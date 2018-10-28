@@ -41,7 +41,7 @@ incluem:
 	considerada inapropriada num ambiente profissional
 
 
-Nossas responsibilidades
+Nossas responsabilidades
 ------------------------
 
 Os administradores do projeto são responsáveis por esclarecer os padrões
@@ -60,7 +60,7 @@ Escopo
 Este Código de Conduta aplica-se dentro dos espaços do projeto ou
 qualquer espaço público onde alguém represente o mesmo ou a sua
 comunidade. Exemplos de representação do projeto ou comunidade incluem
-usar um endereço de email oficial do projeto, postar por uma conta de
+usar um endereço de e-mail oficial do projeto, postar por uma conta de
 mídia social oficial, ou agir como um representante designado num evento
 online ou offline. A representação de um projeto pode ser ainda definida
 e esclarecida pelos administradores do projeto.
