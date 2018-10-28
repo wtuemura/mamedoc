@@ -1,0 +1,544 @@
+.. A nice and clean way to do a page break, this case for latex and PDF
+   only.
+.. raw:: latex
+
+	\clearpage
+
+A implementação da nova família 6502
+====================================
+
+Introdução
+----------
+
+A implementação da nova família 6502 foi criada de maneira que as suas
+sub-instruções sejam observáveis de maneira precisa.
+Foi projetado visando 3 coisas:
+
+- cada ciclo do barramento deve acontecer no exato momento que
+  aconteceria em uma CPU real assim como cada acesso.
+
+- as instruções podem ser interrompidas a qualquer momento e depois
+  reiniciado deste ponto de forma transparente
+
+- para fins de emulação, as instruções podem ser interrompidas mesmo de
+  dentro de um manipulador de memória para a contenção/espera do
+  barramento.
+
+O Ponto 1 foi garantido através de bi-simulação do *perfect6502* a nível
+de gate. O Ponto 2 foi garantido estruturalmente através de um gerador
+de código que será explicado com mais detalhes na seção 8. O Ponto 2
+ainda não está pronto devido a falta de suporte nos subsistemas de
+memória, no entanto a seção 9 mostra como isso será tratado.
+
+
+A família 6502
+--------------
+
+A família do MOS 6502 tem sido grande e produtiva. Existe um grande
+número de variantes, tamanhos de barramentos variados, I/O e até mesmo
+opcodes. Alguns coadjuvantes (g65c816, hu6280) até existem e estão
+perdidos em algum lugar dentro do código fonte do MAME. A classe
+hierárquica final ficou assim:
+
+::
+
+                           6502
+                            |
+         +------+--------+--+--+-------+-------+
+         |      |        |     |       |       |
+       6510   deco16   6504   6509   n2a03   65c02
+         |                                     |
+   +-----+-----+                            r65c02
+   |     |     |                               |
+ 6510t  7501  8502                         +---+---+
+                                           |       |
+                                        65ce02   65sc02
+                                           |
+                                         4510
+
+
+
+O 6510 adiciona 8 bits na porta I/O, com o 6510t, o 7501 e o 8502 são
+variantes, compatíveis entre si a nível de software com uma quantidade
+de pinos diferente (quantidade de I/O), processo da die (NMOS, HNMOS,
+etc) e suporte a clock. 
+
+O deco16 é uma variante do Deco, com um pequeno número de instruções
+adicionais ainda não compreendidas e alguns I/O.
+
+O 6504 é uma versão reduzida de pinos e barramento de endereços.
+
+O 6509 adiciona um suporte interno para paginação.
+
+O n2a03 é uma variante NES com a bandeira D desativada e uma
+funcionalidade de som integrada.
+
+O 65c02 é a primeira variante CMOS com algumas instruções adicionais,
+algumas correções e a maioria das instruções não documentadas se
+transformaram em *nops*. A variante R (*Rockwell*, mas eventualmente
+produzida pela WDC também dentre outras) adiciona várias instruções
+*bitwise* e também *stp* e *wai*. A variante SC, usada pelo console
+portátil Lynx, parece idêntica à variante R. O 'S' provavelmente indica
+um processo estático de células de memória RAM, permitindo total
+controle de clock *DC-to-max*.
+
+O 65ce02 é a evolução final do ISA nesta hierarquia, com instruções
+adicionais, registros e remoções de muitos acessos inertes que
+desacelerava o 6502 original em pelo menos 25%. O 4510 é o 65ce02 com
+suporte a MMU e GPIO integrados.
+
+
+O uso das classes
+-----------------
+
+Todas as CPUs são dispositivos de CPU modernos com toda a interação
+normal junto com a infraestrutura do dispositivo. Para incluir uma
+destas CPUs no seu driver, você precisa incluir "**CPU/m6502/<CPU>.h**"
+e então fazer um **MCFG_CPU_ADD("tag", <CPU>, clock)**.
+
+Os calbacks da porta I/O das variantes do 6510 são configuradas através
+de:
+
+	``MCFG_<CPU>_PORT_CALLBACKS(READ8(type, read_method), WRITE8(type, write_method))``
+
+E as linhas das máscaras **pullup** e **floating** são fornecidas
+através de:
+
+	``MCFG_<CPU>_PORT_PULLS(pullups, floating)``
+
+Para ver todos os acessos de barramento nos manipuladores de memória,
+é necessário desativar os acessos através do mapa direto (ao custo de
+um processamento extra de CPU, é claro) com:
+
+	``MCFG_M6502_DISABLE_DIRECT()``
+
+Nesse caso, o suporte à descriptografia transparente também é
+desabilitada, tudo passa através de chamadas comuns de leitura/gravação
+no mapa de memória. O estado da linha de sincronização é dado pelo
+método da CPU **get_sync()**, possibilitando a implementação da
+descriptografia no manipulador.
+
+A cada dispositivo executável, o método de CPU **total_cycles()** dá o
+tempo atual em ciclos desde o início da máquina do ponto de vista da
+CPU. Ou em outras palavras, o que normalmente é chamado o número de
+ciclo da CPU quando alguém fala sobre contenção do barramento ou a
+espera do estado. A chamada é projetada para ser rápida (sem
+sincronização ampla do sistema, sem apelo à **machine.time()**) e é
+preciso. A quantidade de ciclos para cada acesso é exata a nível de
+sub-instruções.
+
+A linha especial do nomap 4510 é acessível usando **get_nomap()**.
+
+Além destes detalhes específicos, estas são classes normais de CPU.
+
+
+Estrutura geral das emulações
+-----------------------------
+
+Cada variante é emulada através de 4 arquivos:
+
+- <CPU>.h    = cabeçalho para a classe de CPU
+- <CPU>.c    = implementação para a maioria das classes de CPU
+- d<CPU>.lst = tabelas de despacho para a CPU
+- o<CPU>.lst = implementações opcode para a CPU
+
+As duas últimas são opcionais. Eles são usados para gerar um arquivo
+**<CPU>.inc** no diretório de objeto que está incluso no arquivo fonte
+.c.
+
+A classe deve incluir, no mínimo, um construtor e um enum, captando as
+identificações de linha de entrada correta. Veja o *m65sc02* para um
+exemplo minimalista. O cabeçalho também pode incluir macros de
+configuração específica (consulte o *m8502*) e também a classe pode
+incluir assessores específicos de memória (mais sobre estes mais tarde,
+exemplo simples no *m6504*).
+
+Se a CPU tiver a sua própria tabela de expedição, a classe também deve
+incluir uma declaração (mas não uma definição) de **disasm_entries**,
+**do_exec_full** e **do_exec_partial**, a declaração e definição de
+**disasm_disassemble** (idêntico para todas as classes, mas refere-se a
+uma matriz classe específica **disasm_entries**) e incluí o arquivo .inc
+(que fornece as definições que faltarem). Suporte para a geração também
+deve ser adicionada ao CPU.mak.
+
+Se a CPU possuir algo a mais do que seus opcodes, a sua declaração deve
+ser feita por meio de uma macro, veja por exemplo o m65c02. O arquivo
+.inc irá fornecer as definições.
+
+
+Tabelas de despacho
+-------------------
+
+Cada arquivo d<CPU>.lst é uma tabelas de despacho para a CPU. As linhas
+que começam com '#' são comentários. O arquivo deve conter 257 entrada,
+sendo as primeiras 256 sendo opcodes e o 257º dever ser a instrução que
+a CPU deve fazer durante um reset. Dentro do IRQ e mni do 6502 há uma
+chamada "mágica" para o opcode "brk", dai a falta de descrição
+especifica para eles.
+
+As entradas entre 0 e 255 por exemplo, os opcodes devem ter uma dessas
+estruturas:
+
+- opcode_addressing-mode
+- opcode_middle_addressing-mode
+
+O opcode tradicionalmente é um valor com três caracteres. O modo de
+endereçamento devem ser um valor de 3 cartas correspondente a um dos
+DASM_* macros no m6502.h. O Opcode e modo de endereçamento são
+utilizados para gerar a tabela de desmontagem. O texto completo de
+entrada é usado na descrição do arquivo de opcode, os métodos de
+expedição permitem opcodes variantes por CPU que sejam aparentemente
+idênticos.
+
+Uma entrada de "." era utilizável para opcodes não implementados ou
+desconhecidos, pois gera códigos "???" na desmontagem, não é uma boa
+ideia neste momento uma vez que vai realizar um *infloop* numa função
+**execute()** caso seja encontrado.
+
+
+Descrições de Opcode
+--------------------
+
+Cada arquivo **o<CPU>.lst** incluí descrições de opcodes específicas
+para uma CPU. Uma descrição de opcode é uma série de linhas que começam
+por uma entrada de opcode por si mesmo e seguido por uma série de linhas
+recuadas com o código opcode a ser executando.
+Por exemplo, o opcode asl <*absolute address*> ficaria assim:
+
+| asl_aba
+|     TMP = read_pc();
+|     TMP = set_h(TMP, read_pc());
+|     TMP2 = read(TMP);
+|     write(TMP, TMP2);
+|     TMP2 = do_asl(TMP2);
+|     write(TMP, TMP2);
+|     prefetch();
+
+A primeira parte baixa do endereço é a leitura, em seguida a parte alta
+(**read_pc** é incrementada automaticamente). Assim, agora que o
+endereço está disponível o valor a ser deslocado é lido, depois
+reescrito (sim, o 6502 faz isso), deslocado novamente e o resultado
+final é escrito (o **do_asl** cuida das bandeiras). A instrução termina
+com um prefetch da próxima instrução, assim como todas as instruções que
+não quebram a CPU [1]_ fazem.
+
+As funções de acesso ao barramento são:
+
+=================   ============================================
+read(adr)           leitura comum
+read_direct(adr)    lê do espaço do programa
+read_pc()           lê no endereço do PC e incrementa
+read_pc_noinc()     lê no endereço do PC
+read_9()            indexador y do depósito de leitura do 6509
+write(adr, val)     escrita comum
+prefetch()          instrução prefetch
+prefetch_noirq()    instrução prefetch sem verificação de IRQ
+=================   ============================================
+
+A contagem dos ciclos é feita pelo gerador de código que detecta através
+de strings correspondentes os acessos e gera o código apropriado.
+Além das funções de acesso ao barramento, uma linha especial pode ser
+usada para aguardar o próximo evento (irq ou qualquer outro). o
+"**eat-all-cycles;**" numa linha fará essa espera para que só então
+continue. Para o m65c02 é usado um *wai_imp* e um *stp_imp*.
+
+Devido às restrições da geração do código, algumas regras devem ser
+seguidas:
+
+- no geral, fique com uma instrução ou expressão por linha
+
+- não deve haver efeitos colaterais nos parâmetros de uma função de
+  acesso ao barramento
+
+- a vida útil das variáveis locais não deve ultrapassar a de um acesso
+  ao barramento Em geral é melhor deixá-los para ajudar em métodos
+  auxiliares (como o **do_asl**) que não fazem acesso ao barramento.
+  Note que "TMP" e "TMP" não são variáveis locais, são variáveis da
+  classe.
+
+- então uma linha única ou então as construções devem ter chaves ao
+  redor delas caso elas estejam chamando uma função de acesso ao
+  barramento
+
+O código gerado para cada opcode são métodos da classe da CPU. Como tal
+eles têm acesso completo a outros métodos da classe, variáveis, tudo.
+
+
+Interface da Memória
+--------------------
+
+Para uma melhor reutilização do opcode com as variantes MMU/banking, foi
+criada uma subclasse de acesso à memória.
+É chamado de **memory_interface**, que declarado em um dispositivo
+*m6502_device* e provê os seguintes auxiliares:
+
+====================================    ===========================================================
+UINT8 read(UINT16 adr)                  leitura normal
+UINT8 read_sync(UINT16 adr)             leiura com sync ativo para opcode (primeiro byte do opcode)
+UINT8 read_arg(UINT16 adr)              leiura com sync inativo para opcode (resto do opcode)
+void write(UINT16 adr, UINT8 val)       escrita normal
+====================================    ===========================================================
+
+====================================    ==================================================================
+UINT8 read_9(UINT16 adr)                leitura especial para o 6509 com y-indexado, padrão para leitura()
+void write_9(UINT16 adr, UINT8 val);    escrita especial para o 6509 com y-indexado, padrão para escrita()
+====================================    ==================================================================
+
+Por predefinição duas implementações são dadas, uma usual,
+**mi_default_normal**, uma desabilitando o acesso direto,
+**mi_default_nd**. Uma CPU que queira a sua própria interface como o
+6504 ou o 6509 por exemplo, este deve substituir o  ``device_start``,
+inicializar o ``mintf`` e em seguida chamar a função **init ()**.
+
+
+O código gerado
+---------------
+
+Um gerador de código é usado para ser compatível com a interrupção
+durante o reinício de uma instrução. Isso é feito por meio de um estado
+de máquina de dois níveis com atualizações apenas nos limites. Para ser
+mais exato, o ``inst_state`` informa qual o estado principal que você
+está. É igual ao byte opcode quando **0-255** e **0xff00** significarem
+um reset. É sempre válido e usado por instruções como rmb.
+O ``inst_substate`` indica em qual etapa estamos em uma instrução, mas é
+definida somente quando uma instrução tiver sido interrompida.
+Vamos voltar ao código asl <abs>:
+
+|
+| asl_aba
+|     TMP = read_pc();
+|     TMP = set_h(TMP, read_pc());
+|     TMP2 = read(TMP);
+|     write(TMP, TMP2);
+|     TMP2 = do_asl(TMP2);
+|     write(TMP, TMP2);
+|     prefetch();
+|
+
+O código completo que foi gerado é:
+
+| void m6502_device::asl_aba_partial()
+| {
+| switch(inst_substate) {
+| case 0:
+|     if(icount == 0) { inst_substate = 1; return; }
+| case 1:
+|     TMP = read_pc();
+|     icount--;
+|     if(icount == 0) { inst_substate = 2; return; }
+| case 2:
+|     TMP = set_h(TMP, read_pc());
+|     icount--;
+|     if(icount == 0) { inst_substate = 3; return; }
+| case 3:
+|     TMP2 = read(TMP);
+|     icount--;
+|     if(icount == 0) { inst_substate = 4; return; }
+| case 4:
+|     write(TMP, TMP2);
+|     icount--;
+|     TMP2 = do_asl(TMP2);
+|     if(icount == 0) { inst_substate = 5; return; }
+| case 5:
+|     write(TMP, TMP2);
+|     icount--;
+|     if(icount == 0) { inst_substate = 6; return; }
+| case 6:
+|     prefetch();
+|     icount--;
+| }
+|     inst_substate = 0;
+| }
+|
+
+Percebe-se que a inicial ``switch()`` reinicia a instrução no *substate*
+apropriado, que o *icount* é atualizado depois de cada acesso e após
+chegar a zero (0) a instrução é interrompida e o *substate* atualizado.
+Desde que a maioria das instruções são iniciadas desde o principio, uma
+variante específica é gerada para quando o ``inst_substate`` for 0:
+
+|
+| void m6502_device::asl_aba_full()
+| {
+|     if(icount == 0) { inst_substate = 1; return; }
+|     TMP = read_pc();
+|     icount--;
+|     if(icount == 0) { inst_substate = 2; return; }
+|     TMP = set_h(TMP, read_pc());
+|     icount--;
+|     if(icount == 0) { inst_substate = 3; return; }
+|     TMP2 = read(TMP);
+|     icount--;
+|     if(icount == 0) { inst_substate = 4; return; }
+|     write(TMP, TMP2);
+|     icount--;
+|     TMP2 = do_asl(TMP2);
+|     if(icount == 0) { inst_substate = 5; return; }
+|     write(TMP, TMP2);
+|     icount--;
+|     if(icount == 0) { inst_substate = 6; return; }
+|     prefetch();
+|     icount--;
+| }
+|
+
+Essa variante remove o interruptor, evitando um dispendioso custo de
+processamento e também uma gravação de ``inst_substate``. Há também uma
+boa chance de que o decremento teste com um par zerado seja compilado em
+algo eficiente.
+
+Todas essas funções de opcode denominam-se através de dois métodos
+virtuais, **do_exec_full** e **do_exec_partial**, que são gerados em uma
+declaração de chaveamento com 257 entradas. Uma função virtual que
+implemente um interruptor tem uma boa chance de ser melhor do que
+ponteiros para métodos de chamada, que custam caro.
+
+A execução da chamada principal é muito simples:
+
+| void m6502_device::execute_run()
+| {
+|     if(inst_substate)
+|         do_exec_partial();
+|
+|     while(icount > 0) {
+|         if(inst_state < 0x100) {
+|             PPC = NPC;
+|             inst_state = IR;
+|             if(machine().debug_flags & DEBUG_FLAG_ENABLED)
+|                 debugger_instruction_hook(this, NPC);
+|         }
+|         do_exec_full();
+|     }
+| }
+
+Caso uma instrução tenha sido parcialmente executada, termine-a
+(o *icount* então será zero caso ele ainda não tenha terminado).
+Em seguida, tente executar as instruções completas. A dança do NPC/IR é
+devido ao fato que o 6502 realiza funções de prefetching [2]_, então a
+instrução PC e opcode vem dos resultados deste prefetch.
+
+
+Suporte a um slot de contenção/atraso de barramento futuro
+----------------------------------------------------------
+
+O apoio a um slot de contenção e atraso de barramento no contexto do
+gerador de código requer que este seja capaz de anular um acesso de
+barramento quando não houver ciclos suficientes disponíveis em *icount*
+e reiniciá-lo quando os ciclos tornaram-se disponíveis novamente.
+O plano de implementação seria:
+
+- Tem um método de **delay()** na CPU que remove os ciclos *icount*.
+  Caso o *icount* torne-se menor ou igual a zero, faça com que lance uma
+  exceção **suspend()**.
+
+- Mude o gerador de código para gerar:
+
+| void m6502_device::asl_aba_partial()
+| {
+| switch(inst_substate) {
+| case 0:
+|     if(icount == 0) { inst_substate = 1; return; }
+| case 1:
+|     try {
+|     TMP = read_pc();
+|     } catch(suspend) { inst_substate = 1; return; }
+|     icount--;
+|     if(icount == 0) { inst_substate = 2; return; }
+| case 2:
+|     try {
+|     TMP = set_h(TMP, read_pc());
+|     } catch(suspend) { inst_substate = 2; return; }
+|     icount--;
+|     if(icount == 0) { inst_substate = 3; return; }
+| case 3:
+|     try {
+|     TMP2 = read(TMP);
+|     } catch(suspend) { inst_substate = 3; return; }
+|     icount--;
+|     if(icount == 0) { inst_substate = 4; return; }
+| case 4:
+|     try {
+|     write(TMP, TMP2);
+|     } catch(suspend) { inst_substate = 4; return; }
+|     icount--;
+|     TMP2 = do_asl(TMP2);
+|     if(icount == 0) { inst_substate = 5; return; }
+| case 5:
+|     try {
+|     write(TMP, TMP2);
+|     } catch(suspend) { inst_substate = 5; return; }
+|     icount--;
+|     if(icount == 0) { inst_substate = 6; return; }
+| case 6:
+|     try {
+|     prefetch();
+|     } catch(suspend) { inst_substate = 6; return; }
+|     icount--;
+| }
+|     inst_substate = 0;
+| }
+
+Caso nenhuma exceção seja lançada, não custa nada tentar uma tentativa
+de captura mais moderna. Ao usar isso, o controle retorna para o *loop*
+principal conforme mostrado abaixo:
+
+| void m6502_device::execute_run()
+| {
+|     if(waiting_cycles) {
+|         icount -= waiting_cycles;
+|         waiting_cycles = 0;
+|     }
+|
+|     if(icount > 0 && inst_substate)
+|         do_exec_partial();
+|
+|     while(icount > 0) {
+|         if(inst_state < 0x100) {
+|             PPC = NPC;
+|             inst_state = IR;
+|             if(machine().debug_flags & DEBUG_FLAG_ENABLED)
+|                 debugger_instruction_hook(this, NPC);
+|         }
+|         do_exec_full();
+|     }
+|
+|     waiting_cycles = -icount;
+|     icount = 0;
+| }
+
+Um *icount* negativo significa que a CPU não poderá fazer nada por algum
+tempo no futuro, porque ela estará aguardando que o barramento seja
+liberado ou que algum periférico responda. Esses ciclos serão contados
+até que o processamento normal continue. É importante observar que o
+caminho da exceção só acontece quando o estado de contenção/espera para
+além da fatia de planejamento da CPU. O custo deverá ser mínimo, porém,
+este não é sempre o caso.
+
+Múltiplas variantes de despacho
+-------------------------------
+
+Algumas variantes estão em processo de serem compatíveis com as mudanças
+do conjunto de instruções dependam de um sinalizador interno,
+seja alternando para o modo 16-bits ou alterando alguns acessos de
+registro para o acessos à memória. Isso é feito tendo várias tabelas de
+despacho para a CPU, o *d<CPU>.lst* não tem mais 257 entradas e sim
+256*n+1. A variável **inst_state_base** deve selecionar qual a tabela de
+instruções usar em um determinado momento. Deve ser um múltiplo de, e é
+de fato simplesmente *OR* para o byte de primeira instrução visando
+obter o índice da tabela de despacho (*inst_state*).
+
+Tarefas a serem concluídas
+--------------------------
+
+- Implementar os estados de contenção/espera do barramento, mas isso
+  requer suporte no lado do mapa de memória primeiro.
+
+- Integrar os subsistemas de I/O no 4510
+
+- Possivelmente integrar o subsistema de som no n2a03
+
+- Adicionar *hookups* decentes para a bagunça que está no Apple 3
+
+.. [1]	*non-CPU-crashing instructions* no original. (Nota do tradutor)
+.. [2]	Carga prévia de pesquisa, busca ou dado relevante.
+		(Nota do tradutor)

@@ -1,0 +1,471 @@
+\select@language {brazil}
+\contentsline {chapter}{\numberline {1}O QUE \IeC {\'E} O MAME?}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}I. Objetivo}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}II. Custo}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}III. Software em formato de imagem}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}IV. Obras derivativas}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}V. Mais informa\IeC {\c c}\IeC {\~o}es e contato legal}{4}{section.1.5}
+\contentsline {chapter}{\numberline {2}CONFIGURANDO O MAME PARA SER USADO PELA PRIMEIRA VEZ}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Uma introdu\IeC {\c c}\IeC {\~a}o ao MAME}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}O objetivo do MAME}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Os sistemas emulados pelo MAME}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Os sistemas operacionais compat\IeC {\'\i }veis}{6}{section.2.4}
+\contentsline {section}{\numberline {2.5}Requisitos do sistema}{6}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Extra\IeC {\c c}\IeC {\~o}es de BIOS e programas}{7}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Instalando o MAME}{7}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Microsoft Windows}{7}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Outros sistemas operacionais}{7}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.7}Compilando o MAME}{7}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Para todas as plataformas}{7}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Microsoft Windows}{8}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Fedora Linux}{8}{subsection.2.7.3}
+\contentsline {subsection}{\numberline {2.7.4}Debian e Ubuntu (incluindo dispositivos Raspberry Pi e ODROID)}{8}{subsection.2.7.4}
+\contentsline {subsection}{\numberline {2.7.5}Arch Linux}{9}{subsection.2.7.5}
+\contentsline {subsection}{\numberline {2.7.6}Apple Mac OS X}{9}{subsection.2.7.6}
+\contentsline {subsection}{\numberline {2.7.7}Javascript Emscripten e HTML}{9}{subsection.2.7.7}
+\contentsline {section}{\numberline {2.8}Compila\IeC {\c c}\IeC {\~a}o cruzada}{11}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Defini\IeC {\c c}\IeC {\~a}o}{11}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Vantagens}{11}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Preparando o ambiente}{11}{subsection.2.8.3}
+\contentsline {subsection}{\numberline {2.8.4}Compilando o MAME para Windows no Linux}{13}{subsection.2.8.4}
+\contentsline {subsection}{\numberline {2.8.5}Lidando com alguns problemas comuns}{14}{subsection.2.8.5}
+\contentsline {chapter}{\numberline {3}NO\IeC {\c C}\IeC {\~O}ES GERAIS DE USO E CONFIGURA\IeC {\c C}\IeC {\~A}O DO MAME}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Usando o MAME}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Teclas j\IeC {\'a} predefinidas}{17}{section.3.2}
+\contentsline {section}{\numberline {3.3}Os menus do MAME}{22}{section.3.3}
+\contentsline {section}{\numberline {3.4}Interfaces}{22}{section.3.4}
+\contentsline {section}{\numberline {3.5}Sobre ROMs e seus conjuntos}{23}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}O que \IeC {\'e} uma imagem ROM?}{23}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Por que ROM e n\IeC {\~a}o algum outro nome?}{23}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Pais, Clones, Divis\IeC {\~a}o e Mesclagem}{23}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Solucionando problemas dos seus conjuntos de ROMs e um pouco de hist\IeC {\'o}ria}{24}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}ROMs e CHDs}{25}{subsection.3.5.5}
+\contentsline {section}{\numberline {3.6}Problemas comuns e algumas perguntas frequentes}{26}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Por que o meu jogo mostra uma tela de erro quando eu insiro moedas rapidamente?}{26}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Por qu\IeC {\^e} o meu pacote MAME n\IeC {\~a}o oficial (o EmuCR ou qualquer outro por exemplo) n\IeC {\~a}o funciona direito? Por qu\IeC {\^e} a minha atualiza\IeC {\c c}\IeC {\~a}o oficial est\IeC {\'a} quebrada?}{27}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Por qu\IeC {\^e} o MAME suporta jogos de console e terminais burros? N\IeC {\~a}o seria mais r\IeC {\'a}pido se o MAME suportasse apenas jogos de arcade? N\IeC {\~a}o usaria menos mem\IeC {\'o}ria RAM? N\IeC {\~a}o faria com que o MAME ficasse mais r\IeC {\'a}pido por causa de A, B ou C?}{27}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Por qu\IeC {\^e} a minha ROM de Neo-Geo n\IeC {\~a}o funcionam mais? Como eu fa\IeC {\c c}o para que o jogo Humble Bundle volte a funcionar?}{27}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}Como posso usar a cole\IeC {\c c}\IeC {\~a}o para a Steam do Mega Drive Classics collection do Sega Genesis com o MAME?}{28}{subsection.3.6.5}
+\contentsline {subsection}{\numberline {3.6.6}Por qu\IeC {\^e} o MAME alega que ``faltam arquivos'' sendo que eu tenho essas ROMs?}{28}{subsection.3.6.6}
+\contentsline {subsection}{\numberline {3.6.7}Como posso ter certeza que tenho as ROMs certas?}{28}{subsection.3.6.7}
+\contentsline {subsection}{\numberline {3.6.8}Por que alguns jogos t\IeC {\^e}m a vers\IeC {\~a}o Americana como a principal, outras t\IeC {\^e}m a Japonesa e outros a vers\IeC {\~a}o Mundo (World)?}{29}{subsection.3.6.8}
+\contentsline {subsection}{\numberline {3.6.9}Como fa\IeC {\c c}o para obter legalmente as ROMs ou as imagens de disco para poder rodar no MAME?}{29}{subsection.3.6.9}
+\contentsline {subsection}{\numberline {3.6.10}A c\IeC {\'o}pia legal das ROMs n\IeC {\~a}o esbarram num poss\IeC {\'\i }vel limiar jur\IeC {\'\i }dico?}{29}{subsection.3.6.10}
+\contentsline {subsection}{\numberline {3.6.11}As ROMs dos jogos n\IeC {\~a}o podem ser consideradas abandonadas com o tempo (abandonware)?}{30}{subsection.3.6.11}
+\contentsline {subsection}{\numberline {3.6.12}Eu tinha ROMs que funcionavam com uma vers\IeC {\~a}o antiga do MAME e agora n\IeC {\~a}o funcionam mais. O que aconteceu?}{30}{subsection.3.6.12}
+\contentsline {subsection}{\numberline {3.6.13}E aqueles gabinetes de arcade vendidos no Mercado Livre, OLX e outros lugares que v\IeC {\^e}m com todas as ROMs?}{30}{subsection.3.6.13}
+\contentsline {subsection}{\numberline {3.6.14}E aqueles caras que gravam DVDs com ROMs e cobram apenas o pre\IeC {\c c}o da m\IeC {\'\i }dia?}{30}{subsection.3.6.14}
+\contentsline {subsection}{\numberline {3.6.15}Mas n\IeC {\~a}o h\IeC {\'a} uma isen\IeC {\c c}\IeC {\~a}o especial do DMCA que torne a c\IeC {\'o}pia de uma ROM legal?}{31}{subsection.3.6.15}
+\contentsline {subsection}{\numberline {3.6.16}H\IeC {\'a} algum problema se eu baixar a ROM e ``experimentar'' por 24 horas?}{31}{subsection.3.6.16}
+\contentsline {subsection}{\numberline {3.6.17}E se eu comprar um gabinete com ROMs legalizadas, posso disponibiliz\IeC {\'a}-lo em um local p\IeC {\'u}blico para que eu possa ganhar dinheiro?}{31}{subsection.3.6.17}
+\contentsline {subsection}{\numberline {3.6.18}Mas eu j\IeC {\'a} vi gabinetes do Ultracade e Global VR Classics montados em lugares p\IeC {\'u}blicos? Por qu\IeC {\^e} eles podem?}{31}{subsection.3.6.18}
+\contentsline {subsection}{\numberline {3.6.19}AJUDA! Eu estou tendo tela preta ou uma mensagem de erro relacionada com o DirectX no Windows!}{31}{subsection.3.6.19}
+\contentsline {subsection}{\numberline {3.6.20}Eu tenho um controlador que n\IeC {\~a}o quer funcionar com a vers\IeC {\~a}o nativa do MAME no Windows, o que posso fazer?}{32}{subsection.3.6.20}
+\contentsline {subsection}{\numberline {3.6.21}O que aconteceu com o suporte do MAME para placas de som externas com o OPL2 integrado?}{32}{subsection.3.6.21}
+\contentsline {chapter}{\numberline {4}CONFIGURA\IeC {\c C}\IeC {\~O}ES E OP\IeC {\c C}\IeC {\~O}ES DE LINHA DE COMANDO}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Op\IeC {\c c}\IeC {\~o}es universais de linha de comando}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Comandos e verbos}{33}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Conjunto de instru\IeC {\c c}\IeC {\~o}es}{33}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Principais verbos}{33}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Verbos de configura\IeC {\c c}\IeC {\~a}o}{34}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Verbos frontend}{34}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Op\IeC {\c c}\IeC {\~o}es relacionadas as informa\IeC {\c c}\IeC {\~o}es exibidas na tela (OSD)}{36}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}Op\IeC {\c c}\IeC {\~o}es relacionados ao OSD CLI}{37}{subsection.4.1.7}
+\contentsline {subsection}{\numberline {4.1.8}Op\IeC {\c c}\IeC {\~o}es de sa\IeC {\'\i }da do OSD}{37}{subsection.4.1.8}
+\contentsline {subsection}{\numberline {4.1.9}Op\IeC {\c c}\IeC {\~o}es de configura\IeC {\c c}\IeC {\~a}o}{38}{subsection.4.1.9}
+\contentsline {subsection}{\numberline {4.1.10}Principais op\IeC {\c c}\IeC {\~o}es de caminho}{38}{subsection.4.1.10}
+\contentsline {subsection}{\numberline {4.1.11}Principais op\IeC {\c c}\IeC {\~o}es de caminho final de diret\IeC {\'o}rio}{40}{subsection.4.1.11}
+\contentsline {subsection}{\numberline {4.1.12}Principais op\IeC {\c c}\IeC {\~o}es de estado e reprodu\IeC {\c c}\IeC {\~a}o}{41}{subsection.4.1.12}
+\contentsline {subsection}{\numberline {4.1.13}Principais op\IeC {\c c}\IeC {\~o}es de performance}{44}{subsection.4.1.13}
+\contentsline {subsection}{\numberline {4.1.14}Principais op\IeC {\c c}\IeC {\~o}es de rota\IeC {\c c}\IeC {\~a}o}{45}{subsection.4.1.14}
+\contentsline {subsection}{\numberline {4.1.15}Principais op\IeC {\c c}\IeC {\~o}es de v\IeC {\'\i }deo}{45}{subsection.4.1.15}
+\contentsline {subsection}{\numberline {4.1.16}Principais op\IeC {\c c}\IeC {\~o}es de tela inteira}{48}{subsection.4.1.16}
+\contentsline {subsection}{\numberline {4.1.17}Principais op\IeC {\c c}\IeC {\~o}es de janela individual}{48}{subsection.4.1.17}
+\contentsline {subsection}{\numberline {4.1.18}Principais op\IeC {\c c}\IeC {\~o}es para as ilustra\IeC {\c c}\IeC {\~o}es}{50}{subsection.4.1.18}
+\contentsline {subsection}{\numberline {4.1.19}Principais op\IeC {\c c}\IeC {\~o}es de tela}{50}{subsection.4.1.19}
+\contentsline {subsection}{\numberline {4.1.20}Principais op\IeC {\c c}\IeC {\~o}es para vetores}{51}{subsection.4.1.20}
+\contentsline {subsection}{\numberline {4.1.21}Principais op\IeC {\c c}\IeC {\~o}es para a depura\IeC {\c c}\IeC {\~a}o de v\IeC {\'\i }deo OpenGL}{52}{subsection.4.1.21}
+\contentsline {subsection}{\numberline {4.1.22}Principais op\IeC {\c c}\IeC {\~o}es de v\IeC {\'\i }deo OpenGL GLSL}{52}{subsection.4.1.22}
+\contentsline {subsection}{\numberline {4.1.23}Principais op\IeC {\c c}\IeC {\~o}es de \IeC {\'a}udio}{53}{subsection.4.1.23}
+\contentsline {subsection}{\numberline {4.1.24}Principais op\IeC {\c c}\IeC {\~o}es de entrada}{54}{subsection.4.1.24}
+\contentsline {subsection}{\numberline {4.1.25}Principais op\IeC {\c c}\IeC {\~o}es de entrada automaticamente ativas}{57}{subsection.4.1.25}
+\contentsline {subsection}{\numberline {4.1.26}Op\IeC {\c c}\IeC {\~o}es de depura\IeC {\c c}\IeC {\~a}o}{58}{subsection.4.1.26}
+\contentsline {subsection}{\numberline {4.1.27}Principais op\IeC {\c c}\IeC {\~o}es de comunica\IeC {\c c}\IeC {\~a}o de rede}{59}{subsection.4.1.27}
+\contentsline {subsection}{\numberline {4.1.28}Principais op\IeC {\c c}\IeC {\~o}es diversas}{59}{subsection.4.1.28}
+\contentsline {subsection}{\numberline {4.1.29}Op\IeC {\c c}\IeC {\~o}es do servidor HTTP}{61}{subsection.4.1.29}
+\contentsline {section}{\numberline {4.2}Op\IeC {\c c}\IeC {\~o}es de linha de comando espec\IeC {\'\i }ficos para a vers\IeC {\~a}o Windows}{62}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Op\IeC {\c c}\IeC {\~o}es de performance}{62}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Op\IeC {\c c}\IeC {\~o}es de tela inteira}{62}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Op\IeC {\c c}\IeC {\~o}es para a entrada de controle}{63}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Op\IeC {\c c}\IeC {\~o}es de linha de comando espec\IeC {\'\i }ficos para a vers\IeC {\~a}o SDL}{63}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Op\IeC {\c c}\IeC {\~o}es de performance}{63}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Op\IeC {\c c}\IeC {\~o}es de v\IeC {\'\i }deo}{63}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Op\IeC {\c c}\IeC {\~o}es de software espec\IeC {\'\i }ficos para v\IeC {\'\i }deo}{63}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Mapeamento do teclado SDL}{64}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Mapeamento de joystick SDL}{64}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Op\IeC {\c c}\IeC {\~o}es de baixo n\IeC {\'\i }vel para drivers SDL}{64}{subsection.4.3.6}
+\contentsline {section}{\numberline {4.4}Indice das op\IeC {\c c}\IeC {\~o}es de linha de comando}{64}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Op\IeC {\c c}\IeC {\~o}es universais de linha de comando}{65}{subsection.4.4.1}
+\contentsline {subsubsection}{Comandos principais}{65}{subsubsection*.215}
+\contentsline {subsubsection}{Comandos de configura\IeC {\c c}\IeC {\~a}o}{65}{subsubsection*.216}
+\contentsline {subsubsection}{Comandos frontend}{65}{subsubsection*.217}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es relacionadas ao que \IeC {\'e} exibido na tela}{65}{subsubsection*.218}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es CLI relacionados ao que \IeC {\'e} exibido na tela}{66}{subsubsection*.219}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de sa\IeC {\'\i }da relacionados ao que \IeC {\'e} exibido na tela}{66}{subsubsection*.220}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de configura\IeC {\c c}\IeC {\~a}o}{66}{subsubsection*.221}
+\contentsline {subsubsection}{Principais op\IeC {\c c}\IeC {\~o}es de pesquisa de caminho}{66}{subsubsection*.222}
+\contentsline {subsubsection}{Principais op\IeC {\c c}\IeC {\~o}es para o destino de diret\IeC {\'o}rio}{66}{subsubsection*.223}
+\contentsline {subsubsection}{Principais op\IeC {\c c}\IeC {\~o}es de estado e reprodu\IeC {\c c}\IeC {\~a}o}{66}{subsubsection*.224}
+\contentsline {subsubsection}{Principais op\IeC {\c c}\IeC {\~o}es de performance}{67}{subsubsection*.225}
+\contentsline {subsubsection}{Principais op\IeC {\c c}\IeC {\~o}es de rota\IeC {\c c}\IeC {\~a}o}{67}{subsubsection*.226}
+\contentsline {subsubsection}{Principais op\IeC {\c c}\IeC {\~o}es de v\IeC {\'\i }deo}{67}{subsubsection*.227}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de tela inteira}{68}{subsubsection*.228}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de janelas individuais de v\IeC {\'\i }deo}{68}{subsubsection*.229}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de ilustra\IeC {\c c}\IeC {\~a}o (Artwork)}{68}{subsubsection*.230}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de tela}{68}{subsubsection*.231}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de vetores}{68}{subsubsection*.232}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de depura\IeC {\c c}\IeC {\~a}o de v\IeC {\'\i }deo OpenGL}{68}{subsubsection*.233}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de v\IeC {\'\i }deo OpenGL GLSL}{69}{subsubsection*.234}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de \IeC {\'a}udio}{69}{subsubsection*.235}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de entrada}{69}{subsubsection*.236}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de entrada automaticamente habilitadas}{69}{subsubsection*.237}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de depura\IeC {\c c}\IeC {\~a}o}{70}{subsubsection*.238}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de comunica\IeC {\c c}\IeC {\~a}o}{70}{subsubsection*.239}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es diversas}{70}{subsubsection*.240}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de script}{70}{subsubsection*.241}
+\contentsline {subsection}{\numberline {4.4.2}Op\IeC {\c c}\IeC {\~o}es do servidor HTTP}{71}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Op\IeC {\c c}\IeC {\~o}es de linha de comando espec\IeC {\'\i }ficas para o Windows}{71}{subsection.4.4.3}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de performance para o Windows}{71}{subsubsection*.242}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de tela inteira para o Windows}{71}{subsubsection*.243}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de controle de entrada para o Windows}{71}{subsubsection*.244}
+\contentsline {subsection}{\numberline {4.4.4}Op\IeC {\c c}\IeC {\~o}es de linha de comando espec\IeC {\'\i }ficas para o SDL}{71}{subsection.4.4.4}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es relacionadas a performance SDL}{71}{subsubsection*.245}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de v\IeC {\'\i }deo SDL}{71}{subsubsection*.246}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es espec\IeC {\'\i }ficas de software para v\IeC {\'\i }deo SDL}{72}{subsubsection*.247}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de mapeamento de teclado SDL}{72}{subsubsection*.248}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de mapeamento de controle joystick SDL}{72}{subsubsection*.249}
+\contentsline {subsubsection}{Op\IeC {\c c}\IeC {\~o}es de baixo n\IeC {\'\i }vel para drivers SDL}{72}{subsubsection*.250}
+\contentsline {chapter}{\numberline {5}CONFIGURA\IeC {\c C}\IeC {\~O}ES AVAN\IeC {\c C}ADAS}{73}{chapter.5}
+\contentsline {section}{\numberline {5.1}M\IeC {\'u}ltiplos arquivos de configura\IeC {\c c}\IeC {\~a}o}{73}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}A ordem de leitura dos arquivos}{73}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Exemplos da sequ\IeC {\^e}ncia de leitura dos arquivos}{74}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Truques para tornar a vida mais f\IeC {\'a}cil}{74}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Como o MAME lida com o caminho dos arquivos}{74}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}A sequ\IeC {\^e}ncia de leitura dos caminhos}{74}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Desabilitando o interruptor de c\IeC {\^a}mbio}{75}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Alternando o interruptor de c\IeC {\^a}mbio}{75}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Efeitos BGFX para (quase) todo mundo}{76}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Resolu\IeC {\c c}\IeC {\~a}o e rela\IeC {\c c}\IeC {\~a}o de aspecto da tela}{76}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Introdu\IeC {\c c}\IeC {\~a}o ao BGFX}{76}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Alterando as configura\IeC {\c c}\IeC {\~o}es}{77}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Customizando as configura\IeC {\c c}\IeC {\~o}es de BGFX HLSL dentro do MAME}{79}{subsection.5.4.4}
+\contentsline {section}{\numberline {5.5}Os efeitos HLSL para Windows}{79}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Resolu\IeC {\c c}\IeC {\~a}o e rela\IeC {\c c}\IeC {\~a}o de aspecto da tela}{79}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Introdu\IeC {\c c}\IeC {\~a}o ao HLSL}{80}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Customizando as configura\IeC {\c c}\IeC {\~o}es HLSL dentro MAME}{80}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}Alterando as configura\IeC {\c c}\IeC {\~o}es}{80}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}Alterando as configura\IeC {\c c}\IeC {\~o}es}{81}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}Jogos vetorizados}{86}{subsection.5.5.6}
+\contentsline {section}{\numberline {5.6}Efeitos GLSL para *nix, OS X e Windows}{87}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Resolu\IeC {\c c}\IeC {\~a}o e rela\IeC {\c c}\IeC {\~a}o de aspecto da tela}{87}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Introdu\IeC {\c c}\IeC {\~a}o ao GLSL}{88}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}Customizando as configura\IeC {\c c}\IeC {\~o}es GLSL de dentro do MAME}{88}{subsection.5.6.3}
+\contentsline {subsection}{\numberline {5.6.4}Alterando as configura\IeC {\c c}\IeC {\~o}es}{88}{subsection.5.6.4}
+\contentsline {subsection}{\numberline {5.6.5}Alterando as configura\IeC {\c c}\IeC {\~o}es}{89}{subsection.5.6.5}
+\contentsline {section}{\numberline {5.7}Controladores est\IeC {\'a}ticos de IDs}{89}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}O uso do mapdevice}{90}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Exemplo de configura\IeC {\c c}\IeC {\~a}o}{90}{subsection.5.7.2}
+\contentsline {subsection}{\numberline {5.7.3}Listando os dispositivos dispon\IeC {\'\i }veis}{91}{subsection.5.7.3}
+\contentsline {chapter}{\numberline {6}O DEPURADOR DO MAME}{93}{chapter.6}
+\contentsline {section}{\numberline {6.1}Comandos gerais do depurador}{93}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}do}{93}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}symlist}{94}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}softreset}{94}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}hardreset}{95}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.5}print}{95}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.6}printf}{95}{subsection.6.1.6}
+\contentsline {subsection}{\numberline {6.1.7}logerror}{96}{subsection.6.1.7}
+\contentsline {subsection}{\numberline {6.1.8}tracelog}{96}{subsection.6.1.8}
+\contentsline {subsection}{\numberline {6.1.9}tracesym}{97}{subsection.6.1.9}
+\contentsline {subsection}{\numberline {6.1.10}trackpc}{97}{subsection.6.1.10}
+\contentsline {subsection}{\numberline {6.1.11}trackmem}{98}{subsection.6.1.11}
+\contentsline {subsection}{\numberline {6.1.12}pcatmem}{98}{subsection.6.1.12}
+\contentsline {subsection}{\numberline {6.1.13}rewind}{99}{subsection.6.1.13}
+\contentsline {subsection}{\numberline {6.1.14}statesave}{99}{subsection.6.1.14}
+\contentsline {subsection}{\numberline {6.1.15}stateload}{100}{subsection.6.1.15}
+\contentsline {subsection}{\numberline {6.1.16}snap}{100}{subsection.6.1.16}
+\contentsline {subsection}{\numberline {6.1.17}source}{101}{subsection.6.1.17}
+\contentsline {subsection}{\numberline {6.1.18}quit}{101}{subsection.6.1.18}
+\contentsline {section}{\numberline {6.2}Comandos para a depura\IeC {\c c}\IeC {\~a}o de Mem\IeC {\'o}ria}{101}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}dasm}{101}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}find}{102}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}dump}{103}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}save}{103}{subsection.6.2.4}
+\contentsline {subsection}{\numberline {6.2.5}load}{104}{subsection.6.2.5}
+\contentsline {subsection}{\numberline {6.2.6}map}{105}{subsection.6.2.6}
+\contentsline {section}{\numberline {6.3}Comandos de execu\IeC {\c c}\IeC {\~a}o do depurador}{105}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}step}{106}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}over}{106}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}out}{107}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}go}{107}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}gvblank}{108}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {6.3.6}gint}{108}{subsection.6.3.6}
+\contentsline {subsection}{\numberline {6.3.7}gtime}{108}{subsection.6.3.7}
+\contentsline {subsection}{\numberline {6.3.8}next}{109}{subsection.6.3.8}
+\contentsline {subsection}{\numberline {6.3.9}focus}{109}{subsection.6.3.9}
+\contentsline {subsection}{\numberline {6.3.10}ignore}{109}{subsection.6.3.10}
+\contentsline {subsection}{\numberline {6.3.11}observe}{110}{subsection.6.3.11}
+\contentsline {subsection}{\numberline {6.3.12}trace}{111}{subsection.6.3.12}
+\contentsline {subsection}{\numberline {6.3.13}traceover}{112}{subsection.6.3.13}
+\contentsline {subsection}{\numberline {6.3.14}traceflush}{113}{subsection.6.3.14}
+\contentsline {section}{\numberline {6.4}Comandos de breakpoints do depurador}{113}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}bpset}{113}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}bpclear}{114}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}bpdisable}{115}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}bpenable}{115}{subsection.6.4.4}
+\contentsline {subsection}{\numberline {6.4.5}bplist}{116}{subsection.6.4.5}
+\contentsline {section}{\numberline {6.5}Comandos watchpoint do depurador}{116}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}wpset}{116}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}wpclear}{117}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {6.5.3}wpdisable}{118}{subsection.6.5.3}
+\contentsline {subsection}{\numberline {6.5.4}wpenable}{118}{subsection.6.5.4}
+\contentsline {subsection}{\numberline {6.5.5}wplist}{119}{subsection.6.5.5}
+\contentsline {section}{\numberline {6.6}Comandos registerpoints do depurador}{119}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}rpset}{119}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}rpclear}{120}{subsection.6.6.2}
+\contentsline {subsection}{\numberline {6.6.3}rpdisable}{120}{subsection.6.6.3}
+\contentsline {subsection}{\numberline {6.6.4}rpenable}{121}{subsection.6.6.4}
+\contentsline {subsection}{\numberline {6.6.5}rplist}{121}{subsection.6.6.5}
+\contentsline {section}{\numberline {6.7}Comandos de anota\IeC {\c c}\IeC {\~a}o de c\IeC {\'o}digo do depurador}{121}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}comadd}{122}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}comdelete}{122}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.3}comsave}{122}{subsection.6.7.3}
+\contentsline {subsection}{\numberline {6.7.4}comlist}{123}{subsection.6.7.4}
+\contentsline {subsection}{\numberline {6.7.5}commit}{123}{subsection.6.7.5}
+\contentsline {section}{\numberline {6.8}Comandos para o depurador de trapa\IeC {\c c}a}{123}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}cheatinit}{124}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}cheatrange}{124}{subsection.6.8.2}
+\contentsline {subsection}{\numberline {6.8.3}cheatnext}{125}{subsection.6.8.3}
+\contentsline {subsection}{\numberline {6.8.4}cheatnextf}{127}{subsection.6.8.4}
+\contentsline {subsection}{\numberline {6.8.5}cheatlist}{128}{subsection.6.8.5}
+\contentsline {subsection}{\numberline {6.8.6}cheatundo}{129}{subsection.6.8.6}
+\contentsline {section}{\numberline {6.9}Comandos para depura\IeC {\c c}\IeC {\~a}o de imagem}{129}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}images}{129}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}mount}{130}{subsection.6.9.2}
+\contentsline {subsection}{\numberline {6.9.3}unmount}{130}{subsection.6.9.3}
+\contentsline {section}{\numberline {6.10}Guia de express\IeC {\~o}es do depurador}{130}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}N\IeC {\'u}meros}{131}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Diferen\IeC {\c c}as dos comportamentos C}{131}{subsection.6.10.2}
+\contentsline {chapter}{\numberline {7}FERRAMENTAS ADICIONAIS DO MAME}{133}{chapter.7}
+\contentsline {section}{\numberline {7.1}Imgtool - Uma ferramenta gen\IeC {\'e}rica de manipula\IeC {\c c}\IeC {\~a}o de imagens para o MAME}{133}{section.7.1}
+\contentsline {section}{\numberline {7.2}Usando o Imgtool}{133}{section.7.2}
+\contentsline {section}{\numberline {7.3}Subcomandos do Imgtool}{134}{section.7.3}
+\contentsline {section}{\numberline {7.4}Filtros do Imgtool}{136}{section.7.4}
+\contentsline {section}{\numberline {7.5}Informa\IeC {\c c}\IeC {\~a}o de formata\IeC {\c c}\IeC {\~a}o do Imgtool}{137}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Imagem de disquete do Amiga (formato OFS/FFS) - (\emph {amiga\_floppy})}{137}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}Apple {]}{[} imagem de disco DOS order (formato ProDOS) - (\emph {apple2\_do\_prodos\_525})}{137}{subsection.7.5.2}
+\contentsline {subsection}{\numberline {7.5.3}Apple {]}{[} imagem de disco Nibble order (formato ProDOS) - (\emph {apple2\_nib\_prodos\_525})}{137}{subsection.7.5.3}
+\contentsline {subsection}{\numberline {7.5.4}Apple {]}{[} imagem de disco ProDOS order (formato ProDOS) - (\emph {apple2\_po\_prodos\_525})}{137}{subsection.7.5.4}
+\contentsline {subsection}{\numberline {7.5.5}Apple {]}{[}imagem de disco gs 2IMG (formato ProDOS) - (\emph {apple35\_2img\_prodos\_35})}{138}{subsection.7.5.5}
+\contentsline {subsection}{\numberline {7.5.6}Imagem de disco para o Apple DiskCopy (Disquete Mac HFS) - (\emph {apple35\_dc\_mac\_hfs})}{138}{subsection.7.5.6}
+\contentsline {subsection}{\numberline {7.5.7}Imagem de disco para o Apple DiskCopy (Disquete Mac MFS) - (\emph {apple35\_dc\_mac\_hfs})}{138}{subsection.7.5.7}
+\contentsline {subsection}{\numberline {7.5.8}Imagem de disco para o Apple DiskCopy (formato ProDOS) - (\emph {apple35\_dc\_prodos\_35})}{139}{subsection.7.5.8}
+\contentsline {subsection}{\numberline {7.5.9}Imagem de disco para o Apple raw 3.5'' (Disquete Mac HFS) - (\emph {apple35\_raw\_mac\_hfs})}{139}{subsection.7.5.9}
+\contentsline {subsection}{\numberline {7.5.10}Imagem de disco para o Apple raw 3.5'' (Disquete Mac MFS) - (\emph {apple35\_raw\_mac\_mfs})}{139}{subsection.7.5.10}
+\contentsline {subsection}{\numberline {7.5.11}Imagem de disco para o Apple raw 3.5'' (formato ProDOS) - (\emph {apple35\_raw\_prodos\_35})}{139}{subsection.7.5.11}
+\contentsline {subsection}{\numberline {7.5.12}Imagem de disco para o CoCo DMK (formato OS-9) - (\emph {coco\_dmk\_os9})}{140}{subsection.7.5.12}
+\contentsline {subsection}{\numberline {7.5.13}Imagem de disco para o CoCo DMK (formato RS-DOS) - (\emph {coco\_dmk\_rsdos})}{140}{subsection.7.5.13}
+\contentsline {subsection}{\numberline {7.5.14}Imagem de disco para o CoCo JVC (formato OS-9) - (\emph {coco\_jvc\_os9})}{140}{subsection.7.5.14}
+\contentsline {subsection}{\numberline {7.5.15}Imagem de disco para o CoCo JVC (formato RS-DOS) - (\emph {coco\_jvc\_rsdos})}{141}{subsection.7.5.15}
+\contentsline {subsection}{\numberline {7.5.16}Imagem de disco para o CoCo OS-9 (formato OS-9) - (\emph {coco\_os9\_os9})}{141}{subsection.7.5.16}
+\contentsline {subsection}{\numberline {7.5.17}Imagem de disco para o CoCo VDK (formato OS-9) - (\emph {coco\_vdk\_os9})}{141}{subsection.7.5.17}
+\contentsline {subsection}{\numberline {7.5.18}Imagem de disco para o CoCo VDK (formato RS-DOS) - (\emph {coco\_vdk\_rsdos})}{141}{subsection.7.5.18}
+\contentsline {subsection}{\numberline {7.5.19}Imagem de disquete para o Concept - (\emph {concept})}{142}{subsection.7.5.19}
+\contentsline {subsection}{\numberline {7.5.20}Imagem de disquete para o CopyQM (formato Basic Master Level 3) - (\emph {cqm\_bml3})}{142}{subsection.7.5.20}
+\contentsline {subsection}{\numberline {7.5.21}Imagem de disquete para o CopyQM (formato FAT) - (\emph {cqm\_fat})}{142}{subsection.7.5.21}
+\contentsline {subsection}{\numberline {7.5.22}Imagem de disquete para o CopyQM (Mac HFS Floppy) - (\emph {cqm\_mac\_hfs})}{142}{subsection.7.5.22}
+\contentsline {subsection}{\numberline {7.5.23}Imagem de disquete para o CopyQM (Disquete Mac MFS) - (\emph {cqm\_mac\_mfs})}{143}{subsection.7.5.23}
+\contentsline {subsection}{\numberline {7.5.24}Imagem de disquete para o CopyQM (formato OS-9) - (\emph {cqm\_os9})}{143}{subsection.7.5.24}
+\contentsline {subsection}{\numberline {7.5.25}Imagem de disquete para o CopyQM (formato ProDOS) - (\emph {cqm\_prodos\_35})}{143}{subsection.7.5.25}
+\contentsline {subsection}{\numberline {7.5.26}Imagem de disquete para o CopyQM (formato ProDOS) - (\emph {cqm\_prodos\_525})}{143}{subsection.7.5.26}
+\contentsline {subsection}{\numberline {7.5.27}Imagem de disquete para o CopyQM (formato RS-DOS) - (\emph {cqm\_rsdos})}{143}{subsection.7.5.27}
+\contentsline {subsection}{\numberline {7.5.28}Imagem de disquete para o CopyQM (formato VZ-DOS) - (\emph {cqm\_vzdos})}{143}{subsection.7.5.28}
+\contentsline {subsection}{\numberline {7.5.29}Sistema de arquivos para o Cybiko Classic - (\emph {cybiko})}{144}{subsection.7.5.29}
+\contentsline {subsection}{\numberline {7.5.30}Sistema de arquivos para o Cybiko Xtreme - (\emph {cybikoxt})}{144}{subsection.7.5.30}
+\contentsline {subsection}{\numberline {7.5.31}Imagem de disquete para o D88 (formato Basic Master Level 3) - (\emph {d88\_bml3})}{144}{subsection.7.5.31}
+\contentsline {subsection}{\numberline {7.5.32}Imagem de disquete para o D88 (formato FAT) - (\emph {d88\_fat})}{144}{subsection.7.5.32}
+\contentsline {subsection}{\numberline {7.5.33}Imagem de disquete para o D88 (Disquete Mac HFS) - (\emph {d88\_mac\_hfs})}{144}{subsection.7.5.33}
+\contentsline {subsection}{\numberline {7.5.34}Imagem de disquete para o D88 (Disquete Mac MFS) - (\emph {d88\_mac\_mfs})}{144}{subsection.7.5.34}
+\contentsline {subsection}{\numberline {7.5.35}Imagem de disquete para o D88 (formato OS-9) - (\emph {d88\_os9})}{145}{subsection.7.5.35}
+\contentsline {subsection}{\numberline {7.5.36}Imagem de disquete para o D88 (formato OS-9) - (\emph {d88\_os9})}{145}{subsection.7.5.36}
+\contentsline {subsection}{\numberline {7.5.37}Imagem de disquete para o D88 (formato ProDOS) - (\emph {d88\_prodos\_525})}{145}{subsection.7.5.37}
+\contentsline {subsection}{\numberline {7.5.38}Imagem de disquete para o D88 (formato RS-DOS) - (\emph {d88\_rsdos})}{145}{subsection.7.5.38}
+\contentsline {subsection}{\numberline {7.5.39}Imagem de disquete para o D88 (formato VZ-DOS) - (\emph {d88\_vzdos})}{145}{subsection.7.5.39}
+\contentsline {subsection}{\numberline {7.5.40}Imagem de disquete para o DSK (formato Basic Master Level 3) - (\emph {dsk\_bml3})}{145}{subsection.7.5.40}
+\contentsline {subsection}{\numberline {7.5.41}Imagem de disquete para o DSK (formato FAT) - (\emph {dsk\_fat})}{146}{subsection.7.5.41}
+\contentsline {subsection}{\numberline {7.5.42}Imagem de disquete para o DSK (disquete Mac HFS) - (\emph {dsk\_mac\_hfs})}{146}{subsection.7.5.42}
+\contentsline {subsection}{\numberline {7.5.43}Imagem de disquete DSK (Disquete Mac MFS) - (\emph {dsk\_mac\_mfs})}{146}{subsection.7.5.43}
+\contentsline {subsection}{\numberline {7.5.44}Imagem de disquete para o DSK (formato OS-9) - (\emph {dsk\_os9})}{146}{subsection.7.5.44}
+\contentsline {subsection}{\numberline {7.5.45}Imagem de disquete para o DSK (formato ProDOS) - (\emph {dsk\_prodos\_35})}{146}{subsection.7.5.45}
+\contentsline {subsection}{\numberline {7.5.46}Imagem de disquete para o DSK (formato ProDOS) - (\emph {dsk\_prodos\_525})}{146}{subsection.7.5.46}
+\contentsline {subsection}{\numberline {7.5.47}Imagem de disquete para o DSK (formato RS-DOS) - (\emph {dsk\_rsdos})}{147}{subsection.7.5.47}
+\contentsline {subsection}{\numberline {7.5.48}Imagem de disquete para o DSK (formato VZ-DOS) - (\emph {dsk\_vzdos})}{147}{subsection.7.5.48}
+\contentsline {subsection}{\numberline {7.5.49}Imagem de Disco Formatado (formato Basic Master Level 3) - (\emph {fdi\_bml3})}{147}{subsection.7.5.49}
+\contentsline {subsection}{\numberline {7.5.50}Imagem de Disco Formatado (formato FAT) - (\emph {fdi\_fat})}{147}{subsection.7.5.50}
+\contentsline {subsection}{\numberline {7.5.51}Imagem de Disco Formatado (Disquete Mac HFS) - (\emph {fdi\_mac\_hfs})}{147}{subsection.7.5.51}
+\contentsline {subsection}{\numberline {7.5.52}Imagem de Disco Formatado (Disquete Mac MFS) - (\emph {fdi\_mac\_mfs})}{148}{subsection.7.5.52}
+\contentsline {subsection}{\numberline {7.5.53}Imagem de Disco Formatado (formato OS-9) - (\emph {fdi\_os9})}{148}{subsection.7.5.53}
+\contentsline {subsection}{\numberline {7.5.54}Imagem de Disco Formatado (formato ProDOS) - (\emph {fdi\_prodos\_35})}{148}{subsection.7.5.54}
+\contentsline {subsection}{\numberline {7.5.55}Imagem de Disco Formatado (formato ProDOS) - (\emph {fdi\_prodos\_525})}{148}{subsection.7.5.55}
+\contentsline {subsection}{\numberline {7.5.56}Imagem de Disco Formatado (formato RS-DOS) - (\emph {fdi\_rsdos})}{148}{subsection.7.5.56}
+\contentsline {subsection}{\numberline {7.5.57}Imagem de Disco Formatado (formato VZ-DOS) - (\emph {fdi\_vzdos})}{148}{subsection.7.5.57}
+\contentsline {subsection}{\numberline {7.5.58}Cart\IeC {\~a}o de mem\IeC {\'o}ria para o HP48 SX/GX - (\emph {hp48})}{149}{subsection.7.5.58}
+\contentsline {subsection}{\numberline {7.5.59}Imagem de disquete IMD (formato Basic Master Level 3) - (\emph {imd\_bml3})}{149}{subsection.7.5.59}
+\contentsline {subsection}{\numberline {7.5.60}Imagem de disquete IMD (formato FAT) - (\emph {imd\_fat})}{149}{subsection.7.5.60}
+\contentsline {subsection}{\numberline {7.5.61}Imagem de disquete IMD (disquete Mac HFS) - (\emph {imd\_mac\_hfs})}{149}{subsection.7.5.61}
+\contentsline {subsection}{\numberline {7.5.62}Imagem de disquete IMD (Disquete Mac MFS) - (\emph {imd\_mac\_mfs})}{149}{subsection.7.5.62}
+\contentsline {subsection}{\numberline {7.5.63}Imagem de disquete IMD (formato OS-9) - (\emph {imd\_os9})}{149}{subsection.7.5.63}
+\contentsline {subsection}{\numberline {7.5.64}Imagem de disquete IMD (formato ProDOS) - (\emph {imd\_prodos\_35})}{150}{subsection.7.5.64}
+\contentsline {subsection}{\numberline {7.5.65}Imagem de disquete IMD (formato ProDOS) - (\emph {imd\_prodos\_525})}{150}{subsection.7.5.65}
+\contentsline {subsection}{\numberline {7.5.66}Imagem de disquete IMD (formato RS-DOS) - (\emph {imd\_rsdos})}{150}{subsection.7.5.66}
+\contentsline {subsection}{\numberline {7.5.67}Imagem de disquete IMD (formato VZ-DOS) - (\emph {imd\_vzdos})}{150}{subsection.7.5.67}
+\contentsline {subsection}{\numberline {7.5.68}Imagem de disco r\IeC {\'\i }gido para o MESS - (\emph {mess\_hd})}{150}{subsection.7.5.68}
+\contentsline {subsection}{\numberline {7.5.69}Disquete para o TI99 (formato PC99) - (\emph {pc99fm})}{151}{subsection.7.5.69}
+\contentsline {subsection}{\numberline {7.5.70}Disquete para o TI99 (formato PC99 MFM) - (\emph {pc99mfm})}{151}{subsection.7.5.70}
+\contentsline {subsection}{\numberline {7.5.71}Imagem de disco para o PC CHD - (\emph {pc\_chd})}{151}{subsection.7.5.71}
+\contentsline {subsection}{\numberline {7.5.72}Imagem de disquete para o PC (formato FAT) - (\emph {pc\_dsk\_fat})}{151}{subsection.7.5.72}
+\contentsline {subsection}{\numberline {7.5.73}Psion Organiser II Datapack - (\emph {psionpack})}{151}{subsection.7.5.73}
+\contentsline {subsection}{\numberline {7.5.74}Imagem de disquete para o Teledisk (formato Basic Master Level 3) - (\emph {td0\_bml3})}{152}{subsection.7.5.74}
+\contentsline {subsection}{\numberline {7.5.75}Imagem de disquete para o Teledisk (formato FAT) - (\emph {td0\_fat})}{152}{subsection.7.5.75}
+\contentsline {subsection}{\numberline {7.5.76}Imagem de disquete para o Teledisk (Disquete Mac HFS) - (\emph {td0\_mac\_hfs})}{152}{subsection.7.5.76}
+\contentsline {subsection}{\numberline {7.5.77}Imagem de disquete para o Teledisk (Disquete Mac MFS) - (\emph {td0\_mac\_mfs})}{152}{subsection.7.5.77}
+\contentsline {subsection}{\numberline {7.5.78}Imagem de disquete para o Teledisk (OS-9 format) - (\emph {td0\_os9})}{152}{subsection.7.5.78}
+\contentsline {subsection}{\numberline {7.5.79}Imagem de disquete para o Teledisk (formato ProDOS) - (\emph {td0\_prodos\_35})}{153}{subsection.7.5.79}
+\contentsline {subsection}{\numberline {7.5.80}Imagem de disquete para o Teledisk (formato ProDOS) - (\emph {td0\_prodos\_525})}{153}{subsection.7.5.80}
+\contentsline {subsection}{\numberline {7.5.81}Imagem de disquete para o Teledisk (RS-DOS format) - (\emph {td0\_rsdos})}{153}{subsection.7.5.81}
+\contentsline {subsection}{\numberline {7.5.82}Imagem de disquete para o Teledisk (VZ-DOS format) - (\emph {td0\_vzdos})}{153}{subsection.7.5.82}
+\contentsline {subsection}{\numberline {7.5.83}Imagem de disquete Thomson .fd, formato BASIC - (\emph {thom\_fd})}{153}{subsection.7.5.83}
+\contentsline {subsection}{\numberline {7.5.84}Imagem de disquete Thomson .fd, formato BASIC - (\emph {thom\_qd})}{154}{subsection.7.5.84}
+\contentsline {subsection}{\numberline {7.5.85}Imagem de disquete Thomson .fd, formato BASIC - (\emph {thom\_sap})}{154}{subsection.7.5.85}
+\contentsline {subsection}{\numberline {7.5.86}Imagem de Disco R\IeC {\'\i }gido para o TI990 - (\emph {ti990hd})}{154}{subsection.7.5.86}
+\contentsline {subsection}{\numberline {7.5.87}Disquete para o TI99 (formato antigo do MESS) - (\emph {ti99\_old})}{155}{subsection.7.5.87}
+\contentsline {subsection}{\numberline {7.5.88}Disco R\IeC {\'\i }gido para o TI99 - (\emph {ti99hd})}{155}{subsection.7.5.88}
+\contentsline {subsection}{\numberline {7.5.89}Disquete para o TI99 (formato V9T9) - (\emph {v9t9})}{155}{subsection.7.5.89}
+\contentsline {subsection}{\numberline {7.5.90}Imagem de disco para o Laser/VZ (formato VZ-DOS) - (\emph {vtech1\_vzdos})}{155}{subsection.7.5.90}
+\contentsline {section}{\numberline {7.6}Castool - Uma ferramenta gen\IeC {\'e}rica de manipula\IeC {\c c}\IeC {\~a}o de imagens de fita k7 para o MAME}{156}{section.7.6}
+\contentsline {section}{\numberline {7.7}Usando o Castool}{156}{section.7.7}
+\contentsline {section}{\numberline {7.8}Formatos compat\IeC {\'\i }vels}{156}{section.7.8}
+\contentsline {section}{\numberline {7.9}Floptool - Uma ferramenta gen\IeC {\'e}rica de manipula\IeC {\c c}\IeC {\~a}o de imagens de disquete para o MAME}{161}{section.7.9}
+\contentsline {section}{\numberline {7.10}Usando o Floptool}{161}{section.7.10}
+\contentsline {section}{\numberline {7.11}Formatos compat\IeC {\'\i }veis}{162}{section.7.11}
+\contentsline {section}{\numberline {7.12}Outras ferramentas que acompanham o MAME}{164}{section.7.12}
+\contentsline {subsection}{\numberline {7.12.1}ledutil.exe/ledutil.sh}{164}{subsection.7.12.1}
+\contentsline {section}{\numberline {7.13}Ferramentas voltadas ao desenvolvimento}{164}{section.7.13}
+\contentsline {subsection}{\numberline {7.13.1}pngcmp}{164}{subsection.7.13.1}
+\contentsline {subsection}{\numberline {7.13.2}nltool}{164}{subsection.7.13.2}
+\contentsline {subsection}{\numberline {7.13.3}nlwav}{165}{subsection.7.13.3}
+\contentsline {subsection}{\numberline {7.13.4}jedutil}{165}{subsection.7.13.4}
+\contentsline {subsection}{\numberline {7.13.5}ldresample}{165}{subsection.7.13.5}
+\contentsline {subsection}{\numberline {7.13.6}ldverify}{165}{subsection.7.13.6}
+\contentsline {subsection}{\numberline {7.13.7}unidasm}{165}{subsection.7.13.7}
+\contentsline {chapter}{\numberline {8}DEFINI\IeC {\c C}\IeC {\~O}ES T\IeC {\'E}CNICAS}{167}{chapter.8}
+\contentsline {section}{\numberline {8.1}Os arquivos de Layout do MAME}{167}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Introdu\IeC {\c c}\IeC {\~a}o}{168}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Conceitos fundamentais}{168}{subsection.8.1.2}
+\contentsline {subsubsection}{N\IeC {\'u}meros}{168}{subsubsection*.334}
+\contentsline {subsubsection}{Coordenadas}{168}{subsubsection*.335}
+\contentsline {subsubsection}{Cores}{169}{subsubsection*.336}
+\contentsline {subsubsection}{Par\IeC {\^a}metros}{169}{subsubsection*.337}
+\contentsline {subsubsection}{Par\IeC {\^a}metros predefinidos}{171}{subsubsection*.338}
+\contentsline {subsubsection}{Camadas}{173}{subsubsection*.339}
+\contentsline {subsection}{\numberline {8.1.3}As partes de um layout}{174}{subsection.8.1.3}
+\contentsline {subsubsection}{Elementos}{175}{subsubsection*.340}
+\contentsline {subsubsection}{Exibi\IeC {\c c}\IeC {\~o}es}{178}{subsubsection*.341}
+\contentsline {subsubsection}{Grupos reutiliz\IeC {\'a}veis}{181}{subsubsection*.342}
+\contentsline {subsubsection}{Repetindo Blocos}{183}{subsubsection*.343}
+\contentsline {subsection}{\numberline {8.1.4}O Tratamento de erros}{185}{subsection.8.1.4}
+\contentsline {subsection}{\numberline {8.1.5}As Exibi\IeC {\c c}\IeC {\~o}es geradas automaticamente}{185}{subsection.8.1.5}
+\contentsline {subsection}{\numberline {8.1.6}Usando o complay.py}{186}{subsection.8.1.6}
+\contentsline {section}{\numberline {8.2}O dispositivo da interface de mem\IeC {\'o}ria}{186}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}1. Das capacidades}{186}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}2. Configura\IeC {\c c}\IeC {\~a}o}{187}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}3. Associando mapas aos espa\IeC {\c c}os}{187}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}4. Acessando os espa\IeC {\c c}os}{187}{subsection.8.2.4}
+\contentsline {subsection}{\numberline {8.2.5}5. Compatibilidade do MMU para o desmontador}{188}{subsection.8.2.5}
+\contentsline {section}{\numberline {8.3}O dispositivo da interface da ROM}{189}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}1. Das capacidades}{189}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}2. Configura\IeC {\c c}\IeC {\~a}o}{189}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.3}3. Acesso a ROM}{190}{subsection.8.3.3}
+\contentsline {subsection}{\numberline {8.3.4}4. Banco da Rom}{190}{subsection.8.3.4}
+\contentsline {subsection}{\numberline {8.3.5}5. Ressalvas}{190}{subsection.8.3.5}
+\contentsline {section}{\numberline {8.4}O device\_disasm\_interface e os desmontadores}{191}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}1. Das capacidades}{191}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}2. Os desmontadores}{191}{subsection.8.4.2}
+\contentsline {subsubsection}{2.1. Defini\IeC {\c c}\IeC {\~a}o}{191}{subsubsection*.344}
+\contentsline {subsubsection}{2.2. opcode\_alignment}{191}{subsubsection*.345}
+\contentsline {subsubsection}{2.3. disassemble}{191}{subsubsection*.346}
+\contentsline {subsubsection}{2.4. interface\_flags}{192}{subsubsection*.347}
+\contentsline {subsubsection}{2.5. pc\_linear\_to\_real and pc\_real\_to\_linear}{192}{subsubsection*.348}
+\contentsline {subsubsection}{2.6. page\_address\_bits}{192}{subsubsection*.349}
+\contentsline {subsubsection}{2.7. page2\_address\_bits}{193}{subsubsection*.350}
+\contentsline {subsubsection}{2.8. decryptnn}{193}{subsubsection*.351}
+\contentsline {subsection}{\numberline {8.4.3}3. Interface do desmontador, device\_disasm\_interface}{193}{subsection.8.4.3}
+\contentsline {subsubsection}{3.1. Defini\IeC {\c c}\IeC {\~a}o}{193}{subsubsection*.352}
+\contentsline {subsubsection}{3.2. create\_disassembler}{193}{subsubsection*.353}
+\contentsline {subsection}{\numberline {8.4.4}4. A comunica\IeC {\c c}\IeC {\~a}o e a configura\IeC {\c c}\IeC {\~a}o do Desmontador}{193}{subsection.8.4.4}
+\contentsline {subsection}{\numberline {8.4.5}5. Coisas que faltam}{194}{subsection.8.4.5}
+\contentsline {section}{\numberline {8.5}O novo subsistema de disquete}{195}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}Introdu\IeC {\c c}\IeC {\~a}o}{195}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}O armazenamento de disquete para leigos}{195}{subsection.8.5.2}
+\contentsline {subsubsection}{O disquete}{195}{subsubsection*.354}
+\contentsline {subsubsection}{Unidade de Disquete}{196}{subsubsection*.355}
+\contentsline {subsubsection}{Controlador de Disquete}{197}{subsubsection*.356}
+\contentsline {subsection}{\numberline {8.5.3}Codifica\IeC {\c c}\IeC {\~a}o a n\IeC {\'\i }vel de bit}{197}{subsection.8.5.3}
+\contentsline {subsubsection}{Organiza\IeC {\c c}\IeC {\~a}o Celular}{197}{subsubsection*.357}
+\contentsline {subsubsection}{Codifica\IeC {\c c}\IeC {\~a}o FM}{198}{subsubsection*.358}
+\contentsline {subsubsection}{Codifica\IeC {\c c}\IeC {\~a}o MFM}{198}{subsubsection*.359}
+\contentsline {subsubsection}{Codifica\IeC {\c c}\IeC {\~a}o GCR}{198}{subsubsection*.360}
+\contentsline {subsubsection}{Outras codifica\IeC {\c c}\IeC {\~o}es}{198}{subsubsection*.361}
+\contentsline {subsubsection}{Lendo os dados codificados}{198}{subsubsection*.362}
+\contentsline {subsection}{\numberline {8.5.4}Organiza\IeC {\c c}\IeC {\~a}o de n\IeC {\'\i }vel no setor}{199}{subsection.8.5.4}
+\contentsline {subsubsection}{Layout do setor de FM}{199}{subsubsection*.363}
+\contentsline {subsubsection}{Layout do setor de FM}{200}{subsubsection*.364}
+\contentsline {subsubsection}{Formata\IeC {\c c}\IeC {\~a}o e escrita}{200}{subsubsection*.365}
+\contentsline {subsection}{\numberline {8.5.5}A nova implementa\IeC {\c c}\IeC {\~a}o}{201}{subsection.8.5.5}
+\contentsline {subsubsection}{Representa\IeC {\c c}\IeC {\~a}o do disquete}{201}{subsubsection*.366}
+\contentsline {subsection}{\numberline {8.5.6}Convertendo de e para uma representa\IeC {\c c}\IeC {\~a}o interna}{201}{subsection.8.5.6}
+\contentsline {subsubsection}{Classe e interface}{201}{subsubsection*.367}
+\contentsline {subsubsection}{M\IeC {\'e}todos auxiliares de convers\IeC {\~a}o}{202}{subsubsection*.368}
+\contentsline {subsubsection}{M\IeC {\'e}todos de convers\IeC {\~a}o orientados \IeC {\`a} leitura}{202}{subsubsection*.369}
+\contentsline {subsubsection}{M\IeC {\'e}todos de convers\IeC {\~a}o orientados a grava\IeC {\c c}\IeC {\~a}o}{202}{subsubsection*.370}
+\contentsline {subsection}{\numberline {8.5.7}Unidade de Disquete}{204}{subsection.8.5.7}
+\contentsline {subsubsection}{Sinais de controle}{204}{subsubsection*.371}
+\contentsline {subsection}{\numberline {8.5.8}Interface de leitura e grava\IeC {\c c}\IeC {\~a}o}{204}{subsection.8.5.8}
+\contentsline {section}{\numberline {8.6}O novo subsistema SCSI}{205}{section.8.6}
+\contentsline {subsection}{\numberline {8.6.1}Introdu\IeC {\c c}\IeC {\~a}o}{205}{subsection.8.6.1}
+\contentsline {subsection}{\numberline {8.6.2}Estrutura global}{205}{subsection.8.6.2}
+\contentsline {subsection}{\numberline {8.6.3}Conectando um barramento SCSI em um driver}{205}{subsection.8.6.3}
+\contentsline {subsection}{\numberline {8.6.4}Criando um novo dispositivo SCSI usando nscsi\_device}{206}{subsection.8.6.4}
+\contentsline {subsection}{\numberline {8.6.5}Criando um novo dispositivo SCSI usando o \textbf {nscsi\_full\_device}}{207}{subsection.8.6.5}
+\contentsline {subsection}{\numberline {8.6.6}O que falta no \textbf {scsi\_full\_device}}{208}{subsection.8.6.6}
+\contentsline {subsection}{\numberline {8.6.7}O que falta no ncr5390 (e provavelmente em outros controladores futuros)}{208}{subsection.8.6.7}
+\contentsline {section}{\numberline {8.7}Usando Scripts LUA com o MAME}{209}{section.8.7}
+\contentsline {subsection}{\numberline {8.7.1}Introdu\IeC {\c c}\IeC {\~a}o}{209}{subsection.8.7.1}
+\contentsline {subsection}{\numberline {8.7.2}Caracter\IeC {\'\i }sticas}{209}{subsection.8.7.2}
+\contentsline {subsection}{\numberline {8.7.3}Uso}{209}{subsection.8.7.3}
+\contentsline {subsection}{\numberline {8.7.4}Demonstra\IeC {\c c}\IeC {\~a}o passo a passo}{209}{subsection.8.7.4}
+\contentsline {section}{\numberline {8.8}A implementa\IeC {\c c}\IeC {\~a}o da nova fam\IeC {\'\i }lia 6502}{212}{section.8.8}
+\contentsline {subsection}{\numberline {8.8.1}Introdu\IeC {\c c}\IeC {\~a}o}{212}{subsection.8.8.1}
+\contentsline {subsection}{\numberline {8.8.2}A fam\IeC {\'\i }lia 6502}{212}{subsection.8.8.2}
+\contentsline {subsection}{\numberline {8.8.3}O uso das classes}{213}{subsection.8.8.3}
+\contentsline {subsection}{\numberline {8.8.4}Estrutura geral das emula\IeC {\c c}\IeC {\~o}es}{213}{subsection.8.8.4}
+\contentsline {subsection}{\numberline {8.8.5}Tabelas de despacho}{214}{subsection.8.8.5}
+\contentsline {subsection}{\numberline {8.8.6}Descri\IeC {\c c}\IeC {\~o}es de Opcode}{214}{subsection.8.8.6}
+\contentsline {subsection}{\numberline {8.8.7}Interface da Mem\IeC {\'o}ria}{215}{subsection.8.8.7}
+\contentsline {subsection}{\numberline {8.8.8}O c\IeC {\'o}digo gerado}{215}{subsection.8.8.8}
+\contentsline {subsection}{\numberline {8.8.9}Suporte a um slot de conten\IeC {\c c}\IeC {\~a}o/atraso de barramento futuro}{218}{subsection.8.8.9}
+\contentsline {subsection}{\numberline {8.8.10}M\IeC {\'u}ltiplas variantes de despacho}{220}{subsection.8.8.10}
+\contentsline {subsection}{\numberline {8.8.11}Tarefas a serem conclu\IeC {\'\i }das}{220}{subsection.8.8.11}
+\contentsline {chapter}{\numberline {9}O MAME E A PREOCUPA\IeC {\c C}\IeC {\~A}O COM A SEGURAN\IeC {\c C}A}{221}{chapter.9}
+\contentsline {chapter}{\numberline {10}LICEN\IeC {\c C}A}{223}{chapter.10}
+\contentsline {chapter}{\numberline {11}CONTRIBUA}{225}{chapter.11}

@@ -1,0 +1,1094 @@
+MESS(6) 	      MESS - Multi Emulator Super System	       MESS(6)
+
+NAME
+       MESS - Multi Emulator Super System
+
+SYNOPSIS
+       mess system [media software] [options]
+
+DESCRIPTION
+       MESS documents the hardware for a wide variety of (mostly vintage) com‐
+       puters, video game consoles, and calculators  through  software	emula‐
+       tion.  As  a nice side effect, MESS allows software and games for these
+       hardware platforms to run on modern PCs.
+
+SOFTWARE
+       A software entry may be specified to attach an image file to  the  emu‐
+       lated  system.  In  such  a  case, the appropriate media switch is also
+       required:
+
+       -cart, -cart1
+	      Cartrigde, used mainly by game consoles
+
+       -cass  Cassette (tape), widely used by old home computers
+
+       -flop, -flop1
+	      Floppy disk
+
+       -cdrom CD-Rom
+
+OPTIONS
+   Core commands
+       -help, -?
+	      Displays current MESS version and copyright notice.
+
+       -validate, -valid
+	      Performs internal validation on every driver in MESS.  Run  this
+	      before  submitting  changes  to ensure that you haven't violated
+	      any of the core system rules.
+
+   Configuration commands
+       -createconfig, -cc
+	      Creates the default mess.ini file in the current directory.  All
+	      the  configuration options (not commands) described below can be
+	      permanently changed by editing this configuration file.
+
+       -showconfig, -sc
+	      Displays the current configuration settings.
+
+       -showusage, -su
+	      Displays a summary of all the command line options. For  options
+	      that  are  not  mentioned  here,	the  short  summary  given  by
+	      -showusage is usually sufficient.
+
+   Frontend commands
+       All the list commands below write info to the screen.  If you  wish  to
+       write  the  info  to a textfile instead, use redirection.  For example,
+       mess -listxml > ~/messlist.xml writes the full list of  supported  sys‐
+       tems to messlist.xml in your home directory.
+
+       -listxml, -lx [system|wildcard]
+	      List comprehensive details for all of the supported systems. The
+	      output is quite long, so it is usually better to	redirect  this
+	      into  a  file.  The output is in XML format. By default all sys‐
+	      tems are listed; however, you can limit this list by  specifying
+	      a driver name or wildcard.
+
+       -listfull, -ll [system|wildcard]
+	      Displays	a  list  of  system  driver names and descriptions. By
+	      default all systems are listed; however, you can limit this list
+	      by specifying a driver name or wildcard.
+
+       -listsource, -ls [system|wildcard]
+	      Displays	a  list  of  drivers and the names of the source files
+	      their system drivers live in. Useful for finding which driver  a
+	      system  runs on in order to fix bugs. By default all systems are
+	      listed; however, you can limit this list by specifying a	driver
+	      name or wildcard.
+
+       -listclones, -lc [system|wildcard]
+	      Displays	a  list  of  clones. By default all clones are listed;
+	      however, you can limit this list by specifying a driver name  or
+	      wildcard.
+
+       -listbrothers, -lb [system|wildcard]
+	      Displays a list of "brothers" or other drivers from same source‐
+	      file.  By default all systems are listed; however, you can limit
+	      this list by specifying a driver name or wildcard.
+
+       -listcrc
+	      Displays a full list of CRCs of all ROM images referenced by all
+	      drivers within MESS code.
+
+       -listroms, -lr system
+	      Displays a list of ROM images referenced by the  specified  sys‐
+	      tem.
+
+       -listsamples system
+	      Displays a list of samples referenced by the specified system.
+
+       -verifyroms [system|wildcard]
+	      Checks for invalid or missing ROM images. By default all drivers
+	      that have valid ZIP files or directories in  the	rom  path  are
+	      verified;  however,  you	can  limit  this  list by specifying a
+	      driver name or wildcard.
+
+       -verifysamples [system|wildcard]
+	      Checks for invalid or missing samples. By  default  all  drivers
+	      that  have  valid ZIP files or directories in the samplepath are
+	      verified; however, you can  limit  this  list  by  specifying  a
+	      driver name or wildcard.
+
+       -romident
+	      Attempts	to  identify  ROM files, if they are known to MESS, in
+	      the specified .zip file or directory. This command can  be  used
+	      to try and identify ROM sets taken from unknown boards. On exit,
+	      the errorlevel is returned as one of the following:
+	      0  all files were identified
+	      7  all files were identified except for some "non-ROM" files
+	      8  some files were identified
+	      9  no files were identified
+
+       -listdevices, -ld
+	      Output the list of devices referenced by a given system  or  set
+	      of systems.
+
+       -listslots, -lslot
+	      Output the list of available slots and slot devices for the sys‐
+	      tem.
+
+       -listmedia, -lm
+	      Output the list of available media for the system.
+
+       -listsoftware, -lsoft
+	      Output the list of known software for the system.
+
+       -verifysoftware, -vsoft [gamename|wildcard]
+	      Checks for invalid or missing ROM images in your software lists.
+	      By  default all drivers that have valid ZIP files or directories
+	      in the rompath are verified; however, you can limit this list by
+	      specifying a specific driver name or wildcard.
+
+       -getsoftlist, -glist
+	      Retrieve software list by name.
+
+       -verifysoftlist, -vlist [softwarelistname]
+	      Checks a specified software list for missing ROM images if files
+	      exist for issued softwarelistname. By default, all drivers  that
+	      have valid ZIP files or directories in the rompath are verified;
+	      however, you can limit this list by specifying a specific  soft‐
+	      warelistname (without .XML).
+
+       -listmidi, -mlist
+	      List available MIDI I/O devices.
+
+       -listnetwork, -nlist
+	      List available network adapters.
+
+   Configuration options
+       -[no]readconfig, -[no]rc
+	      Enables  or  disables  the  reading  of  the  config files. When
+	      enabled (which is the default), MESS reads the following	config
+	      files in order:
+	      1. mess.ini
+	      the main configuration file
+	      2. [driver].ini
+	      based on the source file name of the system driver
+	      3. [parent].ini
+	      for clones only, may be called recursively
+	      4. [system].ini
+	      note this sometimes resolves to the same of the source driver
+
+       The  settings  in  the later ini's override those in the earlier ini's.
+       The default is ON (-readconfig).
+
+       -[no]writeconfig, -[no]wc
+	      Write configuration to [driver].ini on  exit.   Default  is  OFF
+	      (-nowriteconfig).
+
+   Search path options
+       Be  careful  to	use  the  path, directory and file options in mess.ini
+       ONLY. Otherwise, the outcome may be unpredictable  and  not  consistent
+       across releases.
+
+       -rompath, -rp, -biospath, -bp pathname
+	      Specifies  a list of paths within which to find ROM or hard disk
+	      images.  Multiple paths can be specified by separating them with
+	      semicolons.   The default is 'roms' (that is, a directory 'roms'
+	      in the same directory as the MESS executable).
+
+       -hashpath pathname
+	      Specifies a list of paths within which to  search  for  software
+	      hash  files.  Multiple paths can be specified by separating them
+	      with semicolons.	The default is 'hash' (that  is,  a  directory
+	      'hash' in the same directory as the MESS executable).
+
+       -samplepath, -sp pathname
+	      Specifies  a  list  of  paths within which to find sample files.
+	      Multiple paths can be specified by separating  them  with  semi‐
+	      colons. The default is 'samples' (that is, a directory 'samples'
+	      in the same directory as the MESS executable).
+
+       -artpath, -artwork_directory pathname
+	      Specifies a list of paths within which to  find  artwork	files.
+	      Multiple	paths  can  be specified by separating them with semi‐
+	      colons. The default is 'artwork' (that is, a directory 'artwork'
+	      in the same directory as the MESS executable).
+
+       -ctrlrpath, -ctrlr_directory pathname
+	      Specifies  a  list of paths within which to find controller-spe‐
+	      cific configuration files. Multiple paths can  be  specified  by
+	      separating  them	with  semicolons. The default is 'ctrlr' (that
+	      is, a directory 'ctrlr' in the same directory as the  MESS  exe‐
+	      cutable).
+
+       -inipath pathname
+	      Specifies  a list of paths within which to find .ini files. Mul‐
+	      tiple paths can be specified by separating them with semicolons.
+	      The default is '/etc/mess'.
+
+       -fontpath pathname
+	      Specifies  a list of paths within which to find .bdf font files.
+	      Multiple paths can be specified by separating  them  with  semi‐
+	      colons.  The  default is '.' (that is, search in the same direc‐
+	      tory as the MESS executable).
+
+       -cheatpath pathname
+	      Specifies a list of paths within which to find cheat files. Mul‐
+	      tiple paths can be specified by separating them with semicolons.
+	      The default is 'cheat' (that is, a directory 'cheat' in the same
+	      directory as the MESS executable).
+
+       -crosshairpath pathname
+	      Specifies  a list of paths within which to find crosshair files.
+	      Multiple paths can be specified by separating  them  with  semi‐
+	      colons.  The  default  is  'crosshair'  (that  is,  a  directory
+	      'crosshair' in the same directory as the MESS  executable).   If
+	      the  Crosshair is set to default in the menu, MESS will look for
+	      system/cross#.png and then cross#.png  in  the  specified  path,
+	      where  #	is  the  player  number.   Failing that, MESS will use
+	      built-in default crosshairs.
+
+   Output Directory Options
+       -cfg_directory pathname
+	      Specifies a  single  directory  where  configuration  files  are
+	      stored.	Configuration  files  store user configurable settings
+	      that are read at	startup  and  written  when  MESS  exits.  The
+	      default  is 'cfg' (that is, a directory 'cfg' in the same direc‐
+	      tory as the MESS executable). If this directory does not	exist,
+	      it will be automatically created.
+
+       -nvram_directory pathname
+	      Specifies a single directory where NVRAM files are stored. NVRAM
+	      files store the contents of EEPROM and non-volatile RAM  (NVRAM)
+	      for  systems which used this type of hardware. This data is read
+	      at startup and written when MESS exits. The default  is  'nvram'
+	      (that  is, a directory 'nvram' in the same directory as the MESS
+	      executable). If this directory does not exist, it will be  auto‐
+	      matically created.
+
+       -input_directory pathname
+	      Specifies  a  single  directory  where input recording files are
+	      stored.  Input recordings are created via the -record option and
+	      played back via the -playback option. The default is 'inp' (that
+	      is, a directory 'inp' in the same directory  as  the  MESS  exe‐
+	      cutable). If this directory does not exist, it will be automati‐
+	      cally created.
+
+       -state_directory pathname
+	      Specifies a single directory where save state files are  stored.
+	      Save  state files are read and written either upon user request,
+	      or when using the -autosave option. The default is  'sta'  (that
+	      is,  a  directory  'sta'	in the same directory as the MESS exe‐
+	      cutable). If this directory does not exist, it will be automati‐
+	      cally created.
+
+       -snapshot_directory pathname
+	      Specifies  a single directory where screen snapshots are stored,
+	      when requested by the user. The default is 'snap'  (that	is,  a
+	      directory  'snap' in the same directory as the MESS executable).
+	      If this directory does not exist, it will be automatically  cre‐
+	      ated.
+
+       -diff_directory pathname
+	      Specifies a single directory where hard drive differencing files
+	      are stored. Hard drive differencing files store any data that is
+	      written  back  to  a  hard  disk image, in order to preserve the
+	      original image. The differencing files are  created  at  startup
+	      when  a  system  with  a	hard disk image. The default is 'diff'
+	      (that is, a directory 'diff' in the same directory as  the  MESS
+	      executable).  If this directory does not exist, it will be auto‐
+	      matically created.
+
+       -comment_directory pathname
+	      Specifies a single directory where debugger  comment  files  are
+	      stored.  Debugger comment files are written by the debugger when
+	      comments are added to the disassembly for a system. The  default
+	      is  'comments'  (that  is,  a  directory	'comments' in the same
+	      directory as the MESS executable).  If this directory  does  not
+	      exist, it will be automatically created.
+
+   State/playback options
+       -state slot
+	      Immediately  after starting the specified system, will cause the
+	      save state in the specified slot to be loaded.
+
+       -[no]autosave
+	      When enabled, automatically creates a save state file when exit‐
+	      ing  MESS  and  automatically  attempts  to reload it when later
+	      starting MESS with the same system. This only works for  systems
+	      that have explicitly enabled save state support in their driver.
+	      The default is OFF (-noautosave).
+
+       -playback, -pb filename
+	      Specifies a file from which to play  back  a  series  of	system
+	      inputs. This feature does not work reliably for all systems, but
+	      can be used to watch a previously recorded system  session  from
+	      start  to finish. In order to make things consistent, you should
+	      only record and playback with all  configuration	(.cfg),  NVRAM
+	      (.nv),  and  memory  card files deleted. The default is NULL (no
+	      playback).
+
+       -[no]exit_after_playback
+	      If play back is enabled (see -playback option) the program exits
+	      when end of file is reached. Otherwise the machine will continue
+	      to run.  Default is OFF (-noexit_after_playback).
+
+       -record, -rec filename
+	      Specifies a file to record all input from a system session. This
+	      can  be used to record a system session for later playback. This
+	      feature does not work reliably for all systems, but can be  used
+	      to watch a previously recorded system session from start to fin‐
+	      ish. In order to make things consistent, you should only	record
+	      and  playback  with  all	configuration (.cfg), NVRAM (.nv), and
+	      memory card files deleted. The default is NULL (no recording).
+
+       -[no]record_timecode
+	      Specify whether to create a timecode file. It  contains  a  line
+	      with  elapsed  times  on	each  press  of  timecode shortcut key
+	      (default is F12).  This option works only when recording mode is
+	      enabled  (-record  option).   The  file  is saved on inp folder.
+	      Default is OFF (-norecord_timecode).
+
+       -mngwrite filename
+	      Writes each video frame to the given file in MNG format, produc‐
+	      ing  an  animation  of  the system session.  Note that -mngwrite
+	      only writes video frames; it does not save any audio  data.  Use
+	      -wavwrite for that, and reassemble the audio/video using offline
+	      tools. The default is NULL (no recording).
+
+       -aviwrite filename
+	      Stream video and sound data to the given	file  in  AVI  format,
+	      producing  an  animation	of  the  system  session complete with
+	      sound. The default is NULL (no recording).
+
+       -wavwrite filename
+	      Writes the final mixer output to the given file in  WAV  format,
+	      producing an audio recording of the system session.  The default
+	      is NULL (no recording).
+
+       -snapname string
+	      Describes how MESS should name files for snapshots. string  pro‐
+	      vides a template that is used to generate a filename. Three sim‐
+	      ple substitutions are provided: the / character  represents  the
+	      path  separator  on any target platform (even Windows); the lit‐
+	      eral %g represents the driver name of the  current  system;  and
+	      the  literal %i represents an incrementing index. If %i is omit‐
+	      ted, then each snapshot taken will overwrite the	previous  one;
+	      otherwise,  MESS	will  find the next empty value for %i and use
+	      that for a filename. The default is  '%g/%i',  which  creates  a
+	      separate	folder for each game, and names the snapshots under it
+	      starting with 0000 and increasing from there. In addition to the
+	      above,  for  drivers using different media, like carts or floppy
+	      disks, you  can  also  use  the  %d_[media]  indicator.  Replace
+	      [media]  with  the media switch you want to use. A few examples:
+	      if you use mess nes -cart robby -snapname  %g/%d_cart  snapshots
+	      will be saved as snaps/nes/robby.png; if you use mess c64 -flop1
+	      robby  -snapname	%g/%d_flop1/%i	snapshots  will  be  saved  as
+	      snaps/c64/robby/0000.png.
+
+       -snapsize widthxheight
+	      Hard-codes  the  size  for  snapshots  and  movie  recording. By
+	      default, MESS will create snapshots at the system's current res‐
+	      olution  in  raw	pixels, and will create movies at the system's
+	      starting resolution in raw pixels. If you specify  this  option,
+	      then  MESS  will	create	both  snapshots and movies at the size
+	      specified, and will bilinear filter the result. Note  that  this
+	      size  does  not automatically rotate if the system is vertically
+	      oriented. The default is 'auto'.
+
+       -snapview internal|auto|viewname
+	      Specifies the view to use when rendering snapshots  and  movies.
+	      By  default, both use a special 'internal' view, which renders a
+	      separate snapshot per screen or renders movies only of the first
+	      screen. By specifying this option, you can override this default
+	      behavior and select a single view that will apply to  all  snap‐
+	      shots and movies.  Note that viewname does not need to be a per‐
+	      fect match; rather, it will select the  first  view  whose  name
+	      matches  all  the characters specified by viewname. For example,
+	      -snapview native will  match  the  "Native  (15:14)"  view  even
+	      though  it is not a perfect match.  viewname can also be 'auto',
+	      which selects the first  view  with  all	screens  present.  The
+	      default value is 'internal'.
+
+       -[no]snapbilinear
+	      Specify  whether	snapshot/movie	should have bilinear filtering
+	      applied.	Default is ON (-snapbilinear).
+
+       -statename string
+	      Describes how MESS should store save state  files,  relative  to
+	      the  state_directory  path.  string  provides a template that is
+	      used to generate a relative path. Two simple  substitutions  are
+	      provided:  the  / character represents the path separator on any
+	      target platform (even Windows); the literal  %g  represents  the
+	      driver name of the current game. The default is '%g', which cre‐
+	      ates a separate folder for each game. In addition to the	above,
+	      for  drivers  using different media, like carts or floppy disks,
+	      you can also use the %d_[media] indicator. Replace [media]  with
+	      the  media  switch  you  want to use. A few examples: if you use
+	      mess nes -cart robby -statename %g/%d_cart save states  will  be
+	      stored  inside  sta/nes/robby/; if you use mess c64 -flop1 robby
+	      -statename  %g/%d_flop1  save  states  will  be  stored	inside
+	      sta/c64/robby/.
+
+       -[no]burnin
+	      Tracks  brightness  of  the screen during play and at the end of
+	      emulation generates a PNG that can be used to  simulate  burn-in
+	      effects on other systems. The resulting PNG is created such that
+	      the least-used areas  of	the  screen  are  fully  white	(since
+	      burned-in  areas	are darker, all other areas of the screen must
+	      be lightened a touch).  The intention is that this  PNG  can  be
+	      loaded  via an artwork file with a low alpha (e.g, 0.1-0.2 seems
+	      to work well) and blended over the entire screen. The PNG  files
+	      are    saved    in   the	 snap	directory   under   the   sys‐
+	      tem/burnin-<screen.name>.png. The default is OFF (-noburnin).
+
+   Performance options
+       -[no]autoframeskip, -[no]afs
+	      Automatically determines the frameskip level while you're  play‐
+	      ing  the system, adjusting it constantly in a frantic attempt to
+	      keep the system running at full speed. Turning this on overrides
+	      the  value you have set for -frameskip below. The default is OFF
+	      (-noautoframeskip).
+
+       -frameskip, -fs value
+	      Specifies the frameskip value (autoframeskip must be  disabled).
+	      This  is	the number of frames out of every 12 to drop when run‐
+	      ning. For example, if you say -frameskip 2, then MESS will  dis‐
+	      play  10	out  of every 12 frames. By skipping those frames, you
+	      may be able to get full speed in a  system  that	requires  more
+	      horsepower than your computer has. The default value is 0, which
+	      skips no frames.
+
+       -seconds_to_run, -str value
+	      This option can be used for benchmarking and automated  testing.
+	      It tells MESS to stop execution after a fixed number of seconds.
+	      By combining this  with  a  fixed  set  of  other  command  line
+	      options,	you can set up a consistent environment for benchmark‐
+	      ing MESS performance. In addition, upon exit,  the  -str	option
+	      will  write  a screenshot called final.png to the system's snap‐
+	      shot directory.
+
+       -[no]throttle
+	      Configures the default thottling setting. When throttling is on,
+	      MESS  attempts  to  keep	the  system  running  at  the system's
+	      intended speed. When throttling is off, MESS runs the system  as
+	      fast  as	it can. Note that the fastest speed is more often than
+	      not limited by your graphics card, especially for older systems.
+	      The default is ON (-throttle).
+
+       -[no]sleep
+	      Allows  MESS  to	give time back to the system when running with
+	      -throttle.  This allows other programs to have  some  CPU  time,
+	      assuming	 that  the  system  isn't  taxing  100%  of  your  CPU
+	      resources. This option can potentially cause hiccups in  perfor‐
+	      mance  if  other demanding programs are running.	The default is
+	      ON (-sleep).
+
+       -speed value
+	      Controls the speed of gameplay, relative	to  realtime;  smaller
+	      numbers are slower. Default is 1.00.
+
+       -[no]refreshspeed, -[no]rs
+	      Automatically adjusts the -speed parameter to keep the effective
+	      refresh rate below that  of  the	lowest	screen	refresh  rate.
+	      Default is OFF (-norefreshspeed).
+
+       -[no]multithreading, -[no]mt
+	      Enable  multithreading; this enables rendering and blitting on a
+	      separate thread. The default is OFF (-nomultithreading).
+
+       -numprocessors, -np value
+	      Set number of processors; this overrides the number  the	system
+	      reports.
+
+       -bench value
+	      Benchmark  for  the  given  number  of emulated seconds; implies
+	      -video none -sound none -nothrottle.
+
+       -[no]sdlvideofps
+	      Show SDL video performance. Default is OFF (-nosdlvideofps).
+
+   Rotation options
+       -[no]rotate
+	      Rotate the system to match its normal  state  (horizontal/verti‐
+	      cal).  This  ensures  that both vertically and horizontally ori‐
+	      ented systems show up correctly without the need to rotate  your
+	      monitor.	If you want to keep the system displaying 'raw' on the
+	      screen the way the actual machine would have, turn  this	option
+	      off. The default is ON (-rotate).
+
+       -[no]ror -[no]rol
+	      Rotate  the  system  screen  to  the  right  (clockwise) or left
+	      (counter-clockwise) relative to  either  its  normal  state  (if
+	      -rotate is specified) or its native state (if -norotate is spec‐
+	      ified).  Default for both is OFF (-noror -norol).
+
+       -[no]autoror -[no]autorol
+	      These options are designed for use with  pivoting  screens  that
+	      only  pivot  in  a  single direction. If your screen only pivots
+	      clockwise, use -autorol to ensure that the system will fill  the
+	      screen  either  horizontally  or vertically in one of the direc‐
+	      tions you can handle.  If your screen only pivots counter-clock‐
+	      wise,  use -autoror.  Default for both is OFF (-noautoror -noau‐
+	      torol).
+
+       -[no]flipx -[no]flipy
+	      Flip (mirror) the system screen either horizontally (-flipx)  or
+	      vertically (-flipy). The flips are applied after the -rotate and
+	      -ror/-rol  options  are  applied.   Default  for	both  is   OFF
+	      (-noflipx -noflipy).
+
+   Artwork options
+       -[no]artwork_crop, -[no]artcrop
+	      Enable  cropping of artwork to the system screen area only. This
+	      option can also be controlled via the Video Options menu in  the
+	      user interface. The default is OFF (-noartwork_crop).
+
+       -[no]use_backdrops, -[no]backdrop
+	      Enables/disables	the  display  of  backdrops. The default is ON
+	      (-use_backdrops).
+
+       -[no]use_overlays, -[no]overlay
+	      Enables/disables the display of  overlays.  The  default	is  ON
+	      (-use_overlays).
+
+       -[no]use_bezels, -[no]bezel
+	      Enables/disables	the  display  of  bezels.  The	default  is ON
+	      (-use_bezels).
+
+       -[no]use_cpanels, -[no]cpanel
+	      Enables/disables the display  of	cpanels.  The  default	is  ON
+	      (-use_bezels).
+
+       -[no]use_marquees, -[no]marquee
+	      Enables/disables	the  display  of  marquees.  The default is ON
+	      (-use_bezels).
+
+   Screen options
+       -brightness value
+	      Controls the default brightness, or black level, of  the	system
+	      screens.	This option does not affect the artwork or other parts
+	      of the display.  Using the MESS UI, you can individually set the
+	      brightness for each system screen; this option controls the ini‐
+	      tial value for all visible system screens. The standard value is
+	      1.0.  Selecting  lower values (down to 0.1) will produce a dark‐
+	      ened display, while selecting higher values  (up	to  2.0)  will
+	      give a brighter display. The default is 1.0.
+
+       -contrast value
+	      Controls	the  contrast,	or white level, of the system screens.
+	      This option does not affect the artwork or other	parts  of  the
+	      display.	Using  the  MESS UI, you can individually set the con‐
+	      trast for each system screen; this option controls  the  initial
+	      value for all visible system screens. The standard value is 1.0.
+	      Selecting lower values (down to 0.1) will produce a dimmer  dis‐
+	      play, while selecting higher values (up to 2.0) will give a more
+	      saturated display. The default is 1.0.
+
+       -gamma value
+	      Controls the gamma, which produces a potentially nonlinear black
+	      to  white  ramp,	for  the  system screens. This option does not
+	      affect the artwork or other parts of the display. Using the MESS
+	      UI,  you	can individually set the gamma for each system screen;
+	      this option controls the initial value for  all  visible	system
+	      screens.	The  standard  value is 1.0, which gives a linear ramp
+	      from black to white. Selecting lower values (down to  0.1)  will
+	      increase	the  nonlinearity toward black, while selecting higher
+	      values (up to 3.0) will push the nonlinearity toward white.  The
+	      default is 1.0.
+
+       -pause_brightness value
+	      This  controls  the  brightness  level  when MESS is paused. The
+	      default value is 0.65.
+
+       -effect [none|filename[.png]]
+	      Name of a PNG file to use for visual effects, or 'none'. Default
+	      is 'none'.
+
+   Vector rendering options
+       -[no]antialias, -[no]aa
+	      Enables  antialiased  line  rendering  for  vector  systems. The
+	      default is ON (-antialias).
+
+       -beam value
+	      Sets the width of the vectors. This is a scaling factor  against
+	      the  standard vector width. A value of 1.0 will keep the default
+	      vector line width. Smaller values will  reduce  the  width,  and
+	      larger values will increase the width. The default is 1.0.
+
+       -flicker value
+	      Simulates a vector "flicker" effect, similar to a vector monitor
+	      that needs adjustment. This option requires a float argument  in
+	      the  range  of 0.00-100.00 (0=none, 100=maximum). The default is
+	      0.
+
+   Video options
+       -video [soft|opengl|none]
+	      Specifies which video subsystem to use for drawing:
+	      soft  uses software rendering, which is slower but more compati‐
+	      ble.
+	      opengl   uses  OpenGL  and your graphics accelerator to speed up
+	      many aspects of  drawing	MESS  including  compositing  artwork,
+	      overlays,  and  bezels,  as  well as stretching the image to fit
+	      your screen.
+	      none  does no drawing and is intended for CPU benchmarking.
+	      Default is SOFT.
+
+       -[no]window, -[no]w
+	      Run MESS in either full screen or a window. This is a fully-fea‐
+	      tured window mode where the window resizes as necessary to track
+	      what the system does.  And you can resize it yourself with  your
+	      OS's standard window controls.  The default is OFF (-nowindow).
+
+       -[no]maximize, -[no]max
+	      Controls	initial window size in windowed mode. If it is set on,
+	      the window will initially be set to the maximum  supported  size
+	      when  you start MESS. If it is turned off, the window will start
+	      out at the smallest supported size.  This  option  only  has  an
+	      effect when the -window option is used. The default is ON (-max‐
+	      imize).
+
+       -[no]keepaspect, -[no]ka
+	      Forces the correct aspect ratio. This means when you're resizing
+	      the  window in windowed mode the actual system image will resize
+	      in discrete steps to maintain the proper	shape  of  the	system
+	      graphics. If you turn this off you can resize the window to any‐
+	      thing you like and get funny squishing and stretching.  The same
+	      applies for full-screen. Default is ON (-keepaspect).
+
+       -[no]unevenstretch, -[no]ues
+	      Allow  non-integer  stretch  factors.  Video purists should stay
+	      far, far away from this option,  while  everyone	else  will  be
+	      happy  to  know  that  it  lets  you fill the screen properly in
+	      full-screen mode. Default is ON (-unevenstretch).
+
+       -[no]centerh
+	      Center horizontally within the view area. Default is  ON	(-cen‐
+	      terh).
+
+       -[no]centerv
+	      Center  vertically  within  the  view area. Default is ON (-cen‐
+	      terv).
+
+       -[no]waitvsync, -[no]vs
+	      Enable waiting for the start of VBLANK before flipping  screens;
+	      reduces tearing effects. Default is OFF (-nowaitvsync).
+
+       -[no]syncrefresh, -[no]srf
+	      Enable  using  the start of VBLANK for throttling instead of the
+	      game time.  Default is OFF (-nosyncrefresh).
+
+   Software video rendering subsystem options
+       All the options in this group are available  only  with	softare  video
+       rendering subsystem (-video soft).
+
+       -prescale [value]
+	      Scale screen rendering by this amount in software. Default is 1.
+
+       -scalemode, -sm [none|async|yv12|yuy2|yv12x2|yuy2x2]
+	      Hardware scaling mode.
+	      none    use software rendering.
+	      async   async overlay.
+	      yv12    yv12 overlay.
+	      yuy2    yuy2 overlay.
+	      yv12x2  yv12 overlay using x2 prescaling.
+	      yuy2x2  yuy2 overlay using x2 prescaling.
+	      Default is NONE.
+
+   OpenGL video rendering subsystem options
+       All the options in this group are available only with OpenGL video ren‐
+       dering subsystem (-video opengl or -video opengl16).
+
+       -[no]filter, -[no]glfilter, -[no]flt
+	      Enable bilinear filtering on screen output. Default is ON (-fil‐
+	      ter).
+
+       -[no]gl_forcepow2texture
+	      Force power of two textures. Default is OFF (-nogl_forcepow2tex‐
+	      ture).
+
+       -[no]gl_notexturerect
+	      Don't use OpenGL GL_ARB_texture_rectangle. Turn off  if  corrup‐
+	      tion  occurs  in	OpenGL mode, at cost of some performance loss.
+	      Default is ON (-gl_notexturerect).
+
+       -[no]gl_vbo
+	      Enable OpenGL VBO, if available,	for  a	performance  increase.
+	      Turn off if corruption occurs. Default is ON (-gl_vbo).
+
+       -[no]gl_pbo
+	      Enable  OpenGL  PBO,  if	available, for a performance increase.
+	      Turn off if corruption occurs. Default is ON (-gl_pbo).
+
+       -[no]gl_glsl
+	      Enable OpenGL GLSL, if available, for  a	performance  increase.
+	      Default is OFF (-nogl_glsl).
+
+       -gl_glsl_filter value
+	      Enable  OpenGL  GLSL  filtering instead of FF filtering 0=plain,
+	      1=bilinear.  Default is 1: bilinear.
+
+       -glsl_shader_mame[0-9]
+	      Preferred custom OpenGL GLSL shader set mame bitmap (from  0  to
+	      9).
+
+       -glsl_shader_screen[0-9]
+	      Preferred custom OpenGL GLSL shader screen bitmap (from 0 to 9).
+
+       -gl_glsl_vid_attr
+	      Enable  OpenGL  GLSL handling of brightness and contrast. Better
+	      RGB system performance for free. Default is ON.
+
+       -screen
+	      Explicit name for all screens; 'auto' here will try  to  make  a
+	      best guess.
+
+       -aspect, -screen_aspect
+	      Aspect  ratio  for  all  screens; 'auto' here will try to make a
+	      best guess.
+
+       -resolution, -r
+	      Preferred  resolution  for  all  screens;  format   is   widthx‐
+	      height[@refreshrate] or 'auto'.
+
+       -view  Preferred view for all screens
+
+       -screen[0-3]
+	      Explicit	name  of  the first|second|third|fourth screen; 'auto'
+	      here will try to make a best guess.
+
+       -aspect[0-3]
+	      Aspect ratio of  the  first|second|third|fourth  screen;	'auto'
+	      here will try to make a best guess.
+
+       -resolution[0-3], -r[0-3]
+	      Preferred  resolution  for the first|second|third|fourth screen;
+	      format is widthxheight[@refreshrate] or 'auto'.
+
+       -view[0-3]
+	      Preferred view for the first|second|third|fourth screen.
+
+   Full screen options
+       -[no]switchres
+	      Affects full screen mode only. Chooses if MESS can try to change
+	      the  screen resolution (color depth is normally left alone) when
+	      in full-screen mode. If it's off, you always  get  your  desktop
+	      resolution  in  full-screen mode (which can be useful for LCDs).
+	      Default is OFF (-noswitchres).
+
+       -[no]useallheads
+	      Split full screen image across monitors. Default is OFF (-nouse‐
+	      allhead).
+
+   Sound options
+       -[no]sound
+	      Enable or disable sound altogether. The default is ON (-sound).
+
+       -samplerate, -sr value
+	      Sets  the  audio	sample rate. Smaller values (e.g. 11025) cause
+	      lower audio quality but faster emulation	speed.	Higher	values
+	      (e.g.  48000)  cause  higher  audio quality but slower emulation
+	      speed. The default is 48000.
+
+       -[no]samples
+	      Use samples if available. The default is ON (-samples).
+
+       -volume, -vol value
+	      Sets the startup volume. It can later be changed with  the  user
+	      interface  (see  Keys  section). The volume is an attenuation in
+	      dB: for example, '-volume -12' will start  with  -12dB  attenua‐
+	      tion.  The default is 0.
+
+       -audio_latency value
+	      This controls the amount of latency built into the audio stream‐
+	      ing.  The latency parameter controls the	lower  threshold.  The
+	      default  is 3; increase to reduce glitches, decrease for respon‐
+	      siveness.
+
+   Input options
+       -[no]coin_lockout, -[no]coinlock
+	      Enables simulation of the "coin lockout" feature that is	imple‐
+	      mented  on a number of arcade game PCBs. It was up to the opera‐
+	      tor whether or not the coin lockout outputs were	actually  con‐
+	      nected  to the coin mechanisms. If this feature is enabled, then
+	      attempts to enter a coin while the lockout is active  will  fail
+	      and  will display a popup message in the user interface. If this
+	      feature is disabled, the coin lockout signal  will  be  ignored.
+	      The default is ON (-coin_lockout).
+
+       -ctrlr controller
+	      Enables support for special controllers. Configuration files are
+	      loaded from the ctrlrpath. They are in the same  format  as  the
+	      .cfg  files  that are saved, but only control configuration data
+	      is read from the file. The default is NULL (no controller file).
+
+       -[no]mouse
+	      Controls whether or not MESS looks for  a  mouse	controller  to
+	      use.  Note  that in many cases, lightguns are treated as mice by
+	      the operating system, so you may need to enable this  to	enable
+	      lightgun	support. When this is enabled, you will not be able to
+	      use your mouse while running MESS. If you want to get control of
+	      your  computer back, you will need to either pause MESS or quit.
+	      The default is OFF (-nomouse).
+
+       -[no]joystick, -[no]joy
+	      Controls whether or not MESS  looks  for	joystick/gamepad  con‐
+	      trollers.  The default is ON (-joystick).
+
+       -[no]lightgun, -[no]gun
+	      Controls	whether or not MESS makes use of lightgun controllers.
+	      Note that most lightguns map to the mouse,  so  using  -lightgun
+	      and  -mouse together may produce strange results. The default is
+	      OFF (-nolightgun).
+
+       -[no]multikeyboard, -[no]multikey
+	      Determines whether MESS  differentiates  between	multiple  key‐
+	      boards.	Some  systems  may  report  more than one keyboard; by
+	      default, the data from all of these  keyboards  is  combined  so
+	      that  it	looks  like  a single keyboard. Turning this option on
+	      will enable MESS to report  keypresses  on  different  keyboards
+	      independently. The default is OFF (-nomultikeyboard).
+
+       -[no]multimouse
+	      Determines  whether  MESS  differentiates between multiple mice.
+	      Some systems may report more than one mouse device; by  default,
+	      the  data  from  all  of these mice is combined so that it looks
+	      like a single mouse. Turning this option on will enable MESS  to
+	      report mouse movement and button presses on different mice inde‐
+	      pendently. The default is OFF (-nomultimouse).
+
+       -[no]steadykey, -[no]steady
+	      Some systems require two	or  more  buttons  to  be  pressed  at
+	      exactly  the same time to make special moves. Due to limitations
+	      in the PC keyboard hardware, it can be difficult or even	impos‐
+	      sible  to  accomplish that using the standard keyboard handling.
+	      This option selects a different handling that makes it easier to
+	      register	simultaneous  button presses, but has the disadvantage
+	      of making controls less responsive. The default  is  OFF	(-nos‐
+	      teadykey).
+
+       -[no]ui_active
+	      Enable  MESS  user  interface  on  top  of emulated keyboard (if
+	      present).  User interface may be	toggled  during  execution  by
+	      pressing	the  key  defined  with  -ui_modekey.	Default is OFF
+	      (-noui_active).
+
+       -[no]offscreen_reload, -[no]reload
+	      Controls whether or not MESS treats a second button input from a
+	      lightgun	as a reload signal. In this case, MESS will report the
+	      gun's position as (0,MAX) with the trigger held, which is equiv‐
+	      alent  to  an  offscreen reload. This is only needed for systems
+	      that required you to shoot offscreen to reload, and then only if
+	      your gun does not support off screen reloads. The default is OFF
+	      (-nooffscreen_reload).
+
+       -joystick_map, -joymap map
+	      Controls how joystick values map to digital  joystick  controls.
+	      See  /usr/share/doc/mame-common/config.txt  for  full details on
+	      joymap format.
+
+       -joystick_deadzone, -joy_deadzone, -jdz value
+	      If you play with an analog joystick, the center can drift a lit‐
+	      tle.   joystick_deadzone	tells  how  far along an axis you must
+	      move before the axis starts to change.  This  option  expects  a
+	      float  in  the range of 0.0 to 1.0. Where 0 is the center of the
+	      joystick and 1 is the outer limit. The default is 0.3.
+
+       -joystick_saturation, -joy_saturation, -jsat value
+	      If you play with an analog joystick, the ends can drift  a  lit‐
+	      tle,  and  may not match in the +/- directions. joystick_satura‐
+	      tion tells how  far  along  an  axis  movement  change  will  be
+	      accepted	before	it  reaches  the  maximum  range.  This option
+	      expects a float in the range of 0.0 to 1.0, where 0 is the  cen‐
+	      ter  of  the  joystick and 1 is the outer limit.	The default is
+	      0.85.
+
+       -[no]natural, -[no]nat
+	      Allows user to specify whether or not to use a natural keyboard.
+	      This allows you to start your game or system in a 'native' mode,
+	      depending   on   your   region,	allowing   compatibility   for
+	      non-"QWERTY" style keyboards.  The default is OFF (-nonatural).
+
+       -[no]joystick_contradictory, -[no]joy_contradictory
+	      Enable  contradictory  direction	digital  joystick input at the
+	      same time.  Default is OFF (-nojoystick_contradictory).
+
+       -uimodekey, -umk
+	      Specifies the key used to toggle between	full  and  partial  UI
+	      mode.
+
+       -[no]keymap
+	      Enable keymap for non-QWERTY keyboards. Used in conjunction with
+	      -keymap_file. Default is OFF (-nokeymap).
+
+       -keymap_file keymap_file
+	      Specifies the full path to the keymap file to  be  used.	A  few
+	      keymap files are available in /usr/share/games/mess/keymaps.
+
+       -joy_idx[0-8] joystick
+	      With these options you can assign a joystick to a specific index
+	      in MESS. Even if the kernel will list the joysticks in a differ‐
+	      ent  order on the next boot, MESS will still see the joystick as
+	      e.g. "Joystick 2". Use mame -v to see which joysticks are recog‐
+	      nized.  Default is 'auto'.
+
+       -[no]sixaxis
+	      Use  special  handling  for PS3 Sixaxis controllers.  Default is
+	      OFF (-nosixaxis).
+
+       -lightgun_index[1-8]
+	      Map lightgun to specific index in MESS.
+
+       -videodriver, -vd x11|directfb|auto
+	      SDL video driver to use; auto selects SDL default.
+
+       -audiodriver, -ad alsa|arts|auto
+	      SDL audio driver to use; auto selects SDL default.
+
+       -gl_lib alsa|arts|auto
+	      Alternative libGL.so to use; auto selects SDL default.
+
+   Input automatic enable options
+       -paddle_device, -paddle [none|keyboard|mouse|lightgun|joystick]
+
+       -adstick_device, -adstick [none|keyboard|mouse|lightgun|joystick]
+
+       -pedal_device, -pedal [none|keyboard|mouse|lightgun|joystick]
+
+       -dial_device, -dial [none|keyboard|mouse|lightgun|joystick]
+
+       -trackball_device, -trackball [none|keyboard|mouse|lightgun|joystick]
+
+       -lightgun_device [none|keyboard|mouse|lightgun|joystick]
+
+       -positional_device [none|keyboard|mouse|lightgun|joystick]
+
+       -mouse_device [none|keyboard|mouse|lightgun|joystick]
+	      Each of these options controls auto-enabling the mouse, or  joy‐
+	      stick  depending on the presence of a particular class of analog
+	      control for a particular system. For example, if you specify the
+	      option  -paddle mouse, then any system that has a paddle control
+	      will automatically enable mouse controls	just  as  if  you  had
+	      explicitly  specified -mouse.  Note that these controls override
+	      the values of -[no]mouse, -[no]joystick, etc.
+
+   Debugging options
+       -[no]log
+	      Creates a file called error.log which contains all of the inter‐
+	      nal  log messages generated by the MESS core and system drivers.
+	      The default is OFF (-nolog).
+
+       -[no]verbose, -[no]v
+	      Displays internal diagnostic information.  This  information  is
+	      very  useful  for  debugging  problems  with your configuration.
+	      Please use the -verbose option and include the resulting	infor‐
+	      mation when reporting bugs. The default is OFF (-noverbose).
+
+       -[no]update_in_pause
+	      Enables  updating  the screen bitmap while the system is paused.
+	      This is useful for debuggin in some scenarios (and gets  in  the
+	      way in others).  Default is OFF (-noupdate_in_pause).
+
+       -[no]debug, -[no]d
+	      Activates  the  integrated debugger. By default, the debugger is
+	      entered by pressing the tilde (~) key during  emulation.	It  is
+	      also  entered immediately at startup. The default is OFF (-node‐
+	      bug).
+
+       -debugscript filename
+	      Specifies a file that contains a list of	debugger  commands  to
+	      execute  immediately  upon startup. The default is NULL (no com‐
+	      mands).
+
+       -debugger debugger_name
+	      Name of the debugger to use. Default is AUTO.
+
+       -debugger_font, -dfont font_name
+	      Specifies the font to use for debugging. Default is AUTO.
+
+       -debugger_font_size, -dfontsize size
+	      Specifies the font size to use for debugging.
+
+       -[no]oslog
+	      Outputs the error.log data to the system debugger. This  can  be
+	      used  at	the  same  time as -log to output the log data to both
+	      targets as well.	Default is OFF (-nooslog).
+
+   Misc options
+       -[no]drc
+	      Enable DRC cpu core if available. Default is ON (-drc).
+
+       -[no]drc_use_c
+	      Force DRC use C backend. Default is OFF (-nodrc_use_c).
+
+       -[no]drc_log_uml
+	      Write DRC UML disassembly log. Default is OFF (-nodrc_log_uml).
+
+       -[no]drc_log_native
+	      Write   DRC   native   disassembly   log.   Default    is    OFF
+	      (-no_drc_log_native).
+
+       -bios biosname
+	      Specifies  the specific BIOS to use with the current system, for
+	      systems that make use of a BIOS. The -listxml output  will  list
+	      all  of  the  possible  BIOS  names for a system. The default is
+	      'default'.
+
+       -[no]cheat, -[no]c
+	      Activates the cheat menu with autofire options and other	tricks
+	      from  the  cheat	database,  if  present.   The  default	is OFF
+	      (-nocheat).
+
+       -[no]skip_gameinfo
+	      Forces MESS to skip  displaying  the  system  info  screen.  The
+	      default is OFF (-noskip_gameinfo).
+
+       -uifont fontname
+	      Specifies the name of a BDF font file to use for the UI font. If
+	      this font cannot be found or cannot be loaded, the  system  will
+	      fall  back  to  its built-in UI font. On some platforms fontname
+	      can be a system font name  instead  of  a  BDF  font  file.  The
+	      default is 'default' (use the OSD-determined default font).
+
+       -ramsize, -ram value
+	      Size of RAM (if supported by driver).
+
+       -[no]confirm_quit
+	      Display  confirm	quit  screen  on  exit.  Default  is ON (-con‐
+	      firm_quit).
+
+       -[no]ui_mouse
+	      Display UI mouse cursor. Default is OFF (-noui_mouse).
+
+       -autoboot_command, -ab command
+	      Command string to execute after machine boot (in quotes "").  To
+	      issue a quote to the emulation, use """ in the string.  Using \n
+	      will issue a create a new line, issuing what was typed prior  as
+	      a command. Example: -autoboot_command "load """$""",8,1\n".
+
+       -autoboot_delay [value]
+	      Timer  delay  (in seconds) to trigger command execution on auto‐
+	      boot.  Default is 2.
+
+       -autoboot_script, -script [filename.lua]
+	      File containing scripting to execute after machine boot.
+
+       -[no]http
+	      Enable local http server. Default is OFF (-nohttp).
+
+       -http_port port
+	      Internal webserver listener port.
+
+       -http_path path
+	      Path to web files. Default is /usr/share/games/mess/web.
+
+       -[no]console
+	      Enable emulator LUA console. Default is OFF (-noconsole).
+
+       -newui, -nu
+	      Use the new MESS UI.
+
+       -watchdog value
+	      Specifies a number of seconds after which MESS should  automati‐
+	      cally exit if it detects that the emulation has locked up.
+
+SEE ALSO
+       castool(1), chdman(1), floptool(1), imgtool(1)
+
+LEGAL NOTICE
+       Please visit the MAME website for some important legal information:
+
+       http://mamedev.org/legal.html
+
+0.162				  2015-05-20			       MESS(6)

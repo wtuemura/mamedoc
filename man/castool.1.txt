@@ -1,0 +1,24 @@
+CASTOOL(1)	    MESS Generic cassette manipulation tool	    CASTOOL(1)
+
+NAME
+       castool - MESS Generic cassette manipulation tool
+
+SYNOPSIS
+       castool convert format infile outfile.wav
+
+DESCRIPTION
+       castool	is  a  tool  for  the maintenance and manipulation of cassette
+       dumps that MESS users need to deal with.
+
+COMMANDS
+       convert
+	      Convert a cassette dump to a .wav audio file. See castool (with‐
+	      out arguments) for a full list of supported cassette formats.
+
+EXAMPLES
+       castool convert tzx pyjamarama.tzx pyjamarama.wav
+
+SEE ALSO
+       mess(6)
+
+0.176				  2016-07-21			    CASTOOL(1)

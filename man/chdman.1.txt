@@ -1,0 +1,159 @@
+CHDMAN(1)	  MAME Compressed Hunks of Data (CHD) manager	     CHDMAN(1)
+
+NAME
+       chdman - MAME Compressed Hunks of Data (CHD) manager
+
+SYNOPSIS
+       chdman option
+
+DESCRIPTION
+       chdman  is  the	(C)ompressed (H)unks of (D)ata (CHD) manager for MAME.
+       It is a tool to manage CHD images.
+
+OPTIONS
+       Please note that each option allows a set of switches, the  meaning  of
+       each  is  explained  in	the SWITCHES section below. Whenever the short
+       form for the switch is listed, the long one may be used instead.
+
+       help [option]
+	      Print a summary of the available options or, if option is given,
+	      a detailed list of the valid switches for the option.
+
+       info -i filename [-v]
+	      Dump the header information from a drive image.
+
+       verify -i fileiname [-ip filename]
+	      Validate the MD5/SHA1 on a drive image.
+
+       createraw  -o  filename	[-op  filename] [-f] -i filename [-isb offset]
+       [-ish offset] [-ib  length]  [-ih  length]  -hs	bytes  -us  bytes  [-c
+       none|type1[,[...]]] [-np processors]
+	      Create a new compressed raw image from a raw file.
+
+       createhd  -o  filename  [-op filename] [-f] [-i filename] [-isb offset]
+       [-ish   offset]	 [-ib	length]   [-ih	 length]   [-hs   bytes]   [-c
+       none|type1[,[...]]]  [-chs  cylinders,heads,sectors]  [-ss  bytes] [-np
+       processors]
+	      Create a new compressed hard disk image from a raw file.
+
+       createcd -o filename [-op filename] [-f] -i filename  [-hs  bytes]  [-c
+       none|type1[,[...]]] [-np processors]
+	      Create a new compressed CD image from a raw file.
+
+       createld -o filename [-op filename] [-f] -i filename [-isf offset] [-if
+       length] [-hs bytes] [-c none|type1[,[...]]] [-np processors]
+	      Create a new compressed laserdisc image from a raw file.
+
+       extractraw -o filename [-f] -i filename [-ip  filename]	[-isb  offset]
+       [-ish offset] [-ib length] [-ih length]
+	      Extract a raw file from a CHD image.
+
+       extracthd  -o  filename	[-f]  -i filename [-ip filename] [-isb offset]
+       [-ish offset] [-ib length] [-ih length]
+	      Extract a hard disk block image from a CHD image.
+
+       extractcd -o filename [-ob filename] [-f] -i filename [-ip filename]
+	      Extract a CDRDAO .toc/.bin, CDRWIN .bin/.cue, or Sega  Dreamcast
+	      .GDI file from a CHD-CD image.
+
+       extractld  -o  filename	[-f]  -i filename [-ip filename] [-isf offset]
+       [-if length]
+	      Extract a laserdisc image from a CHD-LD image.
+
+       copy -o filename [-op filename] [-f] -i filename [-ip  filename]  [-isb
+       offset]	 [-ish	offset]  [-ib  length]	[-ih  length]  -hs  bytes  [-c
+       none|type1[,[...]]] [-np processors]
+	      Copy all hunks of data from one CHD file to  another.  The  hunk
+	      sizes  do  not need to match.  If the source is shorter than the
+	      destination, the source data will be padded with 0s.
+
+       addmeta -i filename -t  tag  [-ix  index]  [-vt	text]  [-vf  filename]
+       [-nocs]
+	      Add metadata to the chd.
+
+       delmeta -i filename -t tag [-ix index]
+	      Remove metadata from the chd.
+
+       dumpmeta -i filename [-o filename] [-f] -t tag [-ix index]
+	      Dump metadata from the chd to standard output or to a file.
+
+SWITCHES
+       --chs, -chs cylinders,heads,sectors
+	      Specifies CHS geometry values for CHD harddisks.
+
+       --compression, -c none|type1[,[...]]
+	      Which compression codecs to use (up to 4).
+
+       --force, -f
+	      Force overwriting an existing file.
+
+       --hunksize, -hs bytes
+	      Size of each unit, in hunks.
+
+       --ident, -id filename
+	      Name of ident file to provide CHS information.
+
+       --index, -ix index
+	      Indexed instance of the metadata tag.
+
+       --input, -i filename
+	      Input file name.
+
+       --inputbytes, -ib length
+	      Effective length of the input in bytes.
+
+       --inputframes, -if length
+	      Effective length of the input in frames.
+
+       --inputhunks, -ih length
+	      Effective length of the input in hunks.
+
+       --inputparent, -ip filename
+	      Parent CHD's input file name.
+
+       --inputstartbyte, -isb offset
+	      Starting byte offset within the input.
+
+       --inputstartframe, -isf offset
+	      Starting frame offset within the input.
+
+       --inputstarthunk, -ish offset
+	      Starting hunk offset within the input.
+
+       --nochecksum, -nocs
+	      Do not include this metadata information in the overall SHA-1.
+
+       --numprocessors, -np count
+	      Limits the number of processors to use during compression.
+
+       --output, -o filename
+	      Output file name.
+
+       --outputbin, -ob filename
+	      Output binary file name for extractcd.
+
+       --outputparent, -op filename
+	      Parent CHD's output file name.
+
+       --sectorsize, -ss bytes
+	      Size of each hard disk sector.
+
+       --tag, -t tag
+	      4-character tag for metadata.
+
+       --valuefile, -vf filename
+	      Text file containing data to add.
+
+       --valuetext, -vt text
+	      Text for the metadata.
+
+       --unitsize, -us bytes
+	      Size of each unit, in bytes.
+
+       --verbose, -v
+	      Output additional information about the operation.
+
+SEE ALSO
+       mame(6), mess(6)
+
+0.176				  2016-07-21			     CHDMAN(1)

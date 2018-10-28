@@ -1,0 +1,2913 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.23)  28 OCT 2018 06:04
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**MAME.tex
+(./MAME.tex
+LaTeX2e <2017/01/01> patch level 3
+Babel <3.9r> and hyphenation patterns for 6 language(s) loaded.
+(./sphinxmanual.cls
+Document Class: sphinxmanual 2009/06/02 Document class (Sphinx manual)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
+and LuaTeX
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+   defining Unicode char U+00A0 (decimal 160)
+
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty
+Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/02/22 v2.0g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/02/22 v2.0g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)<<t1.cmap>>)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen103
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks17
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks18
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/04/23 3.9r The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count100
+\U@D=\dimen112
+)
+\l@brazil = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 145.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty
+Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
+\RW=\skip46
+\mylen=\skip47
+\myhi=\skip48
+\px=\skip49
+\py=\skip50
+\pyy=\skip51
+\pxx=\skip52
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip53
+\LTright=\skip54
+\LTpre=\skip55
+\LTpost=\skip56
+\LTchunksize=\count101
+\LTcapwidth=\dimen113
+\LT@head=\box28
+\LT@firsthead=\box29
+\LT@foot=\box30
+\LT@lastfoot=\box31
+\LT@cols=\count102
+\LT@rows=\count103
+\c@LT@tables=\count104
+\c@LT@chunks=\count105
+\LT@p@ftn=\toks21
+) (./sphinx.sty
+Package: sphinx 2010/01/15 LaTeX package (Sphinx markup)
+
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
+\fancy@headwidth=\skip57
+\f@ncyO@elh=\skip58
+\f@ncyO@erh=\skip59
+\f@ncyO@olh=\skip60
+\f@ncyO@orh=\skip61
+\f@ncyO@elf=\skip62
+\f@ncyO@erf=\skip63
+\f@ncyO@olf=\skip64
+\f@ncyO@orf=\skip65
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2017/02/22 v2.0g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box32
+\shadowsize=\dimen114
+\@Sbox=\box33
+\do@VerbBox=\toks22
+\the@fancyput=\toks23
+\this@fancyput=\toks24
+\EndVerbatimTokens=\toks25
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box34
+\beforetitleunit=\skip66
+\aftertitleunit=\skip67
+\ttl@plus=\dimen115
+\ttl@minus=\dimen116
+\ttl@toksa=\toks26
+\titlewidth=\dimen117
+\titlewidthlast=\dimen118
+\titlewidthfirst=\dimen119
+)
+(./tabulary.sty
+Package: tabulary 2008/12/01 v0.9 tabulary package (DPC)
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen120
+\extrarowheight=\dimen121
+\NC@list=\toks27
+\extratabsurround=\skip68
+\backup@length=\skip69
+)
+\TY@count=\count106
+\TY@linewidth=\dimen122
+\tymin=\dimen123
+\tymax=\dimen124
+\TY@tablewidth=\dimen125
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip70
+\fb@frw=\dimen126
+\fb@frh=\dimen127
+\FrameRule=\dimen128
+\FrameSep=\dimen129
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count107
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+\FV@CodeLineNo=\count108
+\FV@InFile=\read2
+\FV@TabBox=\box35
+\c@FancyVerbLine=\count109
+\FV@StepNumber=\count110
+\FV@OutFile=\write4
+) (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box36
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box37
+\fn@width=\dimen130
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen131
+\WF@size=\dimen132
+\c@WF@wrappedlines=\count111
+\WF@box=\box38
+\WF@everypar=\toks29
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count112
+\float@exts=\toks30
+\float@box=\box39
+\@float@everytoks=\toks31
+\@floatcapt=\box40
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen133
+\Gin@req@width=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftex/pdfcolor.tex)
+\sphinxcontinuationbox=\box41
+\sphinxvisiblespacebox=\box42
+\sphinxshadowsep=\skip71
+\sphinxshadowsize=\skip72
+\sphinxshadowrule=\skip73
+\py@argswidth=\skip74
+\lineblockindentation=\skip75
+\spx@image@box=\box43
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen135
+\Hy@linkcounter=\count113
+\Hy@pagecounter=\count114
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count115
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4362.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2016/06/24 v6.83q Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4362.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4362.
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4735.
+\c@Hy@tempcnt=\count116
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5088.
+\XeTeXLinkMargin=\dimen136
+\Fld@menulength=\count117
+\Field@Width=\dimen137
+\Fld@charsize=\dimen138
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring ON on input line 6360.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
+\Hy@abspage=\count118
+\c@Item=\count119
+\c@Hfootnote=\count120
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+\Fld@listcount=\count121
+\c@bookmark@seq@number=\count122
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip76
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
+Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
+)
+\DUlineblockindent=\skip77
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/newfloat.sty
+Package: newfloat 2015/09/17 v1.1-109 Defining new floating environments (AR)
+)
+Package newfloat Info: New float `literal-block' with options `' on input line 
+874.
+\c@literal-block=\count123
+Package newfloat Info: float type `literal-block'=4 on input line 874.
+
+(/usr/share/texlive/texmf-dist/tex/latex/capt-of/capt-of.sty
+Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
+)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+** (sphinx) defining (legacy) text style macros without \sphinx prefix
+** if clashes with packages, set latex_keep_old_macro_names=False in conf.py
+) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip78
+\multirow@cntb=\count124
+\multirow@dima=\skip79
+\bigstrutjot=\dimen139
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eqparbox/eqparbox.sty
+Package: eqparbox 2013/03/15 v4.0 Create equal-widthed boxes
+\eqp@tempdima=\skip80
+\eqp@tempdimb=\skip81
+\eqp@tabular@box=\box44
+\eqp@list@box=\box45
+\eqp@list@indent=\skip82
+
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)))
+\@indexfile=\write5
+\openout5 = `MAME.idx'.
+
+
+Writing index file MAME.idx
+(./MAME.aux
+
+LaTeX Warning: Label `debugger/general:debugger-command-do' multiply defined.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-symlist' multiply defin
+ed.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-softreset' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-hardreset' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-print' multiply defined
+.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-printf' multiply define
+d.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-logerror' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-tracelog' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-tracesym' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-trackpc' multiply defin
+ed.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-trackmem' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-pcatmem' multiply defin
+ed.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-rewind' multiply define
+d.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-statesave' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-stateload' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-snap' multiply defined.
+
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-source' multiply define
+d.
+
+
+LaTeX Warning: Label `debugger/general:debugger-command-quit' multiply defined.
+
+
+
+LaTeX Warning: Label `debugger/memory:debugger-command-dasm' multiply defined.
+
+
+LaTeX Warning: Label `debugger/memory:debugger-command-find' multiply defined.
+
+
+LaTeX Warning: Label `debugger/memory:debugger-command-dump' multiply defined.
+
+
+LaTeX Warning: Label `debugger/memory:debugger-command-save' multiply defined.
+
+
+LaTeX Warning: Label `debugger/memory:debugger-command-load' multiply defined.
+
+
+LaTeX Warning: Label `debugger/memory:debugger-command-map' multiply defined.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-step' multiply define
+d.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-over' multiply define
+d.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-out' multiply defined
+.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-go' multiply defined.
+
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-gvblank' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-gint' multiply define
+d.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-gtime' multiply defin
+ed.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-next' multiply define
+d.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-focus' multiply defin
+ed.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-ignore' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-observe' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-trace' multiply defin
+ed.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-traceover' multiply d
+efined.
+
+
+LaTeX Warning: Label `debugger/execution:debugger-command-traceflush' multiply 
+defined.
+
+
+LaTeX Warning: Label `debugger/breakpoint:debugger-command-bpset' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/breakpoint:debugger-command-bpclear' multiply de
+fined.
+
+
+LaTeX Warning: Label `debugger/breakpoint:debugger-command-bpdisable' multiply 
+defined.
+
+
+LaTeX Warning: Label `debugger/breakpoint:debugger-command-bpenable' multiply d
+efined.
+
+
+LaTeX Warning: Label `debugger/breakpoint:debugger-command-bplist' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/watchpoint:debugger-command-wpset' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/watchpoint:debugger-command-wpclear' multiply de
+fined.
+
+
+LaTeX Warning: Label `debugger/watchpoint:debugger-command-wpdisable' multiply 
+defined.
+
+
+LaTeX Warning: Label `debugger/watchpoint:debugger-command-wpenable' multiply d
+efined.
+
+
+LaTeX Warning: Label `debugger/watchpoint:debugger-command-wplist' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/registerpoints:debugger-command-rpset' multiply 
+defined.
+
+
+LaTeX Warning: Label `debugger/registerpoints:debugger-command-rpclear' multipl
+y defined.
+
+
+LaTeX Warning: Label `debugger/registerpoints:debugger-command-rpdisable' multi
+ply defined.
+
+
+LaTeX Warning: Label `debugger/registerpoints:debugger-command-rpenable' multip
+ly defined.
+
+
+LaTeX Warning: Label `debugger/registerpoints:debugger-command-rplist' multiply
+ defined.
+
+
+LaTeX Warning: Label `debugger/annotation:debugger-command-comadd' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/annotation:debugger-command-comdelete' multiply 
+defined.
+
+
+LaTeX Warning: Label `debugger/annotation:debugger-command-comsave' multiply de
+fined.
+
+
+LaTeX Warning: Label `debugger/annotation:debugger-command-comlist' multiply de
+fined.
+
+
+LaTeX Warning: Label `debugger/annotation:debugger-command-commit' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/cheats:debugger-command-cheatinit' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/cheats:debugger-command-cheatrange' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/cheats:debugger-command-cheatnext' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/cheats:debugger-command-cheatnextf' multiply def
+ined.
+
+
+LaTeX Warning: Label `debugger/cheats:debugger-command-cheatlist' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/cheats:debugger-command-cheatundo' multiply defi
+ned.
+
+
+LaTeX Warning: Label `debugger/image:debugger-command-images' multiply defined.
+
+
+
+LaTeX Warning: Label `debugger/image:debugger-command-mount' multiply defined.
+
+
+LaTeX Warning: Label `debugger/image:debugger-command-unmount' multiply defined
+.
+
+)
+\openout1 = `MAME.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 144.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 144.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 144.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count125
+\scratchdimen=\dimen140
+\scratchbox=\box46
+\nofMPsegments=\count126
+\nofMParguments=\count127
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count128
+\MPscratchDim=\dimen141
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
+\everyMPtoPDFconversion=\toks33
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box47
+Package hyperref Info: Link coloring ON on input line 144.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count131
+)
+LaTeX Info: Redefining \ref on input line 144.
+LaTeX Info: Redefining \pageref on input line 144.
+LaTeX Info: Redefining \nameref on input line 144.
+
+(./MAME.out) (./MAME.out)
+\@outlinefile=\write6
+\openout6 = `MAME.out'.
+
+LaTeX Font Info:    Try loading font information for T1+phv on input line 147.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 147.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 147.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 147.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 147.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 147.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 147.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 147.
+<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Try loading font information for U+msa on input line 147.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 147.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 147.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 147.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 147.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 147.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 147.
+ [2
+
+] (./MAME.toc
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 179.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 179.
+ [1
+
+])
+\tf@toc=\write7
+\openout7 = `MAME.toc'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 147.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 147.
+ [2]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 161.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 161.
+ [1
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 161.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 161.
+ [2
+
+]
+Cap\'{\i }tulo 1.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 161.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 161.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 161.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 161.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 181.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 181.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 188.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 205.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 205.
+ [3]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 207.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 218.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 230.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 241.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 252.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 260.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 260.
+ [4
+
+]
+Cap\'{\i }tulo 2.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 260.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 267.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 288.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 296.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 323.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 323.
+[5
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 325.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 335.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 406.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 406.
+ [6]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 414.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 441.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 485.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 485.
+ [7]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 1.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 1--548
+[]\T1/pcr/m/n/10 sudo dnf install gcc gcc-c++ SDL2-devel SDL2_ttf-devel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--548
+\T1/pcr/m/n/10 libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--562
+[]\T1/pcr/m/n/10 sudo apt-get install git build-essential libsdl2-dev libsdl2-t
+tf-dev
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 571.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 571.
+[8]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 668.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 668.
+ [9]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 743.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 759.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 759.
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 1--823
+[]\T1/pcr/m/n/10 sudo aptitude install binutils-mingw-w64-x86-64 g++-mingw-w64
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--823
+\T1/pcr/m/n/10 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--823
+\T1/pcr/m/n/10 gcc-mingw-w64-x86-64 gobjc++-mingw-w64 mingw-w64 mingw-w64-commo
+n
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 836.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 836.
+[11]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 884.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 884.
+ [12]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 995.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 995.
+ [13
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1056.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1056.
+ [14]
+Cap\'{\i }tulo 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1056.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1066.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1118.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1118.
+[15
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1228.
+
+Overfull \hbox (1.71796pt too wide) in alignment at lines 1233--1235
+ [] [] 
+ []
+
+
+Overfull \hbox (1.71796pt too wide) in alignment at lines 1235--1240
+ [] [] 
+ []
+
+
+Overfull \hbox (1.71796pt too wide) in alignment at lines 1240--1243
+ [] [] 
+ []
+
+
+Overfull \hbox (1.71796pt too wide) in alignment at lines 1243--1245
+ [] [] 
+ []
+
+
+Overfull \hbox (1.71796pt too wide) in alignment at lines 1245--1446
+ [] [] 
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1446.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1446.
+[16
+
+]
+Overfull \hbox (1.71796pt too wide) in alignment at lines 1446--1539
+ [] [] 
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1539.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1539.
+[17]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1539.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1539.
+ [18]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1539.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1539.
+ [19]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1539.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1539.
+ [20]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1547.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1554.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1554.
+ [21]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1559.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1595.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1595.
+ [22]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1597.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1681.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1681.
+ [23
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1764.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1764.
+ [24]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1825.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1825.
+ [25]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1827.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1912.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1912.
+ [26
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1977.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1977.
+ [27]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2056.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2056.
+ [28]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2129.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2129.
+ [29]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2195.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2195.
+ [30]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2260.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2260.
+ [31]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2287.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2287.
+
+[32]
+Cap\'{\i }tulo 4.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2287.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2290.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2352.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2352.
+[33
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2442.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2442.
+ [34]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2545.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2545.
+ [35]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2648.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2648.
+ [36]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2752.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2752.
+ [37]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2851.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2851.
+ [38]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2958.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2958.
+ [39]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3071.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3071.
+ [40]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3169.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3169.
+ [41]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3269.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3269.
+ [42]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3368.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3368.
+ [43]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3476.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3476.
+ [44]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3578.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3578.
+ [45]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3686.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3686.
+ [46]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3790.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3790.
+ [47]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3872.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3872.
+
+[48]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3955.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3955.
+ [49]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4060.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4060.
+ [50]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4168.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4168.
+ [51]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4258.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4258.
+ [52]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4350.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4350.
+ [53]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4459.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4459.
+ [54
+
+]
+Overfull \hbox (6.41681pt too wide) in paragraph at lines 4517--4543
+[][] 
+ []
+
+
+Overfull \hbox (62.02481pt too wide) in paragraph at lines 4556--4556
+[]\T1/ptm/m/n/10 777888999.777888999.777888999.444555666.444555666.444555666.11
+1222333.111222333.111222333|  
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4567.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4567.
+[55]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4661.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4661.
+ [56]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4772.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4772.
+ [57]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4878.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4878.
+ [58]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4982.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 4982.
+ [59]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5097.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5097.
+ [60]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5185.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5185.
+ [61]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5187.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5281.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5281.
+ [62
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5306.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5369.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5369.
+ [63]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5449.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5461.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5461.
+ [64]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5518.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5518.
+ [65]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5576.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5576.
+ [66]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5631.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5631.
+ [67]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5694.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5694.
+ [68]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5751.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5751.
+ [69]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5808.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5808.
+
+[70]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5877.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5877.
+ [71]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5905.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5905.
+ [72]
+Cap\'{\i }tulo 5.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5905.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5908.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5985.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 5985.
+[73
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6031.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6079.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6079.
+ [74]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6089.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6157.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6168.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6168.
+ [75]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6239.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6239.
+ [76]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6294.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6294.
+ [77]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6355.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6355.
+ [78]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6371.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6433.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6433.
+ [79]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6509.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6509.
+ [80]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6555.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6555.
+ [81]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6618.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6618.
+ [82]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6681.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6681.
+ [83]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6742.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6742.
+ [84]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6804.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6804.
+ [85]
+Overfull \hbox (14.58386pt too wide) in paragraph at lines 6820--6860
+[] 
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6908.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6908.
+[86]
+Overfull \hbox (14.58386pt too wide) in paragraph at lines 6936--6976
+[] 
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 6979.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7026.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7026.
+[87]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7107.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7107.
+ [88]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7153.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7171.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7171.
+ [89]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7247.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7247.
+ [90
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7290.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7290.
+ [91
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7290.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7290.
+ [92
+
+]
+Cap\'{\i }tulo 6.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7290.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7295.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7334.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7334.
+[93]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7402.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7402.
+ [94]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7460.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7460.
+ [95]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7526.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7526.
+ [96]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7592.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7592.
+ [97]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7651.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7651.
+ [98]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7705.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7705.
+ [99]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7771.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7771.
+ [100]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7804.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7830.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7830.
+ [101]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7884.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7884.
+ [102]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7940.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7940.
+ [103]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7999.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 7999.
+ [104]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8029.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8060.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8060.
+ [105]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8126.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8126.
+ [106]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8185.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8185.
+
+[107]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8245.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8245.
+ [108]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8311.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8311.
+ [109]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8386.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8386.
+ [110]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8443.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8443.
+ [111]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8501.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8501.
+ [112]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8542.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8568.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8568.
+ [113]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8628.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8628.
+ [114]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8699.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8699.
+ [115]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8723.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8753.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8753.
+ [116]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8814.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8814.
+ [117]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8883.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8883.
+ [118]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8902.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8944.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 8944.
+
+[119]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9012.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9012.
+ [120]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9063.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9076.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9076.
+ [121]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9152.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9152.
+ [122]
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9207.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9219.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9219.
+ [123]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9286.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9286.
+ [124]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9349.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9349.
+ [125]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9420.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9420.
+
+[126]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9480.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9480.
+ [127]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9545.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9545.
+ [128]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9592.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9614.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9614.
+ [129]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9675.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9688.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9688.
+ [130]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9768.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9768.
+ [131]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9795.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9795.
+ [132]
+Cap\'{\i }tulo 7.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9795.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9801.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9818.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9852.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9852.
+[133
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9852.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9944.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 9944.
+ [134]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10048.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10048.
+ [135]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10054.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10128.
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 10131.
+
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 10131.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10135.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10135.
+ [136]
+Underfull \hbox (badness 10000) in paragraph at lines 10173--10173
+|[][]\T1/phv/b/n/12 Apple ][ ima-gem de disco DOS or-der (for-mato Pro-DOS) - (
+\T1/phv/b/sl/12 ap-
+ []
+
+
+Underfull \hbox (badness 6592) in paragraph at lines 10229--10229
+|[][]\T1/phv/b/n/12 Apple ][ ima-gem de disco Nib-ble or-der (for-mato Pro-DOS)
+ - (\T1/phv/b/sl/12 ap-
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10341.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10341.
+[137]
+Underfull \hbox (badness 10000) in paragraph at lines 10341--10341
+|[][]\T1/phv/b/n/12 Apple ][ima-gem de disco gs 2IMG (for-mato Pro-DOS) - (\T1/
+phv/b/sl/12 ap-
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10492.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10492.
+[138]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10684.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10684.
+ [139]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10896.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10896.
+ [140]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11118.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11118.
+ [141]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11239.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11239.
+ [142]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11340.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11340.
+ [143]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11439.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11439.
+ [144]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11567.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11567.
+ [145]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11653.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11653.
+ [146]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11753.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11753.
+ [147]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11854.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11854.
+ [148]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11953.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 11953.
+ [149]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12097.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12097.
+
+[150]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12284.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12284.
+ [151]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12359.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12359.
+ [152]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12525.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12525.
+ [153]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12738.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12738.
+ [154]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12940.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12940.
+ [155]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12945.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12962.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 12992.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13006.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13006.
+ [156]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13102.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13102.
+ [157]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13198.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13198.
+ [158]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13294.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13294.
+ [159]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13390.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13390.
+ [160]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13406.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13422.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13457.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13457.
+ [161]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13459.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13553.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13553.
+
+[162
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13649.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13649.
+ [163]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13689.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13706.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13728.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13728.
+ [164]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13756.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13756.
+ [165]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13756.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13756.
+ [166
+
+]
+Cap\'{\i }tulo 8.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13756.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13763.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13837.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13837.
+[167]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13912.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 13912.
+ [168]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14011.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14011.
+ [169]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14084.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14084.
+ [170]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14189.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14189.
+ [171
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14301.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14301.
+ [172]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14397.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14397.
+ [173]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14495.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14495.
+ [174]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14602.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14602.
+ [175]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14694.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14694.
+ [176]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14778.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14778.
+ [177]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14861.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14861.
+ [178]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14961.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 14961.
+
+[179]
+Overfull \vbox (6.56996pt too high) detected at line 15041
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15041.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15041.
+[180]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15118.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15118.
+ [181]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15182.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15182.
+ [182
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15270.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15270.
+ [183]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15335.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15335.
+ [184]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15412.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15412.
+ [185]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15461.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15525.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15525.
+ [186
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15595.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15595.
+ [187]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15624.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15624.
+ [188]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15626.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15695.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15695.
+ [189
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15749.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15760.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15760.
+ [190]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15825.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15825.
+ [191]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15904.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15904.
+
+[192]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15978.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15978.
+ [193]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15990.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15990.
+ [194]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 15992.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16085.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16085.
+ [195
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16172.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16172.
+ [196]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16254.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16254.
+ [197]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16338.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16338.
+ [198]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16432.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16432.
+ [199]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16529.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16529.
+ [200]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16627.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16627.
+ [201]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16709.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16709.
+ [202]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16768.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16768.
+ [203]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16852.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16852.
+
+[204
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16854.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16934.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 16934.
+ [205
+
+]
+Overfull \hbox (11.14261pt too wide) in paragraph at lines 17020--17024
+[]\T1/ptm/m/n/10 A es-crita nas li-nhs de con-trole é feito com \T1/pcr/m/n/10 
+ctrl_w(scsi_refid,value,mask-of-lines-to-change)\T1/ptm/m/n/10 .
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17038.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17038.
+[206]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17142.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17142.
+ [207]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17235.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17235.
+ [208]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17237.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17320.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17320.
+ [209
+
+]
+LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 17360.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17401.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17401.
+ [210]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17443.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17443.
+ [211]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17445.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17528.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17528.
+ [212
+
+]
+Overfull \hbox (36.24506pt too wide) in paragraph at lines 1--17542
+[]\T1/pcr/m/n/10 MCFG_<CPU>_PORT_CALLBACKS(READ8(type,read_method),WRITE8(type,
+write_method)) 
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17619.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17619.
+[213]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17734.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17734.
+ [214]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17837.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17837.
+ [215]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17918.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17918.
+ [216]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17981.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 17981.
+ [217]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18060.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18060.
+ [218]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18139.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18139.
+ [219]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18182.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18182.
+ [220]
+Cap\'{\i }tulo 9.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18182.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18205.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18205.
+[221
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18205.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18205.
+ [222
+
+]
+Cap\'{\i }tulo 10.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18205.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18243.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18243.
+[223]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18243.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18243.
+ [224
+
+]
+Cap\'{\i }tulo 11.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18243.
+(./MAME.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 18252.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18252.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18252.
+ [225]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 18252.
+ (./MAME.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 18252.
+
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 18252
+.
+Package rerunfilecheck Info: File `MAME.out' has not changed.
+(rerunfilecheck)             Checksum: 9C17D32BA038AF6BAA7FF8F68C9CB5DC;16150.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 18252.
+ ) 
+Here is how much of TeX's memory you used:
+ 15588 strings out of 494884
+ 243183 string characters out of 6179236
+ 447587 words of memory out of 5000000
+ 17471 multiletter control sequences out of 15000+600000
+ 78365 words of font info for 100 fonts, out of 8000000 for 9000
+ 39 hyphenation exceptions out of 8191
+ 35i,12n,49p,1516b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
+vb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on MAME.pdf (229 pages, 677854 bytes).
+PDF statistics:
+ 2915 PDF objects out of 2984 (max. 8388607)
+ 2642 compressed objects within 27 object streams
+ 1083 named destinations out of 1200 (max. 500000)
+ 597 words of extra memory for PDF output out of 10000 (max. 10000000)
+

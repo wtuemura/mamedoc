@@ -1,0 +1,26 @@
+FLOPTOOL(1)	     MESS Generic floppy manipulation tool	   FLOPTOOL(1)
+
+NAME
+       floptool - MESS Generic floppy image manipulation tool
+
+SYNOPSIS
+       floptool option
+
+DESCRIPTION
+       floptool  is a tool for the maintenance and manipulation of floppy disk
+       images that MESS users need to deal with.
+
+COMMANDS
+       identify inputfile [inputfile ... ]
+	      Determine the format of a floppy disk image.
+
+       convert [inputformat|auto] outputformat inputfile outputfile
+	      Convert a floppy disk image to a different format.
+
+EXAMPLES
+       floptool identify image.dsk
+
+SEE ALSO
+       mess(6)
+
+0.176				  2016-07-21			   FLOPTOOL(1)
