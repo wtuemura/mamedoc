@@ -1,6 +1,5 @@
-.. MAME documentation master file, created by
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. Arquivo master da documentação do MAME, criado por Wellington Uemura
+
 
 DOCUMENTAÇÃO MAME
 =================
@@ -9,9 +8,9 @@ DOCUMENTAÇÃO MAME
 	Essa publicação é o resultado de um trabalho em contante evolução.
 	Você pode acompanhar se há alguma atualização dos tópicos e assuntos
 	aqui tratados acessando o 
-	`issue tracker <https://github.com/mamedev/mame/issues>`_.
+	`issue tracker <https://github.com/wtuemura/mamedoc/issues>`_.
 	Veja como você pode contribuir na seção `contribute <https:
-	//github.com/mamedev/mame/blob/master/docs/CONTRIBUTING.md>`_ no
+	//github.com/wtuemura/mamedoc/contribua.md>`_ no
 	site do GitHub.
 
 .. toctree::
@@ -32,9 +31,3 @@ DOCUMENTAÇÃO MAME
     security
     license
 	
-CONTRIBUA
----------
-
-A conclusão desta documentação só foi possível graças ao árduo trabalho
-de muitos colaboradores.
-
