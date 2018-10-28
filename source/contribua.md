@@ -1,9 +1,8 @@
-CONTRIBUA
-=========
-
 Código de Conduta para Colaboradores
+====================================
 
 Nossa promessa
+--------------
 
 Com o interesse de fomentar uma comunidade aberta e acolhedora,
 nós, como colaboradores e administradores deste projeto,
