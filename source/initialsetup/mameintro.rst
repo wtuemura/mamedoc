@@ -1,34 +1,3 @@
-Uma introdução ao MAME
-======================
-
-O MAME antigamente era conhecido pelo seu acrônimo *Multi Arcade Machine
-Emulator* ou *Emulador Múltiplo de Máquinas Arcade* numa tradução livre,
-que foi desenvolvido para documentar e reproduzir, através de emulação,
-a mesma funcionalidade dos componentes internos das máquinas arcade,
-computadores, consoles de videogame, calculadoras e outros tipos de
-máquinas eletrônicas voltada ao entretenimento. Programas e jogos estes
-que foram originalmente desenvolvidos para rodarem apenas nestes
-sistemas, agora o MAME permite que você os rode novamente através de
-emulação usando um PC moderno.
-
-Em um determinado momento, haviam dois projetos separados, o MAME e o
-MESS. O MAME lidava apenas máquinas arcade enquanto o MESS lidava com
-todo o resto. Ambos agora trabalham em conjunto dentro do MAME.
-
-A maior parte do MAME é programado em C++, alguns componentes principais
-em C e outras linguagens auxiliares. Atualmente o MAME consegue emular
-mais de 3200 sistemas independentes das últimas 5 décadas.
-
-
-O objetivo do MAME
-==================
-
-O principal objetivo do MAME é a preservação de décadas de história dos
-arcades, computadores e consoles. À medida que a tecnologia continua
-avançando, o MAME impede que esses importantes sistemas “vintage” se
-percam e sejam esquecidos.
-
-
 Os sistemas emulados pelo MAME
 ==============================
 
@@ -54,6 +23,11 @@ ou se você puder contribuir com correções e/ou novas adições ao código
 fonte atual, siga as instruções na página de contato ou poste uma
 mensagem no Fórum do MAME em `https://forum.mamedev.org/
 <https://forum.mamedev.org/>`_
+
+A maior parte do MAME é programado em C++, alguns componentes principais
+em C e outras linguagens auxiliares. Atualmente o MAME consegue emular
+mais de 3200 sistemas independentes das últimas 5 décadas.
+
 
 
 Os sistemas operacionais compatíveis

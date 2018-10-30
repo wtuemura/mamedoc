@@ -1,3 +1,10 @@
+.. Quebra de página usada para evitar que o capítulo posterior invada o
+   anterior. Necessário e usado apenas na criação de documento latex e
+   PDF.
+.. raw:: latex
+
+	\clearpage
+
 Instalando o MAME
 =================
 

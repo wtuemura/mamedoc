@@ -73,6 +73,9 @@ incluem:
 *	Qualquer outra forma de conduta que pode ser razoavelmente
 	considerada inapropriada num ambiente profissional
 
+.. raw:: latex
+
+	\clearpage
 
 Nossas responsibilidades
 ------------------------
