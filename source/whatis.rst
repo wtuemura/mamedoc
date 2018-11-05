@@ -1,20 +1,14 @@
 ﻿O QUE É O MAME?
 ===============
 
-O MAME é uma estrutura multiúso de trabalho voltado para a emulação.
+O MAME é uma estrutura multiúso de trabalho voltado para a emulação, com
+o tempo (originalmente significava *Multiple Arcade Machine Emulator* ou
+em tradução livre, *Multi Emulador de Máquinas Arcade*) absorveu o
+projeto irmão MESS (Multi Emulator Super System). Agora também documenta
+uma grande variedade de computadores, principalmente aqueles bem mais
+antigos, consoles de videogame, calculadoras, indo muito além do seu
+foco inicial.
 
-O MAME com o tempo (originalmente significava *Multiple Arcade Machine
-Emulator* ou em tradução livre, *Multi Emulador de Máquinas Arcade*)
-absorveu o projeto irmão MESS (Multi Emulator Super System). Agora
-também documenta uma grande variedade de computadores, principalmente
-aqueles bem mais antigos, consoles de videogame, calculadoras, indo
-muito além do seu foco inicial.
-
-|
-| **MAME®**
-| **Copyright © 1997-2018 by Nicola Salmoria and the MAME team**
-| **MAME é uma marca registrada e propriedade de Gregory Ember**
-|
 
 I. Objetivo
 -----------
@@ -82,8 +76,12 @@ V. Mais informações e contato legal
 -----------------------------------
 Para questões relacionadas à licença do MAME, marca comercial ou
 qualquer outra utilização, acesse:
+https://www.mamedev.org/
 
-`https://www.mamedev.org/ <https://www.mamedev.org/>`_
+| **MAME®**
+| **Copyright © 1997-2018 by Nicola Salmoria and the MAME team**
+| **MAME é uma marca registrada e propriedade de Gregory Ember**
+|
 
 .. [1]	Abandonware é um software que foi descontinuado e não é mais
 		desenvolvido, mantido, comercializado seja porque ficou

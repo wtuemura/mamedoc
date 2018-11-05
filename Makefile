@@ -43,8 +43,8 @@ clean:
 
 site: html epub latexpdf
 	-mkdir build/html/_files
-	-cp build/epub/MAMEDocumentation.epub build/html/_files/MAME.epub
-	-cp build/latex/MAME.pdf build/html/_files/MAME.pdf
+	-cp build/epub/Documentao.epub build/html/_files/MAME.epub
+	-cp build/latex/MAME-pt_BR.pdf build/html/_files/MAME.pdf
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

@@ -3,9 +3,9 @@
 Opções universais de linha de comando
 =====================================
 
-Esta seção contém todas as opções de configuração disponíveis em todas
-as versões compiladas do MAME, SDL e Windows.
-
+Estas opções estão disponíveis em todas as versões compiladas do MAME,
+SDL e Windows. Muitos dos verbos aqui descritos estão disponíveis também
+no arquivo de configuração **mame.ini**
 
 
 Comandos e verbos
@@ -440,7 +440,6 @@ Opções de saída do OSD
 		O valor predefinido para a porta de rede é **8000**.
 
 
-
 Opções de configuração
 ----------------------
 
@@ -448,35 +447,70 @@ Opções de configuração
 
 **-[no]readconfig** / **-[no]rc**
 
-	Ativa ou desativa a leitura dos arquivos de configuração,
-	é predefinido que os arquivos de configuração sejam lidos.
-	O MAME faz a leitura destes arquivos na seguinte ordem:
+	Habilita ou não a leitura dos arquivos de configuração,
+	é predefinido que todos os arquivos de configuração sejam lidos em
+	sequência como mostra a lista abaixo:
 
-		- **mame.ini**
-		- **<meumame>.ini**   (por exemplo, caso o arquivo binário do MAME seja renomeado para mame060.exe, então o MAME carregará o aquivo mame060.ini)
-		- **debug.ini**       (caso o depurador esteja habilitado)
-		- **<driver>.ini**    (com base no nome do arquivo fonte ou driver)
-		- **vertical.ini**    (para sistemas com orientação vertical do monitor)
-		- **horizont.ini**    (para sistemas com orientação horizontal do monitor)
-		- **arcade.ini**      (para sistemas adicionados no código fonte com a macro  GAME() )
-		- **console.ini**     (para sistemas adicionados no código fonte com a macro CONS() )
-		- **computer.ini**    (para sistemas adicionados no código fonte com a macro COMP() )
-		- **othersys.ini**    (para sistemas adicionados no código fonte com a macro SYST() )
-		- **vector.ini**      (para sistemas com vetores apenas)
-		- **<parent>.ini**    (para clones apenas, poderá ser chamado de forma recursiva)
-		- **<systemname>.ini**
+- **mame.ini**
 
-        (Veja mais em :ref:`advanced-multi-CFG` para maiores detalhes)
+- **<meumame>.ini**
+
+	Caso o arquivo binário do MAME seja renomeado para **mame060.exe**,
+	então o MAME carregará o aquivo **mame060.ini**.
+
+- **debug.ini**
+
+	Caso o depurador esteja habilitado.
+
+- **<driver>.ini**
+
+	Com base no nome do arquivo fonte ou driver.
+
+- **vertical.ini**
+
+	Para sistemas com orientação vertical do monitor.
+
+- **horizont.ini**
+
+	Para sistemas com orientação horizontal do monitor.
+
+- **arcade.ini**
+
+	Para sistemas adicionados no código fonte com a macro ``GAME()``.
+
+- **console.ini**
+
+	Para sistemas adicionados no código fonte com a macro ``CONS()``.
+
+- **computer.ini**
+
+	Para sistemas adicionados no código fonte com a macro ``COMP()``.
+
+- **othersys.ini**
+
+	Para sistemas adicionados no código fonte com a macro ``SYST()``.
+
+- **vector.ini**
+
+	Para sistemas com vetores apenas.
+
+- **<parent>.ini**
+
+	Para clones apenas, poderá ser chamado de forma recursiva.
+
+- **<systemname>.ini**
+
+	Veja mais em :ref:`advanced-multi-CFG` para mais detalhes.
 
 	As configurações nos INIs posteriores substituem aquelas dos INIs
 	anteriores.
 	Então, por exemplo, se você quiser desabilitar os efeitos de
 	sobreposição nos sistemas vetoriais, você pode criar um arquivo
-	**vector.ini** com a linha "effect none" nele, ele irá sobrescrever
-	qualquer valor de efeito que você tenha em seu mame.ini.
+	**vector.ini** com a linha **effect none** nele, ele irá
+	sobrescrever qualquer valor de efeito que você tenha em seu
+	**mame.ini**.
 
 		O valor predefinido é **Ligado** (**-readconfig**).
-
 
 
 Principais opções de caminho
@@ -590,7 +624,7 @@ Principais opções de caminho
 		O valor predefinido é "*crosshair*" (isto é, um diretório
 		chamado "*crosshair*" no mesmo diretório que o executável do
 		MAME). Caso uma mira seja definida no menu, o MAME procurará por
-		*nomedosistema\\cross#.png*, em seguida no "*crosshairpath*"
+		``nomedosistema\\cross#.png``, em seguida no "*crosshairpath*"
 		especificado onde "*#*" é o número do jogador.
 		Caso nenhuma mira seja definida, o MAME usará a sua própria.
 
