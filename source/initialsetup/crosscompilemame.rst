@@ -1,3 +1,7 @@
+.. raw:: latex
+
+	\clearpage
+
 Compilação cruzada
 ==================
 
@@ -63,17 +67,17 @@ sistema Windows, para outros sistemas operacionais ou dispositivos, o
 procedimento será semelhante bastando que você escolha o conjuntos de
 pacotes apropriados para a plataforma que você deseja compilar.
 O comando abaixo vai instalar ferramentas adicionais além das quais já
-foram descritas na seção :ref:`compiling-MAME-Debian`, note que o
-comando abaixo é formado por uma linha só:
+foram descritas na seção :ref:`compiling-ubuntu`, note que o
+comando abaixo é formado por uma linha só: ::
 
-	``sudo aptitude install binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-x86-64 gobjc++-mingw-w64 mingw-w64 mingw-w64-common mingw-w64-tools mingw-w64-x86-64-dev win-iconv-mingw-w64-dev``
+	sudo aptitude install binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-x86-64 gobjc++-mingw-w64 mingw-w64 mingw-w64-common mingw-w64-tools mingw-w64-x86-64-dev win-iconv-mingw-w64-dev
 
 Como estamos fazendo uma compilação entre plataformas é necessário
 usar a versão POSIX para o **gcc**, **ar** e **g++**, o POSIX vem de
 *Interface Portável entre Sistemas Operacionais* que é regida pela
 norma `IEEE 1003 <https://standards.ieee.org/standard/1003_1-2017.html>`_ [3]_.
 Para configurar os atalhos do **gcc**, **ar** e **g++** voltado para
-a criação de binários para a plataforma **64-Bits** faça os comandos
+a criação de binários para a plataforma **64-bit** faça os comandos
 abaixo no terminal, note que **cada** comando *sudo* é formado por uma
 linha só: ::
 
@@ -81,7 +85,7 @@ linha só: ::
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-ar-posix /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc-ar
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-posix /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc
 
-Já para a plataforma **32-Bits** faremos estes comandos, note que
+Já para a plataforma **32-bit** faremos estes comandos, note que
 **cada** comando *sudo* é formado por uma linha só: ::
 
 	sudo ln -s /usr/bin/i686-w64-mingw32-g++-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-g++
@@ -126,84 +130,119 @@ ele se localiza.
 Compilando o MAME para Windows no Linux
 ---------------------------------------
 
-Para compilar uma versão *64-Bits* do MAME para o **Windows**, execute o
+Para compilar uma versão *64-bit* do MAME para o **Windows**, execute o
 comando abaixo, lembrando que o comando deve ser executado de dentro da
 pasta raiz [4]_ do código fonte do MAME: ::
 
-	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1
+	make clean && make TARGETOS=windows SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1
 
-Caso você queira compilar uma versão *32-Bits* do MAME faça o comando
+Caso você queira compilar uma versão *32-bit* do MAME faça o comando
 abaixo: ::
 
-	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1
+	make clean && make TARGETOS=windows SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1
 
 Assim como na compilação nativa, você pode adicionar a opção **-j** no
 final do comando visando acelerar o processo de compilação usando os
 núcleos do seu processador como já foi explicado com mais detalhes no
 capítulo :ref:`compiling-mame`: ::
 
-	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
+	make clean && make TARGETOS=windows SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
 
-Abaixo algumas descrições resumidas das opções usadas: 
+Abaixo estão as descrições resumidas das opções usadas:
 
-	* **make**
-	
-		Executa o comando de compilação do código fonte.
+**make**
 
-	* **clean**
-	
-		Apaga todo o diretório **build**, é dentro deste diretório onde
-		qualquer compilação ou configuração prévia fica armazenada.
+	Executa o comando de compilação do código fonte.
 
-	* **TARGETOS=windows**
-	
-		Define o Sistema Operacional alvo, Windows.
+**clean**
 
-	* **CROSS_BUILD=1**
-	
-		Define que é uma compilação cruzada.
+	Apaga todo o diretório :ref:`build <mame-compilation-build>`.
 
-	* **SYMBOLS=1**
-	
-		Define que o MAME conterá símbolos de depuração.
+**TARGETOS**
 
-	* **SYMLEVEL=1**
-	
-		Define a quantidade de símbolos de depuração que o MAME terá,
-		valores maiores que **1** incluirá mais e mais símbolos
-		deixando o arquivo final maior do que ele já é.
+	Define o Sistema Operacional de destino, é importante deixar claro
+	que essa opção é desnecessária caso esteja compilando o MAME
+	nativamente, os valores válidos são:
 
-	* **STRIP_SYMBOLS=1**
-	
-		Define que os símbolos ao invés de ficar embutido no MAME ficará
-		em um arquivo "**.sym**" separado.
+	* ``android`` (Android)
 
-	* **SSE2=1**
-	
-		**Double Precision Streaming SIMD Extensions**, em resumo, são
-		instruções que otimizam o desempenho em processadores
-		compatíveis. O MAME terá uma melhor performance quando essa
-		opção é utilizada durante a compilação.
-		Assim informa a `nota publicada
-		<https://www.mamedev.org/?p=451>`_ no site do MAME.
+	* ``asmjs`` (Emscripten/asm.js)
 
-	* **PTR64=1**
-	
-		Quando igual a **1** irá gerar uma versão 64 Bits do MAME e 32
-		Bits quando for igual a **0**.
+	* ``freebsd`` (FreeBSD)
 
-Caso não haja nenhum problema durante esse processo, você terá um
-executável do MAME chamado **mame64.exe** para a versão *64-Bits* ou
-**mame.exe** caso você tenha compilado uma versão para *32-Bits*.
+	* ``netbsd`` (NetBSD)
+
+	* ``openbsd`` (OpenBSD)
+
+	* ``pnacl`` (Native Client - PNaCl)
+
+	* ``linux`` (Linux)
+
+	* ``ios`` (iOS)
+
+	* ``macosx`` (OSX)
+
+	* ``windows`` (Windows)
+
+	* ``haiku`` (Haiku)
+
+	* ``solaris`` (Solaris SunOS)
+
+	* ``steamlink`` (Steam Link)
+
+	* ``rpi`` (Raspberry Pi)
+
+	* ``ci20`` (Creator-Ci20)
+
+.. raw:: latex
+
+	\clearpage
+
+**SYMBOLS=1**
+
+	Veja :ref:`SYMBOLS <mame-compilation-symbols>`
+
+**SYMLEVEL=1**
+
+	Veja :ref:`SYMLEVEL <mame-compilation-symlevel>`
+
+**STRIP_SYMBOLS=1**
+
+	Veja :ref:`STRIP_SYMBOLS <mame-compilation-strip-symbols>`
+
+**SSE2=1**
+
+	**Double Precision Streaming SIMD Extensions**, em resumo, são
+	instruções que otimizam o desempenho em processadores
+	compatíveis. O MAME terá uma melhor performance quando essa
+	opção é utilizada durante a compilação.
+	Assim informa a `nota publicada
+	<https://www.mamedev.org/?p=451>`_ no site do MAME.
+
+**PTR64=1**
+
+	Define o tamanho do ponteiro em bit, assim sendo, gera uma versão
+	64-bit do executável do MAME ou 32-bit quando não for definido.
+
+Caso não haja nenhum problema durante o processo de compilação, você
+terá um executável do MAME chamado **mame64.exe** para a versão *64-bit*
+ou **mame.exe** caso você tenha compilado uma versão para *32-bit*.
+
+.. raw:: latex
+
+	\clearpage
+
+Lidando com alguns problemas comuns
+-----------------------------------
 
 Junto com estes binários será criado também um arquivo de símbolos,
-para a versão *64-Bits* será criado o arquivo **mame64.sym** ou
-**mame.sym** para a versão *32-Bits*. Estes arquivos devem **sempre**
+para a versão *64-bit* será criado o arquivo **mame64.sym** ou
+**mame.sym** para a versão *32-bit*. Estes arquivos devem **sempre**
 estar junto com o executável do MAME, pois em caso de algum erro crítico
 durante a emulação, esse arquivo "**.sym**" é usado para traduzir as
 referências usadas no código fonte junto com os códigos de erro, muito
-útil para os desenvolvedores. Aqui um exemplo de como estes códigos de
-erro se parecem: ::
+útil para os desenvolvedores. Aqui um exemplo de um erro que causou a
+parada do MAME: ::
 
 	Exception at EIP=00000000 (something_state::something()+0x0000): ACCESS VIOLATION
 	While attempting to read memory at 00000000
@@ -217,12 +256,12 @@ erro se parecem: ::
 	E a listagem continua
 	...
 
-Caso o MAME trave durante a emulação e esses códigos apareçam na tela,
-copie e reporte [5]_ o erro no fórum
+Sem o arquivo de símbolos o ``something_state::something`` apareceria
+como um código hexadecimal, com a ajuda do arquivo de símbolos esses
+códigos são traduzidos para algo legível e compreensível para os
+desenvolvedores. Caso o MAME trave durante a emulação, uma tela
+semelhante irá aparecer, copie e reporte [5]_ o erro no fórum
 `MAME testers <https://mametesters.org/view_all_bug_page.php/>`_.
-
-Lidando com alguns problemas comuns
------------------------------------
 
 Algumas vezes o processo de compilação é interrompido antes de chegar ao
 fim, os motivos são os mais diversos, pode ser a falta de alguma
@@ -256,7 +295,7 @@ outra vez.
 		tm-8350, 16GiB de memória DDR3. (Nota do tradutor)
 .. [3]	IEEE é conhecido no Brasil como `Instituto de Engenheiros
 		Eletricistas e Eletrônicos <https://pt.wikipedia.org/wiki/Instituto_de_Engenheiros_Eletricistas_e_Eletrônicos>`_. (Nota do tradutor)
-.. [4]	É no mesmo diretório onde existe um arquivo chamado
+.. [4]	Fica no mesmo diretório onde existe um arquivo chamado
 		**makefile**. (Nota do tradutor)
 .. [5]	Pedimos a gentileza de relatar os problemas encontrados em
 		Inglês. (Nota do tradutor)
