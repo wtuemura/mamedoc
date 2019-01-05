@@ -65,7 +65,7 @@ inicial do MAME encontrada em outra parte deste manual.
 As distribuições oficiais do MAME já incluem o HLSL, então você não
 precisa baixar nenhum outro arquivo adicional.
 
-Abra o seu MAME.INI no seu editor de texto preferido como o bloco de
+Abra o seu ``mame.ini`` no seu editor de texto preferido como o bloco de
 notas por exemplo e verifique se as seguintes opções estão definidas
 corretamente:
 
@@ -79,10 +79,10 @@ Por último, uma edição a mais para ativar o HLSL:
 
 * **hlsl_enable 1**
 
-Salve o arquivo .INI e você está pronto para começar.
+Salve o arquivo ``.ini`` e você está pronto para começar.
 
 
-Várias predefinições foram incluídas na pasta INI junto com o MAME,
+Várias predefinições foram incluídas na pasta ``ini`` junto com o MAME,
 permitindo um bom ponto de partida para as configurações iniciais de
 tela para os consoles Nintendo Game Boy, Nintendo Game Boy Advance,
 Rasterizado e Vetores.
@@ -113,17 +113,17 @@ Alterando as configurações
 --------------------------
 
 Como descrito em :ref:`advanced-multi-CFG`, o MAME segue uma sequência
-na hora de processar os arquivos INI. As configurações HLSL podem ser
-editadas diretamente no arquivo MAME.INI, porém para tirar melhor
+na hora de processar os arquivos ``.ini``. As configurações HLSL podem
+ser editadas diretamente no arquivo MAME.INI, porém para tirar melhor
 proveito do poder dos arquivos de configuração do MAME, talvez seja
-melhor copiar as opções do HLSL do MAME.INI para um outro arquivo de
+melhor copiar as opções do HLSL do ``mame.ini`` para um outro arquivo de
 configuração e fazer as modificações lá.
 
 Por exemplo, uma vez que você encontrou configurações de HLSL que acha
 que são apropriadas para os jogos de Neo-Geo, você pode colocar essas
-configurações num arquivo neogeo.ini para que todos os jogos de Neo-Geo
+configurações num arquivo ``neogeo.ini`` para que todos os jogos de Neo-Geo
 usem essas configurações sem que você tenha que adicioná-las manualmente
-uma a uma em diferentes arquivos INI como o nome do jogo.
+uma a uma em diferentes arquivos ``.ini`` como o nome do jogo.
 
 
 Alterando as configurações
@@ -343,14 +343,14 @@ Jogos vetorizados
 Os efeitos HLSL também podem ser usados com jogos vetorizados. Devido a
 uma grande variedade de opções para a configuração individual de jogos
 vetoriais, é altamente recomendável que você os adicione em arquivos INI
-individuais jogo a jogo (tempest.ini por exemplo).
+individuais jogo a jogo (``tempest.ini`` por exemplo).
 
 As máscaras de sombreamento só estão disponíveis em jogos vetoriais e
 não devem ser usados em jogos vetoriais monocromáticos. Além disso, os
 jogos de vetoriais não usavam linhas de varredura, de modo que também
 devem ser desativados.
 
-Abra o seu arquivo INI no seu editor de texto preferido (o Bloco de
+Abra o seu arquivo ``.ini`` no seu editor de texto preferido (o Bloco de
 notas por exemplo) e verifique se as seguintes opções estão configuradas
 corretamente:
 
