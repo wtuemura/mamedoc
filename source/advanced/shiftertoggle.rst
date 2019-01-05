@@ -34,7 +34,7 @@ Alternando o interruptor de câmbio
 
 O jogo Spy Hunter (do conjunto *spyhunt*) será usado como exemplo para
 explicar as alterações necessárias. Dentro da pasta CFG há um arquivo
-*.CFG* que você precisará editar como *spyhunt.cfg* por exemplo.
+*.CFG* que você precisará editar como ``spyhunt.cfg`` por exemplo.
 
 No MAME, comece rodando o jogo que estamos usando de exemplo, o
 *spyhunt*, assim:
@@ -42,10 +42,10 @@ No MAME, comece rodando o jogo que estamos usando de exemplo, o
 **mame spyhunt**.
 
 Configure os controles da maneira que faria em outros jogos, incluindo a
-configuração do câmbio. Saia do MAME e abra o arquivo .cfg do jogo no
-editor de texto de sua preferência.
+configuração do câmbio. Saia do MAME e abra o arquivo ``.cfg`` do jogo
+no editor de texto de sua preferência.
 
-Dentro do arquivo *spyhunt.cfg*, você deverá encontrar as seguintes
+Dentro do arquivo ``spyhunt.cfg``, você deverá encontrar as seguintes
 linhas de texto de configuração para a entrada. O código de entrada
 exibido no meio da configuração pode variar dependendo da posição do
 controle que você tiver configurado: ::
