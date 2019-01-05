@@ -36,7 +36,7 @@ Resolução e relação de aspecto da tela
 --------------------------------------
 
 
-A resolução é um assunto muito importante para as configurações do HLSL.
+A resolução é um assunto muito importante para as configurações do hlsl.
 Você desejará que o MAME esteja usando a resolução nativa do seu monitor
 para evitar distorções e atrasos adicionais criados pelo seu monitor ao
 tentar preencher a imagem na tela.
@@ -68,7 +68,7 @@ Introdução ao BGFX
 Antes de começar, você precisará seguir as instruções de configuração
 inicial do MAME encontrada em outra parte deste manual.
 As distribuições oficiais do MAME à partir da versão 0.172 já incluem o
-BGFX, então você não precisa baixar nenhum outro arquivo adicional.
+bgfx, então você não precisa baixar nenhum outro arquivo adicional.
 
 Abra o seu ``mame.ini`` no seu editor de texto preferido como o bloco de
 notas por exemplo e verifique se as seguintes opções estão definidas
@@ -221,7 +221,7 @@ qualquer arquivo de configuração. É esperado que isso mude no futuro.*
 Comece rodando o MAME com o jogo de sua preferência (**mame pacman** por
 exemplo)
 
-Use a tecla til (**~**) [2]_ para chamar a tela de opções que vai
+Use a tecla til (**~**) [3]_ para chamar a tela de opções que vai
 aparecer na parte de baixo da tela. Use as teclas cima e baixo para
 navegar dentre as várias opções, enquanto as teclas esquerda e direita
 irão permitir que você altere o valor dessas opções. Os resultados
