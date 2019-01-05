@@ -518,7 +518,7 @@ Nas Opções Principais de Vetores:
 Na Seção das Opções de Pós Processamento de Vetores:
 
 	* **vector_beam_smooth 0.0** (*Intensidade de Suavização do Feixe do
-	   Vetor*)
+	  Vetor*)
 	* **vector_length_scale 0.5** (*Atenuação Máxima do Vetor*)
 	* **vector_length_ratio 0.5** (*Extensão Mínima de Atenuação do Vetor*)
 
