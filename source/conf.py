@@ -183,7 +183,7 @@ html_show_sourcelink = False
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MAME'
+htmlhelp_basename = 'MAME-pt_BR'
 
 
 # -- Options for LaTeX output --------------------------------------------------

@@ -20,7 +20,6 @@ exemplo, **mame -validate pacman** onde *mame* é o *comando* [1]_ em si,
 *-validate* é o verbo e *pacman* a máquina a ser validada.
 
 
-
 Conjunto de instruções
 ----------------------
 
@@ -36,6 +35,60 @@ torno dos seus arranjos para evitar que o seu ambiente tente
 interpretá-los de forma independente em relação aos nomes dos arquivos
 que desejamos usar (por exemplo, **mame -validate "pac\*"**).
 
+.. raw:: latex
+
+	\clearpage
+
+.. _mame-commandline-paths:
+
+Nome de arquivos e o caminho dos diretórios
+-------------------------------------------
+
+O MAME aceita o uso de mais de um caminho em suas configurações, como
+por exemplo, configurações que permitam a pesquisa de ROMs em diferentes
+locais, desde que tais configurações utilizem ``;`` para separar cada
+caminho.
+
+O MAME consegue também identificar o caminho dos locais dos diretórios
+usando as variáveis de ambiente já existente no seu sistema e sua
+sintaxe irá depender do sistema operacional a ser usado. No Windows por
+exemplo, caso a configuração **%APPDATA%\mame\cfg** seja definida, o
+MAME conseguirá ler a variável **%APPDATA%** e resolver o caminho
+completo para o diretório de dados de aplicativos do usuário.
+
+Em sistemas estilo UNIX como macOS e Linux que utilizam o interpretador
+de comandos Bourne Shell, aconteceria o mesmo caso o caminho seja
+definido nas configurações como **/home/${USER}/.mame/cfg**. Assim como
+o sinal de porcentagem **%** é usado em uma palavra para se definir uma
+variável no ambiente do Windows, o sinal de til ``~`` serve como um
+redirecionador para o diretório home do usuário, assim ao invés de se
+digitar o caminho completo **/home/${USER}/.mame/cfg** é possível
+possível simplificar usando **~/.mame/cfg**.
+
+Note porém que o MAME só aceita interpretações de variáveis simples, o
+MAME não reconhece expressões mais complexas compatíveis com Bash, ksh,
+ou zsh.
+
+Os caminhos relativos são resolvidos a partir do diretório de trabalho
+atual. Caso você inicie o MAME com um clique duplo, o diretório de
+trabalho atual será aquele onde estiver o executável do MAME. Caso faça
+o mesmo usando um macOS, será aberto uma janela de terminal onde o seu
+diretório home será o seu diretório de trabalho.
+
+Caso queira um comportamento semelhante ao Windows Explorer no macOS,
+crie um script que contenha as linhas do exemplo abaixo no mesmo
+diretório onde se encontra o executável do MAME, no exemplo abaixo está
+sendo usada a versão 64-bit do MAME, mude conforme necessário. ::
+
+	#!/bin/sh
+	cd "`dirname "$0"`"
+	exec ./mame64
+
+Salve o script com um nome qualquer como **meumame** por exemplo no
+mesmo diretório do executável do MAME, abra o seu terminal e torne o
+script executável com o comando **chmod u+x meumame**, agora ao executar
+o script, uma janela do terminal se abrirá, o MAME será executado e o
+diretório de trabalho será definido no mesmo local do script.
 
 
 Principais verbos
@@ -56,10 +109,12 @@ Principais verbos
 	nós visando garantir que você não tenha violado qualquer uma das
 	regras do sistema principal.
 
-	Caso um padrão seja definido, ele validará a correspondência padrão
-	do sistema em questão, caso contrário, validará todos os sistemas e
+	Caso um padrão seja definido, ele validará a correspondência
+	predefinida do sistema em questão, caso contrário, validará todos
+	os sistemas e dispositivos. Note que caso um padrão seja definido,
+	este será comparado apenas com sistemas e não com outros
+	dispositivos, nenhum tipo de validação será realizada com
 	dispositivos.
-
 
 
 Verbos de configuração
@@ -81,7 +136,7 @@ Verbos de configuração
 	para um arquivo, você também pode utilizá-lo como um arquivo INI,
 	como mostra o exemplo abaixo:
 
-		**mame -showconfig >mame.ini**
+		**mame -showconfig > mame.ini**
 
 	É o mesmo que **-createconfig**.
 
@@ -90,23 +145,24 @@ Verbos de configuração
 **-showusage** / **-su**
 
 	Exibe um breve resumo de todas as opções da linha de comando.
-	Para as opções que não são mencionados aqui, o breve resumo dado por
-	"*mame -showusage*" geralmente é suficiente para a maioria das
-	pessoas.
-
+	Para as opções que não foram mencionados aqui, o breve resumo dado
+	por "*mame -showusage*" geralmente são suficientes para a grande
+	maioria das pessoas.
 
 
 Verbos frontend
 ---------------
 
-É predefinido que todos os verbos "**-list**" abaixo escrevam
-informações na tela. Se você deseja gravar a informação em um arquivo de
-texto, adicione isto ao final do seu comando:
+É predefinido que todos os verbos "**-list**" abaixo, exibam nformações
+na saída predefinida do sistema, geralmente é a tela do terminal onde
+você digitou o comando. Caso queira gravar a informação em um arquivo
+texto, adicione o exemplo abaixo ao final do seu comando:
 
-  **> nome do arquivo**
+	**>** *nome do arquivo*
 
-Onde '*nome do arquivo*' é o caminho e o nome do arquivo de texto (por
-exemplo, *lista.txt*).
+Onde '*nome do arquivo*' é o nome do arquivo texto onde você deseja
+fazer o registro da saída (por exemplo, *lista.txt*). Note que qualquer
+conteúdo prévio que exista dentro deste arquivo será apagado.
 Exemplo:
 
 	Isso cria (ou sobrescreve se já existir) o arquivo ``lista.txt`` e
@@ -114,18 +170,15 @@ Exemplo:
 	Em outras palavras, a lista de cada ROM usada em Puckman e o CRC
 	para essa ROM é gravada nesse arquivo.
 
-
-
 .. _mame-commandline-listxml:
 
 **-listxml** / **-lx** [<*pattern*>]
 
-	Lista os detalhes abrangentes de todos os sistemas e drivers
-	suportados. A saída é bastante longa, então é melhor redirecionar
-	isso para um arquivo. A saída está em formato XML. É predefinido que
-	todos os sistemas sejam listados, no entanto, você pode filtrar essa
-	lista se usar um nome de máquina, jogo ou coringa após o comando
-	**-listxml**.
+	Lista detalhes abrangentes de todos os sistemas e drivers
+	suportados em formato XML. A saída é bastante longa, então é melhor
+	redirecionar toda a saída para um arquivo. É predefinido que todos
+	os sistemas sejam listados, no entanto, você pode filtrar essa lista
+	caso use uma palavra chave ou coringa após o comando **-listxml**.
 
 .. _mame-commandline-listfull:
 
@@ -138,22 +191,24 @@ Exemplo:
 
 .. _mame-commandline-listsource:
 
-**-listsource** / **-ls** [<*pattern*>]
+**-listsource** / **-ls** [<*pattern*>...]
 
 	Exibe uma lista de drivers e os nomes dos arquivos relacionados nos
 	quais os drivers do sistema estão definidos. Útil para localizar em
 	qual driver um determinado sistema roda, útil para relatar bugs.
 	É predefinido que todos os sistemas sejam listados, no entanto, você
-	pode filtrar essa lista se usar um nome de máquina, jogo ou coringa
-	após o comando **-listsource**.
+	pode filtrar essa lista caso use uma palavra chave ou coringa após o
+	comando **-listsource**.
 
 .. _mame-commandline-listclones:
 
 **-listclones** / **-lc** [<*pattern*>]
 
 	Exibe uma lista de clones. É predefinido que todos os clones sejam
-	listados, no entanto, você pode filtrar essa lista se usar um nome
-	de máquina, jogo ou coringa após o comando **-listclones**.
+	listados, no entanto, você pode filtrar essa lista caso use uma
+	palavra chave ou coringa após o comando **-listclones**. O MAME irá
+	irá exibir uma lista de clones dos sistemas ou qualquer outro clone
+	que combine com a palavra chave caso uma seja usada.
 
 .. _mame-commandline-listbrothers:
 
@@ -164,7 +219,7 @@ Exemplo:
 
 .. _mame-commandline-listcrc:
 
-**-listcrc** [<*pattern*>]
+**-listcrc** [<*pattern*>...]
 
 	Exibe uma lista completa de CRCs de todas as imagens ROM
 	que compõem uma máquina, nomes de sistema ou dispositivo.
@@ -177,9 +232,9 @@ Exemplo:
 
 	Exibe uma lista de todas as imagens ROM que compõem uma máquina ou
 	dispositivo. Pode ser filtrado caso seja usado um nome de sistema,
-	dispositivos ou máquina. Caso nenhum termo seja usado como filtro
-	depois do comando, *todos* os resultados dos sistemas e dispositivos
-	serão exibidos.
+	dispositivos ou máquina. Caso nenhuma palavra chave seja usada como
+	filtro após o comando, *todos* os resultados referente aos sistemas
+	e dispositivos serão exibidos.
 
 .. _mame-commandline-listsamples:
 
@@ -207,8 +262,8 @@ Exemplo:
 	Verifica se há amostras inválidas ou ausentes. É predefinido que
 	todos os drivers que possuem arquivos ZIP ou diretórios válidos no
 	samplepath sejam verificados no caminho da pasta onde os arquivos de
-	amostras se encontram, no entanto, você pode filtrar essa lista se
-	usar um nome de máquina, jogo ou coringa após o comando
+	amostras se encontram, no entanto, você pode filtrar essa lista
+	caso use uma palavra chave ou coringa após o comando
 	**-verifysamples**.
 
 .. _mame-commandline-romident:
@@ -303,12 +358,10 @@ Exemplo:
 	predeterminado na pasta **hash**.
 	É predefinido que a busca e a verificação será feita em todos os
 	drivers e arquivos ZIP em diretórios válidos no *rompath* (caminho da
-	rom), no entanto, você pode limitar essa lista usando um nome que
-	contenha a lista de software em "*softwarelistname*" após o comando
+	rom), no entanto, você pode filtrar essa lista usando uma palavra
+	chave ou coringa em "*softwarelistname*" após o comando
 	**-verifysoftlist**. As listas estão na pasta *hash* e devem ser
 	informadas sem a extensão .XML.
-
-
 
 .. _osd-commandline-options:
 
@@ -319,35 +372,45 @@ Opções relacionadas as informações exibidas na tela (OSD)
 
 **-uimodekey** [*keystring*]
 
-	Tecla usada para ativar e desativar o teclado emulado.
-	A configuração predefinida é *SCRLOCK* no Windows, *Forward Delete*
-	no Mac (use *FN-Delete* em laptop/teclados compacto).
+	Tecla usada para ativar ou desativar os controles de teclado do
+	MAME. A configuração predefinida é **SCRLOCK** no Windows,
+	**Forward Delete** no macOS ou **SCRLOCK** em outros sistemas como
+	Linux por exemplo. Use **FN-Delete** em computadores/notebooks
+	Macintosh que usem teclados compactos.
+	
 
 .. _mame-commandline-uifontprovider:
 
-**\-uifontprovider**
+**-uifontprovider**
 
-	Escolha a fonte da Interface do Usuário
+	Define a fonte a ser renderizada na Interface do Usuário
 
-	No Windows, você pode escolher entre: **win**, **dwrite**, **none**
-	ou **auto**.
-	No Mac, você pode escolher entre: **osx** ou **auto**
-	Em outras plataformas, você pode escolher entre: **sdl** ou
-	**auto**.
+	* No Windows, você pode escolher entre: **win**, **dwrite**, **none**
+	  ou **auto**.
+
+	* No Mac, você pode escolher entre: **osx**, **none** ou **auto**
+
+	* Em outras plataformas você pode escolher entre: **sdl**, **none**
+	  ou **auto**.
 
 		O valor predefinido é **auto**
 
 .. _mame-commandline-keyboardprovider:
 
+.. raw:: latex
+
+	\clearpage
+
 **\-keyboardprovider**
 
 	Escolhe como o MAME lidará com o teclado.
 	
-	No Windows, você pode escolher entre: **auto**, **rawinput**,
-	**dinput**, **win32**, ou **none**.
-	No SDL, você pode escolher entre: **auto**, **sdl**, **none**
+	* No Windows, você pode escolher entre: **auto**, **rawinput**,
+	  **dinput**, **win32**, ou **none**.
+	* No SDL, você pode escolher entre: **auto**, **sdl**, **none**
 	
 		O valor predefinido é **auto**.
+
 		No Windows, **auto** tentará o **rawinput**, caso contrário
 		retornará para **dinput**. No SDL, o auto será predefinido como
 		**sdl**.
@@ -358,11 +421,12 @@ Opções relacionadas as informações exibidas na tela (OSD)
 
 	Escolhe como o MAME lidará com o mouse.
 
-	No Windows, você pode escolher entre: **auto**, **rawinput**,
-	**dinput**, **win32**, or **none**.
-	No SDL, você pode escolher entre: **auto**, **sdl**, **none**
+	* No Windows, você pode escolher entre: **auto**, **rawinput**,
+	  **dinput**, **win32**, or **none**.
+	* No SDL, você pode escolher entre: **auto**, **sdl**, **none**
 	
 		O valor predefinido é **auto**.
+
 		No Windows, **auto** tentará o **rawinput**, caso contrário
 		retornará para **dinput**. No SDL, o **auto** será predefinido
 		como **sdl**.
@@ -373,13 +437,14 @@ Opções relacionadas as informações exibidas na tela (OSD)
 
 	Escolhe como o MAME lidará com a arma de luz (*light gun*).
 
-	No Windows, você pode escolher entre: **auto**, **rawinput**,
-	**win32**, ou **none**.
-	No SDL, você pode escolher entre: **auto**, **x11**, **none**.
+	* No Windows, você pode escolher entre: **auto**, **rawinput**,
+	  **win32**, ou **none**.
+	* No SDL, você pode escolher entre: **auto**, **x11**, **none**.
 
 		O valor predefinido é **auto**.
-		o Windows, *auto* tentará **rawinput**, caso contrário retornará
-		para **win32** ou **none** caso não encontre nenhum.
+
+		No Windows, **auto** tentará **rawinput**, caso contrário
+		retornará para **win32** ou **none** caso não encontre nenhum.
 		No SDL/Linux, **auto** é predefinido como **x11** ou **none**
 		caso não encontre nenhum.
 		Em outro tipo de SDL, **auto** será predefinido para **none**.
@@ -390,20 +455,19 @@ Opções relacionadas as informações exibidas na tela (OSD)
 
 	Escolhe como o MAME lidará com o joystick.
 
-	No Windows, você pode escolher entre: **auto**, **winhybrid**,
-	**dinput**, **xinput**, ou **none**.
-	No SDL, você pode escolher entre: **auto**, **sdl**, **none**.
+	* No Windows, você pode escolher entre: **auto**, **winhybrid**,
+	  **dinput**, **xinput**, ou **none**.
+	* No SDL, você pode escolher entre: **auto**, **sdl**, **none**.
 	
 		O valor predefinido é **auto**.
-		No Windows, o auto será predefinido para dinput.
+
+		No Windows **auto** será predefinido para **dinput**.
 	
 	Repare que no controle do Microsoft X-Box 360 e X-Box One, eles
 	funcionarão melhor com **winhybrid** ou **xinput**. A opção de
 	controle *winhybrid* suporta uma mistura de DirectInput e Xinput ao
 	mesmo tempo.
 	No SDL, **auto** será predefinido para **sdl**.
-
-
 
 Opções relacionados ao OSD CLI
 ------------------------------
@@ -518,136 +582,165 @@ Principais opções de caminho
 
 .. _mame-commandline-homepath:
 
-**-homepath** *<path>*
+**-homepath** <*path*>
 
-	Define o caminho onde o diretório base *plugins* deve ser
-	encontrado.
-	
-		O valor predefinido é '.' (isto é, no diretório base atual).
+	Define o caminho para onde os **plugins** Lua armazenarão dados. 
+
+		O valor predefinido é '.' (no diretório raiz do MAME).
 
 .. _mame-commandline-rompath:
 
-**-rompath** / **-rp** <*path*>
+**-rompath** / **-rp** / **-biospath** / **-bp** <*path*>
 
 	Define o caminho completo para encontrar imagens ROM, disco rígido,
-	fita cassete, etc. Mais de um caminho pode ser definido separando-os
-	por ponto e vírgula.
+	fita cassete, etc. Mais de um caminho podem ser definidos desde que
+	estejam separados por ponto e vírgula.
 
-		O valor predefinido é 'roms' (isto é, um diretório chamado
-		"roms" criado no mesmo diretório que o executável do MAME).
+		O valor predefinido é **roms** (isto é, um diretório chamado
+		**roms** no diretório raiz do MAME).
 
 .. _mame-commandline-hashpath:
 
-**-hashpath** <*path*>
+**-hashpath** / **-hash_directory** / **-hash** <*path*>
 
-	Define o caminho completo para a pasta com os arquivos *hash* que é
-	usado pela *lista de software* no gerenciador de arquivos. Mais de
-	um caminho pode ser definido separando-os por ponto e vírgula.
+	Define o caminho completo para a pasta com os arquivos **hash** que
+	é usado pela *lista de software* no gerenciador de arquivos. Mais de
+	um caminho podem ser definidos desde que estejam separados por ponto
+	e vírgula.
 
-		O valor predefinido é 'hash' (isto é, um diretório chamado
-		"hash" no mesmo diretório que o executável do MAME).
+		O valor predefinido é **hash** (isto é, um diretório chamado
+		**hash** no diretório raiz do MAME).
 
 .. _mame-commandline-samplepath:
 
 **-samplepath** / **-sp** <*path*>
 
 	Define o caminho completo para os arquivos de amostras (samples).
-	Mais de um caminho pode ser definido separando-os por ponto e
-	vírgula.
+	Mais de um caminho podem ser definidos desde que estejam separados
+	por ponto e vírgula.
 
-		O valor predefinido é 'samples' (isto é, um diretório chamado
-		"samples" no mesmo diretório que o executável do MAME).
+		O valor predefinido é **samples** (isto é, um diretório chamado
+		**samples** no diretório raiz do MAME).
 
 .. _mame-commandline-artpath:
 
-**-artpath** <*path*> / **-artwork_directory** <*path*>
+**-artpath** <*path*>
 
 	Define o caminho completo para os arquivos de ilustrações
-	(artworks). Mais de um caminho pode ser definido separando-os por
-	ponto e vírgula.
+	(artworks). Mais de um caminho podem ser definidos desde que estejam
+	separados por ponto e vírgula.
 
-		O valor predefinido é 'artwork' (isto é, um diretório chamado
-		"artwork" no mesmo diretório que o executável do MAME).
+		O valor predefinido é **artwork** (isto é, um diretório chamado
+		**artwork** no diretório raiz do MAME).
 
 .. _mame-commandline-ctrlrpath:
 
-**-ctrlrpath** / **-ctrlr_directory** <*path*>
+**-ctrlrpath** <*path*>
 
 	Define o caminho completo para os arquivos de configuração
-	específico para controle. Mais de um caminho pode ser definido
-	separando-os por ponto e vírgula.
+	específico para controle. Mais de um caminho podem ser definidos
+	desde que estejam separados por ponto e vírgula.
 
-		O valor predefinido é 'ctrlr' (isto é, um diretório chamado
-		"ctrlr" no mesmo diretório que o executável do MAME).
+		O valor predefinido é **ctrlr** (isto é, um diretório chamado
+		**ctrlr** no diretório raiz do MAME).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-inipath:
 
 **-inipath** <*path*>
 
-	Define o caminho completo para os arquivos *.INI*. Mais de um
-	caminho pode ser definido separando-os por ponto e vírgula.
+	Define um ou mais caminhos onde os arquivos **.ini** possam ser
+	encontrados. Mais de um caminho podem ser definidos desde que
+	estejam separados por ponto e vírgula.
 
-		O valor predefinido é '.;ini' (isto é, procure primeiro no
-		diretório onde se encontra o executável do MAME, em seguida
-		dentro do diretório "*ini*".
+	* No Windows a predefinição é **.;ini;ini/presets**, tradzindo,
+	  a primeira pesquisa é feita no diretório atual, a segunda no
+	  diretório **ini** e finalmente no diretório **presets** dentro do
+	  diretório **ini**.
+
+	* No macOS a predefinição é
+	  **$HOME/Library/Application Support/mame;$HOME/.mame;.;ini**,
+	  traduzindo, pesquisa no diretório **mame** dentro do diretório
+	  **Application Support** do usuário atual, depois no diretório
+	  **.mame** dentro do diretório home do usuário atual, depois no
+	  diretório raiz e então no diretório **ini**.
+
+	* Em outras plataformas onde se incluem o Linux, a predefinição é
+	  **$HOME/.mame;.;ini**, traduzindo, procura pelo diretório
+	  **.mame** no doretório home do usuário atual, seguido pelo
+	  diretório raiz e finalmente no diretório **ini**.
 
 .. _mame-commandline-fontpath:
 
 **-fontpath** <*path*>
 
-	Define o caminho completo para os arquivos de fontes *.BDF*.
-	Mais de um caminho pode ser definido separando-os por ponto e
-	vírgula.
-
-		O valor predefinido é '.' (isto é, no diretório base atual).
+	Define um ou mais caminhos onde os arquivos de fonte **.BDF**
+	(*Adobe Glyph Bitmap Distribution Format*) possam ser encontrados.
+	Mais de um caminho podem ser definidos desde que estejam separados
+	por ponto e vírgula.
+	
+		O valor predefinido é ‘.’ (isto é, no diretório raiz do MAME).
 
 .. _mame-commandline-cheatpath:
 
 **-cheatpath** <*path*>
 
 	Define o caminho completo para os arquivos de trapaça em formato
-	*.XML*.
-	Mais de um caminho pode ser definido separando-os por ponto e
-	vírgula.
+	**.XML**.
+	Mais de um caminho podem ser definidos desde que estejam separados
+	por ponto e vírgula.
 
-		O valor predefinido é "cheat" (isto é, uma pasta chamada "cheat",
-		localizada no mesmo diretório que o executável do MAME).
+		O valor predefinido é **cheat** (isto é, uma pasta chamada
+		**cheat**, localizada no diretório raiz do MAME).
 
 .. _mame-commandline-crosshairpath:
 
 **-crosshairpath** <*path*>
 
-	Define o caminho completo para os arquivos de mira **crosshair**.
-	Mais de um caminho pode ser definido separando-os por ponto e
-	vírgula.
+	Define um ou mais caminhos onde os arquivos de mira **crosshair**
+	possam ser encontrados. Mais de um caminho podem ser definidos desde
+	que estejam separados por ponto e vírgula.
 	
-		O valor predefinido é "*crosshair*" (isto é, um diretório
-		chamado "*crosshair*" no mesmo diretório que o executável do
-		MAME). Caso uma mira seja definida no menu, o MAME procurará por
-		``nomedosistema\\cross#.png``, em seguida no "*crosshairpath*"
-		especificado onde "*#*" é o número do jogador.
+		O valor predefinido é **crosshair** (isto é, um diretório
+		chamado **crosshair** no diretório raiz do MAME). Caso uma mira
+		seja definida no menu, o MAME procurará por
+		``nomedosistema\\cross#.png``, em seguida no **crosshairpath**
+		especificado onde **#** é o número do jogador.
+
 		Caso nenhuma mira seja definida, o MAME usará a sua própria.
 
 .. _mame-commandline-pluginspath:
 
 **-pluginspath** <*path*>
 
-	Define o caminho completo para os plug-ins Lua.
+	Define um ou mais caminhos onde possam ser encontrados os plug-ins
+	do Lua para o MAME.
+	
+		O valor predefinido é **plugins** (isto é, um diretório chamado
+		**plugins** no diretório raiz do MAME).
 
 .. _mame-commandline-languagepath:
 
 **-languagepath** <*path*>
 
-	Define o caminho para os arquivos de idioma da interface.
+	Define um ou mais caminhos onde possam ser encontrados os arquivos
+	de tradução que o MAME usa na Interface do Usuário.
+	
+		O valor predefinido é **language** (isto é, um diretório chamado
+		**language** no diretório raiz do MAME).
 
 .. _mame-commandline-swpath:
 
-**-swpath** *<path>*
+**-swpath** <*path*>
 
-	Define um caminho onde programas avulsos (software) serão
-	encontrados para uso com o emulador.
-
-
+		Define um ou mais caminhos onde possam ser encontrados os
+		arquivos de programas avulsos (software).
+	
+		O valor predefinido é **software** (isto é, um diretório chamado
+		**software** no diretório raiz do MAME).
 
 Principais opções de caminho final de diretório
 -----------------------------------------------
@@ -656,93 +749,102 @@ Principais opções de caminho final de diretório
 
 **-cfg_directory** <*path*>
 
-	Define um único diretório onde os arquivos de configuração
-	são armazenados. Os arquivos de configuração armazenam as
-	customizações feitas pelo usuário que são lidas na inicialização e
-	escritas quando o MAME sai.
+	Define o diretório onde os arquivos de configuração são armazenados.
+	Os arquivos de configuração armazenam as customizações feitas pelo
+	usuário e são lidas na inicialização do MAME ou de uma máquina
+	emulada, depois quaisquer alterações são salvas ao sair do MAME.
 
-		O valor predefinido é 'cfg' (isto é, um diretório com o nome
-		"cfg" no mesmo diretório que o executável do MAME). Caso este
-		diretório não exista, ele será criado automaticamente.
+	Os arquivos de configuração preservam as configurações da ordem dos
+	botões do seu controle ou joystick, configurações das chaves DIP,
+	informações da contabilidade da máquina e a organização das janelas
+	do depurador.
+	
+		O valor predefinido é **cfg** (isto é, um diretório com o nome
+		**cfg** no diretório raiz do MAME).
+
+		Caso este diretório não exista, ele será criado automaticamente.
 
 .. _mame-commandline-nvramdirectory:
 
 **-nvram_directory** <*path*>
 
-	Define um único diretório onde os arquivos NVRAM são
-	armazenados. Arquivos NVRAM armazenam o conteúdo de EEPROM e RAM não
-	volátil (NVRAM) para sistemas que usavam esse tipo de hardware.
-	Esses dados são lidos na inicialização e gravados quando o MAME sai.
+	Define o diretório onde os arquivos **NVRAM** são armazenados.
+	Os arquivos **NVRAM** armazenam o conteúdo da **EEPROM**, memória
+	RAM não volátil (NVRAM) e informações de outros dispositivos
+	programáveis que fazem uso deste tipo de memória. As informações são
+	lidas no início da emulação e gravadas ao sair.
 
 		O valor predefinido é **nvram** (isto é, um diretório com nome
-		"nvram" no mesmo diretório que o executável do MAME).
+		"nvram" no diretório raiz do MAME).
+
 		Caso este diretório não exista, ele será criado automaticamente.
 
 .. _mame-commandline-inputdirectory:
 
 **-input_directory** <*path*>
 
-	Define um único diretório onde os arquivos de gravação de entrada
-	serão armazenados. As gravações de entrada são criadas através da
-	opção **-record** e reproduzidas através da opção **-playback**.
+	Define o diretório onde os arquivos de gravação de entrada são
+	armazenados. As gravações de entrada são criadas através da opção
+	**-record** e reproduzidas através da opção **-playback**.
 
 		O valor predefinido é **inp** (ou seja, um diretório de nome
-		"inp" no mesmo diretório que o executável do MAME). Caso este
-		diretório não exista, ele será criado automaticamente.
+		**inp** no diretório raiz do MAME).
+
+		Caso este diretório não exista, ele será criado automaticamente.
 
 .. _mame-commandline-statedirectory:
 
 **-state_directory** <*path*>
 
-	Define um único diretório onde os arquivos de gravação de estado
-	são armazenados. Os arquivos de estado são gravados, lidos e
-	escritos mediante a solicitação do utilizador ou ao usar a opção
-	**-autosave**.
+	Define o diretório onde os arquivos de gravação de estado são
+	armazenados. Os arquivos de estado são lidos e gravados mediante a
+	solicitação do usuário ou ao usar a opção **-autosave**.
 
-		O valor predefinido é 'sta' (isto é, um diretório de nome "sta"
-		é salvo no mesmo diretório que o executável do MAME).
+		O valor predefinido é **sta** (isto é, um diretório de nome
+		**sta** no diretório raiz do MAME).
+
 		Caso este diretório não exista, ele será criado automaticamente.
 
 .. _mame-commandline-snapshotdirectory:
 
 **-snapshot_directory** <*path*>
 
-	Define um único diretório onde serão armazenados os instantâneos de
-	tela quando solicitado pelo usuário.
+	Define o diretório onde os arquivos de instantâneos da tela são
+	armazenados quando solicitado pelo usuário.
 
-		O valor predefinido é 'snap' (isto é, um diretório chamado
-		"snap" no mesmo diretório que o executável do MAME). Caso este
-		diretório não exista, ele será criado automaticamente.
+		O valor predefinido é **snap** (isto é, um diretório chamado
+		**snap** no diretório raiz do MAME).
+
+		Caso este diretório não exista, ele será criado automaticamente.
 
 .. _mame-commandline-diffdirectory:
 
 **-diff_directory** <*path*>
 
-	Define um único diretório onde os arquivos de diferencial do disco
-	rígido serão armazenados. Os arquivos de diferencial de disco rígido
-	armazenam qualquer dado que é escrito de volta na imagem do disco
-	rígido, visando a preservação da imagem original. Os arquivos de
-	diferencial são criados na inicialização com um sistema que use um
-	disco rígido.
+	Define o diretório onde os arquivos de diferencial do disco rígido
+	são armazenados. Os arquivos de diferencial armazenam qualquer dado
+	que é escrito de volta na imagem do disco, isso serve para preservar
+	a imagem de disco original. Os arquivos são criados no inicio da
+	emulação com uma imagem compactada do disco rígido.
 
-		O valor predefinido é 'diff' (isto é, um diretório chamado
-		"diff" no mesmo diretório que o executável do MAME). Caso este
-		diretório não exista, ele será criado automaticamente.
+		O valor predefinido é **diff** (isto é, um diretório chamado
+		**diff** no diretório raiz do MAME).
+
+		Caso este diretório não exista, ele será criado automaticamente.
 
 .. _mame-commandline-commentdirectory:
 
 **-comment_directory** <*path*>
 
-	Define um único diretório onde os arquivos de comentário do
-	depurador são armazenados. Os arquivos de comentário do depurador
-	são escritos pelo depurador quando comentários são adicionados ao
-	sistema para a desmontagem.
+	Define o diretório onde os arquivos de comentário do depurador são
+	armazenados. Os arquivos de comentário do depurador são escritos
+	pelo depurador quando comentários são adicionados em um sistema
+	desmontado (disassembly).
 
-		O valor predefinido é 'comments' (isto é, um diretório chamado
-		"comments" no mesmo diretório que o executável do MAME). Caso este
-		diretório não exista, ele será criado automaticamente.
+		O valor predefinido é **comments** (isto é, um diretório chamado
+		**comments** no diretório raiz do MAME).
 
-
+		Caso este diretório não exista, ele será criado automaticamente.
 
 Principais opções de estado e reprodução
 ----------------------------------------
@@ -759,10 +861,10 @@ Principais opções de estado e reprodução
 
 		O valor predefinido é **Desligado** (**-norewind**).
 	
-	Caso o depurador esteja no estado 'break', a condição de estado
-	atual é criada a cada 'step in', 'step over' ou caso ocorra um
-	'step out'. Nesse modo, rebobinar os estados salvos podem ser
-	carregados executando o depurador 'rewind' ou o comando ('rw').
+	Caso o depurador esteja no estado *break*, a condição de estado
+	atual é criada a cada 'step in', *step over* ou caso ocorra um
+	*step out*. Nesse modo os estados salvos podem ser carregados e
+	rebobinados executando o comando *rewind* ou *rw* no depurador.
 	
 .. _mame-commandline-rewindcapacity:
 
@@ -773,8 +875,8 @@ Principais opções de estado e reprodução
 	savestates. Quando a capacidade alcança o limite, os antigos
 	savestates são apagados enquanto novos são capturados. Definindo uma
 	capacidade menor do que o savestate atual, desabilita o
-	rebobinamento. Os valores negativos abaixo de zero são
-	automaticamente fixados em 0.
+	rebobinamento. Os valores negativos são automaticamente fixados em
+	0.
 
 .. _mame-commandline-state:
 
@@ -814,6 +916,10 @@ Principais opções de estado e reprodução
 
 	Diz ao MAME para encerrar a emulação depois que terminar a
 	reprodução (playback).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-record:
 
@@ -903,6 +1009,10 @@ Principais opções de estado e reprodução
 	``mame c64 -flop1 robby -snapname %g/%d_flop1/%i`` estes serão
 	salvos como **snaps\\c64\\robby\\0000.png**.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-snapsize:
 
 **-snapsize** <*width>x<height*>
@@ -981,6 +1091,10 @@ Principais opções de estado e reprodução
 	``mame c64 -flop1 robby -statename %g/%d_flop1/%i`` estes serão
 	salvos como **sta\\c64\\robby\\0000.png**.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-noburnin:
 
 **-[no]burnin**
@@ -1000,8 +1114,6 @@ Principais opções de estado e reprodução
 
 		O valor predefinido é **Desligado** (**-noburnin**).
 
-
-
 Principais opções de performance
 --------------------------------
 
@@ -1009,10 +1121,10 @@ Principais opções de performance
 
 **-[no]autoframeskip** / **-[no]afs**
 
-	Determina automaticamente quantos quadros pular no sistema que você
-	estiver rodando, realizando ajustes constantes na tentativa de
-	manter o sistema rodando a toda velocidade. Habilitando essa opção
-	ela sobrescreve o valor predefinido por **-frameskip**.
+	Para que se mantenha a velocidade máxima de uma emulação, ajusta
+	dinamicamente no sistema emulado a quantidade de quadros que
+	serão pulados. Habilitando essa opção ela se sobrepõem ao que for
+	definido em **-frameskip** descrito logo abaixo.
 
 		O valor predefinido é **Desligado** (**-noautoframeskip**).
 
@@ -1022,11 +1134,10 @@ Principais opções de performance
 
 	Determina o valor de pulo de quadros (frameskip). Ela elimina
 	cerca de 12 quadros enquanto estiver sendo executado. Por exemplo,
-	se você definir *-frameskip 2* então MAME irá exibir 10 de cada 12
-	quadros. Ao pular estes quadros, pode ser que você consiga rodar
-	o sistema emulado em velocidade máxima sem que sobrecarregue o
-	seu computador ainda que ele não tenha todo este poder de
-	processamento.
+	se você definir **-frameskip 2** então MAME irá exibir 10 de cada 12
+	quadros. Ao pular estes quadros, pode ser que se atinja a velocidade
+	nativa do sistema emulado sem que haja sobrecarga no seu computador
+	ainda que ele não tenha um grande poder de processamento.
 
 		O valor predefinido é não pular nenhum quadro
 		(**-frameskip 0**).
@@ -1041,18 +1152,37 @@ Principais opções de performance
 	fixas de linha de comando você pode definir um ambiente para
 	realizar testes de performance. Em adição, ao sair, a opção **-str**
 	faz com que seja gravado um instantâneo da tela chamado *final.png*
-	no diretório de instantâneos.
+	no diretório de
+	:ref:`instantâneos <mame-commandline-snapshotdirectory>`.
+	
+	O comando diz ao MAME para interromper a emulação depois de um
+	tempo determinado, o tempo em questão não é o tempo real e sim o
+	tempo interno da emulação, assim, caso você defina 30 segundos, pode
+	ser que dependendo da máquina que esteja sendo emulada, a parada
+	só venha a acontecer depois de algum tempo.
+	
+	Este comando também é útil para a realização de benchmarks e testes
+	de automação. Ao combinar esta opção com algumas outras, é possível
+	construir uma estrutura de testes de performance do MAME.
+	Adicionalmente a opção **-str**, faz também que ao final do tempo
+	seja criado um instantâneo de tela chamado **final.png** dentro da
+	pasta de :ref:`instantâneos <mame-commandline-snapshotdirectory>`.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-nothrottle:
 
 **-[no]throttle**
 
 	Ativa ou não a função de controle de velocidade do emulador [5]_.
-	Quando este controle está ligado, o MAME tenta manter o sistema
-	rodando em sua velocidade original, ao ser deligado o MAME roda o
-	sistema na velocidade mais rápida possível.
-	Note que a velocidade mais rápida geralmente não é limitada pela sua
-	placa de vídeo, especialmente em sistemas mais antigos.
+	Ao habilitar esta opção, o MAME tenta manter o sistema rodando em
+	sua velocidade nativa, com a opção desabilitada a emulação é
+	executada na velocidade mais rápida possível. Dependendo das
+	características do sistema emulado, a performance final pode
+	limitada pelo seu processador, placa de vídeo ou até mesmo pela
+	performance final da sua memória.
 
 		O valor predefinido é **Ligado** (**-throttle**).
 
@@ -1064,8 +1194,8 @@ Principais opções de performance
 	estiver rodando com **-throttle**. Isso permite que outros programas
 	tenham mais tempo de CPU, assumindo que a emulação não esteja
 	consumindo 100% dos recursos do processador. Essa opção pode causar
-	uma certa intermitência na performance caso outros programas que
-	também demandem de processamento estejam rodando junto com o MAME.
+	uma certa intermitência na performance caso outros programas também
+	demandem processamento estejam rodando junto com o MAME.
 	
 		O valor predefinido é **Ligado** (**-sleep**).
 
@@ -1073,16 +1203,18 @@ Principais opções de performance
 
 **-speed** <*factor*>
 
-	Muda a maneira que o MAME controla o fluxo de dados do sistema
-	emulado de uma maneira que rode em múltiplos da velocidade original.
-	Um <*fator*> de **1.0** significa rodar o sistema em velocidade
-	normal. Um fator de **0.5** significa rodar o sistema na metade da
-	velocidade normal.
-	Já um <*fator*> de **2.0** significa rodar o sistema 2x acima da
-	velocidade normal. Repare que ao mudar este valor, a velocidade e a
-	tonalidade do áudio que está sendo executado irá mudar também
-	proporcionalmente. A resolução interna da fração são dois ponto
-	decimais, então o valor **1.002** é o mesmo que **1.0**.
+	Muda a maneira que o MAME controla a velocidade da emulação de
+	maneira que seja possível que o sistema emulado rode em múltiplos
+	da sua velocidade original.
+
+	Um <*fator*> **1.0** significa rodar o sistema em velocidade normal.
+	Já um fator **0.5** significa rodar o sistema na metade da
+	velocidade normal e um <*fator*> **2.0** significa rodar o sistema
+	2x acima da sua velocidade normal. Note que ao mudar este valor a
+	velocidade de execução do áudio irá mudar proporcionalmente também.
+	
+	A resolução interna da fração são dois pontos decimais, então o
+	valor **1.002** será arredondada para **1.0**.
 
 		O valor predefinido é **1.0**.
 
@@ -1090,14 +1222,13 @@ Principais opções de performance
 
 **-[no]refreshspeed** / **-[no]rs**
 
-	Permite ao MAME ajustar a velocidade do sistema dinamicamente de
-	maneira que não exceda o valor mais baixo da taxa de atualização da
-	tela de qualquer monitor no seu sistema. Assim, se você tem um
-	monitor com **60 Hz** e roda um sistema configurado para **60.6 Hz**
-	o MAME irá reduzir a velocidade dinamicamente para **99%** visando
-	prevenir cortes no som ou outro problemas indesejáveis enquanto
-	estiver rodando com uma velocidade de taxa de atualização de tela
-	mais baixa.
+	Permite ao MAME ajustar a velocidade da primeira tela emulada do
+	sistema de maneira que não exceda a menor velocidade da taxa de
+	atualização de tela de qualquer uma das telas do sistema emulado.
+	Visando evitar cortes no áudio ou efeitos colaterais indesejáveis, o
+	MAME irá reduzir a velocidade da emulação para 99% em casos onde por
+	exemplo, um monitor que funcione nativamente a 60 Hz e o sistema
+	emulado rode a 60.6 Hz.
 	
 		O valor predefinido é **Desligado** (**-norefreshspeed**).
 
@@ -1107,22 +1238,24 @@ Principais opções de performance
 
 	Define a quantidade de núcleos do processador a serem usados.
 	A opção **auto** usará a quantidade de núcleos informada pelo seu
-	sistema ou pela variável de ambiente **OSDPROCESSORS**. Para evitar
-	abusos esse valor é limitado internamente a quantidade de núcleos
-	informados pelo seu sistema.
+	sistema ou pela variável de ambiente **OSDPROCESSORS**. Este valor é
+	limitado internamente para quatro vezes o número de processadores
+	informado pelo seu sistema.
 
 		O valor predefinido é **auto**.
 
 .. _mame-commandline-bench:
 
-**-bench** *[n]*
+**-bench** <*n*>
 
 	Define a quantidade de segundos de emulação em *[n]* usado para
 	teste de performance, o comando é um atalho com comando abaixo:
 
-		**-str [n] -video none -sound none -nothrottle**
+		**-str** <*n*> **-video none -sound none -nothrottle**
 
+.. raw:: latex
 
+	\clearpage
 
 Principais opções de rotação
 ----------------------------
@@ -1658,6 +1791,10 @@ Principais opções de tela
 	
 		O valor predefinido é **1.0**. 
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-pausebrightness:
 
 **-pause_brightness** <*value*>
@@ -1682,8 +1819,6 @@ Principais opções de tela
 	tela de destino.
 	
 		O valor predefinido é **none** ou nenhum efeito.
-
-
 
 Principais opções para vetores
 ------------------------------
@@ -1716,8 +1851,6 @@ Principais opções para vetores
 	entre **0.00** e **100.00** (**0** = nenhum e **100** = máximo).
 	
 		O valor predefinido é **0**.
-
-
 
 Principais opções para a depuração de vídeo OpenGL
 --------------------------------------------------
@@ -1795,7 +1928,7 @@ Principais opções de vídeo OpenGL GLSL
 
 	A ser feito: Descrever mais detalhes sobre a utilização em algum
 	momento no futuro. Veja:
-	http://forums.bannister.org/ubbthreads.php?ubb=showflat&Number=100988#Post100988> para maiores informações.
+	http://forums.bannister.org/ubbthreads.php?ubb=showflat&Number=100988#Post100988 para maiores informações.
 
 
 
@@ -1824,6 +1957,9 @@ Principais opções de vídeo OpenGL GLSL
 	
 		O valor predefinido é **Ligado** (**-gl_glsl_vid_attr**).
 
+.. raw:: latex
+
+	\clearpage
 
 Principais opções de áudio
 --------------------------
@@ -2243,15 +2379,13 @@ Principais opções de entrada automaticamente ativas
 	para o mouse, controle (joystick) ou pistola de luz (lightgun)
 	dependendo de uma classe em particular de controle analógico para um
 	sistema em particular. Por exemplo, se você definir a opção
-	**-paddle mouse** então qualquer jogo que tenha um remo ou pá como
+	**-paddle mouse**, então qualquer jogo que tenha um remo ou pá como
 	controle será automaticamente configurada para ser usada pelo mouse
-	da mesma maneira como se você tivesse especificado explicitamente
-	com a opção **-mouse**.
+	como se a opção **-mouse** tivesse sido definida.
 
-	Observe que estes controles sobrescrevem as opções **-[no]mouse**
-	**-[no]joystick**, etc.
-
-
+	Observe que estes controles sobrescrevem as opções
+	:ref:`-[no]mouse <mame-commandline-nomouse>`,
+	:ref:`-[no]joystick <mame-commandline-nojoystick>`, etc.
 
 Opções de depuração
 -------------------
@@ -2265,8 +2399,8 @@ Opções de depuração
 	Essas informações são úteis para apurar qualquer tipo de problemas
 	com a sua configuração ou qualquer outra que possa aparecer.
 	IMPORTANTE: favor rodar com **mame -verbose** e incluir a
-	saída junto caso você queira entrar em contato conosco para relatar
-	um erro.
+	saída junto caso queira entrar em contato conosco para relatar um
+	erro.
 
 		O valor predefinido é **Desligado** (**-noverbose**).
 
@@ -2356,19 +2490,20 @@ Opções de depuração
 
 	O tamanho padrão da janela é de **9** pontos.
 	O tamanho padrão do Qt é de **11** pontos.
-	O tamanho padrão do Mac (**Cocoa**) é o tamanho padrão do sistema.
+	O tamanho padrão do Mac (**Cocoa**) é o tamanho padrão usado pelo
+	sistema.
 
 
-Principais opções de comunicação de rede
-----------------------------------------
+Opções para configuração de rede
+--------------------------------
 
 .. _mame-commandline-commlocalhost:
 
 **-comm_localhost** <*string*>
 
 	Definição para o endereço local. Este pode ser um endereço
-	tradicional xxx.xxx.xxx.xxx ou uma cadeia contendo um nome de host
-	resolvível.
+	tradicional ``xxx.xxx.xxx.xxx`` ou um nome de host que possa ser
+	resolvido
 
 		O valor predefinido é **0.0.0.0**
 
@@ -2377,8 +2512,8 @@ Principais opções de comunicação de rede
 **-comm_localport** <*string*>
 
 	Definição da porta local. Esta pode ser qualquer porta de
-	comunicação tradicional como um valor inteiro non-signed com 16-bit
-	(**0-65535**).
+	comunicação tradicional como um valor inteiro *non-signed* com
+	16-bit (**0-65535**).
 
 		O valor predefinido é **15122**.
 
@@ -2387,7 +2522,7 @@ Principais opções de comunicação de rede
 **-comm_remotehost** <*string*>
 
 	Definição do endereço remoto. Este pode ser um endereço tradicional
-	xxx.xxx.xxx.xxx ou uma cadeia contendo um nome de host resolvível.
+	``xxx.xxx.xxx.xxx`` ou um nome de host que possa ser resolvido.
 
 	O valor predefinido é **0.0.0.0**
 
@@ -2396,8 +2531,8 @@ Principais opções de comunicação de rede
 **-comm_remoteport** <*string*>
 
 	Definição da porta remota. Esta pode ser qualquer porta de
-	comunicação tradicional como um valor inteiro non-signed com 16-bit
-	(**0-65535**).
+	comunicação tradicional como um valor inteiro *non-signed* com
+	16-bit (**0-65535**).
 
 		O valor predefinido é **15122**.
 
@@ -2411,8 +2546,8 @@ Principais opções de comunicação de rede
 
 
 
-Principais opções diversas
---------------------------
+Outras opções essenciais
+------------------------
 
 .. _mame-commandline-drc:
 
@@ -2434,7 +2569,7 @@ Principais opções diversas
 
 **\-drc_log_uml**
 
-	Escreva um registro descompilado DRC UML em um arquivo de registro
+	Grave um registro descompilado DRC UML em um arquivo de registro
 	(log).
 
 		O valor predefinido é (**-nodrc_log_uml**).
@@ -2443,7 +2578,8 @@ Principais opções diversas
 
 **\-drc_log_native**
 
-	escreva o DRC nativo num registro descompilado em assembler.
+	Grave o DRC nativo e descompilado num registro de log em formato
+	assembler.
 
 		O valor predefinido é **Desligado** (**-nodrc_log_native**).
 

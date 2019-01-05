@@ -1412,37 +1412,46 @@ geradas de forma automática:
 Usando o complay.py
 -------------------
 
-No código fonte do MAME existe um script Python chamado ``complay.py``,
-encontrado no subdiretório ``scripts/build``. Como parte do processo de
+No código fonte do MAME existe um script Python chamado **complay.py**,
+encontrado no subdiretório **scripts/build**. Como parte do processo de
 compilação do MAME esse script é usado para reduzir o tamanho dos dados
 dos layouts internos e para convertê-los de maneira que possam ser
 anexados dentro do executável.
+
 O script pode também detectar muitos erros comuns de formatação nos
 arquivos de layout fornecendo melhores mensagens de erro do que o MAME
 durante a carga de tais arquivos.
+
 Observe que o script não executa todo o mecanismo de layout, por isso
 não pode detectar erros nos parâmetros usados como referências para os
 elementos indefinidos ou agrupamentos dos grupos organizados de forma
 recursiva.
-O script ``complay.py`` é compatível com os interpretadores Python 2.7
-e Python 3.
+O script **complay.py** é compatível com os interpretadores Python
+a partir das versões 2.7, 3 ou mais recentes, ele usa três parâmetros,
+um nome de arquivo de entrada, um nome do arquivo de saída e um nome
+base para as variáveis na saída: ::
 
-O script ``complay.py`` usa três parâmetros, um nome de arquivo de
-entrada, um nome do arquivo de saída e um nome base para as variáveis na
-saída: ::
-
-    python scripts/build/complay.py input [output [varname]]
+	python scripts/build/complay.py <input> [<output> [<varname>]]
 
 O nome do arquivo de entrada é obrigatório. Caso nenhum nome de arquivo
-de saída seja fornecido, o ``complay.py`` irá analisar e verificar a
+de saída seja fornecido, o **complay.py** irá analisar e verificar a
 entrada, informando qualquer erros encontrado, sem gerar qualquer
 arquivo na saída.
-Caso nenhum nome de variável base seja fornecido, o ``complay.py`` irá
+Caso nenhum nome de variável base seja fornecido, o **complay.py** irá
 gerar um com base no nome do arquivo de entrada. Isso não garante a
-produção de identificadores válidos. O status de saída é **0**
-(zero) quando for concluído com sucesso, **1** quando houver um erro
-durante a invocação por linha de comando, **2** caso haja erro no
-arquivo de entrada ou **3** caso seja um erro de I/O.
+produção de identificadores válidos.
+
+Os status de saída são:
+
+	* **0** (zero) quando for concluído com sucesso.
+
+	* **1** quando houver um erro durante a invocação por linha de
+	  comando.
+
+	* **2** caso haja erro no arquivo de entrada.
+
+	* **3** caso seja um erro de I/O.
+
 Ao definir um arquivo de saída o arquivo será criado ou substituído caso
 seja concluído com sucesso ou removido no caso de falha.
 
