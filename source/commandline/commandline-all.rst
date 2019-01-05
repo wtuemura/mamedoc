@@ -1602,8 +1602,6 @@ funcionar corretamente em algumas máquinas Mac.**
 	As opções definidas da janela substituem os valores da opções de
 	todas as janelas.
 
-
-
 .. _mame-commandline-resolution:
 
 |	**-resolution** <*widthxheight[@refresh]*> / **-r** <*widthxheight[@refresh]*>
@@ -1638,8 +1636,6 @@ funcionar corretamente em algumas máquinas Mac.**
 	O parâmetro **-resolution** se aplica a todas as janelas.
 	As opções específicas da janela substituem os valores da opções de
 	todas as janelas.
-
-
 
 .. _mame-commandline-view:
 
@@ -1893,8 +1889,6 @@ obtenha a melhor performance possível.
 	Ativar o *OpenGL PBO* (Pixel Buffer Objects) caso esteja disponível.
 	
 		O valor predefinido é **Ligado** (**-gl_pbo**).
-
-
 
 Principais opções de vídeo OpenGL GLSL
 --------------------------------------
