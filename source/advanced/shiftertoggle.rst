@@ -1,3 +1,8 @@
+
+.. raw:: latex
+
+	\clearpage
+
 Desabilitando o interruptor de câmbio
 =====================================
 
