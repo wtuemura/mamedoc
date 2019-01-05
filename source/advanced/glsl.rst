@@ -67,7 +67,7 @@ As distribuições oficiais do MAME já são compatíveis com o GLSL, mas
 esses arquivos de sombreamento através de um outro fornecedor qualquer
 pela internet.
 
-Abra o seu MAME.INI no seu editor de texto preferido como o bloco de
+Abra o seu ``mame.ini`` no seu editor de texto preferido como o bloco de
 notas por exemplo e verifique se as seguintes opções estão definidas
 corretamente:
 
@@ -81,7 +81,7 @@ Por último, resta uma edição a mais para ativar o GLSL:
 
 * **gl_glsl 1**
 
-Salve o arquivo .INI e já estamos pronto para começar.
+Salve o arquivo ``.ini`` e já estamos pronto para começar.
 
 
 Customizando as configurações GLSL de dentro do MAME
@@ -109,17 +109,18 @@ Alterando as configurações
 --------------------------
 
 Como descrito em :ref:`advanced-multi-CFG`, o MAME segue uma sequência
-na hora de processar os arquivos INI. As configurações GLSL podem ser
-editadas diretamente no arquivo MAME.INI, porém para tirar melhor
+na hora de processar os arquivos ``.ini``. As configurações GLSL podem
+ser editadas diretamente no arquivo ``mame.ini``, porém para tirar melhor
 proveito do poder dos arquivos de configuração do MAME, talvez seja
-melhor copiar as opções do GLSL do MAME.INI para um outro arquivo de
+melhor copiar as opções do GLSL do ``mame.ini`` para um outro arquivo de
 configuração e fazer as modificações lá.
 
 Por exemplo, uma vez que você encontrou configurações de GLSL que acha
 que são apropriadas para os jogos de Neo-Geo, você pode colocar essas
-configurações num arquivo neogeo.ini para que todos os jogos de Neo-Geo
-usem essas configurações sem que você tenha que adicioná-las manualmente
-uma a uma em diferentes arquivos INI como o nome do jogo.
+configurações num arquivo ``neogeo.ini`` para que todos os jogos de
+Neo-Geo usem essas configurações sem que você tenha que adicioná-las
+manualmente uma a uma em diferentes arquivos ``.ini`` como o nome do
+jogo.
 
 
 Alterando as configurações
