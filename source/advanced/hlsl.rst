@@ -101,7 +101,7 @@ resultados sempre sairão conforme esperado.
 Comece rodando o MAME com o jogo de sua preferência como por exemplo
 **mame pacman**.
 
-Use a tecla til (**~**) [1]_ para chamar a tela de opções que vai
+Use a tecla til (**~**) [2]_ para chamar a tela de opções que vai
 aparecer na parte de baixo da tela. Use as teclas cima e baixo para
 navegar dentre as várias opções, enquanto as teclas esquerda e direita
 irão permitir que você altere o valor dessas opções. Os resultados
@@ -432,7 +432,7 @@ azul.
 
 **bloom_blend_mode**
 
-	Define a intensidade da mistura do efeito lume [2]_.
+	Define a intensidade da mistura do efeito lume [3]_.
 	Os valores ficam entre **0** para um efeito mais *Claro* e **1**
 	para um tipo mais *Escuro*, essa última só é útil com monitores do
 	tipo STN LCD. 
@@ -532,20 +532,21 @@ Valores sugeridos para jogos vetoriais:
 
 	* **bloom_lvl_weights** deve ser configurado como mostrado abaixo:
 
-+------------------------------+-------------------------+------------------------------------+
-| | bloom_lvl0_weight    1.00  | | Peso 0 do Nível Bloom | | Tamanho Máximo.                  |
-| | bloom_lvl1_weight    0.48  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 0          |
-| | bloom_lvl2_weight    0.32  | | Peso 2 do Nível Bloom | | 1/4 menor que o nível 1          |
-| | bloom_lvl3_weight    0.24  | | Peso 3 do Nível Bloom | | 1/4 menor que o nível 2          |
-| | bloom_lvl4_weight    0.16  | | Peso 4 do Nível Bloom | | 1/4 menor que o nível 3          |
-| | bloom_lvl5_weight    0.24  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 4          |
-| | bloom_lvl6_weight    0.32  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 5          |
-| | bloom_lvl7_weight    0.48  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 6          |
-| | bloom_lvl8_weight    0.64  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 7          |
-+------------------------------+-------------------------+------------------------------------+
++------------------------------+-------------------------+---------------------------+
+| | bloom_lvl0_weight    1.00  | | Peso 0 do Nível Bloom | | Tamanho Máximo.         |
+| | bloom_lvl1_weight    0.48  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 0 |
+| | bloom_lvl2_weight    0.32  | | Peso 2 do Nível Bloom | | 1/4 menor que o nível 1 |
+| | bloom_lvl3_weight    0.24  | | Peso 3 do Nível Bloom | | 1/4 menor que o nível 2 |
+| | bloom_lvl4_weight    0.16  | | Peso 4 do Nível Bloom | | 1/4 menor que o nível 3 |
+| | bloom_lvl5_weight    0.24  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 4 |
+| | bloom_lvl6_weight    0.32  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 5 |
+| | bloom_lvl7_weight    0.48  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 6 |
+| | bloom_lvl8_weight    0.64  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 7 |
++------------------------------+-------------------------+---------------------------+
 
-.. [1]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
+.. [1]	Cropped do Inglês. (Nota do tradutor)
+.. [2]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)
-.. [2]	Lume significa clarão de luz, luz forte, o efeito é muito
+.. [3]	Lume significa clarão de luz, luz forte, o efeito é muito
 		semelhante a uma névoa ou neblina.
