@@ -1033,17 +1033,19 @@ Principais opções de estado e reprodução
 **-snapview** <*viewname*>
 
 	Define a exibição a ser usada ao renderizar instantâneos e vídeos.
+	
 	É predefinido que ambos usem uma exibição especial 'interna', que
 	renderize uma captura instantânea separada por tela ou renderize
 	os vídeos somente da primeira tela. Ao usar essa opção, você
-	pode sobrepor esse comportamento predefinido de exibição e
+	pode alterar esse comportamento predefinido de exibição e
 	selecionar apenas uma exibição que será aplicada a todos os
-	instantâneos e vídeos. Observe que o nome de visualização.
+	instantâneos e vídeos.
+	
 	Observe que <*viewname*> não precisa ser uma combinação perfeita,
 	ao invés disso, ele selecionará a primeira exibição cujo nome
 	corresponda a todos os caracteres definidos por <*viewname*>.
 	
-	Por exemplo, **-snapview native** corresponderá visualização
+	Por exemplo, **-snapview native** irá casar a visualização
 	"Nativa em (15:14)" ainda que não seja uma combinação ideal.
 	O <*viwename*> também pode ser "auto" onde será escolhida a primeira
 	exibição de todas as telas presentes.
