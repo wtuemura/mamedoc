@@ -202,7 +202,15 @@ latex_elements = {
 'pointsize': '10pt',
 
 # Additional stuff for the LaTeX preamble.
+#
+# Em ordem
+# charter = serif font
+# lato = sans-serif font
+# inconsolata = monospace font
+#
+# Source: https://protips.readthedocs.io/pdf-font.html
 #'preamble': '''
+
 'preamble': r'''
 \usepackage{charter}
 \usepackage[defaultsans]{lato}
