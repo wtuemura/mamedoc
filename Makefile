@@ -1,5 +1,8 @@
 # Makefile for Sphinx documentation
 #
+# Adicionado a oppção xelatexpdf que usa o xelatex para fazer a conversão de latex para PDF.
+# O xelatex consegui lidar muito melhor com caracteres unicode do que o pdflatex.
+# Source: https://github.com/agda/agda/commit/a6a437316c9b9d998e6d6d0a6a654a63422a4212
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
@@ -29,6 +32,7 @@ help:
 	@echo "  epub       to make an epub"
 	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
 	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
+	@echo "  xelatexpdf to make LaTeX files and run them through pdflatex"
 	@echo "  text       to make text files"
 	@echo "  man        to make manual pages"
 	@echo "  texinfo    to make Texinfo files"
@@ -112,6 +116,13 @@ latexpdf:
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+
+
+xelatexpdf:
+	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	@echo "Running LaTeX files through xelatex..."
+	$(MAKE) PDFLATEX=xelatex -C $(BUILDDIR)/latex all-pdf
+	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
 
 text:
 	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text

@@ -59,7 +59,7 @@ Por quê o meu pacote MAME não oficial (o EmuCR ou qualquer outro por exemplo) 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Em muitos casos, as alterações de vários subsistemas tais como plug-ins
-Lua, HLSL ou BGFX vem como atualizações para diversos arquivos
+Lua, hlsl ou bgfx vem como atualizações para diversos arquivos
 diferentes assim como o código fonte principal do MAME.
 Infelizmente as versões que vem de terceiros podem vir como apenas um
 executável principal do MAME ou com arquivos externos desatualizados,
@@ -75,7 +75,7 @@ Compile o seu próprio MAME ou use um dos pacotes oficialmente
 distribuídos por nós.
 
 Você também pode acabar tendo este problema caso você não tenha
-atualizado o conteúdo das pastas HLSL e BGFX com as últimas versões
+atualizado o conteúdo das pastas hlsl e bgfx com as últimas versões
 oficiais do MAME.
 
 .. _faster-if-X:
@@ -98,9 +98,9 @@ drasticamente.
 Nenhuma parte do MAME é descartável, independente de qual seja.
 O princípio que o MAME defende que é a preservação e a documentação,
 sejam as máquinas de vídeo poker quanto os arcades, não importa.
-O MAME é open source, muitas coisas já foram abordadas da melhor maneira
-possível, caso você seja um programador habilidoso, há sempre espaço
-para melhorias e elas são sempre bem vindas.
+O MAME é um software de código aberto, muitas coisas já foram abordadas
+da melhor maneira possível, caso você seja um programador habilidoso,
+há sempre espaço para melhorias, todas elas são sempre bem vindas.
 
 
 .. _NeoGeo-broken:
@@ -111,19 +111,20 @@ Por quê a minha ROM de Neo-Geo não funcionam mais? Como eu faço para que o jo
 Recentemente a BIOS do Neo-Geo foi atualizada para adicionar uma nova
 versão da BIOS Universal. Isso começou entre as versões 0.171 e 0.172 do
 MAME que resultou em um erro ao tentar carregar qualquer jogo de
-Neo-Geo com um conjunto **neogeo.zip** desatualizado.
+Neo-Geo com um conjunto **neogeo.zip** desatualizado, isso também afeta
+o conjunto de pacote do jogo **Humble Bundle**.
 
-Isso também afeta o conjunto de pacote do jogo Humble Bundle:
-os jogos em si estão corretos e atualizados a partir da versão 0.173 do
+Os jogos em si estão corretos e atualizados a partir da versão 0.173 do
 MAME (e provavelmente continuará assim) no entanto você mesmo terá que
 atualizar estes arquivos que estão dentro dos pacotes .ZIP.
 No entanto, o conjunto de BIOS do Neo-Geo (**neogeo.zip**) incluído no
-pacote do jogo Humble Bundle está incompleto até a versão 0.172 do MAME.
+pacote do jogo **Humble Bundle** está incompleto até a versão 0.172 do
+MAME.
 
 Sugerimos que você entre em contato com o fornecedor dos seus jogos
-(Humble Bundle e DotEmu) e peça para eles atualizarem o jogo para a
-versão mais recente. Se muita gente pedir de forma gentil, pode ser que
-eles atualizem para você.
+(**Humble Bundle** e **DotEmu**) e peça para eles atualizarem o jogo
+para a versão mais recente. Se muita gente pedir de forma gentil, pode
+ser que eles atualizem para você.
 
 
 .. _Sega-SGMDC:
@@ -134,10 +135,10 @@ Como posso usar a coleção para a Steam do Mega Drive Classics collection do Se
 A partir da atualização de Abril de 2016, todas as imagens ROM incluídas
 no conjunto são agora 100% compatíveis com o MAME e outros emuladores
 *Genesis/Mega Drive*. As ROMs estão guardadas na pasta
-**steamapps\\Sega Classics\\uncompressed ROMs** como uma série de
+``steamapps\\Sega Classics\\uncompressed ROMs`` como uma série de
 extensões em formatos de imagem do tipo *.68K* e *.SGD*, que podem ser
 carregadas diretamente no MAME. Os manuais em PDF para os jogos podem
-também serem encontrados na pasta **steamapps\\Sega Classics\\manuals**.
+também serem encontrados na pasta ``steamapps\\Sega Classics\\manuals``.
 
 
 .. _Missing-ROMs:
@@ -147,48 +148,63 @@ Por quê o MAME alega que "faltam arquivos" sendo que eu tenho essas ROMs?
 
 Pode ser causado por várias razões:
 
-* Não é incomum as ROMs de um jogo mudarem entre as novas versões do
-  MAME. Por quê isso aconteceria?
-  Muitas vezes é feita uma extração melhor do ci que contém a ROM ou
-  então foi feita uma extração mais completa hoje e que não foi possível
-  na época, ou até mesmo foi feito uma nova extração para corrigir os
-  erros detectados nas ROMs anteriores. As primeiras versões do MAME
-  não eram tão chatas sobre esta questão, porém as versões mais recentes
-  são.
-  Além disso, podem haver mais características de um jogo emulado em uma
-  versão posterior que não havia na versão anterior, o que exige a
-  execução de mais códigos dentro do MAME para rodar essa nova ROM.
+*	Não é incomum as ROMs de um jogo mudarem entre as novas versões do
+	MAME. Por quê isso aconteceria?
 
-* Você pode descobrir que alguns jogos precisam de arquivos CHD.
-  Um arquivo CHD é uma representação comprimida de uma imagem de um jogo
-  em disco rígido, CD-ROM ou laserdisc, geralmente não é incluído como
-  parte das ROMs de um jogo. No entanto, assim como na maioria dos
-  casos, esses arquivos são necessários para rodar o jogo, e o MAME vai
-  reclamar se eles não puderem ser encontrados.
+	Muitas vezes é feita uma extração melhor do CI que contém a ROM ou
+	então foi feita uma extração mais completa hoje e que não foi
+	possível na época, ou até mesmo foi feito uma nova extração para
+	corrigir os erros detectados nas ROMs anteriores. As primeiras
+	versões do MAME não eram tão chatas sobre esta questão, porém as
+	versões mais recentes são.
 
-* Alguns jogos como Neo-Geo, Playchoice-10, Convertible Video System,
-  Deco Cassette, MegaTech, MegaPlay, ST-V Titan e outros, precisam das
-  suas ROMs e do conjunto de BIOS. As ROMs da BIOS geralmente contêm um
-  código da ROM que é usado para inicializar a máquina, o código faz
-  lista dos jogos em sistema multijogos e o código comum a todos os
-  jogos no referido sistema. As ROMs da BIOS devem estar nomeadas
-  corretamente e comprimida em formato .ZIP dentro da pasta ROMs.
+	Além disso, podem haver mais características de um jogo emulado em uma
+	versão posterior que não havia na versão anterior, o que exige a
+	execução de mais códigos dentro do MAME para rodar essa nova ROM.
 
-* Versões mais antigas do MAME precisavam de tabelas de descriptografia
-  para que fosse possível emular jogos da Capcom Play System 2
-  (também conhecido como jogos CPS2). Que foram criados pela equipe
-  CPS2Shock.
+*	Você pode descobrir que alguns jogos precisam de arquivos CHD.
 
-* Alguns jogos no MAME são considerados "Clones" de outros jogos.
-  Isto é, o jogo em questão é simplesmente uma versão alternativa do
-  mesmo jogo. As versões alternativas de alguns jogos incluem as versões
-  com texto em outros idiomas, com diferentes datas de direito autoral,
-  versões posteriores ou atualizações, versões piratas, etc.
-  Os jogos "clonados" muitas vezes se sobrepõem algum código da ROM do
-  jogo, como se fosse a versão original. Para verificar se você tem
-  algum tipo de jogo "clonado" digite o comando
-  "**MAME -listclones**". Para rodar um "jogo clonado" basta colocar a
-  ROM pai dentro da pasta ROMs (sempre zipada).
+	Um arquivo CHD é uma representação comprimida de uma imagem de um
+	jogo em disco rígido, CD-ROM ou laserdisc, geralmente não é incluído
+	como parte das ROMs de um jogo.
+
+	No entanto, assim como na maioria dos casos, esses arquivos são
+	necessários para rodar o jogo, e o MAME vai reclamar se eles não
+	puderem ser encontrados.
+
+*	Alguns jogos como **Neo-Geo**, **Playchoice-10**, **Convertible
+	Video System**, **Deco Cassette**, **MegaTech**, **MegaPlay**,
+	**ST-V Titan** e outros, precisam das suas ROMs e do conjunto de
+	BIOS.
+
+	As ROMs da BIOS geralmente contêm um código da ROM que é usado para
+	inicializar a máquina, o código faz lista dos jogos em sistema
+	multijogos e o código comum a todos os jogos no referido sistema.
+
+	As ROMs da BIOS devem estar nomeadas corretamente e comprimida em
+	formato ``.zip`` dentro da pasta ROMs.
+
+*	Versões mais antigas do MAME precisavam de tabelas de
+	descriptografia, criado na época pela equipe **CPS2Shock** para que
+	fosse possível emular jogos da **Capcom Play System 2**, também
+	conhecido como jogos **CPS2**.
+
+*	Alguns jogos no MAME são considerados *Clones* de outros jogos.
+	Isto é, o jogo em questão é simplesmente uma versão alternativa do
+	mesmo jogo.
+
+	As versões alternativas de alguns jogos incluem as versões com
+	texto em outros idiomas, com diferentes datas de direito autoral,
+	versões posteriores ou atualizações, versões piratas, etc.
+
+	Os jogos "clonados" muitas vezes se sobrepõem algum código da ROM do
+	jogo, como se fosse a versão original. Para verificar se você tem
+	algum tipo de jogo "clonado" digite o comando: ::
+
+		mame.exe -listclones
+
+	Para rodar um "*jogo clonado*" basta colocar a ROM pai dentro da
+	pasta ROMs (sempre zipada).
 
 
 .. _ROM-Verify:
@@ -202,15 +218,20 @@ aquelas testadas e que funcionam corretamente com o MAME. Você precisará
 obter as ROMs corretas através de meios legais.
 
 Se você tiver vários jogos e quiser verificar se eles são compatíveis
-com a versão atual do MAME, você poderá usar a opção *-verifyroms*.
+com a versão atual do MAME, você poderá usar a opção ``-verifyroms``.
 
-| Por Exemplo:
-| **mame -verifyroms robby**
-| ...verifica as suas ROMs para o jogo com nome *Robby Roto* e exibe os resultados na tela.
+Por Exemplo: ::
 
-| **mame -verifyroms \* >verify.txt**
-| ...verifica a autenticidade de TODAS as ROMs dentro do seu diretório ROMs e grava os resultados dentro de um arquivo de texto chamado *verify.txt*.
+		mame.exe -verifyroms robby
 
+Verifica as suas ROMs para o jogo **Robby Roto** e exibe os resultados
+na tela. ::
+
+		mame.exe -verifyroms \* >verify.txt
+
+Verifica a autenticidade de TODAS as ROMs dentro do seu diretório ROMs
+e grava os resultados dentro de um arquivo de texto chamado
+*verify.txt*.
 
 .. _Parent-Sets:
 
@@ -365,11 +386,11 @@ programas de computador alheios, que é o que você faz caso faça cópias
 ilegais de ROMs.
 
 O DMCA é uma lei Americana, é um acrônimo para **Digital Millennium
-Copyright Act** ou numa tradução literal ficaria "Lei dos Direitos
-Autorais do Milênio Digital".
+Copyright Act** ou numa tradução literal ficaria "*Lei dos Direitos
+Autorais do Milênio Digital*".
+
 No Brasil essa lei não tem validade alguma e tão pouco existe qualquer
 lei equivalente no Brasil.
-
 
 .. _24-hours:
 
@@ -399,14 +420,17 @@ contrário e permita tal uso.
 Mas eu já vi gabinetes do Ultracade e Global VR Classics montados em lugares públicos? Por quê eles podem?
 ----------------------------------------------------------------------------------------------------------
 
-O Ultracade tinha dois produtos distintos. O produto Ultracade é uma
-máquina comercial com licenças comerciais para uso dos jogos.
-Estas máquinas foram concebidas para serem colocadas em local público
-e gerar renda, como as máquinas de arcade tradicionais. Seus outros
-produtos são a série Arcade Legends, elas possuem uma licença voltada
-para uso exclusivo em ambiente particular e residencial.
+O Ultracade tinha dois produtos distintos, a máquina **Ultracade**
+possuía **licenças comerciais** para o uso dos jogos com finalidade
+comercial, já o **Arcade Legends** possuía uma licença **exclusiva**
+voltada **apenas** para uso em ambiente particular e residencial.
+
+Apenas as máquinas com licença comercial foram concebidas para serem
+colocadas em local público e gerar renda, assim como foram e ainda são
+as máquinas de arcade tradicionais.
+
 Desde sua aquisição pela empresa Global VR eles só oferecem o gabinete
-Global VR Classics, que equivale ao produto Ultracade anterior.
+**Global VR Classics**, que equivale ao produto Ultracade anterior.
 
 
 .. _Blackscreen-DirectX:
@@ -435,11 +459,15 @@ dispositivos fornecendo resultados mais estáveis. No entanto, alguns
 dispositivos precisam da instalação de drivers especiais que podem não
 funcionar ou não ser compatível com o MAME.
 
-Tente configurar as opções **keyboardprovider**, **mouseprovider** ou
-**joystickprovider** (dependendo de qual tipo de dispositivo de entrada
-ele seja) vindo da entrada direta para uma das outras opções como o
-dinput ou win32. Consulte :ref:`osd-commandline-options` para obter
-detalhes sobre provedores compatíveis.
+Tente configurar as opções
+:ref:`keyboardprovider<mame-commandline-keyboardprovider>`,
+:ref:`mouseprovider<mame-commandline-mouseprovider>` ou
+:ref:`joystickprovider<mame-commandline-joystickprovider>`
+(dependendo de qual tipo de dispositivo de entrada ele seja) vindo da
+entrada direta para uma das outras opções como o dinput ou win32.
+
+Consulte também o capítulo :ref:`osd-commandline-options` para saber
+mais detalhes de outros provedores compatíveis.
 
 
 .. _ExternalOPL:
@@ -447,14 +475,17 @@ detalhes sobre provedores compatíveis.
 O que aconteceu com o suporte do MAME para placas de som externas com o OPL2 integrado?
 ---------------------------------------------------------------------------------------
 
-O MAME ao invés de emular o OPL2 [2]_, inicialmente adicionou o suporte
-para placas de som com o CI YM3212 da Yamaha em sua versão 0.23.
-Na versão nativa do MAME nunca houve apoio a essa funcionalidade e foi
-completamente eliminada na versão 0.60 do MAME pois a emulação do OPL2
-tornou-se avançada o suficiente para ser a melhor solução para a
-maioria dos casos naquela época. E hoje as placas de som atuais e mais
-modernas, não vem mais com o YM3212 embutido, tornando-se então a única
-solução atualmente.
+O MAME ao invés de emular o **OPL2** [2]_, inicialmente adicionou o
+suporte para placas de som com o CI **YM3212** da Yamaha em sua versão
+0.23.
+
+Na versão nativa do MAME nunca houve um suporte adequado para essa
+funcionalidade e foi completamente eliminada na versão 0.60, assim a
+emulação do OPL2 tornou-se avançada o suficiente para ser a melhor
+solução para a maioria dos casos naquela época.
+
+Atualmente as placas de som mais recentes e modernas, não vem mais com
+o **YM3212** embutido, tornando-se então a única solução.
 
 As versões não oficiais do MAME podem também ter mantido esse suporte
 por um período de tempo maior.

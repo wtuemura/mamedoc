@@ -228,10 +228,6 @@ Caso não haja nenhum problema durante o processo de compilação, você
 terá um executável do MAME chamado **mame64.exe** para a versão *64-bit*
 ou **mame.exe** caso você tenha compilado uma versão para *32-bit*.
 
-.. raw:: latex
-
-	\clearpage
-
 Lidando com alguns problemas comuns
 -----------------------------------
 

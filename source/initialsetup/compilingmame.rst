@@ -43,13 +43,17 @@ Para todas as plataformas
 
 *	É possível usar os núcleos extras do seu processador para ajudar a
 	reduzir o tempo de compilação. Isso é feito adicionando o parâmetro
-	**-j** ao comando make. Observe que a quantidade máxima de núcleos
+	**-j** ao comando make.
+
+	Observe que a quantidade máxima de núcleos
 	que você pode usar fica limitado a quantidade de núcleos que o seu
 	processador tiver mais um. Usando valores acima do limite do seu
 	processador não faz com que a compilação fique mais rápida, além
 	disso, a sobrecarga extra de processamento pode fazer com que seu
 	processador superaqueça, seu sistema pode ficar mais lento e pare de
-	responder, etc. Logo, a configuração ideal para se obter a melhor
+	responder, etc.
+
+	Logo, a configuração ideal para se obter a melhor
 	velocidade possível de compilação num processador Quad Core seria
 	**make -j5**, por exemplo.
 
@@ -57,17 +61,17 @@ Para todas as plataformas
 	compilação usando a opção *SYMBOLS=1*, embora seja totalmente
 	desnecessária para a grande maioria das pessoas.
 
-Abaixo um apanhado de tudo o que foi mostrado até o momento usando
-apenas o driver do jogo **Pac Man**, com as ferramentas extras em um
-computador com processador Quad Core i5 ou i7 por exemplo: ::
+*	Abaixo um apanhado de tudo o que foi mostrado até o momento usando
+	apenas o driver do jogo **Pac Man**, com as ferramentas extras em um
+	computador com processador Quad Core i5 ou i7 por exemplo: ::
 
-	make SOURCES=src/mame/drivers/pacman.cpp TOOLS=1 REGENIE=1 -j5
+		make SOURCES=src/mame/drivers/pacman.cpp TOOLS=1 REGENIE=1 -j5
 
 
-Para compilar o MAME em um notebook com processadores Dual Core i3 ou
-i5 por exemplo: ::
+*	Para compilar o MAME em um notebook com processadores Dual Core i3 ou
+	i5 por exemplo: ::
 
-	make -j3
+		make -j3
 
 .. _compiling-windows:
 
@@ -106,6 +110,10 @@ problemas, certifique-se que você tenha a versão mais recente. ::
 	sudo dnf install gcc gcc-c++ SDL2-devel SDL2_ttf-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel
 
 A compilação é exatamente como descrito acima para todas as Plataformas.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _compiling-ubuntu:
 
@@ -462,14 +470,15 @@ Opções para compilação
 	Opções adicionais que serão passadas ao compilador ao compilar
 	arquivos de código fonte Objecive-C.
 
+.. raw:: latex
+
+	\clearpage
+
 **ARCHOPTS_OBJCXX**
 
 	Opções adicionais que serão passadas ao compilador ao compilar
 	arquivos de código fonte Objecive-C++.
 
-.. raw:: latex
-
-	\clearpage
 
 Sede das bibliotecas e framework
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -537,6 +546,10 @@ Sede das bibliotecas e framework
 	Defina como **1** caso prefira usar a biblioteca PortAudio do seu
 	sistema ao invés de usar a versão fornecida pelo MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 **USE_BUNDLED_LIB_SDL2**
 
 	Defina como **1** caso prefira usar a versão da biblioteca fornecida
@@ -544,10 +557,6 @@ Sede das bibliotecas e framework
 	vem predefinida para compilações feitas em Visual Studio e em
 	versões para Android. Já para outras outras configurações, é
 	preferível que seja usada a versão instalada no sistema.
-
-.. raw:: latex
-
-	\clearpage
 
 **USE_SYSTEM_LIB_UTF8PROC**
 
@@ -609,6 +618,7 @@ para o MAME, pois afeta diretamente a performance do emulador, dificulta
 que essas verificações adicionais sejam desabilitadas, assim como torna
 difícil definir outros valores para ``_FORTIFY_SOURCE`` como ``2`` por
 exemplo, que habilita verificações ainda mais restritas.
+
 Neste caso, você deve realmente pegar no pé dos mantenedores da sua
 distribuição preferida, deixando claro que você não quer que o GNU GCC
 tenha comportamentos fora do padrão.
@@ -623,10 +633,6 @@ A distribuição Red Had faz da seguinte maneira, a opção
 ``_FORTIFY_SOURCE`` é definida apenas dentro do ambiente de compilação
 dos pacotes RPM e ao invés de distribuir uma versão modificada do GNU
 GCC.
-
-.. raw:: latex
-
-	\clearpage
 
 Caso você encontre erros relacionados com ``bits/string_fortified.h``,
 você deve antes de mais nada verificar e ter certeza se

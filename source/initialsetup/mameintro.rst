@@ -1,7 +1,6 @@
 Os sistemas emulados pelo MAME
 ==============================
 
-
 O ProjectMESS contém uma lista completa dos sistemas atualmente
 emulados. Você irá notar que ter um sistema emulado, não significa que
 a emulação dele está perfeita. Você pode querer:
@@ -28,8 +27,6 @@ A maior parte do MAME é programado em C++, alguns componentes principais
 em C e outras linguagens auxiliares. Atualmente o MAME consegue emular
 mais de 3200 sistemas independentes das últimas 5 décadas.
 
-
-
 Os sistemas operacionais compatíveis
 ====================================
 
@@ -39,7 +36,6 @@ DirectX/BGFX ou com suporte SDL), Linux, FreeBSD e Max OS X. Além disso
 há suporte para ambas as versões de 32 e 64 bits, saiba que a versão
 64 bits mostra um improviso significativo na performance se comparado
 com a versão de 32 bits.
-
 
 Requisitos do sistema
 =====================
@@ -92,7 +88,6 @@ que todos os sistemas emulados rodem na sua velocidade nativa, seja no
 seu computador ou seja lá onde você estiver rodando o MAME; o principal
 objetivo é documentar o hardware e reproduzir o seu comportamento
 original tão fielmente quanto for possível.
-
 
 Extrações de BIOS e programas
 -----------------------------

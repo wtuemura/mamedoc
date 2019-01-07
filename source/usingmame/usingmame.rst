@@ -9,7 +9,7 @@ apresentada a interface gráfica do MAME ao clicar duas vezes no arquivo
 Caso você esteja interessado em desvendar todo o poder que o MAME pode
 te oferecer, continue lendo.
 
-Em plataformas baseadas em Macintosh OS X e plataformas com base \*nix,
+Em plataformas baseadas em Macintosh OS X e plataformas com base Unix,
 certifique-se de configurar a fonte do seu sistema para que corresponda
 ao seu idioma antes de iniciar, caso contrário você pode não conseguir
 ler o texto devido à falta de glifos e outros caracteres.
@@ -45,12 +45,6 @@ elas possam voltar a funcionar.
 
 Caso você esteja carregando uma placa de arcade ou outro conteúdo que
 não esteja na lista, as coisas ficam um pouco mais complicadas.
-
-.. A nice and clean way to do a page break, this case for latex and PDF
-   only.
-.. raw:: latex
-
-	\clearpage
 
 A estrutura básica da linha de comando fica assim:
 
@@ -104,7 +98,7 @@ disponíveis para o MAME. As opções principais são descritas na seção
 
 Mostra uma lista (bastante longa) das opções de configuração que estão
 sendo usadas pelo MAME. Essas configurações sempre podem ser modificadas
-na linha de comando ou editadas diretamente no arquivo **mame.ini** que
+na linha de comando ou editadas diretamente no arquivo ``mame.ini`` que
 é o arquivo de configuração primário do MAME. Você pode encontrar uma
 descrição de algumas opções de configuração na seção
 :ref:`index-commandline` do manual (na maioria dos casos, cada opção de
@@ -114,9 +108,9 @@ comando).
 
 	**mame.exe -createconfig**
 
-Cria um novo arquivo **mame.ini** com as configurações primárias já
+Cria um novo arquivo ``mame.ini`` com as configurações primárias já
 predefinidas.
-Observe que o **mame.ini** é basicamente um arquivo de texto simples,
+Observe que o ``mame.ini`` é basicamente um arquivo de texto simples,
 portanto, você pode abri-lo com qualquer editor de texto (como o
 Notepad, Geany, Emacs ou TextEdit por exemplo) e alterar todas as opções
 conforme a sua necessidade. A principio, não há a necessidade de nenhum
@@ -124,7 +118,7 @@ ajuste específico para começar a usar o MAME, então você pode
 basicamente deixar a maioria das opções inalteradas.
 
 Caso o MAME venha a ser atualizado, novas opções disponíveis serão
-aplicadas ao mame.ini anterior [2]_ quando o comando for executado
+aplicadas ao ``mame.ini`` anterior [2]_ quando o comando for executado
 novamente.
 
 Agora que você tem mais confiança, você pode tentar melhorar e
@@ -139,5 +133,5 @@ Veja :ref:`advanced-multi-CFG` para obter mais informações.
 		uma máquina irá retornar um erro "*Unknown system*".
 		(Nota do tradutor)
 .. [2]	Caso você tenha alguma opção customizada neste arquivo, é
-		recomendável que um backp seja feito antes de executar o
+		recomendável que um backup seja feito antes de executar o
 		comando. (Nota do tradutor)
