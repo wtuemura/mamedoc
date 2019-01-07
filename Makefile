@@ -1,7 +1,7 @@
 # Makefile for Sphinx documentation
 #
 # Adicionado a oppção xelatexpdf que usa o xelatex para fazer a conversão de latex para PDF.
-# O xelatex consegui lidar muito melhor com caracteres unicode do que o pdflatex.
+# O conversor xelatex consegue lidar muito melhor com caracteres unicode do que o pdflatex.
 # Source: https://github.com/agda/agda/commit/a6a437316c9b9d998e6d6d0a6a654a63422a4212
 
 # You can set these variables from the command line.
