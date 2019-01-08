@@ -1333,49 +1333,87 @@ Principais opções de vídeo
 	dependem do sistema operacional utilizado e se a versão do MAME é
 	uma versão SDL ou não.
 
-* **Geralmente Disponível:**
+**Opções geralmente disponíveis:**
 
-	**bgfx** determina o novo renderizador acelerado por hardware.
+.. _mame-commandline-video-bgfx:
+
+	* **bgfx**
+
+	  Determina o novo renderizador acelerado por hardware.
+
+.. _mame-commandline-video-opengl:
+
+	* **opengl**
+
+	  Faz a renderização do vídeo usando `OpenGL <https://www.tecmundo.com.br/video-game-e-jogos/872-o-que-e-opengl-.htm>`_,
+	  use em sistemas Windows compatíveis quando por algum motivo a opção
+	  ``d3d`` causar problemas.
+	  
+	  Em sistemas não Windows, essa é a opção responsável para que a
+	  renderização da tela aconteça através de aceleração por hardware,
+	  caso seja compatível com o seu sistema operacional.
+
+.. _mame-commandline-video-none:
+
+	* **none**
+
+	  Não exibe janelas e nem mostra nada na tela. É principalmente
+	  utilizado para realizar testes de performance (*benchmarks*)
+	  usando apenas a CPU.
+
+**No Windows:**
+
+.. _mame-commandline-video-gdi:
+
+	* **gdi**
+
+	  Diz ao MAME para renderizar o vídeo usando funções gráficas mais
+	  antigas do Windows.
+	  Em termos de performance é a opção mais lenta porém a mais
+	  compatível com as versões os sistemas Windows mais antigos.
+
+.. _mame-commandline-video-d3d:
+
+	* **d3d**
+
+	  Diz ao MAME para renderizar a tela com o **Direct3D**.
+	  Isso produz uma saída com uma melhor qualidade se comparada com a
+	  opção que o **gdi** assim como permite opções adicionais de
+	  renderização da tela e aceleração gráfica via hardware.
 	
-	**opengl** faz a renderização do vídeo usando a aceleração OpenGL.
-	
-	**none** não exibe janelas e nem mostra nada na tela.
-	
-	Essa última é usada principalmente para realizar testes de
-	performance do processador sem fazer uso da placa de vídeo.
+	  É recomendável que você tenha uma placa de vídeo mediana (2002+)
+	  ou uma placa de vídeo Intel embutida modelo *HD3000* ou superior.
 
+**Em outras plataformas (incluindo o SDL no Windows):**
 
+.. _mame-commandline-video-accel:
 
-* **No Windows:**
+	* **accel**
 
-	**gdi** diz ao MAME para renderizar o vídeo usando funções gráficas mais
-	antigas do Windows. Esta é a opção mais lenta porém a mais compatível
-	com as versões mais antigas do Windows.
+	  Diz ao MAME para, se possível, processar o vídeo usando a
+	  aceleração 2D do SDL.
 
-	**d3d** diz MAME para renderizar a tela com o Direct3D.
-	Isso produz uma saída de melhor qualidade que o gdi e permite opções
-	adicionais de renderização da tela. É recomendável que você tenha uma
-	placa de vídeo mediana (2002+) ou uma placa de vídeo Intel embutida
-	modelo *HD3000* ou superior.
+.. _mame-commandline-video-soft:
 
-* **Em outras plataformas (incluindo o SDL no Windows):**
+	* **soft**
 
-	**accel** diz ao MAME para, se possível, processar o vídeo usando a
-	aceleração 2D do SDL.
-
-	**soft** faz com que a tela seja renderizada através de software.
-	Isso não é tão rápido ou tão bom quanto o OpenGL, mas favorece uma
-	melhor compatibilidade em qualquer plataforma.
+	  Faz com que a tela seja renderizada através de software.
+	  Por não usar nenhum tipo de aceleração de vídeo a performance da
+	  emulação pode ser penalizada, porém favorece uma melhor
+	  compatibilidade em qualquer plataforma.
 
 * **Predefinições:**
 
-	O valor predefinido no Windows é **d3d**.
+	No Windows é **d3d**.
 	
-	Para Mac OS X é **opengl** pois é quase certo que o Mac OS X tenha
-	uma pilha OpenGL compatível.
+	No Mac OS X é **opengl** pois é quase certo que exista uma pilha
+	OpenGL compatível.
 
 		O valor predefinido para todos os outros sistemas é **soft**.
 
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-numscreens:
 
