@@ -1504,6 +1504,7 @@ Principais opções de vídeo
 	O filtro bilinear, aplica um leve efeito de embaçamento ou
 	suavização à tela, amenizando um pouco o serrilhado nos contornos
 	gráficos e suavizando a tela do sistema.
+
 	Quando desabilitado você terá uma imagem pura e com aparência mais
 	serrilhada e também ocasiona artefatos na tela em caso de
 	dimensionamento. Caso não goste da aparência filtrada e amaciada da
@@ -1512,8 +1513,8 @@ Principais opções de vídeo
 	
 		O valor predefinido é **Ligado** (**-filter**).
 
-	Funciona com todos os modos de vídeo (bgfx, d3d, etc) no Windows e
-	nas outras plataformas **APENAS** aquelas com o OpenGL.
+	No Windows funciona com todos os modos de vídeo (bgfx, d3d, etc),
+	nas outras plataformas **APENAS** aquelas compatíveis com OpenGL.
 
 .. _mame-commandline-unevenstretch:
 
