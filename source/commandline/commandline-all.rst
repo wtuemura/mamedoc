@@ -980,30 +980,40 @@ Principais opções de estado e reprodução
 	Descreve como MAME deve nomear arquivos de instantâneos de tela.
 	<*name*> será o guia que o MAME usará para nomear o arquivo. 
 	
-	São disponibilizadas três substituições simples: o caractere ``/``
-	representa o separador de caminho em qualquer plataforma de destino
-	(até mesmo o Windows); a string ``%g`` representa o nome do driver
-	do sistema atual; e a string ``%i`` representa um índice de
-	incremento. Caso o ``%i`` seja omitido, cada instantâneo tirado
-	substituirá o anterior; caso contrário, o MAME encontrará o próximo
-	valor vazio para ``%i`` e o usará como um nome de arquivo.
+	São disponibilizadas três substituições simples:
 	
-	O valor predefinido é ``%g/%i``, que cria uma pasta separada para
-	cada sistema e nomeia os instantâneos dentro ele, começando com
-	**0000** e incrementando a partir daí.
+* O caractere ``/``
+
+	Usado como separador de caminho em qualquer plataforma inclusive no
+	Windows.
+
+* Especificador de conversão ``%g``
+
+		Converte ``%g`` para o nome do driver que for usado.
+
+* Especificador de conversão ``%i``
+
+	Cria arquivos iniciando com nome ``0000`` e os incrementa enquanto
+	novos instantâneos forem sendo criados, O MAME incrementará o valor
+	de ``%i`` para o próximo vazio, caso ele seja omitido, os
+	instantâneos existentes com o mesmo nome serão gravados por cima.
 	
-	Em adição ao que foi dito acima, para os drivers que usam mídias
-	diferentes, como cartões ou disquetes, você também pode usar o
-	indicador ``%d_[media]``. Substitua ``[media]`` pelo comutador de
-	mídia que você deseja usar. 
+		O valor predefinido é **%g/%i**
 	
-	Alguns exemplos: se você usar ``mame robby -snapname foo/%g%i`` os
-	instantâneos serão salvos em **snaps\foo\robby0000.png**,
-	**snaps\foo\robby0001.png** e assim por diante. Caso você use
-	``mame nes -cart robby -snapname %g/%d_cart`` os instantâneos serão
-	salvos como **snaps\\nes\\robby.png**, caso você use
+	Para os drivers que usam mídias diferentes, como cartões ou
+	disquetes, você também pode usar ``%d_[media]``.
+	Substitua ``[media]`` pelo dispositivo que deseja usar. 
+	
+	Alguns exemplos: Caso use ``mame robby -snapname foo/%g%i`` os
+	instantâneos serão salvos como ``snaps\foo\robby0000.png``,
+	``snaps\foo\robby0001.png`` e assim por diante.
+	
+	Caso use ``mame nes -cart robby -snapname %g/%d_cart`` os
+	instantâneos serão salvos como ``snaps\nes\robby.png``.
+	
+	No caso deste outro exemplo,
 	``mame c64 -flop1 robby -snapname %g/%d_flop1/%i`` estes serão
-	salvos como **snaps\\c64\\robby\\0000.png**.
+	salvos como ``snaps\c64\robby\0000.png``.
 
 .. _mame-commandline-snapsize:
 
@@ -1044,6 +1054,10 @@ Principais opções de estado e reprodução
 
 		O valor predefinido é **internal**.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-nosnapbilinear:
 
 **-[no]snapbilinear**
@@ -1056,10 +1070,6 @@ Principais opções de estado e reprodução
 	vídeo.
 
 		O valor predefinido é **Ligado** (**-snapbilinear**).
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-statename:
 
