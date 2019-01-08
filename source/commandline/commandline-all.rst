@@ -738,8 +738,8 @@ Principais opções de caminho
 		O valor predefinido é **software** (isto é, um diretório chamado
 		**software** no diretório raiz do MAME).
 
-Principais opções de caminho final de diretório
------------------------------------------------
+Opções para a configuração dos principais diretórios
+----------------------------------------------------
 
 .. _mame-commandline-cfgdirectory:
 
