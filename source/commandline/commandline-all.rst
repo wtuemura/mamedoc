@@ -756,9 +756,8 @@ Opções para a configuração dos principais diretórios
 	do depurador.
 	
 		O valor predefinido é **cfg** (isto é, um diretório com o nome
-		**cfg** no diretório raiz do MAME).
-
-		Caso este diretório não exista, ele será criado automaticamente.
+		**cfg** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 .. _mame-commandline-nvramdirectory:
 
@@ -771,9 +770,8 @@ Opções para a configuração dos principais diretórios
 	lidas no início da emulação e gravadas ao sair.
 
 		O valor predefinido é **nvram** (isto é, um diretório com nome
-		"nvram" no diretório raiz do MAME).
-
-		Caso este diretório não exista, ele será criado automaticamente.
+		"nvram" no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 .. _mame-commandline-inputdirectory:
 
@@ -784,9 +782,8 @@ Opções para a configuração dos principais diretórios
 	**-record** e reproduzidas através da opção **-playback**.
 
 		O valor predefinido é **inp** (ou seja, um diretório de nome
-		**inp** no diretório raiz do MAME).
-
-		Caso este diretório não exista, ele será criado automaticamente.
+		**inp** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 .. _mame-commandline-statedirectory:
 
@@ -797,9 +794,8 @@ Opções para a configuração dos principais diretórios
 	solicitação do usuário ou ao usar a opção **-autosave**.
 
 		O valor predefinido é **sta** (isto é, um diretório de nome
-		**sta** no diretório raiz do MAME).
-
-		Caso este diretório não exista, ele será criado automaticamente.
+		**sta** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 .. _mame-commandline-snapshotdirectory:
 
@@ -809,9 +805,8 @@ Opções para a configuração dos principais diretórios
 	armazenados quando solicitado pelo usuário.
 
 		O valor predefinido é **snap** (isto é, um diretório chamado
-		**snap** no diretório raiz do MAME).
-
-		Caso este diretório não exista, ele será criado automaticamente.
+		**snap** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 .. _mame-commandline-diffdirectory:
 
@@ -824,9 +819,8 @@ Opções para a configuração dos principais diretórios
 	emulação com uma imagem compactada do disco rígido.
 
 		O valor predefinido é **diff** (isto é, um diretório chamado
-		**diff** no diretório raiz do MAME).
-
-		Caso este diretório não exista, ele será criado automaticamente.
+		**diff** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 .. _mame-commandline-commentdirectory:
 
@@ -838,9 +832,8 @@ Opções para a configuração dos principais diretórios
 	desmontado (disassembly).
 
 		O valor predefinido é **comments** (isto é, um diretório chamado
-		**comments** no diretório raiz do MAME).
-
-		Caso este diretório não exista, ele será criado automaticamente.
+		**comments** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 Principais opções de estado e reprodução
 ----------------------------------------
