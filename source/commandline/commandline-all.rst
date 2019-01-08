@@ -1441,28 +1441,31 @@ Principais opções de vídeo
 	computador antes de começar a desenhar na tela. Caso esta opção
 	esteja desligada, o MAME só irá desenhar na tela com tempo
 	posterior ou até mesmo durante um ciclo de atualização de tela. Isso
-	pode causar um "screen tearing" [6]_.
+	pode causar um *screen tearing* [6]_.
+
 	O efeito "tearing" não é perceptível em todos os sistemas, porém
 	algumas pessoas acham o efeito desagradável, algumas mais do que as
 	outras.
-	Entretanto, ao ativar esta opção, saiba que você desperdiçará
-	preciosos ciclos de CPU enquanto o mesmo espera o tempo certo para
-	desenhar na tela, fazendo com que a performance no geral seja
-	prejudicada.
-	Só é necessário ligar esta opção caso você jogue em modo janelado.
+	Saiba que ao ativar esta opção você desperdiçará preciosos ciclos
+	de CPU enquanto se espera o tempo certo para desenhar na tela
+	fazendo com que a performance no geral seja comprometida.
 
-	Em modo de tela cheia, só será necessário caso a opção
-	**-triplebuffer** não remova o efeito tearing, então você deve usar
-	as duas opções juntas **-notriplebuffer -waitvsync**. Essa opção não
-	funciona com a opção **-video gdi**.
+	Apenas utilize esta opção caso você esteja jogando em modo janelado.
+
+	Em modo de tela cheia, a opção só será necessária caso a opção
+	``-triplebuffer`` não remova o indesejado efeito *tearing*, neste
+	caso você deve ambas as opções em conjunto ``-notriplebuffer``
+	``-waitvsync``.
+	A opção ``-waitvsync`` não funciona com ``-video gdi``.
 	
 		O valor predefinido é **Desligado** (**-nowaitvsync**).
 
-	Essa opção funcionará com o MAME SDL dependendo exclusivamente do
-	seu sistema operacional e dos drivers da sua placa de vídeo que no
-	geral não funcionam em modo janelado, portanto você obterá maior
-	chances de sucesso ao usar o modo de tela inteira com a opção
-	**-video opengl**.
+	O **MAME SDL** funcionará com essa opção em conjunto com o modo
+	janelado, caso haja compatibilidade do seu sistema operacional,
+	da sua placa de vídeo e respectivos drivers.
+	
+	Rode o **MAME SDL** com a opção ``-video opengl`` para aumentar as
+	suas chances de sucesso.
 
 .. _mame-commandline-syncrefresh:
 
