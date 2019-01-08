@@ -78,7 +78,7 @@ Para questões relacionadas à licença do MAME, marca comercial ou
 qualquer outra utilização, acesse:
 https://www.mamedev.org/
 
-| **MAME®**
+| **MAME ®**
 | **Copyright © 1997-2018 by Nicola Salmoria and the MAME team**
 | **MAME é uma marca registrada e propriedade de Gregory Ember**
 |

@@ -1,3 +1,8 @@
+
+.. raw:: latex
+
+	\clearpage
+
 Opções de linha de comando específicos para a versão SDL
 ========================================================
 
@@ -5,8 +10,6 @@ Nesta seção descreveremos as opções de configuração voltadas
 especificamente para qualquer versão compatível com o SDL (incluindo o
 Windows caso o MAME tenha sido compilado com o SDL ao invés da sua forma
 nativa).
-
-
 
 Opções de performance
 ---------------------
@@ -73,6 +76,9 @@ Mapeamento do teclado SDL
 	
 	O valor predefinido é **keymap.dat**.
 
+.. raw:: latex
+
+	\clearpage
 
 Mapeamento de joystick SDL
 --------------------------

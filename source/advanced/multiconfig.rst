@@ -76,7 +76,6 @@ A ordem de leitura dos arquivos
 		Usando o nosso exemplo anterior do Pac-Man, isso seria um
 		arquivo chamado ``pacman.ini``.
 
-
 Exemplos da sequência de leitura dos arquivos
 ---------------------------------------------
 

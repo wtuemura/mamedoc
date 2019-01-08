@@ -1,3 +1,8 @@
+
+.. raw:: latex
+
+	\clearpage
+
 Os efeitos HLSL para Windows
 ============================
 
@@ -58,6 +63,9 @@ ilustração e você vai notar um leve esticamento vertical, porém os
 resultados ainda serão bons o suficiente, como se fossem um monitor com
 formato 4:3.
 
+.. raw:: latex
+
+	\clearpage
 
 Introdução ao HLSL
 ------------------
@@ -375,10 +383,6 @@ azul.
 
 	* **blu_ratio** (*Proporção de sinal RGB Azul*)
 
-.. raw:: latex
-
-	\clearpage
-
 **offset**
 
 	Fortalece ou enfraquece a intensidade do deslocamento do sinal em
@@ -429,6 +433,10 @@ azul.
 **saturation**
 
 	Define a intensidade de saturação de cor.
+
+.. raw:: latex
+
+	\clearpage
 
 **bloom_blend_mode**
 
@@ -486,6 +494,10 @@ Estes são as predefinições sugeridos para os jogos rasterizados:
 | | bloom_lvl7_weight    0.02  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 6 |
 | | bloom_lvl8_weight    0.01  | | Peso 1 do Nível Bloom | | 1/4 menor que o nível 7 |
 +------------------------------+-------------------------+---------------------------+
+
+.. raw:: latex
+
+	\clearpage
 
 Jogos vetorizados
 -----------------

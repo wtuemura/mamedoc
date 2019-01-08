@@ -1,3 +1,8 @@
+
+.. raw:: latex
+
+	\clearpage
+
 Controladores estáticos de IDs
 ==============================
 
@@ -17,12 +22,6 @@ mesmas, é para isso que usamos a configuração ``mapdevice``.
 Essa configuração permite especificar um ID de dispositivo para um ID de
 controlador, garantindo ao MAME que o dispositivo especificado sempre seja
 mapeado para o mesmo ID de controlador.
-
-.. A nice and clean way to do a page break, this case for latex and PDF
-   only.
-.. raw:: latex
-
-	\clearpage
 
 O uso do mapdevice
 ------------------

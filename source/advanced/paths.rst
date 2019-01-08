@@ -1,9 +1,13 @@
+
+.. raw:: latex
+
+	\clearpage
+
 Como o MAME lida com o caminho dos arquivos
 ===========================================
 
 O MAME obedece uma sequência lógica quando verifica os arquivos dos
 usuários como ROMs e os arquivos de trapaça.
-
 
 A sequência de leitura dos caminhos
 -----------------------------------

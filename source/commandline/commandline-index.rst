@@ -1,3 +1,8 @@
+
+.. raw:: latex
+
+	\clearpage
+
 .. _index-commandline:
 
 Indice das opções de linha de comando

@@ -10,8 +10,6 @@ Opções de linha de comando específicos para a versão Windows
 Nesta seção descrevemos todas as opções de configuração disponível
 apenas para a versão nativa do MAME no Windows (não SDL).
 
-
-
 Opções de performance
 ---------------------
 
@@ -84,6 +82,10 @@ Opções de tela inteira
 	Essa opção também não funciona com **-video gdi**.
 
 		O valor predefinido é **1.0**.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-wcommandline-fullscreengamma:
 

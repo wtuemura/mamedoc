@@ -529,6 +529,10 @@ preservação codificam essa informação, ela é adivinhada para os outros.
 A função de gravação da trilha do fdcs deve configurá-la.
 A representação é a posição angular relativa ao índice.
 
+.. raw:: latex
+
+	\clearpage
+
 Convertendo de e para uma representação interna
 -----------------------------------------------
 

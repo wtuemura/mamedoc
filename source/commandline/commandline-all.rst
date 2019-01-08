@@ -363,6 +363,10 @@ Exemplo:
 	**-verifysoftlist**. As listas estão na pasta *hash* e devem ser
 	informadas sem a extensão .XML.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _osd-commandline-options:
 
 Opções relacionadas as informações exibidas na tela (OSD)
@@ -396,10 +400,6 @@ Opções relacionadas as informações exibidas na tela (OSD)
 		O valor predefinido é **auto**
 
 .. _mame-commandline-keyboardprovider:
-
-.. raw:: latex
-
-	\clearpage
 
 **\-keyboardprovider**
 
@@ -643,10 +643,6 @@ Principais opções de caminho
 
 		O valor predefinido é **ctrlr** (isto é, um diretório chamado
 		**ctrlr** no diretório raiz do MAME).
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-inipath:
 
@@ -917,10 +913,6 @@ Principais opções de estado e reprodução
 	Diz ao MAME para encerrar a emulação depois que terminar a
 	reprodução (playback).
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-record:
 
 **-record** / **-rec** <*filename*>
@@ -977,6 +969,10 @@ Principais opções de estado e reprodução
 	
 		O valor predefinido é **NULO** (sem gravação).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-snapname:
 
 **-snapname** <*name*>
@@ -1008,10 +1004,6 @@ Principais opções de estado e reprodução
 	salvos como **snaps\\nes\\robby.png**, caso você use
 	``mame c64 -flop1 robby -snapname %g/%d_flop1/%i`` estes serão
 	salvos como **snaps\\c64\\robby\\0000.png**.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-snapsize:
 
@@ -1065,6 +1057,10 @@ Principais opções de estado e reprodução
 
 		O valor predefinido é **Ligado** (**-snapbilinear**).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-statename:
 
 **-statename** <*name*>
@@ -1093,10 +1089,6 @@ Principais opções de estado e reprodução
 	``mame c64 -flop1 robby -statename %g/%d_flop1/%i`` estes serão
 	salvos como **sta\\c64\\robby\\0000.png**.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-noburnin:
 
 **-[no]burnin**
@@ -1115,6 +1107,10 @@ Principais opções de estado e reprodução
 	*systemname/burnin-<nome.da.tela>.png*.
 
 		O valor predefinido é **Desligado** (**-noburnin**).
+
+.. raw:: latex
+
+	\clearpage
 
 Principais opções de performance
 --------------------------------
@@ -1170,10 +1166,6 @@ Principais opções de performance
 	seja criado um instantâneo de tela chamado **final.png** dentro da
 	pasta de :ref:`instantâneos <mame-commandline-snapshotdirectory>`.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-nothrottle:
 
 **-[no]throttle**
@@ -1200,6 +1192,10 @@ Principais opções de performance
 	demandem processamento estejam rodando junto com o MAME.
 	
 		O valor predefinido é **Ligado** (**-sleep**).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-speed:
 
@@ -1319,7 +1315,9 @@ Principais opções de rotação
 		O valor predefinido para ambas as opções é **Desligado**
 		(**-noflipx** **-noflipy**).
 
+.. raw:: latex
 
+	\clearpage
 
 Principais opções de vídeo
 --------------------------
@@ -1665,7 +1663,9 @@ funcionar corretamente em algumas máquinas Mac.**
 	As opções definidas para a janela substituem os valores da opções de
 	todas as janelas.
 
+.. raw:: latex
 
+	\clearpage
 
 Principais opções para as ilustrações
 -------------------------------------
@@ -1738,7 +1738,9 @@ Principais opções para as ilustrações
 	Define uma ilustração para sobrepor a ilustração interna ou externa
 	de layout.
 
+.. raw:: latex
 
+	\clearpage
 
 Principais opções de tela
 -------------------------
@@ -1789,10 +1791,6 @@ Principais opções de tela
 	
 		O valor predefinido é **1.0**. 
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-pausebrightness:
 
 **-pause_brightness** <*value*>
@@ -1817,6 +1815,10 @@ Principais opções de tela
 	tela de destino.
 	
 		O valor predefinido é **none** ou nenhum efeito.
+
+.. raw:: latex
+
+	\clearpage
 
 Principais opções para vetores
 ------------------------------
@@ -1891,6 +1893,10 @@ obtenha a melhor performance possível.
 	Ativar o *OpenGL PBO* (Pixel Buffer Objects) caso esteja disponível.
 	
 		O valor predefinido é **Ligado** (**-gl_pbo**).
+
+.. raw:: latex
+
+	\clearpage
 
 Principais opções de vídeo OpenGL GLSL
 --------------------------------------
@@ -2273,6 +2279,10 @@ Principais opções de entrada
 	editor de texto) e o MAME tenta traduzir esses caracteres para
 	pressionamentos de tecla emulados.
 
+.. raw:: latex
+
+	\clearpage
+
 **Existem várias limitações inevitáveis no modo "teclado natural":**
 
 	* O driver do sistema emulado ou do dispositivo de teclado precisam
@@ -2309,7 +2319,9 @@ Principais opções de entrada
 	
 		O valor predefinido é **0** (**-coin_impulse 0**).
 
+.. raw:: latex
 
+	\clearpage
 
 Principais opções de entrada automaticamente ativas
 ---------------------------------------------------
@@ -2370,7 +2382,6 @@ Principais opções de entrada automaticamente ativas
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de mouse presente.
 	
-	
 	Cada uma dessas opções de controle são habilitadas automaticamente
 	para o mouse, controle (joystick) ou pistola de luz (lightgun)
 	dependendo de uma classe em particular de controle analógico para um
@@ -2382,6 +2393,10 @@ Principais opções de entrada automaticamente ativas
 	Observe que estes controles sobrescrevem as opções
 	:ref:`-[no]mouse <mame-commandline-nomouse>`,
 	:ref:`-[no]joystick <mame-commandline-nojoystick>`, etc.
+
+.. raw:: latex
+
+	\clearpage
 
 Opções de depuração
 -------------------
@@ -2466,6 +2481,10 @@ Opções de depuração
 
 		Nenhum watchdog vem habilitado.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-debuggerfont:
 
 **-debugger_font** <*fontname*> / **-dfont** <*fontname*>
@@ -2489,6 +2508,9 @@ Opções de depuração
 	O tamanho padrão do Mac (**Cocoa**) é o tamanho padrão usado pelo
 	sistema.
 
+.. raw:: latex
+
+	\clearpage
 
 Opções para configuração de rede
 --------------------------------
@@ -2540,7 +2562,9 @@ Opções para configuração de rede
 	
 		O valor predefinido é **Desligado** (**-nocomm_framesync**).
 
+.. raw:: latex
 
+	\clearpage
 
 Outras opções essenciais
 ------------------------
@@ -2637,6 +2661,10 @@ Outras opções essenciais
 	Permite que você altere o tamanho padrão da RAM (caso exista suporte
 	para tanto no driver).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-confirmquit:
 
 **\-confirm_quit**
@@ -2721,6 +2749,10 @@ Outras opções essenciais
 **-noplugin** [*plugin shortname*]
 
 	Permite desabilitar uma lista de plug-ins Lua separados por vírgula.
+
+.. raw:: latex
+
+	\clearpage
 
 Opções do servidor HTTP
 -----------------------

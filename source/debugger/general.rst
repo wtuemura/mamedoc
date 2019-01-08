@@ -27,9 +27,11 @@ para uma melhor descrição de cada comando.
 | :ref:`debugger-command-source` -- lê os comandos do <*filename*> e os executa um por um
 | :ref:`debugger-command-quit` -- sai do MAME e do depurador
 
+.. raw:: latex
 
+	\clearpage
 
- .. _debugger-command-do:
+.. _debugger-command-do:
 
 do
 --

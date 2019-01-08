@@ -56,6 +56,10 @@ ilustração e você vai notar um leve esticamento vertical, porém os
 resultados ainda serão bons o suficiente, como se fossem um monitor com
 formato 4:3.
 
+.. raw:: latex
+
+	\clearpage
+
 Introdução ao GLSL
 ------------------
 
@@ -102,7 +106,6 @@ aparecerão em tempo real conforme elas forem sendo alteradas.
 Depois de encontrar as configurações desejadas, anote os números em um
 bloco de notas e saia do MAME.
 
-
 Alterando as configurações
 --------------------------
 
@@ -120,6 +123,9 @@ Neo-Geo usem essas configurações sem que você tenha que adicioná-las
 manualmente uma a uma em diferentes arquivos ``.ini`` como o nome do
 jogo.
 
+.. raw:: latex
+
+	\clearpage
 
 Alterando as configurações
 --------------------------

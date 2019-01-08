@@ -255,13 +255,6 @@ Um elemento ``param`` define ou reatribui o seu valor em um parâmetro no
 escopo atual mais interno. Não é possível definir ou reatribuir os
 parâmetros em um escopo de contenção.
 
-
-.. A nice and clean way to do a page break, this case for latex and PDF
-   only.
-.. raw:: latex
-
-	\clearpage
-
 .. _layout-concepts-predef-params:
 
 Parâmetros predefinidos
@@ -332,7 +325,11 @@ disponíveis e fornecem informações sobre a máquina em execução:
 	é fornecida como uma fração impropriamente reduzida. Observe que
 	este é o componente vertical aplicado *antes* da rotação. Este
 	parâmetro é um número inteiro definido no escopo global do layout.
-	
+
+.. raw:: latex
+
+	\clearpage
+
 **scr0width**
 
 	A largura da área visível da primeira tela (se houver) nos pixels
@@ -406,7 +403,11 @@ disponíveis e fornecem informações sobre a máquina em execução:
 	A parte vertical da relação de aspecto da parte visível da tela
 	(base-zero) *N*\ th (caso esteja presente). Este parâmetro é um
 	número inteiro definido no escopo global do layout.
-	
+
+.. raw:: latex
+
+	\clearpage
+
 **scr\ *N*\ width**
 
 	A largura da área visível da tela (base-zero) *N*\ th (se presente)
@@ -555,6 +556,10 @@ nível ``mamelayout``:
     Define ou reatribui um valor para um parâmetro. Veja
     :ref:`layout-concepts-params` para mais informações.
 
+.. raw:: latex
+
+	\clearpage
+
 **element**
 
 
@@ -627,6 +632,10 @@ Os elementos podem, opcionalmente, fornecer um valor de estado padrão
 com um atributo ``defstate`` para ser usado casp não esteja conectado em
 uma saída emulada ou porta I/O. Se presente, o atributo ``defstate``
 deve possuir um valor inteiro não negativo.
+
+.. raw:: latex
+
+	\clearpage
 
 Os elementos filho do elemento ``element`` representam os componentes
 que são desenhados em ordem de leitura do primeiro ao último
@@ -923,6 +932,10 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 	começa de frente para trás.
 	Veja abaixo para mais detalhes.
 
+.. raw:: latex
+
+	\clearpage
+
 **screen**
 
 	Adiciona uma imagem de tela emulada à exibição. A tela deve ser
@@ -1199,6 +1212,9 @@ conteúdo e qualquer referência de parâmetro no próprio atributo ``name``
 será substituído no ponto onde a definição do grupo aparecer no primeiro
 nível do elemento de escopo ``mamelayout``.)
 
+.. raw:: latex
+
+	\clearpage
 
 .. _layout-parts-repeats:
 

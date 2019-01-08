@@ -1,3 +1,8 @@
+
+.. raw:: latex
+
+	\clearpage
+
 Efeitos BGFX para (quase) todo mundo
 ====================================
 
@@ -61,6 +66,9 @@ ilustração e você vai notar um leve esticamento vertical, porém os
 resultados ainda serão bons o suficiente, como se fossem um monitor com
 formato 4:3.
 
+.. raw:: latex
+
+	\clearpage
 
 Introdução ao BGFX
 ------------------
@@ -91,6 +99,10 @@ Particularmente, você vai querer que as configurações
 individualmente ao invés de uma única configuração para todos os jogos.
 
 Salve o arquivo ``.ini`` e já estamos pronto para começar.
+
+.. raw:: latex
+
+	\clearpage
 
 Alterando as configurações
 --------------------------
