@@ -22,7 +22,6 @@ Opções de performance
 	incluindo o driver de vídeo do seu sistema, o servidor X (caso seja
 	aplicável) e stack Opengl em modo **-video opengl**.
 
-
 Opções de vídeo
 ---------------
 
@@ -85,16 +84,16 @@ Mapeamento de joystick SDL
 
 .. _mame-scommandline-joyidx:
 
-| **-joy_idx1** <*name*>
-| **-joy_idx2** <*name*>
-| ...
-| **-joy_idx8** <*name*>
+::
 
-	Nome do controle joystick mapeado para um determinado slot de
-	joystick.
+	-joy_idx1 <name>
+	-joy_idx2 <name>
+	...
+	-joy_idx8 <name>
+
+Nome do controle joystick mapeado para um determinado slot de joystick.
 
 		O valor predefinido é **auto**.
-
 
 .. _mame-scommandline-sixaxis:
 
@@ -104,7 +103,6 @@ Mapeamento de joystick SDL
 	PS3.
 
 		O valor predefinido é **Desligado** (**-nosixaxis**)
-
 
 Opções de baixo nível para drivers SDL
 -------------------------------------- 
