@@ -2208,11 +2208,13 @@ Principais opções de entrada
 	para o controle (joystick) digital. O MAME aceita qualquer dado
 	analógico de todos os controles (joystick). Para controles
 	analógicos de verdade, os valores precisam ser mapeados para valores
-	de controles digitais com 4 direções ou 8 direções. Para fazer isso
-	o MAME divide o alcance do valor analógico numa grade de 9x9.
-	Então usa a posição do eixo (para eixos X e Y apenas), mapeia para
-	essa grade e procura compatibilizar a tradução para um mapa de
-	controle conhecido. Este parâmetro permite especificar o mapa.
+	de controles digitais com 4 direções ou 8 direções.
+	
+	Para fazer isso o MAME divide o alcance do valor analógico numa
+	grade de 9x9. Então usa a posição do eixo (para eixos X e Y apenas),
+	mapeia para essa grade e procura compatibilizar a tradução para um
+	mapa de controle conhecido, este parâmetro permite especificar o
+	mapa.
 	
 	O valor predefinido é **auto** o que significa que um mapa diagonal
 	de 4 ou 8 direções, ou um mapa diagonal 4 direções é selecionado
@@ -2241,10 +2243,10 @@ Principais opções de entrada
 	de dessas linhas separadas por um '.' (que indica o fim de uma
 	linha), dessa maneira:
 
-		+-------------------------------------------------------------------------------------------+
-		| 777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333 |
-		+-------------------------------------------------------------------------------------------+
- 
+
+
+	``777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333``
+
 	No entanto, isso pode ser reduzido usando vários atalhos compatíveis
 	com o parâmetro <map>. Caso as informações sobre uma linha estejam
 	ausentes, presume-se que os dados ausentes nas colunas 5-9 são
