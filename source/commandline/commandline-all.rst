@@ -553,8 +553,8 @@ Opções de configuração
 		O valor predefinido é **Ligado** (**-readconfig**).
 
 
-Principais opções de caminho
-----------------------------
+Opções para a configuração dos principais diretórios
+----------------------------------------------------
 
 .. _mame-commandline-homepath:
 
@@ -713,9 +713,6 @@ Principais opções de caminho
 	
 		O valor predefinido é **software** (isto é, um diretório chamado
 		**software** no diretório raiz do MAME).
-
-Opções para a configuração dos principais diretórios
-----------------------------------------------------
 
 .. _mame-commandline-cfgdirectory:
 
