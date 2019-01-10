@@ -891,6 +891,10 @@ Opções de gravação e reprodução do estado da emulação
 
 		O valor predefinido é **Desligado** (**-noautosave**).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-playback:
 
 **-playback** / **-pb** <*filename*>
@@ -932,6 +936,9 @@ Opções de gravação e reprodução do estado da emulação
 	gravação está ativado (opção **-record**). O arquivo é salvo na
 	pasta *inp*. É predefinido que nenhum arquivo de timecode seja
 	gravado.
+
+Opções para a gravação de áudio e vídeo
+---------------------------------------
 
 .. _mame-commandline-mngwrite:
 
