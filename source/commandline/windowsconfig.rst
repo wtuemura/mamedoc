@@ -1,5 +1,3 @@
-.. A nice and clean way to do a page break, this case for latex and PDF
-   only.
 .. raw:: latex
 
 	\clearpage

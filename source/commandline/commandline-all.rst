@@ -598,6 +598,10 @@ Opções para a configuração dos diretórios principais
 		O valor predefinido é **samples** (isto é, um diretório chamado
 		**samples** no diretório raiz do MAME).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-artpath:
 
 **-artpath** <*path*>
@@ -649,7 +653,7 @@ Opções para a configuração dos diretórios principais
 
 **-fontpath** <*path*>
 
-	Define um ou mais caminhos onde os arquivos de fonte **.BDF**
+	Define um ou mais caminhos onde os arquivos de fonte ``.bdf``
 	(*Adobe Glyph Bitmap Distribution Format*) possam ser encontrados.
 	Mais de um caminho podem ser definidos desde que estejam separados
 	por ponto e vírgula.
@@ -661,7 +665,7 @@ Opções para a configuração dos diretórios principais
 **-cheatpath** <*path*>
 
 	Define o caminho completo para os arquivos de trapaça em formato
-	**.XML**.
+	``.xml``.
 	Mais de um caminho podem ser definidos desde que estejam separados
 	por ponto e vírgula.
 
@@ -1861,10 +1865,11 @@ Principais opções de tela
 
 	Define um único arquivo ``.png`` que será usado como sobreposição na
 	tela de qualquer sistema. Presume-se que o aquivo ``.png`` esteja em
-	um dos diretórios raiz do artpath. Ambas as combinações horizontais
-	e verticais dentro do arquivo ``.png`` é repetido para cobrir toda
-	a tela (mas nenhuma parte da arte externa). Ela é renderizada na
-	resolução nativa do sistema.
+	um dos diretórios raiz do :ref:`artpath <mame-commandline-artpath>`.
+
+	Ambas as combinações horizontais e verticais dentro do arquivo
+	``.png`` é repetido para cobrir toda a tela (mas nenhuma parte da
+	arte externa). Ela é renderizada na resolução nativa do sistema.
 
 	Para os modos de vídeo ``-video gdi`` e ``-video d3d`` significa que
 	um pixel dentro do ``.png`` será mapeado para um pixel da sua tela.
@@ -1908,6 +1913,10 @@ Principais opções para vetores
 	entre **0.00** e **100.00** (**0** = nenhum e **100** = máximo).
 	
 		O valor predefinido é **0**.
+
+.. raw:: latex
+
+	\clearpage
 
 Principais opções para a depuração de vídeo OpenGL
 --------------------------------------------------
@@ -2866,7 +2875,8 @@ Opções do servidor HTTP
 		sincronismo com a parte de baixo, surgindo um efeito ou
 		um "*defeito*" onde cada metade se desloca para lados opostos
 		horizontalmente. (Nota do tradutor)
-.. [6]	Tagarela, que verbaliza muito, falador. (Nota do tradutor)
+.. [6]	Tagarela, que verbaliza muito, falador, barulhento.
+		(Nota do tradutor)
 .. [7]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)
