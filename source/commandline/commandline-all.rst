@@ -1,45 +1,7 @@
-.. _ linha de comando universal:
+.. _universal-command-line:
 
 Opções Universais para a linha de comando
 =========================================
-
-Este capítulo descreve quase todas opções usadas pelo MAME que podem
-variar dependendo do sistema operacional usado, muitas das opções aqui
-descritas também estão disponíveis no arquivo de configuração
-**mame.ini**.
-
-Comandos e verbos
------------------
-
-Os comandos incluem o nome do executável como o **mame**, bem como
-várias ferramentas incluídas na distribuição do MAME, como por exemplo
-o **romcmp** e o **srcclean**.
-
-Os verbos são as ações a serem tomadas em conjunto com o comando, por
-exemplo, **mame -validate pacman** onde *mame* é o *comando* [1]_ em si, 
-*-validate* é o verbo e *pacman* a máquina a ser validada.
-
-
-Conjunto de instruções
-----------------------
-
-Muitos verbos suportam o uso de um *conjunto de instruções* [2]_, que
-podem ser um sistema ou um nome abreviado do dispositivo (por exemplo,
-**a2600**, **zorba_kbd**) ou um conjunto de instruções globais que
-correspondam a um dos dois (por exemplo, **zorba_\***).
-
-Dependendo do comando com o qual você esteja combinando este conjunto de
-instruções, a correspondência dessas combinações podem equiparar um
-sistema ou sistemas e dispositivos. É aconselhável colocar aspas em
-torno dos seus arranjos para evitar que o seu ambiente tente
-interpretá-los de forma independente em relação aos nomes dos arquivos
-que desejamos usar (por exemplo, **mame -validate "pac\*"**).
-
-.. raw:: latex
-
-	\clearpage
-
-.. _mame-commandline-paths:
 
 Nome dos arquivos e a localização dos diretórios
 ------------------------------------------------
