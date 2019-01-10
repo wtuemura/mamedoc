@@ -64,8 +64,8 @@ Desde que sejam respeitadas as seguintes condições:
 	  aparecer, que impeçam outros de fazer legalmente o que o que esta
 	  licença já esteja permitindo.
 
-Este trabalho está licenciado sob a Licença Atribuição 4.0 Internacional
-Creative Commons.
+Este trabalho de tradução está licenciado sob a Licença Atribuição 4.0
+Internacional Creative Commons por Wellington T. Uemura.
 
 Para visualizar uma cópia desta licença,
 visite http://creativecommons.org/licenses/by/4.0/ ou mande uma carta
