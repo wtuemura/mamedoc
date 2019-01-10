@@ -1261,12 +1261,12 @@ Opções de rotação de tela
 **-[no]ror**
 **-[no]rol**
 
-	Rotacione a tela do sistema para a direita (sentido horário) ou para
-	a esquerda (sentido anti-horário) em relação ao seu estado normal
-	(caso o **-rotate** seja definido) ou seu estado nativo
-	(caso **-norotate** for definido).
+	Rotacione a tela do sistema para a direita ``-ror`` ou para a
+	esquerda ``-rol`` em relação ao seu estado normal caso ``-rotate``
+	seja definido ou seu estado nativo caso ``-norotate`` seja
+	definido.
 
-		O valor predefinido para ambas as opções é **Desligado**
+		O valor predefinido para ambas é **Desligado**
 		(**-noror** **-norol**).
 
 
@@ -1279,10 +1279,10 @@ Opções de rotação de tela
 
 	Essas opções são projetadas para uso com telas giratórias que giram
 	apenas em uma única direção. Caso a tela gire somente no sentido
-	horário, use o comando **-autorol** para garantir que o sistema
+	horário, use o comando ``-autorol`` para garantir que o sistema
 	encha a tela horizontalmente ou verticalmente em uma das direções
 	que você pode manipular. Caso a sua tela gire somente no sentido
-	anti-horário, use **-autoror**.
+	anti-horário, use ``-autoror``.
 
 .. _mame-commandline-noflipx:
 
@@ -1291,9 +1291,9 @@ Opções de rotação de tela
 **-[no]flipx**
 **-[no]flipy**
 
-	Espelhe a tela do sistema horizontalmente (**-flipx**) ou
-	verticalmente (**-flipy**). As inversões são aplicadas depois que as
-	opções de rotação **-rotate** e rolagem **-ror/-rol** forem
+	Espelhe a tela do sistema horizontalmente (``-flipx``) ou
+	verticalmente (``-flipy``). As inversões são aplicadas depois que as
+	opções de rotação ``-rotate`` e rolagem ``-ror/-rol`` forem
 	aplicadas.
 
 		O valor predefinido para ambas as opções é **Desligado**
