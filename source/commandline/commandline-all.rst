@@ -1,12 +1,12 @@
 .. _ linha de comando universal:
 
-Opções universais de linha de comando
-=====================================
+Opções Universais para a linha de comando
+=========================================
 
-Estas opções estão disponíveis em todas as versões compiladas do MAME,
-SDL e Windows. Muitos dos verbos aqui descritos estão disponíveis também
-no arquivo de configuração **mame.ini**
-
+Este capítulo descreve quase todas opções usadas pelo MAME que podem
+variar dependendo do sistema operacional usado, muitas das opções aqui
+descritas também estão disponíveis no arquivo de configuração
+**mame.ini**.
 
 Comandos e verbos
 -----------------
