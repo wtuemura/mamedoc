@@ -2450,7 +2450,7 @@ Opções de depuração
 **-[no]debug**
 
 	Habilita o depurador embutido no MAME. É predefinido que o depurador
-	entre em ação ao pressionar a tela til (**~**) [8]_ durante a
+	entre em ação ao pressionar a tela til (**~**) [6]_ durante a
 	emulação.
 	Ele também entra em ação imediatamente ao iniciar a emulação.
 
