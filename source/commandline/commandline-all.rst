@@ -1079,25 +1079,6 @@ Opções para instantâneos de tela
 
 		O valor predefinido é **Ligado** (**-snapbilinear**).
 
-.. _mame-commandline-noburnin:
-
-**-[no]burnin**
-
-	Rastreia o brilho da tela durante a reprodução e no final da
-	emulação, gera um PNG que pode ser usado para simular um efeito
-	burn-in [3]_ na tela. O PNG é criado de tal maneira que as
-	áreas menos usadas da tela ficam totalmente brancas (pois as áreas a
-	serem marcadas são escuras, todo o resto da tela deverá ficar um
-	pouco mais iluminada).
-
-	A intenção é que este PNG possa ser carregado através de um arquivo
-	de ilustração usando um valor alpha pequeno como valores entre *0.1*
-	e *0.2* que se misturam bem com o resto da tela.
-	Os arquivos PNG gerados são gravados no diretório snap dentro do
-	*systemname/burnin-<nome.da.tela>.png*.
-
-		O valor predefinido é **Desligado** (**-noburnin**).
-
 .. raw:: latex
 
 	\clearpage
