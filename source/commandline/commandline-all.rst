@@ -978,6 +978,9 @@ Opções para a gravação de áudio e vídeo
 
 	\clearpage
 
+Opções para instantâneos de tela
+--------------------------------
+
 .. _mame-commandline-snapname:
 
 **-snapname** <*name*>
