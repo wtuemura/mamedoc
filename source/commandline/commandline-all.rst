@@ -127,7 +127,6 @@ Opções para configuração
 	por "*mame -showusage*" geralmente são suficientes para a grande
 	maioria das pessoas.
 
-
 Verbos frontend
 ---------------
 
