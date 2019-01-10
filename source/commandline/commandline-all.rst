@@ -127,8 +127,8 @@ Opções para configuração
 	por "*mame -showusage*" geralmente são suficientes para a grande
 	maioria das pessoas.
 
-Verbos frontend
----------------
+Opções de listagem
+------------------
 
 É predefinido que todos os verbos "**-list**" abaixo, exibam nformações
 na saída predefinida do sistema, geralmente é a tela do terminal onde
