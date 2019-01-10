@@ -38,8 +38,8 @@ Acesse
 `LICENSE.md <https://github.com/mamedev/mame/blob/master/LICENSE.md>`_
 para maiores informações.
 
-LICENCIAMENTO DA TRADUÇÃO DESTE DOCUMENTO
-=========================================
+LICENCIAMENTO DESTE DOCUMENTO E SUA TRADUÇÃO 
+============================================
 
 A `Atribuição 4.0 Internacional (CC BY 4.0)
 <https://creativecommons.org/licenses/by/4.0/legalcode.pt>`_ em resumo,
