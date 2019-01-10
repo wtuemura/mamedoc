@@ -553,7 +553,7 @@ Opções de configuração
 		O valor predefinido é **Ligado** (**-readconfig**).
 
 
-Opções para a configuração dos principais diretórios
+Opções para a configuração dos diretórios principais
 ----------------------------------------------------
 
 .. _mame-commandline-homepath:
