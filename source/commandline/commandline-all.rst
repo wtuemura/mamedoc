@@ -1023,16 +1023,18 @@ Opções para instantâneos de tela
 	disquetes, você também pode usar ``%d_[media]``.
 	Substitua ``[media]`` pelo dispositivo que deseja usar. 
 	
-	Alguns exemplos: Caso use ``mame robby -snapname foo/%g%i`` os
-	instantâneos serão salvos como ``snaps\foo\robby0000.png``,
-	``snaps\foo\robby0001.png`` e assim por diante.
-	
-	Caso use ``mame nes -cart robby -snapname %g/%d_cart`` os
-	instantâneos serão salvos como ``snaps\nes\robby.png``.
-	
-	No caso deste outro exemplo,
-	``mame c64 -flop1 robby -snapname %g/%d_flop1/%i`` estes serão
-	salvos como ``snaps\c64\robby\0000.png``.
+	Alguns exemplos:
+
+	* Caso use ``mame robby -snapname foo/%g%i`` os instantâneos serão
+	  salvos como ``snaps\foo\robby0000.png``,
+	  ``snaps\foo\robby0001.png`` e assim por diante.
+
+	* Caso use ``mame nes -cart robby -snapname %g/%d_cart`` os
+	  instantâneos serão salvos como ``snaps\nes\robby.png``.
+
+	* No caso deste outro exemplo,
+	  ``mame c64 -flop1 robby -snapname %g/%d_flop1/%i`` estes serão
+	  salvos como ``snaps\c64\robby\0000.png``.
 
 .. _mame-commandline-snapsize:
 
@@ -1548,10 +1550,10 @@ Opções para a configuração de vídeo
 	pouco mais iluminada).
 
 	A intenção é que este PNG possa ser carregado através de um arquivo
-	de ilustração usando um valor alpha pequeno como valores entre *0.1*
-	e *0.2* que se misturam bem com o resto da tela.
+	de ilustração usando um valor alpha pequeno como valores entre
+	**0.1** e **0.2** que se misturam bem com o resto da tela.
 	Os arquivos PNG gerados são gravados no diretório snap dentro do
-	*systemname/burnin-<nome.da.tela>.png*.
+	``systemname/burnin-<nome.da.tela>.png``.
 
 		O valor predefinido é **Desligado** (**-noburnin**).
 
