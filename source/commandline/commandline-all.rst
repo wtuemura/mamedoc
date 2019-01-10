@@ -940,6 +940,13 @@ Opções de gravação e reprodução do estado da emulação
 Opções para a gravação de áudio e vídeo
 ---------------------------------------
 
+	Há casos onde certas máquinas alternam a resolução da tela
+	atrapalhando a gravação de vídeo, algumas gravações podem ficar com
+	um tamanho de tela todo preto com um vídeo menor no meio ou em algum
+	outro canto da tela, use essas duas opções caso isso aconteça,
+	:ref:`-noswitchres <mame-commandline-switchres>` com
+	:ref:`-snapsize <mame-commandline-snapsize>`.
+
 .. _mame-commandline-mngwrite:
 
 **-mngwrite** <*filename*>.mng
@@ -971,7 +978,7 @@ Opções para a gravação de áudio e vídeo
 
 	Grava todos os dados de áudio da seção em formato WAV em um arquivo
 	<*filename*>.wav .
-	
+
 		O valor predefinido é **NULO** (sem gravação).
 
 .. raw:: latex
@@ -1226,8 +1233,8 @@ Opções relacionadas a performance e velocidade da emulação
 
 	\clearpage
 
-Principais opções de rotação
-----------------------------
+Opções de rotação de tela
+-------------------------
 
 .. _mame-commandline-norotate:
 
@@ -1290,8 +1297,8 @@ Principais opções de rotação
 
 	\clearpage
 
-Principais opções de vídeo
---------------------------
+Opções para a configuração de vídeo
+-----------------------------------
 
 .. _mame-commandline-video:
 
@@ -1558,22 +1565,27 @@ Principais opções de vídeo
 		O valor predefinido é **Ligado** (**-unevenstretch**).
 
 
-Principais opções de tela inteira
----------------------------------
+Opções para a configuração de tela inteira
+------------------------------------------
 
 .. _mame-commandline-switchres:
 
 **-[no]switchres**
 
-	Ativa a alteração, comutação ou troca da resolução. Esta opção é
+	Permite ou não a comutação ou troca da resolução. Esta opção é
 	necessária para as opções **-resolution** evitando a troca das
-	resoluções enquanto estiver no modo de tela inteira. Em placas de
-	vídeo modernas, há poucas razões para alternar as resoluções a menos
-	que você esteja tentando alcançar as resoluções "exatas" dos pixels
-	dos sistemas originais, o que exige ajustes significativos.
-	Esta opção também é útil em monitores de LCD, uma vez que eles rodam
-	com uma resolução fixa e as comutações da resolução algumas vezes
-	são exageradas. Essa opção não funciona com a opção **-video gdi**.
+	resoluções enquanto estiver no modo de tela inteira.
+	
+	Em placas de vídeo modernas, há poucas razões para alternar as
+	resoluções a menos que você esteja tentando alcançar as resoluções
+	"exatas" dos pixels dos sistemas originais, o que exige ajustes
+	significativos.
+
+	Útil também em monitores de LCD, uma vez que eles rodam com uma
+	resolução fixa e as comutações da resolução algumas vezes são
+	exageradas.
+
+	Essa opção não funciona com a opção **-video gdi**.
 	
 		O valor predefinido é **Desligado** (**-noswitchres**).
 
