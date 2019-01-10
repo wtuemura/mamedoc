@@ -54,8 +54,23 @@ script executável com o comando **chmod u+x meumame**, agora ao executar
 o script, uma janela do terminal se abrirá, o MAME será executado e o
 diretório de trabalho será definido no mesmo local do script.
 
-Principais verbos
------------------
+Conjunto de instruções
+----------------------
+
+Muitos comandos suportam o uso de um *conjunto de instruções* [1]_, que
+pode ser um sistema ou um nome abreviado do dispositivo (por exemplo,
+**a2600**, **zorba_kbd**) ou um conjunto de instruções globais que
+correspondam a um dos dois como **zorba_\*** por exemplo.
+
+Dependendo do comando com o qual você esteja combinando este conjunto de
+instruções, a correspondência dessas combinações podem equiparar um
+sistema ou sistemas e dispositivos. É aconselhável colocar aspas em
+torno dos seus arranjos para evitar que o seu ambiente tente
+interpretá-los de forma independente em relação aos nomes dos arquivos
+que desejamos usar (por exemplo, **mame -validate "pac\*"**).
+
+Opções de ajuda e validação
+---------------------------
 
 .. _mame-commandline-help:
 
@@ -80,8 +95,8 @@ Principais verbos
 	dispositivos.
 
 
-Verbos de configuração
-----------------------
+Opções para configuração
+------------------------
 
 .. _mame-commandline-createconfig:
 
@@ -809,7 +824,7 @@ Principais opções de estado e reprodução
 	estado da condição da memória toda a vez que um quadro for avançado.
 	O rebobinamento das condições de estado que foram salvas podem ser
 	carregadas de forma consecutiva ao pressionar a tecla de atalho para
-	rebobinar passo único (*Shift Esquerdo + til*) [1]_.
+	rebobinar passo único (*Shift Esquerdo + til*) [2]_.
 
 		O valor predefinido é **Desligado** (**-norewind**).
 	
@@ -1061,7 +1076,7 @@ Principais opções de estado e reprodução
 
 	Rastreia o brilho da tela durante a reprodução e no final da
 	emulação, gera um PNG que pode ser usado para simular um efeito
-	burn-in [2]_ na tela. O PNG é criado de tal maneira que as
+	burn-in [3]_ na tela. O PNG é criado de tal maneira que as
 	áreas menos usadas da tela ficam totalmente brancas (pois as áreas a
 	serem marcadas são escuras, todo o resto da tela deverá ficar um
 	pouco mais iluminada).
@@ -1136,7 +1151,7 @@ Principais opções de performance
 
 **-[no]throttle**
 
-	Ativa ou não a função de controle de velocidade do emulador [3]_.
+	Ativa ou não a função de controle de velocidade do emulador [4]_.
 	Ao habilitar esta opção, o MAME tenta manter o sistema rodando em
 	sua velocidade nativa, com a opção desabilitada a emulação é
 	executada na velocidade mais rápida possível. Dependendo das
@@ -1442,7 +1457,7 @@ Principais opções de vídeo
 	computador antes de começar a desenhar na tela. Caso esta opção
 	esteja desligada, o MAME só irá desenhar na tela com tempo
 	posterior ou até mesmo durante um ciclo de atualização de tela. Isso
-	pode causar um *screen tearing* [4]_.
+	pode causar um *screen tearing* [5]_.
 
 	O efeito "tearing" não é perceptível em todos os sistemas, porém
 	algumas pessoas acham o efeito desagradável, algumas mais do que as
@@ -2415,7 +2430,7 @@ Opções de depuração
 
 **-[no]verbose** / **-[no]v**
 
-	Este é o **modo loquaz** [5]_, exibe todas as informações de
+	Este é o **modo loquaz** [6]_, exibe todas as informações de
 	diagnósticos disponíveis.
 	Essas informações são úteis para apurar qualquer tipo de problemas
 	com a sua configuração ou qualquer outra que possa aparecer.
@@ -2450,7 +2465,7 @@ Opções de depuração
 **-[no]debug**
 
 	Habilita o depurador embutido no MAME. É predefinido que o depurador
-	entre em ação ao pressionar a tela til (**~**) [6]_ durante a
+	entre em ação ao pressionar a tela til (**~**) [7]_ durante a
 	emulação.
 	Ele também entra em ação imediatamente ao iniciar a emulação.
 
@@ -2790,27 +2805,34 @@ Opções do servidor HTTP
 
 		O valor predefinido é **web**.
 
-.. [1]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
+.. [1]	**Pattern**, segundo o *Oxford Dictionary* significa arranjar
+		algo de forma repetitiva, seguindo um padrão, uma padronagem.
+		Tradicionalmente "*pattern*" é traduzido como "*padrão*" porém
+		fica claro que não estamos falando de algo igual sendo repetido,
+		mas de um conjunto de instruções ou um conjunto de comandos em
+		cadência que está informando ao programa as opções que o usuário
+		deseja usar. (Nota do tradutor)
+.. [2]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)
-.. [2]	Quando uma imagem ficava estática em uma tela de tubo CRT
+.. [3]	Quando uma imagem ficava estática em uma tela de tubo CRT
 		durante muito tempo, a fina película de fósforo que fica por de
 		trás da tela de vidro sofria uma leve **queima** nas regiões de
 		maior intensidade ficando uma marca no lugar. Uma vez marcada,
 		essa mancha ficava sobre a imagem como se fosse uma sombra e nem
 		sempre era necessário que a tela estivesse ligada para que a
 		mancha pudesse ser visualizada na tela. (Nota do tradutor)
-.. [3]	O termo *throttle* no Inglês significa *parar/interromper a
+.. [4]	O termo *throttle* no Inglês significa *parar/interromper a
 		respiração através da esganadura da garganta*. O termo então
 		significa manter o controle do fluxo da velocidade. Em Inglês
 		este termo também é usado para descrever o acelerador de um
 		veículo, onde o *acelerador* faz o controle da velocidade do
 		mesmo. (Nota do tradutor)
-.. [4]	Faz com que a metade da parte de cima da tela saia de
+.. [5]	Faz com que a metade da parte de cima da tela saia de
 		sincronismo com a parte de baixo, surgindo um efeito ou
 		um "*defeito*" onde cada metade se desloca para lados opostos
 		horizontalmente. (Nota do tradutor)
-.. [5]	Tagarela, que verbaliza muito, falador. (Nota do tradutor)
-.. [6]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
+.. [6]	Tagarela, que verbaliza muito, falador. (Nota do tradutor)
+.. [7]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)
