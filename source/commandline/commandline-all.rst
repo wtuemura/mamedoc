@@ -41,8 +41,8 @@ que desejamos usar (por exemplo, **mame -validate "pac\*"**).
 
 .. _mame-commandline-paths:
 
-Nome de arquivos e o caminho dos diretórios
--------------------------------------------
+Nome dos arquivos e a localização dos diretórios
+------------------------------------------------
 
 O MAME aceita o uso de mais de um caminho em suas configurações, como
 por exemplo, configurações que permitam a pesquisa de ROMs em diferentes
