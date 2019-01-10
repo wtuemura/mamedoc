@@ -808,8 +808,12 @@ Opções para a configuração dos diretórios principais
 		**comments** no diretório raiz do MAME). Caso este diretório não
 		exista, ele será criado automaticamente.
 
-Principais opções de estado e reprodução
-----------------------------------------
+.. raw:: latex
+
+	\clearpage
+
+Opções de gravação e reprodução do estado da emulação
+-----------------------------------------------------
 
 .. _mame-commandline-norewind:
 
@@ -839,6 +843,34 @@ Principais opções de estado e reprodução
 	capacidade menor do que o savestate atual, desabilita o
 	rebobinamento. Os valores negativos são automaticamente fixados em
 	0.
+
+.. _mame-commandline-statename:
+
+**-statename** <*name*>
+
+	Descreve como o MAME deve armazenar os arquivos de estado salvos
+	relativo ao caminho do state_directory. <*name*> é uma string que
+	fornece um modelo a ser usado usado para gerar um nome de arquivo.
+	
+	São disponibilizadas duas substituições simples: o caractere ``/``
+	representa o separador de caminho em qualquer plataforma de destino
+	(até mesmo no Windows); a string ``%g`` representa o nome do driver
+	do sistema atual.
+	
+	O valor predefinido é ``%g``, que cria uma pasta separada para cada
+	sistema.
+	
+	Em adição ao que foi dito acima, para os drivers que usem mídias
+	diferentes, como cartões ou disquetes, você também pode usar o
+	indicador ``%d_[media]``. Substitua ``[media]`` pelo comutador de
+	mídia que você deseja usar. 
+	
+	Alguns exemplos: se você usar ``mame robby -statename foo/%g%i`` os
+	instantâneos serão salvos em **sta\\foo\\robby\\**. Caso você use
+	``mame nes -cart robby -statename %g/%d_cart`` os instantâneos serão
+	salvos em **sta\\nes\\robby**. Caso você use
+	``mame c64 -flop1 robby -statename %g/%d_flop1/%i`` estes serão
+	salvos como **sta\\c64\\robby\\0000.png**.
 
 .. _mame-commandline-state:
 
@@ -1036,34 +1068,6 @@ Principais opções de estado e reprodução
 	vídeo.
 
 		O valor predefinido é **Ligado** (**-snapbilinear**).
-
-.. _mame-commandline-statename:
-
-**-statename** <*name*>
-
-	Descreve como o MAME deve armazenar os arquivos de estado salvos
-	relativo ao caminho do state_directory. <*name*> é uma string que
-	fornece um modelo a ser usado usado para gerar um nome de arquivo.
-	
-	São disponibilizadas duas substituições simples: o caractere ``/``
-	representa o separador de caminho em qualquer plataforma de destino
-	(até mesmo no Windows); a string ``%g`` representa o nome do driver
-	do sistema atual.
-	
-	O valor predefinido é ``%g``, que cria uma pasta separada para cada
-	sistema.
-	
-	Em adição ao que foi dito acima, para os drivers que usem mídias
-	diferentes, como cartões ou disquetes, você também pode usar o
-	indicador ``%d_[media]``. Substitua ``[media]`` pelo comutador de
-	mídia que você deseja usar. 
-	
-	Alguns exemplos: se você usar ``mame robby -statename foo/%g%i`` os
-	instantâneos serão salvos em **sta\\foo\\robby\\**. Caso você use
-	``mame nes -cart robby -statename %g/%d_cart`` os instantâneos serão
-	salvos em **sta\\nes\\robby**. Caso você use
-	``mame c64 -flop1 robby -statename %g/%d_flop1/%i`` estes serão
-	salvos como **sta\\c64\\robby\\0000.png**.
 
 .. _mame-commandline-noburnin:
 
