@@ -48,10 +48,10 @@ Opções de tela inteira
 	manter o fluxo contínuo de dados, evitando interrupções. Dentre as
 	três, apenas a primeira é exibida, a segunda fica na espera sendo
 	acumulada e a terceira fica sendo escrita constantemente.
-	A opção **-triplebuffer** sobrescreve a opção **-waitvsync** caso a
+	A opção ``-triplebuffer`` sobrescreve a opção ``-waitvsync`` caso a
 	memória preliminar seja criada com sucesso.
 	
-	Essa opção não funciona com **-video gdi**.
+	Essa opção não funciona com ``-video gdi``.
 	
 		O valor predefinido é **Desligado** (**-notriplebuffer**).
 
@@ -65,7 +65,7 @@ Opções de tela inteira
 	mais clara.
 
 	Note que nem todas as placa de vídeo são compatíveis com essa opção.
-	Essa opção também não funciona com **-video gdi**.
+	Essa opção também não funciona com ``-video gdi``.
 
 		O valor predefinido é **1.0**.
 
@@ -79,7 +79,7 @@ Opções de tela inteira
 	mais saturada.
 
 	Note que nem todas as placa de vídeo são compatíveis com essa opção.
-	Essa opção também não funciona com **-video gdi**.
+	Essa opção também não funciona com ``-video gdi``.
 
 		O valor predefinido é **1.0**.
 
@@ -96,11 +96,9 @@ Opções de tela inteira
 	Essa opção não afeta a arte ou outras partes da tela.
 
 	Note que nem todas as placa de vídeo são compatíveis com essa opção.
-	Essa opção não funciona com **-video gdi**.
+	Essa opção não funciona com ``-video gdi``.
 
 		O valor predefinido é **1.0**.
-
-
 
 Opções para a entrada de controle
 ---------------------------------
@@ -110,10 +108,10 @@ Opções para a entrada de controle
 **-[no]dual_lightgun** / **-[no]dual**
 
 	Controla se o MAME tenta ou não rastrear duas pistolas de luz
-	conectadas ao mesmo tempo. Essa opção requer **-lightgun**. Essa
+	conectadas ao mesmo tempo. Essa opção requer ``-lightgun``. Essa
 	opção é um quebra galho para ser compatível com certos tipos antigos
 	de pistolas de luz. Se você possuí múltiplas pistolas de luz
-	conectadas, basta apenas usar a opção **-mouse** e configurar cada
+	conectadas, basta apenas usar a opção ``-mouse`` e configurar cada
 	pistola individualmente.
 
 		O valor predefinido é **Desligado** (**-nodual_lightgun**).

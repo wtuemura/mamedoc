@@ -60,14 +60,14 @@ Conjunto de instruções
 Muitos comandos suportam o uso de um *conjunto de instruções* [1]_, que
 pode ser um sistema ou um nome abreviado do dispositivo (por exemplo,
 **a2600**, **zorba_kbd**) ou um conjunto de instruções globais que
-correspondam a um dos dois como **zorba_\*** por exemplo.
+correspondam a um dos dois como ``zorba_*`` por exemplo.
 
 Dependendo do comando com o qual você esteja combinando este conjunto de
 instruções, a correspondência dessas combinações podem equiparar um
 sistema ou sistemas e dispositivos. É aconselhável colocar aspas em
 torno dos seus arranjos para evitar que o seu ambiente tente
 interpretá-los de forma independente em relação aos nomes dos arquivos
-que desejamos usar (por exemplo, **mame -validate "pac\*"**).
+que desejamos usar (por exemplo, ``mame -validate "pac\*"``).
 
 Opções de ajuda e verificação
 -----------------------------
@@ -99,21 +99,21 @@ Opções de ajuda e verificação
 **-verifyroms** [<*pattern*>]
 
 	Verifica se há imagens ROM inválidas ou ausentes. É predefinido que
-	todos os drivers que possuam arquivos ZIP ou diretórios válidos no
-	rompath (caminho da rom) sejam verificados, no entanto, você pode
+	todos os drivers que possuam arquivos ``.zip`` ou diretórios válidos
+	no rompath (caminho da rom) sejam verificados, no entanto, você pode
 	limitar essa lista se usar um termo como filtro após o comando
-	**-verifyroms**.
+	``-verifyroms``.
 
 .. _mame-commandline-verifysamples:
 
 **-verifysamples** [<*pattern*>]
 
 	Verifica se há amostras inválidas ou ausentes. É predefinido que
-	todos os drivers que possuem arquivos ZIP ou diretórios válidos no
-	samplepath sejam verificados no caminho da pasta onde os arquivos de
-	amostras se encontram, no entanto, você pode filtrar essa lista
+	todos os drivers que possuem arquivos ``.zip`` ou diretórios válidos
+	no samplepath sejam verificados no caminho da pasta onde os arquivos
+	de amostras se encontram, no entanto, você pode filtrar essa lista
 	caso use uma palavra chave ou coringa após o comando
-	**-verifysamples**.
+	``-verifysamples``.
 
 .. _mame-commandline-verifysoftware:
 
@@ -121,10 +121,10 @@ Opções de ajuda e verificação
 
 	Verifica se há imagens ROM inválidas ou ausentes na lista de
 	software. Por predefinição, todos os drivers que possuem arquivos
-	ZIP ou diretórios válidos no rompath (caminho da rom) serão
+	``.zip`` ou diretórios válidos no rompath (caminho da rom) serão
 	verificados, no entanto, você pode limitar essa lista definindo um
 	nome de driver específico ou *combinações* após o comando
-	**-verifysoftware**.
+	``-verifysoftware``.
 
 .. _mame-commandline-verifysoftlist:
 
@@ -133,11 +133,11 @@ Opções de ajuda e verificação
 	Verifica ROMs ausentes com base em uma lista de software
 	predeterminado na pasta **hash**.
 	É predefinido que a busca e a verificação será feita em todos os
-	drivers e arquivos ZIP em diretórios válidos no *rompath* (caminho da
-	rom), no entanto, você pode filtrar essa lista usando uma palavra
-	chave ou coringa em "*softwarelistname*" após o comando
-	**-verifysoftlist**. As listas estão na pasta *hash* e devem ser
-	informadas sem a extensão .XML.
+	drivers e arquivos ``.zip`` em diretórios válidos no *rompath*
+	(caminho da rom), no entanto, você pode filtrar essa lista usando
+	uma palavra chave ou coringa em "*softwarelistname*" após o comando
+	``-verifysoftlist``. As listas estão na pasta *hash* e devem ser
+	informadas sem a extensão ``.xml``.
 
 Opções para configuração
 ------------------------
@@ -146,7 +146,7 @@ Opções para configuração
 
 **-createconfig** / **-cc**
 
-	Cria um arquivo mame.ini pré-configurado. Todas as opções de
+	Cria um arquivo ``mame.ini`` pré-configurado. Todas as opções de
 	configuração (não verbos) descritos abaixo podem ser permanentemente
 	alterados, basta editar este arquivo de configuração.
 
@@ -155,8 +155,8 @@ Opções para configuração
 **-showconfig** / **-sc**
 
 	Exibe as configurações atualmente usadas. Caso você direcione isso
-	para um arquivo, você também pode utilizá-lo como um arquivo INI,
-	como mostra o exemplo abaixo:
+	para um arquivo, você também pode utilizá-lo como um arquivo
+	``.ini``, como mostra o exemplo abaixo:
 
 		**mame -showconfig > mame.ini**
 
@@ -168,13 +168,13 @@ Opções para configuração
 
 	Exibe um breve resumo de todas as opções da linha de comando.
 	Para as opções que não foram mencionados aqui, o breve resumo dado
-	por "*mame -showusage*" geralmente são suficientes para a grande
+	por ``mame -showusage`` geralmente são suficientes para a grande
 	maioria das pessoas.
 
 Opções de listagem
 ------------------
 
-É predefinido que todos os verbos "**-list**" abaixo, exibam nformações
+É predefinido que todos os comandos ``-list`` abaixo, exibam informações
 na saída predefinida do sistema, geralmente é a tela do terminal onde
 você digitou o comando. Caso queira gravar a informação em um arquivo
 texto, adicione o exemplo abaixo ao final do seu comando:
@@ -187,7 +187,7 @@ conteúdo prévio que exista dentro deste arquivo será apagado.
 Exemplo:
 
 	Isso cria (ou sobrescreve se já existir) o arquivo ``lista.txt`` e
-	completa o arquivo com os resultados de **-listcrc puckman**.
+	completa o arquivo com os resultados de ``-listcrc puckman``.
 	Em outras palavras, a lista de cada ROM usada em Puckman e o CRC
 	para essa ROM é gravada nesse arquivo.
 
@@ -199,7 +199,7 @@ Exemplo:
 	suportados em formato XML. A saída é bastante longa, então é melhor
 	redirecionar toda a saída para um arquivo. É predefinido que todos
 	os sistemas sejam listados, no entanto, você pode filtrar essa lista
-	caso use uma palavra chave ou coringa após o comando **-listxml**.
+	caso use uma palavra chave ou coringa após o comando ``-listxml``.
 
 .. _mame-commandline-listfull:
 
@@ -208,7 +208,7 @@ Exemplo:
 	Exibe uma lista dos nomes e descrições dos drivers do sistema.
 	É predefinido que todos os sistemas sejam listados, no entanto, você
 	pode filtrar essa lista se usar um nome de máquina, jogo ou coringa
-	após o comando **-listfull**.
+	após o comando ``-listfull``.
 
 .. _mame-commandline-listsource:
 
@@ -219,7 +219,7 @@ Exemplo:
 	qual driver um determinado sistema roda, útil para relatar bugs.
 	É predefinido que todos os sistemas sejam listados, no entanto, você
 	pode filtrar essa lista caso use uma palavra chave ou coringa após o
-	comando **-listsource**.
+	comando ``-listsource``.
 
 .. _mame-commandline-listclones:
 
@@ -227,7 +227,7 @@ Exemplo:
 
 	Exibe uma lista de clones. É predefinido que todos os clones sejam
 	listados, no entanto, você pode filtrar essa lista caso use uma
-	palavra chave ou coringa após o comando **-listclones**. O MAME irá
+	palavra chave ou coringa após o comando ``-listclones``. O MAME irá
 	irá exibir uma lista de clones dos sistemas ou qualquer outro clone
 	que combine com a palavra chave caso uma seja usada.
 
@@ -272,8 +272,8 @@ Exemplo:
 
 	Tenta identificar os arquivos ROM conhecidos pelo MAME e que sejam
 	compartilhados ou que também sejam usados por outras máquinas no
-	arquivo ou diretório .zip determinado. Este comando pode ser usado
-	para tentar identificar conjuntos de ROM retirados de placas
+	arquivo ou diretório ``.zip`` determinado. Este comando pode ser
+	usado para tentar identificar conjuntos de ROM retirados de placas
 	desconhecidas.
 	Na saída, o nível de erro é retornado como um dos seguintes:
 
@@ -292,7 +292,7 @@ Exemplo:
 	uma melhor compreensão do que a emulação está usando. Caso os
 	slots sejam populados por dispositivos, todos os slots
 	adicionais que esses dispositivos fornecerem ficarão visíveis
-	com **-listdevices** também.
+	com ``-listdevices`` também.
 	Por exemplo, caso você instale um controlador de disquete em um
 	PC, este listará os slots da unidade de disco.
 
@@ -313,7 +313,7 @@ Exemplo:
 		unidade de disco.
 		
 		O nome do slot (por exemplo, **ctrl1**) pode ser usado a partir
-		da linha de comando (**-ctrl1** neste caso) 
+		da linha de comando (``-ctrl1`` neste caso) 
 
 .. _mame-commandline-listmedia:
 
@@ -496,7 +496,7 @@ Opções de configuração
 - **<meumame>.ini**
 
 	Caso o arquivo binário do MAME seja renomeado para **mame060.exe**,
-	então o MAME carregará o aquivo **mame060.ini**.
+	então o MAME carregará o aquivo ``mame060.ini``.
 
 - **debug.ini**
 
@@ -546,9 +546,9 @@ Opções de configuração
 	anteriores.
 	Então, por exemplo, se você quiser desabilitar os efeitos de
 	sobreposição nos sistemas vetoriais, você pode criar um arquivo
-	**vector.ini** com a linha **effect none** nele, ele irá
+	``vector.ini`` com a linha **effect none** nele, ele irá
 	sobrescrever qualquer valor de efeito que você tenha em seu
-	**mame.ini**.
+	``mame.ini``.
 
 		O valor predefinido é **Ligado** (**-readconfig**).
 
@@ -624,25 +624,25 @@ Opções para a configuração dos diretórios principais
 
 **-inipath** <*path*>
 
-	Define um ou mais caminhos onde os arquivos **.ini** possam ser
+	Define um ou mais caminhos onde os arquivos ``.ini`` possam ser
 	encontrados. Mais de um caminho podem ser definidos desde que
 	estejam separados por ponto e vírgula.
 
-	* No Windows a predefinição é **.;ini;ini/presets**, tradzindo,
+	* No Windows a predefinição é ``.;ini;ini/presets``, tradzindo,
 	  a primeira pesquisa é feita no diretório atual, a segunda no
 	  diretório **ini** e finalmente no diretório **presets** dentro do
 	  diretório **ini**.
 
 	* No macOS a predefinição é
-	  **$HOME/Library/Application Support/mame;$HOME/.mame;.;ini**,
+	  ``$HOME/Library/Application Support/mame;$HOME/.mame;.;ini``,
 	  traduzindo, pesquisa no diretório **mame** dentro do diretório
 	  **Application Support** do usuário atual, depois no diretório
-	  **.mame** dentro do diretório home do usuário atual, depois no
+	  **.mame** dentro do diretório **home** do usuário atual, depois no
 	  diretório raiz e então no diretório **ini**.
 
 	* Em outras plataformas onde se incluem o Linux, a predefinição é
-	  **$HOME/.mame;.;ini**, traduzindo, procura pelo diretório
-	  **.mame** no doretório home do usuário atual, seguido pelo
+	  ``$HOME/.mame;.;ini``, traduzindo, procura pelo diretório
+	  **.mame** no diretório **home** do usuário atual, seguido pelo
 	  diretório raiz e finalmente no diretório **ini**.
 
 .. _mame-commandline-fontpath:
@@ -764,7 +764,7 @@ Opções para a configuração dos diretórios principais
 
 	Define o diretório onde os arquivos de gravação de estado são
 	armazenados. Os arquivos de estado são lidos e gravados mediante a
-	solicitação do usuário ou ao usar a opção **-autosave**.
+	solicitação do usuário ou ao usar a opção ``-autosave``.
 
 		O valor predefinido é **sta** (isto é, um diretório de nome
 		**sta** no diretório raiz do MAME). Caso este diretório não
@@ -907,7 +907,7 @@ Opções de gravação e reprodução do estado da emulação
 	funciona de maneira confiável com todos os sistemas, mas pode ser
 	usado para assistir a uma sessão de jogo gravada anteriormente do
 	início ao fim. Para tornar as coisas consistentes, você deve apagar
-	os arquivos de configuração (.cfg), NVRAM (.nv) e o cartão de
+	os arquivos de configuração ``.cfg``, NVRAM ``.nv`` e o cartão de
 	memória.
 
 		O valor predefinido é **NULO** (sem reprodução).
@@ -917,7 +917,7 @@ Opções de gravação e reprodução do estado da emulação
 **-exit_after_playback**
 
 	Diz ao MAME para encerrar a emulação depois que terminar a
-	reprodução (playback).
+	reprodução.
 
 .. _mame-commandline-record:
 
@@ -937,7 +937,7 @@ Opções de gravação e reprodução do estado da emulação
 	Diz ao MAME para criar um arquivo de *timecode*. Ele contém uma linha
 	com os tempos decorridos a cada pressão da tecla de atalho
 	(*O valor predefinido é F12*). Esta opção funciona apenas quando o modo de
-	gravação está ativado (opção **-record**). O arquivo é salvo na
+	gravação está ativado (opção ``-record``). O arquivo é salvo na
 	pasta *inp*. É predefinido que nenhum arquivo de timecode seja
 	gravado.
 
@@ -957,8 +957,8 @@ Opções para a gravação de áudio e vídeo
 
 	Escreve cada quadro de vídeo em um arquivo <*filename*> no formato
 	MNG, produzindo uma animação da sessão.
-	Note que **-mngwrite** só grava quadros de vídeo. Ele não grava
-	nenhum dado de áudio, para tanto use **-wavwrite** em conjunto com o
+	Note que ``-mngwrite`` só grava quadros de vídeo. Ele não grava
+	nenhum dado de áudio, para tanto use ``-wavwrite`` em conjunto com o
 	comando e remonte o áudio e vídeo posteriormente usando outras
 	ferramentas.
 	
@@ -1057,7 +1057,7 @@ Opções para instantâneos de tela
 
 	Define a exibição a ser usada ao renderizar instantâneos e vídeos.
 	
-	É predefinido que ambos usem uma exibição especial 'interna', que
+	É predefinido que ambos usem uma exibição especial *interna*, que
 	renderize uma captura instantânea separada por tela ou renderize
 	os vídeos somente da primeira tela. Ao usar essa opção, você
 	pode alterar esse comportamento predefinido de exibição e
@@ -1068,7 +1068,7 @@ Opções para instantâneos de tela
 	ao invés disso, ele selecionará a primeira exibição cujo nome
 	corresponda a todos os caracteres definidos por <*viewname*>.
 	
-	Por exemplo, **-snapview native** irá casar a visualização
+	Por exemplo, ``-snapview native`` irá casar a visualização
 	"Nativa em (15:14)" ainda que não seja uma combinação ideal.
 	O <*viwename*> também pode ser "auto" onde será escolhida a primeira
 	exibição de todas as telas presentes.
@@ -1114,10 +1114,12 @@ Opções relacionadas a performance e velocidade da emulação
 
 **-frameskip** / **-fs** <*level*>
 
-	Determina o valor de pulo de quadros (frameskip). Ela elimina
-	cerca de 12 quadros enquanto estiver sendo executado. Por exemplo,
-	se você definir **-frameskip 2** então MAME irá exibir 10 de cada 12
-	quadros. Ao pular estes quadros, pode ser que se atinja a velocidade
+	Determina o valor de pulo de quadros. Ela elimina cerca de 12
+	quadros enquanto estiver sendo executado. Por exemplo, se você
+	definir ``-frameskip 2`` então MAME irá exibir 10 de cada 12
+	quadros.
+
+	Ao pular estes quadros, pode ser que se atinja a velocidade
 	nativa do sistema emulado sem que haja sobrecarga no seu computador
 	ainda que ele não tenha um grande poder de processamento.
 
@@ -1132,7 +1134,7 @@ Opções relacionadas a performance e velocidade da emulação
 	forma automatizada. O comando diz ao MAME para para interromper a
 	emulação depois de alguns segundos. Ao combinar com outras opções
 	fixas de linha de comando você pode definir um ambiente para
-	realizar testes de performance. Em adição, ao sair, a opção **-str**
+	realizar testes de performance. Em adição, ao sair, a opção ``-str``
 	faz com que seja gravado um instantâneo da tela chamado *final.png*
 	no diretório de
 	:ref:`instantâneos <mame-commandline-snapshotdirectory>`.
@@ -1146,7 +1148,7 @@ Opções relacionadas a performance e velocidade da emulação
 	Este comando também é útil para a realização de benchmarks e testes
 	de automação. Ao combinar esta opção com algumas outras, é possível
 	construir uma estrutura de testes de performance do MAME.
-	Adicionalmente a opção **-str**, faz também que ao final do tempo
+	Adicionalmente a opção ``-str``, faz também que ao final do tempo
 	seja criado um instantâneo de tela chamado **final.png** dentro da
 	pasta de :ref:`instantâneos <mame-commandline-snapshotdirectory>`.
 
@@ -1169,7 +1171,7 @@ Opções relacionadas a performance e velocidade da emulação
 **-[no]sleep**
 
 	Permite que o MAME devolva tempo de CPU ao sistema quando
-	estiver rodando com **-throttle**. Isso permite que outros programas
+	estiver rodando com ``-throttle``. Isso permite que outros programas
 	tenham mais tempo de CPU, assumindo que a emulação não esteja
 	consumindo 100% dos recursos do processador. Essa opção pode causar
 	uma certa intermitência na performance caso outros programas também
@@ -1230,7 +1232,7 @@ Opções relacionadas a performance e velocidade da emulação
 
 **-bench** <*n*>
 
-	Define a quantidade de segundos de emulação em *[n]* usado para
+	Define a quantidade de segundos de emulação em [*n*] usado para
 	teste de performance, o comando é um atalho com comando abaixo:
 
 		**-str** <*n*> **-video none -sound none -nothrottle**
@@ -1450,7 +1452,7 @@ Opções para a configuração de vídeo
 	A equipe do MAME, veementemente sugere que você deixe o valor
 	predefinido inalterado. Esticando a tela do sistema além da
 	proporção original vai causar distorções na aparência do sistema
-	que vai além da capacidade de reparo dos filtros ou HLSL.
+	que vai além da capacidade de reparo dos filtros ou hlsl.
 
 .. _mame-commandline-waitvsync:
 
@@ -1497,7 +1499,7 @@ Opções para a configuração de vídeo
 	haverá problemas com o som. Essa opção foi pensada naqueles que
 	modificaram as configurações da sua placa de vídeo, combinando uma
 	opção a mais com as de atualização de tela.
-	Essa opção não funciona com a opção **-video gdi**.
+	Essa opção não funciona com a opção ``-video gdi``.
 	
 		O valor predefinido é **Desligado** (**-nosyncrefresh**).
 
@@ -1510,7 +1512,7 @@ Opções para a configuração de vídeo
 	tela é renderizada no seu tamanho original antes de ser
 	dimensionada. Com valores maiores a tela é expandida pelo fator
 	definido em <*amount*> antes de ser dimensionado. Isso gera imagens
-	menos borradas com a opção **-video d3d** ao custo da perda de
+	menos borradas com a opção ``-video d3d`` ao custo da perda de
 	alguma performance.
 	
 		O valor predefinido é **1**.
@@ -1530,7 +1532,7 @@ Opções para a configuração de vídeo
 	Quando desabilitado você terá uma imagem pura e com aparência mais
 	serrilhada e também ocasiona artefatos na tela em caso de
 	dimensionamento. Caso não goste da aparência filtrada e amaciada da
-	imagem, tente incrementar o valor da opção **-prescale** ao invés de
+	imagem, tente incrementar o valor da opção ``-prescale`` ao invés de
 	desabilitar todos os filtros.
 	
 		O valor predefinido é **Ligado** (**-filter**).
@@ -1579,7 +1581,7 @@ Opções para a configuração de tela inteira
 **-[no]switchres**
 
 	Permite ou não a comutação ou troca da resolução. Esta opção é
-	necessária para as opções **-resolution** evitando a troca das
+	necessária para as opções ``-resolution`` evitando a troca das
 	resoluções enquanto estiver no modo de tela inteira.
 	
 	Em placas de vídeo modernas, há poucas razões para alternar as
@@ -1591,7 +1593,7 @@ Opções para a configuração de tela inteira
 	resolução fixa e as comutações da resolução algumas vezes são
 	exageradas.
 
-	Essa opção não funciona com a opção **-video gdi**.
+	Essa opção não funciona com a opção ``-video gdi``.
 	
 		O valor predefinido é **Desligado** (**-noswitchres**).
 
@@ -1613,22 +1615,22 @@ funcionar corretamente em algumas máquinas Mac.**
 
 	Define qual o monitor físico em seu sistema você deseja que cada
 	janela use por padrão. Para usar várias janelas, você deve ter
-	aumentado o valor da opção **-numscreens**.
+	aumentado o valor da opção ``-numscreens``.
 	O nome de cada exibição em seu sistema pode ser determinado
-	executando o MAME com a opção **-verbose**.
+	executando o MAME com a opção ``-verbose``.
 	Os nomes de exibição geralmente estão no formato: *\\\\.\DISPLAYn*,
 	onde **n** é um número do monitor conectado.
 	
-	O valor predefinido para essas opções é **auto**.
-	O que significa que a primeira janela é colocada na primeira
-	exibição, a segunda janela na segunda exibição e assim por diante.
+		O valor predefinido para essas opções é **auto**.
+		O que significa que a primeira janela é colocada na primeira
+		exibição, a segunda janela na segunda exibição e assim por
+		diante.
 
-	Os parâmetros **-screen0**, **-screen1**, **-screen2**, **-screen3**
+	Os parâmetros ``-screen0``, ``-screen1``, ``-screen2``, ``-screen3``
 	aplicam-se as janelas definidas. O parâmetro **screen** se aplica
 	a todas as janelas.
 	As opções definidas da janela substituem os valores da opções de
 	todas as janelas.
-
 
 .. _mame-commandline-aspect:
 
@@ -1650,8 +1652,8 @@ funcionar corretamente em algumas máquinas Mac.**
 	ao número de pixels no modo de vídeo da área de trabalho para cada
 	monitor.
 	
-	O parâmetro **-aspect0**, **-aspect1**, **-aspect2** e **-aspect3**
-	se aplica a todas as janelas definidas. O parâmetro **-aspect** se
+	O parâmetro ``-aspect0``, ``-aspect1``, ``-aspect2`` e ``-aspect3``
+	se aplica a todas as janelas definidas. O parâmetro ``-aspect`` se
 	aplica a todas as janelas.
 	As opções definidas da janela substituem os valores da opções de
 	todas as janelas.
@@ -1669,25 +1671,25 @@ funcionar corretamente em algumas máquinas Mac.**
 	obrigatórias, a taxa de atualização é opcional.
 	
 	Caso seja omitido ou configurado para **0**, o MAME determinará o
-	modo automaticamente. Por exemplo, a opção **-resolution 640x480**
+	modo automaticamente. Por exemplo, a opção ``-resolution 640x480``
 	forçará a resolução de 640x480 porém o MAME escolherá a taxa de
 	atualização por conta própria.
 	
-	Da mesma forma que **-resolution 0x0@60** obrigará que a taxa de
+	Da mesma forma que ``-resolution 0x0@60`` obrigará que a taxa de
 	atualização seja de 60 Hz, mas permite que o MAME escolha a
 	resolução. O comando também funciona com "*auto*" e é equivalente a
 	*0x0@0*.
 	
 	No modo janelado essa resolução é usada para determinar o tamanho
 	máximo para a janela. Essa opção também requer que seja usada a
-	opção **-switchres** para ativar a comutação de resolução junto com
+	opção ``-switchres`` para ativar a comutação de resolução junto com
 	**-video d3d**.
 	
 		O valor predefinido para essas opções é **auto**.
 	
-	O parâmetro **-resolution0**, **-resolution1**, **-resolution2** e
-	**-resolution3** se aplica a todas as janelas definidas.
-	O parâmetro **-resolution** se aplica a todas as janelas.
+	O parâmetro ``-resolution0``, ``-resolution1``, ``-resolution2`` e
+	``-resolution3`` se aplica a todas as janelas definidas.
+	O parâmetro ``-resolution`` se aplica a todas as janelas.
 	As opções específicas da janela substituem os valores da opções de
 	todas as janelas.
 
@@ -1704,15 +1706,15 @@ funcionar corretamente em algumas máquinas Mac.**
 	combinação exata, em vez disso, será selecionado a primeira exibição
 	cujo nome corresponde a todos os caracteres especificados por
 	<*viewname*>.
-	Por exemplo, **-view native** corresponderá à visualização
+	Por exemplo, ``-view native`` corresponderá à visualização
 	"Native (15:14)", mesmo que não seja uma correspondência perfeita.
-	O valor funciona com a opção **auto** também e solicita que o MAME
+	O valor funciona com a opção ``auto`` também e solicita que o MAME
 	execute uma seleção predefinida.
 	
 		O valor predefinido para essas opções é **auto**.
 
-	Os parâmetros **-view0**, **-view1**, **-view2** e **-view3** se
-	aplicam a todas as janelas especificadas. O parâmetro **-view** se
+	Os parâmetros ``-view0``, ``-view1``, ``-view2`` e ``-view3`` se
+	aplicam a todas as janelas especificadas. O parâmetro ``-view`` se
 	aplica a todas as janelas.
 	As opções definidas para a janela substituem os valores da opções de
 	todas as janelas.
@@ -1729,7 +1731,7 @@ Principais opções para as ilustrações
 **-[no]artwork_crop** / **-[no]artcrop**
 
 	Ativar o recorte de arte somente na área da tela do sistema. Isso
-	funciona melhor com a opção **-video gdi** ou **-video d3d**
+	funciona melhor com a opção ``-video gdi`` ou ``-video d3d``
 	e significa que os sistemas orientados verticalmente em tela cheia
 	podem exibir as suas ilustrações nos lados esquerdo e direito da
 	tela. Essa opção também pode ser configurada pela opção de vídeo
@@ -1857,16 +1859,17 @@ Principais opções de tela
 
 **-effect** <*filename*>
 
-	Define um único arquivo PNG que será usado como sobreposição na tela
-	de qualquer sistema. Presume-se que o aquivo PNG esteja em um dos
-	diretórios raiz do artpath. Ambas as combinações horizontais e
-	verticais dentro do arquivo PNG é repetido para cobrir toda a tela
-	(mas nenhuma parte da arte externa).
-	Ela é renderizada na resolução nativa do sistema. Para os modos de
-	vídeo **-video gdi** e **-video d3d** significa que um pixel dentro
-	do PNG será mapeado para um pixel da sua tela. Os valores RGB de
-	cada pixel dentro do PNG são multiplicados com os valores de RGB da
-	tela de destino.
+	Define um único arquivo ``.png`` que será usado como sobreposição na
+	tela de qualquer sistema. Presume-se que o aquivo ``.png`` esteja em
+	um dos diretórios raiz do artpath. Ambas as combinações horizontais
+	e verticais dentro do arquivo ``.png`` é repetido para cobrir toda
+	a tela (mas nenhuma parte da arte externa). Ela é renderizada na
+	resolução nativa do sistema.
+
+	Para os modos de vídeo ``-video gdi`` e ``-video d3d`` significa que
+	um pixel dentro do ``.png`` será mapeado para um pixel da sua tela.
+	Os valores RGB de cada pixel dentro do ``.png`` são multiplicados
+	com os valores de RGB da tela de destino.
 	
 		O valor predefinido é **none** ou nenhum efeito.
 
@@ -1899,7 +1902,7 @@ Principais opções para vetores
 
 **-flicker** <*value*>
 
-	Simula um vetor de efeito de "tremulação" ou oscilação da tela
+	Simula um vetor de efeito de *tremulação* ou oscilação da tela
 	semelhante aos monitores desregulados usados nos jogos vetoriais.
 	Essa opção espera um valor flutuante (float) no intervalo
 	entre **0.00** e **100.00** (**0** = nenhum e **100** = máximo).
@@ -1909,7 +1912,7 @@ Principais opções para vetores
 Principais opções para a depuração de vídeo OpenGL
 --------------------------------------------------
 
-Essas são as opções compatíveis com **-video opengl**.
+Essas são as opções compatíveis com ``-video opengl``.
 Caso você note artefatos renderizados na tela, poderá ser solicitado
 pelos desenvolvedores que você tente alterá-los, porém normalmente esses
 os valores devem ser mantidos em seus valores originais para que se
@@ -2047,7 +2050,7 @@ Principais opções de áudio
 	Define o volume inicial. Pode ser alterado posteriormente usando
 	a interface do usuário.
 	O valor do volume está definido em decibéis (dB): Por exemplo,
-	"**-volume -12**" começará com uma atenuação de -12 dB no som.
+	``-volume -12`` começará com uma atenuação de -12 dB no som.
 	
 		O valor predefinido é **0** (**-volume 0**).
 
@@ -2078,7 +2081,7 @@ Principais opções de áudio
 	
 		O valor predefinido é **1** (significando inferior=1/5 e
 		superior=2/5). Para manter a memória intermédia sempre cheia entre
-		2/5 e 3/5, defina o valor para **2** (**-audio_latency 2**).
+		2/5 e 3/5, defina o valor para **2** (``-audio_latency 2``).
 		Caso você exagere nesse valor, como **4** por exemplo, você um
 		notará um atraso significativo no som.
 
@@ -2111,8 +2114,8 @@ Principais opções de entrada
 
 	Ativa o suporte para controladores especiais. Os arquivos de
 	configuração são carregados do *ctrlrpath*. Eles estão no mesmo
-	formato dos arquivos .cfg, mas somente os dados de configuração de
-	controle são lidos do arquivo.
+	formato dos arquivos ``.cfg``, mas somente os dados de configuração
+	de controle são lidos do arquivo.
 	
 		O valor predefinido é **NULO** (nenhum arquivo de controle)
 
@@ -2131,7 +2134,7 @@ Principais opções de entrada
 **-[no]joystick** / **-[no]joy**
 
 	Controla se o MAME usa ou não os controles do joystick/gamepad.
-	Se estiver ligado o MAME perguntará ao DirectInput sobre quais
+	Se estiver ligado o MAME perguntará ao *DirectInput* sobre quais
 	controles estão conectados atualmente.
 	
 		O valor predefinido é **Desligado** (**-nojoystick**).
@@ -2142,7 +2145,7 @@ Principais opções de entrada
 
 	Controla se o MAME usa ou não os controles da pistola de luz
 	(lightgun). Observe que a maioria das pistolas de luz são mapeadas
-	para o mouse, assim, ao se usar ambas as opções **-lightgun** e
+	para o mouse, assim, ao se usar ambas as opções ``-lightgun`` e
 	**-mouse** juntos, isso pode poderá trazer resultados inesperados.
 	
 		O valor predefinido é **Desligado** (**-nolightgun**).
@@ -2215,9 +2218,9 @@ Principais opções de entrada
 
 	Controla como mapear os valores analógicos do controle (joystick)
 	para o controle (joystick) digital. O MAME aceita qualquer dado
-	analógico de todos os controles (joystick). Para controles
-	analógicos de verdade, os valores precisam ser mapeados para valores
-	de controles digitais com 4 direções ou 8 direções.
+	analógico de todos os controles. Para controles analógicos de
+	verdade, os valores precisam ser mapeados para valores de controles
+	digitais com 4 direções ou 8 direções.
 	
 	Para fazer isso o MAME divide o alcance do valor analógico numa
 	grade de 9x9. Então usa a posição do eixo (para eixos X e Y apenas),
@@ -2257,7 +2260,7 @@ Principais opções de entrada
 	``777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333``
 
 	No entanto, isso pode ser reduzido usando vários atalhos compatíveis
-	com o parâmetro <map>. Caso as informações sobre uma linha estejam
+	com o parâmetro <*map*>. Caso as informações sobre uma linha estejam
 	ausentes, presume-se que os dados ausentes nas colunas 5-9 são
 	simétricos da esquerda/direita com os dados da coluna 0-4; qualquer
 	dados ausentes das colunas 0-4, assume-se então que estas serão
@@ -2291,7 +2294,7 @@ Principais opções de entrada
 **-joystick_deadzone** <*value*> / **-joy_deadzone** <*value*> / **-jdz** <*value*>
 
 	Caso você jogue com um joystick analógico ele poderá estar um pouco
-	fora de contro. O **-joystick_deadzone** informa uma folga ao longo
+	fora de contro. O ``-joystick_deadzone`` informa uma folga ao longo
 	de um eixo que você deve mover antes que o eixo comece a mudar.
 	Essa opção espera um valor flutuante (float) no intervalo entre
 	**0.0** e **1.0**. Onde **0** é o centro do joystick e **1** o
@@ -2305,7 +2308,7 @@ Principais opções de entrada
 
 	Caso você jogue com um joystick analógico as extremidades podem
 	estar um pouco fora e podem não corresponder nas direções + /.
-	O **-joystick_saturation** define se uma folga no movimento do eixo
+	O ``-joystick_saturation`` define se uma folga no movimento do eixo
 	será aceita até que se atinja o alcance máximo. Essa opção espera um
 	valor flutuante (float) no intervalo entre **0.0** até **1.0** onde
 	**0** é o centro do joystick e **1** é o limite externo.
@@ -2317,7 +2320,7 @@ Principais opções de entrada
 **\-natural**
 
 	Permite que o usuário defina se deve ou não usar um teclado natural.
-	Isso permite que você inicie seu sistema em um modo 'nativo'
+	Isso permite que você inicie seu sistema em um modo *nativo*
 	dependendo da sua região, permitindo compatibilidade para teclados
 	fora do padrão "QWERTY".
 	
@@ -2351,7 +2354,7 @@ Principais opções de entrada
 	  pressionada.
 	* As sequências de chaves inativas na melhor das hipóteses, são
 	  complicadas de se usar.
-	* Não funcionará se a edição do IME estiver envolvida como
+	* Não funcionará se a edição do **IME** estiver envolvida como
 	  Chinês/Japonês/Coreano por exemplo)
 
 .. _mame-commandline-joystickcontradictory:
@@ -2369,8 +2372,8 @@ Principais opções de entrada
 
 **-coin_impulse** *[n]*
 
-	Define o tempo de impulso da moeda com base em *n* (**n<0**
-	desabilita, **n==0** obedeça o driver, **0<n** defina o tempo em
+	Define o tempo de impulso da moeda com base em *n* (``n<0``
+	desabilita, ``n==0`` obedeça o driver, ``0<n`` defina o tempo em
 	*n*).
 	
 		O valor predefinido é **0** (**-coin_impulse 0**).
@@ -2442,9 +2445,9 @@ Principais opções de entrada automaticamente ativas
 	para o mouse, controle (joystick) ou pistola de luz (lightgun)
 	dependendo de uma classe em particular de controle analógico para um
 	sistema em particular. Por exemplo, se você definir a opção
-	**-paddle mouse**, então qualquer jogo que tenha um remo ou pá como
+	``-paddle mouse``, então qualquer jogo que tenha um remo ou pá como
 	controle será automaticamente configurada para ser usada pelo mouse
-	como se a opção **-mouse** tivesse sido definida.
+	como se a opção ``-mouse`` tivesse sido definida.
 
 	Observe que estes controles sobrescrevem as opções
 	:ref:`-[no]mouse <mame-commandline-nomouse>`,
@@ -2465,7 +2468,7 @@ Opções de depuração
 	diagnósticos disponíveis.
 	Essas informações são úteis para apurar qualquer tipo de problemas
 	com a sua configuração ou qualquer outra que possa aparecer.
-	IMPORTANTE: favor rodar com **mame -verbose** e incluir a
+	IMPORTANTE: favor rodar com ``mame -verbose`` e incluir a
 	saída junto caso queira entrar em contato conosco para relatar um
 	erro.
 
@@ -2486,7 +2489,7 @@ Opções de depuração
 
 	Cria um arquivo chamado error.log que contém todos os registros de
 	mensagens internas gerada pelo cerne do MAME e drivers de sistema.
-	Isso pode ser usado ao mesmo tempo que **-oslog** para escrever os
+	Isso pode ser usado ao mesmo tempo que ``-oslog`` para escrever os
 	dados de saída de ambos ao mesmo tempo.
 
 		O valor predefinido é **Desligado** (**-nolog**).
@@ -2664,7 +2667,7 @@ Outras opções essenciais
 **-bios** <*biosname*>
 
 	Determina qual BIOS usar no sistema a ser emulado em sistemas
-	que fazem uso de uma BIOS. A saída **-listxml** listará todos os
+	que fazem uso de uma BIOS. A saída ``-listxml`` listará todos os
 	nomes das BIOS disponíveis para o sistema.
 
 		Não há valor predefinido (O MAME usará a primeira BIOS nativa
@@ -2697,7 +2700,7 @@ Outras opções essenciais
 	não puder ser carregada, o MAME usará a sua própria fonte embutida.
 	Em algumas plataformas o <*fontname*> (nome da fonte) pode ser um
 	nome da fonte do sistema em vez de um arquivo fonte com extensão
-	BDF.
+	``.bdf``.
 	
 		O valor predefinido é **default** (O MAME usará a fonte nativa).
 
@@ -2706,7 +2709,7 @@ Outras opções essenciais
 **-ui** <*type*>
 
 	Define o tipo de interface do usuário a ser usada, as opções ficam
-	entre *simple* ou *cabinet*.
+	entre **simple** ou **cabinet**.
 	
 		O valor predefinido é **Cabinet** (**-ui cabinet**).
 

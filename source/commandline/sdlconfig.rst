@@ -20,7 +20,7 @@ Opções de performance
 
 	Ativa a saída de dados para benchmark no subsistema de vídeo SDL
 	incluindo o driver de vídeo do seu sistema, o servidor X (caso seja
-	aplicável) e stack Opengl em modo **-video opengl**.
+	aplicável) e stack Opengl em modo ``-video opengl``.
 
 Opções de vídeo
 ---------------
