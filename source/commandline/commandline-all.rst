@@ -1083,8 +1083,8 @@ Opções para instantâneos de tela
 
 	\clearpage
 
-Principais opções de performance
---------------------------------
+Opções relacionadas a performance e velocidade da emulação
+----------------------------------------------------------
 
 .. _mame-commandline-noautoframeskip:
 
@@ -1543,6 +1543,10 @@ Principais opções de vídeo
 	*systemname/burnin-<nome.da.tela>.png*.
 
 		O valor predefinido é **Desligado** (**-noburnin**).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-unevenstretch:
 
