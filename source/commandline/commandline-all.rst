@@ -69,8 +69,8 @@ torno dos seus arranjos para evitar que o seu ambiente tente
 interpretá-los de forma independente em relação aos nomes dos arquivos
 que desejamos usar (por exemplo, **mame -validate "pac\*"**).
 
-Opções de ajuda e validação
----------------------------
+Opções de ajuda e verificação
+-----------------------------
 
 .. _mame-commandline-help:
 
@@ -94,6 +94,50 @@ Opções de ajuda e validação
 	dispositivos, nenhum tipo de validação será realizada com
 	dispositivos.
 
+.. _mame-commandline-verifyroms:
+
+**-verifyroms** [<*pattern*>]
+
+	Verifica se há imagens ROM inválidas ou ausentes. É predefinido que
+	todos os drivers que possuam arquivos ZIP ou diretórios válidos no
+	rompath (caminho da rom) sejam verificados, no entanto, você pode
+	limitar essa lista se usar um termo como filtro após o comando
+	**-verifyroms**.
+
+.. _mame-commandline-verifysamples:
+
+**-verifysamples** [<*pattern*>]
+
+	Verifica se há amostras inválidas ou ausentes. É predefinido que
+	todos os drivers que possuem arquivos ZIP ou diretórios válidos no
+	samplepath sejam verificados no caminho da pasta onde os arquivos de
+	amostras se encontram, no entanto, você pode filtrar essa lista
+	caso use uma palavra chave ou coringa após o comando
+	**-verifysamples**.
+
+.. _mame-commandline-verifysoftware:
+
+**-verifysoftware** / **-vsoft** [<*pattern*>]
+
+	Verifica se há imagens ROM inválidas ou ausentes na lista de
+	software. Por predefinição, todos os drivers que possuem arquivos
+	ZIP ou diretórios válidos no rompath (caminho da rom) serão
+	verificados, no entanto, você pode limitar essa lista definindo um
+	nome de driver específico ou *combinações* após o comando
+	**-verifysoftware**.
+
+.. _mame-commandline-verifysoftlist:
+
+**-verifysoftlist** / **-vlist** [*softwarelistname*]
+
+	Verifica ROMs ausentes com base em uma lista de software
+	predeterminado na pasta **hash**.
+	É predefinido que a busca e a verificação será feita em todos os
+	drivers e arquivos ZIP em diretórios válidos no *rompath* (caminho da
+	rom), no entanto, você pode filtrar essa lista usando uma palavra
+	chave ou coringa em "*softwarelistname*" após o comando
+	**-verifysoftlist**. As listas estão na pasta *hash* e devem ser
+	informadas sem a extensão .XML.
 
 Opções para configuração
 ------------------------
@@ -222,27 +266,6 @@ Exemplo:
 	seja usado como filtro depois do comando, *todos* os resultados dos
 	sistemas e dispositivos serão exibidos.
 
-.. _mame-commandline-verifyroms:
-
-**-verifyroms** [<*pattern*>]
-
-	Verifica se há imagens ROM inválidas ou ausentes. É predefinido que
-	todos os drivers que possuam arquivos ZIP ou diretórios válidos no
-	rompath (caminho da rom) sejam verificados, no entanto, você pode
-	limitar essa lista se usar um termo como filtro após o comando
-	**-verifyroms**.
-
-.. _mame-commandline-verifysamples:
-
-**-verifysamples** [<*pattern*>]
-
-	Verifica se há amostras inválidas ou ausentes. É predefinido que
-	todos os drivers que possuem arquivos ZIP ou diretórios válidos no
-	samplepath sejam verificados no caminho da pasta onde os arquivos de
-	amostras se encontram, no entanto, você pode filtrar essa lista
-	caso use uma palavra chave ou coringa após o comando
-	**-verifysamples**.
-
 .. _mame-commandline-romident:
 
 **-romident** [*caminho\\completo\\para\\a\\rom\\a\\ser\\conferida.zip*]
@@ -309,36 +332,12 @@ Exemplo:
 	isso é simplesmente um copiar/colar do arquivo .XML que reside
 	na pasta HASH e que pode ser usada.
 
-.. _mame-commandline-verifysoftware:
-
-**-verifysoftware** / **-vsoft** [<*pattern*>]
-
-	Verifica se há imagens ROM inválidas ou ausentes na lista de
-	software. Por predefinição, todos os drivers que possuem arquivos
-	ZIP ou diretórios válidos no rompath (caminho da rom) serão
-	verificados, no entanto, você pode limitar essa lista definindo um
-	nome de driver específico ou *combinações* após o comando
-	**-verifysoftware**.
-
 .. _mame-commandline-getsoftlist:
 
 **-getsoftlist** / **-glist** [<*pattern*>]
 
         Postagens para exibir na tela uma listas de software específicos
         que correspondem ao nome do sistema fornecido.
-
-.. _mame-commandline-verifysoftlist:
-
-**-verifysoftlist** / **-vlist** [*softwarelistname*]
-
-	Verifica ROMs ausentes com base em uma lista de software
-	predeterminado na pasta **hash**.
-	É predefinido que a busca e a verificação será feita em todos os
-	drivers e arquivos ZIP em diretórios válidos no *rompath* (caminho da
-	rom), no entanto, você pode filtrar essa lista usando uma palavra
-	chave ou coringa em "*softwarelistname*" após o comando
-	**-verifysoftlist**. As listas estão na pasta *hash* e devem ser
-	informadas sem a extensão .XML.
 
 .. raw:: latex
 
