@@ -1752,12 +1752,13 @@ Opções para uso com as ilustrações
 
 **-[no]artwork_crop** / **-[no]artcrop**
 
-	Ativar o recorte de arte somente na área da tela do sistema. Isso
-	funciona melhor com a opção ``-video gdi`` ou ``-video d3d``
-	e significa que os sistemas orientados verticalmente em tela cheia
-	podem exibir as suas ilustrações nos lados esquerdo e direito da
-	tela. Essa opção também pode ser configurada pela opção de vídeo
-	acessada através das opções da interface do usuário.
+	Ativa o recorte de arte somente na área da tela do sistema.
+	Significa que sistemas que tenham telas com orientação horizontal
+	rodando em tela cheia possam exibir a sua ilustração do lado
+	esquerdo e direito da tela.
+
+	Essa opção também está disponível através da interface gráfica na
+	parte das opções de vídeo.
 	
 		O valor predefinido é **Desligado** (**-noartwork_crop**).
 
