@@ -973,12 +973,18 @@ Opções para a gravação de áudio e vídeo
 
 **-aviwrite** <*filename*>.avi
 
-	Grava todos os dados de áudio e vídeo em um arquivo,
-	<*filename*>.avi é o nome do arquivo de vídeo. O arquivo é gravado
-	em formato AVI puro (raw), note que o arquivo final ficará bem
-	grande. Caso o seu HDD não seja rápido o suficiente haverá
-	travamentos e lentidão na emulação.
+	Grava todos os dados de áudio e vídeo em formato AVI sem compressão,
+	note que a taxa de quadros e a resolução são sempre fixas. Vídeos
+	sem compressão ocupam muito espaço assim como, para que a gravação
+	ocorra sem problemas é necessário um HDD rápido.
 	
+	Talvez seja mais prático gravar os seus comandos com
+	:ref:`-record <mame-commandline-record>` e
+	depois fazer o vídeo com
+	:ref:`-aviwrite <mame-commandline-aviwrite>` combinado com
+	:ref:`-playback <mame-commandline-playback>` e
+	:ref:`-exit_after_playback <mame-commandline-exitafterplayback>`.
+
 		O valor predefinido é **NULO** (sem gravação).
 
 .. _mame-commandline-wavwrite:
