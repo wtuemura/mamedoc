@@ -2,8 +2,8 @@
 
 	\clearpage
 
-Opções de linha de comando específicos para a versão SDL
-========================================================
+Configurações específicas para o versões SDL
+============================================
 
 Nesta seção descreveremos as opções de configuração voltadas
 especificamente para qualquer versão compatível com o SDL (incluindo o
@@ -41,8 +41,8 @@ Opções de vídeo
 		O valor predefinido é **Ligado** (**-centerv**).
 
 
-Opções de software específicos para vídeo
------------------------------------------
+Configurações de tipos de espaços de cor para vídeo
+---------------------------------------------------
 
 .. _mame-scommandline-scalemode:
 
@@ -55,8 +55,8 @@ Opções de software específicos para vídeo
 		O valor predefinido é **none** (nenhum).
 
 
-Mapeamento do teclado SDL
--------------------------
+Configurações para o mapeamento de teclado
+------------------------------------------
 
 .. _mame-scommandline-keymap:
 
@@ -78,8 +78,8 @@ Mapeamento do teclado SDL
 
 	\clearpage
 
-Mapeamento de joystick SDL
---------------------------
+Configurações para o mapeamento de controle joystick
+----------------------------------------------------
 
 .. _mame-scommandline-joyidx:
 
@@ -103,7 +103,7 @@ Nome do controle joystick mapeado para um determinado slot de joystick.
 
 		O valor predefinido é **Desligado** (**-nosixaxis**)
 
-Opções de baixo nível para drivers SDL
+Opções para a configuração dos drivers
 -------------------------------------- 
 
 .. _mame-scommandline-videodriver:

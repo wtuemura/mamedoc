@@ -139,8 +139,8 @@ Opções de ajuda e verificação
 	``-verifysoftlist``. As listas estão na pasta *hash* e devem ser
 	informadas sem a extensão ``.xml``.
 
-Opções para configuração
-------------------------
+Opções de configuração
+----------------------
 
 .. _mame-commandline-createconfig:
 
@@ -171,8 +171,8 @@ Opções para configuração
 	por ``mame -showusage`` geralmente são suficientes para a grande
 	maioria das pessoas.
 
-Opções de listagem
-------------------
+Opções para listagem
+--------------------
 
 É predefinido que todos os comandos ``-list`` abaixo, exibam informações
 na saída predefinida do sistema, geralmente é a tela do terminal onde
@@ -345,8 +345,8 @@ Exemplo:
 
 .. _osd-commandline-options:
 
-Opções relacionadas as informações exibidas na tela (OSD)
----------------------------------------------------------
+Opções relacionadas ao que é exibido na tela (OSD)
+--------------------------------------------------
 
 .. _mame-commandline-uimodekey:
 
@@ -445,8 +445,8 @@ Opções relacionadas as informações exibidas na tela (OSD)
 	mesmo tempo.
 	No SDL, **auto** será predefinido para **sdl**.
 
-Opções relacionados ao OSD CLI
-------------------------------
+Opções de MIDI e rede
+---------------------
 
 .. _mame-commandline-listmidi:
 
@@ -462,10 +462,8 @@ Opções relacionados ao OSD CLI
 	Cria uma lista de adaptadores de rede disponíveis que possam ser
 	usados com a emulação.
 
-
-
-Opções de saída do OSD
-----------------------
+Opções de saída das notificações de tela 
+----------------------------------------
 
 .. _mame-commandline-output:
 
@@ -480,8 +478,8 @@ Opções de saída do OSD
 		O valor predefinido para a porta de rede é **8000**.
 
 
-Opções de configuração
-----------------------
+Opções para a configuração
+--------------------------
 
 .. _mame-commandline-noreadconfig:
 
@@ -816,8 +814,8 @@ Opções para a configuração dos diretórios principais
 
 	\clearpage
 
-Opções de gravação e reprodução do estado da emulação
------------------------------------------------------
+Opções para a gravação e a reprodução do estado da emulação
+-----------------------------------------------------------
 
 .. _mame-commandline-norewind:
 
@@ -1055,6 +1053,10 @@ Opções para instantâneos de tela
 	
 		O valor predefinido é **auto**.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-snapview:
 
 **-snapview** <*viewname*>
@@ -1079,10 +1081,6 @@ Opções para instantâneos de tela
 
 		O valor predefinido é **internal**.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-nosnapbilinear:
 
 **-[no]snapbilinear**
@@ -1100,8 +1098,8 @@ Opções para instantâneos de tela
 
 	\clearpage
 
-Opções relacionadas a performance e velocidade da emulação
-----------------------------------------------------------
+Opções relacionadas a performance e a velocidade da emulação
+------------------------------------------------------------
 
 .. _mame-commandline-noautoframeskip:
 
@@ -1245,8 +1243,8 @@ Opções relacionadas a performance e velocidade da emulação
 
 	\clearpage
 
-Opções de rotação de tela
--------------------------
+Opções para a rotação da tela
+-----------------------------
 
 .. _mame-commandline-norotate:
 
@@ -1577,7 +1575,7 @@ Opções para a configuração de vídeo
 		O valor predefinido é **Ligado** (**-unevenstretch**).
 
 
-Opções para a configuração de tela inteira
+Opções para a configuração da tela inteira
 ------------------------------------------
 
 .. _mame-commandline-switchres:
@@ -1602,13 +1600,13 @@ Opções para a configuração de tela inteira
 		O valor predefinido é **Desligado** (**-noswitchres**).
 
 
-Principais opções de janela individual
---------------------------------------
+Opções de vídeo para uso com janelas individuais
+------------------------------------------------
 
 .. _mame-commandline-screen:
 
 NOTA: **A partir de agora a opção de várias telas simultâneas podem não
-funcionar corretamente em algumas máquinas Mac.**
+funcionar corretamente em alguns computadores Mac.**
 
 |	**-screen** <*display*>
 |	**-screen0** <*display*>
@@ -1727,8 +1725,8 @@ funcionar corretamente em algumas máquinas Mac.**
 
 	\clearpage
 
-Principais opções para as ilustrações
--------------------------------------
+Opções para uso com as ilustrações
+----------------------------------
 
 .. _mame-commandline-noartworkcrop:
 
@@ -1802,8 +1800,8 @@ Principais opções para as ilustrações
 
 	\clearpage
 
-Principais opções de tela
--------------------------
+Opções para os ajustes de imagem da tela
+----------------------------------------
 
 .. _mame-commandline-brightness:
 
@@ -1882,8 +1880,8 @@ Principais opções de tela
 
 	\clearpage
 
-Principais opções para vetores
-------------------------------
+Opções para máquinas que usem gráficos vetoriais
+------------------------------------------------
 
 .. _mame-commandline-beamwidthmin:
 
@@ -1918,8 +1916,8 @@ Principais opções para vetores
 
 	\clearpage
 
-Principais opções para a depuração de vídeo OpenGL
---------------------------------------------------
+Opções para a depuração de vídeo OpenGL
+---------------------------------------
 
 Essas são as opções compatíveis com ``-video opengl``.
 Caso você note artefatos renderizados na tela, poderá ser solicitado
@@ -1964,8 +1962,8 @@ obtenha a melhor performance possível.
 
 	\clearpage
 
-Principais opções de vídeo OpenGL GLSL
---------------------------------------
+Opções de vídeo OpenGL GLSL
+---------------------------
 
 .. _mame-commandline-glglsl:
 
@@ -2029,8 +2027,8 @@ Principais opções de vídeo OpenGL GLSL
 
 	\clearpage
 
-Principais opções de áudio
---------------------------
+Opções para a configuração do áudio
+-----------------------------------
 
 .. _mame-commandline-samplerate:
 
@@ -2094,14 +2092,12 @@ Principais opções de áudio
 		Caso você exagere nesse valor, como **4** por exemplo, você um
 		notará um atraso significativo no som.
 
-.. A nice and clean way to do a page break, this case for latex and PDF
-   only.
 .. raw:: latex
 
 	\clearpage
 
-Principais opções de entrada
-----------------------------
+Opções para as configurações de diferentes entradas
+---------------------------------------------------
 
 .. _mame-commandline-nocoinlockout:
 
@@ -2391,8 +2387,8 @@ Principais opções de entrada
 
 	\clearpage
 
-Principais opções de entrada automaticamente ativas
----------------------------------------------------
+Opções de entrada habilitadas automaticamente 
+---------------------------------------------
 
 .. _mame-commandline-paddledevice:
 
@@ -2466,8 +2462,8 @@ Principais opções de entrada automaticamente ativas
 
 	\clearpage
 
-Opções de depuração
--------------------
+Opções voltadas para a depuração
+--------------------------------
 
 .. _mame-commandline-verbose:
 
@@ -2580,8 +2576,8 @@ Opções de depuração
 
 	\clearpage
 
-Opções para configuração de rede
---------------------------------
+Opções para a configuração da rede
+----------------------------------
 
 .. _mame-commandline-commlocalhost:
 
@@ -2634,8 +2630,8 @@ Opções para configuração de rede
 
 	\clearpage
 
-Outras opções essenciais
-------------------------
+Opções diversas
+---------------
 
 .. _mame-commandline-drc:
 
@@ -2767,6 +2763,9 @@ Outras opções essenciais
 	e qualquer alteração atual não será gravada.
 	
 		O valor predefinido é **Ligado** (**-nvram_save**)
+
+Opções para uso com script
+--------------------------
 
 .. _mame-commandline-autobootcommand:
 

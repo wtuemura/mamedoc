@@ -1,40 +1,41 @@
-
 .. raw:: latex
 
 	\clearpage
 
 .. _index-commandline:
 
-Indice das opções de linha de comando
-=====================================
+Índice das opções para a linha de comando
+=========================================
 
-Este é o índice completo de todas as opções de linha de comandos para o
-MAME, muito conveniente para a localização rápida de um determinado
-comando.
+Este é o índice quase completo do MAME das opções para a linha de
+comando, muito conveniente para a localização rápida de comandos. O MAME
+possui ainda algumas opções disponíveis e não documentadas, a opção
+:ref:`-showusage <mame-commandline-showusage>` pode dar um resumo de
+algumas opções que não estejam aqui listadas.
 
-Opções universais de linha de comando
--------------------------------------
+Opções universais de comandos
+-----------------------------
 
-Esssa seção contém as opções de configuração aplicáveis à *todas* versões do do MAME (seja SDL ou Windows).
-
-
-Comandos principais
-~~~~~~~~~~~~~~~~~~~
+Opções de ajuda e verificação
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`help <mame-commandline-help>`
 | :ref:`validate <mame-commandline-validate>`
+| :ref:`verifyroms <mame-commandline-verifyroms>`
+| :ref:`verifysamples <mame-commandline-verifysamples>`
+| :ref:`verifysoftware <mame-commandline-verifysoftware>`
+| :ref:`verifysoftlist <mame-commandline-verifysoftlist>`
 
-
-Comandos de configuração
-~~~~~~~~~~~~~~~~~~~~~~~~
+Opções de configuração
+~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`createconfig <mame-commandline-createconfig>`
 | :ref:`showconfig <mame-commandline-showconfig>`
 | :ref:`showusage <mame-commandline-showusage>`
 
 
-Comandos frontend
-~~~~~~~~~~~~~~~~~
+Opções para listagem
+~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`listxml <mame-commandline-listxml>`
 | :ref:`listfull <mame-commandline-listfull>`
@@ -44,17 +45,12 @@ Comandos frontend
 | :ref:`listcrc <mame-commandline-listcrc>`
 | :ref:`listroms <mame-commandline-listroms>`
 | :ref:`listsamples <mame-commandline-listsamples>`
-| :ref:`verifyroms <mame-commandline-verifyroms>`
-| :ref:`verifysamples <mame-commandline-verifysamples>`
 | :ref:`romident <mame-commandline-romident>`
 | :ref:`listdevices <mame-commandline-listdevices>`
 | :ref:`listslots <mame-commandline-listslots>`
 | :ref:`listmedia <mame-commandline-listmedia>`
 | :ref:`listsoftware <mame-commandline-listsoftware>`
-| :ref:`verifysoftware <mame-commandline-verifysoftware>`
 | :ref:`getsoftlist <mame-commandline-getsoftlist>`
-| :ref:`verifysoftlist <mame-commandline-verifysoftlist>`
-
 
 Opções relacionadas ao que é exibido na tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,27 +63,27 @@ Opções relacionadas ao que é exibido na tela
 | :ref:`joystickprovider <mame-commandline-joystickprovider>`
 
 
-Opções CLI relacionados ao que é exibido na tela
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções de MIDI e rede
+~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`listmidi <mame-commandline-listmidi>`
 | :ref:`listnetwork <mame-commandline-listnetwork>`
 
 
-Opções de saída relacionados ao que é exibido na tela
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções de saída das notificações de tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`output <mame-commandline-output>`
 
 
-Opções de configuração
-~~~~~~~~~~~~~~~~~~~~~~
+Opções para a configuração
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`noreadconfig <mame-commandline-noreadconfig>`
 
 
-Principais opções de pesquisa de caminho
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para a configuração dos diretórios principais
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`homepath <mame-commandline-homepath>`
 | :ref:`rompath <mame-commandline-rompath>`
@@ -102,11 +98,6 @@ Principais opções de pesquisa de caminho
 | :ref:`pluginspath <mame-commandline-pluginspath>`
 | :ref:`languagepath <mame-commandline-languagepath>`
 | :ref:`swpath <mame-commandline-swpath>`
-
-
-Principais opções para o destino de diretório
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 | :ref:`cfg_directory <mame-commandline-cfgdirectory>`
 | :ref:`nvram_directory <mame-commandline-nvramdirectory>`
 | :ref:`input_directory <mame-commandline-inputdirectory>`
@@ -116,30 +107,39 @@ Principais opções para o destino de diretório
 | :ref:`comment_directory <mame-commandline-commentdirectory>`
 
 
-Principais opções de estado e reprodução
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para a gravação e a reprodução do estado da emulação
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]rewind / rewind<mame-commandline-norewind>`
 | :ref:`rewind_capacity <mame-commandline-rewindcapacity>`
+| :ref:`statename <mame-commandline-statename>`
 | :ref:`state <mame-commandline-state>`
 | :ref:`[no]autosave <mame-commandline-noautosave>`
 | :ref:`playback <mame-commandline-playback>`
 | :ref:`exit_after_playback <mame-commandline-exitafterplayback>`
 | :ref:`record <mame-commandline-record>`
 | :ref:`record_timecode <mame-commandline-recordtimecode>`
+
+
+Opções para a gravação de áudio e vídeo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 | :ref:`mngwrite <mame-commandline-mngwrite>`
 | :ref:`aviwrite <mame-commandline-aviwrite>`
 | :ref:`wavwrite <mame-commandline-wavwrite>`
+
+
+Opções para os instantâneos de tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 | :ref:`snapname <mame-commandline-snapname>`
 | :ref:`snapsize <mame-commandline-snapsize>`
 | :ref:`snapview <mame-commandline-snapview>`
 | :ref:`[no]snapbilinear <mame-commandline-nosnapbilinear>`
-| :ref:`statename <mame-commandline-statename>`
-| :ref:`[no]burnin <mame-commandline-noburnin>`
 
 
-Principais opções de performance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções relacionadas a performance e a velocidade da emulação
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]autoframeskip <mame-commandline-noautoframeskip>`
 | :ref:`frameskip <mame-commandline-frameskip>`
@@ -152,8 +152,8 @@ Principais opções de performance
 | :ref:`bench <mame-commandline-bench>`
 
 
-Principais opções de rotação
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para a rotação da tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]rotate <mame-commandline-norotate>`
 | :ref:`[no]ror <mame-commandline-noror>`
@@ -164,8 +164,8 @@ Principais opções de rotação
 | :ref:`[no]flipy <mame-commandline-noflipy>`
 
 
-Principais opções de vídeo
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para a configuração de vídeo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`video <mame-commandline-video>`
 | :ref:`numscreens <mame-commandline-numscreens>`
@@ -176,17 +176,18 @@ Principais opções de vídeo
 | :ref:`[no]syncrefresh <mame-commandline-syncrefresh>`
 | :ref:`prescale <mame-commandline-prescale>`
 | :ref:`[no]filter <mame-commandline-filter>`
+| :ref:`[no]burnin <mame-commandline-noburnin>`
 | :ref:`[no]unevenstretch <mame-commandline-unevenstretch>`
 
 
-Opções de tela inteira
-~~~~~~~~~~~~~~~~~~~~~~
+Opções para a configuração da tela inteira
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]switchres <mame-commandline-switchres>`
 
 
-Opções de janelas individuais de vídeo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções de vídeo para uso com janelas individuais
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`screen <mame-commandline-screen>`
 | :ref:`aspect <mame-commandline-aspect>`
@@ -194,8 +195,8 @@ Opções de janelas individuais de vídeo
 | :ref:`view <mame-commandline-view>`
 
 
-Opções de ilustração (Artwork)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para uso com as ilustrações
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]artwork_crop <mame-commandline-noartworkcrop>`
 | :ref:`[no]use_backdrops <mame-commandline-nousebackdrops>`
@@ -207,8 +208,8 @@ Opções de ilustração (Artwork)
 | :ref:`override_artwork <mame-commandline-overrideartwork>`
 
 
-Opções de tela
-~~~~~~~~~~~~~~
+Opções para os ajustes de imagem da tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`brightness <mame-commandline-brightness>`
 | :ref:`contrast <mame-commandline-contrast>`
@@ -217,8 +218,8 @@ Opções de tela
 | :ref:`effect <mame-commandline-effect>`
 
 
-Opções de vetores
-~~~~~~~~~~~~~~~~~
+Opções para máquinas que usem gráficos vetoriais
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`beam_width_min <mame-commandline-beamwidthmin>`
 | :ref:`beam_width_max <mame-commandline-beamwidthmax>`
@@ -226,8 +227,8 @@ Opções de vetores
 | :ref:`flicker <mame-commandline-flicker>`
 
 
-Opções de depuração de vídeo OpenGL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para a depuração de vídeo OpenGL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]gl_forcepow2texture <mame-commandline-glforcepow2texture>`
 | :ref:`[no]gl_notexturerect <mame-commandline-glnotexturerect>`
@@ -245,8 +246,8 @@ Opções de vídeo OpenGL GLSL
 | :ref:`gl_glsl_vid_attr <mame-commandline-glglslvidattr>`
 
 
-Opções de áudio
-~~~~~~~~~~~~~~~
+Opções para a configuração do áudio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`samplerate <mame-commandline-samplerate>`
 | :ref:`[no]samples <mame-commandline-nosamples>`
@@ -255,8 +256,8 @@ Opções de áudio
 | :ref:`audio_latency <mame-commandline-audiolatency>`
 
 
-Opções de entrada
-~~~~~~~~~~~~~~~~~~
+Opções para as configurações de diferentes entradas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]coin_lockout <mame-commandline-nocoinlockout>`
 | :ref:`ctrlr <mame-commandline-ctrlr>`
@@ -276,7 +277,7 @@ Opções de entrada
 | :ref:`coin_impulse <mame-commandline-coinimpulse>`
 
 
-Opções de entrada automaticamente habilitadas
+Opções de entrada habilitadas automaticamente 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`paddle_device <mame-commandline-paddledevice>`
@@ -289,8 +290,8 @@ Opções de entrada automaticamente habilitadas
 | :ref:`mouse_device <mame-commandline-mousedevice>`
 
 
-Opções de depuração
-~~~~~~~~~~~~~~~~~~~
+Opções voltadas para a depuração
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]verbose <mame-commandline-verbose>`
 | :ref:`[no]oslog <mame-commandline-oslog>`
@@ -303,8 +304,8 @@ Opções de depuração
 | :ref:`debugger_font_size <mame-commandline-debuggerfontsize>`
 
 
-Opções de comunicação
-~~~~~~~~~~~~~~~~~~~~~
+Opções para a configuração da rede
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`comm_localhost <mame-commandline-commlocalhost>`
 | :ref:`comm_localport <mame-commandline-commlocalport>`
@@ -332,8 +333,8 @@ Opções diversas
 | :ref:`[no]nvram_save <mame-commandline-nvramsave>`
 
 
-Opções de script
-~~~~~~~~~~~~~~~~
+Opções para uso com script
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`autoboot_command <mame-commandline-autobootcommand>`
 | :ref:`autoboot_delay <mame-commandline-autobootdelay>`
 | :ref:`autoboot_script <mame-commandline-autobootscript>`
@@ -350,19 +351,19 @@ Opções do servidor HTTP
 | :ref:`http_root <mame-commandline-httproot>`
 
 
-Opções de linha de comando específicas para o Windows
------------------------------------------------------
+Configurações específicas para o Windows
+----------------------------------------
 
 
-Opções de performance para o Windows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções de performance
+~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`priority <mame-wcommandline-priority>`
 | :ref:`profile <mame-wcommandline-profile>`
 
 
-Opções de tela inteira para o Windows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurações de tela inteira para o Windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]triplebuffer <mame-wcommandline-triplebuffer>`
 | :ref:`full_screen_brightness <mame-wcommandline-fullscreenbrightness>`
@@ -370,22 +371,22 @@ Opções de tela inteira para o Windows
 | :ref:`full_screen_gamma <mame-wcommandline-fullscreengamma>`
 
 
-Opções de controle de entrada para o Windows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para a entrada de controle para o Windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]dual_lightgun <mame-wcommandline-duallightgun>`
 
 
-Opções de linha de comando específicas para o SDL
--------------------------------------------------
+Configurações específicas para versões SDL
+------------------------------------------
 
 Esta seção contém opções de configuração que são específicas para as
 versões SDL compatíveis (incluindo versões Windows que foram compiladas
 com SDL ao invés da sua versão nativa).
 
 
-Opções relacionadas a performance SDL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções relacionadas a performance (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`sdlvideofps <mame-scommandline-sdlvideofps>`
 
@@ -397,30 +398,31 @@ Opções de vídeo SDL
 | :ref:`[no]centerv <mame-scommandline-centerv>`
 
 
-Opções específicas de software para vídeo SDL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurações de tipos de espaços de cor para vídeo (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`scalemode <mame-scommandline-scalemode>`
 
 
-Opções de mapeamento de teclado SDL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurações para o mapeamento de teclado (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`keymap <mame-scommandline-keymap>`
 | :ref:`keymap_file <mame-scommandline-keymapfile>`
 
 
-Opções de mapeamento de controle joystick SDL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurações para o mapeamento de controle joystick (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`joyidx <mame-scommandline-joyidx>`
 | :ref:`sixaxis <mame-scommandline-sixaxis>`
 
 
-Opções de baixo nível para drivers SDL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para a configuração dos drivers SDL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`videodriver <mame-scommandline-videodriver>`
 | :ref:`audiodriver <mame-scommandline-audiodriver>`
 | :ref:`gl_lib <mame-scommandline-gllib>`
+
 

@@ -2,8 +2,8 @@
 
 	\clearpage
 
-Opções de linha de comando específicos para a versão Windows
-============================================================
+Configurações específicas para o Windows
+========================================
 
 Nesta seção descrevemos todas as opções de configuração disponível
 apenas para a versão nativa do MAME no Windows (não SDL).
@@ -30,8 +30,8 @@ Opções de performance
 	Faz o uso de um perfil determinado por [*n*].
 
 
-Opções de tela inteira
-----------------------
+Configurações de tela inteira
+-----------------------------
 
 .. _mame-wcommandline-triplebuffer:
 
