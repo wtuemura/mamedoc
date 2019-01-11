@@ -1447,23 +1447,34 @@ Opções para a configuração de vídeo
 **-[no]keepaspect** / **-[no]ka**
 
 	Faz com que a proporção de tela seja mantida. Quando essa opção está
-	ativa, a taxa de proporção adequada da tela do sistema é aplicada
-	(geralmente 4:3 ou 3:4), mantendo a proporção original do sistema.
-	Ao usar essa opção no modo janelado, ao redimensionar a janela ela
-	tentara manter as proporções originais a menos que você mantenha
-	pressionada a tecla **CONTROL** para que você consiga dimensionar a
-	janela livremente.
-	Desativando a opção, a proporção de tela pode ser alterada
-	livremente no modo janelado. Em tela cheia, isso significa que a
-	imagem vai preencher toda a tela (até mesmo em sistemas verticais)
-	de maneira desproporcional.
+	ativa, a taxa de proporção adequada da tela do sistema é aplicada,
+	geralmente 4:3 ou 3:4 para monitores CRT dependendo da orientação,
+	no entanto muitas outras proporções de tela já foram usadas como 3:2
+	(Nintendo Game Boy), 5:4 para algumas workstation assim como vários
+	outros.
 	
+	Caso a tela que estiver sendo emulada ou ilustração não preencher
+	toda a tela por completo, a imagem será centralizada com barras
+	pretas adicionadas as laterais conforme a necessidade para ocupar os
+	espaços não utilizados, sejam eles em cima ou em baixo assim como
+	na esquerda ou na direita.
+	
+	Ao desativar essa opção a tela ou ilustração poderá ser esticada
+	livremente para preencher os espaços vazios no modo janelado. Em
+	tela cheia a imagem ficará distorcida e fora das proporções.
+	
+	Quando essa opção estiver ativa no Windows e o MAME estiver em modo
+	janelado, a proporção de tela será mantido mesmo que você
+	redimensione a janela para diferentes tamanhos, caso mantenha a
+	tecla **Control** ou **Ctrl** pressionada enquanto redimensiona a
+	janela, a proporção será mantida.
+
 		O valor predefinido é **Ligado** (**-keepaspect**).
 
-	A equipe do MAME, veementemente sugere que você deixe o valor
-	predefinido inalterado. Esticando a tela do sistema além da
-	proporção original vai causar distorções na aparência do sistema
-	que vai além da capacidade de reparo dos filtros ou hlsl.
+	A equipe do MAME, veementemente sugere que você mantenha a opção
+	habilitada. Esticando a tela do sistema além da proporção original
+	vai causar distorções na aparência do sistema que vai muito além da
+	capacidade de reparo dos filtros.
 
 .. _mame-commandline-waitvsync:
 
