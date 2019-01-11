@@ -8,7 +8,7 @@ organização das configurações.
 
 .. _advanced-multi-CFG:
 
-A ordem de leitura dos arquivos
+A ordem da leitura dos arquivos
 -------------------------------
 
 1.		Inicialmente a linha de comando é interpretada primeiro, depois

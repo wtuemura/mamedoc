@@ -166,10 +166,13 @@ Opções de configuração
 
 **-showusage** / **-su**
 
-	Exibe um breve resumo de todas as opções da linha de comando.
-	Para as opções que não foram mencionados aqui, o breve resumo dado
-	por ``mame -showusage`` geralmente são suficientes para a grande
-	maioria das pessoas.
+	Exibe todas as opções disponíveis no MAME que sejam compatíveis com
+	o seu sistema operacional ou a versão do MAME que estiver usando,
+	cada opção será acompanhada de um breve descritivo (em inglês).
+
+	As configurações nativas do Windows como hlsl por exemplo, não
+	estarão disponíveis, tão pouco serão listadas nas versões SDL do
+	MAME que rodem em Linux, macOS e assim por diante.
 
 Opções para listagem
 --------------------
@@ -916,10 +919,10 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. _mame-commandline-exitafterplayback:
 
-**-exit_after_playback**
+**-[no]exit_after_playback**
 
-	Diz ao MAME para encerrar a emulação depois que terminar a
-	reprodução.
+	O MAME encerrará a emulação quando chegar ao final do arquivo de
+	reprodução quando usado em conjunto com a opção ``-playback``.
 
 .. _mame-commandline-record:
 
@@ -959,10 +962,10 @@ Opções para a gravação de áudio e vídeo
 
 	Escreve cada quadro de vídeo em um arquivo <*filename*> no formato
 	MNG, produzindo uma animação da sessão.
-	Note que ``-mngwrite`` só grava quadros de vídeo. Ele não grava
-	nenhum dado de áudio, para tanto use ``-wavwrite`` em conjunto com o
-	comando e remonte o áudio e vídeo posteriormente usando outras
-	ferramentas.
+	Note que ``-mngwrite`` só grava quadros de vídeo, não grava qualquer
+	áudio, use a opção ``-wavwrite`` para gravar o áudio e
+	posteriormente use uma ferramenta de edição de áudio qualquer para
+	unir os dois.
 	
 		O valor predefinido é **NULO** (sem gravação).
 
