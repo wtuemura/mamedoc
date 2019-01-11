@@ -74,7 +74,7 @@ Rode o MAME num terminal para ter acesso ao console Lua:
       _/  _/  _/  _/_/_/_/  _/  _/  _/  _/_/_/
      _/      _/  _/    _/  _/      _/  _/
     _/      _/  _/    _/  _/      _/  _/_/_/_/
-    mame v0.195
+    mame v0.205
     Copyright (C) Nicola Salmoria and the MAME team
 
     Lua 5.3
@@ -100,7 +100,7 @@ você está rodando com o comando abaixo:
 ::
 
     [MAME]> print(emu.app_name() .. " " .. emu.app_version())
-    mame 0.195
+    mame 0.205
 
 Nós agora começaremos a explorar os métodos relacionadas à tela.
 Primeiro, vamos enumerar as telas disponíveis:

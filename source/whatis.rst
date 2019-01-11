@@ -79,7 +79,7 @@ qualquer outra utilização, acesse:
 https://www.mamedev.org/
 
 | **MAME ®**
-| **Copyright © 1997-2018 by Nicola Salmoria and the MAME team**
+| **Copyright © 1997-2019 by Nicola Salmoria and the MAME team**
 | **MAME é uma marca registrada e propriedade de Gregory Ember**
 |
 
