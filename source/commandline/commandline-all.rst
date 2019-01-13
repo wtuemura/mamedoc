@@ -1581,10 +1581,6 @@ Opções para a configuração de vídeo
 
 		O valor predefinido é **Desligado** (**-noburnin**).
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-unevenstretch:
 
 **-[no]unevenstretch**
@@ -1594,6 +1590,9 @@ Opções para a configuração de vídeo
 	
 		O valor predefinido é **Ligado** (**-unevenstretch**).
 
+.. raw:: latex
+
+	\clearpage
 
 Opções para a configuração da tela inteira
 ------------------------------------------
@@ -2278,7 +2277,7 @@ Opções para as configurações de diferentes entradas
 		+-------------+---------------------------------------------------------------------------------+
 
 	Para definir o mapa para este parâmetro, você pode usar uma cadeia
-	de dessas linhas separadas por um '.' (que indica o fim de uma
+	destas linhas separadas por um '.' (que indica o fim de uma
 	linha), dessa maneira:
 
 
