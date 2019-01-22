@@ -1,8 +1,11 @@
+
+.. _mame-aditional-tools:
+
 FERRAMENTAS ADICIONAIS DO MAME
 ------------------------------
 
-Esta seção abrange as várias ferramentas extras que vêm com a sua
-distribuição MAME, como a ferramenta *imgtool* por exemplo.
+Esta seção descreve as várias ferramentas extras que vêm com a
+sua distribuição MAME e os primeiros passos para lidar com elas.
 
 .. toctree::
 	:titlesonly:

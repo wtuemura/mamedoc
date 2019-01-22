@@ -2,6 +2,8 @@
 
 	\clearpage
 
+.. _mame-crosscompilation:
+
 Compilação cruzada
 ==================
 
@@ -210,13 +212,14 @@ Abaixo estão as descrições resumidas das opções usadas:
 
 	Veja :ref:`STRIP_SYMBOLS <mame-compilation-strip-symbols>`
 
+.. _mame-crosscompilation-sse2:
+
 **SSE2=1**
 
 	**Double Precision Streaming SIMD Extensions**, em resumo, são
 	instruções que otimizam o desempenho em processadores
 	compatíveis. O MAME terá uma melhor performance quando essa
-	opção é utilizada durante a compilação.
-	Assim informa a `nota publicada
+	opção é usada segundo a `nota publicada
 	<https://www.mamedev.org/?p=451>`_ no site do MAME.
 
 **PTR64=1**

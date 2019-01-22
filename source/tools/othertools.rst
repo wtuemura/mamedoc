@@ -1,3 +1,6 @@
+
+.._mame-othertools:
+
 Outras ferramentas que acompanham o MAME
 ========================================
 
@@ -16,10 +19,12 @@ Nas plataformas SDLMAME como o Mac OS X e Linux, o **ledutil.sh** poderá
 ser usado. Use o comando **ledutil.sh -a** para que ele seja fechado
 automaticamente ao sair do SDLMAME.
 
+.._mame-othertools-dev:
 
 Ferramentas voltadas ao desenvolvimento 
 =======================================
 
+.._mame-othertools-pngcmp:
 
 pngcmp
 ------
@@ -28,6 +33,7 @@ Essa ferramenta é usada em teste de regressão ao comparar instantâneos
 PNG vindos de um script teste **runtest.cmd** encontrado nos arquivos de
 código fonte. Esse script só funciona no Windows.
 
+.._mame-othertools-nltool:
 
 nltool
 ------
@@ -35,12 +41,15 @@ nltool
 Componente de conversão discreto. A maioria dos usuários não precisam
 lidar com ele. 
 
+.._mame-othertools-nlwav:
+
 nlwav
 -----
 
 Componente discreto de conversão e ferramente de teste. A maioria dos
 usuários não precisam lidar com ele. 
 
+.._mame-othertools-jedutil:
 
 jedutil
 -------
@@ -51,6 +60,7 @@ binário compactado proprietário do MAME, pode mostrar também equações
 lógicas para os tipos de dispositivos que conhecem tal lógica interna.
 A maioria dos usuários não precisam lidar com ele. 
 
+.._mame-othertools-ldresample:
 
 ldresample
 ----------
@@ -58,6 +68,7 @@ ldresample
 Essa ferramenta comprime novamente os dados de vídeo para laserdisc e
 VHS. A maioria dos usuários não precisam lidar com ele. 
 
+.._mame-othertools-ldverify:
 
 ldverify
 --------
@@ -65,6 +76,8 @@ ldverify
 Essa ferramente é usada para comparar imagens de laserdisc ou VHS CHD
 vinda de uma fonte AVI. A maioria dos usuários não precisam lidar com
 ele. 
+
+.._mame-othertools-unidasm:
 
 unidasm
 -------

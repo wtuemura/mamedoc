@@ -1,418 +1,437 @@
+.. Quebra de página para separar o capítulo
 .. raw:: latex
 
 	\clearpage
-
-.. contents:: :local:
 
 .. _compiling-MAME:
 
 Compilando o MAME
 =================
 
-.. _compiling-all:
+.. contents:: :local:
 
-Para todas as plataformas
--------------------------
+.. Quebra de página para separar a tabela de capítulos.
+.. raw:: latex
 
-*	Sempre que você estiver alterando os parâmetros de construção, (como
-	alternar entre uma versão baseada em SDL e uma versão nativa do
-	Windows ou adicionar ferramentas à lista de compilação) você precisa
-	executar um ``make REGENIE=1`` para fazer com que todas as novas
-	opções adicionais sejam incluídas nos arquivos de configuração
-	responsável pela construção do executável do MAME. Caso não seja
-	feito, será muito complicado identificar e localizar possíveis
-	erros.
-
-*	Caso você queira incluir as ferramentas adicionais na sua compilação
-	como por exemplo, o programa *CHDMAN*, adicione a opção ``TOOLS=1``
-	ao comando make, assim ``make REGENIE=1 TOOLS=1``. Isso fará com que
-	o make compile todas as outras ferramentas que acompanham o MAME
-	além do *CHDMAN*.
-
-*	Você pode customizar a sua compilação escolhendo um driver em
-	específico caso queira, usando a opção ``SOURCES=<driver>`` junto
-	com o comando make. Por exemplo, caso queira compilar uma versão
-	customizada do MAME que só rode o jogo **Pac Man**, você faz
-	assim: ::
-
-		make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1
-
-	Repare que é muito importante que é obrigatório o uso da opção
-	**REGENIE** para que o make recrie todas as configurações
-	necessárias durante a compilação desta versão customizada do MAME.
-
-*	É possível usar os núcleos extras do seu processador para ajudar a
-	reduzir o tempo de compilação. Isso é feito adicionando o parâmetro
-	**-j** ao comando make.
-
-	Observe que a quantidade máxima de núcleos
-	que você pode usar fica limitado a quantidade de núcleos que o seu
-	processador tiver mais um. Usando valores acima do limite do seu
-	processador não faz com que a compilação fique mais rápida, além
-	disso, a sobrecarga extra de processamento pode fazer com que seu
-	processador superaqueça, seu sistema pode ficar mais lento e pare de
-	responder, etc.
-
-	Logo, a configuração ideal para se obter a melhor
-	velocidade possível de compilação num processador Quad Core seria
-	**make -j5**, por exemplo.
-
-*	As instruções de depuração também podem ser adicionadas na
-	compilação usando a opção *SYMBOLS=1*, embora seja totalmente
-	desnecessária para a grande maioria das pessoas.
-
-*	Abaixo um apanhado de tudo o que foi mostrado até o momento usando
-	apenas o driver do jogo **Pac Man**, com as ferramentas extras em um
-	computador com processador Quad Core i5 ou i7 por exemplo: ::
-
-		make SOURCES=src/mame/drivers/pacman.cpp TOOLS=1 REGENIE=1 -j5
+	\clearpage
 
 
-*	Para compilar o MAME em um notebook com processadores Dual Core i3 ou
-	i5 por exemplo: ::
+Primeiros passos
+----------------
 
-		make -j3
+Caso você esteja chegando agora e nunca compilou o MAME antes, não sabe
+por onde começar e está completamente perdido. Este documento irá te
+ajudar com o mínimo que você precisa saber para que tenha sucesso na
+sua primeira compilação do MAME.
 
-.. _compiling-windows:
+Há alguns pontos importantes que você precisa saber.
 
-Microsoft Windows
------------------
+* O Windows é a versão nativa do MAME, então uma grande ênfase será dada
+  a compilação neste sistema operacional.
 
-Aqui algumas notas voltadas especificamente para a compilação do MAME no
-Windows.
+* A melhor maneira para baixar o código fonte do MAME e para mantê-lo
+  atualizado é utilizando o **git**. Antigamente era preciso baixar o
+  código fonte do site do MAME, aplicar dezenas de remendos (patch) para
+  que o mesmo fosse atualizado, corrigido e se esses remendos fossem
+  aplicados fora de ordem, geravam outros problemas.
+  
+  Hoje o processo é automatizado com o git, com um simples comando ele
+  vai baixar todo o código fonte assim como aplicar todas as
+  modificações feitas ao código de maneira organizada e bem controlada.
+  
+  Cada nova modificação que é enviada ao código fonte do MAME e
+  autorizada pelos administradores, o servidor conta como sendo
+  1 commit ou 1 envio.
 
-*	Consulte `o site do MAME <https://mamedev.org/tools/>`_ para obter o
-	kit completo de ferramentas mais recente para compilar o sua versão do
-	MAME no Windows.
+* **make** é o comando que faz o papel do *mestre de cerimonias*, é ele
+  quem vai repassar todos comandos ou opções que vierem depois dele para
+  o compilador e outras ferramentas. O make também tem o papel de manter
+  tudo isso fluindo durante todo o processo.
+  
+  O make funciona sozinho, basta digitar *make* no diretório raiz onde
+  se encontra o código fonte do MAME e tenha um arquivo chamado
+  **Makefile** para que uma versão simples do MAME seja compilada, porém
+  ao usar as opções é possível fazer com que a compilação do MAME se
+  beneficie das propriedades do seu processador melhorando a performance
+  final que falaremos mais adiante. O arquivo Makefile contém todas as
+  instruções que o make seguirá assim como todas opções que ele aceita.
 
-*	Você precisará baixar o conjunto de ferramentas desse link para
-	começar. Esse kit de ferramentas são atualizados periodicamente,
-	assim é **obrigatório** usar a versão mais recente deste kit para
-	que seja possível compilar as novas versões do MAME.
+  As opções devem ser adicionadas depois do comando como mostra o
+  exemplo abaixo:
 
-*	Também é possível compilar o MAME usando o *Visual Studio 2017*
-	(caso esteja instalado no seu PC) ao usar **make vs2017**. Esse
-	comando *sempre* regenera todas as configurações de compilação logo,
-	a opção **REGENIE=1** *não é necessário*.
+		``make VERBOSE=1``
 
-*	As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem problemas,
-	certifique-se que você tenha a versão mais recente.
+  Várias outras opções podem ser adicionadas desde que estejam separadas
+  por espaço.
 
-.. _compiling-fedora:
+* Uma vez que você compile algo, todas as opções usadas ficam
+  armazenadas, caso venha a realizar uma nova compilação com opções
+  diferentes das usadas anteriormente, é **obrigatório** que você
+  use a opção **REGENIE=1**, para que todas as opções anteriores sejam
+  atualizadas para levar em consideração qualquer nova opção que você
+  decida usar.
 
-Fedora Linux
-------------
+* Durante o processo de compilação são gerados arquivos objeto ***.o**,
+  arquivos de arquivamento ***.a** dentre vários outros, é importante
+  que seja feito um **make clean** sempre que você atualizar o código
+  fonte do MAME, quando for fazer uma :ref:`compilação cruzada
+  <mame-crosscompilation>` ou quando for customizar uma compilação.
+  No geral é uma boa prática fazer um **make clean** antes do make para
+  evitar qualquer residual de compilações anteriores.
+  
+  Esta opção faz com que todo o diretório **build** seja apagado, este
+  diretório nada mais é do que um espaço auxiliar onde toda a estrutura
+  de compilação usa para organizar as configurações e todos os arquivos
+  auxiliares para a conclusão da compilação do MAME.
 
-Alguns pré-requisitos precisam ser atendidos na sua distro antes de
-continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
-problemas, certifique-se que você tenha a versão mais recente. ::
+* É possível usar os dois comandos em sequência usando **&&** como é
+  mostrado abaixo:
+  
+		``make clean && make <opções>``
+  
+  Assim faz com que o segundo comando apenas seja executado quando o
+  primeiro terminar.
 
-	sudo dnf install gcc gcc-c++ SDL2-devel SDL2_ttf-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel
+* As opções usada pelo make podem ser adicionadas em um arquivo
+  **useroptions.mak**. Muito útil em casos onde a lista de opções para
+  a compilação são grandes e repetitivas, dentro do arquivo as opções se
+  organizam da seguinte maneira: ::
 
-A compilação é exatamente como descrito acima para todas as Plataformas.
+	OPÇÃO1=X
+	OPÇÃO2=Y
+	OPÇÃO3=Z
+
+  Onde X, Y ou Z são os valores das opções usadas independente para cada
+  tipo de opção, como por exemplo ``SSE2=1`` que irá se beneficiar das
+  propriedades do seu processador caso ele seja compatível com as
+  extensões **SSE2** e assim por diante.
+
+* O MAME acompanha algumas ferramentas adicionais que poderão ser úteis
+  em algum momento, caso queira que tais ferramentas também sejam
+  compiladas junto com o MAME, adicione a opção ``TOOLS=1``. Para mais
+  informações sobre cada uma dessas ferramentas e de como usá-las, veja
+  :ref:`mame-aditional-tools`.
+
+* Nas versões compiladas do git, a versão do MAME acompanha um
+  identificador único depois da versão, por exemplo: ::
+
+	./mame64 -help
+	MAME v0.205 (mame0205-540-gc8e4dab20c)
+
+  Onde:
+  
+	**mame0205** - É a versão atual do MAME.
+
+	**540** - Indica a quantidade de *commits* (envios) feitos desde a
+	última mudança de versão.
+
+	**gc8e4dab20c** - São os primeiros 10 dígitos do último *commit*.
+
+* O git mantém um controle de todos os arquivos do código fonte,
+  qualquer alteração que não tenha sido feita pelos administradores a
+  versão do seu MAME incluirá um identificador **dirty** no final: ::
+
+	./mame64 -help
+	MAME v0.205 (mame0205-540-gc8e4dab20c-dirty)
+
+  O problema ocorre também caso exista algum residual antigo vindo de
+  outra compilação, de não fazer um ``make clean`` antes de uma nova
+  compilação, `arquivos não rastreados <https://github.com/git/git/commit/ee6fc514f2df821c2719cc49499a56ef2fb136b0>`_
+  dentro do diretório de trabalho do código fonte ou até mesmo quando há
+  arquivos modificados que por algum motivo não foram aplicados,
+  exemplo: ::
+
+	git status --short
+	
+	M bgfx/shaders/essl/chains/crt-geom/fs_crt-geom-deluxe.bin
+	M bgfx/shaders/essl/chains/crt-geom/fs_crt-geom.bin
+	...
+	?? language/Afrikaans/strings.mo
+	?? language/Albanian/strings.mo
+	...
+
+  A letra **M** indica que o arquivo foi modificado, já **??** indica
+  os novos arquivos criados. Independente do que tenha acontecido,
+  execute ``git commit -a`` para aplicar essas modificações.
+  
+  Agora ao pedir o status do git ele deve retornar que está tudo
+  limpo: ::
+
+	git status
+	On branch master
+	Your branch is up-to-date with 'origin/master'.
+	nothing to commit, working tree clean
+
+  Se por algum motivo, nenhum dos comando acima funcionar e você tiver
+  absoluta certeza de que nada foi alterado, você pode tentar o comando
+  ``git clean -d -x -f``, note que o comando vai apagar tudo que não for
+  relacionado com toda as ramificações da árvore de desenvolvimento do
+  código fonte do MAME, isso incluí o seu **useroptions.mak** ou
+  qualquer outro arquivo.
+
+.. _compiling-practical-examples:
+
+Exemplos práticos para todas as plataformas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A estrutura do MAME já vem preparada de forma que seja possível compilar
+toda a estrutura ou apenas uma parte dela como arcades por exemplo,
+consoles, portáteis ou até mesmo uma máquina em específico como Neo-Geo,
+CPS1, CPS2, etc. Assim como consoles como Megadrive/Genesis, Super
+Nintendo, Playstation e assim por diante.
+
+Isso é útil quando temos que lidar com limitações de tamanho
+do arquivo final do MAME ou caso queira apenas uma versão do MAME
+bem específica.
+
+Para compilar a versão completa do MAME faça o comando:
+
+	**make**
+
+Caso o seu processador tenha 5 núcleos, é possível usar os núcleos
+extras do seu processador para ajudar a reduzir o tempo de compilação
+com a opção ``-j``. Observe que a quantidade máxima de núcleos que você
+pode usar fica limitado a quantidade de núcleos que o seu processador
+tiver mais um.
+
+Usando valores acima da quantidade de núcleos do seu processador não faz
+com que a compilação fique mais rápida, além disso, a sobrecarga extra
+de processamento pode fazer com que seu processador superaqueça, seu
+computador pode ficar mais lento, pare de responder, etc.
+
+	**make -j5**
+
+Para compilar o MAME junto com as
+:ref:`ferramentas <mame-compilation-tools>`, use a opção abaixo:
+
+	**make TOOLS=1 -j5**
+
+Para incluir os símbolos de depuração na compilação use a opção
+**SYMBOLS=1**, opção útil caso o MAME trave por algum motivo. Para mais
+informações veja :ref:`SYMBOLS <mame-compilation-symbols>`. É importante
+também adicionar o nível destes símbolos, para mais informações veja
+:ref:`SYMLEVEL <mame-compilation-symlevel>`.
+
+	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 -j5**
+
+Para compilar uma versão de depuração do MAME use o comando abaixo, para
+mais informações veja :ref:`DEBUG <mame-compilation-debug>`.
+
+	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 DEBUG=1 -j5**
+
+Para compilar uma versão do MAME que tire proveito da extensão SSE2 do
+seu processador melhorando a performance, use o comando abaixo. Para
+mais informações veja :ref:`SSE2 <mame-crosscompilation-sse2>`.
+
+	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j5**
+
+Você pode customizar a sua compilação escolhendo um driver em específico
+usando a opção ``SOURCES=<driver>``, lembrando que é obrigatório usar
+a opção **REGENIE=1** caso você já tenha compilado algo antes. Caso
+queira compilar uma versão customizada do MAME que só rode o jogo
+**Pac Man**:
+
+	**make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1**
 
 .. raw:: latex
 
 	\clearpage
 
-.. _compiling-ubuntu:
+O MAME também permite de maneira prática que seja possível compilar uma
+versão só com máquinas ARCADE, nessa versão os portáteis, consoles,
+computadores, dentre outras ficam de fora.
+Caso queira uma versão arcade do MAME use o comando abaixo:
 
-Debian e Ubuntu (incluindo dispositivos Raspberry Pi e ODROID)
---------------------------------------------------------------
+	**make SUBTARGET=arcade SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j5**
 
-Alguns pré-requisitos precisam ser atendidos na sua distro antes de
-continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
-problemas, certifique-se que você tenha a versão mais recente. ::
+Para compilar uma versão do MAME só com consoles, use o comando abaixo:
 
-	sudo apt-get install git build-essential libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default
+	**make SUBTARGET=mess SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j5**
 
-A compilação é exatamente como descrito acima para todas as Plataformas.
+A próxima seção resume algumas das opções úteis reconhecidas pelo
+makefile.
 
-.. _compiling-arch:
-
-Arch Linux
-----------
-
-Alguns pré-requisitos precisam ser atendidos na sua distro antes de
-continuar. ::
-
-	sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5
-
-A compilação é exatamente como descrito acima para Todas as Plataformas.
-
-.. _compiling-macos:
-
-Apple Mac OS X
---------------
-
-Você precisará de alguns pré-requisitos para começar. Certifique-se de
-estar no *OS X 10.9 Mavericks* ou mais recente.
-É **OBRIGATÓRIO** o uso do SDL 2.0.4 para o OS X.
-
-*	Instale o **Xcode** que você encontra no Mac App Store
-*	Inicie o programa **Xcode**.
-*	Será feito o download de alguns pré-requisitos adicionais.
-	Deixe rodando antes de continuar.
-*	Ao terminar saia do **Xcode** e abra uma janela do **Terminal**
-*	Digite o comando ``xcode-select --install`` para instalar o kit
-	obrigatório de ferramentas para o MAME.
-
-Em seguida, é preciso baixar e instalar o SDL 2.
-
-*	Vá para `este site <http://libsdl.org/download-2.0.php>`_ e baixe o
-	arquivo .dmg para o *Mac OS X*.
-*	Caso o arquivo .dmg não abra sozinho de forma automática, abra você
-	mesmo
-*	Clique no 'Macintosh HD' (ou seja lá o nome que você estiver usando
-	no disco rígido do seu Mac), no painel esquerdo onde está localizado
-	o **Finder**, abra a pasta **Biblioteca** e arraste o arquivo
-	**SDL2.framework** na pasta **Frameworks**.
+Use estas opções em conjunto com o comando make ou definindo-as como
+variáveis de ambiente ou ainda adicionando-as ao seu
+**useroptions.mak**. Note que o GENie não reconstrói automaticamente os
+arquivos afetados por modificações posteriormente usadas.
 
 .. raw:: latex
 
 	\clearpage
-
-Por fim, para começar a compilar, use o Terminal para navegar até onde
-você tem o código fonte do MAME (comando *cd*) e siga as instruções
-normais de compilação acima para todas as Plataformas.
-
-É possível fazer o MAME funcionar a partir da versão 10.6, porém é um
-pouco mais complicado:
-
-*	Você precisará instalar o **clang-3.7**, **ld64**, **libcxx** e o
-	**python27** do MacPorts.
-*	Em seguida, adicione essas opções ao seu comando make ou
-	**useroptions.mak**:
-
-|	``OVERRIDE_CC=/opt/local/bin/clang-mp-3.7``
-|	``OVERRIDE_CXX=/opt/local/bin/clang++-mp-3.7``
-|	``PYTHON_EXECUTABLE=/opt/local/bin/python2.7``
-|	``ARCHOPTS=-stdlib=libc++``
-
-.. _compiling-emscripten:
-
-Javascript Emscripten e HTML
-----------------------------
-
-Primeiro, baixe e instale o **Emscripten 1.37.29** ou mais recente
-segundo as instruções no `site oficial <https://kripken.github.io/emscri
-pten-site/docs/getting_started/downloads.html>`_
-
-Depois de instalar o Emscripten, será possível compilar o MAME direto,
-usando a ferramenta '**emmake**'. O MAME completo é muito grande para
-ser carregado numa página web de uma só vez, então é preferível que você
-compile versões menores e separadas do MAME usando o parâmetro
-*SOURCES*, por exemplo, faça o comando abaixo no mesmo diretório do
-MAME: ::
-
-	emmake make SUBTARGET=pacmantest SOURCES=src/mame/drivers/pacman.cpp
-
-O parâmetro *SOURCES* deve apontar para pelo menos um arquivo de driver
-*.cpp*. O comando make tentará localizar e reunir todas as dependências
-para compilar o executável do MAME junto com o driver que você
-definiu. No entanto porém, caso ocorra algum erro e o processo não
-encontre algum arquivo, é necessário declarar manualmente um ou mais
-arquivos que faltam (separados por vírgula). Por exemplo: ::
-
-	emmake make SUBTARGET=apple2e SOURCES=src/mame/drivers/apple2e.cpp,src/mame/machine/applefdc.cpp
-
-O valor do parâmetro *SUBTARGET* serve apenas para se diferenciar dentre
-as várias compilações existente e não precisa ser definido caso não seja
-necessário.
-
-O Emscripten oferece suporte à compilação do WebAssembly com um loader
-de JavaScript em vez do JavaScript inteiro, esse é o padrão em versões
-mais recentes. Para ligar ou desligar o WebAssembly de modo forçado,
-adicione ``WEBASSEMBLY=1`` ou ``WEBASSEMBLY=0`` ao comando make.
-
-Outros comandos make também poderão ser usados como foi o
-parâmetro **-j** que foi usado visando fazer uso da compilação
-multitarefa.
-
-Quando a compilação atinge a fase da emcc, talvez você veja uma
-certa quantidade de mensagens de aviso do tipo *"unresolved symbol"*.
-Até o presente momento, isso é esperado para funções relacionadas com o
-OpenGL como a função "*glPointSize*". Outros podem também indicar que um
-arquivo de dependência adicional precisa ser especificado na lista
-*SOURCES*. Infelizmente, este processo não é automatizado e você
-precisará localizar e informar o arquivo de código fonte assim como os
-arquivos que contém os símbolos que estão faltando. Você também pode
-ter a sorte de se safar caso ignore os avisos e continue a compilação,
-desde que os códigos ausentes não sejam usados no momento da execução.
-
-Se tudo correr bem, um arquivo. js será criado no diretório. Este
-arquivo não pode ser executado sozinho, ele precisa de um loader HTML
-para que ele possa ser exibido e que seja possível também passar os
-parâmetros de linha de comando para o executável.
-
-O `Projeto Emularity <https://github.com/db48x/emularity>`_ oferece tal
-loader.
-
-Existem amostras de arquivos .html nesse repositório que pode ser
-editado para refletir as suas configurações pessoais e apontar o caminho
-do seu arquivo js recém compilado do MAME. Abaixo está a lista dos
-arquivos que você precisa colocar num servidor web:
-
-*	O arquivo .js compilado do MAME
-*	O arquivo .wasm do MAME caso você o tenha compilado com WebAssembly
-*	Os arquivos .js do pacote Emularity (loader.js, browserfs.js, etc)
-*	Um arquivo .zip com as ROMs do driver que você deseja rodar
-	(caso haja)
-*	Qualquer outro programa que você quiser rodar com o driver do MAME
-*	Um loader do Emularity .html customizado para utilizar todos os
-	itens acima.
-
-Devido a restrição de segurança dos navegadores atuais, você precisa
-usar um servidor web ao invés de tentar rodá-los localmente.
-
-Caso algo dê errado e não funcione, você pode abrir o console Web do seu
-navegador principal e ver qual o erro que ele mostra (por exemplo,
-faltando alguma coisa, algum arquivo de ROM incorreto, etc).
-Um erro do tipo "**ReferenceError: foo is not defined**" pode indicar
-que provavelmente faltou informar um arquivo de código fonte na lista da
-opção **SOURCES**.
 
 .. _compiling-options:
 
-Opções úteis
-------------
-
-Esta seção resume algumas opções úteis reconhecidas pelo makefile. Use
-estas opções em conjunto com o comando make ou definindo-as como
-variáveis de ambiente ou ainda adicionando-as ao prefixo do makefile.
-Essas opções só funcionam caso você utilize a opção ``REGENIE=1`` sempre
-que alguma configuração de compilação tenha sido modificada, note que o
-*GENie* *não reconstrói automaticamente* os arquivos afetados por
-modificações posteriormente usadas.
-
-Opções gerais de compilação
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções gerais para a compilação
+-------------------------------
 
 .. _mame-compilation-premake:
 
 **PREFIX_MAKEFILE**
 
-	Define um makefile a ser incluso no processo de compilação que
-	contenha opções adicionais customizadas por você e que terá
-	prioridade caso o mesmo seja encontrado (o nome predefinido é
-	**useroptions.mak**).
-	Pode ser útil caso você queira alternar entre diferentes
-	configurações de compilação de forma simples e rápida.
+  Define um makefile a ser incluso no processo de compilação que
+  contenha opções adicionais customizadas por você e que terá
+  prioridade caso o mesmo seja encontrado (o nome predefinido é
+  **useroptions.mak**).
+  Pode ser útil caso você queira alternar entre diferentes
+  configurações de compilação de forma simples e rápida.
 
 .. _mame-compilation-build:
 
 **BUILDDIR**
 
-	Define diretório usado para a compilação de todos os arquivos do
-	projeto, códigos fonte auxiliares que são gerados ao longo da
-	configuração, arquivos objeto e bibliotecas intermediárias.
-	Por predefinição, o nome deste diretório é **build**.
+  Define diretório usado para a compilação de todos os arquivos do
+  projeto, códigos fonte auxiliares que são gerados ao longo da
+  configuração, arquivos objeto e bibliotecas intermediárias.
+  Por predefinição, o nome deste diretório é **build**.
+
+.. _mame-compilation-regenie:
 
 **REGENIE**
 
-	Caso seja definido como **1**, faz com que toda a estrutura de
-	instrução para a compilação do projeto seja regenerada, especialmente
-	para o caso onde uma compilação tenha sido feita anteriormente e seja
-	necessário alterar as configurações predefinidas anteriormente.
+  Caso seja definido como **1**, faz com que toda a estrutura de
+  instrução para a compilação do projeto seja regenerada, especialmente
+  para o caso onde uma compilação tenha sido feita anteriormente e seja
+  necessário alterar as configurações predefinidas anteriormente.
+
+.. _mame-compilation-verbose:
 
 **VERBOSE**
 
-	Caso seja definido como **1**, ativa o modo loquaz, isso faz com que
-	todos os comandos usados pela ferramenta make durante a
-	compilação apareçam. Essa opção é aplicada instantaneamente e não
-	precisa do comando **REGENIE**.
+  Caso seja definido como **1**, ativa o modo loquaz, isso faz com que
+  todos os comandos usados pela ferramenta make durante a
+  compilação apareçam. Essa opção é aplicada instantaneamente e não
+  precisa do comando **REGENIE**.
+
+.. _mame-compilation-ignore_git:
+
+**IGNORE_GIT**
+
+  Caso seja definido como **1**, ignora o escaneamento da árvore de
+  trabalho e não embute a revisão descritiva do git no campo da versão
+  do executável.
+
+.. _mame-compilation-subtarget:
+
+**SUBTARGET**
+
+  Define diferentes versões do MAME para serem compiladas, caso nenhum
+  seja escolhido o valor predefinido é **mame**. Os valores válidos são:
+
+		* **arcade**: Compila uma versão do MAME apenas com máquinas classificadas como arcade.
+		* **dummy**: Compila uma versão bem simplificada do mame com apenas o driver da Coleco.
+		* **mame**: Compila uma versão do MAME com arcade, mess e virtual.
+		* **mess**: Compila uma versão do MAME só com máquinas catalogadas como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
+		* **nl**: Compila todos os drivers classificados como *netlist*.
+		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita que você tenha que compilar todo o código fonte do MAME para testar uma modificação feita na interface por exemplo.
+		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
 
 .. raw:: latex
 
 	\clearpage
 
-**IGNORE_GIT**
-
-	Caso seja definido como **1**, ignora o escaneamento da árvore de
-	trabalho e não embute a revisão descritiva do git no campo da versão
-	do executável.
+.. _mame-compilation-alternate-tools:
 
 Usando ferramentas de compilação alternativas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. _mame-compilation-override_cc:
+
 **OVERRIDE_CC**
 
-	Define o compilador C/Objective-C.
+  Define o compilador C/Objective-C.
+
+.. _mame-compilation-override_cxx:
 
 **OVERRIDE_CXX**
 
-	Define o compilador C++/Objective-C++.
+  Define o compilador C++/Objective-C++.
+
+.. _mame-compilation-python_executable:
 
 **PYTHON_EXECUTABLE**
 
-	Define o interpretador Python. Para compilar o MAME é necessário ter
-	o Python versão *2.7*, *3* ou mais recente.
+  Define o interpretador Python. Para compilar o MAME é necessário ter
+  o Python versão *2.7*, *3* ou mais recente.
+
+.. _mame-compilation-optional-resources:
 
 Recursos opcionais
 ~~~~~~~~~~~~~~~~~~
 
+.. _mame-compilation-tools:
+
 **TOOLS**
 
-	Caso seja definido como **1**, as ferramentas adicionais que trabalham
-	em conjunto com o emulador como ``unidasm``, ``chdman``, ``romcmp``,
-	e ``srcclean`` serão compiladas.
+  Caso seja definido como **1**, as ferramentas adicionais que trabalham
+  em conjunto com o emulador como ``unidasm``, ``chdman``, ``romcmp``,
+  e ``srcclean`` serão compiladas.
+
+.. _mame-compilation-nouseportaudio:
 
 **NO_USE_PORTAUDIO**
 
-	Caso seja definido como **1**, desabilita a construção do módulo de
-	saída de áudio PortAudio.
+  Caso seja definido como **1**, desabilita a construção do módulo de
+  saída de áudio PortAudio.
+
+.. _mame-compilation-use_qtdebug:
 
 **USE_QTDEBUG**
 
-	Caso seja definido como **1**, será incluso o depurador com a
-	interface Qt em plataformas onde a mesma não vem previamente
-	embutida como MacOS e Windows por exemplo, defina como **0** para
-	desabilitar. É obrigatório a instalação das bibliotecas de
-	desenvolvimento Qt assim como suas ferramentas para a compilação do
-	depurador.
-	Todo este processo varia de plataforma para plataforma.
+  Caso seja definido como **1**, será incluso o depurador com a
+  interface Qt em plataformas onde a mesma não vem previamente
+  embutida como MacOS e Windows por exemplo, defina como **0** para
+  desabilitar. É obrigatório a instalação das bibliotecas de
+  desenvolvimento Qt assim como suas ferramentas para a compilação do
+  depurador.
+  Todo este processo varia de plataforma para plataforma.
 
-Opções para compilação
-~~~~~~~~~~~~~~~~~~~~~~
+.. _mame-compilation-nowerror:
 
 **NOWERROR**
 
-	Defina como **1** para desabilitar o tratamento das mensagens de
-	aviso do compilador como erro. Talvez seja necessário em
-	configurações minimamente compatíveis.
+  Defina como **1** para desabilitar o tratamento das mensagens de
+  aviso do compilador como erro. Talvez seja necessário em
+  configurações minimamente compatíveis.
+
+.. _mame-compilation-deprecated:
 
 **DEPRECATED**
 
-	Defina como **0** para desabilitar as mensagens de aviso menos
-	importantes/relevantes (repare que as mensagens de avisos não são
-	tratadas como erro).
+  Defina como **0** para desabilitar as mensagens de aviso menos
+  importantes/relevantes (repare que as mensagens de avisos não são
+  tratadas como erro).
+
+.. _mame-compilation-debug:
 
 **DEBUG**
 
-	Defina como **1** para habilitar as rotinas de verificações adicionais
-	e diagnósticos habilitando o modo de depuração. É importante que
-	saiba que essa opção tem impacto direto na performance do emulador e
-	só tem utilidade para desenvolvedores, não compile o MAME com esta
-	opção sem saber o que está fazendo.
+  Defina como **1** para habilitar as rotinas de verificações adicionais
+  e diagnósticos habilitando o modo de depuração. É importante que
+  saiba que essa opção tem impacto direto na performance do emulador e
+  só tem utilidade para desenvolvedores, não compile o MAME com esta
+  opção sem saber o que está fazendo.
 
 .. raw:: latex
 
 	\clearpage
 
+.. _mame-compilation-optimize:
+
 **OPTIMIZE**
 
-	Define o nível de otimização. O valor predefinido é **3** onde o
-	foco é performance ao custo de um executável maior no final da
-	compilação.
-	Há também as seguintes opções:
+  Define o nível de otimização. O valor predefinido é **3** onde o
+  foco é performance ao custo de um executável maior no final da
+  compilação.
+  Há também as seguintes opções:
 
 		* **0**: Caso queira desabilitar a otimização e favorecendo a depuração.
 		* **1**: Otimização simples sem impacto direto no tamanho final do executável nem no tempo de compilação.
 		* **2**: Habilita a maioria das otimizações visando performance e tamanho reduzido.
 		* **s**: Habilita apenas as otimizações que não impactem no tamanho final do executável.
 
-	A compatibilidade destes valores dependem do compilador que esteja
-	sendo usado.
+  A compatibilidade destes valores dependem do compilador que esteja
+  sendo usado.
 
 .. _mame-compilation-symbols:
 
@@ -448,6 +467,8 @@ Opções para compilação
 	geram uma grande quantidade de símbolos que podem ultrapassar o
 	tamanho do executável final.
 
+.. _mame-compilation-archopts:
+
 **ARCHOPTS**
 
 	Opções adicionais que serão passadas ao compilador e ao lincador.
@@ -455,30 +476,37 @@ Opções para compilação
 	binária de aplicação [1]_ como por exemplo a ativação de recursos
 	opcionais do processador.
 
+.. _mame-compilation-archopts-c:
+
 **ARCHOPTS_C**
 
 	Opções adicionais que serão passadas ao compilador ao compilar
 	arquivos de código fonte em linguagem C.
+
+.. _mame-compilation-archopts-cpp:
 
 **ARCHOPTS_CXX**
 
 	Opções adicionais que serão passadas ao compilador ao compilar
 	arquivos de código fonte em linguagem C++.
 
+.. _mame-compilation-archopts-objc:
+
 **ARCHOPTS_OBJC**
 
 	Opções adicionais que serão passadas ao compilador ao compilar
-	arquivos de código fonte Objecive-C.
+	arquivos de código fonte Objective-C.
 
 .. raw:: latex
 
 	\clearpage
 
+.. _mame-compilation-archopts-objcxx:
+
 **ARCHOPTS_OBJCXX**
 
 	Opções adicionais que serão passadas ao compilador ao compilar
-	arquivos de código fonte Objecive-C++.
-
+	arquivos de código fonte Objective-C++.
 
 Sede das bibliotecas e framework
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -580,6 +608,476 @@ Sede das bibliotecas e framework
 	Defina como **1** caso prefira usar a biblioteca pugixml do seu
 	sistema ao invés de usar a versão fornecida pelo MAME.
 
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-windows:
+
+Microsoft Windows
+-----------------
+
+Configurando o pacote MSYS2 já pronto
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Baixe o pacote de instalação do MSYS2 já pronto contendo todas as
+  ferramentas necessárias para a compilação do MAME 
+  em `MAME Build Tools <http://mamedev.org/tools/>`_.
+
+* Descompacte em algum lugar, entre no diretório, abra o shell do
+  MSYS2 (**mingw64.exe**) e aguarde ele terminar a sua configuração.
+
+  Após a configuração inicial do MSYS2 e antes de compilar o MAME é
+  **obrigatório** a atualização de todo o ambiente usando o comando:
+  
+	``pacman -Syu``
+
+  Caso encontre algum problema veja :ref:`compiling-issues-MSYS2`. Ao
+  final do processo, execute a sequência de comandos abaixo:
+
+1.	``git config --global core.autocrlf true``
+2.	``mkdir /src``
+3.	``cd /src``
+4.	``git clone https://github.com/mamedev/mame.git``
+
+  O último comando irá baixar todo o código fonte do MAME para um
+  diretório chamado **mame**, o caminho completo é ``/src/mame``.
+
+* Por predefinição o MAME será compilado usando interfaces nativas
+  do Windows como gerenciamento de janelas, saída de áudio e vídeo,
+  renderizador de fontes, etc. Ao invés disso, caso queira compilar
+  o MAME usando o SDL (Simple DirectMedia Layer), você pode
+  adicionar a opção ``OSD=sdl`` nas opções de compilação do make. É
+  necessário que você instale os pacotes de desenvolvimento do SDL
+  no MSYS2 da versão **2.0.3** em diante.
+
+  A nomenclatura do prefixo do emulador mudará para
+  ``sdlmame64.exe`` ou ``sdlmame.exe`` respectivamente.
+
+* Por predefinição o MAME incluirá a versão nativa do depurador para
+  Windows, para que também seja incluída a versão Qt do depurador, é
+  necessário instalar os pacotes de desenvolvimento do Qt versão 5
+  no MSYS2 e depois usar ``QTDEBUG=1`` nas opções de compilação do
+  make.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-msys2-manually:
+
+Preparando a instalação do MSYS2 manualmente
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A versão nativa do MAME para Windows é compilada usando o ambiente
+de desenvolvimento MSYS2, é necessário que você tenha o Windows 7 ou
+mais recente assim como uma versão atualizada do MSYS2. É
+aconselhável que você compile o MAME em um sistema operacional de
+64-bit, para sistemas 32-bit é necessário fazer algumas alterações.
+
+* Baixe e instale o ambiente de desenvolvimento MSYS2 direto da
+  página do `MSYS2 <https://www.msys2.org/>`_.
+
+* Baixe a última versão do pacote **mame-essentials** do 
+  `repositório <https://repo.mamedev.org/x86_64/>`_ de pacotes do
+  MAME.
+  Copie e extraia o arquivo no diretório raiz do MYSYS2 (geralmente
+  ``c:\mysys32`` ou ``c:\mysys64``) usando o
+  `7-zip <https://www.7-zip.org/>`_.
+
+* Adicione o exemplo abaixo ao arquivo ``/etc/pacman.conf`` usando
+  um editor de texto de sua escolha: ::
+
+	[mame]
+	Include = /etc/pacman.d/mirrorlist.mame
+
+Tenha certeza que o arquivo ``/etc/pacman.d/mirrorlist.mame`` exista.
+
+Para compilações em 64-bit edite o arquivo **.bashrc** que fica dentro
+do seu home, supondo que foi feita uma instalação padrão, 
+**c:\\mysys64\\home\\seu_usuário\\.bashrc** e adicione a variável no
+final do arquivo com um editor de texto de sua preferência.
+
+		**export MINGW64=/mingw64 MINGW32=**
+
+Para compilações em 32-bit edite o arquivo **.bashrc** que fica dentro
+do seu home, supondo que foi feita uma instalação padrão, 
+**c:\\mysys32\\home\\seu_usuário\\.bashrc** e adicione a variável no
+final do arquivo com um editor de texto de sua preferência.
+
+		**export MINGW32=/mingw32 MINGW64=**
+
+Abra o shell do MSYS2 (**mingw64.exe**) e aguarde ele terminar a sua
+configuração, execute o comando a seguir para atualizar a estrutura
+básica do seu MSYS2:
+
+	**pacman -Syu**
+
+Caso ocorra algum erro do tipo **GPGME error**, veja 
+:ref:`compiling-issues-MSYS2`. Ao final, **feche a janela** e
+reinicie o **mingw64.exe**.
+
+* Instale os primeiros pacotes necessários para compilar o MAME com
+  o comando.
+  
+	**pacman -S bash git make**
+
+* Para as versões **64-bit** do MAME é necessário instalar os
+  pacotes:
+
+	**pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-python2**
+
+* Para as versões **32-bit** do MAME é necessário instalar os
+  pacotes:
+  
+	**pacman -S mingw-w64-i686-gcc mingw-w64-i686-python2**
+
+* Para compilar usando as interfaces portáteis do SDL **64-bit** é
+  necessário instalar os pacotes:
+
+	**pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-SDL2_ttf**
+
+* Para compilar usando as interfaces portáteis do SDL **32-bit** é
+  necessário instalar os pacotes:
+
+	**pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-SDL2_ttf**
+
+* Para compilar o MAME com o depurador Qt **64-bit** é preciso
+  instalar o pacote:
+
+	**pacman -S mingw-w64-x86_64-qt5**
+
+* Para compilar o MAME com o depurador Qt **32-bit** é preciso
+  instalar o pacote:
+
+	**pacman -S mingw-w64-i686-qt5**
+
+* Para gerar a documentação API do código fonte é preciso instalar
+  o pacote **doxygen**.
+
+* Para fazer a depuração do MAME é necessário instalar o **gdb**.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-issues-MSYS2:
+
+Resolvendo possíveis problemas com o MSYS2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Por algum motivo pode ser você se depare com o erro
+**error: GPGME error: Invalid crypto engine** que o impedirá de
+continuar. Caso pesquise na internet, verá que o encontrará diversos
+tópicos em centenas de fóruns sobre o assunto e praticamente nenhuma
+solução prática, então aqui vai a dica para este erro em específico,
+caso apareçam outros, este documento será atualizado.
+
+Edite o arquivo ``/etc/pacman.conf`` e mude
+**SigLevel = Required DatabaseOptional** para **SigLevel = Never** e
+salve, mantenha a tela do seu editor aberto. Vá até o diretório
+``/etc/pacman.d`` e apague o diretório **gnupg**.
+
+Abra o shell do MSYS2 (**mingw64.exe**) e digite os comandos abaixo
+nesta sequência:
+
+1. ``pacman-key --init``
+2. ``pacman-key --populate msys2``
+3. ``pacman-key --refresh-keys``
+
+A atualização agora pode prosseguir com o comando ``pacman -Syu``, caso
+você tenha seguido os passos acima corretamente, você deverá ter um
+retorno semelhante ao que é mostrado abaixo:
+
+::
+
+	$ pacman -Syu
+	:: Sincronizando a base de dados de pacotes...
+	mingw32 está atualizado
+	mingw64 está atualizado
+	msys está atualizado
+	mame está atualizado
+	:: Starting core system upgrade...
+	não há nada a fazer
+	:: Iniciando atualização completa do sistema...
+	resolvendo dependências...
+	procurando por pacotes conflitantes...
+
+	Pacotes (69) bash-completion-2.8-2  brotli-1.0.7-1  bsdcpio-3.3.3-3
+			bsdtar-3.3.3-3  ca-certificates-20180409-1  coreutils-8.30-1
+			curl-7.63.0-1  dash-0.5.10.2-1  dtc-1.4.7-1  file-5.35-1
+			gawk-4.2.1-2  gcc-libs-7.4.0-1  glib2-2.54.3-1  gnupg-2.2.12-1
+			grep-3.0-2  heimdal-libs-7.5.0-3  icu-62.1-1  info-6.5-2
+			less-530-1  libarchive-3.3.3-3  libargp-20110921-2
+			libassuan-2.5.2-1  libcrypt-2.1-2  libcurl-7.63.0-1
+			libexpat-2.2.6-1  libffi-3.2.1-3  libgcrypt-1.8.4-1
+			libgnutls-3.6.5-1  libgpg-error-1.33-1  libgpgme-1.12.0-1
+			libhogweed-3.4.1-1  libidn2-2.0.5-1  libksba-1.3.5-1
+			liblz4-1.8.3-1  liblzma-5.2.4-1  liblzo2-2.10-2  libnettle-3.4.1-1
+			libnghttp2-1.35.1-1  libnpth-1.6-1  libopenssl-1.1.1.a-1
+			libp11-kit-0.23.14-1  libpcre-8.42-1  libpcre16-8.42-1
+			libpcre2_8-10.32-1  libpcre32-8.42-1  libpcrecpp-8.42-1
+			libpcreposix-8.42-1  libpsl-0.20.2-1  libreadline-7.0.005-1
+			libsqlite-3.21.0-4  libssh2-1.8.0-2  libunistring-0.9.10-1
+			libutil-linux-2.32.1-1  libxml2-2.9.8-1  m4-1.4.18-2
+			ncurses-6.1.20180908-1  nettle-3.4.1-1  openssl-1.1.1.a-1
+			p11-kit-0.23.14-1  pcre-8.42-1  pinentry-1.1.0-2  pkgfile-19-1
+			rebase-4.4.4-1  sed-4.7-1  time-1.9-1  ttyrec-1.0.8-2
+			util-linux-2.32.1-1  wget-1.20-2  xz-5.2.4-1
+
+	Tamanho total download:    36,91 MiB
+	Tamanho total instalado:  206,90 MiB
+	Alteração no tamanho:    61,49 MiB
+
+	Continuar a instalação? [S/n]
+
+Pressione "Enter" e aguarde, no final do processo é importante que siga
+as instruções, não saia do terminal, feche a janela e abra-a novamente.
+Retorne ao seu editor de texto e mude novamente **SigLevel = Never**
+para **SigLevel = Required DatabaseOptional**, salve o arquivo e feche o
+editor.
+
+Para ter certeza de que não há nenhum erro execute o comando
+``pacman -Syu`` novamente: ::
+
+	$ pacman -Syu
+	:: Sincronizando a base de dados de pacotes...
+	mingw32 está atualizado
+	mingw64 está atualizado
+	msys está atualizado
+	mame está atualizado
+	:: Starting core system upgrade...
+	não há nada a fazer
+	:: Iniciando atualização completa do sistema...
+	não há nada a fazer
+
+Caso você não tenha um retorno semelhante ou tenha qualquer outro problema que o
+impeça de fazer a atualização, veja se você não tem qualquer um 
+`destes programas <https://cygwin.com/faq/faq.html#faq.using.bloda>`_
+instalados no seu computador, se houver, veja se é possível
+desativá-los, adicionar uma regra de exclusão do diretório do MSYS2
+(**c:\\mysys64** ou **c:\\mysys32**) ou até mesmo removê-los até que
+você consiga montar o seu ambiente sem problemas.
+
+Uma outra alternativa interessante seria usar uma máquina virtual para
+compilar o MAME ou para montar o ambiente sem qualquer erro.
+
+.. _compiling-windows-visual-studio:
+
+Compilando com o Microsoft Visual Studio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Você pode gerar projetos compatíveis com o Visual Studio 2017 usando
+  o comando **make vs2017**. É predefinido que a solução e o projeto
+  serão criados no diretório ``build/projects/windows/mame/vs2017``.
+  O nome do diretório **build** pode ser alterado modificando a opção
+  ``BUILDDIR``.
+
+  O comando sempre regenera as configurações, logo a opção **REGENIE=1**
+  não é necessário.
+
+* Usando a opção **MSBUILD=1** será construído a solução usando o
+  *Microsoft Build Engine* após a criação dos arquivos do projeto.
+  Observe que é necessário que o ambiente e os caminhos estejam
+  corretamente configurados para que o Visual Studio possa encontrá-los.
+
+* Problemas com as novas versões do compilador do
+  Microsoft Visual C/C++ previnem que o MAME seja compilado. Pode ser
+  que isso mude no futuro, use as ferramentas do Microsoft Visual
+  Studio **15.7.6**.
+
+* Ainda que o Visual Studio seja usado é necessário ter também o
+  ambiente MSYS2 para gerar os arquivos do projeto, converter os layouts
+  internos, compilar as traduções da interface, etc.
+
+.. raw:: latex
+
+	\clearpage
+
+Linux
+-----
+
+.. _compiling-fedora:
+
+Fedora Linux
+~~~~~~~~~~~~
+
+Alguns pré-requisitos precisam ser atendidos na sua distro antes de
+continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
+problemas, certifique-se que você tenha a versão mais recente. ::
+
+	sudo dnf install gcc gcc-c++ SDL2-devel SDL2_ttf-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel
+
+A compilação é exatamente como descrito em
+:ref:`compiling-practical-examples`.
+
+.. _compiling-ubuntu:
+
+Debian e Ubuntu (incluindo dispositivos Raspberry Pi e ODROID)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Alguns pré-requisitos precisam ser atendidos na sua distro antes de
+continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
+problemas, certifique-se que você tenha a versão mais recente. ::
+
+	sudo apt-get install git build-essential libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default
+
+A compilação é exatamente como descrito em
+:ref:`compiling-practical-examples`
+
+.. _compiling-arch:
+
+Arch Linux
+~~~~~~~~~~
+
+Alguns pré-requisitos precisam ser atendidos na sua distro antes de
+continuar. ::
+
+	sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5
+
+A compilação é exatamente como descrito em
+:ref:`compiling-practical-examples`
+
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-macos:
+
+Apple Mac OS X
+--------------
+
+Você precisará de alguns pré-requisitos para começar. Certifique-se de
+estar no *OS X 10.9 Mavericks* ou mais recente.
+É **OBRIGATÓRIO** o uso do SDL 2.0.4 para o OS X.
+
+*	Instale o **Xcode** que você encontra no Mac App Store
+*	Inicie o programa **Xcode**.
+*	Será feito o download de alguns pré-requisitos adicionais.
+	Deixe rodando antes de continuar.
+*	Ao terminar saia do **Xcode** e abra uma janela do **Terminal**
+*	Digite o comando ``xcode-select --install`` para instalar o kit
+	obrigatório de ferramentas para o MAME.
+
+Em seguida, é preciso baixar e instalar o SDL 2.
+
+*	Vá para `este site <http://libsdl.org/download-2.0.php>`_ e baixe o
+	arquivo .dmg para o *Mac OS X*.
+*	Caso o arquivo .dmg não abra sozinho de forma automática, abra você
+	mesmo
+*	Clique no 'Macintosh HD' (ou seja lá o nome que você estiver usando
+	no disco rígido do seu Mac), no painel esquerdo onde está localizado
+	o **Finder**, abra a pasta **Biblioteca** e arraste o arquivo
+	**SDL2.framework** na pasta **Frameworks**.
+
+Por fim, para começar a compilar, use o Terminal para navegar até onde
+você tem o código fonte do MAME (comando *cd*) e siga as instruções
+normais de compilação acima para todas as Plataformas.
+
+É possível fazer o MAME funcionar a partir da versão 10.6, porém é um
+pouco mais complicado:
+
+*	Você precisará instalar o **clang-3.7**, **ld64**, **libcxx** e o
+	**python27** do MacPorts.
+*	Em seguida, adicione essas opções ao seu comando make ou
+	**useroptions.mak**:
+
+|	``OVERRIDE_CC=/opt/local/bin/clang-mp-3.7``
+|	``OVERRIDE_CXX=/opt/local/bin/clang++-mp-3.7``
+|	``PYTHON_EXECUTABLE=/opt/local/bin/python2.7``
+|	``ARCHOPTS=-stdlib=libc++``
+
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-emscripten:
+
+Javascript Emscripten e HTML
+----------------------------
+
+Primeiro, baixe e instale o **Emscripten 1.37.29** ou mais recente
+segundo as instruções no `site oficial <https://kripken.github.io/emscri
+pten-site/docs/getting_started/downloads.html>`_
+
+Depois de instalar o Emscripten, será possível compilar o MAME direto,
+usando a ferramenta '**emmake**'. O MAME completo é muito grande para
+ser carregado numa página web de uma só vez, então é preferível que você
+compile versões menores e separadas do MAME usando o parâmetro
+*SOURCES*, por exemplo, faça o comando abaixo no mesmo diretório do
+MAME: ::
+
+	emmake make SUBTARGET=pacmantest SOURCES=src/mame/drivers/pacman.cpp
+
+O parâmetro *SOURCES* deve apontar para pelo menos um arquivo de driver
+*.cpp*. O comando make tentará localizar e reunir todas as dependências
+para compilar o executável do MAME junto com o driver que você
+definiu. No entanto porém, caso ocorra algum erro e o processo não
+encontre algum arquivo, é necessário declarar manualmente um ou mais
+arquivos que faltam (separados por vírgula). Por exemplo: ::
+
+	emmake make SUBTARGET=apple2e SOURCES=src/mame/drivers/apple2e.cpp,src/mame/machine/applefdc.cpp
+
+O valor do parâmetro *SUBTARGET* serve apenas para se diferenciar dentre
+as várias compilações existente e não precisa ser definido caso não seja
+necessário.
+
+O Emscripten oferece suporte à compilação do WebAssembly com um loader
+de JavaScript em vez do JavaScript inteiro, esse é o padrão em versões
+mais recentes. Para ligar ou desligar o WebAssembly de modo forçado,
+adicione ``WEBASSEMBLY=1`` ou ``WEBASSEMBLY=0`` ao comando make.
+
+Outros comandos make também poderão ser usados como foi o
+parâmetro **-j** que foi usado visando fazer uso da compilação
+multitarefa.
+
+Quando a compilação atinge a fase da emcc, talvez você veja uma
+certa quantidade de mensagens de aviso do tipo *"unresolved symbol"*.
+Até o presente momento, isso é esperado para funções relacionadas com o
+OpenGL como a função "*glPointSize*". Outros podem também indicar que um
+arquivo de dependência adicional precisa ser especificado na lista
+*SOURCES*. Infelizmente, este processo não é automatizado e você
+precisará localizar e informar o arquivo de código fonte assim como os
+arquivos que contém os símbolos que estão faltando. Você também pode
+ter a sorte de se safar caso ignore os avisos e continue a compilação,
+desde que os códigos ausentes não sejam usados no momento da execução.
+
+Se tudo correr bem, um arquivo. js será criado no diretório. Este
+arquivo não pode ser executado sozinho, ele precisa de um loader HTML
+para que ele possa ser exibido e que seja possível também passar os
+parâmetros de linha de comando para o executável.
+
+O `Projeto Emularity <https://github.com/db48x/emularity>`_ oferece tal
+loader.
+
+Existem amostras de arquivos .html nesse repositório que pode ser
+editado para refletir as suas configurações pessoais e apontar o caminho
+do seu arquivo js recém compilado do MAME. Abaixo está a lista dos
+arquivos que você precisa colocar num servidor web:
+
+*	O arquivo .js compilado do MAME
+*	O arquivo .wasm do MAME caso você o tenha compilado com WebAssembly
+*	Os arquivos .js do pacote Emularity (loader.js, browserfs.js, etc)
+*	Um arquivo .zip com as ROMs do driver que você deseja rodar
+	(caso haja)
+*	Qualquer outro programa que você quiser rodar com o driver do MAME
+*	Um loader do Emularity .html customizado para utilizar todos os
+	itens acima.
+
+Devido a restrição de segurança dos navegadores atuais, você precisa
+usar um servidor web ao invés de tentar rodá-los localmente.
+
+Caso algo dê errado e não funcione, você pode abrir o console Web do seu
+navegador principal e ver qual o erro que ele mostra (por exemplo,
+faltando alguma coisa, algum arquivo de ROM incorreto, etc).
+Um erro do tipo "**ReferenceError: foo is not defined**" pode indicar
+que provavelmente faltou informar um arquivo de código fonte na lista da
+opção **SOURCES**.
+
+.. raw:: latex
+
+	\clearpage
+
 .. _compiling-issues:
 
 Problemas conhecidos
@@ -647,6 +1145,10 @@ Caso ``_FORTIFY_SOURCE`` já esteja predefinido com um valor diferente de
 zero, é possível usar uma solução paleativa com ``-U_FORTIFY_SOURCE``.
 Use em suas opções de compilação **ARCHOPTS** ou redefinindo as suas
 variáveis de ambiente **CFLAGS** e **CXXFLAGS**.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _compiling-unusual:
 
