@@ -210,7 +210,9 @@ Para incluir os símbolos de depuração na compilação use a opção
 **SYMBOLS=1**, opção útil caso o MAME trave por algum motivo. Para mais
 informações veja :ref:`SYMBOLS <mame-compilation-symbols>`. É importante
 também adicionar o nível destes símbolos, para mais informações veja
-:ref:`SYMLEVEL <mame-compilation-symlevel>`.
+:ref:`SYMLEVEL <mame-compilation-symlevel>`. Seja qual for a versão do
+MAME que esteja compilando, é uma boa prática manter ambas as opções em
+todas elas.
 
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 -j5**
 
