@@ -1016,7 +1016,7 @@ definiu. No entanto porém, caso ocorra algum erro e o processo não
 encontre algum arquivo, é necessário declarar manualmente um ou mais
 arquivos que faltam (separados por vírgula). Por exemplo: ::
 
-	emmake make SUBTARGET=apple2e SOURCES=src/mame/drivers/apple2e.cpp,src/mame/machine/applefdc.cpp
+	emmake make SUBTARGET=apple2e SOURCES=src/mame/drivers/apple2e.cpp,src/devices/machine/applefdc.cpp
 
 O valor do parâmetro *SUBTARGET* serve apenas para se diferenciar dentre
 as várias compilações existente e não precisa ser definido caso não seja
