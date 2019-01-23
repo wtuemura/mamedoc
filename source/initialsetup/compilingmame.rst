@@ -316,7 +316,8 @@ Opções gerais para a compilação
 **SUBTARGET**
 
   Define diferentes versões do MAME para serem compiladas, caso nenhum
-  seja escolhido o valor predefinido é **mame**. Os valores válidos são:
+  seja escolhido o valor predefinido é **mame**. Os valores mais usados
+  são:
 
 		* **arcade**: Compila uma versão do MAME apenas com máquinas classificadas como arcade.
 		* **dummy**: Compila uma versão bem simplificada do mame com apenas o driver da Coleco.
@@ -325,6 +326,15 @@ Opções gerais para a compilação
 		* **nl**: Compila todos os drivers classificados como *netlist*.
 		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita que você tenha que compilar todo o código fonte do MAME para testar uma modificação feita na interface por exemplo.
 		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
+
+  O valor do parâmetro *SUBTARGET* serve também para se diferenciar
+  dentre as várias compilações existente e não precisa ser definido sem
+  necessidade. Supondo que use o comando abaixo:
+
+	**make REGENIE=1 SUBTARGET=neogeo SOURCES=src/mame/drivers/neogeo.cpp -j4**
+
+  Será criado um binário MAME de nome **neogeo** caso seja uma versão
+  32-bit ou **neogeo64** caso seja uma versão 64-bit.
 
 .. raw:: latex
 
