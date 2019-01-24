@@ -1334,7 +1334,7 @@ O driver de vídeo algumas vezes pode causar problemas, alguma
 incompatibilidade com o Direct3D, os casos variam muito. A melhor
 maneira de descartar isso é testando o MAME usando uma outra opção de
 vídeo, caso esteja usando ``-video d3d`` (Windows) ou ``-video opengl``
-(Linux e macOS) tente com ``-video software``. Para outras opções veja
+(Linux e macOS) tente com ``-video soft``. Para outras opções veja
 :ref:`-video <mame-commandline-video>`.
 
 .. raw:: latex
