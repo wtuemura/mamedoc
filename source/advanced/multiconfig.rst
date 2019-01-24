@@ -78,8 +78,7 @@ A ordem da leitura dos arquivos
    que não usem uma BIOS.
 
 9. Arquivo INI da mesma família. O **The Last Soldier** é um clone do
-   The Last
-   **Blade / Bakumatsu Roman - Gekka no Kenshi**, assim o arquivo
+   **The Last Blade / Bakumatsu Roman - Gekka no Kenshi**, assim o arquivo
    ``lastblad.ini`` será lido. Nenhum arquivo INI da mesma família será
    lido.
 
