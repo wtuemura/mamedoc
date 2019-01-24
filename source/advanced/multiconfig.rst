@@ -11,87 +11,129 @@ organização das configurações.
 A ordem da leitura dos arquivos
 -------------------------------
 
-1.		Inicialmente a linha de comando é interpretada primeiro, depois
-		as configurações que *terão prioridade sobre qualquer outra
-		opção que esteja no arquivo *.ini*.
+1. A linha de comando é interpretada primeiro e tem prioridade sobre
+   qualquer outro arquivo *.ini*.
 
-2.		O ``mame.ini`` (ou qualquer outra plataforma que use um *.ini*
-		como o ``mess.ini`` por exemplo) são interpretadas duas vezes.
-		Na primeira passada pode alterar várias configurações de
-		caminho, a segunda passagem é feita para ver se há um arquivo de
-		configuração válido nesse novo local (caso haja, altera as
-		configurações com as informações desse arquivo).
-		E o ``debug.ini`` se estiver no modo de depuração.
-		Este é um arquivo de configuração avançado que a maioria das
-		pessoas não precisam sequer se preocupar com ele.
+2. O ``mame.ini`` (ou qualquer outra plataforma que use um *.ini* como o
+   ``mess.ini`` por exemplo) são interpretadas duas vezes. Na primeira
+   passada pode alterar várias configurações de caminho, a segunda
+   passagem é feita para ver se há um arquivo de configuração válido
+   nesse novo local (caso haja, altera as configurações com as
+   informações desse arquivo).
 
-4.		Quando for apropriado, os arquivos *ini* específicos voltado para
-		um sistema como ``neogeo_noslot.ini`` ou ``cps2.ini`` por
-		exemplo.
-		O jogo **Street Fighter Alpha** é um jogo do sistema CPS2, então
-		o arquivo ``cps2.ini`` será lido duas vezes.
 
-5.		Arquivo INI de orientação do monitor (seja ``horizont.ini`` ou
-		``vertical.ini``).
-		O jogo Pac-Man por exemplo, usa uma configuração de monitor
-		vertical, então ele leria o arquivo ``vertical.ini``.
-		Já o jogo **Street Fighter Alpha** é um jogo com tela
-		horizontal, então leria o arquivo ``horizont.ini``.
+3. O ``debug.ini`` se estiver no modo de depuração. Este é um arquivo de
+   configuração avançado que a maioria das pessoas não precisam sequer
+   se preocupar com ele.
 
-6.		Arquivos INI voltado para diferentes sistemas (``arcade.ini``,
-		``console.ini``, ``computer.ini``, ou ``othersys.ini``).
-		Tanto o jogo **Pac-Man** quanto o jogo **Street Fighter Alpha**
-		são jogos de arcade, então o arquivo a ser lido seria o
-		``arcade.ini``.
-		Já no caso de um console como o **Atari 2600**, o arquivo a ser
-		lido seria o ``console.ini``.
+4. Arquivos INI de orientação de tela (seja ``horizont.ini`` ou
+   ``vertical.ini``).
+   O jogo Pac-Man por exemplo usa uma tela vertical, assim o arquivo
+   ``vertical.ini`` é lido. Enquanto jogo **Street Fighter Alpha** é um
+   jogo com tela horizontal, assim o arquivo ``horizont.ini`` é lido.
 
-7.		Os arquivos INI voltados para diferentes tipos de tela
-		(``vector.ini`` para jogos vetoriais, ``raster.ini`` para jogos
-		rasterizados, ``lcd.ini`` para jogos em LCD).
-		Ambos os jogos **Pac-Man** e **Street Fighter Alpha** são jogos
-		rasterizados, então o arquivo a ser lido seria o ``raster.ini``.
-		Tempest é um jogo que usa uma tela com vetores, então o arquivo
-		a ser lido seria o ``vector.ini``.
+   Geralmente o arquivo ``horizont.ini`` será lodo em sistemas sem
+   monitores, com monitores diversos com orientações diferentes ou
+   monitores conectados em dispositivos de slot.
 
-8.		Os Arquivos *.ini* do código fonte.
-		Este também é um arquivo de configuração avançado, a maioria das
-		pessoas não precisam usá-lo para nada.
-		O MAME tentará ler os arquivos ``source/sourcefile.ini`` e
-		``sourcefile.ini`` onde o *sourcefile* é o nome real do arquivo
-		de código-fonte.
-		O **mame -listsource <game>** mostrará o arquivo de código-fonte
-		para um determinado nome.
-		Por exemplo, o jogo **Sailor Moon** da Banpresto, **Dodonpachi**
-		da Atlus e **Dangun Feveron** da Nihon System compartilham uma
-		grande quantidade de hardware compatíveis entre si e são
-		agrupados em um único arquivo **cave.c**, o que significa que
-		todos eles interpretarão o arquivo ``source/cave.ini``.
 
-9.		O arquivo *.ini* Pai.
-		Se rodar o jogo **Pac-Man** por exemplo, que é um clone do jogo
-		**Puck-Man**, seria então o arquivo ``puckman.ini``.
+5. Arquivos INI voltado para diferentes sistemas (``arcade.ini``,
+   ``console.ini``, ``computer.ini``, ou ``othersys.ini``).
+   Tanto o jogo **Pac-Man** quanto o jogo **Street Fighter Alpha**
+   são jogos de arcade, então o arquivo a ser lido seria o
+   ``arcade.ini``, enquanto um console como o **Atari 2600** o
+   ``console.ini`` será lido.
 
-10.		O arquivo *.ini* de Driver.
-		Usando o nosso exemplo anterior do Pac-Man, isso seria um
-		arquivo chamado ``pacman.ini``.
+6. Os arquivos INI voltados para diferentes tipos de tela
+   (``vector.ini`` para jogos vetoriais, ``raster.ini`` para jogos
+   rasterizados, ``lcd.ini`` para jogos em telas de cristal
+   líquido (LCD), EL, Plasma).
+   Ambos os jogos **Pac-Man** e **Street Fighter Alpha** são jogos
+   rasterizados, então o arquivo a ser lido seria o ``raster.ini``,
+   enquanto Tempest é um jogo com tela vetorial, então o arquivo
+   a ser lido é o ``vector.ini``.
+   
+   Para sistemas que tenham mais de um monitor como *House Mannequin*,
+   que usa um monitor CRT raster e um um par de telas em cristal
+   líquido, são lidos os arquivos ``raster.ini`` e ``lcd.ini`` relevantes
+   ao primeiro monitor e as outras respectivas telas.
+
+7. Os arquivos INI voltados para arquivos fonte do driver. O MAME
+   tentará ler ``source/``\ *<sourcefile>*\ ``.ini`` onde <*sourcefile*>
+   é o nome do arquivo de código fonte onde o driver do sistema for
+   definido. O código fonte de um sistema pode ser encontrado usando o
+   comando **mame -listsource <pattern>**, exemplo. ::
+
+	mame.exe -listsource sfa
+	sfa             cps2.cpp
+
+   O Banpresto **Sailor Moon**, Atlus **Dodonpachi** e Nihon System
+   **Dangun Feveron** por exemplo, todos rodam em hardware semelhante e
+   estão listados no arquivo de código fonte ``cave.cpp``, assim todos
+   eles usarão o arquivo ``source/cave.ini`` neste caso.
+
+8. Arquivos INI para BIOS (caso seja aplicável). O **The Last Soldier**
+   por exemplo usa a BIOS do **Neo-Geo MVS**, assim o arquivo
+   ``neogeo.ini`` será lido. Nenhum arquivo INI será lido em sistemas
+   que não usem uma BIOS.
+
+9. Arquivo INI da mesma família. O **The Last Soldier** é um clone do
+   The Last
+   **Blade / Bakumatsu Roman - Gekka no Kenshi**, assim o arquivo
+   ``lastblad.ini`` será lido. Nenhum arquivo INI da mesma família será
+   lido.
+
+10. Arquivo INI do sistema. Usando o exemplo anterior, o arquivo
+    ``lastsold.ini`` será lido para o **The Last Soldier**.
+
+.. raw:: latex
+
+	\clearpage
 
 Exemplos da sequência de leitura dos arquivos
 ---------------------------------------------
 
-	O jogo **Alcon**, que é um clone Americano do jogo **Slap Fight**
-	(**mame alcon**):
+* O Brix que é um clone de Zzyzzyxx. (**mame brix**)
 
-	* ``mame.ini``, ``vertical.ini``, ``arcade.ini``, ``raster.ini``,
-	  ``slapfght.ini`` e por último ``alcon.ini``.
+  1. Linha de comando
+  2. ``mame.ini`` (global)
+  3. (caso o depurador não esteja habilitado, nenhum arquivo INI extra será lido)
+  4. ``vertical.ini`` (orientação de tela)
+  5. ``arcade.ini`` (tipo do sistema)
+  6. ``raster.ini`` (tipo do monitor)
+  7. ``source/jack.ini`` (arquivo fonte do driver)
+  8. (nenhuma BIOS definida)
+  9. ``zzyzzyxx.ini`` (sistema da mesma família)
+  10. ``brix.ini`` (sistema)
 
-	O jogo **Super Street Fighter 2 Turbo** (**mame ssf2t**):
+* Super Street Fighter 2 Turbo (**mame ssf2t**)
 
-	* ``mame.ini``, ``horizont.ini``, ``arcade.ini``, ``raster.ini``,
-	  ``cps2.ini`` e por último ``ssf2t.ini``
+  1. Linha de comando
+  2. ``mame.ini`` (global)
+  3. (caso o depurador não esteja habilitado, nenhum arquivo INI extra será lido)
+  4. ``horizont.ini`` (orientação de tela)
+  5. ``arcade.ini`` (tipo do sistema)
+  6. ``raster.ini`` (tipo do monitor)
+  7. ``source/cps2.ini`` (arquivo fonte do driver)
+  8. (nenhuma BIOS definida)
+  9. (nenhum sistema da mesma família)
+  10. ``ssf2t.ini`` (sistema)
 
-	Lembre-se que os parâmetros na linha de comando tem preferência
-	sobre todos os outros arquivos!
+* Final Arch (**mame finlarch**)
+
+  1. Command line
+  2. ``mame.ini`` (global)
+  3. (caso o depurador não esteja habilitado, nenhum arquivo INI extra será lido)
+  4. ``horizont.ini`` (orientação de tela)
+  5. ``arcade.ini`` (tipo do sistema)
+  6. ``raster.ini`` (tipo do monitor)
+  7. ``source/stv.ini`` (arquivo fonte do driver)
+  8. ``stvbios.ini`` (BIOS definida)
+  9. ``smleague.ini`` (sistema da mesma família)
+  10. ``finlarch.ini`` (sistema)
+
+*Lembre-se que os parâmetros na linha de comando tem preferência sobre
+todos os outros arquivos!*
 
 Truques para tornar a vida mais fácil
 -------------------------------------
