@@ -64,12 +64,33 @@ Há alguns pontos importantes que você precisa saber.
   Várias outras opções podem ser adicionadas desde que estejam separadas
   por espaço.
 
+* Algumas vezes o processo de compilação é interrompido antes de chegar
+  ao fim, os motivos são os mais diversos, pode ser a falta de alguma
+  biblioteca, erro de configuração em algum lugar, uma atualização do
+  código fonte onde algum desenvolvedor deixou passar algo
+  desapercebido, enfim, se você está encarando a tarefa de compilar o
+  seu próprio MAME.
+  
+  Caso o processo tenha parado, repita o comando anterior nos terminais 
+  linux e no MSYS2 basta clicar na tecla para cima do teclado.
+  Geralmente o processo continua sem maiores problemas, porém caso o
+  processo pare novamente no mesmo lugar, pode haver algum outro
+  problema como a falta de alguma biblioteca. Caso a versão que esteja
+  sendo compilada for a GIT, aguarde algumas horas, algumas vezes é
+  necessário esperar um dia inteiro até que os desenvolvedores resolvam
+  o problema. Nestes casos não é necessário reportar o erro, aguarde
+  pois logo o erro será sanado.
+
 * Uma vez que você compile algo, todas as opções usadas ficam
   armazenadas, caso venha a realizar uma nova compilação com opções
   diferentes das usadas anteriormente, é **obrigatório** que você
   use a opção **REGENIE=1**, para que todas as opções anteriores sejam
   atualizadas para levar em consideração qualquer nova opção que você
   decida usar.
+
+.. raw:: latex
+
+	\clearpage
 
 * Durante o processo de compilação são gerados arquivos objeto ***.o**,
   arquivos de arquivamento ***.a** dentre vários outros, é importante
@@ -112,8 +133,8 @@ Há alguns pontos importantes que você precisa saber.
   informações sobre cada uma dessas ferramentas e de como usá-las, veja
   :ref:`mame-aditional-tools`.
 
-* Nas versões compiladas do git, a versão do MAME acompanha um
-  identificador único depois da versão, por exemplo: ::
+* Nas versões compiladas do git (versão GIT), a versão do MAME acompanha
+  um identificador único depois da versão, por exemplo: ::
 
 	./mame64 -help
 	MAME v0.205 (mame0205-540-gc8e4dab20c)
@@ -126,6 +147,10 @@ Há alguns pontos importantes que você precisa saber.
 	última mudança de versão.
 
 	**gc8e4dab20c** - São os primeiros 10 dígitos do último *commit*.
+
+.. raw:: latex
+
+	\clearpage
 
 * O git mantém um controle de todos os arquivos do código fonte,
   qualquer alteração que não tenha sido feita pelos administradores a
@@ -214,6 +239,8 @@ também adicionar o nível destes símbolos, para mais informações veja
 MAME que esteja compilando, é uma boa prática manter ambas as opções em
 todas elas.
 
+.. _mame-compile-add-symbols:
+
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 -j5**
 
 Para compilar uma versão de depuração do MAME use o comando abaixo, para
@@ -223,7 +250,7 @@ mais informações veja :ref:`DEBUG <mame-compilation-debug>`.
 
 Para compilar uma versão do MAME que tire proveito da extensão SSE2 do
 seu processador melhorando a performance, use o comando abaixo. Para
-mais informações veja :ref:`SSE2 <mame-crosscompilation-sse2>`.
+mais informações veja :ref:`SSE2 <mame-compilation-sse2>`.
 
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j5**
 
@@ -234,10 +261,6 @@ queira compilar uma versão customizada do MAME que só rode o jogo
 **Pac Man**:
 
 	**make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1**
-
-.. raw:: latex
-
-	\clearpage
 
 O MAME também permite de maneira prática que seja possível compilar uma
 versão só com máquinas ARCADE, nessa versão os portáteis, consoles,
@@ -338,6 +361,52 @@ Opções gerais para a compilação
   Será criado um binário MAME de nome **neogeo** caso seja uma versão
   32-bit ou **neogeo64** caso seja uma versão 64-bit.
 
+**TARGETOS**
+
+	Define o Sistema Operacional de destino, é importante deixar claro
+	que essa opção é desnecessária caso esteja compilando o MAME
+	nativamente, os valores válidos são:
+
+	* ``android`` (Android)
+
+	* ``asmjs`` (Emscripten/asm.js)
+
+	* ``freebsd`` (FreeBSD)
+
+	* ``netbsd`` (NetBSD)
+
+	* ``openbsd`` (OpenBSD)
+
+	* ``pnacl`` (Native Client - PNaCl)
+
+	* ``linux`` (Linux)
+
+	* ``ios`` (iOS)
+
+	* ``macosx`` (OSX)
+
+	* ``windows`` (Windows)
+
+	* ``haiku`` (Haiku)
+
+	* ``solaris`` (Solaris SunOS)
+
+	* ``steamlink`` (Steam Link)
+
+	* ``rpi`` (Raspberry Pi)
+
+	* ``ci20`` (Creator-Ci20)
+
+.. _mame-compilation-sse2:
+
+**SSE2=1**
+
+	**Double Precision Streaming SIMD Extensions**, em resumo, são
+	instruções que otimizam o desempenho em processadores
+	compatíveis. O MAME terá uma melhor performance quando essa
+	opção é usada segundo a `nota publicada
+	<https://www.mamedev.org/?p=451>`_ no site do MAME.
+
 .. raw:: latex
 
 	\clearpage
@@ -422,7 +491,8 @@ Recursos opcionais
   e diagnósticos habilitando o modo de depuração. É importante que
   saiba que essa opção tem impacto direto na performance do emulador e
   só tem utilidade para desenvolvedores, não compile o MAME com esta
-  opção sem saber o que está fazendo.
+  opção sem saber o que está fazendo. Veja também
+  :ref:`compiling-advanced-options-debug`.
 
 .. raw:: latex
 
@@ -767,7 +837,8 @@ reinicie o **mingw64.exe**.
 * Para gerar a documentação API do código fonte é preciso instalar
   o pacote **doxygen**.
 
-* Para fazer a depuração do MAME é necessário instalar o **gdb**.
+* Para fazer a depuração do MAME é necessário instalar o **gdb**. Para
+  mais informações sobre o gdb veja :ref:`compiling-using-gdb`.
 
 .. raw:: latex
 
@@ -1206,9 +1277,376 @@ Essas configurações podem ser armazenadas em um makefile customizado
 como descrito em :ref:`PREFIX_MAKEFILE <mame-compilation-premake>` caso
 você pretenda utilizá-las regularmente.
 
+.. raw:: latex
+
+	\clearpage
+
+O MAME travou, o quê fazer?
+---------------------------
+
+Investigando e lidando com problemas comuns
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A princípio é preciso saber se a causa do problema tem origem no MAME,
+se é algum bug interno ou se vem de alguma configuração externa.
+A primeira coisa a se fazer é ir eliminando possíveis *culpados*, caso
+tenha alterado algum tipo de configuração comece renomeando o seu
+``mame.ini`` para ``_mame.ini``, isso faz com que o MAME não encontre
+mais o seu arquivo de configuração use as suas configurações
+predefinidas internamente.
+
+Caso o MAME não apresente o problema com o exemplo acima, crie um novo
+``mame.ini`` com o comando
+**mame.exe** :ref:`-createconfig <mame-commandline-createconfig>` e
+usando o editor de texto de sua preferência vá adicionando as suas
+configurações uma a uma, sempre testando com o MAME cada alteração
+adicionada até identificar o problema.
+
+Supondo que o problema não tenha sido com o arquivo de configuração,
+verifique se o conteúdo dos diretórios **bgfx**, **hlsl** e **hash**
+foram atualizados. É comum para aqueles que compilam a sua versão do
+MAME tenham toda a árvore de desenvolvimento atualizada porém se
+esquecem de atualizar o conteúdo destes diretórios no dispositivo que
+estão usando ou até mesmo um outro lugar onde o MAME esteja sendo
+executado. Isso porém não acontece com quem baixa a versão já compilada
+do MAME do site oficial.
+
+Experimente apagar o arquivo de configuração da máquina que você estava
+rodando, fica no diretório **cfg**, apague também o arquivo de memória
+que fica do diretório **nvram**. Em ambos os diretórios o nome do
+arquivo ou diretório será o mesmo que o nome da máquina usada, supondo
+que você teve problemas com a máquina **Street Fighter Alpha**, no
+diretório nvram apague o diretório **sfa**, no diretório cfg apague o
+arquivo **sfa.cfg**. Verifique se não existe nenhuma configuração
+customizada dentro do diretório **ini** como **arcade.ini** ou qualquer
+outro que você tenha criado, caso exista, experimente mover este arquivo
+para outro lugar.
+
+É provável que depois de uma atualização da versão GIT o MAME tenha se
+"*quebrado*", ao acompanhar o `desenvolvimento do MAME diariamente
+<https://github.com/mamedev/mame/commits/master>`_, verá que durante
+todo o dia, vários desenvolvedores estão enviando coisas novas e
+melhorando aquelas que já existem. Esse é o risco de se utilizar a
+versão GIT pois é uma versão instável que a qualquer momento algo pode
+deixar de funcionar.
+
+O driver de vídeo algumas vezes pode causar problemas, alguma
+incompatibilidade com o Direct3D, os casos variam muito. A melhor
+maneira de descartar isso é testando o MAME usando uma outra opção de
+vídeo, caso esteja usando ``-video d3d`` (Windows) ou ``-video opengl``
+(Linux e macOS) tente com ``-video software``. Para outras opções veja
+:ref:`-video <mame-commandline-video>`.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-advanced-options-debug:
+
+A tela do travamento do MAME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Junto aos binários do MAME existe um arquivo de símbolos, para a versão
+*64-bit* será criado o arquivo **mame64.sym** ou **mame.sym** para a
+versão *32-bit*. Estes arquivos já vem com a versão oficial assim como
+:ref:`já foi explicado <mame-compile-add-symbols>` como criá-los
+durante a compilação.
+
+Estes arquivos devem **sempre** estar junto ao executável do MAME, esse
+arquivo "**.sym**" é usado para traduzir as referências usadas no
+código fonte junto com os códigos de erro, para a maioria não significa
+muito porém é útil para os desenvolvedores. Aqui um exemplo de um erro
+que causou a parada do MAME: ::
+
+	Exception at EIP=00000000 (something_state::something()+0x0000): ACCESS VIOLATION
+	While attempting to read memory at 00000000
+	-----------------------------------------------------
+	EAX=00000000 EBX=0fffffff ECX=0fffffff EDX=00000000
+	ESI=00000000 EDI=00000000 EBP=00000000 ESP=00000000
+	-----------------------------------------------------
+	Stack crawl:
+	0012abcd: 00123456 (something_state::something()+0x0000)
+	0034ef01: 00789abc (something_state::something()+0x0000)
+	E a listagem continua
+	...
+
+Sem o arquivo de símbolos o ``something_state::something`` apareceria
+como um código hexadecimal sem sentido, com os símbolos esses códigos
+são traduzidos para algo legível e compreensível para os
+desenvolvedores. Caso o MAME trave durante a emulação, uma tela
+semelhante irá aparecer, copie e reporte [4]_ o erro no fórum
+`MAME testers <https://mametesters.org/view_all_bug_page.php/>`_.
+
+.. _compiling-using-gdb:
+
+Usando o gdb
+~~~~~~~~~~~~
+
+A ideia não é oferecer um manual completo de como usar o gdb, apenas
+o mínimo necessário para que você consiga um *stack trace* válido. No
+exemplo abaixo estou usando uma versão 64-bit do MAME para Linux, porém
+o procedimento é o mesmo em qualquer outra plataforma.
+
+* Carregue o mame no gdb com o comando ``gdb mame64``, irá aparecer
+  algo semelhante com a tela abaixo: ::
+
+	gdb mame64
+	GNU gdb (Debian 7.12-6) 7.12.0.20161007-git
+	Copyright (C) 2016 Free Software Foundation, Inc.
+	License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+	This is free software: you are free to change and redistribute it.
+	There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+	and "show warranty" for details.
+	This GDB was configured as "x86_64-linux-gnu".
+	Type "show configuration" for configuration details.
+	For bug reporting instructions, please see:
+	<http://www.gnu.org/software/gdb/bugs/>.
+	Find the GDB manual and other documentation resources online at:
+	<http://www.gnu.org/software/gdb/documentation/>.
+	For help, type "help".
+	Type "apropos word" to search for commands related to "word"...
+	Reading symbols from mame64...done.
+	(gdb)
+
+Para executar a máquina com problema execute ``run`` seguido pelos
+comandos do MAME, exemplo: ::
+
+	(gdb) run kof99
+	Starting program: /home/mame/mame64 kof99
+	[Thread debugging using libthread_db enabled]
+	Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+	[New Thread 0x7fffe4f6c700 (LWP 21026)]
+	[New Thread 0x7fffe4531700 (LWP 21027)]
+	[New Thread 0x7fffe3d30700 (LWP 21028)]
+	[New Thread 0x7fffe352f700 (LWP 21029)]
+	[New Thread 0x7fffe2d2e700 (LWP 21030)]
+	[New Thread 0x7fffe9ab5700 (LWP 21031)]
+	[New Thread 0x7fffe9a74700 (LWP 21032)]
+
+O exemplo dado foi com **kof99** porém pode ser com qualquer outra
+máquina que você tenha encontrado o problema, use a máquina até
+que o MAME trave, será exibida uma tela como no exemplo abaixo ::
+
+	Thread 1 "mame64" received signal SIGSEGV, Segmentation fault.
+	_int_malloc (av=av@entry=0x7ffff459fb00 <main_arena>, 
+	bytes=bytes@entry=67108864) at malloc.c:3650
+	3650 malloc.c: File or directry not found.
+
+Faça o comando ``where`` para que o gdb liste as possíves causas: ::
+
+	(gdb) where
+	#0  _int_malloc (av=av@entry=0x7ffff459fb00 <main_arena>, 
+	bytes=bytes@entry=67108864) at malloc.c:3650
+	#1  0x00007ffff4280f64 in __GI___libc_malloc (bytes=67108864) at malloc.c:2928
+	#2  0x00007ffff4d7c7a8 in operator new(unsigned long) ()
+	from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+	#3  0x000055555cd4f0f3 in __gnu_cxx::new_allocator<unsigned char>::allocate ()
+		at /usr/include/c++/6/ext/new_allocator.h:104
+	#4  std::allocator_traits<std::allocator<unsigned char> >::allocate ()
+		at /usr/include/c++/6/bits/alloc_traits.h:436
+	#5  std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate () at /usr/include/c++/6/bits/stl_vector.h:170
+	#6  std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage () at /usr/include/c++/6/bits/stl_vector.h:185
+	#7  std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base () at /usr/include/c++/6/bits/stl_vector.h:136
+	...
+	#25 0x00005555591df406 in main () at ../../../../../src/osd/sdl/sdlmain.cpp:217
+
+O comando acima é suficiente para que você copie e envie para os
+desenvolvedores, no exemplo acima ele foi cortado entre o item #7 e #25.
+Para versões do MAME que você baixa do site oficial, você deve enviar
+essas informações para
+`MAME testers <https://mametesters.org/view_all_bug_page.php/>`_. Já no
+caso de versões GIT, as informações devem ser enviadas para o
+mamedev no `github <https://github.com/mamedev/mame/issues>`_, como já
+foi dito antes, é obrigatório que os relatórios sejam feitos em Inglês.
+Para interromper o processo basta teclar **c** seguido da tecla
+**ENTER**, a tela do MAME será fechada, para sair do gdb digite
+**quit**.
+
+Uma outra opção para o gdb é a utilização de interfaces que ajudam a
+organizar a saída do gdb como a `GDB Dashboard
+<https://github.com/cyrus-and/gdb-dashboard>`_, com ela a saída do gdb
+além de ficar colorida, fica mais organizada, já é exibido os valores
+dos registros, o código fonte, etc. No exemplo abaixo é exatamente o
+mesmo do exemplo anterior, porém com informações relevantes disponíveis
+logo que o problema acontecer.
+
+.. raw:: latex
+
+	\clearpage
+
+::
+
+	─── Output/messages ────────────────────────────────────────────────────────────
+	─── Assembly ───────────────────────────────────────────────────────────────────
+	0x0000555555e33409 ? mov    %rsi,-0x70(%rbp)
+	0x0000555555e3340d ? mov    %edx,-0x74(%rbp)
+	0x0000555555e33410 ? mov    %ecx,-0x78(%rbp)
+	0x0000555555e33413 ? lea    -0x39(%rbp),%rax
+	0x0000555555e33417 ? mov    %rax,%rdi
+	0x0000555555e3341a ? callq  0x5555558de53e <std::allocator<unsigned char>::allocator()>
+	0x0000555555e3341f ? mov    -0x74(%rbp),%ecx
+	─── Expressions ────────────────────────────────────────────────────────────────
+	─── History ────────────────────────────────────────────────────────────────────
+	─── Memory ─────────────────────────────────────────────────────────────────────
+	─── Registers ──────────────────────────────────────────────────────────────────
+	rax 0x0000555558945ef0     rbx 0x0000555555e45bbd     rcx 0x0000000000000000 
+	rdx 0x0000000004000000     rsi 0x00007fff9ffff010     rdi 0x0000555558945ef0 
+	rbp 0x00007fffffff5900     rsp 0x00007fffffff5870      r8 0x0000000000000001 
+	r9 0x0000000000000001     r10 0x0000000000000000     r11 0x0000000000000000 
+	r12 0x0000000000080000     r13 0x0000000000080000     r14 0x00007fffd10e7010 
+	r15 0x0000000001000000     rip 0x0000555555e33413  eflags [ IF ]             
+	cs 0x00000033              ss 0x0000002b              ds 0x00000000         
+	es 0x00000000              fs 0x00000000              gs 0x00000000         
+	─── Source ─────────────────────────────────────────────────────────────────────
+	499 
+	500 
+	501 void cmc_prot_device::gfx_decrypt(uint8_t* rom, uint32_t rom_size, int extra_xor)
+	502 {
+	503     int rpos;
+	504     std::vector<uint8_t> buf(rom_size);
+	505 
+	506     // Data xor
+	507     for (rpos = 0; rpos < rom_size/4; rpos++)
+	508     {
+	509         decrypt(&buf[4*rpos+0], &buf[4*rpos+3], rom[4*rpos+0], rom[4*rpos+3], type0_t03, type0_t12, type1_t03, rpos, (rpos>>8) & 1);
+	─── Stack ──────────────────────────────────────────────────────────────────────
+	[0] from 0x0000555555e33413 in cmc_prot_device::gfx_decrypt at ../../../../../src/devices/bus/neogeo/prot_cmc.cpp:504
+	(no arguments)
+	[1] from 0x0000555555e3392c in cmc_prot_device::cmc42_gfx_decrypt at ../../../../../src/devices/bus/neogeo/prot_cmc.cpp:566
+	(no arguments)
+	[+]
+	─── Threads ────────────────────────────────────────────────────────────────────
+	[1] id 2509 name neogeo64 from 0x0000555555e33413 in cmc_prot_device::gfx_decrypt at ../../../../../src/devices/bus/neogeo/prot_cmc.cpp:504
+	────────────────────────────────────────────────────────────────────────────────
+
+
+A instalação é simples, basta salvar o .gbdinit no seu home. Para que a
+informação do código fonte (source) apareça como no exemplo acima, é
+necessário que o caminho completo onde o MAME foi compilado ainda
+exista, ou seja, depois de compilar o MAME não faça um ``make clean``,
+deixe-o como está assim o gdb encontrara aquilo que precisa.
+
+A *GDB Dashboard* é customizável, oferece plug-ins e outras
+configurações que atendam as suas necessidades caso queira se envolver
+com desenvolvimento ou outras funções do gdb que não serão abordadas
+aqui.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-using-asan:
+
+Usando o AddressSanitizer
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Quando tudo parece perdido chega a hora de praticamente chutar o balde,
+há momentos onde você não tem um *stack trace* ou se tem ele não é
+informativo o suficiente para que os desenvolvedores tenham informações
+úteis.
+
+Apesar da opção estar disponível nas configurações ela não é publicada e
+tão pouco seu uso é incentivado, parece que seu uso é reservado a
+*desenvolvedores ascensionados* numa arte oculta qualquer. Talvez a
+explicação seja mais simples do que parece, ao ativar o
+`AddressSanitizer <https://github.com/google/sanitizers/wiki/AddressSanitizer>`_
+o MAME **rodará bem mais lento** que o normal pois o *AddressSanitizer*
+é um detector de erros de memória para C/C++.
+
+Usaremos o Debian 9.97 (stretch) como referência que poderá servir como
+base para outras distribuições. Atualmente o clang já está na versão 7,
+porém a versão 5 continua bem estável e é suficiente para o nosso
+exemplo, caso queira testar versões mais novas, você está por sua conta
+e risco pois há questões de conflitos que precisam ser resolvidos e que
+não será abordado aqui.
+
+Como administrador crie o arquivo **clang.list**:
+
+	``sudo touch /etc/apt/sources.list.d/clang.list``
+
+Adicione as linha abaixo ao arquivo clang.list:
+
+|	``# 5.0``
+|	``deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-5.0 main``
+
+Depois de um ``apt-get update`` instale com o comando:
+
+	``sudo apt-get install clang-5.0 libclang-common-5.0-dev libclang1-5.0
+	liblldb-5.0 lldb-5.0 python-lldb-5.0 libllvm5.0 llvm-5.0
+	llvm-5.0-runtime``
+
+Adicione as linhas abaixo ao arquivo ~/.bashrc do seu home:
+
+|	``echo "export ASAN_OPTIONS=symbolize=1" >> ~/.bashrc``
+|	``echo "export ASAN_SYMBOLIZER_PATH=/usr/lib/llvm-5.0/bin/llvm-symbolizer" >> ~/.bashrc``
+
+Caso a sua distribuição seja diferente faça o comando
+``locate llvm-symbolizer`` para saber o caminho completo do seu
+**llvm-symbolizer** e adicione ao **ASAN_SYMBOLIZER_PATH**.
+
+Recarregue as configurações do seu terminal com o comando ``. .bashrc``
+(ponto, espaço, ponto bashrc) ou saia e retorne à sua conta.
+
+Compile o MAME como mostra o exemplo abaixo:
+
+	``make clean && make OVERRIDE_CC=/usr/bin/clang-5.0 OVERRIDE_CXX=/usr/bin/clang++-5.0 OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 -SANITIZE=address -j5``
+
+.. raw:: latex
+
+	\clearpage
+
+Ao rodar o mame com a máquina com problema, voce terá um retorno
+semelhante ao exemplo abaixo: ::
+
+	==2227==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f6b8d4a6800 at pc 0x0000019a963e bp 0x7ffd4dd2d450 sp 0x7ffd4dd2d448
+	READ of size 2 at 0x7f6b8d4a6800 thread T0
+		#0 0x19a963d in sma_prot_device::kof99_decrypt_68k(unsigned char*) /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/prot_sma.cpp:426:24
+		#1 0x15e7b10 in neogeo_sma_kof99_cart_device::decrypt_all(unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int) /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/sma.cpp:75:14
+		#2 0x15e7cd5 in non-virtual thunk to neogeo_sma_kof99_cart_device::decrypt_all(unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int) /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/sma.cpp
+		#3 0x6232c5 in neogeo_cart_slot_device::late_decrypt_all() /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/slot.h:327:48
+	...
+	SUMMARY: AddressSanitizer: heap-buffer-overflow /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/prot_sma.cpp:426:24 in sma_prot_device::kof99_decrypt_68k(unsigned char*)
+	Shadow bytes around the buggy address:
+	0x0fedf1a8ccb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+	0x0fedf1a8ccc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+	0x0fedf1a8ccd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+	0x0fedf1a8cce0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+	0x0fedf1a8ccf0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+	=>0x0fedf1a8cd00:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+	0x0fedf1a8cd10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+	0x0fedf1a8cd20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+	0x0fedf1a8cd30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+	0x0fedf1a8cd40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+	0x0fedf1a8cd50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+	Shadow byte legend (one shadow byte represents 8 application bytes):
+	Addressable:           00
+	Partially addressable: 01 02 03 04 05 06 07 
+	Heap left redzone:       fa
+	Freed heap region:       fd
+	Stack left redzone:      f1
+	Stack mid redzone:       f2
+	Stack right redzone:     f3
+	Stack after return:      f5
+	Stack use after scope:   f8
+	Global redzone:          f9
+	Global init order:       f6
+	Poisoned by user:        f7
+	Container overflow:      fc
+	Array cookie:            ac
+	Intra object redzone:    bb
+	ASan internal:           fe
+	Left alloca redzone:     ca
+	Right alloca redzone:    cb
+	==2227==ABORTING
+
+Pelas experiência que tive o uso do **SANITIZE** não é aconselhável e
+alguns desenvolvedores não gostam, no entanto é o último recurso
+disponível quando tudo mais falha.
 
 .. [1]	No Inglês ABI ou `Application Binary Interface
 		<https://pt.wikipedia.org/wiki/Interface_binária_de_aplicação>`_.
 		(Nota do tradutor)
 .. [2]	Deprecation warnings. (Nota do tradutor)
 .. [3]	Out-of-bounds access. (Nota do tradutor)
+.. [4]	Pedimos a gentileza de relatar os problemas encontrados em
+		Inglês. (Nota do tradutor)

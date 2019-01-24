@@ -150,78 +150,6 @@ capítulo :ref:`compiling-mame`: ::
 
 	make clean && make TARGETOS=windows SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
 
-Abaixo estão as descrições resumidas das opções usadas:
-
-**make**
-
-	Executa o comando de compilação do código fonte.
-
-**clean**
-
-	Apaga todo o diretório :ref:`build <mame-compilation-build>`.
-
-**TARGETOS**
-
-	Define o Sistema Operacional de destino, é importante deixar claro
-	que essa opção é desnecessária caso esteja compilando o MAME
-	nativamente, os valores válidos são:
-
-	* ``android`` (Android)
-
-	* ``asmjs`` (Emscripten/asm.js)
-
-	* ``freebsd`` (FreeBSD)
-
-	* ``netbsd`` (NetBSD)
-
-	* ``openbsd`` (OpenBSD)
-
-	* ``pnacl`` (Native Client - PNaCl)
-
-	* ``linux`` (Linux)
-
-	* ``ios`` (iOS)
-
-	* ``macosx`` (OSX)
-
-	* ``windows`` (Windows)
-
-	* ``haiku`` (Haiku)
-
-	* ``solaris`` (Solaris SunOS)
-
-	* ``steamlink`` (Steam Link)
-
-	* ``rpi`` (Raspberry Pi)
-
-	* ``ci20`` (Creator-Ci20)
-
-.. raw:: latex
-
-	\clearpage
-
-**SYMBOLS=1**
-
-	Veja :ref:`SYMBOLS <mame-compilation-symbols>`
-
-**SYMLEVEL=1**
-
-	Veja :ref:`SYMLEVEL <mame-compilation-symlevel>`
-
-**STRIP_SYMBOLS=1**
-
-	Veja :ref:`STRIP_SYMBOLS <mame-compilation-strip-symbols>`
-
-.. _mame-crosscompilation-sse2:
-
-**SSE2=1**
-
-	**Double Precision Streaming SIMD Extensions**, em resumo, são
-	instruções que otimizam o desempenho em processadores
-	compatíveis. O MAME terá uma melhor performance quando essa
-	opção é usada segundo a `nota publicada
-	<https://www.mamedev.org/?p=451>`_ no site do MAME.
-
 **PTR64=1**
 
 	Define o tamanho do ponteiro em bit, assim sendo, gera uma versão
@@ -231,64 +159,6 @@ Caso não haja nenhum problema durante o processo de compilação, você
 terá um executável do MAME chamado **mame64.exe** para a versão *64-bit*
 ou **mame.exe** caso você tenha compilado uma versão para *32-bit*.
 
-Lidando com alguns problemas comuns
------------------------------------
-
-Junto com estes binários será criado também um arquivo de símbolos,
-para a versão *64-bit* será criado o arquivo **mame64.sym** ou
-**mame.sym** para a versão *32-bit*. Estes arquivos devem **sempre**
-estar junto com o executável do MAME, pois em caso de algum erro crítico
-durante a emulação, esse arquivo "**.sym**" é usado para traduzir as
-referências usadas no código fonte junto com os códigos de erro, muito
-útil para os desenvolvedores. Aqui um exemplo de um erro que causou a
-parada do MAME: ::
-
-	Exception at EIP=00000000 (something_state::something()+0x0000): ACCESS VIOLATION
-	While attempting to read memory at 00000000
-	-----------------------------------------------------
-	EAX=00000000 EBX=0fffffff ECX=0fffffff EDX=00000000
-	ESI=00000000 EDI=00000000 EBP=00000000 ESP=00000000
-	-----------------------------------------------------
-	Stack crawl:
-	0012abcd: 00123456 (something_state::something()+0x0000)
-	0034ef01: 00789abc (something_state::something()+0x0000)
-	E a listagem continua
-	...
-
-Sem o arquivo de símbolos o ``something_state::something`` apareceria
-como um código hexadecimal, com a ajuda do arquivo de símbolos esses
-códigos são traduzidos para algo legível e compreensível para os
-desenvolvedores. Caso o MAME trave durante a emulação, uma tela
-semelhante irá aparecer, copie e reporte [5]_ o erro no fórum
-`MAME testers <https://mametesters.org/view_all_bug_page.php/>`_.
-
-Algumas vezes o processo de compilação é interrompido antes de chegar ao
-fim, os motivos são os mais diversos, pode ser a falta de alguma
-biblioteca, erro de configuração em algum lugar, uma atualização do
-código fonte onde algum desenvolvedor deixou passar algo desapercebido,
-enfim, se você está encarando a tarefa de compilar o seu próprio MAME,
-"*problema*" é algo que você deve estar preparado caso ocorra.
-
-A primeira coisa a se prestar atenção é ver no terminal, console ou
-*prompt de comando* que você estiver usando, qual o erro que fez todo o
-processo parar, para compilar novamente a partir do ponto que a
-compilação parou, tudo o que você precisa fazer é repetir o comando de
-compilação sem o **make clean &&** no começo. 
-
-Observe que caso você esteja atualizando o código fonte direto do
-`repositório GIT do MAME <https://github.com/mamedev/mame>`_, é
-necessário que você SEMPRE faça um **make clean** antes de compilar
-um novo binário, independente da plataforma.
-
-Geralmente o processo continua sem maiores problemas, porém caso o
-processo pare novamente no mesmo lugar, pode haver algum outro problema
-como a falta de alguma biblioteca, incompatibilidade com alguma coisa,
-etc.
-Caso esteja usando a versão "GIT" ao invés da versão final do MAME,
-saiba que a versão "GIT" sofre várias atualizações ao longo do dia e por
-isso aguarde algumas horas, atualize novamente o código fonte e tente
-outra vez.
-
 .. [1]	Cross compiling no Inglês. (Nota do tradutor)
 .. [2]	Todo o processo no meu computador leva cerca de 4 horas, AMD FX
 		tm-8350, 16GiB de memória DDR3. (Nota do tradutor)
@@ -296,5 +166,3 @@ outra vez.
 		Eletricistas e Eletrônicos <https://pt.wikipedia.org/wiki/Instituto_de_Engenheiros_Eletricistas_e_Eletrônicos>`_. (Nota do tradutor)
 .. [4]	Fica no mesmo diretório onde existe um arquivo chamado
 		**makefile**. (Nota do tradutor)
-.. [5]	Pedimos a gentileza de relatar os problemas encontrados em
-		Inglês. (Nota do tradutor)
