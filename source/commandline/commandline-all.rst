@@ -968,7 +968,8 @@ Opções para a gravação de áudio e vídeo
 	Note que ``-mngwrite`` só grava quadros de vídeo, não grava qualquer
 	áudio, use a opção ``-wavwrite`` para gravar o áudio e
 	posteriormente use uma ferramenta de edição de áudio qualquer para
-	unir os dois.
+	unir os dois, ou use **-aviwrite** para gravar áudio e vídeo em um
+	único arquivo.
 	
 		O valor predefinido é **NULO** (sem gravação).
 
