@@ -1173,18 +1173,19 @@ Problemas conhecidos
 Problemas relacionados com versões específicas do compilador
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	* O GNU GCC 5 há erros esporádicos no Linux onde ocorre alertas de
-	  reprovação. [2]_
-	  Use a opção **DEPRECATED=0** para eliminá-los.
+* O GNU GCC 5 há erros esporádicos no Linux onde ocorre alertas de
+  reprovação. [2]_
+  Use a opção **DEPRECATED=0** para eliminá-los.
 
-	* O MinGW GCC 7 para Windows i386 gera erros esporádicos com alertas
-	  de acesso fora dos limites. [3]_
-	  Use a opção **NOWERROR=1** para eliminá-los.
+* O MinGW GCC 7 para Windows i386 gera erros esporádicos com alertas
+  de acesso fora dos limites. [3]_
+  Use **NOWERROR=1** nas suas opções de compilação para remediar o
+  problema e não tratar avisos como se fossem erros.
 
-	* Versões iniciais do GNU libstdc++ 6 contém uma implementação
-	  ``std::unique_ptr`` quebrada. Caso encontre qualquer mensagem de
-	  erro relacionado com ``std::unique_ptr`` você precisa atualizar o
-	  seu libstdc++ para uma versão mais recente.
+* Versões iniciais do GNU libstdc++ 6 contém uma implementação
+  ``std::unique_ptr`` quebrada. Caso encontre qualquer mensagem de
+  erro relacionado com ``std::unique_ptr`` você precisa atualizar o
+  seu libstdc++ para uma versão mais recente.
 
 Recursos do código fonte fortify da biblioteca GNU C
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
