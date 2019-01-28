@@ -70,7 +70,13 @@ procedimento será semelhante bastando que você escolha o conjuntos de
 pacotes apropriados para a plataforma que você deseja compilar.
 O comando abaixo vai instalar ferramentas adicionais além das quais já
 foram descritas na seção :ref:`compiling-ubuntu`, note que o
-comando abaixo é formado por uma linha só: ::
+comando abaixo é formado por uma linha só:
+
+.. raw:: latex
+
+	\clearpage
+
+::
 
 	sudo aptitude install binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-x86-64 gobjc++-mingw-w64 mingw-w64 mingw-w64-common mingw-w64-tools mingw-w64-x86-64-dev win-iconv-mingw-w64-dev
 

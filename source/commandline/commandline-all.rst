@@ -2280,9 +2280,7 @@ Opções para as configurações de diferentes entradas
 	destas linhas separadas por um '.' (que indica o fim de uma
 	linha), dessa maneira:
 
-
-
-	``777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333``
+	``-joymap 777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333``
 
 	No entanto, isso pode ser reduzido usando vários atalhos compatíveis
 	com o parâmetro <*map*>. Caso as informações sobre uma linha estejam
