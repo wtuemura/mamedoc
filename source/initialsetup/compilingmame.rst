@@ -361,11 +361,15 @@ Opções gerais para a compilação
   Será criado um binário MAME de nome **neogeo** caso seja uma versão
   32-bit ou **neogeo64** caso seja uma versão 64-bit.
 
+.. raw:: latex
+
+	\clearpage
+
 **TARGETOS**
 
-	Define o Sistema Operacional de destino, é importante deixar claro
-	que essa opção é desnecessária caso esteja compilando o MAME
-	nativamente, os valores válidos são:
+Define o Sistema Operacional de destino, é importante deixar claro que
+essa opção é desnecessária caso esteja compilando o MAME nativamente, os
+valores válidos são:
 
 	* ``android`` (Android)
 

@@ -2503,9 +2503,16 @@ Opções voltadas para a depuração
 
 **-[no]oslog**
 
-	Escreve uma saída de dados no arquivo error.log para o depurador do
-	sistema.
+	Escreve um arquivo error.log com mensagens de diagnósticos do
+	sistema caso um esteja presente.
 	
+	É predefinido que as mensagens de erro sejam enviadas para a saída
+	padrão, geralmente é exibido no terminal, prompt de comando ou em um
+	arquivo de log de sistema. No Windows, caso um depurador esteja
+	sendo usado como o depurador do Visual Studio ou WinDbg, as
+	mensagens de erros serão enviadas para estes ao invés de serem exibidas
+	no terminal.
+
 		O valor predefinido é **Desligado** (**-nooslog**).
 
 .. _mame-commandline-log:
