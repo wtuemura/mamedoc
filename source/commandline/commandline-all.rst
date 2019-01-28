@@ -921,8 +921,11 @@ Opções para a gravação e a reprodução do estado da emulação
 
 **-[no]exit_after_playback**
 
-	O MAME encerrará a emulação quando chegar ao final do arquivo de
-	reprodução quando usado em conjunto com a opção ``-playback``.
+	O MAME encerra a emulação ao final do arquivo de playback se usado
+	em conjunto com a opção **-playback**. É predefinido que o MAME
+	não encerre a emulação.
+
+		O valor predefinido é **Desligado** (**-noexit_after_playback**)
 
 .. _mame-commandline-record:
 
