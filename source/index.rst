@@ -1,5 +1,9 @@
 .. Arquivo master da documentação do MAME, criado por Wellington Uemura
 
+.. image:: images/MAMElogo.svg
+    :width: 100%
+    :align: center
+    :alt: MAME
 
 DOCUMENTAÇÃO MAME
 =================

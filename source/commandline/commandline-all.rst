@@ -949,6 +949,10 @@ Opções para a gravação e a reprodução do estado da emulação
 	pasta *inp*. É predefinido que nenhum arquivo de timecode seja
 	gravado.
 
+.. raw:: latex
+
+	\clearpage
+
 Opções para a gravação de áudio e vídeo
 ---------------------------------------
 

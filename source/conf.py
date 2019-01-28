@@ -32,6 +32,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
 	'edit_on_github',
+	'sphinxcontrib.rsvgconverter',
 ]
 
 edit_on_github_project = 'wtuemura/mamedoc'
@@ -129,12 +130,12 @@ html_theme_path = ["../themes/"]
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "mame-logo.png"
+html_logo = "images/mame-logo.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = "favicon.ico"
+html_favicon = "images/favicon.ico"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

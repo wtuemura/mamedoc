@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg4563"
+   version="1.1"
+   viewBox="0 0 321.26581 91.07238"
+   height="91.07238mm"
+   width="321.26581mm">
+  <title
+     id="title4490">MAME Logo</title>
+  <metadata
+     id="metadata4576">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>MAME Logo</dc:title>
+        <dc:date>28/01/2019</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>MAME® and MAME logo® is a registered trademark of Gregory Ember.</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Gregory Ember</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>MAMEDev and the MAME Team</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>Custom alternate colors by Wellington Uemura</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4557">
+    <linearGradient
+       id="left-dark">
+      <stop
+         style="stop-color:#00274f;stop-opacity:1"
+         offset="0"
+         id="stop5213" />
+      <stop
+         style="stop-color:#68cafb;stop-opacity:1"
+         offset="1"
+         id="stop5215" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="299.328"
+       x2="11"
+       y1="299.328"
+       x1="1213.16"
+       id="right-dark">
+      <stop
+         id="stop4"
+         stop-color="#68cafb"
+         offset="0" />
+      <stop
+         id="stop6"
+         stop-color="#00274f"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="162.44048"
+       x2="237.65611"
+       y1="162.44048"
+       x1="-80.41803"
+       id="linearGradient5175"
+       xlink:href="#right-dark"
+       gradientTransform="translate(82.012688,-116.4355)" />
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="162.44048"
+       x2="237.65611"
+       y1="162.44048"
+       x1="-80.41803"
+       id="linearGradient5211"
+       xlink:href="#left-dark"
+       gradientTransform="translate(82.012688,-116.4355)" />
+  </defs>
+  <path
+     id="path4570"
+     class="cls-1"
+     d="m 1.594659,68.45051 66.4546,-66.5869 V 30.7913 L 97.109239,1.86361 V 48.43028 L 143.85239,1.59903 V 54.11882 L 196.37218,1.59903 V 30.7913 L 225.38797,1.86361 v 44.6704 L 268.95612,2.87776 h 50.71269 l -16.36184,16.36025 h -25.83921 l -7.40833,7.40833 h 13.44877 l -17.02064,17.24184 h -13.80332 l -7.67291,7.54062 h 44.93418 L 272.79258,68.45051 H 204.0451 l 4.14496,-4.54211 V 45.47568 L 183.62799,69.64113 V 41.5953 L 156.7286,68.45051 H 126.43381 V 45.74026 L 81.763409,90.41092 H 55.305079 L 79.911329,65.7163 V 45.74026 L 55.305079,70.1703 V 41.06613 l -27.25209,27.38438 z"
+     style="fill-rule:evenodd;stroke:#1b89e3;stroke-width:1.32291663px;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;fill:#1ba2e0" />
+</svg>
