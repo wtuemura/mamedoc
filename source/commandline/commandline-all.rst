@@ -2292,7 +2292,7 @@ Opções para as configurações de diferentes entradas
 
 	Usando essas abreviações o mapa com 81 caracteres pode ser
 	simplesmente definido por essas 11 cadeias de caracteres:
-	7778...4445
+	``-joymap 7778...4445``
 
 	Olhando para a primeira linha, 7778 são apenas 4 caracteres longos.
 	A 5º entrada não pode usar valores simétricos então assume-se que
