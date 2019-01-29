@@ -1574,11 +1574,9 @@ Adicione as linha abaixo ao arquivo clang.list:
 |	``# 5.0``
 |	``deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-5.0 main``
 
-Depois de um ``apt-get update`` instale com o comando:
+Depois de um ``apt-get update`` instale com o comando: ::
 
-	``sudo apt-get install clang-5.0 libclang-common-5.0-dev libclang1-5.0
-	liblldb-5.0 lldb-5.0 python-lldb-5.0 libllvm5.0 llvm-5.0
-	llvm-5.0-runtime``
+	sudo apt-get install clang-5.0 libclang-common-5.0-dev libclang1-5.0 liblldb-5.0 lldb-5.0 python-lldb-5.0 libllvm5.0 llvm-5.0 llvm-5.0-runtime
 
 Adicione as linhas abaixo ao arquivo ~/.bashrc do seu home:
 
@@ -1592,9 +1590,9 @@ Caso a sua distribuição seja diferente faça o comando
 Recarregue as configurações do seu terminal com o comando ``. .bashrc``
 (ponto, espaço, ponto bashrc) ou saia e retorne à sua conta.
 
-Compile o MAME como mostra o exemplo abaixo:
+Compile o MAME como mostra o exemplo abaixo: ::
 
-	``make clean && make OVERRIDE_CC=/usr/bin/clang-5.0 OVERRIDE_CXX=/usr/bin/clang++-5.0 OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 -SANITIZE=address -j5``
+	make clean && make OVERRIDE_CC=/usr/bin/clang-5.0 OVERRIDE_CXX=/usr/bin/clang++-5.0 OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 -SANITIZE=address -j5
 
 .. raw:: latex
 
