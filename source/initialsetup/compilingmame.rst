@@ -364,6 +364,74 @@ arquivos afetados por modificações posteriormente usadas.
 
 	\clearpage
 
+Com o tempo e experiência, cada um irá adaptar as opções de compilação
+para a sua própria necessidade, no exemplo abaixo tem um template para
+o seu **useroptions.mak**: ::
+
+	# Template de configuração do usuário para a compilação do MAME.
+	# Altere as opções conforme a sua necessidade. Remova o # da frente
+	# da opção que deseja usar.
+	#
+	# Para compilações que usem o Clang
+	# <- Clang ->
+	#OVERRIDE_CC=/usr/bin/clang-5.0
+	#OVERRIDE_CXX=/usr/bin/clang++-5.0
+	#
+	# Só use em ÚLTIMO CASO! Para depuração apenas!
+	#-SANITIZE=address
+	#<- Clang ->
+	#
+	# Para compilar o MAME com apenas uma maquina em especifico.
+	#SOURCES=src/mame/drivers/neogeo.cpp
+	#
+	# Para incluir símbolos de depuração (obrigatório)
+	SYMBOLS=1
+	SYMLEVEL=1
+	#
+	# <- Compilação cruzada ->
+	# Para compilar o MAME para o Windows usando o Linux por exemplo.
+	#TARGETOS=windows
+	#STRIP_SYMBOLS=1
+	# Use a opção abaixo para compilar uma versão 64-bit do MAME, não
+	# precisa ser definido para compilações normais.
+	#PTR64=1
+	#
+	# <- Compilação cruzada ->
+	#
+	# Caso queira compilar uma versão tiny apenas para teste.
+	#SUBTARGET=tiny
+	#
+	# Caso queira uma versão ARCADE do MAME
+	#SUBTARGET=arcade
+	#
+	# <- Opções Relacionados com a CPU ->
+	# SSE2
+	SSE2=1
+	#
+	# SSE3
+	#SSE3=1
+	#
+	# Nível de otimização.
+	# 0 Desabilita a otimização favorecendo a depuração.
+	# 1 Otimização simples sem impacto direto no tamanho final do executável.
+	# 2 Habilita a maioria das otimizações visando performance e tamanho reduzido.
+	# 3 Máxima otimização ao custo de um tamanho final maior. (padrão)
+	# s Habilita apenas as otimizações que não impactem no tamanho final.
+	OPTIMIZE=3
+	#
+	# Essa opção habilita todas as extensões do seu processador, se for usar
+	# não use as opções SSE2 e SSE3.
+	#ARCHOPTS=-march=native
+	# <- Opções Relacionados com a CPU ->
+
+Com o arquivo acima configurado e com as opções definidas, execute o
+comando ``make -j5`` que o seu MAME será compilado levando as suas
+opções em consideração.
+
+.. raw:: latex
+
+	\clearpage
+
 .. _compiling-options:
 
 Opções gerais para a compilação
@@ -593,6 +661,7 @@ Recursos opcionais
 		* **0**: Caso queira desabilitar a otimização e favorecendo a depuração.
 		* **1**: Otimização simples sem impacto direto no tamanho final do executável nem no tempo de compilação.
 		* **2**: Habilita a maioria das otimizações visando performance e tamanho reduzido.
+		* **3**: Este é o valor predefinido, em favor da performance ao custo de um executável maior.
 		* **s**: Habilita apenas as otimizações que não impactem no tamanho final do executável.
 
   A compatibilidade destes valores dependem do compilador que esteja
