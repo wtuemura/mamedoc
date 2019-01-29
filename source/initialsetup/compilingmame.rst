@@ -254,11 +254,90 @@ mais informações veja :ref:`SSE2 <mame-compilation-sse2>`.
 
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j5**
 
-Você pode customizar a sua compilação escolhendo um driver em específico
-usando a opção ``SOURCES=<driver>``, lembrando que é obrigatório usar
-a opção **REGENIE=1** caso você já tenha compilado algo antes. Caso
-queira compilar uma versão customizada do MAME que só rode o jogo
-**Pac Man**:
+É possível compilar o MAME usando todas as extensões disponíveis do seu
+processador e não apenas a SSE2 desde que seja também compatível com o
+compilador que estiver usando, use a opção **ARCHOPTS** com
+**-march=native** no seu comando de compilação. Habilitar essas opções
+pode ou não tirar o máximo de performance possível do seu processador,
+assim como o MAME pode ou não se beneficiar de todas elas. O comando
+completo então ficaria assim, note que a opção **SSE2=1** foi removida.
+
+	**make SYMBOLS=1 SYMLEVEL=1 ARCHOPTS=-march=native -j5**
+
+O ponto negativo é que os binários gerados com essa opção só irão
+funcionar em processadores iguais ao seu, caso compile uma versão em um
+processador i3 da Intel, essa versão não vai funcionar em qualquer outro
+processador i7 por exemplo, o mesmo vale para os processadores da AMD.
+Assim como ao ativar estas extensões o seu MAME pode apresentar algum
+problema que não existe na versão oficial, logo, a sua sorte com o uso
+dela pode variar bastante. Por isso saiba que oficialmente os
+desenvolvedores do MAME **não apoiam** o uso dessa opção.
+
+.. raw:: latex
+
+	\clearpage
+
+Para saber quais as extensões serão habilitadas com o comando
+**-march=native** faça o comando abaixo:
+
+	``gcc -march=native -Q --help=target|grep enabled``
+
+Dependendo do modelo do processador o comando retornará mais ou menos
+extensões disponíveis, em um processador AMD FX(tm)-8350 com 8 núcleos
+o **-march=native** vai usar estas extensões do seu processador: ::
+
+	-m64                        		[enabled]
+	-m80387                     		[enabled]
+	-m96bit-long-double         		[enabled]
+	-mabm                       		[enabled]
+	-maes                       		[enabled]
+	-malign-stringops           		[enabled]
+	-mavx                       		[enabled]
+	-mbmi                       		[enabled]
+	-mcx16                      		[enabled]
+	-mf16c                      		[enabled]
+	-mfancy-math-387            		[enabled]
+	-mfentry                    		[enabled]
+	-mfma                       		[enabled]
+	-mfma4                      		[enabled]
+	-mfp-ret-in-387             		[enabled]
+	-mfxsr                      		[enabled]
+	-mglibc                     		[enabled]
+	-mhard-float                		[enabled]
+	-mieee-fp                   		[enabled]
+	-mlong-double-80            		[enabled]
+	-mlwp                       		[enabled]
+	-mlzcnt                     		[enabled]
+	-mmmx                       		[enabled]
+	-mpclmul                    		[enabled]
+	-mpopcnt                    		[enabled]
+	-mprfchw                    		[enabled]
+	-mpush-args                 		[enabled]
+	-mred-zone                  		[enabled]
+	-msahf                      		[enabled]
+	-msse                       		[enabled]
+	-msse2                      		[enabled]
+	-msse3                      		[enabled]
+	-msse4                      		[enabled]
+	-msse4.1                    		[enabled]
+	-msse4.2                    		[enabled]
+	-msse4a                     		[enabled]
+	-mssse3                     		[enabled]
+	-mstackrealign              		[enabled]
+	-mtbm                       		[enabled]
+	-mtls-direct-seg-refs       		[enabled]
+	-mxop                       		[enabled]
+	-mxsave                     		[enabled]
+
+.. raw:: latex
+
+	\clearpage
+
+É possível customizar a sua compilação escolhendo um driver em
+específico usando a opção ``SOURCES=<driver>``, lembrando que é
+obrigatório usar a opção **REGENIE=1** caso você já tenha compilado algo
+antes. Caso queira compilar uma versão customizada do MAME que só rode
+o jogo **Pac Man**, use o comando abaixo:
 
 	**make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1**
 
