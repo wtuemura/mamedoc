@@ -188,6 +188,11 @@ Há alguns pontos importantes que você precisa saber.
 	Your branch is up-to-date with 'origin/master'.
 	nothing to commit, working tree clean
 
+  Caso não funcione, execute a opção abaixo com todos os arquivos que
+  vierem a aparecerem ao fazer um **git status**: ::
+
+	git checkout 3rdparty/winpcap/Lib/libpacket.a 3rdparty/winpcap/Lib/libwpcap.a
+
   Se por algum motivo, nenhum dos comando acima funcionar e você tiver
   absoluta certeza de que nada foi alterado, você pode tentar o comando
   ``git clean -d -x -f``, note que o comando vai apagar tudo que não for
