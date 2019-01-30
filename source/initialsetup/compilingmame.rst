@@ -111,7 +111,8 @@ Há alguns pontos importantes que você precisa saber.
 		``make clean && make <opções>``
   
   Assim faz com que o segundo comando apenas seja executado quando o
-  primeiro terminar.
+  primeiro terminar. Caso a compilação pare por algum erro, tente
+  repetir o comando **make** apenas, sem o **make clean**.
 
 * As opções usada pelo make podem ser adicionadas em um arquivo
   **useroptions.mak**. Muito útil em casos onde a lista de opções para
@@ -248,6 +249,25 @@ mais informações veja :ref:`DEBUG <mame-compilation-debug>`.
 
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 DEBUG=1 -j5**
 
+É possível customizar a sua compilação escolhendo um driver em
+específico usando a opção ``SOURCES=<driver>``, lembrando que é
+obrigatório usar a opção **REGENIE=1** caso você já tenha compilado algo
+antes. Caso queira compilar uma versão customizada do MAME que só rode
+o jogo **Pac Man**, use o comando abaixo:
+
+	**make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1**
+
+O MAME também permite de maneira prática que seja possível compilar uma
+versão só com máquinas ARCADE, nessa versão os portáteis, consoles,
+computadores, dentre outras ficam de fora.
+Caso queira uma versão arcade do MAME use o comando abaixo:
+
+	**make SUBTARGET=arcade SYMBOLS=1 SYMLEVEL=1 -j5**
+
+Para compilar uma versão do MAME só com consoles, use o comando abaixo:
+
+	**make SUBTARGET=mess SYMBOLS=1 SYMLEVEL=1 -j5**
+
 Para compilar uma versão do MAME que tire proveito da extensão SSE2 do
 seu processador melhorando a performance, use o comando abaixo. Para
 mais informações veja :ref:`SSE2 <mame-compilation-sse2>`.
@@ -329,31 +349,67 @@ o **-march=native** vai usar estas extensões do seu processador: ::
 	-mxop                       		[enabled]
 	-mxsave                     		[enabled]
 
+Apesar de ter todas essas extensões habilitadas, incluindo outras
+variantes do SSE como a SSE3, SSE4 e assim por diante, não espere que a
+performance do MAME aumente de forma considerável, há máquinas onde não
+se nota nada de diferente, muito pelo contrário, você perde em
+performance, já outras podem lhe dar uma performance considerável.
+
 .. raw:: latex
 
 	\clearpage
 
-É possível customizar a sua compilação escolhendo um driver em
-específico usando a opção ``SOURCES=<driver>``, lembrando que é
-obrigatório usar a opção **REGENIE=1** caso você já tenha compilado algo
-antes. Caso queira compilar uma versão customizada do MAME que só rode
-o jogo **Pac Man**, use o comando abaixo:
+Em alguns testes a melhor média foi obtida usando apenas as opções
+**SSE3=3 OPTIMIZE=03** e mais nada apesar do padrão do MAME ser
+**SSE2=1**. Novamente, essa é uma questão muito subjetiva pois depende
+muitas variáveis e a sua sorte pode variar bastante, é muito difícil
+saber com precisão se haverá uma melhora na performance ou não pois o
+MAME depende muito do seu hardware (quanto mais potente, melhor) e do
+sistema operacional, dos drivers, etc.
 
-	**make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1**
+Podemos fazer um teste prático compilando duas versões do MAME para
+rodar apenas o **pacman** usado opções diferentes: ::
 
-O MAME também permite de maneira prática que seja possível compilar uma
-versão só com máquinas ARCADE, nessa versão os portáteis, consoles,
-computadores, dentre outras ficam de fora.
-Caso queira uma versão arcade do MAME use o comando abaixo:
+	Opção 1
+	make SOURCES=src/mame/drivers/pacman.cpp SUBTARGET=pacman SSE3=1 OPTIMIZE=3
+	
+	Opção 2
+	make SOURCES=src/mame/drivers/pacman.cpp SUBTARGET=pacman ARCHOPTS=-march=native OPTIMIZE=3
 
-	**make SUBTARGET=arcade SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j5**
+Rodamos o nosso MAME por 90 segundos em um AMD FX(tm)-8350 4 Ghz
+(8 núcleos), 16 GiB de memória DDR3 1866 Mhz, AMD R7 250E 1 GiB, Windows
+10 x64 usando a opção :ref:`bench <mame-commandline-bench>`:
 
-Para compilar uma versão do MAME só com consoles, use o comando abaixo:
+	``pacman64.exe pacman -bench 90``
 
-	**make SUBTARGET=mess SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j5**
+Para a **opção 1** ele retorna:
 
-A próxima seção resume algumas das opções úteis reconhecidas pelo
-makefile.
+	``Average speed: 6337.43% (89 seconds)``
+
+Para a **opção 2** nós temos:
+
+	``Average speed: 6742.91% (89 seconds)``
+
+Agora compilando o MAME para rodar em um Linux Debian 9.7 x64, usando as
+mesmas opções, o mesmo driver, o mesmo código fonte e usando exatamente
+o mesmo hardware, nós temos um resultado bem diferente:
+
+Para a **opção 1** nós temos:
+
+	``Average speed: 8438.88% (89 seconds)``
+
+Já a **opção 2**:
+
+	``Average speed: 8332.99% (89 seconds)``
+
+Ambas as versões foram compiladas usando a mesma versão do GCC **6.3.0**
+do Debian, uma versão foi compilada nativamente e a outra usando
+:ref:`compilação cruzada <mame-crosscompilation>`. Como é possível ver
+nestes exemplos a questão de otimização do MAME não é uma ciência exata,
+apesar da versão do Linux ter levado a melhor, há casos onde dependendo
+da máquina escolhida, a versão do Windows leva a melhor, assim como
+também há casos onde há um empate técnico, nenhum dos dois levam
+vantagens significativas.
 
 Use estas opções em conjunto com o comando make ou definindo-as como
 variáveis de ambiente ou ainda adicionando-as ao seu
@@ -426,7 +482,8 @@ o seu **useroptions.mak**: ::
 
 Com o arquivo acima configurado e com as opções definidas, execute o
 comando ``make -j5`` que o seu MAME será compilado levando as suas
-opções em consideração.
+opções em consideração. A próxima seção resume algumas das opções úteis
+reconhecidas pelo makefile.
 
 .. raw:: latex
 
