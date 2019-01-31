@@ -416,6 +416,12 @@ da máquina escolhida, a versão do Windows leva a melhor, assim como
 também há casos onde há um empate técnico, nenhum dos dois levam
 vantagens significativas.
 
+Para aqueles que se interessarem por benchmarks, `aqui tem um site
+<http://www.mameui.info/Bench.htm>`_ interessante que publica de tempos
+em tempos e inclusive uma versão diária do GIT, uma comparação com
+diferentes máquinas e diferentes
+versões do MAME.
+
 Use estas opções em conjunto com o comando make ou definindo-as como
 variáveis de ambiente ou ainda adicionando-as ao seu
 **useroptions.mak**. Note que o GENie não reconstrói automaticamente os
