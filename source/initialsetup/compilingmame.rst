@@ -764,10 +764,11 @@ Recursos opcionais
 
 	Defina como **1** para que os símbolos de depuração ao invés de
 	ficarem embutidos no MAME, sejam armazenado em um arquivo externo
-	com extensão "**.sym**". Essa opção é útil para aliviar o tamanho
-	final do MAME uma vez que **SYMLEVEL** com valores maiores que **1**
-	geram uma grande quantidade de símbolos que podem ultrapassar o
-	tamanho do executável final.
+	com extensão "**.sym**" apenas em sistemas Windows. Essa opção é
+	útil para aliviar o tamanho final do MAME uma vez que
+	**SYMLEVEL** com valores maiores que **1** geram uma grande
+	quantidade de símbolos que podem ultrapassar o tamanho do executável
+	final.
 
 .. _mame-compilation-archopts:
 
