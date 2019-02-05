@@ -8,6 +8,9 @@
 O cardápio de opções do MAME
 ============================
 
+.. contents:: :local:
+
+
 Caso você inicie o MAME sem nenhum parâmetro na linha de comando ou
 rodando ele com o clicar do mouse, um cardápio de opções será exibido,
 entre eles a lista de seleção de jogos ao centro, os filtros do lado
@@ -35,8 +38,13 @@ pressionando a tecla **Enter** do teclado. A interface também aceita o
 uso do mouse fazendo a seleção com um clique e um duplo clique para abri
 a opção ou rodar uma máquina.
 
-Configurações
--------------
+.. raw:: latex
+
+	\clearpage
+
+
+Opções de configuração
+----------------------
 
 .. _mamemenu-filtro:
 
@@ -237,14 +245,217 @@ MAME.
 
   Exibe uma lista de máquinas que usam orientação horizontal de tela.
 
-Opções de configuração
-======================
-
 Personalizar a interface
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Aqui é possível personalizar a interface do MAME, entre as opções estão:
+
+* **Fontes**: Permite a customização da tipografia da interface, dentro
+  desta opção temos:
+
+	* **Tipografia da interface**: Aqui é possível definir uma fonte
+	  para toda a interface do MAME.
+
+		O Valor predefinido é **Padrão**
+
+	* **Linhas**: Ajusta a dimensão do espaço e o tamanho da fonte,
+	  quanto maior o valor maior a dimensão da interface e menor o texto
+	  na tela.
+
+		O Valor predefinido é **30**
+
+	* **Tamanho da caixa de informação**: Ajusta o tamanho da fonte nas
+	  caixas de texto na tela.
+
+		O Valor predefinido é **0.75**
+
+* **Cores**: Permite a customização completa das cores da interface do
+  MAME, as opções disponíveis são:
+
+	* **Texto Normal**: Define a cor do texto de toda a interface.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **255**
+
+	* **Cor Selecionada**: Define a cor do item que for selecionado.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **0**
+
+	* **Fundo do texto normal**: Aparentemente não tem função alguma.
+
+		O valor predefinido é Opacidade: **239**, Vermelho: **0**,
+		Verde: **0**, Azul: **0**
+
+	* **Cor de fundo selecionada**: Define a cor do item selecionado.
+
+		O valor predefinido é Opacidade: **239**, Vermelho: **128**,
+		Verde: **128**, Azul: **0**
+
+	* **Cor de subitem**: Define a cor dos itens que estiverem abaixo do
+	  item principal.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **255**
+
+	* **Clone**: Define a cor do texto de segundo plano.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **128**,
+		Verde: **128**, Azul: **128**
+
+	* **Borda**: Define a cor das linhas da borda da tela.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **255**
+
+	* **Fundo**: Define a cor do fundo da tela e máquinas clonadas.
+
+		O valor predefinido é Opacidade: **239**, Vermelho: **16**,
+		Verde: **16**, Azul: **48**
+
+	* **Chave DIP**: Define a cor das chaves DIP selecionadas em
+	  máquinas que usam tal chaves.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **0**
+
+	* **Cor indisponível**: Aparentemente não tem função alguma.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **0**
+
+	* **Cor do controle deslizante**: Define a cor dos controles
+	  deslizantes.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **0**
+
+	* **Fundo do visualizador GFX**: Define a cor de fundo do
+	  visualizador GFX (tecla **F4**).
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **0**
+
+	* **Cor de sobreposição do mouse**: Define a cor que texto terá
+	  quando o mouse passar por cima de algum item selecionável.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **128**
+
+	* **Cor de fundo da sobreposição do mouse**: Define a cor de fundo
+	  do texto quando o mouse passar por cima de um item selecionável.
+
+		O valor predefinido é Opacidade: **112**, Vermelho: **64**,
+		Verde: **64**, Azul: **0**
+
+	* **Cor de subposição do mouse**: Aparentemente não tem função
+	  alguma.
+
+		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
+		Verde: **255**, Azul: **128**
+
+	* **Cor de fundo da subposição do mouse**: Aparentemente não tem
+	  função alguma.
+
+		O valor predefinido é Opacidade: **176**, Vermelho: **96**,
+		Verde: **96**, Azul: **0**
+
+.. _mamemenu-idioma:
+
+* **Idioma**
+
+  Permite que você customize o Idioma da interface do MAME, use um
+  clique duplo para abrir a lista e facilitar a seleção.
+
+		O valor predefinido é **English**
+
+* **Mostrar painéis laterais**
+
+  Configura a exibição ou não dos painéis laterais da interface do MAME.
+  As opções disponíveis são:
+
+	* **Mostrar Tudo**
+	* **Esconder Filtros**
+	* **Esconder Info/Imagem**
+	* **Esconder Ambos**
 
 Configurar diretórios
 ~~~~~~~~~~~~~~~~~~~~~
+
+Aqui é possível mudar as predefinições de localização dos diretórios
+usados pelo MAME. As opções disponíveis são:
+
+.. _mamemenu-diretório-roms:
+
+* **ROMs**
+
+  Define o caminho do diretório das ROMs. Veja também :ref:`-rompath <mame-commandline-rompath>`.
+
+		O valor predefinido é um diretório chamado **roms** no diretório
+		raiz do MAME.
+
+* **Mídia de software**
+
+  Define o caminho onde é armazenado o software a ser usado pela
+  emulação.
+
+		O valor predefinido é um diretório chamado **software** no
+		diretório raiz do MAME.
+
+* **Interface do usuário**
+
+* **Idioma**
+
+* **Amostras**
+
+* **DATs**
+
+* **INIs**
+
+* **INIs de categoria**
+
+* **Ícones**
+
+* **Trapaças**
+
+* **Retratos**
+
+* **Gabinetes**
+
+* **Panfletos**
+
+* **Títulos**
+
+* **Ends**
+
+* **PCBs**
+
+* **Marquises**
+
+* **Painéis de controle**
+
+* **Mira**
+
+* **Arte**
+
+* **Chefes**
+
+* **Amostra das artes**
+
+* **Selecionado**
+
+* **Fim do jogo**
+
+* **Como**
+
+* **Logos**
+
+* **Placares**
+
+* **Versus**
+
+* **Capas**
+
 
 Opções de vídeo
 ~~~~~~~~~~~~~~~
