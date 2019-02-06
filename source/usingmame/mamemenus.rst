@@ -143,7 +143,7 @@ Os filtros disponíveis são:
   Até o presente momento não existe uma tradução dessas categorias para
   o Português Brasileiro. Abaixo estão as categorias existentes até o
   momento e que funcionam com o MAME, as categorias que não funcionam
-  com o MAME foram criadas para serem usadas com o MAMEUI [1]_ e não
+  com o MAME foram criadas para serem usadas com o MAMEUI [#]_ e não
   estão listadas aqui:
 
 	* **Cabinets**: Lista as máquinas **Arcade** do MAME estão divididas em tipos de gabinetes.
@@ -389,68 +389,219 @@ usados pelo MAME. As opções disponíveis são:
 
 * **ROMs**
 
-  Define o caminho do diretório das ROMs. Veja também :ref:`-rompath <mame-commandline-rompath>`.
+  Define o caminho do diretório onde se encontram as ROMs. Veja também
+  :ref:`-rompath <mame-commandline-rompath>`.
 
 		O valor predefinido é um diretório chamado **roms** no diretório
 		raiz do MAME.
 
-* **Mídia de software**
+* **Software em mídia**
 
-  Define o caminho onde é armazenado o software a ser usado pela
-  emulação.
+  Define o caminho onde é armazenado a imagem dos arquivos em mídia como
+  CD-ROM, floppy, fita K7, etc.
 
 		O valor predefinido é um diretório chamado **software** no
 		diretório raiz do MAME.
 
 * **Interface do usuário**
+  Define o caminho do diretório onde se encontram os arquivos de
+  configuração da interface visual do MAME.
+
+		O valor predefinido é um diretório chamado **ui** no
+		diretório raiz do MAME.
 
 * **Idioma**
 
+  Define o caminho do diretório onde se encontram os arquivos de idioma
+  da interface do MAME.
+
+		O valor predefinido é um diretório chamado **language** no
+		diretório raiz do MAME.
+
 * **Amostras**
+
+  Define o caminho do diretório onde se encontram os arquivos de áudio
+  usadas como amostras de som no MAME.
+
+		O valor predefinido é um diretório chamado **samples** no
+		diretório raiz do MAME.
 
 * **DATs**
 
+  Define o caminho do diretório onde se encontram os arquivos *.dat*.
+
+		O valor predefinido são os diretórios **dats** e **history** no
+		diretório raiz do MAME.
+
 * **INIs**
+
+  Define o caminho do diretório onde se encontram os arquivos *.ini*.
+
+		O valor predefinido é um diretório chamado **ini** no
+		diretório raiz do MAME.
 
 * **INIs de categoria**
 
+  Define o caminho do diretório onde se encontram os arquivos *.ini* com
+  descritivos de categoria.
+
+		O valor predefinido é um diretório chamado **folders** no
+		diretório raiz do MAME.
+
 * **Ícones**
+
+  Define o caminho do diretório onde se encontram os arquivos *.ico*
+  para serem usados como ícones que ficam ao lado do nome da máquina.
+  [#]_
+
+		O valor predefinido é um diretório chamado **icons** no
+		diretório raiz do MAME.
 
 * **Trapaças**
 
+  Define o caminho do diretório onde se encontra o arquivo de trapaça.
+  Este arquivo também pode ser deixado na pasta raiz do MAME.
+
+		O valor predefinido é um diretório chamado **cheats** no
+		diretório raiz do MAME. [#]_
+
 * **Retratos**
+
+  Define o caminho do diretório onde serão armazenados os instantâneos
+  da tela e a gravação de vídeo. [#]_
+
+		O valor predefinido é um diretório chamado **snaps** no
+		diretório raiz do MAME.
 
 * **Gabinetes**
 
+  Define o caminho do diretório onde se encontram as imagens dos
+  gabinetes.
+
+		O valor predefinido são dois diretórios chamados **cabinets** e
+		**cabdevs** no diretório raiz do MAME.
+
 * **Panfletos**
+
+  Define o caminho do diretório onde se encontram as imagens dos
+  panfletos.
+
+		O valor predefinido é um diretório chamado **flyers** no
+		diretório raiz do MAME.
 
 * **Títulos**
 
+  Define o caminho do diretório onde se encontram as imagens que mostram
+  a tela de título da máquina.
+
+		O valor predefinido é um diretório chamado **titles** no
+		diretório raiz do MAME. [#]_
+
 * **Ends**
+
+  Define o caminho do diretório onde se encontram as imagens que mostram
+  a tela de um final de jogo da máquina.
+
+		O valor predefinido é um diretório chamado **ends** no
+		diretório raiz do MAME.
 
 * **PCBs**
 
+  Define o caminho do diretório onde se encontram fotos que mostram
+  a placa de circuito impresso da máquina.
+
+		O valor predefinido é um diretório chamado **pcb** no
+		diretório raiz do MAME.
+
 * **Marquises**
+
+  Define o caminho do diretório onde se encontram as imagens com a arte
+  gráfica que ficavam na parte de cima da máquina.
+
+		O valor predefinido é um diretório chamado **marquees** no
+		diretório raiz do MAME.
 
 * **Painéis de controle**
 
+  Define o caminho do diretório onde se encontram as imagens ou as fotos
+  com a arte gráfica do painel onde se encontram os diferentes controles
+  e botões do arcade.
+
+		O valor predefinido é um diretório chamado **cpanel** no
+		diretório raiz do MAME.
+
 * **Mira**
+
+  Define o caminho do diretório onde se encontram as imagens com uma
+  arte gráfica em formato de mira que serão usadas por jogos de tiro.
+
+		O valor predefinido é um diretório chamado **crosshair** no
+		diretório raiz do MAME.
 
 * **Arte**
 
+  Define o caminho do diretório onde se encontram as ilustrações
+  gráficas que fazem o preenchimento de fundo da tela das máquinas.
+  Veja mais em :ref:`-artpath <mame-commandline-artpath>`.
+
+		O valor predefinido é um diretório chamado **artwork** no
+		diretório raiz do MAME.
+
 * **Chefes**
+
+  Define o caminho do diretório onde se encontram as imagens com os
+  instantâneos de tela dos chefes de fase. [#]_
+
+		O valor predefinido é um diretório chamado **bosses** no
+		diretório raiz do MAME.
 
 * **Amostra das artes**
 
+  Define o caminho do diretório onde se encontram as imagens com as
+  amostras das ilustrações, essas amostras tem um tamanho menor se
+  comparadas com as ilustrações completas.
+
+		O valor predefinido são dois diretórios chamados **artwork
+		preview** e **artpreview** no diretório raiz do MAME.
+
 * **Selecionado**
+
+  A ser concluído
+
+		O valor predefinido é um diretório chamado **select** no
+		diretório raiz do MAME.
 
 * **Fim do jogo**
 
+  Define o caminho do diretório onde se encontram as imagens com os
+  instantâneos de tela mostrando o **GAME OVER**.
+
+		O valor predefinido é um diretório chamado **gameover** no
+		diretório raiz do MAME.
+
 * **Como**
 
-* **Logos**
+  Define o caminho do diretório onde se encontram as imagens ou fotos
+  daqueles panfletos que mostravam as instruções de como jogar.
+
+		O valor predefinido é um diretório chamado **howto** no
+		diretório raiz do MAME.
+
+* **Logo**
+
+  Define o caminho do diretório onde se encontram as imagens ou
+  ilustrações com a logomarca das empresas.
+
+		O valor predefinido é um diretório chamado **logos** no
+		diretório raiz do MAME.
 
 * **Placares**
+
+  Define o caminho do diretório onde se encontram as imagens com os
+  instantâneos de tela mostrando as maiores pontuações. [#]_
+
+		O valor predefinido é um diretório chamado **scores** no
+		diretório raiz do MAME.
 
 * **Versus**
 
@@ -481,5 +632,20 @@ Salvar Configuração
 Voltar ao menu anterior
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-..	[1] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME com
-		interface gráfica. (Nota do tradutor)
+..	[#] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME com
+		interface gráfica.
+..	[#] O site do `MAMEICONS <http://icons.mameworld.info/>`_ e
+		`Progetto Snaps <http://www.progettosnaps.net/icons>`_ oferecem
+		tais ícones e outras imagens para download.
+..	[#] O site `Pugsy's Cheat <http://cheat.retrogames.com/>`_ é um dos
+		mais conhecidos que oferece o arquivo de trapaça.
+.. 	[#] Em alguns lugares as pessoas também conhecem como "*print de
+		tela*", "*print da tela*", "*captura de tela*", "*fazer um
+		printscreen*", "*fazer um print da tela*", etc.
+..	[#] O site `MAME Channel <https://www.mamechannel.it/pages/titles.php>`_
+		oferece diferentes telas de títulos para download.
+..	[#] É possível baixar essas imagens do site `EmuMovies
+		<https://emumovies.com/files/file/3493-mame-bosses-pack/>`_.
+..	[#] É possível baixar essas imagens do site `High-Score
+		<http://highscore.com/>`_ e
+		`Cubeman <http://www.cubeman.org/mame1.html>`_.

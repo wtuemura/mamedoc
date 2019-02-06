@@ -607,9 +607,11 @@ Opções para a configuração dos diretórios principais
 
 **-artpath** <*path*>
 
-	Define o caminho completo para os arquivos de ilustrações
-	(artworks). Mais de um caminho podem ser definidos desde que estejam
-	separados por ponto e vírgula.
+	Define o caminho completo para os arquivos com as ilustrações
+	gráficas (*artworks*) das máquinas. Essas ilustrações são imagens
+	que cobrem o fundo da tela e oferecem alguns efeitos interessantes.
+	Mais de um caminho podem ser definidos desde que estejam separados
+	por ponto e vírgula.
 
 		O valor predefinido é **artwork** (isto é, um diretório chamado
 		**artwork** no diretório raiz do MAME).
