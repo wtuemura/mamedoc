@@ -2186,6 +2186,106 @@ Opções para a configuração do áudio
 
 	\clearpage
 
+.. _mame-commandline-pa_api:
+
+**-pa_api** <*interface*>
+
+	PortAudio é um novo recurso adicionado na versão `0.182
+	<https://www.mamedev.org/?p=436>`_ do MAME, o PortAudio é um API,
+	"*Application Programming Interface*" ou em uma tradução livre
+	"*Interface de Programação para Aplicações*". O API funciona como
+	uma ponte conectando aplicações ao hardware de forma direta. Essa
+	integração permite uma menor latência (atraso) por haver uma
+	redução no volume de dados e por estes dados serem vinculados de
+	forma específica para áudio, otimizando a performance de uma forma
+	geral pois o que se salva em processamento no áudio pode ser
+	aproveitado pelo MAME em outros setores da emulação.
+
+	Apesar do PortAudio ser o que há de mais moderno em comparação com o
+	DirectSound ou OpenGL Audio e trazer muitos benefícios, há um ponto
+	negativo, o PortAudio faz o uso exclusivo do hardware de áudio. Isso
+	significa que não será possível por exemplo, escutar música ou
+	qualquer outra coisa enquanto o MAME estiver rodando com PortAudio.
+
+	Para escolher qual interface usar, inicie o mame como mostra o
+	exemplo abaixo: ::
+
+		mame.exe -verbose -sound portaudio
+
+	No Windows dentre as várias informações que aparecerão no terminal
+	as mais relevantes para nós serão estas: ::
+
+		PortAudio: API Windows WASAPI has 10 devices
+		PortAudio: Windows WASAPI: "6 - SONY TV  *01 (AMD High Definition Audio Device)" (default)
+		PortAudio: Windows WASAPI: "Alto-falantes (ASUS Xonar Essence STX Audio Device)"
+		PortAudio: Windows WASAPI: "S/PDIF Pass-through Device (ASUS Xonar Essence STX Audio Device)"
+		PortAudio: Windows WASAPI: "Alto-falantes (2- Blackmagic Audio)"
+		PortAudio: Windows WASAPI: "Aux (ASUS Xonar Essence STX Audio Device)"
+		PortAudio: Windows WASAPI: "Entrada (2- Blackmagic Audio)"
+		PortAudio: Windows WASAPI: "Entrada (ASUS Xonar Essence STX Audio Device)"
+		PortAudio: Windows WASAPI: "Wave (ASUS Xonar Essence STX Audio Device)"
+		PortAudio: Windows WASAPI: "Stereo Mix (ASUS Xonar Essence STX Audio Device)"
+		PortAudio: Windows WASAPI: "Microfone (ASUS Xonar Essence STX Audio Device)"
+		
+		PortAudio: API Windows WDM-KS has 12 devices
+		PortAudio: Windows WDM-KS: "Output (AMD HD Audio HDMI out #5)" (default)
+		PortAudio: Windows WDM-KS: "Input (ASUS Xonar Essence STX Audio)"
+		PortAudio: Windows WDM-KS: "Entrada (ASUS Xonar Essence STX Audio)"
+		PortAudio: Windows WDM-KS: "Aux (ASUS Xonar Essence STX Audio)"
+		PortAudio: Windows WDM-KS: "Microfone (ASUS Xonar Essence STX Audio)"
+		PortAudio: Windows WDM-KS: "Speakers (ASUS Xonar Essence STX Audio)"
+		PortAudio: Windows WDM-KS: "SPDIF Out (ASUS Xonar Essence STX Digital)"
+		PortAudio: Windows WDM-KS: "Wave (ASUS Xonar Essence STX Audio Wave In)"
+		PortAudio: Windows WDM-KS: "Input (Blackmagic WDM Capture)"
+		PortAudio: Windows WDM-KS: "Output ()"
+		PortAudio: Windows WDM-KS: "Speakers ()"
+		PortAudio: Windows WDM-KS: "Entrada ()"
+
+	No exemplo acima estão listados dois exemplos de interface,
+	**Windows WASAPI** e **Windows WDM-KS**. O uso de qualquer uma
+	destas interfaces depende do driver da sua placa de som. Para
+	definir a interface use o nome dela entre aspas
+	``-pa_api "Windows WASAPI"`` ou ``-pa_api "Windows WDM-KS"``.
+
+		O valor predefinido é **NULO** (Nenhuma interface PortAudio).
+
+.. raw:: latex
+
+	\clearpage
+
+.. _mame-commandline-pa_device:
+
+**-pa_device** <*dispositivo*>
+
+	Define qual o dispositivo de áudio usar, assim como mostrado em
+	:ref:`-pa_api <mame-commandline-pa_api>`, escolha um dos
+	dispositivos listados. O nome do dispositivo fica do lado direito da
+	lista e entre aspas. Usando o exemplo acima usamos: ::
+
+		mame.exe -verbose -sound portaudio -pa_api "Windows WASAPI" -pa_device "6 - SONY TV  *01 (AMD High Definition Audio Device)"
+
+	Como resultado o MAME deverá exibir a mensagem: ::
+
+		PortAudio: Using device "6 - SONY TV  *01 (AMD High Definition Audio Device)" on API "Windows WASAPI"
+
+	Caso nenhum seja definido o MAME escolherá o dispositivo padrão ou
+	que estiver disponível.
+
+		O valor predefinido é **NULO** (Nenhuma dispositivo PortAudio).
+
+.. _mame-commandline-pa_latency:
+
+**-pa_latency** <*segundos*>
+
+	Faz o ajuste de latência (atraso) do áudio, similar ao
+	:ref:`-audio_latency <mame-commandline-audiolatency>`
+
+		O valor predefinido é **NULO** (Sem ajuste de latência).
+
+.. raw:: latex
+
+	\clearpage
+
 Opções para as configurações de diferentes entradas
 ---------------------------------------------------
 
@@ -2215,7 +2315,7 @@ Opções para as configurações de diferentes entradas
 	(nome_da_maquina).cfg.
 
 	
-		O valor predefinido é **NULO** (nenhum arquivo de controle)
+		O valor predefinido é **NULO** (nenhum arquivo de controle).
 
 .. _mame-commandline-nomouse:
 
