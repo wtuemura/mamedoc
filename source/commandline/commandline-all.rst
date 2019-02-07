@@ -2208,7 +2208,7 @@ Opções para as configurações de diferentes entradas
 **-ctrlr** <*controle*>
 
 	Permite que você carregue arquivos ``.cfg`` no diretório definido em
-	**ctrlrpath** com as configurações customizadas de controles apenas,
+	**ctrlrpath** com as configurações customizadas para controles,
 	outras informações que ali estiverem serão ignoradas. Estes arquivos
 	são criados quando você configura os botões do controle de uma
 	máquina, essas configurações são gravadas no diretório **cfg** como
