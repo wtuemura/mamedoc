@@ -380,7 +380,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 .. _mame-commandline-keyboardprovider:
 
-**\-keyboardprovider**
+**-keyboardprovider**
 
 	Escolhe como o MAME lidará com o teclado.
 	
@@ -396,7 +396,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 	
 .. _mame-commandline-mouseprovider:
 
-**\-mouseprovider**
+**-mouseprovider**
 
 	Escolhe como o MAME lidará com o mouse.
 
@@ -412,7 +412,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 .. _mame-commandline-lightgunprovider:
 
-**\-lightgunprovider**
+**-lightgunprovider**
 
 	Escolhe como o MAME lidará com a arma de luz (*light gun*).
 
@@ -430,7 +430,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 .. _mame-commandline-joystickprovider:
 
-**\-joystickprovider**
+**-joystickprovider**
 
 	Escolhe como o MAME lidará com o joystick.
 
@@ -453,14 +453,14 @@ Opções de MIDI e rede
 
 .. _mame-commandline-listmidi:
 
-**\-listmidi**
+**-listmidi**
 
 	Cria uma lista de dispositivos MIDI I/O disponíveis que possam ser
 	usados com a emulação.
 
 .. _mame-commandline-listnetwork:
 
-**\-listnetwork**
+**-listnetwork**
 
 	Cria uma lista de adaptadores de rede disponíveis que possam ser
 	usados com a emulação.
@@ -470,7 +470,7 @@ Opções de saída das notificações de tela
 
 .. _mame-commandline-output:
 
-**\-output**
+**-output**
 
 	Escolhe como o MAME lidará com o processamento de notificações de
 	saída.
@@ -553,13 +553,21 @@ Opções para a configuração
 
 		O valor predefinido é **Ligado** (**-readconfig**).
 
+.. _mame-commandline-nowriteconfig:
+
+**-[no]writeconfig** / **-[no]wc**
+
+	Grava as configurações feitas no driver da máquina em um arquivo
+	(driver).ini ao sair da emulação.
+
+		O valor predefinido é **Desligado** (**-nowriteconfig**).
 
 Opções para a configuração dos diretórios principais
 ----------------------------------------------------
 
 .. _mame-commandline-homepath:
 
-**-homepath** <*path*>
+**-homepath** <*caminho*>
 
 	Define o caminho para onde os **plugins** Lua armazenarão dados. 
 
@@ -567,7 +575,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-rompath:
 
-**-rompath** / **-rp** / **-biospath** / **-bp** <*path*>
+**-rompath** / **-rp** / **-biospath** / **-bp** <*caminho*>
 
 	Define o caminho completo para encontrar imagens ROM, disco rígido,
 	fita cassete, etc. Mais de um caminho podem ser definidos desde que
@@ -578,7 +586,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-hashpath:
 
-**-hashpath** / **-hash_directory** / **-hash** <*path*>
+**-hashpath** / **-hash_directory** / **-hash** <*caminho*>
 
 	Define o caminho completo para a pasta com os arquivos **hash** que
 	é usado pela *lista de software* no gerenciador de arquivos. Mais de
@@ -590,7 +598,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-samplepath:
 
-**-samplepath** / **-sp** <*path*>
+**-samplepath** / **-sp** <*caminho*>
 
 	Define o caminho completo para os arquivos de amostras (samples).
 	Mais de um caminho podem ser definidos desde que estejam separados
@@ -605,7 +613,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-artpath:
 
-**-artpath** <*path*>
+**-artpath** <*caminho*>
 
 	Define o caminho completo para os arquivos com as ilustrações
 	gráficas (*artworks*) das máquinas. Essas ilustrações são imagens
@@ -618,7 +626,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-ctrlrpath:
 
-**-ctrlrpath** <*path*>
+**-ctrlrpath** <*caminho*>
 
 	Define o caminho completo para os arquivos de configuração
 	específico para controle. Mais de um caminho podem ser definidos
@@ -629,7 +637,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-inipath:
 
-**-inipath** <*path*>
+**-inipath** <*caminho*>
 
 	Define um ou mais caminhos onde os arquivos ``.ini`` possam ser
 	encontrados. Mais de um caminho podem ser definidos desde que
@@ -654,7 +662,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-fontpath:
 
-**-fontpath** <*path*>
+**-fontpath** <*caminho*>
 
 	Define um ou mais caminhos onde os arquivos de fonte ``.bdf``
 	(*Adobe Glyph Bitmap Distribution Format*) possam ser encontrados.
@@ -665,7 +673,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-cheatpath:
 
-**-cheatpath** <*path*>
+**-cheatpath** <*caminho*>
 
 	Define o caminho completo para os arquivos de trapaça em formato
 	``.xml``.
@@ -677,7 +685,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-crosshairpath:
 
-**-crosshairpath** <*path*>
+**-crosshairpath** <*caminho*>
 
 	Define um ou mais caminhos onde os arquivos de mira **crosshair**
 	possam ser encontrados. Mais de um caminho podem ser definidos desde
@@ -693,7 +701,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-pluginspath:
 
-**-pluginspath** <*path*>
+**-pluginspath** <*caminho*>
 
 	Define um ou mais caminhos onde possam ser encontrados os plug-ins
 	do Lua para o MAME.
@@ -703,7 +711,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-languagepath:
 
-**-languagepath** <*path*>
+**-languagepath** <*caminho*>
 
 	Define um ou mais caminhos onde possam ser encontrados os arquivos
 	de tradução que o MAME usa na Interface do Usuário.
@@ -713,7 +721,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-swpath:
 
-**-swpath** <*path*>
+**-swpath** <*caminho*>
 
 		Define um ou mais caminhos onde possam ser encontrados os
 		arquivos de programas avulsos (software).
@@ -723,7 +731,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-cfgdirectory:
 
-**-cfg_directory** <*path*>
+**-cfg_directory** <*caminho*>
 
 	Define o diretório onde os arquivos de configuração são armazenados.
 	Os arquivos de configuração armazenam as customizações feitas pelo
@@ -741,7 +749,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-nvramdirectory:
 
-**-nvram_directory** <*path*>
+**-nvram_directory** <*caminho*>
 
 	Define o diretório onde os arquivos **NVRAM** são armazenados.
 	Os arquivos **NVRAM** armazenam o conteúdo da **EEPROM**, memória
@@ -755,7 +763,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-inputdirectory:
 
-**-input_directory** <*path*>
+**-input_directory** <*caminho*>
 
 	Define o diretório onde os arquivos de gravação de entrada são
 	armazenados. As gravações de entrada são criadas através da opção
@@ -767,7 +775,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-statedirectory:
 
-**-state_directory** <*path*>
+**-state_directory** <*caminho*>
 
 	Define o diretório onde os arquivos de gravação de estado são
 	armazenados. Os arquivos de estado são lidos e gravados mediante a
@@ -779,7 +787,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-snapshotdirectory:
 
-**-snapshot_directory** <*path*>
+**-snapshot_directory** <*caminho*>
 
 	Define o diretório onde os arquivos de instantâneos da tela são
 	armazenados quando solicitado pelo usuário.
@@ -790,7 +798,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-diffdirectory:
 
-**-diff_directory** <*path*>
+**-diff_directory** <*caminho*>
 
 	Define o diretório onde os arquivos de diferencial do disco rígido
 	são armazenados. Os arquivos de diferencial armazenam qualquer dado
@@ -804,7 +812,7 @@ Opções para a configuração dos diretórios principais
 
 .. _mame-commandline-commentdirectory:
 
-**-comment_directory** <*path*>
+**-comment_directory** <*caminho*>
 
 	Define o diretório onde os arquivos de comentário do depurador são
 	armazenados. Os arquivos de comentário do depurador são escritos
@@ -841,7 +849,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	
 .. _mame-commandline-rewindcapacity:
 
-**-rewind_capacity** <*value*>
+**-rewind_capacity** <*valor*>
 
 	Define a capacidade de rebobinar em megabytes.
 	É a quantidade total de memória que será usada para rebobinar
@@ -908,7 +916,7 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. _mame-commandline-playback:
 
-**-playback** / **-pb** <*filename*>
+**-playback** / **-pb** <*nome_do_arquivo*>
 
 	Faz a reprodução de um arquivo de gravação. Esse recurso não
 	funciona de maneira confiável com todos os sistemas, mas pode ser
@@ -931,7 +939,7 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. _mame-commandline-record:
 
-**-record** / **-rec** <*filename*>
+**-record** / **-rec** <*nome_do_arquivo*>
 
 	Faz a gravação de todos comandos feitos pelo usuários durante uma
 	seção e define o nome do arquivo onde será registrado todos esses
@@ -967,10 +975,10 @@ Opções para a gravação de áudio e vídeo
 
 .. _mame-commandline-mngwrite:
 
-**-mngwrite** <*filename*>.mng
+**-mngwrite** <*nome_do_arquivo*>.mng
 
-	Escreve cada quadro de vídeo em um arquivo <*filename*> no formato
-	MNG, produzindo uma animação da sessão.
+	Escreve cada quadro de vídeo em um arquivo <*nome_do_arquivo*> no
+	formato MNG, produzindo uma animação da sessão.
 	Note que ``-mngwrite`` só grava quadros de vídeo, não grava qualquer
 	áudio, use a opção ``-wavwrite`` para gravar o áudio e
 	posteriormente use uma ferramenta de edição de áudio qualquer para
@@ -981,7 +989,7 @@ Opções para a gravação de áudio e vídeo
 
 .. _mame-commandline-aviwrite:
 
-**-aviwrite** <*filename*>.avi
+**-aviwrite** <*nome_do_arquivo*>.avi
 
 	Grava todos os dados de áudio e vídeo em formato AVI sem compressão,
 	note que a taxa de quadros e a resolução são sempre fixas. Vídeos
@@ -999,10 +1007,10 @@ Opções para a gravação de áudio e vídeo
 
 .. _mame-commandline-wavwrite:
 
-**-wavwrite** <*filename*>.wav
+**-wavwrite** <*nome_do_arquivo*>.wav
 
 	Grava todos os dados de áudio da seção em formato WAV em um arquivo
-	<*filename*>.wav .
+	<*nome_do_arquivo*>.wav .
 
 		O valor predefinido é **NULO** (sem gravação).
 
@@ -1059,7 +1067,7 @@ Opções para instantâneos de tela
 
 .. _mame-commandline-snapsize:
 
-**-snapsize** <*width>x<height*>
+**-snapsize** <*largura*>x<*altura*>
 
 	Define um tamanho fixo para os instantâneos e vídeos.
 	É predefinido que o MAME criará instantâneos, assim como os vídeos,
@@ -1078,7 +1086,7 @@ Opções para instantâneos de tela
 
 .. _mame-commandline-snapview:
 
-**-snapview** <*viewname*>
+**-snapview** <*nome*>
 
 	Define a exibição a ser usada ao renderizar instantâneos e vídeos.
 	
@@ -1089,13 +1097,13 @@ Opções para instantâneos de tela
 	selecionar apenas uma exibição que será aplicada a todos os
 	instantâneos e vídeos.
 	
-	Observe que <*viewname*> não precisa ser uma combinação perfeita,
+	Observe que <*nome*> não precisa ser uma combinação perfeita,
 	ao invés disso, ele selecionará a primeira exibição cujo nome
-	corresponda a todos os caracteres definidos por <*viewname*>.
+	corresponda a todos os caracteres definidos por <*nome*>.
 	
 	Por exemplo, ``-snapview native`` irá casar a visualização
 	"Nativa em (15:14)" ainda que não seja uma combinação ideal.
-	O <*viwename*> também pode ser "auto" onde será escolhida a primeira
+	O <*nome*> também pode ser "auto" onde será escolhida a primeira
 	exibição de todas as telas presentes.
 
 		O valor predefinido é **internal**.
@@ -1149,7 +1157,7 @@ Opções relacionadas a performance e a velocidade da emulação
 
 .. _mame-commandline-secondstorun:
 
-**-seconds_to_run** / **-str** <*seconds*>
+**-seconds_to_run** / **-str** <*segundos*>
 
 	Este comando pode ser usado para realizar um teste de velocidade de
 	forma automatizada. O comando diz ao MAME para para interromper a
@@ -1239,7 +1247,7 @@ Opções relacionadas a performance e a velocidade da emulação
 
 .. _mame-commandline-numprocessors:
 
-**-numprocessors** <*auto|value*> / **-np** <*auto|value*>
+**-numprocessors** <*auto|valor*> / **-np** <*auto|valor*>
 
 	Define a quantidade de núcleos do processador a serem usados.
 	A opção **auto** usará a quantidade de núcleos informada pelo seu
@@ -1486,6 +1494,67 @@ Opções para a configuração de vídeo
 	vai causar distorções na aparência do sistema que vai muito além da
 	capacidade de reparo dos filtros.
 
+.. _mame-commandline-unevenstretch:
+
+**-[no]unevenstretch** / **-[no]ues**
+
+	Permite que a proporção da tela seja desigual e que a tela ou janela
+	possa ser preenchida na horizontal ou vertical.
+	
+		O valor predefinido é **Ligado** (**-unevenstretch**).
+
+.. _mame-commandline-unevenstretchx:
+
+**-[no]unevenstretchx** / **-[no]uesx**
+
+	Permite que a proporção da tela seja desigual e que a tela ou janela
+	possa ser preenchida apenas na horizontal.
+	
+		O valor predefinido é **Ligado** (**-unevenstretchx**).
+
+.. _mame-commandline-unevenstretchy:
+
+**-[no]unevenstretchx** / **-[no]uesy**
+
+	Permite que a proporção da tela seja desigual e que a tela ou janela
+	possa ser preenchida apenas na vertical.
+	
+		O valor predefinido é **Ligado** (**-unevenstretchy**).
+
+.. _mame-commandline-autostretchxy:
+
+**-[no]autostretchxy** / **-[no]asxy**
+
+	Aplica a opção **-unevenstretchx/y** automaticamente com base na
+	orientação nativa da fonte.
+	
+		O valor predefinido é **Ligado** (**-noautostretchxy**).
+
+.. _mame-commandline-intoverscan:
+
+**-[no]intoverscan** / **-[no]ios**
+
+	Permite que a imagem passe dos limites da tela (overscan) de alvos
+	inteiros e dimensionáveis.
+	
+		O valor predefinido é **Ligado** (**-nointoverscan**).
+
+.. _mame-commandline-intscalex:
+
+**-[no]intscalex** / **-[no]sx**
+
+	Define o fator de escala horizontal.
+	
+		O valor predefinido é **Ligado** (**-nointscalex**).
+
+.. _mame-commandline-intscaley:
+
+**-[no]intscaley** / **-[no]sy**
+
+	Define o fator de escala vertical.
+	
+		O valor predefinido é **Ligado** (**-nointscaley**).
+
 .. _mame-commandline-waitvsync:
 
 **-[no]waitvsync**
@@ -1537,13 +1606,13 @@ Opções para a configuração de vídeo
 
 .. _mame-commandline-prescale:
 
-**-prescale** <*amount*>
+**-prescale** <*quantidade*>
 
 	Controla o tamanho das imagens na tela enquanto são repassadas para
 	o sistema gráfico de redimensionamento. No ajuste mínimo de **1**, a
 	tela é renderizada no seu tamanho original antes de ser
 	dimensionada. Com valores maiores a tela é expandida pelo fator
-	definido em <*amount*> antes de ser dimensionado. Isso gera imagens
+	definido em <*quantidade*> antes de ser dimensionado. Isso gera imagens
 	menos borradas com a opção ``-video d3d`` ao custo da perda de
 	alguma performance.
 	
@@ -1590,15 +1659,6 @@ Opções para a configuração de vídeo
 	``systemname/burnin-<nome.da.tela>.png``.
 
 		O valor predefinido é **Desligado** (**-noburnin**).
-
-.. _mame-commandline-unevenstretch:
-
-**-[no]unevenstretch**
-
-	Permite fatores não integrais permitindo a flexibilização no momento
-	do dimensionamento e o esticamento da janela.
-	
-		O valor predefinido é **Ligado** (**-unevenstretch**).
 
 .. raw:: latex
 
@@ -1665,11 +1725,11 @@ funcionar corretamente em alguns computadores Mac.**
 
 .. _mame-commandline-aspect:
 
-|	**-aspect** <*width:height*> / **-screen_aspect** <*num:den*>
-|	**-aspect0** <*width:height*>
-|	**-aspect1** <*width:height*>
-|	**-aspect2** <*width:height*>
-|	**-aspect3** <*width:height*>
+|	**-aspect** <*largura:altura*> / **-screen_aspect** <*num:den*>
+|	**-aspect0** <*largura:altura*>
+|	**-aspect1** <*largura:altura*>
+|	**-aspect2** <*largura:altura*>
+|	**-aspect3** <*largura:altura*>
 
 	Define a proporção física do monitor para cada janela. Para usar
 	várias janelas, você deve ter aumentado o valor da opção
@@ -1691,11 +1751,11 @@ funcionar corretamente em alguns computadores Mac.**
 
 .. _mame-commandline-resolution:
 
-|	**-resolution** <*widthxheight[@refresh]*> / **-r** <*widthxheight[@refresh]*>
-|	**-resolution0** <*widthxheight[@refresh]*> / **-r0** <*widthxheight[@refresh]*>
-|	**-resolution1** <*widthxheight[@refresh]*> / **-r1** <*widthxheight[@refresh]*>
-|	**-resolution2** <*widthxheight[@refresh]*> / **-r2** <*widthxheight[@refresh]*>
-|	**-resolution3** <*widthxheight[@refresh]*> / **-r3** <*widthxheight[@refresh]*>
+|	**-resolution** <*larguraxaltura[@refresh]*> / **-r** <*larguraxaltura[@refresh]*>
+|	**-resolution0** <*larguraxaltura[@refresh]*> / **-r0** <*larguraxaltura[@refresh]*>
+|	**-resolution1** <*larguraxaltura[@refresh]*> / **-r1** <*larguraxaltura[@refresh]*>
+|	**-resolution2** <*larguraxaltura[@refresh]*> / **-r2** <*larguraxaltura[@refresh]*>
+|	**-resolution3** <*larguraxaltura[@refresh]*> / **-r3** <*larguraxaltura[@refresh]*>
 
 	Define a resolução exata a ser exibida. No modo de tela cheia o MAME
 	tentará usar a resolução solicitada. A largura e a altura são
@@ -1726,17 +1786,17 @@ funcionar corretamente em alguns computadores Mac.**
 
 .. _mame-commandline-view:
 
-|	**-view** <*viewname*>
-|	**-view0** <*viewname*>
-|	**-view1** <*viewname*>
-|	**-view2** <*viewname*>
-|	**-view3** <*viewname*>
+|	**-view** <*nome*>
+|	**-view0** <*nome*>
+|	**-view1** <*nome*>
+|	**-view2** <*nome*>
+|	**-view3** <*nome*>
 
 	Define a configuração da visualização inicial de cada janela.
-	Note que o nome de visualização <*viewname*> não precisa ser uma
-	combinação exata, em vez disso, será selecionado a primeira exibição
-	cujo nome corresponde a todos os caracteres especificados por
-	<*viewname*>.
+	Note que o nome de visualização <*nome*> não precisa
+	ser uma combinação exata, em vez disso, será selecionado a primeira
+	exibição cujo nome corresponde a todos os caracteres especificados
+	por <*nome*>.
 	Por exemplo, ``-view native`` corresponderá à visualização
 	"Native (15:14)", mesmo que não seja uma correspondência perfeita.
 	O valor funciona com a opção ``auto`` também e solicita que o MAME
@@ -1835,7 +1895,7 @@ Opções para os ajustes de imagem da tela
 
 .. _mame-commandline-brightness:
 
-**-brightness** <*value*>
+**-brightness** <*valor*>
 
 	Controla o valor de brilho ou nível de preto da tela.
 	Essa opção não afeta a arte ou outras partes da tela. Usando a
@@ -1849,7 +1909,7 @@ Opções para os ajustes de imagem da tela
 
 .. _mame-commandline-contrast:
 
-**-contrast** <*value*>
+**-contrast** <*valor*>
 
 	Controla o contraste da tela ou os nível de branco da tela.
 	Essa opção não afeta a arte ou outras partes da tela. Usando a
@@ -1865,7 +1925,7 @@ Opções para os ajustes de imagem da tela
 
 .. _mame-commandline-gamma:
 
-**-gamma** <*value*>
+**-gamma** <*valor*>
 
 	Controle de gamma, ajusta a escala de luminância da tela. Essa opção
 	não afeta a arte ou outras partes da tela. Usando a interface
@@ -1881,7 +1941,7 @@ Opções para os ajustes de imagem da tela
 
 .. _mame-commandline-pausebrightness:
 
-**-pause_brightness** <*value*>
+**-pause_brightness** <*valor*>
 
 	Faz o controle do nível de brilho durante a pausa.
 	
@@ -1889,7 +1949,7 @@ Opções para os ajustes de imagem da tela
 
 .. _mame-commandline-effect:
 
-**-effect** <*filename*>
+**-effect** <*nome_do_arquivo*>
 
 	Define um único arquivo ``.png`` que será usado como sobreposição na
 	tela de qualquer sistema. Presume-se que o aquivo ``.png`` esteja em
@@ -1915,25 +1975,25 @@ Opções para máquinas que usem gráficos vetoriais
 
 .. _mame-commandline-beamwidthmin:
 
-**-beam_width_min** <*width*>
+**-beam_width_min** <*largura*>
 
 	Define a espessura mínima do feixe do vetor.
 
 .. _mame-commandline-beamwidthmax:
 
-**-beam_width_max** <*width*>
+**-beam_width_max** <*largura*>
 
 	Define a espessura máxima do feixe do vetor.
 
 .. _mame-commandline-beamintensityweight:
 
-**-beam_intensity_weight** <*weight*>
+**-beam_intensity_weight** <*altura*>
 
 	Define a intensidade do feixe do vetor.
 
 .. _mame-commandline-flicker:
 
-**-flicker** <*value*>
+**-flicker** <*valor*>
 
 	Simula um vetor de efeito de *tremulação* ou oscilação da tela
 	semelhante aos monitores desregulados usados nos jogos vetoriais.
@@ -2062,7 +2122,7 @@ Opções para a configuração do áudio
 
 .. _mame-commandline-samplerate:
 
-**-samplerate** <*value*> / **-sr** <*value*>
+**-samplerate** <*valor*> / **-sr** <*valor*>
 
 	Define a taxa de amostragem do áudio. Valores menores como 11025 por
 	exemplo, reduzem a qualidade da áudio porém a performance da
@@ -2082,7 +2142,7 @@ Opções para a configuração do áudio
 
 .. _mame-commandline-volume:
 
-**-volume** / **-vol** <*value*>
+**-volume** / **-vol** <*valor*>
 
 	Define o volume inicial. Pode ser alterado posteriormente usando
 	a interface do usuário.
@@ -2107,7 +2167,7 @@ Opções para a configuração do áudio
 
 .. _mame-commandline-audiolatency:
 
-**-audio_latency** <*value*>
+**-audio_latency** <*valor*>
 
 	Controla a quantidade de latência (atraso) incorporada no streaming
 	de áudio. É predefinido que o MAME tente manter a memória intermédia
@@ -2145,12 +2205,15 @@ Opções para as configurações de diferentes entradas
 
 .. _mame-commandline-ctrlr:
 
-**-ctrlr** <*controller*>
+**-ctrlr** <*controle*>
 
-	Ativa o suporte para controladores especiais. Os arquivos de
-	configuração são carregados do *ctrlrpath*. Eles estão no mesmo
-	formato dos arquivos ``.cfg``, mas somente os dados de configuração
-	de controle são lidos do arquivo.
+	Permite que você carregue arquivos ``.cfg`` no diretório definido em
+	**ctrlrpath** com as configurações customizadas de controles apenas,
+	outras informações que ali estiverem serão ignoradas. Estes arquivos
+	são criados quando você configura os botões do controle de uma
+	máquina, essas configurações são gravadas no diretório **cfg** como
+	(nome_da_maquina).cfg.
+
 	
 		O valor predefinido é **NULO** (nenhum arquivo de controle)
 
@@ -2249,7 +2312,7 @@ Opções para as configurações de diferentes entradas
 
 .. _mame-commandline-joystickmap:
 
-**-joystick_map** <*map*> / **-joymap** <*map*>
+**-joystick_map** / **-joymap** <*mapa*>
 
 	Controla como mapear os valores analógicos do controle (joystick)
 	para o controle (joystick) digital. O MAME aceita qualquer dado
@@ -2324,7 +2387,7 @@ Opções para as configurações de diferentes entradas
 
 .. _mame-commandline-joystickdeadzone:
 
-**-joystick_deadzone** <*value*> / **-joy_deadzone** <*value*> / **-jdz** <*value*>
+**-joystick_deadzone** / **-joy_deadzone** / **-jdz** <*valor*>
 
 	Caso você jogue com um joystick analógico ele poderá estar um pouco
 	fora de contro. O ``-joystick_deadzone`` informa uma folga ao longo
@@ -2337,7 +2400,7 @@ Opções para as configurações de diferentes entradas
 
 .. _mame-commandline-joysticksaturation:
 
-**-joystick_saturation** <*value*> / **joy_saturation** <*value*> / **-jsat** <*value*>
+**-joystick_saturation** / **joy_saturation** / **-jsat** <*valor*>
 
 	Caso você jogue com um joystick analógico as extremidades podem
 	estar um pouco fora e podem não corresponder nas direções + /.
@@ -2350,7 +2413,7 @@ Opções para as configurações de diferentes entradas
 
 .. _mame-commandline-natural:
 
-**\-natural**
+**-natural**
 
 	Permite que o usuário defina se deve ou não usar um teclado natural.
 	Isso permite que você inicie seu sistema em um modo *nativo*
@@ -2420,56 +2483,56 @@ Opções de entrada habilitadas automaticamente
 
 .. _mame-commandline-paddledevice:
 
-**\-paddle_device**
+**-paddle_device** / **-paddle**
 
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de pá ou remo presente.
 
 .. _mame-commandline-adstickdevice:
 
-**\-adstick_device**
+**-adstick_device** / **-adstick**
         
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle analógico presente.
 
 .. _mame-commandline-pedaldevice:
 
-**\-pedal_device**
+**-pedal_device** / **-pedal**
         
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de pedal presente.
 
 .. _mame-commandline-dialdevice:
 
-**\-dial_device**
+**-dial_device** / **-dial**
         
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de um discador presente.
 
 .. _mame-commandline-trackballdevice:
 
-**\-trackball_device**
+**-trackball_device** / **-trackball**
         
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de trackball presente.
 
 .. _mame-commandline-lightgundevice:
 
-**\-lightgun_device**
+**-lightgun_device**
         
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de pistola de luz presente.
 
 .. _mame-commandline-positionaldevice:
 
-**\-positional_device**
+**-positional_device**
 
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de posição presente.
 
 .. _mame-commandline-mousedevice:
 
-**\-mouse_device**
+**-mouse_device**
         
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de mouse presente.
@@ -2536,7 +2599,7 @@ Opções voltadas para a depuração
 
 .. _mame-commandline-debug:
 
-**-[no]debug**
+**-[no]debug** / **-[no]d**
 
 	Habilita o depurador embutido no MAME. É predefinido que o depurador
 	entre em ação ao pressionar a tela til (**~**) [7]_ durante a
@@ -2547,7 +2610,7 @@ Opções voltadas para a depuração
 
 .. _mame-commandline-debugscript:
 
-**-debugscript** <*filename*>
+**-debugscript** <*nome_do_arquivo*>
 
 	Define um arquivo que vai conter a lista de comandos de depuração a
 	serem executados no momento da inicialização.
@@ -2567,11 +2630,11 @@ Opções voltadas para a depuração
 
 .. _mame-commandline-watchdog:
 
-**-watchdog** <*duration*> / **-wdog** <*duration*>
+**-watchdog** <*tempo*> / **-wdog** <*tempo*>
 
 	Habilita o temporizador watchdog interno que vai automaticamente
 	matar o processo do MAME caso o tempo de duração definido em
-	<*duration*> passe caso não haja nenhuma atualização de quadro.
+	<*tempo*> passe caso não haja nenhuma atualização de quadro.
 	Tenha em mente que alguns sistemas ficam parados por algum tempo
 	durante o carregamento da tela, então <*duration*> deve ser grande
 	o suficiente para levar esse tempo extra em consideração.
@@ -2586,7 +2649,7 @@ Opções voltadas para a depuração
 
 .. _mame-commandline-debuggerfont:
 
-**-debugger_font** <*fontname*> / **-dfont** <*fontname*>
+**-debugger_font** <*nome_da_fonte*> / **-dfont** <*nome_da_fonte*>
 
 	Define o nome da fonte a ser usada nas janelas do depurador.
 
@@ -2597,7 +2660,7 @@ Opções voltadas para a depuração
 
 .. _mame-commandline-debuggerfontsize:
 
-**-debugger_font_size** <*points*> / **-dfontsize** <*points*>
+**-debugger_font_size** <*pontos*> / **-dfontsize** <*pontos*>
 
 	Define o tamanho da fonte a ser usada nas janelas do depurador
 	em pontos.
@@ -2616,7 +2679,7 @@ Opções para a configuração da rede
 
 .. _mame-commandline-commlocalhost:
 
-**-comm_localhost** <*string*>
+**-comm_localhost** <*endereço*>
 
 	Definição para o endereço local. Este pode ser um endereço
 	tradicional ``xxx.xxx.xxx.xxx`` ou um nome de host que possa ser
@@ -2626,7 +2689,7 @@ Opções para a configuração da rede
 
 .. _mame-commandline-commlocalport:
 
-**-comm_localport** <*string*>
+**-comm_localport** <*porta*>
 
 	Definição da porta local. Esta pode ser qualquer porta de
 	comunicação tradicional como um valor inteiro *non-signed* com
@@ -2636,7 +2699,7 @@ Opções para a configuração da rede
 
 .. _mame-commandline-commremotehost:
 
-**-comm_remotehost** <*string*>
+**-comm_remotehost** <*endereço*>
 
 	Definição do endereço remoto. Este pode ser um endereço tradicional
 	``xxx.xxx.xxx.xxx`` ou um nome de host que possa ser resolvido.
@@ -2645,7 +2708,7 @@ Opções para a configuração da rede
 
 .. _mame-commandline-commremoteport:
 
-**-comm_remoteport** <*string*>
+**-comm_remoteport** <*porta*>
 
 	Definição da porta remota. Esta pode ser qualquer porta de
 	comunicação tradicional como um valor inteiro *non-signed* com
@@ -2657,7 +2720,7 @@ Opções para a configuração da rede
 
 **-[no]comm_framesync**
 
-	Sincroniza os frames entre a rede de comunicação.
+	Sincroniza os frames entre os hosts na rede.
 	
 		O valor predefinido é **Desligado** (**-nocomm_framesync**).
 
@@ -2678,7 +2741,7 @@ Opções diversas
 
 .. _mame-commandline-drcusec:
 
-**\-drc_use_c**
+**-drc_use_c**
 
 	Force o uso de DRC usando infra-estrutura em código C.
 
@@ -2686,7 +2749,7 @@ Opções diversas
 
 .. _mame-commandline-drcloguml:
 
-**\-drc_log_uml**
+**-drc_log_uml**
 
 	Grave um registro descompilado DRC UML em um arquivo de registro
 	(log).
@@ -2695,7 +2758,7 @@ Opções diversas
 
 .. _mame-commandline-drclognative:
 
-**\-drc_log_native**
+**-drc_log_native**
 
 	Grave o DRC nativo e descompilado num registro de log em formato
 	assembler.
@@ -2733,13 +2796,13 @@ Opções diversas
 
 .. _mame-commandline-uifont:
 
-**-uifont** <*fontname*>
+**-uifont** <*nome_da_fonte*>
 
 	Define o nome da fonte ou um nome do arquivo de fonte a ser usada na
 	interface do usuário. Caso esta fonte não possa ser encontrada ou
 	não puder ser carregada, o MAME usará a sua própria fonte embutida.
-	Em algumas plataformas o <*fontname*> (nome da fonte) pode ser um
-	nome da fonte do sistema em vez de um arquivo fonte com extensão
+	Em algumas plataformas o <*nome_da_fonte*> (nome da fonte) pode ser
+	um nome da fonte do sistema em vez de um arquivo fonte com extensão
 	``.bdf``.
 	
 		O valor predefinido é **default** (O MAME usará a fonte nativa).
@@ -2755,7 +2818,7 @@ Opções diversas
 
 .. _mame-commandline-ramsize:
 
-**-ramsize** [*n*]
+**-ramsize** / **-ram** [*n*]
 
 	Permite que você altere o tamanho padrão da RAM (caso exista suporte
 	para tanto no driver).
@@ -2766,7 +2829,7 @@ Opções diversas
 
 .. _mame-commandline-confirmquit:
 
-**\-confirm_quit**
+**-confirm_quit**
 
 	Exibir um aviso na tela "*Confirmar Sair*" antes de sair, exigindo
 	que o usuário confirme a ação antes de sair do MAME.
@@ -2775,7 +2838,7 @@ Opções diversas
 
 .. _mame-commandline-uimouse:
 
-**\-ui_mouse**
+**-ui_mouse**
 
 	Exibe o ponteiro do mouse na interface do usuário do MAME.
 	
@@ -2783,7 +2846,7 @@ Opções diversas
 
 .. _mame-commandline-language:
 
-**-language** <*language*>
+**-language** / **-lang** <*idioma*>
 
 	Especifique um idioma para ser usado na interface do usuário, os
 	arquivos de tradução para cada idioma estão no caminho definido em
@@ -2791,7 +2854,7 @@ Opções diversas
 
 .. _mame-commandline-nvramsave:
 
-**-[no]nvram_save**
+**-[no]nvram_save** / **-[no]nvwrite**
 
 	Salva o conteúdo da NVRAM ao sair da emulação. Caso essa opção seja
 	desligada, o conteúdo que foi gravado anteriormente não será apagado
@@ -2804,7 +2867,7 @@ Opções para uso com script
 
 .. _mame-commandline-autobootcommand:
 
-**-autoboot_command** "<*command*>"
+**-autoboot_command** / **-ab** "<*command*>"
 
 	Cadeia de comandos que serão executados após a inicialização da
 	máquina (entre aspas " "). Para emitir uma cotação para a
@@ -2821,7 +2884,7 @@ Opções para uso com script
 
 .. _mame-commandline-autobootscript:
 
-**-autoboot_script** / **-script** [*filename.lua*]
+**-autoboot_script** / **-script** [*nome_do_arquivo.lua*]
 
 	Carrega e executa um scrit após a inicialização da máquina.
 

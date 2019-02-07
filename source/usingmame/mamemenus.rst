@@ -398,7 +398,7 @@ usados pelo MAME. As opções disponíveis são:
 * **Software em mídia**
 
   Define o caminho onde é armazenado a imagem dos arquivos em mídia como
-  CD-ROM, floppy, fita K7, etc.
+  CD-ROM, floppy, fita K7 ou qualquer outro programa avulso.
 
 		O valor predefinido é um diretório chamado **software** no
 		diretório raiz do MAME.
@@ -605,6 +605,12 @@ usados pelo MAME. As opções disponíveis são:
 
 * **Versus**
 
+  Define o caminho do diretório onde se encontram as imagens com os
+  instantâneos de tela mostrando as maiores pontuações.
+
+		O valor predefinido é um diretório chamado **versus** no
+		diretório raiz do MAME.
+
 * **Capas**
 
 
@@ -638,7 +644,7 @@ Voltar ao menu anterior
 		`Progetto Snaps <http://www.progettosnaps.net/icons>`_ oferecem
 		tais ícones e outras imagens para download.
 ..	[#] O site `Pugsy's Cheat <http://cheat.retrogames.com/>`_ é um dos
-		mais conhecidos que oferece o arquivo de trapaça.
+		mais conhecidos que oferece um arquivo de trapaça para download.
 .. 	[#] Em alguns lugares as pessoas também conhecem como "*print de
 		tela*", "*print da tela*", "*captura de tela*", "*fazer um
 		printscreen*", "*fazer um print da tela*", etc.
