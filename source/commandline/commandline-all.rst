@@ -2317,7 +2317,7 @@ Opções para a configuração do áudio
 	Faz o ajuste de latência (atraso) do áudio, similar ao
 	:ref:`-audio_latency <mame-commandline-audiolatency>`
 
-		O valor predefinido é **NULO** (Sem ajuste de latência).
+		O valor predefinido é **0**.
 
 .. raw:: latex
 
