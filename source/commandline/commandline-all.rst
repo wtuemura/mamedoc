@@ -2169,12 +2169,15 @@ Opções para a configuração do áudio
 
 **-audio_latency** <*valor*>
 
-	Controla a quantidade de latência (atraso) incorporada no streaming
-	de áudio. É predefinido que o MAME tente manter a memória intermédia
-	(buffer) do áudio do DirectSound cheia entre 1/5 e 2/5.
+	Nesta opção, latência significa o tempo que o dispositivo de áudio
+	demora para responder a um comando. Essa opção ajusta a quantidade
+	dessa latência incorporada ao fluxo de dados de áudio.
+
+	É predefinido que o MAME tente manter a memória intermédia (buffer)
+	do áudio DirectSound cheio entre 1/5 e 2/5.
 	Em alguns sistemas, isso poderá ficar muito próximo do limite, o que
-	ocasiona em algumas vezes, um som ruim. O parâmetro de latência
-	controla o limite inferior.
+	ocasiona em algumas vezes, um som ruim. Fazendo ajustes no valor da
+	latência é possível melhorar esse problema.
 	
 		O valor predefinido é **1** (significando inferior=1/5 e
 		superior=2/5). Para manter a memória intermédia sempre cheia entre
@@ -2195,17 +2198,54 @@ Opções para a configuração do áudio
 	"*Application Programming Interface*" ou em uma tradução livre
 	"*Interface de Programação para Aplicações*". O API funciona como
 	uma ponte conectando aplicações ao hardware de forma direta. Essa
-	integração permite uma menor latência (atraso) por haver uma
-	redução no volume de dados e por estes dados serem vinculados de
-	forma específica para áudio, otimizando a performance de uma forma
-	geral pois o que se salva em processamento no áudio pode ser
-	aproveitado pelo MAME em outros setores da emulação.
+	integração permite uma menor latência por haver uma redução no fluxo
+	de dados e por estes dados de áudio serem direcionados diretamente
+	ao dispositivo áudio, a performance é otimizada de maneira geral
+	pois o que se salva em processamento no áudio pode ser aproveitado
+	pelo MAME em outros setores da emulação.
 
 	Apesar do PortAudio ser o que há de mais moderno em comparação com o
 	DirectSound ou OpenGL Audio e trazer muitos benefícios, há um ponto
-	negativo, o PortAudio faz o uso exclusivo do hardware de áudio. Isso
-	significa que não será possível por exemplo, escutar música ou
+	negativo, o PortAudio faz o uso exclusivo do dispositivo de áudio.
+	Isso significa que não será possível por exemplo, escutar música ou
 	qualquer outra coisa enquanto o MAME estiver rodando com PortAudio.
+
+	No Windows Vista ou mais recente nós temos essas interfaces:
+
+	* **MME**: É um acrônimo para *Multimedia Extension* criada pela
+	  Microsoft para um sistema operacional pouco conhecido na época
+	  chamado "*Windows with MultiMedia Extensions 1.0*" com base no
+	  Windows 3.0, é um dos primeiros API para comunicação direta com a
+	  placa de áudio. Essa interface já é obsoleta porém ainda muito
+	  usada por questões de compatibilidade.
+
+	* **Windows DirectSound**: É um outro API introduzido pela Microsoft
+	  no Windows 95 que adicionou uma camada de software entre a
+	  aplicação e o dispositivo de som. Com ele uma placa de som poderia
+	  ter dois canais ou mais, efeitos de som 3D foi uma novidade na
+	  época, aceleração de áudio via hardware, a placa de som poderia
+	  ser compartilhada entre diferentes aplicativos. Essa interface já
+	  é obsoleta porém ainda muito usada por questões de
+	  compatibilidade.
+
+	* **Windows WASAPI**: É um acrônimo para "*Windows Audio Session
+	  API*" ou em uma tradução livre, "*API de Seção de Áudio do
+	  Windows*". Foi introduzido no Windows Vista, a grande vantagem do
+	  WASAPI é poder enviar os fluxos de dados de áudio direto para o
+	  dispositivo de áudio sem ter que passar por nenhum tipo de CODEC.
+	  Outra característica do WASAPI é ter o uso exclusivo do
+	  dispositivo de áudio melhorando a latência assim como a qualidade
+	  do áudio.
+
+	* **Windows WDM-KS**: É um acrônimo para "*Windows Driver Model*"
+	  também criado pela Microsoft e introduzido no Windows 98 e Windows
+	  2000. O KS vem de "*Kernel Streaming*" uma maneira ainda mais
+	  rápida de acessar o dispositivo de áudio de forma direta através
+	  do cerne (kernel) do Windows. Apesar de também fazer uso exclusivo
+	  do dispositivo de áudio essa é a interface mais problemática pois
+	  ela é muito dependente da qualidade dos drivers usados, gera
+	  problemas com a hibernação do Windows quando há problemas com os
+	  drivers, a melhor opção é ficar com o Windows WASAPI.
 
 	Para escolher qual interface usar, inicie o mame como mostra o
 	exemplo abaixo: ::
@@ -2249,10 +2289,6 @@ Opções para a configuração do áudio
 
 		O valor predefinido é **NULO** (Nenhuma interface PortAudio).
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-pa_device:
 
 **-pa_device** <*dispositivo*>
@@ -2264,7 +2300,8 @@ Opções para a configuração do áudio
 
 		mame.exe -verbose -sound portaudio -pa_api "Windows WASAPI" -pa_device "6 - SONY TV  *01 (AMD High Definition Audio Device)"
 
-	Como resultado o MAME deverá exibir a mensagem: ::
+	Como resultado o MAME deverá exibir a mensagem abaixo mostrando que
+	tanto a interface quanto o dispositivos foram aceitos: ::
 
 		PortAudio: Using device "6 - SONY TV  *01 (AMD High Definition Audio Device)" on API "Windows WASAPI"
 
