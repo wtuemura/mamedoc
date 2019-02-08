@@ -2301,7 +2301,7 @@ Opções para a configuração do áudio
 		mame.exe -verbose -sound portaudio -pa_api "Windows WASAPI" -pa_device "6 - SONY TV  *01 (AMD High Definition Audio Device)"
 
 	Como resultado o MAME deverá exibir a mensagem abaixo mostrando que
-	tanto a interface quanto o dispositivos foram aceitos: ::
+	tanto a interface quanto o dispositivo foi aceito: ::
 
 		PortAudio: Using device "6 - SONY TV  *01 (AMD High Definition Audio Device)" on API "Windows WASAPI"
 
