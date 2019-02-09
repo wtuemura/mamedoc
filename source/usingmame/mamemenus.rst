@@ -1451,7 +1451,8 @@ Predefinições para o jogador 4
 |  P4 pedal 3 analog inc               | Enter_pad                     |
 +--------------------------------------+-------------------------------+
 
-As predefinições para o jogador 5 em diante estão vazias.
+As predefinições para o jogador 5 em diante estão vazias e podem ser
+customizadas conforme a necessidade.
 
 * **Outros controles**
 
