@@ -2136,7 +2136,8 @@ Opções para a configuração do áudio
 
 **-[no]samples**
 
-	Usar amostras caso estejam disponíveis.
+	Usar arquivos de amostras caso estejam disponíveis. Esses arquivos
+	são gravações de efeitos de áudio usados por algumas máquinas.
 	
 		O valor predefinido é **Ligado** (**-samples**).
 
