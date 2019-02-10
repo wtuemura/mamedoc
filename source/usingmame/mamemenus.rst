@@ -866,65 +866,317 @@ Entradas gerais
 
 * **interface do usuário**
 
-  Ajustes dos atalhos predefinidos usados na interface do MAME.
+  Aqui estão os principais atalhos já predefinidos da interface do MAME,
+  todos eles podem ser alterados conforme a necessidade. Para retornar
+  ao valor original tecle **DELETE** duas vezes em cima da opção.
 
-	- **On screen display**
-	- **Brek in debugger**
-	- **Config menu**
-	- **Pause**
-	- **Pause - Single step**
-	- **Rewing - Single step**
-	- **Reset machine**
-	- **Soft reset**
-	- **Show gfx**
-	- **Frameskip dec**
-	- **Frameskip inc**
-	- **Throttle**
-	- **Fast forward**
-	- **Show fps**
-	- **Save snapshot**
-	- **Write current timecode**
-	- **Record MNG**
-	- **Record AVI**
-	- **Toggle cheat**
-	- **Toggle autofire**
-	- **UI up**
-	- **UI down**
-	- **UI left**
-	- **UI right**
-	- **UI home**
-	- **UI end**
-	- **UI page up**
-	- **UI page down**
-	- **UI select**
-	- **UI cancel**
-	- **UI Display comment**
-	- **UI clear**
-	- **UI zoom in**
-	- **UI zoom out**
-	- **UI previous group**
-	- **UI next group**
-	- **UI rotate**
-	- **Show profile**
-	- **UI Toggle**
-	- **UI paste text**
-	- **Toggle deugger**
-	- **Save state**
-	- **Load state**
-	- **UI (First) tape start**
-	- **UI (First) tape stop**
-	- **UI external DAT view**
-	- **UI Add/Remove favorites**
-	- **UI export list**
-	- **UI Audit unavailable**
-	- **UI Audit all**
-	- **Toggle fullscreen**
-	- **Toggle uneven stretch**
-	- **Toggle keepaspect**
-	- **Toggle filter**
-	- **Decrease prescaling**
-	- **Increase prescaling**
-	- **Record rendered video**
+* **On screen display**
+
+  Exibe um visor na parte inferior da tela durante a emulação para a
+  realização de ajustes em tempo real.
+
+	A tecla predefinida é **Til**.
+
+* **Brek in debugger**
+
+  Atalho para entrar no depurador durante a emulação, só funciona caso
+  o MAME tenha sido compilado com ferramentas de depuração.
+
+	A tecla predefinida é **Til**.
+
+* **Config menu**
+
+  Chama o cardápio de opções do MAME.
+
+	A tecla predefinida é **Tab**.
+
+* **Pause**
+
+  Pausa a emulação.
+
+	A tecla predefinida é **P**.
+
+* **Pause - Single step**
+
+  Avança em passos de um quadro.
+
+	As teclas predefinidas são **P** + **Shift Esq**.
+
+* **Rewing - Single step**
+
+  Retrocede em passos de um quadro.
+
+	As teclas predefinidas são **Til** + **Shift Esq**.
+
+* **Reset machine**
+
+  Encerra a emulação e a inicia do zero.
+
+	As teclas predefinidas são **F3** + **Shift Esq**.
+
+* **Soft reset**
+
+  Recomeça o software apenas sem encerrar a emulação.
+
+	A telcla predefinida é **F3**.
+
+* **Show gfx**
+
+  Mostra a paleta GFX decodificada e os tilemaps dos jogos.
+
+	A tecla predefinida é **F4**.
+
+* **Frameskip dec**
+
+  Redução do salto de quadros.
+
+	A tecla predefinida é **F8**.
+
+* **Frameskip inc**
+
+  Aumento do salto de quadros.
+
+	A tecla predefinida é **F9**.
+
+* **Throttle**
+
+  Acelerador da emulação, faz a emulação rodar cerca de 3x mais rápido
+  que o norma.
+
+	A tecla predefinida é **F10**.
+
+* **Fast forward**
+
+  Como o exemplo anterior porém faz a emulação rodar o mais rápido
+  possível.
+
+* **Show fps**
+
+  Exibe quantos quadros por segundo a emulação está rodando.
+
+	A tecla predefinida é **PgDn** em versões SDL do MAME e **Insert**
+	no Windows. 
+
+* **Save snapshot**
+
+  Salva um instantâneo da tela.
+
+	A tecla predefinida é **F12**.
+
+* **Write current timecode**
+
+  Salva o tempo decorrido.
+
+	A tecla predefinida é **F12**.
+
+* **Record MNG**
+
+  Grava um vídeo em formato MNG sem áudio.
+
+	As teclas predefinidas são **F12** + **Shift Esq**.
+
+* **Record AVI**
+
+  Grava um vídeo em formato AVI.
+
+	A teclas predefinidas são **F12** + **Shift Esq**.
+
+* **Toggle cheat**
+
+  Habilita a trapaça no jogo.
+
+	A tecla predefinida é **F6**.
+
+* **Toggle autofire**
+
+  Habilita o modo turbo dos botões de tiro.
+
+	A tecla predefinida é **Nenhum**.
+
+* **UI up**
+
+  Move o cursor para cima.
+
+	A tecla predefinida é **Tecla cima** ou **Cima do controle**.
+
+* **UI down**
+
+  Move o cursor para baixo.
+
+	A tecla predefinida é **Tecla baixo** ou **Baixo do controle**.
+
+* **UI left**
+
+  Move o cursor para a esquerda.
+
+	A tecla predefinida é **Tecla esquerda** ou **Esquerda do
+	controle**.
+
+* **UI right**
+
+  Move o cursor para a direita.
+
+	A tecla predefinida é **Tecla direita** ou **Direita do controle**.
+
+* **UI home**
+
+  Move o cursor para o topo da lista.
+
+	A tecla predefinida é **Tecla home**.
+
+* **UI end**
+
+  Move o cursor para o fim da lista.
+
+	A tecla predefinida é **Tecla end**.
+
+* **UI page up**
+
+  Move o cursor para o topo da lista saltando 26 linhas por vez.
+
+	A tecla predefinida é **Tecla page up**.
+
+* **UI page down**
+
+  Move o cursor para o fim da lista saltando 26 linhas por vez.
+
+	A tecla predefinida é **Tecla page down**.
+
+* **UI select**
+
+  Tecla de seleção para qualquer item selecionável.
+
+	As teclas predefinidas são **Enter**, **Botão 0 do controle ou
+	**Tecla enter do teclado numérico**.
+
+* **UI cancel**
+
+  Tecla para cancelar qualquer ação.
+
+	A tecla predefinida é **Tecla escape ou esq**.
+
+* **UI Display comment**
+
+  Tecla para exibir comentário.
+
+	A tecla predefinida é **Tecla espaço**.
+
+* **UI clear**
+
+  Tecla para apagar/zerar uma opção.
+
+	A tecla predefinida é **Tecla delete ou del**.
+
+* **UI zoom in**
+
+  Tecla para aproximar (dar zoom) na interface. Ainda não funciona em
+  teclados ABNT, apenas em teclados tipo ANSI.
+
+	A tecla predefinida é **Tecla =**.
+
+* **UI zoom out**
+  Tecla para sair do zoom da interface. Ainda não funciona em
+  teclados ABNT, apenas em teclados tipo ANSI.
+
+	A tecla predefinida é **Tecla -**.
+
+* **UI previous group**
+
+  Faz a lista pular para o grupo anterior. Ainda não funciona em
+  teclados ABNT, apenas em teclados tipo ANSI.
+
+	A tecla predefinida é **[**. 
+
+* **UI next group**
+
+  Faz a lista pular para o próximo grupo. Ainda não funciona em
+  teclados ABNT, apenas em teclados tipo ANSI.
+
+	A tecla predefinida é **]**.
+
+* **UI rotate**
+
+  Rotaciona a interface.
+
+	A tecla predefinida é **R** (não funciona).
+
+* **Show profile**
+
+  Exibe o analisador de desempenho (não funciona).
+
+	A teclas predefinidas são **F11** + **Shift Esq**.
+
+* **UI Toggle**
+
+  Alterna a interface do usuário.
+
+	A tecla predefinida é **Screen lock**.
+
+* **UI paste text**
+
+  Cola texto na interface do usuário (não funciona).
+
+	As teclas predefinidas são **Screen lock** + **Shift Esq**.
+
+* **Toggle deugger**
+
+  Alterna o depurador.
+
+	A tecla predefinida é **F5**.
+
+* **Save state**
+
+  Salva o estado da máquina.
+
+	As teclas predefinidas são **F7** + **Shift Esq**.
+
+* **Load state**
+
+  Carrega o estado da máquina.
+
+	A tecla predefinida é **F7**.
+
+* **UI (First) tape start**
+
+  Inicia a fita na interface primária.
+
+	A tecla predefinida é **F2**.
+
+* **UI (First) tape stop**
+
+  Para a fita na interface primária.
+
+	As teclas predefinidas são **F2** + **Shift Esq**.
+
+* **UI external DAT view**
+
+  Exibe o DAT externo.
+
+	As teclas predefinidas são **Alt Esq** + **D** (não funciona).
+
+* **UI Add/Remove favorites**
+
+  Adiciona ou remove as máquinas dos favoritos.
+
+	As teclas predefinidas são **Alt Esq** + **F** (não funciona).
+
+* **UI export list**
+
+  Exporta a lista das máquinas em formato:
+
+	* **XML** igual ao comando **-listxml**.
+	* **XML** igual ao comando **-listxml** excluindo os dispositivos.
+	* **TXT** igual ao comando **-listfull**.
+
+* **UI Audit unavailable**
+* **UI Audit all**
+* **Toggle fullscreen**
+* **Toggle uneven stretch**
+* **Toggle keepaspect**
+* **Toggle filter**
+* **Decrease prescaling**
+* **Increase prescaling**
+* **Record rendered video**
 
 * **Player 1 ~ 10 controls**
 
