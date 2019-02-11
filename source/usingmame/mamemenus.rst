@@ -251,7 +251,11 @@ MAME.
 Personalizar a interface
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Aqui é possível personalizar a interface do MAME, entre as opções estão:
+Aqui é possível personalizar a interface do MAME, os valores numéricos
+podem ser alterados movendo o direcional para a esquerda e direita ou
+pressionando a tecla **Enter** e digitando o valor manualmente.
+
+As opções disponíveis são:
 
 * **Fontes**: Permite a customização da tipografia da interface, dentro
   desta opção temos:
@@ -1049,7 +1053,7 @@ Entradas gerais
 
   Tecla de seleção para qualquer item selecionável.
 
-	As teclas predefinidas são **Enter**, **Botão 0 do controle ou
+	As teclas predefinidas são **Enter**, **Botão 0 do controle** ou
 	**Tecla enter do teclado numérico**.
 
 * **UI cancel**
@@ -1170,6 +1174,8 @@ Entradas gerais
 	* **XML** igual ao comando **-listxml**.
 	* **XML** igual ao comando **-listxml** excluindo os dispositivos.
 	* **TXT** igual ao comando **-listfull**.
+
+	As teclas predefinidas são **Alt Esq** + **E**.
 
 * **UI Audit unavailable**
 
