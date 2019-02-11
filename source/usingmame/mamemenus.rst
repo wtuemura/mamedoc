@@ -10,6 +10,9 @@ O cardápio de opções do MAME
 
 .. contents:: :local:
 
+.. raw:: latex
+
+	\clearpage
 
 Caso você inicie o MAME sem nenhum parâmetro na linha de comando ou
 rodando ele com o clicar do mouse, um cardápio de opções será exibido,
@@ -1169,14 +1172,61 @@ Entradas gerais
 	* **TXT** igual ao comando **-listfull**.
 
 * **UI Audit unavailable**
+
+  Realiza uma auditoria das ROMs removendo as não disponíveis, o
+  resultado é salvo no arquivo **mame_avail.ini** dentro do diretório
+  **ui**.
+
+	A tecla predefinida é **F1**.
+
 * **UI Audit all**
+
+  Realiza uma auditoria de todas as ROMs, o resultado é salvo no arquivo
+  **mame_avail.ini** dentro do diretório **ui**.
+
+	As teclas predefinidas são **F1** + **Shift Esq**.
+
 * **Toggle fullscreen**
+
+  Alterna entre tela inteira e janela.
+
+	As teclas predefinidas são **Enter** + **Alt Esq**.
+
 * **Toggle uneven stretch**
+
+  Alterna entre poder esticar a tela com e sem proporção de tamanho.
+
+	As teclas predefinidas são **F3** + **Ctrl Esq**.
+
 * **Toggle keepaspect**
+
+  Alterna entre manter ou não a proporção da tela.
+
+	As teclas predefinidas são **F4** + **Ctrl Esq**.
+
 * **Toggle filter**
+
+  Alterna entre usar ou não o filtro na tela.
+
+	As teclas predefinidas são **F5** + **Ctrl Esq**.
+
 * **Decrease prescaling**
+
+  Reduz a pré-escala de dos pixels.
+
+	As teclas predefinidas são **F6** + **Ctrl Esq**.
+
 * **Increase prescaling**
+
+  Aumenta a pré-escala de dos pixels.
+
+	As teclas predefinidas são **F7** + **Ctrl Esq**.
+
 * **Record rendered video**
+
+  Grava o vídeo usando todos os efeitos e filtros ativos na tela.
+
+	As teclas predefinidas são **F12** + **Ctrl+Alt Esq**.
 
 * **Player 1 ~ 10 controls**
 
@@ -1709,13 +1759,156 @@ customizadas conforme a necessidade.
 * **Outros controles**
 
   Muda a configuração dos botões usados para crédito, serviço, inicio
-  de jogadores, etc.
+  de jogadores, etc. Abaixo a lista das opções predefinidas que podem
+  ser alteradas na própria interface do MAME.
+
++--------------------------------------+-------------------------------+
+|  1 Player start                      |  1                            |
++--------------------------------------+-------------------------------+
+|  2 Players start                     |  2                            |
++--------------------------------------+-------------------------------+
+|  3 Players start                     |  3                            |
++--------------------------------------+-------------------------------+
+|  4 Players start                     |  4                            |
++--------------------------------------+-------------------------------+
+|  5 Players start                     |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  6 Players start                     |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  7 Players start                     |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  8 Players start                     |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Coin 1                              |  5                            |
++--------------------------------------+-------------------------------+
+|  Coin 2                              |  6                            |
++--------------------------------------+-------------------------------+
+|  Coin 3                              |  7                            |
++--------------------------------------+-------------------------------+
+|  Coin 4                              |  8                            |
++--------------------------------------+-------------------------------+
+|  Coin 5                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Coin 6                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Coin 7                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Coin 8                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Coin 9                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Coin 10                             |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Coin 11                             |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Coin 12                             |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Bill1                               |  Backspace                    |
++--------------------------------------+-------------------------------+
+|  Service 1                           |  9                            |
++--------------------------------------+-------------------------------+
+|  Service 2                           |  0                            |
++--------------------------------------+-------------------------------+
+|  Service 3                           |  Tecla menos                  |
++--------------------------------------+-------------------------------+
+|  Service 4                           |  Tecla igual                  |
++--------------------------------------+-------------------------------+
+|  Tilt 1                              |  T                            |
++--------------------------------------+-------------------------------+
+|  Tilt 2                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Tilt 3                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Tilt 4                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Power On                            |  F1                           |
++--------------------------------------+-------------------------------+
+|  Power Off                           |  F2                           |
++--------------------------------------+-------------------------------+
+|  Service                             |  F2                           |
++--------------------------------------+-------------------------------+
+|  Tilt                                |  T                            |
++--------------------------------------+-------------------------------+
+|  Door interlock                      |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Memory reset                        |  F1                           |
++--------------------------------------+-------------------------------+
+|  Volume down                         |  Tecla menos                  |
++--------------------------------------+-------------------------------+
+|  Volume up                           |  Tecla igual                  |
++--------------------------------------+-------------------------------+
+|  Keypad                              |  Nenhum                       |
++--------------------------------------+-------------------------------+
+|  Keyboard                            |  None                         |
++--------------------------------------+-------------------------------+
+
+
 
 Opções avançadas
 ~~~~~~~~~~~~~~~~
 
+Opções de performance
+^^^^^^^^^^^^^^^^^^^^^
+
+* **Salto de quadros automático**
+* **Pulo de quadro** 0
+* **Suprimir**
+* **Dormir**
+* **Velocidade**
+* **Atualização de velocidade**
+
+Opções de rotação
+^^^^^^^^^^^^^^^^^
+
+* **Rotação**
+* **Rotacionar para direita**
+* **Rotacionar para esquerda**
+* **Auto rotacionar para direita**
+* **Auto rotacionar para esquerda**
+* **Giro X**
+* **Giro Y**
+
+Opções de Ilustrações
+^^^^^^^^^^^^^^^^^^^^^
+
+* **Recorte da ilustração**
+* **Usar plano de fundo**
+* **Usar sobreposições**
+* **Usar molduras**
+* **Usar painéis de controle**
+* **Usar marquises**
+
+Opções de Estado/Playback
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* **Salvar/Restaurar Automático**
+* **Retroceder**
+* **Função de rebobinamento**
+* **Retrato biliniar**
+* **Burn-in**
+
+Opções de Entrada
+^^^^^^^^^^^^^^^^^
+
+* **Trava da ficha**
+* **Mouse**
+* **Controle**
+* **Pistola de luz**
+* **Teclado múltiplo**
+* **Mouse múltiplo**
+* **Steadykey**
+* **IU ativa**
+* **Recarga fora da tela**
+* **Zona morta do controle**
+* **Saturação do controle**
+* **Teclado natural**
+* **Direção simultânea**
+* **Impulso de ficha**
+
 Salvar Configuração
 ~~~~~~~~~~~~~~~~~~~
+
+Salva todas as configurações no seu arquivo mame.ini, ui.ini, etc.
 
 Voltar ao menu anterior
 ~~~~~~~~~~~~~~~~~~~~~~~
