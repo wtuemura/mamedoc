@@ -1247,7 +1247,7 @@ Opções relacionadas a performance e a velocidade da emulação
 
 .. _mame-commandline-numprocessors:
 
-**-numprocessors** <*auto|valor*> / **-np** <*auto|valor*>
+**-numprocessors** / **-np** <*auto|valor*>
 
 	Define a quantidade de núcleos do processador a serem usados.
 	A opção **auto** usará a quantidade de núcleos informada pelo seu
