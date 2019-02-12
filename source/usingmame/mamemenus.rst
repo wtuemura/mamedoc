@@ -1848,7 +1848,9 @@ customizadas conforme a necessidade.
 |  Keyboard                            |  None                         |
 +--------------------------------------+-------------------------------+
 
+.. raw:: latex
 
+	\clearpage
 
 Opções avançadas
 ~~~~~~~~~~~~~~~~
@@ -1857,64 +1859,276 @@ Opções de performance
 ^^^^^^^^^^^^^^^^^^^^^
 
 * **Salto de quadros automático**
-* **Pulo de quadro** 0
-* **Suprimir**
+
+  Ignora quadros de forma automática visando manter a velocidade da
+  emulação.
+
+	Valor predefinido é **Desligado**
+
+* **Salto de quadro**
+
+  Define uma quantidade fixa de quadros a serem ignorados visando manter
+  a velocidade da emulação.
+
+	Valor predefinido são **0** quadros.
+
+* **Supressão de velocidade**
+
+  Habilita a supressão de velocidade da emulação para que a máquina
+  emulada rode em sua velocidade nativa ao invés da velocidade do
+  processador em que a máquina está sendo emulada.
+
+	Valor predefinido é **Ligado**
+
 * **Dormir**
+
+  Reduz o consumo de processamento quando o MAME estiver parado sem
+  fazer nada.
+
+	Valor predefinido é **Ligado**
+
 * **Velocidade**
+
+  Controla a velocidade do jogo com relação ao tempo de emulação.
+
+	Valor predefinido é **1**
+
 * **Atualização de velocidade**
+
+  Controla a velocidade da emulação de forma automática mantendo a taxa
+  de atualização de tela mais lenta em referência com a taxa de
+  atualização de tela do computador que está rodando a emulação.
+
+	Valor predefinido é **Desligado**
 
 Opções de rotação
 ^^^^^^^^^^^^^^^^^
 
 * **Rotação**
+
+  Permite que a orientação da tela mude conforme a orientação de tela do
+  jogo.
+
+	Valor predefinido é **Ligado**
+
 * **Rotacionar para direita**
+
+  Rotacione a tela em 90 graus sentido horário.
+
+	Valor predefinido é **Desligado**
+
 * **Rotacionar para esquerda**
+
+  Rotacione a tela em 90 graus sentido anti-horário.
+
+	Valor predefinido é **Desligado**
+
 * **Auto rotacionar para direita**
+
+  Rotacione automaticamente a tela em 90 graus sentido horário caso
+  a tela esteja orientada verticalmente.
+
+	Valor predefinido é **Desligado**
+
 * **Auto rotacionar para esquerda**
+
+  Rotacione automaticamente a tela em 90 graus sentido anti-horário
+  caso a tela esteja orientada verticalmente.
+
+	Valor predefinido é **Desligado**
+
 * **Giro X**
+
+  Inverte a tela da esquerda para a direita.
+
+	Valor predefinido é **Desligado**
+
 * **Giro Y**
+
+  Inverte a tela da direita para a esquerda.
+
+	Valor predefinido é **Desligado**
+
 
 Opções de Ilustrações
 ^^^^^^^^^^^^^^^^^^^^^
 
 * **Recorte da ilustração**
+
+  Recorta a imagem usada como ilustração de forma que ocupe toda a tela
+  emulada em apenas um eixo.
+
+	Valor predefinido é **Desligado**
+
 * **Usar plano de fundo**
+
+  Permite o uso de uma imagem de plano de fundo caso exista um arquivo
+  de plano de fundo disponível.
+
+	Valor predefinido é **Ligado**
+
 * **Usar sobreposições**
+
+  Permite o uso de uma imagem de sobreposição na tela caso exista um
+  arquivo de sobreposição disponível.
+
+	Valor predefinido é **Ligado**
+
 * **Usar molduras**
+
+  Permite o uso de uma imagem de moldura na tela caso exista um arquivo
+  de moldura disponível.
+
+	Valor predefinido é **Ligado**
+
 * **Usar painéis de controle**
+
+  Permite o uso de uma imagem na de painel de controle na tela caso
+  exista um arquivo de painel de controle disponível.
+
+	Valor predefinido é **Ligado**
+
 * **Usar marquises**
+
+  Permite o uso de uma imagem de marquise na tela caso exista um
+  arquivo de marquise disponível.
+
+	Valor predefinido é **Ligado**
 
 Opções de Estado/Playback
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **Salvar/Restaurar Automático**
+
+  Em sistema compatíveis, carrega automaticamente o estado da máquina e
+  a salva ao sair.
+
+	Valor predefinido é **Desligado**
+
 * **Retroceder**
+
+  Habilita o rebobinamento do estado da máquina.
+
+	Valor predefinido é **Desligado**
+
 * **Função de rebobinamento**
-* **Retrato biliniar**
+
+  Reserva uma memória para rebobinamento em Megabytes.
+
+	Valor predefinido é **100**
+
+* **Retrato bilinear**
+
+  Define se os vídeos ou instantâneos de tela terão o filtro aplicado.
+
+	Valor predefinido é **Ligado**
+
 * **Burn-in**
+
+  Cria instantâneos de tela com marcas de tela queimada.
+
+	Valor predefinido é **Desligado**
 
 Opções de Entrada
 ^^^^^^^^^^^^^^^^^
 
-* **Trava da ficha**
+* **Ignora ficha**
+
+  Faz com que a máquina ignore a inserção de fichas em momentos em que
+  a máquina não está pronta para recebê-las.
+
+	Valor predefinido é **Ligado**
+
 * **Mouse**
+
+  Permite o uso de um mouse nas máquinas.
+
+	Valor predefinido é **Desligado**
+
 * **Controle**
+
+  Permite o uso de um controle nas máquinas.
+
+	Valor predefinido é **Ligado**
+
 * **Pistola de luz**
+
+  Habilita o uso do uma pistola de luz.
+
+	Valor predefinido é **Desligado**
+
 * **Teclado múltiplo**
+
+  Permite o uso de mais de um teclado para cada entrada compatível.
+
+	Valor predefinido é **Desligado**
+
 * **Mouse múltiplo**
+
+  Permite o uso de mais de um mouse para cada entrada compatível.
+
+	Valor predefinido é **Desligado**
+
 * **Steadykey**
+
+  Alguns sistemas exigem que dois ou mais botões sejam pressionados
+  exatamente ao mesmo tempo para realizar movimentos ou comandos
+  especiais. Devido a limitação do hardware do teclado, pode ser difícil
+  ou até mesmo impossível de realizar usando um teclado comum. Essa
+  opção seleciona diferentes modos de manuseio o que torna mais fácil
+  registrar o pressionamento simultâneo das teclas, porém tem a
+  desvantagem de deixar a sua capacidade de resposta mais lenta.
+
+	Valor predefinido é **Desligado**
+
 * **IU ativa**
+
+  Habilita a opção para que a interface do usuário se sobreponha a do
+  teclado emulado caso esteja presente.
+
+	Valor predefinido é **Desligado**
+
 * **Recarga fora da tela**
+
+  Converte o botão 2 da pistola de luz como recarga fora da tela.
+
+	Valor predefinido é **Desligado**
+
 * **Zona morta do controle**
+
+  Permite fazer o ajuste fino do ponto morto do controle ou manche.
+
+	Valor predefinido é **0.3**
+
 * **Saturação do controle**
+
+  Faz o ajuste findo do eixo de fim de curso do controle.
+
+	Valor predefinido é **0.85**
+
 * **Teclado natural**
+
+  Habilita ou não o uso de um teclado natural.
+
+	Valor predefinido é **Desligado**
+
 * **Direção simultânea**
+
+  Aceita a entrada de comandos contraditórios e simultâneos no controle
+  digital como esquerda e direita ou cima e baixo ao mesmo tempo.
+
+	Valor predefinido é **Desligado**
+
 * **Impulso de ficha**
+
+  Define o tempo de impulso da ficha.
+
+	Valor predefinido é **0**
 
 Salvar Configuração
 ~~~~~~~~~~~~~~~~~~~
 
-Salva todas as configurações no seu arquivo mame.ini, ui.ini, etc.
+Salva todas as alterações feitas.
 
 Voltar ao menu anterior
 ~~~~~~~~~~~~~~~~~~~~~~~
