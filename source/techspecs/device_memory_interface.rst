@@ -80,7 +80,7 @@ máquina, após a declaração de dispositivo:
 | **MCFG_DEVICE_PROGRAM_MAP**\ *(_map)*
 | **MCFG_DEVICE_DATA_MAP**\ *(_map)*
 | **MCFG_DEVICE_IO_MAP**\ *(_map)*
-| **MCFG_DEVICE_DECRYPTED_OPCODES_MAP**\ *(_map)*
+| **MCFG_DEVICE_OPCODES_MAP**\ *(_map)*
 
 A macro genérica e as quatro associações específicas associadas a um
 mapa para um espaço dado. Endereços mapeados associados com espaços não
