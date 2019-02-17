@@ -948,7 +948,7 @@ Entradas gerais
 * **Throttle**
 
   Acelerador da emulação, faz a emulação rodar cerca de 3x mais rápido
-  que o norma.
+  que o normal, não funciona em versões SDL.
 
 	A tecla predefinida é **F10**.
 
