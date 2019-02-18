@@ -639,13 +639,23 @@ Usando ferramentas de compilação alternativas
 
 **OVERRIDE_CC**
 
-  Define o compilador C/Objective-C.
+  Define o compilador C/Objective-C avulso ou para um compilador voltado
+  para um sistema em específico. 
 
 .. _mame-compilation-override_cxx:
 
 **OVERRIDE_CXX**
 
-  Define o compilador C++/Objective-C++.
+  Define o compilador C++/Objective-C++ avulso ou para um compilador
+  voltado para um sistema em específico.
+
+.. _mame-compilation-override_ld:
+
+**OVERRIDE_LD**
+
+  Define o comando para o lincador, caso o seu ambiente esteja
+  corretamente configurado não é necessário lidar com ele, mesmo em
+  compilação cruzada.
 
 .. _mame-compilation-python_executable:
 
@@ -653,6 +663,13 @@ Usando ferramentas de compilação alternativas
 
   Define o interpretador Python. Para compilar o MAME é necessário ter
   o Python versão *2.7*, *3* ou mais recente.
+
+.. _mame-compilation-cross_build:
+
+**CROSS_BUILD**
+
+  Defina como **1** para que o lincador e o compilador fiquem isolados
+  do sistema hospedeiro.
 
 .. _mame-compilation-optional-resources:
 
@@ -793,16 +810,16 @@ Recursos opcionais
 	Opções adicionais que serão passadas ao compilador ao compilar
 	arquivos de código fonte em linguagem C++.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-compilation-archopts-objc:
 
 **ARCHOPTS_OBJC**
 
 	Opções adicionais que serão passadas ao compilador ao compilar
 	arquivos de código fonte Objective-C.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-compilation-archopts-objcxx:
 
@@ -872,14 +889,14 @@ Sede das bibliotecas e framework
 	Defina como **1** caso prefira usar a biblioteca PortMidi instalada
 	no seu sistema ao invés de usar a versão fornecida pelo MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 **USE_SYSTEM_LIB_PORTAUDIO**
 
 	Defina como **1** caso prefira usar a biblioteca PortAudio do seu
 	sistema ao invés de usar a versão fornecida pelo MAME.
-
-.. raw:: latex
-
-	\clearpage
 
 **USE_BUNDLED_LIB_SDL2**
 

@@ -142,19 +142,19 @@ Para compilar uma versão *64-bit* do MAME para o **Windows**, execute o
 comando abaixo, lembrando que o comando deve ser executado de dentro da
 pasta raiz [4]_ do código fonte do MAME: ::
 
-	make clean && make TARGETOS=windows SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1
+	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1
 
 Caso você queira compilar uma versão *32-bit* do MAME faça o comando
 abaixo: ::
 
-	make clean && make TARGETOS=windows SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1
+	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1
 
 Assim como na compilação nativa, você pode adicionar a opção **-j** no
 final do comando visando acelerar o processo de compilação usando os
 núcleos do seu processador como já foi explicado com mais detalhes no
 capítulo :ref:`compiling-mame`: ::
 
-	make clean && make TARGETOS=windows SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
+	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
 
 **PTR64=1**
 
