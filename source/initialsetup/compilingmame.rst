@@ -1461,7 +1461,7 @@ você deve antes de mais nada verificar e ter certeza se
 ambiente para saber se ``_FORTIFY_SOURCE`` está predefinido com o
 comando abaixo: ::
 
-	gcc -dM -E - | grep _FORTIFY_SOURCE
+	gcc -dM -E - < /dev/null | grep _FORTIFY_SOURCE
 
 Caso ``_FORTIFY_SOURCE`` já esteja predefinido com um valor diferente de
 zero, é possível usar uma solução paleativa com ``-U_FORTIFY_SOURCE``.
