@@ -144,8 +144,9 @@ Há alguns pontos importantes que você precisa saber.
   
 	**mame0205** - É a versão atual do MAME.
 
-	**540** - Indica a quantidade de *commits* (envios) feitos desde a
-	última mudança de versão.
+	**540** - Indica a quantidade de *commits* ou a quantidade de
+	atualizações aplicadas ao código fonte desde a última mudança de
+	versão.
 
 	**gc8e4dab20c** - São os primeiros 10 dígitos do último *commit*.
 
@@ -949,7 +950,7 @@ Configurando o pacote MSYS2 já pronto
 
   Após a configuração inicial do MSYS2 e antes de compilar o MAME é
   **obrigatório** a atualização de todo o ambiente usando o comando:
-  
+
 	``pacman -Syu``
 
   Caso encontre algum problema veja :ref:`compiling-issues-MSYS2`. Ao
@@ -1032,6 +1033,10 @@ configuração, execute o comando a seguir para atualizar a estrutura
 básica do seu MSYS2:
 
 	**pacman -Syu**
+
+.. raw:: latex
+
+	\clearpage
 
 Caso ocorra algum erro do tipo **GPGME error**, veja 
 :ref:`compiling-issues-MSYS2`. Ao final, **feche a janela** e

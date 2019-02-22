@@ -62,7 +62,7 @@ Configurações para o mapeamento de teclado
 
 **-keymap**
 
-	Ativa o mapa de teclado.
+	Permite que você habilite o uso de um mapa de teclado customizado.
 
 		O valor predefinido é **Desligado** (**-nokeymap**).
 
@@ -70,7 +70,15 @@ Configurações para o mapeamento de teclado
 
 **-keymap_file** <*file*>
 	
-	Nome do aquivo de mapa de teclado.
+	Use em conjunto com com **-keymap**, permite que você escolha um
+	arquivo com um mapa de teclado customizado, atualmente o MAME já vem
+	com um mapa de teclado para o teclado ABNT2 chamado
+	**km_br_LINUX.map** no diretório **keymaps**. Um mapa é útil para
+	que o mapeamento das teclas já predefinidas coincidam com o mapa de
+	um teclado ABNT2 por exemplo, assim a tecla **~** (til) que fica
+	acima da tecla TAB no teclado ANSI Americano pode ser remapeado para
+	a tecla que fica do lado direito da tecla **Ç** (cê-cedilha) em um
+	teclado ABNT2.
 	
 	O valor predefinido é **keymap.dat**.
 

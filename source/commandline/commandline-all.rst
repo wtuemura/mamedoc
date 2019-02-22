@@ -596,6 +596,10 @@ Opções para a configuração dos diretórios principais
 		O valor predefinido é **hash** (isto é, um diretório chamado
 		**hash** no diretório raiz do MAME).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-samplepath:
 
 **-samplepath** / **-sp** <*caminho*>
@@ -606,10 +610,6 @@ Opções para a configuração dos diretórios principais
 
 		O valor predefinido é **samples** (isto é, um diretório chamado
 		**samples** no diretório raiz do MAME).
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-artpath:
 
@@ -682,6 +682,10 @@ Opções para a configuração dos diretórios principais
 
 		O valor predefinido é **cheat** (isto é, uma pasta chamada
 		**cheat**, localizada no diretório raiz do MAME).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-crosshairpath:
 
@@ -1054,15 +1058,15 @@ Opções para instantâneos de tela
 	
 	Alguns exemplos:
 
-	* Caso use ``mame robby -snapname foo/%g%i`` os instantâneos serão
-	  salvos como ``snaps\foo\robby0000.png``,
+	* Caso use ``mame.exe robby -snapname foo/%g%i`` os instantâneos
+	  serão salvos como ``snaps\foo\robby0000.png``,
 	  ``snaps\foo\robby0001.png`` e assim por diante.
 
 	* Caso use ``mame nes -cart robby -snapname %g/%d_cart`` os
 	  instantâneos serão salvos como ``snaps\nes\robby.png``.
 
 	* No caso deste outro exemplo,
-	  ``mame c64 -flop1 robby -snapname %g/%d_flop1/%i`` estes serão
+	  ``mame.exe c64 -flop1 robby -snapname %g/%d_flop1/%i`` estes serão
 	  salvos como ``snaps\c64\robby\0000.png``.
 
 .. _mame-commandline-snapsize:
@@ -1503,6 +1507,10 @@ Opções para a configuração de vídeo
 	
 		O valor predefinido é **Ligado** (**-unevenstretch**).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-unevenstretchx:
 
 **-[no]unevenstretchx** / **-[no]uesx**
@@ -1588,6 +1596,10 @@ Opções para a configuração de vídeo
 	
 	Rode o **MAME SDL** com a opção ``-video opengl`` para aumentar as
 	suas chances de sucesso.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-syncrefresh:
 
@@ -2181,10 +2193,11 @@ Opções para a configuração do áudio
 	latência é possível melhorar esse problema.
 	
 		O valor predefinido é **1** (significando inferior=1/5 e
-		superior=2/5). Para manter a memória intermédia sempre cheia entre
-		2/5 e 3/5, defina o valor para **2** (``-audio_latency 2``).
-		Caso você exagere nesse valor, como **4** por exemplo, você um
-		notará um atraso significativo no som.
+		superior=2/5). Para manter a memória intermédia sempre cheia
+		entre 2/5 e 3/5, defina o valor para **2**
+		(``-audio_latency 2``).
+		Caso exagere nesse valor, como **4** por exemplo, será possível
+		notar um atraso significativo no áudio.
 
 .. raw:: latex
 
@@ -2523,6 +2536,10 @@ Opções para as configurações de diferentes entradas
 	consideradas os espelhos cima/baixo das três primeiras linhas, dando
 	três linhas finais de 111222333.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-joystickdeadzone:
 
 **-joystick_deadzone** / **-joy_deadzone** / **-jdz** <*valor*>
@@ -2766,6 +2783,10 @@ Opções voltadas para a depuração
 
 	O valor predefinido é **Desligado** (**-noupdate_in_pause**).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-watchdog:
 
 **-watchdog** <*tempo*> / **-wdog** <*tempo*>
@@ -2780,10 +2801,6 @@ Opções voltadas para a depuração
 	suficientes.
 
 		Nenhum watchdog vem habilitado.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-debuggerfont:
 
@@ -2996,9 +3013,15 @@ Opções diversas
 
 	Salva o conteúdo da NVRAM ao sair da emulação. Caso essa opção seja
 	desligada, o conteúdo que foi gravado anteriormente não será apagado
-	e qualquer alteração atual não será gravada.
+	e qualquer alteração atual não será gravada. Ao desabilitar essa
+	função suprime incondicionalmente o salvamento de arquivos .nv
+	associados com alguns tipos de programas usados em cartuchos.
 	
 		O valor predefinido é **Ligado** (**-nvram_save**)
+
+.. raw:: latex
+
+	\clearpage
 
 Opções para uso com script
 --------------------------

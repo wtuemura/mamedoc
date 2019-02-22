@@ -117,9 +117,8 @@ necessário aferir a configuração para que se tenha certeza de que as
 variáveis estão definidas no ambiente corretamente fazendo o comando
 abaixo:
 
-|	``$ echo $MINGW64``
+|	``$ echo $MINGW64 && echo $MINGW32``
 |	``/usr/x86_64-w64-mingw32``
-|	``$ echo $MINGW32``
 |	``/usr/i686-w64-mingw32``
 
 Caso o seu ambiente não tenha retornado nada, tenha certeza de que as
