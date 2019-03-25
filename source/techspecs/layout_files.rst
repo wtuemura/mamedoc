@@ -1076,16 +1076,22 @@ mostradores digitais podem ser conectados nas saídas emuladas: ::
     <cpanel name="digit1" element="digit"><bounds x="256" y="16" width="48" height="80" /></cpanel>
 
 Caso um elemento justifique um elemento de layout e tenha ambos os
-atributos ``inputtag`` e ``inputmask`` mas faltar um nome de atributo
+atributos ``inputtag`` e ``inputmask`` porém faltar um nome de atributo
 ``name``, ele usará o seu estado com base no valor correspondente da
-porta I/O mascarada com os valores do atributo ``inputmask``,
-transferindo-se para a direita para que o valor do bit com menos
-importância da máscara se alinhe com o valor de menor importância (uma
-máscara **0x05** não causará nenhuma transferência, já uma máscara
-**0xb0** resultará em um deslocamento à direita e a transferência de
-4 bits, por exemplo).
-Isso costuma ser usado para permitir que os botões clicáveis e
-chaves alavanca [9]_ retornem sinais visíveis.
+porta I/O mascarada com o valor do atributo ``inputmask`` onde será
+aplicado um operador lógico XOR junto com os valores predefinidos da
+porta I/O. Este último é importante para entradas que estão em um estado
+baixo. Caso o resultado seja não zero, o estado se torna 1, caso
+contrário será 0. Em geral é útil para permitir botões que sejam
+clicáveis e chaves interruptoras [9]_ que proveem um retorno visível na
+tela.
+
+É possível obter raw data através da porta I/O ao se utilizar
+o elemento ``inputraw="1"`` e mascarado com o ``inputmask`` deslocado
+(shifted) para a direita para que o valor do bit com menos relevância da
+máscara se alinhe com o bit de menor valor relevante (uma máscara
+**0x05** não causará nenhum deslocamento, já uma máscara **0xb0**
+resultará em um valor com 4 bits deslocado para a direita por exemplo).
 
 O MAME trata todos os elementos do layout como sendo retangulares ao
 lidar com a entrada do mouse habilitando apenas o elemento mais à frente
@@ -1499,5 +1505,5 @@ mostra o exemplo abaixo: ::
 		caça niqueis. (Nota do tradutor)
 .. [8]	`Aqui <https://www.youtube.com/watch?v=-rrP4Prx1rc>`_ um exemplo
 		destes mostradores. (Nota do tradutor)
-.. [9]	Toggle switches, também é conhecido como chave interruptor.
+.. [9]	Toggle switches, também é conhecido como chave alavanca.
 		(Nota do tradutor)
