@@ -1086,12 +1086,11 @@ contrário será 0. Em geral é útil para permitir botões que sejam
 clicáveis e chaves interruptoras [9]_ que proveem um retorno visível na
 tela.
 
-É possível obter raw data através da porta I/O ao se utilizar
-o elemento ``inputraw="1"`` e mascarado com o ``inputmask`` deslocado
-(shifted) para a direita para que o valor do bit com menos relevância da
-máscara se alinhe com o bit de menor valor relevante (uma máscara
-**0x05** não causará nenhum deslocamento, já uma máscara **0xb0**
-resultará em um valor com 4 bits deslocado para a direita por exemplo).
+É possível obter raw data através da porta I/O mascarado com
+o valor de ``inputmask`` e deslocado (shifted) para a direita para
+eliminar os zeros (uma máscara **0x05** não causará nenhum deslocamento,
+enquanto uma máscara **0xb0** resultará com o deslocamento do valor em 4
+bits para a direita por exemplo).
 
 O MAME trata todos os elementos do layout como sendo retangulares ao
 lidar com a entrada do mouse habilitando apenas o elemento mais à frente
