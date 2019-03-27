@@ -201,6 +201,25 @@ Há alguns pontos importantes que você precisa saber.
   código fonte do MAME, isso incluí o seu **useroptions.mak** ou
   qualquer outro arquivo.
 
+  Vamos supor que o arquivo abaixo foi alterado para testar uma correção
+  ou algo do tipo: ::
+
+	git status
+	On branch master
+	Your branch is up-to-date with 'origin/master'.
+	Changes not staged for commit:
+	(use "git add <file>..." to update what will be committed)
+	(use "git checkout -- <file>..." to discard changes in working directory)
+
+		modified:   scripts/src/osd/sdl_cfg.lua
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+  Para restaurar o arquivo para o seu estado original execute o comando
+  abaixo: ::
+
+	git checkout master -- scripts/src/osd/sdl_cfg.lua
+
 .. _compiling-practical-examples:
 
 Exemplos práticos para todas as plataformas
