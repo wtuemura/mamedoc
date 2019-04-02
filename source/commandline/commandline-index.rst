@@ -421,6 +421,10 @@ Configurações para o mapeamento do mouse (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`mouse_index <mame-scommandline-mouseindex>`
 
+Configurações para o mapeamento do teclado (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+| :ref:`mouse_index <mame-scommandline-keybidx>`
+
 Opções para a configuração dos drivers SDL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

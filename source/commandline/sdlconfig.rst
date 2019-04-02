@@ -127,6 +127,22 @@ Faça o mapeamento do mouse para uma das 8 entradas.
 
 		O valor predefinido é **auto**.
 
+Configurações para o mapeamento do teclado
+------------------------------------------
+
+.. _mame-scommandline-keybidx:
+
+::
+
+	-keyb_idx1
+	-keyb_idx2
+	...
+	-keyb_idx8
+
+Faça o mapeamento do teclado para uma das 8 entradas.
+
+		O valor predefinido é **auto**.
+
 Opções para a configuração dos drivers
 -------------------------------------- 
 
