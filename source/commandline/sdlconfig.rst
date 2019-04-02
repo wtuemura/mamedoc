@@ -123,6 +123,15 @@ Opções para a configuração dos drivers
 	
 		O valor predefinido é **auto**
 
+.. _mame-scommandline-renderdriver:
+
+**-renderdriver** <*driver*>
+
+	Define o driver de renderização SDL a ser usado (**software**,
+	**opengl**, **directfb** ou **auto**).
+	
+		O valor predefinido é **auto**
+
 .. _mame-scommandline-audiodriver:
 
 **-audiodriver** <*driver*>

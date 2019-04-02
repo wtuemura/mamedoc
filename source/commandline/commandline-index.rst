@@ -422,6 +422,7 @@ Opções para a configuração dos drivers SDL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`videodriver <mame-scommandline-videodriver>`
+| :ref:`renderdriver <mame-scommandline-renderdriver>`
 | :ref:`audiodriver <mame-scommandline-audiodriver>`
 | :ref:`gl_lib <mame-scommandline-gllib>`
 
