@@ -52,6 +52,11 @@ Opções para listagem
 | :ref:`listsoftware <mame-commandline-listsoftware>`
 | :ref:`getsoftlist <mame-commandline-getsoftlist>`
 
+.. raw:: latex
+
+	\clearpage
+
+
 Opções relacionadas ao que é exibido na tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -376,6 +381,10 @@ Opções para a entrada de controle para o Windows
 
 | :ref:`[no]dual_lightgun <mame-wcommandline-duallightgun>`
 
+.. raw:: latex
+
+	\clearpage
+
 
 Configurações específicas para versões SDL
 ------------------------------------------
@@ -430,8 +439,13 @@ Configurações para o mapeamento do teclado (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`mouse_index <mame-scommandline-keybidx>`
 
-Opções para a configuração dos drivers SDL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. raw:: latex
+
+	\clearpage
+
+
+Opções para a configuração dos drivers (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`videodriver <mame-scommandline-videodriver>`
 | :ref:`renderdriver <mame-scommandline-renderdriver>`
