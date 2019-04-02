@@ -228,6 +228,8 @@ Alterando as configurações
 
 	Use um arquivo LUT para aplicar diferentes efeitos de textura.
 
+		O Valor predefinido é **nenhum**
+
 **bgfx_avi_name**
 
 	Essa opção permite que você possa definir um nome de arquivo AVI
