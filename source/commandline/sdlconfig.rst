@@ -41,8 +41,19 @@ Opções de vídeo
 		O valor predefinido é **Ligado** (**-centerv**).
 
 
-Configurações de tipos de espaços de cor para vídeo
----------------------------------------------------
+Configuração para tela inteira
+------------------------------
+
+.. _mame-scommandline-useallheads:
+
+**-useallheads**
+
+	Partilha a tela inteira com diferentes monitores.
+
+		O valor predefinido é **none** (nenhum).
+
+Configuração para diferentes tipos de espaços de cor para vídeo
+---------------------------------------------------------------
 
 .. _mame-scommandline-scalemode:
 
@@ -54,6 +65,10 @@ Configurações de tipos de espaços de cor para vídeo
 
 		O valor predefinido é **none** (nenhum).
 
+
+.. raw:: latex
+
+	\clearpage
 
 Configurações para o mapeamento de teclado
 ------------------------------------------
@@ -82,9 +97,6 @@ Configurações para o mapeamento de teclado
 	
 	O valor predefinido é **keymap.dat**.
 
-.. raw:: latex
-
-	\clearpage
 
 Configurações para o mapeamento de controle joystick
 ----------------------------------------------------

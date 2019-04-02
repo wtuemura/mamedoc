@@ -391,15 +391,20 @@ Opções relacionadas a performance (SDL)
 | :ref:`sdlvideofps <mame-scommandline-sdlvideofps>`
 
 
-Opções de vídeo SDL
-~~~~~~~~~~~~~~~~~~~
+Opções de vídeo (SDL)
+~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]centerh <mame-scommandline-centerh>`
 | :ref:`[no]centerv <mame-scommandline-centerv>`
 
 
-Configurações de tipos de espaços de cor para vídeo (SDL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuração para tela inteira (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+| :ref:`useallheads <mame-scommandline-useallheads>`
+
+
+Configuração para diferentes tipos de espaços de cor para vídeo (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`scalemode <mame-scommandline-scalemode>`
 
