@@ -227,8 +227,10 @@ Alterando as configurações
 Customizando as configurações de bgfx hlsl dentro do MAME
 ---------------------------------------------------------
 
-**Aviso:** *As configurações bgfx hlsl não são gravados ou lidas de
-qualquer arquivo de configuração. É esperado que isso mude no futuro.*
+.. note::
+
+	*As configurações bgfx hlsl não são gravados ou lidas de
+	qualquer arquivo de configuração. É esperado que isso mude no futuro.*
 
 Comece rodando o MAME com o jogo de sua preferência (**mame pacman** por
 exemplo)
