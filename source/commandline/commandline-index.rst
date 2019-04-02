@@ -417,6 +417,9 @@ Configurações para o mapeamento de controle joystick (SDL)
 | :ref:`joyidx <mame-scommandline-joyidx>`
 | :ref:`sixaxis <mame-scommandline-sixaxis>`
 
+Configurações para o mapeamento do mouse (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+| :ref:`mouse_index <mame-scommandline-mouseindex>`
 
 Opções para a configuração dos drivers SDL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

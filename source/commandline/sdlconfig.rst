@@ -111,6 +111,22 @@ Nome do controle joystick mapeado para um determinado slot de joystick.
 
 		O valor predefinido é **Desligado** (**-nosixaxis**)
 
+Configurações para o mapeamento do mouse
+----------------------------------------
+
+.. _mame-scommandline-mouseindex:
+
+::
+
+	-mouse_index1
+	-mouse_index2
+	...
+	-mouse_index8
+
+Faça o mapeamento do mouse para uma das 8 entradas.
+
+		O valor predefinido é **auto**.
+
 Opções para a configuração dos drivers
 -------------------------------------- 
 
