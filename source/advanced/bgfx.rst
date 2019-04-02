@@ -224,6 +224,23 @@ Alterando as configurações
 	Especifica o arquivo PNG para ser usado como efeito de máscara de
 	sombra. Por definição o nome do arquivo é ``slot-mask.png``.
 
+**bgfx_lut**
+
+	Use um arquivo LUT para aplicar diferentes efeitos de textura.
+
+**bgfx_avi_name**
+
+	Essa opção permite que você possa definir um nome de arquivo AVI
+	para gravar o vídeo da máquina emulada com os efeitos
+	``-bgfx_avi_name pacman.avi`` por exemplo.
+
+		O Valor predefinido é **auto**
+
+.. raw:: latex
+
+	\clearpage
+
+
 Customizando as configurações de bgfx hlsl dentro do MAME
 ---------------------------------------------------------
 
