@@ -1251,7 +1251,7 @@ Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
 problemas, certifique-se que você tenha a versão mais recente. ::
 
-	sudo dnf install gcc gcc-c++ SDL2-devel SDL2_ttf-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel
+	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`.
