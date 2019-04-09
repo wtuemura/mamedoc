@@ -1414,8 +1414,8 @@ Opções para a configuração de vídeo
 	* **soft**
 
 	  Faz com que a tela seja renderizada através de software.
-	  Por não usar nenhum tipo de aceleração de vídeo a performance da
-	  emulação pode ser penalizada, porém favorece uma melhor
+	  Por não usar nenhum tipo de aceleração de vídeo, a performance da
+	  emulação pode ser penalizada, porém favorecendo uma melhor
 	  compatibilidade em qualquer plataforma.
 
 * **Predefinições:**
