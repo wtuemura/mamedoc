@@ -1251,7 +1251,7 @@ Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
 problemas, certifique-se que você tenha a versão mais recente. ::
 
-	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel
+	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`.
@@ -1265,7 +1265,7 @@ Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
 problemas, certifique-se que você tenha a versão mais recente. ::
 
-	sudo apt-get install git build-essential python libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default
+	sudo apt-get install git build-essential python libXi-devel libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`
@@ -1278,7 +1278,7 @@ Arch Linux
 Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. ::
 
-	sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5
+	sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5 libxi
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`
