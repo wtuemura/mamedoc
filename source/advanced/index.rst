@@ -11,3 +11,4 @@ CONFIGURAÇÕES AVANÇADAS
 	hlsl
 	glsl
 	devicemap
+	lightguns
