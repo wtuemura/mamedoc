@@ -138,6 +138,10 @@ A base de referência usada aqui é o Debian e Ubuntu, talvez alguns
 ajustes na configuração sejam necessárias para outros sistemas Linux, no
 entanto este apanhado geral serve como um guia do que precisa ser feito.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _pistola-config-udev:
 
 Configuração das regras para udev

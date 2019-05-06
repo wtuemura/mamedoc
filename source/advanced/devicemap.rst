@@ -47,6 +47,7 @@ Exemplo de configuração
 
 ::
 
+	<!-- Veja uma versão deste arquivo aqui https://pastebin.com/fTbEsANJ -->
 	<mameconfig version="10">
 	<system name="default">
 		<input>
@@ -59,7 +60,9 @@ Exemplo de configuração
 				JOYCODE_1_YAXIS_UP_SWITCH OR KEYCODE_8PAD
 			</newseq>
 		</port>
-	...
+		</input>
+	</system>
+	</mameconfig>
 
 Acima especificamos quatro mapeamentos de dispositivos, **GUNCODE 1/2**
 e **JOYCODE 1/2**:
@@ -76,11 +79,6 @@ e **JOYCODE 1/2**:
 	**2** para ``Joy 1`` e ``Joy 2`` respectivamente.
 	Neste caso, estes são dispositivos ``XInput``.
 
-.. A nice and clean way to do a page break, this case for latex and PDF
-   only.
-.. raw:: latex
-
-	\clearpage
 
 Listando os dispositivos disponíveis
 ------------------------------------
