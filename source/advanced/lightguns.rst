@@ -629,13 +629,13 @@ Ainda usando o arquivo **maquinas** executaremos as seguintes ações:
 *	Agora com a lista das ROMs e seu caminho completo basta copiá-los
 	com o comando abaixo: ::
 
-		while read copy ; do cp "$copy" . ; done < list-roms
+		while read copy ; do cp "$copy" . ; done < lista-roms
 
 	O ponto depois de ``"$copy"`` faz com que o comando ``cp`` copie
 	todos os arquivos para o diretório onde você está, caso queira
 	copiá-los para outro lugar basta usar o caminho, assim: ::
 
-		while read copy; do cp "$copy" /caminho/completo ; done < list-roms
+		while read copy; do cp "$copy" /caminho/completo ; done < lista-roms
 
 Apesar do comando **cp** funcionar bem para a maioria dos casos, é
 impossível saber se o arquivo foi copiado de forma correta ou não para o
@@ -646,7 +646,7 @@ também registrar em um arquivo toda a operação que ele fez, seja bem
 sucedida ou não, assim basta usar o comando anterior com algumas
 alterações: ::
 
-		while read copy; do rsync --info=name,progress2 --log-file=registro "$copy" . ; done < list-roms
+		while read copy; do rsync --info=name,progress2 --log-file=registro "$copy" . ; done < lista-roms
 
 Neste novo comando a opção ``--info=name,progress2`` vai exibir
 estatísticas da operação que ele estiver fazendo de um determinado
