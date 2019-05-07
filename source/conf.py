@@ -283,3 +283,5 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+# Suppress "WARNING: unknown mimetype for ..." https://github.com/IQSS/dataverse/issues/3391
+suppress_warnings = ['epub.unknown_project_files']
