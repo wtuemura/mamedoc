@@ -285,8 +285,8 @@ tenha certeza de ter instalado o pacote **libinput-tools**.
 Para mais informações acesse este `link
 <https://wayland.freedesktop.org/libinput/doc/latest/what-is-libinput.html>`_.
 
-O comando deve listar todos os dispositivos, apenas para o nosso caso
-ele nós temos: ::
+O comando deve listar todos os dispositivos, aqui limitado apenas para o
+nosso caso: ::
 
 	Device:           LXD Gaming Mouse
 	Kernel:           /dev/input/event14
@@ -587,6 +587,80 @@ estão os arquivos.
 Use o `7-zip <https://www.7-zip.org/>`_ para descompactar os arquivos
 dentro do diretório pistola.
 
+.. pistola-separando-roms:
+
+Separando apenas as ROMs das máquinas de tiro
+---------------------------------------------
+
+Da mesma maneira que podemos criar uma lista de configuração individual
+para cada máquina, podemos também usar a mesma lista para copiar apenas
+as suas ROMs atendendo a necessidade das pessoas que configuram as suas
+máquinas dessa forma.
+
+Ainda usando o arquivo **maquinas** executaremos as seguintes ações:
+
+*	Crie um diretório **roms** em qualquer outro lugar fora do diretório
+	onde se encontra o MAME.
+*	Copie o arquivo **maquinas** (ou gere um novo caso tenha apagado)
+	para dentro deste diretório.
+*	Você precisa encontrar o caminho completo onde todas as suas ROMs se
+	encontram, vamos supor que seja ``/home/mame/mame/roms``, abra um
+	terminal neste diretório e execute o comando abaixo: ::
+
+		while read maquinas; do echo /home/mame/mame/roms/"$maquinas".zip ; done < maquinas > lista-roms
+
+*	O comando acima vai ser alimentado pelo arquivo **maquinas** e
+	substituir **"$maquinas"** pelos nomes que forem aparecendo linha a
+	linha, depois ``> lista-roms`` faz o redirecionamento completo para
+	o arquivo **lista-roms**. Ao final o arquivo ficará com o seguinte
+	conteúdo: ::
+
+	/home/mame/mame/roms/2spicy.zip
+	/home/mame/mame/roms/alien3.zip
+	/home/mame/mame/roms/alien3j.zip
+	/home/mame/mame/roms/alien3u.zip
+	/home/mame/mame/roms/aplatoon.zip
+	/home/mame/mame/roms/area51.zip
+
+.. raw:: latex
+
+	\clearpage
+
+*	Agora com a lista das ROMs e seu caminho completo basta copiá-los
+	com o comando abaixo: ::
+
+		while read copy ; do cp "$copy" . ; done < list-roms
+
+	O ponto depois de ``"$copy"`` faz com que o comando ``cp`` copie
+	todos os arquivos para o diretório onde você está, caso queira
+	copiá-los para outro lugar basta usar o caminho, assim: ::
+
+		while read copy; do cp "$copy" /caminho/completo ; done < list-roms
+
+Apesar do comando **cp** funcionar bem para a maioria dos casos, é
+impossível saber se o arquivo foi copiado de forma correta ou não para o
+destino, nestes casos a melhor opção é usar o programa **rsync** que
+durante o processo de cópia verifica a integridade do arquivo no
+destivo, além de ser a melhor opção para a cópia de arquivos nós podemos
+também registrar em um arquivo toda a operação que ele fez, seja bem
+sucedida ou não, assim basta usar o comando anterior com algumas
+alterações: ::
+
+		while read copy; do rsync --info=name,progress2 --log-file=registro "$copy" . ; done < list-roms
+
+Neste novo comando a opção ``--info=name,progress2`` vai exibir
+estatísticas da operação que ele estiver fazendo de um determinado
+arquivo, o ``log-file=registro`` armazena todo o processo, seja ele bem
+sucedido ou não assim como erros informando as ROMs que não foram
+encontradas. É possível filtrar essas ROMs que não foram encontradas com
+o comando: ::
+
+		cat registro | grep "No such file or directory" | awk '{print $6}' > roms-ausentes
+
+O exemplo que foi demonstrado aqui serve para qualquer outro tipo de
+lista, você pode por exemplo gerar uma lista para máquinas CPS1/CPS2/ZN
+e depois copiar essas ROMs em diretórios separados, o céu é o limite.
+
 .. raw:: latex
 
 	\clearpage
@@ -811,3 +885,4 @@ No final da compilação você terá um executável do MAME customizado, com
 um tamanho reduzido e que vai incluir as máquinas de tiro assim como
 todas as outras máquinas que esses drivers suportam. Para exibir apenas
 as máquinas de tiro, use o filtro de Categoria.
+
