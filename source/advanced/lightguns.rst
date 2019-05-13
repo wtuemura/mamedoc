@@ -533,11 +533,6 @@ ou similares.
 
 		awk '/Gun/{flag=1; next} / /{flag=0} flag' ../folders/category.ini| head -n -6 > maquinas && sed -i 's/\r//g' maquinas
 
-*	Para gerar uma lista em formato de fim de linha para Windows (CR/LF)
-	execute o comando abaixo: ::
-
-		awk '/Gun/{flag=1; next} / /{flag=0} flag' ../folders/category.ini| head -n -6 > maquinas
-
 *	Caso o seu ``cfg.txt`` esteja em formato Unix, ele precisa ser
 	convertido antes de ser usado no Windows com o comando ``sed -i
 	's/$/\r/' cfg.txt``.
@@ -580,9 +575,9 @@ estão os arquivos.
 *	Arquivos ini com **lightgun_device** como lightgun.
 	https://www.mediafire.com/file/ytmnp3ik9avyfjm/ini-lightgun.7z
 *	Arquivos ini com **lightgun_device** como mouse para Windows.
-	https://www.mediafire.com/file/3o1od5n7rg9h9q6/ini-mouse-windows.7z
+	http://www.mediafire.com/file/1zz6vfkd7jh7tj8/ini-mouse-windows.7z
 *	Arquivos ini com **lightgun_device** como lightgun para Windows.
-	https://www.mediafire.com/file/i5h1be5t4bio06o/ini-lightgun-windows.7z
+	http://www.mediafire.com/file/hi7864yk8s09o78/ini-lightgun-windows.7z
 
 Use o `7-zip <https://www.7-zip.org/>`_ para descompactar os arquivos
 dentro do diretório pistola.
