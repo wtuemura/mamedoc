@@ -220,6 +220,88 @@ Há alguns pontos importantes que você precisa saber.
 
 	git checkout master -- scripts/src/osd/sdl_cfg.lua
 
+.. _mame-compilation-ccache:
+
+Acelerando uma compilação
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Compilar todo o código fonte do MAME é um processo demorado e que
+consome muitos recursos de processamento, memória e principalmente
+energia elétrica. É possível acelerar todo este processo usando o
+**ccache**, este programa armazena uma cópia da sua compilação, fazendo
+com que apenas o código fonte que foi atualizado seja compilado, todo
+o resto vem do armazenamento que o **ccache** fazendo com que a
+compilação termine em um tempo muito menor, estamos falando em compilar
+todo o código fonte do MAME em segundos com o **ccache**, sem ele,
+uma compilação pode levar horas.
+
+Para sistemas **Ubuntu** e **Debian Linux** o comando para instalar o
+**ccache** é ``sudo apt-get install ccache``, para **Arch Linux** e
+**MSYS2** o comando é ``pacman -s ccache``, veja qual é a opção para o
+sistema operacional que você estiver usando.
+
+A configuração é muito simples, basta usá-lo antes dos compiladores, é
+mais fácil adicionar essas opções no arquivo **useroptions.mak** assim
+não é necessário usar uma linha muito grande de configuração, para o
+Linux a configuração ficaria assim: ::
+
+	# Escolha apenas uma opção para OVERRIDE_CC e OVERRIDE_CXX
+	# Remova o # da frente da opção que deseja usar.
+	#
+	# Compila com ccache Linux
+	OVERRIDE_CC=/usr/bin/ccache gcc
+	OVERRIDE_CXX=/usr/bin/ccache g++
+	#
+	# Compila com ccache Linux (Clang)
+	# CCACHE_CPP2=yes
+	# OVERRIDE_CC=/usr/bin/ccache /usr/bin/clang-6.0
+	# OVERRIDE_CXX=/usr/bin/ccache /usr/bin/clang++-6.0
+
+A configuração para Windows no MSYS2 fica assim: ::
+
+	# Compila com ccache MSYS2 (Windows) 32-Bit
+	# OVERRIDE_CC=/mingw32/bin/ccache /mingw32/bin/gcc
+	# OVERRIDE_CXX=/mingw32/bin/ccache /mingw32/bin/g++
+	#
+	# Compila com ccache MSYS2 (Windows) 64-Bit
+	# OVERRIDE_CC=/mingw64/bin/ccache /mingw64/bin/gcc
+	# OVERRIDE_CXX=/mingw64/bin/ccache /mingw64/bin/g++
+	#
+	# Compila com ccache MSYS2 (Windows) 64-Bit (Clang)
+	# OVERRIDE_CC=/mingw64/bin/ccache /mingw64/bin/clang
+	# OVERRIDE_CXX=/mingw64/bin/ccache /mingw64/bin/clang++
+
+Para ver a condição do armazenamento cache faça ``ccache -s``: ::
+
+	cache directory                     /home/mame/.ccache
+	primary config                      /home/mame/.ccache/ccache.conf
+	secondary config      (readonly)    /etc/ccache.conf
+	cache hit (direct)                     0
+	cache hit (preprocessed)               0
+	cache miss                         14278
+	cache hit rate                      0.00 %
+	called for link                        2
+	no input file                          6
+	cleanups performed                     0
+	files in cache                     42927
+	cache size                           4.9 GB
+	max cache size                      10.0 GB
+
+Para montar a sua cache basta fazer uma compilação limpa do código fonte
+do MAME com ``rm -rf build/* && make -j5``, no final em **cache size**
+deve aparecer o quanto foi armazenado em cache. Para aumentar o **max
+cache size** edite o arquivo ``/home/mame/.ccache/ccache.conf``.
+
+Para que o **ccache** funcione é **obrigatório** manter exatamente a
+mesma configuração usada para gerar o cache, caso contrário o **ccache**
+vai gerar um novo cache para essa nova configuração e assim por diante.
+
+Veja todas as opções do **ccache** com o comando ``ccache -h``.
+
+Caso você escolha uma nova configuração de compilação, elimine o cache
+antigo com o comando ``ccache -C`` e faça uma nova compilação limpa com
+todas as suas novas opções.
+
 .. _compiling-practical-examples:
 
 Exemplos práticos para todas as plataformas
@@ -318,12 +400,8 @@ problema que não existe na versão oficial, logo, a sua sorte com o uso
 dela pode variar bastante. Por isso saiba que oficialmente os
 desenvolvedores do MAME **não apoiam** o uso dessa opção.
 
-.. raw:: latex
-
-	\clearpage
-
-Para saber quais as extensões serão habilitadas com o comando
-**-march=native** faça o comando abaixo:
+Execute o comando abaixo para saber quais as extensões serão habilitadas
+com a opção **-march=native**:
 
 	``gcc -march=native -Q --help=target|grep enabled``
 
@@ -379,10 +457,6 @@ variantes do SSE como a SSE3, SSE4 e assim por diante, não espere que a
 performance do MAME aumente de forma considerável, há máquinas onde não
 se nota nada de diferente, muito pelo contrário, você perde em
 performance, já outras podem lhe dar uma performance considerável.
-
-.. raw:: latex
-
-	\clearpage
 
 Em alguns testes a melhor média foi obtida usando apenas as opções
 **SSE3=3 OPTIMIZE=03** e mais nada apesar do padrão do MAME ser
@@ -446,10 +520,6 @@ Use estas opções em conjunto com o comando make ou definindo-as como
 variáveis de ambiente ou ainda adicionando-as ao seu
 **useroptions.mak**. Note que o GENie não reconstrói automaticamente os
 arquivos afetados por modificações posteriormente usadas.
-
-.. raw:: latex
-
-	\clearpage
 
 Com o tempo e experiência, cada um irá adaptar as opções de compilação
 para a sua própria necessidade, no exemplo abaixo tem um template para
