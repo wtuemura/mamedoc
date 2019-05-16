@@ -590,438 +590,6 @@ reconhecidas pelo makefile.
 
 	\clearpage
 
-.. _compiling-options:
-
-Opções gerais para a compilação
--------------------------------
-
-.. _mame-compilation-premake:
-
-**PREFIX_MAKEFILE**
-
-  Define um makefile a ser incluso no processo de compilação que
-  contenha opções adicionais customizadas por você e que terá
-  prioridade caso o mesmo seja encontrado (o nome predefinido é
-  **useroptions.mak**).
-  Pode ser útil caso você queira alternar entre diferentes
-  configurações de compilação de forma simples e rápida.
-
-.. _mame-compilation-build:
-
-**BUILDDIR**
-
-  Define diretório usado para a compilação de todos os arquivos do
-  projeto, códigos fonte auxiliares que são gerados ao longo da
-  configuração, arquivos objeto e bibliotecas intermediárias.
-  Por predefinição, o nome deste diretório é **build**.
-
-.. _mame-compilation-regenie:
-
-**REGENIE**
-
-  Caso seja definido como **1**, faz com que toda a estrutura de
-  instrução para a compilação do projeto seja regenerada, especialmente
-  para o caso onde uma compilação tenha sido feita anteriormente e seja
-  necessário alterar as configurações predefinidas anteriormente.
-
-.. _mame-compilation-verbose:
-
-**VERBOSE**
-
-  Caso seja definido como **1**, ativa o modo loquaz, isso faz com que
-  todos os comandos usados pela ferramenta make durante a
-  compilação apareçam. Essa opção é aplicada instantaneamente e não
-  precisa do comando **REGENIE**.
-
-.. _mame-compilation-ignore_git:
-
-**IGNORE_GIT**
-
-  Caso seja definido como **1**, ignora o escaneamento da árvore de
-  trabalho e não embute a revisão descritiva do git no campo da versão
-  do executável.
-
-.. _mame-compilation-subtarget:
-
-**SUBTARGET**
-
-  Define diferentes versões do MAME para serem compiladas, caso nenhum
-  seja escolhido o valor predefinido é **mame**. Os valores mais usados
-  são:
-
-		* **arcade**: Compila uma versão do MAME apenas com máquinas classificadas como arcade.
-		* **dummy**: Compila uma versão bem simplificada do mame com apenas o driver da Coleco.
-		* **mame**: Compila uma versão do MAME com arcade, mess e virtual.
-		* **mess**: Compila uma versão do MAME só com máquinas catalogadas como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
-		* **nl**: Compila todos os drivers classificados como *netlist*.
-		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita que você tenha que compilar todo o código fonte do MAME para testar uma modificação feita na interface por exemplo.
-		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
-
-  O valor do parâmetro *SUBTARGET* serve também para se diferenciar
-  dentre as várias compilações existente e não precisa ser definido sem
-  necessidade. Supondo que use o comando abaixo:
-
-	**make REGENIE=1 SUBTARGET=neogeo SOURCES=src/mame/drivers/neogeo.cpp -j4**
-
-  Será criado um binário MAME de nome **neogeo** caso seja uma versão
-  32-bit ou **neogeo64** caso seja uma versão 64-bit.
-
-.. raw:: latex
-
-	\clearpage
-
-**TARGETOS**
-
-Define o Sistema Operacional de destino, é importante deixar claro que
-essa opção é desnecessária caso esteja compilando o MAME nativamente, os
-valores válidos são:
-
-	* ``android`` (Android)
-
-	* ``asmjs`` (Emscripten/asm.js)
-
-	* ``freebsd`` (FreeBSD)
-
-	* ``netbsd`` (NetBSD)
-
-	* ``openbsd`` (OpenBSD)
-
-	* ``pnacl`` (Native Client - PNaCl)
-
-	* ``linux`` (Linux)
-
-	* ``ios`` (iOS)
-
-	* ``macosx`` (OSX)
-
-	* ``windows`` (Windows)
-
-	* ``haiku`` (Haiku)
-
-	* ``solaris`` (Solaris SunOS)
-
-	* ``steamlink`` (Steam Link)
-
-	* ``rpi`` (Raspberry Pi)
-
-	* ``ci20`` (Creator-Ci20)
-
-.. _mame-compilation-sse2:
-
-**SSE2=1**
-
-	**Double Precision Streaming SIMD Extensions**, em resumo, são
-	instruções que otimizam o desempenho em processadores
-	compatíveis. O MAME terá uma melhor performance quando essa
-	opção é usada segundo a `nota publicada
-	<https://www.mamedev.org/?p=451>`_ no site do MAME.
-
-.. raw:: latex
-
-	\clearpage
-
-.. _mame-compilation-alternate-tools:
-
-Usando ferramentas de compilação alternativas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _mame-compilation-override_cc:
-
-**OVERRIDE_CC**
-
-  Define o compilador C/Objective-C avulso ou para um compilador voltado
-  para um sistema em específico. 
-
-.. _mame-compilation-override_cxx:
-
-**OVERRIDE_CXX**
-
-  Define o compilador C++/Objective-C++ avulso ou para um compilador
-  voltado para um sistema em específico.
-
-.. _mame-compilation-override_ld:
-
-**OVERRIDE_LD**
-
-  Define o comando para o lincador, caso o seu ambiente esteja
-  corretamente configurado não é necessário lidar com ele, mesmo em
-  compilação cruzada.
-
-.. _mame-compilation-python_executable:
-
-**PYTHON_EXECUTABLE**
-
-  Define o interpretador Python. Para compilar o MAME é necessário ter
-  o Python versão *2.7*, *3* ou mais recente.
-
-.. _mame-compilation-cross_build:
-
-**CROSS_BUILD**
-
-  Defina como **1** para que o lincador e o compilador fiquem isolados
-  do sistema hospedeiro.
-
-.. _mame-compilation-optional-resources:
-
-Recursos opcionais
-~~~~~~~~~~~~~~~~~~
-
-.. _mame-compilation-tools:
-
-**TOOLS**
-
-  Caso seja definido como **1**, as ferramentas adicionais que trabalham
-  em conjunto com o emulador como ``unidasm``, ``chdman``, ``romcmp``,
-  e ``srcclean`` serão compiladas.
-
-.. _mame-compilation-nouseportaudio:
-
-**NO_USE_PORTAUDIO**
-
-  Caso seja definido como **1**, desabilita a construção do módulo de
-  saída de áudio PortAudio.
-
-.. _mame-compilation-use_qtdebug:
-
-**USE_QTDEBUG**
-
-  Caso seja definido como **1**, será incluso o depurador com a
-  interface Qt em plataformas onde a mesma não vem previamente
-  embutida como MacOS e Windows por exemplo, defina como **0** para
-  desabilitar. É obrigatório a instalação das bibliotecas de
-  desenvolvimento Qt assim como suas ferramentas para a compilação do
-  depurador.
-  Todo este processo varia de plataforma para plataforma.
-
-.. _mame-compilation-nowerror:
-
-**NOWERROR**
-
-  Defina como **1** para desabilitar o tratamento das mensagens de
-  aviso do compilador como erro. Talvez seja necessário em
-  configurações minimamente compatíveis.
-
-.. _mame-compilation-deprecated:
-
-**DEPRECATED**
-
-  Defina como **0** para desabilitar as mensagens de aviso menos
-  importantes/relevantes (repare que as mensagens de avisos não são
-  tratadas como erro).
-
-.. _mame-compilation-debug:
-
-**DEBUG**
-
-  Defina como **1** para habilitar as rotinas de verificações adicionais
-  e diagnósticos habilitando o modo de depuração. É importante que
-  saiba que essa opção tem impacto direto na performance do emulador e
-  só tem utilidade para desenvolvedores, não compile o MAME com esta
-  opção sem saber o que está fazendo. Veja também
-  :ref:`compiling-advanced-options-debug`.
-
-.. raw:: latex
-
-	\clearpage
-
-.. _mame-compilation-optimize:
-
-**OPTIMIZE**
-
-  Define o nível de otimização. O valor predefinido é **3** onde o
-  foco é performance ao custo de um executável maior no final da
-  compilação.
-  Há também as seguintes opções:
-
-		* **0**: Caso queira desabilitar a otimização e favorecendo a depuração.
-		* **1**: Otimização simples sem impacto direto no tamanho final do executável nem no tempo de compilação.
-		* **2**: Habilita a maioria das otimizações visando performance e tamanho reduzido.
-		* **3**: Este é o valor predefinido, em favor da performance ao custo de um executável maior.
-		* **s**: Habilita apenas as otimizações que não impactem no tamanho final do executável.
-
-  A compatibilidade destes valores dependem do compilador que esteja
-  sendo usado.
-
-.. _mame-compilation-symbols:
-
-**SYMBOLS**
-
-	Defina como **1** para habilitar a inclusão de símbolos adicionais
-	de depuração para a plataforma que o executável está sendo
-	compilado, além dos já inclusos (muitas plataformas por predefinição
-	já incluem estes símbolos já com os nomes das funções).
-
-.. _mame-compilation-symlevel:
-
-**SYMLEVEL**
-
-	Valor numérico que controla a quantidade de detalhes nos símbolos de
-	depuração. Valores maiores facilitam a depuração ao custo do tempo
-	de compilação e do tamanho final do executável. A compatibilidade
-	destes valores dependem do compilador que esteja sendo usado.
-	No caso do GNU GCC e similares estes valores são:
-	
-		* **1**: Incluí tabelas numéricas e variáveis externas.
-		* **2**: Incluindo os itens descritos em **1**, incluí também as variáveis locais.
-		* **3**: Incluí também definições macros.
-
-.. _mame-compilation-strip-symbols:
-
-**STRIP_SYMBOLS**
-
-	Defina como **1** para que os símbolos de depuração ao invés de
-	ficarem embutidos no MAME, sejam armazenado em um arquivo externo
-	com extensão "**.sym**" apenas em sistemas Windows. Essa opção é
-	útil para aliviar o tamanho final do MAME uma vez que
-	**SYMLEVEL** com valores maiores que **1** geram uma grande
-	quantidade de símbolos que podem ultrapassar o tamanho do executável
-	final.
-
-.. _mame-compilation-archopts:
-
-**ARCHOPTS**
-
-	Opções adicionais que serão passadas ao compilador e ao lincador.
-	Útil para a geração de códigos adicionais ou opções de interface
-	binária de aplicação [1]_ como por exemplo a ativação de recursos
-	opcionais do processador.
-
-.. _mame-compilation-archopts-c:
-
-**ARCHOPTS_C**
-
-	Opções adicionais que serão passadas ao compilador ao compilar
-	arquivos de código fonte em linguagem C.
-
-.. _mame-compilation-archopts-cpp:
-
-**ARCHOPTS_CXX**
-
-	Opções adicionais que serão passadas ao compilador ao compilar
-	arquivos de código fonte em linguagem C++.
-
-.. raw:: latex
-
-	\clearpage
-
-.. _mame-compilation-archopts-objc:
-
-**ARCHOPTS_OBJC**
-
-	Opções adicionais que serão passadas ao compilador ao compilar
-	arquivos de código fonte Objective-C.
-
-.. _mame-compilation-archopts-objcxx:
-
-**ARCHOPTS_OBJCXX**
-
-	Opções adicionais que serão passadas ao compilador ao compilar
-	arquivos de código fonte Objective-C++.
-
-Sede das bibliotecas e framework
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**SDL_INSTALL_ROOT**
-
-	Diretório raiz onde se encontra a instalação dos arquivos de
-	desenvolvimento SDL.
-
-**SDL_FRAMEWORK_PATH**
-
-	Caminho onde se encontra o SDL framework.
-
-**USE_LIBSDL**
-
-	Defina como **1** para usar a biblioteca SDL no destino onde o
-	framework for predefinido.
-
-**USE_SYSTEM_LIB_ASIO**
-
-	Defina como **1** caso prefira usar a biblioteca I/O assíncrona
-	Asio C++ do seu sistema ao invés de usar a versão fornecida pelo
-	MAME.
-
-**USE_SYSTEM_LIB_EXPAT**
-
-	Defina como **1** caso prefira usar o analisador sintático Expat XML
-	do seu sistema ao invés de usar a versão fornecida pelo MAME.
-
-**USE_SYSTEM_LIB_ZLIB**
-
-	Defina como **1** caso prefira usar a biblioteca de compressão zlib
-	instalada no seu sistema ao invés de usar a versão fornecida pelo
-	MAME.
-
-**USE_SYSTEM_LIB_JPEG**
-
-	Defina como **1** caso prefira usar a biblioteca de compressão de
-	imagem libjpeg ao invés de usar a versão fornecida pelo MAME.
-
-**USE_SYSTEM_LIB_FLAC**
-
-	Defina como **1** caso prefira usar a biblioteca de compressão de
-	áudio libFLAC ao invés de usar a versão fornecida pelo MAME.
-
-**USE_SYSTEM_LIB_LUA**
-
-	Defina como **1** caso prefira usar a biblioteca do interpretador
-	Lua instalado no seu sistema ao invés de usar a versão fornecida
-	pelo MAME.
-
-**USE_SYSTEM_LIB_SQLITE3**
-
-	Defina como **1** caso prefira usar a biblioteca do motor de
-	pesquisa SQLITE do seu sistema ao invés de usar a versão fornecida
-	pelo MAME.
-
-**USE_SYSTEM_LIB_PORTMIDI**
-
-	Defina como **1** caso prefira usar a biblioteca PortMidi instalada
-	no seu sistema ao invés de usar a versão fornecida pelo MAME.
-
-.. raw:: latex
-
-	\clearpage
-
-**USE_SYSTEM_LIB_PORTAUDIO**
-
-	Defina como **1** caso prefira usar a biblioteca PortAudio do seu
-	sistema ao invés de usar a versão fornecida pelo MAME.
-
-**USE_BUNDLED_LIB_SDL2**
-
-	Defina como **1** caso prefira usar a versão da biblioteca fornecida
-	pelo MAME ao invés da versão instalada no seu sistema. Essa opção já
-	vem predefinida para compilações feitas em Visual Studio e em
-	versões para Android. Já para outras outras configurações, é
-	preferível que seja usada a versão instalada no sistema.
-
-**USE_SYSTEM_LIB_UTF8PROC**
-
-	Defina como **1** caso prefira usar a biblioteca Julia utf8proc
-	instalada no seu sistema ao invés de usar a versão fornecida pelo
-	MAME.
-
-**USE_SYSTEM_LIB_GLM**
-
-	Defina como **1** caso prefira usar a biblioteca GLM OpenGL
-	Mathematics do seu sistema ao invés de usar a versão fornecida pelo
-	MAME.
-
-**USE_SYSTEM_LIB_RAPIDJSON**
-
-	Defina como **1** caso prefira usar a biblioteca Tencent RapidJSON
-	do seu sistema ao invés de usar a versão fornecida pelo MAME.
-
-**USE_SYSTEM_LIB_PUGIXML**
-
-	Defina como **1** caso prefira usar a biblioteca pugixml do seu
-	sistema ao invés de usar a versão fornecida pelo MAME.
-
-.. raw:: latex
-
-	\clearpage
-
 .. _compiling-windows:
 
 Microsoft Windows
@@ -1488,6 +1056,438 @@ faltando alguma coisa, algum arquivo de ROM incorreto, etc).
 Um erro do tipo "**ReferenceError: foo is not defined**" pode indicar
 que provavelmente faltou informar um arquivo de código fonte na lista da
 opção **SOURCES**.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-options:
+
+Opções gerais para a compilação
+-------------------------------
+
+.. _mame-compilation-premake:
+
+**PREFIX_MAKEFILE**
+
+  Define um makefile a ser incluso no processo de compilação que
+  contenha opções adicionais customizadas por você e que terá
+  prioridade caso o mesmo seja encontrado (o nome predefinido é
+  **useroptions.mak**).
+  Pode ser útil caso você queira alternar entre diferentes
+  configurações de compilação de forma simples e rápida.
+
+.. _mame-compilation-build:
+
+**BUILDDIR**
+
+  Define diretório usado para a compilação de todos os arquivos do
+  projeto, códigos fonte auxiliares que são gerados ao longo da
+  configuração, arquivos objeto e bibliotecas intermediárias.
+  Por predefinição, o nome deste diretório é **build**.
+
+.. _mame-compilation-regenie:
+
+**REGENIE**
+
+  Caso seja definido como **1**, faz com que toda a estrutura de
+  instrução para a compilação do projeto seja regenerada, especialmente
+  para o caso onde uma compilação tenha sido feita anteriormente e seja
+  necessário alterar as configurações predefinidas anteriormente.
+
+.. _mame-compilation-verbose:
+
+**VERBOSE**
+
+  Caso seja definido como **1**, ativa o modo loquaz, isso faz com que
+  todos os comandos usados pela ferramenta make durante a
+  compilação apareçam. Essa opção é aplicada instantaneamente e não
+  precisa do comando **REGENIE**.
+
+.. _mame-compilation-ignore_git:
+
+**IGNORE_GIT**
+
+  Caso seja definido como **1**, ignora o escaneamento da árvore de
+  trabalho e não embute a revisão descritiva do git no campo da versão
+  do executável.
+
+.. _mame-compilation-subtarget:
+
+**SUBTARGET**
+
+  Define diferentes versões do MAME para serem compiladas, caso nenhum
+  seja escolhido o valor predefinido é **mame**. Os valores mais usados
+  são:
+
+		* **arcade**: Compila uma versão do MAME apenas com máquinas classificadas como arcade.
+		* **dummy**: Compila uma versão bem simplificada do mame com apenas o driver da Coleco.
+		* **mame**: Compila uma versão do MAME com arcade, mess e virtual.
+		* **mess**: Compila uma versão do MAME só com máquinas catalogadas como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
+		* **nl**: Compila todos os drivers classificados como *netlist*.
+		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita que você tenha que compilar todo o código fonte do MAME para testar uma modificação feita na interface por exemplo.
+		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
+
+  O valor do parâmetro *SUBTARGET* serve também para se diferenciar
+  dentre as várias compilações existente e não precisa ser definido sem
+  necessidade. Supondo que use o comando abaixo:
+
+	**make REGENIE=1 SUBTARGET=neogeo SOURCES=src/mame/drivers/neogeo.cpp -j4**
+
+  Será criado um binário MAME de nome **neogeo** caso seja uma versão
+  32-bit ou **neogeo64** caso seja uma versão 64-bit.
+
+.. raw:: latex
+
+	\clearpage
+
+**TARGETOS**
+
+Define o Sistema Operacional de destino, é importante deixar claro que
+essa opção é desnecessária caso esteja compilando o MAME nativamente, os
+valores válidos são:
+
+	* ``android`` (Android)
+
+	* ``asmjs`` (Emscripten/asm.js)
+
+	* ``freebsd`` (FreeBSD)
+
+	* ``netbsd`` (NetBSD)
+
+	* ``openbsd`` (OpenBSD)
+
+	* ``pnacl`` (Native Client - PNaCl)
+
+	* ``linux`` (Linux)
+
+	* ``ios`` (iOS)
+
+	* ``macosx`` (OSX)
+
+	* ``windows`` (Windows)
+
+	* ``haiku`` (Haiku)
+
+	* ``solaris`` (Solaris SunOS)
+
+	* ``steamlink`` (Steam Link)
+
+	* ``rpi`` (Raspberry Pi)
+
+	* ``ci20`` (Creator-Ci20)
+
+.. _mame-compilation-sse2:
+
+**SSE2=1**
+
+	**Double Precision Streaming SIMD Extensions**, em resumo, são
+	instruções que otimizam o desempenho em processadores
+	compatíveis. O MAME terá uma melhor performance quando essa
+	opção é usada segundo a `nota publicada
+	<https://www.mamedev.org/?p=451>`_ no site do MAME.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _mame-compilation-alternate-tools:
+
+Usando ferramentas de compilação alternativas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _mame-compilation-override_cc:
+
+**OVERRIDE_CC**
+
+  Define o compilador C/Objective-C avulso ou para um compilador voltado
+  para um sistema em específico. 
+
+.. _mame-compilation-override_cxx:
+
+**OVERRIDE_CXX**
+
+  Define o compilador C++/Objective-C++ avulso ou para um compilador
+  voltado para um sistema em específico.
+
+.. _mame-compilation-override_ld:
+
+**OVERRIDE_LD**
+
+  Define o comando para o lincador, caso o seu ambiente esteja
+  corretamente configurado não é necessário lidar com ele, mesmo em
+  compilação cruzada.
+
+.. _mame-compilation-python_executable:
+
+**PYTHON_EXECUTABLE**
+
+  Define o interpretador Python. Para compilar o MAME é necessário ter
+  o Python versão *2.7*, *3* ou mais recente.
+
+.. _mame-compilation-cross_build:
+
+**CROSS_BUILD**
+
+  Defina como **1** para que o lincador e o compilador fiquem isolados
+  do sistema hospedeiro.
+
+.. _mame-compilation-optional-resources:
+
+Recursos opcionais
+~~~~~~~~~~~~~~~~~~
+
+.. _mame-compilation-tools:
+
+**TOOLS**
+
+  Caso seja definido como **1**, as ferramentas adicionais que trabalham
+  em conjunto com o emulador como ``unidasm``, ``chdman``, ``romcmp``,
+  e ``srcclean`` serão compiladas.
+
+.. _mame-compilation-nouseportaudio:
+
+**NO_USE_PORTAUDIO**
+
+  Caso seja definido como **1**, desabilita a construção do módulo de
+  saída de áudio PortAudio.
+
+.. _mame-compilation-use_qtdebug:
+
+**USE_QTDEBUG**
+
+  Caso seja definido como **1**, será incluso o depurador com a
+  interface Qt em plataformas onde a mesma não vem previamente
+  embutida como MacOS e Windows por exemplo, defina como **0** para
+  desabilitar. É obrigatório a instalação das bibliotecas de
+  desenvolvimento Qt assim como suas ferramentas para a compilação do
+  depurador.
+  Todo este processo varia de plataforma para plataforma.
+
+.. _mame-compilation-nowerror:
+
+**NOWERROR**
+
+  Defina como **1** para desabilitar o tratamento das mensagens de
+  aviso do compilador como erro. Talvez seja necessário em
+  configurações minimamente compatíveis.
+
+.. _mame-compilation-deprecated:
+
+**DEPRECATED**
+
+  Defina como **0** para desabilitar as mensagens de aviso menos
+  importantes/relevantes (repare que as mensagens de avisos não são
+  tratadas como erro).
+
+.. _mame-compilation-debug:
+
+**DEBUG**
+
+  Defina como **1** para habilitar as rotinas de verificações adicionais
+  e diagnósticos habilitando o modo de depuração. É importante que
+  saiba que essa opção tem impacto direto na performance do emulador e
+  só tem utilidade para desenvolvedores, não compile o MAME com esta
+  opção sem saber o que está fazendo. Veja também
+  :ref:`compiling-advanced-options-debug`.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _mame-compilation-optimize:
+
+**OPTIMIZE**
+
+  Define o nível de otimização. O valor predefinido é **3** onde o
+  foco é performance ao custo de um executável maior no final da
+  compilação.
+  Há também as seguintes opções:
+
+		* **0**: Caso queira desabilitar a otimização e favorecendo a depuração.
+		* **1**: Otimização simples sem impacto direto no tamanho final do executável nem no tempo de compilação.
+		* **2**: Habilita a maioria das otimizações visando performance e tamanho reduzido.
+		* **3**: Este é o valor predefinido, em favor da performance ao custo de um executável maior.
+		* **s**: Habilita apenas as otimizações que não impactem no tamanho final do executável.
+
+  A compatibilidade destes valores dependem do compilador que esteja
+  sendo usado.
+
+.. _mame-compilation-symbols:
+
+**SYMBOLS**
+
+	Defina como **1** para habilitar a inclusão de símbolos adicionais
+	de depuração para a plataforma que o executável está sendo
+	compilado, além dos já inclusos (muitas plataformas por predefinição
+	já incluem estes símbolos já com os nomes das funções).
+
+.. _mame-compilation-symlevel:
+
+**SYMLEVEL**
+
+	Valor numérico que controla a quantidade de detalhes nos símbolos de
+	depuração. Valores maiores facilitam a depuração ao custo do tempo
+	de compilação e do tamanho final do executável. A compatibilidade
+	destes valores dependem do compilador que esteja sendo usado.
+	No caso do GNU GCC e similares estes valores são:
+	
+		* **1**: Incluí tabelas numéricas e variáveis externas.
+		* **2**: Incluindo os itens descritos em **1**, incluí também as variáveis locais.
+		* **3**: Incluí também definições macros.
+
+.. _mame-compilation-strip-symbols:
+
+**STRIP_SYMBOLS**
+
+	Defina como **1** para que os símbolos de depuração ao invés de
+	ficarem embutidos no MAME, sejam armazenado em um arquivo externo
+	com extensão "**.sym**" apenas em sistemas Windows. Essa opção é
+	útil para aliviar o tamanho final do MAME uma vez que
+	**SYMLEVEL** com valores maiores que **1** geram uma grande
+	quantidade de símbolos que podem ultrapassar o tamanho do executável
+	final.
+
+.. _mame-compilation-archopts:
+
+**ARCHOPTS**
+
+	Opções adicionais que serão passadas ao compilador e ao lincador.
+	Útil para a geração de códigos adicionais ou opções de interface
+	binária de aplicação [1]_ como por exemplo a ativação de recursos
+	opcionais do processador.
+
+.. _mame-compilation-archopts-c:
+
+**ARCHOPTS_C**
+
+	Opções adicionais que serão passadas ao compilador ao compilar
+	arquivos de código fonte em linguagem C.
+
+.. _mame-compilation-archopts-cpp:
+
+**ARCHOPTS_CXX**
+
+	Opções adicionais que serão passadas ao compilador ao compilar
+	arquivos de código fonte em linguagem C++.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _mame-compilation-archopts-objc:
+
+**ARCHOPTS_OBJC**
+
+	Opções adicionais que serão passadas ao compilador ao compilar
+	arquivos de código fonte Objective-C.
+
+.. _mame-compilation-archopts-objcxx:
+
+**ARCHOPTS_OBJCXX**
+
+	Opções adicionais que serão passadas ao compilador ao compilar
+	arquivos de código fonte Objective-C++.
+
+Sede das bibliotecas e framework
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**SDL_INSTALL_ROOT**
+
+	Diretório raiz onde se encontra a instalação dos arquivos de
+	desenvolvimento SDL.
+
+**SDL_FRAMEWORK_PATH**
+
+	Caminho onde se encontra o SDL framework.
+
+**USE_LIBSDL**
+
+	Defina como **1** para usar a biblioteca SDL no destino onde o
+	framework for predefinido.
+
+**USE_SYSTEM_LIB_ASIO**
+
+	Defina como **1** caso prefira usar a biblioteca I/O assíncrona
+	Asio C++ do seu sistema ao invés de usar a versão fornecida pelo
+	MAME.
+
+**USE_SYSTEM_LIB_EXPAT**
+
+	Defina como **1** caso prefira usar o analisador sintático Expat XML
+	do seu sistema ao invés de usar a versão fornecida pelo MAME.
+
+**USE_SYSTEM_LIB_ZLIB**
+
+	Defina como **1** caso prefira usar a biblioteca de compressão zlib
+	instalada no seu sistema ao invés de usar a versão fornecida pelo
+	MAME.
+
+**USE_SYSTEM_LIB_JPEG**
+
+	Defina como **1** caso prefira usar a biblioteca de compressão de
+	imagem libjpeg ao invés de usar a versão fornecida pelo MAME.
+
+**USE_SYSTEM_LIB_FLAC**
+
+	Defina como **1** caso prefira usar a biblioteca de compressão de
+	áudio libFLAC ao invés de usar a versão fornecida pelo MAME.
+
+**USE_SYSTEM_LIB_LUA**
+
+	Defina como **1** caso prefira usar a biblioteca do interpretador
+	Lua instalado no seu sistema ao invés de usar a versão fornecida
+	pelo MAME.
+
+**USE_SYSTEM_LIB_SQLITE3**
+
+	Defina como **1** caso prefira usar a biblioteca do motor de
+	pesquisa SQLITE do seu sistema ao invés de usar a versão fornecida
+	pelo MAME.
+
+**USE_SYSTEM_LIB_PORTMIDI**
+
+	Defina como **1** caso prefira usar a biblioteca PortMidi instalada
+	no seu sistema ao invés de usar a versão fornecida pelo MAME.
+
+.. raw:: latex
+
+	\clearpage
+
+**USE_SYSTEM_LIB_PORTAUDIO**
+
+	Defina como **1** caso prefira usar a biblioteca PortAudio do seu
+	sistema ao invés de usar a versão fornecida pelo MAME.
+
+**USE_BUNDLED_LIB_SDL2**
+
+	Defina como **1** caso prefira usar a versão da biblioteca fornecida
+	pelo MAME ao invés da versão instalada no seu sistema. Essa opção já
+	vem predefinida para compilações feitas em Visual Studio e em
+	versões para Android. Já para outras outras configurações, é
+	preferível que seja usada a versão instalada no sistema.
+
+**USE_SYSTEM_LIB_UTF8PROC**
+
+	Defina como **1** caso prefira usar a biblioteca Julia utf8proc
+	instalada no seu sistema ao invés de usar a versão fornecida pelo
+	MAME.
+
+**USE_SYSTEM_LIB_GLM**
+
+	Defina como **1** caso prefira usar a biblioteca GLM OpenGL
+	Mathematics do seu sistema ao invés de usar a versão fornecida pelo
+	MAME.
+
+**USE_SYSTEM_LIB_RAPIDJSON**
+
+	Defina como **1** caso prefira usar a biblioteca Tencent RapidJSON
+	do seu sistema ao invés de usar a versão fornecida pelo MAME.
+
+**USE_SYSTEM_LIB_PUGIXML**
+
+	Defina como **1** caso prefira usar a biblioteca pugixml do seu
+	sistema ao invés de usar a versão fornecida pelo MAME.
 
 .. raw:: latex
 
