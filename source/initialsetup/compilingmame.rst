@@ -1179,13 +1179,25 @@ valores válidos são:
 
 .. _mame-compilation-sse2:
 
-**SSE2=1**
+**SSE2**
 
 	**Double Precision Streaming SIMD Extensions**, em resumo, são
 	instruções que otimizam o desempenho em processadores
-	compatíveis. O MAME terá uma melhor performance quando essa
-	opção é usada segundo a `nota publicada
+	compatíveis. Se definido como **1** o MAME terá uma melhor
+	performance segundo a `nota publicada
 	<https://www.mamedev.org/?p=451>`_ no site do MAME.
+
+.. _mame-compilation-ptr64:
+
+**PTR64**
+
+	Se definido como **1** define o tamanho do ponteiro em bit, assim
+	sendo, gera uma versão 64-bit do executável do MAME ou 32-bit quando
+	não for definido.
+	Caso não haja nenhum problema durante o processo de compilação, você
+	terá um executável do MAME chamado **mame64.exe** para a versão
+	*64-bit* ou **mame.exe** caso você tenha compilado uma versão para
+	*32-bit*.
 
 .. raw:: latex
 

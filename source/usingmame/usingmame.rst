@@ -105,17 +105,24 @@ descrição de algumas opções de configuração na seção
 configuração listada ali, possui uma versão equivalente para a linha de
 comando).
 
+.. raw:: latex
 
-	**mame.exe -createconfig**
+	\clearpage
 
 Cria um novo arquivo ``mame.ini`` com as configurações primárias já
 predefinidas.
+
+	**mame.exe -createconfig**
+
 Observe que o ``mame.ini`` é basicamente um arquivo de texto simples,
 portanto, você pode abri-lo com qualquer editor de texto (como o
-Notepad, Geany, Emacs ou TextEdit por exemplo) e alterar todas as opções
-conforme a sua necessidade. A principio, não há a necessidade de nenhum
-ajuste específico para começar a usar o MAME, então você pode
-basicamente deixar a maioria das opções inalteradas.
+Notepad, `Geany <https://www.geany.org/>`_,
+`Emacs <https://www.gnu.org/software/emacs/>`_ ou
+`TextEdit <https://support.apple.com/pt-br/guide/textedit/welcome/mac>`_
+por exemplo) e alterar todas as opções conforme a sua necessidade. A
+principio, não há a necessidade de nenhum ajuste específico para começar
+a usar o MAME, então você pode basicamente deixar a maioria das opções
+inalteradas.
 
 Caso o MAME venha a ser atualizado, novas opções disponíveis serão
 aplicadas ao ``mame.ini`` anterior [2]_ quando o comando for executado

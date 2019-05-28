@@ -9,7 +9,7 @@ Introdução
 ----------
 
 Agora é possível controlar o MAME externamente usando scripts LUA [1]_.
-Essa funcionalidade apareceu inicialmente na versão 0.148, quando o
+Essa funcionalidade apareceu inicialmente na versão **0.148**, quando o
 ``luaengine`` foi implementado. Hoje em dia, a interface LUA é rica o
 suficiente para deixar você inspecionar e manipular os estados dos
 dispositivos, acesso aos registros do CPU, ler e escrever a memória,
@@ -74,7 +74,7 @@ Rode o MAME num terminal para ter acesso ao console Lua:
       _/  _/  _/  _/_/_/_/  _/  _/  _/  _/_/_/
      _/      _/  _/    _/  _/      _/  _/
     _/      _/  _/    _/  _/      _/  _/_/_/_/
-    mame v0.205
+    mame v0.210
     Copyright (C) Nicola Salmoria and the MAME team
 
     Lua 5.3
@@ -100,7 +100,7 @@ você está rodando com o comando abaixo:
 ::
 
     [MAME]> print(emu.app_name() .. " " .. emu.app_version())
-    mame 0.205
+    mame 0.210
 
 Nós agora começaremos a explorar os métodos relacionadas à tela.
 Primeiro, vamos enumerar as telas disponíveis:

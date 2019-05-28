@@ -155,15 +155,6 @@ capítulo :ref:`compiling-mame`: ::
 
 	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
 
-**PTR64=1**
-
-	Define o tamanho do ponteiro em bit, assim sendo, gera uma versão
-	64-bit do executável do MAME ou 32-bit quando não for definido.
-
-Caso não haja nenhum problema durante o processo de compilação, você
-terá um executável do MAME chamado **mame64.exe** para a versão *64-bit*
-ou **mame.exe** caso você tenha compilado uma versão para *32-bit*.
-
 .. [1]	Cross compiling no Inglês. (Nota do tradutor)
 .. [2]	Todo o processo no meu computador leva cerca de 4 horas, AMD FX
 		tm-8350, 16GiB de memória DDR3. (Nota do tradutor)
