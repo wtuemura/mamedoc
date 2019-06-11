@@ -6,6 +6,12 @@
 Efeitos BGFX para (quase) todo mundo
 ====================================
 
+.. note::
+
+	Segundo `este post <https://www.reddit.com/r/MAME/comments/bx1c90/would_using_hlsl_add_input_lag_with_my_spec/eq3boab>`_
+	feito pelo **MameHaze** [#]_ os efeitos BGFX causam lentidão na
+	emulação e poderão ser removidos do MAME no futuro.
+
 Por predefinição, o MAME gera um sinal de vídeo puro, assim como seria
 também no hardware original do arcade até o sinal chegar aos circuitos
 que levam o sinal ao monitor CRT do arcade, com pequenas modificações na
@@ -57,7 +63,7 @@ desperdiçado. Muitos gabinetes de arcade na época utilizavam uma moldura
 com ilustrações ao redor da tela, caso você tenha esses arquivos o MAME
 também irá exibir essas ilustrações na tela. Para se obter um melhor
 resultado, ative o visualizador de ilustrações e selecione o modo
-recortado [1]_.
+recortado [#]_.
 
 Alguns monitores de LCD mais antigos usavam uma resolução nativa de
 1280x1024 onde tinham uma proporção de tela no formato 5:4.
@@ -217,7 +223,7 @@ Alterando as configurações
 		``bgfx_screen_chains hlsl,unfiltered,unfiltered``
 
 	Observe que as vírgulas estão nas bordas externas e qualquer
-	dois-pontos estão no meio. [2]_
+	dois-pontos estão no meio. [#]_
 
 **bgfx_shadow_mask**
 
@@ -254,7 +260,7 @@ Customizando as configurações de bgfx hlsl dentro do MAME
 Comece rodando o MAME com o jogo de sua preferência (**mame pacman** por
 exemplo)
 
-Use a tecla til (**~**) [3]_ para chamar a tela de opções que vai
+Use a tecla til (**~**) [#]_ para chamar a tela de opções que vai
 aparecer na parte de baixo da tela. Use as teclas cima e baixo para
 navegar dentre as várias opções, enquanto as teclas esquerda e direita
 irão permitir que você altere o valor dessas opções. Os resultados
@@ -262,8 +268,13 @@ aparecerão em tempo real conforme elas forem sendo alteradas.
 
 Observe que as configurações são individuais para cada tela.
 
-.. [1]	Cropped do Inglês. (Nota do tradutor)
-.. [2]	Onde? (Nota do tradutor)
-.. [3]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
+.. [#]	**Citação** "O uso do BGFX  adiciona algo em torno de 2 ou 3
+		quadros (de atraso) e no geral é considerado inadequado para
+		jogos ainda que uma aparência melhor (Eu acredito que (o BGFX)
+		acabará sendo removido já que é um problema significativo
+		segundo os usuários)".
+.. [#]	Cropped do Inglês. (Nota do tradutor)
+.. [#]	Onde? (Nota do tradutor)
+.. [#]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)

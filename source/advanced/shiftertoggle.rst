@@ -28,7 +28,6 @@ customização extrema feita apenas pessoas que têm essa necessidade em
 específico e o conhecimento para fazer o uso dela da forma correta.
 
 
-
 Alternando o interruptor de câmbio
 ----------------------------------
 
@@ -48,7 +47,9 @@ no editor de texto de sua preferência.
 Dentro do arquivo ``spyhunt.cfg``, você deverá encontrar as seguintes
 linhas de texto de configuração para a entrada. O código de entrada
 exibido no meio da configuração pode variar dependendo da posição do
-controle que você tiver configurado: ::
+controle que você tiver configurado:
+
+.. code-block:: xml
 
              <port tag=":ssio:IP0" type="P1_BUTTON2" mask="16" defvalue="16">
                  <newseq type="standard">
@@ -59,7 +60,9 @@ controle que você tiver configurado: ::
 
 Você precisa editar a linha da porta que definirá a entrada. Para o jogo
 Spy Hunter será *P1_BUTTON2*. Adicione ``toggle="no"`` no final da tag,
-como mostra o exemplo abaixo: ::
+como mostra o exemplo abaixo:
+
+.. code-block:: xml
 
              <port tag=":ssio:IP0" type="P1_BUTTON2" mask="16" defvalue="16" toggle="no">
                  <newseq type="standard">

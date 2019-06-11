@@ -1718,9 +1718,11 @@ funcionar corretamente em alguns computadores Mac.**
 
 	Define qual o monitor físico em seu sistema você deseja que cada
 	janela use por padrão. Para usar várias janelas, você deve ter
-	aumentado o valor da opção ``-numscreens``.
+	aumentado o valor da opção :ref:`-numscreens
+	<mame-commandline-numscreens>`.
 	O nome de cada exibição em seu sistema pode ser determinado
-	executando o MAME com a opção ``-verbose``.
+	executando o MAME com a opção :ref:`-verbose
+	<mame-commandline-verbose>`.
 	Os nomes de exibição geralmente estão no formato: *\\\\.\DISPLAYn*,
 	onde **n** é um número do monitor conectado.
 	
@@ -1785,8 +1787,8 @@ funcionar corretamente em alguns computadores Mac.**
 	
 	No modo janelado essa resolução é usada para determinar o tamanho
 	máximo para a janela. Essa opção também requer que seja usada a
-	opção ``-switchres`` para ativar a comutação de resolução junto com
-	**-video d3d**.
+	opção :ref:`-switchres <mame-commandline-switchres>` para ativar a
+	comutação de resolução em conjunto com a opção **-video d3d**.
 	
 		O valor predefinido para essas opções é **auto**.
 	

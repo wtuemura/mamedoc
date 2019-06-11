@@ -1939,7 +1939,9 @@ Compile o MAME como mostra o exemplo abaixo: ::
 	\clearpage
 
 Ao rodar o mame com a máquina com problema, voce terá um retorno
-semelhante ao exemplo abaixo: ::
+semelhante ao exemplo abaixo:
+
+.. code-block:: c
 
 	==2227==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f6b8d4a6800 at pc 0x0000019a963e bp 0x7ffd4dd2d450 sp 0x7ffd4dd2d448
 	READ of size 2 at 0x7f6b8d4a6800 thread T0

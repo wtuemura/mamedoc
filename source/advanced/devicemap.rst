@@ -45,7 +45,7 @@ como **JOYCODE**, **GUNCODE**, **MOUSECODE**, etc.
 Exemplo de configuração 
 -----------------------
 
-::
+.. code-block:: xml
 
 	<!-- Veja uma versão deste arquivo aqui https://pastebin.com/fTbEsANJ -->
 	<mameconfig version="10">

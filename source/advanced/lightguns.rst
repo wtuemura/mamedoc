@@ -2,9 +2,10 @@
 
 	\clearpage
 
-
 Pistola de luz
 ==============
+
+.. contents:: :local:
 
 .. _pistola-luz-funcionamento:
 
@@ -41,6 +42,10 @@ que a pistola de luz deles funcionem em qualquer TV de tela plana e
 usando desde os consoles de videogames originais, máquinas de fliperama
 e até mesmo emuladores como o MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _pistola-config-windows:
 
 Configuração da pistola no Windows
@@ -69,13 +74,11 @@ o comando ``mame -v`` e observe a listagem de **Input** (Entradas) que
 ele gera e tome nota!
 
 Para não deixar a saída muito grande separei apenas o que nos
-interessa: ::
+interessa:
+
+.. code-block:: kconfig
 
 	Input: Adding mouse #2: HID-compliant mouse (device id: \\?\HID#VID_1D57&PID_AD04&MI_01&Col01#7&ecdb012&0&0000#{378de44c-56ef-11d1-bc8c-00a0c91405dd})
-
-.. raw:: latex
-
-	\clearpage
 
 Para que fique fácil a compreensão, vamos quebrar essa linha em pedaços
 listando apenas as partes que nos interessa para a configuração:
@@ -93,7 +96,9 @@ listando apenas as partes que nos interessa para a configuração:
 	  ``ATRAK Device #1``.
 
 Para remapear este dispositivo como ``lightgun #0``, nós usamos o
-exemplo da configuração abaixo: ::
+exemplo da configuração abaixo:
+
+.. code-block:: xml
 
 	<mameconfig version="10">
 	<system name="default">
@@ -110,7 +115,9 @@ exemplo da configuração abaixo: ::
 Salve a configuração como `pistola.cfg <https://pastebin.com/3chyfNzr>`_
 dentro do diretório **ctrl**, caso o MAME esteja aberto, feche. Inicie-o
 novamente com o comando ``mame -v -ctrlr pistola``, você deverá ter na
-saída algo deste tipo: ::
+saída algo deste tipo:
+
+.. code-block:: bash
 
 	Attempting to parse: pistola.cfg
 	Input: Remapped lightgun #0: HID-compliant mouse (device id: \\?\HID#VID_1D57&PID_AD04&MI_01&Col01#7&ecdb012&0&0000#{378de44c-56ef-11d1-bc8c-00a0c91405dd})
@@ -120,15 +127,14 @@ saída algo deste tipo: ::
 Configuração da pistola no Linux
 --------------------------------
 
-No Linux o processo é um pouco mais complicado e exige um pouco mais de
-trabalho na parte de configuração porém não desanime, é mais fácil fazer
-do que descrever todo o processo. Existem diferentes meios de se
-alcançar este objetivo, dentre os mais conhecidos fazem com que o MAME
-veja essa pistola de luz como um mouse, o que faz com que a experiência
-final do usuário não seja das melhores. Não há qualquer alinhamento
-prévio entre a interface do mouse com a mira externa, isso exige que uma
-configuração individual seja feita para cada jogo e ainda assim não é a
-mais precisa.
+No Linux o processo é mais complicado e exige um pouco mais de trabalho
+na parte de configuração porém não desanime, é mais fácil fazer do que
+descrever todo o processo. Existem diferentes meios de se alcançar este
+objetivo, dentre os mais conhecidos fazem com que o MAME veja essa
+pistola de luz como um mouse, o que faz com que a experiência final do
+usuário não seja das melhores. Não há qualquer alinhamento prévio entre
+a interface do mouse com a mira externa, isso exige que uma configuração
+individual seja feita para cada jogo e ainda assim não é a mais precisa.
 
 Existe no entanto um outro método fazendo a configuração através do
 ``udev`` e ``Xorg.conf`` que permite um acesso direto ao acessório e com
@@ -138,14 +144,10 @@ A base de referência usada aqui é o Debian e Ubuntu, talvez alguns
 ajustes na configuração sejam necessárias para outros sistemas Linux, no
 entanto este apanhado geral serve como um guia do que precisa ser feito.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _pistola-config-udev:
 
 Configuração das regras para udev
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A pistola AimTrak assim como as de outras marcas, quando conectadas na
 porta USB, exibem geralmente 2 mouses e 1 joystick. O que faremos será
@@ -160,7 +162,9 @@ Crie um novo arquivo chamado **99-aimtrak.rules** em
 numérico alto pois este arquivo não tem prioridade alguma, assim
 deixamos ele para ser carregado por último pelo sistema evitando
 possíveis conflitos. Usando o seu editor preferido, cole a configuração
-abaixo: ::
+abaixo:
+
+.. code-block:: bash
 
 		# Veja uma cópia deste arquivo no link abaixo:
 		# https://pastebin.com/HQvML0Dg
@@ -203,7 +207,9 @@ Toda a vez que um dispositivo USB é conectado no Linux ele faz um
 registro dessa conexão, para acessar esse registro faça o comando
 ``sudo dmesg`` no terminal logo depois de conectar a sua pistola USB.
 Aqui um exemplo do que aparece no terminal logo depois que um mouse
-gamer USB é conectado: ::
+gamer USB é conectado:
+
+.. code-block:: bash
 
 	[12119.580375] usb 2-1.3: new full-speed USB device number 3 using xhci_hcd
 	[12119.688300] usb 2-1.3: New USB device found, idVendor=1d57, idProduct=ad04
@@ -218,7 +224,9 @@ gamer USB é conectado: ::
 O exemplo mostra duas interfaces **input** assim como é com a pistola
 **AimTrak**, basta agora substituir os valores de **idVendor** e
 **idProduct** para bater com o nosso dispositivo, assim a configuração
-ficaria assim: ::
+ficaria assim:
+
+.. code-block:: bash
 
 		# Veja uma cópia deste arquivo no link abaixo:
 		# https://pastebin.com/gw0VszkK
@@ -286,7 +294,9 @@ Para mais informações acesse este `link
 <https://wayland.freedesktop.org/libinput/doc/latest/what-is-libinput.html>`_.
 
 O comando deve listar todos os dispositivos, aqui limitado apenas para o
-nosso caso: ::
+nosso caso:
+
+.. code-block:: kconfig
 
 	Device:           LXD Gaming Mouse
 	Kernel:           /dev/input/event14
@@ -299,7 +309,9 @@ nosso caso: ::
 
 A saída completa foi eliminada para exibir apenas o que nos interessa,
 caso a sua distribuição não tenha o **libinput-tools** por algum motivo, 
-podemos usar o bom e velho comando ``cat /proc/bus/input/devices``: ::
+podemos usar o bom e velho comando ``cat /proc/bus/input/devices``:
+
+.. code-block:: kconfig
 
 	I: Bus=0003 Vendor=1d57 Product=ad04 Version=0110
 	N: Name="LXD Gaming Mouse"
@@ -320,7 +332,9 @@ podemos usar o bom e velho comando ``cat /proc/bus/input/devices``: ::
 Veja que o comando também mostra o Vendor e Product ID's, com essa
 informação em mãos criamos o seguinte conteúdo para o nosso arquivo
 `99-pistola.conf <https://pastebin.com/HQpY06Ca>`_, novamente, usamos
-**99** para que este seja o último arquivo a ser lido pelo sistema: ::
+**99** para que este seja o último arquivo a ser lido pelo sistema:
+
+.. code-block:: kconfig
 
 	Section "InputClass"
 		Identifier "LXD Gaming Mouse"
@@ -372,7 +386,9 @@ Configuração genérica da pistola no MAME
 
 Existem diferentes maneiras de fazer este tipo de configuração no MAME,
 a primeira seria editando o seu ``~/.mame/mame.ini`` com as
-configurações abaixo para **Windows**: ::
+configurações abaixo para **Windows**:
+
+.. code-block:: kconfig
 
 	lightgun                  1
 	lightgun_device           lightgun
@@ -380,7 +396,9 @@ configurações abaixo para **Windows**: ::
 
 Adicione as opções acima no seu ``mame.ini`` e pronto.
 
-Aqui a configuração para **Linux** e variantes **SDL**: ::
+Aqui a configuração para **Linux** e variantes **SDL**:
+
+.. code-block:: kconfig
 
 	lightgun                  1
 	lightgun_device           mouse
@@ -398,7 +416,9 @@ valor que precisamos usar é o **nome do dispositivo** ou o seu **ID**.
 as pistolas que você tiver no sistema, cada uma com o seu ID único.
 Com a pistola ou o mouse conectado, inicie o MAME com o comando
 ``mame64 -v``, o MAME deve exibir uma mensagem como essa (ela vai variar
-muito de caso para caso): ::
+muito de caso para caso):
+
+.. code-block:: bash
 
 	Evaluating device with name: Virtual core pointer
 	Evaluating device with name: Virtual core keyboard
@@ -438,7 +458,9 @@ verifique no gerenciador de pacotes da sua distribuição como fazer para
 instalá-lo, no **Debian** e **Ubuntu** seria ``sudo
 apt-get install xinput``.
 
-Execute o comando ``xinput list``: ::
+Execute o comando ``xinput list``:
+
+.. code-block:: bash
 
 	  Virtual core pointer					id=2	[master pointer  (3)]
 	     Virtual core XTEST pointer				id=4	[slave  pointer  (2)]
@@ -458,7 +480,9 @@ Execute o comando ``xinput list``: ::
 
 O comando exibe a **id=14**, **id=15** e **id=16** para o
 **LXD Gaming Mouse**, nos testes o id que funciona com o nosso
-dispositivo é o **id=15**, logo a configuração final fica assim: ::
+dispositivo é o **id=15**, logo a configuração final fica assim:
+
+.. code-block:: kconfig
 
 	lightgun                  1
 	lightgun_device           mouse
@@ -467,7 +491,9 @@ dispositivo é o **id=15**, logo a configuração final fica assim: ::
 	offscreen_reload          1
 
 Salve o seu ``mame.ini`` com as opções acima e inicie o MAME com o
-comando ``mame64 -v``, na saída agora temos: ::
+comando ``mame64 -v``, na saída agora temos:
+
+.. code-block:: bash
 
 	Lightgun: Begin initialization
 	Lightgun mapping: Logical id 1: 15
@@ -482,6 +508,121 @@ comando ``mame64 -v``, na saída agora temos: ::
 
 Escolha um jogo de tiro qualquer e verá que a sua pistola ou mouse deve
 funcionar sem qualquer problema.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _pistola-usando:
+
+Usando uma Pistola de luz no MAME
+---------------------------------
+
+Agora que tudo está funcionando a parte mais chata seria fazer
+configuração da sua pistola para cada uma das trezentas e poucas
+máquinas, porém isso é mais simples do que parece. O MAME oferece a
+opção :ref:`-ctrlr <mame-commandline-ctrlrpath>` para que você possa
+carregar a configuração que você já fez para uma máquina mas que podem
+ser usada em outras.
+
+Inicie uma máquina qualquer como **bang** por exemplo, ``mame64 bang``,
+quando ela iniciar pressione **TAB** para acessar a interface e vá em
+**Entrada (esta máquina)**. Para o **Jogador 1** selecione **Lightgun X
+Analog** e pressione **Enter**, mova a pistola da esquerda para direita,
+deve aparecer **Gun 1 X**, faça o mesmo com **Lightgun X Analog** mas
+mova a pistola de cima para baixo, agora a opção deve aparecer como
+**Gun 1 X**. Caso tenha mais uma pistola para o jogador 2 faça o mesmo
+em **Lightgun X 2 Analog** e **Lightgun Y 2 Analog**.
+
+Pressione **ESQ** para sair do MAME, vá até o diretório **cfg** e
+localize o arquivo `bang.cfg <https://pastebin.com/n1YbX53G>`_, nele
+está toda a configuração que você fez, exemplo:
+
+.. code-block:: xml
+
+	<?xml version="1.0"?>
+	<!-- This file is autogenerated; comments and unknown tags will be stripped -->
+	<mameconfig version="10">
+		<system name="bang">
+		<counters>
+			<coins index="0" number="10" />
+		</counters>
+		<input>
+		<port tag=":LIGHT0_X" type="P1_LIGHTGUN_X" mask="255" defvalue="128">
+			<newseq type="standard">
+				GUNCODE_1_XAXIS
+			</newseq>
+		</port>
+		<port tag=":LIGHT0_Y" type="P1_LIGHTGUN_Y" mask="255" defvalue="128">
+			<newseq type="standard">
+				GUNCODE_1_YAXIS
+			</newseq>
+		</port>
+	</input>
+	</system>
+	</mameconfig>
+
+.. raw:: latex
+
+	\clearpage
+
+O exemplo acima foi gerado no Linux, no Windows e outros sistemas será
+gerado o mesmo arquivo mas com uma `configuração diferente
+<https://pastebin.com/FZJd3UBW>`_, aqui o exemplo para o Aimtrak no
+Windows:
+
+.. code-block:: xml
+
+	
+    <?xml version="1.0"?>
+    <!-- This file is autogenerated; comments and unknown tags will be stripped -->
+    <mameconfig version="10">
+        <system name="bang">
+            <counters>
+                <coins index="0" number="10" />
+            </counters>
+            <input>
+                <mapdevice device="ATRAK Device #1 product_XXXXXXXX-0000-0000-0000-XXXXXXXXXXXX instance_XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" controller="GUNCODE_1" />
+                <mapdevice device="ATRAK Device #2 product_YYYYYYYY-0000-0000-0000-YYYYYYYYYYYY instance_YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY" controller="GUNCODE_2" />
+                <port type="P1_LIGHTGUN_X">
+                    <newseq type="standard">
+                        GUNCODE_1_XAXIS
+                    </newseq>
+                </port>
+                <port type="P1_LIGHTGUN_Y">
+                    <newseq type="standard">
+                        GUNCODE_1_YAXIS
+                    </newseq>
+                </port>
+                <port type="P2_LIGHTGUN_X">
+                    <newseq type="standard">
+                        GUNCODE_2_XAXIS
+                    </newseq>
+                </port>
+                <port type="P2_LIGHTGUN_Y">
+                    <newseq type="standard">
+                        GUNCODE_2_YAXIS
+                    </newseq>
+                </port>
+            </input>
+        </system>
+    </mameconfig>
+
+Independente do arquivo que você tenha gerado edite a linha
+**<system name="bang">** para **<system name="default">** e salve o
+arquivo como **pistola.cfg** dentro do diretório **ctrl**. Agora sempre
+que você for iniciar o MAME com essa configuração, basta fazer o comando
+``mame64 -ctrlr pistola bang``. Assim o MAME inicia a máquina com as
+suas configurações predefinidas.
+
+Caso não queira fazer isso para cada jogo, adicione a configuração no
+seu **mame.ini**: ::
+
+	ctrlr                     pistola
+
+Lembrando que é possível também fazer como foi ensinado em
+:ref:`Habilitando a pistola apenas em jogos que precisam
+<pistola-em-jogos-que-precisam>` adicionando esta opção em **cfg.txt**.
 
 .. raw:: latex
 
@@ -510,6 +651,8 @@ para nos ajudar, certo?
 Todos os procedimentos abaixo são feitos em um ambiente **Linux** mas
 podem funcionar em um ambiente `MINGW <http://www.mingw.org/>`_
 ou similares.
+
+.. _pistola-luz-maquinas:
 
 *	Abra o seu arquivo ``~/.mame/mame.ini``, em **inipath** substitua o
  	``$HOME/.mame;.;ini`` por ``$HOME/.mame;.;ini;pistola``
@@ -549,14 +692,14 @@ ou similares.
 		lightgun_index1           15
 		offscreen_reload          1
 
-.. raw:: latex
-
-	\clearpage
-
 *	No terminal, ainda dentro do diretório pistola, execute o comando
 	abaixo para criar uma configuração com o nome de cada máquina: ::
 
 		while read lista; do cp cfg.txt "$lista".ini; done < maquinas
+
+.. raw:: latex
+
+	\clearpage
 
 Agora dentro do diretório pistola estará cheia de arquivos ***.ini**
 como o nome de cada máquina que usa uma pistola e com a configuração
@@ -582,6 +725,10 @@ estão os arquivos.
 Use o `7-zip <https://www.7-zip.org/>`_ para descompactar os arquivos
 dentro do diretório pistola.
 
+.. raw:: latex
+
+	\clearpage
+
 .. pistola-separando-roms:
 
 Separando apenas as ROMs das máquinas de tiro
@@ -592,7 +739,8 @@ para cada máquina, podemos também usar a mesma lista para copiar apenas
 as suas ROMs atendendo a necessidade das pessoas que configuram as suas
 máquinas dessa forma.
 
-Ainda usando o arquivo **maquinas** executaremos as seguintes ações:
+Ainda usando o arquivo :ref:`maquinas <pistola-luz-maquinas>`
+executaremos as seguintes ações:
 
 *	Crie um diretório **roms** em qualquer outro lugar fora do diretório
 	onde se encontra o MAME.
@@ -616,10 +764,6 @@ Ainda usando o arquivo **maquinas** executaremos as seguintes ações:
 	/home/mame/mame/roms/alien3u.zip
 	/home/mame/mame/roms/aplatoon.zip
 	/home/mame/mame/roms/area51.zip
-
-.. raw:: latex
-
-	\clearpage
 
 *	Agora com a lista das ROMs e seu caminho completo basta copiá-los
 	com o comando abaixo: ::
@@ -655,117 +799,6 @@ o comando: ::
 O exemplo que foi demonstrado aqui serve para qualquer outro tipo de
 lista, você pode por exemplo gerar uma lista para máquinas CPS1/CPS2/ZN
 e depois copiar essas ROMs em diretórios separados, o céu é o limite.
-
-.. raw:: latex
-
-	\clearpage
-
-.. _pistola-usando:
-
-Usando uma Pistola de luz no MAME
----------------------------------
-
-Agora que tudo está funcionando a parte mais chata seria fazer
-configuração da sua pistola para cada uma das trezentas e poucas
-máquinas, porém isso é mais simples do que parece. O MAME oferece a
-opção :ref:`-ctrlr <mame-commandline-ctrlrpath>` para que você possa
-carregar a configuração que você já fez para uma máquina mas que podem
-ser usada em outras.
-
-Inicie uma máquina qualquer como **bang** por exemplo, ``mame64 bang``,
-quando ela iniciar pressione **TAB** para acessar a interface e vá em
-**Entrada (esta máquina)**. Para o **Jogador 1** selecione **Lightgun X
-Analog** e pressione **Enter**, mova a pistola da esquerda para direita,
-deve aparecer **Gun 1 X**, faça o mesmo com **Lightgun X Analog** mas
-mova a pistola de cima para baixo, agora a opção deve aparecer como
-**Gun 1 X**. Caso tenha mais uma pistola para o jogador 2 faça o mesmo
-em **Lightgun X 2 Analog** e **Lightgun Y 2 Analog**.
-
-Pressione **ESQ** para sair do MAME, vá até o diretório **cfg** e
-localize o arquivo `bang.cfg <https://pastebin.com/n1YbX53G>`_, nele
-está toda a configuração que você fez, exemplo: ::
-
-	<?xml version="1.0"?>
-	<!-- This file is autogenerated; comments and unknown tags will be stripped -->
-	<mameconfig version="10">
-		<system name="bang">
-		<counters>
-			<coins index="0" number="10" />
-		</counters>
-		<input>
-			<port tag=":LIGHT0_X" type="P1_LIGHTGUN_X" mask="255" defvalue="128">
-				<newseq type="standard">
-					GUNCODE_1_XAXIS
-				</newseq>
-			</port>
-			<port tag=":LIGHT0_Y" type="P1_LIGHTGUN_Y" mask="255" defvalue="128">
-				<newseq type="standard">
-					GUNCODE_1_YAXIS
-				</newseq>
-			</port>
-		</input>
-	</system>
-	</mameconfig>
-
-.. raw:: latex
-
-	\clearpage
-
-O exemplo acima foi gerado no Linux, no Windows e outros sistemas será
-gerado o mesmo arquivo mas com uma `configuração diferente
-<https://pastebin.com/FZJd3UBW>`_, aqui o exemplo para o Aimtrak no
-Windows: ::
-
-	﻿<?xml version="1.0"?>
-    <!-- This file is autogenerated; comments and unknown tags will be stripped -->
-    <mameconfig version="10">
-        <system name="bang">
-            <counters>
-                <coins index="0" number="10" />
-            </counters>
-            <input>
-                <mapdevice device="ATRAK Device #1 product_XXXXXXXX-0000-0000-0000-XXXXXXXXXXXX instance_XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" controller="GUNCODE_1" />
-                <mapdevice device="ATRAK Device #2 product_YYYYYYYY-0000-0000-0000-YYYYYYYYYYYY instance_YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY" controller="GUNCODE_2" />
-                <port type="P1_LIGHTGUN_X">
-                    <newseq type="standard">
-                        GUNCODE_1_XAXIS
-                    </newseq>
-                </port>
-                <port type="P1_LIGHTGUN_Y">
-                    <newseq type="standard">
-                        GUNCODE_1_YAXIS
-                    </newseq>
-                </port>
-                <port type="P2_LIGHTGUN_X">
-                    <newseq type="standard">
-                        GUNCODE_2_XAXIS
-                    </newseq>
-                </port>
-                <port type="P2_LIGHTGUN_Y">
-                    <newseq type="standard">
-                        GUNCODE_2_YAXIS
-                    </newseq>
-                </port>
-            </input>
-        </system>
-	</mameconfig>
-
-Independente do arquivo que você tenha gerado edite a linha
-**<system name="bang">** para **<system name="default">** e salve o
-arquivo como **pistola.cfg** dentro do diretório **ctrl**. Agora sempre
-que você for iniciar o MAME com essa configuração, basta fazer o comando
-``mame64 -ctrlr pistola bang``. Assim o MAME inicia a máquina com as
-suas configurações predefinidas.
-
-Caso não queira fazer isso para cada jogo, adicione a configuração no
-seu **mame.ini**: ::
-
-	ctrlr                     pistola
-
-Lembrando que é possível também fazer como foi ensinado em
-:ref:`Habilitando a pistola apenas em jogos que precisam
-<pistola-em-jogos-que-precisam>` adicionando esta opção em **cfg.txt**.
-
 
 .. raw:: latex
 
@@ -860,20 +893,20 @@ compilação usando a opção **SOURCES**.
 
 	Aqui o comando ``cat list-drivers`` lista todo o conteúdo de
 	**list-drivers**, já ``sed ':a;N;$!ba;s/\n/,/g' > compile-drivers``
-	vai quebrar o final de linha depois do último caractere, 
-	substituí-lo por vírgula e redirecionar a sua saída para o arquivo
-	`compile-drivers <https://pastebin.com/3rGt6yvj>`_, exemplo: ::
+	vai quebrar o final de linha depois do último caractere, o 
+	substituirá por vírgula e redirecionará a sua saída para o arquivo
+	`compile-drivers <https://pastebin.com/3rGt6yvj>`_, exemplo:
+
+.. code-block:: bash
 
 		src/mame/drivers/3do.cpp,src/mame/drivers/8080bw.cpp,src/mame/drivers/alg.cpp,src/mame/drivers/atarittl.cpp,...
 
-.. raw:: latex
-
-	\clearpage
-
 *	Com a nossa `lista completa <https://pastebin.com/4pEvJhm2>`_,
-	basta agora executar o comando de compilação do MAME: ::
+	basta agora executar o comando de compilação do MAME:
 
-		make SOURCES=src/mame/drivers/3do.cpp,src/mame/drivers/8080bw.cpp,src/mame/drivers/alg.cpp,src/mame/drivers/atarittl.cpp,src/mame/drivers/bbusters.cpp,src/mame/drivers/calchase.cpp,src/mame/drivers/chihiro.cpp,src/mame/drivers/cischeat.cpp,src/mame/drivers/cops.cpp,src/mame/drivers/crystal.cpp,src/mame/drivers/cswat.cpp,src/mame/drivers/deco32.cpp,src/mame/drivers/dkong.cpp,src/mame/drivers/exidy440.cpp,src/mame/drivers/fantland.cpp,src/mame/drivers/gaelco2.cpp,src/mame/drivers/gticlub.cpp,src/mame/drivers/gunbustr.cpp,src/mame/drivers/hikaru.cpp,src/mame/drivers/hng64.cpp,src/mame/drivers/hornet.cpp,src/mame/drivers/iteagle.cpp,src/mame/drivers/jaguar.cpp,src/mame/drivers/konamigq.cpp,src/mame/drivers/konamigv.cpp,src/mame/drivers/konamigx.cpp,src/mame/drivers/konamim2.cpp,src/mame/drivers/ksys573.cpp,src/mame/drivers/lethal.cpp,src/mame/drivers/lethalj.cpp,src/mame/drivers/lindbergh.cpp,src/mame/drivers/lordgun.cpp,src/mame/drivers/mazerbla.cpp,src/mame/drivers/mediagx.cpp,src/mame/drivers/midxunit.cpp,src/mame/drivers/midyunit.cpp,src/mame/drivers/midzeus.cpp,src/mame/drivers/model2.cpp,src/mame/drivers/model3.cpp,src/mame/drivers/mw8080bw.cpp,src/mame/drivers/namconb1.cpp,src/mame/drivers/namcops2.cpp,src/mame/drivers/namcos10.cpp,src/mame/drivers/namcos11.cpp,src/mame/drivers/namcos12.cpp,src/mame/drivers/namcos22.cpp,src/mame/drivers/namcos23.cpp,src/mame/drivers/namcos2.cpp,src/mame/drivers/naomi.cpp,src/mame/drivers/nycaptor.cpp,src/mame/drivers/oneshot.cpp,src/mame/drivers/opwolf.cpp,src/mame/drivers/othunder.cpp,src/mame/drivers/playch10.cpp,src/mame/drivers/policetr.cpp,src/mame/drivers/pse.cpp,src/mame/drivers/seattle.cpp,src/mame/drivers/segas18.cpp,src/mame/drivers/segas32.cpp,src/mame/drivers/segaxbd.cpp,src/mame/drivers/segaybd.cpp,src/mame/drivers/seta2.cpp,src/mame/drivers/seta.cpp,src/mame/drivers/shootaway2.cpp,src/mame/drivers/skeetsht.cpp,src/mame/drivers/slapshot.cpp,src/mame/drivers/sshot.cpp,src/mame/drivers/ssv.cpp,src/mame/drivers/system1.cpp,src/mame/drivers/taitopjc.cpp,src/mame/drivers/taito_z.cpp,src/mame/drivers/targeth.cpp,src/mame/drivers/tickee.cpp,src/mame/drivers/triplhnt.cpp,src/mame/drivers/undrfire.cpp,src/mame/drivers/unianapc.cpp,src/mame/drivers/unico.cpp,src/mame/drivers/vcombat.cpp,src/mame/drivers/viper.cpp,src/mame/drivers/voyager.cpp,src/mame/drivers/vp101.cpp,src/mame/drivers/vsnes.cpp,src/mame/drivers/williams.cpp,src/mame/drivers/zn.cpp SYMBOLS=1 SYMLEVEL=1 PTR64=1 SSE2=1 OPTIMIZE=3 -j5
+.. code-block:: bash
+
+		make SYMBOLS=1 SYMLEVEL=1 PTR64=1 SSE2=1 OPTIMIZE=3 SOURCES=src/mame/drivers/3do.cpp,src/mame/drivers/8080bw.cpp,src/mame/drivers/alg.cpp,src/mame/drivers/atarittl.cpp,src/mame/drivers/bbusters.cpp,src/mame/drivers/calchase.cpp,src/mame/drivers/chihiro.cpp,src/mame/drivers/cischeat.cpp,src/mame/drivers/cops.cpp,src/mame/drivers/crystal.cpp,src/mame/drivers/cswat.cpp,src/mame/drivers/deco32.cpp,src/mame/drivers/dkong.cpp,src/mame/drivers/exidy440.cpp,src/mame/drivers/fantland.cpp,src/mame/drivers/gaelco2.cpp,src/mame/drivers/gticlub.cpp,src/mame/drivers/gunbustr.cpp,src/mame/drivers/hikaru.cpp,src/mame/drivers/hng64.cpp,src/mame/drivers/hornet.cpp,src/mame/drivers/iteagle.cpp,src/mame/drivers/jaguar.cpp,src/mame/drivers/konamigq.cpp,src/mame/drivers/konamigv.cpp,src/mame/drivers/konamigx.cpp,src/mame/drivers/konamim2.cpp,src/mame/drivers/ksys573.cpp,src/mame/drivers/lethal.cpp,src/mame/drivers/lethalj.cpp,src/mame/drivers/lindbergh.cpp,src/mame/drivers/lordgun.cpp,src/mame/drivers/mazerbla.cpp,src/mame/drivers/mediagx.cpp,src/mame/drivers/midxunit.cpp,src/mame/drivers/midyunit.cpp,src/mame/drivers/midzeus.cpp,src/mame/drivers/model2.cpp,src/mame/drivers/model3.cpp,src/mame/drivers/mw8080bw.cpp,src/mame/drivers/namconb1.cpp,src/mame/drivers/namcops2.cpp,src/mame/drivers/namcos10.cpp,src/mame/drivers/namcos11.cpp,src/mame/drivers/namcos12.cpp,src/mame/drivers/namcos22.cpp,src/mame/drivers/namcos23.cpp,src/mame/drivers/namcos2.cpp,src/mame/drivers/naomi.cpp,src/mame/drivers/nycaptor.cpp,src/mame/drivers/oneshot.cpp,src/mame/drivers/opwolf.cpp,src/mame/drivers/othunder.cpp,src/mame/drivers/playch10.cpp,src/mame/drivers/policetr.cpp,src/mame/drivers/pse.cpp,src/mame/drivers/seattle.cpp,src/mame/drivers/segas18.cpp,src/mame/drivers/segas32.cpp,src/mame/drivers/segaxbd.cpp,src/mame/drivers/segaybd.cpp,src/mame/drivers/seta2.cpp,src/mame/drivers/seta.cpp,src/mame/drivers/shootaway2.cpp,src/mame/drivers/skeetsht.cpp,src/mame/drivers/slapshot.cpp,src/mame/drivers/sshot.cpp,src/mame/drivers/ssv.cpp,src/mame/drivers/system1.cpp,src/mame/drivers/taitopjc.cpp,src/mame/drivers/taito_z.cpp,src/mame/drivers/targeth.cpp,src/mame/drivers/tickee.cpp,src/mame/drivers/triplhnt.cpp,src/mame/drivers/undrfire.cpp,src/mame/drivers/unianapc.cpp,src/mame/drivers/unico.cpp,src/mame/drivers/vcombat.cpp,src/mame/drivers/viper.cpp,src/mame/drivers/voyager.cpp,src/mame/drivers/vp101.cpp,src/mame/drivers/vsnes.cpp,src/mame/drivers/williams.cpp,src/mame/drivers/zn.cpp -j5
 
 
 No final da compilação você terá um executável do MAME customizado, com

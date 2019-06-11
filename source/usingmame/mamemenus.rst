@@ -41,6 +41,25 @@ pressionando a tecla **Enter** do teclado. A interface também aceita o
 uso do mouse fazendo a seleção com um clique e um duplo clique para abri
 a opção ou rodar uma máquina.
 
+.. _mamemenu-alt-valores:
+
+Alterando os valores
+--------------------
+
+A interface é bem intuitiva, os controles para modificar os valores
+predefinidos funcionam da seguinte maneira:
+
+*	**Mouse** - Move o cursor na tela, seleciona os itens, as teclas
+	cima, baixo, esquerda e direita fazem o mesmo.
+*	**Clique duplo ou Enter** - Aguarda a entrada do usuário (controle,
+	teclado, etc).
+*	**Delete** - **1x** apaga o valor, **2x** retorna ao valor
+	predefinido originalmente.
+
+Os campos que possuam mais de uma opção de escolha podem ser abertos
+ao clicar duas vezes nele, como é o caso dos campos disponíveis em
+:ref:`Filtro <mamemenu-filtro>`, por exemplo.
+
 .. raw:: latex
 
 	\clearpage
