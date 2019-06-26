@@ -1581,17 +1581,17 @@ Opções para a configuração de vídeo
 
 	Apenas utilize esta opção caso você esteja jogando em modo janelado.
 
-	Em modo de tela cheia, a opção só será necessária caso a opção
+	Em modo de tela cheia a opção só será necessária caso a opção
 	``-triplebuffer`` não remova o indesejado efeito *tearing*, neste
-	caso você deve ambas as opções em conjunto ``-notriplebuffer``
-	``-waitvsync``.
+	caso, tente usar as duas opções juntas
+	``-notriplebuffer -waitvsync``.
 	A opção ``-waitvsync`` não funciona com ``-video gdi``.
 	
 		O valor predefinido é **Desligado** (**-nowaitvsync**).
 
-	O **MAME SDL** funcionará com essa opção em conjunto com o modo
-	janelado, caso haja compatibilidade do seu sistema operacional,
-	da sua placa de vídeo e respectivos drivers.
+	O **MAME SDL** funcionará com essa opção em modo janelado, caso haja
+	compatibilidade com o seu sistema operacional, da sua placa de vídeo
+	e respectivos drivers.
 	
 	Rode o **MAME SDL** com a opção ``-video opengl`` para aumentar as
 	suas chances de sucesso.
