@@ -208,18 +208,19 @@ Exemplo:
 
 **-listfull** / **-ll** [<*pattern*>]
 
-	Exibe uma lista dos nomes e descrições dos drivers do sistema.
-	É predefinido que todos os sistemas sejam listados, no entanto, você
-	pode filtrar essa lista se usar um nome de máquina, jogo ou coringa
-	após o comando ``-listfull``.
+	Exibe uma lista com o nome da ROM e as suas respectivas descrições
+	para cada máquinas.
+	É predefinido que tudo seja listado, no entanto, você pode filtrar
+	essa lista se usar um nome de máquina, jogo ou coringa após o
+	comando ``-listfull``.
 
 .. _mame-commandline-listsource:
 
 **-listsource** / **-ls** [<*pattern*>...]
 
-	Exibe uma lista de drivers e os nomes dos arquivos relacionados nos
-	quais os drivers do sistema estão definidos. Útil para localizar em
-	qual driver um determinado sistema roda, útil para relatar bugs.
+	Exibe uma lista dos drivers e todas as ROMs relacionado como o
+	mesmo. Útil para localizar em qual driver está uma determinada ROM,
+	como por exemplo ``mame64.exe pacman* -ls`` útil para relatar bugs.
 	É predefinido que todos os sistemas sejam listados, no entanto, você
 	pode filtrar essa lista caso use uma palavra chave ou coringa após o
 	comando ``-listsource``.
@@ -254,11 +255,11 @@ Exemplo:
 
 **-listroms** / **-lr** [<*pattern*>]
 
-	Exibe uma lista de todas as imagens ROM que compõem uma máquina ou
-	dispositivo. Pode ser filtrado caso seja usado um nome de sistema,
-	dispositivos ou máquina. Caso nenhuma palavra chave seja usada como
-	filtro após o comando, *todos* os resultados referente aos sistemas
-	e dispositivos serão exibidos.
+	Exibe uma lista de todas as imagens contidas em uma ROM que fazem
+	parte de uma máquina ou dispositivo. Pode ser filtrado caso seja
+	usado um nome de sistema, dispositivos ou máquina. Caso nenhuma
+	palavra chave seja usada como filtro após o comando, *todos* os
+	resultados referente aos sistemas e dispositivos serão exibidos.
 
 .. _mame-commandline-listsamples:
 
@@ -290,13 +291,11 @@ Exemplo:
 **-listdevices** / **-ld** [<*pattern*>]
 
 	Exibe uma lista de todos os dispositivos conhecidos e conectados
-	em um sistema. O ":" é considerado o próprio sistema
-	com a lista de dispositivos sendo anexada para dar ao usuário
-	uma melhor compreensão do que a emulação está usando. Caso os
-	slots sejam populados por dispositivos, todos os slots
-	adicionais que esses dispositivos fornecerem ficarão visíveis
+	em uma determinada máquina como especificação de CPU, som, vídeo,
+	tela, etc. Caso os slots sejam populados por dispositivos, todos os
+	slots adicionais que esses dispositivos fornecerem ficarão visíveis
 	com ``-listdevices`` também.
-	Por exemplo, caso você instale um controlador de disquete em um
+		Por exemplo, caso você instale um controlador de disquete em um
 	PC, este listará os slots da unidade de disco.
 
 .. _mame-commandline-listslots:
