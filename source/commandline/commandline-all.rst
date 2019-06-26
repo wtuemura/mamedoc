@@ -295,7 +295,7 @@ Exemplo:
 	tela, etc. Caso os slots sejam populados por dispositivos, todos os
 	slots adicionais que esses dispositivos fornecerem ficarão visíveis
 	com ``-listdevices`` também.
-		Por exemplo, caso você instale um controlador de disquete em um
+	Por exemplo, caso você instale um controlador de disquete em um
 	PC, este listará os slots da unidade de disco.
 
 .. _mame-commandline-listslots:
