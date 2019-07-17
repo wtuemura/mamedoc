@@ -59,7 +59,7 @@ Preparando o ambiente
 A plataforma usada neste exemplo foi o *Debian 9*, porém pode ser
 qualquer outro, a vantagem do Debian é que ela é uma distribuição muito
 estável do sistema operacional Linux, por causa disso, o Debian não
-utiliza a última versão de nenhum software como o gcc por exemplo. 
+utiliza a última versão de nenhum software como o gcc por exemplo.
 Geralmente ela fica alguma versões para trás do último lançamento
 encontrado na internet pois o foco é a estabilidade ao invés de
 empacotar a última versão do que quer que seja.

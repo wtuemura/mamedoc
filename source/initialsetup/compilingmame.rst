@@ -1810,16 +1810,14 @@ Para interromper o processo basta teclar **c** seguido da tecla
 Uma outra opção para o gdb é a utilização de interfaces que ajudam a
 organizar a saída do gdb como a `GDB Dashboard
 <https://github.com/cyrus-and/gdb-dashboard>`_, com ela a saída do gdb
-além de ficar colorida, fica mais organizada, já é exibido os valores
-dos registros, o código fonte, etc. No exemplo abaixo é exatamente o
-mesmo do exemplo anterior, porém com informações relevantes disponíveis
-logo que o problema acontecer.
+além de ficar colorida, fica mais organizada, já são exibidos todos
+os valores mais relevantes dos registros, código fonte, etc.
 
 .. raw:: latex
 
 	\clearpage
 
-::
+.. code-block:: shell
 
 	─── Output/messages ────────────────────────────────────────────────────────────
 	─── Assembly ───────────────────────────────────────────────────────────────────
@@ -1869,7 +1867,7 @@ A instalação é simples, basta salvar o .gbdinit no seu home. Para que a
 informação do código fonte (source) apareça como no exemplo acima, é
 necessário que o caminho completo onde o MAME foi compilado ainda
 exista, ou seja, depois de compilar o MAME não faça um ``make clean``,
-deixe-o como está assim o gdb encontrara aquilo que precisa.
+deixe-o como está assim o gdb encontrará o que precisa.
 
 A *GDB Dashboard* é customizável, oferece plug-ins e outras
 configurações que atendam as suas necessidades caso queira se envolver
@@ -1909,10 +1907,10 @@ Como administrador crie o arquivo **clang.list**:
 
 	``sudo touch /etc/apt/sources.list.d/clang.list``
 
-Adicione as linha abaixo ao arquivo clang.list:
+Adicione as linha abaixo ao arquivo clang.list: ::
 
-|	``# 5.0``
-|	``deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-5.0 main``
+	# 5.0
+	deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-5.0 main
 
 Depois de um ``apt-get update`` instale com o comando: ::
 
