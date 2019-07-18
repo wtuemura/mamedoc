@@ -2341,9 +2341,9 @@ Opções para a configuração do áudio
 		mame64.exe -verbose -sound portaudio -pa_api "Windows WASAPI" -pa_device "6 - SONY TV  *01 (AMD High Definition Audio Device)"
 
 	Já para Linux o comando também não é muito diferente para o mesmo
-	dispositivo:
+	dispositivo: ::
 
-	./mame64 -verbose -sound portaudio -pa_api ALSA -pa_device "HDA ATI HDMI: 0 (hw:1,3)"
+		./mame64 -verbose -sound portaudio -pa_api ALSA -pa_device "HDA ATI HDMI: 0 (hw:1,3)"
 
 	Como resultado o MAME deverá exibir a mensagem abaixo mostrando que
 	tanto a interface quanto o dispositivo foram aceitos: ::
