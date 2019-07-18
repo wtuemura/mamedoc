@@ -313,9 +313,9 @@ Exemplo:
 		com **-listslots** também. Por exemplo, caso você instale um
 		controlador de disquete em um PC, este listará os slots da
 		unidade de disco.
-		
+
 		O nome do slot (por exemplo, **ctrl1**) pode ser usado a partir
-		da linha de comando (``-ctrl1`` neste caso) 
+		da linha de comando (``-ctrl1`` neste caso)
 
 .. _mame-commandline-listmedia:
 
@@ -359,7 +359,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 	**Forward Delete** no macOS ou **SCRLOCK** em outros sistemas como
 	Linux por exemplo. Use **FN-Delete** em computadores/notebooks
 	Macintosh que usem teclados compactos.
-	
+
 
 .. _mame-commandline-uifontprovider:
 
@@ -382,17 +382,17 @@ Opções relacionadas ao que é exibido na tela (OSD)
 **-keyboardprovider**
 
 	Escolhe como o MAME lidará com o teclado.
-	
+
 	* No Windows, você pode escolher entre: **auto**, **rawinput**,
 	  **dinput**, **win32**, ou **none**.
 	* No SDL, você pode escolher entre: **auto**, **sdl**, **none**
-	
+
 		O valor predefinido é **auto**.
 
 		No Windows, **auto** tentará o **rawinput**, caso contrário
 		retornará para **dinput**. No SDL, o auto será predefinido como
 		**sdl**.
-	
+
 .. _mame-commandline-mouseprovider:
 
 **-mouseprovider**
@@ -402,7 +402,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 	* No Windows, você pode escolher entre: **auto**, **rawinput**,
 	  **dinput**, **win32**, or **none**.
 	* No SDL, você pode escolher entre: **auto**, **sdl**, **none**
-	
+
 		O valor predefinido é **auto**.
 
 		No Windows, **auto** tentará o **rawinput**, caso contrário
@@ -436,11 +436,11 @@ Opções relacionadas ao que é exibido na tela (OSD)
 	* No Windows, você pode escolher entre: **auto**, **winhybrid**,
 	  **dinput**, **xinput**, ou **none**.
 	* No SDL, você pode escolher entre: **auto**, **sdl**, **none**.
-	
+
 		O valor predefinido é **auto**.
 
 		No Windows **auto** será predefinido para **dinput**.
-	
+
 	Repare que no controle do Microsoft X-Box 360 e X-Box One, eles
 	funcionarão melhor com **winhybrid** ou **xinput**. A opção de
 	controle *winhybrid* suporta uma mistura de DirectInput e Xinput ao
@@ -464,7 +464,7 @@ Opções de MIDI e rede
 	Cria uma lista de adaptadores de rede disponíveis que possam ser
 	usados com a emulação.
 
-Opções de saída das notificações de tela 
+Opções de saída das notificações de tela
 ----------------------------------------
 
 .. _mame-commandline-output:
@@ -473,10 +473,10 @@ Opções de saída das notificações de tela
 
 	Escolhe como o MAME lidará com o processamento de notificações de
 	saída.
-	
+
 	Você pode escolher entre: **auto**, **none**, **console** ou
 	**network**.
-	
+
 		O valor predefinido para a porta de rede é **8000**.
 
 
@@ -568,7 +568,7 @@ Opções para a configuração dos diretórios principais
 
 **-homepath** <*caminho*>
 
-	Define o caminho para onde os **plugins** Lua armazenarão dados. 
+	Define o caminho para onde os **plugins** Lua armazenarão dados.
 
 		O valor predefinido é '.' (no diretório raiz do MAME).
 
@@ -667,7 +667,7 @@ Opções para a configuração dos diretórios principais
 	(*Adobe Glyph Bitmap Distribution Format*) possam ser encontrados.
 	Mais de um caminho podem ser definidos desde que estejam separados
 	por ponto e vírgula.
-	
+
 		O valor predefinido é ‘.’ (isto é, no diretório raiz do MAME).
 
 .. _mame-commandline-cheatpath:
@@ -693,7 +693,7 @@ Opções para a configuração dos diretórios principais
 	Define um ou mais caminhos onde os arquivos de mira **crosshair**
 	possam ser encontrados. Mais de um caminho podem ser definidos desde
 	que estejam separados por ponto e vírgula.
-	
+
 		O valor predefinido é **crosshair** (isto é, um diretório
 		chamado **crosshair** no diretório raiz do MAME). Caso uma mira
 		seja definida no menu, o MAME procurará por
@@ -708,7 +708,7 @@ Opções para a configuração dos diretórios principais
 
 	Define um ou mais caminhos onde possam ser encontrados os plug-ins
 	do Lua para o MAME.
-	
+
 		O valor predefinido é **plugins** (isto é, um diretório chamado
 		**plugins** no diretório raiz do MAME).
 
@@ -718,7 +718,7 @@ Opções para a configuração dos diretórios principais
 
 	Define um ou mais caminhos onde possam ser encontrados os arquivos
 	de tradução que o MAME usa na Interface do Usuário.
-	
+
 		O valor predefinido é **language** (isto é, um diretório chamado
 		**language** no diretório raiz do MAME).
 
@@ -728,7 +728,7 @@ Opções para a configuração dos diretórios principais
 
 		Define um ou mais caminhos onde possam ser encontrados os
 		arquivos de programas avulsos (software).
-	
+
 		O valor predefinido é **software** (isto é, um diretório chamado
 		**software** no diretório raiz do MAME).
 
@@ -745,7 +745,7 @@ Opções para a configuração dos diretórios principais
 	botões do seu controle ou joystick, configurações das chaves DIP,
 	informações da contabilidade da máquina e a organização das janelas
 	do depurador.
-	
+
 		O valor predefinido é **cfg** (isto é, um diretório com o nome
 		**cfg** no diretório raiz do MAME). Caso este diretório não
 		exista, ele será criado automaticamente.
@@ -844,12 +844,12 @@ Opções para a gravação e a reprodução do estado da emulação
 	rebobinar passo único (*Shift Esquerdo + til*) [2]_.
 
 		O valor predefinido é **Desligado** (**-norewind**).
-	
+
 	Caso o depurador esteja no estado *break*, a condição de estado
 	atual é criada a cada 'step in', *step over* ou caso ocorra um
 	*step out*. Nesse modo os estados salvos podem ser carregados e
 	rebobinados executando o comando *rewind* ou *rw* no depurador.
-	
+
 .. _mame-commandline-rewindcapacity:
 
 **-rewind_capacity** <*valor*>
@@ -869,22 +869,22 @@ Opções para a gravação e a reprodução do estado da emulação
 	Descreve como o MAME deve armazenar os arquivos de estado salvos
 	relativo ao caminho do state_directory. <*name*> é uma string que
 	fornece um modelo a ser usado usado para gerar um nome de arquivo.
-	
+
 	São disponibilizadas duas substituições simples: o caractere ``/``
 	representa o separador de caminho em qualquer plataforma de destino
 	(até mesmo no Windows); a string ``%g`` representa o nome do driver
 	do sistema atual.
-	
+
 	O valor predefinido é ``%g``, que cria uma pasta separada para cada
 	sistema.
-	
+
 	Em adição ao que foi dito acima, para os drivers que usem mídias
 	diferentes, como cartões ou disquetes, você também pode usar o
 	indicador ``%d_[media]``. Substitua ``[media]`` pelo comutador de
-	mídia que você deseja usar. 
-	
+	mídia que você deseja usar.
+
 	Alguns exemplos:
-	
+
 	* Caso use ``mame robby -statename foo/%g%i`` os instantâneos serão
 	  salvos em **sta\\foo\\robby\\**.
 
@@ -948,7 +948,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	seção e define o nome do arquivo onde será registrado todos esses
 	comandos durante uma seção.
 	Esse recurso não funciona de forma confiável com todos os sistemas.
-	
+
 		O valor predefinido é **NULO** (sem gravação).
 
 .. _mame-commandline-recordtimecode:
@@ -987,7 +987,7 @@ Opções para a gravação de áudio e vídeo
 	posteriormente use uma ferramenta de edição de áudio qualquer para
 	unir os dois, ou use **-aviwrite** para gravar áudio e vídeo em um
 	único arquivo.
-	
+
 		O valor predefinido é **NULO** (sem gravação).
 
 .. _mame-commandline-aviwrite:
@@ -998,7 +998,7 @@ Opções para a gravação de áudio e vídeo
 	note que a taxa de quadros e a resolução são sempre fixas. Vídeos
 	sem compressão ocupam muito espaço assim como, para que a gravação
 	ocorra sem problemas é necessário um HDD rápido.
-	
+
 	Talvez seja mais prático gravar os seus comandos com
 	:ref:`-record <mame-commandline-record>` e
 	depois fazer o vídeo com
@@ -1029,10 +1029,10 @@ Opções para instantâneos de tela
 **-snapname** <*name*>
 
 	Descreve como MAME deve nomear arquivos de instantâneos de tela.
-	<*name*> será o guia que o MAME usará para nomear o arquivo. 
-	
+	<*name*> será o guia que o MAME usará para nomear o arquivo.
+
 	São disponibilizadas três substituições simples:
-	
+
 * O caractere ``/``
 
 	Usado como separador de caminho em qualquer plataforma inclusive no
@@ -1048,13 +1048,13 @@ Opções para instantâneos de tela
 	novos instantâneos forem sendo criados, O MAME incrementará o valor
 	de ``%i`` para o próximo vazio, caso ele seja omitido, os
 	instantâneos existentes com o mesmo nome serão gravados por cima.
-	
+
 		O valor predefinido é **%g/%i**
-	
+
 	Para os drivers que usam mídias diferentes, como cartões ou
 	disquetes, você também pode usar ``%d_[media]``.
-	Substitua ``[media]`` pelo dispositivo que deseja usar. 
-	
+	Substitua ``[media]`` pelo dispositivo que deseja usar.
+
 	Alguns exemplos:
 
 	* Caso use ``mame.exe robby -snapname foo/%g%i`` os instantâneos
@@ -1080,7 +1080,7 @@ Opções para instantâneos de tela
 	aplicado no resultado final. Observe que ao definir este tamanho a
 	tela não gira automaticamente caso o sistema seja orientado
 	verticalmente.
-	
+
 		O valor predefinido é **auto**.
 
 .. raw:: latex
@@ -1092,18 +1092,18 @@ Opções para instantâneos de tela
 **-snapview** <*nome*>
 
 	Define a exibição a ser usada ao renderizar instantâneos e vídeos.
-	
+
 	É predefinido que ambos usem uma exibição especial *interna*, que
 	renderize uma captura instantânea separada por tela ou renderize
 	os vídeos somente da primeira tela. Ao usar essa opção, você
 	pode alterar esse comportamento predefinido de exibição e
 	selecionar apenas uma exibição que será aplicada a todos os
 	instantâneos e vídeos.
-	
+
 	Observe que <*nome*> não precisa ser uma combinação perfeita,
 	ao invés disso, ele selecionará a primeira exibição cujo nome
 	corresponda a todos os caracteres definidos por <*nome*>.
-	
+
 	Por exemplo, ``-snapview native`` irá casar a visualização
 	"Nativa em (15:14)" ainda que não seja uma combinação ideal.
 	O <*nome*> também pode ser "auto" onde será escolhida a primeira
@@ -1170,13 +1170,13 @@ Opções relacionadas a performance e a velocidade da emulação
 	faz com que seja gravado um instantâneo da tela chamado *final.png*
 	no diretório de
 	:ref:`instantâneos <mame-commandline-snapshotdirectory>`.
-	
+
 	O comando diz ao MAME para interromper a emulação depois de um
 	tempo determinado, o tempo em questão não é o tempo real e sim o
 	tempo interno da emulação, assim, caso você defina 30 segundos, pode
 	ser que dependendo da máquina que esteja sendo emulada, a parada
 	só venha a acontecer depois de algum tempo.
-	
+
 	Este comando também é útil para a realização de benchmarks e testes
 	de automação. Ao combinar esta opção com algumas outras, é possível
 	construir uma estrutura de testes de performance do MAME.
@@ -1208,7 +1208,7 @@ Opções relacionadas a performance e a velocidade da emulação
 	consumindo 100% dos recursos do processador. Essa opção pode causar
 	uma certa intermitência na performance caso outros programas também
 	demandem processamento estejam rodando junto com o MAME.
-	
+
 		O valor predefinido é **Ligado** (**-sleep**).
 
 .. raw:: latex
@@ -1228,7 +1228,7 @@ Opções relacionadas a performance e a velocidade da emulação
 	velocidade normal e um <*fator*> **2.0** significa rodar o sistema
 	2x acima da sua velocidade normal. Note que ao mudar este valor a
 	velocidade de execução do áudio irá mudar proporcionalmente também.
-	
+
 	A resolução interna da fração são dois pontos decimais, então o
 	valor **1.002** será arredondada para **1.0**.
 
@@ -1245,7 +1245,7 @@ Opções relacionadas a performance e a velocidade da emulação
 	MAME irá reduzir a velocidade da emulação para 99% em casos onde por
 	exemplo, um monitor que funcione nativamente a 60 Hz e o sistema
 	emulado rode a 60.6 Hz.
-	
+
 		O valor predefinido é **Desligado** (**-norefreshspeed**).
 
 .. _mame-commandline-numprocessors:
@@ -1363,7 +1363,7 @@ Opções para a configuração de vídeo
 	  Faz a renderização do vídeo usando `OpenGL <https://www.tecmundo.com.br/video-game-e-jogos/872-o-que-e-opengl-.htm>`_,
 	  use em sistemas Windows compatíveis quando por algum motivo a opção
 	  ``d3d`` causar problemas.
-	  
+
 	  Em sistemas não Windows, essa é a opção responsável para que a
 	  renderização da tela aconteça através de aceleração por hardware,
 	  caso seja compatível com o seu sistema operacional.
@@ -1395,7 +1395,7 @@ Opções para a configuração de vídeo
 	  Isso produz uma saída com uma melhor qualidade se comparada com a
 	  opção que o **gdi** assim como permite opções adicionais de
 	  renderização da tela e aceleração gráfica via hardware.
-	
+
 	  É recomendável que você tenha uma placa de vídeo mediana (2002+)
 	  ou uma placa de vídeo Intel embutida modelo *HD3000* ou superior.
 
@@ -1420,7 +1420,7 @@ Opções para a configuração de vídeo
 * **Predefinições:**
 
 	No Windows é **d3d**.
-	
+
 	No Mac OS X é **opengl** pois é quase certo que exista uma pilha
 	OpenGL compatível.
 
@@ -1440,7 +1440,7 @@ Opções para a configuração de vídeo
 	PlayChoice-10 por exemplo*). Cada tela (até 4), possem as suas
 	próprias configurações, taxa de proporção de tela, resolução e
 	exibição, que podem ser definidas usando as opções abaixo.
-	
+
 		O valor predefinido é **1**.
 
 .. _mame-commandline-window:
@@ -1460,7 +1460,7 @@ Opções para a configuração de vídeo
 	máximo suportado. Caso esteja desativado, a janela será exibida no
 	menor tamanho suportado. Esta opção só tem efeito quando a opção
 	**-window** for usada.
-	
+
 		O valor predefinido é **Ligado** (**-maximize**).
 
 .. _mame-commandline-keepaspect:
@@ -1473,17 +1473,17 @@ Opções para a configuração de vídeo
 	no entanto muitas outras proporções de tela já foram usadas como 3:2
 	(Nintendo Game Boy), 5:4 para algumas workstation assim como vários
 	outros.
-	
+
 	Caso a tela que estiver sendo emulada ou ilustração não preencher
 	toda a tela por completo, a imagem será centralizada com barras
 	pretas adicionadas as laterais conforme a necessidade para ocupar os
 	espaços não utilizados, sejam eles em cima ou em baixo assim como
 	na esquerda ou na direita.
-	
+
 	Ao desativar essa opção a tela ou ilustração poderá ser esticada
 	livremente para preencher os espaços vazios no modo janelado. Em
 	tela cheia a imagem ficará distorcida e fora das proporções.
-	
+
 	Quando essa opção estiver ativa no Windows e o MAME estiver em modo
 	janelado, a proporção de tela será mantido mesmo que você
 	redimensione a janela para diferentes tamanhos, caso mantenha a
@@ -1503,7 +1503,7 @@ Opções para a configuração de vídeo
 
 	Permite que a proporção da tela seja desigual e que a tela ou janela
 	possa ser preenchida na horizontal ou vertical.
-	
+
 		O valor predefinido é **Ligado** (**-unevenstretch**).
 
 .. raw:: latex
@@ -1516,7 +1516,7 @@ Opções para a configuração de vídeo
 
 	Permite que a proporção da tela seja desigual e que a tela ou janela
 	possa ser preenchida apenas na horizontal.
-	
+
 		O valor predefinido é **Ligado** (**-unevenstretchx**).
 
 .. _mame-commandline-unevenstretchy:
@@ -1525,7 +1525,7 @@ Opções para a configuração de vídeo
 
 	Permite que a proporção da tela seja desigual e que a tela ou janela
 	possa ser preenchida apenas na vertical.
-	
+
 		O valor predefinido é **Ligado** (**-unevenstretchy**).
 
 .. _mame-commandline-autostretchxy:
@@ -1534,7 +1534,7 @@ Opções para a configuração de vídeo
 
 	Aplica a opção **-unevenstretchx/y** automaticamente com base na
 	orientação nativa da fonte.
-	
+
 		O valor predefinido é **Ligado** (**-noautostretchxy**).
 
 .. _mame-commandline-intoverscan:
@@ -1543,7 +1543,7 @@ Opções para a configuração de vídeo
 
 	Permite que a imagem passe dos limites da tela (overscan) de alvos
 	inteiros e dimensionáveis.
-	
+
 		O valor predefinido é **Ligado** (**-nointoverscan**).
 
 .. _mame-commandline-intscalex:
@@ -1551,7 +1551,7 @@ Opções para a configuração de vídeo
 **-[no]intscalex** / **-[no]sx**
 
 	Define o fator de escala horizontal.
-	
+
 		O valor predefinido é **Ligado** (**-nointscalex**).
 
 .. _mame-commandline-intscaley:
@@ -1559,7 +1559,7 @@ Opções para a configuração de vídeo
 **-[no]intscaley** / **-[no]sy**
 
 	Define o fator de escala vertical.
-	
+
 		O valor predefinido é **Ligado** (**-nointscaley**).
 
 .. _mame-commandline-waitvsync:
@@ -1586,13 +1586,13 @@ Opções para a configuração de vídeo
 	caso, tente usar as duas opções juntas
 	``-notriplebuffer -waitvsync``.
 	A opção ``-waitvsync`` não funciona com ``-video gdi``.
-	
+
 		O valor predefinido é **Desligado** (**-nowaitvsync**).
 
 	O **MAME SDL** funcionará com essa opção em modo janelado, caso haja
 	compatibilidade com o seu sistema operacional, da sua placa de vídeo
 	e respectivos drivers.
-	
+
 	Rode o **MAME SDL** com a opção ``-video opengl`` para aumentar as
 	suas chances de sucesso.
 
@@ -1612,7 +1612,7 @@ Opções para a configuração de vídeo
 	modificaram as configurações da sua placa de vídeo, combinando uma
 	opção a mais com as de atualização de tela.
 	Essa opção não funciona com a opção ``-video gdi``.
-	
+
 		O valor predefinido é **Desligado** (**-nosyncrefresh**).
 
 .. _mame-commandline-prescale:
@@ -1626,7 +1626,7 @@ Opções para a configuração de vídeo
 	definido em <*quantidade*> antes de ser dimensionado. Isso gera imagens
 	menos borradas com a opção ``-video d3d`` ao custo da perda de
 	alguma performance.
-	
+
 		O valor predefinido é **1**.
 
 	Funciona com todos os modos de vídeo no Windows (bgfx, d3d, etc) e
@@ -1646,7 +1646,7 @@ Opções para a configuração de vídeo
 	dimensionamento. Caso não goste da aparência filtrada e amaciada da
 	imagem, tente incrementar o valor da opção ``-prescale`` ao invés de
 	desabilitar todos os filtros.
-	
+
 		O valor predefinido é **Ligado** (**-filter**).
 
 	No Windows funciona com todos os modos de vídeo (bgfx, d3d, etc),
@@ -1685,7 +1685,7 @@ Opções para a configuração da tela inteira
 	Permite ou não a comutação ou troca da resolução. Esta opção é
 	necessária para as opções ``-resolution`` evitando a troca das
 	resoluções enquanto estiver no modo de tela inteira.
-	
+
 	Em placas de vídeo modernas, há poucas razões para alternar as
 	resoluções a menos que você esteja tentando alcançar as resoluções
 	"exatas" dos pixels dos sistemas originais, o que exige ajustes
@@ -1696,7 +1696,7 @@ Opções para a configuração da tela inteira
 	exageradas.
 
 	Essa opção não funciona com a opção ``-video gdi``.
-	
+
 		O valor predefinido é **Desligado** (**-noswitchres**).
 
 
@@ -1724,7 +1724,7 @@ funcionar corretamente em alguns computadores Mac.**
 	<mame-commandline-verbose>`.
 	Os nomes de exibição geralmente estão no formato: *\\\\.\DISPLAYn*,
 	onde **n** é um número do monitor conectado.
-	
+
 		O valor predefinido para essas opções é **auto**.
 		O que significa que a primeira janela é colocada na primeira
 		exibição, a segunda janela na segunda exibição e assim por
@@ -1749,13 +1749,13 @@ funcionar corretamente em alguns computadores Mac.**
 	**-numscreens**.
 	A proporção física pode ser determinada medindo a largura e a altura
 	da imagem da tela visível e definindo-as separadas por dois pontos.
-	
+
 		O valor predefinido para essas opções é **auto**.
-	
+
 	Significa que o MAME assume que a proporção de tela é proporcional
 	ao número de pixels no modo de vídeo da área de trabalho para cada
 	monitor.
-	
+
 	O parâmetro ``-aspect0``, ``-aspect1``, ``-aspect2`` e ``-aspect3``
 	se aplica a todas as janelas definidas. O parâmetro ``-aspect`` se
 	aplica a todas as janelas.
@@ -1773,24 +1773,24 @@ funcionar corretamente em alguns computadores Mac.**
 	Define a resolução exata a ser exibida. No modo de tela cheia o MAME
 	tentará usar a resolução solicitada. A largura e a altura são
 	obrigatórias, a taxa de atualização é opcional.
-	
+
 	Caso seja omitido ou configurado para **0**, o MAME determinará o
 	modo automaticamente. Por exemplo, a opção ``-resolution 640x480``
 	forçará a resolução de 640x480 porém o MAME escolherá a taxa de
 	atualização por conta própria.
-	
+
 	Da mesma forma que ``-resolution 0x0@60`` obrigará que a taxa de
 	atualização seja de 60 Hz, mas permite que o MAME escolha a
 	resolução. O comando também funciona com "*auto*" e é equivalente a
 	*0x0@0*.
-	
+
 	No modo janelado essa resolução é usada para determinar o tamanho
 	máximo para a janela. Essa opção também requer que seja usada a
 	opção :ref:`-switchres <mame-commandline-switchres>` para ativar a
 	comutação de resolução em conjunto com a opção **-video d3d**.
-	
+
 		O valor predefinido para essas opções é **auto**.
-	
+
 	O parâmetro ``-resolution0``, ``-resolution1``, ``-resolution2`` e
 	``-resolution3`` se aplica a todas as janelas definidas.
 	O parâmetro ``-resolution`` se aplica a todas as janelas.
@@ -1814,7 +1814,7 @@ funcionar corretamente em alguns computadores Mac.**
 	"Native (15:14)", mesmo que não seja uma correspondência perfeita.
 	O valor funciona com a opção ``auto`` também e solicita que o MAME
 	execute uma seleção predefinida.
-	
+
 		O valor predefinido para essas opções é **auto**.
 
 	Os parâmetros ``-view0``, ``-view1``, ``-view2`` e ``-view3`` se
@@ -1841,7 +1841,7 @@ Opções para uso com as ilustrações
 
 	Essa opção também está disponível através da interface gráfica na
 	parte das opções de vídeo.
-	
+
 		O valor predefinido é **Desligado** (**-noartwork_crop**).
 
 .. _mame-commandline-nousebackdrops:
@@ -1849,7 +1849,7 @@ Opções para uso com as ilustrações
 **-[no]use_backdrops** / **-[no]backdrop**
 
 	Ativa ou desativa a exibição dos cenários ou pano de fundo.
-	
+
 		O valor predefinido é **Ligado** (**-use_backdrops**).
 
 .. _mame-commandline-nouseoverlays:
@@ -1857,7 +1857,7 @@ Opções para uso com as ilustrações
 **-[no]use_overlays** / **-[no]overlay**
 
 	Ativa ou desativa a exibição de sobreposições.
-	
+
 		O valor predefinido é **Ligado** (**-use_overlays**).
 
 .. _mame-commandline-nousebezels:
@@ -1865,7 +1865,7 @@ Opções para uso com as ilustrações
 **-[no]use_bezels** / **-[no]bezels**
 
 	Ativa ou desativa a exibição de molduras.
-	
+
 		O valor predefinido é **Ligado** (**-use_bezels**).
 
 .. _mame-commandline-nousecpanels:
@@ -1873,7 +1873,7 @@ Opções para uso com as ilustrações
 **-[no]use_cpanels** / **-[no]cpanels**
 
 	Ativa ou desativa a exibição dos painéis de controle.
-	
+
 		O valor predefinido é **Ligado** (**-use_cpanels**).
 
 .. _mame-commandline-nousemarquees:
@@ -1882,7 +1882,7 @@ Opções para uso com as ilustrações
 
 	Ativa ou desativa a exibição de marquises ou molduras que sustentem
 	a arte do jogo na parte de cima da máquina.
-	
+
 		O valor predefinido é **Ligado** (**-use_marquees**).
 
 .. _mame-commandline-fallbackartwork:
@@ -1917,7 +1917,7 @@ Opções para os ajustes de imagem da tela
 	Ao selecionar valores menores (não menor que **0.1**) produzirá uma
 	tela mais escura, enquanto valores maiores até **2.0** produzirão
 	uma tela mais clara.
-	
+
 		O valor predefinido é **1.0**.
 
 .. _mame-commandline-contrast:
@@ -1933,7 +1933,7 @@ Opções para os ajustes de imagem da tela
 	Selecionando valores (não menor que **0.1**) produzirá uma tela mais
 	apagada, enquanto valores maiores até **2.0** produzirão uma tela
 	mais saturada.
-	
+
 		O valor predefinido é **1.0**.
 
 .. _mame-commandline-gamma:
@@ -1949,15 +1949,15 @@ Opções para os ajustes de imagem da tela
 	para o branco. Ao selecionar valores menores (até **0.1**)
 	trará a luminância mais para o preto, enquanto valores maiores
 	(até **3.0**) empurrarão essa luminância para o branco.
-	
-		O valor predefinido é **1.0**. 
+
+		O valor predefinido é **1.0**.
 
 .. _mame-commandline-pausebrightness:
 
 **-pause_brightness** <*valor*>
 
 	Faz o controle do nível de brilho durante a pausa.
-	
+
 		O valor predefinido é **0.65**.
 
 .. _mame-commandline-effect:
@@ -1976,7 +1976,7 @@ Opções para os ajustes de imagem da tela
 	um pixel dentro do ``.png`` será mapeado para um pixel da sua tela.
 	Os valores RGB de cada pixel dentro do ``.png`` são multiplicados
 	com os valores de RGB da tela de destino.
-	
+
 		O valor predefinido é **none** ou nenhum efeito.
 
 .. raw:: latex
@@ -2012,7 +2012,7 @@ Opções para máquinas que usem gráficos vetoriais
 	semelhante aos monitores desregulados usados nos jogos vetoriais.
 	Essa opção espera um valor flutuante (float) no intervalo
 	entre **0.00** e **100.00** (**0** = nenhum e **100** = máximo).
-	
+
 		O valor predefinido é **0**.
 
 .. raw:: latex
@@ -2033,7 +2033,7 @@ obtenha a melhor performance possível.
 **-[no]gl_forcepow2texture**
 
 	Sempre utilize a potência de 2 para o tamanhos das texturas.
-	
+
 		O valor predefinido é **Desligado**
 		(**-nogl_forcepow2texture**).
 
@@ -2042,7 +2042,7 @@ obtenha a melhor performance possível.
 **-[no]gl_notexturerect**
 
 	Não use o *OpenGL GL_ARB_texture_rectangle*
-	
+
 		O valor predefinido é **Ligado** (**-gl_notexturerect**).
 
 .. _mame-commandline-glvbo:
@@ -2050,7 +2050,7 @@ obtenha a melhor performance possível.
 **-[no]gl_vbo**
 
 	Ative o *OpenGL VBO* (Vertex Buffer Objects) caso esteja disponível.
-	
+
 		O valor predefinido é **Ligado** (**-gl_vbo**).
 
 .. _mame-commandline-glpbo:
@@ -2058,7 +2058,7 @@ obtenha a melhor performance possível.
 **-[no]gl_pbo**
 
 	Ativar o *OpenGL PBO* (Pixel Buffer Objects) caso esteja disponível.
-	
+
 		O valor predefinido é **Ligado** (**-gl_pbo**).
 
 .. raw:: latex
@@ -2073,7 +2073,7 @@ Opções de vídeo OpenGL GLSL
 **-[no]gl_glsl**
 
 	Ativar o *OpenGL GLSL* caso esteja disponível.
-	
+
 		O valor predefinido é **Desligado** (**-nogl_glsl**).
 
 .. _mame-commandline-glglslfilter:
@@ -2082,7 +2082,7 @@ Opções de vídeo OpenGL GLSL
 
 	Habilite a filtragem *OpenGL GLSL* em vez da filtragem FF
 	*0-simples, 1-bilinear, 2-bicúbica*
-	
+
 		O valor predefinido é **1** (**-gl_glsl_filter 1**).
 
 .. _mame-commandline-glslshadermame:
@@ -2113,7 +2113,7 @@ Opções de vídeo OpenGL GLSL
 
 	A ser feito: Descrever mais detalhes sobre a utilização em algum
 	momento no futuro. Veja:
-	
+
 	http://forums.bannister.org/ubbthreads.php?ubb=showflat&Number=100988#Post100988 para maiores informações.
 
 
@@ -2123,7 +2123,7 @@ Opções de vídeo OpenGL GLSL
 
 	Ative o manuseio do GLSL em OpenGL de brilho e contraste.
 	Melhor desempenho do sistema RGB.
-	
+
 		O valor predefinido é **Ligado** (**-gl_glsl_vid_attr**).
 
 .. raw:: latex
@@ -2142,7 +2142,7 @@ Opções para a configuração do áudio
 	emulação melhora.
 	Valores maiores que 48000, aumentam a qualidade do áudio ao custo da
 	perda de performance da emulação.
-	
+
 		O valor predefinido é **48000** (**-samplerate 48000**).
 
 .. _mame-commandline-nosamples:
@@ -2151,7 +2151,7 @@ Opções para a configuração do áudio
 
 	Usar arquivos de amostras caso estejam disponíveis. Esses arquivos
 	são gravações de efeitos de áudio usados por algumas máquinas.
-	
+
 		O valor predefinido é **Ligado** (**-samples**).
 
 .. _mame-commandline-volume:
@@ -2162,7 +2162,7 @@ Opções para a configuração do áudio
 	a interface do usuário.
 	O valor do volume está definido em decibéis (dB): Por exemplo,
 	``-volume -12`` começará com uma atenuação de -12 dB no som.
-	
+
 		O valor predefinido é **0** (**-volume 0**).
 
 .. _mame-commandline-sound:
@@ -2192,7 +2192,7 @@ Opções para a configuração do áudio
 	Em alguns sistemas, isso poderá ficar muito próximo do limite, o que
 	ocasiona em algumas vezes, um som ruim. Fazendo ajustes no valor da
 	latência é possível melhorar esse problema.
-	
+
 		O valor predefinido é **1** (significando inferior=1/5 e
 		superior=2/5). Para manter a memória intermédia sempre cheia
 		entre 2/5 e 3/5, defina o valor para **2**
@@ -2281,7 +2281,7 @@ Opções para a configuração do áudio
 		PortAudio: Windows WASAPI: "Wave (ASUS Xonar Essence STX Audio Device)"
 		PortAudio: Windows WASAPI: "Stereo Mix (ASUS Xonar Essence STX Audio Device)"
 		PortAudio: Windows WASAPI: "Microfone (ASUS Xonar Essence STX Audio Device)"
-		
+
 		PortAudio: API Windows WDM-KS has 12 devices
 		PortAudio: Windows WDM-KS: "Output (AMD HD Audio HDMI out #5)" (default)
 		PortAudio: Windows WDM-KS: "Input (ASUS Xonar Essence STX Audio)"
@@ -2302,7 +2302,32 @@ Opções para a configuração do áudio
 	definir a interface use o nome dela entre aspas
 	``-pa_api "Windows WASAPI"`` ou ``-pa_api "Windows WDM-KS"``.
 
-		O valor predefinido é **NULO** (Nenhuma interface PortAudio).
+	Já no Linux nós temos uma lista um pouco diferente do mesmo hardware
+	acima: ::
+
+		PortAudio: API ALSA has 15 devices
+		PortAudio: ALSA: "Xonar STX: Multichannel (hw:0,0)"
+		PortAudio: ALSA: "Xonar STX: Digital (hw:0,1)"
+		PortAudio: ALSA: "HDA ATI HDMI: 0 (hw:1,3)"
+		PortAudio: ALSA: "HDA ATI HDMI: 1 (hw:1,7)"
+		PortAudio: ALSA: "HDA ATI HDMI: 2 (hw:1,8)"
+		PortAudio: ALSA: "HDA ATI HDMI: 3 (hw:1,9)"
+		PortAudio: ALSA: "HDA ATI HDMI: 4 (hw:1,10)"
+		PortAudio: ALSA: "HDA ATI HDMI: 5 (hw:1,11)"
+		PortAudio: ALSA: "sysdefault"
+		PortAudio: ALSA: "front"
+		PortAudio: ALSA: "iec958"
+		PortAudio: ALSA: "spdif"
+		PortAudio: ALSA: "pulse"
+		PortAudio: ALSA: "dmix"
+		PortAudio: ALSA: "default" (default)
+		PortAudio: API OSS has 0 devices
+		PortAudio: Unable to find specified API or device or none set, reverting to default
+		PortAudio: Using device "default" on API "ALSA"
+		PortAudio: Sample rate is 48000 Hz, device output latency is 8.67 ms
+		PortAudio: Allowed additional buffering latency is 30.00 ms/1440 frames
+
+	O valor predefinido é **NULO** (Nenhuma interface PortAudio).
 
 .. _mame-commandline-pa_device:
 
@@ -2311,14 +2336,24 @@ Opções para a configuração do áudio
 	Define qual o dispositivo de áudio usar, assim como mostrado em
 	:ref:`-pa_api <mame-commandline-pa_api>`, escolha um dos
 	dispositivos listados. O nome do dispositivo fica do lado direito da
-	lista e entre aspas. Usando o exemplo acima usamos: ::
+	lista e entre aspas. Usando o exemplo para o Windows nós usaremos: ::
 
-		mame.exe -verbose -sound portaudio -pa_api "Windows WASAPI" -pa_device "6 - SONY TV  *01 (AMD High Definition Audio Device)"
+		mame64.exe -verbose -sound portaudio -pa_api "Windows WASAPI" -pa_device "6 - SONY TV  *01 (AMD High Definition Audio Device)"
+
+	Já para Linux o comando também não é muito diferente para o mesmo
+	dispositivo:
+
+	./mame64 -verbose -sound portaudio -pa_api ALSA -pa_device "HDA ATI HDMI: 0 (hw:1,3)"
 
 	Como resultado o MAME deverá exibir a mensagem abaixo mostrando que
-	tanto a interface quanto o dispositivo foi aceito: ::
+	tanto a interface quanto o dispositivo foram aceitos: ::
 
 		PortAudio: Using device "6 - SONY TV  *01 (AMD High Definition Audio Device)" on API "Windows WASAPI"
+
+	E aqui o mesmo para Linux: ::
+
+		PortAudio: Using device "HDA ATI HDMI: 0 (hw:1,3)" on API "ALSA"
+		PortAudio: Sample rate is 48000 Hz, device output latency is 8.00 ms
 
 	Caso nenhum seja definido o MAME escolherá o dispositivo padrão ou
 	que estiver disponível.
@@ -2352,7 +2387,7 @@ Opções para as configurações de diferentes entradas
 	uma moeda enquanto o bloqueio estiver ativo falharão e exibirão uma
 	mensagem na tela (no modo de depuração). Caso esta função esteja
 	desativada, o sinal de bloqueio da moeda será ignorado.
-	
+
 		O valor predefinido é **Ligado** (**-coin_lockout**).
 
 .. _mame-commandline-ctrlr:
@@ -2366,7 +2401,7 @@ Opções para as configurações de diferentes entradas
 	máquina, essas configurações são gravadas no diretório **cfg** como
 	(nome_da_maquina).cfg.
 
-	
+
 		O valor predefinido é **NULO** (nenhum arquivo de controle).
 
 .. _mame-commandline-nomouse:
@@ -2376,7 +2411,7 @@ Opções para as configurações de diferentes entradas
 	Controla se o MAME faz uso ou não dos controladores do mouse.
 	Se estiver ligado o mouse ficará reservado para uso exclusivo do
 	MAME até que você saia ou pause a emulação.
-	
+
 		O valor predefinido é **Desligado** (**-nomouse**).
 
 .. _mame-commandline-nojoystick:
@@ -2386,7 +2421,7 @@ Opções para as configurações de diferentes entradas
 	Controla se o MAME usa ou não os controles do joystick/gamepad.
 	Se estiver ligado o MAME perguntará ao *DirectInput* sobre quais
 	controles estão conectados atualmente.
-	
+
 		O valor predefinido é **Desligado** (**-nojoystick**).
 
 .. _mame-commandline-nolightgun:
@@ -2397,7 +2432,7 @@ Opções para as configurações de diferentes entradas
 	(lightgun). Observe que a maioria das pistolas de luz são mapeadas
 	para o mouse, assim, ao se usar ambas as opções ``-lightgun`` e
 	**-mouse** juntos, isso pode poderá trazer resultados inesperados.
-	
+
 		O valor predefinido é **Desligado** (**-nolightgun**).
 
 .. _mame-commandline-nomultikeyboard:
@@ -2409,7 +2444,7 @@ Opções para as configurações de diferentes entradas
 	dados de todos esses teclados são combinados para que pareçam um só.
 	Ativando essa opção permitirá que o MAME retorne quais teclas foram
 	pressionadas em diferentes teclados de maneira independente.
-	
+
 		O valor predefinido é **Desligado** (**-nomultikeyboard**).
 
 .. _mame-commandline-nomultimouse:
@@ -2422,7 +2457,7 @@ Opções para as configurações de diferentes entradas
 	pareçam um só. Ativando esta opção fará com que o MAME relate o
 	movimento e o pressionar de botões do mouse em diferentes mouses de
 	maneira independente.
-	
+
 		O valor predefinido é **Desligado** (**-nomultimouse**).
 
 .. _mame-commandline-nosteadykey:
@@ -2436,7 +2471,7 @@ Opções para as configurações de diferentes entradas
 	Essa opção seleciona diferentes modos de manuseio o que torna mais
 	fácil registrar o pressionamento simultâneo das teclas, porém tem a
 	desvantagem de deixar a sua capacidade de resposta mais lenta.
-	
+
 		O valor predefinido é **Desligado** (**-nosteadykey**).
 
 .. _mame-commandline-uiactive:
@@ -2445,7 +2480,7 @@ Opções para as configurações de diferentes entradas
 
 	Habilita a opção para que a interface do usuário se sobreponha a do
 	teclado emulado caso esteja presente.
-	
+
 		O valor predefinido é **Desligado** (**-noui_active**).
 
 .. _mame-commandline-nooffscreenreload:
@@ -2459,7 +2494,7 @@ Opções para as configurações de diferentes entradas
 	apontada para fora da tela. Isso só é necessário para jogos que
 	precisam que o usuário atire para fora da tela para recarregar a
 	arma e se também a sua arma não tiver essa funcionalidade.
-	
+
 		O valor predefinido é **Desligado** (**-nooffscreen_reload**).
 
 .. _mame-commandline-joystickmap:
@@ -2471,13 +2506,13 @@ Opções para as configurações de diferentes entradas
 	analógico de todos os controles. Para controles analógicos de
 	verdade, os valores precisam ser mapeados para valores de controles
 	digitais com 4 direções ou 8 direções.
-	
+
 	Para fazer isso o MAME divide o alcance do valor analógico numa
 	grade de 9x9. Então usa a posição do eixo (para eixos X e Y apenas),
 	mapeia para essa grade e procura compatibilizar a tradução para um
 	mapa de controle conhecido, este parâmetro permite especificar o
 	mapa.
-	
+
 	O valor predefinido é **auto** o que significa que um mapa diagonal
 	de 4 ou 8 direções, ou um mapa diagonal 4 direções é selecionado
 	automaticamente com base na configuração da porta de entrada do
@@ -2551,7 +2586,7 @@ Opções para as configurações de diferentes entradas
 	Essa opção espera um valor flutuante (float) no intervalo entre
 	**0.0** e **1.0**. Onde **0** é o centro do joystick e **1** o
 	limite externo.
-	
+
 		O valor predefinido é **0.3** (**-joystick_deadzone 0.3**).
 
 .. _mame-commandline-joysticksaturation:
@@ -2564,7 +2599,7 @@ Opções para as configurações de diferentes entradas
 	será aceita até que se atinja o alcance máximo. Essa opção espera um
 	valor flutuante (float) no intervalo entre **0.0** até **1.0** onde
 	**0** é o centro do joystick e **1** é o limite externo.
-	
+
 		O valor predefinido é **0.85** (**-joystick_saturation 0.85**).
 
 .. _mame-commandline-natural:
@@ -2575,7 +2610,7 @@ Opções para as configurações de diferentes entradas
 	Isso permite que você inicie seu sistema em um modo *nativo*
 	dependendo da sua região, permitindo compatibilidade para teclados
 	fora do padrão "QWERTY".
-	
+
 	O valor predefinido é **Desligado** (**-nonatural**).
 
 	No modo de "teclado emulado" (predefinido) o MAME traduz o
@@ -2616,7 +2651,7 @@ Opções para as configurações de diferentes entradas
 	Aceita a entrada de comandos contraditórios e simultâneos no
 	controle digital como **Esquerda e Direita** ou **Cima e Baixo** ao
 	mesmo tempo.
-	
+
 		O valor predefinido é **Desligado**
 		(**-nojoystick_contradictory**)
 
@@ -2627,14 +2662,14 @@ Opções para as configurações de diferentes entradas
 	Define o tempo de impulso da moeda com base em *n* (``n<0``
 	desabilita, ``n==0`` obedeça o driver, ``0<n`` defina o tempo em
 	*n*).
-	
+
 		O valor predefinido é **0** (**-coin_impulse 0**).
 
 .. raw:: latex
 
 	\clearpage
 
-Opções de entrada habilitadas automaticamente 
+Opções de entrada habilitadas automaticamente
 ---------------------------------------------
 
 .. _mame-commandline-paddledevice:
@@ -2647,35 +2682,35 @@ Opções de entrada habilitadas automaticamente
 .. _mame-commandline-adstickdevice:
 
 **-adstick_device** / **-adstick**
-        
+
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle analógico presente.
 
 .. _mame-commandline-pedaldevice:
 
 **-pedal_device** / **-pedal**
-        
+
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de pedal presente.
 
 .. _mame-commandline-dialdevice:
 
 **-dial_device** / **-dial**
-        
+
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de um discador presente.
 
 .. _mame-commandline-trackballdevice:
 
 **-trackball_device** / **-trackball**
-        
+
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de trackball presente.
 
 .. _mame-commandline-lightgundevice:
 
 **-lightgun_device**
-        
+
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de pistola de luz presente.
 
@@ -2689,10 +2724,10 @@ Opções de entrada habilitadas automaticamente
 .. _mame-commandline-mousedevice:
 
 **-mouse_device**
-        
+
 	ativa (*none|keyboard|mouse|lightgun|joystick*)
 	caso haja um controle de mouse presente.
-	
+
 	Cada uma dessas opções de controle são habilitadas automaticamente
 	para o mouse, controle (joystick) ou pistola de luz (lightgun)
 	dependendo de uma classe em particular de controle analógico para um
@@ -2732,7 +2767,7 @@ Opções voltadas para a depuração
 
 	Escreve um arquivo error.log com mensagens de diagnósticos do
 	sistema caso um esteja presente.
-	
+
 	É predefinido que as mensagens de erro sejam enviadas para a saída
 	padrão, geralmente é exibido no terminal, prompt de comando ou em um
 	arquivo de log de sistema. No Windows, caso um depurador esteja
@@ -2877,7 +2912,7 @@ Opções para a configuração da rede
 **-[no]comm_framesync**
 
 	Sincroniza os frames entre os hosts na rede.
-	
+
 		O valor predefinido é **Desligado** (**-nocomm_framesync**).
 
 .. raw:: latex
@@ -2892,7 +2927,7 @@ Opções diversas
 **-[no]drc**
 	Ativa o núcleo o DRC (recompilador dinâmico) da CPU visando uma
 	velocidade máxima de emulação, caso esteja disponível.
-	
+
 		O valor predefinido é **Ligado** (**-drc**).
 
 .. _mame-commandline-drcusec:
@@ -2960,7 +2995,7 @@ Opções diversas
 	Em algumas plataformas o <*nome_da_fonte*> (nome da fonte) pode ser
 	um nome da fonte do sistema em vez de um arquivo fonte com extensão
 	``.bdf``.
-	
+
 		O valor predefinido é **default** (O MAME usará a fonte nativa).
 
 .. _mame-commandline-ui:
@@ -2969,7 +3004,7 @@ Opções diversas
 
 	Define o tipo de interface do usuário a ser usada, as opções ficam
 	entre **simple** ou **cabinet**.
-	
+
 		O valor predefinido é **Cabinet** (**-ui cabinet**).
 
 .. _mame-commandline-ramsize:
@@ -2989,7 +3024,7 @@ Opções diversas
 
 	Exibir um aviso na tela "*Confirmar Sair*" antes de sair, exigindo
 	que o usuário confirme a ação antes de sair do MAME.
-	
+
 		O valor predefinido é **Desligado** (**-noconfirm_quit**).
 
 .. _mame-commandline-uimouse:
@@ -2997,8 +3032,8 @@ Opções diversas
 **-ui_mouse**
 
 	Exibe o ponteiro do mouse na interface do usuário do MAME.
-	
-		O valor predefinido é **sem mouse** (**-noui_mouse**). 
+
+		O valor predefinido é **sem mouse** (**-noui_mouse**).
 
 .. _mame-commandline-language:
 
@@ -3017,7 +3052,7 @@ Opções diversas
 	e qualquer alteração atual não será gravada. Ao desabilitar essa
 	função suprime incondicionalmente o salvamento de arquivos .nv
 	associados com alguns tipos de programas usados em cartuchos.
-	
+
 		O valor predefinido é **Ligado** (**-nvram_save**)
 
 .. raw:: latex
@@ -3034,7 +3069,7 @@ Opções para uso com script
 	Cadeia de comandos que serão executados após a inicialização da
 	máquina (entre aspas " "). Para emitir uma cotação para a
 	emulação, use """ no comando. Usando **\\n** irá criar uma nova
-	linha, emitindo o que foi digitado antes como comando. 
+	linha, emitindo o que foi digitado antes como comando.
 
 	Exemplo: ``-autoboot_command "load """$""",8,1\\n``
 
