@@ -74,7 +74,7 @@ IEEE754 como um número binário de 32-bit de ponto flutuante (também
 conhecido como "*precisão simples*"). O incremento das coordenadas
 nas direções para a direita e para baixo. A origem (**0,0**) não tem um
 significado em particular e valores negativos podem ser usados nos
-layouts. 
+layouts.
 As coordenadas são fornecidas como números de ponto flutuante.
 
 O MAME pressupõe que as coordenadas exibição tem a mesma proporção de
@@ -128,7 +128,9 @@ O componente e a cor do item de exibição são especificados usando os
 elementos ``color``.
 Os atributos relevantes são vermelho ``red``, verde ``green``,
 azul ``blue`` e ``alpha``. Este exemplo de elemento ``color`` determina
-todos os valores dos canais: ::
+todos os valores dos canais:
+
+.. code-block:: xml
 
     <color red="0.85" green="0.4" blue="0.3" alpha="1.0" />
 
@@ -149,11 +151,13 @@ com caracteres til *(~)*.
 Caso um parâmetro não seja definido, nenhuma substituição será feita.
 Aqui um exemplo mostrando os dois casos do parâmetro, use os valores dos
 parâmetros de ``digitno`` e ``x`` que serão substituídos por
-``~digitno~`` e ``~x~``: ::
+``~digitno~`` e ``~x~``:
 
-    <bezel name="digit~digitno~" element="digit">
+.. code-block:: xml
+
+    <element name="digit~digitno~" ref="digit">
         <bounds x="~x~" y="80" width="25" height="40" />
-    </bezel>
+    </element>
 
 Um nome para o parâmetro é uma sequência de letras maiúsculas das letras
 **A-Z**, das letras minusculas **a-z**, dígitos decimais **0-9**, ou
@@ -182,7 +186,6 @@ até que seja reatribuído.
 O parâmetro "*generator parameters*" tem um valor inicial, um incremento
 e/ou uma transferência [4]_ aplicada para cada interação.
 
-
 Os valores dos parâmetros são atribuídos usando um elemento ``param``
 junto com elementos ``name`` e ``value``. Os valores do parâmetro podem
 aparecer de dentro de um elemento de primeiro nível ``mamelayout`` e
@@ -194,7 +197,9 @@ superior do elemento ``mamelayout``, ao contrário dos elementos
 O valor do parâmetro pode ser reatribuído a qualquer momento.
 
 Aqui está um exemplo atribuindo o valor "4" para o parâmetro
-"firstdigit": ::
+"firstdigit":
+
+.. code-block:: xml
 
     <param name="firstdigit" value="4" />
 
@@ -205,7 +210,9 @@ Os geradores de parâmetros só podem aparecer de dentro de elementos
 ``repeat`` (veja :ref:`layout-parts-repeats` para mais informações).
 Os geradores de parâmetros não deve ser reatribuídos no mesmo escopo
 (um nome de parâmetro idêntico pode ser definido em um escopo filho.
-Aqui alguns exemplos dos geradores de parâmetros: ::
+Aqui alguns exemplos dos geradores de parâmetros:
+
+.. code-block:: xml
 
     <param name="nybble" start="3" increment="-1" />
     <param name="switchpos" start="74" increment="156" />
@@ -241,7 +248,7 @@ seja necessário e transferido de acordo. A transferência para a esquerda
 é definida como uma transferência feita para o bit mais importante.
 Caso ambos os parâmetros ``lshift`` e ``rshift`` sejam fornecidos, estes
 serão compensados antes dos valores serem aplicados. Isto significa que
-você não pode, por exemplo, usar atributos iguais tanto para 
+você não pode, por exemplo, usar atributos iguais tanto para
 `` lshift`` como para ``rshift`` visando limpar os bits em um valor de
 parâmetro extremo após a primeira interação.
 
@@ -278,21 +285,21 @@ disponíveis e fornecem informações sobre a máquina em execução:
 	ou ``ie15`` para o terminal que estiver conectado em uma porta.
 	Este parâmetro é uma sequência de caracteres definida no escopo
 	global do layout.
-	
+
 **devicename**
 
 	O nome completo (descrição) do dispositivo que será responsável pela
 	leitura do layout, como por exemplo os terminais ``AIM-65/40`` ou
 	``IE15``. Este parâmetro é uma sequência de caracteres
 	definida no escopo global do layout.
-	
+
 **deviceshortname**
 
 	Um nome curto do dispositivo que será responsável pela leitura do
 	layout, como por exemplo os terminais ``aim65_40`` ou ``ie15``.
 	Este parâmetro é uma sequência de caracteres definida no escopo
 	global do layout.
-	
+
 **scr0physicalxaspect**
 
 	A parte horizontal da relação de aspecto físico da primeira tela
@@ -300,7 +307,7 @@ disponíveis e fornecem informações sobre a máquina em execução:
 	uma fração impropriamente reduzida. Observe que este é o componente
 	horizontal aplicado *antes* da rotação. Este parâmetro é um número
 	inteiro definido no escopo global do layout.
-	
+
 **scr0physicalyaspect**
 
 	A parte vertical da relação de aspecto físico da primeira tela
@@ -308,7 +315,7 @@ disponíveis e fornecem informações sobre a máquina em execução:
 	uma fração impropriamente reduzida. Observe que este é o componente
 	vertical aplicado *antes* da rotação. Este parâmetro é um número
 	inteiro definido no escopo global do layout.
-	
+
 **scr0nativexaspect**
 
 	A parte horizontal da relação de aspecto do pixel visível na área da
@@ -317,7 +324,7 @@ disponíveis e fornecem informações sobre a máquina em execução:
 	Observe que este é o componente horizontal aplicado *antes* da
 	rotação. Este parâmetro é um número inteiro definido no escopo
 	global do layout.
-	
+
 **scr0nativeyaspect**
 
 	A parte vertical da relação de aspecto do pixel visível na área da
@@ -336,68 +343,68 @@ disponíveis e fornecem informações sobre a máquina em execução:
 	emulados. Observe que a largura é aplicada *antes* da rotação.
 	Este parâmetro é um número inteiro definido no escopo global do
 	layout.
-	
+
 **scr0height**
 
 	A altura da área visível da primeira tela (se houver) nos pixels
 	emulados. Observe que a altura é aplicada *antes* da rotação.
 	Este parâmetro é um número inteiro definido no escopo global do
 	layout.
-	
+
 **scr1physicalxaspect**
 
 	A parte horizontal da relação de aspecto físico da primeira tela
 	(caso esteja presente). Este parâmetro é um número inteiro definido
 	no escopo global do layout.
-	
+
 **scr1physicalyaspect**
 
 	A parte vertical da relação de aspecto físico da segunda tela
 	(caso esteja presente). Este parâmetro é um número inteiro
 	definido no escopo global do layout.
-	
+
 **scr1nativexaspect**
 
 	A parte horizontal da relação de aspecto do pixel visível na área da
 	segunda tela (caso esteja presente). Este parâmetro é um número
 	inteiro definido no escopo global de visualização do layout.
-	
+
 **scr1nativeyaspect**
 
 	A parte vertical da relação de aspecto do pixel visível na área da
 	segunda tela (caso esteja presente). Este parâmetro é um número inteiro
 	definido no escopo global de visualização do layout.
-	
+
 **scr1width**
 
 	A largura da área visível da segunda tela (se houver) nos pixels
 	emulados. Este parâmetro é um número inteiro definido no escopo
 	global do layout.
-	
+
 **scr1height**
 
 	A altura da área visível da segunda tela (se houver) nos pixels
 	emulados. Este parâmetro é um número inteiro definido no escopo
 	global do layout.
-	
+
 **scr\ *N*\ physicalxaspect**
 
 	A parte horizontal da relação de aspecto físico da tela (base-zero)
 	*N*\ th (caso esteja presente). Este parâmetro é um número inteiro
 	definido no escopo global do layout.
-	
+
 **scr\ *N*\ physicalyaspect**
 
 	A parte vertical da relação de aspecto físico da tela (base-zero)
 	*N*\ th (caso esteja presente). Este parâmetro é um número inteiro
 	definido no escopo global do layout.
-	
+
 **scr\ *N*\ nativexaspect**
 
 	A parte horizontal da relação de aspecto da parte visível da tela
 	(base-zero) *N*\ th (caso esteja presente). Este parâmetro é um
 	número inteiro definido no escopo global do layout.
-	
+
 **scr\ *N*\ nativeyaspect**
 
 	A parte vertical da relação de aspecto da parte visível da tela
@@ -413,13 +420,13 @@ disponíveis e fornecem informações sobre a máquina em execução:
 	A largura da área visível da tela (base-zero) *N*\ th (se presente)
 	nos pixels emulados. Este parâmetro é um número inteiro definido no
 	escopo de visualização do layout.
-	
+
 **scr\ *N*\ height**
 
 	A largura da área visível da tela (base-zero) *N*\ th (se presente)
 	nos pixels emulados. Este parâmetro é um número inteiro definido no
 	escopo de visualização do layout.
-	
+
 **viewname**
 
 	O nome da exibição atual. Este parâmetro é uma sequências de
@@ -436,90 +443,6 @@ Os valores baseados na área visível são calculados no final da
 configuração. Caso o sistema não reconfigure a tela durante a execução
 os valores dos parâmetros não serão atualizados assim como os layouts
 não serão recalculados.
-
-
-.. _layout-concepts-layers:
-
-Camadas
-~~~~~~~
-
-As exibições são renderizadas como uma pilha de camadas, ganharam
-seus nomes com referência aos nomes de peças do arcade.
-O layout fornece elementos a serem desenhados em todas as camadas além
-da camada da tela, que é reservado para as telas emuladas. Com exceção
-da camada de tela, os usuários podem ativar ou desativar as camadas
-usando o cardápio interno do emulador ou a linha de comando.
-
-As seguintes camadas estão disponíveis:
-
-
-**backdrop**
-
-	Desenvolvido para o uso em situações onde a imagem da tela é projetada
-	sobre um pano de fundo usando um espelho semi reflexivo criando uma
-	ilusão de ótica (os fantasmas de Pepper [5]_). Esse arranjo famoso
-	ficou conhecido no gabinete de luxo do jogo *Space Invaders*.
-	
-**screen**
-
-	Esta camada é reservada para imagens emuladas da tela e não pode ser
-	desativada pelo usuário. É desenhado usando uma combinação
-	cumulativa [6]_.
-	
-**overlay**
-
-	Esta camada serve para o uso de sobreposições translúcidas usadas
-	antigamente para adicionar cores em jogos que usavam monitores CRT
-	monocromáticos, dentre eles o jogo **Circus**, **Gee Bee** e claro
-	o jogo **Space Invaders**.
-	É desenhado usando multiplicações RGB.
-	
-**bezel**
-
-	Esta camada é para ser usada com elementos que iam ao redor da tela
-	e potencialmente podiam obscurecer a imagem na tela.
-	É desenhado usando um padrão de combinação do canal alfa.
-	
-**cpanel**
-
-	Esta camada destina-se a exibir ilustrações de controles/dispositivos
-	de entrada (painéis de controle).
-	É desenhado usando um padrão de combinação do canal alfa.
-	
-**marquee**
-
-	Esta camada é usada para exibir as imagens dos letreiros do gabinete 
-	de arcade. Isto é, desenhado usando um padrão de combinação do canal
-	alfa.
-
-
-É predefinido que as camadas sejam desenhadas de trás para frente nesta
-ordem:
-
-* screen (adiciona)
-* overlay (multiplica)
-* backdrop (adiciona)
-* bezel (alfa)
-* cpanel (alfa)
-* marquee (alfa)
-
-Caso uma visualização tenha vários elementos de pano de fundo e nenhum
-elemento de sobreposição, uma ordem diferente de exibição é usada
-(de trás para frente):
-
-* backdrop (alfa)
-* screen (adiciona)
-* bezel (alfa)
-* cpanel (alfa)
-* marquee (alfa)
-
-A alternância da ordem a ser desenhada torna-se mais simples para a
-criação do pano de fundo vindo de diversos pedaços desenhados ou
-escaneados de uma arte qualquer, assim como as partes opacas. Não pode
-ser usado com elementos de sobreposição pois as cores sobrepostas são
-convenientemente colocadas entre a tela e um espelho, por isso não tem
-efeito algum no pano de fundo usado.
-
 
 .. _layout-parts:
 
@@ -552,7 +475,6 @@ nível ``mamelayout``:
 
 **param**
 
-
     Define ou reatribui um valor para um parâmetro. Veja
     :ref:`layout-concepts-params` para mais informações.
 
@@ -562,22 +484,19 @@ nível ``mamelayout``:
 
 **element**
 
-
     Define um elemento, um dos objetos básicos que podem ser organizados
     em uma Visualização. Veja :ref:`layout-parts-elements` para mais
     informações.
 
 **group**
 
-
     Define um grupo de elementos ou telas que possam ser reutilizáveis e
     que também possam ser usados como referência em uma visualização
     ou em outros grupos.
-    
+
     Veja :ref:`layout-parts-groups` para mais informações.
 
 **repeat**
-
 
     Um grupo repetido de elementos que podem conter os elementos
     ``param``, ``element``, ``group`` e ``repeat``.
@@ -585,13 +504,11 @@ nível ``mamelayout``:
 
 **view**
 
-
     Um arranjo de elementos ou de telas que podem ser exibidos em um
     dispositivo de saída (uma janela ou tela do host).
     Veja :ref:`layout-parts-views` para mais informações.
 
 **script**
-
 
     Permite que scripts lua sejam usados para um layout aprimorado de
     interação.
@@ -617,7 +534,7 @@ mais informações de como conectar um elemento a uma porta ou saída I/O).
 Qualquer componente de um elemento pode ser restrito apenas ao desenho
 quando o estado do elemento tiver um valor específico. Alguns
 componentes (como mostradores de segmento múltiplo e mostradores
-rotativos [7]_) que usam diretamente o estado para determinar a sua
+rotativos [5]_) que usam diretamente o estado para determinar a sua
 aparência final.
 
 Cada elemento possui o seu próprio sistema interno de coordenadas. Os
@@ -647,7 +564,7 @@ Suporte a todos os componentes com alguns recursos em comum:
   ao seu valor (se ausente, o componente sempre será desenhado).
   Se presente, o atributo ``state`` deve ser um valor inteiro não
   negativo.
-* Cada componente pode ter um elemento filho ``bounds`` definindo a 
+* Cada componente pode ter um elemento filho ``bounds`` definindo a
   sua posição e tamanho (veja :ref:`layout-concepts-coordinates`). Caso
   tal elemento não esteja presente, os limites serão predefinidos a uma
   unidade quadrada, com o valor **1.0** para a largura e a altura e
@@ -665,7 +582,7 @@ Há suporte para os seguintes componentes:
 **rect**
 
 	Desenha um retângulo colorido uniforme preenchendo as suas bordas.
-	
+
 **disk**
 
 	Desenha uma elipse colorida uniforme ajustada às suas bordas.
@@ -739,7 +656,7 @@ Há suporte para os seguintes componentes:
 **led8seg_gts1**
 
 	Desenha um mostrador fluorescente digital de oito segmentos do tipo
-	usado em máquinas de fliperama *Gottlieb System 1* [8]_ (na verdade uma
+	usado em máquinas de fliperama *Gottlieb System 1* [6]_ (na verdade uma
 	parte da Futaba). Comparado com um mostrador padrão
 	com sete segmentos, esses mostradores não têm ponto decimal, a barra
 	do meio horizontal está quebrada no centro, assim como no meio da
@@ -805,7 +722,7 @@ Há suporte para os seguintes componentes:
 	mínima de dígitos a serem exibidos. Se presente, o atributo
 	``digits`` deve ser um número inteiro, se ausente, um mínimo de dois
 	dígitos será exibido.
-	
+
 	O atributo ``maxstate`` pode ser informado
 	para definir o valor máximo do estado a ser exibido. Se presente, o atributo
 	``maxstate`` deve ser um número positivo; caso esteja ausente o valor
@@ -823,7 +740,9 @@ Há suporte para os seguintes componentes:
 	``numsymbolsvisible``, ``reelreversed`` e ``beltreel``.
 
 Um exemplo de um elemento que desenha um texto estático do lado esquerdo
-da tela: ::
+da tela:
+
+.. code-block:: xml
 
     <element name="label_reset_cpu">
         <text string="CPU" align="1"><color red="1.0" green="1.0" blue="1.0" /></text>
@@ -831,7 +750,9 @@ da tela: ::
 
 
 Um exemplo de um elemento que mostra um LED redondo onde a intensidade do
-seu brilho depende do estado alto da saída: ::
+seu brilho depende do estado alto da saída:
+
+.. code-block:: xml
 
     <element name="led" defstate="0">
         <rect state="0"><color red="0.43" green="0.35" blue="0.39" /></rect>
@@ -839,7 +760,9 @@ seu brilho depende do estado alto da saída: ::
     </element>
 
 Um exemplo de elemento de um botão que retorna um efeito visual quando
-pressionado: ::
+pressionado:
+
+.. code-block:: xml
 
     <element name="btn_rst">
         <rect state="0"><bounds x="0.0" y="0.0" width="1.0" height="1.0" /><color red="0.2" green="0.2" blue="0.2" /></rect>
@@ -887,7 +810,9 @@ nível primário do elemento ``mamelayout``. Cada elemento ``view`` deve
 ter um nome usando o atributo ``name``, informando seu nome legível para
 o uso na interface do usuário e nas opções de linha de comando.
 Este é um exemplo de uma tag inicial válida para um elemento
-``view``: ::
+``view``:
+
+.. code-block:: xml
 
     <view name="Control panel">
 
@@ -917,20 +842,6 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 
 	Define ou reatribui um parâmetro de valor no escopo da exibição. Veja
 	:ref:`layout-concepts-params` para mais informações.
-
-**backdrop, overlay, bezel, cpanel e marquise**
-
-	Adiciona um elemento à camada relevante
-	(veja :ref:`layout-parts` e :ref:`layout-concepts-layers`).
-	O nome do elemento a adicionar é definido usando o atributo
-	``element``. Será considerado um erro caso nenhum elemento com este
-	nome seja definido no arquivo de layout. Opcionalmente, pode ser
-	conectado a uma porta I/O emulada usando os atributos ``inputtag``,
-	``inputmask`` ou uma saída emulada usando o atributo ``name``.
-	Dentro de uma camada, os elementos são desenhados na ordem em que
-	forem aparecendo no arquivo de layout. A sua ordem de exibição
-	começa de frente para trás.
-	Veja abaixo para mais detalhes.
 
 .. raw:: latex
 
@@ -964,20 +875,18 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 	Repete o seu conteúdo definindo a sua quantidade pelo atributo
 	``count``. O atributo ``count`` deve ser um número inteiro e
 	positivo. Em uma exibição, o elemento ``repeat`` pode conter os
-	elementos ``backdrop``, ``screen``, ``overlay``, ``bezel``,
-	``cpanel``, ``marquee``, ``group`` e mais elementos ``repeat``, que
-	funcionam da mesma maneira que quando colocados em uma visualização
-	direta.
-	Veja :ref:`layout-parts-repeats` para uma discução de como usar os
+	elementos ``element``, ``screen``, ``group`` e mais elementos
+	``repeat``, que funcionam da mesma maneira que quando colocados em
+	uma visualização direta.
+	Veja :ref:`layout-parts-repeats` para mais informações de como usar os
 	elementos ``repeat``.
 
-As Telas com elementos ``screen``,  elementos de layout ``backdrop``,
-``overlay``, ``bezel``, ``cpanel`` ou elementos ``marquee`` e elementos
-de grupos (``group``) podem ter a sua orientação alterada usando um
-elemento filho ``orientation``.
+As Telas com elementos ``screen``,  elementos de layout ``element`` e
+elementos de grupo ``group`` podem ter a sua orientação alterada usando
+o elemento ``orientation``.
 Para as telas, os modificadores de orientação são aplicados junto com os
 modificadores de orientação definido no dispositivo de tela da máquina.
-O elemento ``orientation`` suporta os seguintes atributos, todos
+O elemento ``orientation`` suportam os seguintes atributos, todos
 eles são opcionais:
 
 **rotate**
@@ -1008,8 +917,7 @@ eles são opcionais:
 	``yes`` ou ``no``. O espelhamento ocorre após a rotação.
 
 
-As Telas (elementos ``screen``), elementos de layout
-(``backdrop``, ``overlay``, ``bezel``, ``cpanel`` ou ``marquee``) e
+As Telas (elementos ``screen``), elementos de layout (``elementos``) e
 elementos de grupo (``group``) podem ser posicionados e redimensionados
 usando um elemento ``bounds``
 (veja :ref:`layout-concepts-coordinates` para mais informações).
@@ -1020,60 +928,63 @@ Na ausência do elemento filho ``bounds``, os grupos serão expandidos sem
 tradução ou escala (note que os grupos podem posicionar as telas ou
 elementos fora dos seus limites. Este exemplo mostra uma exibição
 com referência a posição da tela com um elemento de layout individual e
-dois grupos de elementos: ::
+dois grupos de elementos:
+
+.. code-block:: xml
 
     <view name="LED Displays, Terminal and Keypad">
-        <cpanel element="beige"><bounds x="320" y="0" width="172" height="372" /></cpanel>
+        <screen index="0"><bounds x="0" y="132" width="320" height="240" /></screen>
+        <element ref="beige"><bounds x="320" y="0" width="172" height="372" /></element>
         <group ref="displays"><bounds x="0" y="0" width="320" height="132" /></group>
         <group ref="keypad"><bounds x="336" y="16" width="140" height="260" /></group>
-        <screen index="0"><bounds x="0" y="132" width="320" height="240" /></screen>
     </view>
 
-As Telas (elementos ``screen``), elementos de layout
-(``backdrop``, ``overlay``, ``bezel``, ``cpanel`` ou ``marquee``) e
-elementos de grupos (``group``) podem ter um elemento filho ``color``
-(veja :ref:`layout-concepts-colours`) ao definir uma cor
-modificadora.
-As cores componentes da tela ou elementos de layout são multiplicados
-por essa cor.
+As Telas (elementos ``screen``), elementos de layout (``element``) e
+elementos de grupos (``group``) podem ter um sub-elemento ``color``
+(veja :ref:`layout-concepts-colours`) ao definir uma cor modificadora,
+o valor dessa cor será usada como multiplicador para alterar as cores
+componentes da tela ou de elementos de layout.
 
-Caso um elemento referencie um elemento de layout
-(``backdrop``, ``overlay``, ``bezel``, ``cpanel`` ou ``marquee``) que
-tenham os atributos ``inputtag`` e ``inputmask``, ao clicar neles será o
-mesmo que pressionar uma tecla ou botão correspondente mapeado para
-essa(s) entrada(s).
-O ``inputtag`` define o caminho da tag de uma porta de I/O em relação
-ao dispositivo que fez com que o arquivo de layout fosse carregado. O
-atributo ``inputmask`` deve ser um número inteiro definindo os bits
-da porta de I/O que o elemento deve ativar. Este exemplo mostra a
-inicialização dos botões pressionáveis: ::
+Caso um elemento ``element`` contenham atributos ``inputtag`` e
+``inputmask``, ao clicar neles terá o mesmo efeito que pressionar uma
+tecla ou botão correspondente mapeado(s) para essa(s) entrada(s).
+O atributo ``inputtag`` define o caminho da tag de uma porta de I/O em
+relação ao dispositivo que fez com que o arquivo de layout fosse
+carregado. O atributo ``inputmask`` deve ser um número inteiro definindo
+os bits da porta de I/O que o elemento deve ativar. Este exemplo mostra
+como inicializar os botões pressionáveis:
 
-    <cpanel element="btn_3" inputtag="X2" inputmask="0x10">
+.. code-block:: xml
+
+    <element ref="btn_3" inputtag="X2" inputmask="0x10">
         <bounds x="2.30" y="4.325" width="1.0" height="1.0" />
-    </cpanel>
-    <cpanel element="btn_0" inputtag="X0" inputmask="0x20">
-        <bounds x="0.725" y="5.375" width="1.0" height="1.0" /></cpanel>
-    <cpanel element="btn_rst" inputtag="RESET" inputmask="0x01">
+    </element>
+    <element ref="btn_0" inputtag="X0" inputmask="0x20">
+        <bounds x="0.725" y="5.375" width="1.0" height="1.0" />
+    </element>
+    <element ref="btn_rst" inputtag="RESET" inputmask="0x01">
         <bounds x="1.775" y="5.375" width="1.0" height="1.0" />
-    </cpanel>
+    </element>
 
 
-Caso um elemento referencie um elemento de layout
-(``backdrop``, ``overlay``, ``bezel``, ``cpanel`` ou ``marquee``) e
-tenha um atributo ``name``, ele usará seu estado com base no valor
-correspondente da saída emulada com o mesmo nome. Observe que os nomes
-de saída são globais, o que pode se tornar um problema quando uma
-máquina usar diferentes categorias do mesmo tipo de dispositivo.
-Veja :ref:`layout-parts-elements` para mais informações de como um
-estado do elemento afeta a sua aparência. Este exemplo mostra como os
-mostradores digitais podem ser conectados nas saídas emuladas: ::
+Caso um elemento contenha um atributo ``name``, ele usará seu estado com
+base no valor correspondente da saída emulada com o mesmo nome. Observe
+que os nomes de saída são globais, o que pode se tornar um problema
+quando uma máquina usar diferentes categorias do mesmo tipo de
+dispositivo. Veja :ref:`layout-parts-elements` para obter mais
+informações de como um estado do elemento afeta a sua aparência.
+Este exemplo mostra como os mostradores digitais podem ser conectados
+nas saídas emuladas:
 
-    <cpanel name="digit6" element="digit"><bounds x="16" y="16" width="48" height="80" /></cpanel>
-    <cpanel name="digit5" element="digit"><bounds x="64" y="16" width="48" height="80" /></cpanel>
-    <cpanel name="digit4" element="digit"><bounds x="112" y="16" width="48" height="80" /></cpanel>
-    <cpanel name="digit3" element="digit"><bounds x="160" y="16" width="48" height="80" /></cpanel>
-    <cpanel name="digit2" element="digit"><bounds x="208" y="16" width="48" height="80" /></cpanel>
-    <cpanel name="digit1" element="digit"><bounds x="256" y="16" width="48" height="80" /></cpanel>
+.. code-block:: xml
+
+    <element name="digit6" ref="digit"><bounds x="16" y="16" width="48" height="80" /></element>
+    <element name="digit5" ref="digit"><bounds x="64" y="16" width="48" height="80" /></element>
+    <element name="digit4" ref="digit"><bounds x="112" y="16" width="48" height="80" /></element>
+    <element name="digit3" ref="digit"><bounds x="160" y="16" width="48" height="80" /></element>
+    <element name="digit2" ref="digit"><bounds x="208" y="16" width="48" height="80" /></element>
+    <element name="digit1" ref="digit"><bounds x="256" y="16" width="48" height="80" /></element>
+
 
 Caso um elemento justifique um elemento de layout e tenha ambos os
 atributos ``inputtag`` e ``inputmask`` porém faltar um nome de atributo
@@ -1083,7 +994,7 @@ aplicado um operador lógico XOR junto com os valores predefinidos da
 porta I/O. Este último é importante para entradas que estão em um estado
 baixo. Caso o resultado seja não zero, o estado se torna 1, caso
 contrário será 0. Em geral é útil para permitir botões que sejam
-clicáveis e chaves interruptoras [9]_ que proveem um retorno visível na
+clicáveis e chaves interruptoras [7]_ que proveem um retorno visível na
 tela.
 
 É possível obter raw data através da porta I/O ao utilizar o elemento
@@ -1125,7 +1036,9 @@ elemento ``group`` usando um elemento de grupo como referência.
 Opcionalmente os limites de destino, a orientação e as modificações
 das cores poderão ser informados também.
 O atributo ``ref`` identifica o grupo a qual faz referência, neste
-exemplo são fornecidos os valores de limite: ::
+exemplo são fornecidos os valores de limite:
+
+.. code-block:: xml
 
     <group ref="panel"><bounds x="87" y="58" width="23" height="23.5" /></group>
 
@@ -1157,13 +1070,14 @@ não serão cortados.
 	\clearpage
 
 Para demonstrar como o cálculo dos limites funcionam, considere este
-exemplo: ::
+exemplo:
 
+.. code-block:: xml
 
     <group name="autobounds">
         <!-- limites automaticamente calculados com sua origem em (5,10), largura 30, e altura 15 -->
-        <cpanel element="topleft"><bounds x="5" y="10" width="10" height="10" /></cpanel>
-        <cpanel element="bottomright"><bounds x="25" y="15" width="10" height="10" /></cpanel></group>
+        <element ref="topleft"><bounds x="5" y="10" width="10" height="10" /></element>
+        <element ref="bottomright"><bounds x="25" y="15" width="10" height="10" /></element>
 
     <view name="Teste">
         <!--
@@ -1172,19 +1086,22 @@ exemplo: ::
            Elemento inferior direito posicionado em (13.33,10) com 6.67 de largura e 20 de altura
            Os elementos de visualização calculado com origem em (0,0) 20 de largura e 30 de altura
         -->
-        <group ref="autobounds"><bounds x="0" y="0" width="20" height="30" /></group>
+        <element ref="topleft"><bounds x="5" y="10" width="10" height="10" /></element>
+        <element ref="bottomright"><bounds x="25" y="15" width="10" height="10" /></element>
     </view>
 
 Isto é relativamente simples, como todos os elementos inerentemente caem
 dentro dos limites automaticamente calculados ao grupo. Agora, considere
 o que acontece caso a posição dos elementos de um grupo estiver fora dos
-seus limites: ::
+seus limites:
+
+.. code-block:: xml
 
     <group name="periphery">
         <!-- os limites dos elementos estão acima da quina superior e à direita da quina direita -->
         <bounds x="10" y="10" width="20" height="25" />
-        <cpanel element="topleft"><bounds x="10" y="0" width="10" height="10" /></cpanel>
-        <cpanel element="bottomright"><bounds x="30" y="20" width="10" height="10" /></cpanel></group>
+        <element ref="topleft"><bounds x="10" y="0" width="10" height="10" /></element>
+        <element ref="bottomright"><bounds x="30" y="20" width="10" height="10" /></element>
 
     <view name="Test">
         <!--
@@ -1247,8 +1164,8 @@ dentro do elemento ``repeat`` depende de onde ele aparecer:
   ``param``, ``element``, ``group`` (definição), e ``repeat``.
 * Um bloco repetido dentro de um elemento ``group`` ou ``view`` podem
   conter os seguintes elementos
-  ``param``, ``backdrop``, ``screen``, ``overlay``, ``bezel``, ``cpanel``,
-  ``marquee``, ``group`` (referência), e ``repeat``.
+  ``param``, ``element`` (referência), ``screen``, ``group``
+  (referência), e ``repeat``.
 
 Um bloco de repetição faz a repetição efetiva do seu conteúdo diversas
 vezes dependendo do valor definido no atributo ``count``.
@@ -1260,7 +1177,9 @@ léxico (DOM).
 
 Gerando rótulos numéricos em branco de zero a onze com o nome
 ``label_0``, ``label_1``, e assim por diante (dentro do elemento de
-primeiro nível ``mamelayout``): ::
+primeiro nível ``mamelayout``):
+
+.. code-block:: xml
 
     <repeat count="12">
         <param name="labelnum" start="0" increment="1" />
@@ -1271,19 +1190,23 @@ primeiro nível ``mamelayout``): ::
 
 Uma fileira horizontal com 40 mostradores digitais, com cinco unidades
 de espaço entre elas, controladas pelas saídas ``digit0`` até
-``digit39`` (dentro de um elemento ``group`` ou ``view``): ::
+``digit39`` (dentro de um elemento ``group`` ou ``view``):
+
+.. code-block:: xml
 
     <repeat count="40">
         <param name="i" start="0" increment="1" />
         <param name="x" start="5" increment="30" />
-        <bezel name="digit~i~" element="digit">
+        <element name="digit~i~" ref="digit">
             <bounds x="~x~" y="5" width="25" height="50" />
-        </bezel>
+        </element>
     </repeat>
 
 Oito mostradores com matrix de ponto medindo cinco por sete em uma
 linha, com pixels controlados por ``Dot_000`` até ``Dot_764``
-(dentro de um elemento ``group`` ou ``view``): ::
+(dentro de um elemento ``group`` ou ``view``):
+
+.. code-block:: xml
 
     <repeat count="8"> <!-- 8 digits -->
         <param name="digitno" start="1" increment="1" />
@@ -1294,16 +1217,18 @@ linha, com pixels controlados por ``Dot_000`` até ``Dot_764``
             <repeat count="5"> <!-- 5 columns in each digit -->
                 <param name="colno" start="1" increment="1" />
                 <param name="colx" start="~digitx~" increment="111" /> <!-- distância horizontal entre LEDs -->
-                <bezel name="Dot_~digitno~~rowno~~colno~" element="Pixel" state="0">
+                <element name="Dot_~digitno~~rowno~~colno~" ref="Pixel" state="0">
                     <bounds x="~colx~" y="~rowy~" width="100" height="100" /> <!-- tamanho de cada LED -->
-                </bezel>
+                </element>
             </repeat>
         </repeat>
     </repeat>
 
 Dois teclados "clicáveis", separados horizontalmente por um teclado
 numérico quatro por quatro (dentro de um elemento ``group`` ou
-``view``): ::
+``view``):
+
+.. code-block:: xml
 
     <repeat count="2">
         <param name="group" start="0" increment="4" />
@@ -1316,9 +1241,9 @@ numérico quatro por quatro (dentro de um elemento ``group`` ou
                 <param name="col" start="~group~" increment="1" />
                 <param name="btnx" start="~padx~" increment="110" />
                 <param name="mask" start="~mask~" lshift="1" />
-                <bezel element="btn~row~~col~" inputtag="row~row~" inputmask="~mask~">
+                <element ref="btn~row~~col~" inputtag="row~row~" inputmask="~mask~">
                     <bounds x="~btnx~" y="~y~" width="80" height="80" />
-                </bezel>
+                </element>
             </repeat>
         </repeat>
     </repeat>
@@ -1335,7 +1260,9 @@ vindo do parâmetro correspondentemente nomeado no delimitador de escopo,
 mas não o modifica.
 
 Gerando um tabuleiro de xadrez com valores alfa alternados entre 0.4 e
-0.2 (dentro de um elemento ``group`` ou ``view``): ::
+0.2 (dentro de um elemento ``group`` ou ``view``):
+
+.. code-block:: xml
 
     <repeat count="4">
         <param name="pairy" start="3" increment="20" />
@@ -1350,14 +1277,14 @@ Gerando um tabuleiro de xadrez com valores alfa alternados entre 0.4 e
                 <param name="rx" start="13" increment="20" />
                 <param name="lmask" start="0x01" lshift="2" />
                 <param name="rmask" start="0x02" lshift="2" />
-                <bezel element="hl" inputtag="board:IN.~rowno~" inputmask="~lmask~">
+                <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~lmask~">
                     <bounds x="~lx~" y="~rowy~" width="10" height="10" />
                     <color alpha="~lalpha~" />
-                </bezel>
-                <bezel element="hl" inputtag="board:IN.~rowno~" inputmask="~rmask~">
+                </element>
+                <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~rmask~">
                     <bounds x="~rx~" y="~rowy~" width="10" height="10" />
                     <color alpha="~ralpha~" />
-                </bezel>
+                </element>
             </repeat>
         </repeat>
     </repeat>
@@ -1378,7 +1305,7 @@ O Tratamento de erros
 * Para os arquivos de layout internos (fornecidos pelo desenvolvedor),
   os erros são detectados pelo script ``complay.py`` durante uma falha
   de compilação.
-* O MAME irá parar de carregar um arquivo de layout caso haja um erro 
+* O MAME irá parar de carregar um arquivo de layout caso haja um erro
   de sintaxe e nenhuma exibição de layout estará disponível.
   Alguns exemplos de erros de sintaxe são referências para elementos ou
   grupos indefinidos, limites inválidos, cores inválidas, grupos
@@ -1395,7 +1322,7 @@ O Tratamento de erros
 As Exibições geradas automaticamente
 ------------------------------------
 
-Após o carregamento interno de layouts (fornecido pelo desenvolvedor) e 
+Após o carregamento interno de layouts (fornecido pelo desenvolvedor) e
 do layout externo (fornecido pelo usuário). As seguintes exibições são
 geradas de forma automática:
 
@@ -1490,19 +1417,10 @@ mostra o exemplo abaixo: ::
 .. [4]	O termo *shift* é muito amplo, também pode ser
 		interpretado como desvio, mudança, turno, inversão, câmbio, etc.
 		(Nota do tradutor)
-.. [5]	Pepper's ghosts, no Brasil ficou muito
-		conhecido como `casa de Monga <https://www.youtube.com/watch?v=L5Lgn1vbeHA>`_,
-		*Monga* ou *"Monga, a Mulher-Macaco"*, é uma `técnica de ilusão
-		de ótica <https://www.youtube.com/watch?v=xrAWgmfhOaM>`_ usada
-		em apresentações feitas em teatros no século XIX, inventado pelo
-		cientista Inglês *John Henry Pepper* (1821–1900). Monga também é
-		relacionado à
-		`Julia Pastrana <https://super.abril.com.br/ciencia/monga-a-verdadeira-mulher-macaco/>`_. (Nota do tradutor)
-.. [6]	Additive blending. (Nota do tradutor)
-.. [7]	Reels, `mostradores mecânicos
+.. [5]	Reels, `mostradores mecânicos
 		<https://i.postimg.cc/FF2GYc9v/Reels.jpg>`_ usados em máquinas
 		caça niqueis. (Nota do tradutor)
-.. [8]	`Aqui <https://www.youtube.com/watch?v=-rrP4Prx1rc>`_ um exemplo
+.. [6]	`Aqui <https://www.youtube.com/watch?v=-rrP4Prx1rc>`_ um exemplo
 		destes mostradores. (Nota do tradutor)
-.. [9]	Toggle switches, também é conhecido como chave alavanca.
+.. [7]	Toggle switches, também é conhecido como chave alavanca.
 		(Nota do tradutor)

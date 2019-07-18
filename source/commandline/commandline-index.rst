@@ -204,11 +204,6 @@ Opções para uso com as ilustrações
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]artwork_crop <mame-commandline-noartworkcrop>`
-| :ref:`[no]use_backdrops <mame-commandline-nousebackdrops>`
-| :ref:`[no]use_overlays <mame-commandline-nouseoverlays>`
-| :ref:`[no]use_bezels <mame-commandline-nousebezels>`
-| :ref:`[no]use_cpanels <mame-commandline-nousecpanels>`
-| :ref:`[no]use_marquees <mame-commandline-nousemarquees>`
 | :ref:`fallback_artwork <mame-commandline-fallbackartwork>`
 | :ref:`override_artwork <mame-commandline-overrideartwork>`
 
@@ -282,7 +277,7 @@ Opções para as configurações de diferentes entradas
 | :ref:`coin_impulse <mame-commandline-coinimpulse>`
 
 
-Opções de entrada habilitadas automaticamente 
+Opções de entrada habilitadas automaticamente
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`paddle_device <mame-commandline-paddledevice>`
@@ -451,5 +446,3 @@ Opções para a configuração dos drivers (SDL)
 | :ref:`renderdriver <mame-scommandline-renderdriver>`
 | :ref:`audiodriver <mame-scommandline-audiodriver>`
 | :ref:`gl_lib <mame-scommandline-gllib>`
-
-

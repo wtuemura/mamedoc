@@ -1844,47 +1844,6 @@ Opções para uso com as ilustrações
 
 		O valor predefinido é **Desligado** (**-noartwork_crop**).
 
-.. _mame-commandline-nousebackdrops:
-
-**-[no]use_backdrops** / **-[no]backdrop**
-
-	Ativa ou desativa a exibição dos cenários ou pano de fundo.
-
-		O valor predefinido é **Ligado** (**-use_backdrops**).
-
-.. _mame-commandline-nouseoverlays:
-
-**-[no]use_overlays** / **-[no]overlay**
-
-	Ativa ou desativa a exibição de sobreposições.
-
-		O valor predefinido é **Ligado** (**-use_overlays**).
-
-.. _mame-commandline-nousebezels:
-
-**-[no]use_bezels** / **-[no]bezels**
-
-	Ativa ou desativa a exibição de molduras.
-
-		O valor predefinido é **Ligado** (**-use_bezels**).
-
-.. _mame-commandline-nousecpanels:
-
-**-[no]use_cpanels** / **-[no]cpanels**
-
-	Ativa ou desativa a exibição dos painéis de controle.
-
-		O valor predefinido é **Ligado** (**-use_cpanels**).
-
-.. _mame-commandline-nousemarquees:
-
-**-[no]use_marquees** / **-[no]marquees**
-
-	Ativa ou desativa a exibição de marquises ou molduras que sustentem
-	a arte do jogo na parte de cima da máquina.
-
-		O valor predefinido é **Ligado** (**-use_marquees**).
-
 .. _mame-commandline-fallbackartwork:
 
 **-fallback_artwork**
