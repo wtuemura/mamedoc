@@ -2146,14 +2146,14 @@ Opções para a configuração do áudio
 	demora para responder a um comando. Essa opção ajusta a quantidade
 	dessa latência incorporada ao fluxo de dados de áudio.
 
-	É predefinido que o MAME tente manter a memória intermédia (buffer)
+	É predefinido que o MAME tente manter a memória intermediária (buffer)
 	do áudio DirectSound cheio entre 1/5 e 2/5.
 	Em alguns sistemas, isso poderá ficar muito próximo do limite, o que
 	ocasiona em algumas vezes, um som ruim. Fazendo ajustes no valor da
 	latência é possível melhorar esse problema.
 
 		O valor predefinido é **1** (significando inferior=1/5 e
-		superior=2/5). Para manter a memória intermédia sempre cheia
+		superior=2/5). Para manter a memória intermediária sempre cheia
 		entre 2/5 e 3/5, defina o valor para **2**
 		(``-audio_latency 2``).
 		Caso exagere nesse valor, como **4** por exemplo, será possível
