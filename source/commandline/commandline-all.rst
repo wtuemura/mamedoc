@@ -1008,6 +1008,15 @@ Opções para a gravação de áudio e vídeo
 
 		O valor predefinido é **NULO** (sem gravação).
 
+.. _mame-commandline-aviio:
+
+**-aviio**
+
+	Define o formato de compressão e conversão do arquivo AVI. A ser
+	implementado em uma versão futura do MAME.
+
+		Não há valor predefinido ainda.
+
 .. _mame-commandline-wavwrite:
 
 **-wavwrite** <*nome_do_arquivo*>.wav

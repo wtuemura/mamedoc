@@ -131,6 +131,7 @@ Opções para a gravação de áudio e vídeo
 
 | :ref:`mngwrite <mame-commandline-mngwrite>`
 | :ref:`aviwrite <mame-commandline-aviwrite>`
+| :ref:`aviio <mame-commandline-aviio>`
 | :ref:`wavwrite <mame-commandline-wavwrite>`
 
 
