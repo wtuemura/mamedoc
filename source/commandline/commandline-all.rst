@@ -2940,9 +2940,23 @@ Opções diversas
 
 **-[no]skip_gameinfo**
 
-	Força o MAME a não exibir a tela de informações do sistema ou jogo.
+	Ao iniciar, faz com que o MAME não exiba a tela de informações do
+	sistema ou jogo.
 
 		O valor predefinido é **Desligado** (**-noskip_gameinfo**).
+
+.. Para a interface:
+   Ao iniciar, o gerenciador de arquivos não vai informar o usuário de
+   qualquer imagem obrigatória.
+
+.. _mame-commandline-skip_mandatory_fileman:
+
+**-[no]skip_mandatory_fileman**
+
+	Ao iniciar, faz com que o gerenciador de arquivos do MAME não
+	informe o usuário de qualquer imagem obrigatória.
+
+		O valor predefinido é **Desligado** (**-noskip_mandatory_fileman**).
 
 .. _mame-commandline-uifont:
 
