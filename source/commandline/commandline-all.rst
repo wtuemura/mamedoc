@@ -1021,8 +1021,7 @@ Opções para a gravação de áudio e vídeo
 
 **-wavwrite** <*nome_do_arquivo*>.wav
 
-	Grava todos os dados de áudio da seção em formato WAV em um arquivo
-	<*nome_do_arquivo*>.wav .
+	Grava apenas o áudio da seção em formato PCM 16 bits.
 
 		O valor predefinido é **NULO** (sem gravação).
 
