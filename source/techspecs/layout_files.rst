@@ -9,7 +9,7 @@ Os arquivos de Layout do MAME
 Introdução
 ----------
 
-Os arquivos de layout [1]_ são usados para informar ao MAME o que exibir
+Os arquivos de layout [#]_ são usados para informar ao MAME o que exibir
 enquanto um sistema emulado estiver rodando e como organizar estes
 elementos na tela. O MAME pode renderizar as telas emuladas, imagens,
 texto, formas e objetos especiais para dispositivos de saída comuns.
@@ -36,7 +36,7 @@ flutuante.
 
 Os números inteiros podem ser fornecidos em notação decimal ou
 hexadecimal. Um número decimal inteiro consiste em um prefixo opcional
-**#** (hash [2]_), um caractere opcional **+/-** (mais ou menos) e uma
+**#** (hash [#]_), um caractere opcional **+/-** (mais ou menos) e uma
 sequência de dígitos entre **0-9**.
 
 Um número hexadecimal consiste em que um dos prefixos
@@ -60,7 +60,7 @@ ele será interpretado como um número de ponto flutuante.
 Caso nenhum prefixo de número inteiro, ponto decimal ou a letra E seja
 encontrado, o número será interpretado como um número inteiro.
 
-Os números são analisados usando uma acentuação de caracteres em C [3]_
+Os números são analisados usando uma acentuação de caracteres em C [#]_
 por questões de portabilidade.
 
 
@@ -184,7 +184,7 @@ Existem dois tipos de parâmetros: *value parameters* and *generator
 parameters*. O parâmetro "value parameters" mantém o seu valor atribuído
 até que seja reatribuído.
 O parâmetro "*generator parameters*" tem um valor inicial, um incremento
-e/ou uma transferência [4]_ aplicada para cada interação.
+e/ou uma transferência [#]_ aplicada para cada interação.
 
 Os valores dos parâmetros são atribuídos usando um elemento ``param``
 junto com elementos ``name`` e ``value``. Os valores do parâmetro podem
@@ -534,7 +534,7 @@ mais informações de como conectar um elemento a uma porta ou saída I/O).
 Qualquer componente de um elemento pode ser restrito apenas ao desenho
 quando o estado do elemento tiver um valor específico. Alguns
 componentes (como mostradores de segmento múltiplo e mostradores
-rotativos [5]_) que usam diretamente o estado para determinar a sua
+rotativos [#]_) que usam diretamente o estado para determinar a sua
 aparência final.
 
 Cada elemento possui o seu próprio sistema interno de coordenadas. Os
@@ -656,7 +656,7 @@ Há suporte para os seguintes componentes:
 **led8seg_gts1**
 
 	Desenha um mostrador fluorescente digital de oito segmentos do tipo
-	usado em máquinas de fliperama *Gottlieb System 1* [6]_ (na verdade uma
+	usado em máquinas de fliperama *Gottlieb System 1* [#]_ (na verdade uma
 	parte da Futaba). Comparado com um mostrador padrão
 	com sete segmentos, esses mostradores não têm ponto decimal, a barra
 	do meio horizontal está quebrada no centro, assim como no meio da
@@ -916,19 +916,27 @@ eles são opcionais:
 	eixo horizontal, de cima para baixo. Se presente, deve ser entre
 	``yes`` ou ``no``. O espelhamento ocorre após a rotação.
 
+As Telas (elementos ``screen``) e elementos de layout (elementos
+``element``) podem conter um atributo ``blend`` para determinar o modo
+de mesclagem. Os valores válidos são ``none`` (sem mesclagem), ``alpha``
+(mesclagem alpha) [#]_, ``multiply`` (multiplicação RGB) [#]_, e ``add``
+(mesclagem aditiva) [#]_. A predefinição para a tela é permitir que o
+driver defina a mesclagem por camada, sendo que o modo de mesclagem dos
+elementos de layout é predefinido como mesclagem alpha.
 
-As Telas (elementos ``screen``), elementos de layout (``elementos``) e
-elementos de grupo (``group``) podem ser posicionados e redimensionados
-usando um elemento ``bounds``
+As Telas (elementos ``screen``), elementos de layout (elementos
+``element``) e elementos de grupo (``group``) podem ser posicionados e
+redimensionados usando um elemento ``bounds``
 (veja :ref:`layout-concepts-coordinates` para mais informações).
 Na ausência do elemento ``bounds`` os elementos "screens" e "layout"
 retornam aos valores predefinidos em unidades quadradas (origem em
 **0,0** e ambos os valores de altura e largura serão igual a **1**).
-Na ausência do elemento filho ``bounds``, os grupos serão expandidos sem
-tradução ou escala (note que os grupos podem posicionar as telas ou
-elementos fora dos seus limites. Este exemplo mostra uma exibição
-com referência a posição da tela com um elemento de layout individual e
-dois grupos de elementos:
+
+Na ausência do elemento ``bounds``, os grupos são expandidos sem
+qualquer tradução ou redimensionamento (note que os grupos podem
+posicionar as telas ou elementos fora dos seus limites. Este exemplo
+mostra uma exibição com referência a posição da tela com um elemento de
+layout individual e dois grupos de elementos:
 
 .. code-block:: xml
 
@@ -994,7 +1002,7 @@ aplicado um operador lógico XOR junto com os valores predefinidos da
 porta I/O. Este último é importante para entradas que estão em um estado
 baixo. Caso o resultado seja não zero, o estado se torna 1, caso
 contrário será 0. Em geral é útil para permitir botões que sejam
-clicáveis e chaves interruptoras [7]_ que proveem um retorno visível na
+clicáveis e chaves interruptoras [#]_ que proveem um retorno visível na
 tela.
 
 É possível obter raw data através da porta I/O ao utilizar o elemento
@@ -1409,18 +1417,21 @@ mostra o exemplo abaixo: ::
 
 	python scripts/build/complay.py artwork/dino/default.lay
 
-.. [1]	Arquivos de disposição dos elementos na tela. (Nota do tradutor)
-.. [2]	Em nosso idioma conhecido também como
+.. [#]	Arquivos de disposição dos elementos na tela. (Nota do tradutor)
+.. [#]	Em nosso idioma conhecido também como
 		cerquilha, jogo da velha, sustenido e atualmente como
 		**hashtag**. (Nota do tradutor)
-.. [3]	*C locale* em Inglês. (Nota do tradutor)
-.. [4]	O termo *shift* é muito amplo, também pode ser
+.. [#]	*C locale* em Inglês. (Nota do tradutor)
+.. [#]	O termo *shift* é muito amplo, também pode ser
 		interpretado como desvio, mudança, turno, inversão, câmbio, etc.
 		(Nota do tradutor)
-.. [5]	Reels, `mostradores mecânicos
+.. [#]	Reels, `mostradores mecânicos
 		<https://i.postimg.cc/FF2GYc9v/Reels.jpg>`_ usados em máquinas
 		caça niqueis. (Nota do tradutor)
-.. [6]	`Aqui <https://www.youtube.com/watch?v=-rrP4Prx1rc>`_ um exemplo
+.. [#]	`Aqui <https://www.youtube.com/watch?v=-rrP4Prx1rc>`_ um exemplo
 		destes mostradores. (Nota do tradutor)
-.. [7]	Toggle switches, também é conhecido como chave alavanca.
+.. [#]	Alpha Blending
+.. [#]	RGB multiplication
+.. [#]	Additive blending
+.. [#]	Toggle switches, também é conhecido como chave alavanca.
 		(Nota do tradutor)
