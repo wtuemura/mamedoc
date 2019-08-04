@@ -32,7 +32,7 @@ help:
 	@echo "  epub       to make an epub"
 	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
 	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
-	@echo "  xelatexpdf to make LaTeX files and run them through pdflatex"
+	@echo "  xelatexpdf to make LaTeX files and run them through xelatexpdf"
 	@echo "  text       to make text files"
 	@echo "  man        to make manual pages"
 	@echo "  texinfo    to make Texinfo files"
