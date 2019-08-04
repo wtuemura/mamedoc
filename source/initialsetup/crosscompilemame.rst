@@ -127,6 +127,7 @@ administrativos.
 
 |	``echo "export MINGW64="/usr/x86_64-w64-mingw32"" >> ~/.bashrc``
 |	``echo "export MINGW32="/usr/i686-w64-mingw32"" >> ~/.bashrc``
+|
 
 .. raw:: latex
 
@@ -141,6 +142,7 @@ abaixo:
 |	``$ echo $MINGW64 && echo $MINGW32``
 |	``/usr/x86_64-w64-mingw32``
 |	``/usr/i686-w64-mingw32``
+|
 
 Caso o seu ambiente não tenha retornado nada, tenha certeza de que as
 instruções acima foram seguidas corretamente, se a sua distribuição
