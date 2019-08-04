@@ -46,7 +46,7 @@ abaixo.
 - **singlehtml** para gerar um arquivo HTML de uma página só
 - **pickle** para gerar arquivos pickle
 - **json** para gerar arquivos json
-- **htmlhelp** para gerar arquivos de ajuda em formato HTML, precisa ser finalizado com o `Microsoft HTML Help Workshop <https://www.microsoft.com/en-us/download/details.aspx?id=21138>`_
+- **htmlhelp** para gerar arquivos de ajuda em formato HTML, precisa ser finalizado com o [Microsoft HTML Help Workshop](https://www.microsoft.com/en-us/download/details.aspx?id=21138).
 - **qthelp** para gerar arquivos de ajuda em formato HTML e de ajuda compatíveis com KDE ou Qt
 - **devhelp** para gerar arquivos de ajuda em formato HTML e Devhelp (Gnome e compatíveis)
 - **epub** para gerar arquivos em formato de livro digital
