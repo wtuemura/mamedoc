@@ -21,17 +21,17 @@ Compilando este documento para outros formatos
 Fedora
 ~~~~~~
 
-Instale os seguintes pacotes: ::
+Instale os seguintes pacotes:
 
-	sudo dnf install python3-sphinx python2-sphinx python3-sphinx-bootstrap-theme python3-sphinxcontrib-rsvgconverter inkscape librsvg2-tools latexmk texlive-cmap texlive-metafont texlive-collection-fontsrecommended texlive-babel-portuges texlive-fncychap texlive-lwarp texlive-fancyhdr texlive-framed texlive-wrapfig texlive-parskip texlive-upquote texlive-titlesec texlive-capt-of texlive-needspace texlive-lato texlive-fontaxes texlive-inconsolata python2-pygments texlive-texments texlive-pygmentex texlive-verbments texlive-collection-publishers texlive-texinfo texinfo python2-docutils texlive-polyglossia texlive-tabulary texlive-collection-langportuguese texlive-hyphen-portuguese pip
+  sudo dnf install python3-sphinx python2-sphinx python3-sphinx-bootstrap-theme python3-sphinxcontrib-rsvgconverter inkscape librsvg2-tools latexmk texlive-cmap texlive-metafont texlive-collection-fontsrecommended texlive-babel-portuges texlive-fncychap texlive-lwarp texlive-fancyhdr texlive-framed texlive-wrapfig texlive-parskip texlive-upquote texlive-titlesec texlive-capt-of texlive-needspace texlive-lato texlive-fontaxes texlive-inconsolata python2-pygments texlive-texments texlive-pygmentex texlive-verbments texlive-collection-publishers texlive-texinfo texinfo python2-docutils texlive-polyglossia texlive-tabulary texlive-collection-langportuguese texlive-hyphen-portuguese pip
 
-Na sua conta comum, use o `pip` para instalar os pacotes restantes: ::
+Na sua conta comum, use o `pip` para instalar os pacotes restantes:
 
-	sudo pip install -U Sphinx sphinxcontrib-svg2pdfconverter
+  sudo pip install -U Sphinx sphinxcontrib-svg2pdfconverter
 
-Faça uma cópia do texto fonte com o comando: ::
+Faça uma cópia do texto fonte com o comando:
 
-	git clone https://github.com/wtuemura/mamedoc.git
+  git clone https://github.com/wtuemura/mamedoc.git
 
 Será criado um diretório chamado **mamedoc** com todo o código texto
 desta documentação, entre no diretório **mamedoc** e use o comando `make
