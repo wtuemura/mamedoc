@@ -36,6 +36,34 @@ Faça uma cópia do texto fonte com o comando:
   git clone https://github.com/wtuemura/mamedoc.git
 ```
 
+Caso apareça o erro abaixo:
+
+```
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language `Portuguese' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for english instead on input line 55.
+```
+Verifique se no arquivo `/usr/share/texlive/texmf-dist/tex/generic/config/language.dat`
+as linhas abaixo existem:
+
+```
+dumylang        dumyhyph.tex    %for testing a new language.
+nohyphenation   zerohyph.tex    %a language with no patterns at all.
+portuguese loadhyph-pt.tex
+=portuges
+=brazil
+=brazilian
+```
+
+Em seguida faça o comando abaixo para atualizar o cache de fontes do
+tex:
+
+```
+sudo fmtutil-sys --all
+```
+
 Será criado um diretório chamado **mamedoc** com todo o código texto
 desta documentação, entre no diretório **mamedoc** e use o comando `make
 formato` onde `formato` pode ser substituído por qualquer um da lista
