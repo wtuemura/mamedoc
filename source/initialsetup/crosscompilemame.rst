@@ -69,18 +69,16 @@ sistema Windows, para outros sistemas operacionais ou dispositivos, o
 procedimento será semelhante bastando que você escolha o conjuntos de
 pacotes apropriados para a plataforma que você deseja compilar.
 
+.. raw:: latex
+
+	\clearpage
+
 Debian e Ubuntu
 ~~~~~~~~~~~~~~~
 
 O comando abaixo vai instalar ferramentas adicionais além das quais já
 foram descritas na seção :ref:`compiling-ubuntu`, note que o
-comando abaixo é formado por uma linha só:
-
-.. raw:: latex
-
-	\clearpage
-
-::
+comando abaixo é formado por uma linha só: ::
 
 	sudo aptitude install binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-x86-64 gobjc++-mingw-w64 mingw-w64 mingw-w64-common mingw-w64-tools mingw-w64-x86-64-dev win-iconv-mingw-w64-dev
 
@@ -117,16 +115,22 @@ Seguido dos comandos abaixo: ::
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-ar /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc-ar
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc
 
-Precisamos agora disponibilizar as variáveis **MINGW64** e **MINGW32**
-no ambiente, elas são necessárias para que os scripts usados para a
-compilação do MAME saibam onde encontrá-los.
-Não é necessário usar o *sudo* para o comando abaixo pois você deseja
-aplicar a variável no ambiente da sua conta comum, não use uma conta com
-poderes administrativos. É mais fácil criar uma conta comum apenas para
-ser utilizada para compilar o MAME.
+
+Configurando as variáveis de ambiente
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As variáveis **MINGW64** e **MINGW32** são necessárias para que os
+scripts usados para a compilação do MAME saibam onde encontrá-los.
+**Não use sudo** para o comando abaixo pois você deseja aplicar a
+variável no ambiente da sua conta comum e não em uma conta com poderes
+administrativos.
 
 |	``echo "export MINGW64="/usr/x86_64-w64-mingw32"" >> ~/.bashrc``
 |	``echo "export MINGW32="/usr/i686-w64-mingw32"" >> ~/.bashrc``
+
+.. raw:: latex
+
+	\clearpage
 
 Recarregue as configurações do seu terminal com o comando ``. .bashrc``
 (ponto, espaço, ponto bashrc) ou saia e retorne à sua conta. É
@@ -144,12 +148,6 @@ Linux - ou outra distribuição - utiliza o arquivo ``.bashrc``, caso não
 utilize, verifique no manual da sua distribuição qual arquivo de
 configuração ela utiliza para armazenar as variáveis do ambiente e onde
 ele se localiza.
-
-.. A nice and clean way to do a page break, this case for latex and PDF
-   only.
-.. raw:: latex
-
-	\clearpage
 
 Compilando o MAME para Windows no Linux
 ---------------------------------------

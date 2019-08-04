@@ -43,6 +43,12 @@ Há alguns pontos importantes que você precisa saber.
   autorizada pelos administradores, o servidor conta como sendo
   1 commit ou 1 envio.
 
+* Para clonar o código fonte do MAME com o git faça o comando: ::
+
+	git clone https://github.com/mamedev/mame.git
+
+  Será criado um diretório *mame* com todos os arquivos fonte.
+
 * **make** é o comando que faz o papel do *mestre de cerimonias*, é ele
   quem vai repassar todos comandos ou opções que vierem depois dele para
   o compilador e outras ferramentas. O make também tem o papel de manter
