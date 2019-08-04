@@ -68,6 +68,10 @@ Precisamos instalar os pacotes abaixo para compilar binários voltados ao
 sistema Windows, para outros sistemas operacionais ou dispositivos, o
 procedimento será semelhante bastando que você escolha o conjuntos de
 pacotes apropriados para a plataforma que você deseja compilar.
+
+Debian e Ubuntu
+~~~~~~~~~~~~~~~
+
 O comando abaixo vai instalar ferramentas adicionais além das quais já
 foram descritas na seção :ref:`compiling-ubuntu`, note que o
 comando abaixo é formado por uma linha só:
@@ -100,8 +104,21 @@ Já para a plataforma **32-bit** faremos estes comandos, note que
 	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-ar-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc-ar
 	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-6.3-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc
 
-Precisamos disponibilizar as variáveis **MINGW64** e **MINGW32** no
-ambiente, elas são necessárias para que os scripts usados para a
+Fedora Linux
+~~~~~~~~~~~~
+
+Instale os seguintes pacotes: ::
+
+	sudo dnf install mingw64-binutils mingw64-cpp mingw64-gcc mingw64-gcc-c++ mingw64-gcc-objc mingw64-gcc-objc++  mingw64-fontconfig mingw64-win-iconv mingw64-winpthreads mingw64-winpthreads-static
+
+Seguido dos comandos abaixo: ::
+
+	sudo ln -s /usr/bin/x86_64-w64-mingw32-g++ /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-g++
+	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-ar /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc-ar
+	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc
+
+Precisamos agora disponibilizar as variáveis **MINGW64** e **MINGW32**
+no ambiente, elas são necessárias para que os scripts usados para a
 compilação do MAME saibam onde encontrá-los.
 Não é necessário usar o *sudo* para o comando abaixo pois você deseja
 aplicar a variável no ambiente da sua conta comum, não use uma conta com
