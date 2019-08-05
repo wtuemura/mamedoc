@@ -2953,19 +2953,6 @@ Opções diversas
 
 		O valor predefinido é **Desligado** (**-noskip_gameinfo**).
 
-.. Para a interface:
-   Ao iniciar, o gerenciador de arquivos não vai informar o usuário de
-   qualquer imagem que seja obrigatória.
-
-.. _mame-commandline-skip_mandatory_fileman:
-
-**-[no]skip_mandatory_fileman**
-
-	Ao iniciar, faz com que o gerenciador de arquivos do MAME não
-	informe o usuário de qualquer imagem que seja obrigatória.
-
-		O valor predefinido é **Desligado** (**-noskip_mandatory_fileman**).
-
 .. _mame-commandline-uifont:
 
 **-uifont** <*nome_da_fonte*>
