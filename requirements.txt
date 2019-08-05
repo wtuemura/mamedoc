@@ -1,3 +1,2 @@
 Sphinx
 sphinxcontrib-svg2pdfconverter
-sphinx-rtd-theme
