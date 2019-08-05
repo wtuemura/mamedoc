@@ -193,9 +193,6 @@ html_show_sourcelink = False
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'MAME'
 
-# Read the docs
-html_style=""
-
 # -- Options for LaTeX output --------------------------------------------------
 
 latex_elements = {
