@@ -97,6 +97,9 @@ abaixo.
 Então para gerar um arquivo PDF fazemos `make latexpdf` ou `make html`
 para gerar páginas HTML e assim por diante.
 
-Para ler a versão em HTML deste documento acesse:
+Acesse a versão mais recente deste documento e baixe os arquivos PDF e
+e-PUB na página oficial do projeto:
+https://mamedoc.readthedocs.io
 
+Espelho do site oficial:
 http://mamedoc.epizy.com
