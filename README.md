@@ -1,5 +1,7 @@
 # Documentação MAME para o Português do Brasil
 
+[![Documentation Status](https://readthedocs.org/projects/mamedoc/badge/?version=latest)](https://mamedoc.readthedocs.io/pt/latest/?badge=latest)
+
 # Sobre
 
 Tradução não oficial da documentação do MAME para o Português do Brasil.
