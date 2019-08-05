@@ -97,6 +97,10 @@ abaixo.
 Então para gerar um arquivo PDF fazemos `make latexpdf` ou `make html`
 para gerar páginas HTML e assim por diante.
 
+Acesse a versão mais recente deste documento e baixe os arquivos PDF e
+e-PUB na página oficial do projeto:
+https://mamedoc.readthedocs.io
+
 # Licença
 
 A [Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/legalcode.pt) em resumo lhe garantem os seguintes direitos:
@@ -122,7 +126,3 @@ Para visualizar uma cópia desta licença, visite http://creativecommons.org/lic
 
 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-
-Acesse a versão mais recente deste documento e baixe os arquivos PDF e
-e-PUB na página oficial do projeto:
-https://mamedoc.readthedocs.io
