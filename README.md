@@ -1,6 +1,8 @@
 # Documentação MAME para o Português do Brasil
 
-[![Documentation Status](https://readthedocs.org/projects/mamedoc/badge/?version=latest)](https://mamedoc.readthedocs.io/pt/latest/?badge=latest)
+| Formatos        | Condição           |
+| ------------- |:-------------:| 
+HTML, PDF, EPUB| [![Documentation Status](https://readthedocs.org/projects/mamedoc/badge/?version=latest)](https://mamedoc.readthedocs.io/pt/latest/?badge=latest)
 
 # Sobre
 
