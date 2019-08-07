@@ -2134,7 +2134,7 @@ Opções para a configuração do áudio
 
 .. _mame-commandline-sound:
 
-**-sound** <*dsound|sdl|coreaudio|xaudio|portaudio|none*>
+**-sound** <*dsound|sdl|coreaudio|xaudio2|portaudio|none*>
 
 	Define qual o tipo de saída de áudio usar. **none** desativa o áudio
 	completamente.
