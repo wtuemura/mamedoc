@@ -31,9 +31,9 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-	'edit_on_github',
-	'sphinxcontrib.rsvgconverter',
-	'sphinx.ext.doctest',
+    'sphinx.ext.doctest',
+    'edit_on_github',
+    'sphinxcontrib.rsvgconverter',
 ]
 
 edit_on_github_project = 'wtuemura/mamedoc'

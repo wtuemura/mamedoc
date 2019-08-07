@@ -2269,8 +2269,8 @@ Opções para a configuração do áudio
 	definir a interface use o nome dela entre aspas
 	``-pa_api "Windows WASAPI"`` ou ``-pa_api "Windows WDM-KS"``.
 
-	Já no Linux nós temos uma lista um pouco diferente do mesmo hardware
-	acima: ::
+	Já no Linux nós temos uma lista um pouco diferente ainda que
+	estejamos usando o mesmo hardware acima: ::
 
 		PortAudio: API ALSA has 15 devices
 		PortAudio: ALSA: "Xonar STX: Multichannel (hw:0,0)"
