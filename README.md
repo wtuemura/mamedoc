@@ -34,12 +34,6 @@ Na sua conta comum, use o `pip` para instalar os pacotes restantes:
 sudo pip install -U Sphinx sphinxcontrib-svg2pdfconverter
 ```
 
-Faça uma cópia do texto fonte com o comando:
-
-```
-  git clone https://github.com/wtuemura/mamedoc.git
-```
-
 Caso apareça o erro abaixo:
 
 ```
@@ -67,6 +61,13 @@ tex:
 ```
 sudo fmtutil-sys --all
 ```
+
+Faça uma cópia do texto fonte com o comando:
+
+```
+  git clone https://github.com/wtuemura/mamedoc.git
+```
+
 
 Será criado um diretório chamado **mamedoc** com todo o código texto
 desta documentação, entre no diretório **mamedoc** e use o comando `make
@@ -97,8 +98,8 @@ abaixo.
 Então para gerar um arquivo PDF fazemos `make latexpdf` ou `make html`
 para gerar páginas HTML e assim por diante.
 
-Acesse a versão mais recente deste documento e baixe os arquivos PDF e
-e-PUB na página oficial do projeto:
+Para ler o documento online acesse a página oficial do projeto no link
+abaixo, lá também se encontram os arquivos em HTML, PDF e e-PUB:
 https://mamedoc.readthedocs.io
 
 # Licença
