@@ -162,8 +162,11 @@ Opções para a configuração dos drivers
 
 **-videodriver** <*driver*>
 
-	Define o driver de vídeo SDL a ser usado (**x11**, **directfb** ou
-	**auto**).
+	Define o driver de vídeo SDL a ser usado (**x11**, **wayland**,
+	**KMSDRM**, **directfb**, **dummy** ou **auto**).
+	
+	A disponibilidade de alguns destes drivers depende do sistema
+	operacional.
 	
 		O valor predefinido é **auto**
 
@@ -171,8 +174,11 @@ Opções para a configuração dos drivers
 
 **-renderdriver** <*driver*>
 
-	Define o driver de renderização SDL a ser usado (**software**,
-	**opengl**, **directfb** ou **auto**).
+	Define o driver de renderização SDL a ser usado (**opengl**,
+	**software**, **opengles2**, **directfb** ou **auto**).
+	
+	A disponibilidade de alguns destes drivers depende do sistema
+	operacional.
 	
 		O valor predefinido é **auto**
 
@@ -180,8 +186,11 @@ Opções para a configuração dos drivers
 
 **-audiodriver** <*driver*>
 
-	Define o driver de áudio SDL a ser usado (**alsa**, **arts** ou
-	**auto**).
+	Define o driver de áudio SDL a ser usado (**pulseaudio**, **alsa**,
+	**dsp**, **arts**, **jack**, **disk**, **dummy** ou **auto**).
+	
+	A disponibilidade de alguns destes drivers depende do sistema
+	operacional.
 	
 		O valor predefinido é **auto**
 
