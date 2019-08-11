@@ -50,6 +50,7 @@ wpset
 |
 | Voltar para :ref:`debugger-watchpoints-list`
 |
+
  .. _debugger-command-wpclear:
 
 wpclear
