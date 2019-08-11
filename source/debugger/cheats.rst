@@ -43,7 +43,7 @@ cheatinit
 |
 | Inicializa a pesquisa de trapaça com uma largura de **4 bytes** trocados de **0x0000** para **0x1000**.
 |
-| Back to :ref:`debugger-cheats-list`
+| Voltar para :ref:`debugger-cheats-list`
 |
 
  .. _debugger-command-cheatrange:
@@ -63,7 +63,7 @@ cheatrange
 |
 | Adiciona os bytes de **0x1000** para **0x1010** na pesquisa da trapaça.
 |
-| Back to :ref:`debugger-cheats-list`
+| Voltar para :ref:`debugger-cheats-list`
 |
 
  .. _debugger-command-cheatnext:
@@ -141,7 +141,7 @@ cheatnext
 |
 | Pesquise por todos os bytes que tenham diminuído por 1 desde a última pesquisa
 |
-| Back to :ref:`debugger-cheats-list`
+| Voltar para :ref:`debugger-cheats-list`
 |
 
  .. _debugger-command-cheatnextf:
@@ -220,7 +220,7 @@ cheatnextf
 |
 | Pesquise por todos os bytes que tenham diminuído 1 byte desde a pesquisa inicial.
 |
-| Back to :ref:`debugger-cheats-list`
+| Voltar para :ref:`debugger-cheats-list`
 |
 
  .. _debugger-command-cheatlist:
@@ -243,7 +243,7 @@ cheatlist
 |
 | Salve todas as coincidências atuais em formato XML no arquivo **cheat.txt**.
 |
-| Back to :ref:`debugger-cheats-list`
+| Voltar para :ref:`debugger-cheats-list`
 |
 
  .. _debugger-command-cheatundo:
@@ -264,5 +264,5 @@ cheatundo
 |
 | desfaz a última pesquisa (apenas do estado).
 |
-| Back to :ref:`debugger-cheats-list`
+| Voltar para :ref:`debugger-cheats-list`
 |
