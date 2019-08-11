@@ -3220,7 +3220,7 @@ textarea {
     overflow: auto;
     vertical-align: top;
     width: 100%;
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif
+    font-family: "Lato","proxima-nova","Helvetica Neue",Raleway,sans-serif
 }
 
 select,textarea {
@@ -3513,7 +3513,7 @@ input[type="radio"][disabled],input[type="checkbox"][disabled] {
 
 .wy-table caption,.rst-content table.docutils caption,.rst-content table.field-list caption {
     color: #000;
-    font: italic 85%/1 arial,sans-serif;
+    font: italic 85%/1 Raleway,sans-serif;
     padding: 1em 0;
     text-align: center
 }
@@ -3653,7 +3653,7 @@ html {
 }
 
 body {
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato","proxima-nova","Helvetica Neue",Raleway,sans-serif;
     font-weight: normal;
     color: #404040;
     min-height: 100%;
@@ -3732,7 +3732,7 @@ a.wy-text-neutral:hover {
 h1,h2,.rst-content p.caption,h3,h4,h5,h6,legend {
     margin-top: 0;
     font-weight: 700;
-    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif
+    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Raleway,sans-serif
 }
 
 p {
@@ -4754,7 +4754,7 @@ footer p {
     color: #fcfcfc;
     background: #1f1d1d;
     border-top: solid 10px #343131;
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato","proxima-nova","Helvetica Neue",Raleway,sans-serif;
     z-index: 400
 }
 
@@ -5010,7 +5010,7 @@ footer p {
 
 .rst-content .sidebar .sidebar-title {
     display: block;
-    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Raleway,sans-serif;
     font-weight: bold;
     background: #e1e4e5;
     padding: 6px 12px;
