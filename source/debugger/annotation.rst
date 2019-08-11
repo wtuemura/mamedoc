@@ -12,7 +12,7 @@ para uma melhor descrição de cada comando.
 | :ref:`debugger-command-comsave` -- salva o comentário atual em um arquivo
 | :ref:`debugger-command-comlist` -- imprime os comentários disponíveis de um arquivo
 | :ref:`debugger-command-commit` -- aplica um comadd e depois comsave
-
+|
 
  .. _debugger-command-comadd:
 
@@ -32,7 +32,7 @@ comadd
 |  ``// 10, opcode não documentado!``
 |
 | Inclui o comentário 'opcode não documentado!' ao código no endereço **0x10**
-
+|
 
  .. _debugger-command-comdelete:
 
@@ -48,7 +48,7 @@ comdelete
 |  ``comdelete 10``
 |
 | Apaga o comentário do código no endereço **0x10** (usando as configurações do banco atual de memória)
-
+|
 
  .. _debugger-command-comsave:
 
@@ -64,7 +64,7 @@ comsave
 |  ``comsave``
 |
 | Salva os comentários no arquivo de comentários do driver
-
+|
 
  .. _debugger-command-comlist:
 
@@ -80,7 +80,7 @@ comlist
 |  ``comlist``
 |
 | Mostra os comentários disponíveis atualmente.
-
+|
 
  .. _debugger-command-commit:
 
@@ -101,4 +101,4 @@ commit
 |  ``// 10, undocumented opcode!``
 |
 | Inclui o comentário 'opcode não documentado!' ao código no endereço **0x10**
-
+|
