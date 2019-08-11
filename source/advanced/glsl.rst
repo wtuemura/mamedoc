@@ -145,6 +145,7 @@ Alterando as configurações
 |	``glsl_shader_mame0``
 |	``...``
 |	``glsl_shader_mame9``
+|
 
 	Especifica quais dos sombreadores usar, na ordem entre **0** a
 	**9**. Informe-se com o autor do seu pacote de sombreadores para
@@ -154,6 +155,7 @@ Alterando as configurações
 |	``glsl_shader_screen0``
 |	``...``
 |	``glsl_shader_screen9``
+|
 
 	Determina em qual tela aplicar os efeitos.
 
