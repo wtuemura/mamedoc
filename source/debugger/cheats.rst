@@ -14,6 +14,7 @@ para uma melhor descrição de cada comando.
 | :ref:`debugger-command-cheatlist` -- mostra uma lista de pesquisa de trapaças que tiveram correspondências ou salve-as em um nome de arquivo <filename>
 | :ref:`debugger-command-cheatundo` -- desfaz a última pesquisa de trapaça (estado apenas)
 |
+
  .. _debugger-command-cheatinit:
 
 cheatinit
