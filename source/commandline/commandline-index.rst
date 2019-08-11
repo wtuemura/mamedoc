@@ -25,6 +25,7 @@ Opções de ajuda e verificação
 | :ref:`verifysamples <mame-commandline-verifysamples>`
 | :ref:`verifysoftware <mame-commandline-verifysoftware>`
 | :ref:`verifysoftlist <mame-commandline-verifysoftlist>`
+|
 
 Opções de configuração
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -32,7 +33,7 @@ Opções de configuração
 | :ref:`createconfig <mame-commandline-createconfig>`
 | :ref:`showconfig <mame-commandline-showconfig>`
 | :ref:`showusage <mame-commandline-showusage>`
-
+|
 
 Opções para listagem
 ~~~~~~~~~~~~~~~~~~~~
@@ -51,6 +52,7 @@ Opções para listagem
 | :ref:`listmedia <mame-commandline-listmedia>`
 | :ref:`listsoftware <mame-commandline-listsoftware>`
 | :ref:`getsoftlist <mame-commandline-getsoftlist>`
+|
 
 .. raw:: latex
 
@@ -66,26 +68,26 @@ Opções relacionadas ao que é exibido na tela
 | :ref:`mouseprovider <mame-commandline-mouseprovider>`
 | :ref:`lightgunprovider <mame-commandline-lightgunprovider>`
 | :ref:`joystickprovider <mame-commandline-joystickprovider>`
-
+|
 
 Opções de MIDI e rede
 ~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`listmidi <mame-commandline-listmidi>`
 | :ref:`listnetwork <mame-commandline-listnetwork>`
-
+|
 
 Opções de saída das notificações de tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`output <mame-commandline-output>`
-
+|
 
 Opções para a configuração
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`noreadconfig <mame-commandline-noreadconfig>`
-
+|
 
 Opções para a configuração dos diretórios principais
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,7 +112,7 @@ Opções para a configuração dos diretórios principais
 | :ref:`snapshot_directory <mame-commandline-snapshotdirectory>`
 | :ref:`diff_directory <mame-commandline-diffdirectory>`
 | :ref:`comment_directory <mame-commandline-commentdirectory>`
-
+|
 
 Opções para a gravação e a reprodução do estado da emulação
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,7 +126,7 @@ Opções para a gravação e a reprodução do estado da emulação
 | :ref:`exit_after_playback <mame-commandline-exitafterplayback>`
 | :ref:`record <mame-commandline-record>`
 | :ref:`record_timecode <mame-commandline-recordtimecode>`
-
+|
 
 Opções para a gravação de áudio e vídeo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -133,7 +135,7 @@ Opções para a gravação de áudio e vídeo
 | :ref:`aviwrite <mame-commandline-aviwrite>`
 | :ref:`aviio <mame-commandline-aviio>`
 | :ref:`wavwrite <mame-commandline-wavwrite>`
-
+|
 
 Opções para os instantâneos de tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,7 +144,7 @@ Opções para os instantâneos de tela
 | :ref:`snapsize <mame-commandline-snapsize>`
 | :ref:`snapview <mame-commandline-snapview>`
 | :ref:`[no]snapbilinear <mame-commandline-nosnapbilinear>`
-
+|
 
 Opções relacionadas a performance e a velocidade da emulação
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,7 +158,7 @@ Opções relacionadas a performance e a velocidade da emulação
 | :ref:`[no]refreshspeed <mame-commandline-norefreshspeed>`
 | :ref:`numprocessors <mame-commandline-numprocessors>`
 | :ref:`bench <mame-commandline-bench>`
-
+|
 
 Opções para a rotação da tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,7 +170,7 @@ Opções para a rotação da tela
 | :ref:`[no]autorol <mame-commandline-noautorol>`
 | :ref:`[no]flipx <mame-commandline-noflipx>`
 | :ref:`[no]flipy <mame-commandline-noflipy>`
-
+|
 
 Opções para a configuração de vídeo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -184,13 +186,13 @@ Opções para a configuração de vídeo
 | :ref:`[no]filter <mame-commandline-filter>`
 | :ref:`[no]burnin <mame-commandline-noburnin>`
 | :ref:`[no]unevenstretch <mame-commandline-unevenstretch>`
-
+|
 
 Opções para a configuração da tela inteira
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]switchres <mame-commandline-switchres>`
-
+|
 
 Opções de vídeo para uso com janelas individuais
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -199,7 +201,7 @@ Opções de vídeo para uso com janelas individuais
 | :ref:`aspect <mame-commandline-aspect>`
 | :ref:`resolution <mame-commandline-resolution>`
 | :ref:`view <mame-commandline-view>`
-
+|
 
 Opções para uso com as ilustrações
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -207,7 +209,7 @@ Opções para uso com as ilustrações
 | :ref:`[no]artwork_crop <mame-commandline-noartworkcrop>`
 | :ref:`fallback_artwork <mame-commandline-fallbackartwork>`
 | :ref:`override_artwork <mame-commandline-overrideartwork>`
-
+|
 
 Opções para os ajustes de imagem da tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -217,7 +219,7 @@ Opções para os ajustes de imagem da tela
 | :ref:`gamma <mame-commandline-gamma>`
 | :ref:`pause_brightness <mame-commandline-pausebrightness>`
 | :ref:`effect <mame-commandline-effect>`
-
+|
 
 Opções para máquinas que usem gráficos vetoriais
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -226,7 +228,7 @@ Opções para máquinas que usem gráficos vetoriais
 | :ref:`beam_width_max <mame-commandline-beamwidthmax>`
 | :ref:`beam_intensity_weight <mame-commandline-beamintensityweight>`
 | :ref:`flicker <mame-commandline-flicker>`
-
+|
 
 Opções para a depuração de vídeo OpenGL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -235,7 +237,7 @@ Opções para a depuração de vídeo OpenGL
 | :ref:`[no]gl_notexturerect <mame-commandline-glnotexturerect>`
 | :ref:`[no]gl_vbo <mame-commandline-glvbo>`
 | :ref:`[no]gl_pbo <mame-commandline-glpbo>`
-
+|
 
 Opções de vídeo OpenGL GLSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -245,7 +247,7 @@ Opções de vídeo OpenGL GLSL
 | :ref:`glsl_shader_mame[0-9] <mame-commandline-glslshadermame>`
 | :ref:`glsl_shader_screen[0-9] <mame-commandline-glslshaderscreen>`
 | :ref:`gl_glsl_vid_attr <mame-commandline-glglslvidattr>`
-
+|
 
 Opções para a configuração do áudio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,7 +257,7 @@ Opções para a configuração do áudio
 | :ref:`volume <mame-commandline-volume>`
 | :ref:`sound <mame-commandline-sound>`
 | :ref:`audio_latency <mame-commandline-audiolatency>`
-
+|
 
 Opções para as configurações de diferentes entradas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,7 +278,7 @@ Opções para as configurações de diferentes entradas
 | :ref:`natural <mame-commandline-natural>`
 | :ref:`joystick_contradictory <mame-commandline-joystickcontradictory>`
 | :ref:`coin_impulse <mame-commandline-coinimpulse>`
-
+|
 
 Opções de entrada habilitadas automaticamente
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -289,7 +291,7 @@ Opções de entrada habilitadas automaticamente
 | :ref:`lightgun_device <mame-commandline-lightgundevice>`
 | :ref:`positional_device <mame-commandline-positionaldevice>`
 | :ref:`mouse_device <mame-commandline-mousedevice>`
-
+|
 
 Opções voltadas para a depuração
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -303,7 +305,7 @@ Opções voltadas para a depuração
 | :ref:`watchdog <mame-commandline-watchdog>`
 | :ref:`debugger_font <mame-commandline-debuggerfont>`
 | :ref:`debugger_font_size <mame-commandline-debuggerfontsize>`
-
+|
 
 Opções para a configuração da rede
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -313,7 +315,7 @@ Opções para a configuração da rede
 | :ref:`comm_remotehost <mame-commandline-commremotehost>`
 | :ref:`comm_remoteport <mame-commandline-commremoteport>`
 | :ref:`[no]comm_framesync <mame-commandline-commframesync>`
-
+|
 
 Opções diversas
 ~~~~~~~~~~~~~~~
@@ -332,7 +334,7 @@ Opções diversas
 | :ref:`ui_mouse <mame-commandline-uimouse>`
 | :ref:`language <mame-commandline-language>`
 | :ref:`[no]nvram_save <mame-commandline-nvramsave>`
-
+|
 
 Opções para uso com script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -343,25 +345,24 @@ Opções para uso com script
 | :ref:`[no]plugins <mame-commandline-plugins>`
 | :ref:`plugin <mame-commandline-plugin>`
 | :ref:`noplugin <mame-commandline-noplugin>`
-
+|
 
 Opções do servidor HTTP
 -----------------------
 | :ref:`http <mame-commandline-http>`
 | :ref:`http_port <mame-commandline-httpport>`
 | :ref:`http_root <mame-commandline-httproot>`
-
+|
 
 Configurações específicas para o Windows
 ----------------------------------------
-
 
 Opções de performance
 ~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`priority <mame-wcommandline-priority>`
 | :ref:`profile <mame-wcommandline-profile>`
-
+|
 
 Configurações de tela inteira para o Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -370,12 +371,13 @@ Configurações de tela inteira para o Windows
 | :ref:`full_screen_brightness <mame-wcommandline-fullscreenbrightness>`
 | :ref:`full_screen_contrast <mame-wcommandline-fullscreencontrast>`
 | :ref:`full_screen_gamma <mame-wcommandline-fullscreengamma>`
-
+|
 
 Opções para a entrada de controle para o Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]dual_lightgun <mame-wcommandline-duallightgun>`
+|
 
 .. raw:: latex
 
@@ -394,46 +396,49 @@ Opções relacionadas a performance (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`sdlvideofps <mame-scommandline-sdlvideofps>`
-
+|
 
 Opções de vídeo (SDL)
 ~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]centerh <mame-scommandline-centerh>`
 | :ref:`[no]centerv <mame-scommandline-centerv>`
-
+|
 
 Configuração para tela inteira (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`useallheads <mame-scommandline-useallheads>`
-
+|
 
 Configuração para diferentes tipos de espaços de cor para vídeo (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`scalemode <mame-scommandline-scalemode>`
-
+|
 
 Configurações para o mapeamento de teclado (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`keymap <mame-scommandline-keymap>`
 | :ref:`keymap_file <mame-scommandline-keymapfile>`
-
+|
 
 Configurações para o mapeamento de controle joystick (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`joyidx <mame-scommandline-joyidx>`
 | :ref:`sixaxis <mame-scommandline-sixaxis>`
+|
 
 Configurações para o mapeamento do mouse (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`mouse_index <mame-scommandline-mouseindex>`
+|
 
 Configurações para o mapeamento do teclado (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`mouse_index <mame-scommandline-keybidx>`
+|
 
 .. raw:: latex
 
@@ -447,3 +452,4 @@ Opções para a configuração dos drivers (SDL)
 | :ref:`renderdriver <mame-scommandline-renderdriver>`
 | :ref:`audiodriver <mame-scommandline-audiodriver>`
 | :ref:`gl_lib <mame-scommandline-gllib>`
+|
