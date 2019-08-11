@@ -2537,23 +2537,24 @@ Opções para as configurações de diferentes entradas
 	simplesmente definido por essas 11 cadeias de caracteres:
 	``-joymap 7778...4445``
 
-	Olhando para a primeira linha, 7778 são apenas 4 caracteres longos.
+	Olhando para a primeira linha, ``7778`` são apenas 4 caracteres
+	longos.
 	A 5º entrada não pode usar valores simétricos então assume-se que
 	seja igual ao valor anterior, '8'. O 6º caractere é esquerda/direita
 	em simetria com o 4º caractere, resultando em '8'. O 7º caractere é
 	esquerda/direita em simétrica com o 3º caractere, resultando em '9'
 	(que é '7' invertido com esquerda/direita). Eventualmente isso
-	resulta numa cadeia de 777888999 na linha.
+	resulta numa cadeia de ``777888999`` na linha.
 
 	A segunda e a terceira linhas estão ausentes, portanto, elas são
 	consideradas idênticas à primeira linha. A quarta linha decodifica
-	de forma semelhante à primeira linha, produzindo 444555666.
+	de forma semelhante à primeira linha, produzindo ``444555666``.
 	A quinta linha está faltando, então é assumido como sendo o mesmo
 	que o quarto.
 
 	As três linhas restantes também estão faltando, então elas são
 	consideradas os espelhos cima/baixo das três primeiras linhas, dando
-	três linhas finais de 111222333.
+	três linhas finais de ``111222333``.
 
 .. raw:: latex
 
