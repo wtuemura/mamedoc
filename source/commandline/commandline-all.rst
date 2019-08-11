@@ -2643,64 +2643,56 @@ Opções de entrada habilitadas automaticamente
 
 **-paddle_device** / **-paddle**
 
-	ativa (*none|keyboard|mouse|lightgun|joystick*)
-	caso haja um controle de pá ou remo presente.
+	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
 .. _mame-commandline-adstickdevice:
 
 **-adstick_device** / **-adstick**
 
-	ativa (*none|keyboard|mouse|lightgun|joystick*)
-	caso haja um controle analógico presente.
+	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
 .. _mame-commandline-pedaldevice:
 
 **-pedal_device** / **-pedal**
 
-	ativa (*none|keyboard|mouse|lightgun|joystick*)
-	caso haja um controle de pedal presente.
+	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
 .. _mame-commandline-dialdevice:
 
 **-dial_device** / **-dial**
 
-	ativa (*none|keyboard|mouse|lightgun|joystick*)
-	caso haja um controle de um discador presente.
+	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
 .. _mame-commandline-trackballdevice:
 
 **-trackball_device** / **-trackball**
 
-	ativa (*none|keyboard|mouse|lightgun|joystick*)
-	caso haja um controle de trackball presente.
+	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
 .. _mame-commandline-lightgundevice:
 
 **-lightgun_device**
 
-	ativa (*none|keyboard|mouse|lightgun|joystick*)
-	caso haja um controle de pistola de luz presente.
+	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
 .. _mame-commandline-positionaldevice:
 
 **-positional_device**
 
-	ativa (*none|keyboard|mouse|lightgun|joystick*)
-	caso haja um controle de posição presente.
+	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
 .. _mame-commandline-mousedevice:
 
 **-mouse_device**
 
-	ativa (*none|keyboard|mouse|lightgun|joystick*)
-	caso haja um controle de mouse presente.
+	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
 	Cada uma dessas opções de controle são habilitadas automaticamente
 	para o mouse, controle (joystick) ou pistola de luz (lightgun)
 	dependendo de uma classe em particular de controle analógico para um
 	sistema em particular. Por exemplo, se você definir a opção
 	``-paddle mouse``, então qualquer jogo que tenha um remo ou pá como
-	controle será automaticamente configurada para ser usada pelo mouse
+	controle será automaticamente configurado para ser usado com o mouse
 	como se a opção ``-mouse`` tivesse sido definida.
 
 	Observe que estes controles sobrescrevem as opções
