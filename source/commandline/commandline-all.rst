@@ -2134,10 +2134,23 @@ Opções para a configuração do áudio
 
 .. _mame-commandline-sound:
 
-**-sound** <*dsound|sdl|coreaudio|xaudio2|portaudio|none*>
+**-sound** <``dsound`` | ``sdl`` | ``coreaudio`` | ``xaudio2`` | ``portaudio`` | ``none``>
 
-	Define qual o tipo de saída de áudio usar. **none** desativa o áudio
-	completamente.
+	Define qual o tipo de saída de áudio usar, Ao usar **none** desativa
+	o áudio completamente porém o hardware de áudio continua sendo
+	emulado. Abaixo as opções disponíveis para cada sistema operacional:
+
+	+---------+-----------+---------+-----------+------+
+	| Windows | dsound    | xaudio2 | portaudio | none |
+	+---------+-----------+---------+-----------+------+
+	| macOS   | coreaudio | sdl     | portaudio | none |
+	+---------+-----------+---------+-----------+------+
+	| SDL     | portaudio | sdl     | none      |      |
+	+---------+-----------+---------+-----------+------+
+
+
+	Versões especiais como o **SDLMAME** para Windows, pode usar a opção
+	**sdl** e ter o **portaudio** desabilitado.
 
 		O valor predefinido é **dsound** no Windows, no Mac é
 		**coreaudio** nas outras plataformas é **sdl**.
