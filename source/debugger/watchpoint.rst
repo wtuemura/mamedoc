@@ -13,6 +13,7 @@ para uma melhor descrição de cada comando.
 |	:ref:`debugger-command-wpenable` -- habilita todos ou um determinado watchpoint caso nenhum <*wpnum*> seja definido
 |	:ref:`debugger-command-wplist` -- lista todos os watchpoints
 |
+
  .. _debugger-command-wpset:
 
 wpset
