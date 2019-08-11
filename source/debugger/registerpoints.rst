@@ -13,6 +13,7 @@ para uma melhor descrição de cada comando.
 | :ref:`debugger-command-rpenable` -- habilita todo ou um determinado registerpoint se nenhum <*rpnum*> for especificado
 | :ref:`debugger-command-rplist` -- lista todos os registerpoints
 |
+
  .. _debugger-command-rpset:
 
 rpset
