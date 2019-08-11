@@ -1832,10 +1832,6 @@ funcionar corretamente em alguns computadores Mac.**
 	As opções definidas para a janela substituem os valores da opções de
 	todas as janelas.
 
-.. raw:: latex
-
-	\clearpage
-
 Opções para uso com as ilustrações
 ----------------------------------
 
@@ -2443,6 +2439,10 @@ Opções para as configurações de diferentes entradas
 
 		O valor predefinido é **Desligado** (**-nomultimouse**).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-nosteadykey:
 
 **-[no]steadykey** / **-[no]steady**
@@ -2607,10 +2607,6 @@ Opções para as configurações de diferentes entradas
 	de tecla a caracteres (da mesma forma quando você digita em um
 	editor de texto) e o MAME tenta traduzir esses caracteres para
 	pressionamentos de tecla emulados.
-
-.. raw:: latex
-
-	\clearpage
 
 **Existem várias limitações inevitáveis no modo "teclado natural":**
 
