@@ -47,7 +47,7 @@ wpset
 |
 | Define um watchpoint que interromperá a execução sempre que uma escrita acontecer no endereço **45678** e o valor que estiver sendo escrito for igual a **f0**. Quando isso acontecer, incrementa a variável **temp0** e resume a execução.
 |
-| Back to :ref:`debugger-watchpoints-list`
+| Voltar para :ref:`debugger-watchpoints-list`
 |
  .. _debugger-command-wpclear:
 
@@ -68,7 +68,7 @@ wpclear
 |
 | Limpa todos os watchpoints.
 |
-| Back to :ref:`debugger-watchpoints-list`
+| Voltar para :ref:`debugger-watchpoints-list`
 |
 
  .. _debugger-command-wpdisable:
@@ -90,7 +90,7 @@ wpdisable
 |
 | Desabilita todos os watchpoints.
 |
-| Back to :ref:`debugger-watchpoints-list`
+| Voltar para :ref:`debugger-watchpoints-list`
 |
 
  .. _debugger-command-wpenable:
@@ -112,7 +112,7 @@ wpenable
 |
 | ativa todos os watchpoints.
 |
-| Back to :ref:`debugger-watchpoints-list`
+| Voltar para :ref:`debugger-watchpoints-list`
 |
 
  .. _debugger-command-wplist:
@@ -124,5 +124,5 @@ wplist
 |
 |  O comando "*wplist*" lista todos os watchpoints atuais, junto com o seu indexador e quaisquer condições anexadas a eles.
 |
-| Back to :ref:`debugger-watchpoints-list`
+| Voltar para :ref:`debugger-watchpoints-list`
 |
