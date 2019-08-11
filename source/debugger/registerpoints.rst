@@ -12,7 +12,7 @@ para uma melhor descrição de cada comando.
 | :ref:`debugger-command-rpdisable` -- desabilita todos ou um determinado registerpoint se nenhum <*rpnum*> for especificado
 | :ref:`debugger-command-rpenable` -- habilita todo ou um determinado registerpoint se nenhum <*rpnum*> for especificado
 | :ref:`debugger-command-rplist` -- lista todos os registerpoints
-
+|
  .. _debugger-command-rpset:
 
 rpset
@@ -36,7 +36,7 @@ rpset
 | Define um registerpoint que interromperá a execução sempre que a variável **temp0** for igual a **5**.
 |
 | Back to :ref:`debugger-registerpoints-list`
-
+|
 
  .. _debugger-command-rpclear:
 
@@ -58,7 +58,7 @@ rpclear
 | Limpa todos os registerpoints.
 |
 | Back to :ref:`debugger-registerpoints-list`
-
+|
 
  .. _debugger-command-rpdisable:
 
@@ -80,7 +80,7 @@ rpdisable
 | Desabilita todo os registerpoints.
 |
 | Back to :ref:`debugger-registerpoints-list`
-
+|
 
  .. _debugger-command-rpenable:
 
@@ -102,7 +102,7 @@ rpenable
 | Habilita todos os registerpoints.
 |
 | Back to :ref:`debugger-registerpoints-list`
-
+|
 
  .. _debugger-command-rplist:
 
@@ -114,3 +114,4 @@ rplist
 | O comando "*rplist*" lista todos os registerpoints atuais, juntamente com o seu índice e quaisquer ações anexadas à elas.
 |
 | Back to :ref:`debugger-registerpoints-list`
+|
