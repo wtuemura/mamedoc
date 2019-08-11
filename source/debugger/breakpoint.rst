@@ -47,7 +47,7 @@ bpset
 |
 | Define um breakpoints que irá interromper uma execução sempre que o PC for igual a **567890** e a expressão **(++temp0 >= 10)** for verdadeira. Isso somente para de fato após o breakpoint ter sido atingido 16 vezes.
 |
-| Back to :ref:`debugger-breakpoint-list`
+| Voltar para :ref:`debugger-breakpoint-list`
 |
 
  .. _debugger-command-bpclear:
@@ -69,7 +69,7 @@ bpclear
 |
 | Limpa todos os breakpoints.
 |
-| Back to :ref:`debugger-breakpoint-list`
+| Voltar para :ref:`debugger-breakpoint-list`
 |
 
  .. _debugger-command-bpdisable:
@@ -91,7 +91,7 @@ bpdisable
 |
 | Desabilita todos os breakpoints.
 |
-| Back to :ref:`debugger-breakpoint-list`
+| Voltar para :ref:`debugger-breakpoint-list`
 |
 
  .. _debugger-command-bpenable:
@@ -113,7 +113,7 @@ bpenable
 |
 | Ativa todos os breakpoints.
 |
-| Back to :ref:`debugger-breakpoint-list`
+| Voltar para :ref:`debugger-breakpoint-list`
 |
 
  .. _debugger-command-bplist:
@@ -125,5 +125,5 @@ bplist
 |
 | O comando bplist lista todos os breakpoints atuais, junto com seu indexador ou qualquer condições ou ações anexados a eles.
 |
-| Back to :ref:`debugger-breakpoint-list`
+| Voltar para :ref:`debugger-breakpoint-list`
 |
