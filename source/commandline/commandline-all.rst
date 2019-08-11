@@ -2074,6 +2074,7 @@ Opções de vídeo OpenGL GLSL
 | **-glsl_shader_screen1**
 | ...
 | **-glsl_shader_screen9**
+|
 
 	O shader personalizado de tela do OpenGL GLSL configura o bitmap do
 	MAME no slot fornecido entre (0-9).
