@@ -34,7 +34,7 @@ dasm
 |
 | Desmonta os intervalos de endereços **3000-3fff** da CPU **#2** sem nenhum dado de **raw opcode** para o arquivo 'harddriv.asm'.
 |
-| Back to :ref:`debugger-memory-list`
+| Voltar para :ref:`debugger-memory-list`
 |
 
  .. _debugger-command-find:
@@ -60,7 +60,7 @@ find
 |
 | Procura no intervalo de endereços **0000-7fff** pela string "**AAR**" seguindo por um dwrod com tamanho **0** seguido pela string "**BEN**" e seguido por uma word com tamanho **0**.
 |
-| Back to :ref:`debugger-memory-list`
+| Voltar para :ref:`debugger-memory-list`
 |
 
  .. _debugger-command-dump:
@@ -88,7 +88,7 @@ dump
 |
 | Despeja o intervalo de endereços **3000-3fff** da CPU **#3** em pedaços de **4 bytes**, sem nenhum dado ASCII no arquivo 'harddriv.dmp'.
 |
-| Back to :ref:`debugger-memory-list`
+| Voltar para :ref:`debugger-memory-list`
 |
 
  .. _debugger-command-save:
@@ -114,7 +114,7 @@ save
 |
 | Salva o intervalo de dados da memória **3000-3fff** da CPU **#3** para o arquivo binário 'harddriv.bin'.
 |
-| Back to :ref:`debugger-memory-list`
+| Voltar para :ref:`debugger-memory-list`
 |
 
  .. _debugger-command-load:
@@ -143,7 +143,7 @@ load
 |
 | Carrega dados de memória do intervalo de endereços **3000-3fff** da CPU **#3** vindo do arquivo binário 'harddriv.bin'.
 |
-| Back to :ref:`debugger-memory-list`
+| Voltar para :ref:`debugger-memory-list`
 |
 
  .. _debugger-command-map:
@@ -162,5 +162,5 @@ map
 |
 | Fornece o endereço físico e o banco para o endereço lógico **152d0** na memória do programa
 |
-| Back to :ref:`debugger-memory-list`
+| Voltar para :ref:`debugger-memory-list`
 |
