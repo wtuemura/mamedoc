@@ -1812,6 +1812,7 @@ funcionar corretamente em alguns computadores Mac.**
 |	**-view1** <*nome*>
 |	**-view2** <*nome*>
 |	**-view3** <*nome*>
+|
 
 	Define a configuração da visualização inicial de cada janela.
 	Note que o nome de visualização <*nome*> não precisa
