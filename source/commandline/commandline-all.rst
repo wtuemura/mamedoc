@@ -2128,7 +2128,8 @@ Opções para a configuração do áudio
 	Define o volume inicial. Pode ser alterado posteriormente usando
 	a interface do usuário.
 	O valor do volume está definido em decibéis (dB): Por exemplo,
-	``-volume -12`` começará com uma atenuação de -12 dB no som.
+	``-volume -12`` começará com uma atenuação de **-12 dB** no volume
+	do áudio.
 
 		O valor predefinido é **0** (**-volume 0**).
 
