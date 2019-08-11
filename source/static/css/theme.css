@@ -2653,7 +2653,7 @@ button[disabled] {
     background-color: #27AE60;
     text-decoration: none;
     font-weight: normal;
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato","proxima-nova","Helvetica Neue",Raleway,sans-serif;
     box-shadow: 0px 1px 2px -1px rgba(255,255,255,0.5) inset,0px -2px 0px 0px rgba(0,0,0,0.1) inset;
     outline-none: false;
     vertical-align: middle;
