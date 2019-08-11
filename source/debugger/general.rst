@@ -26,6 +26,7 @@ para uma melhor descrição de cada comando.
 | :ref:`debugger-command-snap` -- salva um instantâneo da tela.
 | :ref:`debugger-command-source` -- lê os comandos do <*filename*> e os executa um por um
 | :ref:`debugger-command-quit` -- sai do MAME e do depurador
+|
 
 .. raw:: latex
 
@@ -47,6 +48,7 @@ do
 | Define o registro 'pc' para 0.
 |
 | Voltar para :ref:`debugger-general-list`
+|
 
  .. _debugger-command-symlist:
 
@@ -65,7 +67,7 @@ symlist
 | Exibe os símbolos específicos para a CPU ``#2``.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-softreset:
 
@@ -81,7 +83,7 @@ softreset
 |
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-hardreset:
 
@@ -97,7 +99,7 @@ hardreset
 |
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-print:
 
@@ -114,7 +116,7 @@ print
 | Imprime **a**, **b** e o valor de **a+b** no console como números hexadecimais.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-printf:
 
@@ -141,7 +143,7 @@ printf
 | Imprime **A=<aval>**, **B=<bval>** em uma linha e **C=<a+bval>** na segunda linha.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-logerror:
 
@@ -168,7 +170,7 @@ logerror
 | Registra **A=<aval>**, **B=<bval>** em uma linha, e **C=<a+bval>** na segunda linha.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-tracelog:
 
@@ -190,7 +192,7 @@ tracelog
 | Registra **A=<aval>**, **B=<bval>** em uma linha, e **C=<a+bval>** na segunda.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-tracesym:
 
@@ -208,7 +210,7 @@ tracesym
 | Registra **PC=<pcval>** onde <*pcval*> é exibido em seu formato predefinido.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-trackpc:
 
@@ -230,7 +232,7 @@ trackpc
 | Continue rastreando o PC na CPU 0, mas limpe as informações de faixa existentes.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-trackmem:
 
@@ -252,7 +254,7 @@ trackmem
 | Continue rastreando as gravações de memória na CPU 0, mas limpe as informações de faixa existentes.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-pcatmem:
 
@@ -274,7 +276,7 @@ pcatmem
 | Imprimir qual PC escreveu a localização de memória da CPU **0x400000**.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-rewind:
 
@@ -286,7 +288,7 @@ rewind
 | O comando de retrocesso "*rewind*" carrega o estado mais recente baseado em RAM. Os estados de retrocesso, quando ativados, são salvos quando o comando "step", "over" ou "out" é executado, armazenando o estado da máquina a partir do momento antes de realmente avançar. Consecutivamente, o carregamento de estados de retrocesso pode funcionar como uma execução reversa. Dependendo de quais passos foram dados anteriormente, o comportamento pode ser similar ao "reverse stepi" do GDB ou "reverse next". Toda a saída para este comando está atualmente ecoada na janela da máquina em execução. A memória anterior e as estatísticas de rastreamento do PC serão limpas, a execução reversa atual não ocorre.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-statesave:
 
@@ -304,7 +306,7 @@ statesave
 | Grava o arquivo 'foo.sta' no diretório de salvamento de estado padrão.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-stateload:
 
@@ -322,7 +324,7 @@ stateload
 | Carrega o arquivo 'foo.sta' do diretório padrão de salvamento de estado.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-snap:
 
@@ -344,7 +346,7 @@ snap
 | Obtém um instantâneo da tela de vídeo atual e a salva como 'shinobi.png' no diretório **snapshot**.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-source:
 
@@ -362,7 +364,7 @@ source
 | Lê nos comandos do depurador a partir do **break_and_trace.cmd** e os executa.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
 
  .. _debugger-command-quit:
 
@@ -374,4 +376,4 @@ quit
 | O comando quit sai do MAME imediatamente.
 |
 | Voltar para :ref:`debugger-general-list`
-
+|
