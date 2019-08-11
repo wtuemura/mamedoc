@@ -145,9 +145,13 @@ html_favicon = "images/favicon.ico"
 html_static_path = ['static']
 html_context = {
     'css_files': [
-    'static/theme_overrides.css',  # override wide tables in RTD theme
+    '_static/css/theme_overrides.css',  # override wide tables in RTD theme
     ],
 }
+
+def setup(app):
+    app.add_css_file('theme_overrides.css')
+
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
 #html_last_updated_fmt = '%b %d, %Y'
