@@ -3,13 +3,13 @@
 Comandos para depuração de imagem
 =================================
 
-
 Na interface de depuração do MAME você pode digitar **help <command>**
 para uma melhor descrição de cada comando.
 
 | :ref:`debugger-command-images` -- lista todos os dispositivos de imagens arquivos montados
 | :ref:`debugger-command-mount` -- monta um arquivo para um dispositivo
 | :ref:`debugger-command-unmount` -- desmonta um aquivo de uma dispositivo específico
+|
 
  .. _debugger-command-images:
 
@@ -25,7 +25,7 @@ images
 |  ``images``
 |
 | Mosta uma lista de dispositivos e arquivos montados para o driver atual.
-
+|
 
  .. _debugger-command-mount:
 
@@ -43,7 +43,7 @@ mount
 |  ``mount cart,aladdin``
 |
 | Monta a lista de software com o item aladdin no dispositivo de cartucho.
-
+|
 
  .. _debugger-command-unmount:
 
@@ -59,5 +59,4 @@ unmount
 |  ``unmount cart``
 |
 | Desmonta qualquer arquivo montado no dispositivo cart.
-
-
+|
