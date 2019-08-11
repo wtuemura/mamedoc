@@ -31,6 +31,7 @@ primeiro.
 | ``|| :`` lógica OR
 | ``= \*= /= %= += -= <<= >>= &= \|= ^= :`` atribuição
 | ``, :`` termos separados, parâmetros de função
+|
 
 Números
 -------
