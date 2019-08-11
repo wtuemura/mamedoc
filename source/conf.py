@@ -149,6 +149,8 @@ html_context = {
     ],
 }
 
+# https://github.com/readthedocs/sphinx_rtd_theme/issues/714
+# getting error when try to load custom css
 def setup(app):
     app.add_css_file('theme_overrides.css')
 
