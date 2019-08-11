@@ -35,7 +35,7 @@ rpset
 | Define um registerpoint que irá incrementar a variável **temp0** sempre que o registrador PC for igual a **0x150**.
 | Define um registerpoint que interromperá a execução sempre que a variável **temp0** for igual a **5**.
 |
-| Back to :ref:`debugger-registerpoints-list`
+| Voltar para :ref:`debugger-registerpoints-list`
 |
 
  .. _debugger-command-rpclear:
@@ -57,7 +57,7 @@ rpclear
 |
 | Limpa todos os registerpoints.
 |
-| Back to :ref:`debugger-registerpoints-list`
+| Voltar para :ref:`debugger-registerpoints-list`
 |
 
  .. _debugger-command-rpdisable:
@@ -79,7 +79,7 @@ rpdisable
 |
 | Desabilita todo os registerpoints.
 |
-| Back to :ref:`debugger-registerpoints-list`
+| Voltar para :ref:`debugger-registerpoints-list`
 |
 
  .. _debugger-command-rpenable:
@@ -101,7 +101,7 @@ rpenable
 |
 | Habilita todos os registerpoints.
 |
-| Back to :ref:`debugger-registerpoints-list`
+| Voltar para :ref:`debugger-registerpoints-list`
 |
 
  .. _debugger-command-rplist:
@@ -113,5 +113,5 @@ rplist
 |
 | O comando "*rplist*" lista todos os registerpoints atuais, juntamente com o seu índice e quaisquer ações anexadas à elas.
 |
-| Back to :ref:`debugger-registerpoints-list`
+| Voltar para :ref:`debugger-registerpoints-list`
 |
