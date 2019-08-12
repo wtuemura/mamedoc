@@ -1241,7 +1241,7 @@ Usando ferramentas de compilação alternativas
 **PYTHON_EXECUTABLE**
 
   Define o interpretador Python. Para compilar o MAME é necessário ter
-  o Python versão *2.7*, *3* ou mais recente.
+  o Python versão *2.7*, Python *3* ou mais recente.
 
 .. _mame-compilation-cross_build:
 
