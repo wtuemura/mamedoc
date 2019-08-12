@@ -1346,10 +1346,11 @@ Recursos opcionais
 **SYMLEVEL**
 
 	Valor numérico que controla a quantidade de detalhes nos símbolos de
-	depuração. Valores maiores facilitam a depuração ao custo do tempo
-	de compilação e do tamanho final do executável. A compatibilidade
-	destes valores dependem do compilador que esteja sendo usado.
-	No caso do GNU GCC e similares estes valores são:
+	depuração, valores maiores facilitam a depuração ao custo do tempo
+	de compilação e do tamanho final do executável. **SYMLEVEL=1** é
+	usado na versão oficial do MAME e a mínima recomendada. A
+	compatibilidade destes valores dependem do compilador que esteja
+	sendo usado, no caso do GNU GCC e similares, estes valores são:
 	
 		* **1**: Incluí tabelas numéricas e variáveis externas.
 		* **2**: Incluindo os itens descritos em **1**, incluí também as variáveis locais.
