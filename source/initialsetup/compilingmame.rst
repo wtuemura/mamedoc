@@ -1248,7 +1248,8 @@ Usando ferramentas de compilação alternativas
 **CROSS_BUILD**
 
   Defina como **1** para que o lincador e o compilador fiquem isolados
-  do sistema hospedeiro.
+  do sistema hospedeiro, opção obrigatória ao realizar uma
+  :ref:`mame-crosscompilation`.
 
 .. _mame-compilation-optional-resources:
 
