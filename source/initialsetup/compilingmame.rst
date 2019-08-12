@@ -1521,7 +1521,7 @@ Problemas conhecidos
 Problemas relacionados com versões específicas do compilador
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* O GNU GCC 5 há erros esporádicos no Linux onde ocorre alertas de
+* Há erros esporádicos com o GNU GCC 5 no Linux onde ocorre alertas de
   reprovação. [2]_
   Use a opção **DEPRECATED=0** para eliminá-los.
 
