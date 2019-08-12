@@ -1251,6 +1251,18 @@ Usando ferramentas de compilação alternativas
   do sistema hospedeiro, opção obrigatória ao realizar uma
   :ref:`mame-crosscompilation`.
 
+.. _mame-compilation-openmp:
+
+**OPENMP**
+
+  Se definido como **1**, faz uso da `paralelização implícita <https://www.ibm.com/developerworks/br/aix/library/au-aix-openmp-framework/index.html>`_ com o
+  `OpenMP <https://pt.wikibooks.org/wiki/Programação_Paralela_em_Arquiteturas_Multi-Core/Programação_em_OpenMP>`_.
+  No MAME segundo o `FAQ oficial <https://wiki.mamedev.org/index.php/FAQ:Performance>`_,
+  são adicionadas novas threads para aceleração de loop, trazendo um
+  aumento de performance. Para fazer uso desta opção é necessário a
+  instalação do ``libomp-devel`` ou ``libomp-dev`` dependendo da sua
+  distribuição.
+
 .. _mame-compilation-optional-resources:
 
 Recursos opcionais
@@ -1299,6 +1311,10 @@ Recursos opcionais
   importantes/relevantes (repare que as mensagens de avisos não são
   tratadas como erro).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-compilation-debug:
 
 **DEBUG**
@@ -1309,10 +1325,6 @@ Recursos opcionais
   só tem utilidade para desenvolvedores, não compile o MAME com esta
   opção sem saber o que está fazendo. Veja também
   :ref:`compiling-advanced-options-debug`.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-compilation-optimize:
 
@@ -1368,6 +1380,10 @@ Recursos opcionais
 	quantidade de símbolos que podem ultrapassar o tamanho do executável
 	final.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-compilation-archopts:
 
 **ARCHOPTS**
@@ -1390,10 +1406,6 @@ Recursos opcionais
 
 	Opções adicionais que serão passadas ao compilador ao compilar
 	arquivos de código fonte em linguagem C++.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-compilation-archopts-objc:
 
@@ -1469,10 +1481,6 @@ Sede das bibliotecas e framework
 
 	Defina como **1** caso prefira usar a biblioteca PortMidi instalada
 	no seu sistema ao invés de usar a versão fornecida pelo MAME.
-
-.. raw:: latex
-
-	\clearpage
 
 **USE_SYSTEM_LIB_PORTAUDIO**
 
