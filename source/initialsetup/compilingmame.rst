@@ -1339,7 +1339,7 @@ Recursos opcionais
 	Defina como **1** para habilitar a inclusão de símbolos adicionais
 	de depuração para a plataforma que o executável está sendo
 	compilado, além dos já inclusos (muitas plataformas por predefinição
-	já incluem estes símbolos já com os nomes das funções).
+	já incluem estes símbolos e os nomes das respectivas funções).
 
 .. _mame-compilation-symlevel:
 
