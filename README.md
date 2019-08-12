@@ -4,6 +4,11 @@
 | ------------- |:-------------:| 
 HTML, PDF, EPUB| [![Documentation Status](https://readthedocs.org/projects/mamedoc/badge/?version=latest)](https://mamedoc.readthedocs.io/pt/latest/?badge=latest)
 
+Para ler o documento online acesse a página oficial do projeto no link
+abaixo, lá também se encontram os arquivos em HTML, PDF e e-PUB:
+
+https://mamedoc.readthedocs.io
+
 # Sobre
 
 Tradução não oficial da documentação do MAME para o Português do Brasil.
@@ -97,10 +102,6 @@ abaixo.
 
 Então para gerar um arquivo PDF fazemos `make latexpdf` ou `make html`
 para gerar páginas HTML e assim por diante.
-
-Para ler o documento online acesse a página oficial do projeto no link
-abaixo, lá também se encontram os arquivos em HTML, PDF e e-PUB:
-https://mamedoc.readthedocs.io
 
 # Licença
 
