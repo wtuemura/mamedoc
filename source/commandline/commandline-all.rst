@@ -2799,7 +2799,7 @@ Opções voltadas para a depuração
 
 **-debugger_port** <*valor*>
 
-	Define uma porta para depuração remota.
+	Define uma porta a ser usada pelo gdbstub debugger.
 
 		A porta predefinida é **23946**
 
