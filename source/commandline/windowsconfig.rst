@@ -13,13 +13,13 @@ Opções de performance
 
 .. _mame-wcommandline-priority:
 
-**-priority** <*priority*>
+**-priority** <*prioridade*>
 
 	Define a prioridade de tarefas (*threads*) usadas pelo MAME. Não há
 	nenhuma tarefa predefinida para que não haja interferência com
 	outros aplicativos.
-	Um valor válido fica entre **-15** até **1** onde **1** é a maior
-	prioridade.
+	Os valores válidos ficam entre **-15** até **1** onde **1** é a
+	maior prioridade.
 
 		O valor predefinido é **0** (**prioridade NORMAL**).
 
