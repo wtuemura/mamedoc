@@ -2799,7 +2799,9 @@ Opções voltadas para a depuração
 
 **-debugger_port** <*valor*>
 
-	Define uma porta a ser usada pelo gdbstub debugger.
+	Define uma porta a ser usada pelo gdbstub debugger. Para usar,
+	execute o ``gdb`` e faça o comando
+	``target remote localhost:23946``.
 
 		A porta predefinida é **23946**
 
