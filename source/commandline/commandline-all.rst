@@ -2795,20 +2795,13 @@ Opções voltadas para a depuração
 
 	\clearpage
 
-.. _mame-commandline-watchdog:
+.. _mame-commandline-debuggerport:
 
-**-watchdog** <*tempo*> / **-wdog** <*tempo*>
+**-debugger_port** <*valor*>
 
-	Habilita o temporizador watchdog interno que vai automaticamente
-	matar o processo do MAME caso o tempo de duração definido em
-	<*tempo*> passe caso não haja nenhuma atualização de quadro.
-	Tenha em mente que alguns sistemas ficam parados por algum tempo
-	durante o carregamento da tela, então <*duration*> deve ser grande
-	o suficiente para levar esse tempo extra em consideração.
-	Geralmente, um valor entre **10** e **30** segundos devem ser
-	suficientes.
+	Define uma porta para depuração remota.
 
-		Nenhum watchdog vem habilitado.
+		A porta predefinida é **23946**
 
 .. _mame-commandline-debuggerfont:
 
@@ -2832,6 +2825,21 @@ Opções voltadas para a depuração
 	O tamanho padrão do Qt é de **11** pontos.
 	O tamanho padrão do Mac (**Cocoa**) é o tamanho padrão usado pelo
 	sistema.
+
+.. _mame-commandline-watchdog:
+
+**-watchdog** <*tempo*> / **-wdog** <*tempo*>
+
+	Habilita o temporizador watchdog interno que vai automaticamente
+	matar o processo do MAME caso o tempo de duração definido em
+	<*tempo*> passe caso não haja nenhuma atualização de quadro.
+	Tenha em mente que alguns sistemas ficam parados por algum tempo
+	durante o carregamento da tela, então <*duration*> deve ser grande
+	o suficiente para levar esse tempo extra em consideração.
+	Geralmente, um valor entre **10** e **30** segundos devem ser
+	suficientes.
+
+		Nenhum watchdog vem habilitado.
 
 .. raw:: latex
 

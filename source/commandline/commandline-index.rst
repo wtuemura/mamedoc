@@ -302,9 +302,10 @@ Opções voltadas para a depuração
 | :ref:`[no]debug <mame-commandline-debug>`
 | :ref:`debugscript <mame-commandline-debugscript>`
 | :ref:`[no]update_in_pause <mame-commandline-updateinpause>`
-| :ref:`watchdog <mame-commandline-watchdog>`
+| :ref:`debugger_port <mame-commandline-debuggerport>`
 | :ref:`debugger_font <mame-commandline-debuggerfont>`
 | :ref:`debugger_font_size <mame-commandline-debuggerfontsize>`
+| :ref:`watchdog <mame-commandline-watchdog>`
 |
 
 Opções para a configuração da rede
