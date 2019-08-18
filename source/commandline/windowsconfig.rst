@@ -55,7 +55,7 @@ Configurações de tela inteira
 
 .. _mame-wcommandline-fullscreenbrightness:
 
-**-full_screen_brightness** <*value*> / **-fsb** <*value*>
+**-full_screen_brightness** <*valor*> / **-fsb** <*valor*>
 
 	Controla o brilho ou nível de preto da tela.
 	Selecionando valores menores (até **0.1**) produzirá uma tela mais
@@ -69,7 +69,7 @@ Configurações de tela inteira
 
 .. _mame-wcommandline-fullscreencontrast:
 
-**-full_screen_contrast** <*value*> / **-fsc** <*value*>
+**-full_screen_contrast** <*valor*> / **-fsc** <*valor*>
 
 	Controla o contraste ou nível de branco da tela.
 	Selecionando valores menores (até **0.1**) produzirá uma tela mais
@@ -87,7 +87,7 @@ Configurações de tela inteira
 
 .. _mame-wcommandline-fullscreengamma:
 
-**-full_screen_gamma** <*value*> / **-fsg** <*value*>
+**-full_screen_gamma** <*valor*> / **-fsg** <*valor*>
 
 	Ajuste de gama da tela, faz o ajuste da escala de luminância da
 	tela ajustando o contraste entre o claro e escuro.
@@ -103,7 +103,7 @@ Opções para o modo janela
 
 .. _mame-wcommandline-menu:
 
-**-menu** <*value*>
+**-menu** <*valor*>
 
 	Habilita uma barra de menu caso esteja disponível e implementado na
 	interface do usuário.
