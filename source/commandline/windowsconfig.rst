@@ -98,6 +98,26 @@ Configurações de tela inteira
 
 		O valor predefinido é **1.0**.
 
+Opções para o modo janela
+-------------------------
+
+.. _mame-wcommandline-menu:
+
+**-menu** <*value*>
+
+	Habilita uma barra de menu caso esteja disponível e implementado na
+	interface do usuário.
+
+		O valor predefinido é **0**.
+
+.. _mame-wcommandline-attach_window:
+
+**-attach_window**
+
+	Se anexa a uma janela arbitrária.
+
+		Não há valor predefinido.
+
 Opções para a entrada de controle
 ---------------------------------
 

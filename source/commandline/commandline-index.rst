@@ -373,6 +373,13 @@ Configurações de tela inteira para o Windows
 | :ref:`full_screen_gamma <mame-wcommandline-fullscreengamma>`
 |
 
+Opções para o modo janela
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| :ref:`menu <mame-wcommandline-menu>`
+| :ref:`attach_window <mame-wcommandline-attach_window>`
+|
+
 Opções para a entrada de controle para o Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
