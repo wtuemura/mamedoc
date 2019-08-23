@@ -12,3 +12,4 @@ CONFIGURAÇÕES AVANÇADAS
 	glsl
 	devicemap
 	lightguns
+	tricks
