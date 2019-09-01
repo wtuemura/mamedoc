@@ -729,7 +729,7 @@ dentro do diretório pistola.
 
 	\clearpage
 
-.. pistola-separando-roms:
+.. _pistola-separando-roms:
 
 Separando apenas as ROMs das máquinas de tiro
 ---------------------------------------------

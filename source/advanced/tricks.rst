@@ -216,6 +216,68 @@ com **Neo-Geo** usarão as configurações predefinidas pelo MAME sem haver
 conflitos de configuração, assim como, não será mais necessário
 especificar todas essas opções na linha de comando.
 
+.. _advanced-tricks-dat-sistema:
+
+Gerando arquivos DAT para serem usados com gerenciadores de ROMs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Arquivos DAT são usados por gerenciadores de ROMs como
+`RomCenter (Windows) <http://romcenter.com/>`_,
+`RomVault (Linux e Windows) <http://www.romvault.com/>`_,
+`Romulus (Windows) <http://romulus.net63.net/>`_,
+`Clrmamepro (Windows) <http://mamedev.emulab.it/clrmamepro/>`_ e
+`Clrmamepro (Mac) <http://www.emulab.it/>`_ para aferir a validade de
+cada arquivo existente dentro de um arquivo ROM identificando o CRC e
+SHA1 de cada um.
+
+Execute o MAME com o comando: ::
+
+	mame64 -listxml >mame.xml
+
+Baixe o `DatUtil <http://www.logiqx.com/Tools/DatUtil/>`_, extraia-o no
+mesmo diretório do MAME e execute o comando: ::
+
+	datutil mame.xml
+
+Será gerado um arquivo ``datutil.dat``, agora para criar um DAT para um
+sistema CPS1 (**cps1.dat**) compatível com o **Clrmamepro** faça o
+comando: ::
+
+	datutil.exe -G cps1.cpp -o cps1.dat -f cmp datutil.dat
+
+O mesmo pode ser usado para criar um DAT para CPS2: ::
+
+	datutil.exe -G cps2.cpp -o cps2.dat -f cmp datutil.dat
+
+.. raw:: latex
+
+	\clearpage
+
+Neo-geo: ::
+
+	datutil.exe -G neogeo.cpp -o neogeo.dat -f cmp datutil.dat
+
+Para uma lista de Neo-Geo sem clones: ::
+
+	datutil.exe -G neogeo.cpp -o neogeo.dat -r -f cmp datutil.dat
+
+E assim por diante, para criar um DAT em formato **RomCenter** troque o
+``cmp`` por ``rc``, para **RomCenter 2** use ``rc2`` e para criar um
+arquivo XML genérico aceito pelos outros gerenciadores use ``gx`` ou
+``generic``. Para mais informações sobre outros formatos leia o arquivo
+**Readme.txt** que acompanha o DatUtil, para ver alguns outros exemplos
+práticos do uso do DatUtil acesse `este link
+<https://forum.recalbox.com/topic/4537/tutorial-datutil>`_.
+
+Estes mesmos arquivos ``neogeo.dat``, ``cps2.dat`` e qualquer outro que
+for criado poderá ser utilizado pelos gerenciadores de ROMs para
+construir um ROM SET para cada um destes sistemas. É uma maneira muito
+mais fácil de se separar as ROMs do que ter que fazer e
+:ref:`usar scripts <pistola-separando-roms>`. No entanto, apesar de ser
+mais fácil utilizar um gerenciador, repare que é bem genérico. O uso de
+scripts permitem que a separação seja bem mais específica caso seja
+necessário.
+
 .. [#]	De acordo com `este post
 		<https://vgmrips.net/forum/viewtopic.php?f=3&t=155>`_ o YM2610
 		trabalha com uma taxa de amostragem de 18.5 kHz (18500 Hz), logo
