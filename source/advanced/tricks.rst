@@ -278,6 +278,114 @@ mais fácil utilizar um gerenciador, repare que é bem genérico. O uso de
 scripts permitem que a separação seja bem mais específica caso seja
 necessário.
 
+.. _advanced-tricks-criando-romset:
+
+Criando um ROMSET apenas com máquinas tipo Arcade
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Umas das maneiras de se criar tal ROMSET é baixando o código fonte e
+compilando o MAME com a opção ``SUBTARGET=arcade``, isso fará com que o
+MAME funcione e exiba apenas uma lista com máquinas classificadas
+internamente como arcade, simples assim. Para mais informações leia o
+capítulo :ref:`compiling-MAME`.
+
+Usando a interface do MAME
+--------------------------
+
+Para aqueles que não estão familiarizados(as) com o processo de
+compilação, só utilizam a versão oficial do MAME e que também não
+tenham interesse em montar todo um ambiente de desenvolvimento só para
+isso, é possível criar essa lista através da interface do MAME, o que
+facilita muito a nossa vida.
+
+* Faça o download da última versão do arquivo category.ini no site
+  `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_ e extraia
+  o diretório **folders** dentro do diretório do MAME.
+* Inicie o MAME, no lado esquerdo da interface selecione **Categoria**,
+  em **Arquivo** escolha **Working Arcade.ini**, em **Incluir Clones**
+  escolha **Não** e clique em **Voltar ao Menu Anterior**.
+* No topo da interface, clique com o mouse no ícone do disquete para
+  exportar a lista e escolha **Exportar lista em formato XML
+  (igual -listxml)**, depois de alguns segundos será gerado um arquivo
+  **exported.xml** dentro do diretório **ui**.
+* Assim como foi explicado no :ref:`capítulo anterior <advanced-tricks-dat-sistema>`,
+  é possível usar o DatUtil para transformar o arquivo XML em um arquivo
+  DAT compatível com um dos gerenciadores listados no capítulo anterior
+  ou utilizar diretamente o arquivo XML nos gerenciadores que
+  não dependam de um arquivo DAT.
+* Convertendo ou não o arquivo XML em DAT, use o seu gerenciador
+  preferido para **reconstruir (Rebuild)** as ROMs, usando o diretório
+  onde as suas ROMs se encontram e com o destino o diretório onde deseja
+  ter somente as ROMs de arcade.
+
+Uma outra maneira para obter o mesmo resultado é através da utilização
+de pequenos scripts usando a linha de comandos, apesar de ser um
+processo mais manual e um pouco trabalhoso, o processo acaba sendo mais
+poderoso pois permite que a filtragem e a seleção dos arquivos possa ser
+mais refinada e podendo ser utilizada em qualquer sistema operacional e
+não algo exclusivo do Windows apenas.
+
+.. raw:: latex
+
+	\clearpage
+
+* Faça o download da última versão do arquivo category.ini no site
+  `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_
+* Abra e extraia apenas o arquivo **Working Arcade.ini**
+* Apague tudo e deixe apenas o que estiver depois de ``[ROOT_FOLDER]``
+* Salve este arquivo modificado como **arcade.txt**
+
+Usando a linha de comando no Windows
+------------------------------------
+
+Abra o prompt de comando no mesmo diretório onde se encontra o arquivo
+``arcade.txt`` defina o caminho completo para onde deseja copiar os
+arquivos: ::
+
+	set DST=H:\arcade-roms
+
+Seguido do comando abaixo: ::
+
+	for /F %f in ('type arcade.txt') do @echo G:\roms\%f.zip >> caminho-roms.txt
+
+O comando acima vai ler todos os nomes das máquinas em ``arcade.txt``,
+incluir o caminho completo onde estão armazenadas as suas ROMs,
+adicionar o nome da máquina + a extensão .zip e por fim redirecionar a
+saída para o arquivo ``caminho-roms.txt``.
+
+Execute o comando abaixo para realizar a cópia dos arquivos com base na
+lista que acabamos de criar: ::
+
+	for /F %f in ('type caminho-roms.txt') do copy %f %DST%
+
+Assim como no comando acima, o arquivo ``caminho-roms.txt`` será lido e
+posteriormente irá alimentar o comando ``copy`` com o devido caminho e
+o destino ``H:\arcade-roms``.
+
+Usando o terminal no Linux, macOS e \*NIX em geral
+--------------------------------------------------
+
+Como descrito acima, abra o terminal no mesmo diretório onde se encontra
+o arquivo ``arcade.txt`` e defina o diretório de destino: ::
+
+	export DST=/mnt/usb/arcade-roms
+
+É necessário converter o formato do arquivo de Windows (quebra de linha
+**CRLF**) para um formato compatível com \*nix (quebra de linha
+**LF**), caso contrário a lista ficará toda bagunçada: ::
+
+	sed -i 's/\r//g' arcade.txt
+
+Execute o comando abaixo para gerar o arquivo ``caminho-roms.txt`` onde
+**/home/mame/roms** é o caminho completo onde as ROMs estão
+armazenadas: ::
+
+	for f in $(< arcade.txt); do echo /home/mame/roms/"$f".zip; done > caminho-roms.txt
+
+Execute o comando abaixo para fazer a cópia dos arquivos: ::
+
+	for f in $(< caminho-roms.txt); do cp "$f" "$DST"; done
+
 .. [#]	De acordo com `este post
 		<https://vgmrips.net/forum/viewtopic.php?f=3&t=155>`_ o YM2610
 		trabalha com uma taxa de amostragem de 18.5 kHz (18500 Hz), logo
