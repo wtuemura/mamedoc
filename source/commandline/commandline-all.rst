@@ -2410,7 +2410,7 @@ Opções para as configurações de diferentes entradas
 	Controla se o MAME usa ou não os controles da pistola de luz
 	(lightgun). Observe que a maioria das pistolas de luz são mapeadas
 	para o mouse, assim, ao se usar ambas as opções ``-lightgun`` e
-	**-mouse** juntos, isso pode poderá trazer resultados inesperados.
+	``-mouse`` juntos, isso pode poderá trazer resultados inesperados.
 
 		O valor predefinido é **Desligado** (**-nolightgun**).
 
