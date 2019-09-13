@@ -1543,7 +1543,7 @@ Opções para a configuração de vídeo
 	Aplica a opção **-unevenstretchx/y** automaticamente com base na
 	orientação nativa da fonte.
 
-		O valor predefinido é **Ligado** (**-noautostretchxy**).
+		O valor predefinido é **Desligado** (**-noautostretchxy**).
 
 .. _mame-commandline-intoverscan:
 
@@ -1552,7 +1552,7 @@ Opções para a configuração de vídeo
 	Permite que a imagem passe dos limites da tela (overscan) de alvos
 	inteiros e dimensionáveis.
 
-		O valor predefinido é **Ligado** (**-nointoverscan**).
+		O valor predefinido é **Desligado** (**-nointoverscan**).
 
 .. _mame-commandline-intscalex:
 
@@ -1560,7 +1560,7 @@ Opções para a configuração de vídeo
 
 	Define o fator de escala horizontal.
 
-		O valor predefinido é **Ligado** (**-nointscalex**).
+		O valor predefinido é **Desligado** (**-nointscalex**).
 
 .. _mame-commandline-intscaley:
 
@@ -1568,7 +1568,7 @@ Opções para a configuração de vídeo
 
 	Define o fator de escala vertical.
 
-		O valor predefinido é **Ligado** (**-nointscaley**).
+		O valor predefinido é **Desligado** (**-nointscaley**).
 
 .. _mame-commandline-waitvsync:
 
