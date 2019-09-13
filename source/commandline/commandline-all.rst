@@ -3150,8 +3150,8 @@ Opções do servidor HTTP
 		mesmo. (Nota do tradutor)
 .. [5]	Faz com que a metade da parte de cima da tela saia de
 		sincronismo com a outra metade da parte de baixo da tela,
-		surgindo um efeito ou um "*defeito*" onde cada metade se desloca
-		para lados opostos horizontalmente. (Nota do tradutor)
+		surgindo um efeito ou um "*defeito*" onde cada metade se
+		deslocam horizontalmente para lados opostos. (Nota do tradutor)
 .. [6]	Tagarela, que verbaliza muito, falador, barulhento.
 		(Nota do tradutor)
 .. [7]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
