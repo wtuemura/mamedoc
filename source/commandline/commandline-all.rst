@@ -3149,9 +3149,9 @@ Opções do servidor HTTP
 		veículo, onde o *acelerador* faz o controle da velocidade do
 		mesmo. (Nota do tradutor)
 .. [5]	Faz com que a metade da parte de cima da tela saia de
-		sincronismo com a parte de baixo, surgindo um efeito ou
-		um "*defeito*" onde cada metade se desloca para lados opostos
-		horizontalmente. (Nota do tradutor)
+		sincronismo com a outra metade da parte de baixo da tela,
+		surgindo um efeito ou um "*defeito*" onde cada metade se desloca
+		para lados opostos horizontalmente. (Nota do tradutor)
 .. [6]	Tagarela, que verbaliza muito, falador, barulhento.
 		(Nota do tradutor)
 .. [7]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
