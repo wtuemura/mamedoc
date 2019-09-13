@@ -1522,8 +1522,8 @@ Opções para a configuração de vídeo
 
 **-[no]unevenstretchx** / **-[no]uesx**
 
-	Permite que a proporção da tela seja desigual e que a tela ou janela
-	possa ser preenchida apenas na horizontal.
+	Permite que a relação de aspecto da tela seja desigual e que a tela
+	ou janela possa ser preenchida (esticada) apenas na horizontal.
 
 		O valor predefinido é **Ligado** (**-unevenstretchx**).
 
