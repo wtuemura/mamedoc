@@ -1529,10 +1529,10 @@ Opções para a configuração de vídeo
 
 .. _mame-commandline-unevenstretchy:
 
-**-[no]unevenstretchx** / **-[no]uesy**
+**-[no]unevenstretchy** / **-[no]uesy**
 
-	Permite que a proporção da tela seja desigual e que a tela ou janela
-	possa ser preenchida apenas na vertical.
+	Permite que a relação de aspecto da tela seja desigual e que a tela
+	ou janela possa ser preenchida (esticada) apenas na vertical.
 
 		O valor predefinido é **Ligado** (**-unevenstretchy**).
 
