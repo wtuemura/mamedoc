@@ -336,10 +336,11 @@ Exemplo:
 
 .. _mame-commandline-getsoftlist:
 
-**-getsoftlist** / **-glist** [<*pattern*>]
+**-getsoftlist** / **-glist** [<*sistema*>]
 
-        Postagens para exibir na tela uma listas de software específicos
-        que correspondem ao nome do sistema fornecido.
+	Gera uma lista de software determinada por **sistema** em
+	formato XML, o comando usa como base a lista de sistemas disponíveis
+	dentro do diretório **hash**.
 
 .. raw:: latex
 
