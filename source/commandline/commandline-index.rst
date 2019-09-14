@@ -180,12 +180,18 @@ Opções para a configuração de vídeo
 | :ref:`[no]window <mame-commandline-window>`
 | :ref:`[no]maximize <mame-commandline-maximize>`
 | :ref:`[no]keepaspect <mame-commandline-keepaspect>`
+| :ref:`[no]unevenstretch <mame-commandline-unevenstretch>`
+| :ref:`[no]unevenstretchx <mame-commandline-unevenstretchx>`
+| :ref:`[no]unevenstretchy <mame-commandline-unevenstretchy>`
+| :ref:`[no]unevenstretchxy <mame-commandline-unevenstretchxy>`
+| :ref:`[no]intoverscan <mame-commandline-intoverscan>`
+| :ref:`[no]intscalex <mame-commandline-intscalex>`
+| :ref:`[no]intscaley <mame-commandline-intscaley>`
 | :ref:`[no]waitvsync <mame-commandline-waitvsync>`
 | :ref:`[no]syncrefresh <mame-commandline-syncrefresh>`
 | :ref:`prescale <mame-commandline-prescale>`
 | :ref:`[no]filter <mame-commandline-filter>`
 | :ref:`[no]burnin <mame-commandline-noburnin>`
-| :ref:`[no]unevenstretch <mame-commandline-unevenstretch>`
 |
 
 Opções para a configuração da tela inteira
