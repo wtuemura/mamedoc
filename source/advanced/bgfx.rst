@@ -271,7 +271,7 @@ Observe que as configurações são individuais para cada tela.
 .. [#]	**Citação** "O uso do BGFX adiciona um atraso em torno de 2 ou 3
 		quadros e no geral é considerado inadequado para jogos, ainda
 		que se obtenha uma melhor aparência visual (Eu acredito que
-		(o BGFX) acabará sendo removido já que há muitos problema
+		(o BGFX) acabará sendo removido já que há muitos problemas
 		segundo os próprios usuários)".
 .. [#]	Cropped do Inglês. (Nota do tradutor)
 .. [#]	Onde? (Nota do tradutor)
