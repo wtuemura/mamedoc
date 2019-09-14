@@ -319,11 +319,17 @@ Exemplo:
 
 .. _mame-commandline-listmedia:
 
-**-listmedia** / **-lm** [<*pattern*>]
+**-listmedia** / **-lm** [<*sistema*>]
 
-	Liste a mídia disponível para uso do sistema. Isso inclui tipos
-	de mídia como cartucho, cassete, disquete e mais. Extensões de
-	arquivo comumente conhecidas também são suportadas.
+	Exibe uma lista de compatibilidade de mídia para cada sistema, como
+	cartucho, cassete, disquete, etc. O comando também exibe as
+	extensões conhecidas para cada sistema, caso elas existam.
+	Exemplo: ::
+
+		mame64 -lm genesis
+		SYSTEM           MEDIA NAME       (brief)    IMAGE FILE EXTENSIONS SUPPORTED
+		---------------- --------------------------- -------------------------------
+		genesis          cartridge        (cart)     .smd  .bin  .md   .gen
 
 .. _mame-commandline-listsoftware:
 
