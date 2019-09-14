@@ -56,7 +56,7 @@ ocorra.
 .. _broken-package:
 
 Por quê o meu pacote MAME não oficial (vindo do EmuCR por exemplo ou de qualquer outro lugar) não funciona direito? Por quê a minha atualização oficial está quebrada?
-------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Em muitos casos, as alterações de vários subsistemas tais como plug-ins
 Lua, hlsl ou bgfx vem como atualizações para diversos arquivos
