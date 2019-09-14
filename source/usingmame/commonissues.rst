@@ -55,7 +55,7 @@ ocorra.
 
 .. _broken-package:
 
-Por quê o meu pacote MAME não oficial (o EmuCR ou qualquer outro por exemplo) não funciona direito? Por quê a minha atualização oficial está quebrada?
+Por quê o meu pacote MAME não oficial (vindo do EmuCR por exemplo ou de qualquer outro lugar) não funciona direito? Por quê a minha atualização oficial está quebrada?
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Em muitos casos, as alterações de vários subsistemas tais como plug-ins
