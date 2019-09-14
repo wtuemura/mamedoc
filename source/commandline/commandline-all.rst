@@ -327,19 +327,17 @@ Exemplo:
 
 .. _mame-commandline-listsoftware:
 
-**-listsoftware** / **-lsoft** [<*pattern*>]
+**-listsoftware** / **-lsoft** [<*sistema*>]
 
-	Mostre na tela a lista de software completa que pode ser
-	usadas através de um determinado termo ou sistema. Observe que
-	isso é simplesmente um copiar/colar do arquivo .XML que reside
-	na pasta HASH e que pode ser usada.
+	Lista o conteúdo dos arquivos XML que estão dentro do diretório
+	**hash**.
 
 .. _mame-commandline-getsoftlist:
 
 **-getsoftlist** / **-glist** [<*sistema*>]
 
-	Gera uma lista de software determinada por **sistema** em
-	formato XML, o comando usa como base a lista de sistemas disponíveis
+	Gera uma lista de software em formato XML determinada por
+	**sistema**, o comando usa como base a lista de sistemas disponíveis
 	dentro do diretório **hash**.
 
 .. raw:: latex
