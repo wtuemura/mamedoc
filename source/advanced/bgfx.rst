@@ -269,10 +269,10 @@ aparecerão em tempo real conforme elas forem sendo alteradas.
 Observe que as configurações são individuais para cada tela.
 
 .. [#]	**Citação** "O uso do BGFX adiciona um atraso em torno de 2 ou 3
-		quadros e no geral é considerado inadequado para jogos ainda que
-		se obtenha uma melhor aparência visual (Eu acredito que (o BGFX)
-		acabará sendo removido já que há muitos problema segundo os
-		próprios usuários)".
+		quadros e no geral é considerado inadequado para jogos, ainda
+		que se obtenha uma melhor aparência visual (Eu acredito que
+		(o BGFX) acabará sendo removido já que há muitos problema
+		segundo os próprios usuários)".
 .. [#]	Cropped do Inglês. (Nota do tradutor)
 .. [#]	Onde? (Nota do tradutor)
 .. [#]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
