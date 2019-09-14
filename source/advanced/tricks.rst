@@ -225,10 +225,10 @@ Arquivos DAT são usados por gerenciadores de ROMs como
 `RomCenter (Windows) <http://romcenter.com/>`_,
 `RomVault (Linux e Windows) <http://www.romvault.com/>`_,
 `Romulus (Windows) <http://romulus.net63.net/>`_,
-`Clrmamepro (Windows) <http://mamedev.emulab.it/clrmamepro/>`_ e
-`Clrmamepro (Mac) <http://www.emulab.it/>`_ para aferir a validade de
-cada arquivo existente dentro de um arquivo ROM identificando o CRC e
-SHA1 de cada um.
+`Clrmamepro (Windows) <http://mamedev.emulab.it/clrmamepro/>`_,
+`Clrmamepro (Mac) <http://www.emulab.it/>`_ dentre outros que aferem a
+validade de cada arquivo existente dentro de um arquivo ROM
+identificando o CRC e SHA1 de cada um, dentre outras funções.
 
 Execute o MAME com o comando: ::
 
