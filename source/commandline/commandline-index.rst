@@ -183,7 +183,7 @@ Opções para a configuração de vídeo
 | :ref:`[no]unevenstretch <mame-commandline-unevenstretch>`
 | :ref:`[no]unevenstretchx <mame-commandline-unevenstretchx>`
 | :ref:`[no]unevenstretchy <mame-commandline-unevenstretchy>`
-| :ref:`[no]unevenstretchxy <mame-commandline-unevenstretchxy>`
+| :ref:`[no]autostretchxy <mame-commandline-autostretchxy>`
 | :ref:`[no]intoverscan <mame-commandline-intoverscan>`
 | :ref:`[no]intscalex <mame-commandline-intscalex>`
 | :ref:`[no]intscaley <mame-commandline-intscaley>`
