@@ -268,7 +268,17 @@ Exemplo:
 	Exibe uma lista das amostras que fazem parte de uma determinada
 	máquina, nomes de sistema ou nome de dispositivos. Caso nenhum termo
 	seja usado como filtro depois do comando, *todos* os resultados dos
-	sistemas e dispositivos serão exibidos.
+	sistemas e dispositivos serão exibidos. Exemplo: ::
+
+		mame64 -listsamples 005
+		Samples required for driver "005".
+		lexplode
+		sexplode
+		dropbomb
+		shoot
+		missile
+		helicopt
+		whistle
 
 .. _mame-commandline-romident:
 
