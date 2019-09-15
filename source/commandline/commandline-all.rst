@@ -246,10 +246,20 @@ Exemplo:
 
 **-listcrc** [<*pattern*>...]
 
-	Exibe uma lista completa de CRCs de todas as imagens ROM
-	que compõem uma máquina, nomes de sistema ou dispositivo.
-	Caso nenhum termo seja usado depois do comando, *todos* os
-	resultados dos sistemas e dispositivos serão exibidos.
+	Exibe uma lista completa com CRCs de todas as imagens ROM
+	que compõem uma máquina, nomes de sistema ou dispositivo em um
+	formato simples que pode ser facilmente filtrado por comandos como
+	``grep``, ``awk`` e ``sed`` no Linux e macOS ou
+	`findstr <https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/findstr>`_ no Windows.
+	Caso nenhuma palavra chave seja usada como filtro após o comando,
+	o MAME irá listar *tudo* que estiver em seu banco de dados interno.
+	Exemplo: ::
+
+		mame64 -listcrc 005
+		8e68533e 1346b.cpu-u25                   005             005
+		29e10a81 5092.prom-u1
+		...
+		1d298cb0 6331.sound-u8                   005             005
 
 .. _mame-commandline-listroms:
 
