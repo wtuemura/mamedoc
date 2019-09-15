@@ -98,11 +98,29 @@ Opções de ajuda e verificação
 
 **-verifyroms** [<*pattern*>]
 
-	Verifica se há imagens ROM inválidas ou ausentes. É predefinido que
-	todos os drivers que possuam arquivos ``.zip`` ou diretórios válidos
-	no rompath (caminho da rom) sejam verificados, no entanto, você pode
-	limitar essa lista se usar um termo como filtro após o comando
-	``-verifyroms``.
+	Verifica a condição dos arquivos de imagem ROM em uma determinada
+	máquina. Serão verificados todas as máquinas e diretórios válidos
+	que estejam dentro do ``rompath`` (caminho da rom): ::
+
+		mame64 -verifyroms pacman
+		romset pacman [puckman] is good
+		1 romsets found, 1 were OK.
+
+	É possível usar um asterisco ao final do nome da máquina para que
+	seja exibido uma lista com todas as outras máquinas relacionadas com
+	o nome da máquina principal e a sua condição atual, exemplo: ::
+
+		mame64 -verifyroms pacman*
+		romset pacman [puckman] is good
+		romset pacmanbl [puckman] is good
+		...
+		pacmanfm    : pm1-1.7f (32 bytes) - NEEDS REDUMP
+		pacmanfm    : pm1-4.4a (256 bytes) - NEEDS REDUMP
+		romset pacmanfm [puckman] is best available
+		...
+		pacmaniao   : pac-mania_111187.sound0 (65536 bytes) - NOT FOUND
+		romset pacmaniao [pacmania] is bad
+		...
 
 .. _mame-commandline-verifysamples:
 
