@@ -198,11 +198,11 @@ Exemplo:
 
 **-listxml** / **-lx** [<*pattern*>]
 
-	Lista detalhes abrangentes de todos os sistemas e drivers
-	suportados em formato XML. A saída é bastante longa, então é melhor
-	redirecionar toda a saída para um arquivo. É predefinido que todos
-	os sistemas sejam listados, no entanto, você pode filtrar essa lista
-	caso use uma palavra chave ou coringa após o comando ``-listxml``.
+	O comando gera uma lista com muitos detalhes de todos os sistemas,
+	máquinas e drivers em formato XML, geralmente este comando é usado
+	para ser redirecionado para um arquivo texto. É possível limitar a
+	saída para um nome de sistema, máquina ou driver caso um seja
+	informado.
 
 .. _mame-commandline-listfull:
 
