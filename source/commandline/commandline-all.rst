@@ -126,12 +126,25 @@ Opções de ajuda e verificação
 
 **-verifysamples** [<*pattern*>]
 
-	Verifica se há amostras inválidas ou ausentes. É predefinido que
-	todos os drivers que possuem arquivos ``.zip`` ou diretórios válidos
-	no samplepath sejam verificados no caminho da pasta onde os arquivos
-	de amostras se encontram, no entanto, você pode filtrar essa lista
-	caso use uma palavra chave ou coringa após o comando
-	``-verifysamples``.
+	Verifica a condição dos arquivos **samples** informado. Todos os
+	arquivos samples ou diretórios válidos serão verificados desde que
+	estejam configurados em ``samplepath``: ::
+
+		mame64 -verifysamples 005
+		sampleset 005 is good
+		1 samplesets found, 1 were OK.
+
+	É possível usar um asterisco ao final do nome do sample para que
+	seja exibido uma lista com todos os outros samples relacionados com
+	o nome do sample principal e a sua condição atual, exemplo: ::
+
+		mame64 -verifysamples armora*
+		sampleset armora is good
+		sampleset armorap [armora] is good
+		sampleset armorar [armora] is good
+		3 samplesets found, 3 were OK.
+
+	Todas os samples serão listados caso nenhum nome seja informado.
 
 .. _mame-commandline-verifysoftware:
 
