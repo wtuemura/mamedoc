@@ -383,7 +383,8 @@ Exemplo:
 **-getsoftlist** / **-glist** [<*sistema*>]
 
 	Gera uma lista de software em formato XML determinada por
-	**sistema**, o comando usa como base a lista de sistemas disponíveis
+	**sistema**, nesta lista o arquivo gerado vem livre de qualquer
+	comentário. O comando usa como base a lista de sistemas disponíveis
 	dentro do diretório **hash**.
 
 .. raw:: latex
