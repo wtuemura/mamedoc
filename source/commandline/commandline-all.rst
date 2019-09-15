@@ -229,11 +229,17 @@ Exemplo:
 
 **-listclones** / **-lc** [<*pattern*>]
 
-	Exibe uma lista de clones. É predefinido que todos os clones sejam
-	listados, no entanto, você pode filtrar essa lista caso use uma
-	palavra chave ou coringa após o comando ``-listclones``. O MAME irá
-	irá exibir uma lista de clones dos sistemas ou qualquer outro clone
-	que combine com a palavra chave caso uma seja usada.
+	Exibe uma lista de clones de uma determinada máquina. O MAME irá
+	listar todos os clones em seu banco de dados porém essa lista pode
+	ser filtrada com o uso de uma palavra chave após o comando.
+	Exemplo: ::
+
+		mame64 -lc rallyx
+		Name:            Clone of:
+		dngrtrck         rallyx
+		rallyxa          rallyx
+		rallyxm          rallyx
+		rallyxmr         rallyx
 
 .. _mame-commandline-listbrothers:
 
