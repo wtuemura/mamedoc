@@ -255,11 +255,23 @@ Exemplo:
 
 **-listroms** / **-lr** [<*pattern*>]
 
-	Exibe uma lista de todas as imagens contidas em uma ROM que fazem
-	parte de uma máquina ou dispositivo. Pode ser filtrado caso seja
-	usado um nome de sistema, dispositivos ou máquina. Caso nenhuma
-	palavra chave seja usada como filtro após o comando, *todos* os
-	resultados referente aos sistemas e dispositivos serão exibidos.
+	Exibe uma lista com todas as imagens contidas em uma ROM que fazem
+	parte de uma máquina ou dispositivo. A lista mostra o nome dos
+	arquivos ROM, os valores CRC e SHA1, assim como mostra também se uma
+	das ROMs contidas no arquivo estão sinalizadas como **BAD_DUMP**.
+	Isso significa que o conteúdo extraído não é válido, pode conter
+	erro, não foi extraído de forma correta ou de forma apropriada,
+	por algum motivo não pode ser validada, etc. Caso nenhuma palavra
+	chave seja usada como filtro após o comando, o MAME irá listar
+	*tudo* que estiver em seu banco de dados interno. Exemplo: ::
+
+		mame64 -lr 005
+		ROMs required for driver "005".
+		Name                                   Size Checksum
+		1346b.cpu-u25                          2048 CRC(8e68533e) SHA1(a257c556d31691068ed5c991f1fb2b51da4826db)
+		5092.prom-u1                           2048 CRC(29e10a81) SHA1(c4b4e6c75bcf276e53f39a456d8d633c83dcf485)
+		...
+		6331.sound-u8                            32 BAD CRC(1d298cb0) SHA1(bb0bb62365402543e3154b9a77be9c75010e6abc) BAD_DUMP
 
 .. _mame-commandline-listsamples:
 
