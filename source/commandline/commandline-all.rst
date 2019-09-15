@@ -122,6 +122,9 @@ Opções de ajuda e verificação
 		romset pacmaniao [pacmania] is bad
 		...
 
+	Todas as máquinas e arquivos de imagem ROM serão verificadss caso
+	nenhum nome seja informado.
+
 .. _mame-commandline-verifysamples:
 
 **-verifysamples** [<*pattern*>]
