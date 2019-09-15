@@ -274,17 +274,33 @@ Exemplo:
 
 **-romident** [*caminho\\completo\\para\\a\\rom\\a\\ser\\conferida.zip*]
 
-	Tenta identificar os arquivos ROM conhecidos pelo MAME e que sejam
-	compartilhados ou que também sejam usados por outras máquinas no
-	arquivo ou diretório ``.zip`` determinado. Este comando pode ser
-	usado para tentar identificar conjuntos de ROM retirados de placas
-	desconhecidas.
-	Na saída, o nível de erro é retornado como um dos seguintes:
+	Tenta identificar arquivos ROM cadastrados no banco de dados interno
+	do MAME que sejam usados por apenas uma máquina ou que também sejam
+	compartilhados por mais de um arquivo ``.zip`` específico ou
+	diretório determinado. Este comando também pode ser usado para
+	tentar identificar conjuntos de ROM retirados de placas
+	desconhecidas. Exemplo: ::
+	
+		mame64 -romident /Mame/roms/pacman.zip
+		Identifying /Mame/roms/pacman.zip....
+		pacman.6j           = pacman.6j             msheartb   Ms. Pac-Man Heart Burn
+		                    = pacman.6j             mspacman   Ms. Pac-Man
+		...
+		                    = pacman.5e             puckmod    Puck Man (Japan set 2)
+	
+	Ao finalizar, o comando retorna níveis de erro (errorlevel):
 
 		* 0: significa que todos os arquivos foram identificados
 		* 7: significa que todos os arquivos foram identificados, exceto um ou mais arquivos não qualificados como "não-ROM"
 		* 8: significa que alguns arquivos foram identificados
 		* 9: significa que nenhum arquivo foi identificado
+
+.. note::
+
+	Apesar do "errorlevel" constar na documentação oficial, o
+	comando não retorna **nenhum** destes valores, pelo menos não é
+	visível no terminal ou linha de comando. O comando retorna apenas a
+	listagem mostrada no exemplo.
 
 .. raw:: latex
 
