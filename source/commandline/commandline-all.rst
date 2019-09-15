@@ -239,8 +239,25 @@ Exemplo:
 
 **-listbrothers** / **-lb** [<*pattern*>]
 
-	Exibe uma lista de '*irmãos*', ou melhor, outros conjuntos que
-	compartilham do mesmo driver que o nome do sistema pesquisado.
+	Exibe uma lista com o nome do driver, da ROM principal e parentes
+	que compartilhem do mesmo driver da máquina pesquisada. Exemplo: ::
+
+		mame64 -lb 005
+		Source file:         Name:            Parent:
+		segag80r.cpp         005
+		segag80r.cpp         astrob
+		segag80r.cpp         astrob1          astrob
+		segag80r.cpp         astrob2          astrob
+		segag80r.cpp         astrob2a         astrob
+		segag80r.cpp         astrob2b         astrob
+		segag80r.cpp         astrobg          astrob
+		segag80r.cpp         monsterb
+		segag80r.cpp         monsterb2        monsterb
+		segag80r.cpp         pignewt
+		segag80r.cpp         pignewta         pignewt
+		segag80r.cpp         sindbadm
+		segag80r.cpp         spaceod
+		segag80r.cpp         spaceod2         spaceod
 
 .. _mame-commandline-listcrc:
 
