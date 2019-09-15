@@ -300,22 +300,38 @@ Exemplo:
 
 .. _mame-commandline-listslots:
 
-**-listslots** / **-lslot** [<*pattern*>]
+**-listslots** / **-lslot** [<*sistema*>]
 
-	Mostra os slots disponíveis e as opções para cada slot caso
-	estejam disponíveis. Usado principalmente pelo MAME para
-	permitir o controle plug-and-play de placas internas, assim
-	como os PCs que precisam de vídeo, som e outras placas de
-	expansão.
+	Exibe uma lista com todos os slots disponíveis para o sistema e suas
+	respectivas opções, caso estejam disponíveis. Exemplo: ::
 
-		Caso os slots estejam populados com dispositivos, todos os slots
-		adicionais que esses dispositivos fornecerem ficarão visíveis
-		com **-listslots** também. Por exemplo, caso você instale um
-		controlador de disquete em um PC, este listará os slots da
-		unidade de disco.
+		mame64 -lslot snes
+		SYSTEM           SLOT NAME        SLOT OPTIONS     SLOT DEVICE NAME
+		---------------- ---------------- ---------------- ----------------------------
+		snes             ctrl1            barcode_battler  Epoch Barcode Battler (SFC)
+		                                  joypad           Nintendo SNES / SFC Control Pad
+		                                  miracle_piano    Miracle Piano SNES Cable
+		                                  mouse            Nintendo SNES / SFC Mouse Controller
+		                                  multitap         Nintendo SNES / SFC Multitap Adapter
+		                                  pachinko         Sunsoft Pachinko Controller
+		                                  sscope           Nintendo SNES / SFC SuperScope
+		                                  twintap          Yonezawa Twin Tap Controller
+		
+		                 ctrl2            barcode_battler  Epoch Barcode Battler (SFC)
+		                                  joypad           Nintendo SNES / SFC Control Pad
+		                                  miracle_piano    Miracle Piano SNES Cable
+		                                  mouse            Nintendo SNES / SFC Mouse Controller
+		                                  multitap         Nintendo SNES / SFC Multitap Adapter
+		                                  pachinko         Sunsoft Pachinko Controller
+		                                  sscope           Nintendo SNES / SFC SuperScope
+		                                  twintap          Yonezawa Twin Tap Controller
+		
+		                                  snsslot          [none]       No options available
 
-		O nome do slot (por exemplo, **ctrl1**) pode ser usado a partir
-		da linha de comando (``-ctrl1`` neste caso)
+	Com base no exemplo acima, para conectar a bazuca do SNES na porta
+	do controle 1 usamos as opções ``ctrlr1 SLOT NAME + SLOT OPTIONS``.
+	Então o comando completo ficaria
+	``mame64 snes -ctrl1 sscope -cart nome_da_rom.sfc``.
 
 .. _mame-commandline-listmedia:
 
