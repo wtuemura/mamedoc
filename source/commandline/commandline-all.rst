@@ -204,6 +204,10 @@ Exemplo:
 	saída para um nome de sistema, máquina ou driver caso um seja
 	informado.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-listfull:
 
 **-listfull** / **-ll** [<*pattern*>]
@@ -254,20 +258,24 @@ Exemplo:
 	Todas as máquinas ou sistemas serão listados caso nenhum nome seja
 	informado.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-listsource:
 
 **-listsource** / **-ls** [<*pattern*>...]
 
 	Exibe uma lista de drivers de acordo com a máquina pesquisada, é
 	possível pesquisar por uma única máquina: ::
-	
+
 		mame64 -ls pacman
 		pacman           pacman.cpp
 
 	Ou usar um asterisco ao final do nome da máquina para que seja
 	exibido uma lista com todas as outras máquinas relacionadas com o
 	nome da máquina principal, exemplo: ::
-	
+
 		mame64 -ls pacman*
 		pacman           pacman.cpp
 		pacmanbl         galaxian.cpp
@@ -316,6 +324,10 @@ Exemplo:
 		segag80r.cpp         sindbadm
 		segag80r.cpp         spaceod
 		segag80r.cpp         spaceod2         spaceod
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-listcrc:
 
@@ -377,6 +389,10 @@ Exemplo:
 		helicopt
 		whistle
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-romident:
 
 **-romident** [*caminho\\completo\\para\\a\\rom\\a\\ser\\conferida.zip*]
@@ -409,10 +425,6 @@ Exemplo:
 	visível no terminal ou linha de comando. O comando retorna apenas a
 	listagem mostrada no exemplo.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-listdevices:
 
 **-listdevices** / **-ld** [<*pattern*>]
@@ -440,6 +452,10 @@ Exemplo:
 		     ntb_list                     Software List
 		     ppu                          2C02 PPU
 		     screen                       Video Screen
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-listslots:
 
@@ -475,10 +491,6 @@ Exemplo:
 	do controle 1 usamos as opções ``ctrlr1 SLOT NAME + SLOT OPTIONS``.
 	Então o comando completo ficaria
 	``mame64 snes -ctrl1 sscope -cart nome_da_rom.sfc``.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-listmedia:
 
