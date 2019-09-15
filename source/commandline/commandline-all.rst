@@ -255,10 +255,10 @@ Exemplo:
 
 **-listroms** / **-lr** [<*pattern*>]
 
-	Exibe uma lista com todas as imagens contidas em uma ROM que fazem
-	parte de uma máquina ou dispositivo. A lista mostra o nome dos
-	arquivos ROM, os valores CRC e SHA1, assim como mostra também se uma
-	das ROMs contidas no arquivo estão sinalizadas como **BAD_DUMP**.
+	Exibe uma lista com todos os arquivos ROM que fazem parte de uma
+	máquina ou dispositivo. A lista mostra o nome dos arquivos ROM,
+	os valores CRC e SHA1, assim como mostra também se uma das ROMs
+	contidas no arquivo estão sinalizadas como **BAD_DUMP**.
 	Isso significa que o conteúdo extraído não é válido, pode conter
 	erro, não foi extraído de forma correta ou de forma apropriada,
 	por algum motivo não pode ser validada, etc. Caso nenhuma palavra
