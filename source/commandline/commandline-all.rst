@@ -286,17 +286,37 @@ Exemplo:
 		* 8: significa que alguns arquivos foram identificados
 		* 9: significa que nenhum arquivo foi identificado
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-listdevices:
 
 **-listdevices** / **-ld** [<*pattern*>]
 
-	Exibe uma lista de todos os dispositivos conhecidos e conectados
-	em uma determinada máquina como especificação de CPU, som, vídeo,
-	tela, etc. Caso os slots sejam populados por dispositivos, todos os
-	slots adicionais que esses dispositivos fornecerem ficarão visíveis
-	com ``-listdevices`` também.
-	Por exemplo, caso você instale um controlador de disquete em um
-	PC, este listará os slots da unidade de disco.
+	Exibe as especificações técnicas e todos os dispositivos conhecidos
+	e conectados na máquina. Caso os slots sejam populados por
+	dispositivos, todos os slots adicionais que esses dispositivos
+	fornecerem ficarão visíveis com ``-listdevices`` também. Exemplo: ::
+
+		mame64 -ld nes
+		Driver nes (Nintendo Entertainment System / Famicom (NTSC)):
+		   <root>                         Nintendo Entertainment System / Famicom (NTSC)
+		     ade_list                     Software List
+		     cart_list                    Software List
+		     ctrl1                        Nintendo NES/FC control port
+		       joypad                     Nintendo NES / FC Control Pad
+		     ctrl2                        Nintendo NES/FC control port
+		       joypad                     Nintendo NES / FC Control Pad
+		     datach_list                  Software List
+		     kstudio_list                 Software List
+		     maincpu                      Ricoh N2A03 @ 1.78 MHz
+		       nesapu                     N2A03 APU @ 1.78 MHz
+		     mono                         Speaker
+		     nes_slot                     NES Cartridge Slot @ 1.78 MHz
+		     ntb_list                     Software List
+		     ppu                          2C02 PPU
+		     screen                       Video Screen
 
 .. _mame-commandline-listslots:
 
@@ -332,6 +352,10 @@ Exemplo:
 	do controle 1 usamos as opções ``ctrlr1 SLOT NAME + SLOT OPTIONS``.
 	Então o comando completo ficaria
 	``mame64 snes -ctrl1 sscope -cart nome_da_rom.sfc``.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-listmedia:
 
