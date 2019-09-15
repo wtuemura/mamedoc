@@ -218,12 +218,24 @@ Exemplo:
 
 **-listsource** / **-ls** [<*pattern*>...]
 
-	Exibe uma lista dos drivers e todas as ROMs relacionado como o
-	mesmo. Útil para localizar em qual driver está uma determinada ROM,
-	como por exemplo ``mame64.exe pacman* -ls`` útil para relatar bugs.
-	É predefinido que todos os sistemas sejam listados, no entanto, você
-	pode filtrar essa lista caso use uma palavra chave ou coringa após o
-	comando ``-listsource``.
+	Exibe uma lista de drivers de acordo com a máquina pesquisada, é
+	possível pesquisar por uma única máquina: ::
+	
+		mame64 -ls pacman
+		pacman           pacman.cpp
+
+	Ou usar um asterisco ao final do nome da máquina para que seja
+	exibido uma lista com todas as outras máquinas relacionadas com o
+	nome da máquina principal, exemplo: ::
+	
+		mame64 -ls pacman*
+		pacman           pacman.cpp
+		pacmanbl         galaxian.cpp
+		...
+		pacmania         namcos1.cpp
+
+	Todas as máquinas serão listadas caso nenhum nome de máquina seja
+	informado.
 
 .. _mame-commandline-listclones:
 
