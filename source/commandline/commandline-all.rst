@@ -208,11 +208,51 @@ Exemplo:
 
 **-listfull** / **-ll** [<*pattern*>]
 
-	Exibe uma lista com o nome da ROM e as suas respectivas descrições
-	para cada máquinas.
-	É predefinido que tudo seja listado, no entanto, você pode filtrar
-	essa lista se usar um nome de máquina, jogo ou coringa após o
-	comando ``-listfull``.
+	Exibe uma lista com o nome da máquina pesquisada e a sua
+	descrição: ::
+
+		mame64 -ll pacman
+		Name:             Description:
+		pacman            "Pac-Man (Midway)"
+
+	É possível usar um asterisco ao final do nome da máquina para que seja
+	exibido uma lista com todas as outras máquinas relacionadas com o
+	nome da máquina principal e as suas respectivas descrições,
+	exemplo: ::
+
+		mame64 -ll pacman*
+		Name:             Description:
+		pacman            "Pac-Man (Midway)"
+		pacmanbl          "Pac-Man (Galaxian hardware, set 1)"
+		pacmanbla         "Pac-Man (Galaxian hardware, set 2)"
+		pacmanblb         "Pac-Man (Moon Alien 'AL-10A1' hardware)"
+		...
+
+	É possível também listar a descrição de sistemas, infelizmente nem
+	todos os sistemas possuem descrições disponíveis ainda, exemplo: ::
+
+		mame64 -ll neogeo*
+		Name:             Description:
+		neogeo            "Neo-Geo MV-6F"
+		neogeo_cart_slot  "Neo Geo Cartridge Slot"
+		...
+		
+		mame64 -ll genesis*
+		Name:             Description:
+		genesis           "Genesis (USA, NTSC)"
+		genesis_tmss      "Genesis (USA, NTSC, with TMSS chip)"
+		genesisp          "Genesis"
+		...
+		
+		mame64 -ll snes*
+		Name:             Description:
+		snes              "Super Nintendo Entertainment System / Super Famicom (NTSC)"
+		snes4sl           "SNES 4 Slot arcade switcher"
+		snespal           "Super Nintendo Entertainment System (PAL)"
+		...
+
+	Todas as máquinas ou sistemas serão listados caso nenhum nome seja
+	informado.
 
 .. _mame-commandline-listsource:
 
