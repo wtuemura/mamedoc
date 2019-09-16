@@ -283,10 +283,6 @@ O mesmo pode ser usado para criar um DAT para CPS2: ::
 
 	datutil.exe -G cps2.cpp -o cps2.dat -f cmp datutil.dat
 
-.. raw:: latex
-
-	\clearpage
-
 Neo-geo: ::
 
 	datutil.exe -G neogeo.cpp -o neogeo.dat -f cmp datutil.dat
@@ -359,10 +355,6 @@ poderoso pois permite que a filtragem e a seleção dos arquivos possa ser
 mais refinada e podendo ser utilizada em qualquer sistema operacional e
 não algo exclusivo do Windows apenas.
 
-.. raw:: latex
-
-	\clearpage
-
 * Faça o download da última versão do arquivo category.ini no site
   `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_
 * Abra e extraia apenas o arquivo **Working Arcade.ini**
@@ -395,6 +387,10 @@ lista que acabamos de criar: ::
 Assim como no comando acima, o arquivo ``caminho-roms.txt`` será lido e
 posteriormente irá alimentar o comando ``copy`` com o devido caminho e
 o destino ``H:\arcade-roms``.
+
+.. raw:: latex
+
+	\clearpage
 
 Usando o terminal no Linux, macOS e \*NIX em geral
 --------------------------------------------------
