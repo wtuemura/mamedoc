@@ -184,8 +184,8 @@ Baixe um exemplo de configuração de controle para `Guitar Freaks
 
 .. _advanced-tricks-configuração-individual:
 
-Configuração individual por sistema
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Criando uma configuração customizada para cada sistema
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No diretório **ini** crie um diretório chamado **source** e dentro dele
 crie um arquivo chamado ``neogeo.ini``. Neste arquivo nós configuraremos
