@@ -43,56 +43,54 @@ Há alguns pontos importantes que você precisa saber.
   autorizada pelos administradores, o servidor conta como sendo
   1 commit ou 1 envio.
 
-* Para clonar o código fonte do MAME com o git faça o comando: ::
-
-	git clone https://github.com/mamedev/mame.git
-
-  Será criado um diretório *mame* com todos os arquivos fonte.
-
 * **make** é o comando que faz o papel do *mestre de cerimonias*, é ele
   quem vai repassar todos comandos ou opções que vierem depois dele para
-  o compilador e outras ferramentas. O make também tem o papel de manter
-  tudo isso fluindo durante todo o processo.
+  o compilador e outras ferramentas.
   
-  O make funciona sozinho, basta digitar *make* no diretório raiz onde
-  se encontra o código fonte do MAME e tenha um arquivo chamado
-  **Makefile** para que uma versão simples do MAME seja compilada, porém
-  ao usar as opções é possível fazer com que a compilação do MAME se
-  beneficie das propriedades do seu processador melhorando a performance
-  final que falaremos mais adiante. O arquivo Makefile contém todas as
-  instruções que o make seguirá assim como todas opções que ele aceita.
+  Digite *make* no diretório raiz onde se encontra o código fonte do
+  MAME para que ele leia as instruções contidas em um arquivo chamado
+  **Makefile** para que uma versão do MAME seja compilada, note porém
+  que é possível usar outras opções fazendo com que a compilação do MAME
+  seja customizada e atenda as suas necessidades, como por exemplo, se
+  beneficiar das propriedades do seu processador dentre outras opções
+  que será mostrada mais adiante.
 
-  As opções devem ser adicionadas depois do comando como mostra o
-  exemplo abaixo:
+  As opções devem **sempre** ser adicionadas depois do comando **make**
+  como mostra o exemplo abaixo:
 
 		``make VERBOSE=1``
 
   Várias outras opções podem ser adicionadas desde que estejam separadas
-  por espaço.
+  por espaço, abra o arquivo **makefile** em um editor de texto e veja
+  quais são todas as opções disponíveis.
 
 * Algumas vezes o processo de compilação é interrompido antes de chegar
   ao fim, os motivos são os mais diversos, pode ser a falta de alguma
   biblioteca, erro de configuração em algum lugar, uma atualização do
   código fonte onde algum desenvolvedor deixou passar algo
-  desapercebido, enfim, se você está encarando a tarefa de compilar o
-  seu próprio MAME.
+  desapercebido, enfim, estes são problemas comuns encontrados durante o
+  processo de compilação do MAME.
   
   Caso o processo tenha parado, repita o comando anterior nos terminais 
-  linux e no MSYS2 basta clicar na tecla para cima do teclado.
+  linux e no MSYS2 basta clicar na tecla para cima do teclado para
+  repetir o comando anterior seguido de **Enter**.
   Geralmente o processo continua sem maiores problemas, porém caso o
   processo pare novamente no mesmo lugar, pode haver algum outro
   problema como a falta de alguma biblioteca. Caso a versão que esteja
-  sendo compilada for a GIT, aguarde algumas horas, algumas vezes é
+  sendo compilada seja a GIT, aguarde algumas horas, algumas vezes é
   necessário esperar um dia inteiro até que os desenvolvedores resolvam
-  o problema. Nestes casos não é necessário reportar o erro, aguarde
-  pois logo o erro será sanado.
+  o problema. Nestes casos não é necessário reportar o erro pois o
+  código fonte do MAME no GIT é atualizado a todo instante.
 
-* Uma vez que você compile algo, todas as opções usadas ficam
-  armazenadas, caso venha a realizar uma nova compilação com opções
-  diferentes das usadas anteriormente, é **obrigatório** que você
-  use a opção **REGENIE=1**, para que todas as opções anteriores sejam
-  atualizadas para levar em consideração qualquer nova opção que você
-  decida usar.
+* Para que o código fonte do MAME possa ser compilado, há toda uma
+  estrutura que precisa ser configurada, no momento que o comando
+  **make** é executado, essa estrutura cria diversos outros aquivos
+  **makefile** onde todas as opções escolhidas são salvas e usadas
+  durante a compilação. Se durante a compilação for necessário alterar
+  uma opção ou adicionar outras, é **obrigatório** usar a opção
+  **REGENIE=1** junto com as novas opções para que toda essa estrutura
+  leve em consideração as novas opções e que a mesma seja replicada
+  internamente.
 
 .. raw:: latex
 
@@ -100,16 +98,15 @@ Há alguns pontos importantes que você precisa saber.
 
 * Durante o processo de compilação são gerados arquivos objeto ***.o**,
   arquivos de arquivamento ***.a** dentre vários outros, é importante
-  que seja feito um **make clean** sempre que você atualizar o código
+  que seja feito um **make clean** sempre após uma atualização do código
   fonte do MAME, quando for fazer uma :ref:`compilação cruzada
   <mame-crosscompilation>` ou quando for customizar uma compilação.
   No geral é uma boa prática fazer um **make clean** antes do make para
   evitar qualquer residual de compilações anteriores.
   
   Esta opção faz com que todo o diretório **build** seja apagado, este
-  diretório nada mais é do que um espaço auxiliar onde toda a estrutura
-  de compilação usa para organizar as configurações e todos os arquivos
-  auxiliares para a conclusão da compilação do MAME.
+  diretório nada mais é do que um espaço auxiliar usado pela estrutura
+  de compilação.
 
 * É possível usar os dois comandos em sequência usando **&&** como é
   mostrado abaixo:
@@ -118,7 +115,7 @@ Há alguns pontos importantes que você precisa saber.
   
   Assim faz com que o segundo comando apenas seja executado quando o
   primeiro terminar. Caso a compilação pare por algum erro, tente
-  repetir o comando **make** apenas, sem o **make clean**.
+  repetir apenas o comando **make**.
 
 * As opções usada pelo make podem ser adicionadas em um arquivo
   **useroptions.mak**. Muito útil em casos onde a lista de opções para
@@ -150,11 +147,11 @@ Há alguns pontos importantes que você precisa saber.
   
 	**mame0205** - É a versão atual do MAME.
 
-	**540** - Indica a quantidade de *commits* ou a quantidade de
+	**540** - Indica a quantidade de **commits** ou a quantidade de
 	atualizações aplicadas ao código fonte desde a última mudança de
 	versão.
 
-	**gc8e4dab20c** - São os primeiros 10 dígitos do último *commit*.
+	**gc8e4dab20c** - São os primeiros 10 dígitos do último **commit**.
 
 .. raw:: latex
 
@@ -196,19 +193,19 @@ Há alguns pontos importantes que você precisa saber.
 	nothing to commit, working tree clean
 
   Caso não funcione, execute a opção abaixo com todos os arquivos que
-  vierem a aparecerem ao fazer um **git status**: ::
+  vierem a aparecer ao fazer um **git status**: ::
 
 	git checkout 3rdparty/winpcap/Lib/libpacket.a 3rdparty/winpcap/Lib/libwpcap.a
 
   Se por algum motivo, nenhum dos comando acima funcionar e você tiver
-  absoluta certeza de que nada foi alterado, você pode tentar o comando
+  absoluta certeza de que nada foi alterado, tente o comando
   ``git clean -d -x -f``, note que o comando vai apagar tudo que não for
-  relacionado com toda as ramificações da árvore de desenvolvimento do
-  código fonte do MAME, isso incluí o seu **useroptions.mak** ou
-  qualquer outro arquivo.
+  relacionado com o código fonte do MAME, isso incluí o seu
+  **useroptions.mak** ou qualquer outro arquivo que ali estiver.
+  Portanto, não se esqueça de fazer um **backup** antes de executar o
+  comando!
 
-  Vamos supor que o arquivo abaixo foi alterado para testar uma correção
-  ou algo do tipo: ::
+  Vamos supor que o arquivo abaixo foi alterado por qualquer motivo: ::
 
 	git status
 	On branch master
@@ -221,8 +218,7 @@ Há alguns pontos importantes que você precisa saber.
 
 	no changes added to commit (use "git add" and/or "git commit -a")
 
-  Para restaurar o arquivo para o seu estado original execute o comando
-  abaixo: ::
+  Execute o comando abaixo para restaurá-lo ao seu estado original: ::
 
 	git checkout master -- scripts/src/osd/sdl_cfg.lua
 
