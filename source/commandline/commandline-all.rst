@@ -1678,11 +1678,8 @@ Opções para a configuração de vídeo
 
 **-[no]maximize** / **-[no]max**
 
-	Controla o tamanho inicial da janela no modo de janelado. Caso seja
-	ativado, ao iniciar o MAME a janela será configurada para o tamanho
-	máximo suportado. Caso esteja desativado, a janela será exibida no
-	menor tamanho suportado. Esta opção só tem efeito quando a opção
-	**-window** for usada.
+	Faz com que a janela preencha quase todo o tamanho da tela apenas
+	quando for usada em conjunto com a opção ``-window``.
 
 		O valor predefinido é **Ligado** (**-maximize**).
 
