@@ -216,6 +216,40 @@ com **Neo-Geo** usarão as configurações predefinidas pelo MAME sem haver
 conflitos de configuração, assim como, não será mais necessário
 especificar todas essas opções na linha de comando.
 
+.. _advanced-tricks-configuração-controle-por-maquina:
+
+Criando uma configuração de controle por máquina
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No exemplo de :ref:`configuração de botões
+<advanced-tricks-mais-de-um-botão>` aprendemos como mapear os botões
+de um controle para um determinado sistema, no entanto, um sistema pode
+ter máquinas com diferentes configurações de botões, se pegarmos o
+sistema CPS1 por exemplo, o jogo **Street Fighter II** utiliza 6 botões
+já o jogo **Final Fight** utiliza apenas 2 e ambos compartilham o mesmo
+sistema CPS1. Apesar da dica ter facilitado bastante a configuração do
+controle para máquinas que usam 6 botões, ela não irá funcionar com
+todas as outras.
+
+Para criar um mapa customizado para **Final Fight** por exemplo, siga as
+instruções descritas em :ref:`advanced-tricks-mais-de-um-botão`, porém
+usando a máquina **Final Fight** (``mame64 ffight``), uma vez que os
+botões forem definidos e você sair do MAME, encontre o arquivo
+**ffight.cfg** no diretório **cfg** e faça as alterações necessárias.
+Copie-o para o diretório **ctrlr** como **ffight.cfg**. Entre no
+diretório **ini** e crie um arquivo chamado **ffight.ini**, abra-o em um
+editor de texto e adicione: ::
+
+	ctrlr ffight
+
+Salve e saia do editor, agora sempre que a máquina **Final Fight** for
+iniciada ela usará o novo mapa de botões que foi criado só para ela.
+
+Repare que não é necessário que o arquivo de configuração tenha o mesmo
+nome da máquina, é possível renomear estes arquivos como por exemplo,
+**2-botoes.cfg**, **3-botoes.cfg**, **4-botoes.cfg** e compartilhar
+estas configurações conforme necessário.
+
 .. _advanced-tricks-dat-sistema:
 
 Gerando arquivos DAT para serem usados com gerenciadores de ROMs
