@@ -2024,19 +2024,18 @@ funcionar corretamente em alguns computadores Mac.**
 |	**-view1** <*nome*>
 |	**-view2** <*nome*>
 |	**-view3** <*nome*>
-|
 
 	Define a configuração da visualização inicial de cada janela.
 	Note que o nome de visualização <*nome*> não precisa
 	ser uma combinação exata, em vez disso, será selecionado a primeira
 	exibição cujo nome corresponde a todos os caracteres especificados
 	por <*nome*>.
-	Por exemplo, ``-view native`` corresponderá à visualização
-	"Native (15:14)", mesmo que não seja uma correspondência perfeita.
-	O valor funciona com a opção ``auto`` também e solicita que o MAME
-	execute uma seleção predefinida.
+	Por exemplo, ``-view native`` representa uma visualização
+	"Native (15:14)", ainda que não seja uma correspondência perfeita.
+	O campo <*nome*> também funciona com a opção ``auto`` fazendo com
+	que um nome seja automaticamente escolhido.
 
-		O valor predefinido para essas opções é **auto**.
+		O valor predefinido para estas opções é **auto**.
 
 	Os parâmetros ``-view0``, ``-view1``, ``-view2`` e ``-view3`` se
 	aplicam a todas as janelas especificadas. O parâmetro ``-view`` se
