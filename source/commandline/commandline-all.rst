@@ -1670,7 +1670,7 @@ Opções para a configuração de vídeo
 
 **-[no]window** / **-[no]w**
 
-	Faz o MAME exibir a tela em uma janela ou em uma tela inteira.
+	Inicia a tela do MAME em uma janela ao invés de tela inteira.
 
 		O valor predefinido é **Desligado** (**-nowindow**).
 
