@@ -381,8 +381,8 @@ são:
 
 .. _pistola-configuracao-mame:
 
-Configuração genérica da pistola no MAME
-----------------------------------------
+Configuração genérica
+---------------------
 
 Existem diferentes maneiras de fazer este tipo de configuração no MAME,
 a primeira seria editando o seu ``~/.mame/mame.ini`` com as
