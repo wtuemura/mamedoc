@@ -5,8 +5,8 @@
 
 .. _compiling-MAME:
 
-Compilando o MAME
-=================
+Compilando
+==========
 
 .. contents:: :local:
 
@@ -1700,8 +1700,8 @@ vídeo, caso esteja usando ``-video d3d`` (Windows) ou ``-video opengl``
 
 .. _compiling-advanced-options-debug:
 
-A tela do travamento do MAME
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A tela de travamento
+~~~~~~~~~~~~~~~~~~~~
 
 Junto aos binários do MAME existe um arquivo de símbolos, para a versão
 *64-bit* será criado o arquivo **mame64.sym** ou **mame.sym** para a

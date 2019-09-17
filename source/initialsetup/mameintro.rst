@@ -1,5 +1,5 @@
-Os sistemas emulados pelo MAME
-==============================
+Os sistemas emulados
+====================
 
 O ProjectMESS contém uma lista completa dos sistemas atualmente
 emulados. Você irá notar que ter um sistema emulado, não significa que

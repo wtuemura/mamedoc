@@ -5,8 +5,8 @@
 
 .. _mamemenu:
 
-O cardápio de opções do MAME
-============================
+Cardápio de opções
+==================
 
 .. contents:: :local:
 

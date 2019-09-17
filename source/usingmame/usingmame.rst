@@ -1,5 +1,5 @@
-Usando o MAME
--------------
+Primeiros passos
+----------------
 
 Caso você queira sair usando sem precisar usar a linha de comando
 saiba que você já pode usar o MAME sem precisar baixar e configurar

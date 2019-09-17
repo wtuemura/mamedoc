@@ -2,8 +2,8 @@
 
 	\clearpage
 
-Instalando o MAME
-=================
+Instalando
+==========
 
 Microsoft Windows
 -----------------

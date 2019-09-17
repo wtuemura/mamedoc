@@ -26,7 +26,7 @@ Observe que nós da equipe MAME não estamos endossando nenhuma das
 interfaces abaixo ou de qualquer outra, elas servem como um bom ponto
 de partida já que todas elas são bem conhecidas e gratuitas.
 
-| QMC2 (multiple platforms)
+| QMC2 (Várias plataformas)
 | Download: http://qmc2.batcom-it.net/
 |
 | IV/Play (Microsoft Windows)
