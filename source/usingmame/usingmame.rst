@@ -78,12 +78,12 @@ Para saber quais são as opções <*options*> estão disponíveis, leia o
 capítulo :ref:`universal-command-line` deste manual, veja também as
 :ref:`frontends`.
 
-Como alternativa, você também pode usar a opção de ajuda abaixo:
+Precisando de ajuda?
 
 	**mame.exe -help**
 
 O comando exibe algumas opções básicas de uso, a versão do MAME e outras
-informações.
+informações úteis.
 
 	**mame.exe -showusage**
 
