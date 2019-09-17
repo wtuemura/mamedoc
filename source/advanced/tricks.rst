@@ -319,8 +319,8 @@ MAME funcione e exiba apenas uma lista com máquinas classificadas
 internamente como arcade, simples assim. Para mais informações leia o
 capítulo :ref:`compiling-MAME`.
 
-Usando a interface do MAME
---------------------------
+Usando a interface
+------------------
 
 Para aqueles que não estão familiarizados(as) com o processo de
 compilação, só utilizam a versão oficial do MAME e que também não

@@ -515,8 +515,8 @@ funcionar sem qualquer problema.
 
 .. _pistola-usando:
 
-Usando uma Pistola de luz no MAME
----------------------------------
+Configurando uma Pistola de luz
+-------------------------------
 
 Agora que tudo está funcionando a parte mais chata seria fazer
 configuração da sua pistola para cada uma das trezentas e poucas

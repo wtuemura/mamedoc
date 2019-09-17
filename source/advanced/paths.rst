@@ -3,14 +3,14 @@
 
 	\clearpage
 
-Como o MAME lida com o caminho dos arquivos
-===========================================
+Lidando com o caminho dos arquivos
+==================================
 
 O MAME obedece uma sequência lógica quando verifica os arquivos dos
 usuários como ROMs e os arquivos de trapaça.
 
-A sequência de leitura dos caminhos
------------------------------------
+A sequência de leitura
+----------------------
 
 Usando o exemplo de um arquivo de trapaça do Sega Genesis/Megadrive
 para o jogo **After Burner 2** (**aburner2** na lista de software para
