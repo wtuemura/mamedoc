@@ -12,34 +12,45 @@ usuários como ROMs e os arquivos de trapaça.
 A sequência de leitura dos caminhos
 -----------------------------------
 
-Vamos usar o exemplo de um arquivo de trapaça do Sega Genesis/Megadrive
-para o jogo **After Burner 2** (aburner2 na lista de jogos para
+Usando o exemplo de um arquivo de trapaça do Sega Genesis/Megadrive
+para o jogo **After Burner 2** (**aburner2** na lista de software para
 Megadrive), o caminho predefinido para o :ref:`cheatpath
-<mame-commandline-cheatpath>` é cheat. A sequência de pesquisa que o
+<mame-commandline-cheatpath>` é **cheat**. A sequência de pesquisa que o
 MAME utiliza para encontrar o arquivo de trapaça é demonstrado abaixo:
 
-1.	``cheat/megadriv/aburner2.xml``
-2.	``cheat/megadriv.zip`` -> ``aburner2.xml``
-	Repare que ele pesquisa por um arquivo *.ZIP* primeiro, depois um
-	arquivo *.7Z*.
-3.	``cheat/megadriv.zip`` -> ``<qualquer caminho>/aburner2.xml``
-	Caso exista, ele procurará pelo primeiro arquivo aburner2.xml que
-	ele puder encontrar dentro daquele arquivo zip, independente de onde
-	esteja.
-4.	``cheat.zip`` -> ``megadriv/aburner2.xml``
-	Agora está procurando especificamente por uma combinação de arquivo
-	ou pasta, porém agora, dentro do arquivo cheat.zip.
-5.	``cheat.zip`` -> ``<qualquer caminho>/megadriv/aburner2.xml``
-	Como antes, caso exista, irá procurar em qualquer lugar menos dentro
-	do primeiro aburner2.xml que fica dentro da pasta megadriv e que
-	esteja dentro de um arquivo zip.
-6.	``cheat/megadriv.7z`` -> ``aburner2.xml``
-	Agora começa a procurar dentro de arquivos *.7z* [1]_.
-7.	``cheat/megadriv.7z`` -> ``<qualquer caminho>/aburner2.xml``
-8.	``cheat.7z`` -> ``megadriv/aburner2.xml``
-9.	``cheat.7z`` -> ``<qualquer caminho>/megadriv/aburner2.xml``
-	Similar aos arquivos *.zip*, porém que agora com arquivos *.7z*.
+1.	cheat/megadriv/aburner2.xml
+		Primeiro caminho a ser pesquisado.
 
+2.	:menuselection:`cheat/megadriv.zip --> aburner2.xml`
+		Repare que primeiro é pesquisado um arquivo **.zip** e depois um
+		arquivo **.7z**.
+
+3.	:menuselection:`cheat/megadriv.zip --> <qualquer caminho>/aburner2.xml`
+		Caso exista, será procurado pelo primeiro arquivo
+		**aburner2.xml** que for encontrado dentro daquele arquivo zip,
+		independente de onde esteja.
+
+4.	:menuselection:`cheat.zip --> megadriv/aburner2.xml`
+		A próxima pesquisa será feita por uma combinação de arquivo ou
+		diretório, porém agora, dentro do arquivo de trapaça cheat.zip.
+
+5.	:menuselection:`cheat.zip --> <qualquer caminho>/megadriv/aburner2.xml`
+		Caso exista, irá procurar em qualquer lugar menos dentro do
+		primeiro **aburner2.xml** que fica dentro do diretório
+		**megadriv** e que esteja dentro de um arquivo zip.
+
+6.	:menuselection:`cheat/megadriv.7z --> aburner2.xml`
+		A próxima pesquisa é feita agora dentro de arquivos **.7z** [1]_.
+
+7.	:menuselection:`cheat/megadriv.7z --> <qualquer caminho>/aburner2.xml`
+		Em sequência a pesquisa é feita em qualquer outro caminho
+		próximo.
+
+8.	:menuselection:`cheat.7z --> megadriv/aburner2.xml`
+		Similar aos arquivos **.zip**, porém agora com arquivos **.7z**.
+
+9.	:menuselection:`cheat.7z --> <qualquer caminho>/megadriv/aburner2.xml`
+		Similar aos itens **7** e **8**.
 
 [a fazer: A leitura do conjunto de arquivos ROM é um pouco mais
 complicado, adicionar CRC. Documentar isso no próximo dia ou dois.
