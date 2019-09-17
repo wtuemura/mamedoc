@@ -1,5 +1,5 @@
-O DEPURADOR DO MAME
--------------------
+O DEPURADOR
+-----------
 
 .. toctree::
 	:titlesonly:
