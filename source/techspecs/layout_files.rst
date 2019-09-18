@@ -1,5 +1,5 @@
-Os arquivos de Layout do MAME
-=============================
+Os arquivos de Layout
+=====================
 
 .. contents:: :local:
 

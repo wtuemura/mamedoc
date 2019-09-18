@@ -2,8 +2,8 @@
 
 	\clearpage
 
-Usando Scripts LUA com o MAME
-=============================
+Usando Scripts LUA
+==================
 
 Introdução
 ----------
