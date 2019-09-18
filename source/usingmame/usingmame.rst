@@ -17,14 +17,18 @@ complexo, porém é bem mais simples do que parece. Você pode iniciar uma
 máquina selecionando ela na lista que aparece do lado direito da tela ou
 pode também iniciar usando a linha de comando:
 
+	**mame.exe** <*ROM*>
+
+Faça assim para iniciar um sistema junto com o seu software:
+
 	**mame.exe** <*system*> <*software*>
 
 Em **system** você pode escolher uma das centenas de sistemas emulados,
 já em **software** é o nome da máquina [#]_ que deseja rodar. O software
-nada mais é do que um nome de uma ROM. É possível também a utilização de
-**lista de programa** (**softlists**) que é um grade catálogo de
-software ou máquinas de diferentes sistemas conhecidos no banco de dados
-interno do MAME.
+nada mais é do que um nome de uma ROM ou a imagem de uma mídia. É
+possível também a utilização de **lista de programa** (**softlists**)
+que é um grade catálogo de software ou máquinas de diferentes sistemas
+conhecidos no banco de dados interno do MAME.
 
 Para rodar o **Sonic the Headgehog** na versão do **Sega Genesis
 Americano** execute o comando como mostrado abaixo:
