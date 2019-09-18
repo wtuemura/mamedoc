@@ -1,5 +1,5 @@
-Imgtool - Uma ferramenta genérica de manipulação de imagens para o MAME
-=======================================================================
+Imgtool - Uma ferramenta genérica de manipulação de imagens
+===========================================================
 
 
 Imgtool é uma ferramenta usada para a manutenção e manipulação de

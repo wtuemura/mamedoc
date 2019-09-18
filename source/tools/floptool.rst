@@ -1,7 +1,5 @@
-Floptool - Uma ferramenta genérica de manipulação de imagens de disquete para o MAME
-====================================================================================
-
-
+Floptool - Uma ferramenta genérica de manipulação de imagens de disquete
+========================================================================
 
 Floptool é uma ferramenta para manutenção e manipulação de imagens de
 disquete que os usuários precisam aprender a usar. O MAME já é

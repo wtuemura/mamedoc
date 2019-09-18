@@ -1,7 +1,5 @@
-Castool - Uma ferramenta genérica de manipulação de imagens de fita k7 para o MAME
-==================================================================================
-
-
+Castool - Uma ferramenta genérica de manipulação de imagens de fita k7
+======================================================================
 
 Castool é uma ferramenta para manutenção e manipulação de imagens de
 fita k7 que os usuários precisarão aprender a usar. O MAME já é

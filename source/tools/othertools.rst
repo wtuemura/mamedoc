@@ -1,8 +1,8 @@
 
 .. _mame-othertools:
 
-Outras ferramentas que acompanham o MAME
-========================================
+Outras ferramentas
+==================
 
 
 ledutil.exe/ledutil.sh
