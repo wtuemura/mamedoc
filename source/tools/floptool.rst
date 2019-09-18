@@ -1,5 +1,5 @@
-Floptool - Uma ferramenta genérica de manipulação de imagens de disquete
-========================================================================
+Floptool
+========
 
 Floptool é uma ferramenta para manutenção e manipulação de imagens de
 disquete que os usuários precisam aprender a usar. O MAME já é
@@ -15,8 +15,8 @@ Logo, os termos da sua distribuição seguem os mesmos termos existentes
 para o MAME. Favor ler a toda :ref:`MAME-license` com atenção.
 
 
-Usando o Floptool
-=================
+Utilização
+==========
 
 Floptool é um programa de linha comando que contém um conjunto simples
 de instruções. Os comandos são invocados usando uma cadência de
@@ -43,8 +43,8 @@ Exemplo de uso:
 
 	\clearpage
 
-Formatos compatíveis
-====================
+Lista de formatos compatíveis
+=============================
 
 Esses são os formatos compatíveis com o Floptool para a conversão em
 outros formatos.

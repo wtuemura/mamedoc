@@ -1,5 +1,5 @@
-Castool - Uma ferramenta genérica de manipulação de imagens de fita k7
-======================================================================
+Castool
+=======
 
 Castool é uma ferramenta para manutenção e manipulação de imagens de
 fita k7 que os usuários precisarão aprender a usar. O MAME já é
@@ -16,8 +16,8 @@ para o MAME.
 Favor ler a toda :ref:`MAME-license` com atenção.
 
 
-Usando o Castool
-================
+Utilização
+==========
 
 Castool é um programa de linha comando que contém um conjunto simples de
 instruções. Os comandos são invocados usando uma cadência de instruções,
@@ -38,8 +38,8 @@ Exemplo de uso:
 
 
 
-Formatos compatívels
-====================
+Lista de formatos compatívels
+=============================
 
 Esses são os formatos compatíveis com o Castool para a conversão para
 o format .WAV.

@@ -1,5 +1,5 @@
-Imgtool - Uma ferramenta genérica de manipulação de imagens
-===========================================================
+Imgtool
+=======
 
 
 Imgtool é uma ferramenta usada para a manutenção e manipulação de
@@ -16,8 +16,8 @@ para o MAME. Favor ler a toda :ref:`MAME-license` com atenção.
 Universidade da Califórnia (c) 1989, 1993.
 Todos os direitos reservados.**
 
-Usando o Imgtool
-================
+Utilização
+==========
 
 Imgtool é um programa de linha comando que contém alguns "subcomandos"
 que fazem todo o trabalho. A maioria dos comandos são invocados usando
@@ -41,8 +41,8 @@ todos os subcomandos são compatíveis ou aplicáveis em todos os
 variados tipos diferentes de imagem.
 
 
-Subcomandos do Imgtool
-======================
+Subcomandos
+===========
 
 **create**
 
@@ -159,8 +159,8 @@ Subcomandos do Imgtool
 	Exibe uma lista completa de todas as opções relacionadas a um formato em específico para os comandos 'put' e 'create'.
 
 
-Filtros do Imgtool
-==================
+Filtros
+=======
 
 Os filtros são uma maneira de processar a maneira que os dados estão
 sendo escritos ou lidos em uma imagem. Os filtros podem ser usados nos
@@ -211,8 +211,8 @@ na linha de comando. Atualmente, os seguintes filtros são compatíveis:
 
 	Processa arquivos BASIC, Basic Master Level 3 tokenizados
 
-Informação de formatação do Imgtool
-===================================
+Lista de formatos compatíveis
+=============================
 
 
 Imagem de disquete do Amiga (formato OFS/FFS) - (*amiga_floppy*)
