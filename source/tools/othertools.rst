@@ -1,3 +1,6 @@
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-othertools:
 

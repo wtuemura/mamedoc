@@ -2202,6 +2202,9 @@ Nenhuma opção específica da imagem
 
 Nenhuma opção específica para a criação da imagem
 
+.. raw:: latex
+
+	\clearpage
 
 Disquete para o TI99 (formato V9T9) - (*v9t9*)
 ----------------------------------------------
