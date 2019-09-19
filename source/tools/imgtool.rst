@@ -219,7 +219,7 @@ Imagem de disquete do Amiga (formato OFS/FFS) - (*amiga_floppy*)
 ----------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'amiga_floppy':
+Opções específicas do driver para o módulo 'amiga_floppy':
 
 Nenhuma opção específica da imagem
 
@@ -253,7 +253,7 @@ Apple ][ imagem de disco DOS order (formato ProDOS) - (*apple2_do_prodos_525*)
 ------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple2_do_prodos_525':
+Opções específicas do driver para o módulo 'apple2_do_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -288,7 +288,7 @@ Apple ][ imagem de disco Nibble order (formato ProDOS) - (*apple2_nib_prodos_525
 ----------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple2_nib_prodos_525':
+Opções específicas do driver para o módulo 'apple2_nib_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -323,7 +323,7 @@ Apple ][ imagem de disco ProDOS order (formato ProDOS) - (*apple2_po_prodos_525*
 ---------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple2_po_prodos_525':
+Opções específicas do driver para o módulo 'apple2_po_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -358,7 +358,7 @@ Apple ][imagem de disco gs 2IMG (formato ProDOS) - (*apple35_2img_prodos_35*)
 -----------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple35_2img_prodos_35':
+Opções específicas do driver para o módulo 'apple35_2img_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -390,7 +390,7 @@ Imagem de disco para o Apple DiskCopy (Disquete Mac HFS) - (*apple35_dc_mac_hfs*
 ---------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple35_dc_mac_hfs':
+Opções específicas do driver para o módulo 'apple35_dc_mac_hfs':
 
 Nenhuma opção específica da imagem
 
@@ -422,7 +422,7 @@ Imagem de disco para o Apple DiskCopy (Disquete Mac MFS) - (*apple35_dc_mac_hfs*
 ---------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple35_dc_mac_mfs':
+Opções específicas do driver para o módulo 'apple35_dc_mac_mfs':
 
 Nenhuma opção específica da imagem
 
@@ -454,7 +454,7 @@ Imagem de disco para o Apple DiskCopy (formato ProDOS) - (*apple35_dc_prodos_35*
 ----------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple35_dc_prodos_35':
+Opções específicas do driver para o módulo 'apple35_dc_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -486,7 +486,7 @@ Imagem de disco para o Apple raw 3.5" (Disquete Mac HFS) - (*apple35_raw_mac_hfs
 ----------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple35_raw_mac_hfs':
+Opções específicas do driver para o módulo 'apple35_raw_mac_hfs':
 
 Nenhuma opção específica da imagem
 
@@ -518,7 +518,7 @@ Imagem de disco para o Apple raw 3.5" (Disquete Mac MFS) - (*apple35_raw_mac_mfs
 ----------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple35_raw_mac_mfs':
+Opções específicas do driver para o módulo 'apple35_raw_mac_mfs':
 
 Nenhuma opção específica da imagem
 
@@ -550,7 +550,7 @@ Imagem de disco para o Apple raw 3.5" (formato ProDOS) - (*apple35_raw_prodos_35
 ----------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'apple35_raw_prodos_35':
+Opções específicas do driver para o módulo 'apple35_raw_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -582,7 +582,7 @@ Imagem de disco para o CoCo DMK (formato OS-9) - (*coco_dmk_os9*)
 -----------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'coco_dmk_os9':
+Opções específicas do driver para o módulo 'coco_dmk_os9':
 
 Nenhuma opção específica da imagem
 
@@ -623,7 +623,7 @@ Imagem de disco para o CoCo DMK (formato RS-DOS) - (*coco_dmk_rsdos*)
 ---------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'coco_dmk_rsdos':
+Opções específicas do driver para o módulo 'coco_dmk_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -677,7 +677,7 @@ Imagem de disco para o CoCo JVC (formato OS-9) - (*coco_jvc_os9*)
 -----------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'coco_jvc_os9':
+Opções específicas do driver para o módulo 'coco_jvc_os9':
 
 Nenhuma opção específica da imagem
 
@@ -712,7 +712,7 @@ Imagem de disco para o CoCo JVC (formato RS-DOS) - (*coco_jvc_rsdos*)
 ---------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'coco_jvc_rsdos':
+Opções específicas do driver para o módulo 'coco_jvc_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -763,7 +763,7 @@ Imagem de disco para o CoCo OS-9 (formato OS-9) - (*coco_os9_os9*)
 ------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'coco_os9_os9':
+Opções específicas do driver para o módulo 'coco_os9_os9':
 
 Nenhuma opção específica da imagem
 
@@ -798,7 +798,7 @@ Imagem de disco para o CoCo VDK (formato OS-9) - (*coco_vdk_os9*)
 -----------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'coco_vdk_os9':
+Opções específicas do driver para o módulo 'coco_vdk_os9':
 
 Nenhuma opção específica da imagem
 
@@ -833,7 +833,7 @@ Imagem de disco para o CoCo VDK (formato RS-DOS) - (*coco_vdk_rsdos*)
 ---------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'coco_vdk_rsdos':
+Opções específicas do driver para o módulo 'coco_vdk_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -884,7 +884,7 @@ Imagem de disquete para o Concept - (*concept*)
 -----------------------------------------------
 
 
-Opções específicas de driver para o módulo 'concept':
+Opções específicas do driver para o módulo 'concept':
 
 Nenhuma opção específica da imagem
 
@@ -895,7 +895,7 @@ Imagem de disquete para o CopyQM (formato Basic Master Level 3) - (*cqm_bml3*)
 -------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_bml3':
+Opções específicas do driver para o módulo 'cqm_bml3':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -921,7 +921,7 @@ Imagem de disquete para o CopyQM (formato FAT) - (*cqm_fat*)
 ------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_fat':
+Opções específicas do driver para o módulo 'cqm_fat':
 
 Nenhuma opção específica da imagem
 
@@ -932,7 +932,7 @@ Imagem de disquete para o CopyQM (Mac HFS Floppy) - (*cqm_mac_hfs*)
 -------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_mac_hfs':
+Opções específicas do driver para o módulo 'cqm_mac_hfs':
 
 Nenhuma opção específica da imagem
 
@@ -943,7 +943,7 @@ Imagem de disquete para o CopyQM (Disquete Mac MFS) - (*cqm_mac_mfs*)
 ---------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_mac_mfs':
+Opções específicas do driver para o módulo 'cqm_mac_mfs':
 
 Nenhuma opção específica da imagem
 
@@ -954,7 +954,7 @@ Imagem de disquete para o CopyQM (formato OS-9) - (*cqm_os9*)
 -------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_os9':
+Opções específicas do driver para o módulo 'cqm_os9':
 
 Nenhuma opção específica da imagem
 
@@ -965,7 +965,7 @@ Imagem de disquete para o CopyQM (formato ProDOS) - (*cqm_prodos_35*)
 ---------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_prodos_35':
+Opções específicas do driver para o módulo 'cqm_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -976,7 +976,7 @@ Imagem de disquete para o CopyQM (formato ProDOS) - (*cqm_prodos_525*)
 ----------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_prodos_525':
+Opções específicas do driver para o módulo 'cqm_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -987,7 +987,7 @@ Imagem de disquete para o CopyQM (formato RS-DOS) - (*cqm_rsdos*)
 -----------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_rsdos':
+Opções específicas do driver para o módulo 'cqm_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1013,7 +1013,7 @@ Imagem de disquete para o CopyQM (formato VZ-DOS) - (*cqm_vzdos*)
 -----------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cqm_vzdos':
+Opções específicas do driver para o módulo 'cqm_vzdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1039,7 +1039,7 @@ Sistema de arquivos para o Cybiko Classic - (*cybiko*)
 ------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cybiko':
+Opções específicas do driver para o módulo 'cybiko':
 
 Nenhuma opção específica da imagem
 
@@ -1064,7 +1064,7 @@ Sistema de arquivos para o Cybiko Xtreme - (*cybikoxt*)
 -------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'cybikoxt':
+Opções específicas do driver para o módulo 'cybikoxt':
 
 Nenhuma opção específica da imagem
 
@@ -1074,7 +1074,7 @@ Nenhuma opção específica para a criação da imagem
 Imagem de disquete para o D88 (formato Basic Master Level 3) - (*d88_bml3*)
 ---------------------------------------------------------------------------
 
-Opções específicas de driver para o módulo 'd88_bml3':
+Opções específicas do driver para o módulo 'd88_bml3':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1100,7 +1100,7 @@ Imagem de disquete para o D88 (formato FAT) - (*d88_fat*)
 ---------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'd88_fat':
+Opções específicas do driver para o módulo 'd88_fat':
 
 Nenhuma opção específica da imagem
 
@@ -1111,7 +1111,7 @@ Imagem de disquete para o D88 (Disquete Mac HFS) - (*d88_mac_hfs*)
 ------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'd88_mac_hfs':
+Opções específicas do driver para o módulo 'd88_mac_hfs':
 
 Nenhuma opção específica da imagem
 
@@ -1122,7 +1122,7 @@ Imagem de disquete para o D88 (Disquete Mac MFS) - (*d88_mac_mfs*)
 ------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'd88_mac_mfs':
+Opções específicas do driver para o módulo 'd88_mac_mfs':
 
 Nenhuma opção específica da imagem
 
@@ -1133,7 +1133,7 @@ Imagem de disquete para o D88 (formato OS-9) - (*d88_os9*)
 ----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'd88_os9':
+Opções específicas do driver para o módulo 'd88_os9':
 
 Nenhuma opção específica da imagem
 
@@ -1144,7 +1144,7 @@ Imagem de disquete para o D88 (formato OS-9) - (*d88_os9*)
 ----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'd88_prodos_35':
+Opções específicas do driver para o módulo 'd88_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -1155,7 +1155,7 @@ Imagem de disquete para o D88 (formato ProDOS) - (*d88_prodos_525*)
 -------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'd88_prodos_525':
+Opções específicas do driver para o módulo 'd88_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -1166,7 +1166,7 @@ Imagem de disquete para o D88 (formato RS-DOS) - (*d88_rsdos*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'd88_rsdos':
+Opções específicas do driver para o módulo 'd88_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1192,7 +1192,7 @@ Imagem de disquete para o D88 (formato VZ-DOS) - (*d88_vzdos*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'd88_vzdos':
+Opções específicas do driver para o módulo 'd88_vzdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1218,7 +1218,7 @@ Imagem de disquete para o DSK (formato Basic Master Level 3) - (*dsk_bml3*)
 ---------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_bml3':
+Opções específicas do driver para o módulo 'dsk_bml3':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1244,7 +1244,7 @@ Imagem de disquete para o DSK (formato FAT) - (*dsk_fat*)
 ---------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_fat':
+Opções específicas do driver para o módulo 'dsk_fat':
 
 Nenhuma opção específica da imagem
 
@@ -1255,7 +1255,7 @@ Imagem de disquete para o DSK (disquete Mac HFS) - (*dsk_mac_hfs*)
 ------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_mac_hfs':
+Opções específicas do driver para o módulo 'dsk_mac_hfs':
 
 Nenhuma opção específica da imagem
 
@@ -1266,7 +1266,7 @@ Imagem de disquete DSK (Disquete Mac MFS) - (*dsk_mac_mfs*)
 -----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_mac_mfs':
+Opções específicas do driver para o módulo 'dsk_mac_mfs':
 
 Nenhuma opção específica da imagem
 
@@ -1277,7 +1277,7 @@ Imagem de disquete para o DSK (formato OS-9) - (*dsk_os9*)
 ----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_os9':
+Opções específicas do driver para o módulo 'dsk_os9':
 
 Nenhuma opção específica da imagem
 
@@ -1288,7 +1288,7 @@ Imagem de disquete para o DSK (formato ProDOS) - (*dsk_prodos_35*)
 ------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_prodos_35':
+Opções específicas do driver para o módulo 'dsk_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -1299,7 +1299,7 @@ Imagem de disquete para o DSK (formato ProDOS) - (*dsk_prodos_525*)
 -------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_prodos_525':
+Opções específicas do driver para o módulo 'dsk_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -1310,7 +1310,7 @@ Imagem de disquete para o DSK (formato RS-DOS) - (*dsk_rsdos*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_rsdos':
+Opções específicas do driver para o módulo 'dsk_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1336,7 +1336,7 @@ Imagem de disquete para o DSK (formato VZ-DOS) - (*dsk_vzdos*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'dsk_vzdos':
+Opções específicas do driver para o módulo 'dsk_vzdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1362,7 +1362,7 @@ Imagem de Disco Formatado (formato Basic Master Level 3) - (*fdi_bml3*)
 -----------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_bml3':
+Opções específicas do driver para o módulo 'fdi_bml3':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1388,7 +1388,7 @@ Imagem de Disco Formatado (formato FAT) - (*fdi_fat*)
 -----------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_fat':
+Opções específicas do driver para o módulo 'fdi_fat':
 
 Nenhuma opção específica da imagem
 
@@ -1399,7 +1399,7 @@ Imagem de Disco Formatado (Disquete Mac HFS) - (*fdi_mac_hfs*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_mac_hfs':
+Opções específicas do driver para o módulo 'fdi_mac_hfs':
 
 Nenhuma opção específica da imagem
 
@@ -1410,7 +1410,7 @@ Imagem de Disco Formatado (Disquete Mac MFS) - (*fdi_mac_mfs*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_mac_mfs':
+Opções específicas do driver para o módulo 'fdi_mac_mfs':
 
 Nenhuma opção específica da imagem
 
@@ -1421,7 +1421,7 @@ Imagem de Disco Formatado (formato OS-9) - (*fdi_os9*)
 ------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_os9':
+Opções específicas do driver para o módulo 'fdi_os9':
 
 Nenhuma opção específica da imagem
 
@@ -1432,7 +1432,7 @@ Imagem de Disco Formatado (formato ProDOS) - (*fdi_prodos_35*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_prodos_35':
+Opções específicas do driver para o módulo 'fdi_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -1443,7 +1443,7 @@ Imagem de Disco Formatado (formato ProDOS) - (*fdi_prodos_525*)
 ---------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_prodos_525':
+Opções específicas do driver para o módulo 'fdi_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -1454,7 +1454,7 @@ Imagem de Disco Formatado (formato RS-DOS) - (*fdi_rsdos*)
 ----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_rsdos':
+Opções específicas do driver para o módulo 'fdi_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1480,7 +1480,7 @@ Imagem de Disco Formatado (formato VZ-DOS) - (*fdi_vzdos*)
 ----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'fdi_vzdos':
+Opções específicas do driver para o módulo 'fdi_vzdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1506,7 +1506,7 @@ Cartão de memória para o HP48 SX/GX - (*hp48*)
 ----------------------------------------------
 
 
-Opções específicas de driver para o módulo 'hp48':
+Opções específicas do driver para o módulo 'hp48':
 
 Nenhuma opção específica da imagem
 
@@ -1530,7 +1530,7 @@ Imagem de disquete IMD (formato Basic Master Level 3) - (*imd_bml3*)
 --------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_bml3':
+Opções específicas do driver para o módulo 'imd_bml3':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1556,7 +1556,7 @@ Imagem de disquete IMD (formato FAT) - (*imd_fat*)
 --------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_fat':
+Opções específicas do driver para o módulo 'imd_fat':
 
 Nenhuma opção específica da imagem
 
@@ -1567,7 +1567,7 @@ Imagem de disquete IMD (disquete Mac HFS) - (*imd_mac_hfs*)
 -----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_mac_hfs':
+Opções específicas do driver para o módulo 'imd_mac_hfs':
 
 Nenhuma opção específica da imagem
 
@@ -1578,7 +1578,7 @@ Imagem de disquete IMD (Disquete Mac MFS) - (*imd_mac_mfs*)
 ------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_mac_mfs':
+Opções específicas do driver para o módulo 'imd_mac_mfs':
 
 Nenhuma opção específica da imagem
 
@@ -1589,7 +1589,7 @@ Imagem de disquete IMD (formato OS-9) - (*imd_os9*)
 ---------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_os9':
+Opções específicas do driver para o módulo 'imd_os9':
 
 Nenhuma opção específica da imagem
 
@@ -1600,7 +1600,7 @@ Imagem de disquete IMD (formato ProDOS) - (*imd_prodos_35*)
 -----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_prodos_35':
+Opções específicas do driver para o módulo 'imd_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -1611,7 +1611,7 @@ Imagem de disquete IMD (formato ProDOS) - (*imd_prodos_525*)
 ------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_prodos_525':
+Opções específicas do driver para o módulo 'imd_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -1622,7 +1622,7 @@ Imagem de disquete IMD (formato RS-DOS) - (*imd_rsdos*)
 -------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_rsdos':
+Opções específicas do driver para o módulo 'imd_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1648,7 +1648,7 @@ Imagem de disquete IMD (formato VZ-DOS) - (*imd_vzdos*)
 -------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'imd_vzdos':
+Opções específicas do driver para o módulo 'imd_vzdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1674,7 +1674,7 @@ Imagem de disco rígido para o  MESS - (*mess_hd*)
 -------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'mess_hd':
+Opções específicas do driver para o módulo 'mess_hd':
 
 Nenhuma opção específica da imagem
 
@@ -1709,7 +1709,7 @@ Disquete para o TI99 (formato PC99) - (*pc99fm*)
 ------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'pc99fm':
+Opções específicas do driver para o módulo 'pc99fm':
 
 Nenhuma opção específica da imagem
 
@@ -1720,7 +1720,7 @@ Disquete para o TI99 (formato PC99 MFM) - (*pc99mfm*)
 -----------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'pc99mfm':
+Opções específicas do driver para o módulo 'pc99mfm':
 
 Nenhuma opção específica da imagem
 
@@ -1731,7 +1731,7 @@ Imagem de disco para o PC CHD - (*pc_chd*)
 ------------------------------------------
 
 
-Opções específicas de driver para o módulo 'pc_chd':
+Opções específicas do driver para o módulo 'pc_chd':
 
 Nenhuma opção específica da imagem
 
@@ -1759,7 +1759,7 @@ Imagem de disquete para o PC (formato FAT) - (*pc_dsk_fat*)
 -----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'pc_dsk_fat':
+Opções específicas do driver para o módulo 'pc_dsk_fat':
 
 Nenhuma opção específica da imagem
 
@@ -1787,7 +1787,7 @@ Psion Organiser II Datapack - (*psionpack*)
 -------------------------------------------
 
 
-Opções específicas de driver para o módulo 'psionpack':
+Opções específicas do driver para o módulo 'psionpack':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1839,7 +1839,7 @@ Imagem de disquete para o Teledisk (formato Basic Master Level 3) - (*td0_bml3*)
 ---------------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_bml3':
+Opções específicas do driver para o módulo 'td0_bml3':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1865,7 +1865,7 @@ Imagem de disquete para o Teledisk (formato FAT) - (*td0_fat*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_fat':
+Opções específicas do driver para o módulo 'td0_fat':
 
 Nenhuma opção específica da imagem
 
@@ -1876,7 +1876,7 @@ Imagem de disquete para o Teledisk (Disquete Mac HFS) - (*td0_mac_hfs*)
 -----------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_mac_hfs':
+Opções específicas do driver para o módulo 'td0_mac_hfs':
 
 Nenhuma opção específica da imagem
 
@@ -1887,7 +1887,7 @@ Imagem de disquete para o Teledisk (Disquete Mac MFS) - (*td0_mac_mfs*)
 -----------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_mac_mfs':
+Opções específicas do driver para o módulo 'td0_mac_mfs':
 
 Nenhuma opção específica da imagem
 
@@ -1898,7 +1898,7 @@ Imagem de disquete para o Teledisk (OS-9 format) - (*td0_os9*)
 --------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_os9':
+Opções específicas do driver para o módulo 'td0_os9':
 
 Nenhuma opção específica da imagem
 
@@ -1909,7 +1909,7 @@ Imagem de disquete para o Teledisk (formato ProDOS) - (*td0_prodos_35*)
 -----------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_prodos_35':
+Opções específicas do driver para o módulo 'td0_prodos_35':
 
 Nenhuma opção específica da imagem
 
@@ -1920,7 +1920,7 @@ Imagem de disquete para o Teledisk (formato ProDOS) - (*td0_prodos_525*)
 ------------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_prodos_525':
+Opções específicas do driver para o módulo 'td0_prodos_525':
 
 Nenhuma opção específica da imagem
 
@@ -1931,7 +1931,7 @@ Imagem de disquete para o Teledisk (RS-DOS format) - (*td0_rsdos*)
 ------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_rsdos':
+Opções específicas do driver para o módulo 'td0_rsdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1957,7 +1957,7 @@ Imagem de disquete para o Teledisk (VZ-DOS format) - (*td0_vzdos*)
 ------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'td0_vzdos':
+Opções específicas do driver para o módulo 'td0_vzdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -1983,7 +1983,7 @@ Imagem de disquete Thomson .fd, formato BASIC - (*thom_fd*)
 -----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'thom_fd':
+Opções específicas do driver para o módulo 'thom_fd':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -2032,7 +2032,7 @@ Imagem de disquete Thomson .fd, formato BASIC - (*thom_qd*)
 -----------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'thom_qd':
+Opções específicas do driver para o módulo 'thom_qd':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -2081,7 +2081,7 @@ Imagem de disquete Thomson .fd, formato BASIC - (*thom_sap*)
 ------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'thom_sap':
+Opções específicas do driver para o módulo 'thom_sap':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
@@ -2130,7 +2130,7 @@ Imagem de Disco Rígido para o TI990 - (*ti990hd*)
 -------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'ti990hd':
+Opções específicas do driver para o módulo 'ti990hd':
 
 Nenhuma opção específica da imagem
 
@@ -2161,7 +2161,7 @@ Disquete para o TI99 (formato antigo do MESS) - (*ti99_old*)
 ------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'ti99_old':
+Opções específicas do driver para o módulo 'ti99_old':
 
 Nenhuma opção específica da imagem
 
@@ -2196,7 +2196,7 @@ Disco Rígido para o TI99 - (*ti99hd*)
 -------------------------------------
 
 
-Opções específicas de driver para o módulo 'ti99hd':
+Opções específicas do driver para o módulo 'ti99hd':
 
 Nenhuma opção específica da imagem
 
@@ -2207,7 +2207,7 @@ Disquete para o TI99 (formato V9T9) - (*v9t9*)
 ----------------------------------------------
 
 
-Opções específicas de driver para o módulo 'v9t9':
+Opções específicas do driver para o módulo 'v9t9':
 
 Nenhuma opção específica da imagem
 
@@ -2242,7 +2242,7 @@ Imagem de disco para o Laser/VZ (formato VZ-DOS) - (*vtech1_vzdos*)
 -------------------------------------------------------------------
 
 
-Opções específicas de driver para o módulo 'vtech1_vzdos':
+Opções específicas do driver para o módulo 'vtech1_vzdos':
 
 Opções específicas para o arquivo (utilizável com o comando 'put')
 
