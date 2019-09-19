@@ -252,8 +252,8 @@ estas configurações conforme necessário.
 
 .. _advanced-tricks-dat-sistema:
 
-Gerando arquivos DAT para serem usados com gerenciadores de ROMs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Gerando arquivos DAT para diferentes gerenciadores de ROMs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Arquivos DAT são usados por gerenciadores de ROMs como
 `RomCenter (Windows) <http://romcenter.com/>`_,
@@ -273,17 +273,21 @@ mesmo diretório do MAME e execute o comando: ::
 
 	datutil mame.xml
 
-Será gerado um arquivo ``datutil.dat``, agora para criar um DAT para um
-sistema CPS1 (**cps1.dat**) compatível com o **Clrmamepro** faça o
-comando: ::
+Será criado o arquivo ``datutil.dat``.
+
+Criando arquivos DAT separados por sistema
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para criar um DAT para o sistema CPS1 (**cps1.dat**) compatível com o
+**Clrmamepro** faça o comando: ::
 
 	datutil.exe -G cps1.cpp -o cps1.dat -f cmp datutil.dat
 
-O mesmo pode ser usado para criar um DAT para CPS2: ::
+Para o sistema CPS2: ::
 
 	datutil.exe -G cps2.cpp -o cps2.dat -f cmp datutil.dat
 
-Neo-geo: ::
+Para o sistema Neo-Geo: ::
 
 	datutil.exe -G neogeo.cpp -o neogeo.dat -f cmp datutil.dat
 
