@@ -482,7 +482,7 @@ Opções específicas para a criação da imagem (utilizável com o comando 'cre
      - Primeiro setor
 
 
-Imagem de disco para o Apple raw 3.5" (Disquete Mac HFS) - (*apple35_raw_mac_hfs*)
+Imagem de disco para o Apple raw 3.5' (Disquete Mac HFS) - (*apple35_raw_mac_hfs*)
 ----------------------------------------------------------------------------------
 
 
@@ -514,7 +514,7 @@ Opções específicas para a criação da imagem (utilizável com o comando 'cre
      - Primeiro setor
 
 
-Imagem de disco para o Apple raw 3.5" (Disquete Mac MFS) - (*apple35_raw_mac_mfs*)
+Imagem de disco para o Apple raw 3.5' (Disquete Mac MFS) - (*apple35_raw_mac_mfs*)
 ----------------------------------------------------------------------------------
 
 
@@ -546,7 +546,7 @@ Opções específicas para a criação da imagem (utilizável com o comando 'cre
      - Primeiro setor
 
 
-Imagem de disco para o Apple raw 3.5" (formato ProDOS) - (*apple35_raw_prodos_35*)
+Imagem de disco para o Apple raw 3.5' (formato ProDOS) - (*apple35_raw_prodos_35*)
 ----------------------------------------------------------------------------------
 
 
