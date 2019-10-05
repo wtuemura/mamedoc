@@ -478,7 +478,11 @@ Para mudar a codificação de todo o terminal, faça o comando:
 .. code-block:: kconfig
 
 	$OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
-	
+
+Um exemplo de como agora fica a codificação do terminal:
+
+.. code-block:: kconfig
+
 	$OutputEncoding
 	
 	BodyName          : utf-8
