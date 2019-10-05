@@ -2353,7 +2353,7 @@ Opções para a configuração do áudio
 .. table:: Opções disponíveis para cada versão
 
 		+---------+--------------+----------------------------------------+
-		| Versões | Predefinição |             Opções disponíveis         |
+		| Versões | Predefinição |             Opções válidas             |
 		+=========+==============+===========+=========+===========+======+
 		| Windows |     auto     | dsound    | xaudio2 | portaudio | none |
 		+---------+--------------+-----------+---------+-----------+------+
