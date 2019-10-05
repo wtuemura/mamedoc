@@ -2776,7 +2776,7 @@ Opções para as configurações de diferentes entradas
 **-joystick_deadzone** / **-joy_deadzone** / **-jdz** <*valor*>
 
 	Caso você jogue com um joystick analógico ele poderá estar um pouco
-	fora de contro. O ``-joystick_deadzone`` informa uma folga ao longo
+	fora de centro. O ``-joystick_deadzone`` informa uma folga ao longo
 	de um eixo que você deve mover antes que o eixo comece a mudar.
 	Essa opção espera um valor flutuante (float) no intervalo entre
 	**0.0** e **1.0**. Onde **0** é o centro do joystick e **1** o
