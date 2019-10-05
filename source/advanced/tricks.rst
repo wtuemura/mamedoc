@@ -420,16 +420,6 @@ Execute o comando abaixo para fazer a cópia dos arquivos: ::
 
 	for f in $(< caminho-roms.txt); do cp "$f" "$DST"; done
 
-Teste
------
-
-.. graphviz::
-
-	digraph TV {
-	"4:3" [shape=polygon, peripheries=2, sides=4];
-	"16:9" [shape=rectangle, peripheries=2, width=0.9];
-	}
-
 .. [#]	De acordo com `este post
 		<https://vgmrips.net/forum/viewtopic.php?f=3&t=155>`_ o YM2610
 		trabalha com uma taxa de amostragem de 18.5 kHz (18500 Hz), logo
