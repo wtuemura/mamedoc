@@ -2350,17 +2350,20 @@ Opções para a configuração do áudio
 	o áudio completamente porém o hardware de áudio continua sendo
 	emulado. Abaixo as opções disponíveis para cada sistema operacional:
 
-	+---------+------+-----------+---------+-----------+------+
-	| Windows | auto | dsound    | xaudio2 | portaudio | none |
-	+---------+------+-----------+---------+-----------+------+
-	| macOS   | auto | coreaudio | sdl     | portaudio | none |
-	+---------+------+-----------+---------+-----------+------+
-	| SDL     | auto | portaudio | sdl     | none      |      |
-	+---------+------+-----------+---------+-----------+------+
+.. table:: Opções disponíveis para cada versão
 
+		+---------+--------------+----------------------------------------+
+		| Versões | Predefinição |             Opções disponíveis         |
+		+=========+==============+===========+=========+===========+======+
+		| Windows |     auto     | dsound    | xaudio2 | portaudio | none |
+		+---------+--------------+-----------+---------+-----------+------+
+		| macOS   |     auto     | coreaudio | sdl     | portaudio | none |
+		+---------+--------------+-----------+---------+-----------+------+
+		| SDL     |     auto     | portaudio | sdl     | none      |      |
+		+---------+--------------+-----------+---------+-----------+------+
 
-	Versões especiais como o **SDLMAME** para Windows, pode usar a opção
-	**sdl** e ter o **portaudio** desabilitado.
+Versões especiais como o **SDLMAME** para Windows, pode usar a opção
+**sdl** e ter o **portaudio** desabilitado.
 
 		O valor predefinido é **dsound** no Windows, no Mac é
 		**coreaudio** nas outras plataformas é **sdl**.
