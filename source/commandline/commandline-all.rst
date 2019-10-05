@@ -238,6 +238,10 @@ Exemplo:
 	saída para um nome de sistema, máquina ou driver caso um seja
 	informado.
 
+	Caso utilize o MAME com o PowerShell da Microsoft, leia também
+	:ref:`Redirecionamento com o PowerShell da Microsoft
+	<advanced-tricks-powershell-redirect>`.
+
 .. raw:: latex
 
 	\clearpage

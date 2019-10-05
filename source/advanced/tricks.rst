@@ -420,6 +420,89 @@ Execute o comando abaixo para fazer a cópia dos arquivos: ::
 
 	for f in $(< caminho-roms.txt); do cp "$f" "$DST"; done
 
+.. _advanced-tricks-powershell-redirect:
+
+Resolvendo o redirecionamento do MAME com PowerShell da Microsoft #5694
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ao redirecionar a saída do MAME com o comando :ref:`-listxml / -lx
+<mame-commandline-listxml>` usando o PowerShell da Microsoft, a saída
+tem o dobro de tamanho se comparado com a saída do mesmo comando ao se
+utilizar o terminal do Linux, macOS ou o comando prompt do Windows. [#]_
+
+Segundo mostra `este artigo
+<https://devblogs.microsoft.com/powershell/outputencoding-to-the-rescue/>`_
+hospedado em um blog de desenvolvimento da Microsoft, a codificação
+predefinida do PowerShell não é UTF-8, originalmente ele vem
+como `us-ascii <https://en.wikipedia.org/wiki/Code_page_20127>`_:
+
+.. code-block:: kconfig
+
+	$OutputEncoding
+	
+	IsSingleByte      : True
+	BodyName          : us-ascii
+	EncodingName      : US-ASCII
+	HeaderName        : us-ascii
+	WebName           : us-ascii
+	WindowsCodePage   : 1252
+	IsBrowserDisplay  : False
+	IsBrowserSave     : False
+	IsMailNewsDisplay : True
+	IsMailNewsSave    : True
+	EncoderFallback   : System.Text.EncoderReplacementFallback
+	DecoderFallback   : System.Text.DecoderReplacementFallback
+	IsReadOnly        : True
+	CodePage          : 20127
+
+.. raw:: latex
+
+	\clearpage
+
+Ao fazer o redirecionamento, a saída é codificada para
+`iso-10646-ucs-2 BOM <https://en.wikipedia.org/wiki/ISO_10646>`_, isso
+faz com que cada caractere comum seja armazenado com 2 bytes. Geralmente
+o UTF-8 por exemplo utiliza de 1 a 4 bytes para caracteres
+`diacríticos <https://pt.wikipedia.org/wiki/Diacrítico>`_, assim como
+caracteres Cirílico, Grego, etc.
+
+Para arrumar apenas o redirecionamento ``>`` ou ``>>`` faça o comando no
+terminal do PowerShell:
+
+.. code-block:: kconfig
+
+	$PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
+
+Para mudar a codificação de todo o terminal, faça o comando:
+
+.. code-block:: kconfig
+
+	$OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::UTF8
+	
+	$OutputEncoding
+	
+	BodyName          : utf-8
+	EncodingName      : Unicode (UTF-8)
+	HeaderName        : utf-8
+	WebName           : utf-8
+	WindowsCodePage   : 1200
+	IsBrowserDisplay  : True
+	IsBrowserSave     : True
+	IsMailNewsDisplay : True
+	IsMailNewsSave    : True
+	IsSingleByte      : False
+	EncoderFallback   : System.Text.EncoderReplacementFallback
+	DecoderFallback   : System.Text.DecoderReplacementFallback
+	IsReadOnly        : True
+	CodePage          : 65001
+
+Qualquer uma das opções funcionam, não é necessário usar as duas. Para
+mais informações `veja este post
+<https://devblogs.microsoft.com/scripting/understanding-the-six-powershell-profiles/>`_
+para saber localizar os perfis do PowerShell no Windows e alternar estes
+valores para que fiquem permanentes ou que sejam executados sempre que
+uma seção do PowerShell seja iniciada.
+
 .. [#]	De acordo com `este post
 		<https://vgmrips.net/forum/viewtopic.php?f=3&t=155>`_ o YM2610
 		trabalha com uma taxa de amostragem de 18.5 kHz (18500 Hz), logo
@@ -428,3 +511,4 @@ Execute o comando abaixo para fazer a cópia dos arquivos: ::
 		48 kHz ou 48000 Hz e essa alta taxa de amostragem não traz
 		nenhum benefício para a emulação como já foi descrito em
 		:ref:`-samplerate <mame-commandline-samplerate>`.
+.. [#]	#5694 https://github.com/mamedev/mame/issues/5694
