@@ -1,3 +1,7 @@
+.. raw:: latex
+
+	\clearpage
+
 .. _debugger-expressions-list:
 
 Guia de expressões do depurador
@@ -14,8 +18,6 @@ os operadores em sua ordem, os operadores de primeira prioridade vem
 primeiro.
 
 |
-|
-|
 | ``( ) :`` parênteses padrão
 | ``++ -- :`` incremento/decremento do postfix
 | ``++ -- ~ ! - + b@ w@ d@ q@ :`` prefixo inc/dec, binário NOT, lógico NOT, unário +/-, acesso à memória
@@ -24,11 +26,11 @@ primeiro.
 | ``<< >> :`` deslocar para a esquerda/direita
 | ``< <= > >= :`` menor que, menor que ou igual, maior que, maior que ou igual
 | ``== != :`` igual, não igual
-| ``& :`` binário AND
-| ``^ :`` binário XOR
-| ``| :`` bibinárionary OR
-| ``&& :`` lógica AND
-| ``|| :`` lógica OR
+| ``& :`` binário **AND**
+| ``^ :`` binário **XOR**
+| ``| :`` binário **OR**
+| ``&& :`` lógica **AND**
+| ``|| :`` lógica **OR**
 | ``= \*= /= %= += -= <<= >>= &= \|= ^= :`` atribuição
 | ``, :`` termos separados, parâmetros de função
 |
