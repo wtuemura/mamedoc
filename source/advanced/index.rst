@@ -13,3 +13,4 @@ CONFIGURAÇÕES AVANÇADAS
 	devicemap
 	lightguns
 	tricks
+	slowmomame
