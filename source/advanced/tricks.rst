@@ -507,6 +507,158 @@ para saber localizar os perfis do PowerShell no Windows e alternar estes
 valores para que fiquem permanentes ou que sejam executados sempre que
 uma seção do PowerShell seja iniciada.
 
+.. raw:: latex
+
+	\clearpage
+
+Resolvendo o problema "please call attendant" das máquinas DrumMania
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As máquinas **DruMania 4th Mix** em diante não iniciam e param em uma
+tela de erro como mostra a imagem abaixo:
+
+.. figure:: images/drummania-attendant.png
+	:width: 400
+	:align: center
+	:figclass: align-center
+	:alt: Mensagem de erro
+
+Existem duas maneiras de resolver o problema, aplicando um patch na
+imagem o que altera a sua integridade ou usando um **cheat**. Crie os
+arquivos abaixo dentro do diretório **cheat**, estes arquivos não são de
+minha autoria e desconheço o autor original, caso alguém conheça, entre
+em contato que o devido crédito será dado.
+
+**drmn4m.xml**
+
+.. code-block:: xml
+
+	<mamecheat version="1">
+		<cheat desc="Please Call Attendant Fix">
+			<script state="run">
+				<action>maincpu.pd@80047F24=00000000</action>
+			</script>
+		</cheat>
+	</mamecheat>
+
+https://pastebin.com/JyaTSr4c
+
+**drmn5m.xml**
+
+.. code-block:: xml
+
+	<mamecheat version="1">
+		<cheat desc="Please Call Attendant Fix">
+			<script state="run">
+				<action>maincpu.pd@8003BAF8=00000000</action>
+			</script>
+		</cheat>
+	</mamecheat>
+
+https://pastebin.com/dTQMeJB1
+
+.. raw:: latex
+
+	\clearpage
+
+**drmn6m.xml**
+
+.. code-block:: xml
+
+	<mamecheat version="1">
+		<cheat desc="Please Call Attendant Fix">
+			<script state="run">
+				<action>maincpu.pd@8004F6E0=00000000</action>
+				<action>maincpu.pd@8004F740=00000000</action>
+			</script>
+		</cheat>
+	</mamecheat>
+
+https://pastebin.com/tRAFhfaS
+
+**drmn7m.xml**
+
+.. code-block:: xml
+
+	<mamecheat version="1">
+		<cheat desc="Please Call Attendant Fix">
+			<script state="run">
+				<action>maincpu.pd@80073F84=00000000</action>
+				<action>maincpu.pd@80073FE4=00000000</action>
+				<action>maincpu.pd@800E1B64=10000017</action>
+			</script>
+		</cheat>
+	</mamecheat>
+
+https://pastebin.com/LtMyNZ7i
+
+**drmn7ma.xml**
+
+.. code-block:: xml
+
+	<mamecheat version="1">
+		<cheat desc="Please Call Attendant Fix">
+			<script state="run">
+				<action>maincpu.pd@8006170C=00000000</action>
+				<action>maincpu.pd@8006176C=00000000</action>
+			</script>
+		</cheat>
+	</mamecheat>
+
+https://pastebin.com/MyX6scPk
+
+**drmn8m.xml**
+
+.. code-block:: xml
+
+	<mamecheat version="1">
+		<cheat desc="Please Call Attendant Fix">
+			<script state="run">
+				<action>maincpu.pd@800A4544=00000000</action>
+				<action>maincpu.pd@800A45A4=00000000</action>
+				<action>maincpu.pd@800E35F0=10000017</action>
+			</script>
+		</cheat>
+	</mamecheat>
+
+https://pastebin.com/LGTnUd4Y
+
+.. raw:: latex
+
+	\clearpage
+
+**drmn9m.xml**
+
+.. code-block:: xml
+
+	<mamecheat version="1">
+		<cheat desc="Please Call Attendant Fix">
+			<script state="run">
+				<action>maincpu.pd@800B92C0=00000000</action>
+				<action>maincpu.pd@800B9320=00000000</action>
+				<action>maincpu.pd@80106634=10000017</action>
+			</script>
+		</cheat>
+	</mamecheat>
+
+https://pastebin.com/at99MLqz
+
+**drmn10m.xml**
+
+.. code-block:: xml
+
+	<mamecheat version="1">
+		<cheat desc="Please Call Attendant Fix">
+			<script state="run">
+				<action>maincpu.pd@800BC854=00000000</action>
+				<action>maincpu.pd@800BC8B4=00000000</action>
+				<action>maincpu.pd@8010C4F4=10000017</action>
+			</script>
+		</cheat>
+	</mamecheat>
+
+https://pastebin.com/EaJes6Eh
+
 .. [#]	De acordo com `este post
 		<https://vgmrips.net/forum/viewtopic.php?f=3&t=155>`_ o YM2610
 		trabalha com uma taxa de amostragem de 18.5 kHz (18500 Hz), logo
