@@ -12,5 +12,5 @@ CONFIGURAÇÕES AVANÇADAS
 	glsl
 	devicemap
 	lightguns
-	tricks
 	slowmomame
+	tricks
