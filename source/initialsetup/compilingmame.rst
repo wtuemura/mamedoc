@@ -25,6 +25,11 @@ necessário para que tenha sucesso na sua primeira compilação do MAME.
 
 Antes, alguns pontos importantes:
 
+* É necessário um compilador C++14 e suas respectivas bibliotecas, a
+  versão mínima aceitável do GCC é a versão 7.2 ou mais recente, para o
+  clang é necessário a versão 5 ou mais recente. O executável do MAME
+  rodará com a biblioteca GNU libstdc++ versão 5.1 ou mais recente.
+
 * O Windows é a versão nativa do MAME, então uma grande ênfase será dada
   a compilação neste sistema operacional.
 
@@ -1530,12 +1535,8 @@ Problemas conhecidos
 Problemas relacionados com versões específicas do compilador
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Há erros esporádicos com o GNU GCC 5 no Linux onde ocorre alertas de
-  reprovação. [2]_
-  Use a opção **DEPRECATED=0** para eliminá-los.
-
 * O MinGW GCC 7 para Windows i386 gera erros esporádicos com alertas
-  de acesso fora dos limites. [3]_
+  de acesso fora dos limites. [2]_
   Use **NOWERROR=1** nas suas opções de compilação para remediar o
   problema e não tratar avisos como se fossem erros.
 
@@ -1628,10 +1629,10 @@ o C++14. Caso queira compilar o MAME com uma verão alternativa
 do GNU GCC que esteja instalada em seu sistema, defina o caminho
 completo dos compiladores C (gcc) e C++ (g++), assim como, adicione o
 caminho completo da biblioteca do seu sistema. Supondo que tenha o
-GNU GCC instalado em ``/opt/local/gcc63``, use o comando de compilação
+GNU GCC instalado em ``/opt/local/gcc72``, use o comando de compilação
 como mostrado abaixo: ::
 
-	make OVERRIDE_CC=/opt/local/gcc63/bin/gcc OVERRIDE_CXX=/opt/local/gcc63/bin/g++ ARCHOPTS=-Wl,-R,/opt/local/gcc63/lib64
+	make OVERRIDE_CC=/opt/local/gcc72/bin/gcc OVERRIDE_CXX=/opt/local/gcc72/bin/g++ ARCHOPTS=-Wl,-R,/opt/local/gcc72/lib64
 
 Essas configurações podem ser armazenadas em um makefile customizado
 como descrito em :ref:`PREFIX_MAKEFILE <mame-compilation-premake>` caso
@@ -1733,7 +1734,7 @@ Sem o arquivo de símbolos o ``something_state::something`` apareceria
 como um código hexadecimal sem sentido, com os símbolos esses códigos
 são traduzidos para algo legível e compreensível para os
 desenvolvedores. Caso o MAME trave durante a emulação, uma tela
-semelhante irá aparecer, copie e reporte [4]_ o erro no fórum
+semelhante irá aparecer, copie e reporte [3]_ o erro no fórum
 `MAME testers <https://mametesters.org/view_all_bug_page.php/>`_.
 
 .. _compiling-using-gdb:
@@ -2002,7 +2003,6 @@ disponível quando tudo mais falha.
 .. [1]	No Inglês ABI ou `Application Binary Interface
 		<https://pt.wikipedia.org/wiki/Interface_binária_de_aplicação>`_.
 		(Nota do tradutor)
-.. [2]	Deprecation warnings. (Nota do tradutor)
-.. [3]	Out-of-bounds access. (Nota do tradutor)
-.. [4]	Pedimos a gentileza de relatar os problemas encontrados em
+.. [2]	Out-of-bounds access. (Nota do tradutor)
+.. [3]	Pedimos a gentileza de relatar os problemas encontrados em
 		Inglês. (Nota do tradutor)
