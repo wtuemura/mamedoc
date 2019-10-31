@@ -17,8 +17,8 @@ outra plataforma compatível com o MAME.
 Nas instruções a seguir iremos  configurar um ambiente de compilação
 cruzada em uma plataforma Linux para compilar uma versão do MAME voltada
 para o Microsoft Windows, apesar do processo abaixo ser voltado para
-Windows, ele pode servir também de modelo para que você possa compilar o
-MAME para outras plataformas compatíveis além do Windows.
+Windows, ele pode servir também de modelo para compilar o MAME em outras
+plataformas compatíveis além do Windows.
 
 Vantagens
 ---------
@@ -31,26 +31,25 @@ Dentre as várias vantagens é possível citar as mais relevantes:
 	usando para compilar, como por exemplo, poder de processamento,
 	memória, etc.
 
-*	Ainda que você utilize o mesmo computador com dois sistemas
-	operacionais instalados como o Linux e o Windows no mesmo
-	computador, o tempo que você leva para compilar uma versão do MAME
-	para o Linux é muito menor do que compilar uma versão nativa do
-	MAME no Windows. Compilar uma versão do MAME para Linux leva em
-	torno de 30 minutos para mais ou para menos dependendo do poder de
-	processamento do seu computador, compilando o mesmo código fonte do
-	MAME, na mesma máquina com o Windows, usando a mesma versão do *gcc*
-	e *g++*, a tarefa pode levar algumas *horas* [2]_ ainda que você tenha um
-	computador mais recente.
+*	Ainda que seja utilizado o mesmo computador com dois sistemas
+	operacionais instalados como o Linux e o Windows, o tempo gasto para
+	compilar uma versão do MAME para o Linux é muito menor do que
+	compilar a mesma versão no Windows. Compilar uma versão do MAME para
+	Linux leva em torno de 30 minutos para mais ou para menos dependendo
+	do poder de processamento do seu computador, compilando o mesmo
+	código fonte na mesma máquina, com o Windows, usando a mesma versão
+	do *gcc* e *g++*, a tarefa pode levar algumas *horas* [2]_ ainda que
+	tenha um computador mais recente.
 
 *	Ao utilizar o processo de compilação cruzada, o tempo final de
 	compilação leva aproximadamente o mesmo tempo que a versão nativa do
-	Linux fazendo com que você ganhe tempo e economize recursos, afinal
-	de contas, manter o processador a 100% compilando o código fonte por
-	cerca de 30 minutos é uma coisa, fazer exatamente a mesma coisa
-	gastando algumas horas além de ser uma perda de tempo, a sua conta
-	de energia pode ficar um pouco mais cara no final do mês.
+	Linux, ganhando tempo e economizando recursos, afinal de contas,
+	manter o processador a 100% compilando o código fonte por cerca de
+	30 minutos é uma coisa, fazer exatamente a mesma coisa gastando
+	algumas horas além de ser uma perda de tempo, a sua conta de energia
+	pode ficar um pouco mais cara no final do mês.
 
-*	Assim o motivo principal para adotar a compilação cruzada é a
+*	Assim, o motivo principal para adotar a compilação cruzada é a
 	economia de tempo e recursos.
 
 Preparando o ambiente
@@ -66,8 +65,8 @@ empacotar a última versão do que quer que seja.
 
 Precisamos instalar os pacotes abaixo para compilar binários voltados ao
 sistema Windows, para outros sistemas operacionais ou dispositivos, o
-procedimento será semelhante bastando que você escolha o conjuntos de
-pacotes apropriados para a plataforma que você deseja compilar.
+procedimento será semelhante contanto que seja escolhido o conjuntos de
+pacotes apropriados para a plataforma desejada.
 
 .. raw:: latex
 
@@ -121,9 +120,9 @@ Configurando as variáveis de ambiente
 
 As variáveis **MINGW64** e **MINGW32** são necessárias para que os
 scripts usados para a compilação do MAME saibam onde encontrá-los.
-**Não use sudo** para o comando abaixo pois você deseja aplicar a
-variável no ambiente da sua conta comum e não em uma conta com poderes
-administrativos.
+**Não use sudo** para o comando abaixo pois queremos aplicá-las nas
+variáveis de ambiente da nossa conta comum e não em uma conta com
+poderes administrativos.
 
 |	``echo "export MINGW64="/usr/x86_64-w64-mingw32"" >> ~/.bashrc``
 |	``echo "export MINGW32="/usr/i686-w64-mingw32"" >> ~/.bashrc``
@@ -160,12 +159,11 @@ pasta raiz [4]_ do código fonte do MAME: ::
 
 	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1
 
-Caso você queira compilar uma versão *32-bit* do MAME faça o comando
-abaixo: ::
+Para compilar uma versão *32-bit* do MAME faça o comando abaixo: ::
 
 	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1
 
-Assim como na compilação nativa, você pode adicionar a opção **-j** no
+Assim como na compilação nativa, é possível adicionar a opção **-j** no
 final do comando visando acelerar o processo de compilação usando os
 núcleos do seu processador como já foi explicado com mais detalhes no
 capítulo :ref:`compiling-mame`: ::

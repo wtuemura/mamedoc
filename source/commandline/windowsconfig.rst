@@ -128,7 +128,7 @@ Opções para a entrada de controle
 	Controla se o MAME tenta ou não rastrear duas pistolas de luz
 	conectadas ao mesmo tempo. Essa opção requer ``-lightgun``. Essa
 	opção é um quebra galho para ser compatível com certos tipos antigos
-	de pistolas de luz. Se você possuí múltiplas pistolas de luz
+	de pistolas de luz. Caso possua múltiplas pistolas de luz
 	conectadas, basta apenas usar a opção ``-mouse`` e configurar cada
 	pistola individualmente.
 
