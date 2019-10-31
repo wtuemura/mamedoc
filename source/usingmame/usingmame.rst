@@ -9,11 +9,11 @@ desvendar todo o potencial que o MAME pode te oferecer.
 
 Em plataformas baseadas em Macintosh OS X e plataformas com base Unix,
 certifique-se de configurar a fonte do seu sistema para que corresponda
-ao seu idioma antes de iniciar, caso contrário você pode não conseguir
-ler o texto devido à falta de glifos e outros caracteres.
+ao seu idioma antes de iniciar, caso contrário não será possível ler o
+texto devido à falta de glifos e outros caracteres.
 
 Para marinheiros de primeira viagem o MAME pode parecer um pouco
-complexo, porém é bem mais simples do que parece. Você pode iniciar uma
+complexo, porém é bem mais simples do que parece. É possível iniciar uma
 máquina selecionando ela na lista que aparece do lado direito da tela ou
 pode também iniciar usando a linha de comando:
 
@@ -23,8 +23,8 @@ Faça assim para iniciar um sistema junto com o seu software:
 
 	**mame.exe** <*system*> <*software*>
 
-Em **system** você pode escolher uma das centenas de sistemas emulados,
-já em **software** é o nome da máquina [#]_ que deseja rodar. O software
+Em **system** escolha uma das centenas de sistemas emulados, já em
+**software** é o nome da máquina [#]_ que deseja rodar. O software
 nada mais é do que um nome de uma ROM ou a imagem de uma mídia. É
 possível também a utilização de **lista de programa** (**softlists**)
 que é um grade catálogo de software ou máquinas de diferentes sistemas
@@ -35,7 +35,7 @@ Americano** execute o comando como mostrado abaixo:
 
 	**mame.exe genesis sonic**
 
-Alternativamente, você pode também começar MAME apenas com o sistema:
+Alternativamente, também é possível iniciar MAME apenas com o sistema:
 
 	**mame.exe genesis**
 
@@ -44,9 +44,9 @@ E escolher numa *lista de jogos* qual deseja iniciar selecionando
 funcione é necessário ter um conjunto de máquinas no diretório **roms**.
 Observe que muitas cópias de ROMs antigas, de fitas e discos que
 funcionavam em versões anteriores, podem não mais serem reconhecidas
-pelas versões mais novas do MAME, exigindo que você as atualize ou as
-renomeie caso o nome tenha mudado ao longo do tempo e seja compatível
-com a última versão do MAME para que elas voltem a funcionar.
+pelas versões mais novas do MAME, exigindo uma atualização ou as
+renomeie caso o nome tenha mudado ao longo do tempo e seja apenas
+compatível com a última versão do MAME.
 
 Caso seja carregado um sistema arcade ou outro conteúdo que
 não esteja na lista, as coisas ficam um pouco mais complicadas.
@@ -59,7 +59,7 @@ Onde:
 
 *	<*system*> é o apelido ou o nome encurtado do sistema que deseja
 	emular (por exemplo, nes, c64, etc).
-*	<*media*> é o seletor da mídia que você deseja carregar (se for um
+*	<*media*> é o seletor da mídia desejado carregar (se for um
 	cartucho, tente **-cart** ou **-cart1**; caso seja um disquete,
 	tente **-flop** or **-flop1**; caso seja um CD-ROM, tente
 	**-cdrom**).
@@ -124,7 +124,7 @@ Notepad, `Geany <https://www.geany.org/>`_,
 `TextEdit <https://support.apple.com/pt-br/guide/textedit/welcome/mac>`_
 por exemplo) e alterar todas as opções conforme a sua necessidade. A
 principio, não há a necessidade de nenhum ajuste específico para começar
-a usar o MAME, então você pode basicamente deixar a maioria das opções
+a usar o MAME, então é possível basicamente deixar a maioria das opções
 inalteradas.
 
 Caso o MAME venha a ser atualizado, novas opções disponíveis serão
@@ -137,7 +137,7 @@ nos detalhes de todos os comandos compatíveis e todas as possibilidades
 de customização do MAME.
 
 .. [#]	Os desenvolvedores do MAME preferem usar o termo **máquinas** ao
-		invés de **jogos**, talvez visando evitar problemas legais?
+		em vez de **jogos**, talvez visando evitar problemas legais?
 .. [#]	Existe uma diferença entre sistema e máquina, o comando em
 		questão funciona apenas com sistemas. Arcades são considerados
 		máquinas como o CPS1, CP2, ZN, etc. O comando ao ser usado com

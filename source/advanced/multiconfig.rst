@@ -150,24 +150,23 @@ Usando diferentes arquivos de configuração
 ------------------------------------------
 
 O MAME oferece a possibilidade de criar diferentes tipos de configuração
-separada por algumas categorias ou pelo nome dos drivers ao invés de
+separada por algumas categorias ou pelo nome dos drivers em vez de
 concentrar todas as configurações em um único arquivo como o
 ``mame.ini``. E para quê isso?
 
 O MAME possuí dezenas de opções disponíveis para configurar outra
-dezena de coisas como áudio, vídeo, controladores diversos, etc. Você já
-deve ter se dado conta que dependendo do que você precise configurar, o
-tamanho da linha de comando pode ficar bem grande e complexa dependendo
-do sistema a ser emulado e variar de sistema para sistema. Criando
-diferentes tipos de arquivos de configuração torna possível armazenar as
-diferentes opções individuais para cada sistema encurtando também o
-tamanho da linha de comando uma vez que as opções agora podem ficar
-armazenadas em seus respectivos arquivos de configuração.
+dezena de coisas como áudio, vídeo, controladores diversos, etc. A linha
+de comando pode ficar bem grande e complexa dependendo do sistema a ser
+emulado e variar de sistema para sistema. Criando diferentes tipos de
+arquivos de configuração, é possível armazenar as diferentes opções
+individuais para cada sistema encurtando também o tamanho da linha de
+comando uma vez que as opções agora podem ficar armazenadas em seus
+respectivos arquivos de configuração.
 
 Podemos citar como exemplo a opção de vídeo, no Windows o MAME por
 predefinição escolhe ``d3d`` como a melhor opção, porém caso seja
 necessário o uso de outras opções como ``opengl`` ou até mesmo ``gdi``
-se for o caso, ao invés de usar esta opção toda a vez que for iniciar
+se for o caso, em vez de usar esta opção toda a vez que for iniciar
 alguma emulação, é possível definir como um padrão para todos os
 sistemas dentro do arquivo ``mame.ini``.
 
@@ -175,8 +174,8 @@ O arquivo ``mame.ini`` afeta a configuração de forma global porém
 algumas vezes há a necessidade de customizar apenas alguns sistemas em
 específico sem que haja qualquer tipo de configuração cruzada onde a
 configuração de um sistema afete o outro e vice versa. Como definir uma
-configuração apenas para sistemas que usem vetores e você não quer que
-essa configuração afete sistemas que usem pixel (raster) por exemplo.
+configuração apenas para sistemas que usem vetores sem que essa
+configuração afete sistemas que usem pixel (raster) por exemplo.
 
 .. raw:: latex
 

@@ -133,7 +133,7 @@ quase nenhum sistema faz.
 Finalmente, após o disco girar e a cabeça estiver sob a posição
 adequada, a leitura correta da faixa acontece. A leitura é feita através
 de uma cabeça indutiva, que lhe dá a característica interessante de não
-ler a orientação magnética de forma direta, ao invés disso, ser sensível
+ler a orientação magnética de forma direta, em vez disso, ser sensível
 o suficiente às inversões de orientação, chamadas de transições de
 fluxo. Esta detecção é fraca e pouco precisa, de modo que um
 amplificador com Ajuste de Ganho Automático (*Automatic Gain Control*
@@ -305,11 +305,10 @@ específicas para um determinado sistema.
 Lendo os dados codificados
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Escrever dados codificados é fácil, você só precisa de um relógio na
-frequência apropriada e enviar ou não uma cadeia de pulsos ao redor do
-relógio. A diversão está em ler esses dados.
-As células são uma construção lógica e não uma entidade física
-mensurável.
+Escrever dados codificados é fácil, basta de um relógio na frequência
+apropriada e enviar ou não uma cadeia de pulsos ao redor do relógio. A
+diversão está em ler esses dados. As células são uma construção lógica e
+não uma entidade física mensurável.
 
 As velocidades rotacionais variam ao redor dos valores definidos (+/- 2%
 não é raro) e perturbações locais (turbulência do ar, distância da
@@ -477,7 +476,7 @@ onde a escrita termina, há uma perda de sincronização uma vez que não
 há nenhuma chance do relógio de fluxo da célula terminar a escrita de
 forma correta. Esta mudança de fase brutal é chamada uma gravação da
 tala, especificamente a faixa escrever da tala. É o ponto onde a
-escrita deve começar se você quiser uma cópia raw da faixa para um novo
+escrita deve começar caso queira uma cópia raw da faixa para um novo
 disquete.
 
 Igualmente duas junções de gravação são criadas quando um setor é
@@ -524,7 +523,7 @@ A última posição implícita da célula é 200,000,000.
 As trilhas não formatadas são codificadas com um tamanho zero.
 
 A informação de "junção de trilha" indica onde começar a escrever caso
-você tente reescrever um disco físico com dados. Alguns formatos de
+tente reescrever um disco físico com dados. Alguns formatos de
 preservação codificam essa informação, ela é adivinhada para os outros.
 A função de gravação da trilha do fdcs deve configurá-la.
 A representação é a posição angular relativa ao índice.
@@ -667,7 +666,7 @@ Métodos de conversão orientados a gravação
 |                      **UINT8 \*sector data)**
 
 
-  Extrai o que você obteria ao ler na ordem dos setores '*sector size*'
+  Extrai o que seria obtido ao ler na ordem dos setores '*sector size*'
   do número 1 para o contador do setor e registra o resultado no setor
   de dados.
 
@@ -689,7 +688,7 @@ Sinais de controle
 
 Devido à maneira de como estão ligados na CPUs (diretamente numa porta
 I/O por exemplo), o controlador de sinais trabalha com valores físicos
-ao invés de lógicos. Em geral, o 0 significa ativo e 1 inativo.
+em vez de lógicos. Em geral, o 0 significa ativo e 1 inativo.
 Alguns sinais têm também um retorno de chamada associado a eles quando
 mudam.
 

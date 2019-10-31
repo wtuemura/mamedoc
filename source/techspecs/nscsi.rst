@@ -50,7 +50,7 @@ O subsistema nscsi aproveita as interfaces de slot e a nomenclatura do
 dispositivo para permitir uma implementação e configuração de barramento
 de forma simples.
 
-Primeiro você precisa criar uma lista de dispositivos aceitáveis para
+Primeiro é necessário criar uma lista de dispositivos aceitáveis para
 conectar ao barramento. Isso geralmente inclui **cdrom**, **hasrdisk** e
 o CI do controlador.
 Por exemplo:
@@ -66,9 +66,9 @@ A interface **_INTERNAL** indica um dispositivo que não é selecionável
 pelo usuário, o que é útil para o controlador.
 
 Então na configuração da máquina (ou em uma configuração de fragmento)
-você precisa primeiro adicionar o barramento e em seguida os
+primeiro é necessário adicionar o barramento e em seguida os
 dispositivos (potenciais) como dispositivos de sub-dispositivos do
-barramento com o SCSI ID como seu nome. Você pode usar como exemplo:
+barramento com o SCSI ID como seu nome, exemplo:
 
 |
 |     MCFG_NSCSI_BUS_ADD("scsibus")
@@ -176,9 +176,9 @@ essencialmente), funciona assim:
 * desocupa o barramento de dados e seleciona uma linha
 * espera mais um pouco
 
-E tudo pronto, você está conectado com o dispositivo de destino até que
-o alvo desocupe a linha ocupada, seja porque você pediu ou apenas para
-te aborrecer. O **de-assert** (desocupar) é chamado de desconexão.
+E tudo pronto, a conexão com o dispositivo de destino está feita até que
+o alvo desocupe a linha ocupada, seja porque foi requisitado ou apenas
+para te aborrecer. O **de-assert** (desocupar) é chamado de desconexão.
 
 O **ncr5390** é um exemplo de como usar um estado de máquina com dois
 níveis de estado para lidar com todos os eventos.

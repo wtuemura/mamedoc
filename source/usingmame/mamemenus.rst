@@ -14,7 +14,7 @@ Cardápio de opções
 
 	\clearpage
 
-Caso você inicie o MAME sem nenhum parâmetro na linha de comando ou
+Caso inicie o MAME sem nenhum parâmetro na linha de comando ou
 rodando ele com o clicar do mouse, um cardápio de opções será exibido,
 entre eles a lista de seleção de jogos ao centro, os filtros do lado
 esquerdo, a aba de informações e imagens. No rodapé da tela tem um
@@ -75,7 +75,7 @@ Filtro
 
 Escolhe entre diferentes filtros pré configurados e um personalizado.
 Estes filtros ajudam o usuário a selecionar máquinas separadas por
-categorias, supondo que você queira encontrar uma máquina que você não
+categorias, caso queira encontrar uma máquina que você não
 se lembra do nome porém se lembra do ano, é possível usar o filtro
 **Ano** para listar todas as máquinas conhecidas pelo MAME que foram
 lançadas naquele ano.
@@ -390,7 +390,7 @@ As opções disponíveis são:
 
 * **Idioma**
 
-  Permite que você customize o Idioma da interface do MAME, use um
+  Permite customizar o Idioma da interface do MAME, use um
   clique duplo para abrir a lista e facilitar a seleção.
 
 		O valor predefinido é **English**
@@ -793,7 +793,7 @@ Opções diversas
 * **Saltar a tela de seleção de BIOS**
 
   Faz com que o MAME inicie a máquina com a primeira BIOS disponível
-  para a máquina ao invés de usar uma lista.
+  para a máquina ao em vez de usar uma lista.
 
 		O valor predefinido é **Desligado**.
 

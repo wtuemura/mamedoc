@@ -40,11 +40,11 @@ Por que o meu jogo mostra uma tela de erro quando eu insiro moedas rapidamente?
 -------------------------------------------------------------------------------
 
 Isso não é um bug do MAME.
-No hardware de arcade original, você simplesmente não poderia inserir
-moedas tão rápido quanto você faz apertando um botão. A única maneira
-que você pode obter crédito nesse ritmo é se o hardware do mecanismo de
-moedas estiver com defeito ou se você estivesse fisicamente tentando
-enganar o mecanismo de moeda.
+No hardware de arcade original, não era possível inserir moedas tão
+rápido como se faz apertando um botão. A única maneira que você pode
+obter crédito nesse ritmo é se o hardware do mecanismo de moedas estiver
+com defeito ou se você estivesse fisicamente tentando enganar o
+mecanismo de moeda.
 
 Em ambos os casos, o jogo apresentaria um erro para que o responsável
 investigasse a situação, evitando que algum espertinho tirasse vantagem
@@ -74,9 +74,8 @@ que não fornecemos suporte para programas que nós não compilamos.
 Compile o seu próprio MAME ou use um dos pacotes oficialmente
 distribuídos por nós.
 
-Você também pode acabar tendo este problema caso você não tenha
-atualizado o conteúdo das pastas hlsl e bgfx com as últimas versões
-oficiais do MAME.
+Este problema também ocorre caso não tenha atualizado o conteúdo das
+pastas hlsl e bgfx com as últimas versões oficiais do MAME.
 
 .. _faster-if-X:
 
@@ -99,8 +98,8 @@ Nenhuma parte do MAME é descartável, independente de qual seja.
 O princípio que o MAME defende que é a preservação e a documentação,
 sejam as máquinas de vídeo poker quanto os arcades, não importa.
 O MAME é um software de código aberto, muitas coisas já foram abordadas
-da melhor maneira possível, caso você seja um programador habilidoso,
-há sempre espaço para melhorias, todas elas são sempre bem vindas.
+da melhor maneira possível, há sempre espaço para melhorias, todas elas
+são sempre bem vindas caso seja um programador habilidoso
 
 
 .. _NeoGeo-broken:
@@ -115,13 +114,13 @@ Neo-Geo com um conjunto **neogeo.zip** desatualizado, isso também afeta
 o conjunto de pacote do jogo **Humble Bundle**.
 
 Os jogos em si estão corretos e atualizados a partir da versão 0.173 do
-MAME (e provavelmente continuará assim) no entanto você mesmo terá que
-atualizar estes arquivos que estão dentro dos pacotes .ZIP.
-No entanto, o conjunto de BIOS do Neo-Geo (**neogeo.zip**) incluído no
-pacote do jogo **Humble Bundle** está incompleto até a versão 0.172 do
-MAME.
+MAME (e provavelmente continuará assim) no entanto uma atualização
+manual destes arquivos que estão dentro dos pacotes .ZIP terá que ser
+feita.
+O conjunto de BIOS do Neo-Geo (**neogeo.zip**) incluído no pacote do
+jogo **Humble Bundle** estava incompleto até a versão 0.172 do MAME.
 
-Sugerimos que você entre em contato com o fornecedor dos seus jogos
+Sugerimos que entre em contato com o fornecedor dos seus jogos
 (**Humble Bundle** e **DotEmu**) e peça para eles atualizarem o jogo
 para a versão mais recente. Se muita gente pedir de forma gentil, pode
 ser que eles atualizem para você.
@@ -162,7 +161,7 @@ Pode ser causado por várias razões:
 	versão posterior que não havia na versão anterior, o que exige a
 	execução de mais códigos dentro do MAME para rodar essa nova ROM.
 
-*	Você pode descobrir que alguns jogos precisam de arquivos CHD.
+*	Alguns jogos precisam de arquivos CHD.
 
 	Um arquivo CHD é uma representação comprimida de uma imagem de um
 	jogo em disco rígido, CD-ROM ou laserdisc, geralmente não é incluído
@@ -198,8 +197,8 @@ Pode ser causado por várias razões:
 	versões posteriores ou atualizações, versões piratas, etc.
 
 	Os jogos "clonados" muitas vezes se sobrepõem algum código da ROM do
-	jogo, como se fosse a versão original. Para verificar se você tem
-	algum tipo de jogo "clonado" digite o comando: ::
+	jogo, como se fosse a versão original. Para verificar se possuí ou
+	não algum tipo de jogo "clonado" digite o comando: ::
 
 		mame.exe -listclones
 
@@ -212,13 +211,13 @@ Pode ser causado por várias razões:
 Como posso ter certeza que tenho as ROMs certas?
 ------------------------------------------------
 
-O MAME verifica se você tem as ROMs corretas antes de iniciar a
-emulação. Caso você vir alguma mensagem de erro, as suas ROMs não são
-aquelas testadas e que funcionam corretamente com o MAME. Você precisará
+O MAME verifica a existência das ROMs corretas antes de iniciar a
+emulação. Caso veja alguma mensagem de erro, as suas ROMs não são
+aquelas testadas e que funcionam corretamente com o MAME. É necessário
 obter as ROMs corretas através de meios legais.
 
-Se você tiver vários jogos e quiser verificar se eles são compatíveis
-com a versão atual do MAME, você poderá usar a opção ``-verifyroms``.
+Caso tenha vários jogos e quiser verificar se eles são compatíveis
+com a versão atual do MAME, será possível usar a opção ``-verifyroms``.
 
 Por Exemplo: ::
 
@@ -271,13 +270,13 @@ Como faço para obter legalmente as ROMs ou as imagens de disco para poder rodar
 
 As principais opções são:
 
-* Você pode obter uma licença para eles, comprando uma através de um
+* É possível obter uma licença para eles, comprando uma através de um
   distribuidor ou fornecedor que tenha a devida autoridade para fazê-lo.
-* Você pode baixar um dos conjuntos de ROMs que foram disponibilizados
+* É possível baixar um dos conjuntos de ROMs que foram disponibilizados
   gratuitamente para o público em geral e para o uso não comercial do
   mesmo.
-* Você pode comprar uma PCB de arcade e extrair as ROMs ou discos você
-  mesmo e usar com o MAME.
+* É possível comprar uma PCB de arcade e extrair as ROMs ou discos você
+  mesmo e usá-las com o MAME.
 
 No mais, você está por sua própria conta e risco.
 
@@ -475,7 +474,7 @@ mais detalhes de outros provedores compatíveis.
 O que aconteceu com o suporte do MAME para placas de som externas com o OPL2 integrado?
 ---------------------------------------------------------------------------------------
 
-O MAME ao invés de emular o **OPL2** [2]_, inicialmente adicionou o
+O MAME em vez de emular o **OPL2** [2]_, inicialmente adicionou o
 suporte para placas de som com o CI **YM3212** da Yamaha em sua versão
 0.23.
 

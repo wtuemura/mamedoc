@@ -93,7 +93,7 @@ O uso das classes
 
 Todas as CPUs são dispositivos de CPU modernos com toda a interação
 normal junto com a infraestrutura do dispositivo. Para incluir uma
-destas CPUs no seu driver, você precisa incluir "**CPU/m6502/<CPU>.h**"
+destas CPUs no seu driver, é necessário incluir "**CPU/m6502/<CPU>.h**"
 e então fazer um **MCFG_CPU_ADD("tag", <CPU>, clock)**.
 
 Os calbacks da porta I/O das variantes do 6510 são configuradas através
@@ -297,8 +297,8 @@ O código gerado
 Um gerador de código é usado para ser compatível com a interrupção
 durante o reinício de uma instrução. Isso é feito por meio de um estado
 de máquina de dois níveis com atualizações apenas nos limites. Para ser
-mais exato, o ``inst_state`` informa qual o estado principal que você
-está. É igual ao byte opcode quando **0-255** e **0xff00** significarem
+mais exato, o ``inst_state`` informa qual o estado principal no momento.
+É igual ao byte opcode quando **0-255** e **0xff00** significarem
 um reset. É sempre válido e usado por instruções como rmb.
 O ``inst_substate`` indica em qual etapa estamos em uma instrução, mas é
 definida somente quando uma instrução tiver sido interrompida.

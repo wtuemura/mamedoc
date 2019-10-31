@@ -11,9 +11,9 @@ Introdução
 Agora é possível controlar o MAME externamente usando scripts LUA [1]_.
 Essa funcionalidade apareceu inicialmente na versão **0.148**, quando o
 ``luaengine`` foi implementado. Hoje em dia, a interface LUA é rica o
-suficiente para deixar você inspecionar e manipular os estados dos
-dispositivos, acesso aos registros do CPU, ler e escrever a memória,
-desenhar um painel customizado na tela.
+suficiente para manipular os estados dos dispositivos, acesso aos
+registros do CPU, ler e escrever a memória, desenhar um painel
+customizado na tela, etc.
 
 Internamente, o MAME faz o uso intensivo de ``luabridge`` para
 implementar esse recurso: a ideia é expor muitos dos recursos internos
@@ -21,8 +21,8 @@ de forma mais transparente possível.
 
 Aqui fica o alerta: A API LUA ainda não é considerada estável havendo a
 possibilidade de ser alterada sem nenhum aviso prévio. No entanto,
-podemos demonstrar metodologias para que você saiba qual a versão do
-API está rodando e quais os objetos são os mais usados durante a
+podemos demonstrar metodologias onde é possível saber qual a versão do
+API está sendo rodada e quais os objetos são os mais usados durante a
 execução.
 
 Características
@@ -45,7 +45,7 @@ Uso
 
 O MAME suporta o carregamento de scripts LUA (>= 5.3), seja ele escrito
 no console interativo ou se for carregado como um arquivo externo. Para
-usar o console, rode o mame usando o comando **-console**, você será
+usar o console, rode o mame usando o comando **-console**, será
 apresentado a um prompt de comando com um ``>``, onde será possível
 redigir o seu script.
 
@@ -54,7 +54,7 @@ predefinição o carregamento do script pode ser atrasado em alguns poucos
 segundos, essa predefinição pode ser substituída com o comando 
 **-autoboot_delay**.
 
-Para controlar a execução do seu código, você pode usar uma abordagem do
+Para controlar a execução do seu código, é possível usar uma abordagem do
 tipo *loop-bases* ou *event-based*. Não encorajamos o uso deste último
 devido ao alto consumo de recursos e faz a continuidade de controle
 desnecessariamente complicada. Em vez disso, sugerimos o registro de
@@ -90,14 +90,12 @@ use o comando abaixo para pausá-lo:
     [MAME]> emu.pause()
     [MAME]>
 
-Mesmo sem qualquer tipo de retorno no console, você deve ter notado que
+Mesmo sem qualquer tipo de retorno no console, é possível notar que
 o jogo parou. Em geral, os comandos não retornam informação de
 confirmação o terminal retorna mensagens de erro apenas.
 
-Você pode verificar durante a execução, qual a versão do MAME que
-você está rodando com o comando abaixo:
-
-::
+Durante a execução é possível verificar qual a versão do MAME sendo
+rodada no momento com o comando abaixo: ::
 
     [MAME]> print(emu.app_name() .. " " .. emu.app_version())
     mame 0.210
@@ -147,7 +145,7 @@ isso, registre o gancho a ser chamado em cada quadro desenhado:
 Todas as cores são no formato ARGB (32b unsigned), enquanto a origem da
 tela geralmente corresponde ao canto superior esquerdo da tela (0,0).
 
-Da mesma forma para telas, você pode inspecionar todos os dispositivos
+Da mesma forma para telas, é possível inspecionar todos os dispositivos
 conectados em uma máquina:
 
 ::
@@ -160,7 +158,7 @@ conectados em uma máquina:
     :palette
     [...]
 
-Em alguns casos, você também pode inspecionar e manipular a memória
+Em alguns casos, também é possível inspecionar e manipular a memória
 e o estado:
 
 ::

@@ -248,7 +248,7 @@ seja necessário e transferido de acordo. A transferência para a esquerda
 é definida como uma transferência feita para o bit mais importante.
 Caso ambos os parâmetros ``lshift`` e ``rshift`` sejam fornecidos, estes
 serão compensados antes dos valores serem aplicados. Isto significa que
-você não pode, por exemplo, usar atributos iguais tanto para
+não é possível, por exemplo, usar atributos iguais tanto para
 `` lshift`` como para ``rshift`` visando limpar os bits em um valor de
 parâmetro extremo após a primeira interação.
 
@@ -1023,7 +1023,7 @@ Grupos reutilizáveis
 
 Os grupos permitem que um arranjo de telas ou de elementos de layout
 sejam usados várias vezes em uma exibição ou outros grupos. Os grupos
-podem ser de grande ajuda mesmo que você use o arranjo apenas uma vez,
+podem ser de grande ajuda mesmo que seja usado o arranjo apenas uma vez,
 pois eles podem ser usados para agregar parte de um layout complexo.
 Os grupos são definidos usando elementos ``group`` dentro de elementos
 ``mamelayout`` de primeiro nível e representados ao usar elementos

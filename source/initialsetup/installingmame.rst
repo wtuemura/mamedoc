@@ -21,11 +21,11 @@ O processo de instalação termina aqui, fácil não?
 Outros sistemas operacionais
 ----------------------------
 
-Neste caso você pode procurar por uma versão pré compilada do executável
+Neste caso procure por uma versão pré compilada do executável
 do (SDL) MAME que pode ser encontrado em alguns repositórios da
 distribuição Linux da sua preferência. Ou então, compile o MAME você
 mesmo, baixando e descompactando o arquivo do código fonte em alguma
 pasta de sua preferência.
 
-Caso você escolha a opção de compilar você mesmo o MAME, consulte a
-seção :ref:`compiling-mame` para mais detalhes.
+Caso queira compilar o MAME você mesmo, consulte a seção
+:ref:`compiling-mame` para mais detalhes.

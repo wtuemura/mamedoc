@@ -33,8 +33,8 @@ arquivo de configuração **ctrl**.
 
 O atributo ``device`` define o ID do dispositivo a ser mapeado. Também
 pode ser uma subcategoria de caracteres deste ID. No MAME use o modo
-loquaz através da opção ``-verbose`` para que você possa ver os
-dispositivos disponíveis durante a inicialização (mais detalhes logo
+loquaz através da opção ``-verbose`` para ver os dispositivos
+disponíveis durante a inicialização (mais detalhes logo
 abaixo).
 
 No MAME o atributo ``controller`` define o ID do controlador que é
@@ -108,7 +108,8 @@ Aqui um exemplo: ::
 		Input: Adding Joy #3: XInput Player 2 (device id: XInput Player 2) < aqui!
 
 Além disso, quando os dispositivos são definidos usando o ``mapdevice``,
-você os verá também no modo :ref:`loquaz <mame-commandline-verbose>`: ::
+é possível vê-los também no modo
+:ref:`loquaz <mame-commandline-verbose>`: ::
 
 		Input: Remapped Gun #0: HID-compliant mouse (device id: \\?\HID#VID_D209&PID_1601&MI_02#9&375eebb1&0&0000#{378de44c-56ef-11d1-bc8c-00a0c91405dd})
 		Input: Remapped Gun #1: HID-compliant mouse (device id: \\?\HID#VID_D209&PID_1602&MI_02#8&389ab7f3&0&0000#{378de44c-56ef-11d1-bc8c-00a0c91405dd})

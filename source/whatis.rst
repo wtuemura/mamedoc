@@ -19,8 +19,8 @@ esquecido e se perca ao longo tempo. Isso se torna possível usando o
 próprio código fonte do MAME para documentar o funcionamento do
 hardware original. Com a evolução do desenvolvimento do MAME,
 programas e jogos que foram originalmente desenvolvidos para rodarem
-apenas no seu hardware original, agora através da emulação permite que
-você os rode novamente usando um PC moderno, sendo referência ao
+apenas no seu hardware original, agora através da emulação é possível
+rodá-los novamente usando um PC moderno, sendo referência ao
 funcionamento interno das máquinas emuladas e um efeito colateral bem
 vindo, este porém não é o foco principal do projeto.
 
