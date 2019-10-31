@@ -173,6 +173,10 @@ Opções de ajuda e verificação
 	``-verifysoftlist``. As listas estão na pasta *hash* e devem ser
 	informadas sem a extensão ``.xml``.
 
+.. raw:: latex
+
+	\clearpage
+
 Opções de configuração
 ----------------------
 
