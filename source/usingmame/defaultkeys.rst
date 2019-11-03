@@ -112,6 +112,25 @@ Tecla             | Ação
 **Escape**        | Sai do emulador.
 ================  ===============================================================================
 
+Comparativo entre mapas de teclado
+==================================
+
+QWERTY US (104 Teclas)
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: images/QWERTY_US(104).svg
+    :width: 100%
+    :align: center
+    :alt: QWERTY US (104)
+
+QWERTY ABNT-2 (107 Teclas)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: images/QWERTY_pt_BR-ABNT2(107).svg
+    :width: 100%
+    :align: center
+    :alt: QWERTY ABNT-2 (107)
+
 .. [1] Nem todos os jogos possuem gráficos tilemap decodificados.
 .. [2] **tilemaps** são como pequenos recortes ou pedaços usados para montar uma imagem do jogo.
 

@@ -1,0 +1,1281 @@
+<svg width="799" height="385" fill-rule="evenodd" version="1.1" viewBox="0 0 800 384" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><title>Teclado QWERTY ABNT-2, 107 teclas pt_BR</title><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title>Teclado QWERTY ABNT-2, 107 teclas pt_BR</dc:title><dc:creator><cc:Agent><dc:title>Wellington T. Uemura</dc:title></cc:Agent></dc:creator><dc:subject><rdf:Bag/></dc:subject><dc:language>Brazilian Portuguese</dc:language><dc:source>https://commons.wikimedia.org/wiki/File:ISO_keyboard_(105)_QWERTY_UK.svg</dc:source><dc:date>03/11/2019</dc:date><dc:rights><cc:Agent><dc:title>CC BY-SA 4.0</dc:title></cc:Agent></dc:rights><cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"/><dc:description>Segunda Revisão</dc:description></cc:Work><cc:License rdf:about="http://creativecommons.org/licenses/by-sa/4.0/"><cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/><cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/><cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/><cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/><cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/><cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/></cc:License></rdf:RDF></metadata><defs><style type="text/css"/><marker id="TriangleOutMu" overflow="visible" orient="auto"><path transform="scale(.4)" d="m5.77 0-8.65 5v-10l8.65 5z" fill="#2b2828" fill-rule="evenodd" stroke="#2b2828" stroke-width="1pt"/></marker><marker id="TriangleOutMY" overflow="visible" orient="auto"><path transform="scale(.4)" d="m5.77 0-8.65 5v-10l8.65 5z" fill="#2b2828" fill-rule="evenodd" stroke="#2b2828" stroke-width="1pt"/></marker><marker id="TriangleOutM1" overflow="visible" orient="auto"><path transform="scale(.4)" d="m5.77 0-8.65 5v-10l8.65 5z" fill="#2b2828" fill-rule="evenodd" stroke="#2b2828" stroke-width="1pt"/></marker><marker id="TriangleOutMF" overflow="visible" orient="auto"><path transform="scale(.4)" d="m5.77 0-8.65 5v-10l8.65 5z" fill="#2b2828" fill-rule="evenodd" stroke="#2b2828" stroke-width="1pt"/></marker>
+
+</defs><path d="m45.996 20.23h713.94c12.731 0 22.525 9 22.525 22v192c0 12-9.7934 23-22.525 23h-713.94c-13.711 0-24.484-11-24.484-23v-192c0-13 10.773-22 24.484-22z" fill="#f5f6f7" fill-rule="evenodd" stroke-width="0"/><g display="none"><text x="375.12885" y="163.67149" fill="#000000" font-family="sans-serif" font-size="27.584px" letter-spacing="0px" stroke-width=".68959" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="375.12885" y="163.67149" font-family="Arial" font-size="18.389px" stroke-width=".68959" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">ç</tspan></text>
+
+
+
+
+
+
+
+</g><g fill="#9fcfe0" stroke-width="0"><path d="m53.644 91.995h20c1 0 3 1 3 3v17c0 2-2 3-3 3h-20c-2 0-3-1-3-3v-17c0-2 1-3 3-3z"/><path d="m83.644 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-2 0-3-1-3-3v-17c0-2 1-3 3-3z"/><path d="m112.64 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-1 0-2-1-2-3v-17c0-2 1-3 2-3z"/><path d="m142.64 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-2 0-3-1-3-3v-17c0-2 1-3 3-3z"/><path d="m172.64 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-17c0-2 2-3 3-3z"/><path d="m202.64 91.995h19c2 0 3 1 3 3v17c0 2-1 3-3 3h-19c-1 0-3-1-3-3v-17c0-2 2-3 3-3z"/><path d="m231.64 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-17c0-2 2-3 3-3z"/><path d="m261.64 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-17c0-2 2-3 3-3z"/><path d="m291.64 91.995h19c2 0 3 1 3 3v17c0 2-1 3-3 3h-19c-1 0-3-1-3-3v-17c0-2 2-3 3-3z"/><path d="m320.64 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-17c0-2 2-3 3-3z"/><path d="m350.64 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-17c0-2 2-3 3-3z"/><path d="m380.64 91.995h20c1 0 2 1 2 3v17c0 2-1 3-2 3h-20c-1 0-3-1-3-3v-17c0-2 2-3 3-3z"/><path d="m409.64 91.995h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-1 0-2-1-2-3v-17c0-2 1-3 2-3z"/></g><path d="m442.03 91.995h44.011c4.4011 0 6.6016 1 6.6016 3v17c0 2-2.2006 3-6.6016 3h-44.011c-2.2005 0-4.4011-1-4.4011-3v-17c0-2 2.2006-3 4.4011-3z" fill="#f1ef9e" stroke-width="0"/><g fill="#9fcfe0" stroke-width="0"><path d="m101.64 119h19c2 0 3 1 3 3v18c0 1-1 3-3 3h-19c-1 0-3-2-3-3v-18c0-2 2-3 3-3z"/><path d="m130.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-3-2-3-3v-18c0-2 2-3 3-3z"/><path d="m160.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-3-2-3-3v-18c0-2 2-3 3-3z"/><path d="m190.64 119h19c2 0 3 1 3 3v18c0 1-1 3-3 3h-19c-1 0-3-2-3-3v-18c0-2 2-3 3-3z"/><path d="m219.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m249.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m279.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m308.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m338.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m368.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m398.64 119h19c2 0 3 1 3 3v18c0 1-1 3-3 3h-19c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m427.64 119h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m109.64 147h19c1 0 3 1 3 2v19c0 1-2 2-3 2h-19c-2 0-3-1-3-2v-19c0-1 1-2 3-2z"/><path d="m138.4 147h20c1 0 3 1 3 2v19c0 1-2 2-3 2h-20c-2 0-3-1-3-2v-19c0-1 1-2 3-2z"/><path d="m168.28 147h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-2 0-3-1-3-2v-19c0-1 1-2 3-2z"/><path d="m198.64 147h19c2 0 3 1 3 2v19c0 1-1 2-3 2h-19c-2 0-3-1-3-2v-19c0-1 1-2 3-2z"/><path d="m227.64 147h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-2 0-3-1-3-2v-19c0-1 1-2 3-2z"/><path d="m257.64 147h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-19c0-1 2-2 3-2z"/><path d="m287.64 147h19c2 0 3 1 3 2v19c0 1-1 2-3 2h-19c-1 0-3-1-3-2v-19c0-1 2-2 3-2z"/><path d="m316.64 147h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-19c0-1 2-2 3-2z"/><path d="m346.64 147h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-19c0-1 2-2 3-2z"/><path d="m376.64 147h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-19c0-1 2-2 3-2z"/><path d="m406.85 147h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-19c0-1 2-2 3-2z"/><path d="m119.64 174h21c1 0 2 2 2 3v17c0 2-1 3-2 3h-21c-1 0-2-1-2-3v-17c0-1 1-3 2-3z"/><path d="m149.64 174h21c1 0 2 2 2 3v17c0 2-1 3-2 3h-21c-1 0-2-1-2-3v-17c0-1 1-3 2-3z"/><path d="m179.64 174h21c1 0 2 2 2 3v17c0 2-1 3-2 3h-21c-1 0-2-1-2-3v-17c0-1 1-3 2-3z"/><path d="m239.64 174h20c1 0 2 2 2 3v17c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-17c0-1 1-3 3-3z"/><path d="m269.64 174h20c1 0 2 2 2 3v17c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-17c0-1 1-3 3-3z"/><path d="m299.64 174h19c1 0 2 2 2 3v17c0 2-1 3-2 3h-19c-2 0-3-1-3-3v-17c0-1 1-3 3-3z"/><path d="m328.64 174h20c1 0 2 2 2 3v17c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-17c0-1 1-3 3-3z"/><path d="m358.64 174h20c1 0 2 2 2 3v17c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-17c0-1 1-3 3-3z"/><path d="m417.58 174h19c1 0 2 2 2 3v17c0 2-1 3-2 3h-19c-2 0-3-1-3-3v-17c0-1 1-3 3-3z"/></g><path d="m53.644 46.99h20c1 0 3 1 3 3v18c0 1-2 3-3 3h-20c-2 0-3-2-3-3v-18c0-2 1-3 3-3z" fill="#f2c480" stroke-width="0"/><g fill="#ffc1ea" stroke-width="0"><path d="m112.64 46.99h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-2-2-2-3v-18c0-2 1-3 2-3z"/><path d="m142.64 46.99h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-2 0-3-2-3-3v-18c0-2 1-3 3-3z"/><path d="m172.64 46.99h20c2 0 3 1 3 3v18c0 1-1 3-3 3h-20c-1 0-3-2-3-3v-18c0-2 2-3 3-3z"/><path d="m202.64 46.99h19c2 0 3 1 3 3v18c0 1-1 3-3 3h-19c-1 0-3-2-3-3v-18c0-2 2-3 3-3z"/><path d="m246.64 45.99h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/><path d="m276.64 45.99h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/><path d="m305.64 45.99h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-1 0-2-1-2-3v-18c0-1 1-3 2-3z"/><path d="m335.64 45.99h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/><path d="m379.64 45.99h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/><path d="m408.64 45.99h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/><path d="m438.64 45.99h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/><path d="m468.64 45.99h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/></g><g stroke-width="0"><path d="m527.64 91.995h20c1 0 2 1 2 2v18c0 1-1 2-2 2h-20c-2 0-3-1-3-2v-18c0-1 1-2 3-2z" fill="#f1ef9e"/><path d="m557.64 91.995h20c1 0 2 1 2 2v18c0 1-1 2-2 2h-20c-2 0-3-1-3-2v-18c0-1 1-2 3-2z" fill="#a8d1b1"/><path d="m587.64 91.995h19c1 0 2 1 2 2v18c0 1-1 2-2 2h-19c-2 0-3-1-3-2v-18c0-1 1-2 3-2z" fill="#a8d1b1"/><path d="m525.64 45.99h20c2 0 3 2 3 3v18c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-18c0-1 2-3 3-3z" fill="#f2c480"/><path d="m555.64 45.99h20c2 0 3 2 3 3v18c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-18c0-1 2-3 3-3z" fill="#cf98cf"/><path d="m585.64 45.99h19c2 0 3 2 3 3v18c0 2-1 3-3 3h-19c-1 0-3-1-3-3v-18c0-1 2-3 3-3z" fill="#f2c480"/><path d="m527.64 120h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z" fill="#f1ef9e"/></g><g fill="#a8d1b1" stroke-width="0"><path d="m557.64 120h20c1 0 2 2 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/><path d="m587.64 120h19c1 0 2 2 2 3v18c0 2-1 3-2 3h-19c-2 0-3-1-3-3v-18c0-1 1-3 3-3z"/><path d="m527.64 201h20c1 0 2 1 2 2v19c0 1-1 2-2 2h-20c-2 0-3-1-3-2v-19c0-1 1-2 3-2z"/><path d="m557.64 201h20c1 0 2 1 2 2v19c0 1-1 2-2 2h-20c-2 0-3-1-3-2v-19c0-1 1-2 3-2z"/><path d="m587.64 201h19c1 0 2 1 2 2v19c0 1-1 2-2 2h-19c-2 0-3-1-3-2v-19c0-1 1-2 3-2z"/><path d="m557.64 173.8h20c1 0 2 1 2 3v17c0 1-1 3-2 3h-20c-2 0-3-2-3-3v-17c0-2 1-3 3-3z"/></g><path d="m644.64 91.995h20c2 0 3 1 3 2v18c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-18c0-1 2-2 3-2z" fill="#cf98cf" stroke-width="0"/><g fill="#b0bde0" stroke-width="0"><path d="m674.64 91.995h19c2 0 3 1 3 2v18c0 1-1 2-3 2h-19c-1 0-3-1-3-2v-18c0-1 2-2 3-2z"/><path d="m703.64 91.995h20c2 0 3 1 3 2v18c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-18c0-1 2-2 3-2z"/><path d="m644.64 120h20c2 0 3 2 3 3v18c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-18c0-1 2-3 3-3z"/><path d="m674.64 120h19c2 0 3 2 3 3v18c0 2-1 3-3 3h-19c-1 0-3-1-3-3v-18c0-1 2-3 3-3z"/><path d="m703.64 120h20c2 0 3 2 3 3v18c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-18c0-1 2-3 3-3z"/><path d="m644.64 148h20c2 0 3 1 3 3v18c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-18c0-2 2-3 3-3z"/><path d="m674.64 148h19c2 0 3 1 3 3v18c0 2-1 3-3 3h-19c-1 0-3-1-3-3v-18c0-2 2-3 3-3z"/><path d="m703.64 148h20c2 0 3 1 3 3v18c0 2-1 3-3 3h-20c-1 0-3-1-3-3v-18c0-2 2-3 3-3z"/><path d="m644.64 176h20c2 0 3 1 3 3v17c0 1-1 3-3 3h-20c-1 0-3-2-3-3v-17c0-2 2-3 3-3z"/><path d="m674.64 176h19c2 0 3 1 3 3v17c0 1-1 3-3 3h-19c-1 0-3-2-3-3v-17c0-2 2-3 3-3z"/><path d="m703.64 176h20c2 0 3 1 3 3v17c0 1-1 3-3 3h-20c-1 0-3-2-3-3v-17c0-2 2-3 3-3z"/><path d="m703.64 203.01h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-19c0-1 2-2 3-2z"/><path d="m733.64 91.995h20c2 0 3 1 3 2v18c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-18c0-1 2-2 3-2z"/></g><g stroke-width="0"><path d="m168.64 201h-11c-2 0-3 1-3 3v18c0 2 1 3 3 3h197s1-1 1-3v-18c0-2-1-3-1-3h-18z" fill="#9fcfe0"/><path d="m397.64 201h19c1 0 2 1 2 3v18c0 2-1 3-2 3h-19c-2 0-3-1-3-3v-18c0-2 1-3 3-3z" fill="#ffc1ea"/><path d="m426.64 201h20c1 0 2 1 2 3v18c0 2-1 3-2 3h-20c-2 0-3-1-3-3v-18c0-2 1-3 3-3z" fill="#f2c480"/><path d="m756.64 179.13c0-2.0835-1-3.1253-3-3.1253h-20c-1 0-3 1.0418-3 3.1253v44.795c0 1.0418 2 2.0835 3 2.0835h20c2 0 3-1.0418 3-2.0835z" fill="#f1ef9e"/><path d="m208.64 174h21c1 0 2 2 2 3v17c0 2-1 3-2 3h-21s-1-1-1-3v-17c0-1 1-3 1-3z" fill="#9fcfe0"/><path d="m53.644 143c-2 0-3-2-3-3v-18c0-2 1-3 3-3h38c2 0 3 1 3 3v18c0 1-1 3-3 3z" fill="#a8d1b1"/><path d="m53.644 170c-1 0-3-1-3-2v-19c0-1 2-2 3-2h45c2 0 4 1 4 2v19c0 1-2 2-4 2z" fill="#cf98cf"/></g><g transform="matrix(.77456 0 0 .77345 -203.73 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">Q</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -176.02 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">W</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -143.36 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">E</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -114.65 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">R</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -83.973 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">T</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -54.281 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">Y</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -24.589 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">U</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 8.0723 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">I</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 33.805 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">O</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 64.487 -12.32)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">P</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -105.75 15.379)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">F</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -77.044 15.379)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">G</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -47.353 15.379)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">H</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -15.681 15.379)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">J</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 12.031 15.379)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">K</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 42.713 15.379)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">L</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -183.94 42.089)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">Z</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -154.24 42.089)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">X</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -124.55 42.089)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">C</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -94.86 42.089)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">V</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -65.168 42.089)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">B</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -35.476 42.089)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">N</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -6.7736 42.089)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">M</text>
+
+
+
+
+
+
+
+</g><g fill="none" stroke-width="0"><path d="m567.64 188v-10"/><path d="m567.64 207v11"/><path d="m591.64 212h10"/><path d="m542.64 212h-11"/></g><g transform="matrix(.77456 0 0 .77345 337.65 -46.937)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Num</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 337.65 -39.03)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Lock</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 333.69 -19.212)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">7</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 333.69 7.4982)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">4</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 333.69 35.197)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">1</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.0675 0 0 1.066 255.35 -97.1)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">/</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 364.37 -19.212)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">8</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 364.37 7.4982)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">5</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 364.37 35.197)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">2</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.8183 0 0 1.8157 -17.878 -236.71)"><text x="400" y="194" fill="#2b2828" font-family="Arial" font-size="12px">*</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 393.08 -19.212)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">9</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 393.08 7.4982)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">6</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 393.08 35.197)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">3</text>
+
+
+
+
+
+
+
+</g><path d="m644.64 226.01c-1 0-3-1-3-2v-19c0-1 2-2 3-2h49c2 0 3 1 3 2v19c0 1-1 2-3 2z" fill="#b0bde0" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 356.77 64.898)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">0</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(2.2895 0 0 1.6633 -176.73 -211.19)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">-</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 246.6 -91.463)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Scroll</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 246.6 -83.556)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Lock</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 215.91 -96.404)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Print</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 215.91 -88.498)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Scrn</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 215.91 -80.591)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">SysRq</text>
+
+
+
+
+
+
+
+</g><path d="m522.64 61.99h26" fill="none" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 275.3 -95.416)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Pause</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 276.29 -81.579)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Break</text>
+
+
+
+
+
+
+
+</g><path d="m582.64 60.99h25" fill="none" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 -191.85 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F1</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -163.15 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F2</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -133.46 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F3</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -103.77 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F4</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -59.229 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F5</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -29.537 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F6</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 .15455 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F7</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 29.846 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F8</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 73.394 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F9</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 100.12 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F10</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 130.8 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F11</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 159.5 -86.521)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="13px">F12</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -252.23 -87.509)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Esc</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 247.59 -42.983)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Home</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 251.54 -13.282)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">End</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 278.27 -17.235)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Page</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 278.27 -9.3289)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Down</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 279.26 -47.925)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Page</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 279.26 -40.018)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Up</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 218.88 -42.983)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Insert</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 217.89 -13.282)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Delete</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 425.74 59.982)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Enter</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -226.49 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">1</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -195.49 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">2</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -166.4 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">3</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -135.9 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">4</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -106.22 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">5</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -77.433 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">6</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -47.541 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">7</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -17.538 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">8</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 11.553 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">9</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 41.635 -37.08)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">0</text>
+
+
+
+
+
+
+
+</g><g stroke-width="0"><path d="m485.64 102h-11" fill="none"/><path d="m444.93 196.9c-0.62679 0-1.2536-1-1.2536-3v-17c0-1 0.6268-3 1.2536-3h45.756c1.2536 0 1.8804 2 1.8804 3v17c0 2-0.6268 3-1.8804 3z" fill="#ffb9af"/><path d="m473.64 127v11h-10" fill="none"/></g><g stroke-width="0"><path d="m456.64 201h33c2 0 3 1 3 3v18c0 2-1 3-3 3h-33c-2 0-3-1-3-3v-18c0-2 1-3 3-3z" fill="#ffb9af"/><path d="m53.644 201h30c1 0 2 1 2 3v18c0 2-1 3-2 3h-30c-2 0-3-1-3-3v-18c0-2 1-3 3-3z" fill="#ffb9af"/><path d="m93.644 201h19c2 0 3 1 3 3v18c0 1-1 3-3 3h-19c-1 0-3-2-3-3v-18c0-2 2-3 3-3z" fill="#f2c480"/><path d="m122.64 201h25c1 0 2 1 2 3v18c0 1-1 3-2 3h-25c-1 0-2-2-2-3v-18c0-2 1-3 2-3z" fill="#ffb9af"/></g><g transform="matrix(.77456 0 0 .77345 157.52 67.811)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Ctrl</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -246.29 67.811)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Ctrl</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -178.99 66.823)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Alt</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 11.353 -49.902)"><text x="400" y="194" fill="#2b2828" font-family="Arial" font-size="12px">(</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 41.434 -49.902)"><text x="400" y="194" fill="#2b2828" font-family="Arial" font-size="12px">)</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -17.449 -49.902)"><text x="400" y="194" fill="#2b2828" font-family="Arial" font-size="12px">*</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -47.53 -48.913)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">&amp;</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.91754 0 0 .91622 40.134 -15.377)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">^</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -106.41 -48.913)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">%</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -136.1 -48.913)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">$</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -166.1 -48.913)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">#</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.60226 0 0 .60139 -126.63 -17.384)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">@</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -226.29 -48.913)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">!</text>
+
+
+
+
+
+
+
+</g><path d="m60.644 179-4 4h2v8h5v-8h2z" fill="none" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 151.19 40.113)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Shift</text>
+
+
+
+
+
+
+
+</g><path d="m423.64 179-4 4h2v8h4v-8h2z" fill="none" stroke-width="0"/><g transform="matrix(1.3643 0 0 1.3624 -147.27 -124.82)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">`</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 97.174 17.584)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">~</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -256.19 -20.226)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Tab</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -241.34 8.4609)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Caps</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -241.34 16.367)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Lock</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 71.638 -35.077)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">-</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 72.139 -49.902)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">_</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.1309 0 0 1.1293 -41.452 -102.53)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">=</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.1311 0 0 1.1294 -41.529 -115.74)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">+</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 119.73 -9.4297)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">[</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 119.3 -21.053)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">{</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -255.6 -35.178)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">'</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 -255.61 -44.642)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">"</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.0388 0 0 .83846 4.2858 32.536)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">/</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.91498 0 0 .91367 51.947 9.6859)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">?</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.1084 0 0 1.1068 -84.491 -27.443)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">&gt;</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.0437 0 0 1.0422 -88.053 -15.5)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">&lt;</text>
+
+
+
+
+
+
+
+</g><g fill="none" stroke-width="0"><path d="m708.64 160h10"/><path d="m684.64 137v-10"/><path d="m659.64 160h-10"/><path d="m684.64 180v10"/></g><g transform="matrix(.77456 0 0 .77345 333.69 49.059)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">End</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 333.69 -6.3641)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Home</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 393.08 -6.3641)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">PgUp</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 394.07 49.059)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">PgDn</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 398.56 74.755)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Del</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 354.48 74.755)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Ins</text>
+
+
+
+
+
+
+
+</g><path d="m648.64 62.99h7v-3h-7z" fill="#2b2828"/><path d="m648.64 62.99h7v-3h-7z" fill="none" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 347.55 -88.498)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="8px">Num</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 347.55 -81.579)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="8px">Lock</text>
+
+
+
+
+
+
+
+</g><path d="m689.64 62.99h7v-3h-7z" fill="#2b2828"/><path d="m689.64 62.99h7v-3h-7z" fill="none" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 389.12 -88.498)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="8px">Caps</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 389.12 -81.579)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="8px">Lock</text>
+
+
+
+
+
+
+
+</g><path d="m730.64 62.99h7v-3h-7z" fill="#2b2828"/><path d="m730.64 62.99h7v-3h-7z" fill="none" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 429.7 -88.498)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="8px">Scroll</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 429.7 -81.579)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="8px">Lock</text>
+
+
+
+
+
+
+
+</g><path d="m362.64 201h24c1 0 2 1 2 3v18c0 1-1 3-2 3h-24c-1 0-2-2-2-3v-18c0-2 1-3 2-3z" fill="#ffb9af" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 56.341 66.823)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Alt Gr</text>
+
+
+
+
+
+
+
+</g><g transform="translate(6.644 -2.0025)" fill="#2b2828" stroke="#2b2828"><path d="m82.103 127.42h-10.013" marker-end="url(#TriangleOutMu)" stroke-width="1.0003"/><path d="m69.086 125.42v4.005" stroke-width="1.0003"/></g><g transform="translate(6.644 -2.0025)" fill="#2b2828" fill-rule="evenodd" stroke="#2b2828" stroke-width="1.0003"><path d="m69.086 135.43h10.013" marker-end="url(#TriangleOutMY)"/><path d="m82.103 133.43v4.005"/></g><g fill="none" stroke="#2b2828" stroke-width="1.0013px"><path d="m567.34 206.58v10.013" marker-end="url(#TriangleOutM1)"/><path d="m542.31 213.53h-10.013" marker-end="url(#TriangleOutM1)"/><path d="m592.38 213.53h10.013" marker-end="url(#TriangleOutM1)"/><path d="m567.34 191.3v-10.013" marker-end="url(#TriangleOutM1)"/><path d="m687.5 139.43v-10.013" marker-end="url(#TriangleOutM1)"/><path d="m687.5 181.49v10.013" marker-end="url(#TriangleOutM1)"/><path d="m707.52 161.46h10.013" marker-end="url(#TriangleOutM1)"/><path d="m662.46 161.46h-10.013" marker-end="url(#TriangleOutM1)"/><path d="m474.07 102.84h-15.019" marker-end="url(#TriangleOutM1)"/></g><g transform="translate(9.0131 9.1734)" fill-rule="evenodd"><g transform="matrix(.77456 0 0 .77345 62.702 5.941)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="18px">C</text>
+
+
+
+
+
+
+
+</g><text x="372.80667" y="154.52354" fill="#000000" font-family="sans-serif" font-size="19.839px" letter-spacing="0px" stroke-width=".49598" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="372.80667" y="154.52354" stroke-width=".49598">¸</tspan></text>
+
+
+
+
+
+
+
+</g><g fill="#000000" fill-rule="evenodd" font-family="sans-serif" font-size="20.876px" letter-spacing="0px" stroke-width=".5219" word-spacing="0px"><text x="114.50256" y="163.82106" style="line-height:1.25" xml:space="preserve"><tspan x="114.50256" y="163.82106" font-family="Arial" font-size="13.917px" stroke-width=".5219" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">A</tspan></text>
+
+
+
+
+
+
+
+<text x="143.80794" y="163.82106" style="line-height:1.25" xml:space="preserve"><tspan x="143.80794" y="163.82106" font-family="Arial" font-size="13.917px" stroke-width=".5219" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">S</tspan></text>
+
+
+
+
+
+
+
+<text x="173.08347" y="163.82106" style="line-height:1.25" xml:space="preserve"><tspan x="173.08347" y="163.82106" font-family="Arial" font-size="13.917px" stroke-width=".5219" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">D</tspan></text>
+
+
+
+
+
+
+
+</g><path d="m436.6 146.93h20c2 0 3 1 3 2v19c0 1-1 2-3 2h-20c-1 0-3-1-3-2v-19c0-1 2-2 3-2z" fill="#9fcfe0" fill-rule="evenodd" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 127.31 18.077)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">]</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(.77456 0 0 .77345 127.3 6.471)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">}</text>
+
+
+
+
+
+
+
+</g><path d="m461.36 142.94h-4.7339c-1.2637 0-1.8955-1.0409-1.8955-2.0818v-19.777c0-1.0409 0.63185-2.0818 1.8955-2.0818h34.12c1.2637 0 1.8955 1.0409 1.8955 2.0818v45.8c0 2.0818-0.63185 3.1227-1.8955 3.1227h-25.595c-1.2637 0-1.8956-1.0409-1.8956-3.1227v-20.818c0-2.0818 0-3.1227-1.8955-3.1227z" fill="#f1ef9e" fill-rule="evenodd" stroke-width="0"/><path d="m487.31 130.42v8.6223h-17.245" fill="none" marker-end="url(#TriangleOutMF)" stroke="#2b2828" stroke-width=".86223px"/><g fill="#000000" fill-rule="evenodd" letter-spacing="0px" word-spacing="0px"><text x="442.64182" y="142.12047" font-family="sans-serif" font-size="16.827px" stroke-width=".42068" style="line-height:1.25" xml:space="preserve"><tspan x="442.64182" y="142.12047" font-family="sans-serif" font-size="11.218px" stroke-width=".42068" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">ª</tspan></text>
+
+
+
+
+
+
+
+<text x="451.0943" y="169.02606" font-family="sans-serif" font-size="16.827px" stroke-width=".42068" style="line-height:1.25" xml:space="preserve"><tspan x="451.0943" y="169.02606" font-family="sans-serif" font-size="11.218px" stroke-width=".42068" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">º</tspan></text>
+
+
+
+
+
+
+
+<text x="461.78912" y="133.35468" font-family="Arial" font-size="40.05px" stroke-width="1.0013" style="line-height:1.25" xml:space="preserve"><tspan x="461.78912" y="133.35468" font-family="Arial" font-size="8.01px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Enter</tspan></text><g font-family="sans-serif">
+
+
+
+
+
+
+
+<text x="231.26402" y="109.28158" font-size="40.05px" stroke-width="1.0013" style="line-height:1.25" xml:space="preserve"><tspan x="231.26402" y="109.28158" font-size="14.685px" stroke-width="1.0013">¨</tspan></text>
+
+
+
+
+
+
+
+<text x="244.01912" y="112.36185" font-size="36.072px" stroke-width=".90181" style="line-height:1.25" xml:space="preserve"><tspan x="244.01912" y="112.36185" font-family="Arial" font-size="13.227px" stroke-width=".90181">¬</tspan></text><g font-size="40.05px" stroke-width="1.0013">
+
+
+
+
+
+
+
+<text x="216.70567" y="112.28972" style="line-height:1.25" xml:space="preserve"><tspan x="216.70567" y="112.28972" font-family="sans-serif" font-size="8.01px" stroke-width="1.0013">¢</tspan></text>
+
+
+
+
+
+
+
+<text x="187.56921" y="113.49087" style="line-height:1.25" xml:space="preserve"><tspan x="187.56921" y="113.49087" font-family="sans-serif" font-size="8.01px" stroke-width="1.0013">£</tspan></text>
+
+
+
+
+
+
+
+<text x="159.03365" y="116.09391" style="line-height:1.25" xml:space="preserve"><tspan x="159.03365" y="116.09391" font-family="sans-serif" font-size="8.01px" stroke-width="1.0013">³</tspan></text>
+
+
+
+
+
+
+
+<text x="129.09584" y="116.0935" style="line-height:1.25" xml:space="preserve"><tspan x="129.09584" y="116.0935" font-family="sans-serif" font-size="8.01px" stroke-width="1.0013">²</tspan></text>
+
+
+
+
+
+
+
+<text x="99.959457" y="116.0935" style="line-height:1.25" xml:space="preserve"><tspan x="99.959457" y="116.0935" font-family="sans-serif" font-size="8.01px" stroke-width="1.0013">¹</tspan></text>
+
+
+
+
+
+
+
+<text x="424.56595" y="111.28853" style="line-height:1.25" xml:space="preserve"><tspan x="424.56595" y="111.28853" font-family="Arial" font-size="8.01px" stroke-width="1.0013">§</tspan></text>
+
+
+
+
+
+
+
+</g></g></g><g fill-rule="evenodd"><path d="m90.506 173.94h20c2 0 3 1 3 3v17c0 2-1 3-3 3h-20c-1 0-2-1-2-3v-17c0-2 1-3 2-3z" fill="#9fcfe0" stroke-width="0"/><path d="m52.313 197c-0.54061 0-1.6218-1-1.6218-3v-17c0-1 1.0812-3 1.6218-3h30.815c0.54061 0 1.0812 2 1.0812 3v17c0 2-0.54061 3-1.0812 3h-30.815z" fill="#ffb9af" stroke-width="0"/><g transform="matrix(.77456 0 0 .77345 -249.48 39.492)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="9px">Shift</text>
+
+
+
+
+
+
+
+</g></g><g fill-rule="evenodd">
+
+<text x="91.605171" y="194.18254" fill="#000000" font-family="sans-serif" font-size="40.05px" letter-spacing="0px" stroke-width="1.0013" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="91.605171" y="194.18254" font-size="10.68px" stroke-width="1.0013">\</tspan></text>
+
+
+
+
+
+
+<path d="m388.72 173.96h19c1 0 2 2 2 3v17c0 2-1 3-2 3h-19c-2 0-3-1-3-3v-17c0-1 1-3 3-3z" fill="#9fcfe0" stroke-width="0"/><text x="396.71307" y="145.11729" fill="#000000" font-family="sans-serif" font-size="40.05px" letter-spacing="0px" stroke-width="1.0013" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="396.71307" y="145.11729" font-size="13.35px" stroke-width="1.0013">´</tspan></text>
+
+
+
+
+
+
+
+<path d="m733.64 119.96h20c2 0 3 1.0918 3 2.1837v19.653c0 1.0918-1 2.1837-3 2.1837h-20c-1 0-3-1.0918-3-2.1837v-19.653c0-1.0918 2-2.1837 3-2.1837z" fill="#b0bde0" stroke-width="0"/></g><g transform="matrix(1.2965 0 0 1.2946 220.48 -113.75)"><text x="400" y="194" fill="#2b2828" font-family="Arial" font-size="12px">+</text>
+
+
+
+
+
+
+
+</g><path d="m733.72 148.01h20c2 0 3 1.0847 3 2.1694v19.525c0 1.0847-1 2.1694-3 2.1694h-20c-1 0-3-1.0847-3-2.1694v-19.525c0-1.0847 2-2.1694 3-2.1694z" fill="#b0bde0" fill-rule="evenodd" stroke-width="0"/><g fill="#000000" fill-rule="evenodd" font-size="40.05px" letter-spacing="0px" stroke-width="1.0013" word-spacing="0px"><g font-family="sans-serif"><text x="740.71008" y="161.01305" style="line-height:1.25" xml:space="preserve"><tspan x="740.71008" y="161.01305" font-family="Arial" font-size="21.36px" stroke-width="1.0013">.</tspan></text>
+
+
+
+
+
+
+
+<text x="710.73932" y="210.58594" style="line-height:1.25" xml:space="preserve"><tspan x="710.73932" y="210.58594" font-family="Arial" font-size="21.36px" stroke-width="1.0013">,</tspan></text>
+
+
+
+
+
+
+
+<text x="329.31546" y="190.59241" style="line-height:1.25" xml:space="preserve"><tspan x="329.31546" y="190.59241" font-family="Arial" font-size="21.36px" stroke-width="1.0013">,</tspan></text>
+
+
+
+
+
+
+
+<text x="359.47513" y="190.59021" style="line-height:1.25" xml:space="preserve"><tspan x="359.47513" y="190.59021" font-family="Arial" font-size="21.36px" stroke-width="1.0013">.</tspan></text>
+
+
+
+
+
+
+
+</g><text x="401.91516" y="215.37122" font-family="Arial" style="line-height:1.25" xml:space="preserve"><tspan x="401.91516" y="215.37122" font-family="Arial" font-size="6.675px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Fn</tspan></text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.0478 0 0 .99027 -30.498 2.3605)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">;</text>
+
+
+
+
+
+
+
+</g><g transform="matrix(1.0478 0 0 .99027 -30.476 -6.7495)"><text x="400" y="192" fill="#2b2828" font-family="Arial" font-size="12px">:</text>
+
+
+
+
+
+
+
+</g><g><g transform="translate(-2.4672)" fill-rule="evenodd"><g stroke-width="0"><path d="m405.79 282.04h21.333c1.0667 0 3.2 1.0667 3.2 3.2v19.2c0 1.0667-2.1333 3.2-3.2 3.2h-21.333c-2.1333 0-3.2-2.1333-3.2-3.2v-19.2c0-2.1333 1.0667-3.2 3.2-3.2z" fill="#f2c480"/><path d="m405.78 316.86h21.333c1.0667 0 3.2 1.0667 3.2 3.2v19.2c0 1.0667-2.1333 3.2-3.2 3.2h-21.333c-2.1333 0-3.2-2.1333-3.2-3.2v-19.2c0-2.1333 1.0667-3.2 3.2-3.2z" fill="#9fcfe0"/><path d="m607.08 282.04h21.333c1.0667 0 3.2 1.0667 3.2 3.2v19.2c0 1.0667-2.1334 3.2-3.2 3.2h-21.333c-2.1333 0-3.2-2.1333-3.2-3.2v-19.2c0-2.1333 1.0667-3.2 3.2-3.2z" fill="#f1ef9e"/><path d="m607.05 316.96h21.333c1.0667 0 3.2 1.0667 3.2 3.2v19.2c0 1.0667-2.1334 3.2-3.2 3.2h-21.333c-2.1333 0-3.2-2.1333-3.2-3.2v-19.2c0-2.1333 1.0667-3.2 3.2-3.2z" fill="#a8d1b1"/></g><g fill="#000000" letter-spacing="0px" stroke-width="1.0013" word-spacing="0px"><text x="439.85025" y="334.91647" font-family="sans-serif" font-size="40.05px" style="line-height:1.25" xml:space="preserve"><tspan x="439.85025" y="334.91647" font-family="Arial" font-size="14.685px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Teclas alfanuméricas</tspan></text>
+
+
+
+
+
+
+
+<text x="641.94818" y="292.51141" font-family="Arial" font-size="14.685px" style="line-height:0.2" xml:space="preserve"><tspan x="641.94818" y="292.51141" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:0.40000001">Teclas de comando</tspan><tspan x="641.94818" y="305.80759" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:0.40000001">e de edição</tspan></text>
+
+
+
+
+
+
+
+<text x="641.11938" y="333.46786" font-family="sans-serif" font-size="40.05px" style="line-height:1.25" xml:space="preserve"><tspan x="641.11938" y="333.46786" font-family="Arial" font-size="14.685px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Teclas de navegação</tspan></text>
+
+
+
+
+
+
+
+<text x="440.68915" y="292.61853" font-family="Arial" font-size="14.685px" style="line-height:0px" xml:space="preserve"><tspan x="440.68915" y="292.61853" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:14.68502331px">Teclas de sistema </tspan><tspan x="440.68915" y="307.30356" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:14.68502331px">e de interface</tspan></text>
+
+
+
+
+
+
+
+</g><path d="m205.41 282.04h21.333c1.0667 0 3.2 1.0667 3.2 3.2v19.2c0 1.0667-2.1333 3.2-3.2 3.2h-21.333c-2.1333 0-3.2-2.1333-3.2-3.2v-19.2c0-2.1333 1.0667-3.2 3.2-3.2z" fill="#e89fa5" stroke-width="0"/><path d="m205.41 316.89h21.333c1.0667 0 3.2 1.0667 3.2 3.2v19.2c0 1.0667-2.1333 3.2-3.2 3.2h-21.333c-2.1333 0-3.2-2.1333-3.2-3.2v-19.2c0-2.1333 1.0667-3.2 3.2-3.2z" fill="#b0bde0" stroke-width="0"/><text x="238.56418" y="334.88409" fill="#000000" font-family="sans-serif" font-size="40.05px" letter-spacing="0px" stroke-width="1.0013" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="238.56418" y="334.88409" font-family="Arial" font-size="14.685px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Teclas numéricas</tspan></text>
+
+
+
+
+
+
+
+<text x="239.2377" y="300.10043" fill="#000000" font-family="sans-serif" font-size="40.05px" letter-spacing="0px" stroke-width="1.0013" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="239.2377" y="300.10043" font-family="Arial" font-size="14.685px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Teclas modificadoras</tspan></text>
+
+
+
+
+
+
+
+<path d="m29.515 282.06h21.333c1.0667 0 3.2 1.0667 3.2 3.2v19.2c0 1.0667-2.1333 3.2-3.2 3.2h-21.333c-2.1333 0-3.2-2.1333-3.2-3.2v-19.2c0-2.1333 1.0667-3.2 3.2-3.2z" fill="#ffc1ea" stroke-width="0"/><path d="m29.408 316.89h21.333c1.0667 0 3.2 1.0667 3.2 3.2v19.2c0 1.0667-2.1333 3.2-3.2 3.2h-21.333c-2.1333 0-3.2-2.1333-3.2-3.2v-19.2c0-2.1333 1.0667-3.2 3.2-3.2z" fill="#cf98cf" stroke-width="0"/><text x="62.224548" y="333.48227" fill="#000000" font-family="sans-serif" font-size="40.05px" letter-spacing="0px" stroke-width="1.0013" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="62.224548" y="333.48227" font-family="Arial" font-size="14.685px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Teclas de bloqueio</tspan></text>
+
+
+
+
+
+
+
+<text x="63.548775" y="298.76358" fill="#000000" font-family="sans-serif" font-size="40.05px" letter-spacing="0px" stroke-width="1.0013" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="63.548775" y="298.76358" font-family="Arial" font-size="14.685px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Teclas de função</tspan></text>
+
+
+
+
+
+
+
+</g></g><text transform="scale(1.1666 .85716)" x="79.036194" y="214.10997" fill="#000000" font-family="sans-serif" font-size="10.676px" letter-spacing="0px" stroke-width=".26691" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="79.036194" y="214.10997" stroke-width=".26691">|</tspan></text>
+
+
+
+
+</svg>
