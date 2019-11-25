@@ -1499,6 +1499,25 @@ Opções relacionadas a performance e a velocidade da emulação
 
 		**-str** <*n*> **-video none -sound none -nothrottle**
 
+.. _mame-commandline-lowlatency:
+
+**-[no]lowlatency**
+
+	Diz ao MAME para desenhar um novo quadro antes de controlar a
+	velocidade de emulação (:ref:`throttling
+	<mame-commandline-nothrottle>`) visando reduzir o atraso (latência)
+	de resposta da entrada. Esta opção é particularmente efetiva com
+	telas com variação em sua taxa de atualização (Variable
+	Refresh Rate).
+
+	Esta opção pode causar um efeito colateral de despassamento ou
+	problemas com o sequenciamento dos quadros gerando instabilidades
+	(especialmente em sistemas mais recentes com base 3D ou 3D
+	dependentes, assim como sistemas onde rodam um software similar ao
+	sistema operacional).
+
+		O valor predefinido é **-nolowlatency**.
+
 .. raw:: latex
 
 	\clearpage
