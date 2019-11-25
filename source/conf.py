@@ -65,7 +65,7 @@ copyright = u'2019, Equipe de Desenvolvimento do MAME (MAMEdev), Tradução e Re
 # built documents.
 #
 # The short X.Y version.
-version = 'MAME Série 0.200'
+version = 'MAME 0.216'
 # The full version, including alpha/beta/rc tags.
 release = '0.216'
 
