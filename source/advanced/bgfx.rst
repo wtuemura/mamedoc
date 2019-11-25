@@ -132,12 +132,20 @@ Alterando as configurações
 	* ``d3d11`` Renderizador do Direct3D 11.0 (Requer Windows Vista
 	  com o D3D11 atualizado ou o  Windows 7 ou mais recente).
 
+	* ``d3d12`` Renderizador do Direct3D 12.0 (Requer Windows 10 ou mais
+	  recente, assim como uma placa de vídeo com driver compatível).
+
 	* ``opengl`` Renderizador OpenGL (Requer Drivers compatíveis com
 	  OpenGL, pode não funcionar bem  com algumas placas de vídeo mais
-	  antigas ou mal projetadas, compatível com Linux/Mac OS X)
+	  antigas ou mal projetadas). Compatível com Linux/Mac OS X.
 
 	* ``metal`` Metal Apple Graphics API (Requer Mac OS X 10.11 El
 	  Capitan ou mais recente).
+
+	* ``vulkan`` Renderizador Vulkan (via hardware), compatível
+	  atualmente com OpenGL ES 3.1, OpenGL 4.X ou versões mais recentes.
+	  Requer drivers compatíveis para as placas de vídeo atuais e pode
+	  não ser compatível com placas de vídeo ou drivers mais antigos.
 
 		O valor predefinido é **auto**.
 
