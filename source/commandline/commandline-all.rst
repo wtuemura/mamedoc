@@ -3302,7 +3302,8 @@ Opções para uso com script
 .. _mame-commandline-plugins:
 
 **-plugins**
-	Habilita o uso de plug-ins Lua
+
+	Habilita o uso de plug-ins Lua.
 
 		O valor predefinido é **Ligado** (**-plugins**).
 
@@ -3328,6 +3329,7 @@ Opções do servidor HTTP
 .. _mame-commandline-http:
 
 **-http**
+
 	Habilita o servidor de HTTP.
 
 		O valor predefinido é **Desligado** (**-nohttp**).
