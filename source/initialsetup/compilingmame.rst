@@ -1535,7 +1535,7 @@ Problemas conhecidos
 Problemas relacionados com versões específicas do compilador
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* O MinGW GCC 7 para Windows i386 gera erros esporádicos com alertas
+* O GCC 7 32-bit para Windows x86 gera erros esporádicos com alertas
   de acesso fora dos limites. [2]_
   Use **NOWERROR=1** nas suas opções de compilação para remediar o
   problema e não tratar avisos como se fossem erros.
