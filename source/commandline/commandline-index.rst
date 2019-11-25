@@ -152,7 +152,7 @@ Opções relacionadas a performance e a velocidade da emulação
 | :ref:`[no]refreshspeed <mame-commandline-norefreshspeed>`
 | :ref:`numprocessors <mame-commandline-numprocessors>`
 | :ref:`bench <mame-commandline-bench>`
-| :ref:`lowlatency <mame-commandline-lowlatency>`
+| :ref:`[no]lowlatency <mame-commandline-lowlatency>`
 
 .. raw:: latex
 
