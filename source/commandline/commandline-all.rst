@@ -1432,12 +1432,14 @@ Opções relacionadas a performance e a velocidade da emulação
 
 **-[no]sleep**
 
-	Permite que o MAME devolva tempo de CPU ao sistema quando
-	estiver rodando com ``-throttle``. Isso permite que outros programas
-	tenham mais tempo de CPU, assumindo que a emulação não esteja
-	consumindo 100% dos recursos do processador. Essa opção pode causar
-	uma certa intermitência na performance caso outros programas também
-	demandem processamento estejam rodando junto com o MAME.
+	Quando utilizada em conjunto com ``-throttle`` o MAME elimina
+	os processos não utilizados durante a limitação de velocidade da
+	emulação melhorando o rendimento de processamento. Em outras
+	palavras, permite que outros programas tenham mais tempo de CPU
+	assumindo que a emulação não esteja consumindo 100% dos recursos do
+	processador. Esta opção pode causar uma certa intermitência na
+	performance caso outros programas que também demandem processamento
+	estejam rodando junto com o MAME.
 
 		O valor predefinido é **Ligado** (**-sleep**).
 
@@ -1459,8 +1461,8 @@ Opções relacionadas a performance e a velocidade da emulação
 	2x acima da sua velocidade normal. Note que ao mudar este valor a
 	velocidade de execução do áudio irá mudar proporcionalmente também.
 
-	A resolução interna da fração são dois pontos decimais, então o
-	valor **1.002** será arredondada para **1.0**.
+	A resolução interna da fração são dois pontos decimais, logo o
+	valor **1.002** será arredondado para **1.0**.
 
 		O valor predefinido é **1.0**.
 
@@ -1468,13 +1470,17 @@ Opções relacionadas a performance e a velocidade da emulação
 
 **-[no]refreshspeed** / **-[no]rs**
 
-	Permite ao MAME ajustar a velocidade da primeira tela emulada do
-	sistema de maneira que não exceda a menor velocidade da taxa de
-	atualização de tela de qualquer uma das telas do sistema emulado.
+	Permite ao MAME ajustar a velocidade da emulação para que a taxa de
+	atualização da primeira tela emulada não exceda o menor valor de
+	taxa de atualização de tela de qualquer um dos monitores do seu
+	sistema.
 	Visando evitar cortes no áudio ou efeitos colaterais indesejáveis, o
 	MAME irá reduzir a velocidade da emulação para 99% em casos onde por
 	exemplo, um monitor que funcione nativamente a 60 Hz e o sistema
 	emulado rode a 60.6 Hz.
+
+	Utilize esta opção caso note pequenas travadas de tela durante cenas
+	de movimentação horizontal ou vertical.
 
 		O valor predefinido é **Desligado** (**-norefreshspeed**).
 
@@ -1814,38 +1820,44 @@ Opções para a configuração de vídeo
 
 	Aguarda acabar o período de atualização da tela do monitor do seu
 	computador antes de começar a desenhar na tela. Caso esta opção
-	esteja desligada, o MAME só irá desenhar na tela com tempo
-	posterior ou até mesmo durante um ciclo de atualização de tela. Isso
-	pode causar um *screen tearing* [5]_.
+	esteja desligada, o MAME só irá desenhar na tela quando o quadro
+	estiver pronto, mesmo que seja durante o processo de atualização de
+	tela. Isso pode causar artefato de *screen tearing* [5]_.
 
 	O efeito "tearing" não é perceptível em todos os sistemas, porém
 	algumas pessoas acham o efeito desagradável, algumas mais do que as
 	outras.
-	Saiba que ao ativar esta opção haverá desperdícios de recursos
-	preciosos de ciclos de CPU enquanto se espera o tempo certo para
-	desenhar na tela fazendo com que a performance em geral seja
-	comprometida.
 
-	Apenas utilize esta opção caso esteja jogando em modo janelado.
+	Os efeitos colaterais de se habilitar a opção ``-waitvsync`` podem
+	variar dependendo da combinação usada em diferentes sistemas
+	operacionais e drivers de vídeo.
 
-	Em modo de tela cheia a opção só será necessária caso a opção
-	``-triplebuffer`` não remova o indesejado efeito *tearing*, neste
-	caso, tente usar as duas opções juntas
-	``-notriplebuffer -waitvsync``.
-	A opção ``-waitvsync`` não funciona com ``-video gdi``.
+	No **Windows**, ``-waitvsync`` será bloqueado até o próximo
+	apagamento de vídeo, permitindo que o MAME desenhe o próximo quadro,
+	sincronizando a taxa de quadros da máquina emulada com a taxa de
+	quadros nativa do monitor que estiver sendo usado no Windows, apenas
+	ative esta opção caso esteja utilizando o modo janelado. Em tela
+	inteira esta opção só é necessária caso a opção ``-triplebuffer``
+	não remova o indesejado efeito "tearing", neste caso, tente usar as
+	duas opções juntas ``-notriplebuffer -waitvsync``. Note que a opção
+	``-waitvsync`` não vai funcionar em conjunto com a opção
+	``-video gdi``.
+
+	No **macOS**, ``-waitvsync`` não é bloqueado, contudo o quadro
+	completamente desenhado será exibido no próximo apagamento de vídeo
+	(vblank). Isso quer dizer que caso um sistema emulado tenha uma taxa
+	de quadros maior do que a do seu sistema (ou do seu monitor), haverá
+	uma queda periódica na velocidade dos quadros de vídeo emulados
+	resultando em pequenos travamentos durante as cenas com movimentos.
 
 		O valor predefinido é **Desligado** (**-nowaitvsync**).
 
-	O **MAME SDL** funcionará com essa opção em modo janelado, caso haja
+	O **MAME SDL** funcionará com essa opção em modo janelado caso haja
 	compatibilidade com o seu sistema operacional, da sua placa de vídeo
 	e respectivos drivers.
 
 	Rode o **MAME SDL** com a opção ``-video opengl`` para aumentar as
 	suas chances de sucesso.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-syncrefresh:
 
@@ -1898,6 +1910,10 @@ Opções para a configuração de vídeo
 
 	No Windows funciona com todos os modos de vídeo (bgfx, d3d, etc),
 	nas outras plataformas **APENAS** aquelas compatíveis com OpenGL.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-noburnin:
 
