@@ -1997,40 +1997,6 @@ Opções de Ilustrações
 
 	Valor predefinido é **Desligado**
 
-* **Usar plano de fundo**
-
-  Permite o uso de uma imagem de plano de fundo caso exista um arquivo
-  de plano de fundo disponível.
-
-	Valor predefinido é **Ligado**
-
-* **Usar sobreposições**
-
-  Permite o uso de uma imagem de sobreposição na tela caso exista um
-  arquivo de sobreposição disponível.
-
-	Valor predefinido é **Ligado**
-
-* **Usar molduras**
-
-  Permite o uso de uma imagem de moldura na tela caso exista um arquivo
-  de moldura disponível.
-
-	Valor predefinido é **Ligado**
-
-* **Usar painéis de controle**
-
-  Permite o uso de uma imagem na de painel de controle na tela caso
-  exista um arquivo de painel de controle disponível.
-
-	Valor predefinido é **Ligado**
-
-* **Usar marquises**
-
-  Permite o uso de uma imagem de marquise na tela caso exista um
-  arquivo de marquise disponível.
-
-	Valor predefinido é **Ligado**
 
 Opções de Estado/Playback
 ^^^^^^^^^^^^^^^^^^^^^^^^^
