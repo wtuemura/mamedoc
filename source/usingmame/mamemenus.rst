@@ -2062,7 +2062,7 @@ Opções de Estado/Playback
 
 * **Burn-in**
 
-  Cria prints de tela com marcas de fósforo queimado na tela.
+  Cria prints de tela com marcas de fósforo queimado.
 
 	Valor predefinido é **Desligado**
 
