@@ -33,7 +33,7 @@ Abaixo da lista de máquinas nós temos:
 	* **Opções de configuração**: Exibe uma lista de configurações do MAME.
 	* **Configurar a máquina**: Exibe uma lista de opções para configurar a máquina selecionada.
 	* **Plug-ins**: Exibe uma lista para a configuração de plug-ins
-	* **Sair**: Sai do MAME
+	* **Sair**: Encerra o MAME
 
 Todos os itens exibidos essa interface podem ser selecionados usando as
 setas do seu teclado (cima, baixo, esquerda, direita) e são selecionadas
@@ -649,20 +649,20 @@ usados pelo MAME. As opções disponíveis são:
 
 	\clearpage
 
-Opções de vídeo
+Opções de Vídeo
 ~~~~~~~~~~~~~~~
 
 Essas opções sempre serão lidas no inicio do MAME, lembrando que a linha
 de comando **sempre** terá prioridade, independente do que seja definido
 aqui.
 
-* **Modo do vídeo**
+* **Modo do Vídeo**
 
   Veja :ref:`-video <mame-commandline-video>`.
 
 		O valor predefinido é **Auto**
 
-* **Número de telas**
+* **Número de Telas**
 
   Predefine a quantidade de telas a serem usadas.
 
@@ -674,7 +674,7 @@ aqui.
 
 		O valor predefinido é **Desligado**
 
-* **Filtragem bilinear**
+* **Filtragem Bilinear**
 
   Habilita ou não os filtros de tela para suavizar os gráficos, caso os
   gráficos fiquem muito borrados, experimente habilitar também a opção
@@ -682,7 +682,7 @@ aqui.
 
 		O valor predefinido é **Ligado**
 
-* **Pré-escala de bitmap**
+* **Pré-escala de Bitmap**
 
   Opção útil quando máquinas com baixa resolução são ampliadas para uma
   resolução maior, use essa opção para dar uma amenizada nessa
@@ -691,15 +691,15 @@ aqui.
 
 		O valor predefinido é **1**.
 
-* **Modo janelado**
+* **Modo Janelado**
 
   Faz o MAME exibir a tela em uma janela ou em uma tela inteira.
 
 		O valor predefinido é **Desligado**.
 
-* **Manter a proporção da imagem**
+* **Manter a proporção da tela**
 
-  Faz com que a proporção da imagem seja sempre mantida.
+  Faz com que a proporção da imagem exibida seja sempre mantida.
 
 		O valor predefinido é **Ligado**.
 
@@ -709,11 +709,11 @@ aqui.
 
 		O valor predefinido é **Ligado**.
 
-* **Atualização sincronizada de quadros**
+* **Atualização Sincronizada de Quadros**
 
   Veja :ref:`-syncrefresh <mame-commandline-syncrefresh>`.
 
-* **Aguardar sincronismo vertical**
+* **Aguardar Sincronismo Vertical**
 
   Veja :ref:`-waitvsync <mame-commandline-waitvsync>`.
 
@@ -740,6 +740,7 @@ Opções diversas
 ~~~~~~~~~~~~~~~
 
 * **Lembrar da última máquina selecionada**
+
   Faz com que o MAME se lembre da última máquina selecionada na
   interface do MAME.
 
@@ -765,13 +766,13 @@ Opções diversas
 
 		O valor predefinido é **Ligado**.
 
-* **Confirmar ao sair**
+* **Confirmar saída das máquinas**
 
   Faz com que o MAME sempre peça uma confirmação ao sair.
 
 		O valor predefinido é **Desligado**.
 
-* **Saltar a tela de informação ao iniciar**
+* **Omitir a tela de informação ao iniciar**
 
   Não exibe a tela com informações sobre o sistema.
 
@@ -779,26 +780,35 @@ Opções diversas
 
 * **Manter aspecto 4:3 para instantâneos de tela**
 
-  Faz com que todos os instantâneos de tela mantenham uma proporção de
+  Faz com que todos os prints da tela mantenham uma proporção de
   4:3.
 
 		O valor predefinido é **Ligado**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **Usar imagem como plano de fundo**
+
   Permite o uso de uma imagem como papel de parede na interface do MAME.
   Escolha uma imagem *.JPG* e a renomeie para **backgound.jpg**.
 
 		O valor predefinido é **Ligado**.
 
-* **Saltar a tela de seleção de BIOS**
+* **Omitir a tela de seleção de BIOS**
 
   Faz com que o MAME inicie a máquina com a primeira BIOS disponível
   para a máquina ao em vez de usar uma lista.
 
 		O valor predefinido é **Desligado**.
 
-* **Saltar a lista de seleção de segmentos de software**
-  Inicia a máquina com a primeira parte do software.
+* **Omitir partes do cardápio de seleção de software**
+
+  Altera a maneira com que a lista de software é exibida, em vez de
+  exibir a lista como é predefinido pelo MAME, a lista será exibida na
+  sequência que os itens estiverem listados no arquivo da respectiva
+  lista.
 
 		O valor predefinido é **Desligado**.
 
@@ -809,6 +819,8 @@ Opções diversas
   selecionada. Assim como também verifica se a máquina usa amostras ou
   não aferindo a condição delas caso esteja **BOA** ou **RUIM**. Caso a
   máquina não use amostras aparecerá a mensagem **Nenhuma Necessária**.
+  Note que essa função deixa a interface do MAME um pouco mais lenta
+  devido as aferições que são feitas a cada seleção da ROM.
 
 		O valor predefinido é **Desligado**.
 
@@ -1920,6 +1932,12 @@ Opções de performance
 
 	Valor predefinido é **Desligado**
 
+* **Low Latency**
+
+  Reduz a latência (atraso) dos dispositivos de entrada como joysticks
+  por exemplo. Para mais informações veja :ref:`-[no]lowlatency
+  <mame-commandline-lowlatency>`.
+
 Opções de rotação
 ^^^^^^^^^^^^^^^^^
 
@@ -2044,7 +2062,7 @@ Opções de Estado/Playback
 
 * **Burn-in**
 
-  Cria instantâneos de tela com marcas de tela queimada.
+  Cria prints de tela com marcas de fósforo queimado na tela.
 
 	Valor predefinido é **Desligado**
 
