@@ -177,13 +177,10 @@ Opções para a configuração dos drivers
 
 .. _mame-scommandline-audiodriver:
 
-**-audiodriver** <*driver*>
+**-audiodriver** <**pulseaudio|alsa|dsp|arts|jack|disk|dummy|auto**>
 
-	Define o driver de áudio SDL a ser usado (**pulseaudio**, **alsa**,
-	**dsp**, **arts**, **jack**, **disk**, **dummy** ou **auto**).
-	
-	A disponibilidade de alguns destes drivers depende do sistema
-	operacional.
+	Define o driver de áudio SDL a ser usado, a disponibilidade de
+	alguns destes drivers depende do sistema operacional.
 	
 		O valor predefinido é **auto**
 
