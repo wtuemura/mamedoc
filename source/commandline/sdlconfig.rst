@@ -52,7 +52,7 @@ Configuração para tela inteira
 
 		O valor predefinido é **none** (nenhum).
 
-Configuração para diferentes tipos de espaços de cor para vídeo
+Configurações específicas quando o driver de vídeo for software
 ---------------------------------------------------------------
 
 .. _mame-scommandline-scalemode:
