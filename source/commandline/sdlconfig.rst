@@ -168,13 +168,10 @@ Opções para a configuração dos drivers
 
 .. _mame-scommandline-renderdriver:
 
-**-renderdriver** <*driver*>
+**-renderdriver** <**opengl|software|opengles2|directfb|auto**>
 
-	Define o driver de renderização SDL a ser usado (**opengl**,
-	**software**, **opengles2**, **directfb** ou **auto**).
-	
-	A disponibilidade de alguns destes drivers depende do sistema
-	operacional.
+	Define o driver de renderização SDL a ser usado, a disponibilidade
+	de alguns destes drivers depende do sistema operacional.
 	
 		O valor predefinido é **auto**
 
