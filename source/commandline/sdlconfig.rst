@@ -8,7 +8,72 @@ Configurações específicas para o versões SDL
 Nesta seção descreveremos as opções de configuração voltadas
 especificamente para qualquer versão compatível com o SDL (incluindo o
 Windows caso o MAME tenha sido compilado com o SDL ao invés da sua forma
-nativa).
+nativa). Inicie o MAME com o comando ``mame -v`` para ver quais são os
+drivers que estão disponíveis para o seu sistema. ::
+
+	Available videodrivers: x11 wayland KMSDRM dummy
+	Current Videodriver: x11
+		Display #0
+			Renderdrivers:
+				opengl		(0x0)
+				opengles2	(0x0)
+				software	(0x0)
+	Available audio drivers:
+		pulseaudio          
+		alsa                
+		dsp                 
+		jack                
+		disk                
+		dummy
+	...
+	Enter init_monitors
+	Adding monitor screen0 (1920 x 1080)
+	Leave init_monitors
+	Enter sdlwindow_init
+	Using SDL multi-window soft driver (SDL 2.0+)
+	
+	Hints:
+		SDL_FRAMEBUFFER_ACCELERATION             (NULL)
+		SDL_RENDER_DRIVER                        (NULL)
+		SDL_RENDER_OPENGL_SHADERS                (NULL)
+		SDL_RENDER_SCALE_QUALITY                 (NULL)
+		SDL_RENDER_VSYNC                         (NULL)
+		SDL_VIDEO_X11_XVIDMODE                   (NULL)
+		SDL_VIDEO_X11_XINERAMA                   (NULL)
+		SDL_VIDEO_X11_XRANDR                     (NULL)
+		SDL_GRAB_KEYBOARD                        (NULL)
+		SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS         (NULL)
+		SDL_IOS_IDLE_TIMER_DISABLED              (NULL)
+		SDL_IOS_ORIENTATIONS                     (NULL)
+		SDL_XINPUT_ENABLED                       (NULL)
+		SDL_GAMECONTROLLERCONFIG                 (NULL)
+		SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS     (NULL)
+		SDL_ALLOW_TOPMOST                        (NULL)
+		SDL_TIMER_RESOLUTION                     (NULL)
+		SDL_RENDER_DIRECT3D_THREADSAFE           (NULL)
+		SDL_VIDEO_ALLOW_SCREENSAVER              (NULL)
+		SDL_ACCELEROMETER_AS_JOYSTICK            (NULL)
+		SDL_MAC_CTRL_CLICK_EMULATE_RIGHT_CLICK   (NULL)
+		SDL_VIDEO_WIN_D3DCOMPILER                (NULL)
+		SDL_VIDEO_WINDOW_SHARE_PIXEL_FORMAT      (NULL)
+		SDL_VIDEO_MAC_FULLSCREEN_SPACES          (NULL)
+		SDL_MOUSE_RELATIVE_MODE_WARP             (NULL)
+		SDL_RENDER_DIRECT3D11_DEBUG              (NULL)
+		SDL_VIDEO_HIGHDPI_DISABLED               (NULL)
+		SDL_WINRT_PRIVACY_POLICY_URL             (NULL)
+		SDL_WINRT_PRIVACY_POLICY_LABEL           (NULL)
+		SDL_WINRT_HANDLE_BACK_BUTTON             (NULL)
+	Leave sdlwindow_init
+	Enter sdl_info::create
+	window: using renderer opengl
+	renderer: flag SDL_RENDERER_ACCELERATED
+	Leave renderer_sdl2::create
+	Audio: Start initialization
+	Audio: Driver is pulseaudio
+	Audio: frequency: 48000, channels: 2, samples: 256
+	sdl_create_buffers: creating stream buffer of 25600 bytes
+	Audio: End initialization
+
 
 Opções de performance
 ---------------------
