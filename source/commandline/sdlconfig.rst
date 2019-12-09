@@ -57,11 +57,10 @@ Configuração para diferentes tipos de espaços de cor para vídeo
 
 .. _mame-scommandline-scalemode:
 
-**-scalemode**
+**-scalemode** <**none|hwblit|hwbest|yv12|yv12x2|yuy2|yuy2x2**>
 
-	Modos de escala da família de espaços de cor: **none**, **async**,
-	**yv12**, **yuy2**, **yv12x2**, **yuy2x2** (apenas com **-video
-	soft**).
+	Modos de escala da família de espaços de cor, esta opção funciona
+	apenas com **-video soft**.
 
 		O valor predefinido é **none** (nenhum).
 
