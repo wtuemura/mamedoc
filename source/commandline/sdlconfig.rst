@@ -41,17 +41,6 @@ Opções de vídeo
 		O valor predefinido é **Ligado** (**-centerv**).
 
 
-Configuração para tela inteira
-------------------------------
-
-.. _mame-scommandline-useallheads:
-
-**-useallheads**
-
-	Partilha a tela inteira com diferentes monitores.
-
-		O valor predefinido é **none** (nenhum).
-
 Configurações específicas quando o driver de vídeo for software
 ---------------------------------------------------------------
 
@@ -122,44 +111,13 @@ Nome do controle joystick mapeado para um determinado slot de joystick.
 
 		O valor predefinido é **Desligado** (**-nosixaxis**)
 
-Configurações para o mapeamento do mouse
-----------------------------------------
-
-.. _mame-scommandline-mouseindex:
-
-::
-
-	-mouse_index1
-	-mouse_index2
-	...
-	-mouse_index8
-
-Faça o mapeamento do mouse para uma das 8 entradas.
-
-		O valor predefinido é **auto**.
-
-Configurações para o mapeamento do teclado
-------------------------------------------
-
-.. _mame-scommandline-keybidx:
-
-::
-
-	-keyb_idx1
-	-keyb_idx2
-	...
-	-keyb_idx8
-
-Faça o mapeamento do teclado para uma das 8 entradas.
-
-		O valor predefinido é **auto**.
 
 .. _mame-scommandline-videodriver:
 
 Opções para a configuração dos drivers
 --------------------------------------
 
-**-videodriver** <**x11|wayland|KMSDRM|directfb|dummy|auto**>
+**-videodriver** <**x11|directfb|...|auto**>
 
 	Define um driver de vídeo SDL a ser usado, a disponibilidade de
 	alguns destes drivers depende do sistema operacional.
@@ -168,7 +126,7 @@ Opções para a configuração dos drivers
 
 .. _mame-scommandline-renderdriver:
 
-**-renderdriver** <**opengl|software|opengles2|directfb|auto**>
+**-renderdriver** <**opengl|directfb|...|auto**>
 
 	Define o driver de renderização SDL a ser usado, a disponibilidade
 	de alguns destes drivers depende do sistema operacional.
@@ -177,7 +135,7 @@ Opções para a configuração dos drivers
 
 .. _mame-scommandline-audiodriver:
 
-**-audiodriver** <**pulseaudio|alsa|dsp|arts|jack|disk|dummy|auto**>
+**-audiodriver** <**pulseaudio|alsa|arts|...|auto**>
 
 	Define o driver de áudio SDL a ser usado, a disponibilidade de
 	alguns destes drivers depende do sistema operacional.
