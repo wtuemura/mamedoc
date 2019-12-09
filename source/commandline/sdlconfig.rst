@@ -154,18 +154,15 @@ Faça o mapeamento do teclado para uma das 8 entradas.
 
 		O valor predefinido é **auto**.
 
-Opções para a configuração dos drivers
--------------------------------------- 
-
 .. _mame-scommandline-videodriver:
 
-**-videodriver** <*driver*>
+Opções para a configuração dos drivers
+--------------------------------------
 
-	Define o driver de vídeo SDL a ser usado (**x11**, **wayland**,
-	**KMSDRM**, **directfb**, **dummy** ou **auto**).
-	
-	A disponibilidade de alguns destes drivers depende do sistema
-	operacional.
+**-videodriver** <**x11|wayland|KMSDRM|directfb|dummy|auto**>
+
+	Define um driver de vídeo SDL a ser usado, a disponibilidade de
+	alguns destes drivers depende do sistema operacional.
 	
 		O valor predefinido é **auto**
 
