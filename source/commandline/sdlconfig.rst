@@ -41,6 +41,18 @@ Opções de vídeo
 		O valor predefinido é **Ligado** (**-centerv**).
 
 
+Configuração para tela inteira
+------------------------------
+
+.. _mame-scommandline-useallheads:
+
+**-useallheads**
+
+	Partilha a tela inteira com diferentes monitores.
+
+		O valor predefinido é **none** (nenhum).
+
+
 Configurações específicas quando o driver de vídeo for software
 ---------------------------------------------------------------
 
@@ -112,10 +124,43 @@ Nome do controle joystick mapeado para um determinado slot de joystick.
 		O valor predefinido é **Desligado** (**-nosixaxis**)
 
 
-.. _mame-scommandline-videodriver:
+Configurações para o mapeamento do mouse
+----------------------------------------
+
+.. _mame-scommandline-mouseindex:
+
+::
+
+	-mouse_index1
+	-mouse_index2
+	...
+	-mouse_index8
+
+Faça o mapeamento do mouse para uma das 8 entradas.
+
+		O valor predefinido é **auto**.
+
+Configurações para o mapeamento do teclado
+------------------------------------------
+
+.. _mame-scommandline-keybidx:
+
+::
+
+	-keyb_idx1
+	-keyb_idx2
+	...
+	-keyb_idx8
+
+Faça o mapeamento do teclado para uma das 8 entradas.
+
+		O valor predefinido é **auto**.
+
 
 Opções para a configuração dos drivers
 --------------------------------------
+
+.. _mame-scommandline-videodriver:
 
 **-videodriver** <**x11|directfb|...|auto**>
 
