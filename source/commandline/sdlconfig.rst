@@ -213,7 +213,7 @@ Configurações específicas quando o driver de vídeo for software
 
 .. _mame-scommandline-scalemode:
 
-**-scalemode** <**none|hwblit|hwbest|yv12|yv12x2|yuy2|yuy2x2**>
+**-scalemode** <``none`` | ``hwblit`` | ``hwbest`` | ``yv12`` | ``yv12x2`` | ``yuy2`` | ``yuy2x2``>
 
 	Modos de escala da família de espaços de cor, esta opção funciona
 	apenas com **-video soft**.
@@ -317,7 +317,7 @@ Opções para a configuração dos drivers
 
 .. _mame-scommandline-videodriver:
 
-**-videodriver** <**x11|directfb|...|auto**>
+**-videodriver** <``x11`` | ``directfb`` | ``...`` | ``auto``>
 
 	Define um driver de vídeo SDL a ser usado, a disponibilidade de
 	alguns destes drivers depende do sistema operacional.
@@ -326,7 +326,7 @@ Opções para a configuração dos drivers
 
 .. _mame-scommandline-renderdriver:
 
-**-renderdriver** <**opengl|directfb|...|auto**>
+**-renderdriver** <``opengl`` | ``directfb`` | ``...`` | ``auto``>
 
 	Define o driver de renderização SDL a ser usado, a disponibilidade
 	de alguns destes drivers depende do sistema operacional.
@@ -335,7 +335,7 @@ Opções para a configuração dos drivers
 
 .. _mame-scommandline-audiodriver:
 
-**-audiodriver** <**pulseaudio|alsa|arts|...|auto**>
+**-audiodriver** <``pulseaudio`` | ``alsa`` | ``arts`` | ``...`` | ``auto``>
 
 	Define o driver de áudio SDL a ser usado, a disponibilidade de
 	alguns destes drivers depende do sistema operacional.
