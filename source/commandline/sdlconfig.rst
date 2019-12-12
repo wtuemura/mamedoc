@@ -2,14 +2,15 @@
 
 	\clearpage
 
-Configurações específicas para o versões SDL
-============================================
+Configurações específicas para as versões SDL
+=============================================
 
 Nesta seção descreveremos as opções de configuração voltadas
 especificamente para qualquer versão compatível com o SDL (incluindo o
 Windows caso o MAME tenha sido compilado com o SDL ao invés da sua forma
 nativa). Inicie o MAME com o comando ``mame -v`` para ver quais são os
-drivers que estão disponíveis para o seu sistema. ::
+drivers que estão disponíveis para o seu sistema, abaixo um exemplo para
+o Linux. ::
 
 	Available videodrivers: x11 wayland KMSDRM dummy
 	Current Videodriver: x11
@@ -26,12 +27,49 @@ drivers que estão disponíveis para o seu sistema. ::
 		disk                
 		dummy
 	...
-	Enter init_monitors
-	Adding monitor screen0 (1920 x 1080)
-	Leave init_monitors
-	Enter sdlwindow_init
-	Using SDL multi-window soft driver (SDL 2.0+)
-	
+	Leave sdlwindow_init
+	Enter sdl_info::create
+	window: using renderer opengl
+	renderer: flag SDL_RENDERER_ACCELERATED
+	Leave renderer_sdl2::create
+	Audio: Start initialization
+	Audio: Driver is pulseaudio
+	Audio: frequency: 48000, channels: 2, samples: 256
+
+Aqui temos o exemplo para o Windows das versões do MAME que forem
+compiladas com o SDL usando a opção ``OSD=sdl``, para mais informações
+veja :ref:`Microsoft Windows <compiling-windows>`. ::
+
+	Available videodrivers: windows dummy
+	Current Videodriver: windows
+		Display #0
+			Renderdrivers:
+				direct3d	(0x0)
+				direct3d11	(0x0)
+				opengl		(0x0)
+				opengles2	(0x0)
+				software	(0x0)
+	Available audio drivers:
+		wasapi
+		directsound
+		winmm
+		disk
+		dummy
+	...
+	Leave sdlwindow_init
+	Enter sdl_info::create
+	window: using renderer direct3d11
+	renderer: flag SDL_RENDERER_ACCELERATED
+	Leave renderer_sdl2::create
+	DirectSound: Primary buffer: 48000 Hz, 16 bits, 2 channels
+
+.. raw:: latex
+
+	\clearpage
+
+Aqui temos opções disponíveis para customização em todas as versões
+SDL: ::
+
 	Hints:
 		SDL_FRAMEBUFFER_ACCELERATION             (NULL)
 		SDL_RENDER_DRIVER                        (NULL)
@@ -63,17 +101,69 @@ drivers que estão disponíveis para o seu sistema. ::
 		SDL_WINRT_PRIVACY_POLICY_URL             (NULL)
 		SDL_WINRT_PRIVACY_POLICY_LABEL           (NULL)
 		SDL_WINRT_HANDLE_BACK_BUTTON             (NULL)
-	Leave sdlwindow_init
-	Enter sdl_info::create
-	window: using renderer opengl
-	renderer: flag SDL_RENDERER_ACCELERATED
-	Leave renderer_sdl2::create
-	Audio: Start initialization
-	Audio: Driver is pulseaudio
-	Audio: frequency: 48000, channels: 2, samples: 256
-	sdl_create_buffers: creating stream buffer of 25600 bytes
-	Audio: End initialization
 
+Não há qualquer garantia que ao alterar qualquer uma destas opções traga
+alguma melhoria de performance, a sua sorte pode variar bastante
+dependendo do sistema operacional usado, da sua placa de vídeo e seus
+respectivos drivers.
+
+No **Linux** e **macOS** você pode definir estes
+parâmetros como variáveis de ambiente no seu ``~/.bashrc`` como por
+exemplo: ::
+
+	SDL_FRAMEBUFFER_ACCELERATION=1
+	SDL_RENDER_DRIVER=opengl
+	SDL_RENDER_OPENGL_SHADERS=1
+
+Antes do executável do MAME: ::
+
+	SDL_FRAMEBUFFER_ACCELERATION=1 SDL_RENDER_DRIVER=opengl SDL_RENDER_OPENGL_SHADERS=1 ./mame64
+
+Ou então exportando estas opções para o ambiente, elas serão lidas
+durante a inicialização do MAME: ::
+
+	export SDL_FRAMEBUFFER_ACCELERATION=1 SDL_RENDER_DRIVER=opengl SDL_RENDER_OPENGL_SHADERS=1
+
+Já para as versões do **Windows** você pode definir estas opções como
+variáveis do ambiente no prompt de comando antes de iniciar o MAME com
+os comandos:
+
+.. raw:: latex
+
+	\clearpage
+
+::
+
+	set SDL_FRAMEBUFFER_ACCELERATION=1
+	set SDL_RENDER_DRIVER=direct3d11
+	set SDL_RENDER_OPENGL_SHADERS=1
+
+Criar um arquivo **.BAT** com estas opções predefinidas dentro do
+diretório do MAME, exemplo de um ``run.bat``: ::
+
+	@echo off
+	set SDL_FRAMEBUFFER_ACCELERATION=1
+	set SDL_RENDER_DRIVER=direct3d11
+	set SDL_RENDER_OPENGL_SHADERS=1
+	mame64.exe
+
+Ou então deixar isso disponível como variável do sistema, pressione as
+teclas :kbd:`WIN` + :kbd:`R` e execute o comando **sysdm.cpl**, siga
+para --> **Avançado** --> **Variáveis de Ambiente**, na parte de baixo
+da tela onde está escrito **Variáveis do sistema** clique em **Novo**,
+na próxima janela que aparecer adicione o **Nome da variável** que
+deseja definir, no campo **Valor** defina o valor apropriado. O valor
+para ``SDL_RENDER_DRIVER`` seria ``direct3d11`` e assim por diante,
+reinicie o computador ou encerre a sessão que estiver usando para que as
+modificações sejam aplicadas.
+
+Novamente, não é garantia que ao definir estas opções você note alguma
+melhora na performance da emulação, tudo vai depender do hardware usado
+e seus respectivos drivers.
+
+.. raw:: latex
+
+	\clearpage
 
 Opções de performance
 ---------------------
