@@ -213,7 +213,7 @@ Configurações específicas quando o driver de vídeo for software
 
 .. _mame-scommandline-scalemode:
 
-**-scalemode** <``none`` | ``hwblit`` | ``hwbest`` | ``yv12`` | ``yv12x2`` | ``yuy2`` | ``yuy2x2``>
+**-scalemode** < ``none`` | ``hwblit`` | ``hwbest`` | ``yv12`` | ``yv12x2`` | ``yuy2`` | ``yuy2x2`` >
 
 	Modos de escala da família de espaços de cor, esta opção funciona
 	apenas com **-video soft**.
