@@ -241,7 +241,7 @@ Exemplo:
 	mantém em seu banco de dados interno sobre os seus dispositivos,
 	sistemas, máquinas, nome do driver assim como muitas outras
 	informações em formato XML. A sua saída pode ser limitada informando
-	um um nome de dispositivo (**ym2203** por exemplo), um sistema
+	um nome de dispositivo (**ym2203** por exemplo), um sistema
 	(**megadriv** por exemplo) ou máquina (**sf2** por exemplo).
 
 	Geralmente a saída deste comando é usado para ser redirecionado em
