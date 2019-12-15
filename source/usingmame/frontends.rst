@@ -14,11 +14,11 @@ seleção de diferentes sistemas, software, organização da sua lista de
 jogos preferidos dentre inúmeras funções extras.
 
 Entre o usuário e o MAME é possível usar ferramentas chamadas
-"*Frontends*" que funcionam como uma interface intermediária. Elas
+*Front-ends* [#]_ que funcionam como uma interface intermediária. Elas
 existem aos milhares e seria inviável tentar listá-las todas aqui.
 
 Já fica o alerta, algumas são gratuitas porém nem todas elas são.
-Algumas frontends mais antigas antecedem a fusão de MAME e MESS e não
+Algumas front-ends mais antigas antecedem a fusão de MAME e MESS e não
 suportam as novas funcionalidades herdadas do MESS como consoles,
 handheld, etc.
 
@@ -40,3 +40,7 @@ problema que você venha a ter com elas. Para receber suporte, sugerimos
 entrar em contato diretamente com o autor da interface ou buscar ajuda
 em qualquer um dos fóruns relacionados com o MAME espalhados pela
 Internet.
+
+.. [#]	Por ser um adjetivo, estamos seguindo `estas normas
+		<http://gcc.gnu.org/codingconventions.html#Spelling>`_ e
+		passamos a utilizar **front-end** e não mais **frontend**.
