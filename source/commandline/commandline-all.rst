@@ -235,7 +235,7 @@ Exemplo:
 
 .. _mame-commandline-listxml:
 
-**-listxml** / **-lx** <``dispositivo`` | ``sistema`` | ``máquina``>
+**-listxml** / **-lx** < ``dispositivo`` | ``sistema`` | ``máquina`` >
 
 	Gera uma lista detalhada e completa de toda a informação que o MAME
 	mantém em seu banco de dados interno sobre os seus dispositivos,
