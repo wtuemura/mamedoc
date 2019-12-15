@@ -235,13 +235,20 @@ Exemplo:
 
 .. _mame-commandline-listxml:
 
-**-listxml** / **-lx** [<*pattern*>]
+**-listxml** / **-lx** <``dispositivo`` | ``sistema`` | ``máquina``>
 
-	O comando gera uma lista com muitos detalhes de todos os sistemas,
-	máquinas e drivers em formato XML, geralmente este comando é usado
-	para ser redirecionado para um arquivo texto. É possível limitar a
-	saída para um nome de sistema, máquina ou driver caso um seja
-	informado.
+	Gera uma lista detalhada e completa de toda a informação que o MAME
+	mantém em seu banco de dados interno sobre os seus dispositivos,
+	sistemas, máquinas, nome do driver assim como muitas outras
+	informações em formato XML. A sua saída pode ser limitada informando
+	um um nome de dispositivo (**ym2203** por exemplo), um sistema
+	(**megadriv** por exemplo) ou máquina (**sf2** por exemplo).
+
+	Geralmente a saída deste comando é usado para ser redirecionado em
+	um arquivo texto que posteriormente é utilizado por outras
+	ferramentas como :ref:`gerenciadores de ROMs
+	<advanced-tricks-dat-sistema>` e interfaces intermediárias
+	:ref:`front-ends <frontends>`.
 
 	Caso utilize o MAME com o PowerShell da Microsoft, leia também
 	:ref:`Redirecionamento com o PowerShell da Microsoft
