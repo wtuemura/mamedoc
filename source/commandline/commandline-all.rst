@@ -1885,13 +1885,14 @@ Opções para a configuração de vídeo
 
 **-prescale** <*quantidade*>
 
-	Controla o tamanho das imagens na tela enquanto são repassadas para
-	o sistema gráfico de redimensionamento. No ajuste mínimo de **1**, a
-	tela é renderizada no seu tamanho original antes de ser
+	Controla a proporcionalidade de redimensionamento da grandeza do
+	vídeo antes da aplicação de filtros ou shaders. No ajuste mínimo
+	a tela é renderizada no seu tamanho original antes de ser
 	dimensionada. Com valores maiores a tela é expandida pelo fator
-	definido em <*quantidade*> antes de ser dimensionado. Isso gera imagens
-	menos borradas com a opção ``-video d3d`` ao custo da perda de
-	alguma performance.
+	definido em <*quantidade*>. Isso gera imagens menos borradas com a
+	opção ``-video d3d`` ao custo da perda de alguma performance.
+
+	Os valores válidos são **1** (mínimo) e **8** (máximo).
 
 		O valor predefinido é **1**.
 
