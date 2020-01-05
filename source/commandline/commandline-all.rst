@@ -1760,8 +1760,21 @@ Opções para a configuração de vídeo
 
 **-[no]unevenstretch** / **-[no]ues**
 
-	Permite que a relação de aspecto da tela seja desigual e que a tela
-	ou janela possa ser preenchida (esticada) na horizontal ou vertical.
+	Permite que valores não inteiros possam ser usados para o
+	redimensionamento da tela. Isso determina se os pixels que
+	formam a imagem serão ou não distorcidos/esticados durante o
+	processo de redimensionamento.
+
+	O uso de valores não inteiros geram uma interferência chamada
+	**aliasing** nos pixels. Imagine o mapa de um jogo feito de
+	linhas retas com 1 pixel de largura, quando ocorre o aliasing a
+	linha que originalmente era feita com 1 pixel de largura passa a
+	ter 2 pixels ou mais, essa interferência cria pixels onde antes não
+	existiam gerando distorções nos gráficos.
+
+	Atualmente as pessoas sentem a necessidade de preencher toda a tela
+	da TV ainda que isso gere este tipo de interferência e distorça a
+	proporção dos gráficos.
 
 		O valor predefinido é **Ligado** (**-unevenstretch**).
 
