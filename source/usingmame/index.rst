@@ -10,5 +10,6 @@ NOÇÕES GERAIS DE USO E CONFIGURAÇÃO
 	frontends
 	aboutromsets
 	commonissues
+	faqgames
 
 
