@@ -1,3 +1,6 @@
+
+.. _advanced-glsl:
+
 Efeitos GLSL para \*nix, OS X e Windows
 =======================================
 

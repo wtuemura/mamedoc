@@ -2,6 +2,8 @@
 
 	\clearpage
 
+.. _advanced-hlsl:
+
 Os efeitos HLSL para Windows
 ============================
 

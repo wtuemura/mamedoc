@@ -3,6 +3,8 @@
 
 	\clearpage
 
+.. _advanced-bgfx:
+
 Efeitos BGFX para (quase) todo mundo
 ====================================
 
