@@ -36,6 +36,7 @@ A
 | :ref:`faqgames-animalc`
 | :ref:`faqgames-apple10`
 | :ref:`faqgames-armchmp2`
+| :ref:`faqgames-assalt`
 | :ref:`faqgames-asterix`
 | :ref:`faqgames-autmoon`
 | :ref:`faqgames-avengrgs`
@@ -480,6 +481,15 @@ Arm Champs II
 	  direita por um segundo ou dois, logo depois o título deve
 	  aparecer.
 
+.. _faqgames-assalt:
+
+Assalt
+------
+
+	* **35 WARNING 00180040**
+
+	 Pressione **1**.
+
 .. _faqgames-asterix:
 
 Asterix
@@ -499,6 +509,10 @@ Asterix
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-autmoon:
 
 Autumn Moon
@@ -511,10 +525,6 @@ Autumn Moon
 	  as teclas **Z + X + C**. Se realizado corretamente o valor de
 	  **RF/AMT** será alterado de **0** para **200**, pressione **F1**,
 	  depois **F2**.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-avengrgs:
 
@@ -651,6 +661,10 @@ Bottle 10
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _faqgames-bubblem:
 
@@ -1477,9 +1491,6 @@ Hard Drivin' / Race Drivin'
 	  saia por aí perturbando as pessoas caso algum problema ocorra por
 	  causa da alteração que você fizer.
 
-.. raw:: latex
-
-	\clearpage
 
 **Caso tenha problemas de controlar o veículo ou caso o freio esteja
 sempre acionado, é necessário calibrar os controles!**
@@ -1566,6 +1577,10 @@ Hyper Sports
 	  Records** como **Erase on Reset**, pressione **F3**. Redefina
 	  **World Records** como **Don't Erase**.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-ilpag:
 
 Il Pagliaccio
@@ -1606,10 +1621,6 @@ Island / Island 2
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-itazuram:
 
@@ -1721,6 +1732,10 @@ K.G Bird
 	  **RF/AMT** será alterado de **0** para **200**, pressione **F1**,
 	  depois **F2**.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-karatblzu:
 
 Karate Blazers
@@ -1794,6 +1809,10 @@ Konami 80's AC Special
 	  Navegue para baixo com o botão **2** do jogador 1, selecione
 	  **SAVE AND EXIT**, pressione **1** para continuar.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-opengolf:
 
 Konami's Open Golf Championship
@@ -1839,10 +1858,6 @@ Kyukyoku Sentai Dadandarn
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-lghostu:
 
@@ -1944,6 +1959,10 @@ Lucky & Wild
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _faqgames-lhaunt_2:
 
@@ -2067,10 +2086,6 @@ Martial Champion
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _faqgames-mslug:
 
 Metal Slug (Series)
@@ -2172,6 +2187,10 @@ Monster Maulers
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-mk2:
 
 Mortal Kombat II / Mortal Kombat 3 / Ultimate Mortal Kombat 3
@@ -2218,10 +2237,6 @@ Mystic Marathon
 
 	  Pressione **F2** ao ver a mensagem **FACTORY SETTINGS RESTORED**.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _faqgames-mystwarr:
 
 Mystic Warriors
@@ -2240,6 +2255,10 @@ Mystic Warriors
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _faqgames-nclubv3:
 
@@ -2376,6 +2395,10 @@ Player's Edge Plus (Set038) Set Chip
 	Pode ser que a dica esteja errada, obsoleta ou já não funcione mais.
 	A informação será mantida para futuras referências de versões mais
 	antigas do MAME.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _faqgames-peke0004:
 
