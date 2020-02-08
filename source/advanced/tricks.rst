@@ -312,6 +312,10 @@ mais fácil utilizar um gerenciador, repare que é bem genérico. O uso de
 scripts permitem que a separação seja bem mais específica caso seja
 necessário.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _advanced-tricks-criando-romset:
 
 Criando um ROMSET apenas com máquinas tipo Arcade
@@ -322,6 +326,8 @@ compilando o MAME com a opção ``SUBTARGET=arcade``, isso fará com que o
 MAME funcione e exiba apenas uma lista com máquinas classificadas
 internamente como arcade, simples assim. Para mais informações leia o
 capítulo :ref:`compiling-MAME`.
+
+.. _advanced-tricks-using-mame-interface:
 
 Usando a interface
 ------------------
@@ -336,8 +342,8 @@ facilita muito a nossa vida.
   `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_ e extraia
   o diretório **folders** dentro do diretório do MAME.
 * Inicie o MAME, no lado esquerdo da interface selecione **Categoria**,
-  em **Arquivo** escolha **Working Arcade.ini**, em **Incluir Clones**
-  escolha **Não** e clique em **Voltar ao Menu Anterior**.
+  em **Arquivo** escolha **Working Arcade Clean.ini**, em **Incluir
+  Clones** escolha **Não** e clique em **Voltar ao Menu Anterior**.
 * No topo da interface, clique com o mouse no ícone do disquete para
   exportar a lista e escolha **Exportar lista em formato XML
   (igual -listxml)**, depois de alguns segundos será gerado um arquivo
@@ -352,6 +358,85 @@ facilita muito a nossa vida.
   onde as suas ROMs se encontram e com o destino o diretório onde deseja
   ter somente as ROMs de arcade.
 
+.. raw:: latex
+
+	\clearpage
+
+.. _advanced-tricks-using-clrmamepro:
+
+Usando o Clrmamepro
+-------------------
+
+O **Clrmamepro** é apenas um dos diversos programas disponíveis para
+gerenciar as suas ROMs, o exemplo abaixo mostra como usar o arquivo XML
+gerado no passo anterior para **reconstruir (Rebuild)** o seu ROMSET
+apenas com ROMs arcade.
+
+* Baixe e instale o `Clrmamepro <https://mamedev.emulab.it/clrmamepro/>`_
+  é importante saber em qual diretório ele foi instalado!
+* Renomeie o arquivo **exported.xml** que está dentro do diretório
+  **ui** para **arcade-clean.xml** assim é possível ter um controle do
+  arquivo que está sendo carregado.
+* Localize o diretório onde o Clrmamepro foi instalado e copie o arquivo
+  **arcade-clean.xml** para dentro do diretório **datfiles**.
+* Rode o Clrmamepro no campo direito onde diz **Profile** deve estar
+  vazio.
+
+.. figure:: images/Clrmamepro-add-dat.png
+	:width: 300
+	:align: center
+	:figclass: align-center
+	:alt: Add DatFile
+
+* Clique em **Add DatFile...** e selecione o arquivo
+  **arcade-clean.xml**, na próxima tela apenas clique em OK.
+* Clique em **Load / Update**, na próxima tela selecione **Default**.
+
+.. figure:: images/Clrmamepro-load.png
+	:width: 300
+	:align: center
+	:figclass: align-center
+	:alt: Load Update
+
+* Durante a leitura deve aparecer alguns erros do tipo **DatFile
+  Problem**, apenas clique em **OK TO ALL**.
+* Ao concluir clique no ícone **Rebuilder**.
+
+.. figure:: images/Clrmamepro-rebuilder.png
+	:width: 250
+	:align: center
+	:figclass: align-center
+	:alt: rebuilder
+
+.. raw:: latex
+
+	\clearpage
+
+* Sem alterar nenhuma das opções, vá em **Source** e selecione o
+  diretório onde se encontram todas as suas ROMs. Em **Destination**
+  selecione o diretório de destino onde será criada a sua nova ROMSET.
+
+.. figure:: images/Clrmamepro-rebuilder-screen.png
+	:width: 300
+	:align: center
+	:figclass: align-center
+	:alt: rebuilder screen
+
+* **ATENÇÃO! Não escolha o mesmo diretório de origem**, escolha um
+  diretório completamente diferente e se possível que seja em outro HDD,
+  cartão de memória, pen-drive, etc!
+* Clique em **Rebuild...** para iniciar e aguarde pois dependendo da
+  quantidade de arquivos todo o processo será demorado.
+
+Ao final do processo você terá um ROMSET apenas com as ROMs das máquinas arcades,
+o mesmo pode ser feito para qualquer outro sistema, Mega Drive/Genesis, SNES,
+o céu é o limite!
+
+.. _advanced-tricks-using-scripts:
+
+Usando Scripts
+--------------
+
 Uma outra maneira para obter o mesmo resultado é através da utilização
 de pequenos scripts usando a linha de comandos, apesar de ser um
 processo mais manual e um pouco trabalhoso, o processo acaba sendo mais
@@ -364,6 +449,8 @@ não algo exclusivo do Windows apenas.
 * Abra e extraia apenas o arquivo **Working Arcade.ini**
 * Apague tudo e deixe apenas o que estiver depois de ``[ROOT_FOLDER]``
 * Salve este arquivo modificado como **arcade.txt**
+
+.. _advanced-tricks-command-windows:
 
 Usando a linha de comando no Windows
 ------------------------------------
@@ -383,6 +470,10 @@ incluir o caminho completo onde estão armazenadas as suas ROMs,
 adicionar o nome da máquina + a extensão .zip e por fim redirecionar a
 saída para o arquivo ``caminho-roms.txt``.
 
+.. raw:: latex
+
+	\clearpage
+
 Execute o comando abaixo para realizar a cópia dos arquivos com base na
 lista que acabamos de criar: ::
 
@@ -392,9 +483,7 @@ Assim como no comando acima, o arquivo ``caminho-roms.txt`` será lido e
 posteriormente irá alimentar o comando ``copy`` com o devido caminho e
 o destino ``H:\arcade-roms``.
 
-.. raw:: latex
-
-	\clearpage
+.. _advanced-tricks-others:
 
 Usando o terminal no Linux, macOS e \*NIX em geral
 --------------------------------------------------

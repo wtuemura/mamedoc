@@ -784,7 +784,7 @@ Complex X
 Coral Riches II
 ---------------
 
-	* **Memory Error - Watchdog Reset***
+	* **Memory Error - Watchdog Reset**
 
 .. warning::
 

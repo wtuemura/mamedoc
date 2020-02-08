@@ -3285,7 +3285,7 @@ Opções diversas
 **-confirm_quit**
 
 	Exibir um aviso na tela "*Confirmar Sair*" antes de sair, exigindo
-	que o usuário confirme a ação antes de sair do MAME.
+	que o usuário confirme a ação antes de encerrar o MAME.
 
 		O valor predefinido é **Desligado** (**-noconfirm_quit**).
 
