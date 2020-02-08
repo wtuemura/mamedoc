@@ -1032,10 +1032,10 @@ Dragoon Might
 
 .. _faqgames-drummania:
 
-Drum Mania
-----------
+DrumMania
+---------
 
-	* **Please call attendant**
+	* **Please Call Attendant**
 
 	  Veja a solução em detalhes :ref:`neste capítulo
 	  <advanced-tricks-drummania>`.
