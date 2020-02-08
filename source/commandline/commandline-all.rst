@@ -3186,8 +3186,19 @@ Opções diversas
 .. _mame-commandline-drc:
 
 **-[no]drc**
+
 	Ativa o núcleo o DRC (recompilador dinâmico) da CPU visando uma
 	velocidade máxima de emulação, caso esteja disponível.
+
+	Na recompilação dinâmica as instruções são traduzidas em tempo real
+	e mais próxima possível do sistema que está sendo emulado com
+	instruções reagrupadas em código de alto nível que então é compilado
+	na linguagem nativa do sistema hospedeiro. A grande vantagem desta
+	técnica é a melhor adequação do código gerado refletindo num melhor
+	desempenho e eficiência durante a execução. Por outro lado a
+	penalidade para se atingir uma melhor performance e desempenho
+	reside na necessidade de um grande poder de processamento, muito
+	maior do que o sistema que está sendo emulado.
 
 		O valor predefinido é **Ligado** (**-drc**).
 
@@ -3195,7 +3206,7 @@ Opções diversas
 
 **-drc_use_c**
 
-	Force o uso de DRC usando infra-estrutura em código C.
+	Impor o uso do DRC usando a infra-estrutura em código C.
 
 	O valor predefinido é **Desligado** (**-nodrc_use_c**).
 
@@ -3260,6 +3271,10 @@ Opções diversas
 
 		O valor predefinido é **default** (O MAME usará a fonte nativa).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-ui:
 
 **-ui** <*type*>
@@ -3275,10 +3290,6 @@ Opções diversas
 
 	Permite que seja alterado o tamanho padrão da RAM (caso exista suporte
 	para tanto no driver).
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-confirmquit:
 
