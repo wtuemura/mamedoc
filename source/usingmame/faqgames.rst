@@ -87,6 +87,7 @@ D
 | :ref:`faqgames-dirtfoxj`
 | :ref:`faqgames-ddragon`
 | :ref:`faqgames-dragoona`
+| :ref:`faqgames-drummania`
 | :ref:`faqgames-dsoccr94`
 | :ref:`faqgames-ddsom`
 
@@ -1029,6 +1030,15 @@ Dragoon Might
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
+.. _faqgames-drummania:
+
+Drum Mania
+----------
+
+	* **Please call attendant**
+
+	  Veja a solução em detalhes :ref:`neste capítulo
+	  <advanced-tricks-drummania>`.
 
 .. _faqgames-dsoccr94:
 

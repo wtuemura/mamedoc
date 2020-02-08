@@ -600,6 +600,8 @@ uma seção do PowerShell seja iniciada.
 
 	\clearpage
 
+.. _advanced-tricks-drummania:
+
 Resolvendo o problema "please call attendant" das máquinas DrumMania
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
