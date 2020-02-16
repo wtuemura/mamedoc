@@ -242,8 +242,9 @@ Q
 R
 ~
 
-| :ref:`faqgames-racinfrc`
+| :ref:`faqgames-rdft`
 | :ref:`faqgames-rfjetu`
+| :ref:`faqgames-racinfrc`
 | :ref:`faqgames-rmpgwt`
 | :ref:`faqgames-redearth`
 | :ref:`faqgames-resdnt`
@@ -2723,6 +2724,38 @@ Quiz Tonosama no Yabou
 
 	  Pressione a tecla **2** quando aparecer a tela **MENU**.
 
+.. _faqgames-rdft:
+
+Raiden Fighters (Todas as Regiões)
+----------------------------------
+
+	  Essa máquina necessita de uma memória NVRAM válida para funcionar,
+	  seja paciente durante o processo de inicialização pois os testes
+	  internos desta máquina demoram bastante. Talvez a opção
+	  ``-nothrottle`` ajude a acelerar o processo.
+
+	  Quando o contador chegar no **000** pressione **TAB**, vá em
+	  **Chaves DIP**, **Desligue** a chave **JP1**, encerre o MAME e
+	  inicie a máquina novamente.
+
+.. _faqgames-rfjetu:
+
+Raiden Fighters Jet (Todas as regiões)
+--------------------------------------
+
+	  Essa máquina necessita de uma memória NVRAM válida para funcionar,
+	  seja paciente durante o processo de inicialização pois os testes
+	  internos desta máquina demoram bastante. Talvez a opção
+	  ``-nothrottle`` ajude a acelerar o processo.
+
+	  Quando o contador chegar no **000** pressione **TAB**, vá em
+	  **Chaves DIP**, **Desligue** a chave **JP1**, encerre o MAME e
+	  inicie a máquina novamente.
+
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-racinfrc:
 
 Racing Force
@@ -2745,24 +2778,6 @@ Racing Force
 .. warning::
 
 	Até a presente versão do MAME esta máquina ainda não funciona.
-
-.. _faqgames-rfjetu:
-
-Raiden Fighters Jet (Todas as regiões)
---------------------------------------
-
-	  Essa máquina necessita de uma memória NVRAM válida para funcionar,
-	  seja paciente durante o processo de inicialização pois os testes
-	  internos desta máquina demoram bastante. Talvez a opção
-	  ``-nothrottle`` ajude a acelerar o processo.
-
-	  Quando o contador chegar no **000** pressione **TAB**, vá em
-	  **Chaves DIP**, **Desligue** a chave **JP1**, encerre o MAME e
-	  inicie a máquina novamente.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-rmpgwt:
 
@@ -2810,6 +2825,10 @@ Resident
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _faqgames-revx:
 
@@ -2882,6 +2901,10 @@ Rock Climber (rclimb_3)
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-royalcrd:
 
 Royal Card
@@ -2903,10 +2926,6 @@ Royal Card
 	Pode ser que a dica esteja errada, obsoleta ou já não funcione mais.
 	A informação será mantida para futuras referências de versões mais
 	antigas do MAME.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-vegasfst:
 
@@ -2949,6 +2968,10 @@ Run and Gun
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-salmndr2:
 
 Salamander 2
@@ -2974,10 +2997,6 @@ San Fransisco Rush
 ------------------
 
 	  Pressione o botão **1** no controle do **jogador 1**.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-scud:
 
@@ -3049,10 +3068,6 @@ Shadow Dancer
 	  **Backup Ram Clear**, Pressione **F2** e confirme, selecione
 	  **EXIT** para encerrar a configuração.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _faqgames-sigma2k:
 
 Sigma Poker 2000
@@ -3120,10 +3135,6 @@ Slither
 
 	  Pressione **2** ao ver a mensagem **CMOS INVALID**.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _faqgames-snookr10:
 
 Snooker 10
@@ -3185,6 +3196,10 @@ Space Dungeon
 
 	  Use a tecla **9** para passar por todas as telas de configuração
 	  até chegar na tela do título.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _faqgames-spacegun:
 
@@ -3249,6 +3264,10 @@ Steel Gunner / Steel Gunner 2
 	  Para calibrar as pistolas mantenha a tecla **9** pressionada e toque em
 	  **F2**, atire nos alvos com a pistola do jogador 1 e 2. Pressione
 	  **F2** para encerrar a configuração.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _faqgames-sss:
 
@@ -3419,10 +3438,6 @@ Target Panic
 	  Uma maneira de acelerar um pouco este processo é utilizar a opção
 	  :ref:`-nothrottle <mame-commandline-nothrottle>` porém ainda assim
 	  todo o processo pode levar cerca de 7 minutos.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-techbowl:
 
