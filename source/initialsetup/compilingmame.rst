@@ -294,7 +294,7 @@ Para ver a condição do armazenamento cache faça ``ccache -s``: ::
 	max cache size                      10.0 GB
 
 Para montar a sua cache basta fazer uma compilação limpa do código fonte
-do MAME com ``rm -rf build/* && make -j5``, no final em **cache size**
+do MAME com ``rm -rf build/* && make -j7``, no final em **cache size**
 deve aparecer o quanto foi armazenado em cache. Para aumentar o **max
 cache size** edite o arquivo ``/home/mame/.ccache/ccache.conf``.
 
@@ -344,12 +344,12 @@ benefícios da compilação em paralelo, nos testes realizados com Windows
 10 64-bit o valor ideal foi a quantidade de núcleos **-1** ou seja, num
 processador com 8 núcleos o valor ideal é **7**.
 
-	**make -j5**
+	**make -j7**
 
 Para compilar o MAME junto com as
 :ref:`ferramentas <mame-compilation-tools>`, use a opção abaixo:
 
-	**make TOOLS=1 -j5**
+	**make TOOLS=1 -j7**
 
 Para incluir os símbolos de depuração na compilação use a opção
 **SYMBOLS=1**, opção útil caso o MAME trave por algum motivo. Para mais
@@ -361,12 +361,12 @@ todas elas.
 
 .. _mame-compile-add-symbols:
 
-	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 -j5**
+	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 -j7**
 
 Para compilar uma versão de depuração do MAME use o comando abaixo, para
 mais informações veja :ref:`DEBUG <mame-compilation-debug>`.
 
-	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 DEBUG=1 -j5**
+	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 DEBUG=1 -j7**
 
 É possível customizar a sua compilação escolhendo um driver em
 específico usando a opção ``SOURCES=<driver>``, lembrando que é
@@ -381,17 +381,17 @@ versão só com máquinas ARCADE, nessa versão os portáteis, consoles,
 computadores, dentre outras ficam de fora.
 Caso queira uma versão arcade do MAME use o comando abaixo:
 
-	**make SUBTARGET=arcade SYMBOLS=1 SYMLEVEL=1 -j5**
+	**make SUBTARGET=arcade SYMBOLS=1 SYMLEVEL=1 -j7**
 
 Para compilar uma versão do MAME só com consoles, use o comando abaixo:
 
-	**make SUBTARGET=mess SYMBOLS=1 SYMLEVEL=1 -j5**
+	**make SUBTARGET=mess SYMBOLS=1 SYMLEVEL=1 -j7**
 
 Para compilar uma versão do MAME que tire proveito da extensão SSE2 do
 seu processador melhorando a performance, use o comando abaixo. Para
 mais informações veja :ref:`SSE2 <mame-compilation-sse2>`.
 
-	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j5**
+	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j7**
 
 É possível compilar o MAME usando todas as extensões disponíveis do seu
 processador e não apenas a SSE2 desde que seja também compatível com o
@@ -401,7 +401,7 @@ pode ou não tirar o máximo de performance possível do seu processador,
 assim como o MAME pode ou não se beneficiar de todas elas. O comando
 completo então ficaria assim, note que a opção **SSE2=1** foi removida.
 
-	**make SYMBOLS=1 SYMLEVEL=1 ARCHOPTS=-march=native -j5**
+	**make SYMBOLS=1 SYMLEVEL=1 ARCHOPTS=-march=native -j7**
 
 O ponto negativo é que os binários gerados com essa opção só irão
 funcionar em processadores iguais ao seu, caso compile uma versão em um
@@ -595,7 +595,7 @@ o seu **useroptions.mak**: ::
 	# <- Opções Relacionados com a CPU ->
 
 Com o arquivo acima configurado e com as opções definidas, execute o
-comando ``make -j5`` que o seu MAME será compilado levando as suas
+comando ``make -j7`` que o seu MAME será compilado levando as suas
 opções em consideração. A próxima seção resume algumas das opções úteis
 reconhecidas pelo makefile.
 
@@ -633,6 +633,8 @@ Configurando o pacote MSYS2 já pronto
 
   O último comando irá baixar todo o código fonte do MAME para um
   diretório chamado **mame**, o caminho completo é ``/src/mame``.
+
+.. _compiling-msys2-osd-sdl:
 
 * Por predefinição o MAME será compilado usando interfaces nativas
   do Windows como gerenciamento de janelas, saída de áudio e vídeo,
@@ -675,14 +677,6 @@ necessário fazer algumas alterações.
   Copie e extraia o arquivo no diretório raiz do MYSYS2 (geralmente
   ``c:\mysys32`` ou ``c:\mysys64``) usando o
   `7-zip <https://www.7-zip.org/>`_.
-
-* Adicione o exemplo abaixo ao arquivo ``/etc/pacman.conf`` usando
-  um editor de texto de sua escolha: ::
-
-	[mame]
-	Include = /etc/pacman.d/mirrorlist.mame
-
-Tenha certeza que o arquivo ``/etc/pacman.d/mirrorlist.mame`` exista.
 
 Para compilações em 64-bit edite o arquivo **.bashrc** que fica dentro
 do seu home, supondo que foi feita uma instalação padrão, 
@@ -1944,7 +1938,7 @@ Recarregue as configurações do seu terminal com o comando ``. .bashrc``
 
 Compile o MAME como mostra o exemplo abaixo: ::
 
-	make clean && make OVERRIDE_CC=/usr/bin/clang-5.0 OVERRIDE_CXX=/usr/bin/clang++-5.0 OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 -SANITIZE=address -j5
+	make clean && make OVERRIDE_CC=/usr/bin/clang-5.0 OVERRIDE_CXX=/usr/bin/clang++-5.0 OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 -SANITIZE=address -j7
 
 .. raw:: latex
 
