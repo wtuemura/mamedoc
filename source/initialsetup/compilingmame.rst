@@ -1630,12 +1630,12 @@ caminho nas variáveis de ambiente do Windows:
 6.	No nosso exemplo seria ``C:\msys64\mingw64\bin``, clique em ``Ok``
 	para finalizar e feche todas as janelas.
 
-E aqui começa toda a confusão, caso você tenha baixado a ferramenta de
-compilação oficial do MAME, ela já vem com uma versão do arquivo
-**libstdc++-6.dll**, porém caso você compile o seu SDL MAME com ela e
-tempos depois atualize o seu MSYS2, a versão do seu **libstdc++-6.dll**
-será diferente daquela que você compilou o seu SDL MAME, ocorrendo assim
-o problema.
+E aqui começa toda a confusão, caso você tenha baixado a `ferramenta de
+compilação oficial do MAME <https://www.mamedev.org/tools/>`_, ela já
+vem com uma versão do arquivo **libstdc++-6.dll**, porém caso você
+compile o seu SDL MAME com ela e tempos depois atualize o seu MSYS2, a
+versão do seu **libstdc++-6.dll** será diferente daquela que você
+compilou o seu SDL MAME, ocorrendo assim o problema.
 
 Para solucionar o problema basta que você compile uma nova versão do
 MAME que fará com que este utilize a versão atualizada do arquivo
