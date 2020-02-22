@@ -647,6 +647,18 @@ Configurando o pacote MSYS2 já pronto
   seja instalado os pacotes de desenvolvimento do SDL no MSYS2 da
   versão **2.0.3** ou mais recente.
 
+  Caso queira compilar uma verção SDL (Simple DirectMedia Layer) do MAME
+  para Windows em vez da versão nativa, instale os pacotes SDL com o
+  comando:
+
+  Para versões **x64** ::
+
+	pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-SDL2_ttf
+
+  Para versões **x32** ::
+
+	pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-SDL2_ttf
+
   A nomenclatura do prefixo do emulador mudará para
   ``sdlmame64.exe`` ou ``sdlmame.exe`` respectivamente.
 
