@@ -618,10 +618,13 @@ Configurando o pacote MSYS2 já pronto
 * Descompacte em algum lugar, entre no diretório, abra o shell do
   MSYS2 (**mingw64.exe**) e aguarde ele terminar a sua configuração.
 
-  Após a configuração inicial do MSYS2 e antes de compilar o MAME é
-  **obrigatório** a atualização de todo o ambiente usando o comando:
-
-	``pacman -Syu``
+  Apesar da recomendação para atualizar as ferramentas na `documentação
+  oficial <https://www.mamedev.org/tools/>`_ a  experiência mostra que
+  algumas vezes essa atualização acaba quebrando a compilação do MAME de
+  alguma maneira, veja por exemplo `este exemplo
+  <https://github.com/mamedev/mame/issues/6248>`_, portanto, prefira
+  manter a ferramenta oficial sem atualizações a não ser que seja
+  extremamente necessário.
 
   Caso encontre algum problema veja :ref:`compiling-issues-MSYS2`. Ao
   final do processo, execute a sequência de comandos abaixo:
