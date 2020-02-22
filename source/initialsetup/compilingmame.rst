@@ -744,6 +744,11 @@ reinicie o **mingw64.exe**.
 
 	**pacman -S mingw-w64-i686-qt5**
 
+.. note::
+
+	Utilize ``QTDEBUG=1`` nas opções de compilação do make para compilar
+	a interface QT do depurador.
+
 * Para gerar a documentação API do código fonte é preciso instalar
   o pacote **doxygen**.
 
