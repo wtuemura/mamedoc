@@ -1591,6 +1591,57 @@ variáveis de ambiente **CFLAGS** e **CXXFLAGS**.
 
 	\clearpage
 
+.. _compiling-issues-entry-point:
+
+Ponto de entrada não encontrado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Caso o seu **sdlmame64.exe** mostre um erro como este ou algo
+parecido: ::
+
+	Não foi possível localizar o ponto de entrada do procedimento
+	_ZNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEC1Ev na
+	biblioteca de vínculo dinâmico D:\MAME\sdlmame64.exe.
+
+Devido a alteração feita
+`neste commit <https://github.com/mamedev/mame/commit/b0223ac413ccfb0907be9741168b4cf43fb67fb9>`_
+o executável **sdlmame64.exe** é compilado de maneira que ele busque as
+bibliotecas que ele precisa para funcionar no sistema em vez de tê-las
+embutidas em si.
+
+Assim o executável **sdlmame64.exe** busca pelas seguintes bibliotecas,
+``libgcc_s_seh-1.dll``, ``libstdc++-6.dll``, ``libwinpthread-1.dll`` e
+``SDL2.dll``, todas elas estão dentro do diretório de instalação do seu
+MSYS2 ( exemplo ``C:\msys64\mingw64\bin`` ), é possível adicionar este
+caminho nas variáveis de ambiente do Windows:
+
+1.	Pressione a tecla com a bandeira do Windows ( ela é chamada
+	``WINKEY`` ) junto com a tecla ``Pause``.
+2.	Clique na opção chamada ``Configurações Avançadas do Sistema``.
+3.	Vá em ``Avançado`` --> ``Variáveis de Ambiente``.
+4.	Selecione ``Path`` e clique em ``Editar``.
+5.	Clique em ``Novo`` e adicione o caminho onde está instalado o seu
+	MSYS2.
+6.	No nosso exemplo seria ``C:\msys64\mingw64\bin``, clique em ``Ok``
+	para finalizar e feche todas as janelas.
+
+E aqui começa toda a confusão, caso você tenha baixado a ferramenta de
+compilação oficial do MAME, ela já vem com uma versão do arquivo
+**libstdc++-6.dll**, porém caso você compile o seu SDL MAME com ela e
+tempos depois atualize o seu MSYS2, a versão do seu **libstdc++-6.dll**
+será diferente daquela que você compilou o seu SDL MAME, ocorrendo assim
+o problema.
+
+Para solucionar o problema basta que você compile uma nova versão do
+MAME que fará com que este utilize a versão atualizada do arquivo
+**libstdc++-6.dll**. Caso não queira lidar com variáveis de ambiente,
+é possível também copiar as bibliotecas acima listadas para o diretório
+onde se encontra o seu SDL MAME.
+
+.. raw:: latex
+
+	\clearpage
+
 .. _compiling-unusual:
 
 Configurações para compilações não ortodoxas
