@@ -693,29 +693,17 @@ necessário fazer algumas alterações.
   ``c:\mysys32`` ou ``c:\mysys64``) usando o
   `7-zip <https://www.7-zip.org/>`_.
 
-Para compilações em 64-bit edite o arquivo **.bashrc** que fica dentro
-do seu home, supondo que foi feita uma instalação padrão, 
-**c:\\mysys64\\home\\seu_usuário\\.bashrc** e adicione a variável no
-final do arquivo com um editor de texto de sua preferência.
+Por fim é necessário definir as variáveis MINGW32 e MINGW64, instale o
+editor de texto nano com o comando ``pacman -S nano``, após a instalação
+faça ``nano ~/.bashrc`` e adicione a linha abaixo no final do
+arquivo: ::
 
-		**export MINGW64=/mingw64 MINGW32=**
+		export MINGW32=/mingw32 MINGW64=/mingw64
 
-Para compilações em 32-bit edite o arquivo **.bashrc** que fica dentro
-do seu home, supondo que foi feita uma instalação padrão, 
-**c:\\mysys32\\home\\seu_usuário\\.bashrc** e adicione a variável no
-final do arquivo com um editor de texto de sua preferência.
-
-		**export MINGW32=/mingw32 MINGW64=**
-
-Abra o shell do MSYS2 (**mingw64.exe**) e aguarde ele terminar a sua
-configuração, execute o comando a seguir para atualizar a estrutura
-básica do seu MSYS2:
-
-	**pacman -Syu**
-
-.. raw:: latex
-
-	\clearpage
+Salve o arquivo com **CTRL+O** seguido de **ENTER** e faça **CTRL+X**
+para sair do editor, essas variáveis de ambiente permitem a compilação
+das versões 32-bit e 64-bit do MAME. Feche e abra o terminal novamente
+para que essas configurações sejam aplicadas.
 
 Caso ocorra algum erro do tipo **GPGME error**, veja 
 :ref:`compiling-issues-MSYS2`. Ao final, **feche a janela** e
