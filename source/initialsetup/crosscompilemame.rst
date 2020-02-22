@@ -170,6 +170,50 @@ capítulo :ref:`compiling-mame`: ::
 
 	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
 
+
+Compilando o MAME SDL para Windows no Linux
+-------------------------------------------
+
+Caso queira compilar uma versão SDL do MAME instale as estes pacotes
+mingw do SDL2, ``SDL2-static``, ``SDL2_ttf`` e ``SDL2``.
+
+Debian e Ubuntu
+~~~~~~~~~~~~~~~
+
+Infelizmente será necessário compilar estes pacotes manualmente e no
+momento não iremos cobrir este assunto aqui porém lembre-se que é
+possível compilar esta versão do MAME SDL usando o :ref:`MINGW no Windows
+<compiling-msys2-osd-sdl>`!
+
+Basta compilar usando a opção ``OSD=sdl`` na sua linha de comando,
+exemplo: ::
+
+	make clean && make OSD=sdl SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 -j5
+
+Ao final da compilação será gerado um arquivo **sdlmame64.exe**.
+
+.. raw:: latex
+
+	\clearpage
+
+Fedora Linux
+~~~~~~~~~~~~
+
+::
+
+	sudo dnf install mingw64-SDL2_ttf mingw64-SDL2 mingw64-SDL2-static
+
+Agora use a opção ``OSD=sdl`` como mostra o exemplo abaixo para versões
+32-bit: ::
+
+	make clean && make TARGETOS=windows CROSS_BUILD=1 OSD=sdl SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 -j5
+
+Para versões 64-bit: ::
+
+	make clean && make TARGETOS=windows CROSS_BUILD=1 OSD=sdl SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
+
+Ao final da compilação será gerado um arquivo **sdlmame64.exe**.
+
 .. [1]	Cross compiling no Inglês. (Nota do tradutor)
 .. [2]	Todo o processo no meu computador leva cerca de 4 horas, AMD FX
 		tm-8350, 16GiB de memória DDR3. (Nota do tradutor)
