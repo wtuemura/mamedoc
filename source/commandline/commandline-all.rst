@@ -1925,7 +1925,8 @@ Opções para a configuração de vídeo
 	serrilhada, esta opção também ocasiona artefatos na tela em caso de
 	redimensionamento. Caso não goste da aparência filtrada e amaciada
 	da imagem, tente incrementar o valor da opção ``-prescale`` ao em
-	vez de desabilitar todos os filtros.
+	vez de desabilitar todos os filtros. Veja também
+	:ref:`-gl_glsl_filter <mame-commandline-glglslfilter>`.
 
 		O valor predefinido é **Ligado** (**-filter**).
 
@@ -2317,10 +2318,23 @@ Opções de vídeo OpenGL GLSL
 
 .. _mame-commandline-glglslfilter:
 
-**-gl_glsl_filter**
+**-gl_glsl_filter** <*valor*>
 
-	Habilite a filtragem *OpenGL GLSL* em vez da filtragem FF
-	*0-simples, 1-bilinear, 2-bicúbica*
+	Habilita a interpolação da imagem **OpenGL GLSL**, os valores
+	válidos são:
+
+	* **0**, Simples: Método de interpolação rápida e menos precisa que
+	  deixa os pixels de forma serrilhada pois utiliza a técnica de
+	  interpolação do
+	  `vizinho mais próximo <https://pt.wikipedia.org/wiki/Interpolação_por_vizinho_mais_próximo>`_.
+	* **1**, Bilinear: Método de interpolação lenta e de qualidade
+	  mediana, suaviza a transição entre as cores dos pixels deixando a
+	  imagem mais suavizada como um todo. Veja também
+	  :ref:`-filter <mame-commandline-filter>`.
+	* **2**, Bicúbico: Método de interpolação lenta e mais precisa,
+	  suaviza a transição entre as cores dos pixels próximos gerando uma
+	  gradação mais suave. Também suaviza a imagem porém nem tanto como
+	  o método bilinear.
 
 		O valor predefinido é **1** (**-gl_glsl_filter 1**).
 
