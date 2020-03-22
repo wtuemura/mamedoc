@@ -2321,7 +2321,7 @@ Opções de vídeo OpenGL GLSL
 **-gl_glsl_filter** <*valor*>
 
 	Habilita a interpolação da imagem **OpenGL GLSL**, os valores
-	válidos são:
+	válidos [6]_ são:
 
 	* **0**, Simples: Método de interpolação rápida e menos precisa que
 	  deixa os pixels de forma serrilhada pois utiliza a técnica de
@@ -3016,7 +3016,7 @@ Opções voltadas para a depuração
 
 **-[no]verbose** / **-[no]v**
 
-	Este é o **modo loquaz** [6]_, exibe todas as informações de
+	Este é o **modo loquaz** [7]_, exibe todas as informações de
 	diagnósticos disponíveis.
 	Essas informações são úteis para apurar qualquer tipo de problemas
 	com a sua configuração ou qualquer outra que possa aparecer.
@@ -3058,7 +3058,7 @@ Opções voltadas para a depuração
 **-[no]debug** / **-[no]d**
 
 	Habilita o depurador embutido no MAME. É predefinido que o depurador
-	entre em ação ao pressionar a tela til (**~**) [7]_ durante a
+	entre em ação ao pressionar a tela til (**~**) [8]_ durante a
 	emulação.
 	Ele também entra em ação imediatamente ao iniciar a emulação.
 
@@ -3458,8 +3458,9 @@ Opções do servidor HTTP
 		sincronismo com a outra metade da parte de baixo da tela,
 		surgindo um efeito ou um "*defeito*" onde cada metade se
 		deslocam horizontalmente para lados opostos. (Nota do tradutor)
-.. [6]	Tagarela, que verbaliza muito, falador, barulhento.
+.. [6]	https://github.com/mamedev/mame/pull/2989/files
+.. [7]	Tagarela, que verbaliza muito, falador, barulhento.
 		(Nota do tradutor)
-.. [7]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
+.. [8]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)

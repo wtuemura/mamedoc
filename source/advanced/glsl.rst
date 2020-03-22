@@ -123,15 +123,15 @@ Por exemplo, uma vez que você encontrou configurações de glsl que acha
 que são apropriadas para os jogos de Neo-Geo, você pode colocar essas
 configurações num arquivo ``neogeo.ini`` para que todos os jogos de
 Neo-Geo usem essas configurações sem que você tenha que adicioná-las
-manualmente uma a uma em diferentes arquivos ``.ini`` como o nome do
-jogo.
+manualmente uma a uma em diferentes arquivos ``.ini`` como o nome da
+máquina.
 
 .. raw:: latex
 
 	\clearpage
 
-Alterando as configurações
---------------------------
+Opções disponíveis
+------------------
 
 **gl_glsl**
 
@@ -140,10 +140,23 @@ Alterando as configurações
 
 		O valor predefinido é **0**.
 
-**gl_glsl_filter**
+**-gl_glsl_filter** <*valor*>
 
-	Ativa o filtro na saída glsl. Reduz o serrilhado no contorno da
-	imagem, essa opção deixa a imagem um pouco suavizada.
+	Habilita a interpolação da imagem **OpenGL GLSL**, os valores
+	válidos [3]_ são:
+
+	* **0**, Simples: Método de interpolação rápida e menos precisa que
+	  deixa os pixels de forma serrilhada pois utiliza a técnica de
+	  interpolação do
+	  `vizinho mais próximo <https://pt.wikipedia.org/wiki/Interpolação_por_vizinho_mais_próximo>`_.
+	* **1**, Bilinear: Método de interpolação lenta e de qualidade
+	  mediana, suaviza a transição entre as cores dos pixels deixando a
+	  imagem mais suavizada como um todo. Veja também
+	  :ref:`-filter <mame-commandline-filter>`.
+	* **2**, Bicúbico: Método de interpolação lenta e mais precisa,
+	  suaviza a transição entre as cores dos pixels próximos gerando uma
+	  gradação mais suave. Também suaviza a imagem porém nem tanto como
+	  o método bilinear.
 
 |	``glsl_shader_mame0``
 |	``...``
@@ -166,3 +179,4 @@ Alterando as configurações
 .. [2]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)
+.. [3]	https://github.com/mamedev/mame/pull/2989/files
