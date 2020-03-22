@@ -306,6 +306,7 @@ T
 | :ref:`faqgames-couple`
 | :ref:`faqgames-elecyoyo`
 | :ref:`faqgames-simpsons`
+| :ref:`faqgames-thrilld`
 | :ref:`faqgames-thndrx2`
 | :ref:`faqgames-timecris`
 | :ref:`faqgames-tjumpman`
@@ -3586,6 +3587,15 @@ The Simpsons
 .. raw:: latex
 
 	\clearpage
+
+.. _faqgames-thrilld:
+
+Thrill Drive (JAE/JAA)
+----------------------
+
+	* **RTC SELF CHECK ERROR**
+
+	  Pressione **F2** para continuar.
 
 .. _faqgames-thndrx2:
 
