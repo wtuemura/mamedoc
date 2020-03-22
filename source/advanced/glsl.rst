@@ -119,12 +119,13 @@ proveito do poder dos arquivos de configuração do MAME, talvez seja
 melhor copiar as opções do glsl do ``mame.ini`` para um outro arquivo de
 configuração e fazer as modificações lá.
 
-Por exemplo, uma vez que você encontrou configurações de glsl que acha
-que são apropriadas para os jogos de Neo-Geo, você pode colocar essas
-configurações num arquivo ``neogeo.ini`` para que todos os jogos de
-Neo-Geo usem essas configurações sem que você tenha que adicioná-las
-manualmente uma a uma em diferentes arquivos ``.ini`` como o nome da
-máquina.
+Por exemplo, uma vez selecionada as opções glsl que queira usar nas
+máquinas para Neo-Geo, coloque essas configurações no arquivo
+``neogeo.ini`` dentro do diretório **ini/sources** para que essas
+configurações sejam compartilhadas com todas as máquinas Neo-Geo
+automaticamente. Caso contrário seria necessário ter que adicionar essas
+configurações uma a uma manualmente em diferentes arquivos ``.ini`` como
+o nome de cada máquina dentro do diretório **ini**.
 
 .. raw:: latex
 
