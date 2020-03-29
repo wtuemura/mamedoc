@@ -295,8 +295,8 @@ Para ver a condição do armazenamento cache faça ``ccache -s``: ::
 
 Antes de usar tenha certeza que a variável de ambiente ``USE_CCACHE``
 exista e seja igual a **1**, caso não exista, defina com ``export
-USE_CCACHE=1`` antes da compilação ou salve no arquivo ~/.bashrc como já
-foi descrito em :ref:`compiling-msys2-manually`.
+USE_CCACHE=1`` antes da compilação ou salve no arquivo ``~/.bashrc``
+como já foi descrito em :ref:`compiling-msys2-manually`.
 
 Para montar a sua cache basta fazer uma compilação limpa do código fonte
 do MAME com ``rm -rf build/* && make -j7``, no final em **cache size**
