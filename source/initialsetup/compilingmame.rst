@@ -293,6 +293,11 @@ Para ver a condição do armazenamento cache faça ``ccache -s``: ::
 	cache size                           4.9 GB
 	max cache size                      10.0 GB
 
+Antes de usar tenha certeza que a variável de ambiente ``USE_CCACHE``
+exista e seja igual a **1**, caso não exista, defina com ``export
+USE_CCACHE=1`` antes da compilação ou salve no arquivo ~/.bashrc como já
+foi descrito em :ref:`compiling-msys2-manually`.
+
 Para montar a sua cache basta fazer uma compilação limpa do código fonte
 do MAME com ``rm -rf build/* && make -j7``, no final em **cache size**
 deve aparecer o quanto foi armazenado em cache. Para aumentar o **max
