@@ -160,6 +160,7 @@ def setup(app):
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
+# This was depreciated in Sphinx 1.6.6
 #html_use_smartypants = True
 
 # We don't want smartquotes in general.
