@@ -162,6 +162,9 @@ def setup(app):
 # typographically correct entities.
 #html_use_smartypants = True
 
+# We don't want smartquotes in general.
+smartquotes = False
+
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
 
