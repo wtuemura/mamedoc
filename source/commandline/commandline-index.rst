@@ -74,6 +74,8 @@ Opções de MIDI e rede
 ~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`listmidi <mame-commandline-listmidi>`
+| :ref:`midiin <mame-commandline-midiin>`
+| :ref:`midiout <mame-commandline-midiout>`
 | :ref:`listnetwork <mame-commandline-listnetwork>`
 
 Opções de saída das notificações de tela
