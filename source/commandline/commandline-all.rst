@@ -1135,11 +1135,11 @@ Opções para a gravação e a reprodução do estado da emulação
 
 **-[no]autosave**
 
-	Quando ativado, cria automaticamente um arquivo de estado ao sair do
-	MAME e automaticamente tenta recarregá-lo caso o MAME inicie
-	novamente com o mesmo sistema. Isso só funciona para sistemas que
-	habilitaram explicitamente o suporte a estado de salvamento em seu
-	driver.
+	Quando ativado, cria automaticamente um arquivo com a condição atual
+	do sistema ao encerrar o MAME e automaticamente tenta recarregá-lo
+	caso o MAME inicie novamente com o mesmo sistema. Isto só funciona
+	para o driver dos sistemas compatíveis que suportam o salvamento da
+	sua condição atual.
 
 		O valor predefinido é **Desligado** (**-noautosave**).
 
