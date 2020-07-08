@@ -1150,7 +1150,7 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. _mame-commandline-playback:
 
-**-playback** / **-pb** <*nome_do_arquivo*>
+**-playback** / **-pb** <*nome do arquivo*>
 
 	Faz a reprodução de um arquivo de gravação. Esse recurso não
 	funciona de maneira confiável com todos os sistemas, mas pode ser
@@ -1173,7 +1173,7 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. _mame-commandline-record:
 
-**-record** / **-rec** <*nome_do_arquivo*>
+**-record** / **-rec** <*nome do arquivo*>
 
 	Faz a gravação de todos comandos feitos pelo usuários durante uma
 	seção e define o nome do arquivo onde será registrado todos esses
@@ -1209,9 +1209,9 @@ Opções para a gravação de áudio e vídeo
 
 .. _mame-commandline-mngwrite:
 
-**-mngwrite** <*nome_do_arquivo*>.mng
+**-mngwrite** <*nome do arquivo*>.mng
 
-	Escreve cada quadro de vídeo em um arquivo <*nome_do_arquivo*> no
+	Escreve cada quadro de vídeo em um arquivo <*nome do arquivo*> no
 	formato MNG, produzindo uma animação da sessão.
 	Note que ``-mngwrite`` só grava quadros de vídeo, não grava qualquer
 	áudio, use a opção ``-wavwrite`` para gravar o áudio e
@@ -1223,7 +1223,7 @@ Opções para a gravação de áudio e vídeo
 
 .. _mame-commandline-aviwrite:
 
-**-aviwrite** <*nome_do_arquivo*>.avi
+**-aviwrite** <*nome do arquivo*>.avi
 
 	Grava todos os dados de áudio e vídeo em formato AVI sem compressão,
 	note que a taxa de quadros e a resolução são sempre fixas. Vídeos
@@ -1250,7 +1250,7 @@ Opções para a gravação de áudio e vídeo
 
 .. _mame-commandline-wavwrite:
 
-**-wavwrite** <*nome_do_arquivo*>.wav
+**-wavwrite** <*nome do arquivo*>.wav
 
 	Grava apenas o áudio da seção em formato PCM 16 bits.
 
@@ -2203,7 +2203,7 @@ Opções para os ajustes de imagem da tela
 
 .. _mame-commandline-effect:
 
-**-effect** <*nome_do_arquivo*>
+**-effect** <*nome do arquivo*>
 
 	Define um único arquivo ``.png`` que será usado como sobreposição na
 	tela de qualquer sistema. Presume-se que o aquivo ``.png`` esteja em
@@ -3067,7 +3067,7 @@ Opções voltadas para a depuração
 
 .. _mame-commandline-debugscript:
 
-**-debugscript** <*nome_do_arquivo*>
+**-debugscript** <*nome do arquivo*>
 
 	Define um arquivo que vai conter a lista de comandos de depuração a
 	serem executados no momento da inicialização.
