@@ -1426,7 +1426,7 @@ Opções relacionadas a performance e a velocidade da emulação
 **-[no]throttle**
 
 	Ativa ou não a função de controle de velocidade do emulador [4]_.
-	Ao habilitar esta opção, o MAME tenta manter o sistema rodando em
+	Ao ativar esta opção, o MAME tenta manter o sistema rodando em
 	sua velocidade nativa, com a opção desabilitada a emulação é
 	executada na velocidade mais rápida possível. Dependendo das
 	características do sistema emulado, a performance final pode
@@ -1848,7 +1848,7 @@ Opções para a configuração de vídeo
 	algumas pessoas acham o efeito desagradável, algumas mais do que as
 	outras.
 
-	Os efeitos colaterais de se habilitar a opção ``-waitvsync`` podem
+	Os efeitos colaterais de se ativar a opção ``-waitvsync`` podem
 	variar dependendo da combinação usada em diferentes sistemas
 	operacionais e drivers de vídeo.
 
