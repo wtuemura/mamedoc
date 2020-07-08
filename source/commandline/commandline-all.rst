@@ -80,7 +80,7 @@ Opções de ajuda e verificação
 
 .. _mame-commandline-validate:
 
-**-validate** / **-valid** [<*pattern*>]
+**-validate** / **-valid** [<*padrão a ser pesquisado*>]
 
 	Executa validação interna em um ou mais drivers e dispositivos
 	no sistema. Execute isso antes de enviar qualquer alterações para
@@ -96,7 +96,7 @@ Opções de ajuda e verificação
 
 .. _mame-commandline-verifyroms:
 
-**-verifyroms** [<*pattern*>]
+**-verifyroms** [<*padrão a ser pesquisado*>]
 
 	Verifica a condição dos arquivos de imagem ROM em uma determinada
 	máquina. Serão verificados todas as máquinas e diretórios válidos
@@ -127,7 +127,7 @@ Opções de ajuda e verificação
 
 .. _mame-commandline-verifysamples:
 
-**-verifysamples** [<*pattern*>]
+**-verifysamples** [<*padrão a ser pesquisado*>]
 
 	Verifica a condição dos arquivos **samples** informado. Todos os
 	arquivos samples ou diretórios válidos serão verificados desde que
@@ -151,7 +151,7 @@ Opções de ajuda e verificação
 
 .. _mame-commandline-verifysoftware:
 
-**-verifysoftware** / **-vsoft** [<*pattern*>]
+**-verifysoftware** / **-vsoft** [<*padrão a ser pesquisado*>]
 
 	Verifica se há imagens ROM inválidas ou ausentes na lista de
 	software. Por predefinição, todos os drivers que possuem arquivos
@@ -260,7 +260,7 @@ Exemplo:
 
 .. _mame-commandline-listfull:
 
-**-listfull** / **-ll** [<*pattern*>]
+**-listfull** / **-ll** [<*padrão a ser pesquisado*>]
 
 	Exibe uma lista com o nome da máquina pesquisada e a sua
 	descrição: ::
@@ -314,7 +314,7 @@ Exemplo:
 
 .. _mame-commandline-listsource:
 
-**-listsource** / **-ls** [<*pattern*>...]
+**-listsource** / **-ls** [<*padrão a ser pesquisado*>...]
 
 	Exibe uma lista de drivers de acordo com a máquina pesquisada, é
 	possível pesquisar por uma única máquina: ::
@@ -337,7 +337,7 @@ Exemplo:
 
 .. _mame-commandline-listclones:
 
-**-listclones** / **-lc** [<*pattern*>]
+**-listclones** / **-lc** [<*padrão a ser pesquisado*>]
 
 	Exibe uma lista de clones de uma determinada máquina. O MAME irá
 	listar todos os clones em seu banco de dados porém essa lista pode
@@ -353,7 +353,7 @@ Exemplo:
 
 .. _mame-commandline-listbrothers:
 
-**-listbrothers** / **-lb** [<*pattern*>]
+**-listbrothers** / **-lb** [<*padrão a ser pesquisado*>]
 
 	Exibe uma lista com o nome do driver, da ROM principal e parentes
 	que compartilhem do mesmo driver da máquina pesquisada. Exemplo: ::
@@ -381,7 +381,7 @@ Exemplo:
 
 .. _mame-commandline-listcrc:
 
-**-listcrc** [<*pattern*>...]
+**-listcrc** [<*padrão a ser pesquisado*>...]
 
 	Exibe uma lista completa com CRCs de todas as imagens ROM
 	que compõem uma máquina, nomes de sistema ou dispositivo em um
@@ -400,7 +400,7 @@ Exemplo:
 
 .. _mame-commandline-listroms:
 
-**-listroms** / **-lr** [<*pattern*>]
+**-listroms** / **-lr** [<*padrão a ser pesquisado*>]
 
 	Exibe uma lista com todos os arquivos ROM que fazem parte de uma
 	máquina ou dispositivo. A lista mostra o nome dos arquivos ROM,
@@ -422,7 +422,7 @@ Exemplo:
 
 .. _mame-commandline-listsamples:
 
-**-listsamples** [<*pattern*>]
+**-listsamples** [<*padrão a ser pesquisado*>]
 
 	Exibe uma lista das amostras que fazem parte de uma determinada
 	máquina, nomes de sistema ou nome de dispositivos. Caso nenhum termo
@@ -477,7 +477,7 @@ Exemplo:
 
 .. _mame-commandline-listdevices:
 
-**-listdevices** / **-ld** [<*pattern*>]
+**-listdevices** / **-ld** [<*padrão a ser pesquisado*>]
 
 	Exibe as especificações técnicas e todos os dispositivos conhecidos
 	e conectados na máquina. Caso os slots sejam populados por
