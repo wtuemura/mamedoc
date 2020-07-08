@@ -9,12 +9,12 @@ O dispositivo da interface da ROM
 ------------------
 
 Esta interface foi concebida para dispositivos que esperam ter uma
-ROM conectada a ela através de um barramento dedicado sendo
-principalmente desenvolvido para CIs de áudio. Pode haver interesse de
-outros tipos de dispositivos, no entanto há outros pontos a serem
-levados em consideração, que podem torná-lo impraticável (como a cache
-de decodificação de gráficos, por exemplo). A interface provê a
-possibilidade de conexão entre um **ROM_REGION** com um **ADDRESS_MAP**
+ROM conectada à ela através de um barramento dedicado sendo
+principalmente desenvolvido para CIs de áudio. Pode haver um interesse
+dos outros tipos de dispositivos, no entanto há outros pontos a serem
+levados em consideração, que pode torná-lo impraticável (como a cache
+da decodificação dos gráficos, por exemplo). A interface informa a
+possibilidade da conexão entre um **ROM_REGION** com um **ADDRESS_MAP**
 ou dinamicamente configurando um bloco de memória como se fosse uma ROM.
 Nos casos da região e blocos, esse banco de memória é tratado de forma
 automática.
@@ -22,11 +22,15 @@ automática.
 2. Configuração
 ---------------
 
-| **device_rom_interface**\ (*const machine_config &mconfig, device_t &device, u8 addrwidth, endianness_t endian = ENDIANNESS_LITTLE, u8 datawidth = 8*)
+| device_rom_interface<AddrWidth, DataWidth=0, AddrShift=0, Endian=ENDIANNESS_LITTLE>
 
-Além disso, a ordenação dos bits (*endianness* [1]_), podem ser
-fornecidos casos eles não sejam "*little endian*" ou um barramento com
-tamanho e largura de byte.
+A interface é um modelo que pega a largura do endereçamento do
+barramento dedicado como um parâmetro. Além disso, a largura do
+barramento de dados (caso não seja um byte), o deslocamento do endereço
+(caso não seja 0) e o endianness (caso não seja little endian ou um
+barramento com tamanho em byte) pode ser fornecido. A largura do
+barramento de dados é 0 para byte, 1 para word, etc.
+
 
 | **MCFG_DEVICE_ADDRESS_MAP**\ (*AS_0, map*)
 
@@ -49,15 +53,11 @@ a região da ROM definida com **MCFG_DEVICE_ROM**, será selecionada e
 conectada. Um mapa de endereço tem prioridade sobre uma região da ROM
 caso uma esteja presente na configuração da máquina.
 
-| void **set_rom_endianness**\ (*endianness_t endian*)
-| void **set_rom_data_width**\ (*u8 width*)
-| void **set_rom_addr_width**\ (*u8 width*)
+| void **override_address_width**\ (u8 width)
 
-Esses métodos são voltados para dispositivos genéricos com
-especificações de hardware indefinidas, sobrescreve a ordenação dos
-bits, a largura do barramento e o endereçamento de dados atribuída por
-meio de um construtor. Eles devem ser chamados de dentro do dispositivo
-antes que o **config_complete** termine.
+Este método permite sobrescrever a a largura do barramento e o
+endereçamento dos dados. Deve ser invocado a partir de dentro do
+dispositivo antes da conclusão do **config_complete**.
 
 | void **set_rom**\ (*const void \*base, u32 size*);
 
@@ -92,18 +92,18 @@ Esse método seleciona o número atual do banco da rom.
 5. Ressalvas
 ------------
 
-Ao usar aquela interface, faz com que o dispositivo derive de
-**device_memory_interface**. Caso o dispositivo queira realmente usar a
-memória da interface para si mesmo, lembre-se que **AS_0/AS_PROGRAM** é
-usado pela interface da ROM, por isso não se esqueça de chamar
-**memory_space_config**.
+Ao usar aquela interface, faz com que o dispositivo derive do
+**device_memory_interface**. Caso o dispositivo queira realmente
+utilizar a memória da interface para si mesmo, lembre-se que
+**AS_0/AS_PROGRAM** é utilizado pela interface da ROM, por isso não se
+esqueça de chamar **memory_space_config**.
 
-Para dispositivos com saídas que possam ser usadas para endereçar
-ROMs, porém restrito apenas ao encaminhamento de dados para outro
+Para os dispositivos com saídas que possam ser utilizadas para endereçar
+ROMs, porém restrito apenas ao encaminhamento dos dados para outro
 dispositivo com a única finalidade de processamento, pode ser que seja
-de grande ajuda desativar a interface quando não a estiver usando.
-Isso pode ser feito sobrescrevendo o **memory_space_config** para
-retornar um vetor vazio.
+de grande ajuda desativar a interface quando não estiver sendo
+utilizada. Isto pode ser feito sobrescrevendo o **memory_space_config**
+para retornar um vetor vazio.
 
 .. [1]	Para maiores explicações sobre os diferentes tipos de endianness, acesse `este link <http://carlosdelfino.eti.br/programacao/cplusplus/Diferencas_entre_BigEndian_Little_Endian_e_Bit_Endianness/>`_. (Nota do tradutor)
 .. [2]	Rom banking no texto original. (Nota do tradutor)
