@@ -1095,10 +1095,10 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. _mame-commandline-statename:
 
-**-statename** <*name*>
+**-statename** <*nome*>
 
 	Descreve como o MAME deve armazenar os arquivos de estado salvos
-	relativo ao caminho do state_directory. <*name*> é uma string que
+	relativo ao caminho do state_directory. <*nome*> é uma string que
 	fornece um modelo a ser usado usado para gerar um nome de arquivo.
 
 	São disponibilizadas duas substituições simples: o caractere ``/``
@@ -1265,10 +1265,10 @@ Opções para instantâneos de tela
 
 .. _mame-commandline-snapname:
 
-**-snapname** <*name*>
+**-snapname** <*nome*>
 
 	Descreve como MAME deve nomear arquivos de instantâneos de tela.
-	<*name*> será o guia que o MAME usará para nomear o arquivo.
+	<*nome*> será o guia que o MAME usará para nomear o arquivo.
 
 	São disponibilizadas três substituições simples:
 
