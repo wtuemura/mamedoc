@@ -2,17 +2,17 @@
 
 	\clearpage
 
-Pistola de luz
-==============
+A arma de luz
+=============
 
 .. contents:: :local:
 
-.. _pistola-luz-funcionamento:
+.. _arma-luz-funcionamento:
 
 Funcionamento
 -------------
 
-Em geral a pistola possuí um fotorreceptor, repare que elas têm uma
+Em geral a arma possuí um fotorreceptor, repare que elas têm uma
 lente no final do cano, quando o jogador aperta o gatilho o
 fotorreceptor é acionado, a tela escurece e o alvo acende, tudo isso
 em milésimos de segundo. Caso o alvo consiga excitar o fotorreceptor no
@@ -26,19 +26,19 @@ própria tecnologia. Neste `vídeo <https://youtu.be/2Dw7NFm1ZfY?t=981>`_
 autor seja de fácil compreensão.
 
 Hoje vivemos em um mundo onde as telas de CRT deixaram de ser
-fabricadas já faz algum tempo, atualmente no entanto, existem pistolas
+fabricadas já faz algum tempo, atualmente no entanto, existem armas
 desenvolvidas para funcionar com telas mais modernas como LCD, Plasma,
-OLED, etc. Temos por exemplo a pistola **Aimtrak** da empresa `Ultimarc
+OLED, etc. Temos por exemplo a arma **Aimtrak** da empresa `Ultimarc
 <https://www.ultimarc.com/aimtrak.html>`_ que utiliza um sensor no topo
-da tela para detectar o movimento da pistola.
+da tela para detectar o movimento da arma.
 
 Outro projeto muito interessante lançado recentemente no
 `kickstarter <https://www.kickstarter.com/projects/sindenlightgun/the-sinden-lightgun>`_
-é da pistola `Sinden Lightgun <http://www.sindenlightgun.com/>`_ da
+é da arma `Sinden Lightgun <http://www.sindenlightgun.com/>`_ da
 empresa **Sinden Technology** que desenvolveu uma nova tecnologia onde
 não é mais necessário o uso de um sensor em cima da TV para que o jogo
-possa identificar o movimento da pistola. Esse projeto promete fazer com
-que a pistola de luz deles funcionem em qualquer TV de tela plana e
+possa identificar o movimento da arma. Esse projeto promete fazer com
+que a arma de luz deles funcionem em qualquer TV de tela plana e
 usando desde os consoles de videogames originais, máquinas de fliperama
 e até mesmo emuladores como o MAME.
 
@@ -46,17 +46,17 @@ e até mesmo emuladores como o MAME.
 
 	\clearpage
 
-.. _pistola-config-windows:
+.. _arma-config-windows:
 
-Configuração da pistola no Windows
-----------------------------------
+Configuração da arma no Windows
+-------------------------------
 
 A configuração no Windows é um processo mais simples, a princípio basta
 conectar o acessório na porta USB e instalar o driver. Depois use o
 aplicativo de configuração que acompanha o produto e faça os devidos
 ajustes, testes e calibragem de mira.
 
-Para identificar a sua pistola no Windows, conecte-a no computador e
+Para identificar a sua arma no Windows, conecte-a no computador e
 baixe o utilitário gratuito chamado `USBDeview
 <http://www.nirsoft.net/utils/usb_devices_view.html>`_, rode ele e vá
 em ``Exibir > escolher colunas > Deselect all`` e selecione as opções
@@ -65,7 +65,7 @@ Instância``, caso ele esteja em inglês, vá então em ``View > Choose
 colums > Deselect all`` e selecione ``Device name, description, Vendor
 ID, Product ID, Instance ID``.
 
-O nome da sua pistola deve aparecer no campo
+O nome da sua arma deve aparecer no campo
 ``Nome do dispositivo/Device name``, tome nota do **ID do Vendedor
 (Vendor ID)** e do **ID do Produto (Product ID)**, para o nosso exemplo
 o dispositivo que usaremos é um mouse gamer com a identificação
@@ -91,7 +91,7 @@ listando apenas as partes que nos interessa para a configuração:
 	  atenção quanto ao nome que aparece aqui pois o MAME costuma gerar
 	  um crash com ``ACCESS VIOLATION`` ou ignorar o dispositivo caso
 	  ele tenha o nome errado, ainda que o PID e VID estejam certos. As
-	  pistolas Aimtrak podem exibir algo como ``ATRAK Device #1
+	  armas Aimtrak podem exibir algo como ``ATRAK Device #1
 	  product_1601d209-....`` neste caso, o que importa para nós é o
 	  ``ATRAK Device #1``.
 
@@ -103,35 +103,35 @@ exemplo da configuração abaixo:
 	<mameconfig version="10">
 	<system name="default">
 		<input>
-			<!--Atenção ao nome correto do dispositivo, esta parte configura a parte de controle da pistola-->
+			<!--Atenção ao nome correto do dispositivo, esta parte configura a parte de controle da arma-->
 			<mapdevice device="HID-compliant mouse" controller="JOYCODE_1" />
-			<!--Aqui definimos o VID e PID da pistola-->
+			<!--Aqui definimos o VID e PID da arma-->
 			<mapdevice device="VID_1D57&amp;PID_AD04" controller="GUNCODE_1" />
-			<!--Para 2 pistolas ou mais, basta usar JOYCODE_2/GUNCODE2 para o jogador 2 e assim por diante-->
+			<!--Para 2 armas ou mais, basta usar JOYCODE_2/GUNCODE2 para o jogador 2 e assim por diante-->
 		</input>
 	</system>
 	</mameconfig>
 
-Salve a configuração como `pistola.cfg <https://pastebin.com/3chyfNzr>`_
+Salve a configuração como `arma.cfg <https://pastebin.com/3chyfNzr>`_
 dentro do diretório **ctrl**, caso o MAME esteja aberto, feche. Inicie-o
-novamente com o comando ``mame -v -ctrlr pistola``, você deverá ter na
+novamente com o comando ``mame -v -ctrlr arma``, você deverá ter na
 saída algo deste tipo:
 
 .. code-block:: bash
 
-	Attempting to parse: pistola.cfg
+	Attempting to parse: arma.cfg
 	Input: Remapped lightgun #0: HID-compliant mouse (device id: \\?\HID#VID_1D57&PID_AD04&MI_01&Col01#7&ecdb012&0&0000#{378de44c-56ef-11d1-bc8c-00a0c91405dd})
 
-.. _pistola-config-linux:
+.. _arma-config-linux:
 
-Configuração da pistola no Linux
---------------------------------
+Configuração da arma no Linux
+-----------------------------
 
 No Linux o processo é mais complicado e exige um pouco mais de trabalho
 na parte de configuração porém não desanime, é mais fácil fazer do que
 descrever todo o processo. Existem diferentes meios de se alcançar este
 objetivo, dentre os mais conhecidos fazem com que o MAME veja essa
-pistola de luz como um mouse, o que faz com que a experiência final do
+arma de luz como um mouse, o que faz com que a experiência final do
 usuário não seja das melhores. Não há qualquer alinhamento prévio entre
 a interface do mouse com a mira externa, isso exige que uma configuração
 individual seja feita para cada jogo e ainda assim não é a mais precisa.
@@ -144,17 +144,17 @@ A base de referência usada aqui é o Debian e Ubuntu, talvez alguns
 ajustes na configuração sejam necessárias para outros sistemas Linux, no
 entanto este apanhado geral serve como um guia do que precisa ser feito.
 
-.. _pistola-config-udev:
+.. _arma-config-udev:
 
 Configuração das regras para udev
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A pistola AimTrak assim como as de outras marcas, quando conectadas na
+A arma AimTrak assim como as de outras marcas, quando conectadas na
 porta USB, exibem geralmente 2 mouses e 1 joystick. O que faremos será
 fazer uma configuração estática usando o udev em conjunto com o
 **libinput**, fazendo com que todo o resto seja ignorado, menos os
 dispositivos que precisamos. Isso evita conflitos do sistema que
-identifica mais de um mouse para cada pistola USB que for conectada.
+identifica mais de um mouse para cada arma USB que for conectada.
 
 Crie um novo arquivo chamado **99-aimtrak.rules** em
 ``/etc/udev/rules.d`` com o comando
@@ -186,8 +186,8 @@ você vai perder o acesso ao computador e só será possível recuperá-lo
 reiniciando e entrando no modo de recuperação do sistema para apagar ou
 arrumar a regra.
 
-A configuração acima é voltada especificamente para pistolas
-**AimTrak**, porém cada modelo de pistola precisará de uma configuração
+A configuração acima é voltada especificamente para as armas
+**AimTrak**, porém cada modelo de arma precisará de uma configuração
 específica. Atenção a formatação deste aquivo, há distribuições que
 ignoram a quebra de linha, porém distribuições como o Debian interpretam
 a quebra de linha como um erro fazendo com que você perca o controle do
@@ -198,14 +198,14 @@ para obter uma cópia deste arquivo.
 
 	\clearpage
 
-.. _pistola-outro-fabricante:
+.. _arma-outro-fabricante:
 
-E caso eu tenha uma pistola de outro modelo ou fabricante?
-----------------------------------------------------------
+E caso eu tenha uma arma de outro modelo ou fabricante?
+-------------------------------------------------------
 
 Toda a vez que um dispositivo USB é conectado no Linux ele faz um
 registro dessa conexão, para acessar esse registro faça o comando
-``sudo dmesg`` no terminal logo depois de conectar a sua pistola USB.
+``sudo dmesg`` no terminal logo depois de conectar a sua arma USB.
 Aqui um exemplo do que aparece no terminal logo depois que um mouse
 gamer USB é conectado:
 
@@ -221,7 +221,7 @@ gamer USB é conectado:
 	[12119.759341] input: LXD Gaming Mouse as /devices/pci0000:00/0000:00:09.0/0000:02:00.0/usb2/2-1/2-1.3/2-1.3:1.1/0003:1D57:AD04.0007/input/input18
 	[12119.816761] hid-generic 0003:1D57:AD04.0007: input,hidraw6: USB HID v1.10 Mouse [LXD Gaming Mouse] on usb-0000:02:00.0-1.3/input1
 
-O exemplo mostra duas interfaces **input** assim como é com a pistola
+O exemplo mostra duas interfaces **input** assim como é com a arma
 **AimTrak**, basta agora substituir os valores de **idVendor** e
 **idProduct** para bater com o nosso dispositivo, assim a configuração
 ficaria assim:
@@ -252,7 +252,7 @@ arrumar a regra.
 
 	\clearpage
 
-.. _pistola-configuracao-xorg:
+.. _arma-configuracao-xorg:
 
 Configurando as entradas no Xorg
 --------------------------------
@@ -264,12 +264,12 @@ ainda usam o arquivo de configuração **xorg.conf** assim como, o
 diretório de configuração pode estar localizado em um outro lugar
 qualquer, assim a sua sorte pode variar bastante.
 
-Para que mais de uma pistola funcione de forma correta, é necessário
+Para que mais de uma arma funcione de forma correta, é necessário
 configurar o Xorg para tratá-la(s) como dispositivos "`flutuantes`",
-fazendo com que a mira de cada pistola não seja confundida com o
+fazendo com que a mira de cada arma não seja confundida com o
 ponteiro do mouse usado pelo sistema.
 
-No **Ubuntu** e **Fedora** crie o arquivo **99-pistola.conf** no
+No **Ubuntu** e **Fedora** crie o arquivo **99-arma.conf** no
 diretório ``/etc/X11/xorg.conf.d``, no **Debian** e no **Arch Linux** o
 diretório fica em ``/usr/share/X11/xorg.conf.d``. Devido a grande
 variedade de distribuições Linux é inviável tentar descrever o caminho
@@ -331,7 +331,7 @@ podemos usar o bom e velho comando ``cat /proc/bus/input/devices``:
 
 Veja que o comando também mostra o Vendor e Product ID's, com essa
 informação em mãos criamos o seguinte conteúdo para o nosso arquivo
-`99-pistola.conf <https://pastebin.com/HQpY06Ca>`_, novamente, usamos
+`99-arma.conf <https://pastebin.com/HQpY06Ca>`_, novamente, usamos
 **99** para que este seja o último arquivo a ser lido pelo sistema:
 
 .. code-block:: kconfig
@@ -379,7 +379,7 @@ são:
 
 	\clearpage
 
-.. _pistola-configuracao-mame:
+.. _arma-configuracao-mame:
 
 Configuração genérica
 ---------------------
@@ -407,14 +407,14 @@ Aqui a configuração para **Linux** e variantes **SDL**:
 	offscreen_reload          1
 
 Lembrando que estamos usando um mouse como teste, assim estamos usando
-**lightgun_device** como **mouse**, caso você esteja usando uma pistola
+**lightgun_device** como **mouse**, caso você esteja usando uma arma
 de luz mude para **lightgun**.
 
 Na versão SDL precisamos definir **lightgun_index[1-8]**, geralmente o
 valor que precisamos usar é o **nome do dispositivo** ou o seu **ID**.
 É usando o **lightgun_index** entre 1 e 8 que você vai adicionando todas
-as pistolas que você tiver no sistema, cada uma com o seu ID único.
-Com a pistola ou o mouse conectado, inicie o MAME com o comando
+as armas que você tiver no sistema, cada uma com o seu ID único.
+Com a arma ou o mouse conectado, inicie o MAME com o comando
 ``mame64 -v``, o MAME deve exibir uma mensagem como essa (ela vai variar
 muito de caso para caso):
 
@@ -506,20 +506,20 @@ comando ``mame64 -v``, na saída agora temos:
 	Events types to register: motion:71, press:69, release:70
 	Lightgun: End initialization
 
-Escolha um jogo de tiro qualquer e verá que a sua pistola ou mouse deve
+Escolha um jogo de tiro qualquer e verá que a sua arma ou mouse deve
 funcionar sem qualquer problema.
 
 .. raw:: latex
 
 	\clearpage
 
-.. _pistola-usando:
+.. _arma-usando:
 
 Configurando uma Pistola de luz
 -------------------------------
 
 Agora que tudo está funcionando a parte mais chata seria fazer
-configuração da sua pistola para cada uma das trezentas e poucas
+configuração da sua arma para cada uma das trezentas e poucas
 máquinas, porém isso é mais simples do que parece. O MAME oferece a
 opção :ref:`-ctrlr <mame-commandline-ctrlrpath>` para que você possa
 carregar a configuração que você já fez para uma máquina mas que podem
@@ -528,10 +528,10 @@ ser usada em outras.
 Inicie uma máquina qualquer como **bang** por exemplo, ``mame64 bang``,
 quando ela iniciar pressione **TAB** para acessar a interface e vá em
 **Entrada (esta máquina)**. Para o **Jogador 1** selecione **Lightgun X
-Analog** e pressione **Enter**, mova a pistola da esquerda para direita,
+Analog** e pressione **Enter**, mova a arma da esquerda para direita,
 deve aparecer **Gun 1 X**, faça o mesmo com **Lightgun X Analog** mas
-mova a pistola de cima para baixo, agora a opção deve aparecer como
-**Gun 1 X**. Caso tenha mais uma pistola para o jogador 2 faça o mesmo
+mova a arma de cima para baixo, agora a opção deve aparecer como
+**Gun 1 X**. Caso tenha mais uma arma para o jogador 2 faça o mesmo
 em **Lightgun X 2 Analog** e **Lightgun Y 2 Analog**.
 
 Pressione **ESQ** para sair do MAME, vá até o diretório **cfg** e
@@ -610,38 +610,38 @@ Windows:
 
 Independente do arquivo que você tenha gerado edite a linha
 **<system name="bang">** para **<system name="default">** e salve o
-arquivo como **pistola.cfg** dentro do diretório **ctrl**. Agora sempre
+arquivo como **arma.cfg** dentro do diretório **ctrl**. Agora sempre
 que você for iniciar o MAME com essa configuração, basta fazer o comando
-``mame64 -ctrlr pistola bang``. Assim o MAME inicia a máquina com as
+``mame64 -ctrlr arma bang``. Assim o MAME inicia a máquina com as
 suas configurações predefinidas.
 
 Caso não queira fazer isso para cada jogo, adicione a configuração no
 seu **mame.ini**: ::
 
-	ctrlr                     pistola
+	ctrlr                     arma
 
 Lembrando que é possível também fazer como foi ensinado em
-:ref:`Habilitando a pistola apenas em jogos que precisam
-<pistola-em-jogos-que-precisam>` adicionando esta opção em **cfg.txt**.
+:ref:`Habilitando a arma apenas em jogos que precisam
+<arma-em-jogos-que-precisam>` adicionando esta opção em **cfg.txt**.
 
 .. raw:: latex
 
 	\clearpage
 
-.. _pistola-em-jogos-que-precisam:
+.. _arma-em-jogos-que-precisam:
 
-Habilitando a pistola apenas em jogos que precisam
+Habilitando a arma apenas em jogos que precisam
 --------------------------------------------------
 
 O problema de usar o ``mame.ini`` é que o MAME **sempre** vai carregar e
-habilitar a pistola em maquinas que não precisam, em um PC com bastante
+habilitar a arma em maquinas que não precisam, em um PC com bastante
 recursos pode não ser problema, no entanto, caso o MAME esteja rodando
 em um ambiente com recursos limitados isso pode ser um problema. Ou
 simplesmente, é como o autor deste texto que gosta das coisas bem
 organizadas.
 
 O que faremos é replicar a configuração que temos e sabemos que funciona
-apenas para as máquinas que usam pistola, deixando o **mame.ini** livre
+apenas para as máquinas que usam arma, deixando o **mame.ini** livre
 de modificações. Para realizar essa façanha *é bem simples*, basta
 criarmos um arquivo ***.ini** **para cada uma das 362 máquinas
 conhecidas** e salvar a configuração acima **EM CADA UM DESTES
@@ -652,22 +652,22 @@ Todos os procedimentos abaixo são feitos em um ambiente **Linux** mas
 podem funcionar em um ambiente `MINGW <http://www.mingw.org/>`_
 ou similares.
 
-.. _pistola-luz-maquinas:
+.. _arma-luz-maquinas:
 
 *	Abra o seu arquivo ``~/.mame/mame.ini``, em **inipath** substitua o
- 	``$HOME/.mame;.;ini`` por ``$HOME/.mame;.;ini;pistola``
+ 	``$HOME/.mame;.;ini`` por ``$HOME/.mame;.;ini;arma``
 *	Salve e saia.
 *	O site do projeto **Project-Snaps** mantém um arquivo chamado
  	**category.ini** com uma lista de jogos separados por diversas
  	categorias diferentes, dentre elas há a categoria de jogos de tiro
- 	que usam pistolas definido na lista como **[Shooting / Guns]**,
+ 	que usam armas definido na lista como **[Shooting / Guns]**,
  	usaremos os nomes desta lista para preparar a nossa.
 *	Acesse `este link <http://www.progettosnaps.net/renameset/>`_ do
 	site Project-Snaps e baixe o arquivo **category.ini** mais recente.
 *	Abra o arquivo compactado e extraia o diretório **folders** no
 	diretório raiz do MAME.
 *	**No terminal**, vá até o diretório raiz do MAME e faça o comando
-	``mkdir pistola`` para criar o diretório seguido de ``cd pistola``
+	``mkdir arma`` para criar o diretório seguido de ``cd arma``
 	para entrar nele.
 *	Execute o comando abaixo para filtrar apenas os nomes das máquinas
 	que queremos e em seguida salvamos eles em um arquivo chamado
@@ -681,10 +681,10 @@ ou similares.
 	's/$/\r/' cfg.txt``.
 
 *	Copie e cole a configuração abaixo em um arquivo texto e salve
-	**dentro do diretório pistola** localizado no diretório raiz do MAME
+	**dentro do diretório arma** localizado no diretório raiz do MAME
 	como `cfg.txt <https://pastebin.com/UYu6P3gM>`_, no exemplo estou
 	usando **mouse** como **lightgun_device**, caso esteja usando uma
-	pistola substitua por **lightgun**: ::
+	arma substitua por **lightgun**: ::
 
 		lightgun                  1
 		lightgun_device           mouse
@@ -692,7 +692,7 @@ ou similares.
 		lightgun_index1           15
 		offscreen_reload          1
 
-*	No terminal, ainda dentro do diretório pistola, execute o comando
+*	No terminal, ainda dentro do diretório arma, execute o comando
 	abaixo para criar uma configuração com o nome de cada máquina: ::
 
 		while read lista; do cp cfg.txt "$lista".ini; done < maquinas
@@ -701,8 +701,8 @@ ou similares.
 
 	\clearpage
 
-Agora dentro do diretório pistola estará cheia de arquivos ***.ini**
-como o nome de cada máquina que usa uma pistola e com a configuração
+Agora dentro do diretório arma estará cheia de arquivos ***.ini**
+como o nome de cada máquina que usa uma arma e com a configuração
 correta dentro de cada um deles.
 
 Estou disponibilizando esses arquivos ***.ini** já prontos visando
@@ -710,7 +710,7 @@ facilitar a vida de todos, a versão para Windows é bem genérica e deve
 funcionar de imediato sem muitos ajustes, porém o mesmo não ocorre com a
 versão Linux, a configuração precisa ser customizada individualmente
 para cada caso, principalmente o **lightgun_index**, caso o nome ou o ID
-esteja errado a sua pistola não vai funcionar, de qualquer maneira aqui
+esteja errado a sua arma não vai funcionar, de qualquer maneira aqui
 estão os arquivos.
 
 *	Arquivos ini com **lightgun_device** como mouse.
@@ -723,13 +723,13 @@ estão os arquivos.
 	http://www.mediafire.com/file/hi7864yk8s09o78/ini-lightgun-windows.7z
 
 Use o `7-zip <https://www.7-zip.org/>`_ para descompactar os arquivos
-dentro do diretório pistola.
+dentro do diretório arma.
 
 .. raw:: latex
 
 	\clearpage
 
-.. _pistola-separando-roms:
+.. _arma-separando-roms:
 
 Separando apenas as ROMs das máquinas de tiro
 ---------------------------------------------
@@ -739,7 +739,7 @@ para cada máquina, podemos também usar a mesma lista para copiar apenas
 as suas ROMs atendendo a necessidade das pessoas que configuram as suas
 máquinas dessa forma.
 
-Ainda usando o arquivo :ref:`maquinas <pistola-luz-maquinas>`
+Ainda usando o arquivo :ref:`maquinas <arma-luz-maquinas>`
 executaremos as seguintes ações:
 
 *	Crie um diretório **roms** em qualquer outro lugar fora do diretório
@@ -804,7 +804,7 @@ e depois copiar essas ROMs em diretórios separados, o céu é o limite.
 
 	\clearpage
 
-.. _pistola-compilando:
+.. _arma-compilando:
 
 Compilando uma versão do MAME só com maquinas de tiros
 ------------------------------------------------------
@@ -825,7 +825,7 @@ para obter maiores informações e detalhes que não serão abordados aqui.
 O autor assume que o você já tenha lido e compreendido o capítulo sobre
 a compilação do MAME e que você já esteja familiarizado com o processo.
 
-No :ref:`capítulo anterior <pistola-em-jogos-que-precisam>` nós
+No :ref:`capítulo anterior <arma-em-jogos-que-precisam>` nós
 demonstramos como criar o arquivo **maquinas** usando o arquivo
 **category.ini** que fica dentro do diretório **folders**, naquele
 aquivo ficam todas as máquinas dentro da categoria de tiro, porém para

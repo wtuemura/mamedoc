@@ -307,7 +307,7 @@ Estes mesmos arquivos ``neogeo.dat``, ``cps2.dat`` e qualquer outro que
 for criado poderá ser utilizado pelos gerenciadores de ROMs para
 construir um ROM SET para cada um destes sistemas. É uma maneira muito
 mais fácil de se separar as ROMs do que ter que fazer e
-:ref:`usar scripts <pistola-separando-roms>`. No entanto, apesar de ser
+:ref:`usar scripts <arma-separando-roms>`. No entanto, apesar de ser
 mais fácil utilizar um gerenciador, repare que é bem genérico. O uso de
 scripts permitem que a separação seja bem mais específica caso seja
 necessário.
