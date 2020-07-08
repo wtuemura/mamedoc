@@ -492,15 +492,15 @@ por um período de tempo maior.
 
 .. _Autofire:
 
-O quê aconteceu com a opção de Auto Disparo?
+O que aconteceu com a opção de Auto Disparo?
 --------------------------------------------
 
 Um plug-in Lua mais aprimorado e com mais funcionalidades foi adicionado
 ao MAME 0.210, a opção que antes estava embutida no código fonte foi
-removida no MAME 0.216, este novo plug-in permite que você possa definir
-botões alternativos para o auto disparo.
+removida no MAME 0.216, este novo plug-in permite a definição de botões
+alternativos para o auto disparo.
 
-Para habilitar e configurar o novo sistema de auto disparo, siga as
+Para ativar e configurar o novo sistema de auto disparo, siga as
 instruções abaixo:
 
  * Inicie o MAME sem nenhum sistema.
@@ -566,8 +566,8 @@ que o personagem recolher o item de "power up" este será ativado pelo
 auto disparo pois este estará sempre pressionado junto com o botão de
 auto disparo.
 
-É preferível que o botão de auto disparo escolhido seja qualquer botão
-que não esteja sendo utilizado para nada ou que não tenha nenhuma função
+É obrigatório que o botão de auto disparo escolhido seja qualquer outro
+botão que já não esteja sendo utilizado ou que não tenha nenhuma função
 no sistema.
 
 .. [1]	Decapping é um processo feito no CI para expor seu núcleo, é
