@@ -3433,7 +3433,7 @@ Opções do servidor HTTP
 
 .. _mame-commandline-httproot:
 
-**-http_root** [*rootfolder*]
+**-http_root** [*diretório raíz*]
 
 	Define a pasta raíz para os documentos do servidor HTTP.
 
