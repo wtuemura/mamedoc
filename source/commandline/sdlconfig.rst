@@ -238,7 +238,7 @@ Configurações para o mapeamento de teclado
 
 .. _mame-scommandline-keymapfile:
 
-**-keymap_file** <*file*>
+**-keymap_file** <*arquivo*>
 	
 	Use em conjunto com com **-keymap**, permite que você escolha um
 	arquivo com um mapa de teclado customizado, atualmente o MAME já vem
