@@ -3299,7 +3299,7 @@ Opções diversas
 
 .. _mame-commandline-ui:
 
-**-ui** <*type*>
+**-ui** <*tipo*>
 
 	Define o tipo de interface do usuário a ser usada, as opções ficam
 	entre **simple** ou **cabinet**.
