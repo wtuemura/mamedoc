@@ -2353,7 +2353,9 @@ Opções de vídeo OpenGL GLSL
 	momento no futuro. Veja:
 	http://forums.bannister.org/ubbthreads.php?ubb=showflat&Number=100988#Post100988 para maiores informações.
 
+.. raw:: latex
 
+	\clearpage
 
 .. _mame-commandline-glslshaderscreen:
 
@@ -2600,6 +2602,10 @@ Versões especiais como o **SDLMAME** para Windows, pode usar a opção
 		PortAudio: Allowed additional buffering latency is 30.00 ms/1440 frames
 
 	O valor predefinido é **NULO** (Nenhuma interface PortAudio).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-pa_device:
 
