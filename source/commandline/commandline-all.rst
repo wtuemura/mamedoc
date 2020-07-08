@@ -3107,7 +3107,7 @@ Opções voltadas para a depuração
 
 .. _mame-commandline-debuggerfont:
 
-**-debugger_font** <*nome_da_fonte*> / **-dfont** <*nome_da_fonte*>
+**-debugger_font** <*nome da fonte*> / **-dfont** <*nome da fonte*>
 
 	Define o nome da fonte a ser usada nas janelas do depurador.
 
@@ -3281,14 +3281,15 @@ Opções diversas
 
 .. _mame-commandline-uifont:
 
-**-uifont** <*nome_da_fonte*>
+**-uifont** <*nome da fonte*>
 
 	Define o nome da fonte ou um nome do arquivo de fonte a ser usada na
 	interface do usuário. Caso esta fonte não possa ser encontrada ou
 	não puder ser carregada, o MAME usará a sua própria fonte embutida.
-	Em algumas plataformas o <*nome_da_fonte*> (nome da fonte) pode ser
+	Em algumas plataformas o <*nome da fonte*> (nome da fonte) pode ser
 	um nome da fonte do sistema em vez de um arquivo fonte com extensão
-	``.bdf``.
+	``.bdf``. Para o nome das fontes que tem espaço utilize o nome entre
+	aspas (``-uifont "nome do arquivo da fonte"``).
 
 		O valor predefinido é **default** (O MAME usará a fonte nativa).
 
