@@ -27,7 +27,7 @@ automática.
 A interface é um modelo que pega a largura do endereçamento do
 barramento dedicado como um parâmetro. Além disso, a largura do
 barramento de dados (caso não seja um byte), o deslocamento do endereço
-(caso não seja 0) e o endianness (caso não seja little endian ou um
+(caso não seja 0) e o endianness [1]_ (caso não seja little endian ou um
 barramento com tamanho em byte) pode ser fornecido. A largura do
 barramento de dados é 0 para byte, 1 para word, etc.
 
