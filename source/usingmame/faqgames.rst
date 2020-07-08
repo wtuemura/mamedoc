@@ -2859,7 +2859,7 @@ Revolution X
 	  pontos indicados.
 
 	  Para aprender como utilizar e configurar as suas pistolas de luz
-	  leia o capítulo :ref:`Pistola de luz <pistola-luz-funcionamento>`.
+	  leia o capítulo :ref:`Pistola de luz <arma-luz-funcionamento>`.
 
 .. _faqgames-rimrockn:
 
@@ -3545,7 +3545,7 @@ Terminator 2
 	  pontos indicados.
 
 	  Para aprender como utilizar e configurar as suas pistolas de luz
-	  leia o capítulo :ref:`Pistola de luz <pistola-luz-funcionamento>`.
+	  leia o capítulo :ref:`Pistola de luz <arma-luz-funcionamento>`.
 
 .. _faqgames-couple:
 
