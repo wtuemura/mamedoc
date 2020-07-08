@@ -3359,7 +3359,7 @@ Opções para uso com script
 
 .. _mame-commandline-autobootcommand:
 
-**-autoboot_command** / **-ab** "<*command*>"
+**-autoboot_command** / **-ab** "<*comando*>"
 
 	Cadeia de comandos que serão executados após a inicialização da
 	máquina (entre aspas " "). Para emitir uma cotação para a
