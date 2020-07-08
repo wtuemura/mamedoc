@@ -3398,13 +3398,13 @@ Opções para uso com script
 
 .. _mame-commandline-plugin:
 
-**-plugin** [*plugin shortname*]
+**-plugin** [*apelido do plugin*]
 
 	Permite o uso de uma lista de plug-ins Lua separados por vírgula.
 
 .. _mame-commandline-noplugin:
 
-**-noplugin** [*plugin shortname*]
+**-noplugin** [*apelido do plugin*]
 
 	Permite desabilitar uma lista de plug-ins Lua separados por vírgula.
 
