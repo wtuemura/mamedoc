@@ -33,6 +33,7 @@ jurídico e tão pouco foi escrito por um advogado.**
 20. :ref:`ControllerIssues`
 21. :ref:`ExternalOPL`
 22. :ref:`Autofire`
+23. :ref:`gsync-freesync`
 
 
 .. _rapid-coins:
@@ -569,6 +570,35 @@ auto disparo.
 É obrigatório que o botão de auto disparo escolhido seja qualquer outro
 botão que já não esteja sendo utilizado ou que não tenha nenhuma função
 no sistema.
+
+.. _gsync-freesync:
+
+O MAME é compatível com o G-Sync ou FreeSync? Como configurar o MAME para utilizá-los?
+--------------------------------------------------------------------------------------
+
+O MAME já é compatível com ambos G-Sync e FreeSync nos sistemas Windows
+e Linux, contudo não há a compatibilidade com o macOS ainda.
+
+* Tenha certeza que seu monitor suporta pelo menos 120 Hz
+  G-Sync/FreeSync. Caso o seu monitor seja compatível apenas com o modo
+  G-Sync/FreeSync em 60 hz, haverá problemas com drivers como o
+  *Pac-Man* que roda a **60.60606 Hz**, assim como outros que rodam com
+  uma velocidade semelhante porém não os 60 Hz exatos.
+* Caso esteja jogando o MAME em modo janelado ou utilizando o sistema
+  de vídeo BGFX, será necessário ter certeza que tenha o G-Sync/FreeSync
+  ativado para o driver de vídeo que estiver utilizando nas aplicações
+  em modo janela, assim como no modo de tela inteira.
+* Tenha certeza que a opção :ref:`triple buffering
+  <mame-wcommandline-triplebuffer>` esteja desligado.
+* No geral, é aconselhável ligar a opção Vsync quando usar o G-Sync e 
+  FreeSync.
+* A opção :ref:`-lowlatency <mame-commandline-lowlatency>` não afeta o
+  desempenho do MAME com o G-Sync ou FreeSync.
+
+Os efeitos do G-Sync e FreeSync é mais notável nos drivers que rodam com
+taxas de atualização que sejam bem diferentes do que o seu PC esteja
+executando. Como por exemplo, os primeiras três versões do
+**Mortal Kombat** roda a **54.706841 Hz**.
 
 .. [1]	Decapping é um processo feito no CI para expor seu núcleo, é
 		possível ver algumas fotos desse processo no blog do `CAPS0ff
