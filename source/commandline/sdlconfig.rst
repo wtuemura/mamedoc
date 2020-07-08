@@ -260,10 +260,10 @@ Configurações para o mapeamento de controle joystick
 
 ::
 
-	-joy_idx1 <name>
-	-joy_idx2 <name>
+	-joy_idx1 <nome>
+	-joy_idx2 <nome>
 	...
-	-joy_idx8 <name>
+	-joy_idx8 <nome>
 
 Nome do controle joystick mapeado para um determinado slot de joystick.
 
