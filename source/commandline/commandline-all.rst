@@ -1457,7 +1457,7 @@ Opções relacionadas a performance e a velocidade da emulação
 
 .. _mame-commandline-speed:
 
-**-speed** <*factor*>
+**-speed** <*fator*>
 
 	Muda a maneira que o MAME controla a velocidade da emulação de
 	maneira que seja possível que o sistema emulado rode em múltiplos
