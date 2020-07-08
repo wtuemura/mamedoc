@@ -57,10 +57,11 @@ diretório de trabalho será definido no mesmo local do script.
 Conjunto de instruções
 ----------------------
 
-Muitos comandos suportam o uso de um *conjunto de instruções* [1]_, que
-pode ser um sistema ou um nome abreviado do dispositivo (por exemplo,
-**a2600**, **zorba_kbd**) ou um conjunto de instruções globais que
-correspondam a um dos dois como ``zorba_*`` por exemplo.
+Muitos comandos são compatíveis com o uso de um *conjunto de instruções*
+ou um padrão [1]_, que pode ser um sistema ou um nome abreviado do
+dispositivo (como por exemplo, **a2600**, **zorba_kbd**) ou um conjunto
+de instruções globais que correspondam a um dos dois como ``zorba_*``
+por exemplo.
 
 Dependendo do comando que foi combinado com este conjunto de
 instruções, a correspondência dessas combinações podem equiparar um
