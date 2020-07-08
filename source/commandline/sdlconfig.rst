@@ -6,11 +6,11 @@ Configurações específicas para as versões SDL
 =============================================
 
 Nesta seção descreveremos as opções de configuração voltadas
-especificamente para qualquer versão compatível com o SDL (incluindo o
-Windows caso o MAME tenha sido compilado com o SDL ao invés da sua forma
-nativa). Inicie o MAME com o comando ``mame -v`` para ver quais são os
-drivers que estão disponíveis para o seu sistema, abaixo um exemplo para
-o Linux. ::
+especificamente para qualquer versão MAME que for compatível com o SDL
+(incluindo o Windows caso o MAME tenha sido compilado com o SDL ao invés
+da sua forma nativa). Inicie o MAME com o comando ``mame -v`` para ver
+quais são os drivers que estão disponíveis para o seu sistema, abaixo um
+exemplo para o Linux. ::
 
 	Available videodrivers: x11 wayland KMSDRM dummy
 	Current Videodriver: x11
@@ -67,7 +67,7 @@ veja :ref:`Microsoft Windows <compiling-windows>`. ::
 
 	\clearpage
 
-Aqui temos opções disponíveis para customização em todas as versões
+Aqui temos as opções disponíveis para a customização em todas as versões
 SDL: ::
 
 	Hints:
@@ -104,8 +104,8 @@ SDL: ::
 
 Não há qualquer garantia que ao alterar qualquer uma destas opções traga
 alguma melhoria de performance, a sua sorte pode variar bastante
-dependendo do sistema operacional usado, da sua placa de vídeo e seus
-respectivos drivers.
+dependendo do sistema operacional utilizado, da sua placa de vídeo e dos
+seus respectivos drivers.
 
 No **Linux** e **macOS** você pode definir estes
 parâmetros como variáveis de ambiente no seu ``~/.bashrc`` como por
@@ -225,14 +225,14 @@ Configurações específicas quando o driver de vídeo for software
 
 	\clearpage
 
-Configurações para o mapeamento de teclado
+Configurações para o mapeamento do teclado
 ------------------------------------------
 
 .. _mame-scommandline-keymap:
 
 **-keymap**
 
-	Permite que você habilite o uso de um mapa de teclado customizado.
+	Permite que você ative o uso de um mapa de teclado personalizado.
 
 		O valor predefinido é **Desligado** (**-nokeymap**).
 
@@ -253,7 +253,7 @@ Configurações para o mapeamento de teclado
 	O valor predefinido é **keymap.dat**.
 
 
-Configurações para o mapeamento de controle joystick
+Configurações para o mapeamento do controle joystick
 ----------------------------------------------------
 
 .. _mame-scommandline-joyidx:
@@ -265,7 +265,7 @@ Configurações para o mapeamento de controle joystick
 	...
 	-joy_idx8 <nome>
 
-Nome do controle joystick mapeado para um determinado slot de joystick.
+Nome do controle joystick mapeado para um determinado slot do joystick.
 
 		O valor predefinido é **auto**.
 
