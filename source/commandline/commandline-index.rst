@@ -265,7 +265,9 @@ Opções para a configuração do áudio
 | :ref:`volume <mame-commandline-volume>`
 | :ref:`sound <mame-commandline-sound>`
 | :ref:`audio_latency <mame-commandline-audiolatency>`
-|
+| :ref:`pa_api <mame-commandline-pa_api>`
+| :ref:`pa_device <mame-commandline-pa_device>`
+| :ref:`pa_latency <mame-commandline-pa_latency>`
 
 Opções para as configurações de diferentes entradas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
