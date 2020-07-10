@@ -1233,7 +1233,7 @@ Opções para a configuração dos diretórios principais
 	  **.mame** no diretório **home** do usuário atual, seguido pelo
 	  diretório raiz e finalmente no diretório **ini**.
 
-::
+	::
 
 		mame64 -inipath D:\mameini
 
