@@ -2318,6 +2318,10 @@ Opções para a configuração de vídeo
 
 		mame64 ssf2tu -nounevenstretch
 
+.. raw:: latex
+
+	\clearpage
+
 
 .. _mame-commandline-unevenstretchx:
 
