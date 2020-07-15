@@ -990,7 +990,17 @@ Opções de MIDI e rede
 **-listnetwork**
 
 	Cria uma lista de adaptadores de rede disponíveis que possam ser
-	usados com a emulação.
+	usados com a emulação. ::
+
+		No Windows
+		mame64 -listnetwork
+			Available network adapters:
+			Conexão Local
+		
+		No Linux
+		mame64 -listnetwork
+			Available network adapters:
+			TAP/TUN Device
 
 	.. admonition:: Fica a dica!
 
