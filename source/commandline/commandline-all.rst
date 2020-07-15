@@ -2441,6 +2441,12 @@ Opções para a configuração de vídeo
 
 		mame64 mk -syncrefresh
 
+	.. admonition:: Fica a dica!
+
+		O syncrefresh pode ser útil para as pessoas com display
+		compatível com G-Sync ou FreeSync.
+
+
 .. raw:: latex
 
 	\clearpage
