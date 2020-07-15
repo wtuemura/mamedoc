@@ -989,8 +989,8 @@ Opções de MIDI e rede
 
 **-listnetwork**
 
-	Cria uma lista de adaptadores de rede disponíveis que possam ser
-	usados com a emulação. ::
+	Lista os adaptadores de redes que estiverem disponíveis para serem
+	utilizados com a emulação. ::
 
 		No Windows
 		mame64 -listnetwork
