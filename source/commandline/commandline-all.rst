@@ -980,12 +980,23 @@ Opções de MIDI e rede
 
 		mame64 sistema -nome-do-slot -midiout "nome do dispositivo"
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-listnetwork:
 
 **-listnetwork**
 
 	Cria uma lista de adaptadores de rede disponíveis que possam ser
 	usados com a emulação.
+
+	.. admonition:: Fica a dica!
+
+		No Windows, é necessário instalar o
+		`OpenVPN <https://openvpn.net/community-downloads/>`_ mais
+		recente para que o MAME possa ver os adaptadores de rede.
 
 .. raw:: latex
 
