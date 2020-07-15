@@ -770,6 +770,11 @@ Opções relacionadas ao que é exibido na tela (OSD)
 	**dinput**. O binário oficial do MAME para Windows não é compilado
 	com SDL, sendo necessário compilar uma versão compatível para que a
 	opção ``sdl`` funcione.
+
+	Observe que a emulação do teclado em modo de usuário para
+	ferramentas como joy2key irá certamente precisar da opção
+	``-keyboardprovider win32`` no Windows.
+
 	O valor predefinido é **auto**. ::
 
 		mame64 c64 -keyboardprovider win32
