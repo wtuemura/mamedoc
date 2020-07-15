@@ -2360,11 +2360,14 @@ Opções para a configuração de vídeo
 **-[no]intscaley** / **-[no]sy** [<*fator*>]
 
 	Define o fator da escala para o preenchimento e a aproximação (zoom)
-	da tela na vertical **não causa aliasing nos pixels**.
+	da tela na vertical, não causa aliasing nos pixels quando usado
+	sozinho ou até o fator **4.0**. Causa aliasing mínimo nos pixels
+	quando utilizado em conjunto com intscalex.
 
 	O valor predefinido é **0.0** (**-nointscaley 0.0**). ::
 
 		mame64 ssf2tu -sy 1.0
+		mame64 ssf2tu -nowindow -ka -sx 5.0 -sy 5.0
 
 .. raw:: latex
 
