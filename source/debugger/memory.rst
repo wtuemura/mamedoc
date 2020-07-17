@@ -1,6 +1,6 @@
 .. _debugger-memory-list:
 
-Comandos para a depuração de Memória
+Comandos para a depuração da Memória
 ====================================
 
 

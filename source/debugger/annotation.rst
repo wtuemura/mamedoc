@@ -1,6 +1,6 @@
 .. _debugger-annotation-list:
 
-Comandos de anotação de código do depurador
+Comandos da anotação do código do depurador
 ===========================================
 
 

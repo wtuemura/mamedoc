@@ -1,6 +1,6 @@
 .. _debugger-image-list:
 
-Comandos para depuração de imagem
+Comandos para depuração da imagem
 =================================
 
 Na interface de depuração do MAME você pode digitar **help <command>**

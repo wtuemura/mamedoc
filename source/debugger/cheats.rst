@@ -1,6 +1,6 @@
 .. _debugger-cheats-list:
 
-Comandos para o depurador de trapaça
+Comandos para o depurador da trapaça
 ====================================
 
 
