@@ -1118,7 +1118,17 @@ Opções para a configuração
 
 	Para clones apenas, poderá ser chamado de forma recursiva.
 
-- **<systemname>.ini**
+- **<nome-do-driver-da-máquina>.ini**
+
+	Para que as opções sejam aplicadas apenas no driver da máquina, para
+	saber qual o nome do driver de uma determinada máquina faça o
+	comando: ::
+
+		mame64 sf2 -ls
+		sf2              cps1.cpp
+
+	O nome do driver é **cps1**, logo, o arquivo deve ser nomeado como
+	``cps1.ini``.
 
 	Veja mais em :ref:`advanced-multi-CFG` para mais detalhes. ::
 
@@ -1133,9 +1143,6 @@ Opções para a configuração
 
 		O valor predefinido é **Ligado** (**-readconfig**)
 
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-nowriteconfig:
 
@@ -3170,10 +3177,10 @@ Opções para a configuração do áudio
 	Os valores menores oferecem um menor atraso no áudio enquanto exige
 	um desempenho maior do seu sistema. Valores maiores incrementam o
 	atraso do áudio porém ajudam a evitar o esvaziamento da memória
-	intermediária (buffer) e as interrupções do áudio. ::
+	intermediária (buffer) e as interrupções do áudio.
 
 	Os valores válidos ficam entre **1** e **5**, o valor predefinido é
-	**2**.
+	**2**. ::
 
 		mame64 galaga -audio_latency 1
 
