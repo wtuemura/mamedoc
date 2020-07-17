@@ -329,6 +329,7 @@ V
 | :ref:`faqgames-viostorm`
 | :ref:`faqgames-vmahjong`
 | :ref:`faqgames-myfairld`
+| :ref:`faqgames-vr`
 
 W
 ~
@@ -3840,6 +3841,104 @@ Virtual Mahjong 2 - My Fair Lady
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
+
+.. _faqgames-vr:
+
+Virtua Racing
+-------------
+
+	* **MULTIPLAYER E LIVE MONITOR**
+
+	  Para que a configuração do seu MAME não fique bagunçada, crie uma
+	  pasta qualquer em algum lugar do seu desktop e dentro copie o
+	  executável do MAME, chama o prompt de comando caso esteja no
+	  Windows ou o terminal caso esteja no Linux ou macOS e execute o
+	  comando ``mame64 -cc`` para criar a sua configuração inicial.
+
+	  Edite o seu arquivo **mame.ini** e altere as opções abaixo: ::
+
+		rompath roms;caminho-completo-das-suas-roms
+		skip_gameinfo 1
+		window 1
+		resolution 640x480
+
+	  Faça o comando ``mkdir nvram1 nvram2 nvram3`` para criar os
+	  diretórios de configuração. O diretório **nvram1** será a
+	  configuração da máquina **master**, **nvram2** será a configuração
+	  máquina **slave** e o diretório **nvram3** será a configuração do
+	  nosso **live monitor**.
+
+	  Para configurar a máquina **master** execute o comando abaixo: ::
+
+		mame64 vr -wdog 10 -nvram_directory nvram1
+
+	  Pressione **F2** para entrar na configuração da máquina, vá até
+	  **Game System**, defina **Link ID** para **Master**, aproveite que
+	  já está aí e altere a cor do veículo, caso contrário todos serão
+	  vermelhos. A opção ``-wdog 10`` serve para encerrar o MAME caso
+	  ele trave. Salve, ao retornar para a tela de configuração
+	  pressione **ESQ**.
+
+	  Para configurar a máquina **slave** (player 2) faça o mesmo, porém
+	  na linha de comando troque o **nvram1** por **nvram2**, em
+	  **Link ID** defina como **Slave** e não se esqueça de alterar a
+	  cor do carro. Salve, ao retornar para a tela de configuração
+	  pressione **ESQ**.
+
+	  Para configurar a máquina **live monitor** faça o mesmo, porém
+	  na linha de comando troque o **nvram2** por **nvram3**, em
+	  **Link ID** defina como **Live**. Salve, ao retornar para a tela
+	  de configuração pressione **ESQ**.
+
+	  No Windows, abra o seu editor de texto preferido e cole as linhas
+	  abaixo: ::
+
+		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15113 -comm_remoteport 15114 -comm_framesync
+		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram2 -comm_localport 15113 -comm_remoteport 15112 -comm_framesync
+		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram3 -comm_localport 15114 -comm_remoteport 15113 -comm_framesync
+
+	  No Linux ou macOS: ::
+
+		#!/bin/sh
+		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15113 -comm_remoteport 15114 -comm_framesync &
+		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram2 -comm_localport 15113 -comm_remoteport 15112 -comm_framesync &
+		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram3 -comm_localport 15114 -comm_remoteport 15113 -comm_framesync
+
+	  Salve o arquivo como **vr-multi.bat** no Windows ou **vr-multi**
+	  no Linux ou macOS, para este último é necessário fazer o comando
+	  ``chmod 755 vr-multi``. Agora ao executar estes arquivos deve
+	  aparecer três telas, uma para o jogador 1, para o jogador 2 e uma
+	  para o live monitor.
+
+	  Esta máquina suporta até 4 máquinas "Twin" conectadas entre si
+	  totalizando 8 jogadores mais o live monitor. O segredo está em
+	  conectar uma máquina na outra e a última (live monitor)
+	  conectando de volta para a máquina master. No exemplo acima, com a
+	  opção ``-comm_remoteport`` a máquina **nvram2 (Player 2)** está
+	  apontando para para a porta da máquina **nvram1 (Player 1)**, a
+	  máquina **nvram3 (Player 3)** aponta para a porta da **nvram2
+	  (Player 2)** e assim sucessivamente.
+
+	  A configuração acima serve apenas como um exemplo. É preferível
+	  que seja criada uma rede entre 8 ou 9 computadores para que eles
+	  possam conversar entre si, neste caso não é necessário criar
+	  diferentes diretórios **nvram**. No Windows, é necessário instalar
+	  o `OpenVPN <https://openvpn.net/community-downloads/>`_ mais
+	  recente para que o MAME possa ver e usar os adaptadores de rede.
+	  Em um exemplo de configuração de rede ela ficaria assim: ::
+
+		Computador MASTER Player 1
+		mame64 vr -wdog 10 -comm_localhost 192.168.1.1 -comm_localport 15111 -comm_remotehost 192.168.1.10 -comm_remoteport 15110
+		
+		Computador SLAVE Player 2
+		mame64 vr -wdog 10 -comm_localhost 192.168.1.2 -comm_localport 15112 -comm_remotehost 192.168.1.1 -comm_remoteport 15111
+		
+		Computador SLAVE Player 3
+		mame64 vr -wdog 10 -comm_localhost 192.168.1.3 -comm_localport 15113 -comm_remotehost 192.168.1.2 -comm_remoteport 15112
+		...
+		Computador LIVE MONITOR
+		mame64 vr -wdog 10 -comm_localhost 192.168.1.10 -comm_localport 15110 -comm_remotehost 192.168.1.1 -comm_remoteport 15111
+
 
 .. _faqgames-warzard:
 
