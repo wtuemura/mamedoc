@@ -3893,14 +3893,14 @@ Virtua Racing
 	  No Windows, abra o seu editor de texto preferido e cole as linhas
 	  abaixo: ::
 
-		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15113 -comm_remoteport 15114 -comm_framesync
+		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15114 -comm_framesync
 		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram2 -comm_localport 15113 -comm_remoteport 15112 -comm_framesync
 		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram3 -comm_localport 15114 -comm_remoteport 15113 -comm_framesync
 
 	  No Linux ou macOS: ::
 
 		#!/bin/sh
-		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15113 -comm_remoteport 15114 -comm_framesync &
+		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15114 -comm_framesync &
 		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram2 -comm_localport 15113 -comm_remoteport 15112 -comm_framesync &
 		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram3 -comm_localport 15114 -comm_remoteport 15113 -comm_framesync
 
