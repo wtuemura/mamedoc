@@ -3543,77 +3543,144 @@ Opções para as configurações de diferentes entradas
 
 **-joystick_map** / **-joymap** [<*mapa*>]
 
-	Controla como mapear os valores analógicos do controle (joystick)
-	para o controle (joystick) digital. O MAME aceita qualquer dado
-	analógico de todos os controles. Para controles analógicos de
-	verdade, os valores precisam ser mapeados para valores de controles
-	digitais com 4 direções ou 8 direções.
+	Controla como o valores do joystick analógico são mapeados para os
+	controles do joystick digital.
 
-	Para fazer isso o MAME divide o alcance do valor analógico numa
-	grade de 9x9. Então usa a posição do eixo (para eixos X e Y apenas),
-	mapeia para essa grade e procura compatibilizar a tradução para um
-	mapa de controle conhecido, este parâmetro permite especificar o
-	mapa.
+	Sistemas como o Pac-Man utilizam um controle digital com quatro
+	posições (4-way joystick) que exibe um comportamento inapropriado
+	quando a diagonal é acionada, o Pac-Man simplesmente para nos
+	cruzamentos do mapa fazendo com que seja quase que impossível
+	jogá-lo direito ou pelo menos, da maneira que ele foi desenvolvido
+	para ser jogado. Outras máquinas arcade utilizam controles digitais
+	do tipo 4-way ou 8-way (em vez de utilizarem controles analógicos),
+	assim para controles analógicos como os utilizados em máquinas de
+	voo com manches ou thumb sticks analógicos, estes precisam ser
+	mapeados para valores correspondentes aos controles digitais
+	com 4 ou 8 posições.
 
-	O valor predefinido é **auto** o que significa que um mapa diagonal
-	de 4 ou 8 direções, ou um mapa diagonal 4 direções é selecionado
-	automaticamente com base na configuração da porta de entrada do
-	sistema atual.
+	Para tanto o MAME divide o alcance do controle analógico numa grade
+	com 9x9 muito semelhante ao desenho abaixo:
 
-	Estes mapas são definidos como uma sequência de números e
-	caracteres. Sabendo que a grade é de 9x9, há um total de 81
-	caracteres necessários para definir um mapa completo.
-	Abaixo está um exemplo de um mapa para um controle (joystick) com
-	8 direções:
+	.. image:: images/9x9grid.png
+		:width: 50%
+		:align: center
+		:alt: Grade 9x9
 
-		+-------------+---------------------------------------------------------------------------------+
-		| | 777888999 |                                                                                 |
-		| | 777888999 | | Note que os dígitos numéricos correspondem às chaves                          |
-		| | 777888999 | | em um teclado numérico. Então o '7' mapeia para cima + esquerda, o '4' mapeia |
-		| | 444555666 | | para a esquerda, o '5' mapeia para o neutro, etc. Em adição aos valores       |
-		| | 444555666 | | numéricos, é possível especificar o caractere 's',                            |
-		| | 444555666 | | que significa 'pegajoso' . Neste caso, o valor do                             |
-		| | 111222333 | | mapa é o mesmo que foi da última vez que um valor não pegajoso                |
-		| | 111222333 | | foi lido.                                                                     |
-		| | 111222333 |                                                                                 |
-		+-------------+---------------------------------------------------------------------------------+
+	O MAME então toma a posição do eixo do joystick (apenas os valores
+	nos eixos X e Y), mapeia para esta grade e então monitora a tradução
+	a partir do mapa do joystick. Este parâmetro permite que você defina
+	tal mapa.
 
-	Para definir o mapa para este parâmetro, é possível usar uma cadeia
-	destas linhas separadas por um '.' (que indica o fim de uma
-	linha), dessa maneira:
+	Como por exemplo, um joystick com 8 posições geralmente se assemelha
+	com a imagem abaixo:
+
+	.. image:: images/8way.png
+		:width: 50%
+		:align: center
+		:alt: Joystick com 8 posições
+
+	Este mapeamento oferece uma grande margem de manobra para os ângulos
+	aceitos em uma determinada direção, assim sendo bem próximo da área
+	da direção desejada. Sem isso, caso esteja um pouco fora do eixo
+	central enquanto segura o controle para a esquerda, a máquina não
+	vai reconhecer a ação de forma adequada.
+
+	O valor predefinido é **auto**, significa que o controle padrão com
+	4, 8 posições ou um mapa diagonal para um controle com 4 posições é
+	selecionado de forma automática com base na informação da
+	configuração da porta de entrada do sistema atual.
+
+	Caso queira configurar a opção ``-joystick_map`` de forma individual
+	através do ``<sistema>.ini`` em vez da configuração do ``mame.ini``
+	para que tais configurações afetem apenas os sistemas que precisem
+	destes mapeamentos, consulte a seção :ref:`Múltiplos arquivos de
+	configuração <advanced-multi-CFG>` para mais detalhes.
+
+	Os mapeamentos são definidos como uma cadeia de caracteres e
+	números. Uma vez que a grade possui 9x9, existem 81 caracteres no
+	total para que seja possível definir um mapa completo. Abaixo é um
+	exemplo de um mapa para um joystick com 8 posições que coincide com
+	a imagem anterior.
+
+	.. image:: images/joymap.png
+		:width: 100%
+		:align: center
+		:alt: exemplo mapa 8 posições
+
+	Para definir um mapa com estes parâmetros informe a cadeia de
+	caracteres com as linhas separadas por um ponto '.' (que indica o
+	final de uma linha), exemplo:
+
 
 	``-joymap 777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333``
 
-	No entanto, isso pode ser reduzido usando vários atalhos compatíveis
-	com o parâmetro [<*map*>]. Caso as informações sobre uma linha estejam
-	ausentes, presume-se que os dados ausentes nas colunas 5-9 são
-	simétricos da esquerda/direita com os dados da coluna 0-4; qualquer
-	dados ausentes das colunas 0-4, assume-se então que estas serão
-	cópias dos dados anteriores. A mesma lógica se aplica a linhas
-	ausentes, exceto que a simetria cima/baixo seja assumida.
 
-	Usando essas abreviações o mapa com 81 caracteres pode ser
-	simplesmente definido por essas 11 cadeias de caracteres:
-	``-joymap 7778...4445``
+	Contudo é possível reduzir o tamanho do comando utilizando-se de
+	atalhos compatíveis com o parâmetro [<*mapa*>]. Caso falte uma
+	informação sobre uma linha então assume-se que qualquer dado
+	faltante nas colunas 5-9 sejam simetricamente esquerda/direita com
+	dados nas colunas 0-4; assim como qualquer dado que falte nas
+	colunas 0-4 é assumido que sejam cópias dos dados anteriores. A
+	mesma lógica se aplica para as linhas faltantes, exceto quando se
+	assume a simetria cima/baixo.
 
-	Olhando para a primeira linha, ``7778`` são apenas 4 caracteres
-	longos.
-	A 5º entrada não pode usar valores simétricos então assume-se que
-	seja igual ao valor anterior, '8'. O 6º caractere é esquerda/direita
-	em simetria com o 4º caractere, resultando em '8'. O 7º caractere é
-	esquerda/direita em simétrica com o 3º caractere, resultando em '9'
-	(que é '7' invertido com esquerda/direita). Eventualmente isso
-	resulta numa cadeia de ``777888999`` na linha.
+	Ao utilizar estes atalhos os 81 caracteres deste mapa podem ser
+	simplificados para uma cadeia com 11 caracteres: 7778...4445 (
+	significa que podemos utilizar o comando **-joymap 7778...4445**)
 
-	A segunda e a terceira linhas estão ausentes, portanto, elas são
-	consideradas idênticas à primeira linha. A quarta linha decodifica
-	de forma semelhante à primeira linha, produzindo ``444555666``.
-	A quinta linha está faltando, então é assumido como sendo o mesmo
-	que o quarto.
+	Olhando na primeira fileira, o 7778 tem o cumprimento de apenas 4
+	caracteres. Não é possível utilizar a simetria na 5ª entrada,
+	assume-se então que seja igual ao caractere anterior, '8'. O 6º
+	caractere é simétrico com a posição esquerda/direita em conjunto com
+	o 4º caractere, dando um '8'. O 7º caractere é simétrico com a
+	posição esquerda/direita em conjunto com o 3º caractere, dando um
+	'9' (que é '7' com os lados esquerdo/direito invertido). Por fim,
+	retorna o conjunto completo da linha **777888999**.
 
-	As três linhas restantes também estão faltando, então elas são
-	consideradas os espelhos cima/baixo das três primeiras linhas, dando
-	três linhas finais de ``111222333``.
+	As carreiras dois e três estão faltando, se deduz então que sejam
+	idênticos à primeira linha. A 4ª carreira é decodificada de
+	forma semelhante à 1ª gerando 444555666. A 5ª carreira
+	está faltando, assume-se então que seja a mesma que a 4ª.
+
+	O resto das 3 carreiras também estão faltando, então deduz-se que
+	sejam espelhos do sentido cima/baixo das 3 primeiras carreiras,
+	gerando as carreiras finais com 111222333.
+
+	Em máquinas compatíveis com controles com 4 posições, o "sticky"
+	(pegadiço) se torna importante para evitar problemas com as
+	diagonais. Geralmente seria escolhido um mapa semelhante com este:
+
+	.. image:: images/4way.png
+		:width: 50%
+		:align: center
+		:alt: Joystick com 4 posições
+
+	Significa que caso pressione esquerda e então role o controle para
+	cima (sem passar pelo centro), o eixo do controle passará por
+	aquela parte pegadiça do canto do controle fazendo com que o
+	movimento "pegue" ou "raspe" o manche nas diagonais atrapalhando o
+	movimento. Durante o movimento o MAME irá ler esta posição pegadiça
+	como **esquerda** pois é a última posição não pegadiça que foi
+	recebida. Até que o movimento chega até a posição **cima** do mapa
+	até finalmente resultar no movimento para cima.
+
+	O mapa então ficaria muito parecido com isso:
+
+	.. image:: images/joymap-sticky.png
+		:width: 100%
+		:align: center
+		:alt: Joystick com 4 posições sticky
+
+	Para definir um mapa com estes parâmetros informe a cadeia de
+	caracteres com as linhas separadas por um ponto '.' (que indica o
+	final de uma linha), exemplo:
+
+	``-joymap s8888888s.4s88888s6.44s888s66.444555666.444555666.444555666.44s222s66.4s22222s6.s2222222s``
+
+	Assim como antes, por causa da simetria entre cima, baixo, esquerda
+	e direita, podemos reduzir o comando para:
+
+	``-joymap s8.4s8.44s8.4445``
 
 
 .. _mame-commandline-joystickdeadzone:
