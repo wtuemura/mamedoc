@@ -3617,7 +3617,7 @@ Opções para as configurações de diferentes entradas
 
 	Contudo é possível reduzir o tamanho do comando utilizando-se de
 	atalhos compatíveis com o parâmetro [<*mapa*>]. Caso falte uma
-	informação sobre uma linha então assume-se que qualquer dado
+	informação sobre uma linha então se deduz que qualquer dado
 	faltante nas colunas 5-9 sejam simetricamente esquerda/direita com
 	dados nas colunas 0-4; assim como qualquer dado que falte nas
 	colunas 0-4 é assumido que sejam cópias dos dados anteriores. A
@@ -3630,7 +3630,7 @@ Opções para as configurações de diferentes entradas
 
 	Olhando na primeira fileira, o 7778 tem o cumprimento de apenas 4
 	caracteres. Não é possível utilizar a simetria na 5ª entrada,
-	assume-se então que seja igual ao caractere anterior, '8'. O 6º
+	se deduz então que seja igual ao caractere anterior, '8'. O 6º
 	caractere é simétrico com a posição esquerda/direita em conjunto com
 	o 4º caractere, dando um '8'. O 7º caractere é simétrico com a
 	posição esquerda/direita em conjunto com o 3º caractere, dando um
@@ -3640,7 +3640,7 @@ Opções para as configurações de diferentes entradas
 	As carreiras dois e três estão faltando, se deduz então que sejam
 	idênticos à primeira linha. A 4ª carreira é decodificada de
 	forma semelhante à 1ª gerando 444555666. A 5ª carreira
-	está faltando, assume-se então que seja a mesma que a 4ª.
+	está faltando, se deduz então que seja a mesma que a 4ª.
 
 	O resto das 3 carreiras também estão faltando, então deduz-se que
 	sejam espelhos do sentido cima/baixo das 3 primeiras carreiras,
