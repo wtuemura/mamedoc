@@ -3628,7 +3628,7 @@ Opções para as configurações de diferentes entradas
 	simplificados para uma cadeia com 11 caracteres: 7778...4445 (
 	significa que podemos utilizar o comando **-joymap 7778...4445**)
 
-	Olhando na primeira fileira, o 7778 tem o cumprimento de apenas 4
+	Olhando na primeira fileira, o 7778 tem o comprimento de apenas 4
 	caracteres. Não é possível utilizar a simetria na 5ª entrada,
 	se deduz então que seja igual ao caractere anterior, '8'. O 6º
 	caractere é simétrico com a posição esquerda/direita em conjunto com
