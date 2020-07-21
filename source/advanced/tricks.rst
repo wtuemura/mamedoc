@@ -761,7 +761,14 @@ Usando uma imagem de fundo no MAME
 
 É possível utilizar uma imagem de fundo no MAME que é exibida na
 interface como um papel de parede e somado com a opção de customização é
-possível var uma aparência toda sua na interface.
+possível dar uma aparência toda sua na interface. Escolha a imagem que
+deseja usar em formato .jpg ou .png e renomeie o arquivo para
+**background.jpg** ou **background.png**, cuidado para não usar imagens
+muito pesadas, prefira o formato **.jpg**.
+
+Eu usei um fundo do filme `Tron
+<https://i.postimg.cc/4yGFp8Kg/background.jpg>`_ que baixei de um site
+de wallpaper qualquer na internet.
 
 .. figure:: images/mame-interface.png
 	:width: 100%
@@ -769,10 +776,19 @@ possível var uma aparência toda sua na interface.
 	:figclass: align-center
 	:alt: Interface customizada
 
-Eu usei um fundo do filme `Tron
-<https://i.postimg.cc/4yGFp8Kg/background.jpg>`_ que baixei de um site
-de wallpaper qualquer na internet. Para as cores eu estou utilizando as
-configurações abaixo: ::
+.. raw:: latex
+
+	\clearpage
+
+.. figure:: images/mame-interface2.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Interface customizada2
+
+Lembrando que todo o fundo é um papel de parede, tirando as opções do
+MAME nada na tela do Iron Man é funcional. Para as cores eu estou
+utilizando as configurações abaixo: ::
 
 	# UI OPTIONS
 	#
@@ -795,6 +811,10 @@ configurações abaixo: ::
 	ui_text_bg_color          ef000000
 	ui_text_color             ffffffff
 	ui_unavail_color          ff404040
+
+Na tela do Iron Man a única diferença é a cor da borda: ::
+
+	ui_border_color           ff076f85
 
 Salve estas opções no seu **ui.ini**. Caso queira brincar com as cores,
 eu gosto do site `Hex Colors Tools <https://www.hexcolortool.com/>`_.
@@ -819,7 +839,8 @@ Já em termos de ferramentas eu gosto bastante da `Paletton
 
 Infelizmente a customização das cores da interface do MAME é muito
 limitada pois alguma cores são fixas como o verde que fica no título das
-janelas, aquele azul da seleção das ROMs, etc.
+janelas ou o texto verde das opções que estão ligadas, aquele azul da
+seleção das ROMs, etc.
 
 .. [#]	De acordo com `este post
 		<https://vgmrips.net/forum/viewtopic.php?f=3&t=155>`_ o YM2610
