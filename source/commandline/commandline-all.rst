@@ -3543,8 +3543,8 @@ Opções para as configurações de diferentes entradas
 
 **-joystick_map** / **-joymap** [<*mapa*>]
 
-	Controla como o valores do joystick analógico são mapeados para os
-	controles do joystick digital.
+	Controla como os valores do joystick analógico são mapeados para os
+	controles em um joystick digital.
 
 	Sistemas como o Pac-Man utilizam um controle digital com quatro
 	posições (4-way joystick) que exibe um comportamento inapropriado
@@ -3617,15 +3617,15 @@ Opções para as configurações de diferentes entradas
 
 	Contudo é possível reduzir o tamanho do comando utilizando-se de
 	atalhos compatíveis com o parâmetro [<*mapa*>]. Caso falte uma
-	informação sobre uma linha então se deduz que qualquer dado
-	faltante nas colunas 5-9 sejam simetricamente esquerda/direita com
-	dados nas colunas 0-4; assim como qualquer dado que falte nas
-	colunas 0-4 é assumido que sejam cópias dos dados anteriores. A
-	mesma lógica se aplica para as linhas faltantes, exceto quando se
-	assume a simetria cima/baixo.
+	informação sobre uma linha, se deduz então que qualquer dado
+	que falte nas colunas 5-9 sejam simétricos com a posição
+	esquerda/direita em relação com os dados das colunas 0-4; assim
+	como, qualquer dado que falte nas colunas 0-4 é deduzido que sejam
+	cópias dos dados anteriores. A mesma lógica se aplica para as
+	linhas faltantes, exceto quando se assume a simetria cima/baixo.
 
-	Ao utilizar estes atalhos os 81 caracteres deste mapa podem ser
-	simplificados para uma cadeia com 11 caracteres: 7778...4445 (
+	Ao utilizar esta forma abreviada os 81 caracteres deste mapa podem
+	ser simplificados para uma cadeia com 11 caracteres: 7778...4445 (
 	significa que podemos utilizar o comando **-joymap 7778...4445**)
 
 	Olhando na primeira fileira, o 7778 tem o comprimento de apenas 4

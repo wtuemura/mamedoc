@@ -750,6 +750,77 @@ https://pastebin.com/at99MLqz
 
 https://pastebin.com/EaJes6Eh
 
+.. raw:: latex
+
+	\clearpage
+
+.. _advanced-tricks-imagem-fundo:
+
+Usando uma imagem de fundo no MAME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+É possível utilizar uma imagem de fundo no MAME que é exibida na
+interface como um papel de parede e somado com a opção de customização é
+possível var uma aparência toda sua na interface.
+
+.. figure:: images/mame-interface.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Interface customizada
+
+Eu usei um fundo do filme `Tron
+<https://i.postimg.cc/4yGFp8Kg/background.jpg>`_ que baixei de um site
+de wallpaper qualquer na internet. Para as cores eu estou utilizando as
+configurações abaixo: ::
+
+	# UI OPTIONS
+	#
+	infos_text_size           0.700000
+	font_rows                 37
+	hide_main_panel           0
+	ui_border_color           ffb7e7eb
+	ui_bg_color               c8022f35
+	ui_clone_color            ff808080
+	ui_dipsw_color            ff03d2d8
+	ui_gfxviewer_color        ef101030
+	ui_mousedown_bg_color     9470b3d0
+	ui_mousedown_color        fffa26ec
+	ui_mouseover_bg_color     70276e84
+	ui_mouseover_color        ff25b9a9
+	ui_selected_bg_color      ef047289
+	ui_selected_color         ff03d2d8
+	ui_slider_color           ffffffff
+	ui_subitem_color          ffffffff
+	ui_text_bg_color          ef000000
+	ui_text_color             ffffffff
+	ui_unavail_color          ff404040
+
+Salve estas opções no seu **ui.ini**. Caso queira brincar com as cores,
+eu gosto do site `Hex Colors Tools <https://www.hexcolortool.com/>`_.
+No site é possível você entrar com o valor de cores em hex (#000000) e
+ela oferece a possibilidade de variar a cor para mais claro ou mais
+escuro em intervalos de 10% ou um outro valor qualquer.
+
+Já para a combinação das cores é necessário saber sobre cores primárias,
+cores frias, quentes, monocromáticas, análogas, saber como utilizar o
+círculo cromático (dentre outras ferramentas) etc. Um tópico desta
+natureza daria um livro (ou mais de um livro) só sobre o assunto, logo
+este tópico não é coberto por este documento, no entanto, deixo algumas
+sugestões de leitura como `combinando cores 1
+<https://www.treinaweb.com.br/blog/voce-sabe-como-combinar-cores>`_,
+`combinando cores 2 <https://www.publicitarioscriativos.com/descubra-de-uma-vez-por-todas-como-utilizar-o-circulo-cromatico/>`_,
+`combinando cores 3 <https://www.canva.com/colors/color-wheel/>`_, isso
+sem falar nas centenas de milhares de vídeos no YouTube sobre o assunto.
+
+Já em termos de ferramentas eu gosto bastante da `Paletton
+<https://paletton.com>`_ e a `Adobe
+<https://color.adobe.com/pt/create/color-wheel>`_.
+
+Infelizmente a customização das cores da interface do MAME é muito
+limitada pois alguma cores são fixas como o verde que fica no título das
+janelas, aquele azul da seleção das ROMs, etc.
+
 .. [#]	De acordo com `este post
 		<https://vgmrips.net/forum/viewtopic.php?f=3&t=155>`_ o YM2610
 		trabalha com uma taxa de amostragem de 18.5 kHz (18500 Hz), logo
