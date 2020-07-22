@@ -3793,8 +3793,8 @@ Opções para as configurações de diferentes entradas
 
 	\clearpage
 
-Opções de entrada habilitadas automaticamente
----------------------------------------------
+Opções Automaticamente Ativas das Entadas Principais
+----------------------------------------------------
 
 .. _mame-commandline-paddledevice:
 
