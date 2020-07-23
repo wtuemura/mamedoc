@@ -1,4 +1,4 @@
-Alerta sobre a Saúde
+ALERTA SOBRE A SAÚDE
 ====================
 
 Fotossensibilidade / Ataques Epiléticos
