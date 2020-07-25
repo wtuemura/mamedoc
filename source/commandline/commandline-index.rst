@@ -231,6 +231,7 @@ Opções para máquinas que usem gráficos vetoriais
 
 | :ref:`beam_width_min <mame-commandline-beamwidthmin>`
 | :ref:`beam_width_max <mame-commandline-beamwidthmax>`
+| :ref:`beam_dot_size <mame-commandline-beamdotsize>`
 | :ref:`beam_intensity_weight <mame-commandline-beamintensityweight>`
 | :ref:`flicker <mame-commandline-flicker>`
 |

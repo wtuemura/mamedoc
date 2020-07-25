@@ -2914,6 +2914,15 @@ Opções para máquinas que usem gráficos vetoriais
 		mame64 asteroid -beam_width_max 2
 
 
+.. _mame-commandline-beamdotsize:
+
+**-beam_dot_size** [<*tamanho*>]
+
+	Define o tamanho do feixe do vetor para pontos. ::
+
+		mame64 asteroid -beam_dot_size 2
+
+
 .. _mame-commandline-beamintensityweight:
 
 **-beam_intensity_weight** [<*altura*>]
@@ -2921,6 +2930,7 @@ Opções para máquinas que usem gráficos vetoriais
 	Define a intensidade do feixe do vetor. ::
 
 		mame64 asteroid -beam_intensity_weight 0.5
+
 
 .. _mame-commandline-flicker:
 
