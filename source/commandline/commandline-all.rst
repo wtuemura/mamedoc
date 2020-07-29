@@ -2660,7 +2660,7 @@ Opções de vídeo para uso com janelas individuais
 
 .. _mame-commandline-resolution:
 
-**-resolution[0-3]** <*largura_x_altura[@taxa de atualização]*> / **-r[0-3]** <*largura_x_altura[@taxa de atualização]*>
+**-resolution[0-3]** <*[largura_x_altura]@[taxa de atualização]*> / **-r[0-3]** <*[largura_x_altura]@[taxa de atualização]*>
 
 	Define a resolução exata a ser exibida. No modo de tela cheia o MAME
 	tentará usar a resolução solicitada. A largura e a altura são
