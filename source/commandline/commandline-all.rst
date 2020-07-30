@@ -3122,6 +3122,35 @@ Opções para a configuração do áudio
 
 		mame64 ssf2tu -volume -30
 
+.. _mame-commandline-speakerreport:
+
+**-speaker_report** [<*valor*>]
+
+	Imprime um relatório na tela dizendo se houve ou não um ceifamento
+	ou "clipping" da onda gerada pela saída de áudio no alto-falante.
+	Este ceifamento causa distorções no áudio devido a saturação do
+	sinal, tornando as curvas de uma onda senoide em uma onda quadrada.
+	
+	Os valores válidos são:
+
+	* **nível 1**: relate apenas se houve clipping.
+	* **nível 2**: relate a máxima geral, ainda que não haja qualquer clipping.
+	* **nível 3**: imprima uma lista detalhada de todos os momento que houveram clipping.
+	* **nível 4**: imprima uma lista detalhada de tudo.
+
+	O valor predefinido é **Desligado** ::
+
+		mame64 robocop -speaker_report 2
+		Speaker ":mono" - max = 51586 (gain *= 0.635) - clipped in 30/735 (4%) buckets
+
+	.. note:: Este comando não tem utilidade prática para o usuário,
+	          serve apenas como uma ferramenta para os desenvolvedores
+	          do MAME.
+
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-sound:
 
 **-sound** <``auto`` | ``dsound`` | ``sdl`` | ``coreaudio`` | ``xaudio2`` | ``portaudio`` | ``none``>
@@ -3170,9 +3199,6 @@ Opções para a configuração do áudio
       - none
       - 
 
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-audiolatency:
 
