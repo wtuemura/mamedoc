@@ -9,6 +9,7 @@ para uma melhor descrição de cada comando.
 
 | :ref:`debugger-command-dasm` -- desmonta para um determinado arquivo
 | :ref:`debugger-command-find` -- pesquisa a memória do programa, dados de memória, ou a memória I/O por dados
+| :ref:`debugger-command-fill` -- completa a memória do programa, dados de memória, ou a memória I/O com dados
 | :ref:`debugger-command-dump` -- extrai a memória do programa, dados da memória, ou os dados I/O como texto
 | :ref:`debugger-command-save` -- salva o binário do programa, dados, ou a memória I/O para um determinado aquivo
 | :ref:`debugger-command-load` -- carrega um programa binário na memória, memória de dados, ou a memória I/O de um determinado arquivo
@@ -44,7 +45,7 @@ find
 
 |  **f[ind][{d|i}]** <*address*>,<*length*>[,<*data*>[,...]]
 |
-| Os comandos **find**/**findd**/**findi** pesquisam na memória por uma sequência específica de dados. o 'find' procurará o espaço do programa na memória, enquanto 'findd' procurará o espaço dos dados na memória e 'findi' procurará pelo espaço I/O na memória. O *<address>* indica o endereço que será iniciado a pesquisa, e <*length*> indica quanta memória será pesquisada. *<data>* pode ser tanto uma string citada, um valor numérico, uma expressão ou um caractere coringa '?'. As strings por padrão implicam em uma pesquisa de tamanho de byte. Os dados não string são pesquisados por padrão no tamanho da palavra nativa da CPU. Para substituir o tamanho da pesquisa por sequências sem string, você pode prefixar o valor com **b**. para forçar pesquisa de tamanho de byte, **w** para pesquisa por tamanho da palavra, **d** para o tamanho dword e **q** para o tamanho qword. As substituições são memorizadas, então se você quiser procurar por uma série de palavras, basta prefixar o primeiro valor com um *w*. Observe também que você pode misturar os tamanhos para executar as pesquisas mais complexas. Todo o intervalo *<address>* através de *<address>+<length>-1* será inclusive pesquisada na sequência e todas as ocorrências serão exibidas.
+| Os comandos **find**/**findd**/**findi** pesquisam na memória por uma sequência específica de dados. O 'find' procurará o espaço do programa na memória, enquanto 'findd' procurará o espaço dos dados na memória e 'findi' procurará pelo espaço I/O na memória. O *<address>* indica o endereço que será iniciado a pesquisa, e <*length*> indica quanta memória será pesquisada. *<data>* pode ser tanto uma string citada, um valor numérico, uma expressão ou um caractere curinga '?'. As strings por padrão implicam em uma pesquisa de tamanho de byte. Os dados não string são pesquisados por padrão no tamanho da palavra nativa da CPU. Para substituir o tamanho da pesquisa por sequências sem string, você pode prefixar o valor com **b**. para forçar pesquisa de tamanho de byte, **w** para pesquisa por tamanho da palavra, **d** para o tamanho dword e **q** para o tamanho qword. As substituições são memorizadas, então se você quiser procurar por uma série de palavras, basta prefixar o primeiro valor com um *w*. Observe também que você pode misturar os tamanhos para executar as pesquisas mais complexas. Todo o intervalo *<address>* através de *<address>+<length>-1* será inclusive pesquisada na sequência e todas as ocorrências serão exibidas.
 |
 | Exemplos:
 |
@@ -62,6 +63,21 @@ find
 |
 | Voltar para :ref:`debugger-memory-list`
 |
+
+ .. _debugger-command-fill:
+
+fill
+----
+
+|  **fill[{d|i}]** <*address*>,<*length*>[,<*data*>[,...]]
+|
+| Os comanndos **fill**/**filld**/**filli** sobrescrevem um bloco da memória por uma sequência específica de dados. O 'fill' preenche o espaço do programa na memória, enquanto 'filld' preencherá o espaço de dados na memória e o 'filli' preencherá o espaço de memória I/O. O *<address>* indica o endereço que será iniciado a escrita, e <*length*> indica quanta memória será preenchida. *<data>* pode ser tanto uma string citada, um valor numérico ou uma expressão. Por predefinição os dados não strings são escritos nativamente com tamanho word da CPU. Para sobrescrever o tamanho dos dados para não strings, é possível prefixar o valor com b. para impor o preenchimento do tamanho do byte, w. para preenchimento com tamanho word, d. para preenchimento com tamanho dword e q. para preenchimento com tamanho qword. As sobrescritas são memorizadas, assim caso queira preencher com uma série de words é necessário prefixar o primeiro valor com um w. Observe que é possível também misturar os tamanhos para que seja possível realizar preenchimentos mais co,plexos. A operação de preenchimento poderá ser truncado caso uma falha da página ocorra ou caso uma parte da sequência ou da string falhe além do <address>+<length>-1.
+|
+| Voltar para :ref:`debugger-memory-list`
+
+ .. raw:: latex
+
+	\clearpage
 
  .. _debugger-command-dump:
 
