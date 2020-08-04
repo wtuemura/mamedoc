@@ -24,8 +24,8 @@ mais de dois estados (como jogos modernos com mais de uma marcha por
 exemplo).
 
 Este recurso não é exibido através da tela do usuário pois é uma
-customização extrema feita apenas pessoas que têm essa necessidade em
-específico e o conhecimento para fazer o uso dela da forma correta.
+customização extrema feita apenas para pessoas que têm essa necessidade
+em específico e o conhecimento para fazer o uso dela da forma correta.
 
 
 Alternando o interruptor de câmbio
