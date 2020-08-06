@@ -2900,7 +2900,11 @@ Opções para máquinas que usem gráficos vetoriais
 
 **-beam_width_min** [<*largura*>]
 
-	Define a espessura mínima do feixe do vetor. ::
+	Define a espessura mínima do feixe do vetor. Esta espessura varia
+	entre mínimo e máximo à medida que a intensidade do traçado do vetor
+	muda. Para desativar as alterações da largura do vetor com base na
+	intensidade, defina o mesmo valor para ``-beam_width_max`` e
+	``-beam_width_min``. ::
 
 		mame64 asteroid -beam_width_min 0.1
 
@@ -2909,7 +2913,11 @@ Opções para máquinas que usem gráficos vetoriais
 
 **-beam_width_max** [<*largura*>]
 
-	Define a espessura máxima do feixe do vetor. ::
+	Define a espessura máxima do feixe do vetor. Esta espessura varia
+	entre mínimo e máximo à medida que a intensidade do traçado do vetor
+	muda. Para desativar as alterações da largura do vetor com base na
+	intensidade, defina o mesmo valor para ``-beam_width_max`` e
+	``-beam_width_min``. ::
 
 		mame64 asteroid -beam_width_max 2
 
@@ -2918,7 +2926,12 @@ Opções para máquinas que usem gráficos vetoriais
 
 **-beam_dot_size** [<*tamanho*>]
 
-	Define o tamanho do feixe do vetor para pontos. ::
+	Fator de escala que será aplicado ao tamanho dos pontos nos jogos
+	vetoriais com ponto único. Normalmente estes são renderizados de
+	acordo com a largura do feixe computado, no entanto, é comum que
+	isto produza pontos que sejam difíceis de se ver. Esta opção aplica
+	um fator de escala no topo da largura do feixe para que estes fiquem
+	mais visíveis. ::
 
 		mame64 asteroid -beam_dot_size 2
 
@@ -2927,7 +2940,13 @@ Opções para máquinas que usem gráficos vetoriais
 
 **-beam_intensity_weight** [<*altura*>]
 
-	Define a intensidade do feixe do vetor. ::
+	Define a intensidade do feixe do vetor. Este valor determina como
+	a intensidade afeta a sua largura, o valor ``0`` (zero) cria um
+	mapeamento linear a partir da intensidade da sua largura. Os valores
+	negativos fazem com que os vetores com menor intensidade aumentem a
+	sua largura máxima de forma mais rápida, enquanto valores positivos
+	o farão de forma mais lenta. ::
+
 
 		mame64 asteroid -beam_intensity_weight 0.5
 
