@@ -112,8 +112,8 @@ Tecla             | Ação
 **Escape**        | Sai do emulador.
 ================  ===============================================================================
 
-Comparativo entre mapas de teclado
-==================================
+Comparativo entre os mapas de teclado
+=====================================
 
 QWERTY US (104 Teclas)
 ~~~~~~~~~~~~~~~~~~~~~~

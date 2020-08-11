@@ -1217,7 +1217,7 @@
 
 
 
-<text x="641.94818" y="292.51141" font-family="Arial" font-size="14.685px" style="line-height:0.2" xml:space="preserve"><tspan x="641.94818" y="292.51141" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:0.40000001">Teclas de comando</tspan><tspan x="641.94818" y="305.80759" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:0.40000001">e de edição</tspan></text>
+<text x="641.94818" y="292.51141" font-family="Arial" font-size="14.685px" style="line-height:0.2" xml:space="preserve"><tspan x="641.94818" y="292.51141" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:0.40000001">Teclas para comandos</tspan><tspan x="641.94818" y="305.80759" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:0.40000001">e edição</tspan></text>
 
 
 
@@ -1225,7 +1225,7 @@
 
 
 
-<text x="641.11938" y="333.46786" font-family="sans-serif" font-size="40.05px" style="line-height:1.25" xml:space="preserve"><tspan x="641.11938" y="333.46786" font-family="Arial" font-size="14.685px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Teclas de navegação</tspan></text>
+<text x="641.11938" y="333.46786" font-family="sans-serif" font-size="40.05px" style="line-height:1.25" xml:space="preserve"><tspan x="641.11938" y="333.46786" font-family="Arial" font-size="14.685px" stroke-width="1.0013" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Teclas para navegação</tspan></text>
 
 
 
@@ -1233,7 +1233,7 @@
 
 
 
-<text x="440.68915" y="292.61853" font-family="Arial" font-size="14.685px" style="line-height:0px" xml:space="preserve"><tspan x="440.68915" y="292.61853" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:14.68502331px">Teclas de sistema </tspan><tspan x="440.68915" y="307.30356" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:14.68502331px">e de interface</tspan></text>
+<text x="440.68915" y="292.61853" font-family="Arial" font-size="14.685px" style="line-height:0px" xml:space="preserve"><tspan x="440.68915" y="292.61853" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:14.68502331px">Teclas do sistema </tspan><tspan x="440.68915" y="307.30356" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:14.68502331px">e da interface</tspan></text>
 
 
 
