@@ -1572,9 +1572,6 @@ Opções para a gravação e a reprodução do estado da emulação
 
 		mame64 -autosave
 
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-playback:
 
@@ -1626,6 +1623,11 @@ Opções para a gravação e a reprodução do estado da emulação
 	O valor predefinido é **NULO** (sem gravação). ::
 
 		mame64 ssf2tu -rec perfect
+
+.. raw:: latex
+
+	\clearpage
+
 
 .. _mame-commandline-recordtimecode:
 
