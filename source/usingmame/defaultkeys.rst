@@ -8,12 +8,18 @@
 Teclas já predefinidas
 ======================
 
-Todas as teclas abaixo podem ser configuradas na interface do usuário.
-Esta lista mostra as teclas que já vem pré-configuradas.
+Aqui um pequeno resumo de todas as teclas que já vem pré-configuradas,
+para ver a lista completa de todas as teclas consulte o capítulo
+:ref:`Cardápio de opções <mamemenu>`. Todas as teclas podem ser
+configuradas através da interface do usuário.
 
 ================  ===============================================================================
 Tecla             | Ação
 ----------------  -------------------------------------------------------------------------------
+**Escape**        | Encerra a emulação.
+**5**             | Insere crédito em máquinas do tipo Arcade.
+**1**             | Inicia a partida para o jogador 1 (Player 1).
+**2**             | Inicia a partida para o jogador 2 (Player 2).
 **Tab**           | Exibe um cardápio que dá acesso a diferentes configurações.
 **~**             | Exibe opções configuráveis na parte de baixo da tela, use as seguintes teclas para
                   | controlá-las:
@@ -42,7 +48,7 @@ Tecla             | Ação
 **Shift+F3**      | Executa uma "reinicialização forçada", fechando e reiniciando a emulação do zero.
                   | Este produz um reinicio mais limpo e completo do que pressionar apenas o F3.
 **LCtrl+F3**      | [APENAS SDL] - Alterna o alongamento irregular.
-**F4**            | Mostra a paleta GFX decodificada e os tilemaps dos jogos. Pressione **F4** novamente para sair.
+**F4**            | Exibe a paleta GFX decodificada e os tilemaps dos jogos. Pressione **F4** novamente para sair.
                   |
                   | Paleta / modo tabela de cores (colortable):
                   |  * **[ ]** - alterna entre os modos paleta e tabela de cores
@@ -109,8 +115,11 @@ Tecla             | Ação
                   | a IU (pressionando TAB), depois de pressionar essa tecla primeiro.
                   | Você pode mudar a condição inicial do teclado emulado como demonstrado
                   | logo abaixo com mais detalhes usando a opção **-ui_active**.
-**Escape**        | Sai do emulador.
 ================  ===============================================================================
+
+.. raw:: latex
+
+	\clearpage
 
 Comparativo entre os mapas de teclado
 =====================================
