@@ -792,7 +792,8 @@ Opções diversas
 * **Usar imagem como plano de fundo**
 
   Permite o uso de uma imagem como papel de parede na interface do MAME.
-  Escolha uma imagem *.JPG* e a renomeie para **backgound.jpg**.
+  Escolha uma imagem **.JPG** ou **.PNG** e a renomeie para
+  **backgound.jpg** ou **backgound.png**.
 
 		O valor predefinido é **Ligado**.
 
