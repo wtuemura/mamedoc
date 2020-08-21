@@ -1692,7 +1692,7 @@ Opções para a gravação de áudio e vídeo
 
 	O valor predefinido é **NULO** (sem gravação). ::
 
-		mame64 ssf2tu -pb perfect -aviwrite ssf2tu.avi -exit_after_playback
+		mame64 ssf2tu -pb perfect -exit_after_playback -aviwrite ssf2tu.avi
 
 
 .. _mame-commandline-wavwrite:
