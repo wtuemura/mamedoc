@@ -793,7 +793,9 @@ Opções diversas
 
   Permite o uso de uma imagem como papel de parede na interface do MAME.
   Escolha uma imagem **.JPG** ou **.PNG** e a renomeie para
-  **backgound.jpg** ou **backgound.png**.
+  **backgound.jpg** ou **backgound.png**. Para fazer uso dela coloque-a
+  no diretório raiz do MAME (no mesmo diretório onde o executável do
+  MAME se encontra).
 
 		O valor predefinido é **Ligado**.
 
