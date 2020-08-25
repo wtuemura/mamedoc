@@ -2200,7 +2200,7 @@ Opções para a configuração de vídeo
 
 .. _mame-commandline-numscreens:
 
-**-numscreens** [<*count*>]
+**-numscreens** [<*quantidade*>]
 
 	Diz ao MAME quantas telas devem ser criadas. Para a maioria dos
 	sistemas só exite uma, porém alguns sistemas originalmente usavam

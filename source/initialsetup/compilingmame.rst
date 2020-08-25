@@ -1684,7 +1684,7 @@ configurando o **LDOPTS** no arquivo **useroptions.mak**), exemplo: ::
 	<https://github.com/msys2/MINGW-packages/issues/6855>`_ caso o MAME
 	seja compilado com o clang. No entanto funciona bem com o gcc
 	fazendo com que todo o processo de lincagem leve apenas **segundos**
-	se comparado com o GNU linker.
+	para ser concluído se comparado com o GNU linker.
 
 Usando libc++ no Linux
 ~~~~~~~~~~~~~~~~~~~~~~
