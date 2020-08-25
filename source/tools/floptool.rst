@@ -33,9 +33,9 @@ instruções, exemplo:
 
 Exemplo de uso:
 
-|	floptool convert coco zaxxon.cas zaxxon.wav
-|	floptool convert cbm arkanoid.tap arkanoid.wav
-|	floptool convert ddp mybasicprogram.ddp mybasicprogram.wav
+|	``floptool convert coco zaxxon.cas zaxxon.wav``
+|	``floptool convert cbm arkanoid.tap arkanoid.wav``
+|	``floptool convert ddp mybasicprogram.ddp mybasicprogram.wav``
 |
 
 .. A nice and clean way to do a page break, this case for latex and PDF
