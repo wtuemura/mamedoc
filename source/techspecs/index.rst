@@ -8,6 +8,7 @@ scripts LUA que são executados na estrutura do MAME.
 .. toctree::
 	:titlesonly:
 
+	naming
 	layout_files
 	device_memory_interface
 	device_rom_interface
