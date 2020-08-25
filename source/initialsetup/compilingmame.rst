@@ -722,12 +722,17 @@ reinicie o **mingw64.exe**.
 * Para as versões **64-bit** do MAME é necessário instalar os
   pacotes:
 
-	**pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-python2**
+	**pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-python**
 
 * Para as versões **32-bit** do MAME é necessário instalar os
   pacotes:
   
-	**pacman -S mingw-w64-i686-gcc mingw-w64-i686-python2**
+	**pacman -S mingw-w64-i686-gcc mingw-w64-i686-python**
+
+* Para lincar usando o LLVM linker (é geralmente mais rápido que a
+  versão do GNU linker), instale o pacote ``mingw-w64-x86_64-lld`` para
+  as versões 64-bit ou o pacote ``mingw-w64-i686-lld`` para as versões
+  32-bit. Para mais informações consulte :ref:`compiling-llvm`.
 
 * Para compilar usando as interfaces portáteis do SDL **64-bit** é
   necessário instalar os pacotes:
@@ -1656,6 +1661,30 @@ onde se encontra o seu SDL MAME.
 
 Configurações para compilações não ortodoxas
 --------------------------------------------
+
+.. _compiling-llvm:
+
+Lincando com o LLVM linker
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Geralmente o LLVM linker é mais rápido que o GNU linker utilizado pelo
+GCC. Isso fica mais evidente em sistemas com uma elevada sobrecarga de
+operações dos arquivos do sistema (como o Microsoft Windows ou ao
+compilar num disco compartilhado na rede por exemplo). Para utilizar o
+LLVM linker com o GCC, tenha certeza de tê-lo instalado no seu sistema
+e utilize ``-fuse-ld=lld`` nas opções do compilador, seja através da
+variável de ambiente **LDFLAGS**, através da opção **LDOPTS** ou
+configurando o **LDOPTS** no arquivo **useroptions.mak**), exemplo: ::
+
+	LDOPTS=-fuse-ld=lld
+
+.. note::
+
+	Até a presente versão deste documento a opção ainda `não funciona
+	<https://github.com/msys2/MINGW-packages/issues/6855>`_ caso o MAME
+	seja compilado com o clang. No entanto funciona bem com o gcc
+	fazendo com que todo o processo de lincagem leve apenas **segundos**
+	se comparado com o GNU linker.
 
 Usando libc++ no Linux
 ~~~~~~~~~~~~~~~~~~~~~~
