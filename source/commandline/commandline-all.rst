@@ -1841,18 +1841,18 @@ Opções relacionadas a performance e a velocidade da emulação
 
 .. _mame-commandline-frameskip:
 
-**-frameskip** / **-fs** [<*level*>]
+**-frameskip** / **-fs** [<*quantidade*>]
 
-	Determina o valor do salto dos quadros. Ela elimina cerca de 12
-	quadros enquanto estiver sendo executado. Por exemplo, caso seja
+	Determina a quantidade de quadros que são ignorados. Ela elimina
+	cerca de 12 quadros enquanto estiver sendo executado. Caso seja
 	definido ``-frameskip 2`` o MAME então exibirá 10 de cada 12
-	quadros.
+	quadros por exemplo.
 
-	Ao pular estes quadros, pode ser que se atinja a velocidade
+	Ao ignorar estes quadros, pode ser que se atinja a velocidade
 	nativa do sistema emulado sem que haja sobrecarga no seu computador
 	ainda que ele não tenha um grande poder de processamento.
 
-	O valor predefinido é não pular nenhum quadro (**-frameskip 0**). ::
+	O valor predefinido é não ignorar nenhum quadro (**-frameskip 0**). ::
 
 		mame64 gradius4 -frameskip 2
 
@@ -4212,7 +4212,7 @@ Opções diversas
 
 .. _mame-commandline-bios:
 
-**-bios** [<*biosname*>]
+**-bios** [<*nome da bios*>]
 
 	Determina qual BIOS usar no sistema a ser emulado em sistemas
 	que fazem uso de uma BIOS. A saída ``-listxml`` listará todos os
@@ -4440,7 +4440,7 @@ Opções do servidor HTTP
 
 .. _mame-commandline-httpport:
 
-**-http_port** [<*port*>]
+**-http_port** [<*porta*>]
 
 	Define uma porta para o servidor HTTP.
 
