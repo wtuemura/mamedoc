@@ -2868,7 +2868,9 @@ Opções para os ajustes de imagem da tela
 	Para os modos de vídeo ``-video gdi`` e ``-video d3d`` significa que
 	um pixel dentro do ``.png`` será mapeado para um pixel da sua tela.
 	Os valores RGB de cada pixel dentro do ``.png`` são multiplicados
-	com os valores de RGB da tela de destino.
+	com os valores de RGB da tela de destino. Ambos os arquivos
+	``RealScanlinesV`` e ``RealScanlinesH`` estão disponíveis no `site
+	do projeto <https://github.com/wtuemura/mamedoc/tree/master/artwork>`_.
 
 	O valor predefinido é **none** ou nenhum efeito. ::
 
