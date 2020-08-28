@@ -17,7 +17,7 @@ configuradas através da interface do usuário.
 Tecla             | Ação
 ----------------  -------------------------------------------------------------------------------
 **Escape**        | Encerra a emulação.
-**5**             | Insere crédito em máquinas do tipo Arcade.
+**5**             | Insere crédito nas máquinas do tipo Arcade.
 **1**             | Inicia a partida para o jogador 1 (Player 1).
 **2**             | Inicia a partida para o jogador 2 (Player 2).
 **Tab**           | Exibe um cardápio que dá acesso a diferentes configurações.

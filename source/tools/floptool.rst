@@ -1,3 +1,7 @@
+.. raw:: latex
+
+	\clearpage
+
 Floptool
 ========
 
@@ -16,7 +20,7 @@ para o MAME. Favor ler a toda :ref:`MAME-license` com atenção.
 
 
 Utilização
-==========
+----------
 
 Floptool é um programa de linha comando que contém um conjunto simples
 de instruções. Os comandos são invocados usando uma cadência de
@@ -38,19 +42,18 @@ Exemplo de uso:
 |	``floptool convert ddp mybasicprogram.ddp mybasicprogram.wav``
 |
 
-.. A nice and clean way to do a page break, this case for latex and PDF
-   only.
+
 .. raw:: latex
 
 	\clearpage
 
-A Listagem dos formatos compatíveis
-===================================
+Lista dos formatos compatívels
+------------------------------
 
-Esses são os formatos compatíveis com o Floptool para a conversão em
-outros formatos.
+Estes são os formatos compatíveis com o Floptool usados para a conversão
+em outros formatos.
 
-.. tabularcolumns:: |L|C|C|
+.. tabularcolumns:: |l|c|l|
 
 .. list-table:: Listagem dos formatos
    :header-rows: 1
