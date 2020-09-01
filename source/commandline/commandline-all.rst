@@ -2714,9 +2714,30 @@ Opções de vídeo para uso com janelas individuais
 	aplicam a todas as janelas especificadas. O parâmetro ``-view`` se
 	aplica a todas as janelas.
 	As opções definidas para a janela substituem os valores da opções de
-	todas as janelas. ::
+	todas as janelas.
+	
+	Para identificar qual o nome correto para ser utilizado com a opção
+	``-view``, ao iniciar a máquina pressione **TAB** e vá em
+	**Opções de Vídeo**, escolha a visualização que mais lhe agrada e
+	encerre a emulação. No diretório **cfg** haverá um arquivo de
+	configuração com **nomedarom.cfg** (se usarmos o exemplo abaixo o
+	nome do arquivo será ``neobombe.cfg``), abra-o em um editor de texto
+	qualquer, no campo **view** veja qual a opção está sendo usada e
+	use-a na linha de comando como mostra o exemplo abaixo: ::
 
-		mame64 ssf2tu -view native
+		mame64 neobombe -view "Screen 0 Cropped (304x224)"
+
+	Supondo que esta seja a sua opção de visualização preferida e caso
+	queira que ela seja aplicada a todas as máquinas deste driver, no
+	nosso caso, basta fazer o comando ``mame64 -ls neobombe`` para
+	identificá-lo. Com o nome do driver em mãos crie o arquivo
+	``neogeo.ini`` dentro do diretório **ini/source** e coloque a opção
+	como descrito abaixo: ::
+
+		view "Screen 0 Cropped (304x224)"
+
+	Salve o arquivo e rode a máquina novamente sem a opção ``-view``,
+	note que ela já começa com a opção de visualização selecionada.
 
 .. raw:: latex
 
