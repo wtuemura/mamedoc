@@ -4,8 +4,8 @@
 
 	\clearpage
 
-Sobre ROMs e seus conjuntos
-===========================
+Sobre as ROMs e os seus conjuntos
+=================================
 
 O manuseio e atualização de ROMs e seus conjuntos usados no MAME é
 provavelmente a maior área de confusão e frustração que os usuários
