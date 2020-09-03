@@ -7,22 +7,21 @@
 Problemas comuns e algumas perguntas frequentes
 ===============================================
 
-**Aviso Legal: As informações a seguir não tem qualquer fundamento
-jurídico e tão pouco foi escrito por um advogado.**
+**Aviso: As informações a seguir não possuem qualquer fundamento
+jurídico e tão pouco se destinam para tanto.**
 
-
-1. :ref:`rapid-coins`
-2. :ref:`broken-package`
-3. :ref:`faster-if-X`
-4. :ref:`NeoGeo-broken`
-5. :ref:`Sega-SGMDC`
-6. :ref:`Missing-ROMs`
-7. :ref:`ROM-Verify`
-8. :ref:`Parent-Sets`
-9. :ref:`Legal-ROMs`
-10. :ref:`ROMs-Grey`
-11. :ref:`Abandonware`
-12. :ref:`Old-Sets`
+1. :ref:`Old-Sets`
+2. :ref:`rapid-coins`
+3. :ref:`broken-package`
+4. :ref:`faster-if-X`
+5. :ref:`NeoGeo-broken`
+6. :ref:`Sega-SGMDC`
+7. :ref:`Missing-ROMs`
+8. :ref:`ROM-Verify`
+9. :ref:`Parent-Sets`
+10. :ref:`Legal-ROMs`
+11. :ref:`ROMs-Grey`
+12. :ref:`Abandonware`
 13. :ref:`eBay-cabs`
 14. :ref:`ROM-DVDs`
 15. :ref:`DMCA-exemption`
@@ -34,6 +33,46 @@ jurídico e tão pouco foi escrito por um advogado.**
 21. :ref:`ExternalOPL`
 22. :ref:`Autofire`
 23. :ref:`gsync-freesync`
+
+.. _Old-Sets:
+
+Por que as minhas ROMs antigas não funcionam mais com as versões mais novas do MAME?
+------------------------------------------------------------------------------------
+
+Não há um único motivo porém podemos citar dois, por questões de
+melhoramentos da emulação feita pelo MAME.
+
+A emulação em si não é algo simples e trivial, horas e mais horas de
+desenvolvimento são necessárias para descobrir como certos sistemas
+funcionam, para descobrir como quebrar certas proteções, para descobrir
+informações não disponíveis, para lidar com componentes eletrônicos que
+foram customizados pelas empresas e não há informações disponíveis ao
+público, etc. Logo certos parâmetros para fazer determinada máquina
+funcionar mudam. Quando tais parâmetros mudam, certos arquivos das ROMs
+deixam de ser necessárias, algumas precisam passar por uma validação e
+outras precisam ser extraídas novamente o que acontece na grande maioria
+das vezes.
+
+As ROMs antigas foram extraídas de forma precária no passado sem passar
+por validações, hoje com mais conhecimento e tecnologia estas mesmas
+ROMs agora podem ser extraídas de forma mais confiável, por isso que as
+ROMs são atualizadas e as antigas deixam de ser válidas, mesmo que elas
+funcionassem nas versões mais antigas do MAME.
+
+Há outros tipos de ROMs onde só é possível a sua extração através de um
+processo chamado de `decapagem <https://recoveryic.com.br/decapagem-e-empacotamento-do-mcu/>`_
+onde o miolo do circuito integrado é exposto para que só então o seu
+conteúdo possa ser extraído à força, por isso que algumas ROMs que
+funcionavam antes agora precisam de mais um ou mais arquivos.
+
+Em conjunto com o processo de decapagem, depois que o miolo é exposto há
+também casos onde alguns colaboradores e desenvolvedores do MAME
+precisam recriar a ROM `manualmente
+<https://www.youtube.com/watch?v=7YHkBRR-okY>`_ se utilizando de fotos
+de alta resolução e este é um processo lento e muito demorado. Para
+conhecer mais sobre este processo consulte a página do
+`CAPS0ff <http://caps0ff.blogspot.com>`_ ou do
+`Guru <http://members.iinet.net.au/~lantra9jp1_nbn/gurudumps/index.html>`_.
 
 
 .. _rapid-coins:
@@ -57,11 +96,11 @@ ocorra.
 
 .. _broken-package:
 
-Por quê o meu pacote MAME não oficial (vindo do EmuCR por exemplo ou de qualquer outro lugar) não funciona direito? Por quê a minha atualização oficial está quebrada?
+Por que o meu pacote MAME não oficial (vindo do EmuCR por exemplo ou de qualquer outro lugar) não funciona direito? Por que a minha atualização oficial está quebrada?
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Em muitos casos, as alterações de vários subsistemas tais como plug-ins
-Lua, hlsl ou bgfx vem como atualizações para diversos arquivos
+Lua, HLSL ou BGFX vem como atualizações para diversos arquivos
 diferentes assim como o código fonte principal do MAME.
 Infelizmente as versões que vem de terceiros podem vir como apenas um
 executável principal do MAME ou com arquivos externos desatualizados,
@@ -77,11 +116,11 @@ Compile o seu próprio MAME ou use um dos pacotes oficialmente
 distribuídos por nós.
 
 Este problema também ocorre caso não tenha atualizado o conteúdo das
-pastas hlsl e bgfx com as últimas versões oficiais do MAME.
+pastas HLSL e BGFX com as últimas versões oficiais do MAME.
 
 .. _faster-if-X:
 
-Por quê o MAME suporta jogos de console e terminais burros? Não seria mais rápido se o MAME suportasse apenas jogos de arcade? Não usaria menos memória RAM? Não faria com que o MAME ficasse mais rápido por causa de A, B ou C?
+Por que o MAME suporta jogos de console e terminais burros? Não seria mais rápido se o MAME suportasse apenas jogos de arcade? Não usaria menos memória RAM? Não faria com que o MAME ficasse mais rápido por causa de A, B ou C?
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Este é um equívoco comum.
@@ -106,7 +145,7 @@ são sempre bem vindas caso seja um programador habilidoso
 
 .. _NeoGeo-broken:
 
-Por quê a minha ROM de Neo-Geo não funcionam mais? Como eu faço para que o jogo Humble Bundle volte a funcionar?
+Por que a minha ROM de Neo-Geo não funcionam mais? Como eu faço para que o jogo Humble Bundle volte a funcionar?
 ----------------------------------------------------------------------------------------------------------------
 
 Recentemente a BIOS do Neo-Geo foi atualizada para adicionar uma nova
@@ -144,13 +183,13 @@ também serem encontrados na pasta ``steamapps\\Sega Classics\\manuals``.
 
 .. _Missing-ROMs:
 
-Por quê o MAME alega que "faltam arquivos" sendo que eu tenho essas ROMs?
+Por que o MAME alega que "faltam arquivos" sendo que eu tenho estas ROMs?
 -------------------------------------------------------------------------
 
 Pode ser causado por várias razões:
 
 *	Não é incomum as ROMs de um jogo mudarem entre as novas versões do
-	MAME. Por quê isso aconteceria?
+	MAME. Por que isso aconteceria?
 
 	Muitas vezes é feita uma extração melhor do CI que contém a ROM ou
 	então foi feita uma extração mais completa hoje e que não foi
@@ -185,10 +224,10 @@ Pode ser causado por várias razões:
 	As ROMs da BIOS devem estar nomeadas corretamente e comprimida em
 	formato ``.zip`` dentro da pasta ROMs.
 
-*	Versões mais antigas do MAME precisavam de tabelas de
-	descriptografia, criado na época pela equipe **CPS2Shock** para que
-	fosse possível emular jogos da **Capcom Play System 2**, também
-	conhecido como jogos **CPS2**.
+*	Versões mais antigas do MAME precisavam de tabelas para
+	descriptografar os arquivos criptografados, criado na época pela
+	equipe **CPS2Shock** para que fosse possível emular jogos da
+	**Capcom Play System 2**, também conhecido como jogos **CPS2**.
 
 *	Alguns jogos no MAME são considerados *Clones* de outros jogos.
 	Isto é, o jogo em questão é simplesmente uma versão alternativa do
@@ -305,25 +344,6 @@ Até mesmo as empresas que faliram tiveram seus ativos comprados por
 alguém e esse alguém hoje é o detentor legal desses direitos autorais.
 
 
-.. _Old-Sets:
-
-Eu tinha ROMs que funcionavam com uma versão antiga do MAME e agora não funcionam mais. O que aconteceu?
---------------------------------------------------------------------------------------------------------
-
-O MAME com o passar do tempo aperfeiçoa a emulação dos jogos antigos,
-mesmo quando não pareça óbvio para os usuários. Outras vezes, visando
-melhorar a emulação para que o jogo funcione corretamente, é necessário
-obter mais dados do jogo original. Dados estes que foram negligenciados
-por algum motivo qualquer, às vezes simplesmente não foi possível
-extrair o conteúdo do CI de forma apropriada (para se ter uma ideia,
-a técnica de "*decapping*" [1]_ dos circuitos integrados só se tornou
-viável recentemente, facilitando muito para aqueles que colaboram com o
-projeto e não tem os mesmos recursos que um laboratórios de ponta).
-Em outros casos, é muito mais simples.
-Mais conjuntos de um determinado jogo foram extraídos e organizados cada
-um com a sua versão, região, modelo, tipo, etc.
-
-
 .. _eBay-cabs:
 
 E aqueles gabinetes de arcade vendidos no Mercado Livre, OLX e outros lugares que vêm com todas as ROMs?
@@ -418,7 +438,7 @@ contrário e permita tal uso.
 
 .. _Ultracade:
 
-Mas eu já vi gabinetes do Ultracade e Global VR Classics montados em lugares públicos? Por quê eles podem?
+Mas eu já vi gabinetes do Ultracade e Global VR Classics montados em lugares públicos? Por que eles podem?
 ----------------------------------------------------------------------------------------------------------
 
 O Ultracade tinha dois produtos distintos, a máquina **Ultracade**
@@ -476,7 +496,7 @@ mais detalhes de outros provedores compatíveis.
 O que aconteceu com o suporte do MAME para placas de som externas com o OPL2 integrado?
 ---------------------------------------------------------------------------------------
 
-O MAME em vez de emular o **OPL2** [2]_, inicialmente adicionou o
+O MAME em vez de emular o **OPL2** [#OPL2]_, inicialmente adicionou o
 suporte para placas de som com o CI **YM3212** da Yamaha em sua versão
 0.23.
 
@@ -600,9 +620,6 @@ taxas de atualização que sejam bem diferentes do que o seu PC esteja
 executando. Como por exemplo, os primeiras três versões do
 **Mortal Kombat** roda a **54.706841 Hz**.
 
-.. [1]	Decapping é um processo feito no CI para expor seu núcleo, é
-		possível ver algumas fotos desse processo no blog do `CAPS0ff
-		<http://caps0ff.blogspot.com>`_. (Nota do tradutor)
-.. [2]	OPL é um acrônimo de "*FM Operator Type-L*" ou em uma tradução
+.. [#OPL2]	OPL é um acrônimo de "*FM Operator Type-L*" ou em uma tradução
 		livre, *Operador de Modulação em Frequência Tipo L*, o 2 é o
 		número do modelo. (Nota do tradutor)
