@@ -734,7 +734,7 @@ Opções de Som
 
 * **Usar amostras externas**
 
-  Veja :ref:`- samples <mame-commandline-nosamples>`.
+  Veja :ref:`-samples <mame-commandline-nosamples>`.
 
 Opções diversas
 ~~~~~~~~~~~~~~~
