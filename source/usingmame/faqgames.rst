@@ -3956,7 +3956,7 @@ Warzard e máquinas CPS-3 em geral
 Water Match
 -----------
 
-**Os controles dessa máquina são impossíveis! O quê eu faço para poder
+**Os controles dessa máquina são impossíveis! O que eu faço para poder
 jogar?**
 
 	Segundo as instruções da máquina, os controles envolvem chacoalhar

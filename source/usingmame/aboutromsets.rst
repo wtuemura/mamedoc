@@ -143,7 +143,7 @@ A frustração de muitos usuários do MAME podem estar relacionadas com
 mudanças e modificações, julgadas como desnecessárias por muitos, que os
 arquivos ROM sofrem ao longo do tempo e que parece que nossa intenção é
 fazer da vida de vocês mais difícil. Entender a origem dessas mudanças e
-por quê elas são necessárias ajudará você a evitar ser pego de surpresa
+por que elas são necessárias ajudará você a evitar ser pego de surpresa
 quando essas mudanças acontecem e saber o que precisa ser feito para
 manter os seus conjuntos atualizados.
 

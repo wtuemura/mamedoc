@@ -1729,7 +1729,7 @@ pretenda utilizá-las regularmente.
 
 	\clearpage
 
-O MAME travou, o quê fazer?
+O MAME travou, o que fazer?
 ---------------------------
 
 Investigando e lidando com problemas comuns

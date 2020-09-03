@@ -739,6 +739,13 @@ Opções de Som
 Opções diversas
 ~~~~~~~~~~~~~~~
 
+* **Skip imperfect emulation warnings**
+
+  Faz com que o MAME não exiba as telas de aviso das máquinas com
+  emulação imperfeita (tarja amarela).
+
+		O valor predefinido é **Desligado**.
+
 * **Lembrar da última máquina selecionada**
 
   Faz com que o MAME se lembre da última máquina selecionada na
@@ -778,16 +785,16 @@ Opções diversas
 
 		O valor predefinido é **Desligado**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **Manter aspecto 4:3 para instantâneos de tela**
 
   Faz com que todos os prints da tela mantenham uma proporção de
   4:3.
 
 		O valor predefinido é **Ligado**.
-
-.. raw:: latex
-
-	\clearpage
 
 * **Usar imagem como plano de fundo**
 
@@ -2118,10 +2125,11 @@ Opções de Entrada
 
 	Valor predefinido é **Desligado**
 
-* **Direção simultânea**
+* **Direção contraditória**
 
-  Aceita a entrada de comandos contraditórios e simultâneos no controle
-  digital como esquerda e direita ou cima e baixo ao mesmo tempo.
+  Aceita comandos contraditórios e simultâneos no controle digital como
+  o acionamento dos comando esquerda e direita ou cima e baixo ao mesmo
+  tempo.
 
 	Valor predefinido é **Desligado**
 
@@ -2134,7 +2142,7 @@ Opções de Entrada
 Salvar Configuração
 ~~~~~~~~~~~~~~~~~~~
 
-Salva todas as alterações feitas.
+Salva todas as alterações que foram feitas.
 
 Voltar ao menu anterior
 ~~~~~~~~~~~~~~~~~~~~~~~

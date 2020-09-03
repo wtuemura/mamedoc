@@ -152,7 +152,7 @@ Usando diferentes arquivos de configuração
 O MAME oferece a possibilidade de criar diferentes tipos de configuração
 separada por algumas categorias ou pelo nome dos drivers em vez de
 concentrar todas as configurações em um único arquivo como o
-``mame.ini``. E para quê isso?
+``mame.ini``. E para que isso?
 
 O MAME possuí dezenas de opções disponíveis para configurar outra
 dezena de coisas como áudio, vídeo, controladores diversos, etc. A linha
