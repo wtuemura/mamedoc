@@ -853,7 +853,7 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 
 **screen**
 
-	Adiciona uma imagem de tela emulada à exibição. A tela deve ser
+	Adiciona uma imagem da tela emulada na exibição. A tela deve ser
 	identificada usando um atributo ``index`` ou um atributo ``tag``
 	(um elemento ``screen`` não pode ter ambos os atributos ``index`` e
 	``tag``).
@@ -864,6 +864,13 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 	dispositivo que provoque a leitura do layout. As telas são
 	desenhadas na ordem em que aparecem no arquivo de layout, A sua
 	ordem de exibição começa de frente para trás.
+
+**collection**
+
+	Adiciona telas ou itens na coleção que possa ser exibida ou
+	escondida pelo usuário (consulte :ref:`layout-parts-collections`).
+	O nome da coleção é definida através do atributo ``name``. Há um
+	limite de 32 coleções por visualização.
 
 **group**
 
@@ -1018,6 +1025,50 @@ no deslocamento do valor em 4 bits para a direita por exemplo).
 O MAME trata todos os elementos do layout como sendo retangulares ao
 lidar com a entrada do mouse habilitando apenas o elemento mais à frente
 na região onde o ponteiro estiver presente.
+
+.. _layout-parts-collections:
+
+Collections
+~~~~~~~~~~~
+
+Coleções das telas ou elementos de layout que possam ser exibidos ou não
+pelo usuário conforme a sua necessidade. Em uma visualização única é
+possível ambas as visualizações e um teclado numérico (keypad)
+selecionável por exemplo, permitir que o usuário esconda o teclado
+numérico deixando visível apenas a exibição. As coleções são criadas
+através do elemento ``collection`` dentro dos elementos ``view``,
+``group`` e dos outros elementos ``collection``.
+
+Um elemento ``collection`` deve ter um atributo ``name`` informando o
+nome da exibição. Os nomes destinados para ``collection`` devem ser
+únicos. A visualização inicial da coleção deve ser definida através do
+atributo ``visible``. Defina o atributo ``visible`` para ``yes`` caso a
+coleção deva estar visível desde o inicio ou ``no`` caso queira
+escondê-la. É predefinido que as coleções estejam visíveis.
+
+Aqui um exemplo demonstrando a utilização de um ``collection``
+permitindo que partes de uma visualização possam ser escondidas pelo
+usuário:
+
+	.. code-block:: xml
+
+		<view name="Telas LED, CRT e Teclado Numérico">
+			<collection name="LED Displays">
+			<group ref="displays"><bounds x="240" y="0" width="320" height="47" /></group>
+			</collection>
+			<collection name="Keypad">
+			<group ref="keypad"><bounds x="650" y="57" width="148" height="140" /></group>
+			</collection>
+			<screen tag="screen"><bounds x="0" y="57" width="640" height="480" /></screen>
+		</view>
+
+Uma coleção cria um escopo de parâmetros agrupados. Qualquer elemento
+``param`` que estiver dentro do elemento de coleção define os parâmetros
+no escopo local para a coleção. Observe que o nome da coleção e a
+visualização predefinida não fazem parte do seu conteúdo, quaisquer
+referências dos parâmetros nos atributos ``name`` e ``visible`` serão
+substituídos usando os valores dos parâmetros a partir da origem do
+escopo relacionado com a coleção.
 
 
 .. _layout-parts-groups:
