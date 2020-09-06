@@ -3718,9 +3718,9 @@ Opções para as configurações de diferentes entradas
 	retorna o conjunto completo da linha **777888999**.
 
 	As carreiras dois e três estão faltando, se deduz então que sejam
-	idênticos à primeira linha. A 4ª carreira é decodificada de
-	forma semelhante à 1ª gerando 444555666. A 5ª carreira
-	está faltando, se deduz então que seja a mesma que a 4ª.
+	idênticos à 1ª linha. A 4ª carreira é decodificada de forma
+	semelhante à 1ª gerando 444555666. A 5ª carreira está faltando,
+	se deduz então que seja a mesma que a 4ª.
 
 	O resto das 3 carreiras também estão faltando, então deduz-se que
 	sejam espelhos do sentido cima/baixo das 3 primeiras carreiras,
