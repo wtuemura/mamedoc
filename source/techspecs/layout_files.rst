@@ -1064,8 +1064,9 @@ usuário:
 
 Uma coleção cria um escopo de parâmetros agrupados. Qualquer elemento
 ``param`` que estiver dentro do elemento de coleção define os parâmetros
-no escopo local para a coleção. Observe que o nome da coleção e a
-visualização predefinida não fazem parte do seu conteúdo, quaisquer
+no escopo local para a coleção. Para mais detalhes sobre os parâmetros
+consulte :ref:`layout-concepts-params`. Observe que o nome da coleção e
+a visualização predefinida não fazem parte do seu conteúdo, quaisquer
 referências dos parâmetros nos atributos ``name`` e ``visible`` serão
 substituídos usando os valores dos parâmetros a partir da origem do
 escopo relacionado com a coleção.
