@@ -258,7 +258,7 @@ Gerando arquivos DAT para diferentes gerenciadores de ROMs
 Arquivos DAT são usados por gerenciadores de ROMs como
 `RomCenter (Windows) <http://romcenter.com/>`_,
 `RomVault (Linux e Windows) <http://www.romvault.com/>`_,
-`Romulus (Windows) <http://romulus.net63.net/>`_,
+`Romulus (Windows) <https://romulus.cc>`_,
 `Clrmamepro (Windows) <http://mamedev.emulab.it/clrmamepro/>`_,
 `Clrmamepro (Mac) <http://www.emulab.it/>`_ dentre outros que aferem a
 validade de cada arquivo existente dentro de um arquivo ROM
