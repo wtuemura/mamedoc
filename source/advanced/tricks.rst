@@ -41,11 +41,11 @@ encerrar a emulação e criar um arquivo ``galaxian.cfg`` no diretório
 Configurando mais de um botão
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Usando um controle de **Playstation 2** ligado no PC com um adaptador
-USB como exemplo, faremos uma configuração de botões para máquinas
-**Neo-Geo** executando o comando ``mame64 kof2000``, pressione **TAB**,
-depois selecione **Entrada (esta máquina)** e configure os botões com a
-ordem de sua preferência.
+Usando um controle de **Playstation 2** (ou qualquer outro tipo de
+controle) ligado no PC com um adaptador USB como exemplo, faremos uma
+configuração de botões para máquinas **Neo-Geo** executando o comando
+``mame64 kof2000``, pressione **TAB**, depois selecione **Entrada (esta
+máquina)** e configure os botões com a ordem de sua preferência.
 
 Dentro do diretório **cfg** será criado um arquivo chamado
 ``kof2000.cfg``, abra ele em um editor de texto qualquer, no topo do
@@ -101,8 +101,8 @@ capítulo de :ref:`Configuração individual por sistema
 
 .. _advanced-tricks-botões-combinação:
 
-Combinação de botões
-~~~~~~~~~~~~~~~~~~~~
+Combinação dos botões
+~~~~~~~~~~~~~~~~~~~~~
 
 O personagem Zangief do **Street Fighter II** possui um golpe chamado
 `Double Lariat <https://streetfighter.fandom.com/wiki/Double_Lariat>`_
@@ -181,6 +181,93 @@ momentos, necessitam que mais de um botão seja acionado ao mesmo tempo.
 Baixe um exemplo de configuração de controle para `Guitar Freaks
 <https://pastebin.com/g1iXAB1E>`_ e `Dance Dance Revolution
 <https://pastebin.com/rSc4kd5u>`_.
+
+
+.. _advanced-tricks-controle1-qualquer-jogador:
+
+Usando o controle 1 para controlar qualquer outro jogador
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Em máquinas onde a posição do jogador é fixa como em **Sunset Riders**,
+a série **Muscle Bomber**, **Teenage Mutant Ninja Turtles**, **Teenage
+Mutant Ninja Turtles - Turtles in Time** e tantas outras máquinas, é
+possível utilizar o controle do jogador 1 em qualquer uma das posições
+com máquinas que aceitem 2 ou mais jogadores.
+
+Inicie a máquina que deseja configurar e siga as instruções descritas no
+capítulo :ref:`advanced-tricks-mais-de-um-botão` para gerar o seu
+arquivo com a configuração personalizada para o seu controle. Abra o
+arquivo em um editor de textos e logo no começo haverá algo do tipo
+(pode variar dependendo do seu controle):
+
+.. code-block:: xml
+
+	
+    <port tag=":P1" type="P1_JOYSTICK_LEFT" mask="1" defvalue="1">
+
+O que nos interessa são todas as partes que definem os comando para
+**P1**, no seu editor de texto pressione **CTRL+H** ou o comando usado
+para substituir texto e substitua **P1** por **P2** ficando assim:
+
+.. code-block:: xml
+
+	
+    <port tag=":P2" type="P2_JOYSTICK_LEFT" mask="1" defvalue="1">
+
+Salve este arquivo como `2P.cfg` para ser usado como jogador 2, faça o
+mesmo para o jogador 3 e 4. Não foi disponibilizado aqui todas as linhas
+que foram substituídas, porém, veja como fica a configuração completa
+para `2P.cfg <https://pastebin.com/tSkGwMgi>`_,
+`3P.cfg <https://pastebin.com/WzfRW3Zm>`_ e
+`4P.cfg <https://pastebin.com/BbdTyQ3L>`_. Não custa lembrar que todos
+estes arquivos devem ficar armazenados dentro do diretório **ctrlr**.
+
+Em sistemas Linux por exemplo a diferença entre maiúsculas e minúsculas
+são levadas em consideração, caso salve estes arquivos com **P**
+maiúsculo, faça o mesmo ao informar o nome da configuração, caso
+contrário o MAME acusará um erro dizendo que os arquivos não foram
+encontrados.
+
+Para jogar com o **Donatello** (jogador 3) na máquina **Teenage
+Mutant Ninja Turtles - Turtles in Time** faça o comando: ::
+
+	mame64 tmnt2 -ctrlr 3P
+
+Para inserir o crédito para o jogador 3 (Coin 3) pressione **7**, a
+partida deve iniciar com o **Donatello** ao clicar em qualquer um dos
+botões do controle, abaixo tem uma colinha para facilitar, para ver a
+listagem completa consulte o capítulo :ref:`mamemenu`.
+
+.. tabularcolumns:: |l|c|c|c|c|
+
+.. list-table:: Colinha básica.
+   :header-rows: 1
+
+   * - Descrição
+     - Jogador 1
+     - Jogador 2
+     - Jogador 3
+     - Jogador 4
+   * - **Crédito**
+     - Botão 5
+     - Botão 6
+     - Botão 7
+     - Botão 8
+   * - **Início da Partida**
+     - Botão 1
+     - Botão 2
+     - Botão 3
+     - Botão 4
+
+Repare que há máquinas como as da série **Muscle Bomber** por exemplo, é
+necessário pressionar os botões relacionados ao inicio da partida de
+cada jogador e não apenas pressionar os botões do controle para iniciar
+a partida.
+
+.. raw:: latex
+
+	\clearpage
+
 
 .. _advanced-tricks-configuração-individual:
 
