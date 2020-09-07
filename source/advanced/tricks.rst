@@ -278,7 +278,7 @@ No diretório **ini** crie um diretório chamado **source** e dentro dele
 crie um arquivo chamado ``neogeo.ini``. Neste arquivo nós configuraremos
 os seguintes parâmetros:
 
-*	Que a Bios seja a **UniBios v 3.3**
+*	Que a Bios seja a **UniBios v 4.0**
 *	Que a minha configuração de controle chamada **neogeo**.
 	seja sempre carregada.
 *	Que o áudio tenha uma taxa de amostragem com **32000 Hz** [#]_
@@ -290,7 +290,7 @@ Assim temos as seguintes opções para o nosso ``neogeo.ini``:
 
 .. code-block:: kconfig
 
-	bios                      unibios33
+	bios                      unibios40
 	ctrlr                     neogeo
 	samplerate                32000
 	filter                    1
