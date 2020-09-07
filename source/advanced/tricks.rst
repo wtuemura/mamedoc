@@ -249,15 +249,15 @@ listagem completa consulte o capítulo :ref:`mamemenu`.
      - Jogador 3
      - Jogador 4
    * - **Crédito**
-     - Botão 5
-     - Botão 6
-     - Botão 7
-     - Botão 8
+     - 5
+     - 6
+     - 7
+     - 8
    * - **Início da Partida**
-     - Botão 1
-     - Botão 2
-     - Botão 3
-     - Botão 4
+     - 1
+     - 2
+     - 3
+     - 4
 
 Repare que há máquinas como as da série **Muscle Bomber** por exemplo, é
 necessário pressionar os botões relacionados ao inicio da partida de
