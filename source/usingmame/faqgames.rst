@@ -182,6 +182,7 @@ M
 | :ref:`faqgames-magic10`
 | :ref:`faqgames-magicrd2`
 | :ref:`faqgames-magzun`
+| :ref:`faqgames-odyssey2`
 | :ref:`faqgames-ponchin`
 | :ref:`faqgames-mjyuugi`
 | :ref:`faqgames-mmaze`
@@ -2041,6 +2042,16 @@ Magical Zunou Power
 
 	A máquina atualmente não funciona e nada pode ser feito até que o
 	drive seja atualizado ou a emulação seja corrigida.
+
+.. _faqgames-odyssey2:
+
+Magnavox Odyssey 2 / Philips Videopac G7000
+-------------------------------------------
+
+	  Para utilizar o sintetizador de voz, execute o comando abaixo: ::
+
+		mame64 odyssey2 -cart1 voice -cart2 caminho_completo_para_a_ROM\nome_da_rom.zip
+		mame64 videopac -cart1 voice -cart2 caminho_completo_para_a_ROM\nome_da_rom.zip
 
 .. _faqgames-ponchin:
 
