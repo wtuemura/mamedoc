@@ -2040,7 +2040,7 @@ Magical Zunou Power
 
 .. warning::
 
-	A máquina atualmente não funciona e nada pode ser feito até que o
+	Atualmente a máquina não funciona e nada pode ser feito até que o
 	drive seja atualizado ou a emulação seja corrigida.
 
 .. _faqgames-odyssey2:
