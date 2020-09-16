@@ -1373,7 +1373,7 @@ primeiro nível ``mamelayout``):
     <repeat count="12">
         <param name="labelnum" start="0" increment="1" />
         <element name="label_~labelnum~">
-            <text string="~labelnum~"><color red="1.0" green="1.0" blue="1.0" /></text>
+        <text string="~labelnum~"><color red="1.0" green="1.0" blue="1.0" /></text>
         </element>
     </repeat>
 
@@ -1387,7 +1387,7 @@ de espaço entre elas, controladas pelas saídas ``digit0`` até
         <param name="i" start="0" increment="1" />
         <param name="x" start="5" increment="30" />
         <element name="digit~i~" ref="digit">
-            <bounds x="~x~" y="5" width="25" height="50" />
+        <bounds x="~x~" y="5" width="25" height="50" />
         </element>
     </repeat>
 
@@ -1405,15 +1405,15 @@ linha, com pixels controlados por ``Dot_000`` até ``Dot_764``
         <param name="digitno" start="1" increment="1" />
         <param name="digitx" start="0" increment="935" /> <!-- distância entre dígitos ((111 * 5) + 380) -->
         <repeat count="7"> <!-- 7 rows in each digit -->
-            <param name="rowno" start="1" increment="1" />
-            <param name="rowy" start="0" increment="114" /> <!-- distância vertical entre LEDs -->
-            <repeat count="5"> <!-- 5 columns in each digit -->
-                <param name="colno" start="1" increment="1" />
-                <param name="colx" start="~digitx~" increment="111" /> <!-- distância horizontal entre LEDs -->
-                <element name="Dot_~digitno~~rowno~~colno~" ref="Pixel" state="0">
-                    <bounds x="~colx~" y="~rowy~" width="100" height="100" /> <!-- tamanho de cada LED -->
-                </element>
-            </repeat>
+        <param name="rowno" start="1" increment="1" />
+        <param name="rowy" start="0" increment="114" /> <!-- distância vertical entre LEDs -->
+        <repeat count="5"> <!-- 5 columns in each digit -->
+        <param name="colno" start="1" increment="1" />
+        <param name="colx" start="~digitx~" increment="111" /> <!-- distância horizontal entre LEDs -->
+        <element name="Dot_~digitno~~rowno~~colno~" ref="Pixel" state="0">
+        <bounds x="~colx~" y="~rowy~" width="100" height="100" /> <!-- tamanho de cada LED -->
+        </element>
+        </repeat>
         </repeat>
     </repeat>
 
@@ -1428,16 +1428,16 @@ numérico quatro por quatro (dentro de um elemento ``group`` ou
         <param name="padx" start="10" increment="530" />
         <param name="mask" start="0x01" lshift="4" />
         <repeat count="4">
-            <param name="row" start="0" increment="1" />
-            <param name="y" start="100" increment="110" />
-            <repeat count="4">
-                <param name="col" start="~group~" increment="1" />
-                <param name="btnx" start="~padx~" increment="110" />
-                <param name="mask" start="~mask~" lshift="1" />
-                <element ref="btn~row~~col~" inputtag="row~row~" inputmask="~mask~">
-                    <bounds x="~btnx~" y="~y~" width="80" height="80" />
-                </element>
-            </repeat>
+        <param name="row" start="0" increment="1" />
+        <param name="y" start="100" increment="110" />
+        <repeat count="4">
+        <param name="col" start="~group~" increment="1" />
+        <param name="btnx" start="~padx~" increment="110" />
+        <param name="mask" start="~mask~" lshift="1" />
+        <element ref="btn~row~~col~" inputtag="row~row~" inputmask="~mask~">
+        <bounds x="~btnx~" y="~y~" width="80" height="80" />
+        </element>
+        </repeat>
         </repeat>
     </repeat>
 
@@ -1465,24 +1465,24 @@ Gerando um tabuleiro de xadrez com valores alfa alternados entre 0.4 e
         <param name="pairy" start="3" increment="20" />
         <param name="pairno" start="7" increment="-2" />
         <repeat count="2">
-            <param name="rowy" start="~pairy~" increment="10" />
-            <param name="rowno" start="~pairno~" increment="-1" />
-            <param name="lalpha" start="0.4" increment="-0.2" />
-            <param name="ralpha" start="0.2" increment="0.2" />
-            <repeat count="4">
-                <param name="lx" start="3" increment="20" />
-                <param name="rx" start="13" increment="20" />
-                <param name="lmask" start="0x01" lshift="2" />
-                <param name="rmask" start="0x02" lshift="2" />
-                <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~lmask~">
-                    <bounds x="~lx~" y="~rowy~" width="10" height="10" />
-                    <color alpha="~lalpha~" />
-                </element>
-                <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~rmask~">
-                    <bounds x="~rx~" y="~rowy~" width="10" height="10" />
-                    <color alpha="~ralpha~" />
-                </element>
-            </repeat>
+        <param name="rowy" start="~pairy~" increment="10" />
+        <param name="rowno" start="~pairno~" increment="-1" />
+        <param name="lalpha" start="0.4" increment="-0.2" />
+        <param name="ralpha" start="0.2" increment="0.2" />
+        <repeat count="4">
+        <param name="lx" start="3" increment="20" />
+        <param name="rx" start="13" increment="20" />
+        <param name="lmask" start="0x01" lshift="2" />
+        <param name="rmask" start="0x02" lshift="2" />
+        <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~lmask~">
+        <bounds x="~lx~" y="~rowy~" width="10" height="10" />
+        <color alpha="~lalpha~" />
+        </element>
+        <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~rmask~">
+        <bounds x="~rx~" y="~rowy~" width="10" height="10" />
+        <color alpha="~ralpha~" />
+        </element>
+        </repeat>
         </repeat>
     </repeat>
 
