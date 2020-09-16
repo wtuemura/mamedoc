@@ -448,6 +448,10 @@ configuração. Caso o sistema não reconfigure a tela durante a execução
 os valores dos parâmetros não serão atualizados assim como os layouts
 não serão recalculados.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _layout-parts:
 
 As partes de um layout
@@ -479,12 +483,9 @@ nível ``mamelayout``:
 
 **param**
 
-    Define ou reatribui um valor para um parâmetro. Veja
+    Define ou reatribui um valor para um parâmetro. consulte
     :ref:`layout-concepts-params` para mais informações.
 
-.. raw:: latex
-
-	\clearpage
 
 **element**
 
@@ -518,10 +519,14 @@ nível ``mamelayout``:
     interação.
 
 
+.. raw:: latex
+
+	\clearpage
+
 .. _layout-parts-elements:
 
-Elementos
-~~~~~~~~~
+Os Elementos
+~~~~~~~~~~~~
 
 Os elementos são um dos objetos visuais mais básicos que podem ser
 organizados junto com as telas para compor uma visualização. Os
@@ -554,32 +559,76 @@ com um atributo ``defstate`` para ser usado casp não esteja conectado em
 uma saída emulada ou porta I/O. Se presente, o atributo ``defstate``
 deve possuir um valor inteiro não negativo.
 
-.. raw:: latex
-
-	\clearpage
-
 Os elementos filho do elemento ``element`` representam os componentes
 que são desenhados em ordem de leitura do primeiro ao último
 (componentes desenhados em cima de componentes que vierem antes deles).
 Suporte a todos os componentes com alguns recursos em comum:
 
-* Cada componente pode ter um atributo ``state``. Se presente, o
-  componente só será desenhado quando o estado do elemento corresponder
-  ao seu valor (se ausente, o componente sempre será desenhado).
-  Se presente, o atributo ``state`` deve ser um valor inteiro não
-  negativo.
+* Os componentes podem ser desenhados de forma condicional dependendo da
+  condição do elemento ao informar os atributos ``state`` ou
+  ``statemask``. Caso estejam presentes, estes atributos devem ser
+  inteiros e conter valores que não sejam negativos. Caso apenas o
+  atributo ``state`` esteja presente, então o componente só será
+  desenhado na tela quando o elemento "state" coincidir com o seu valor.
+  Se apenas o atributo ``statemask`` estiver presente, então o
+  componente só será desenhado na tela caso todos os bits estejam
+  definidos e os seus valores estejam definidos no atributo "state".
+  
+  Caso ambos os atributos ``state`` e ``statemask`` estejam presentes,
+  então o componente só será desenhado na tela quando os bits no
+  elemento "state" corresponderem ao bit que estiver definido no
+  atributo ``statemask`` e também corresponder com os bits do valor do
+  atributo ``state``.
+  
+  Caso nenhum dos atributos ``state`` ou o ``statemask`` estiverem
+  presentes o componente sempre será desenhado ou caso o valor do
+  atributo ``statemask`` seja zero.
 * Cada componente pode ter um elemento filho ``bounds`` definindo a
   sua posição e tamanho (veja :ref:`layout-concepts-coordinates`). Caso
   tal elemento não esteja presente, os limites serão predefinidos a uma
   unidade quadrada, com o valor **1.0** para a largura e a altura e
   **0.0** para o canto superior esquerdo.
-* Cada componente de cor pode ter um elemento filho ``color`` definindo
-  uma cor RGBA (Veja :ref:`layout-concepts-colours` para mais
+  
+  A posição ou o tamanho de um componente pode ser animado de acordo com
+  o estado do elemento, fornecendo múltiplos elementos ``bounds`` com os
+  atributos ``state``. O atributo ``state`` de cada elemento ``bounds``
+  deve ser um inteiro positivo. Os atributos ``state`` não devem ser
+  iguais para quaisquer um dos dois elementos ``bounds`` dentro de um
+  componente.
+  
+  Caso o estado do elemento seja inferior ao valor do atributo ``state``
+  de qualquer elemento ``bounds``, será utilizada a posição/tamanho
+  especificado pelo elemento ``bounds`` com o menor valor do atributo
+  ``state``. Caso o estado do elemento seja maior que o valor do
+  atributo ``state`` de qualquer elemento ``bounds``, será utilizada a
+  posição/tamanho especificado pelo elemento ``bounds`` com o maior
+  valor do atributo ``state``. Caso o estado do elemento estiver entre
+  os valores do atributo ``state`` de dois elementos ``bounds``, a
+  posição/tamanho será interpolada de forma linear.
+* Cada componente de cor pode ter um elemento ``color`` definindo uma
+  cor RGBA (Consulte :ref:`layout-concepts-colours` para mais
   informações).
-  Isso pode ser usado para controlar a geometria da cor dos componentes,
-  desenhados de forma algorítmica ou textual, sendo ignorado pelos
-  componentes ``image``. Caso tal elemento não esteja presente,
-  será usada uma cor predefinida que é branca e opaca.
+  Isto pode ser usado para controlar a geometria da cor dos componentes
+  desenhados de forma algorítmica ou textual. Para os componentes
+  ``image``, a cor dos pixels da imagem são multiplicadas através da cor
+  que foi definida. Caso tal elemento não esteja presente, será usada
+  uma cor predefinida, branca opaca.
+  
+  A cor do componente pode ser animada de acordo com o estado do
+  elemento ao fornecer diversos elementos ``color`` com os atributos
+  ``state``. Os atributos ``state`` não devem ser iguais em dois
+  elementos ``color`` dentro de um componente.
+  
+  Caso o estado do elemento seja inferior ao valor do atributo ``state``
+  de qualquer elemento ``color``, será utilizada a cor especificada
+  através do elemento ``color`` com o menor valor do atributo ``state``.
+  
+  Caso o estado do elemento seja superior ao valor do atributo ``state``
+  de qualquer elemento ``color``, será utilizada a cor especificada
+  através do elemento ``color`` com o maior valor do atributo ``state``.
+  Caso o estado do elemento estiver entre os valores do atributo
+  ``state`` de dois elementos ``color``, os componentes de cor RGBA
+  serão interpolados de forma linear.
 
 Há suporte para os seguintes componentes:
 
@@ -627,6 +676,10 @@ Há suporte para os seguintes componentes:
 	quais os pixels que estarão acesos, com o bit de menor importância
 	correspondendo ao pixel mais à esquerda. Os pixels apagados são
 	desenhados com uma menor intensidade (**0x20/0xff**).
+
+.. raw:: latex
+
+	\clearpage
 
 **dotmatrix5dot**
 
@@ -693,6 +746,10 @@ Há suporte para os seguintes componentes:
 	decimal e cauda de vírgula. Os pixels apagados são desenhados com
 	uma menor intensidade (**0x20/0xff**).
 
+.. raw:: latex
+
+	\clearpage
+
 **led16seg**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico padrão com dezesseis
@@ -736,6 +793,10 @@ Há suporte para os seguintes componentes:
 	ao centro, **1** alinhar à esquerda e **2** alinhar à direita.
 	Na sua ausência o texto será centralizado.
 
+.. raw:: latex
+
+	\clearpage
+
 **reel**
 
 	Usado para desenhar os cilindros usados por máquinas de caça
@@ -764,7 +825,7 @@ seu brilho depende do estado alto da saída:
     </element>
 
 Um exemplo de elemento de um botão que retorna um efeito visual quando
-pressionado:
+ele for pressionado:
 
 .. code-block:: xml
 
@@ -777,6 +838,66 @@ pressionado:
         <text string="RESET"><bounds x="0.1" y="0.4" width="0.8" height="0.2" /><color red="1.0" green="1.0" blue="1.0" /></text>
     </element>
 
+Um exemplo de um elemento que desenha um LED de sete segmentos
+usando imagens externas:
+
+.. code-block:: xml
+
+    <element name="digit_a" defstate="0">
+        <image file="a_off.png" />
+        <image file="a_a.png" statemask="0x01" />
+        <image file="a_b.png" statemask="0x02" />
+        <image file="a_c.png" statemask="0x04" />
+        <image file="a_d.png" statemask="0x08" />
+        <image file="a_e.png" statemask="0x10" />
+        <image file="a_f.png" statemask="0x20" />
+        <image file="a_g.png" statemask="0x40" />
+        <image file="a_dp.png" statemask="0x80" />
+    </element>
+
+.. raw:: latex
+
+	\clearpage
+
+Um exemplo de um gráfico de barras que cresce verticalmente e muda da
+cor do verde, passando pelo amarelo e para o vermelho à medida que o
+nível vai aumentando:
+
+.. code-block:: xml
+
+    <element name="pedal">
+        <rect>
+            <bounds state="0x000" left="0.0" top="0.9" right="1.0" bottom="1.0" />
+            <bounds state="0x610" left="0.0" top="0.0" right="1.0" bottom="1.0" />
+            <color state="0x000" red="0.0" green="1.0" blue="0.0" />
+            <color state="0x184" red="1.0" green="1.0" blue="0.0" />
+            <color state="0x610" red="1.0" green="0.0" blue="0.0" />
+        </rect>
+    </element>
+
+Um exemplo de um gráfico de barras que cresce horizontalmente para a
+esquerda ou para a direita e muda de cor do verde, passando pelo
+amarelo e para o vermelho à medida que o nível muda da posição neutra:
+
+.. code-block:: xml
+
+    <element name="wheel">
+        <rect>
+            <bounds state="0x800" left="0.475" top="0.0" right="0.525" bottom="1.0" />
+            <bounds state="0x280" left="0.0" top="0.0" right="0.525" bottom="1.0" />
+            <bounds state="0xd80" left="0.475" top="0.0" right="1.0" bottom="1.0" />
+            <color state="0x800" red="0.0" green="1.0" blue="0.0" />
+            <color state="0x3e0" red="1.0" green="1.0" blue="0.0" />
+            <color state="0x280" red="1.0" green="0.0" blue="0.0" />
+            <color state="0xc20" red="1.0" green="1.0" blue="0.0" />
+            <color state="0xd80" red="1.0" green="0.0" blue="0.0" />
+        </rect>
+    </element>
+
+
+.. raw:: latex
+
+	\clearpage
 
 .. _layout-parts-views:
 
@@ -927,7 +1048,7 @@ eles são opcionais:
 	eixo horizontal, de cima para baixo. Se presente, deve ser entre
 	``yes`` ou ``no``. O espelhamento ocorre após a rotação.
 
-As Telas (elementos ``screen``) e elementos de layout (elementos
+As telas (elementos ``screen``) e os elementos de layout (elementos
 ``element``) podem conter um atributo ``blend`` para determinar o modo
 de mesclagem. Os valores válidos são ``none`` (sem mesclagem), ``alpha``
 (mesclagem alpha) [#]_, ``multiply`` (multiplicação RGB) [#]_, e ``add``
@@ -1266,6 +1387,10 @@ de espaço entre elas, controladas pelas saídas ``digit0`` até
         </element>
     </repeat>
 
+.. raw:: latex
+
+	\clearpage
+
 Oito mostradores com matrix de ponto medindo cinco por sete em uma
 linha, com pixels controlados por ``Dot_000`` até ``Dot_764``
 (dentro de um elemento ``group`` ou ``view``):
@@ -1311,6 +1436,10 @@ numérico quatro por quatro (dentro de um elemento ``group`` ou
             </repeat>
         </repeat>
     </repeat>
+
+.. raw:: latex
+
+	\clearpage
 
 Os botões são desenhados usando os elementos ``btn00`` na parte superior
 esquerda, ``btn07`` na parte superior direita, ``btn30`` na parte
