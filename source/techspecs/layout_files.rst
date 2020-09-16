@@ -266,6 +266,10 @@ Um elemento ``param`` define ou reatribui o seu valor em um parâmetro no
 escopo atual mais interno. Não é possível definir ou reatribuir os
 parâmetros em um escopo de contenção.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _layout-concepts-predef-params:
 
 Parâmetros predefinidos
