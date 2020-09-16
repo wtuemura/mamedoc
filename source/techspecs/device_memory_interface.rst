@@ -110,6 +110,10 @@ Aborta na inexistência do espaço.
 Indica se um determinado espaço fornecido realmente existe. É uma versão
 de testes sem parâmetros para AS_PROGRAM/AS_0.
 
+.. raw:: latex
+
+	\clearpage
+
 
 5. Compatibilidade do MMU para o desmontador
 --------------------------------------------
