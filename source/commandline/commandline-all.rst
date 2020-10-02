@@ -2605,19 +2605,26 @@ Opções de vídeo para uso com janelas individuais
 	Para usar várias janelas, o valor da opção
 	:ref:`-numscreens <mame-commandline-numscreens>` deverá ter sido
 	aumentado.
-	O nome de cada exibição em seu sistema pode ser determinado
-	executando o MAME com a opção :ref:`-verbose
-	<mame-commandline-verbose>`.
-	Os nomes de exibição geralmente estão no formato: *\\\\.\DISPLAYn*,
-	onde **n** é um número do monitor conectado.
+	O nome de cada tela do seu sistema pode ser identificado executando
+	o MAME com a opção :ref:`-verbose <mame-commandline-verbose>`.
+	Os nomes de cada tela geralmente estão no formato: *\\\\.\\DISPLAYn*
+	no Windows e *screenN* no macOS e variantes do OpenGL como o Linux
+	por exemplo o **n** ou **N** é um número do monitor que estiver
+	conectado.
 
-	O valor predefinido para essas opções é **auto**.
+	O valor predefinido para estas opções é **auto**.
 	O que significa que a primeira janela é colocada na primeira
 	exibição, a segunda janela na segunda exibição e assim por
 	diante. ::
 
+		Windows
 		mame64 pc_cntra -numscreens 2 -screen0 \\.\DISPLAY1 -screen1 \\.\DISPLAY2
 		mame64 darius -numscreens 3 -screen0 \\.\DISPLAY1 -screen1 \\.\DISPLAY3 -screen2 \\.\DISPLAY2
+
+		OpenGL (Mac, Linux, *nix)
+		mame64 pc_cntra -numscreens 2 -screen0 screen0 -screen1 screen1
+		mame64 darius -numscreens 3 -screen0 screen1 -screen1 screen3 -screen2 screen2
+
 
 	Os parâmetros ``-screen0``, ``-screen1``, ``-screen2``, ``-screen3``
 	aplicam-se as janelas definidas. O parâmetro **screen** se aplica
