@@ -2,7 +2,7 @@
 
 	\clearpage
 
-Os arquivos de Layout
+Os arquivos de layout
 =====================
 
 .. contents:: :local:
@@ -23,6 +23,10 @@ Os layouts podem ser gerados automaticamente com base no número ou tipo
 de tela emulada, construído e lincado internamente ao binário do MAME ou
 disponibilizado externamente. Para o MAME os arquivos de layout são
 interpretados como arquivos XML usando a extensão ``.lay``.
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _layout-concepts:
@@ -67,6 +71,10 @@ encontrado, o número será interpretado como um número inteiro.
 Os números são analisados usando uma acentuação de caracteres em C [#]_
 por questões de portabilidade.
 
+.. raw:: latex
+
+	\clearpage
+
 
 .. _layout-concepts-coordinates:
 
@@ -82,34 +90,53 @@ layouts.
 As coordenadas são fornecidas como números de ponto flutuante.
 
 O MAME pressupõe que as coordenadas exibição tem a mesma proporção de
-aspecto que o pixel de saída do dispositivo (janela ou nativa).
+aspecto que os pixels de saída do dispositivo (janela ou nativa).
 Considerando que sejam pixels quadrados e sem rotação, isso significa
 que a distância seja igual nos eixos **X** e **Y** o que corresponde a
 distâncias iguais na vertical e horizontal na saída que for renderizada.
 
-Elementos, grupos e exibições, todos têm os seus sistemas internos
-de coordenadas. Quando um elemento ou grupo é referenciado a partir de
-uma visão ou um outro grupo, as suas coordenadas são dimensionadas
-conforme necessário para ajustar os limites definidos.
+Os elementos, os grupos e as visualizações, todos têm os seus sistemas
+internos de coordenadas. Quando um elemento ou grupo é referenciado a
+partir de uma visão ou um outro grupo, as suas coordenadas são
+dimensionadas conforme necessário para ajustar os limites definidos.
 
-Os objetos são posicionados e dimensionados usando os elementos limite
-``bounds``.
-Os elementos limite podem definir a posição da parte do canto superior
-esquerdo e usando o atributo de tamanho ``x``, ``y``, largura ``width``
-e altura ``height`` ou pode definir as coordenadas dos cantos com os
-atributos esquerda ``left``, cima ``top``, direita ``right`` e baixo
-``bottom``. Estes dois elementos ``bounds`` são equivalentes: ::
+Os objetos são posicionados e dimensionados usando os elementos
+``bounds``. A posição horizontal e o tamanho podem ser definidos de três
+maneiras: a borda esquerda e a largura usando os atributos ``x`` e
+``width``. O centro horizontal e a largura usando os atributos ``xc`` e
+``width``. As bordas esquerda e direita usando os atributos ``left`` e
+``right``. De forma similar a posição vertical e o seu tamanho podem ser
+definidos através da borda superior e a altura usando os atributos
+``y`` e ``height``, o centro vertical e a altura usando os atributos
+``yc`` e ``height`` ou bordas superiores e inferiores usando os
+atributos ``top`` e ``bottom``.
 
-    <bounds x="455" y="120" width="11" height="7" />
-    <bounds left="455" top="120" right="466" bottom="127" />
+Estes três elementos ``bounds`` são equivalentes:
 
-Ambos os atributos ``x`` ou ``left`` devem estar presente para se
-distinguir entre os dois elementos. O ``width`` e ``height`` ou
-``right`` e ``bottom`` o valor 1.0 é predefinido caso um valor não seja
-informado.
-Será considerado um erro caso os valores de ``width`` ou ``height``
-sejam negativos, caso ``right`` sejam menor que ``left`` ou se
-``bottom`` seja menor que ``top``.
+.. code-block:: xml
+
+    <bounds x="455" y="120" width="12" height="8" />
+    <bounds xc="461" yc="124" width="12" height="8" />
+    <bounds left="455" top="120" right="467" bottom="128" />
+
+É possível utilizar diferentes esquemas nas direções horizontal e
+vertical. Por exemplo, estes elementos ``bounds`` equivalentes também
+são válidos:
+
+.. code-block:: xml
+
+    <bounds x="455" top="120" width="12" bottom="128" />
+    <bounds left="455" yc="124" right="467" height="8" />
+
+A predefinição para o atributo ``width``/``height`` ou para o atributo
+``right``/``bottom`` é **1.0** caso nenhum seja informado. Haverá um
+erro caso os atributos ``width`` ou ``height`` tenham valores negativos,
+caso o atributo ``right`` tenha um valor menor que o atributo ``left``
+ou caso o atributo ``bottom`` tenha um valor menor que o atributo ``top``.
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _layout-concepts-colours:
@@ -326,8 +353,8 @@ disponíveis e fornecem informações sobre a máquina em execução:
 
 **scr0nativexaspect**
 
-	A parte horizontal da relação de aspecto do pixel visível na área da
-	primeira tela (caso esteja presente). A relação de aspecto
+	A parte horizontal da relação de aspecto do pixel visível na região
+	da primeira tela (caso esteja presente). A relação de aspecto
 	do pixel é fornecida como uma fração impropriamente reduzida.
 	Observe que este é o componente horizontal aplicado *antes* da
 	rotação. Este parâmetro é um número inteiro definido no escopo
@@ -335,7 +362,7 @@ disponíveis e fornecem informações sobre a máquina em execução:
 
 **scr0nativeyaspect**
 
-	A parte vertical da relação de aspecto do pixel visível na área da
+	A parte vertical da relação de aspecto do pixel visível na região da
 	primeira tela (caso esteja presente). A relação de aspecto do pixel
 	é fornecida como uma fração impropriamente reduzida. Observe que
 	este é o componente vertical aplicado *antes* da rotação. Este
@@ -347,14 +374,14 @@ disponíveis e fornecem informações sobre a máquina em execução:
 
 **scr0width**
 
-	A largura da área visível da primeira tela (se houver) nos pixels
+	A largura da região visível da primeira tela (se houver) nos pixels
 	emulados. Observe que a largura é aplicada *antes* da rotação.
 	Este parâmetro é um número inteiro definido no escopo global do
 	layout.
 
 **scr0height**
 
-	A altura da área visível da primeira tela (se houver) nos pixels
+	A altura da região visível da primeira tela (se houver) nos pixels
 	emulados. Observe que a altura é aplicada *antes* da rotação.
 	Este parâmetro é um número inteiro definido no escopo global do
 	layout.
@@ -373,25 +400,25 @@ disponíveis e fornecem informações sobre a máquina em execução:
 
 **scr1nativexaspect**
 
-	A parte horizontal da relação de aspecto do pixel visível na área da
-	segunda tela (caso esteja presente). Este parâmetro é um número
+	A parte horizontal da relação de aspecto do pixel visível na região
+	da segunda tela (caso esteja presente). Este parâmetro é um número
 	inteiro definido no escopo global de visualização do layout.
 
 **scr1nativeyaspect**
 
-	A parte vertical da relação de aspecto do pixel visível na área da
+	A parte vertical da relação de aspecto do pixel visível na região da
 	segunda tela (caso esteja presente). Este parâmetro é um número inteiro
 	definido no escopo global de visualização do layout.
 
 **scr1width**
 
-	A largura da área visível da segunda tela (se houver) nos pixels
+	A largura da região visível da segunda tela (se houver) nos pixels
 	emulados. Este parâmetro é um número inteiro definido no escopo
 	global do layout.
 
 **scr1height**
 
-	A altura da área visível da segunda tela (se houver) nos pixels
+	A altura da região visível da segunda tela (se houver) nos pixels
 	emulados. Este parâmetro é um número inteiro definido no escopo
 	global do layout.
 
@@ -425,15 +452,15 @@ disponíveis e fornecem informações sobre a máquina em execução:
 
 **scr\ *N*\ width**
 
-	A largura da área visível da tela (base-zero) *N*\ th (se presente)
-	nos pixels emulados. Este parâmetro é um número inteiro definido no
-	escopo de visualização do layout.
+	A largura da região visível da tela (base-zero) *N*\ th (se
+	presente) nos pixels emulados. Este parâmetro é um número inteiro
+	definido no escopo da visualização do layout.
 
 **scr\ *N*\ height**
 
-	A largura da área visível da tela (base-zero) *N*\ th (se presente)
-	nos pixels emulados. Este parâmetro é um número inteiro definido no
-	escopo de visualização do layout.
+	A largura da região visível da tela (base-zero) *N*\ th (se
+	presente) nos pixels emulados. Este parâmetro é um número inteiro
+	definido no escopo de visualização do layout.
 
 **viewname**
 
@@ -447,7 +474,7 @@ ordem em que aparecem na configuração da máquina. Todas as telas estão
 inclusas (não apenas nos sub-dispositivos do dispositivo que fizeram com
 que o layout fosse carregado). **X/width** e **Y/height** referem-se as
 dimensões horizontal e vertical da tela *antes* da rotação ser aplicada.
-Os valores baseados na área visível são calculados no final da
+Os valores baseados na região visível são calculados no final da
 configuração. Caso o sistema não reconfigure a tela durante a execução
 os valores dos parâmetros não serão atualizados assim como os layouts
 não serão recalculados.
@@ -462,13 +489,13 @@ As partes de um layout
 ----------------------
 
 Uma visualização define a disposição de um objeto gráfico a ser exibido.
-O arquivo de layout do MAME pode conter diversas exibições. As
-exibições são construídas a partir de elementos *elements* e telas
+O arquivo de layout do MAME pode conter diversas visualizações. As
+visualizações são construídas a partir de elementos *elements* e telas
 *screens*. Para simplificar os layouts complexos, os blocos repetidos e
 os grupos reutilizáveis são compatíveis entre si.
 
 O elemento de primeiro nível de um arquivo de layout do MAME deve ser um
-elemento``mamelayout`` junto com um atributo ``version``. O atributo
+elemento ``mamelayout`` junto com um atributo ``version``. O atributo
 ``version`` deve ser um valor inteiro. Atualmente, o MAME suporta apenas
 a versão 2 e não carregará qualquer outra versão diferente.
 Este é um exemplo de uma tag inicial para um elemento ``mamelayout``::
@@ -477,8 +504,8 @@ Este é um exemplo de uma tag inicial para um elemento ``mamelayout``::
 
 Em geral, os filhos de primeiro nível do elemento ``mamelayout`` são
 processados em ordem de chegada de cima para baixo. Uma exceção é que
-por questões históricas, as exibições são processadas por último.
-Isso significa que as exibições veem os valores finais de todos os
+por questões históricas, as visualizações são processadas por último.
+Isso significa que as visualizações veem os valores finais de todos os
 parâmetros do final do elemento ``mamelayout`` e pode se referir a
 elementos e grupos que possam aparecer depois deles.
 
@@ -529,7 +556,7 @@ nível ``mamelayout``:
 
 .. _layout-parts-elements:
 
-Os Elementos
+Os elementos
 ~~~~~~~~~~~~
 
 Os elementos são um dos objetos visuais mais básicos que podem ser
@@ -537,36 +564,40 @@ organizados junto com as telas para compor uma visualização. Os
 elementos podem ser construídos com um ou mais componentes *components*
 porém um elemento é tratado como uma única superfície ao compor o
 gráfico da cena e sua renderização. Um elemento pode ser usado em
-diversas exibições e pode também ser usado diversas vezes dentro de
-uma exibição.
+diversas visualizações e podem também serem utilizadas diversas vezes
+dentro de uma exibição.
 
-A aparência de um elemento depende do seu estado *state*. O estado é um
-valor inteiro que geralmente vem de uma área da porta I/O ou de uma
-saída emulada (veja a discussão em :ref:`layout-parts-views` para
-mais informações de como conectar um elemento a uma porta ou saída I/O).
-Qualquer componente de um elemento pode ser restrito apenas ao desenho
-quando o estado do elemento tiver um valor específico. Alguns
-componentes (como mostradores de segmento múltiplo e mostradores
-rotativos [#]_) que usam diretamente o estado para determinar a sua
-aparência final.
+A aparência de um elemento depende do seu *estado*. O estado é um
+valor inteiro que geralmente vem de uma região da porta I/O ou da
+saída emulada (consulte :ref:`layout-interact-elemstate` para obter
+mais informações de como conectar um elemento a uma porta ou uma saída
+I/O emulada).
+Qualquer componente de um elemento pode estar restrito apenas ao desenho
+quando o estado do elemento for um valor em particular. Alguns
+componentes (como os mostradores de segmento múltiplo e mostradores
+rotativos [#]_ (reels) por exemplo) que usam diretamente a sua condição
+para determinar a sua aparência final.
 
 Cada elemento possui o seu próprio sistema interno de coordenadas. Os
-limites dos elementos dos sistema de coordenadas são computados de
-maneira que cada parte individual dos componentes sejam unidos.
+limites dos elementos dos sistema de coordenadas são computados através
+da união dos limites dos componentes individuais das quais ele é
+composto.
 
 Todo elemento deve definir o seu nome usando o atributo ``name``. Os
-elementos são consultados pelo nome quando são consultados em grupos ou
-exibições. Será considerado um erro caso o arquivo de layout
-contenha vários elementos com atributos ``name`` idênticos.
-Os elementos podem, opcionalmente, fornecer um valor de estado padrão
-com um atributo ``defstate`` para ser usado casp não esteja conectado em
-uma saída emulada ou porta I/O. Se presente, o atributo ``defstate``
-deve possuir um valor inteiro não negativo.
+elementos são mencionados através do nome quando são solicitados nos
+grupos ou nas visualizações. Será considerado um erro caso o arquivo de
+layout contenha vários elementos ``name`` com os mesmos valores.
+Os elementos podem de forma opcional, informar um valor padrão do seu
+estado com um atributo ``defstate`` para ser utilizado caso não esteja
+conectado em uma saída emulada ou uma porta I/O. Caso esteja presente,
+o atributo ``defstate`` deve possuir um valor inteiro não negativo.
 
 Os elementos filho do elemento ``element`` representam os componentes
-que são desenhados em ordem de leitura do primeiro ao último
-(componentes desenhados em cima de componentes que vierem antes deles).
-Suporte a todos os componentes com alguns recursos em comum:
+que são desenhados na textura do elemento ao ler a ordem a partir do
+primeiro ao último utilizando alpha blending (os componente são
+desenhados por cima e podem se sobrepor aos componentes que venham antes
+dele). Todos os componentes são compatíveis com algumas características
+em comum:
 
 * Os componentes podem ser desenhados de forma condicional dependendo da
   condição do elemento ao informar os atributos ``state`` ou
@@ -587,7 +618,12 @@ Suporte a todos os componentes com alguns recursos em comum:
   Caso nenhum dos atributos ``state`` ou o ``statemask`` estiverem
   presentes o componente sempre será desenhado ou caso o valor do
   atributo ``statemask`` seja zero.
-* Cada componente pode ter um elemento filho ``bounds`` definindo a
+
+.. raw:: latex
+
+	\clearpage
+
+* Cada componente pode ter um sub-elemento ``bounds`` definindo a
   sua posição e tamanho (veja :ref:`layout-concepts-coordinates`). Caso
   tal elemento não esteja presente, os limites serão predefinidos a uma
   unidade quadrada, com o valor **1.0** para a largura e a altura e
@@ -602,7 +638,7 @@ Suporte a todos os componentes com alguns recursos em comum:
   
   Caso o estado do elemento seja inferior ao valor do atributo ``state``
   de qualquer elemento ``bounds``, será utilizada a posição/tamanho
-  especificado pelo elemento ``bounds`` com o menor valor do atributo
+  definido pelo elemento ``bounds`` com o menor valor do atributo
   ``state``. Caso o estado do elemento seja maior que o valor do
   atributo ``state`` de qualquer elemento ``bounds``, será utilizada a
   posição/tamanho especificado pelo elemento ``bounds`` com o maior
@@ -634,6 +670,10 @@ Suporte a todos os componentes com alguns recursos em comum:
   ``state`` de dois elementos ``color``, os componentes de cor RGBA
   serão interpolados de forma linear.
 
+.. raw:: latex
+
+	\clearpage
+
 Há suporte para os seguintes componentes:
 
 **rect**
@@ -646,20 +686,31 @@ Há suporte para os seguintes componentes:
 
 **image**
 
-	Desenha uma imagem carregada de um arquivo PNG ou JPEG. O nome do
-	arquivo a ser carregado (incluindo o nome da extensão do arquivo) é
-	informado usando o atributo ``file``. Adicionalmente, um atributo
-	opcional ``alphafile`` pode ser usado para determinar o nome de um
+	Desenha uma imagem carregada a partir um arquivo PNG, JPEG, Window
+	DIB (BMP) ou arquivo SVG. O nome do arquivo a ser carregado
+	(incluindo o nome da extensão do arquivo) é informado usando o
+	atributo ``file``. Adicionalmente, um atributo opcional
+	``alphafile`` pode ser usado para determinar o nome de um
 	arquivo PNG (incluindo o nome da extensão do arquivo) para ser
-	carregado dentro do canal alfa da imagem. O(s) arquivo(s) de
-	imagem(s) devem ser colocados no mesmo diretório que o arquivo de
-	layout. Caso o atributo ``alphafile`` esteja relacionado a um
-	arquivo, ele deve ter as mesmas dimensões que o arquivo definido no
-	atributo ``file`` e a sua profundidade de bits por pixel não deve
-	ser maior que 8 bits por canal. A intensidade de brightness dessa
-	imagem, é copiada para o canal alfa, com intensidade plena
-	(branco em escala de cinza) o que corresponde a um opaco
+	carregado dentro do canal alfa da imagem.
+	
+	Caso o atributo ``alphafile`` esteja relacionado a um arquivo, este
+	deve ter as mesmas dimensões (em pixels) que o arquivo definido
+	através do atributo ``file`` e a sua profundidade de bits por pixel
+	da imagem não deve ser maior que 8 bits por canal. A intensidade de
+	brightness desta imagem, é copiada para o canal alfa com plena
+	intensidade (branco em escala de cinza) o que corresponde a um opaco
 	pleno e o preto a uma transparência plena.
+	
+	O atributo ``alphafile`` será ignorado caso o atributo ``file``
+	aponte para um arquivo SVG, o atributo é apenas utilizado com
+	imagens do tipo bitmap.
+
+	O(s) arquivo(s) de imagem(s) devem ser colocados no mesmo diretório
+	que o arquivo de layout. Os formatos de imagem são detectados
+	durante a analise do conteúdo dos arquivos, os nomes das extensões
+	dos arquivos não são levados em consideração.
+
 
 **text**
 
@@ -681,10 +732,6 @@ Há suporte para os seguintes componentes:
 	correspondendo ao pixel mais à esquerda. Os pixels apagados são
 	desenhados com uma menor intensidade (**0x20/0xff**).
 
-.. raw:: latex
-
-	\clearpage
-
 **dotmatrix5dot**
 
 	Desenha um segmento horizontal de cinco pixels em um mostrador em
@@ -693,6 +740,10 @@ Há suporte para os seguintes componentes:
 	quais os pixels que estarão acesos, com o bit de menor importância
 	correspondendo ao pixel mais à esquerda. Os pixels apagados são
 	desenhados com uma menor intensidade (**0x20/0xff**).
+
+.. raw:: latex
+
+	\clearpage
 
 **dotmatrixdot**
 
@@ -863,9 +914,9 @@ usando imagens externas:
 
 	\clearpage
 
-Um exemplo de um gráfico de barras que cresce verticalmente e muda da
+Um exemplo de um gráfico de barras que crescem verticalmente e mudam da
 cor do verde, passando pelo amarelo e para o vermelho à medida que o
-nível vai aumentando:
+nível for aumentando:
 
 .. code-block:: xml
 
@@ -910,35 +961,35 @@ Exibições
 
 Uma exibição define um arranjo de elementos ou imagens na tela emulada
 que podem ser exibidas em uma janela ou em uma tela.
-As exibições também conectam elementos as entradas I/O e saídas
+As visualizações também conectam elementos as entradas I/O e saídas
 emuladas.
 Um arquivo de layout podem conter vários modos de exibição. Caso uma
 exibição corresponda a uma tela inexistente, ela se torna
 *inviável*.
 
 O MAME exibirá uma mensagem de aviso, irá ignorar a exibição que for
-inviável e continuará a carregar as exibições do arquivo de layout.
+inviável e continuará a carregar as visualizações do arquivo de layout.
 Isso é muito útil para sistemas onde uma tela é opcional, por exemplo,
 computadores com controles do painel frontal e um terminal serial
 opcional.
 
-As exibições são identificadas pelo nome na interface do usuário
+As visualizações são identificadas pelo nome na interface do usuário
 do MAME e na linha de comando. Para arquivos de layouts associados a
 dispositivos outros que o dispositivo de driver raiz, os nomes das
-exibições dos dispositivos são precedidos por uma tag (com os dois
+visualizações dos dispositivos são precedidos por uma tag (com os dois
 pontos iniciais omitidos) por exemplo, para exibir um dispositivo
 chamado "*Keyboard LEDs*" vindo do dispositivo ``:tty:ie15``, ele deve ser
 associado como **tty:ie15 Keyboard LEDs** na interface do usuário do
 MAME.
-As exibições são mostradas na ordem em que são carregadas.
-Dentro de um arquivo de layout, as exibições são carregados em ordem
+As visualizações são mostradas na ordem em que são carregadas.
+Dentro de um arquivo de layout, as visualizações são carregados em ordem
 de chegada, começando de cima para baixo.
 
-As exibições são criadas com elementos ``view`` dentro de um atributo de
-nível primário do elemento ``mamelayout``. Cada elemento ``view`` deve
-ter um nome usando o atributo ``name``, informando seu nome legível para
-o uso na interface do usuário e nas opções de linha de comando.
-Este é um exemplo de uma tag inicial válida para um elemento
+As visualizações são criadas com elementos ``view`` dentro de um
+atributo de nível primário do elemento ``mamelayout``. Cada elemento
+``view`` deve ter um nome usando o atributo ``name``, informando seu
+nome legível para o uso na interface do usuário e nas opções de linha
+de comando. Este é um exemplo de uma tag inicial válida para um elemento
 ``view``:
 
 .. code-block:: xml
@@ -959,13 +1010,13 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 
 	Define a origem e o tamanho da exibição interna do sistema de
 	coordenadas caso esteja presente.
-	Veja :ref:`layout-concepts-coordinates` para maiores detalhes.
+	Consulte :ref:`layout-concepts-coordinates` para maiores detalhes.
 	Se ausente, os limites de exibição serão computados unindo os
 	limites de todas as telas e elementos dentro da região sendo
 	exibida. Só faz sentido ter um elemento ``bounds`` como um filho
 	direto de um elemento ``view``. Qualquer conteúdo fora dos limites
 	da exibição serão recortados e a visualização será redimensionada
-	proporcionalmente para se ajustar aos limites da tela ou janela.
+	proporcionalmente para se ajustar aos limites da tela ou da janela.
 
 **param**
 
@@ -976,13 +1027,31 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 
 	\clearpage
 
+**element**
+
+	Adiciona um elemento à visualização (consulte
+	:ref:`layout-parts-elements`). O nome do elemento que será
+	adicionado é definido através do atributo obrigatório ``ref``.
+	Haverá um erro caso nenhum elemento com este nome seja definido no
+	arquivo de layout. Dentro de uma camada os elementos são desenhados
+	na ordem em que aparecem no arquivo de layout, a partir da frente
+	para trás.
+	Veja abaixo para mais detalhes.
+
+	Pode opcionalmente estar conectada em uma porta I/O emulada
+	usando os atributos ``inputtag`` e o ``inputmask`` ou através
+	de uma saída emulada usando um atributo ``name`` atributo. Consulte
+	:ref:`layout-interact-clickable` para obter mais detalhes. Consulte
+	:ref:`layout-interact-elemstate` para obter mais detalhes sobre
+	como informar o valor de uma condição para o elemento solicitado.
+
 **screen**
 
-	Adiciona uma imagem da tela emulada na exibição. A tela deve ser
+	Adiciona uma imagem emulada da tela na exibição. A tela deve ser
 	identificada usando um atributo ``index`` ou um atributo ``tag``
 	(um elemento ``screen`` não pode ter ambos os atributos ``index`` e
 	``tag``).
-	Se presente, o atributo ``index`` deve ser um valor inteiro e não
+	Se presente, o atributo ``index`` deve ser um valor inteiro não
 	negativo. As telas são numeradas pela ordem em que aparecem na
 	configuração da máquina, começando com zero (**0**). Se presente, o
 	atributo ``tag`` deve ser o caminho da tag para a tela em relação ao
@@ -990,36 +1059,44 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 	desenhadas na ordem em que aparecem no arquivo de layout, A sua
 	ordem de exibição começa de frente para trás.
 
+	Pode opcionalmente estar conectada a uma porta I/O emulada usando os
+	atributos ``inputtag`` e ``inputmask`` ou através uma saída emulada
+	usando um atributo ``name`` atributo. Consulte
+	:ref: `layout-interact-clickable` para obter mais detalhes.
+
 **collection**
 
-	Adiciona telas ou itens na coleção que possa ser exibida ou
-	escondida pelo usuário (consulte :ref:`layout-parts-collections`).
+	Adiciona telas ou itens na coleção que possam ser exibidos ou
+	escondidos pelo usuário (consulte :ref:`layout-parts-collections`).
 	O nome da coleção é definida através do atributo ``name``. Há um
-	limite de 32 coleções por visualização.
+	limite de 32 ``collection`` por visualização.
 
 **group**
 
-	Adiciona o conteúdo do grupo à exibição
-	(veja :ref:`layout-parts-groups`).
-	Para adicionar o nome do grupo use o atributo ``ref``. Será
-	considerado um erro caso nenhum grupo com este nome seja definido
-	no arquivo de layout. Veja abaixo para mais informações sobre a
-	questão de posicionamento.
+	Adiciona o conteúdo do grupo na exibição (consulte
+	:ref:`layout-parts-groups`). O nome do grupo que será adicionado
+	pode ser definido através do atributo ``ref``. Haverá um erro caso
+	nenhum grupo com este atributo seja definido no arquivo de layout.
+	Veja abaixo para mais informações sobre a questão de posicionamento.
 
 **repeat**
 
-	Repete o seu conteúdo definindo a sua quantidade pelo atributo
-	``count``. O atributo ``count`` deve ser um número inteiro e
-	positivo. Em uma exibição, o elemento ``repeat`` pode conter os
+	Repete o seu conteúdo pela sua quantidade de vezes através do
+	atributo ``count``. O atributo ``count`` deve ser um número inteiro
+	e positivo. Em uma exibição o elemento ``repeat`` pode conter os
 	elementos ``element``, ``screen``, ``group`` e mais elementos
 	``repeat``, que funcionam da mesma maneira que quando colocados em
 	uma visualização direta.
-	Veja :ref:`layout-parts-repeats` para mais informações de como usar os
+	Consulte :ref:`layout-parts-repeats` para saber como usar os
 	elementos ``repeat``.
 
-As Telas com elementos ``screen``,  elementos de layout ``element`` e
-elementos de grupo ``group`` podem ter a sua orientação alterada usando
-o elemento ``orientation``.
+.. raw:: latex
+
+	\clearpage
+
+As telas com os elementos ``screen``, elementos de layout ``element`` e
+os elementos de grupo ``group``, podem ter a sua orientação alterada
+usando o elemento ``orientation``.
 Para as telas, os modificadores de orientação são aplicados junto com os
 modificadores de orientação definido no dispositivo de tela da máquina.
 O elemento ``orientation`` suportam os seguintes atributos, todos
@@ -1060,11 +1137,11 @@ de mesclagem. Os valores válidos são ``none`` (sem mesclagem), ``alpha``
 driver defina a mesclagem por camada, sendo que o modo de mesclagem dos
 elementos de layout é predefinido como mesclagem alpha.
 
-As Telas (elementos ``screen``), elementos de layout (elementos
+As telas (elementos ``screen``), elementos de layout (elementos
 ``element``) e elementos de grupo (``group``) podem ser posicionados e
 redimensionados usando um elemento ``bounds``
-(veja :ref:`layout-concepts-coordinates` para mais informações).
-Na ausência do elemento ``bounds`` os elementos "screens" e "layout"
+(consulte :ref:`layout-concepts-coordinates` para mais informações).
+Na ausência do sub-elemento ``bounds`` os elementos "screen" e "layout"
 retornam aos valores predefinidos em unidades quadradas (origem em
 **0,0** e ambos os valores de altura e largura serão igual a **1**).
 
@@ -1083,82 +1160,27 @@ layout individual e dois grupos de elementos:
         <group ref="keypad"><bounds x="336" y="16" width="140" height="260" /></group>
     </view>
 
-As Telas (elementos ``screen``), elementos de layout (``element``) e
+As telas (elementos ``screen``), elementos de layout (``element``) e
 elementos de grupos (``group``) podem ter um sub-elemento ``color``
-(veja :ref:`layout-concepts-colours`) ao definir uma cor modificadora,
-o valor dessa cor será usada como multiplicador para alterar as cores
-componentes da tela ou de elementos de layout.
+(consulte :ref:`layout-concepts-colours`) ao definir uma cor
+modificadora. O valor dessa cor será usada como multiplicador para
+alterar as cores componentes da tela ou dos elementos de layout.
 
-Caso um elemento ``element`` contenham atributos ``inputtag`` e
-``inputmask``, ao clicar neles terá o mesmo efeito que pressionar uma
-tecla ou botão correspondente mapeado(s) para essa(s) entrada(s).
-O atributo ``inputtag`` define o caminho da tag de uma porta de I/O em
-relação ao dispositivo que fez com que o arquivo de layout fosse
-carregado. O atributo ``inputmask`` deve ser um número inteiro definindo
-os bits da porta de I/O que o elemento deve ativar. Este exemplo mostra
-como inicializar os botões pressionáveis:
+As telas (elementos ``screen``) e os elementos de layout (``element``)
+podem ter a sua cor, posição e tamanho animados ao invormar diversos
+elementos ``color`` e/ou sub-elementos ``bounds`` em conjunto com o
+atributo ``state``. Consulte :ref:`layout-interact-itemanim` para obter
+mais informações.
 
-.. code-block:: xml
-
-    <element ref="btn_3" inputtag="X2" inputmask="0x10">
-        <bounds x="2.30" y="4.325" width="1.0" height="1.0" />
-    </element>
-    <element ref="btn_0" inputtag="X0" inputmask="0x20">
-        <bounds x="0.725" y="5.375" width="1.0" height="1.0" />
-    </element>
-    <element ref="btn_rst" inputtag="RESET" inputmask="0x01">
-        <bounds x="1.775" y="5.375" width="1.0" height="1.0" />
-    </element>
-
-
-Caso um elemento contenha um atributo ``name``, ele usará seu estado com
-base no valor correspondente da saída emulada com o mesmo nome. Observe
-que os nomes de saída são globais, o que pode se tornar um problema
-quando uma máquina usar diferentes categorias do mesmo tipo de
-dispositivo. Veja :ref:`layout-parts-elements` para obter mais
-informações de como um estado do elemento afeta a sua aparência.
-Este exemplo mostra como os mostradores digitais podem ser conectados
-nas saídas emuladas:
-
-.. code-block:: xml
-
-    <element name="digit6" ref="digit"><bounds x="16" y="16" width="48" height="80" /></element>
-    <element name="digit5" ref="digit"><bounds x="64" y="16" width="48" height="80" /></element>
-    <element name="digit4" ref="digit"><bounds x="112" y="16" width="48" height="80" /></element>
-    <element name="digit3" ref="digit"><bounds x="160" y="16" width="48" height="80" /></element>
-    <element name="digit2" ref="digit"><bounds x="208" y="16" width="48" height="80" /></element>
-    <element name="digit1" ref="digit"><bounds x="256" y="16" width="48" height="80" /></element>
-
-
-Caso um elemento justifique um elemento de layout e tenha ambos os
-atributos ``inputtag`` e ``inputmask`` porém faltar um nome de atributo
-``name``, ele usará o seu estado com base no valor correspondente da
-porta I/O mascarada com o valor do atributo ``inputmask`` onde será
-aplicado um operador lógico XOR junto com os valores predefinidos da
-porta I/O. Este último é importante para entradas que estão em um estado
-baixo. Caso o resultado seja não zero, o estado se torna 1, caso
-contrário será 0. Em geral é útil para permitir botões que sejam
-clicáveis e chaves interruptoras [#]_ que proveem um retorno visível na
-tela.
-
-É possível obter raw data através da porta I/O ao utilizar o elemento
-``inputraw="1"`` mascarado com o valor de ``inputmask`` e deslocado
-(shifted) para a direita para eliminar os zeros (uma máscara **0x05**
-não causará nenhum deslocamento, enquanto uma máscara **0xb0** resultará
-no deslocamento do valor em 4 bits para a direita por exemplo).
-
-O MAME trata todos os elementos do layout como sendo retangulares ao
-lidar com a entrada do mouse habilitando apenas o elemento mais à frente
-na região onde o ponteiro estiver presente.
 
 .. _layout-parts-collections:
 
 Collections
 ~~~~~~~~~~~
 
-Coleções das telas ou elementos de layout que possam ser exibidos ou não
-pelo usuário conforme a sua necessidade. Em uma visualização única é
-possível ambas as visualizações e um teclado numérico (keypad)
+As coleções das telas ou dos elementos de layout que possam ser exibidos
+ou não pelo usuário conforme a sua necessidade. Em uma visualização
+única é possível ambas as visualizações e um teclado numérico (keypad)
 selecionável por exemplo, permitir que o usuário esconda o teclado
 numérico deixando visível apenas a exibição. As coleções são criadas
 através do elemento ``collection`` dentro dos elementos ``view``,
@@ -1175,17 +1197,17 @@ Aqui um exemplo demonstrando a utilização de um ``collection``
 permitindo que partes de uma visualização possam ser escondidas pelo
 usuário:
 
-	.. code-block:: xml
+.. code-block:: xml
 
-		<view name="Telas LED, CRT e Teclado Numérico">
-			<collection name="LED Displays">
-			<group ref="displays"><bounds x="240" y="0" width="320" height="47" /></group>
-			</collection>
-			<collection name="Keypad">
-			<group ref="keypad"><bounds x="650" y="57" width="148" height="140" /></group>
-			</collection>
-			<screen tag="screen"><bounds x="0" y="57" width="640" height="480" /></screen>
-		</view>
+    <view name="Telas LED, CRT e Teclado Numérico">
+        <collection name="LED Displays">
+          <group ref="displays"><bounds x="240" y="0" width="320" height="47" /></group>
+          </collection>
+        <collection name="Keypad">
+          <group ref="keypad"><bounds x="650" y="57" width="148" height="140" /></group>
+          </collection>
+          <screen tag="screen"><bounds x="0" y="57" width="640" height="480" /></screen>
+    </view>
 
 Uma coleção cria um escopo de parâmetros agrupados. Qualquer elemento
 ``param`` que estiver dentro do elemento de coleção define os parâmetros
@@ -1195,6 +1217,10 @@ a visualização predefinida não fazem parte do seu conteúdo, quaisquer
 referências dos parâmetros nos atributos ``name`` e ``visible`` serão
 substituídos usando os valores dos parâmetros a partir da origem do
 escopo relacionado com a coleção.
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _layout-parts-groups:
@@ -1234,10 +1260,10 @@ exemplo são fornecidos os valores de limite:
 Os elementos de definição dos grupos permitem que todos os elementos
 filhos que forem iguais, sejam exibidos. O posicionamento e as
 orientações das tela, elementos de layout e arranjo desses grupos
-funcionem da mesma maneira que as exibições.
+funcionem da mesma maneira que as visualizações.
 Veja :ref:`layout-parts-views` para mais informações.
 Um grupo pode justificar outros grupos, porém loops recursivos não são
-permitidos. Será considerado um erro caso um grupo representar a si
+permitidos. Será considerado um erro caso um grupo represente a si
 mesmo de forma direta ou indireta.
 
 Os grupos possuem seus próprios sistemas de coordenadas internas.
@@ -1247,12 +1273,11 @@ a união dos limites de todas as telas, elementos de layout ou grupos
 relacionados.
 Um elemento filho ``bounds`` pode ser usado para definir
 explicitamente grupos limitadores
-(veja :ref:`layout-concepts-coordinates` para mais informações).
+(consulte :ref:`layout-concepts-coordinates` para mais informações).
 Observe que os limites dos grupos são usados com a única justificativa
-para calcular as coordenadas de transformação quando for relacionado
-a um grupo.
-Um grupo pode posicionar as telas ou elementos fora de seus limites e eles
-não serão cortados.
+para calcular as coordenadas de transformação quando forem relacionados
+a um grupo. Um grupo pode posicionar as telas ou os elementos fora dos
+seus limites sem que sejam cortados.
 
 .. raw:: latex
 
@@ -1267,22 +1292,21 @@ exemplo:
         <!-- limites automaticamente calculados com sua origem em (5,10), largura 30, e altura 15 -->
         <element ref="topleft"><bounds x="5" y="10" width="10" height="10" /></element>
         <element ref="bottomright"><bounds x="25" y="15" width="10" height="10" /></element>
-
     <view name="Teste">
         <!--
-           Os grupos limitadores são traduzidos e escalonados para preencher 2/3 da escala horizontal e o dobro verticalmente
-           Elemento superior esquerdo posicionado em  (0,0) com 6.67 de largura e 20 de altura
-           Elemento inferior direito posicionado em (13.33,10) com 6.67 de largura e 20 de altura
+           Os grupos limitadores são traduzidos e escalonados para preencher 2/3 da escala
+           horizontal e o dobro verticalmente.
+           O elemento superior esquerdo posicionado em  (0,0) com 6.67 de largura e 20 de altura
+           O elemento inferior direito posicionado em (13.33,10) com 6.67 de largura e 20 de altura
            Os elementos de visualização calculado com origem em (0,0) 20 de largura e 30 de altura
         -->
         <element ref="topleft"><bounds x="5" y="10" width="10" height="10" /></element>
         <element ref="bottomright"><bounds x="25" y="15" width="10" height="10" /></element>
     </view>
 
-Isto é relativamente simples, como todos os elementos inerentemente caem
-dentro dos limites automaticamente calculados ao grupo. Agora, considere
-o que acontece caso a posição dos elementos de um grupo estiver fora dos
-seus limites:
+Como todos os elementos inerentemente caem dentro dos limites calculados
+ao grupo de forma automática. Agora, considere o que acontece caso a
+posição dos elementos de um grupo estejam fora dos seus limites:
 
 .. code-block:: xml
 
@@ -1291,34 +1315,34 @@ seus limites:
         <bounds x="10" y="10" width="20" height="25" />
         <element ref="topleft"><bounds x="10" y="0" width="10" height="10" /></element>
         <element ref="bottomright"><bounds x="30" y="20" width="10" height="10" /></element>
-
     <view name="Test">
         <!--
-           Os grupos limitadores são traduzidos e escalonados para preencher 2/3 da escala horizontal unido verticalmente.
-           Elemento superior esquerdo posicionado em (5,-5) com 15 de largura e 10 de altura
-           Elemento inferior direito posicionado em (35,15) com 15 de largura e 10 de altura
+           Os grupos limitadores são traduzidos e escalonados para preencher 2/3 da escala
+           horizontal unido verticalmente.
+           O elemento superior esquerdo posicionado em (5,-5) com 15 de largura e 10 de altura
+           O elemento inferior direito posicionado em (35,15) com 15 de largura e 10 de altura
            Os elementos de visualização calculado com origem em (5,-5) 45 de largura e 30 de altura
         -->
         <group ref="periphery"><bounds x="5" y="5" width="30" height="25" /></group>
     </view>
 
-Os elementos de grupo são traduzidos e escalonados conforme são
+Os elementos de grupo são traduzidos e escalonados conforme sejam
 necessários para distorcer os limites internos dos grupos para o limite
-de exibição final. O conteúdo dos grupos não fica limitado aos seus
-limites. A exibição considera os limites dos elementos atuais ao
-calcular seus próprios limites e não os limites de destino especificado
+de exibição final. O conteúdo dos grupos não ficam restritos aos seus
+limites. A visualização considera os limites dos elementos atuais ao
+calcular os seus próprios limites e não aos limites do destino definido
 para o grupo.
 
-Quando um grupo é interpretado, ele cria um escopo do parâmetro
-agrupado.
-A lógica do escopo pai é o escopo do parâmetro de visualização, grupo ou
-bloco de repetição onde o grupo for interpretado (*não* é um parente
-léxico ao elemento de primeiro nível ``mamelayout``).
-Qualquer elemento ``param`` dentro do conjunto de definição, estabelece
-os parâmetros dos elementos no escopo local para o grupo interpretado.
-Os parâmetros locais não persistem através de várias interpretações.
-Veja :ref:`layout-concepts-params` para mais informações sobre os
-parâmetros. (Observe que o nome dos grupos não fazem parte do seu
+Quando um grupo é instanciado [#INSTANCIA]_, ele cria um escopo agrupado do parâmetro.
+A lógica do escopo principal é o escopo do parâmetro de visualização,
+do grupo ou do bloco de repetição onde o grupo for instanciado (*não* é
+um parente léxico ao elemento de primeiro nível ``mamelayout``).
+Qualquer elemento ``param`` dentro da definição do conjunto, estabelece
+os parâmetros dos elementos no escopo local para o grupo instanciado.
+Os parâmetros locais não se preservam através das várias instancias.
+
+Consulte :ref:`layout-concepts-params` para obter mais informações sobre
+os parâmetros. (Observe que o nome dos grupos não fazem parte do seu
 conteúdo e qualquer referência de parâmetro no próprio atributo ``name``
 será substituído no ponto onde a definição do grupo aparecer no primeiro
 nível do elemento de escopo ``mamelayout``.)
@@ -1329,43 +1353,42 @@ nível do elemento de escopo ``mamelayout``.)
 
 .. _layout-parts-repeats:
 
-Repetindo Blocos
+Repetindo blocos
 ~~~~~~~~~~~~~~~~
 
 Os blocos repetidos fornecem uma maneira concisa de gerar ou organizar
-um grande número de elementos similares. A repetição de blocos são
-geralmente usadas em conjunto com o gerador de parâmetros
-(veja :ref:`layout-concepts-params`).
-As repetições de blocos podem ser agrupados para criar arranjos mais
+uma grande quantidade de elementos iguais. A repetição dos blocos são
+geralmente usados em conjunto com o gerador de parâmetros
+(consulte :ref:`layout-concepts-params`).
+As repetições dos blocos podem ser agrupados para criar arranjos mais
 complexos.
 
-Os blocos repetidos são criados com o elemento ``repeat``.
-Cada elemento ``repeat`` requer um atributo ``count`` definindo um
-número de iterações a serem geradas.
+Os blocos repetidos são criados através do elemento ``repeat``.
+Cada elemento ``repeat`` requer um atributo ``count`` definindo uma
+quantidade de iterações que serão geradas.
 O atributo ``count`` deve ser um número inteiro e positivo. A repetição
-de blocos é permitida dentro do elemento de primeiro nível
+dos blocos é permitida dentro do elemento de primeiro nível
 ``mamelayout``, dentro dos elementos ``group`` e ``view`` assim como
-dentro de outros elementos ``repeat``. O exato elemento filho permitido
-dentro do elemento ``repeat`` depende de onde ele aparecer:
+dentro dos outros elementos ``repeat``. O exato sub-elemento permitido
+dentro do elemento ``repeat`` depende de onde ele for aparecer:
 
 * Um bloco repetido dentro do elemento de primeiro nível ``mamelayout``
   podem conter os seguintes elementos
-  ``param``, ``element``, ``group`` (definição), e ``repeat``.
+  ``param``, ``element``, ``group`` (definição) e ``repeat``.
 * Um bloco repetido dentro de um elemento ``group`` ou ``view`` podem
-  conter os seguintes elementos
-  ``param``, ``element`` (referência), ``screen``, ``group``
-  (referência), e ``repeat``.
+  conter os seguintes elementos, ``param``, ``element`` (referência),
+  ``screen``, ``group`` (referência) e ``repeat``.
 
-Um bloco de repetição faz a repetição efetiva do seu conteúdo diversas
-vezes dependendo do valor definido no atributo ``count``.
-Veja as seções relevantes para mais informações de como os elementos
-filho são usados (:ref:`layout-parts`, :ref:`layout-parts-groups`,
+Um bloco de repetição repete o seu conteúdo diversas vezes dependendo do
+valor definido no atributo ``count``. Consulte as seções relevantes para
+obter mais informações de como os sub-elementos são usados
+(:ref:`layout-parts`, :ref:`layout-parts-groups`
 e :ref:`layout-parts-views`). Um bloco que se repete cria um escopo de
-parâmetros agrupados dentro do escopo do parâmetro de seu elemento pai
-léxico (DOM).
+parâmetros agrupados dentro do escopo do parâmetro do seu elemento
+léxico principal (DOM).
 
-Gerando rótulos numéricos em branco de zero a onze com o nome
-``label_0``, ``label_1``, e assim por diante (dentro do elemento de
+O exemplo abaixo geram rótulos numéricos em branco de zero a onze com o
+nome ``label_0``, ``label_1`` e assim por diante (dentro do elemento de
 primeiro nível ``mamelayout``):
 
 .. code-block:: xml
@@ -1377,8 +1400,8 @@ primeiro nível ``mamelayout``):
         </element>
     </repeat>
 
-Uma fileira horizontal com 40 mostradores digitais, com cinco unidades
-de espaço entre elas, controladas pelas saídas ``digit0`` até
+Uma fileira horizontal com 40 mostradores digitais, separadas por cinco
+unidades de espaço entre elas, controladas pelas saídas ``digit0`` até
 ``digit39`` (dentro de um elemento ``group`` ou ``view``):
 
 .. code-block:: xml
@@ -1401,24 +1424,31 @@ linha, com pixels controlados por ``Dot_000`` até ``Dot_764``
 
 .. code-block:: xml
 
-    <repeat count="8"> <!-- 8 digits -->
+    <!-- 8 dígitos -->
+    <repeat count="8">
         <param name="digitno" start="1" increment="1" />
-        <param name="digitx" start="0" increment="935" /> <!-- distância entre dígitos ((111 * 5) + 380) -->
-        <repeat count="7"> <!-- 7 rows in each digit -->
+        <!-- a distância entre os dígitos ((111 * 5) + 380) -->
+        <param name="digitx" start="0" increment="935" />
+          <!-- 7 linhas para cada dígito -->
+          <repeat count="7">
         <param name="rowno" start="1" increment="1" />
-        <param name="rowy" start="0" increment="114" /> <!-- distância vertical entre LEDs -->
-        <repeat count="5"> <!-- 5 columns in each digit -->
+        <!-- a distância vertical entre os LEDs -->
+        <param name="rowy" start="0" increment="114" />
+          <!-- 5 colunas em cada dígito -->
+          <repeat count="5">
         <param name="colno" start="1" increment="1" />
-        <param name="colx" start="~digitx~" increment="111" /> <!-- distância horizontal entre LEDs -->
-        <element name="Dot_~digitno~~rowno~~colno~" ref="Pixel" state="0">
-        <bounds x="~colx~" y="~rowy~" width="100" height="100" /> <!-- tamanho de cada LED -->
-        </element>
-        </repeat>
+        <!-- a distância horizontal entre os LEDs -->
+        <param name="colx" start="~digitx~" increment="111" />
+          <element name="Dot_~digitno~~rowno~~colno~" ref="Pixel" state="0">
+          <!-- o tamanho de cada LED -->
+          <bounds x="~colx~" y="~rowy~" width="100" height="100" />
+             </element>
+           </repeat>
         </repeat>
     </repeat>
 
-Dois teclados "clicáveis", separados horizontalmente por um teclado
-numérico quatro por quatro (dentro de um elemento ``group`` ou
+Dois teclados que podem ser clicados, separados horizontalmente por um
+teclado numérico quatro por quatro (dentro de um elemento ``group`` ou
 ``view``):
 
 .. code-block:: xml
@@ -1427,17 +1457,17 @@ numérico quatro por quatro (dentro de um elemento ``group`` ou
         <param name="group" start="0" increment="4" />
         <param name="padx" start="10" increment="530" />
         <param name="mask" start="0x01" lshift="4" />
-        <repeat count="4">
+          <repeat count="4">
         <param name="row" start="0" increment="1" />
         <param name="y" start="100" increment="110" />
-        <repeat count="4">
+          <repeat count="4">
         <param name="col" start="~group~" increment="1" />
         <param name="btnx" start="~padx~" increment="110" />
         <param name="mask" start="~mask~" lshift="1" />
-        <element ref="btn~row~~col~" inputtag="row~row~" inputmask="~mask~">
-        <bounds x="~btnx~" y="~y~" width="80" height="80" />
-        </element>
-        </repeat>
+          <element ref="btn~row~~col~" inputtag="row~row~" inputmask="~mask~">
+          <bounds x="~btnx~" y="~y~" width="80" height="80" />
+             </element>
+           </repeat>
         </repeat>
     </repeat>
 
@@ -1449,12 +1479,13 @@ Os botões são desenhados usando os elementos ``btn00`` na parte superior
 esquerda, ``btn07`` na parte superior direita, ``btn30`` na parte
 inferior esquerda e ``btn37`` na parte inferior direita contando entre
 eles. As quatro colunas são conectadas às portas I/O ``row0``, ``row1``,
-``row2``, and ``row3``, de cima para baixo.
-As colunas consecutivas são conectadas aos bits das portas I/O, começando
-com o bit de menor importância do lado esquerdo. Observe que o parâmetro
-``mask`` no elemento mais interno ``repeat``, recebe o seu valor inicial
-vindo do parâmetro correspondentemente nomeado no delimitador de escopo,
-mas não o modifica.
+``row2``, and ``row3`` de cima para baixo.
+As colunas consecutivas são conectadas aos bits das portas I/O começando
+com o bit de menor importância do lado esquerdo.
+
+Observe que o parâmetro ``mask`` no elemento mais interno ``repeat``
+recebe o seu valor inicial a partir do parâmetro correspondentemente
+nomeado no delimitador do escopo, porém sem alterá-lo.
 
 Gerando um tabuleiro de xadrez com valores alfa alternados entre 0.4 e
 0.2 (dentro de um elemento ``group`` ou ``view``):
@@ -1464,89 +1495,357 @@ Gerando um tabuleiro de xadrez com valores alfa alternados entre 0.4 e
     <repeat count="4">
         <param name="pairy" start="3" increment="20" />
         <param name="pairno" start="7" increment="-2" />
-        <repeat count="2">
+          <repeat count="2">
         <param name="rowy" start="~pairy~" increment="10" />
         <param name="rowno" start="~pairno~" increment="-1" />
         <param name="lalpha" start="0.4" increment="-0.2" />
         <param name="ralpha" start="0.2" increment="0.2" />
-        <repeat count="4">
+          <repeat count="4">
         <param name="lx" start="3" increment="20" />
         <param name="rx" start="13" increment="20" />
         <param name="lmask" start="0x01" lshift="2" />
         <param name="rmask" start="0x02" lshift="2" />
-        <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~lmask~">
-        <bounds x="~lx~" y="~rowy~" width="10" height="10" />
-        <color alpha="~lalpha~" />
-        </element>
-        <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~rmask~">
-        <bounds x="~rx~" y="~rowy~" width="10" height="10" />
-        <color alpha="~ralpha~" />
-        </element>
-        </repeat>
+          <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~lmask~">
+          <bounds x="~lx~" y="~rowy~" width="10" height="10" />
+          <color alpha="~lalpha~" />
+          </element>
+          <element ref="hl" inputtag="board:IN.~rowno~" inputmask="~rmask~">
+          <bounds x="~rx~" y="~rowy~" width="10" height="10" />
+          <color alpha="~ralpha~" />
+             </element>
+           </repeat>
         </repeat>
     </repeat>
 
-O elemento ``repeat`` mais externo gera um grupo de duas colunas em cada
-interação; o próximo elemento ``repeat`` gera uma coluna individual em
-cada interação; o elemento ``repeat`` interno produz dois recortes
+O elemento ``repeat`` mais externo gera um grupo com duas colunas em
+cada interação; o próximo elemento ``repeat`` gera uma coluna individual
+em cada interação; o elemento ``repeat`` interno produz dois recortes
 horizontais adjacentes em cada interação.
 As colunas são conectadas às portas I/O através do ``board:IN.7``
 no topo do ``board.IN.0`` na parte inferior.
 
+.. raw:: latex
+
+	\clearpage
+
+
+.. _layout-interact:
+
+Interatividade
+--------------
+
+As visualizações com interatividade são suportadas através da permissão
+dos itens que serão vinculados nas saídas e nas portas I/O. Há suporte
+para cinco tipos de interatividades:
+
+**Itens Selecionáveis**
+
+	Caso um item em uma visualização esteja vinculado com uma região dos
+	interruptores da porta I/O, ao clicar no item o interruptor emulado
+	será ativado.
+
+**Componentes que dependam de uma condição**
+
+	Dependendo do estado do elemento que o contiver, alguns componentes
+	serão desenhados de forma diferente. Isso inclui a matriz de pontos,
+	o display de LEDs com vários segmentos, os contadores simples e os
+	elementos com mostradores rotativos. Consulte
+	:ref:`layout-parts-elements` para obter mais detalhes.
+
+**Componentes desenhados de forma condicional**
+
+	Os componentes podem ser desenhados de forma condicional ou
+	escondidos dependendo da condição do conteúdo do elemento a partir
+	da informação dos valores para os elementos ``state`` e/ou
+	``statemask``. Consulte :ref:`layout-parts-elements` para obter mais
+	detalhes.
+
+**Parâmetros para a animação dos componentes**
+
+	A posição, tamanho e a cor dos componentes contido em seus elementos
+	talvez possam ser animados de acordo com a condição do elemento a
+	partir da informação dos diversos elementos ``color`` e/ou
+	``bounds`` em conjunto com os atributos de condição ``state``.
+	Consulte :ref:`layout-parts-elements` para obter mais detalhes.
+
+**Parâmetros para a animação dos itens**
+
+	A cor, a posição e o tamanho dos itens restritos ao seu espaço de
+	visualização podem ser animados de acordo com a sua condição.
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _layout-interact-clickable:
+
+Itens que podem ser clicados
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Caso um item de visualização (elemento ``element`` ou ``screen``) tenham
+atributos ``inputtag`` e ``inputmask`` com valores que correspondam a
+uma região com interruptores digitais no sistema emulado, será possível
+clicar no elemento para que determinado interruptor seja ativado. O
+interruptor permanecerá ativo enquanto o botão do mouse estiver
+pressionado e o ponteiro estiver dentro dos limites do item.
+(Observe que os limites podem mudar dependendo da condição do estado de
+animação do item, consulte :ref:`layout-interact-itemanim`).
+
+O atributo ``inputtag`` determina o caminho do identificador de uma
+porta I/O relativa ao dispositivo responsável pelo carregamento do
+arquivo de layout. O atributo ``inputmask`` deve ser um valor inteiro
+definindo os bits da região da porta de I/O que o item deve ativar.
+Este exemplo demonstra a instanciação dos botões que podem ser
+clicados:
+
+.. code-block:: xml
+
+    <element ref="btn_3" inputtag="X2" inputmask="0x10">
+        <bounds x="2.30" y="4.325" width="1.0" height="1.0" />
+    </element>
+    <element ref="btn_0" inputtag="X0" inputmask="0x20">
+        <bounds x="0.725" y="5.375" width="1.0" height="1.0" />
+    </element>
+    <element ref="btn_rst" inputtag="RESET" inputmask="0x01">
+        <bounds x="1.775" y="5.375" width="1.0" height="1.0" />
+    </element>
+
+Ao lidar com o retorno das informações vindas do mouse o MAME trata
+todos os elementos de layout como sendo retangular e ativa apenas o
+primeiro item que possa ser pressionado cuja região inclua a posição do
+ponteiro do mouse.
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _layout-interact-elemstate:
+
+O Estado do elemento
+~~~~~~~~~~~~~~~~~~~~
+
+Um item de visualização que instancie um elemento (elemento ``element``)
+pode fornecer um valor da sua condição para o elemento a partir de uma
+porta emulada de I/O ou para a saída. Consulte
+:ref:`layout-parts-elements` para obter mais detalhes sobre como o
+estado de um elemento afeta sua aparência.
+
+O valor do estado do elemento será obtido através do valor da saída
+emulada que corresponda a tal nome caso o elemento ``element`` tenha um
+atributo ``name``. Observe que os nomes das saídas são globais
+e podem se tornar um problema quando uma máquina utilizar várias
+instâncias do mesmo tipo do dispositivo. Este exemplo mostra como
+os monitores digitais podem ser conectados na saída emulada:
+
+.. code-block:: xml
+
+    <element name="digit6" ref="digit"><bounds x="16" y="16" width="48" height="80" /></element>
+    <element name="digit5" ref="digit"><bounds x="64" y="16" width="48" height="80" /></element>
+    <element name="digit4" ref="digit"><bounds x="112" y="16" width="48" height="80" /></element>
+    <element name="digit3" ref="digit"><bounds x="160" y="16" width="48" height="80" /></element>
+    <element name="digit2" ref="digit"><bounds x="208" y="16" width="48" height="80" /></element>
+    <element name="digit1" ref="digit"><bounds x="256" y="16" width="48" height="80" /></element>
+
+O valor do estado do elemento será obtido a partir do valor da porta
+correspondente ao I/O mascarado com o valor do ``inputmask`` caso o
+elemento ``element`` tenha os atributos ``inputtag`` e ``inputmask``
+porém não tenha um atributo ``name``. O atributo ``inputtag``
+determina o caminho do identificador de uma porta I/O relativa ao
+dispositivo responsável pelo carregamento do arquivo de layout. O
+atributo ``inputmask`` deve ser um valor inteiro para definir os bits da
+região da porta I/O que o item deve ativar.
+
+O valor da porta I/O é mascarado com o valor do ``inputmask`` e feito
+uma operação XOR [#XOR]_ com o valor predefinido da região da porta I/O
+caso o elemento ``element`` não tenha qualquer atributo ``inputraw`` ou
+caso o valor do atributo ``inputraw`` seja **no**. Em geral é utilizado
+para fornecer um retorno visual para os botões que sejam clicáveis como
+valores normais para os interruptores alto-ativo e baixo-ativo.
+
+O estado do elemento será obtido a partir dos valores da porta I/O
+mascarado com o valor do ``inputmask`` e deslocada para a direita
+para remover os zeros restantes caso o elemento ``element`` tenha um
+atributo ``inputraw`` com o valor **yes** (por exemplo, uma máscara com
+o valor **0x5** não terá deslocamento algum enquanto uma máscara com o
+valor **0xb0** resultará num deslocamento com quatro bits à direita).
+É útil para obter os valores analógicos das entradas ou das posições.
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _layout-interact-itemanim:
+
+A visualização de um item animado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A cor, a posição e o tamanho dos itens que estejam dentro dos limites da
+visualização poderão ser animados. Isso é feito através da definição dos
+diversos sub-elementos ``color`` ou ``bounds`` com atributos ``state``.
+O atributo ``state`` deve ser um número inteiro positivo para cada
+elemento ``color`` ou sub-elemento ``bounds``. Dentro do item de
+visualização os dois elementos ``color`` e os dois elementos ``bounds``
+não podem ter os mesmos atributos ``state`` com os mesmos valores.
+
+Para definir a posição ou o tamanho do item através do sub-elemento
+``bounds`` será usado o menor valor do atributo ``state`` caso o estado
+de animação do item seja menor que o valor do atributo ``state`` de
+qualquer um dos sub-elementos ``bounds``. Já a posição ou o tamanho
+definido pelo sub-elemento ``bounds`` será utilizado com o maior valor
+do atributo ``state`` caso o estado da animação do item seja maior que o
+valor do atributo ``state`` de qualquer um dos sub-elementos ``bounds``.
+No entanto a posição ou o tamanho será interpolada de forma linear caso
+o estado da animação do item esteja entre os valores do atributo
+``state`` dos dois sub-elementos ``bounds``.
+
+A cor será atribuída através do sub-elemento ``color`` com o menor valor
+do atributo ``state`` caso o estado de animação do item seja menor do
+que o valor do atributo ``state`` de qualquer sub-elemento ``color``.
+O mesmo princípio é usado com o maior valor do atributo ``state``.
+Os componentes da cor RGBA serão interpolados de forma linear caso o
+estado da animação do item esteja entre os valores do atributo ``state``
+dos dois sub-elementos ``color``.
+
+O estado da animação de um item pode estar limitada a uma saída emulada
+ou a entrada de uma porta durante o fornecimento de um sub-elemento
+``animate``. Quando estiver presente o elemento ``animate`` deve possuir
+ou um atributo ``inputtag`` ou um atributo ``name`` (porém não ambos).
+Na ausência do sub-elemento ``animate`` o estado de animação do item
+será idêntico ao estado do seu elemento (consulte
+:ref:`layout-interact-elemstate`).
+
+Quando um sub-elemento ``animate`` estiver presente e tiver um atributo
+``inputtag``, o estado da animação do item será obtido a partir do valor
+correspondente à porta I/O. O atributo ``inputtag`` determina o caminho
+da tag de uma porta I/O relativa ao dispositivo que provoque a leitura
+do arquivo de layout. São utilizados os valores brutos da porta de
+entrada, os valores baixo-ativo do interruptor não são normalizados.
+
+Na presença de um sub-elemento ``animate`` com o atributo ``name`` o
+estado da animação do item será obtido através do valor do nome
+correspondente a saída emulada. Observe que os nomes das saídas são
+globais e podem se tornar um problema quando uma máquina utilizar várias
+instâncias do mesmo tipo do dispositivo.
+
+O estado da animação será mascarado com o valor ``mask`` e deslocada
+para a direita para remover os zeros restantes caso um sub-elemento
+``animate`` tenha um atributo ``mask`` (por exemplo, uma máscara com o
+valor **0x5** não terá deslocamento algum enquanto uma máscara com o
+valor **0xb0** resultará num deslocamento com quatro bits à direita).
+Observe que o atributo ``mask`` aplica o valor da saída (determinado
+através do atributo ``inputtag``). Na presença do atributo ``mask`` o
+seu valor deve ser inteiro, na ausência, é equivalente a todas as
+definições com 32 bits.
+
+.. raw:: latex
+
+	\clearpage
+
+Este exemplo exibe elementos com estado independente para o elemento e
+para a animação obtendo o estado da animação a partir das saídas
+emuladas para controlar a sua posição:
+
+.. code-block:: xml
+
+    <repeat count="5">
+        <param name="x" start="10" increment="9" />
+        <param name="i" start="0" increment="1" />
+        <param name="mask" start="0x01" lshift="1" />
+
+        <element name="cg_sol~i~" ref="cosmo">
+            <animate name="cg_count~i~" />
+            <bounds state="0" x="~x~" y="10" width="6" height="7" />
+            <bounds state="255" x="~x~" y="48.5" width="6" height="7" />
+        </element>
+
+        <element ref="nothing" inputtag="FAKE1" inputmask="~mask~">
+            <animate name="cg_count~i~" />
+            <bounds state="0" x="~x~" y="10" width="6" height="7" />
+            <bounds state="255" x="~x~" y="48.5" width="6" height="7" />
+        </element>
+    </repeat>
+
+Assim como no exemplo anterior porém agora usa o estado da emulação a
+partir da posição emulada da entrada para controlar as suas posições:
+
+.. code-block:: xml
+
+        <repeat count="4">
+            <param name="y" start="1" increment="3" />
+            <param name="n" start="0" increment="1" />
+            <element ref="ledr" name="~n~.7">
+                <animate inputtag="IN.1" mask="0x0f" />
+                <bounds state="0" x="0" y="~y~" width="1" height="1" />
+                <bounds state="11" x="16.5" y="~y~" width="1" height="1" />
+            </element>
+        </repeat>
+
+.. raw:: latex
+
+	\clearpage
+
 
 .. _layout-errors:
 
-O Tratamento de erros
----------------------
+Lidando com erros
+-----------------
 
-* Para os arquivos de layout internos (fornecidos pelo desenvolvedor),
-  os erros são detectados pelo script ``complay.py`` durante uma falha
-  de compilação.
-* O MAME irá parar de carregar um arquivo de layout caso haja um erro
-  de sintaxe e nenhuma exibição de layout estará disponível.
-  Alguns exemplos de erros de sintaxe são referências para elementos ou
-  grupos indefinidos, limites inválidos, cores inválidas, grupos
-  recursivamente emaranhados e a redefinição do gerador de parâmetros.
-* O MAME mostrará uma mensagem de aviso e continuará caso uma exibição
-  faça referência à uma tela inexistente durante o carregamento de um
-  layout.
-  Exibições apontando para telas não existentes, não são exibidas, são
-  consideradas inviáveis e tão pouco estarão disponíveis para o usuário.
+* Para os arquivos internos de layout (fornecidos pelo desenvolvedor),
+  os erros são detectados através script ``complay.py`` durante uma
+  falha de compilação.
+* O MAME irá parar de carregar um arquivo de layout caso encontre um
+  erro de sintaxe, fazendo assim com que nenhuma visualização do
+  layout fique disponível.
+  Alguns exemplos de erros de sintaxe incluem referências para
+  elementos ou grupos indefinidos, limites inválidos, cores inválidas,
+  grupos recursivamente emaranhados e a redefinição do gerador dos
+  parâmetros.
+* O MAME exibirá uma mensagem de aviso e continuará caso uma
+  visualização faça referência à uma tela inexistente durante o
+  carregamento de um layout.
+  Visualizações apontando para telas não existentes não são exibidas,
+  elas são consideradas inviáveis e tão pouco estarão disponíveis para o
+  usuário.
 
 
 .. _layout-autogen:
 
-As Exibições geradas automaticamente
-------------------------------------
+As visualizações que são geradas de forma automática
+----------------------------------------------------
 
-Após o carregamento interno de layouts (fornecido pelo desenvolvedor) e
-do layout externo (fornecido pelo usuário). As seguintes exibições são
-geradas de forma automática:
+Após o carregamento interno dos layouts (fornecido pelo desenvolvedor) e
+do layout externo (fornecido pelo usuário). As seguintes visualizações
+são geradas de forma automática:
 
 * Será exibido a mensagem "*No screens Attached to the system*" ou
   "*Sem telas anexadas ao sistema*" caso o sistema não possua telas e
-  tão pouco sejam encontradas exibições viáveis no sistema interno ou
+  tão pouco sejam encontradas visualizações viáveis no sistema interno ou
   externo de layout.
-* A tela será exibida em sua proporção física e com a rotação aplicada
-  em cada tela emulada.
+* A tela será exibida com a sua proporção física e com a rotação
+  aplicada em cada tela que for emulada.
 * A tela será exibida em uma proporção onde os pixels sejam quadrados e
-  com a rotação aplicada para cada tela emulada onde a proporção de
-  pixel configurada não corresponda a proporção física.
-* Serão exibidos duas cópias da imagem da tela uma em cima da outra com
-  um pequeno espaço entre elas caso o sistema emule apenas uma tela.
+  com a rotação aplicada para cada tela emulada onde a proporção
+  configurada para o pixel não corresponda a proporção física.
+* Serão exibidos duas cópias da imagem da tela uma uma sobreposta a
+  outra com um pequeno espaço entre elas caso o sistema emule apenas uma
+  tela.
   A cópia da parte de cima será rotacionada em 180 graus. Esta visão
-  pode ser usada em uma cabine tipo cocktail, que disponibiliza uma mesa
-  onde os jogadores se sentam frente a frente, ou alternando os jogos
-  que não girem automaticamente a tela para o segundo jogador.
+  pode ser usada em um cabine tipo cocktail, que disponibiliza uma mesa
+  onde os jogadores se sentam frente a frente e cada um com a sua tela,
+  ou alternando os jogos que não girem automaticamente a tela para o
+  segundo jogador.
 * As telas serão organizadas horizontalmente da esquerda para a direita
-  e verticalmente de cima para baixo, ambos com e sem pequenas lacunas
-  entre elas caso o sistema tenha exatamente duas telas emuladas e
-  nenhuma exibição no layout interno ou externo mostrando todas as
-  telas, ou caso o sistema tenha mais de duas telas emuladas.
-* As telas serão exibidas em formato de grade, em ambas as fileiras
+  e verticalmente de cima para baixo, ambos com e sem as pequenas
+  lacunas entre elas caso o sistema tenha exatamente duas telas emuladas
+  e nenhuma exibição no layout interno ou no layout externo exibindo
+  todas as telas, ou caso o sistema tenha mais de duas telas emuladas.
+* As telas serão exibidas em formato de grade em ambas as fileiras
   principais (da esquerda para a direita e de cima para baixo) e o pilar
   principal (de cima para baixo e depois da esquerda para a direita).
-  As exibições são geradas com e sem intervalos entre as telas.
+  As visualizações são geradas com e sem intervalos entre as telas.
 
 .. raw:: latex
 
@@ -1624,3 +1923,10 @@ mostra o exemplo abaixo: ::
 .. [#]	Additive blending
 .. [#]	Toggle switches, também é conhecido como chave alavanca.
 		(Nota do tradutor)
+.. [#INSTANCIA]	Em programação orientada a objetos, chama-se instância
+		de uma classe, um objeto cujo comportamento e estado sejam
+		definidos pela classe. (`Wikipedia
+		<https://pt.wikipedia.org/wiki/Instância_(ciência_da_computação)>`_)
+.. [#XOR]	Exclusive OR ou operador exclusivo, é um operando que sempre
+		retorna 1 quando os bits da sua entrada são diferentes e
+		O (zero) quando forem iguais.
