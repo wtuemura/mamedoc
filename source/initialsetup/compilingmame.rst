@@ -730,8 +730,9 @@ reinicie o **mingw64.exe**.
 	**pacman -S mingw-w64-i686-gcc mingw-w64-i686-python**
 
 * Para lincar usando o LLVM linker (é geralmente mais rápido que a
-  versão do GNU linker), instale o pacote ``mingw-w64-x86_64-lld`` para
-  as versões 64-bit ou o pacote ``mingw-w64-i686-lld`` para as versões
+  versão do GNU linker), instale o pacote ``mingw-w64-x86_64-lld`` e o
+  ``mingw-w64-x86_64-libc++`` para as versões 64-bit ou o pacote
+  ``mingw-w64-i686-lld`` e o ``mingw-w64-i686-libc++`` para as versões
   32-bit. Para mais informações consulte :ref:`compiling-llvm`.
 
 * Para compilar usando as interfaces portáteis do SDL **64-bit** é
