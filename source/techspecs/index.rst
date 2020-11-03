@@ -13,6 +13,7 @@ scripts LUA que são executados na estrutura do MAME.
 	device_memory_interface
 	device_rom_interface
 	device_disasm_interface
+	memory
 	floppy
 	nscsi
 	luaengine
