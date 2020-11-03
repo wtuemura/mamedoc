@@ -368,6 +368,9 @@ Define um método de um outro dispositivo, designado através de um
 localizador (``required_device`` ou ``optional_device``) ou sua tag,
 para ler, escrever ou ambos na entrada atual.
 
+.. raw:: latex
+
+	\clearpage
 
 A função lambda
 '''''''''''''''
