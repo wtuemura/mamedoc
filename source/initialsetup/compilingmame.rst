@@ -613,6 +613,13 @@ reconhecidas pelo makefile.
 Microsoft Windows
 -----------------
 
+O MAME para Windows é compilado usando o ambiente MSYS2. Será necessário
+o Windows 7 ou mais recente e uma instalação atualizada do MSYS2.
+Recomendamos veementemente que o MAME seja compilado em um sistema
+64-bit, talvez seja necessário fazer ajustes para que a compilação
+funcione com sistemas 32-bit.
+
+
 Configurando o pacote MSYS2 já pronto
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -766,6 +773,29 @@ reinicie o **mingw64.exe**.
 * Para fazer a depuração do MAME é necessário instalar o **gdb**. Para
   mais informações sobre o gdb veja :ref:`compiling-using-gdb`.
 
+É possível também utilizar estes comandos para garantir que todos os
+pacotes necessários para compilar o MAME estejam disponíveis no seu
+sistema, omita aqueles cuja configuração você não planeja utilizar para
+compilar ou combine diversos comandos **pacman** para instalar mais de
+um pacote de uma vez: ::
+
+	pacman -Syu
+	pacman -S curl git make
+	pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-libc++ mingw-w64-x86_64-lld mingw-w64-x86_64-python
+	pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-SDL2_ttf
+	pacman -S mingw-w64-x86_64-qt5
+	pacman -S mingw-w64-i686-gcc mingw-w64-i686-libc++ mingw-w64-i686-lld mingw-w64-i686-python
+	pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-SDL2_ttf
+	pacman -S mingw-w64-i686-qt5
+
+Utilize estes comando para instalar a versão mais recente do pacote do
+**mame-essentials** e adicione o pacote ao repositório da configuração
+do seu pacman: ::
+
+	curl -O "https://repo.mamedev.org/x86_64/mame-essentials-1.0.6-1-x86_64.pkg.tar.xz"
+	pacman -U mame-essentials-1.0.6-1-x86_64.pkg.tar.xz
+	echo -e '\n[mame]\nInclude = /etc/pacman.d/mirrorlist.mame' >> /etc/pacman.conf
+
 .. raw:: latex
 
 	\clearpage
@@ -897,6 +927,70 @@ Compilando com o Microsoft Visual Studio
 * Ainda que o Visual Studio seja usado é necessário ter também o
   ambiente MSYS2 para gerar os arquivos do projeto, converter os layouts
   internos, compilar as traduções da interface, etc.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _compiling-msys2-observacoes:
+
+Algumas observações sobre o ambiente MSYS2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O MSYS2 utiliza a ferramenta pacman do gerenciador de pacotes do Arch
+Linux. Existe uma página no wiki do `Arch Linux
+<https://wiki.archlinux.org/index.php/Pacman>`_ com informações
+relevantes e que ensinam como usar a ferramenta pacman.
+
+O ambiente MSYS2 incluí dois tipos de ferramentas: As ferramentas MSYS2
+desenvolvidas para trabalhar em um ambiente semelhante ao UNIX no
+Windows e as ferramentas MinGW que foram desenvolvidas para trabalhar em
+um ambiente Windows. As ferramentas do MSYS2 são instaladas no
+``/usr/bin`` enquanto as ferramentas do MinGW são instaladas no
+``/mingw64/bin`` ou ``/mingw32/bin`` sempre relativo ao diretório de
+instalação do MSYS2. As ferramentas do MSYS2 trabalham melhor em um
+terminal do MSYS2 enquanto as ferramentas do MinGW trabalham melhor com
+o prompt de comando do Windows.
+
+É possível notar sintomas óbvios quando você roda as ferramentas certas
+nos terminais errados quando não há a interatividade dos programas com
+as teclas direcionais por exemplo. Caso rode o MinGW dgb ou python a
+partir da janela do terminal do MSYS2 por exemplo, o histórico dos
+comandos não funcionam e é bem provável que interrompa o funcionamento
+dos programas anexados com o gdb. De forma similar, pode ser bem difícil
+editar os arquivos com o vim do MSYS2 no prompt de comandos do Windows.
+
+O MAME é compilado usando o compiladores do MinGW, logo os diretórios do
+MinGW são inclusos anteriormente no ambiente de compilação através do
+``PATH``. Caso queira utilizar um programa interativo do MSYS2 a partir
+de um shell MSYS2, pode ser que seja necessário informar os caminhos
+completo para evitar a utilização das ferramentas equivalentes do MinGW.
+
+O gdb do MSYS2 podem ter problemas para depurar programas MinGW como o
+MAME. É possível obter melhores resultados ao instalar a versão do gdb
+do MinGW e rodá-lo a partir do prompt de comandos do Windows para
+depurar o MAME.
+
+O GNU make é compatível com shells de ambos os estilos POSIX (como o
+bash por exemplo) e o ``cmd.exe`` da Microsoft. Há um problema a ser
+levado em consideração ao utilizar o ``cmd.exe`` da Microsoft pois
+comando ``copy`` não verbaliza nada muito útil durante a condição da sua
+ação, assim as operação de cópia são geralmente silenciosas. Prefira o
+uso de ferramentas como o
+`robocopy <https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/robocopy>`_
+que garante a integridade do arquivo do destino e gera um relatório
+completo.
+
+Não é possível realizar a compilação cruzada de uma versão 32-bit do
+MAME utilizando ferramentas 64-bit do MinGW no Windows pois causa
+problemas devido ao tamanho do MAME, portanto, as ferramentas 32-bit do
+MinGW devem ser utilizadas. Não é possível lincar uma versão completa do
+MAME 32-bit incluindo as versões SDL e o depurador Qt. Ambos os GNU
+**ld** e o **ldd** ficarão sem memória gerando um arquivo final que não
+funciona. Também não é possível compilar uma versão 32-bit com todos os
+símbolos. O GCC pode ficar sem memória e certos arquivos de código fonte
+podem extrapolar o limite de **32.768** seções impostas pelo formato
+PE/COFF do objeto.
 
 .. raw:: latex
 
