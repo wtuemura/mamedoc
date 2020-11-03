@@ -1033,10 +1033,9 @@ Os seguintes elementos filho são permitidos dentro do elemento ``view``:
 	:ref:`layout-parts-elements`). O nome do elemento que será
 	adicionado é definido através do atributo obrigatório ``ref``.
 	Haverá um erro caso nenhum elemento com este nome seja definido no
-	arquivo de layout. Dentro de uma camada os elementos são desenhados
-	na ordem em que aparecem no arquivo de layout, a partir da frente
-	para trás.
-	Veja abaixo para mais detalhes.
+	arquivo de layout. Dentro de uma visualização os elementos são
+	desenhados na ordem em que aparecem no arquivo de layout, a partir
+	da frente para trás. Veja abaixo para mais detalhes.
 
 	Pode opcionalmente estar conectada em uma porta I/O emulada
 	usando os atributos ``inputtag`` e o ``inputmask`` ou através
