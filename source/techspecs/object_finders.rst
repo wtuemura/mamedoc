@@ -414,6 +414,8 @@ localizador de objetos ``_array`` são adicionado a eles:
 +------------------------+------------------------------+
 | optional_shared_ptr    | optional_shared_ptr_array    |
 +------------------------+------------------------------+
+| memory_share_creator   | memory_share_array_creator   |
++------------------------+------------------------------+
 
 Um caso comum para um localizador da array do objeto é uma matriz da
 chave::
