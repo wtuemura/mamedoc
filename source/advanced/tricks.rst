@@ -91,8 +91,8 @@ Baixe uma cópia deste arquivo no link ao lado https://pastebin.com/9Xp97xcd
 
 Agora sempre que quiser usar essa configuração para os botões, basta
 usar a opção :ref:`-ctrlr <mame-commandline-ctrlrpath>`, exemplo
-``mame64 kof200 -ctrlr neogeo``, você pode também adicionar essa opção
-ao seu **mame.ini** porém note que, essa configuração será aplicada em
+``mame64 kof2003 -ctrlr neogeo``, você pode também adicionar esta opção
+ao seu **mame.ini** porém note que esta configuração será aplicada em
 todas as máquinas!
 
 Para aplicar essa configuração apenas nas máquinas **Neo-Geo**, veja o
@@ -101,8 +101,8 @@ capítulo de :ref:`Configuração individual por sistema
 
 .. _advanced-tricks-botões-combinação:
 
-Combinação dos botões
-~~~~~~~~~~~~~~~~~~~~~
+Combinando os botões
+~~~~~~~~~~~~~~~~~~~~
 
 O personagem Zangief do **Street Fighter II** possui um golpe chamado
 `Double Lariat <https://streetfighter.fandom.com/wiki/Double_Lariat>`_
