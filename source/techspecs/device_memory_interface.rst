@@ -6,20 +6,22 @@
 O dispositivo da interface de memória
 =====================================
 
-1. Das capacidades
-------------------
+.. contents:: :local:
 
-A interface do dispositivo de memória provê aos dispositivos a
-capacidade de criar espaços de endereços mapeados aos quais estes possam
-ser associados. É usado por qualquer dispositivo que forneça um
+Das capacidades
+---------------
+
+A interface do dispositivo da memória fornece aos dispositivos a
+capacidade de criar o mapeamento nos espaços dos endereços onde estes
+possam ser associados. É usado por qualquer dispositivo que forneça um
 endereço/barramento de dados (lógico) para que os outros dispositivos
-possam se conectar à ela. É em essência, mas não apenas, as CPUs.
+possam se conectar nele. É em essência, mas não apenas, às CPUs.
 
-A interface permite um conjunto ilimitado de espaços de endereços,
-numerados com valores positivos pequenos. Os IDs devem permanecer
-pequenos pois eles indexam os vetores visando manter a rápida pesquisa.
-Os espaços com os números entre 0-3 tem uma constante com um nome
-associado à ela:
+A interface permite um conjunto ilimitado nos espaços de endereços,
+numerados apenas com pequenos valores positivos. Os índices dos vetores
+das IDs devem permanecer pequenos visando manter uma pesquisa rápida.
+Os espaços numerados entre 0-3 possui o nome de uma constante associado
+e ele:
 
 +----+---------------+
 | ID | Nome          |
@@ -33,103 +35,128 @@ associado à ela:
 | 3  | AS_OPCODES    |
 +----+---------------+
 
-Os espaços 0 e 3 como "*AS_PROGRAM*" e "*AS_OPCODE*" são especiais para
-o depurador e algumas CPU's por exemplo. AS_PROGRAM é usado pelo
-depurador e CPUs como um espaço de onde a CPU lê as suas instruções para
-o desmontador. Quando presente, AS_OPCODE é usado pelo depurador e
-algumas CPUs para ler parte do 'opcode' da instrução. O opcode significa
-que ele é dependente do dispositivo. Por exemplo, para o z80 é o byte
-inicial que é lido junto com o sinal M1 declarado.
-Para o 68000 significa que cada instrução 'word' mais os acessos
-relativos ao PC. O principal, mas não o único uso do AS_OPCODE, serve
-para implementar a descriptografia de instruções através de um hardware
-de forma separada dos dados.
+Os espaços 0 e 3 como o ``AS_PROGRAM`` e o ``AS_OPCODE`` são especiais
+para o depurador e algumas CPU's por exemplo. o ``AS_PROGRAM`` é usado
+pelo depurador e CPUs como um espaço de onde a CPU lê as suas instruções
+para o desmontador. O ``AS_OPCODE`` quando está presente é utilizado
+pelo depurador e algumas CPUs para ler parte da instrução do 'opcode', 
+isso significa que o 'opcode' é dependente do dispositivo. Para o Z80
+por exemplo, o byte inicial é lido junto com o sinal declarado do M1 enquanto
+que para o 68000 significa cada instrução 'word' mais os acessos
+relativos ao PC. O principal, mas não o único uso do ``AS_OPCODE``,
+serve para implementar a descriptografia de instruções através de um
+hardware de forma separada dos dados.
 
-2. Configuração
----------------
+Configuração
+------------
 
-| std::vector<std::pair<int, const address_space_config \*>>\ **memory_space_config**\ *(int spacenum) const*
+::
+
+	std::vector<std::pair<int, const address_space_config \*>>\ **memory_space_config**\ *(int spacenum) const*
 
 O dispositivo deve sobrescrever esse método fornecendo um vetor de pares
 compreendendo um espaço numerado e seu descritor de configuração
-associado **address_space_config**. Alguns exemplos para pesquisar
+associado ``address_space_config``. Alguns exemplos para pesquisar
 quando precisar:
 
-* Vetor padrão two-space: v60_device
-* Condicional AS_OPCODE: z80_device
-* Configuração herdada e com um espaço adicionado: m6801_device
-* Configuração herdada e com um patch no espaço: tmpz84c011_device
+* Vetor padrão two-space: `v60_device <https://git.redump.net/mame/tree/src/devices/cpu/v60/v60.cpp?h=mame0226>`_
+* Condicional AS_OPCODE: `z80_device <https://git.redump.net/mame/tree/src/devices/cpu/z80/z80.cpp?h=mame0226>`_
+* Configuração herdada e com um espaço adicionado: `hd647180x_device <https://git.redump.net/mame/tree/src/devices/cpu/z180/hd647180x.cpp?h=mame0226>`_
+* Configuração herdada e com um patch no espaço: `tmpz84c011_device <https://git.redump.net/mame/tree/src/devices/cpu/z80/tmpz84c011.cpp?h=mame0226>`_
+
+::
+
+	bool has_configured_map(int index = 0) const;
 
 
-| bool **has_configured_map**\ *() const*
-| bool **has_configured_map**\ *(int index) const*
-
-O método **has_configured_map** permite um teste no método
-**memory_space_config** caso um **address_map** seja associado com o
-espaço dado. Isso permite a implementação opcional de espaços de memória
-como as AS_OPCODES em determinados núcleos de CPUs, em versões de teste
-sem o uso de parâmetros para o espaço zero (0).
-
-3. Associando mapas aos espaços
+Associando os mapas aos espaços
 -------------------------------
 
-A associação de mapas aos espaços é feito a nível de configuração da
-máquina, após a declaração de dispositivo:
+A associação dos mapas aos espaços é feito no nível da configuração da
+máquina após a instanciação do dispositivo::
 
-| **MCFG_DEVICE_ADDRESS_MAP**\ *(_space, _map)*
-| **MCFG_DEVICE_PROGRAM_MAP**\ *(_map)*
-| **MCFG_DEVICE_DATA_MAP**\ *(_map)*
-| **MCFG_DEVICE_IO_MAP**\ *(_map)*
-| **MCFG_DEVICE_OPCODES_MAP**\ *(_map)*
+	void set_addrmap(int spacenum, T &obj, Ret (U::*func)(Params...));
+	void set_addrmap(int spacenum, Ret (T::*func)(Params...));
+	void set_addrmap(int spacenum, address_map_constructor map);
 
-A macro genérica e as quatro associações específicas associadas a um
-mapa para um espaço dado. Endereços mapeados associados com espaços não
-existentes são ignorados sem qualquer aviso. O *devcpu.h* definem os
-apelidos **MCFG_CPU_*_MAP** para macros específicos.
+Estas funções associam um mapa a um determinado espaço. A associação dos
+mapas dos endereços com espaços que não existem são ignorados sem
+qualquer aviso. A primeira forma toma uma referência em um objeto e um
+método para chamar este objeto. A segunda forma assume um método para
+invocar o dispositivo atual que está sendo configurado. A terceira forma
+toma um ``address_map_constructor`` para ser copiado. Em cada caso a
+função deve poder ser invocada como argumento através da referência de
+um objeto ``address_map``.
 
-| **MCFG_DEVICE_REMOVE_ADDRESS_MAP**\ *(_space)*
+Como exemplo aqui está o mapa de configuração do endereço do mapa para a
+CPU principal nas máquinas Hana Yayoi e na Hana Fubiki com todas as
+distrações removidas::
 
-Essa macro remove a memória associada a um mapa em um determinado
-espaço. Útil para remover um mapa de um espaço opcional, quando for
-derivado de uma configuração de máquina.
+	class hnayayoi_state : public driver_device
+	{
+	public:
+		void hnayayoi(machine_config &config);
+		void hnfubuki(machine_config &config);
+	
+	private:
+	required_device<cpu_device> m_maincpu;
+
+	void hnayayoi_map(address_map &map);
+	void hnayayoi_io_map(address_map &map);
+	void hnfubuki_map(address_map &map);
+	};
+	
+	void hnayayoi_state::hnayayoi(machine_config &config)
+	{
+		Z80(config, m_maincpu, 20000000/4);
+		m_maincpu->set_addrmap(AS_PROGRAM, &hnayayoi_state::hnayayoi_map);
+		m_maincpu->set_addrmap(AS_IO, &hnayayoi_state::hnayayoi_io_map);
+	}
+
+	void hnayayoi_state::hnfubuki(machine_config &config)
+	{
+		hnayayoi(config);
+	
+		m_maincpu->set_addrmap(AS_PROGRAM, &hnayayoi_state::hnfubuki_map);
+		m_maincpu->set_addrmap(AS_IO, address_map_constructor());
+	}
 
 
-4. Acessando os espaços
------------------------
+Acessando os espaços
+--------------------
 
-| address_space &\ **space**\ *() const*
-| address_space &\ **space**\ *(int index) const*
+::
 
-Retorna um determinado espaço de endereços depois da inicialização.
-É uma versão de testes sem parâmetros para AS_PROGRAM/AS_0.
-Aborta na inexistência do espaço.
+	address_space &space(int index = 0) const;
 
-| bool **has_space**\ *() const*
-| bool **has_space**\ *(int index) const*
+Retorna um espaço de endereço específico depois da inicialização e o
+endereço informado deve existir.
 
-Indica se um determinado espaço fornecido realmente existe. É uma versão
-de testes sem parâmetros para AS_PROGRAM/AS_0.
+::
 
-.. raw:: latex
+	bool has_space(int index = 0) const;
 
-	\clearpage
+Indica se um determinado espaço fornecido realmente existe.
 
 
-5. Compatibilidade do MMU para o desmontador
---------------------------------------------
+O suporte MMU para o desmontador
+--------------------------------
 
-| bool **translate**\ *(int spacenum, int intention, offs_t &address)*
+::
+
+	bool translate(int spacenum, int intention, offs_t &address);
 
 Faz uma tradução lógica para o endereço físico através do dispositivo
-MMU [1]_. O "*spacenum*" dá o número do espaço, intenção do tipo do
-acesso futuro *(TRANSLATE_(READ\|WRITE\|FETCH)(\|_USER\|_DEBUG))* e o
-endereço é um parâmetro de entrada e saída (in/out) com o endereço para
-traduzir e a sua versão traduzida. Deve retornar **true** caso a tradução
-seja correta e **false** caso o endereço não tenha sido mapeado.
+MMU [1]_. O "*spacenum*" dá o número do espaço, a intenção para o tipo
+do acesso futuro (``TRANSLATE_(READ\|WRITE\|FETCH)(\|_USER\|_DEBUG)``)
+e o endereço é um parâmetro de entrada e saída (in/out) armazenando o
+endereço para tradução na entrada e a versão traduzida no retorno.
+Deve retornar ``true`` caso a tradução seja correta ou ``false`` caso o
+endereço não tenha sido mapeado.
 
-Observe que, por algum motivo histórico, o próprio dispositivo
-deve substituir o método virtual **memory_translate** com a
+Observe que por alguma razão histórica, o próprio dispositivo
+deve substituir o método virtual ``memory_translate`` com a
 mesma assinatura.
 
-.. [1]	Memory management unit ou Unidade de gerenciamento de memória.
+.. [1]	Memory management unit ou Unidade de gerenciamento da memória.
 		(Nota do tradutor)
