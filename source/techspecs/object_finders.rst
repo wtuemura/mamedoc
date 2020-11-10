@@ -211,7 +211,9 @@ passadas ao objeto em construção.
 	\clearpage
 
 A ramificação dos dispositivos são instanciados na função do membro de
-configuração da máquina do dispositivo::
+configuração da máquina do dispositivo:
+
+.. code-block:: C++
 
 	void a2bus_parprn_device::device_add_mconfig(machine_config &config)
 	{
@@ -232,7 +234,9 @@ deve ser o mesmo que o dispositivo que está sendo configurado (o
 ponteiro ``this`` da função do membro de configuração da máquina).
 
 Após a inicialização da máquina emulada os localizadores podem ser
-usados da mesma maneira que os ponteiros::
+usados da mesma maneira que os ponteiros:
+
+.. code-block:: C++
 
 	void a2bus_parprn_device::write_c0nx(u8 offset, u8 data)
 	{
@@ -242,14 +246,13 @@ usados da mesma maneira que os ponteiros::
 		m_printer_conn->write_strobe(BIT(~cfg, 3));
 	}
 	
-	
 	u8 a2bus_parprn_device::read_cnxx(u8 offset)
 	{
 		offset ^= 0x40U;
 		return m_prom[offset];
 	}
 
-Por questão de conveniência, os localizadores que visam o ponteiro de
+Por questão de conveniência, os localizadores que visam o ponteiro
 base das regiões da memória e os compartilhamentos podem ser indexados
 como arrays.
 
@@ -417,8 +420,10 @@ localizador de objetos ``_array`` são adicionado a eles:
 | memory_share_creator   | memory_share_array_creator   |
 +------------------------+------------------------------+
 
-Um caso comum para um localizador da array do objeto é uma matriz da
-chave::
+Um caso comum para um localizador da array do objeto é a chave da
+matriz:
+
+.. code-block:: C++
 
 	class keyboard_base : public device_t, public device_mac_keyboard_interface
 	{
@@ -444,7 +449,7 @@ chave::
 		required_ioport_array<10> m_rows;
 	};
 
-Construir um objeto localizador de array é o mesmo que construir um
+Construir um objeto localizador da array é o mesmo que construir um
 localizador de objetos exceto que em vez de apenas uma tag você fornece
 uma string com o formato da tag e um offset do índice. Neste caso as
 tags das portas de E/S no array serão ``ROW0``, ``ROW1``, ``ROW2``,
@@ -517,3 +522,242 @@ colchetes quando as tags não seguirem uma sequência ascendente simples::
 	private:
 		required_device_array<dm9368_device, 6> m_digits;
 	};
+
+Se os localizadores subjacentes dos objetos exigirem argumentos
+adicionais do construtor, forneça-os após o formato da etiqueta e o
+deslocamento do índice (os mesmos valores serão usados para todos os
+elementos da array)::
+
+	class dreamwld_state : public driver_device
+	{
+	public:
+		dreamwld_state(machine_config const &mconfig, device_type type, char const *tag) :
+			driver_device(mconfig, type, tag),
+			m_vram(*this, "vram_%u", 0U, 0x2000U, ENDIANNESS_BIG)
+		{
+		}
+	
+	private:
+		memory_share_array_creator<u16, 2> m_vram;
+	};
+
+Isso localiza ou cria uma memória compartilhada com as etiquetas
+``vram_0`` e ``vram_1``, cada uma com 8 KiB organizadas com 4,096 words
+big-Endian 16-bit.
+
+
+Localizadores opcionais de objetos
+----------------------------------
+
+Os localizadores opcionais de objetos não exibem um erro caso o objeto
+alvo não seja encontrado. Isto é útil em duas situações: implementações
+``driver_device`` (classes do estado) que representam uma família dos
+sistemas onde alguns componentes não estão presentes em todas as
+configurações e os dispositivos que podem utilizar um recurso de maneira
+opcional. Também são fornecidas funções adicionais dos membros para
+testar se o objeto alvo foi encontrado ou não.
+
+.. raw:: latex
+
+	\clearpage
+
+Componentes opcionais do sistema
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Muitas vezes uma classe é usada para representar uma família relacionada
+de sistemas. Caso um componente não esteja presente em todas as
+configurações, pode ser conveniente usar um localizador opcional para
+obter acesso a ele. Como exemplo, usaremos o dispositivo Sega X-board::
+
+	class segaxbd_state : public device_t
+	{
+	protected:
+		segaxbd_state(machine_config const &mconfig, device_type type, char const *tag, device_t *owner, u32 clock) :
+			device_t(mconfig, type, tag, owner, clock),
+			m_soundcpu(*this, "soundcpu"),
+			m_soundcpu2(*this, "soundcpu2"),
+			m_segaic16vid(*this, "segaic16vid"),
+			m_pc_0(0),
+			m_lastsurv_mux(0),
+			m_adc_ports(*this, "ADC%u", 0),
+			m_mux_ports(*this, "MUX%u", 0)
+		{
+		}
+	
+	optional_device<z80_device> m_soundcpu;
+	optional_device<z80_device> m_soundcpu2;
+	required_device<mb3773_device> m_watchdog;
+	required_device<segaic16_video_device> m_segaic16vid;
+		bool m_adc_reverse[8];
+		u8 m_pc_0;
+		u8 m_lastsurv_mux;
+		optional_ioport_array<8> m_adc_ports;
+		optional_ioport_array<4> m_mux_ports;
+	};
+
+Os membros ``optional_device`` e ``optional_ioport_array`` são
+construídos e declarados de maneira comum. Antes de acessar o objeto
+alvo, chamamos o membro da função ``found()`` para verificar a sua
+presença no sistema (o operador "cast-to-Boolean" pode ser utilizado de
+maneira explícita com a mesma finalidade):
+
+.. code-block:: C++
+
+	void segaxbd_state::pc_0_w(u8 data)
+	{
+		m_pc_0 = data;
+		m_watchdog->write_line_ck(BIT(data, 6));
+		m_segaic16vid->set_display_enable(data & 0x20);
+		if (m_soundcpu.found())
+			m_soundcpu->set_input_line(INPUT_LINE_RESET, (data & 0x01) ? CLEAR_LINE : ASSERT_LINE);
+		if (m_soundcpu2.found())
+			m_soundcpu2->set_input_line(INPUT_LINE_RESET, (data & 0x01) ? CLEAR_LINE : ASSERT_LINE);
+	}
+
+.. raw:: latex
+
+	\clearpage
+
+As portas opcionais de E/S oferecem de maneira conveniente a função do
+membro chamado ``read_safe`` que lê o valor da porta caso esta esteja
+presente ou em vez disso retorna o valor padrão::
+
+	u8 segaxbd_state::analog_r()
+	{
+		int const which = (m_pc_0 >> 2) & 7;
+		u8 value = m_adc_ports[which].read_safe(0x10);
+	
+		if (m_adc_reverse[which])
+			value = 255 - value;
+	
+		return value;
+	}
+	
+	uint8_t segaxbd_state::lastsurv_port_r()
+	{
+		return m_mux_ports[m_lastsurv_mux].read_safe(0xff);
+	}
+
+Na ausência, as portas ADC retornam 0x10 (decimal 16) enquanto na
+ausência das portas digitais multiplexadas retornam 0xff (decimal 255).
+Observe que o ``read_safe`` é um membro do próprio ``optional_ioport``
+e não um membro do objeto alvo ``ioport_port`` (o ``optional_ioport``
+não perde a sua referência durante o uso).
+
+Há algumas desvantagens durante o uso dos localizadores opcionais:
+
+* Não há como distinguir entre o alvo não estar presente ou não ser
+  encontrado por questões de erros nas etiquetas tornando-as mais
+  propensos a erros.
+* Verificando caso o alvo esteja presente para poder utilizar os
+  recursos do prognóstico do núcleo da CPU prejudicando potencialmente
+  seu desempenho caso isso aconteça com muita frequência.
+
+Avalie se os localizadores opcionais são a melhor solução ou se seria
+mais apropriado a criação de uma classe derivada para o sistema com
+componentes adicionais.
+
+.. raw:: latex
+
+	\clearpage
+
+Recursos Opcionais
+~~~~~~~~~~~~~~~~~~
+
+Alguns dispositivos podem utilizar certos recursos de maneira opcional.
+O dispositivo ainda funcionará caso o sistema host não os forneça,
+embora algumas funcionalidades possam não estar disponíveis.
+Por exemplo, o slot do cartucho do **Virtual Boy** responde em três
+espaços de endereço chamados ``EXP``, ``CHIP`` e ``ROM``. O sistema host
+jamais utilizará um ou mais deles, não é necessário fornecer um lugar
+para que o cartucho instale os manipuladores correspondentes.
+(Por exemplo, uma copiadora só pode utilizar apenas o espaço da ROM).
+
+Vejamos como isso é implementado. O dispositivo de slot do cartucho do
+**Virtual Boy** declara os membros ``optional_address_space`` para os
+três espaços dos endereços, os membros do ``offs_t`` para os espaços
+nestes endereços e as funções dos membros em linha para configurá-los::
+
+	class vboy_cart_slot_device :
+			public device_t,
+			public device_image_interface,
+			public device_single_card_slot_interface<device_vboy_cart_interface>
+	{
+	public:
+		vboy_cart_slot_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock = 0U);
+	
+	template <typename T> void set_exp(T &&tag, int no, offs_t base)
+		{
+			m_exp_space.set_tag(std::forward<T>(tag), no);
+			m_exp_base = base;
+		}
+	template <typename T> void set_chip(T &&tag, int no, offs_t base)
+		{
+			m_chip_space.set_tag(std::forward<T>(tag), no);
+			m_chip_base = base;
+		}
+	template <typename T> void set_rom(T &&tag, int no, offs_t base)
+		{
+			m_rom_space.set_tag(std::forward<T>(tag), no);
+			m_rom_base = base;
+		}
+	
+	protected:
+		virtual void device_start() override;
+	
+	private:
+		optional_address_space m_exp_space;
+		optional_address_space m_chip_space;
+		optional_address_space m_rom_space;
+		offs_t m_exp_base;
+		offs_t m_chip_base;
+		offs_t m_rom_base;
+
+	device_vboy_cart_interface *m_cart;
+	};
+	
+	DECLARE_DEVICE_TYPE(VBOY_CART_SLOT, vboy_cart_slot_device)
+
+.. raw:: latex
+
+	\clearpage
+
+Os localizadores de objetos são construídos com valores fictícios
+para as etiquetas e os números do espaço matemático
+(``finder_base::DUMMY_TAG`` e ``-1``):
+
+.. code-block:: C++
+
+	vboy_cart_slot_device::vboy_cart_slot_device(machine_config const &mconfig, char const *tag, device_t *owner, u32 clock) :
+		device_t(mconfig, VBOY_CART_SLOT, tag, owner, clock),
+		device_image_interface(mconfig, *this),
+		device_single_card_slot_interface<device_vboy_cart_interface>(mconfig, *this),
+		m_exp_space(*this, finder_base::DUMMY_TAG, -1, 32),
+		m_chip_space(*this, finder_base::DUMMY_TAG, -1, 32),
+		m_rom_space(*this, finder_base::DUMMY_TAG, -1, 32),
+		m_exp_base(0U),
+		m_chip_base(0U),
+		m_rom_base(0U),
+		m_cart(nullptr)
+	{
+	}
+
+Para ajudar na detecção dos erros de configuração, verificaremos os
+casos onde os espaços dos endereços foram configurados mas não estão
+presentes:
+
+.. code-block:: C++
+
+	void vboy_cart_slot_device::device_start()
+	{
+		if (!m_exp_space && ((m_exp_space.finder_tag() != finder_base::DUMMY_TAG) || (m_exp_space.spacenum() >= 0)))
+			throw emu_fatalerror("%s: Address space %d of device %s not found (EXP)\n", tag(), m_exp_space.spacenum(), m_exp_space.finder_tag());
+	
+		if (!m_chip_space && ((m_chip_space.finder_tag() != finder_base::DUMMY_TAG) || (m_chip_space.spacenum() >= 0)))
+			throw emu_fatalerror("%s: Address space %d of device %s not found (CHIP)\n", tag(), m_chip_space.spacenum(), m_chip_space.finder_tag());
+	
+		if (!m_rom_space && ((m_rom_space.finder_tag() != finder_base::DUMMY_TAG) || (m_rom_space.spacenum() >= 0)))
+			throw emu_fatalerror("%s: Address space %d of device %s not found (ROM)\n", tag(), m_rom_space.spacenum(), m_rom_space.finder_tag());
+	
+		m_cart = get_card_device();
+	}
