@@ -1631,11 +1631,11 @@ As visualizações com interatividade são suportadas através da permissão
 dos itens que serão vinculados nas saídas e nas portas E/S. Há suporte
 para cinco tipos de interatividades:
 
-**Itens Selecionáveis**
+**Itens que podem ser clicados**
 
 	Caso um item em uma visualização esteja vinculado com uma região dos
-	interruptores da porta E/S, ao clicar no item o interruptor emulado
-	será ativado.
+	interruptores da porta E/S, será possível clicar no item para ativar
+	o interruptor ou um botão emulado.
 
 **Componentes que dependam de uma condição**
 
