@@ -5,6 +5,8 @@
 O device_disasm_interface e os desmontadores
 ============================================
 
+.. contents:: :local:
+
 Das capacidades
 ---------------
 
