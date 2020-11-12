@@ -2075,6 +2075,23 @@ aqui.
 
 	\clearpage
 
+Caso nada apareça no **Source Code** em conjunto com uma mensagem de
+erro::
+
+	2509 prot_cmc.cpp File or directry not found.
+
+Ainda dentro do gdb indique o caminho completo para o código fonte do
+MAME com o comando ``directory``::
+
+	directory /home/mame/src/mame
+
+Da próxima vez que ocorrer algum problema o gdb saberá onde pesquisar
+pelos arquivos fonte, use o comando ``list`` para testar.
+
+.. raw:: latex
+
+	\clearpage
+
 .. _compiling-using-asan:
 
 Usando o AddressSanitizer
