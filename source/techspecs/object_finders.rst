@@ -1036,6 +1036,10 @@ Estes membros retornam o *Endianness*, a largura em bits e a largura em
 bytes da parte da memória respectivamente.  Eles não devem ser invocados
 caso o compartilhamento da memória não tenha sido encontrado.
 
+.. raw:: latex
+
+	\clearpage
+
 Os localizadores das saídas
 ---------------------------
 
