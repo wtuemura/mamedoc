@@ -335,7 +335,7 @@ Há suporte para três coisas:
   concluída.
 * Um outro localizador de objetos, o localizador de objetos assumirá o
   seu alvo atual.
-* Para os localizadores de dispositivos, uma referência para uma
+* Para os localizadores dos dispositivos, uma referência para uma
   instância do tipo de dispositivo do destino, definindo o alvo para
   este dispositivo. Observe que não irá funcionar caso o dispositivo
   seja posteriormente substituído na configuração da máquina. Em geral
@@ -633,7 +633,7 @@ presente ou em vez disso retorna o valor padrão::
 		return value;
 	}
 	
-	uint8_t segaxbd_state::lastsurv_port_r()
+	u8 segaxbd_state::lastsurv_port_r()
 	{
 		return m_mux_ports[m_lastsurv_mux].read_safe(0xff);
 	}
@@ -761,3 +761,402 @@ presentes:
 	
 		m_cart = get_card_device();
 	}
+
+.. raw:: latex
+
+	\clearpage
+
+Os tipos dos localizadores de objetos com mais detalhes
+-------------------------------------------------------
+
+Todos os localizadores de objetos oferecem a funcionalidade de
+configuração:
+
+.. code-block:: C++
+
+	char const *finder_tag() const { return m_tag; }
+	std::pair<device_t &, char const *> finder_target();
+	void set_tag(device_t &base, char const *tag);
+	void set_tag(char const *tag);
+	void set_tag(finder_base const &finder);
+
+Os membros das funções ``finder_tag`` e ``finder_target`` oferecem
+acesso ao alvo que está sendo configurado no momento. Observe que a tag
+retornada por ``finder`` é relativa a base do dispositivo e por si
+só não é suficiente para identificar o alvo.
+
+As funções do membro ``set_tag`` fazem a configuração do alvo do
+localizador de objetos. Estes membros não devem ser invocados depois que
+o localizador de objetos seja resolvido. O primeiro formulário configura
+a base do dispositivo e a etiqueta relativa a ele. Já o segundo
+formulário configura a etiqueta relativa como também configura de forma
+implícita a base do dispositivo que atualmente está sendo configurado,
+este formulário só deve ser invocado a partir das funções de
+configuração da máquina. O terceiro formulário configura a base do
+objeto base e a etiqueta relacionada para o alvo atual de um outro
+localizador de objetos.
+
+Observe que a função do membro ``set_tag`` **não** copia a etiqueta
+relacionada ao objeto. É responsabilidade de quem invoca assegurar que
+a string C permaneça válida até que o localizador do objeto seja
+resolvido (ou reconfigurado com uma etiqueta diferente). No momento da
+resolução a base do dispositivo também deve ser válido. Este pode
+não ser o caso se posteriormente o dispositivo puder ser removido ou
+substituído.
+
+Todos os localizadores de objetos oferecem a mesma interface para
+acessar o objeto alvo:
+
+.. code-block:: C++
+
+	ObjectClass *target() const;
+	operator ObjectClass *() const;
+	ObjectClass *operator->() const;
+
+Todos estes membros dão acesso ao objeto-alvo. Caso o alvo não tenha
+sido encontrado, a função do membro ``target`` e o operador
+"cast-to-pointer" retornará ``nullptr``. O operador do membro de acesso
+do ponteiro garante que o alvo tenha sido encontrado.
+
+Os localizadores de objetos opcionais fornecem aos membros de maneira
+adicional os testes para saber se o objeto-alvo tenha foi encontrado:
+
+.. code-block:: C++
+
+	bool found() const;
+	explicit operator bool() const;
+
+Estes membros retornam ``true`` caso o alvo tenha sido encontrado
+assumindo que o ponteiro do alvo não seja nulo no momento da sua
+localização.
+
+Os localizadores dos dispositivos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Os localizadores dos dispositivos exigem um modelo de argumento para a
+classe prevista do dispositivo. Isto deve ser proveniente a partir do
+``device_t`` ou do ``device_interface``. O objeto do dispositivo alvo
+deve ser entre uma instância desta classe ou de uma instância de uma
+classe que se derive dela. Uma mensagem de aviso é registrada caso um
+dispositivo correspondente seja encontrado, porém mas não é uma
+instância da classe prevista.
+
+Os localizadores dos dispositivos oferecem uma sobrecarga ``set_tag``
+adicional:
+
+.. code-block:: C++
+
+	set_tag(DeviceClass &object);
+
+Seria o mesmo que invocar ``set_tag(object, DEVICE_SELF)``. Observe que
+o objeto do dispositivo não deve ser removido ou substituído antes que o
+localizador do objeto seja resolvido.
+
+O sistema de memória dos localizadores de objetos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Os localizadores dos objetos do sistema de memória,
+``required_memory_region``, ``optional_memory_region``,
+``required_memory_bank``, ``optional_memory_bank`` e o
+``memory_bank_creator``, não possuem qualquer funcionalidade especial.
+São frequentemente utilizados no lugar das etiquetas literais durante a
+instalação dos bancos da memória no espaço dos endereços.
+
+Um exemplo do uso do localizador do banco de memória em um endereço no
+mapa:
+
+.. code-block:: C++
+
+	class qvt70_state : public driver_device
+	{
+	public:
+		qvt70_state(machine_config const &mconfig, device_type type, char const *tag) :
+			driver_device(mconfig, type, tag),
+			m_rombank(*this, "rom"),
+			m_rambank(*this, "ram%d", 0U),
+		{ }
+	
+	private:
+		required_memory_bank m_rombank;
+		required_memory_bank_array<2> m_rambank;
+	
+		void mem_map(address_map &map);
+	
+		void rombank_w(u8 data);
+	};
+	
+	void qvt70_state::mem_map(address_map &map)
+	{
+		map(0x0000, 0x7fff).bankr(m_rombank);
+		map(0x8000, 0x8000).w(FUNC(qvt70_state::rombank_w));
+		map(0xa000, 0xbfff).ram();
+		map(0xc000, 0xdfff).bankrw(m_rambank[0]);
+		map(0xe000, 0xffff).bankrw(m_rambank[1]);
+	}
+
+.. raw:: latex
+
+	\clearpage
+
+Um exemplo de um criador do banco da memória para instalação dinâmica:
+
+.. code-block:: C++
+
+	class vegaeo_state : public eolith_state
+	{
+	public:
+		vegaeo_state(machine_config const &mconfig, device_type type, char const *tag) :
+			eolith_state(mconfig, type, tag),
+			m_qs1000_bank(*this, "qs1000_bank")
+		{
+		}
+	
+		void init_vegaeo();
+	
+	private:
+		memory_bank_creator m_qs1000_bank;
+	};
+	
+	void vegaeo_state::init_vegaeo()
+	{
+		// Set up the QS1000 program ROM banking, taking care not to overlap the internal RAM
+		m_qs1000->cpu().space(AS_IO).install_read_bank(0x0100, 0xffff, m_qs1000_bank);
+		m_qs1000_bank->configure_entries(0, 8, memregion("qs1000:cpu")->base() + 0x100, 0x10000);
+	
+		init_speedup();
+	}
+
+O localizador das portas E/S
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Um localizador opcional de portas E/S para fornecer uma função adicional
+e conveniente ao membro:
+
+.. code-block:: C++
+
+	ioport_value read_safe(ioport_value defval);
+
+Isso vai ler o valor da porta caso o valor alvo da porta E/S tenha sido
+encontrado ou então retorne ``defval``. É útil em situações onde certos
+dispositivos de entrada não estejam sempre presentes.
+
+Os localizadores dos espaços nos endereços
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Os localizadores de espaço nos endereços aceitam um argumento adicional
+para o número do espaço do endereço que será localizado. Pode ser que
+uma largura de dados possa ser fornecida de forma opcional ao
+construtor.
+
+.. code-block:: C++
+
+	address_space_finder(device_t &base, char const *tag, int spacenum, u8 width = 0);
+	void set_tag(device_t &base, char const *tag, int spacenum);
+	void set_tag(char const *tag, int spacenum);
+	void set_tag(finder_base const &finder, int spacenum);
+	template <bool R> void set_tag(address_space_finder<R> const &finder);
+
+A base do dispositivo e sua etiqueta devem identificar um dispositivo
+que implemente ``device_memory_interface``.  O número do espaço do
+endereço é um índice baseado em zero para um dos espaços nos endereços
+do dispositivo.
+
+Caso a largura não seja zero ela deve corresponder à largura dos dados
+do espaço do endereço do alvo em bits. Caso o espaço de endereço exista
+no destino mas tenha uma largura de dados diferente, uma mensagem de
+aviso será registrada e será tratada como não tendo sido encontrada.
+No caso da largura ser zero (o valor predefinido do argumento), não
+haverá verificação na largura dos dados no espaço dos endereços do alvo.
+
+As funções dos membros também são fornecidas visando obter o número do
+espaço dos endereços configurados e definir a largura necessária dos
+dados:
+
+.. code-block:: C++
+
+	int spacenum() const;
+	void set_data_width(u8 width);
+
+Os localizadores dos ponteiros da memória
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Todos os localizadores ``required_region_ptr``, ``optional_region_ptr``,
+``required_shared_ptr``, ``optional_shared_ptr`` e
+``memory_share_creator`` do ponteiro da memória precisam de um argumento
+modelo para o tipo do elemento da região da memória. Este normalmente
+deve ser um tipo explicitamente inteiro não assinado (``u8``, ``u16``,
+``u32`` or ``u64``). O tamanho deste tipo é comparado com a largura da
+região da memória. Caso não corresponda, uma mensagem de aviso é
+registrada e a região ou o compartilhamento é tratado como não
+encontrado.
+
+Os localizadores do ponteiro da memória providenciam um operador de
+acesso ao array e aos membros para que tenham acesso ao tamanho da
+região da memória:
+
+.. code-block:: C++
+
+    PointerType &operator[](int index) const;
+    size_t length() const;
+    size_t bytes() const;
+
+O operador de acesso ao array retorna uma referência
+``const \ non-const`` para um elemento da região da memória.  O índice
+está em unidades do tipo elemento; deve ser positivo e menor que o
+comprimento da região da memória.  O membro ``length`` retorna a
+quantidade dos elementos na região da memória.  O membro ``bytes``
+retorna o tamanho da região da memória em bytes. Estes membros não devem
+ser invocados caso a região ou compartilhamento alvo não tenha sido
+encontrada.
+
+O ``memory_share_creator`` necessita de argumentos adicionais do
+construtor para o tamanho e a extremidade [#ENDIAN]_ do compartilhamento
+da memória:
+
+.. code-block:: C++
+
+	memory_share_creator(device_t &base, char const *tag, size_t bytes, endianness_t endianness);
+
+O tamanho é definido em bytes. Caso um compartilhamento da memória seja
+encontrado, será considerado como um erro caso seu tamanho não
+corresponda ao tamanho especificado. No caso da largura ser maior que
+8 bits e seja encontrado um compartilhamento existente na memória, será
+considerado um erro caso o seu *Endianness* não corresponda ao
+*Endianness* definido.
+
+O ``memory_share_creator`` proporciona membros adicionais para acessar
+as propriedades do compartilhamento da memória:
+
+.. code-block:: C++
+
+	endianness_t endianness() const;
+	u8 bitwidth() const;
+	u8 bytewidth() const;
+
+Estes membros retornam o *Endianness*, a largura em bits e a largura em
+bytes da parte da memória respectivamente.  Eles não devem ser invocados
+caso o compartilhamento da memória não tenha sido encontrado.
+
+Os localizadores das saídas
+---------------------------
+
+Os localizadores das saídas são usados para expor as saídas que podem
+ser aproveitadas pelo sistema de arte-final ou por programas externos.
+Uma aplicação comum que utilize um programa externo é um painel de
+controle ou controlador da iluminação do gabinete.
+
+Os localizadores da saída não são realmente localizadores de objetos
+porém eles são descritos aqui porque são usados de maneira similar. Há
+uma série de diferenças importantes a se considerar:
+
+* Os localizadores das saídas sempre criam saídas caso elas não existam.
+* Os localizadores devem ser resolvidos de forma manual, eles não são
+  automaticamente resolvidos.
+* Os localizadores não podem ter o seu alvo alterado depois da
+  construção.
+* Os localizadores são do tipo array e suportam uma quantidade
+  indeterminado de dimensões.
+* Os nomes das saídas são globais, não há influência do dispositivo de
+  base (Isto irá mudar no futuro).
+
+Os localizadores da saída aceitam uma quantidade variável de argumentos
+do modelo correspondente a quantidade das dimensões que você quiser da
+array. Vejamos um exemplo que utiliza os localizadores ``zero-``,
+unidimensionais e bidimensionais:
+
+.. code-block:: C++
+
+	class mmd2_state : public driver_device
+	{
+	public:
+		mmd2_state(machine_config const &mconfig, device_type type, char const *tag) :
+			driver_device(mconfig, type, tag),
+			m_digits(*this, "digit%u", 0U),
+			m_p(*this, "p%u_%u", 0U, 0U),
+			m_led_halt(*this, "led_halt"),
+			m_led_hold(*this, "led_hold")
+		{ }
+	
+	protected:
+		virtual void machine_start() override;
+	
+	private:
+		void round_leds_w(offs_t, u8);
+		void digit_w(u8 data);
+	void status_callback(u8 data);
+	
+		u8 m_digit;
+	
+		output_finder<9> m_digits;
+		output_finder<3, 8> m_p;
+		output_finder<> m_led_halt;
+		output_finder<> m_led_hold;
+	};
+
+Os membros ``m_led_halt`` e ``m_led_hold`` são localizadores com saída
+zero-dimensional. Eles encontram uma única saída cada um. O membro
+``m_digits`` é um localizador unidimensional, ele encontra nove saídas
+organizadas como uma array unidimensional. O membro ``m_p`` é um
+localizador bidimensional, ele encontra 24 saídas organizadas em três
+filas de 8 colunas cada. Uma quantidade maior de dimensões são
+suportadas.
+
+O construtor do localizador obtém uma referência do dispositivo de base,
+um formato string e um deslocamento do índice para cada dimensão.
+Neste caso todos os deslocamentos são zero. O localizador unidimensional
+``m_digits`` encontrará as saídas ``digit0``, ``digit1``, ``digit2``,
+… ``digit8``. O localizador bidimensional ``m_p`` encontrará as saídas
+``p0_0``, ``p0_1``, … ``p0_7`` para a primeira linha, ``p1_0``,
+``p1_1``, … ``p1_7`` para a segunda e ``p2_0``, ``p2_1``, … ``p2_7`` para
+a terceira.
+
+Você deve solicitar o ``resolve`` em cada localizador antes de serem
+utilizados. Isto deve ser feito na inicialização para que os valores da
+saída sejam incluídos nos estados de salvamento:
+
+.. code-block:: C++
+
+	void mmd2_state::machine_start()
+	{
+		m_digits.resolve();
+		m_p.resolve();
+		m_led_halt.resolve();
+		m_led_hold.resolve();
+	
+		save_item(NAME(m_digit));
+	}
+
+Os localizadores da saída proporcionam operadores que permitem que eles
+sejam designados ou fundidos a inteiros assinados com 32 bits. O
+operador da atribuição enviará uma notificação caso o novo valor seja
+diferente do valor da saída atual.
+
+.. code-block:: C++
+
+	operator s32() const;
+	s32 operator=(s32 value);
+
+Para definir os valores da saída, atribua através dos localizadores da
+mesma maneira que seria feito com uma array do mesmo nível:
+
+.. code-block:: C++
+
+	void mmd2_state::round_leds_w(offs_t offset, u8 data)
+	{
+		for (u8 i = 0; i < 8; i++)
+			m_p[offset][i] = BIT(~data, i);
+	}
+	
+	void mmd2_state::digit_w(u8 data)
+	{
+		if (m_digit < 9)
+			m_digits[m_digit] = data;
+	}
+	
+	void mmd2_state::status_callback(u8 data)
+	{
+		m_led_halt = (~data & i8080_cpu_device::STATUS_HLTA) ? 1 : 0;
+		m_led_hold = (data & i8080_cpu_device::STATUS_WO) ? 1 : 0;
+	}
+
+.. [#ENDIAN]	Propriedade daquilo que é ENDIAN,
+		`extremidade (ordenação) <https://pt.wikipedia.org/wiki/Extremidade_(ordenação)>`_
