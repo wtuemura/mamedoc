@@ -160,7 +160,7 @@ e a resolução dos objetos.
 
 	\clearpage
 
-Observe que os localizadores *não* copiam as strings das tags.
+Observe que os localizadores *não* copiam as strings das etiquetas.
 O solicitante deve garantir que a string da tag se mantenha válida até
 o final da validação e/ou até que a resolução seja concluída e que a
 região da memória e da porta de E/S venha a partir da definição e da
@@ -203,8 +203,8 @@ entrada da ROM respectivamente::
 		return INPUT_PORTS_NAME(parprn);
 	}
 
-Observe que as tags ``"prom"`` e o ``"CFG"`` correspondem às tags
-passadas ao objeto em construção.
+Observe que as etiquetas ``"prom"`` e o ``"CFG"`` correspondem às
+etiquetas passadas ao objeto em construção.
 
 .. raw:: latex
 
@@ -225,7 +225,7 @@ configuração da máquina do dispositivo:
 	}
 
 Os localizadores são passados para os tipos dos dispositivos para
-fornecer as tags ao instanciar os dispositivos herdados. Depois de
+fornecer as etiquetas ao instanciar os dispositivos herdados. Depois de
 instanciar um dispositivo ramificado desta forma, o objeto pode ser
 utilizado como um ponteiro para o dispositivo até o final da
 configuração da função do membro de configuração da máquina. Observe que
@@ -361,8 +361,8 @@ o espaço do endereço dos dispositivos e para configurar o
 dispositivo SBus.
 
 Observe que também podemos usar strings literais C para configurar o
-dispositivo SBus ao custo de precisar atualizar as tags em diferentes
-lugares caso elas se alterem::
+dispositivo SBus ao custo de precisar atualizar as etiquetas em
+diferentes lugares caso elas se alterem::
 
 	SBUS(config, m_sbus, 20'000'000);
 	m_sbus->set_cpu("maincpu");
@@ -452,17 +452,17 @@ matriz:
 Construir um objeto localizador da array é o mesmo que construir um
 localizador de objetos exceto que em vez de apenas uma tag você fornece
 uma string com o formato da tag e um offset do índice. Neste caso as
-tags das portas de E/S no array serão ``ROW0``, ``ROW1``, ``ROW2``,
+etiquetas das portas de E/S no array serão ``ROW0``, ``ROW1``, ``ROW2``,
 ``…`` e ``ROW9``. Observe que a matriz do localizador de objetos aloca o
-armazenamento de forma dinâmica para as tags para que as mesmas
+armazenamento de forma dinâmica para as etiquetas para que as mesmas
 permaneçam válidas até a sua destruição.
 
 O localizador é utilizado da mesma forma que um ``std::array`` do tipo
 do localizador de objeto subjacente. Ele suporta a indexação, os
 iteradores e com base nos intervalos de loop ``for``.
 
-Por ter um offset do índice definido as tags, não precisam utilizar os
-índices com base zero. É comum utilizar a indexação com base 1 como
+Por ter um offset do índice definido as etiquetas não precisam utilizar
+os índices com base zero. É comum utilizar a indexação com base 1 como
 mostra o exemplo abaixo::
 
 	class dooyong_state : public driver_device
@@ -479,10 +479,10 @@ mostra o exemplo abaixo::
 		optional_device_array<dooyong_rom_tilemap_device, 2> m_fg;
 	};
 
-Isso faz com que ``m_bg`` encontre os dispositivos com as tags ``bg1`` e
-``bg2`` enquanto ``m_fg`` encontra os dispositivos com as tags ``fg1``
-e ``fg2``. Observe que os índices nos localizadores ainda tem base zero
-como qualquer outra array C.
+Isso faz com que ``m_bg`` encontre os dispositivos com as etiquetas
+``bg1`` e ``bg2`` enquanto ``m_fg`` encontra os dispositivos com as
+etiquetas ``fg1`` e ``fg2``. Observe que os índices nos localizadores
+ainda tem base zero como qualquer outra array C.
 
 Também é possível que haja outras conversões do formato como
 hexadecimais (``%x`` e ``%X``) ou caractere (``%c``)::
@@ -500,15 +500,16 @@ hexadecimais (``%x`` e ``%X``) ou caractere (``%c``)::
 		required_ioport_array<5> m_keys;
 	};
 
-Neste caso as portas da matriz chave usam as tags ``KEYA``, ``KEYB``,
-``KEYC``, ``KEYD`` e ``KEYE``.
+Neste caso as portas da matriz chave usam as etiquetas ``KEYA``,
+``KEYB``, ``KEYC``, ``KEYD`` e ``KEYE``.
 
 .. raw:: latex
 
 	\clearpage
 
-É possível usar uma lista das tags do inicializador fechado-as entre
-colchetes quando as tags não seguirem uma sequência ascendente simples::
+É possível usar uma lista das etiquetas do inicializador fechado-as
+entre colchetes quando as etiquetas não seguirem uma sequência
+ascendente simples::
 
 	class seabattl_state : public driver_device
 	{
