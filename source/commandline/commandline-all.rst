@@ -1783,22 +1783,23 @@ Opções para instantâneos de tela
 
 **-snapview** [<*tipo*>]
 
-	Define a exibição a ser usada ao renderizar instantâneos e vídeos.
+	Define a visualização que será utilizada nos instantâneos e para
+	gravar os vídeos.
 
-	É predefinido que ambos usem uma exibição especial *interna*, que
-	renderize uma captura instantânea separada por tela ou renderize
-	os vídeos somente da primeira tela. Ao usar esta opção, é possível
-	alterar o comportamento predefinido de exibição e selecionar apenas
-	uma exibição que será aplicada a todos os instantâneos e vídeos.
+	É predefinido que ambos utilizem a primeira visualização que estiver
+	disponível ou somente da primeira tela. Ao usar esta opção é
+	possível alterar o comportamento predefinido da exibição e
+	selecionar apenas a visualização que será aplicada em todos os
+	instantâneos e vídeos.
 
 	Observe que o [<*tipo*>] não precisa ser uma combinação perfeita,
-	em vez disso, ele selecionará a primeira exibição cujo nome
-	corresponda a todos os caracteres definidos por [<*tipo*>].
+	em vez disso, o MAME selecionará a primeira exibição cujo nome
+	corresponda com o que for definido através do [<*tipo*>].
 
 	Por exemplo, ``-snapview native`` irá casar a visualização
-	"Nativa em (15:14)" ainda que não seja uma combinação ideal.
+	"Nativa em (15:14)" ainda que o nome não combine perfeitamente.
 	O [<*tipo*>] também pode ser "auto" onde será escolhida a primeira
-	exibição de todas as telas presentes.
+	exibição de todas que existirem.
 
 	O valor predefinido é **internal**. ::
 

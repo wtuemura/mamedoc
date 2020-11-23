@@ -25,10 +25,10 @@ necessário para que tenha sucesso na sua primeira compilação do MAME.
 
 Antes, alguns pontos importantes:
 
-* É necessário um compilador C++14 e suas respectivas bibliotecas, a
+* É necessário um compilador C++17 e suas respectivas bibliotecas, a
   versão mínima aceitável do GCC é a versão 7.2 ou mais recente, para o
   clang é necessário a versão 5 ou mais recente. O executável do MAME
-  rodará com a biblioteca GNU libstdc++ versão 5.1 ou mais recente.
+  rodará com a biblioteca GNU libstdc++ versão 7.2 ou mais recente.
 
 * O Windows é a versão nativa do MAME, então uma grande ênfase será dada
   a compilação neste sistema operacional.
@@ -201,15 +201,15 @@ Antes, alguns pontos importantes:
 
 	git checkout 3rdparty/winpcap/Lib/libpacket.a 3rdparty/winpcap/Lib/libwpcap.a
 
-  Se por algum motivo, nenhum dos comando acima funcionar e ter absoluta
-  certeza de que nada foi alterado, tente o comando
-  ``git clean -d -x -f``, note que o comando vai apagar tudo que não for
-  relacionado com o código fonte do MAME, isso incluí o seu
-  **useroptions.mak** ou qualquer outro arquivo que ali estiver.
-  Portanto, não se esqueça de fazer um **backup** antes de executar o
-  comando!
+  Caso nenhum dos comando acima funcione e depois de ter absoluta
+  certeza de que nada tenha sido alterado, experimente o comando
+  ``git clean -d -x -f``, note que o comando vai apagar tudo o que não
+  seja relacionado com o código fonte do MAME, isso incluí o seu
+  **useroptions.mak** ou qualquer outro arquivo que ali esteja.
+  Portanto, faça um **backup** antes de executar o comando!
 
-  Vamos supor que o arquivo abaixo foi alterado por qualquer motivo: ::
+  Vamos supor que o arquivo abaixo tenha sido alterado por qualquer
+  motivo: ::
 
 	git status
 	On branch master
@@ -954,14 +954,14 @@ o prompt de comando do Windows.
 
 É possível notar sintomas óbvios quando você roda as ferramentas certas
 nos terminais errados quando não há a interatividade dos programas com
-as teclas direcionais por exemplo. Caso rode o MinGW dgb ou python a
+as teclas direcionais por exemplo. Caso rode o MinGW gdb ou python a
 partir da janela do terminal do MSYS2 por exemplo, o histórico dos
 comandos não funcionam e é bem provável que interrompa o funcionamento
 dos programas anexados com o gdb. De forma similar, pode ser bem difícil
 editar os arquivos com o vim do MSYS2 no prompt de comandos do Windows.
 
-O MAME é compilado usando o compiladores do MinGW, logo os diretórios do
-MinGW são inclusos anteriormente no ambiente de compilação através do
+O MAME é compilado usando o compiladores do MinGW, logo, os diretórios
+do MinGW são inclusos anteriormente no ambiente de compilação através do
 ``PATH``. Caso queira utilizar um programa interativo do MSYS2 a partir
 de um shell MSYS2, pode ser que seja necessário informar os caminhos
 completo para evitar a utilização das ferramentas equivalentes do MinGW.
@@ -1807,7 +1807,7 @@ O GNU GCC pode ter sido compilado e instalado em um local diferente caso
 o mantenedor do mesmo utilize a opção ``--prefix=`` junto com o comando
 ``configure``. Isso pode ser útil caso queira compilar o MAME em uma
 distribuição Linux que ainda use a versão do GNU libstdc++ que anteceda
-o C++14. Caso queira compilar o MAME com uma verão alternativa
+o C++17. Caso queira compilar o MAME com uma verão alternativa
 do GNU GCC que esteja instalada em seu sistema, defina o caminho
 completo dos compiladores C (gcc) e C++ (g++), assim como, adicione o
 caminho completo da biblioteca do seu sistema. Supondo que tenha o

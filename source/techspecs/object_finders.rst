@@ -17,8 +17,8 @@ sistema. São usados para definir as conexões entre os dispositivos
 acessando os seus recursos de forma eficiente e também confirmando se
 os mesmos estão disponíveis durante a validação.
 
-Os localizadores procuram um objeto alvo através de uma tag através de
-um dispositivo base. Para alguns tipos são necessários parâmetros
+Os localizadores procuram um objeto alvo através de uma etiqueta através
+de um dispositivo base. Para alguns tipos são necessários parâmetros
 adicionais.
 
 A maioria dos localizadores possuem versões obrigatórias e também
@@ -149,12 +149,12 @@ No construtor, definimos o alvo inicial para os localizadores::
 	{
 	}
 
-Cada localizador recebe um dispositivo base e uma tag com argumentos do
-construtor. O dispositivo base informado na construção atende a dois
-propósitos. O mais óbvio, a tag, que é definida em relação a este
-dispositivo e provavelmente o mais importante, o objeto se registra
-com este dispositivo para que seja chamado para realizar a validação
-e a resolução dos objetos.
+Cada localizador recebe um dispositivo base e uma etiqueta com
+argumentos do construtor. O dispositivo base informado na construção
+atende a dois propósitos. O mais óbvio, a etiqueta, que é definida em
+relação a este dispositivo e provavelmente o mais importante, o objeto
+se registra com este dispositivo para que seja chamado para realizar a
+validação e a resolução dos objetos.
 
 .. raw:: latex
 
@@ -318,17 +318,17 @@ endereços são numerados a partir do zero, logo, haverá um erro caso o
 mesmo seja negativo.
 
 As funções do membro para configurar os localizadores dos objetos tomam
-uma referência universal a um objeto semelhante a uma tag (um tipo
+uma referência universal a um objeto semelhante a uma etiqueta (um tipo
 modelado com o qualificador ``&&``), bem como qualquer outros parâmetros
 necessários para o tipo específico do localizador de objeto. Um
 localizador do espaço de endereço precisa de um número além de um objeto
-semelhante a uma tag.
+semelhante a uma etiqueta.
 
-Então o que é seria um objeto semelhante a uma tag?
+Então o que é seria um objeto semelhante a uma etiqueta?
 
 Há suporte para três coisas:
 
-* Um ponteiro de string C (``char const *``) representando uma tag
+* Um ponteiro de string C (``char const *``) representando uma etiqueta
   relativa ao dispositivo que estiver sendo configurado. Observe que o
   localizador de objetos não copiará a string. O chamado deve garantir
   que continuará válido até a sua resolução e/ou que a validação seja
@@ -450,18 +450,18 @@ matriz:
 	};
 
 Construir um objeto localizador da array é o mesmo que construir um
-localizador de objetos exceto que em vez de apenas uma tag você fornece
-uma string com o formato da tag e um offset do índice. Neste caso as
-etiquetas das portas de E/S no array serão ``ROW0``, ``ROW1``, ``ROW2``,
-``…`` e ``ROW9``. Observe que a matriz do localizador de objetos aloca o
-armazenamento de forma dinâmica para as etiquetas para que as mesmas
-permaneçam válidas até a sua destruição.
+localizador de objetos exceto que em vez de apenas uma etiqueta você
+fornece uma string com o formato da tag e um offset do índice. Neste
+caso as etiquetas das portas de E/S no array serão ``ROW0``, ``ROW1``,
+``ROW2``, ``…`` e ``ROW9``. Observe que a matriz do localizador de
+objetos aloca o armazenamento de forma dinâmica para as etiquetas para
+que as mesmas permaneçam válidas até a sua destruição.
 
 O localizador é utilizado da mesma forma que um ``std::array`` do tipo
 do localizador de objeto subjacente. Ele suporta a indexação, os
 iteradores e com base nos intervalos de loop ``for``.
 
-Por ter um offset do índice definido as etiquetas não precisam utilizar
+Por ter um offset do índice definido, as etiquetas não precisam utilizar
 os índices com base zero. É comum utilizar a indexação com base 1 como
 mostra o exemplo abaixo::
 
@@ -1131,7 +1131,7 @@ saída sejam incluídos nos estados de salvamento:
 	}
 
 Os localizadores da saída proporcionam operadores que permitem que eles
-sejam designados ou fundidos a inteiros assinados com 32 bits. O
+sejam designados ou fundidos aos inteiros assinados com 32 bits. O
 operador da atribuição enviará uma notificação caso o novo valor seja
 diferente do valor da saída atual.
 
