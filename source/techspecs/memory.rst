@@ -90,7 +90,7 @@ Os objetos da memória
 Compartilhamentos - memory_share
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	class memory_share {
 		const std::string &name() const;
@@ -108,7 +108,7 @@ compartilhada entre os espaços, mas também compartilhado entre uma CPU
 emulada e um driver.  Como tal, é fácil ter acesso ao seu conteúdo a
 partir da classe do driver.
 
-.. code-block:: C++
+::
 
 	required_shared_ptr<uNN> m_share_ptr;
 	optional_shared_ptr<uNN> m_share_ptr;
@@ -123,7 +123,7 @@ facilmente recuperada através da construção de um destes quatro
 localizadores. Observe que como cada localizador chamando um
 ``target()`` no localizador dá a você o objeto ``memory_share``.
 
-.. code-block:: C++
+::
 
 	memory_share_creator<uNN> m_share;
 	
@@ -136,7 +136,7 @@ método ``target()`` para obter o objeto ``memory_share`` e os métodos de
 compartilhamento de informação ``bytes()``, ``endianness()``,
 ``bitwidth()`` e o ``bytewidth()``.
 
-.. code-block:: C++
+::
 
 	memory_share \*memshare(string tag) const;
 
@@ -151,7 +151,7 @@ disso prefira os localizadores.
 Bancos - memory_bank
 ~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	class memory_bank {
 	const std::string &tag() const;
@@ -175,7 +175,7 @@ O ``set_entry`` permite selecionar de forma dinâmica e eficientemente
 a entrada ativa atual, o ``entry()`` obtém esta seleção de volta e
 ``base()`` obtém o ponteiro associado a base.
 
-.. code-block:: C++
+::
 
 	required_memory_bank m_bank;
 	optional_memory_bank m_bank;
@@ -189,7 +189,7 @@ No nível do dispositivo, um ponteiro para o objeto do banco da memória
 pode ser facilmente recuperado ao construir um destes quatro
 localizadores.
 
-.. code-block:: C++
+::
 
 	memory_bank_creator m_bank;
 	
@@ -199,7 +199,7 @@ Um compartilhamento da memória pode ser criado caso ele não exista em um
 mapa da memória através dessa classe de criação. Caso já exista basta
 recupera-la.
 
-.. code-block:: C++
+::
 
 	memory_bank \*membank(string tag) const;
 
@@ -214,7 +214,7 @@ disso prefira os localizadores.
 Regiões - memory_region
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	class memory_bank {
 	u8 \*base();
@@ -238,7 +238,7 @@ emulado. Eles na realidade não possuem uma largura intrínseca
 impossível de consertar neste ponto.  Os métodos ``as_*`` permitem
 acessá-los a partir de uma determinada largura.
 
-.. code-block:: C++
+::
 
 	required_memory_region m_region;
 	optional_memory_region m_region;
@@ -267,7 +267,7 @@ disso prefira os localizadores.
 Visualizações - memory_view
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
     class memory_view {
         memory_view(device_t &device, std::string name);
@@ -283,7 +283,7 @@ Uma visualização permite alternar parte de um mapa de memória entre
 diversas possibilidades ou mesmo desabilitá-lo completamente para ver o
 que estava lá antes. Ele é criado como um objeto do dispositivo.
 
-.. code-block:: C++
+::
 
     memory_view m_view;
 
@@ -311,7 +311,7 @@ acessado.
 
 A sintaxe geral para as entradas utiliza um método de encadeamento:
 
-.. code-block:: C++
+::
 
 	map(start, end).handler(...).handler_qualifier(...).range_qualifier();
 
@@ -332,7 +332,7 @@ As configurações globais
 Mascaramento global
 '''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	map.global_mask(offs_t mask);
 
@@ -343,7 +343,7 @@ quando acessar o espaço onde o mapa estiver instalado.
 O valor retornado na leitura não mapeada/nop-ed
 '''''''''''''''''''''''''''''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	map.unmap_value_low();
 	map.unmap_value_high();
@@ -362,7 +362,7 @@ A configuração do manipulador
 O método no dispositivo atual
 '''''''''''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).r(FUNC(my_device::read_method))
 	(...).w(FUNC(my_device::write_method))
@@ -402,7 +402,7 @@ de direção por bit, a resolução pode estar no nível de bits.
 O método em um dispositivo diferente
 ''''''''''''''''''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).r(m_other_device, FUNC(other_device::read_method))
 	(...).r("other-device-tag", FUNC(other_device::read_method))
@@ -422,7 +422,7 @@ para ler, escrever ou ambos na entrada atual.
 A função lambda
 '''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).lr{8,16,32,64}(NAME([...](address_space &space, offs_t offset, uNN mem_mask) -> uNN { ... }))
 	(...).lr{8,16,32,64}([...](address_space &space, offs_t offset, uNN mem_mask) -> uNN { ... }, "name")
@@ -441,7 +441,7 @@ dados do acesso, como o ``NN`` por exemplo.
 O acesso direto à memória
 '''''''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).rom()
 	(...).writeonly()
@@ -462,14 +462,14 @@ Existem dois casos onde não qualificador é aceitável:
   Em seguida, a zona da memória aponta para essa região no offset
   correspondente ao início da zona.
 
-.. code-block:: C++
+::
 
 	(...).rom().region("name", offset)
 
 O qualificador da região permite fazer um ponto somente leitura da zona
 para o conteúdo de uma determinada região em um determinado offset.
 
-.. code-block:: C++
+::
 
 	(...).rom().share("name")
 	(...).writeonly.share("name")
@@ -485,7 +485,7 @@ tiver mais do que um byte de largura.
 O acesso ao banco
 '''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).bankr("name")
 	(...).bankw("name")
@@ -498,7 +498,7 @@ Define a faixa do intervalo para apontar para o conteúdo de um banco que
 O acesso à porta
 ''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).portr("name")
 	(...).portw("name")
@@ -510,7 +510,7 @@ Define a faixa do intervalo para apontar para uma porta de E/S.
 Os acessos descartados
 ''''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).nopr()
 	(...).nopw()
@@ -523,7 +523,7 @@ Durante a leitura, um valor não mapeado é retornado.
 O acesso não mapeado
 ''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).unmapr()
 	(...).unmapw()
@@ -536,7 +536,7 @@ Durante a leitura, um valor não mapeado é retornado.
 O mapeamento do sub-dispositivo
 '''''''''''''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).m(m_other_device, FUNC(other_device::map_method))
 	(...).m("other-device-tag", FUNC(other_device::map_method))
@@ -556,7 +556,7 @@ Os qualificadores de alcance
 O espelhamento
 ''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).mirror(mask)
 
@@ -571,7 +571,7 @@ bits do espelho não são vistos.
 O mascaramento
 ''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).mask(mask)
 
@@ -582,7 +582,7 @@ máscara antes de ser passado para o manipulador.
 A seleção
 '''''''''
 
-.. code-block:: C++
+::
 
 	(...).select(mask)
 
@@ -597,7 +597,7 @@ voz.
 A seleção da subunidade
 '''''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).umask16(16-bits mask)
 	(...).umask32(32-bits mask)
@@ -617,7 +617,7 @@ máscara será replicada nas linhas superiores.
 O manuseio da seleção do CI na subunidade
 '''''''''''''''''''''''''''''''''''''''''
 
-.. code-block:: C++
+::
 
 	(...).cselect(16/32/64)
 
@@ -633,7 +633,7 @@ O parâmetro é a largura do gatilho (seria 16 no caso do 68000).
 Configuração da visualização
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
    map(start, end).view(m_view);
    m_view[0](start1, end1).[...];
@@ -696,7 +696,7 @@ sendo escritos em itálico.
 O mapeamento do manipulador
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	uNN my_device::read_method(address_space &space, offs_t offset, uNN mem_mask)
 	uNN my_device::read_method_m(address_space &space, offs_t offset)
@@ -737,7 +737,7 @@ tipos, para a leitura, para a escrita e para todos os seis protótipos
 possíveis.
 Observe que como todos os delegados, eles também podem envolver lambdas.
 
-.. code-block:: C++
+::
 
 	space.install_read_handler(addrstart, addrend, read_delegate, *unitmask*, *cswidth*)
 	space.install_read_handler(addrstart, addrend, addrmask, addrmirror, addrselect, read_delegate, *unitmask*, *cswidth*)
@@ -755,7 +755,7 @@ tipos dos métodos.
 O mapeamento direto da faixa do intervalo da memória
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	space.install_rom(addrstart, addrend, void \*pointer)
 	space.install_rom(addrstart, addrend, addrmirror, void \*pointer)
@@ -772,7 +772,7 @@ a memória.
 O mapeamento do banco
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	space.install_read_bank(addrstart, addrend, memory_bank \*bank)
 	space.install_read_bank(addrstart, addrend, addrmirror, memory_bank \*bank)
@@ -787,7 +787,7 @@ memória em um espaço de endereçamento.
 O mapeamento da porta
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	space.install_read_port(addrstart, addrend, const char \*rtag)
 	space.install_read_port(addrstart, addrend, addrmirror, const char \*rtag)
@@ -801,7 +801,7 @@ Instala a leitura, a gravação ou ambas as portas através do nome.
 Os acessos abandonados
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	space.nop_read(addrstart, addrend, *addrmirror*)
 	space.nop_write(addrstart, addrend, *addrmirror*)
@@ -813,7 +813,7 @@ espelho opcional.
 Os acessos não mapeados
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	space.unmap_read(addrstart, addrend, *addrmirror*)
 	space.unmap_write(addrstart, addrend, *addrmirror*)
@@ -826,7 +826,7 @@ intervalo com um espelho opcional.
 A instalação do mapa do dispositivo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	space.install_device(addrstart, addrend, device, map, *unitmask*, *cswidth*)
 
@@ -836,7 +836,7 @@ determinado espaço.
 Instalação da visualização
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: C++
+::
 
 	space.install_view(addrstart, addrend, view)
 	space.install_view(addrstart, addrend, addrmirror, view)

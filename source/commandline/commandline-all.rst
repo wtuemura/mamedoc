@@ -1783,7 +1783,7 @@ Opções para instantâneos de tela
 
 **-snapview** [<*tipo*>]
 
-	Define a visualização que será utilizada nos instantâneos e para
+	Define a visualização que será utilizada nos prints da tela e para
 	gravar os vídeos.
 
 	É predefinido que ambos utilizem a primeira visualização que estiver
@@ -1792,9 +1792,11 @@ Opções para instantâneos de tela
 	selecionar apenas a visualização que será aplicada em todos os
 	instantâneos e vídeos.
 
-	Observe que o [<*tipo*>] não precisa ser uma combinação perfeita,
+	Observe que o [<*tipo*>] não precisa ser o nome exato,
 	em vez disso, o MAME selecionará a primeira exibição cujo nome
-	corresponda com o que for definido através do [<*tipo*>].
+	corresponda com o que for definido através do [<*tipo*>], suponto
+	que o nome seja **Cabine Animada** basta usar **Cabine** ou
+	**cabine**.
 
 	Por exemplo, ``-snapview native`` irá casar a visualização
 	"Nativa em (15:14)" ainda que o nome não combine perfeitamente.
@@ -2712,7 +2714,8 @@ Opções de vídeo para uso com janelas individuais
 	exibição cujo nome corresponde a todos os caracteres especificados
 	por [<*nome*>].
 	Por exemplo, ``-view native`` representa uma visualização
-	"Native (15:14)", ainda que não seja uma correspondência perfeita.
+	"Native (15:14)", ainda que não seja o nome exato, suponto que o
+	nome seja **Cabine Animada** basta usar **Cabine** ou **cabine**.
 	O campo [<*nome*>] também funciona com a opção ``auto`` fazendo com
 	que um nome seja automaticamente escolhido.
 

@@ -1,5 +1,5 @@
-CONFIGURAÇÕES E OPÇÕES DE LINHA DE COMANDO
-------------------------------------------
+CONFIGURAÇÕES E OPÇÕES PARA A LINHA DE COMANDO
+----------------------------------------------
 
 .. toctree::
 	:titlesonly:
