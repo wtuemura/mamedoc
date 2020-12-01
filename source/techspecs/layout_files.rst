@@ -2144,6 +2144,10 @@ imagem tem **3296x4093**:
 	</element>
 
 
+.. raw:: latex
+
+	\clearpage
+
 .. _layout-screen-position:
 
 A Posição e a proporção de tela
