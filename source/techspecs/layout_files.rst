@@ -3067,6 +3067,17 @@ tabela abaixo com os valores para algumas máquinas:
      - ``0xb``
      - ``0xa``
      - ``0xf``
+   * - packman
+     - ``0xf``
+     - ``0xe``
+     - 
+     - ``0xb``
+     - 
+     - ``0x7``
+     - 
+     - ``0xd``
+     - 
+     - ``0xf``
    * - psx
      - ``0xf0``
      - ``0xe``
