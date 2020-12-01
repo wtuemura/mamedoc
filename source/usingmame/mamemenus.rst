@@ -64,6 +64,7 @@ ao clicar duas vezes nele, como é o caso dos campos disponíveis em
 
 	\clearpage
 
+.. _mamemenu-config-options:
 
 Opções de configuração
 ----------------------
@@ -909,6 +910,8 @@ Mapeamento de dispositivos
 
 	\clearpage
 
+.. _mamemenu-general-inputs:
+
 Entradas gerais
 ~~~~~~~~~~~~~~~
 
@@ -1282,6 +1285,8 @@ Entradas gerais
   opções predefinidas para o jogador 1 que podem ser alteradas na
   própria interface do MAME.
 
+.. _mamemenu-general-inputs-P1:
+
 Predefinições para o jogador 1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1587,6 +1592,8 @@ Predefinições para o jogador 1
 |  Mouse Y analog inc                  | Down                          |
 +--------------------------------------+-------------------------------+
 
+.. _mamemenu-general-inputs-P2:
+
 Predefinições para o jogador 2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1678,6 +1685,8 @@ Predefinições para o jogador 2
 |  Mouse Y 2 analog inc                | F                             |
 +--------------------------------------+-------------------------------+
 
+.. _mamemenu-general-inputs-P3:
+
 Predefinições para o jogador 3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1766,6 +1775,8 @@ Predefinições para o jogador 3
 +--------------------------------------+-------------------------------+
 |  Mouse Y 3 analog inc                | K                             |
 +--------------------------------------+-------------------------------+
+
+.. _mamemenu-general-inputs-P4:
 
 Predefinições para o jogador 4
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1892,6 +1903,8 @@ customizadas conforme a necessidade.
 .. raw:: latex
 
 	\clearpage
+
+.. _mamemenu-advanced-options:
 
 Opções avançadas
 ~~~~~~~~~~~~~~~~
@@ -2138,6 +2151,8 @@ Opções de Entrada
   Define o tempo de impulso da ficha.
 
 	Valor predefinido é **0**
+
+.. _mamemenu-config-saving:
 
 Salvar Configuração
 ~~~~~~~~~~~~~~~~~~~

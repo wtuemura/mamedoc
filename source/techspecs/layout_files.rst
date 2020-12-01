@@ -105,16 +105,20 @@ suas coordenadas são dimensionadas de acordo com a necessidade para que
 os limites sejam definidos.
 
 Os objetos são posicionados e dimensionados através do elemento
-``bounds`` que define os seus limites ou as suas fronteiras. A posição
-horizontal e o seu tamanho podem ser definidos de três maneiras:
+``bounds`` que define os seus limites e também as suas fronteiras.
+A posição horizontal e o seu tamanho podem ser definidos de três
+maneiras:
 
-* a borda esquerda e a largura usando atributos ``x`` e ``width``.
-* O centro horizontal e a largura usando atributos ``xc`` e ``width``.
+* A borda esquerda e a largura usando atributos ``x`` e ``width``.
+* O eixo horizontal centralizado onde **c** significa que a referência
+  usada será o **centro** do objeto/imagem e a largura usando atributos
+  ``xc`` e ``width``.
 * As bordas esquerda e direita usando atributos ``left`` e ``right``.
 * De maneira semelhante a posição vertical e o seu tamanho podem ser
   definidos através da borda superior e a altura usando atributos
   ``y`` e ``height``.
-* O centro vertical e a altura usando atributos ``yc`` e ``height``
+* O eixo vertical centralizado e a altura usando atributos ``yc`` e
+  ``height``.
 * As bordas superiores e inferiores usando atributos ``top`` e
   ``bottom``.
 
@@ -961,8 +965,8 @@ do seu brilho depende do nível do seu estado na saída:
 .. code-block:: xml
 
 	<element name="led" defstate="0">
-		<rect state="0"><color red="0.43" green="0.35" blue="0.39" /></rect>
-		<rect state="1"><color red="1.0" green="0.18" blue="0.20" /></rect>
+		<disk state="0"><color red="0.43" green="0.35" blue="0.39" /></disk>
+		<disk state="1"><color red="1.0" green="0.18" blue="0.20" /></disk>
 	</element>
 
 Um exemplo de um elemento para um botão que retorna um efeito visual
@@ -1289,13 +1293,13 @@ usuário:
 .. code-block:: xml
 
 	<view name="Telas LED, CRT e Teclado Numérico">
-		<collection name="LED Displays">
+		<collection name="Telas LED">
 			<group ref="displays"><bounds x="240" y="0" width="320" height="47" /></group>
-			</collection>
-		<collection name="Keypad">
+		</collection>
+		<collection name="Teclado numérico">
 			<group ref="keypad"><bounds x="650" y="57" width="148" height="140" /></group>
-			</collection>
-			<screen tag="screen"><bounds x="0" y="57" width="640" height="480" /></screen>
+		</collection>
+		<screen tag="screen"><bounds x="0" y="57" width="640" height="480" /></screen>
 	</view>
 
 Uma coleção cria um escopo de parâmetros agrupados. Qualquer elemento
@@ -1306,6 +1310,8 @@ a visualização predefinida não fazem parte do seu conteúdo, quaisquer
 referências dos parâmetros nos atributos ``name`` e ``visible`` serão
 substituídos usando os valores dos parâmetros a partir da origem do
 escopo relacionado com a coleção.
+
+Para mais informações consulte :ref:`layout-disable-objects`.
 
 .. raw:: latex
 
@@ -1984,14 +1990,1499 @@ O status gera os seguintes valores:
 * **2** caso haja erro no arquivo de entrada.
 * **3** caso seja um erro de E/S.
 
-Ao definir um arquivo na saída este será criado ou substituído caso
-seja concluído com sucesso ou removido no caso de falha.
+Ao definir um arquivo na saída, este será criado ou substituído caso
+seja concluído com sucesso ou será removido caso haja um erro.
 
-Para aferir um arquivo de layout visando identificar a existência de
-algum tipo de erro, execute o script apontando o caminho completo do
-arquivo como mostra o exemplo abaixo: ::
+Para aferir um arquivo de layout execute o script apontando o caminho
+completo do arquivo como mostra o exemplo abaixo: ::
 
 	python scripts/build/complay.py artwork/dino/default.lay
+
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layout-create-layout:
+
+Criando um arquivo de layout na prática
+---------------------------------------
+
+Neste capítulo criaremos um layout do zero para a máquina **Galaxian**
+demonstrando como definir todos os parâmetros para que todos os objetos
+apareçam na tela em seus devidos lugares e com o tamanho correto, no
+final será possível ver a capacidade do MAME de apresentar o design
+completo na tela, com a devida animação dos controles e dos botões e com
+todos os botões clicáveis.
+
+.. _layout-tools:
+
+Ferramentas necessárias
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Para esta tarefa precisamos dos seguintes itens:
+
+* Um editor de texto da sua preferência, recomendo o
+  `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ no Windows ou
+  o `Geany <https://www.geany.org/>`_ para \*nix e macOS.
+* `Gimp <https://www.gimp.org/>`_.
+* A `versão básica <http://www.mediafire.com/file/dzln51abe3jm8rz/basic_galaxian.zip>`_
+  do layout da máquina Galaxian usada neste documento.
+* A versão básica do layout da máquina Galaxian usando o `método inputraw <http://www.mediafire.com/file/muybmtuac60390r/inputraw_galaxian.zip>`_.
+* A `versão avançada <http://www.mediafire.com/file/yz57kkxvjhuzbbw/advanced_galaxian.zip>`_
+  do layout com diferentes versões da máquina Galaxian.
+* O `layout modelo <http://www.mediafire.com/file/cgscfqsh8pb18py/layout_modelo_mame.zip>`_ criado para identificar as posições do controle para 2
+  e 4 jogadores.
+* A arte utilizada aqui foi criada por `Etienne MacGyver
+  <http://vectorlib.free.fr/Galaxian_Namco/>`_.
+* Uma `planilha <http://www.mediafire.com/file/srny2s304461bau/aspect_ratio.zip>`_
+  feita com `LibreOffice <https://pt-br.libreoffice.org>`_ para
+  facilitar o cálculo da relação de aspecto da tela.
+* Os botões foram criados pela minha amiga **u/cd4053b**.
+* A rom da máquina **Galaxian**.
+* O MAME configurado e instalado no seu computador.
+
+A versão básica do **Galaxian** já deve ter um arquivo ``default.lay``
+montado e funcionando, porém vamos descrever como encontramos cada um
+dos valores utilizados nele. Os arquivos vêm com os respectivos nomes
+``basic_galaxian.zip``, ``inputraw_galaxian.zip`` e
+``advanced_galaxian.zip``, para melhor acompanhar o andamento dos
+capítulos faça a descompressão dos arquivos dentro do diretório
+**artwork** onde cada um esteja dentro do seu próprio diretório ou seja
+``basic_galaxian``, ``inputraw_galaxian`` e ``advanced_galaxian``.
+Quando quiser avaliar qualquer um deles basta renomear **um deles** para
+**galaxian**
+
+.. _layout-identify-parts:
+
+Identificando as partes
+~~~~~~~~~~~~~~~~~~~~~~~
+
+No diretório onde o seu MAME está instalado vá até **artwork**, dentro
+dele crie outro diretório chamado **galaxian** extraia o conteúdo do
+arquivo de imagens dentro deste diretório. Abra o seu editor de texto e
+adicione as duas primeiras linhas:
+
+.. code-block:: xml
+
+	<?xml version="1.0"?>
+	<mamelayout version="2">
+
+Salve o arquivo como ``default.lay``.
+
+O próximo passo é definir um nome para a nossa imagem de fundo, estamos
+usando o nome "Italiano" pois é a versão italiana da máquina Galaxian e
+também precisamos anexar junto ao nome a imagem que servirá como o fundo
+da nossa máquina:
+
+.. code-block:: xml
+
+	<element name="Italiano">
+		<image file="arte.png" />
+	</element>
+
+.. raw:: latex
+
+	\clearpage
+
+Todas as imagens em grupos, é importante utilizar nomes bem específicos
+para cada uma elas. O ``defstate`` define a sua condição inicial e o
+``state`` define o seu o estado em cada condição onde ``0`` (zero)
+significa quando o botão não estiver pressionado e ``1`` quando
+estiver, observe que a imagem usada para os direcionais e para o disparo
+pode ser a mesma:
+
+.. code-block:: xml
+
+	<element name="J1" defstate="0">
+		<image file="btn0.png" state="0" />
+		<image file="btn1.png" state="1" />
+	</element>
+
+	<element name="J2" defstate="0">
+		<image file="btn0.png" state="0" />
+		<image file="btn1.png" state="1" />
+	</element>
+
+	<element name="esquerda" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+
+	<element name="direita" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+
+	<element name="disparo" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+
+	<element name="pisca" defstate="0">
+		<image file="pisca1.png" state="1" />
+	</element>
+
+Usamos o exemplo abaixo para definir o nome da visualização que vai
+aparecer na interface do MAME para ser selecionada na opção **Vídeo**
+(TAB --> Opções de Vídeo):
+
+.. code-block:: xml
+
+	<view name="Galaxian Italiano">
+
+Precisamos informar ao MAME o tamanho exato da imagem, para ver estas
+informações clique com o mouse direito do mouse em cima dela e
+selecione **Propriedades** ou abra o arquivo **arte.png** no Gimp e
+selecione Imagem --> Propriedades da imagem para identificar que a
+imagem tem **3296x4093**:
+
+.. code-block:: xml
+
+	<element ref="Italiano">
+		<bounds x="0" y="0" width="3296" height="4093" />
+	</element>
+
+
+.. _layout-screen-position:
+
+A Posição e a proporção de tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para aqueles que nunca trabalharam com gráficos de linhas o **eixo x**
+vai lidar com as coordenadas da posição **horizontal** e o **eixo y**
+da **vertical**.
+
+Para descobrir os valores **x** e **y** abra o arquivo **arte.png** no
+Gimp, na parte de baixo do Gimp próximo ao zoom ficam as coordenadas
+**x,y** como mostra a imagem abaixo. É dali que obtemos os valores e
+eles aparecem conforme movimentamos o mouse:
+
+.. image:: images/gimp-coordenadas.png
+   :width: 50%
+   :align: center
+   :alt: Coordenadas
+
+.. raw:: latex
+
+	\clearpage
+
+O espaço quadriculado ao centro é a área vazia da imagem, dê um zoom na
+imagem na casa dos 300% ou mais posicione o mouse na borda entre o
+quadriculado e a parte preta da imagem do lado **ESQUERDO** para
+encontrar o valor de **x** e em **CIMA** para encontrar o valor de
+**y**, para facilitar foram posicionados duas linhas azuis na imagem
+abaixo indicando a posição que o mouse deve estar para obter as
+coordenadas que são **817** e **575**:
+
+.. image:: images/gimp-coordenadas-linhas.png
+   :width: 80%
+   :align: center
+   :alt: Coordenadas
+
+Uma maneira ainda mais fácil de se obter estes valores é pressionando a
+tecla **U** do seu teclado para selecionar a "varinha" ou a **Ferramenta
+de seleção contígua**, clique dentro da área quadriculada da imagem para
+selecioná-la. Em seguida pressione a tecla **R** ou a **Ferramenta de
+seleção retangular** e clique em qualquer região da área quadriculada,
+no painel à esquerda deve aparecer os mesmos valores para a coordenada
+**x (817)** e **y (575)**:
+
+.. image:: images/gimp-coordenadas-selecao.png
+   :width: 80%
+   :align: center
+   :alt: Seleção
+
+Observe que nem sempre haverá um vazio selecionável na imagem para ser
+mensurado, assim sendo, utilize a técnica que funcionar melhor com o
+desenho ou a arte que estiver utilizando.
+
+Com a posição da tela definida agora é necessário dimensioná-la mantendo
+a sua proporção **4:3** que é o padrão para a maioria dos arcades e
+telas CRT da época. A tela está invertida na horizontal então pegue o
+valor da **largura** como mostra a imagem acima e faça as contas::
+
+	x = 1660 * (4 / 3)
+	x = 1660 * 1,333333333
+	x = 2213
+
+Encontrado o valor a resolução final deve ser **1660x2213**. Assim temos
+todos os valores para definirmos a nossa tela (screen):
+
+.. code-block:: xml
+
+	<screen index="0">
+		<bounds x="817" y="575" width="1660" height="2213" />
+	</screen>
+
+.. raw:: latex
+
+	\clearpage
+
+Utilize a ferramenta disponibilizada em :ref:`layout-tools` para
+facilitar o cálculo destas dimensões. Insira os valores no campo
+**verde**, o primeiro campo verde no topo serve para a fácil
+identificação da relação de aspecto da tela de um valor qualquer. O
+segundo campo em verde serve para situações como demonstrada acima, seja
+fazendo um novo design do espaço onde a imagem emulada deve aparecer ou
+utilizando um design já existente, você insere o valor da altura quando
+a tela for horizontal ou largura quando a tela estiver na vertical para
+que a planilha calcule os valores.
+
+A planilha também faz o cálculo da largura com o valor do **SAR**
+(Storage Aspect Ratio ou Relação de Aspecto da Origem), este valor é
+vulgarmente conhecido como **pixel perfect**. Supondo que você vá fazer
+um layout para um jogo de um determinado console e queira o tal "pixel
+perfect", insira uma das resoluções do console no primeiro campo para
+obter o **SAR** e descobrir o valor da largura com base neste **SAR**
+em vez de utilizar o **DAR** (Display Aspect Ratio ou a Proporção da
+Imagem na Tela).
+
+.. image:: images/aspect ratio.png
+   :width: 80%
+   :align: center
+   :alt: Seleção
+
+A planilha foi criada com a intenção de facilitar os cálculos e para ser
+usada no desenvolvimento dos layouts, ela não serve para nada muito
+técnico ou avançado, porém a planilha está aberta, podendo ser alterada
+para atender qualquer outra necessidade que você venha a ter.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layout-button-posicionando:
+
+Posicionando os botões na tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para posicionar qualquer outra imagem na tela como botões, controles ou
+o que quer que seja, será preciso estar com a arte que será usada no
+MAME já aberta no Gimp, pegue a imagem de um botão por exemplo e
+arraste para a tela do Gimp, ele deverá aparecer como uma camada,
+posicione-o na região desejada e se for o caso redimensione-o usando a
+ferramenta de redimensionamento **Shift+S**, para o botão escolhi o
+tamanho de **190 px**. Quando concluir selecione a camada do botão com o
+botão direito do mouse e escolha **Alfa para a seleção**, em seguida
+pressione **R** ou escolha **Ferramenta de seleção retangular** e clique
+na imagem do botão, na barra à esquerda já deve aparecer as informações
+do tamanho e a posição na tela que seria **x 1105** e **y 3314** com o
+tamanho de **190x190**.
+
+.. image:: images/gimp-coordenadas-selecao2.png
+   :width: 80%
+   :align: center
+   :alt: Seleção
+
+Com todos os botões posicionados e com os valores em mãos, temos então a
+seguinte configuração para o botão ``esquerda``, ``direita`` e
+``disparo``:
+
+.. code-block:: xml
+
+	<element ref="esquerda">
+		<bounds x="867" y="3313" width="190" height="190" />
+	</element>
+	<element ref="direita">
+		<bounds x="1105" y="3313" width="190" height="190" />
+	</element>
+	<element ref="disparo">
+		<bounds x="1819" y="3313" width="190" height="190" />
+	</element>
+
+Outra maneira de se posicionar os botões na tela é utilizar os valores
+centralizados, no modo descrito anteriormente a referência utilizada
+como coordenadas é o limite da imagem do lado **esquerdo** ou **x** e o
+limite do **topo** da imagem ou **y**. Os valores centralizados utilizam
+exatamente a posição do ponteiro do mouse na tela e por isso tais
+coordenadas são definidas como **xc** e **yc** como mostra a figura
+abaixo:
+
+.. image:: images/gimp-coordenadas-controle.png
+   :width: 80%
+   :align: center
+   :alt: Centralizado
+
+Posicione o ponteiro do mouse bem em cima onde as linhas se cruzam para
+ver as coordenadas na parte de baixo da tela do Gimp, fica mais fácil
+fazer um zoom com 300% ou mais, assim os valores podem ser encontrados
+de forma mais precisa, para isso, posicione o ponteiro no ponto
+desejado, mantenha pressionado **CTRL** e movimente a roda do mouse para
+cima para aplicar o zoom na região do ponteiro do mouse:
+
+.. code-block:: xml
+
+	<element ref="esquerda">
+		<bounds xc="962" yc="3407" width="190" height="190" />
+	</element>
+	<element ref="direita">
+		<bounds xc="1201" yc="3407" width="190" height="190" />
+	</element>
+	<element ref="disparo">
+		<bounds xc="1913" yc="3407" width="190" height="190" />
+	</element>
+
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layout-button-logica:
+
+Conectando os botões e ativando as suas funções lógicas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A referência "ref" ``esquerda``, ``direita`` e ``disparo`` são os nomes
+dos conjuntos das imagens definidos lá no começo, durante o inicio da
+emulação o MAME identifica o ``defstate`` (condição/estado
+inicial) inicial, como o seu valor é **0** (zero), a primeira imagem que
+aparece será aquela que estiver definida como ``state=0``. Quando
+acionarmos o botão e a sua condição mudar para ``state=1`` o MAME
+carregará a imagem definida como ``state=1``, a mecânica para todo este
+processo é bem simples:
+
+.. code-block:: xml
+
+	<element name="disparo" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+
+Para conectar os botões e para dar as suas funções lógicas é necessário
+encontrar os valores para ``inputtag`` e ``inputmask`` onde ``inputtag``
+é o nome da porta usada pela máquina para os controles e botões do
+jogador 1, 2, etc. Já ``inputmask`` é o valor usado pela máquina para
+definir os valores hexadecimais dos comandos, botões, etc.
+
+Para encontrar estes valores, inicie a máquina Galaxian::
+
+	mame64 galaxian
+
+Pressione **TAB** e vá em **Entrada (esta máquina)**.
+Selecione **P1 Left**, no teclado clique na tecla **Delete** para apagar
+o seu valor e usando o seu controle, joystick ou teclado, clique no
+direcional para o lado esquerdo, faça o mesmo para **P1 Right** e
+**P1 Button 1**, quando terminar pressione **TAB** seguido de **ESQ**
+para encerrar a emulação.
+
+Será criado dentro do diretório **cfg** um arquivo chamado
+**galaxian.cfg**, abra-o em um editor de texto e veja que para cada
+configuração feita para os controles e para o botão há um valor
+específico para eles, aqui um exemplo usando um controle de
+Playstation 2::
+
+    <input>
+        <port tag=":IN0" type="P1_JOYSTICK_LEFT" mask="4" defvalue="0">
+            <newseq type="standard">
+                JOYCODE_1_XAXIS_LEFT_SWITCH
+            </newseq>
+        </port>
+        <port tag=":IN0" type="P1_JOYSTICK_RIGHT" mask="8" defvalue="0">
+            <newseq type="standard">
+                JOYCODE_1_XAXIS_RIGHT_SWITCH
+            </newseq>
+        </port>
+        <port tag=":IN0" type="P1_BUTTON1" mask="16" defvalue="0">
+            <newseq type="standard">
+                JOYCODE_1_BUTTON3
+            </newseq>
+        </port>
+    </input>
+
+.. raw:: latex
+
+	\clearpage
+
+Para o botão de disparo **P1_BUTTON1** por exemplo, temos o valor da
+porta ``tag=":IN0"`` que usaremos em ``inputtag`` e o valor
+``mask="16"`` que usaremos em ``inputmask``, assim a nossa configuração
+fica assim:
+
+.. code-block:: xml
+
+	<element ref="esquerda" inputtag="IN0" inputmask="4">
+		<bounds x="867" y="3313" width="190" height="190" />
+	</element>
+	<element ref="direita" inputtag="IN0" inputmask="8">
+		<bounds x="1105" y="3313" width="190" height="190" />
+	</element>
+	<element ref="disparo" inputtag="IN0" inputmask="16">
+		<bounds x="1819" y="3313" width="190" height="190" />
+	</element>
+
+Na primeira definimos  que vamos associar a imagem **esquerda** na
+entrada ``IN0`` e que seu código (máscara) para este botão é **4** e
+assim sucessivamente, com isso nós conectamos e damos funções para as
+imagens na parte lógica da máquina fazendo com que o MAME passe a
+interpretá-las de forma animada na tela quando o botão for pressionado
+no seu joystick ou seja acionado na tela quando for clicado pelo mouse.
+
+Observe que não é preciso copiar os dois pontos **iniciais** existentes
+em ``tag=":IN0"``, copie apenas o seu valor ``IN0``. Cada máquina possuí
+a sua configuração específica, no caso das máquinas Neo Geo por exemplo
+a **tag** aparece como ``tag=":edge:joy:JOY1"``, apenas ignore os dois
+pontos iniciais e copie **todo** o resto, ou seja, a nossa ``inputtag``
+para as máquinas Neo Geo ficaria ``inputtag="edge:joy:JOY1"``.
+
+.. _layout-button-alerta-retorno:
+
+Alertas e retornos externos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A máquina Galaxian possui uma porta que sinaliza através de um sinal
+luminoso quando 1 crédito é inserido, o sinal da lâmpada passa a piscar
+indicando que o jogador deve clicar nele para iniciar a partida para o
+jogador 1 e o mesmo ocorre quando dois créditos são inseridos indicando
+o inicio da partida para o jogador 1 ou para o jogador 2. A versão da
+máquina Galaxian Italiana não possui tais luzes porém vamos adicioná-las
+mesmo assim para fins didáticos.
+
+Usando o Gimp, posicione os botões para o jogador 1 e para o jogador 2,
+escolhemos o tamanho de **200x200 px** e então chegamos na seguinte
+configuração:
+
+.. code-block:: xml
+
+	<element ref="J1" inputtag="IN1" inputmask="1">
+		<bounds xc="2670" yc="3408" width="200" height="200" />
+	</element>
+	<element ref="J2" inputtag="IN1" inputmask="2">
+		<bounds xc="2790" yc="3753" width="200" height="200" />
+	</element>
+
+Execute o MAME no terminal ou prompt de comando com a opção abaixo::
+
+	mame64 -output console galaxian
+
+Insira 2 créditos na máquina, repare no terminal que é possível ver os
+valores ``lamp0`` e ``lamp1`` se alternando entre ``0`` (desligado) e
+``1`` (ligado), são estes sinais que usaremos para fazer piscar uma
+imagem na tela simulando uma lâmpada e indicando os créditos para os
+respectivos jogadores.
+
+É possível montar este layout de duas maneiras, posicionando a nossa
+lâmpada uma a uma ou utilizando ``cont`` em conjunto com os
+:ref:`layout-concepts-params`. Imagine o seguinte cenário, você está
+montando um layout onde precisa colocar lamp0 até lamp100 na tela, é
+possível fazer isso de forma manual ou usar parâmetros para facilitar
+escrevendo poucas linhas e deixando que o MAME lide com o resto.
+
+Dada a simplicidade da máquina Galaxian não é preciso usar qualquer
+parâmetro porém usaremos mesmo assim para que fique fácil a compreensão
+de como isso funciona.
+
+.. raw:: latex
+
+	\clearpage
+
+São duas lâmpadas ``lamp0`` e ``lamp1`` então contamos até 2:
+
+.. code-block:: xml
+
+	<repeat count="2">
+
+No parâmetro nós definimos que a variável ``i`` inicie uma contagem, que
+comece a partir do 0 (zero) e termine em 1.
+
+.. code-block:: xml
+
+	<param name="i" start="0" increment="1" />
+
+A nossa "lâmpada" será um anel azul que vai aparecer e sumir na tela
+simulando um pisca-pisca. Definimos os parâmetros para a posição deste
+primeiro anel azul (pisca) no eixo x (horizontal), **x** é o nome da
+nossa variável e esta pode ter qualquer nome, escolhemos **x** para
+facilitar a identificação do eixo horizontal, ``start`` define a posição
+inicial do anel que fica bem em cima da posição do botão **J1**
+(Jogador 1) como descrito na configuração alguns parágrafos atrás, não
+precisamos fazer nenhum deslocamento no eixo x, portanto o valor de
+``increment`` é zero.
+
+.. code-block:: xml
+
+	<param name="x" start="2790" increment="0" />
+
+Fazemos o mesmo para o eixo y (vertical), para que o segundo anel azul
+possa ficar alinhado exatamente onde queremos realizado o cálculo
+abaixo.
+O cálculo serve para descobrir quantos pixels a mais eu preciso para
+deslocar o anel azul da primeira coordenada no eixo y a partir da
+posição do **J1** (3408) até a segunda coordenada vertical do eixo y
+(3753) do **J2**. A conta foi organizada para que o minuendo tenha o
+maior valor que o subtraendo para que se obtenha um número inteiro
+positivo::
+
+	increment = J2 y - J1 y
+	increment = 3753 - 3408
+	increment = 345 
+
+Definimos uma variável **y** para facilitar a identificação do eixo y
+(vertical), nós começamos na coordenada **3408** e para que o anel azul
+fique em cima do botão **J2** precisamos deslocá-lo **345** pixels.
+
+.. code-block:: xml
+
+	<param name="y" start="3408" increment="345" />
+
+Aqui é onde toda a mágica acontece, usaremos as variáveis que definimos
+para que elas sejam substituídas automaticamente pelos seus respectivos
+valores, aqui o valor da variável ``~i~`` será automaticamente
+substituído por **0** e **1**, então ``lamp~i~`` se transforma em
+``lamp0`` e ``lamp1`` respectivamente, repare que utilizamos apenas 1
+linha para isso, se fosse o caso para 100 lamps seria a mesma coisa:
+
+.. code-block:: xml
+
+	<element name="lamp~i~" ref="pisca">
+
+Para ficar fácil a compreensão do resultado, a linha acima se traduziria
+desta forma para o MAME:
+
+.. code-block:: xml
+
+	<element name="lamp0" ref="pisca">
+	<element name="lamp1" ref="pisca">
+
+**Pisca** está definido com os parâmetros:
+
+.. code-block:: xml
+
+	<element name="pisca" defstate="0">
+		<image file="pisca1.png" state="1" />
+	</element>
+
+O valor de 'lamp0' sempre retorna 0 (zero) quando estiver desligado e 1
+(um) quando estiver ligado, o mesmo acontece com 'lamp1', como não é
+preciso definir nada para quando ``lamp0`` e ``lamp1`` estiverem
+desligados basta definir apenas a condição de ligado, portanto
+``defstate="0"`` estabelece a sua condição inicial é 0 ou não faça nada,
+o anel azul só vai aparecer caso a sua condição mude para 1 através do
+``state="1"``.
+
+.. raw:: latex
+
+	\clearpage
+
+As variáveis ``~x~`` e ``~y~`` são substituídas pelos seus respectivos
+valores que foram definidos anteriormente fazendo com que a imagem do
+anel azul seja posicionada corretamente no eixo x (horizontal) e no
+eixo y (vertical), assim como definimos que o seu tamanho será pouca
+coisa maior que o desenho do botão para que ele cubra um pouco a mais
+dos limites do botão, assim o valor seria de **250 pixels** de largura
+e **250 pixels** de altura.
+
+.. code-block:: xml
+
+	<bounds xc="~x~" yc="~y~" width="250" height="250" />
+	</element>
+
+O atributo abaixo encerra as definições para ``repeat``
+
+.. code-block:: xml
+
+	</repeat>
+
+Finalizamos o nosso layout com os dois últimos itens:
+
+.. code-block:: xml
+
+	</view>
+	</mamelayout>
+
+.. raw:: latex
+
+	\clearpage
+
+Este é o nosso arquivo completo:
+
+.. code-block:: xml
+
+	<?xml version="1.0"?>
+	<!-- Layout file created by: Wellington Terumi Uemura
+		Artwork design by: Etienne MacGyver
+		Round Buttons design by: u/cd4053
+		License: CC by 4.0
+		https://mamedoc.readthedocs.io/pt/latest/techspecs/layout_files.html
+	 -->
+	<mamelayout version="2">
+	<element name="Italiano">
+		<image file="arte.png" />
+	</element>
+	<element name="J1" defstate="0">
+		<image file="btn0.png" state="0" />
+		<image file="btn1.png" state="1" />
+	</element>
+	<element name="J2" defstate="0">
+		<image file="btn0.png" state="0" />
+		<image file="btn1.png" state="1" />
+	</element>
+	<element name="disparo" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+	<element name="esquerdo" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+	<element name="direito" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+	<element name="pisca" defstate="0">
+		<image file="pisca1.png" state="1" />
+	</element>
+	<view name="Galaxian Italiano">
+	<element ref="Italiano">
+		<bounds x="0" y="0" width="3296" height="4093" />
+	</element>
+	<screen index="0">
+		<bounds x="817" y="575" width="1660" height="2213" />
+	</screen>
+	<element ref="J1" inputtag="IN1" inputmask="1">
+		<bounds xc="2790" yc="3408" width="200" height="200" />
+	</element>
+	<element ref="J2" inputtag="IN1" inputmask="2">
+		<bounds xc="2790" yc="3753" width="200" height="200" />
+	</element>
+	<element ref="esquerdo" inputtag="IN0" inputmask="4">
+		<bounds xc="962" yc="3407" width="190" height="190" />
+	</element>
+	<element ref="direito" inputtag="IN0" inputmask="8">
+		<bounds xc="1201" yc="3407" width="190" height="190" />
+	</element>
+	<element ref="disparo" inputtag="IN0" inputmask="16">
+		<bounds xc="1913" yc="3407" width="190" height="190" />
+	</element>
+	<repeat count="2">
+		<param name="i" start="0" increment="1" />
+		<param name="x" start="2790" increment="0" />
+		<param name="y" start="3408" increment="345" />
+		<element name="lamp~i~" ref="pisca">
+		<bounds xc="~x~" yc="~y~" width="250" height="250" />
+	</element>
+	</repeat>
+	</view>
+	</mamelayout>
+
+.. _layout-funcionar-efeitos:
+
+Colocando para funcionar e adicionando efeitos na tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para ver a nossa criação funcionar, dentro do diretório do MAME existe
+o diretório **artwork**, dentro deste diretório crie um novo chamado
+**galaxian**, dentro deste diretório coloque o arquivo acima com o nome
+``default.lay`` e todos os arquivos **\*.png**. Rode o mame com o
+comando::
+
+	mame64 -window galaxian
+
+A tela deve aparecer com a arte e todos os botões em seus respectivos
+lugares, experimente clicar nos botões com o mouse e verá que eles
+reagem ao seu clique, ao adicionar 2 créditos o nosso anel azul deve
+aparecer simulando o piscar de uma luz.
+
+.. image:: images/galaxian.png
+   :width: 80%
+   :align: center
+   :alt: "Tela do Galaxian"
+
+O MAME aceita trabalhar com o diretório como está ou então comprimindo-o
+em formato .zip ou .7zip. Ao usar a arte como um diretório permite que
+você altere alguma coisa enquanto realiza testes, caso altere o arquivo
+ou alguma imagem, é possível recarregar todos eles sem precisar encerrar
+o MAME pressionando **SHIFT+F3**.
+
+.. raw:: latex
+
+	\clearpage
+
+Caso queira aplicar shaders na tela para dar um efeito de uma tela CRT
+como mostra a foto, baixe
+`este arquivo <https://drive.google.com/file/d/0B10tgIdlTMwYSWt2emJtbU81NGc/view?usp=sharing>`_,
+descompacte o seu conteúdo dentro de um diretório chamado **glsl**, vá
+até o diretório **ini** e crie o arquivo **galaxian.ini** e dentro dele
+adicione estas opções::
+
+	video                     opengl
+	gl_glsl                   1
+	gl_glsl_filter            1
+
+	# No Windows use
+	glsl_shader_mame0 glsl\osd\CRT-geom
+
+	# No Linux use
+	glsl_shader_mame0 glsl/osd/CRT-geom
+
+Ao rodar o galaxian novamente a tela terá uma aparência de um CRT, caso
+queira manter a aparência porém eliminando um pouco a curvatura da tela,
+edite o arquivo **CRT-geom.vsh** e use estas configurações::
+
+	// START of parameters
+	
+	// gamma of simulated CRT
+	CRTgamma = 2.2;
+	// gamma of display monitor (typically 2.2 is correct)
+	monitorgamma = 2.2;
+	// overscan (e.g. 1.02 for 2% overscan)
+	overscan = vec2(1.01,1.01);
+	// aspect ratio
+	aspect = vec2(1.0, 0.75);
+	// lengths are measured in units of (approximately) the width of the monitor
+	// simulated distance from viewer to monitor
+	d = 2.0;
+	// radius of curvature
+	R = 10.0;
+	// tilt angle in radians
+	// (behavior might be a bit wrong if both components are nonzero)
+	const vec2 angle = vec2(0.01,0.01);
+	// size of curved corners
+	cornersize = 0.03;
+	// border smoothness parameter
+	// decrease if borders are too aliased
+	cornersmooth = 1000.0;
+	
+	// END of parameters
+
+Caso queira aplicar essas configurações para **TODAS** as máquinas
+classificadas como **Arcade**, então renomeie o arquivo **galaxian.ini**
+para **arcade.ini**, assim a máquina **Galaxian** e muitas outras terão
+este efeito na tela.
+
+Altere o valor do ``overscan`` de ``vec2(1.01,1.01)`` para
+``vec2(1.00,1.00)`` para que a tela apareça completa na tela.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layout-advanced-settings:
+
+Adicionando diagonais nos controles com 8 direções com inputraw
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Algumas máquinas possuem controles simples como a própria **Galaxian**
+tem apenas 2 direções, **esquerda** e **direita**, outras como
+**Pacman** possuem 4 direções, **cima**, **baixo**, **esquerda**,
+**direita**. Nestes casos a criação de um layout animado para o controle
+por exemplo é bem simples, basta adicionar uma imagem para cada posição
+associando-a com os seus respectivos ``inputtag`` e ``inputmask`` para
+que seja possível ver a sua animação na tela quando cada uma das
+posições forem acionadas, no entanto a coisa muda um pouco quando se
+trata de uma máquina com um joystick com 8 direções (ou mais).
+
+Nestes casos, quando qualquer uma das diagonais é acionada o MAME
+sobrepõem outras imagens uma em cima da outra, caso a diagonal superior
+direita seja acionada no controle, o MAME irá exibir a imagem para a
+diagonal superior direita em cima da imagem **cima** e em cima da
+imagem **direita** ou seja, em vez de aparecer apenas uma imagem para a
+diagonal escolhida irão aparecer outras duas. Na internet diferentes
+pessoas encontraram diferentes soluções para o problema, algumas
+criaram imagens na diagonal com um tamanho suficiente para cobrir as
+duas outras imagens dentre diversas outras soluções.
+
+Outra maneira de lidar com o problema é utilizar o ``inputraw``, com
+esta opção o MAME faz a leitura dos dados diretamente da entrada do
+controle, vamos aproveitar o layout que acabamos de criar para a máquina
+**Galaxian** e ver como isso ficaria modificando a lógica para os
+controles e adicionando 3 imagens para simular um joystick:
+
+.. code-block:: xml
+
+	<element name="controle"		defstate="0xc">
+		<image file="esquerda.png"	state="0x1" />
+		<image file="direita.png"	state="0x2" />
+		<image file="centro.png"	state="0x0" />
+	</element>
+
+Assim como foi feito anteriormente, usamos o Gimp para posicionar o
+joystick na região que queremos que ele apareça, com as coordenadas em
+mãos nós montamos toda a lógica dele:
+
+.. code-block:: xml
+
+	<element ref="controle" inputtag="IN0" inputmask="0xc" inputraw="yes">
+		<bounds x="1010" y="3260" width="250" height="250" />
+	</element>
+
+Agora em vez de 2 botões vermelhos nós temos um joystick preto na
+posição que escolhemos e se move conforme nós mexemos nos controles.
+Fica claro que a quantidade de linhas necessárias para que esta animação
+aconteça se reduz deixando o layout mais enxuto e simplificado.
+
+Note que ao clicar com o mouse em cima do controle ele faz um movimento
+indesejado, para evitar essa anomalia adicionamos uma camada de "nada"
+com o mesmo tamanho da imagem do controle e exatamente na mesma posição:
+
+.. code-block:: xml
+
+	<element name="nada" defstate="0">
+		<text string=" " />
+	</element>
+
+E aplicamos isso **antes** do controle com ``inputmask="0x00"`` pois o
+MAME interpreta estes elementos na ordem que eles aparecem no layout,
+assim temos a camada "nada" sendo construída primeiro seguida do
+controle logo abaixo desta camada, bloqueando qualquer interação do
+mouse:
+
+.. code-block:: xml
+
+	<element ref="nada" blend="add" inputtag="IN0" inputmask="0x00" inputraw="yes">
+		<bounds x="1010" y="3260" width="250" height="250" />
+	</element>
+	<element ref="controle" inputtag="IN0" inputmask="0xc" inputraw="yes">
+		<bounds x="1010" y="3260" width="250" height="250" />
+	</element>
+
+Ao executar a máquina novamente o controle não mais responde aos cliques
+do mouse.
+
+Como estamos trabalhando com dados vindos diretamente dos controles é
+necessário encontrar os valores para ``defstate``, ``inputmask`` e
+``state``.
+O ``defstate`` e o ``inputmask`` utilizam o mesmo valor, este valor
+**precisa ser calculado**, para isso acessamos o
+`código fonte do driver Galaxian <https://github.com/mamedev/mame/blob/master/src/mame/drivers/galaxian.cpp#L2746>`_,
+bem na linha **2746** de cara já temos o nosso ``inputtag`` com o valor
+``IN0`` que utilizamos acima, observe quem nem sempre o valor do
+``inputtag`` está disponível assim tão fácil, o driver **Playstaion**
+(psx) por exemplo utiliza ``port1:digital_pad:PSXPAD0``, já a máquina
+**Neo Geo** usa ``edge:joy:JOY1`` e por aí vai. Para casos como estes é
+preferível neste caso é preferível utilizar a maneira descrita no
+capítulo :ref:`layout-button-logica`.
+
+A Galaxian tem apenas duas direções, esquerda e direita, preste atenção
+ao valor ``0x04`` para ``IPT_JOYSTICK_LEFT`` e ``0x08`` para
+``IPT_JOYSTICK_RIGHT``. Abra a calculadora do seu celular ou do seu
+sistema operacional em modo programador ou qualquer função que consiga
+somar valores em **hexadecimais** e some os valores ``4 + 8`` para obter
+``c`` ou ``0xc``, este é o valor do nosso ``defstate`` e ``inputmask``
+**específicos para esta máquina**, dependendo da máquina este valor pode
+mudar, é possível ter uma ideia vendo a tabela logo abaixo.
+
+Já os valores para ``state`` eles vão de **0x0** até **0xf** nas
+máquinas mais comuns, porém em outras máquinas mais complexas como as
+máquinas de corrida de carro e de moto que usam um volante ou guidão, os
+valores vão muito além disso. O assunto foge ao escopo do que estamos
+apresentando aqui então recomendo o belo trabalho do
+`Mr.Do <https://mrdo.mameworld.info/mame_artwork_ingame.php>`_ e de
+todas as pessoas que colaboram com aquele projeto, baixe o
+**hangon.ZIP** e vejam um exemplo de até onde o nível de complexidade
+pode chegar.
+
+Até o presente momento não há uma ferramenta que ajude a obter os
+valores para ``state`` e portanto eles devem ser encontrados de forma
+**manual** o que dá um certo trabalho, para facilitar, veja o exemplo da
+tabela abaixo com os valores para algumas máquinas:
+
+.. |cima| image:: images/cima.png
+   :scale: 20%
+   :align: middle
+.. |sdir| image:: images/superior-direita.png
+   :scale: 20%
+   :align: middle
+.. |dire| image:: images/direita.png
+   :scale: 20%
+   :align: middle
+.. |idir| image:: images/inferior-direita.png
+   :scale: 20%
+   :align: middle
+.. |baix| image:: images/baixo.png
+   :scale: 20%
+   :align: middle
+.. |iesq| image:: images/inferior-esquerda.png
+   :scale: 20%
+   :align: middle
+.. |esqu| image:: images/esquerda.png
+   :scale: 20%
+   :align: middle
+.. |sesq| image:: images/superior-esquerda.png
+   :scale: 20%
+   :align: middle
+.. |cent| image:: images/centro.png
+   :scale: 20%
+   :align: middle
+
+.. tabularcolumns:: |c|c|c|c|c|c|c|c|c|c|c|
+
+.. list-table:: Códigos dos direcionais de alguns drivers
+
+   * - Driver
+     - defstate
+     - |cima|
+     - |sdir|
+     - |dire|
+     - |idir|
+     - |baix|
+     - |iesq|
+     - |esqu|
+     - |sesq|
+     - |cent|
+   * - cps1
+     - ``0xf``
+     - ``0x7``
+     - ``0x6``
+     - ``0xe``
+     - ``0xa``
+     - ``0xb``
+     - ``0x9``
+     - ``0xd``
+     - ``0x5``
+     - ``0xf``
+   * - cps2
+     - ``0xf``
+     - ``0x7``
+     - ``0x6``
+     - ``0xe``
+     - ``0xa``
+     - ``0xb``
+     - ``0x9``
+     - ``0xd``
+     - ``0x5``
+     - ``0xf``
+   * - cps3
+     - ``0xf``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0x0``
+   * - ddragon
+     - ``0xf``
+     - ``0xb``
+     - ``0xa``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xd``
+     - ``0x9``
+     - ``0xf``
+   * - dkong
+     - ``0xf``
+     - ``0x4``
+     - 
+     - ``0x1``
+     - 
+     - ``0x8``
+     - 
+     - ``0x2``
+     - 
+     - ``0x0``
+   * - galaxian
+     - ``0xc``
+     - 
+     - 
+     - ``0x1``
+     - 
+     - 
+     - 
+     - ``0x2``
+     - 
+     - ``0x0``
+   * - kinst
+     - ``0x3c0``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0xf``
+   * - m72/m92
+     - ``0xf``
+     - ``0x7``
+     - ``0x6``
+     - ``0xe``
+     - ``0xa``
+     - ``0xb``
+     - ``0x9``
+     - ``0xd``
+     - ``0x5``
+     - ``0xf``
+   * - midtunit
+     - ``0xf``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0xf``
+   * - midwunit
+     - ``0xf``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0xf``
+   * - model1
+     - ``0xf0``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xf``
+   * - nemesis
+     - ``0xf``
+     - ``0xb``
+     - ``0x9``
+     - ``0xd``
+     - ``0x5``
+     - ``0x7``
+     - ``0x6``
+     - ``0xe``
+     - ``0xa``
+     - ``0xf``
+   * - neogeo
+     - ``0xf``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0xf``
+   * - psx
+     - ``0xf0``
+     - ``0xe``
+     - ``0xc``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0x3``
+     - ``0x7``
+     - ``0x6``
+     - ``0xf``
+   * - segas16a
+     - ``0xf0``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xf``
+   * - segas18
+     - ``0xf0``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xf``
+   * - seibuspi
+     - ``0xf``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0xa``
+     - ``0xf``
+   * - simpsons
+     - ``0xf``
+     - ``0xb``
+     - ``0x9``
+     - ``0xd``
+     - ``0x5``
+     - ``0x7``
+     - ``0x6``
+     - ``0xe``
+     - ``0xa``
+     - ``0xf``
+   * - stv
+     - ``0xf0``
+     - ``0xd``
+     - ``0x9``
+     - ``0xb``
+     - ``0x6``
+     - ``0xe``
+     - ``0x6``
+     - ``0x7``
+     - ``0x5``
+     - ``0xf``
+   * - tmnt
+     - ``0xf``
+     - ``0xb``
+     - ``0x9``
+     - ``0xd``
+     - ``0x5``
+     - ``0x7``
+     - ``0x6``
+     - ``0xe``
+     - ``0xa``
+     - ``0xf``
+   * - toaplan2
+     - ``0xf``
+     - ``0x1``
+     - ``0x9``
+     - ``0x8``
+     - ``0xa``
+     - ``0x2``
+     - ``0x6``
+     - ``0x4``
+     - ``0x5``
+     - ``0x0``
+
+.. raw:: latex
+
+	\clearpage
+
+Aqui vai a **dica de ouro** para quem for criar os seus próprios layouts
+com o método ``inputraw``, se ao carregar um layout a imagem usada para
+o centro (posição neutra do controle) **não aparecer** ou se durante o
+acionamento do direcional uma das posições sumir da tela, significa que:
+
+* O valor do ``inputtag`` está errado.
+* O valor do ``state`` está errado.
+* O valor do ``defstate`` não foi calculado corretamente.
+
+Todos estes valores variam de máquina para máquina, em determinadas
+máquinas por exemplo, ainda que o valor ``inputtag`` esteja incorreto a
+imagem do controle relacionada ao ponto neutro ou **centro** poderá
+aparecer ou não e em outras vezes apesar da imagem do ponto neutro
+aparecer, não haverá qualquer animação do controle na tela. Para a
+maioria das máquinas avaliadas o ponto neutro funciona com o valor
+``0xf`` para  ``state`` contudo há algumas máquinas onde o valor precisa
+ser alterado para ``0x0`` para que funcione ou algum outro valor onde
+este irá depender do tipo da máquina emulada.
+
+Nos casos onde a animação aparece invertida na tela como por exemplo se
+ao clicar para cima o controle na tela aparece para baixo e assim por
+diante, inverta os valores dos seus respectivos ``state``.
+
+
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layout-dois-ou-mais:
+
+Máquinas com dois ou mais controles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Em máquinas com dois ou mais controles o princípio é o mesmo, usando a
+máquina **Neo Geo** como exemplo nós teríamos o seguinte:
+
+.. code-block:: xml
+
+	<element name="controle_J1"		defstate="0xf">
+		<image file="baixodireito.png"	state="0x5" />
+		<image file="cimadireita.png"	state="0x6" />
+		<image file="direita.png"	state="0x7" />
+		<image file="baixoesquerdo.png"	state="0x9" />
+		<image file="cimaesquerda.png"	state="0xa" />
+		<image file="esquerda.png"	state="0xb" />
+		<image file="baixo.png"		state="0xd" />
+		<image file="cima.png"		state="0xe" />
+		<image file="centro.png"	state="0xf" />
+	</element>
+	
+	<element name="controle_J2"		defstate="0xf0">
+		<image file="baixodireito.png"	state="0x5" />
+		<image file="cimadireita.png"	state="0x6" />
+		<image file="direita.png"	state="0x7" />
+		<image file="baixoesquerdo.png"	state="0x9" />
+		<image file="cimaesquerda.png"	state="0xa" />
+		<image file="esquerda.png"	state="0xb" />
+		<image file="baixo.png"		state="0xd" />
+		<image file="cima.png"		state="0xe" />
+		<image file="centro.png"	state="0xf" />
+	
+	</element>
+	<element ref="nada" blend="add" inputtag="edge:joy:JOY1" inputmask="0x00" inputraw="yes">
+		<bounds x="158" y="794" width="150" height="150" />
+	</element>
+	<element ref="controle_J1" inputtag="edge:joy:JOY1" inputmask="0xf" inputraw="yes">
+		<bounds x="158" y="794" width="150" height="150" />
+	</element>
+	<element ref="nada" blend="add" inputtag="edge:joy:JOY2" inputmask="0x00" inputraw="yes">
+		<bounds x="665" y="794" width="150" height="150" />
+	</element>
+	<element ref="controle_J2" inputtag="edge:joy:JOY2" inputmask="0xf0" inputraw="yes">
+		<bounds x="665" y="794" width="150" height="150" />
+	</element>
+
+Ambos os controles utilizam os mesmos valores para ``state`` e
+``defstate``, o que muda é o valor do ``inputtag`` onde
+``edge:joy:JOY1`` define que este é o controle do **jogador 1** e
+``edge:joy:JOY2`` é o controle do **jogador 2**.
+
+Contudo há máquinas como a **CPS2** que apresentam o mesmo valor ``IN0``
+no ``inputtag`` para ambos os jogadores, nestes casos devemos recorrer
+novamente ao código fonte do MAME para este driver, observando a linha
+`#1001 <https://github.com/mamedev/mame/blob/master/src/mame/drivers/cps2.cpp#L1001>`_
+nós temos os 4 valores para a porta do 2º jogador ``PORT_PLAYER(2)``,
+temos o valor ``100`` para a direita, ``200`` para a esquerda, ``400``
+para baixo e ``800`` para cima. Assim foi feito anteriormente, some
+todos os valores hexadecimais com uma calculadora compatível para obter
+o valor ``f00`` ou seja ``100 + 200 + 400 + 800 = f00``.
+
+
+.. raw:: latex
+
+	\clearpage
+
+Este é o valor que deve ser usado em ``defstate`` e ``inputmask`` na
+configuração do controle do 2º jogador como mostra o exemplo abaixo que
+também funcionam para todas as outras máquinas existentes no driver
+**CPS2** do MAME:
+
+.. code-block:: xml
+
+	<element name="controle_J1"		defstate="0xf">
+		<image file="cimaesquerda.png"	state="0x5" />
+		<image file="cimadireita.png"	state="0x6" />
+		<image file="cima.png"		state="0x7" />
+		<image file="baixoesquerda.png"	state="0x9" />
+		<image file="baixodireita.png"	state="0xa" />
+		<image file="baixo.png"		state="0xb" />
+		<image file="esquerda.png"	state="0xd" />
+		<image file="direita.png"	state="0xe" />
+		<image file="centro.png"	state="0xf" />
+	</element>
+	
+	<element name="controle_J2"		defstate="0xf00">
+		<image file="cimaesquerda.png"	state="0x5" />
+		<image file="cimadireita.png"	state="0x6" />
+		<image file="cima.png"		state="0x7" />
+		<image file="baixoesquerda.png"	state="0x9" />
+		<image file="baixodireita.png"	state="0xa" />
+		<image file="baixo.png"		state="0xb" />
+		<image file="esquerda.png"	state="0xd" />
+		<image file="direita.png"	state="0xe" />
+		<image file="centro.png"	state="0xf" />
+	</element>
+	
+	<element ref="nada" blend="add" inputtag="IN0" inputmask="0x00" inputraw="1">
+		<bounds x="158" y="794" width="150" height="150" />
+	</element>
+	<element ref="controle_J1" inputtag="IN0" inputmask="0xf" inputraw="1">
+		<bounds x="158" y="794" width="150" height="150" />
+	</element>
+	<element ref="nada" blend="add" inputtag="IN0" inputmask="0x00" inputraw="1">
+		<bounds x="665" y="794" width="150" height="150" />
+	</element>
+	<element ref="controle_J2" inputtag="IN0" inputmask="0xf00" inputraw="1">
+		<bounds x="665" y="794" width="150" height="150" />
+	</element>
+
+.. raw:: latex
+
+	\clearpage
+
+Utilize o **layout modelo** disponibilizado em :ref:`layout-tools` para
+realizar testes em diferentes máquinas e obter uma visualização simples
+e rápida dos controles, depois de baixar e extrair o arquivo, copie-o
+para o diretório **artwork** e o renomeie com o nome da máquina que será
+testada, para o exemplo usado na foto o nome do diretório é
+**ssriders**. Rodando o comando ``mame64 -windows ssriders`` irá
+aparecer uma tela com um design branco genérico, será possível escolher
+um modelo para 2 ou 4 jogadores através do menu **Opções de Vídeo**
+(TAB --> Opções de Vídeo), faça as alterações necessárias no arquivo de
+layout e para visualizar na tela pressione **SHIFT+F3**.
+
+.. image:: images/modelo-4-controles.png
+   :width: 90%
+   :align: center
+   :alt: Modelo com 4 controles
+
+Abaixo as teclas predefinidas do MAME para os 4 jogadores, para mais
+informações consulte :ref:`mamemenu-general-inputs-P1`.
+
+.. tabularcolumns:: |c|c|c|c|c|
+
+.. list-table:: Teclas predefinidas do MAME para o controle dos jogadores
+
+   * - 1º Jogador
+     - Direcional **cima**
+     - Direcional **baixo**
+     - Direcional **esquerda**
+     - Direcional **direita**
+   * - 2º Jogador
+     - **R**
+     - **F**
+     - **G**
+     - **D**
+   * - 3º Jogador
+     - **I**
+     - **K**
+     - **J**
+     - **L**
+   * - 4º Jogador
+     - Teclado num. **8**
+     - Teclado num. **2**
+     - Teclado num. **4**
+     - Teclado num. **6**
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layout-mais-de-uma-visualizacao:
+
+Um único arquivo para diferentes visualizações
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Com os layouts também é possível montar diferentes visualizações não
+ficando limitado a apenas uma, ou seja, é possível dar a opção ao
+jogador para escolher aquilo que ele possa querer ver na tela como por
+exemplo, ter diferentes versões de visualização para a máquina
+**Galaxian**. No arquivo da versão completa (disponível em
+:ref:`layout-tools`) temos o exemplo da **Galaxian** Italiana, Americana
+e a Japonesa com diferentes configurações para os botões para o 1º e 2º
+jogador, algumas utilizam botões simples e outras usam os botões
+iluminados da NAMCO.
+
+As configurações para as diferentes visualizações devem ficar entre os
+elementos ``view``. Assim como é feito com um layout simples, primeiro
+**todas as imagens** que serão utilizadas são definidas, depois cada
+visualização fica separada através dos elementos ``view`` e cada um com
+seus respectivos nomes:
+
+.. code-block:: xml
+
+	<view name="Nome da visualização 1">
+		...
+		...
+	</view>
+	<view name="Nome da visualização 2">
+		...
+		...
+	</view>
+	<view name="Nome da visualização 3">
+		...
+		...
+	</view>
+
+Estas visuzalizações ficam acessíveis através do menu **Opções de
+Vídeo** (TAB --> Opções de Vídeo).
+
+.. image:: images/tipos-galaxian.png
+   :width: 100%
+   :align: center
+   :alt: As diferentes versões da máquina Galaxian
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layout-disable-objects:
+
+Desativando objetos na tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Assim como foi descrito em :ref:`layout-parts-collections` isso é
+possível organizando os objetos da tela dentro dos elementos
+``collections``, quando a visualização tiver esta opção o jogador poderá
+desligar qualquer objeto na tela que tenha sido organizado pelo autor
+para ser removido da tela.
+
+.. code-block:: xml
+
+	<collection name="Botão para o inicio da partida para o 1º Jogador">
+	<element ref="btn-namco">
+		<bounds x="2605" y="3217" width="350" height="291" />
+	</element>
+	<element name="lamp0" ref="J1JP" inputtag="IN1" inputmask="1">
+		<bounds x="2666" y="3299" width="230" height="126" />
+	</element>
+	</collection>
+
+.. image:: images/galaxian-selecionaveis.png
+   :width: 80%
+   :align: center
+   :alt: Opções selecionáveis
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layout-examples:
+
+Exemplos de outros arquivos de layout
+-------------------------------------
+
+Estes arquivos de layout demonstram as várias características do sistema
+de visualização, todo eles estão embutidos no MAME.
+
+* `sstrangr.lay <https://git.redump.net/mame/tree/src/mame/layout/sstrangr.lay?h=mame0226>`_
+
+    Um caso simples da utilização de transparências coloridas para
+    visualizar a separação e o destaque dos elementos em uma tela preto
+    e branco.
+
+* `seawolf.lay <https://git.redump.net/mame/tree/src/mame/layout/seawolf.lay?h=mame0226>`_
+
+    Este sismtema utiliza lâmpadas para os elementos importantes do
+    jogo. Os modos de mesclagem são utilizados para a transparência
+    colorida que é colocada na frente do monitor. Também utiliza
+    ``collections`` permitindo que partes do layout sejam desativadas
+    seletivamente.
+
+* `armora.lay <https://git.redump.net/mame/tree/src/mame/layout/armora.lay?h=mame0226>`_
+
+    A tela deste jogo é vista diretamente através de uma transparência
+    colorida em vez de ser refletida a partir de dentro do gabinete.
+    Isso significa que a transparência reflete a luz ambiente assim como
+    afeta a cor da imagem do vídeo.
+
+* `tranz330.lay <https://git.redump.net/mame/tree/src/mame/layout/tranz330.lay?h=mame0226>`_
+
+    Uma tela e um teclado alfanumérico com vários segmentos. As teclas
+    são clicáveis e fornecem feedback visual quando pressionadas.
+
+* `esq2by16.lay <https://git.redump.net/mame/tree/src/mame/layout/esq2by16.lay?h=mame0226>`_
+
+    Constrói uma matriz de caracteres com múltiplas linhas. As
+    repetições são usadas para evitar a repetição das linhas em um
+    caractere, dos caracteres em uma linha e das linhas em uma página.
+    As cores de grupo permitem que um único elemento seja usado para
+    todas as quatro cores da tela.
+
+* `cgang.lay <https://git.redump.net/mame/tree/src/mame/layout/cgang.lay?h=mame0226>`_
+
+    Anima a posição dos elementos para simular um jogo de tiro
+    eletromecânico. Também demonstra o uso eficaz dos componentes para a
+    construção de gráficos complexos.
+
+* `unkeinv.lay <https://git.redump.net/mame/tree/src/mame/layout/unkeinv.lay?h=mame0226>`_
+
+    Exibe a posição de um controle deslizante com LEDs.
+
+* `md6802.lay <https://git.redump.net/mame/tree/src/mame/layout/md6802.lay?h=mame0226>`_
+
+    Usa grupos de forma efetiva como uma linguagem de programação para
+    construir a imagem de um protoboard.
 
 .. [#]	Arquivos de disposição dos elementos na tela. (Nota do tradutor)
 .. [#]	Em nosso idioma conhecido também como
