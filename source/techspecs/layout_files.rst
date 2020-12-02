@@ -3065,7 +3065,7 @@ tabela abaixo com os valores para algumas máquinas:
      - ``0xb``
      - ``0xa``
      - ``0xf``
-   * - packman
+   * - pacman
      - ``0xf``
      - ``0xe``
      - 
