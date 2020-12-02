@@ -2851,9 +2851,9 @@ bem na linha **2746** de cara já temos o nosso ``inputtag`` com o valor
 ``IN0`` que utilizamos acima, observe quem nem sempre o valor do
 ``inputtag`` está disponível assim tão fácil, o driver **Playstaion**
 (psx) por exemplo utiliza ``port1:digital_pad:PSXPAD0``, já a máquina
-**Neo Geo** usa ``edge:joy:JOY1`` e por aí vai. Para casos como estes é
-preferível neste caso é preferível utilizar a maneira descrita no
-capítulo :ref:`layout-button-logica`.
+**Neo Geo** usa ``edge:joy:JOY1`` e assim por diante. Para casos como
+estes é preferível neste caso é preferível utilizar a maneira descrita
+no capítulo :ref:`layout-button-logica`.
 
 A Galaxian tem apenas duas direções, esquerda e direita, preste atenção
 ao valor ``0x04`` para ``IPT_JOYSTICK_LEFT`` e ``0x08`` para
