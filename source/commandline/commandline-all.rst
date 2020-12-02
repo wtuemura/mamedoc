@@ -1598,6 +1598,26 @@ Opções para a gravação e a reprodução do estado da emulação
 	máquina dentro do diretório **nvram** sejam excluídos antes de
 	iniciar uma gravação ou uma reprodução.
 
+.. warning::
+
+	Para que o playback funcione em algumas máquinas de alguns drivers,
+	elas precisam da **NVRAM** como por exemplo a CPS1, a CPS2 e a CPS3,
+	manter ou não o arquivo de configuração nestes casos não faz a menor
+	diferença. Então caso você vá compartilhar a gravação com alguém,
+	tenha certeza de enviar o arquivo **NVRAM** da máquina em questão.
+
+.. warning::
+
+	Em máquinas que não usam **NVRAM** como a packman, mspackman e
+	talvez outras, elas também perdem o sincronismo e algumas vezes
+	criam anomalias (bugs) apenas durante a reprodução, neste caso
+	apague o arquivo que mantém o registro do **high score** dentro do
+	diretório **hi**. Caso você mantenha um registro de pontuações, faça
+	um backup antes de apagar o arquivo.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mame-commandline-exitafterplayback:
 
