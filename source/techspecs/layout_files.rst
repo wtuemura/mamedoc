@@ -2024,10 +2024,10 @@ Para esta tarefa precisamos dos seguintes itens:
   `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ no Windows ou
   o `Geany <https://www.geany.org/>`_ para \*nix e macOS.
 * `Gimp <https://www.gimp.org/>`_.
-* A `versão básica <http://www.mediafire.com/file/dzln51abe3jm8rz/basic_galaxian.zip>`_
+* A `versão básica <http://www.mediafire.com/file/knpn3uzmrjrxets/basic_galaxian.zip>`_
   do layout da máquina Galaxian usada neste documento.
-* A versão básica do layout da máquina Galaxian usando o `método inputraw <http://www.mediafire.com/file/muybmtuac60390r/inputraw_galaxian.zip>`_.
-* A `versão avançada <http://www.mediafire.com/file/yz57kkxvjhuzbbw/advanced_galaxian.zip>`_
+* A versão básica do layout da máquina Galaxian usando o `método inputraw <http://www.mediafire.com/file/47bm4e5eb3hsm61/inputraw_galaxian.zip>`_.
+* A `versão avançada <http://www.mediafire.com/file/bj9m9j2spqhdanh/advanced_galaxian.zip>`_
   do layout com diferentes versões da máquina Galaxian.
 * O `layout modelo <http://www.mediafire.com/file/cgscfqsh8pb18py/layout_modelo_mame.zip>`_ criado para identificar as posições do controle para 2
   e 4 jogadores.
@@ -3418,11 +3418,14 @@ Assim como foi descrito em :ref:`layout-parts-collections` isso é
 possível organizando os objetos da tela dentro dos elementos
 ``collections``, quando a visualização tiver esta opção o jogador poderá
 desligar qualquer objeto na tela que tenha sido organizado pelo autor
-para ser removido da tela.
+para ser removido da tela. Use ``visible`` **yes** ou **no** dentro do
+elemento ``collection`` caso queira que ele já inicie **ligado** ou
+**desligado**. Baixe este arquivo para ver como funciona na prática com
+a máquina `mspacman <http://www.mediafire.com/file/ogq1t6zmduy5x0l/mspacman.zip>`_.
 
 .. code-block:: xml
 
-	<collection name="Botão para o inicio da partida para o 1º Jogador">
+	<collection name="Botão para o inicio da partida para o 1º Jogador" visible="no">
 	<element ref="btn-namco">
 		<bounds x="2605" y="3217" width="350" height="291" />
 	</element>
