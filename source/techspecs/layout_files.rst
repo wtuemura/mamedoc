@@ -769,21 +769,19 @@ Há suporte para os seguintes componentes:
 
 **image**
 
-	Desenha uma imagem carregada a partir um arquivo PNG, JPEG, Window
-	DIB (BMP) ou arquivo SVG. O nome do arquivo a ser carregado
-	(incluindo o nome da extensão do arquivo) é informado usando o
-	atributo ``file``. Adicionalmente, um atributo opcional
-	``alphafile`` pode ser usado para determinar o nome de um
-	arquivo PNG (incluindo o nome da extensão do arquivo) para ser
-	carregado dentro do canal alfa da imagem.
+	Exibe uma imagem na tela a partir de um arquivo PNG, JPEG, Window
+	DIB (BMP) ou um arquivo SVG. O nome do arquivo que será carregado
+	(incluindo a sua extensão) é definido usando o atributo ``file``.
+	Adicionalmente, é possível utilizar um atributo opcional chamado
+	``alphafile`` para determinar o nome de um arquivo PNG (incluindo a
+	sua extensão) para ser carregada dentro do canal alfa.
 
-	Caso o atributo ``alphafile`` esteja relacionado a um arquivo, este
-	deve ter as mesmas dimensões (em pixels) que o arquivo definido
-	através do atributo ``file`` e a sua profundidade de bits por pixel
-	da imagem não deve ser maior que 8 bits por canal. A intensidade de
-	brightness desta imagem, é copiada para o canal alfa com plena
-	intensidade (branco em escala de cinza) o que corresponde a um opaco
-	pleno e o preto a uma transparência plena.
+	O arquivo usado como ``alphafile`` deve ter as mesmas dimensões
+	(em pixels) que o arquivo do atributo ``file`` e a sua profundidade
+	de bits por pixel da imagem não deve ser maior que 8 bits por canal.
+	A intensidade de brightness desta imagem é copiada para o canal alfa
+	com total intensidade (branco em escala de cinza) o que corresponde
+	a um opaco completo e o preto uma total transparência.
 	
 	O atributo ``alphafile`` será ignorado caso o atributo ``file``
 	aponte para um arquivo SVG, o atributo é apenas utilizado com
