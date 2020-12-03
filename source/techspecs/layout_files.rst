@@ -2864,20 +2864,22 @@ somar valores em **hexadecimais** e some os valores ``4 + 8`` para obter
 **específicos para esta máquina**, dependendo da máquina este valor pode
 mudar, é possível ter uma ideia vendo a tabela logo abaixo.
 
-Já os valores para ``state`` eles vão de **0x0** até **0xf** nas
-máquinas mais comuns, porém em outras máquinas mais complexas como as
-máquinas de corrida de carro e de moto que usam um volante ou guidão, os
-valores vão muito além disso. O assunto foge ao escopo do que estamos
+Já os valores para ``state`` vão de **0x0** até **0xf** nas máquinas
+mais comuns, porém em outras máquinas mais complexas como as máquinas
+de corrida de carro e de moto que usam um volante ou guidão, os valores
+vão muito além disso. O assunto foge ao escopo do que estamos
 apresentando aqui então recomendo o belo trabalho do
 `Mr.Do <https://mrdo.mameworld.info/mame_artwork_ingame.php>`_ e de
-todas as pessoas que colaboram com aquele projeto, baixe o
-**hangon.ZIP** e vejam um exemplo de até onde o nível de complexidade
+todas as pessoas que colaboram com aquele projeto, baixe o arquivo
+**hangon.ZIP** e veja um exemplo de até onde o nível de complexidade
 pode chegar.
 
 Até o presente momento não há uma ferramenta que ajude a obter os
 valores para ``state`` e portanto eles devem ser encontrados de forma
 **manual** o que dá um certo trabalho, para facilitar, veja o exemplo da
 tabela abaixo com os valores para algumas máquinas:
+
+.. _layout-codigos-direcionais:
 
 .. |cima| image:: images/cima.png
    :scale: 20%
@@ -3183,16 +3185,47 @@ máquinas por exemplo, ainda que o valor ``inputtag`` esteja incorreto a
 imagem do controle relacionada ao ponto neutro ou **centro** poderá
 aparecer ou não e em outras vezes apesar da imagem do ponto neutro
 aparecer, não haverá qualquer animação do controle na tela. Para a
-maioria das máquinas avaliadas o ponto neutro funciona com o valor
-``0xf`` para  ``state`` contudo há algumas máquinas onde o valor precisa
+maioria das máquinas avaliadas o ``state`` para o ponto neutro funciona
+com o valor ``0xf``, contudo há algumas máquinas onde o valor precisa
 ser alterado para ``0x0`` para que funcione ou algum outro valor onde
-este irá depender do tipo da máquina emulada.
+este irá depender do tipo da máquina emulada. Quando você movimenta os
+direcionais e nota que o controle fica piscando na tela, este é um bom
+indicativo que você está no caminho certo pois indica que a combinação
+``inputtag`` e ``inputmask`` está correta e apenas os valores para o
+``state`` estão errados.
 
 Nos casos onde a animação aparece invertida na tela como por exemplo se
 ao clicar para cima o controle na tela aparece para baixo e assim por
-diante, inverta os valores dos seus respectivos ``state``.
+diante, basta inverter os valores dos seus respectivos ``state`` e
+clicar em **SHIFT+F3** para recarregar o arquivo e ver como ficou.
 
+Há casos onde nenhum dos valores da tabela mostrada acima vai funcionar
+com a máquina que você estiver desenvolvendo o layout mesmo que os
+valores estejam corretos para ``inputtag``, ``defstate`` e
+``inputmask``. Nestes casos inicie a sua configuração com todos os
+valores ``state`` zerados:
 
+.. code-block:: xml
+
+	<element name="controle_J1"		defstate="0xf">
+		<image file="cima.png"		state="0x0" />
+		<image file="baixo.png"		state="0x0" />
+		<image file="esquerda.png"	state="0x0" />
+		<image file="direita.png"	state="0x0" />
+		<image file="centro.png"	state="0xf" />
+	</element>
+
+Comece alterando o valor ``state`` para o comando **cima**, comece com
+``0x1`` e vá subindo, clique **SHIFT+F3** a cada alteração para ver se
+alteração surtiu algum efeito. É muito comum encontrar um determinado
+valor onde você aciona o controle para cima e ocorre uma animação para
+qualquer outra direção, supondo que a animação que apareceu foi para
+baixo, altere o valor do ``state`` relacionado com **baixo.png** e
+continue incrementando o valor até chegar em ``0xf``, depois comece
+novamente a partir de ``0x1``. Observe que alguns valores já testados e
+que não retornaram nenhuma animação agora passam a responder, continue
+definindo os valores encontrado para as suas respectivas posições até
+encontrar todos os valores.
 
 .. raw:: latex
 
