@@ -8,7 +8,7 @@ Os arquivos de layout
 .. contents:: :local:
 
 
-.. _layout-intro:
+.. _layfile-intro:
 
 Introdução
 ----------
@@ -31,12 +31,12 @@ extensão ``.lay``.
 	\clearpage
 
 
-.. _layout-concepts:
+.. _layfile-concepts:
 
 Conceitos básicos
 -----------------
 
-.. _layout-concepts-numbers:
+.. _layfile-concepts-numbers:
 
 Números
 ~~~~~~~
@@ -78,7 +78,7 @@ por questões de portabilidade.
 	\clearpage
 
 
-.. _layout-concepts-coordinates:
+.. _layfile-concepts-coordinates:
 
 Coordenadas
 ~~~~~~~~~~~
@@ -139,7 +139,7 @@ são válidos:
     <bounds x="455" top="120" width="12" bottom="128" />
     <bounds left="455" yc="124" right="467" height="8" />
 
-Caso nenhum valor seja fornecido, é predefindo que seja **1.0** para o
+Caso nenhum valor seja informado, é predefindo que seja **1.0** para o
 atributo ``width``/``height`` ou ``right``/``bottom``.
 O MAME irá considerar como um erro caso os atributos ``width`` ou
 ``height`` tenham valores negativos, ``right`` tenha um valor menor que
@@ -150,7 +150,7 @@ O MAME irá considerar como um erro caso os atributos ``width`` ou
 	\clearpage
 
 
-.. _layout-concepts-colours:
+.. _layfile-concepts-colours:
 
 Cores
 ~~~~~
@@ -186,7 +186,7 @@ que o MAME, assim sendo, utilize
 para converter um valor RGB hexadecimal usado em HTML ou RGB por
 exemplo, para o formato que o MAME aceita.
 
-.. _layout-concepts-params:
+.. _layfile-concepts-params:
 
 Parâmetros
 ~~~~~~~~~~
@@ -255,7 +255,7 @@ Os parâmetros dos geradores são atribuídos através do elemento ``param``
 em conjunto com os atributos ``name``, ``start``, ``increment``,
 ``lshift`` e ``rshift``.
 Os parâmetros dos geradores só podem aparecer de dentro dos elementos
-``repeat`` (consulte :ref:`layout-parts-repeats` para obter mais
+``repeat`` (consulte :ref:`layfile-parts-repeats` para obter mais
 informações) e também não devem ser reatribuídos dentro do mesmo escopo
 (um parâmetro com um nome idêntico pode ser atribuído em um escopo
 através da sua ramificação). Abaixo alguns parâmetros de exemplos dos
@@ -316,7 +316,7 @@ parâmetros em um escopo de contenção.
 
 	\clearpage
 
-.. _layout-concepts-predef-params:
+.. _layfile-concepts-predef-params:
 
 Parâmetros já predefinidos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -502,7 +502,7 @@ não serão recalculados.
 
 	\clearpage
 
-.. _layout-parts:
+.. _layfile-parts:
 
 As partes de um layout
 ----------------------
@@ -595,13 +595,13 @@ Os seguintes elementos são permitidos dentro do primeiro elemento
 **param**
 
     Define ou reatribui um valor ao parâmetro. Consulte
-    :ref:`layout-concepts-params` para mais informações.
+    :ref:`layfile-concepts-params` para mais informações.
 
 
 **element**
 
     Define um elemento, um dos objetos primários a serem organizados
-    em uma Visualização. Consulte :ref:`layout-parts-elements` para
+    em uma Visualização. Consulte :ref:`layfile-parts-elements` para
     obter mais informações.
 
 **group**
@@ -610,19 +610,19 @@ Os seguintes elementos são permitidos dentro do primeiro elemento
     reutilizáveis e que também possam ser usados como referência numa
     visualização ou nos outros grupos.
 
-    Consulte :ref:`layout-parts-groups` para obter mais informações.
+    Consulte :ref:`layfile-parts-groups` para obter mais informações.
 
 **repeat**
 
     Um grupo de elementos repetidos que podem conter os elementos
     ``param``, ``element``, ``group`` e ``repeat``.
-    Consulte :ref:`layout-parts-repeats` para obter mais informações.
+    Consulte :ref:`layfile-parts-repeats` para obter mais informações.
 
 **view**
 
     Um arranjo dos elementos ou das telas que podem ser exibidos na
     saída de um dispositivo (uma janela ou uma tela do host).
-    Consulte :ref:`layout-parts-views` para obter mais informações.
+    Consulte :ref:`layfile-parts-views` para obter mais informações.
 
 **script**
 
@@ -634,7 +634,7 @@ Os seguintes elementos são permitidos dentro do primeiro elemento
 
 	\clearpage
 
-.. _layout-parts-elements:
+.. _layfile-parts-elements:
 
 Os elementos
 ~~~~~~~~~~~~
@@ -649,7 +649,7 @@ visualização.
 
 A aparência de um elemento depende do seu *estado*. O estado é um
 valor inteiro que geralmente vem de uma região da porta E/S ou da
-emulação gerada (consulte :ref:`layout-interact-elemstate` para obter
+emulação gerada (consulte :ref:`layfile-interact-elemstate` para obter
 mais informações de como conectar um elemento numa porta ou na saída
 E/S de uma emulação).
 Qualquer componente de um elemento pode estar restrito apenas ao desenho
@@ -705,7 +705,7 @@ em comum:
 
 * Cada componente pode ter um sub-elemento ``bounds`` definindo a
   sua posição e o seu tamanho (consulte
-  :ref:`layout-concepts-coordinates`). Na ausência de tal elemento os
+  :ref:`layfile-concepts-coordinates`). Na ausência de tal elemento os
   limites serão predefinidos a uma unidade quadrada com o valor igual a
   **1.0** tanto para a largura quanto para a altura e com o canto
   superior esquerdo com valor **0.0**.
@@ -729,7 +729,7 @@ em comum:
   atributo ``state`` dos dois elementos ``bounds``, a posição/tamanho
   será interpolada de forma linear.
 * Cada componente de cor pode ter um elemento ``color`` definindo uma
-  cor RGBA (Consulte :ref:`layout-concepts-colours` para obter mais
+  cor RGBA (Consulte :ref:`layfile-concepts-colours` para obter mais
   informações).
   Isto pode ser usado para controlar a geometria da cor dos componentes
   desenhados de forma algorítmica ou textual. Para os componentes
@@ -776,6 +776,12 @@ Há suporte para os seguintes componentes:
 	``alphafile`` para determinar o nome de um arquivo PNG (incluindo a
 	sua extensão) para ser carregada dentro do canal alfa.
 
+	Alternativamente, os dados da imagem podem ser informados no próprio
+	arquivo de layout utilizando um sub-elemento ``data``. Isto pode ser
+	útil para oferecer gráficos SVG simples e legíveis. Será considerado
+	como um erro caso nenhum atributo ``file`` ou ``data`` seja
+	informado.
+
 	O arquivo usado como ``alphafile`` deve ter as mesmas dimensões
 	(em pixels) que o arquivo do atributo ``file`` e a sua profundidade
 	de bits por pixel da imagem não deve ser maior que 8 bits por canal.
@@ -784,8 +790,8 @@ Há suporte para os seguintes componentes:
 	a um opaco completo e o preto uma total transparência.
 	
 	O atributo ``alphafile`` será ignorado caso o atributo ``file``
-	aponte para um arquivo SVG, o atributo é apenas utilizado com
-	imagens do tipo bitmap.
+	aponte para um arquivo SVG ou um sub-elemento ``data`` contendo
+	dados SVG, o atributo é apenas utilizado com imagens do tipo bitmap.
 
 	O(s) arquivo(s) da(s) imagem(s) devem ser colocados no mesmo
 	diretório que o arquivo de layout. Os formatos da imagem são
@@ -820,6 +826,10 @@ Há suporte para os seguintes componentes:
 	correspondendo ao pixel mais à esquerda. Os pixels que estiverem
 	apagados são desenhados com uma intensidade menor (**0x20/0xff**).
 
+.. raw:: latex
+
+	\clearpage
+
 **dotmatrix5dot**
 
 	Desenha um segmento horizontal de cinco pixels em um mostrador em
@@ -828,10 +838,6 @@ Há suporte para os seguintes componentes:
 	quais os pixels que estarão acesos, com o bit de menor importância
 	correspondendo ao pixel mais à esquerda. Os pixels que estiverem
 	apagados são desenhados com uma intensidade menor (**0x20/0xff**).
-
-.. raw:: latex
-
-	\clearpage
 
 **dotmatrixdot**
 
@@ -1042,22 +1048,21 @@ amarelo e para o vermelho à medida que o nível muda da posição neutra:
 
 	\clearpage
 
-.. _layout-parts-views:
+.. _layfile-parts-views:
 
 As visualizações
 ~~~~~~~~~~~~~~~~
 
-Uma visualização define um arranjo dos elementos ou das imagens exibidas
-da tela emulada numa janela ou numa tela.
+Uma visualização (elemento ``view``) define um arranjo dos elementos ou
+das imagens exibidas da tela emulada numa janela ou numa tela.
 As exibições também conectam os elementos, as entradas E/S e as saídas
 emuladas.
-Um arquivo de layout pode conter vários modos de visualização. Caso uma
-visualização corresponda a uma tela inexistente, ela se torna
-*inválida*.
+Um arquivo de layout pode conter vários elementos ``view``, caso uma
+delas corresponda a uma tela inexistente, esta se torna *inválida*.
 
 O MAME exibirá uma mensagem de aviso ignorando toda a visualização que
-for considerada inválida e continuará a carregar aquelas que forem
-consideradas corretas.
+for considerada inválida e continuará a carregar aquelas que estiverem
+corretas.
 Isso é muito útil nos sistemas onde uma tela seja opcional, como
 computadores que tenham apenas controles no painel frontal e onde um
 terminal serial seja opcional.
@@ -1099,7 +1104,7 @@ elemento ``view``:
 
 	Define a origem e o tamanho da visualização através das coordenadas
 	interna do sistema caso um esteja presente.
-	Consulte :ref:`layout-concepts-coordinates` para obter mais
+	Consulte :ref:`layfile-concepts-coordinates` para obter mais
 	informações.
 	Em sua ausência os limites da visualização serão computadas
 	unindo os limites de todas as telas e dos elementos dentro da
@@ -1113,7 +1118,7 @@ elemento ``view``:
 **param**
 
 	Define ou reatribui um valor no parâmetro do escopo da visualização.
-	Consulte :ref:`layout-concepts-params` para obter mais informações.
+	Consulte :ref:`layfile-concepts-params` para obter mais informações.
 
 .. raw:: latex
 
@@ -1122,7 +1127,7 @@ elemento ``view``:
 **element**
 
 	Adiciona um elemento à visualização (consulte
-	:ref:`layout-parts-elements`) através do atributo do elemento
+	:ref:`layfile-parts-elements`) através do atributo do elemento
 	obrigatório ``ref``.
 	Haverá um erro caso nenhum elemento ``ref`` seja definido no arquivo
 	de layout.
@@ -1130,8 +1135,8 @@ elemento ``view``:
 	Opcionalmente pode estar conectada em uma porta E/S emulada
 	através dos atributos ``inputtag`` e o ``inputmask`` ou através
 	da emulação de uma saída usando um atributo ``name``. Consulte
-	:ref:`layout-interact-clickable` e também 
-	:ref:`layout-interact-elemstate` para obter mais detalhes sobre
+	:ref:`layfile-interact-clickable` e também 
+	:ref:`layfile-interact-elemstate` para obter mais detalhes sobre
 	como informar o valor de uma condição/estado para o elemento
 	que for solicitado.
 
@@ -1152,20 +1157,20 @@ elemento ``view``:
 	Pode opcionalmente estar conectada em uma porta E/S emulada através
 	dos atributos ``inputtag`` e ``inputmask`` ou através de uma saída
 	emulada através do atributo ``name``. Consulte
-	:ref:`layout-interact-clickable` para obter mais informações.
+	:ref:`layfile-interact-clickable` para obter mais informações.
 
 **collection**
 
 	Adiciona as telas ou os itens em uma coleção de itens que poderão
 	ser exibidos ou escondidos pelo usuário (consulte
-	:ref:`layout-parts-collections`). O nome da coleção é definida
+	:ref:`layfile-parts-collections`). O nome da coleção é definida
 	através do atributo ``name``. Há um limite de até 32 ``collection``
 	por visualização.
 
 **group**
 
 	Adiciona o conteúdo do grupo na visualização (consulte
-	:ref:`layout-parts-groups`). O nome do grupo que será adicionado
+	:ref:`layfile-parts-groups`). O nome do grupo que será adicionado
 	pode ser definido através do atributo ``ref``. Haverá um erro caso
 	nenhum grupo com este atributo seja definido no arquivo de layout.
 	Veja abaixo para mais informações sobre a questão de posicionamento.
@@ -1177,12 +1182,20 @@ elemento ``view``:
 	e positivo. O elemento ``repeat`` aceita os elementos ``element``,
 	``screen``, ``group`` mais os elementos ``repeat`` que funcionam da
 	mesma maneira que quando colocados em uma visualização direta.
-	Consulte :ref:`layout-parts-repeats` para saber como usar os
+	Consulte :ref:`layfile-parts-repeats` para saber como usar os
 	elementos ``repeat``.
 
 .. raw:: latex
 
 	\clearpage
+
+As telas com os elementos ``screen`` e os elementos de layout
+``element`` podem ter um atributo ``id``. Quando presente o atributo
+``id`` deve ser único entre os elementos ``view`` e seu valor não pode
+ser vazio, isso incluí telas (screens) e os elementos instanciados
+através dos grupos reutilizáveis e da repetição dos blocos. Os elementos
+de tela e layout com o atributo ``id`` são identificados através de
+scripts Lua (consulte :ref:`layscript`).
 
 As telas com os elementos ``screen``, elementos de layout ``element`` e
 os elementos de grupo ``group``, podem ter a sua orientação alterada
@@ -1231,7 +1244,7 @@ elementos de layout é predefinido como mesclagem alpha.
 As telas (elementos ``screen``), elementos de layout (elementos
 ``element``) e elementos de grupo (``group``) podem ser posicionados e
 redimensionados usando um elemento ``bounds``
-(consulte :ref:`layout-concepts-coordinates` para mais informações).
+(consulte :ref:`layfile-concepts-coordinates` para mais informações).
 Na ausência do sub-elemento ``bounds`` os elementos "screen" e "layout"
 retornam aos valores predefinidos em unidades quadradas (origem em
 **0,0** e ambos os valores de altura e largura serão igual a **1**).
@@ -1253,29 +1266,30 @@ de layout individual e dois grupos de elementos:
 
 As telas (elementos ``screen``), elementos de layout (``element``) e
 elementos de grupos (``group``) podem ter um sub-elemento ``color``
-(consulte :ref:`layout-concepts-colours`) ao definir uma cor
+(consulte :ref:`layfile-concepts-colours`) ao definir uma cor
 modificadora. O valor dessa cor será usada como multiplicador para
 alterar as cores componentes da tela ou dos elementos de layout.
 
 As telas (elementos ``screen``) e os elementos de layout (``element``)
 podem ter a sua cor, posição e tamanho animados ao invormar diversos
 elementos ``color`` e/ou sub-elementos ``bounds`` em conjunto com o
-atributo ``state``. Consulte :ref:`layout-interact-itemanim` para obter
+atributo ``state``. Consulte :ref:`layfile-interact-itemanim` para obter
 mais informações.
 
 
-.. _layout-parts-collections:
+.. _layfile-parts-collections:
 
 Coleções
 ~~~~~~~~
 
-As coleções das telas ou dos elementos de layout que possam ser exibidos
-ou não pelo usuário conforme a sua necessidade. Em uma visualização
-única é possível ambas as visualizações e um teclado numérico (keypad)
-selecionável por exemplo, permitir que o usuário esconda o teclado
-numérico deixando visível apenas a visualização. As coleções são criadas
-através do elemento ``collection`` dentro dos elementos ``view``,
-``group`` e dos outros elementos ``collection``.
+As coleções das telas ou dos elementos do layout que são agrupados de
+maneira que possam ser exibidos ou não pelo usuário conforme a sua
+necessidade caso este esteja definido pelo autor do layout. Em uma
+visualização única é possível ambas as visualizações e um teclado
+numérico (keypad) selecionável por exemplo, permitir que o usuário
+esconda o teclado numérico deixando visível apenas a visualização. As
+coleções são criadas através do elemento ``collection`` dentro dos
+elementos ``view``, ``group`` e dos outros elementos ``collection``.
 
 Um elemento ``collection`` deve ter um atributo ``name`` informando o
 nome da visualização. Os nomes destinados para ``collection`` devem ser
@@ -1303,20 +1317,20 @@ usuário:
 Uma coleção cria um escopo de parâmetros agrupados. Qualquer elemento
 ``param`` que estiver dentro do elemento de coleção define os parâmetros
 no escopo local para a coleção. Para mais detalhes sobre os parâmetros
-consulte :ref:`layout-concepts-params`. Observe que o nome da coleção e
+consulte :ref:`layfile-concepts-params`. Observe que o nome da coleção e
 a visualização predefinida não fazem parte do seu conteúdo, quaisquer
 referências dos parâmetros nos atributos ``name`` e ``visible`` serão
 substituídos usando os valores dos parâmetros a partir da origem do
 escopo relacionado com a coleção.
 
-Para mais informações consulte :ref:`layout-disable-objects`.
+Para mais informações consulte :ref:`layfile-disable-objects`.
 
 .. raw:: latex
 
 	\clearpage
 
 
-.. _layout-parts-groups:
+.. _layfile-parts-groups:
 
 Grupos reutilizáveis
 ~~~~~~~~~~~~~~~~~~~~
@@ -1347,7 +1361,7 @@ elemento ``group`` usando um elemento de grupo como referência.
 Opcionalmente os limites de destino, a orientação e as modificações
 das cores poderão ser informados também.
 O atributo ``ref`` identifica o grupo a qual faz referência, neste
-exemplo são fornecidos os valores de limite:
+exemplo são informados os limites dos valores:
 
 .. code-block:: xml
 
@@ -1357,7 +1371,7 @@ Os elementos de definição dos grupos permitem que todos os elementos
 filhos que forem iguais, sejam exibidos. O posicionamento e as
 orientações das tela, elementos de layout e arranjo desses grupos
 funcionem da mesma maneira que as visualizações.
-Veja :ref:`layout-parts-views` para mais informações.
+Veja :ref:`layfile-parts-views` para mais informações.
 Um grupo pode justificar outros grupos, porém loops recursivos não são
 permitidos. Será considerado um erro caso um grupo represente a si
 mesmo de forma direta ou indireta.
@@ -1369,7 +1383,7 @@ a união dos limites de todas as telas, elementos de layout ou grupos
 relacionados.
 Um elemento filho ``bounds`` pode ser usado para definir
 explicitamente grupos limitadores
-(consulte :ref:`layout-concepts-coordinates` para mais informações).
+(consulte :ref:`layfile-concepts-coordinates` para mais informações).
 Observe que os limites dos grupos são usados com a única justificativa
 para calcular as coordenadas de transformação quando forem relacionados
 a um grupo. Um grupo pode posicionar as telas ou os elementos fora dos
@@ -1438,7 +1452,7 @@ Qualquer elemento ``param`` dentro da definição do conjunto, estabelece
 os parâmetros dos elementos no escopo local para o grupo instanciado.
 Os parâmetros locais não se preservam através das várias instancias.
 
-Consulte :ref:`layout-concepts-params` para obter mais informações sobre
+Consulte :ref:`layfile-concepts-params` para obter mais informações sobre
 os parâmetros. (Observe que o nome dos grupos não fazem parte do seu
 conteúdo e qualquer referência de parâmetro no próprio atributo ``name``
 será substituído no ponto onde a definição do grupo aparecer no primeiro
@@ -1448,7 +1462,7 @@ nível do elemento de escopo ``mamelayout``.)
 
 	\clearpage
 
-.. _layout-parts-repeats:
+.. _layfile-parts-repeats:
 
 Repetindo os blocos
 ~~~~~~~~~~~~~~~~~~~
@@ -1456,7 +1470,7 @@ Repetindo os blocos
 A repetição dos blocos fornecem uma maneira concisa de gerar ou para
 organizar uma grande quantidade de elementos iguais. A repetição dos
 blocos são geralmente usados em conjunto com o gerador de parâmetros
-(consulte :ref:`layout-concepts-params`).
+(consulte :ref:`layfile-concepts-params`).
 A repetição dos blocos podem ser agrupados para criar arranjos mais
 complexos.
 
@@ -1479,8 +1493,8 @@ dentro do elemento ``repeat`` depende de onde ele for aparecer:
 Um bloco de repetição repete o seu conteúdo diversas vezes dependendo do
 valor definido no atributo ``count``. Consulte as seções relevantes para
 obter mais informações de como os sub-elementos são usados
-(:ref:`layout-parts`, :ref:`layout-parts-groups`
-e :ref:`layout-parts-views`). Um bloco que se repete cria um escopo de
+(:ref:`layfile-parts`, :ref:`layfile-parts-groups`
+e :ref:`layfile-parts-views`). Um bloco que se repete cria um escopo de
 parâmetros agrupados dentro do escopo do parâmetro do seu elemento
 léxico principal (DOM).
 
@@ -1626,7 +1640,7 @@ no topo do ``board.IN.0`` na parte inferior.
 	\clearpage
 
 
-.. _layout-interact:
+.. _layfile-interact:
 
 Interatividade
 --------------
@@ -1647,14 +1661,14 @@ para cinco tipos de interatividades:
 	serão desenhados de forma diferente. Isso inclui a matriz de pontos,
 	o display de LEDs com vários segmentos, os contadores simples e os
 	elementos com mostradores rotativos. Consulte
-	:ref:`layout-parts-elements` para obter mais detalhes.
+	:ref:`layfile-parts-elements` para obter mais detalhes.
 
 **Componentes desenhados de forma condicional**
 
 	Os componentes podem ser desenhados de forma condicional ou
 	escondidos dependendo da condição do conteúdo do elemento a partir
 	da informação dos valores para os elementos ``state`` e/ou
-	``statemask``. Consulte :ref:`layout-parts-elements` para obter mais
+	``statemask``. Consulte :ref:`layfile-parts-elements` para obter mais
 	detalhes.
 
 **Parâmetros para a animação dos componentes**
@@ -1663,7 +1677,7 @@ para cinco tipos de interatividades:
 	talvez possam ser animados de acordo com a condição do elemento a
 	partir da informação dos diversos elementos ``color`` e/ou
 	``bounds`` em conjunto com os atributos de condição ``state``.
-	Consulte :ref:`layout-parts-elements` para obter mais detalhes.
+	Consulte :ref:`layfile-parts-elements` para obter mais detalhes.
 
 **Parâmetros para a animação dos itens**
 
@@ -1675,7 +1689,7 @@ para cinco tipos de interatividades:
 	\clearpage
 
 
-.. _layout-interact-clickable:
+.. _layfile-interact-clickable:
 
 Itens que podem ser clicados
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1687,7 +1701,7 @@ clicar no elemento para que determinado interruptor seja ativado. O
 interruptor permanecerá ativo enquanto o botão do mouse estiver
 pressionado e o ponteiro estiver dentro dos limites do item.
 (Observe que os limites podem mudar dependendo da condição do estado de
-animação do item, consulte :ref:`layout-interact-itemanim`).
+animação do item, consulte :ref:`layfile-interact-itemanim`).
 
 O atributo ``inputtag`` determina o caminho do identificador de uma
 porta E/S relativa ao dispositivo responsável pelo carregamento do
@@ -1713,12 +1727,35 @@ todos os elementos de layout como sendo retangular e ativa apenas o
 primeiro item que possa ser pressionado cuja região inclua a posição do
 ponteiro do mouse.
 
+Para **bloquear** o elemento de ser clicado na tela crie uma camada
+vazia com as mesmas dimensões do item bloqueado antes do item que você
+deseja bloquear. Primeiro crie-o no inicio do layout:
+
+.. code-block:: xml
+
+	<element name="nada" defstate="0">
+		<text string=" " />
+	</element>
+
+Em seguida use-o **antes** do elemento que será protegido:
+
+.. code-block:: xml
+
+	<element ref="nada" blend="add" inputtag="IN0" inputmask="0x0" inputraw="yes">
+		<bounds x="1783" y="3919" width="270" height="270" />
+	</element>
+	<element ref="controle" inputtag="IN0" inputmask="0xf" inputraw="yes">
+		<bounds x="1783" y="3919" width="270" height="270" />
+	</element>
+
+Consulte também :ref:`layfile-advanced-settings`.
+
 .. raw:: latex
 
 	\clearpage
 
 
-.. _layout-interact-elemstate:
+.. _layfile-interact-elemstate:
 
 O Estado do elemento
 ~~~~~~~~~~~~~~~~~~~~
@@ -1726,7 +1763,7 @@ O Estado do elemento
 Um item de visualização que instancie um elemento (elemento ``element``)
 pode fornecer um valor da sua condição para o elemento a partir de uma
 porta emulada de E/S ou para a saída. Consulte
-:ref:`layout-parts-elements` para obter mais detalhes sobre como o
+:ref:`layfile-parts-elements` para obter mais detalhes sobre como o
 estado de um elemento afeta sua aparência.
 
 O valor do estado do elemento será obtido através do valor da saída
@@ -1774,7 +1811,7 @@ valor **0xb0** resultará num deslocamento com quatro bits à direita).
 	\clearpage
 
 
-.. _layout-interact-itemanim:
+.. _layfile-interact-itemanim:
 
 A visualização de um item animado
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1812,7 +1849,7 @@ ou a entrada de uma porta durante o fornecimento de um sub-elemento
 ou um atributo ``inputtag`` ou um atributo ``name`` (porém não ambos).
 Na ausência do sub-elemento ``animate`` o estado de animação do item
 será idêntico ao estado do seu elemento (consulte
-:ref:`layout-interact-elemstate`).
+:ref:`layfile-interact-elemstate`).
 
 Quando um sub-elemento ``animate`` estiver presente e tiver um atributo
 ``inputtag``, o estado da animação do item será obtido a partir do valor
@@ -1885,7 +1922,7 @@ partir da posição emulada da entrada para controlar as suas posições:
 	\clearpage
 
 
-.. _layout-errors:
+.. _layfile-errors:
 
 Lidando com erros
 -----------------
@@ -1908,7 +1945,7 @@ Lidando com erros
   usuário.
 
 
-.. _layout-autogen:
+.. _layfile-autogen:
 
 As visualizações que são geradas automaticamente
 ------------------------------------------------
@@ -1948,7 +1985,7 @@ são geradas automaticamente:
 
 	\clearpage
 
-.. _layout-complay:
+.. _layfile-complay:
 
 Usando o complay.py
 -------------------
@@ -1977,7 +2014,7 @@ base para as variáveis na saída: ::
 seja usado na saída, o **complay.py** irá analisar e verificar apenas o
 arquivo da entrada, informando quaisquer erros que forem encontrados e
 não gerando qualquer tipo de arquivo na saída.
-Caso nenhum ``varname`` seja fornecido, o **complay.py** irá
+Caso nenhum ``varname`` seja informado, o **complay.py** irá
 gerar um com base no nome do arquivo da entrada. Isso não garante a
 geração de identificadores válidos.
 
@@ -2001,7 +2038,7 @@ completo do arquivo como mostra o exemplo abaixo: ::
 
 	\clearpage
 
-.. _layout-create-layout:
+.. _layfile-create-layout:
 
 Criando um arquivo de layout na prática
 ---------------------------------------
@@ -2013,7 +2050,7 @@ final será possível ver a capacidade do MAME de apresentar o design
 completo na tela, com a devida animação dos controles e dos botões e com
 todos os botões clicáveis.
 
-.. _layout-tools:
+.. _layfile-tools:
 
 Ferramentas necessárias
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2051,7 +2088,7 @@ capítulos faça a descompressão dos arquivos dentro do diretório
 Quando quiser avaliar qualquer um deles basta renomear **um deles** para
 **galaxian**
 
-.. _layout-identify-parts:
+.. _layfile-identify-parts:
 
 Identificando as partes
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2146,7 +2183,7 @@ imagem tem **3296x4093**:
 
 	\clearpage
 
-.. _layout-screen-position:
+.. _layfile-screen-position:
 
 A Posição e a proporção de tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2221,7 +2258,7 @@ todos os valores para definirmos a nossa tela (screen):
 
 	\clearpage
 
-Utilize a ferramenta disponibilizada em :ref:`layout-tools` para
+Utilize a ferramenta disponibilizada em :ref:`layfile-tools` para
 facilitar o cálculo destas dimensões. Insira os valores no campo
 **verde**, o primeiro campo verde no topo serve para a fácil
 identificação da relação de aspecto da tela de um valor qualquer. O
@@ -2254,7 +2291,7 @@ para atender qualquer outra necessidade que você venha a ter.
 
 	\clearpage
 
-.. _layout-button-posicionando:
+.. _layfile-button-posicionando:
 
 Posicionando os botões na tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2330,7 +2367,7 @@ cima para aplicar o zoom na região do ponteiro do mouse:
 
 	\clearpage
 
-.. _layout-button-logica:
+.. _layfile-button-logica:
 
 Conectando os botões e ativando as suas funções lógicas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2427,7 +2464,7 @@ a **tag** aparece como ``tag=":edge:joy:JOY1"``, apenas ignore os dois
 pontos iniciais e copie **todo** o resto, ou seja, a nossa ``inputtag``
 para as máquinas Neo Geo ficaria ``inputtag="edge:joy:JOY1"``.
 
-.. _layout-button-alerta-retorno:
+.. _layfile-button-alerta-retorno:
 
 Alertas e retornos externos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2465,7 +2502,7 @@ respectivos jogadores.
 
 É possível montar este layout de duas maneiras, posicionando a nossa
 lâmpada uma a uma ou utilizando ``cont`` em conjunto com os
-:ref:`layout-concepts-params`. Imagine o seguinte cenário, você está
+:ref:`layfile-concepts-params`. Imagine o seguinte cenário, você está
 montando um layout onde precisa colocar lamp0 até lamp100 na tela, é
 possível fazer isso de forma manual ou usar parâmetros para facilitar
 escrevendo poucas linhas e deixando que o MAME lide com o resto.
@@ -2602,7 +2639,7 @@ Este é o nosso arquivo completo:
 
 	<?xml version="1.0"?>
 	<!-- Layout file created by: Wellington Terumi Uemura
-		Artwork design by: Etienne MacGyver
+		Bezel design by: Etienne MacGyver
 		Round Buttons design by: u/cd4053
 		License: CC by 4.0
 		https://mamedoc.readthedocs.io/pt/latest/techspecs/layout_files.html
@@ -2667,7 +2704,7 @@ Este é o nosso arquivo completo:
 	</view>
 	</mamelayout>
 
-.. _layout-funcionar-efeitos:
+.. _layfile-funcionar-efeitos:
 
 Colocando para funcionar e adicionando efeitos na tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2759,7 +2796,7 @@ Altere o valor do ``overscan`` de ``vec2(1.01,1.01)`` para
 
 	\clearpage
 
-.. _layout-advanced-settings:
+.. _layfile-advanced-settings:
 
 Adicionando diagonais nos controles com 8 direções com inputraw
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2853,7 +2890,7 @@ bem na linha **2746** de cara já temos o nosso ``inputtag`` com o valor
 (psx) por exemplo utiliza ``port1:digital_pad:PSXPAD0``, já a máquina
 **Neo Geo** usa ``edge:joy:JOY1`` e assim por diante. Para casos como
 estes é preferível neste caso é preferível utilizar a maneira descrita
-no capítulo :ref:`layout-button-logica`.
+no capítulo :ref:`layfile-button-logica`.
 
 A Galaxian tem apenas duas direções, esquerda e direita, preste atenção
 ao valor ``0x04`` para ``IPT_JOYSTICK_LEFT`` e ``0x08`` para
@@ -2879,7 +2916,7 @@ valores para ``state`` e portanto eles devem ser encontrados de forma
 **manual** o que dá um certo trabalho, para facilitar, veja o exemplo da
 tabela abaixo com os valores para algumas máquinas:
 
-.. _layout-codigos-direcionais:
+.. _layfile-codigos-direcionais:
 
 .. |cima| image:: images/cima.png
    :scale: 20%
@@ -3231,7 +3268,7 @@ encontrar todos os valores.
 
 	\clearpage
 
-.. _layout-dois-ou-mais:
+.. _layfile-dois-ou-mais:
 
 Máquinas com dois ou mais controles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3346,7 +3383,7 @@ também funcionam para todas as outras máquinas existentes no driver
 
 	\clearpage
 
-Utilize o **layout modelo** disponibilizado em :ref:`layout-tools` para
+Utilize o **layout modelo** disponibilizado em :ref:`layfile-tools` para
 realizar testes em diferentes máquinas e obter uma visualização simples
 e rápida dos controles, depois de baixar e extrair o arquivo, copie-o
 para o diretório **artwork** e o renomeie com o nome da máquina que será
@@ -3394,7 +3431,7 @@ informações consulte :ref:`mamemenu-general-inputs-P1`.
 
 	\clearpage
 
-.. _layout-mais-de-uma-visualizacao:
+.. _layfile-mais-de-uma-visualizacao:
 
 Um único arquivo para diferentes visualizações
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3404,7 +3441,7 @@ ficando limitado a apenas uma, ou seja, é possível dar a opção ao
 jogador para escolher aquilo que ele possa querer ver na tela como por
 exemplo, ter diferentes versões de visualização para a máquina
 **Galaxian**. No arquivo da versão completa (disponível em
-:ref:`layout-tools`) temos o exemplo da **Galaxian** Italiana, Americana
+:ref:`layfile-tools`) temos o exemplo da **Galaxian** Italiana, Americana
 e a Japonesa com diferentes configurações para os botões para o 1º e 2º
 jogador, algumas utilizam botões simples e outras usam os botões
 iluminados da NAMCO.
@@ -3442,12 +3479,12 @@ Vídeo** (TAB --> Opções de Vídeo).
 
 	\clearpage
 
-.. _layout-disable-objects:
+.. _layfile-disable-objects:
 
 Desativando objetos na tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assim como foi descrito em :ref:`layout-parts-collections` isso é
+Assim como foi descrito em :ref:`layfile-parts-collections` isso é
 possível organizando os objetos da tela dentro dos elementos
 ``collections``, quando a visualização tiver esta opção o jogador poderá
 desligar qualquer objeto na tela que tenha sido organizado pelo autor
@@ -3476,7 +3513,7 @@ a máquina `mspacman <http://www.mediafire.com/file/ogq1t6zmduy5x0l/mspacman.zip
 
 	\clearpage
 
-.. _layout-examples:
+.. _layfile-examples:
 
 Exemplos de outros arquivos de layout
 -------------------------------------
