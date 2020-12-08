@@ -2798,8 +2798,8 @@ Altere o valor do ``overscan`` de ``vec2(1.01,1.01)`` para
 
 .. _layfile-advanced-settings:
 
-Adicionando diagonais nos controles com 8 direções com inputraw
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adicionando diagonais nos controles com 8 direções usando o inputraw
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Algumas máquinas possuem controles simples como a própria **Galaxian**
 tem apenas 2 direções, **esquerda** e **direita**, outras como
