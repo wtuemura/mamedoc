@@ -1644,10 +1644,6 @@ Opções para a gravação e a reprodução do estado da emulação
 
 		mame64 ssf2tu -rec perfect
 
-.. raw:: latex
-
-	\clearpage
-
 
 .. _mame-commandline-recordtimecode:
 
