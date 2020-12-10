@@ -34,9 +34,8 @@ para que se possa usar o nome, o logo e a marca "MAME".
     Na falta, obtenha em `Licenças GNU <https://www.gnu.org/licenses/>`_.
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-Acesse
-`LICENSE.md <https://github.com/mamedev/mame/blob/master/LICENSE.md>`_
-para maiores informações.
+Para mais informações acesse `license information <https://github.com/ma
+medev/mame/blob/master/COPYING>`_.
 
 LICENCIAMENTO DESTE DOCUMENTO E SUA TRADUÇÃO 
 ============================================
