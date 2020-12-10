@@ -69,8 +69,8 @@ adicionados e correções posteriores a versão do MAME que estiver usando.
 O MAME tira vantagem dos recursos de hardware 3D para a exibição das
 ilustrações assim como o redimensionamento do software ou jogo para tela
 inteira. Para fazer uso destes benefícios, é obrigatório ter uma placa
-de vídeo mais recente capaz de lidar com Direct3D 11 e com pelo menos
-1 GiB de memória RAM.
+de vídeo mais recente capaz de lidar com Direct3D 11 e no mínimo 2 GiB
+de memória RAM.
 
 Os filtros especiais HLSL ou GLSL assim como o efeito de simulação de
 uma tela de tubo CRT, causam uma sobrecarga extra na emulação,
