@@ -1782,9 +1782,13 @@ Linux Fedora os pacotes necessários são **libcxx**, **libcxx-devel**,
 **libcxxabi** e **libcxxabi-devel**. Defina os compiladores clang C e
 C++ assim como o **-stdlib=libc++** nas opções do compilador C++ e seu
 lincador.
-O comando completo ficaria assim: ::
+O comando completo ficaria assim::
 
 	env LDFLAGS=-stdlib=libc++ make OVERRIDE_CC=clang OVERRIDE_CXX=clang++ ARCHOPTS_CXX=-stdlib=libc++ ARCHOPTS_OBJCXX=-stdlib=libc++
+
+Ou em caso de erro, tente::
+
+	env LDFLAGS=-stdlib=libc++ make OVERRIDE_CC=clang OVERRIDE_CXX=clang++ ARCHOPTS_OBJCXX=-stdlib=libc++ LDOPTS=-fuse-ld=lld -stdlib=libc++
 
 As opções depois do comando make podem ser armazenadas em um
 makefile customizado como descrito em :ref:`PREFIX_MAKEFILE
