@@ -106,16 +106,24 @@ seção :ref:`index-commandline` deste manual (na maioria dos casos, cada
 opção de configuração listada ali, possui uma versão equivalente para a
 linha de comando).
 
+.. raw:: latex
+
+	\clearpage
+
 Para criar um novo arquivo ``mame.ini`` com as configurações primárias
 já predefinidas:
 
 	**mame.exe -createconfig** ou **mame.exe -cc**
 
-Serão criados 3 arquivos, o ``mame.ini`` que é o arquivo primário de
-configuração, o ``plugins.ini`` que é o arquivo que armazena uma lista
-de plugins disponíveis e o ``ui.ini``, este arquivo armazena toda a
-customização feita na interface interna como mudar o tamanho e o
-nome da fonte, a cor da interface, etc.
+Serão criados 3 arquivos, o ``mame.ini`` que é o arquivo de configuração
+primária, o ``plugins.ini`` que é o arquivo que armazena uma lista
+de plug-ins disponíveis e o ``ui.ini`` que armazena toda a customização
+feita na interface interna como mudar o tamanho e o nome da fonte, a cor
+da interface, etc.
+
+No Windows estes arquivos são criados no mesmo diretório do executável
+do MAME, no macOS ele é criado em ``~/Application Support/mame`` e em
+sistemas \*.nix são criados em ``~/.mame``.
 
 Observe que o ``mame.ini`` é basicamente um arquivo de texto simples,
 que pode ser editado com qualquer editor de texto (como o
