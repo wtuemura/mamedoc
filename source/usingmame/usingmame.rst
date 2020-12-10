@@ -7,10 +7,10 @@ iniciar o executável clicando duas vezes no **mame.exe** (32 bit) ou
 **mame64.exe** (64 bit). Continue lendo caso tenha interesse em
 desvendar todo o potencial que o MAME pode te oferecer.
 
-Em plataformas baseadas em Macintosh OS X e plataformas com base Unix,
-certifique-se de configurar a fonte do seu sistema para que corresponda
-ao seu idioma antes de iniciar, caso contrário não será possível ler o
-texto devido à falta de glifos e outros caracteres.
+Em plataformas macOS e plataformas \*nix, certifique-se de configurar a
+fonte do seu sistema para que corresponda ao seu idioma antes de
+iniciar, caso contrário não será possível ler o texto devido a falta dos
+glifos e dos outros caracteres.
 
 Para marinheiros de primeira viagem o MAME pode parecer um pouco
 complexo, porém é bem mais simples do que parece. É possível iniciar uma
@@ -21,9 +21,9 @@ pode também iniciar usando a linha de comando:
 
 Faça assim para iniciar um sistema junto com o seu software:
 
-	**mame.exe** <*system*> <*software*>
+	**mame.exe** <*systema*> <*software*>
 
-Em **system** escolha uma das centenas de sistemas emulados, já em
+Em **systema** escolha uma das centenas de sistemas emulados, já em
 **software** é o nome da máquina [#]_ que deseja rodar. O software
 nada mais é do que um nome de uma ROM ou a imagem de uma mídia. É
 possível também a utilização de **lista de programa** (**softlists**)
@@ -53,33 +53,33 @@ não esteja na lista, as coisas ficam um pouco mais complicadas.
 
 A estrutura básica da linha de comando fica assim:
 
-	**mame.exe** <*system*> <*media*> <*software*> <*options*>
+	**mame.exe** <*systema*> <*mídia*> <*software*> <*opções*>
 
 Onde:
 
-*	<*system*> é o apelido ou o nome encurtado do sistema que deseja
+*	<*systema*> é o apelido ou o nome encurtado do sistema que deseja
 	emular (por exemplo, nes, c64, etc).
-*	<*media*> é o seletor da mídia desejado carregar (se for um
+*	<*mídia*> é o seletor da mídia desejado carregar (se for um
 	cartucho, tente **-cart** ou **-cart1**; caso seja um disquete,
 	tente **-flop** or **-flop1**; caso seja um CD-ROM, tente
 	**-cdrom**).
 *	<*software*> é o programa ou jogo que deseja carregar (também pode
 	ser usado o caminho completo para o arquivo a ser carregado ou como
 	o nome abreviado do arquivo que esteja na sua lista de software).
-*	<*options*> é qualquer opção de linha de comando adicional para
-	controles, vídeo, áudio, etc.
+*	<*opções*> quaisquer opções adicionais usadas na linha de comando
+	para os controles, para o vídeo, áudio, etc.
 
 Lembre-se que ao digitar um nome de sistema <*system*> e este ainda não
 exista ou não seja emulado [#]_, o MAME irá sugerir algumas
-opções próximas ao que foi digitado. No caso de desconhecimento de quais
-mídias <*media*> estão disponíveis, inicie a emulação como mostra o
-exemplo abaixo:
+opções próximas ao que foi digitado. No caso do desconhecimento de quais
+<*mídias*> estão disponíveis, inicie a emulação como mostra o exemplo
+abaixo:
 
-	**mame.exe** <*system*> :ref:`-listmedia <mame-commandline-listmedia>` <*options*>
+	**mame.exe** <*systema*> :ref:`-listmedia <mame-commandline-listmedia>` <*opções*>
 
 
-Para saber quais são as opções <*options*> estão disponíveis, leia o
-capítulo :ref:`universal-command-line` deste manual, veja também as
+Para saber quais são as <*opções*> estão disponíveis, leia o capítulo
+:ref:`universal-command-line` deste manual, veja também as
 :ref:`frontends`.
 
 Precisando de ajuda?
@@ -132,12 +132,12 @@ aplicadas ao ``mame.ini`` anterior [#]_ quando o comando for executado
 novamente.
 
 Neste capítulo revelamos apenas o topo do iceberg, há muito mais para
-ser revelado, nos próximos capítulos começaremos a entrar mais a fundo
-nos detalhes de todos os comandos compatíveis e todas as possibilidades
+ser revelado, entraremos mais a fundo nos próximos capítulos com mais
+detalhes  de todos os comandos compatíveis e de todas as possibilidades
 de customização do MAME.
 
-.. [#]	Os desenvolvedores do MAME preferem usar o termo **máquinas** ao
-		em vez de **jogos**, talvez visando evitar problemas legais?
+.. [#]	Os desenvolvedores do MAME preferem usar o termo **máquinas** em
+		vez de **jogos**, talvez visando evitar problemas legais?
 .. [#]	Existe uma diferença entre sistema e máquina, o comando em
 		questão funciona apenas com sistemas. Arcades são considerados
 		máquinas como o CPS1, CP2, ZN, etc. O comando ao ser usado com
