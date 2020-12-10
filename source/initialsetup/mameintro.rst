@@ -96,9 +96,9 @@ circuitos integrados originais destes aparelhos precisam ser extraídos.
 Isso pode ser feito extraindo estes dados do aparelho original você
 mesmo, ou procurando por eles na internet por sua conta e risco.
 
-O MAME não fornece, disponibiliza ou vem acompanhado de nenhum deles
-justamente pelo fato desses conteúdos estarem protegidos por leis de
+O MAME não fornece, disponibiliza ou vem acompanhado com nenhum deles
+justamente pelo fato destes conteúdos estarem protegidos por leis de
 direitos autorais. Caso tenha interesse em encontrar algum software que
 rode em uma das máquinas já emuladas, lembre-se, o Google e outros sites
-de pesquisa são os seus melhores amigos nessas horas.
+de pesquisa são os seus melhores amigos.
 
