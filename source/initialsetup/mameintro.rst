@@ -23,9 +23,9 @@ código fonte atual, siga as instruções na página de contato ou poste uma
 mensagem no Fórum do MAME em `https://forum.mamedev.org/
 <https://forum.mamedev.org/>`_
 
-A maior parte do MAME é programado em C++, alguns componentes principais
-em C e outras linguagens auxiliares. Atualmente o MAME consegue emular
-mais de 3200 sistemas independentes das últimas 5 décadas.
+Grande parte do MAME é programado em C/C++  e outras linguagens
+auxiliares. Atualmente o MAME consegue emular mais de 3200 sistemas
+independentes das últimas 5 décadas.
 
 Os sistemas operacionais compatíveis
 ====================================
@@ -50,10 +50,10 @@ Os binários oficiais do MAME são compilados e projetados para rodar em
 qualquer sistema Windows. Os requisitos mínimos são:
 
 * Processador Intel Core ou equivalente com pelo menos 2.0 GHz
-* Sistema Operacional de 32-bit (Windos Vista SP1 ou mais recente, Mac
-  10.9 ou mais recente)
+* Sistema Operacional com 64-bit (Windos 7 SP1 ou mais recente, macOS
+  10.14 ou mais recente)
 * 4 GB de RAM
-* DirectX 9.0c para Windows
+* DirectX 9.0c para Windows (Não é compatível com o Windows 10)
 * Uma placa gráfica compatível com Direct3D ou OpenGL
 * Qualquer placa de som compatível com DirectSound
 
@@ -69,16 +69,16 @@ adicionados e correções posteriores a versão do MAME que estiver usando.
 O MAME tira vantagem dos recursos de hardware 3D para a exibição das
 ilustrações assim como o redimensionamento do software ou jogo para tela
 inteira. Para fazer uso destes benefícios, é obrigatório ter uma placa
-de vídeo mais recente capaz de lidar com Direct3D 8 e com pelo menos
-16 MB de memória RAM.
+de vídeo mais recente capaz de lidar com Direct3D 11 e com pelo menos
+1 GiB de memória RAM.
 
 Os filtros especiais HLSL ou GLSL assim como o efeito de simulação de
-tela de tubo CRT, causam uma sobrecarga extra na emulação, especialmente
-em resoluções mais altas. Exigindo uma placa de vídeo moderna o bastante
-para aguentar o tranco, pois a carga de processamento sobe
-exponencialmente à medida que se aumenta também a resolução. Caso HLSL
-ou GLSL fiquem muito pesado, tente reduzir o tamanho da resolução de
-vídeo da emulação.
+uma tela de tubo CRT, causam uma sobrecarga extra na emulação,
+especialmente em resoluções mais altas. Exigindo uma placa de vídeo
+moderna o bastante para aguentar o tranco, pois a carga de processamento
+sobe exponencialmente à medida que se aumenta também a resolução. Caso
+HLSL ou GLSL fiquem muito pesado, tente reduzir o tamanho da resolução
+do vídeo do sistema emulado.
 
 Tenha sempre em mente que, mesmo usando os computadores mais rápidos
 disponíveis hoje, o MAME ainda é incapaz de rodar alguns sistemas em

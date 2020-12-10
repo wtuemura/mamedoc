@@ -260,8 +260,8 @@ Linux a configuração ficaria assim: ::
 	#
 	# Compila com ccache Linux (Clang)
 	# CCACHE_CPP2=yes
-	# OVERRIDE_CC=/usr/bin/ccache /usr/bin/clang-6.0
-	# OVERRIDE_CXX=/usr/bin/ccache /usr/bin/clang++-6.0
+	# OVERRIDE_CC=/usr/bin/ccache /usr/bin/clang
+	# OVERRIDE_CXX=/usr/bin/ccache /usr/bin/clang++
 
 A configuração para Windows no MSYS2 fica assim: ::
 
@@ -549,8 +549,8 @@ o seu **useroptions.mak**: ::
 	#
 	# Para compilações que usem o Clang
 	# <- Clang ->
-	#OVERRIDE_CC=/usr/bin/clang-5.0
-	#OVERRIDE_CXX=/usr/bin/clang++-5.0
+	#OVERRIDE_CC=/usr/bin/clang
+	#OVERRIDE_CXX=/usr/bin/clang++
 	#
 	# Só use em ÚLTIMO CASO! Para depuração apenas!
 	#-SANITIZE=address
@@ -693,17 +693,9 @@ A versão nativa do MAME para Windows é compilada usando o ambiente
 de desenvolvimento MSYS2, é necessário ter o Windows 7 ou mais recente
 assim como uma versão atualizada do MSYS2. É aconselhável compilar o
 MAME em um sistema operacional de 64-bit, para sistemas 32-bit é
-necessário fazer algumas alterações.
-
-* Baixe e instale o ambiente de desenvolvimento MSYS2 direto da
-  página do `MSYS2 <https://www.msys2.org/>`_.
-
-* Baixe a última versão do pacote **mame-essentials** do 
-  `repositório <https://repo.mamedev.org/x86_64/>`_ de pacotes do
-  MAME.
-  Copie e extraia o arquivo no diretório raiz do MYSYS2 (geralmente
-  ``c:\mysys32`` ou ``c:\mysys64``) usando o
-  `7-zip <https://www.7-zip.org/>`_.
+necessário fazer algumas alterações. Baixe e instale o ambiente de
+desenvolvimento MSYS2 direto da página do
+`MSYS2 <https://www.msys2.org/>`_.
 
 Por fim é necessário definir as variáveis MINGW32 e MINGW64, instale o
 editor de texto nano com o comando ``pacman -S nano``, após a instalação
@@ -773,6 +765,10 @@ reinicie o **mingw64.exe**.
 * Para fazer a depuração do MAME é necessário instalar o **gdb**. Para
   mais informações sobre o gdb veja :ref:`compiling-using-gdb`.
 
+.. raw:: latex
+
+	\clearpage
+
 É possível também utilizar estes comandos para garantir que todos os
 pacotes necessários para compilar o MAME estejam disponíveis no seu
 sistema, omita aqueles cuja configuração você não planeja utilizar para
@@ -787,14 +783,6 @@ um pacote de uma vez: ::
 	pacman -S mingw-w64-i686-gcc mingw-w64-i686-libc++ mingw-w64-i686-lld mingw-w64-i686-python
 	pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-SDL2_ttf
 	pacman -S mingw-w64-i686-qt5
-
-Utilize estes comando para instalar a versão mais recente do pacote do
-**mame-essentials** e adicione o pacote ao repositório da configuração
-do seu pacman: ::
-
-	curl -O "https://repo.mamedev.org/x86_64/mame-essentials-1.0.6-1-x86_64.pkg.tar.xz"
-	pacman -U mame-essentials-1.0.6-1-x86_64.pkg.tar.xz
-	echo -e '\n[mame]\nInclude = /etc/pacman.d/mirrorlist.mame' >> /etc/pacman.conf
 
 .. raw:: latex
 
@@ -905,9 +893,9 @@ compilar o MAME ou para montar o ambiente sem qualquer erro.
 Compilando com o Microsoft Visual Studio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* É possível gerar projetos compatíveis com o Visual Studio 2017 usando
-  o comando **make vs2017**. É predefinido que a solução e o projeto
-  serão criados no diretório ``build/projects/windows/mame/vs2017``.
+* É possível gerar projetos compatíveis com o Visual Studio 2019 usando
+  o comando **make vs2019**. É predefinido que a solução e o projeto
+  serão criados no diretório ``build/projects/windows/mame/vs2019``.
   O nome do diretório **build** pode ser alterado modificando a opção
   ``BUILDDIR``.
 
@@ -919,10 +907,11 @@ Compilando com o Microsoft Visual Studio
   Observe que é necessário que o ambiente e os caminhos estejam
   corretamente configurados para que o Visual Studio possa encontrá-los.
 
-* Problemas com as novas versões do compilador do
-  Microsoft Visual C/C++ previnem que o MAME seja compilado. Pode ser
-  que isso mude no futuro, use as ferramentas do Microsoft Visual
-  Studio **15.7.6**.
+* Consulte `Usando o conjunto de ferramentas Microsoft C++ na linha de
+  comando <https://docs.microsoft.com/pt-br/cpp/build/building-on-the-
+  command-line>`_.
+  Pode ser que você ache mais fácil carregar o projeto direto na
+  interface do Visual Studio do que usar **MSBUILD=1**.
 
 * Ainda que o Visual Studio seja usado é necessário ter também o
   ambiente MSYS2 para gerar os arquivos do projeto, converter os layouts
@@ -977,9 +966,9 @@ levado em consideração ao utilizar o ``cmd.exe`` da Microsoft pois
 comando ``copy`` não verbaliza nada muito útil durante a condição da sua
 ação, assim as operação de cópia são geralmente silenciosas. Prefira o
 uso de ferramentas como o
-`robocopy <https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/robocopy>`_
-que garante a integridade do arquivo do destino e gera um relatório
-completo.
+`robocopy <https://docs.microsoft.com/pt-br/windows-server/administratio
+n/windows-commands/robocopy>`_ que garante a integridade do arquivo do
+destino e gera um relatório completo.
 
 Não é possível realizar a compilação cruzada de uma versão 32-bit do
 MAME utilizando ferramentas 64-bit do MinGW no Windows pois causa
@@ -1046,12 +1035,12 @@ A compilação é exatamente como descrito em
 
 .. _compiling-macos:
 
-Apple Mac OS X
---------------
+Apple macOS
+-----------
 
 Alguns pré-requisitos são necessários. Certifique-se de estar no
-*OS X 10.9 Mavericks* ou mais recente. É **OBRIGATÓRIO** o uso do
-**SDL 2.0.4** para o **OS X**.
+*macOS X 10.14 Mavericks* ou mais recente. É **OBRIGATÓRIO** o uso do
+**SDL 2.0.4** ou mais recente para o **OS X**.
 
 *	Instale o **Xcode** encontrado no Mac App Store
 *	Inicie o programa **Xcode**.
@@ -1064,7 +1053,7 @@ Alguns pré-requisitos são necessários. Certifique-se de estar no
 Em seguida, é preciso baixar e instalar o SDL 2.
 
 *	Vá para `este site <http://libsdl.org/download-2.0.php>`_ e baixe o
-	arquivo .dmg para o *Mac OS X*.
+	arquivo .dmg para o *macOS*.
 *	Caso o arquivo .dmg não abra sozinho de forma automática, execute-o
 	manualmente.
 *	Clique no 'Macintosh HD' (ou seja lá o nome usado no disco rígido do
@@ -1083,12 +1072,12 @@ pouco mais complicado:
 *	É necessário a instalação do **clang-3.7**, **ld64**, **libcxx** e o
 	**python27** do MacPorts.
 *	Em seguida, adicione estas opções ao seu comando **make** ou
-	**useroptions.mak**:
+	**useroptions.mak**::
 
-|	``OVERRIDE_CC=/opt/local/bin/clang-mp-3.7``
-|	``OVERRIDE_CXX=/opt/local/bin/clang++-mp-3.7``
-|	``PYTHON_EXECUTABLE=/opt/local/bin/python2.7``
-|	``ARCHOPTS=-stdlib=libc++``
+		OVERRIDE_CC=/opt/local/bin/clang-mp-3.7
+		OVERRIDE_CXX=/opt/local/bin/clang++-mp-3.7
+		PYTHON_EXECUTABLE=/opt/local/bin/python2.7
+		ARCHOPTS=-stdlib=libc++
 
 .. raw:: latex
 
@@ -1100,8 +1089,8 @@ Javascript Emscripten e HTML
 ----------------------------
 
 Primeiro, baixe e instale o **Emscripten 1.37.29** ou mais recente
-segundo as instruções no `site oficial <https://kripken.github.io/emscri
-pten-site/docs/getting_started/downloads.html>`_
+segundo as instruções no `site oficial <https://emscripten.org/docs/gett
+ing_started/downloads.html>`_.
 
 Depois de instalar o Emscripten, será possível compilar o MAME direto,
 usando a ferramenta '**emmake**'. O MAME completo é muito grande para
@@ -1112,8 +1101,8 @@ MAME: ::
 
 	emmake make SUBTARGET=pacmantest SOURCES=src/mame/drivers/pacman.cpp
 
-O parâmetro *SOURCES* deve apontar para pelo menos um arquivo de driver
-*.cpp*. O comando make tentará localizar e reunir todas as dependências
+O parâmetro *SOURCES* deve apontar para pelo menos um arquivo driver
+*\*.cpp*. O comando make tentará localizar e reunir todas as dependências
 para compilar o executável do MAME junto com o driver definido. No
 entanto porém, caso ocorra algum erro e o processo não encontre algum
 arquivo, é necessário declarar manualmente um ou mais arquivos que
@@ -1368,13 +1357,15 @@ Usando ferramentas de compilação alternativas
 
 **OPENMP**
 
-  Se definido como **1**, faz uso da `paralelização implícita <https://www.ibm.com/developerworks/br/aix/library/au-aix-openmp-framework/index.html>`_ com o
-  `OpenMP <https://pt.wikibooks.org/wiki/Programação_Paralela_em_Arquiteturas_Multi-Core/Programação_em_OpenMP>`_.
-  No MAME segundo o `FAQ oficial <https://wiki.mamedev.org/index.php/FAQ:Performance>`_,
-  são adicionadas novas threads para aceleração de loop, trazendo um
-  aumento de performance. Para fazer uso desta opção é necessário a
-  instalação do ``libomp-devel`` ou ``libomp-dev`` dependendo da sua
-  distribuição.
+  Se definido como **1**, faz uso da `paralelização implícita
+  <https://www.ibm.com/developerworks/br/aix/library/au-aix-openmp-frame
+  work/index.html>`_ com o `OpenMP <https://pt.wikibooks.org/wiki/Progra
+  ação_Paralela_em_Arquiteturas_Multi-Core/Programação_em_OpenMP>`_.
+  No MAME segundo o `FAQ oficial <https://wiki.mamedev.org/index.php/FA
+  Q:Performance>`_, são adicionadas novas threads para aceleração de
+  loop, trazendo um   aumento de performance. Para fazer uso desta opção
+  é necessário a instalação do ``libomp-devel`` ou ``libomp-dev`` depend
+  ndo da sua distribuição.
 
 .. _mame-compilation-optional-resources:
 
@@ -1714,10 +1705,10 @@ parecido: ::
 	biblioteca de vínculo dinâmico D:\MAME\sdlmame64.exe.
 
 Devido a alteração feita
-`neste commit <https://github.com/mamedev/mame/commit/b0223ac413ccfb0907be9741168b4cf43fb67fb9>`_
-o executável **sdlmame64.exe** é compilado de maneira que ele busque as
-bibliotecas que ele precisa para funcionar no sistema em vez de tê-las
-embutidas em si.
+`neste commit <https://github.com/mamedev/mame/commit/b0223ac413ccfb0907
+be9741168b4cf43fb67fb9>`_ o executável **sdlmame64.exe** é compilado de
+maneira que ele busque as bibliotecas que ele precisa para funcionar no
+sistema em vez de tê-las embutidas em si.
 
 Assim o executável **sdlmame64.exe** busca pelas seguintes bibliotecas,
 ``libgcc_s_seh-1.dll``, ``libstdc++-6.dll``, ``libwinpthread-1.dll`` e
