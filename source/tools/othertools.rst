@@ -18,7 +18,7 @@ jogos de arcade como o Asteroids por exemplo.
 Para ativar essa funcionalidade inicie o **ledutil.exe** da linha de
 comando. Rode o comando **ledutil.exe -kill** para interrompê-lo.
 
-Nas plataformas SDLMAME como o Mac OS X e Linux, o **ledutil.sh** poderá
+Nas plataformas SDLMAME como o macOS e Linux, o **ledutil.sh** poderá
 ser usado. Use o comando **ledutil.sh -a** para que ele seja fechado
 automaticamente ao sair do SDLMAME.
 

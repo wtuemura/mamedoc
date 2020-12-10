@@ -139,10 +139,10 @@ Alterando as configurações
 
 	* ``opengl`` Renderizador OpenGL (Requer Drivers compatíveis com
 	  OpenGL, pode não funcionar bem  com algumas placas de vídeo mais
-	  antigas ou mal projetadas). Compatível com Linux/Mac OS X.
+	  antigas ou mal projetadas). Compatível com Linux/macOS.
 
-	* ``metal`` Metal Apple Graphics API (Requer Mac OS X 10.11 El
-	  Capitan ou mais recente).
+	* ``metal`` Metal Apple Graphics API (Requer macOS 10.14 Mavericks
+	  ou mais recente).
 
 	* ``vulkan`` Renderizador Vulkan (via hardware), compatível
 	  atualmente com OpenGL ES 3.1, OpenGL 4.X ou versões mais recentes.

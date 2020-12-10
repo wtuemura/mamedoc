@@ -2205,7 +2205,7 @@ Opções para a configuração de vídeo
 
 	No Windows é **d3d**.
 
-	No Mac OS X é **opengl** pois é quase certo que exista uma pilha
+	No macOS é **opengl** pois é quase certo que exista uma pilha
 	OpenGL compatível.
 
 	O valor predefinido para todos os outros sistemas é **soft**. ::
