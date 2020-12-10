@@ -15,13 +15,14 @@ Tradução não oficial da documentação do MAME para o Português do Brasil.
 Todo o texto fonte oficial foi obtido do site:
 https://github.com/mamedev/mame/tree/master/docs
 
-Este documento não têm qualquer relação com o documento oficial e tão
-pouco com o projeto MAME. Este projeto teve inicio como uma tradução
-porém por diversas razões se tornou um trabalho independente sem no
-entanto ignorar as atualizações da documentação oficial e assim como
-abordando tópicos que não existem na documentação oficial, tópicos estes
-que foram pedidos por alguns membros da comunidade brasileira que gostam
-de emuladores e em especial o MAME.
+Este documento não tem qualquer relação com o documento oficial e tão
+pouco com o projeto MAME, apesar de utilizá-lo como referência. Este
+projeto teve inicio como uma tradução porém por diversas razões se
+tornou um trabalho independente sem no entanto ignorar as atualizações
+da documentação oficial e assim como abordando tópicos que não existem
+na documentação oficial, tópicos estes que foram pedidos por alguns
+membros da comunidade brasileira que gostam de emuladores e em especial
+o MAME.
 
 # Compilando este documento para outros formatos
 
@@ -33,7 +34,22 @@ Instale os seguintes pacotes:
 sudo dnf install python3-sphinx python2-sphinx python3-sphinx-bootstrap-theme python3-sphinxcontrib-rsvgconverter inkscape librsvg2-tools latexmk texlive-cmap texlive-metafont texlive-collection-fontsrecommended texlive-babel-portuges texlive-fncychap texlive-lwarp texlive-fancyhdr texlive-framed texlive-wrapfig texlive-parskip texlive-upquote texlive-titlesec texlive-capt-of texlive-needspace texlive-lato texlive-fontaxes texlive-inconsolata python2-pygments texlive-texments texlive-pygmentex texlive-verbments texlive-collection-publishers texlive-texinfo texinfo python2-docutils texlive-polyglossia texlive-tabulary texlive-collection-langportuguese texlive-hyphen-portuguese pip
 ```
 
-Na sua conta comum, use o `pip` para instalar os pacotes restantes:
+## Debian
+
+```
+sudo apt-get install python3-sphinx python3-pip latexmk texlive texlive-science texlive-formats-extra
+```
+
+## Windows
+
+No Windows é preciso ter o MSYS2 e instalar os seguintes pacotes:
+
+```
+pacman -S mingw-w64-x86_64-librsvg mingw-w64-x86_64-python-sphinx mingw-w64-x86_64-python-sphinxcontrib-svg2pdfconverter
+```
+
+Na sua conta comum, use o `pip` ou `pip3` para instalar os pacotes
+restantes:
 
 ```
 sudo pip install -U Sphinx sphinxcontrib-svg2pdfconverter
