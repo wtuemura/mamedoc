@@ -2245,8 +2245,41 @@ valor da **largura** como mostra a imagem acima e faça as contas::
 	x = 1660 * 1,333333333
 	x = 2213
 
-Encontrado o valor a resolução final deve ser **1660x2213**. Assim temos
-todos os valores para definirmos a nossa tela (screen):
+Ou utilize a ferramenta disponibilizada em :ref:`layfile-tools` para
+facilitar o cálculo destas dimensões.
+
+Insira os valores no campo **verde**, o primeiro campo verde no topo
+serve como uma fácil identificação da relação de aspecto da tela de um
+valor qualquer, caso um valor seja inserido no segundo campo será feito
+o cálculo da largura com base nos dados da primeira linha, se nenhum
+valor for inserido, nada será calculado. O segundo campo em verde serve
+para situações como demonstrada acima onde você identifica uma área
+qualquer e quer saber qual seria a proporção 4:3 ideal para ela, você
+insere o valor da altura quando a tela for horizontal ou largura quando
+a tela estiver na vertical para que a planilha calcule os valores.
+
+.. image:: images/aspectratio.png
+   :width: 80%
+   :align: center
+   :alt: Seleção
+
+A planilha também faz o cálculo da largura com o valor do **SAR**
+(Storage Aspect Ratio ou Relação de Aspecto da Origem), este valor é
+vulgarmente conhecido como **pixel perfect**. Supondo que você vá fazer
+um layout para um jogo de um determinado console e queira o tal "pixel
+perfect", insira uma das resoluções do console no primeiro campo para
+obter o **SAR** e descobrir o valor da largura com base neste **SAR**
+em vez de utilizar o **DAR** (Display Aspect Ratio ou a Proporção da
+Imagem na Tela).
+
+Esta planilha foi criada com a intenção de facilitar os cálculos e para
+ser usada no desenvolvimento dos layouts, ela não serve para nada muito
+técnico ou avançado, porém a planilha está aberta, podendo ser alterada
+para atender qualquer outra necessidade que você venha a ter.
+
+Com o valor calculado em mãos, a resolução final será **1660x2213**.
+Assim temos todos os valores para posicionarmos a nossa tela emulada na
+tela (screen) e a sua correta proporção:
 
 .. code-block:: xml
 
@@ -2258,34 +2291,87 @@ todos os valores para definirmos a nossa tela (screen):
 
 	\clearpage
 
-Utilize a ferramenta disponibilizada em :ref:`layfile-tools` para
-facilitar o cálculo destas dimensões. Insira os valores no campo
-**verde**, o primeiro campo verde no topo serve para a fácil
-identificação da relação de aspecto da tela de um valor qualquer. O
-segundo campo em verde serve para situações como demonstrada acima, seja
-fazendo um novo design do espaço onde a imagem emulada deve aparecer ou
-utilizando um design já existente, você insere o valor da altura quando
-a tela for horizontal ou largura quando a tela estiver na vertical para
-que a planilha calcule os valores.
+É possível organizar este layout de duas maneiras diferentes dependendo
+do efeito que você queira dar ao seu design. O MAME organiza o layout em
+camadas obedecendo a ordem em que elas forem definidas no arquivo de
+layout, então a composição da sua tela emulada e o gráfico pode começar
+com a arte gráfica no fundo e a tela emulada em cima desta arte:
 
-A planilha também faz o cálculo da largura com o valor do **SAR**
-(Storage Aspect Ratio ou Relação de Aspecto da Origem), este valor é
-vulgarmente conhecido como **pixel perfect**. Supondo que você vá fazer
-um layout para um jogo de um determinado console e queira o tal "pixel
-perfect", insira uma das resoluções do console no primeiro campo para
-obter o **SAR** e descobrir o valor da largura com base neste **SAR**
-em vez de utilizar o **DAR** (Display Aspect Ratio ou a Proporção da
-Imagem na Tela).
+.. code-block:: xml
 
-.. image:: images/aspect ratio.png
-   :width: 80%
+	<element ref="Italiano">
+		<bounds x="0" y="0" width="3296" height="4093" />
+	</element>
+	<screen index="0">
+		<bounds x="817" y="575" width="1660" height="2213" />
+	</screen>
+
+.. image:: images/screen-pos-front.png
+   :width: 100%
    :align: center
-   :alt: Seleção
+   :alt: Tela por baixo da arte
 
-A planilha foi criada com a intenção de facilitar os cálculos e para ser
-usada no desenvolvimento dos layouts, ela não serve para nada muito
-técnico ou avançado, porém a planilha está aberta, podendo ser alterada
-para atender qualquer outra necessidade que você venha a ter.
+.. raw:: latex
+
+	\clearpage
+
+Ou ao contrário, com a arte gráfica por cima da tela:
+
+.. code-block:: xml
+
+	<screen index="0">
+		<bounds x="817" y="575" width="1660" height="2213" />
+	</screen>
+	<element ref="Italiano">
+		<bounds x="0" y="0" width="3296" height="4093" />
+	</element>
+
+.. image:: images/screen-pos-back.png
+   :width: 100%
+   :align: center
+   :alt: Tela por baixo da arte
+
+Os motivos de se escolher um ou outro depende do efeito final que você
+queira dar na tela. A arte que estamos utilizando tem uma área preta na
+região da tela fazendo com que ambos se misturem quase que criando uma
+composição de um fundo infinito, porém caso eu queira dar um efeito de
+tela recortada como uma tela CRT eu usaria a segunda opção para
+aproveitar o recorte do design.
+
+.. raw:: latex
+
+	\clearpage
+
+Na Galaxian não dá para perceber este recorte da tela pois tanto a arte
+quanto a tela são pretas, porém com outras máquinas é possível por
+exemplo, colocar uma moldura em volta da tela com efeitos de sombra,
+como mostra `este exemplo <https://www.mediafire.com/file/gwt9yvwkgj14ws
+f/mslug2.zip>`_:
+
+.. image:: images/moldura-tela.png
+   :width: 100%
+   :align: center
+   :alt: Tela com arte, efeitos e moldura
+
+Neste caso nós definimos a tela primeiro, a arte e por último a moldura
+da tela já com alguns efeitos de sombra e transparência:
+
+.. code-block:: xml
+
+	<screen index="0">
+		<bounds x="292" y="43" width="1340" height="997" />
+	</screen>
+	<element ref="Artwork_1">
+		<bounds x="0" y="0" width="1920" height="1080" />
+	</element>
+	<element ref="screen_bezel">
+		<bounds x="272" y="0" width="1376" height="1080" />
+	</element>
+
+Repare que os efeitos da sombra e da transparência da moldura aparecem
+perfeitamente sobre a tela emulada. Neste caso específico a tela foi um
+pouco esticada horizontalmente para cobrir as barras pretas que aparecem
+nos cantos da tela.
 
 .. raw:: latex
 
