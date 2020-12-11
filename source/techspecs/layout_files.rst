@@ -2738,11 +2738,10 @@ o MAME pressionando **SHIFT+F3**.
 	\clearpage
 
 Caso queira aplicar shaders na tela para dar um efeito de uma tela CRT
-como mostra a foto, baixe
-`este arquivo <https://drive.google.com/file/d/0B10tgIdlTMwYSWt2emJtbU81NGc/view?usp=sharing>`_,
-descompacte o seu conteúdo dentro de um diretório chamado **glsl**, vá
-até o diretório **ini** e crie o arquivo **galaxian.ini** e dentro dele
-adicione estas opções::
+como mostra a foto, baixe `este arquivo <https://drive.google.com/file/d
+/0B10tgIdlTMwYSWt2emJtbU81NGc/view?usp=sharing>`_, descompacte-o dentro
+de um diretório chamado **glsl**. Vá até o diretório **ini** e crie o
+arquivo **galaxian.ini** e dentro dele adicione estas opções::
 
 	video                     opengl
 	gl_glsl                   1
@@ -2878,19 +2877,20 @@ mouse:
 Ao executar a máquina novamente o controle não mais responde aos cliques
 do mouse.
 
-Como estamos trabalhando com dados vindos diretamente dos controles é
-necessário encontrar os valores para ``defstate``, ``inputmask`` e
+Como estamos trabalhando com dados vindos diretamente dos controles, é
+necessário encontrar os valores para ``defstate``, ``inputmask`` e para
 ``state``.
 O ``defstate`` e o ``inputmask`` utilizam o mesmo valor, este valor
 **precisa ser calculado**, para isso acessamos o
-`código fonte do driver Galaxian <https://github.com/mamedev/mame/blob/master/src/mame/drivers/galaxian.cpp#L2746>`_,
-bem na linha **2746** de cara já temos o nosso ``inputtag`` com o valor
-``IN0`` que utilizamos acima, observe quem nem sempre o valor do
-``inputtag`` está disponível assim tão fácil, o driver **Playstaion**
-(psx) por exemplo utiliza ``port1:digital_pad:PSXPAD0``, já a máquina
-**Neo Geo** usa ``edge:joy:JOY1`` e assim por diante. Para casos como
-estes é preferível neste caso é preferível utilizar a maneira descrita
-no capítulo :ref:`layfile-button-logica`.
+`código fonte do driver Galaxian <https://github.com/mamedev/mame/blob/m
+aster/src/mame/drivers/galaxian.cpp#L2634>`_, bem na linha **2634** de
+cara já temos o nosso ``inputtag`` com o valor ``IN0`` que utilizamos
+acima, observe quem nem sempre o valor do ``inputtag`` está disponível
+assim tão fácil, o driver **Playstaion** (psx) por exemplo utiliza
+``port1:digital_pad:PSXPAD0``, já a máquina **Neo Geo** usa
+``edge:joy:JOY1`` e assim por diante. Para casos como estes é preferível
+neste caso é preferível utilizar a maneira descrita no capítulo
+:ref:`layfile-button-logica`.
 
 A Galaxian tem apenas duas direções, esquerda e direita, preste atenção
 ao valor ``0x04`` para ``IPT_JOYSTICK_LEFT`` e ``0x08`` para
@@ -3261,7 +3261,7 @@ baixo, altere o valor do ``state`` relacionado com **baixo.png** e
 continue incrementando o valor até chegar em ``0xf``, depois comece
 novamente a partir de ``0x1``. Observe que alguns valores já testados e
 que não retornaram nenhuma animação agora passam a responder, continue
-definindo os valores encontrado para as suas respectivas posições até
+definindo os valores encontrados para as suas respectivas posições até
 encontrar todos os valores.
 
 .. raw:: latex
@@ -3290,7 +3290,7 @@ máquina **Neo Geo** como exemplo nós teríamos o seguinte:
 		<image file="centro.png"	state="0xf" />
 	</element>
 	
-	<element name="controle_J2"		defstate="0xf0">
+	<element name="controle_J2"		defstate="0xf">
 		<image file="baixodireito.png"	state="0x5" />
 		<image file="cimadireita.png"	state="0x6" />
 		<image file="direita.png"	state="0x7" />
@@ -3311,14 +3311,14 @@ máquina **Neo Geo** como exemplo nós teríamos o seguinte:
 	<element ref="nada" blend="add" inputtag="edge:joy:JOY2" inputmask="0x00" inputraw="yes">
 		<bounds x="665" y="794" width="150" height="150" />
 	</element>
-	<element ref="controle_J2" inputtag="edge:joy:JOY2" inputmask="0xf0" inputraw="yes">
+	<element ref="controle_J2" inputtag="edge:joy:JOY2" inputmask="0xf" inputraw="yes">
 		<bounds x="665" y="794" width="150" height="150" />
 	</element>
 
 Ambos os controles utilizam os mesmos valores para ``state`` e
 ``defstate``, o que muda é o valor do ``inputtag`` onde
-``edge:joy:JOY1`` define que este é o controle do **jogador 1** e
-``edge:joy:JOY2`` é o controle do **jogador 2**.
+``edge:joy:JOY1`` define que este é o controle do **jogador 1** e que
+``edge:joy:JOY2`` é o controle do **jogador2**.
 
 Contudo há máquinas como a **CPS2** que apresentam o mesmo valor ``IN0``
 no ``inputtag`` para ambos os jogadores, nestes casos devemos recorrer
@@ -3491,7 +3491,8 @@ desligar qualquer objeto na tela que tenha sido organizado pelo autor
 para ser removido da tela. Use ``visible`` **yes** ou **no** dentro do
 elemento ``collection`` caso queira que ele já inicie **ligado** ou
 **desligado**. Baixe este arquivo para ver como funciona na prática com
-a máquina `mspacman <http://www.mediafire.com/file/ogq1t6zmduy5x0l/mspacman.zip>`_.
+a máquina `mspacman <https://www.mediafire.com/file/ltjl0mnczuvc532/mspa
+cman.zip>`_.
 
 .. code-block:: xml
 
