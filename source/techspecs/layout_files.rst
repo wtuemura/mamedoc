@@ -2354,7 +2354,7 @@ f/mslug2.zip>`_:
    :alt: Tela com arte, efeitos e moldura
 
 Neste caso nós definimos a tela primeiro, a arte e por último a moldura
-da tela já com alguns efeitos de sombra e transparência:
+(screen_bezel) da tela já com alguns efeitos de sombra e transparência:
 
 .. code-block:: xml
 
