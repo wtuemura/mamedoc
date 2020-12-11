@@ -3488,11 +3488,11 @@ Assim como foi descrito em :ref:`layfile-parts-collections` isso é
 possível organizando os objetos da tela dentro dos elementos
 ``collections``, quando a visualização tiver esta opção o jogador poderá
 desligar qualquer objeto na tela que tenha sido organizado pelo autor
-para ser removido da tela. Use ``visible`` **yes** ou **no** dentro do
-elemento ``collection`` caso queira que ele já inicie **ligado** ou
-**desligado**. Baixe este arquivo para ver como funciona na prática com
-a máquina `mspacman <https://www.mediafire.com/file/ltjl0mnczuvc532/mspa
-cman.zip>`_.
+para ser removido da tela. Use ``visible`` **yes** ou **no** (também
+funciona com 1 ou 0) dentro do elemento ``collection`` caso queira que
+ele já inicie **ligado** ou **desligado**. Baixe este arquivo para ver
+como funciona na prática com a máquina
+`mspacman <https://www.mediafire.com/file/ltjl0mnczuvc532/mspacman.zip>`_.
 
 .. code-block:: xml
 
