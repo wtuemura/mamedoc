@@ -281,10 +281,27 @@ os seguintes parâmetros:
 *	Que a Bios seja a **UniBios v 4.0**
 *	Que a minha configuração de controle chamada **neogeo**.
 	seja sempre carregada.
-*	Que o áudio tenha uma taxa de amostragem com **32000 Hz** [#]_
+*	Que o áudio tenha uma taxa de amostragem com **32000 Hz**.
 *	O filtro esteja ativo.
 *	O prescale seja maior que **1**.
 *	Que a proporção de tela seja mantida.
+
+.. note:: 
+
+	De acordo com `este post <https://vgmrips.net/forum/viewtopi
+	c.php?f=3&t=155>`_ o YM2610 trabalha com uma taxa de amostragem de
+	18.5 kHz (18500 Hz), logo a configuração de 22050 Hz até 32000 Hz
+	deva ser suficiente uma vez que a taxa de amostragem de áudio do
+	MAME é predefinida em 48 kHz ou 48000 Hz e essa alta taxa de
+	amostragem não traz nenhum benefício para a emulação como já foi
+	descrito em :ref:`-samplerate <mame-commandline-samplerate>`.
+
+.. warning::
+
+	Tenha certeza que a sua placa de som tenha suporte para esta taxa de
+	amostragem, caso não tenha, utilize **44100**. Quando a taxa de
+	amostragem não for compatível você pode sofrer com problemas como
+	falta de áudio, cortes, estalos, ruídos, etc.
 
 Assim temos as seguintes opções para o nosso ``neogeo.ini``:
 
@@ -916,7 +933,8 @@ natureza daria um livro (ou mais de um livro) só sobre o assunto, logo
 este tópico não é coberto por este documento, no entanto, deixo algumas
 sugestões de leitura como `combinando cores 1
 <https://www.treinaweb.com.br/blog/voce-sabe-como-combinar-cores>`_,
-`combinando cores 2 <https://www.publicitarioscriativos.com/descubra-de-uma-vez-por-todas-como-utilizar-o-circulo-cromatico/>`_,
+`combinando cores 2 <https://www.publicitarioscriativos.com/descubra-de-
+uma-vez-por-todas-como-utilizar-o-circulo-cromatico/>`_,
 `combinando cores 3 <https://www.canva.com/colors/color-wheel/>`_, isso
 sem falar nas centenas de milhares de vídeos no YouTube sobre o assunto.
 
@@ -929,12 +947,532 @@ limitada pois alguma cores são fixas como o verde que fica no título das
 janelas ou o texto verde das opções que estão ligadas, aquele azul da
 seleção das ROMs, etc.
 
-.. [#]	De acordo com `este post
-		<https://vgmrips.net/forum/viewtopic.php?f=3&t=155>`_ o YM2610
-		trabalha com uma taxa de amostragem de 18.5 kHz (18500 Hz), logo
-		a configuração de 22050 Hz até 32000 Hz deva ser suficiente uma
-		vez que a taxa de amostragem de áudio do MAME é predefinida em
-		48 kHz ou 48000 Hz e essa alta taxa de amostragem não traz
-		nenhum benefício para a emulação como já foi descrito em
-		:ref:`-samplerate <mame-commandline-samplerate>`.
+.. raw:: latex
+
+	\clearpage
+
+.. _advanced-tricks-performance:
+
+Melhorando o desempenho em sistemas Linux
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Máquinas como a **Dance Dance Revolution**, **Guitar Freaks**,
+**DrumMania** dentre outras no Windows, elas funcionam sem qualquer
+problema,  porém sofrem com diversos problemas no Linux, um dos motivos
+é a configuração "padrão" que "vem de fábrica". Geralmente o seu sistema
+Linux vem configurado em modo de economia de energia, drivers genéricos
+e configurações básicas para o seu hardware, claro que não podemos nos
+esquecer que o MAME é um ávido consumidor de recursos de hardware,
+logo, quanto melhor, bem configurado e mais recente for o seu hardware
+melhor será a sua experiência com o MAME. A melhoria no desempenho
+contudo não será absoluta, extrairemos o melhor possível porém este
+desempenho se limita ao desenvolvimento do MAME, se os drivers
+responsáveis pela máquina em questão já foram concluídas ou não, se o
+desenvolvimento da emulação como um todo já foi concluída ou não, etc.
+
+Os testes foram realizados com o Debian 10.7 (Buster) e o Fedora 33
+usando uma AMD Radeon HD 7750 porém as configurações descritas aqui
+devem ser compatíveis com outras distribuições Linux ou talvez sirva
+como um guia para outros modelos de placas de vídeo. Não entraremos nas
+questões de instalação de pacotes dada a complexidade de cobrir todas as
+sua dependências e sim apenas na configuração.
+
+.. note::
+
+	Tenha certeza de utilizar uma versão mais recente do Linux e do
+	MAME!
+
+.. note::
+
+	Considere o site `pkg.org <https://pkgs.org>`_ para pesquisar os
+	pacotes para a sua distribuição.
+
+.. warning::
+
+	Antes de prosseguir saiba que o driver amdgpu **não tem áudio
+	HDMI**, você vai precisar usar a sua placa de som ou fones de
+	ouvidos.
+
+.. _advanced-tricks-performance-gpu:
+
+Identificando o modelo da sua placa de vídeo
+--------------------------------------------
+
+No terminal execute o comando::
+
+	lspci |grep VGA
+	01:00.0 VGA compatible controller: Advanced Micro Devices, Inc.
+	[AMD/ATI] Cape Verde PRO [Radeon HD 7750/8740 / R7 250E]
+
+O que nos interessa é o nome do chipset da placa **Cape Verde**, ela é
+da família **Southern Islands** ou **SI**. Consulte `a lista completa
+<https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units#Fea
+tures_Overview>`_.
+
+Confira qual o driver que está sendo utilizado no momento::
+
+	lspci -vs 01:00.0|grep driver
+	Kernel driver in use: radeon
+
+.. raw:: latex
+
+	\clearpage
+
+.. _advanced-tricks-performance-vulkan:
+
+Ativando o Vulkan
+-----------------
+
+Nem todos os pacotes e as suas respectivas dependências estão listadas,
+os pacotes básicos para o Fedora são:
+
+* **linux-firmware**
+* **xorg-x11-drv-amdgpu**
+* **vulkan-tools**
+* **vulkaninfo**
+* **radeontop**
+* **mesa-vulkan-drivers**
+* **mesa-dri-drivers**
+* **tuned**
+* **glx-utils**
+
+Para o Debian são:
+
+* **linux-firmware**
+* **firmware-amd-graphics**
+* **xserver-xorg-video-amdgpu**
+* **libdrm-amdgpu1**
+* **firmware-linux-nonfree**
+* **vulkan-tools**
+* **vulkaninfo**
+* **radeontop**
+* **mesa-vulkan-drivers**
+* **mesa-dri-drivers**
+* **mesa**
+* **mesa-utils**
+* **libdrm**
+* **libglvnd**
+* **tuned**
+
+.. raw:: latex
+
+	\clearpage
+
+É preciso passar alguns parâmetros para o kernel no arquivo
+``/etc/default/grub``, na opção ``GRUB_CMDLINE_LINUX`` deve haver algo
+do tipo::
+
+	GRUB_CMDLINE_LINUX="rhgb quiet"
+
+Adicione as opções para a sua placa de vídeo, para o nosso exemplo eles
+seriam::
+
+	GRUB_CMDLINE_LINUX="rhgb quiet pcie_aspm.policy=performance radeon.si_support=0 amdgpu.si_support=1 modprobe.blacklist=radeon amdgpu.gpu_recovery=1 amdgpu.pcie_gen2=1 amdgpu.dpm=1"
+
+.. warning::
+
+	Observe que independente de como apareça aqui neste documento a
+	linha acima é direta e contínua!
+
+* **pcie_aspm.policy**
+
+    Desliga o gerenciamento de energia dos slots PCIe e permite que os
+    dispositivos conectados à ele trabalhem com o máximo desempenho. Os
+    valores válidos são ``default``, ``powersave`` e ``performance``,
+    por predefinição o sistema usa economia de energia.
+
+* **radeon.si_support**
+
+    Ativa (1) ou desativa (0) o suporte ao driver **radeon**.
+
+* **amdgpu.si_support**
+
+    Ativa (1) ou desativa (0) o suporte ao driver **amdgpu**.
+
+* **modprobe.blacklist**
+
+    Evita que o kernel carregue o driver **radeon**.
+
+* **amdgpu.gpu_recovery**
+
+    Caso a sua placa de vídeo trave por algum motivo qualquer deixando a
+    sua tela parada, o mecanismo de recuperação entra em ação.
+
+* **amdgpu.pcie_gen2**
+
+    Impõem o uso da geração da PCIe mais recente, não use se a sua
+    placa-mãe e a placa de vídeo não forem compatíveis.
+
+* **amdgpu.dpm**
+
+    Gerenciamento dinâmico de energia, faz com que a sua GPU economize
+    energia e trabalhe fria quando não estiver em uso e ofereça o máximo
+    desempenho apenas quando for preciso.
+
+.. raw:: latex
+
+	\clearpage
+
+No Debian atualize o grub com o comando ``update-grub``, no Fedora
+Linux faça este comando caso o seu PC use EFI::
+
+	sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
+Ou sem EFI::
+
+	sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+
+Caso não queira lidar com o grub ou se a sua distribuição não usar o
+grub, crie um arquivo ``amdgpu.conf`` dentro do diretório **/etc/modprobe.d**
+com as mesmas opções::
+
+	options radeon si_support=0
+	options amdgpu si_support=1
+	options amdgpu pcie_gen2=1
+	options amdgpu gpu_recovery=1
+	options amdgpu dpm=1
+	options pcie_aspm policy=performance
+	blacklist radeon
+
+Regenere o **initramfs** no Fedora com o comando ``sudo dracut -fv``, no
+Debian faça ``sudo update-initramfs -u`` e **reinicie o seu
+computador**. Para aqueles que tem a opção de usar ambos, escolha um ou
+o outro, **não utilizem os dois juntos!**
+Particularmente prefiro usar o **modprobe** em vez do **grub** pois
+qualquer erro que seja feito na configuração do arquivo do grub o seu
+sistema não inicia mais e dá um baita trabalho arrumar depois, já pelo
+modprobe a única coisa que acontece são alguns erros no seu registro de
+logs. Em termos de desempenho ambos são iguais.
+
+É possível listar todos os parâmetros disponíveis do módulo **amdgpu**
+(ou qualquer outro módulo) com o comando ``modinfo amdgpu|grep parm``,
+quase todos eles estão disponíveis no diretório ``/sys/class/drm/card0/d
+evice/driver/module/parameters/`` e apesar de estarem disponíveis não
+significa que todos eles sejam compatíveis com a sua placa de vídeo.
+
+Isso nada tem a ver com o MAME e o MAME tão pouco tira proveito desta
+configuração específica, no entanto como já estamos turbinando as
+configurações, caso o seu monitor e a sua placa de vídeo sejam
+compatíveis com "Deep Color" ela pode ser ativada com a opção::
+
+	options amdgpu deep_color=1
+
+Regenere o **initramfs** e reinicie.
+
+.. raw:: latex
+
+	\clearpage
+
+.. |cor| image:: images/deepcolor.png
+   :scale: 30%
+   :align: middle
+
+.. note::
+
+	Antes das telas "Full HD" os monitores trabalhavam com VGA e usavam
+	**8 bit** para cada canal de cor RGB (Vermelho, Verde e Azul) ou 256
+	(2^8) variações de cores para cada componente RGB dando um total de
+	**16.777.216** (256^3) ou 16.7 milhões de cores, nos PC's do final
+	dos anos 90 o Windows exibia esta configuração como **True Color**.
+	Com o **Deep Color** nós temos **12 bit** por canal, ou seja, 4096
+	(2^12) variações de cores para cada componente, estamos falando de
+	um total de **68.719.476.736** (4096^3) ou cerca de 68.7 bilhões de
+	cores.
+
+.. tabularcolumns:: |c|
+
+.. list-table:: Um exemplo **exagerado** das diferenças.
+
+   * - |cor|
+
+Verifique se o driver **amdgpu** está em uso::
+
+	lspci -vs 01:00.0|grep driver
+	Kernel driver in use: amdgpu
+
+Verifique se tudo está em ordem::
+
+	glxinfo -B|grep "OpenGL renderer" && glxinfo -B |grep "OpenGL version"
+	
+	OpenGL renderer string: AMD Radeon HD 7700 Series
+	(VERDE, DRM 3.39.0, 5.9.13-200.fc33.x86_64, LLVM 11.0.0)
+	OpenGL version string: 4.6 (Compatibility Profile) Mesa 20.2.4
+
+Execute o comando ``vulkaninfo`` e verifique se ele não acusa qualquer
+erro, se tudo estiver certo aparecerá uma lista detalhada com as
+informações da sua placa de vídeo e das extensões que estão ativas para
+ela, a lista abaixo é um **resumo** com informações da placa apenas::
+
+	Layers: count = 1
+	=================
+	VK_LAYER_MESA_device_select (Linux device selection layer) Vulkan version 1.1.73, layer version 1:
+	Layer Extensions: count = 0
+	Devices: count = 2
+		GPU id = 0 (AMD RADV VERDE (ACO))
+		Layer-Device Extensions: count = 0
+	
+		GPU id = 1 (AMD Radeon HD 7700 Series)
+		Layer-Device Extensions: count = 0
+	
+	GPU0:
+	VkPhysicalDeviceProperties:
+	---------------------------
+	apiVersion     = 4202627 (1.2.131)
+	driverVersion  = 83894276 (0x5002004)
+	vendorID       = 0x1002
+	deviceID       = 0x683f
+	deviceType     = PHYSICAL_DEVICE_TYPE_DISCRETE_GPU
+	deviceName     = AMD RADV VERDE (ACO)
+	
+	GPU1:
+	VkPhysicalDeviceProperties:
+	---------------------------
+	apiVersion     = 4202655 (1.2.159)
+	driverVersion  = 8388775 (0x8000a7)
+	vendorID       = 0x1002
+	deviceID       = 0x683f
+	deviceType     = PHYSICAL_DEVICE_TYPE_DISCRETE_GPU
+	deviceName     = AMD Radeon HD 7700 Series
+
+	VkPhysicalDeviceDriverProperties:
+	---------------------------------
+	driverID           = DRIVER_ID_MESA_RADV
+	driverName         = radv
+	driverInfo         = Mesa 20.2.4 (ACO)
+	conformanceVersion = 1.2.3.0
+
+.. note::
+
+	Ignore o aviso **WARNING: radv is not a conformant vulkan
+	implementation, testing use only.**
+
+.. _advanced-tricks-performance-ancora:
+
+Removendo a âncora
+------------------
+
+Em geral as distros linux vem com o modo mais agressivo de economia de
+energia ativo, seria colocar uma âncora em um carro de corrida. Isso
+sacrifica a performance do seu computador visando a economia exagerada
+de energia, 
+
+Instale o ``tuned`` com ``sudo dnf install tuned`` no Fedora ou ``sudo
+apt-get install tuned`` no Debian. Inicie o tuned com o comando::
+
+	systemctl start tuned
+
+Faça com que ele seja sempre inicializado no boot::
+
+	systemctl enable tuned
+
+Definimos o perfil ``desktop`` com o comando::
+
+	tuned-adm profile desktop
+
+O perfil **desktop** fica no meio termo, salva energia quando estiver
+tudo calmo e acelera quando precisar. Para ver a lista dos outros perfis
+execute o comando ``tuned-adm profile``, há o perfil
+``latency-performance`` que elimina o gerenciamento de energia e deixa
+tudo no máximo ao custo de um alto consumo de energia.
+
+Para conferir qual o perfil ativo faça::
+
+	tuned-adm active
+	Current active profile: desktop
+
+Os perfis com cada configuração ficam no diretório ``/usr/lib/tuned``.
+
+.. raw:: latex
+
+	\clearpage
+
+Para deixar o gerenciamento de energia em modo **performance** crie o
+arquivo ``10-amdgpu.rules`` em ``/etc/udev/rules.d`` com o comando
+``sudo touch /etc/udev/rules.d/10-amdgpu.rules`` e adicione estas
+configurações::
+
+	KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="performance"
+
+Salve o arquivo e execute o comando
+``sudo udevadm control --reload-rules`` para atualizar o udev, em
+seguida rode o comando ``journalctl -b -p err`` e tenha certeza que não
+há **qualquer** erro em vermelho relacionado ao amdgpu, se houver
+verifique o arquivo ``10-amdgpu.rules`` e o seu conteúdo, repita o
+comando ``udevadm control --reload-rules``. Caso o erro persista, apague
+o arquivo ``10-amdgpu.rules`` e repita o comando
+``udevadm control --reload-rules`` novamente para eliminar as
+configurações, talvez haja algum problema com a versão do driver ou da
+compatibilidade com a sua placa de vídeo.
+
+Há situações onde pode ocorrer o corrompimento dos gráficos na sua tela
+como um todo ou em partes dela, se for o seu caso troque a opção
+``performance`` por ``high`` seguido do comando
+``udevadm control --reload-rules``, novamente, verifique com o comando
+``journalctl -b -p err`` se não há erros do **amdgpu** em vermelho.
+
+Execute o comando para verificar a temperatura da sua placa de vídeo::
+
+	sensors
+	
+	amdgpu-pci-0100
+	Adapter:      PCI adapter
+	fan1:         N/A
+	edge:         +43.0°C  (crit = +120.0°C, hyst = +90.0°C)
+
+Rode um vídeo qualquer, pode ser do Youtube, em seguida execute o
+comando ``radeontop`` e veja se está havendo atividade enquanto o vídeo
+está sendo executado, tecle **c** para ativar o modo colorido. Se não
+houver qualquer atividade é porque há algum erro na sua configuração.
+
+.. _advanced-tricks-performance-mame:
+
+Configurando o MAME com o vulkan
+--------------------------------
+
+Antes de prosseguir leia com atenção:
+
+* **AS CONFIGURAÇÕES SÓ FUNCIONAM COM A VERSÃO MAIS RECENTE DO MAME!**
+  
+  Elas foram testadas com a versão **0.226**, portanto as configurações
+  valem desta versão ou versões mais recentes.
+
+É importante que não haja conflitos de configuração, portanto, faça o
+backup dos seus arquivos ``mame.ini``, ``ui.ini`` e ``plugins.ini``.
+Crie novos arquivos com o comando ``mame64 -cc``.
+
+Vá até onde o seu MAME está instalado, dentro do diretório **ini** crie
+um arquivo ``arcade.ini`` e edite-o com as seguintes configurações::
+
+	rompath                   roms;outro_caminho_completo_das_suas_roms
+	# Video
+	video                     bgfx
+	bgfx_backend              vulkan
+	bgfx_screen_chains        crt-geom
+	window                    1
+
+.. raw:: latex
+
+	\clearpage
+
+No terminal rode o comando ``radeontop``, ele deve exibir algumas
+estatísticas.
+
+.. image:: images/radeontop-idle.png
+   :scale: 60%
+   :align: center
+
+Em outro terminal rode a máquina ``ddrmax2`` por exemplo (ou qualquer
+outra do driver **ksys573**) com o comando ``mame64 ddrmax2 -v``, além
+da mensagem **"WARNING: radv is not a conformant...** não deve haver
+nada fora do normal, repare porém no terminal rodando o **radeontop**
+que as estatísticas passam a se alterar e em especial a frequência do
+**Memory Clock** e do **Shader Clock** que sobem para 100%, repare que
+também haverá um aumento do consumo da memória de vídeo **VRAM**.
+
+.. image:: images/radeontop-mame.png
+   :scale: 60%
+   :align: center
+
+Na janela do MAME pressione **ESQ** para encerrar a emulação, se tudo
+estiver corretamente configurado como demonstramos aqui, a frequência do
+**Memory Clock** e do **Shader Clock** devem recuar logo após o
+encerramento do MAME, caso não recue aguarde aproximadamente uns 10
+minutos e se ainda assim continuarem em 100% significa que você está
+utilizando algum perfil de alta performance que desativou o
+gerenciamento de energia, não há problema deixar a sua placa de vídeo
+rodando no máximo desde que você saiba **EXATAMENTE** o que está
+fazendo.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _advanced-tricks-performance-portaudio:
+
+Melhorando o desempenho do áudio com portaudio
+----------------------------------------------
+
+Quando falamos em um melhor desempenho de áudio estamos falando em uma
+menor latência onde máquinas rítmicas como a **Dance Dance Revolution**
+e outras do tipo por exemplo, se beneficiam bastante.
+
+Para identificar a sua placa de som no MAME execute o comando
+``mame64 -v -sound portaudio``, ele deverá retornar uma lista com as
+opções disponíveis seja para Windows, Linux ou macOS, para mais
+informações consulte :ref:`-pa_api <mame-commandline-pa_api>`.
+
+Abra novamente o seu arquivo ``arcade.ini`` e adicione estas opções
+extras::
+
+	# Audio
+	sound                   portaudio
+	lowlatency              1
+	samplerate              44100
+	pa_api                  ALSA
+	pa_device               "Xonar STX: Multichannel (hw:0,0)"
+
+Remova a opção ``pa_device`` caso queira deixar que a seleção seja
+automática. Salve o arquivo e rode novamente no terminal o comando
+``mame64 ddrmax2 -v``, dentre as várias informações você deverá ver algo
+como mostra o exemplo abaixo para a minha máquina::
+
+	PortAudio: API ALSA has 13 devices
+	PortAudio: ALSA: "Xonar STX: Multichannel (hw:0,0)" (default)
+	PortAudio: ALSA: "Xonar STX: Digital (hw:0,1)"
+	PortAudio: ALSA: "HDA ATI HDMI: 0 (hw:1,3)"
+	PortAudio: ALSA: "HDA ATI HDMI: 1 (hw:1,7)"
+	PortAudio: ALSA: "HDA ATI HDMI: 2 (hw:1,8)"
+	PortAudio: ALSA: "HDA ATI HDMI: 3 (hw:1,9)"
+	PortAudio: ALSA: "HDA ATI HDMI: 4 (hw:1,10)"
+	PortAudio: ALSA: "HDA ATI HDMI: 5 (hw:1,11)"
+	PortAudio: ALSA: "sysdefault"
+	PortAudio: ALSA: "iec958"
+	PortAudio: ALSA: "spdif"
+	PortAudio: ALSA: "pulse"
+	PortAudio: ALSA: "a52"
+	PortAudio: API OSS has 0 devices
+	PortAudio: Using device "Xonar STX: Multichannel (hw:0,0)" on API "ALSA"
+	PortAudio: Sample rate is 44100 Hz, device output latency is 8.67 ms
+	PortAudio: Allowed additional buffering latency is 30.00 ms/1440 frames
+
+Experimente jogar uma partida e repare que houve uma melhora
+considerável no sincronismo do som com a ação na tela.
+
+Para obter o benefício de uma latência menor o uso da placa de som se
+torna exclusiva para o MAME, ou seja, caso você goste de usar o MAME
+enquanto escuta música de fundo com as outras máquinas ou ouvir o som do
+Youtube, Spotify, Tidal ou qualquer outro site ou programa que use a
+placa de som o áudio **não vai funcionar**.
+
+Neste caso altere a configuração do arquivo ``arcade.ini`` para::
+
+	# Audio
+	sound                   sdl
+	samplerate              44100
+
+.. raw:: latex
+
+	\clearpage
+
+Para manter o benefício do áudio para todas as máquinas do driver
+**ksys573** como a **Dance Dance Revolution**, entre no diretório
+**ini** e crie o diretório **source**, dentro dele crie o arquivo
+``ksys573.ini`` com as configurações de áudio usadas anteriormente::
+
+	# Audio
+	sound                   portaudio
+	lowlatency              1
+	pa_api                  ALSA
+	pa_device               "Xonar STX: Multichannel (hw:0,0)"
+
+Agora todas as máquinas que estão dentro da categoria "Arcade" passam a
+usar a interface comum de áudio que não precisam de baixa latência e que
+funciona junto com qualquer outros programas ou serviços de áudio e só
+as máquinas do driver **ksys573** passam a usar a configuração com baixa
+latência. O mesmo pode ser feito com outros drivers como a **djmain**
+que é responsável pelas máquinas da série **Beatmania** e
+**Pop'n Music**, lembrando que você pode identificar o nome do driver
+com o comando ``mame64 nome_da_rom -ls``, para mais informações consulte
+o comando :ref:`-listsource <mame-commandline-listsource>`.
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
