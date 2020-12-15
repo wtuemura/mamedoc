@@ -2070,7 +2070,7 @@ Para esta tarefa precisamos dos seguintes itens:
   e 4 jogadores.
 * A arte utilizada aqui foi criada por `Etienne MacGyver
   <http://vectorlib.free.fr/Galaxian_Namco/>`_.
-* Uma `planilha <http://www.mediafire.com/file/srny2s304461bau/aspect_ratio.zip>`_
+* Uma `planilha <https://www.mediafire.com/file/ktc2ohsoiev9jmd/aspect_ratio.zip>`_
   feita com `LibreOffice <https://pt-br.libreoffice.org>`_ para
   facilitar o cálculo da relação de aspecto da tela.
 * Os botões foram criados pela minha amiga **u/cd4053b**.
@@ -2238,15 +2238,17 @@ desenho ou a arte que estiver utilizando.
 
 Com a posição da tela definida agora é necessário dimensioná-la mantendo
 a sua proporção **4:3** que é o padrão para a maioria dos arcades e
-telas CRT da época. A tela está invertida na horizontal então pegue o
-valor da **largura** como mostra a imagem acima e faça as contas::
+telas CRT da época. A tela está invertida com proporção **3:4** então
+pegue o valor da **largura** como mostra a imagem acima e faça as
+contas::
 
 	x = 1660 * (4 / 3)
 	x = 1660 * 1,333333333
 	x = 2213
 
 Ou utilize a ferramenta disponibilizada em :ref:`layfile-tools` para
-facilitar o cálculo destas dimensões.
+facilitar o cálculo destas dimensões exibindo o mesmo resultado no campo
+**3:4**.
 
 Insira os valores no campo **verde**, o primeiro campo verde no topo
 serve como uma fácil identificação da relação de aspecto da tela de um
