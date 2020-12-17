@@ -1,4 +1,3 @@
-
 .. raw:: latex
 
 	\clearpage
@@ -14,14 +13,15 @@ Cardápio de opções
 
 	\clearpage
 
-Caso inicie o MAME sem nenhum parâmetro na linha de comando ou
-rodando ele com o clicar do mouse, um cardápio de opções será exibido,
-entre eles a lista de seleção de jogos ao centro, os filtros do lado
-esquerdo, a aba de informações e imagens. No rodapé da tela tem um
+Caso rode o MAME sem nenhum parâmetro na linha de comando ou
+clicando duas vezes em seu ícone, você verá a interface do usuário e
+acessando as opções da parte debaixo da tela terá acesso ao cardápio de
+opções, entre eles a lista de seleção de jogos ao centro, os filtros do
+lado esquerdo, a aba de informações e imagens. No rodapé da tela tem um
 descritivo resumido da máquina, com o nome da máquina, nome do
 fabricante, ano, a condição som e imagem e se a máquina funciona ou não.
 
-Dependendo da condição das máquinas a interface do MAME mostrará
+Dependendo da condição das máquinas a interface do MAME exibirá
 diferentes cores de fundo indicando a sua condição.
 
 	* **Verde**: São máquinas com roms completas e que funcionam.
@@ -30,16 +30,16 @@ diferentes cores de fundo indicando a sua condição.
 
 Abaixo da lista de máquinas nós temos:
 
-	* **Opções de configuração**: Exibe uma lista de configurações do MAME.
-	* **Configurar a máquina**: Exibe uma lista de opções para configurar a máquina selecionada.
+	* **Opções de configuração**: Exibe uma lista das configurações do MAME.
+	* **Configurar a máquina**: Exibe uma lista das opções para configurar a máquina selecionada.
 	* **Plug-ins**: Exibe uma lista para a configuração de plug-ins
 	* **Sair**: Encerra o MAME
 
 Todos os itens exibidos essa interface podem ser selecionados usando as
 setas do seu teclado (cima, baixo, esquerda, direita) e são selecionadas
 pressionando a tecla **Enter** do teclado. A interface também aceita o
-uso do mouse fazendo a seleção com um clique e um duplo clique para abri
-a opção ou rodar uma máquina.
+uso do mouse fazendo a seleção com um clique e um duplo clique para
+abrir a opção ou rodar uma máquina.
 
 .. _mamemenu-alt-valores:
 
@@ -64,15 +64,10 @@ ao clicar duas vezes nele, como é o caso dos campos disponíveis em
 
 	\clearpage
 
-.. _mamemenu-config-options:
-
-Opções de configuração
-----------------------
-
 .. _mamemenu-filtro:
 
 Filtro
-~~~~~~
+------
 
 Escolhe entre diferentes filtros pré configurados e um personalizado.
 Estes filtros ajudam o usuário a selecionar máquinas separadas por
@@ -87,8 +82,8 @@ fabricante dela foi a *Technos Japan*. Vamos até o
 **Filtro Personalizado**, no primeiro filtro adicionamos um filtro para
 o **Ano** e colocamos *1987*, adicionamos mais um filtro para o
 **Fabricante** e escolhemos *Techmos Japan*, ao retornarmos ao menu
-anterior o MAME exibirá uma lista de máquinas que atendam aos critérios
-definodos por nós. Neste exemplo então o MAME vai retornar 6 diferentes
+anterior o MAME exibirá uma lista das máquinas que atendam aos critérios
+definidos por nós. Neste exemplo então o MAME vai retornar 6 diferentes
 máquinas **Double Dragon**, **Super Dodge Ball** e **Nekketsu Koukou
 Dodgeball Bu**.
 
@@ -110,7 +105,7 @@ Os filtros disponíveis são:
 
 .. _mamemenu-nao-disponivel:
 
-* **Não disponíveis**
+* **Não disponível**
 
   Exibe toda a lista de máquinas conhecidas e cadastradas no catálogo
   interno do MAME que não estão disponíveis, ainda que a interface
@@ -188,7 +183,7 @@ MAME.
 
   Exibe uma lista das máquinas que foram favoritadas, para adicionar uma
   máquina à lista de favoritos, pressione **TAB**, no menu que aparecer
-  selecione **Adicionar aos favoritos**.
+  selecione **Adicione aos Favoritos**.
 
 .. _mamemenu-bios:
 
@@ -205,16 +200,17 @@ MAME.
 
 .. _mamemenu-pai:
 
-* **Pai**
+* **Principais**
 
-  Quando existirem máquinas que se originaram de uma matriz (pai), exibe
-  uma lista de máquinas que são originadas dessa matriz.
+  Quando existirem máquinas derivadas da máquina principal exibe
+  uma lista das máquinas que são originadas desta matriz.
 
 .. _mamemenu-clones:
 
 * **Clones**
 
-  Exibe uma lista de máquinas que são consideradas clones das originais.
+  Exibe uma lista de máquinas que são consideradas clones das máquinas
+  originais.
 
 .. _mamemenu-fabricante:
 
@@ -226,18 +222,18 @@ MAME.
 
 * **Ano**
 
-  Exibe uma lista de máquinas separadas por ano de lançamento.
+  Exibe uma lista das máquinas separadas por ano de lançamento.
 
 .. _mamemenu-save-support:
 
 * **Com suporte a salvamento**
 
-  Exibe uma lista de máquinas onde é possível salvar o estado da
-  máquina.
+  Exibe uma lista de máquinas onde o salvamento do estado da máquina
+  seja possível.
 
 .. _mamemenu-nosave-support:
 
-* **Sem suporte a salvamento**
+* **Sem suporte ao salvamento**
 
   Exibe uma lista de máquinas onde não é possível salvar o estado da
   máquina.
@@ -268,8 +264,17 @@ MAME.
 
   Exibe uma lista de máquinas que usam orientação horizontal de tela.
 
-Personalizar a interface
-~~~~~~~~~~~~~~~~~~~~~~~~
+* **Filtro Personalizado**
+
+  Todo o filtro criado será listado aqui.
+
+.. _mamemenu-config-options:
+
+Opções de configuração
+----------------------
+
+Personalize a Interface
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Aqui é possível personalizar a interface do MAME, os valores numéricos
 podem ser alterados movendo o direcional para a esquerda e direita ou
@@ -277,8 +282,9 @@ pressionando a tecla **Enter** e digitando o valor manualmente.
 
 As opções disponíveis são:
 
-* **Fontes**: Permite a customização da tipografia da interface, dentro
-  desta opção temos:
+* **Fontes**
+  Permite a customização da tipografia da interface, dentro desta opção
+  temos:
 
 	* **Tipografia da interface**: Aqui é possível definir uma fonte
 	  para toda a interface do MAME.
@@ -296,8 +302,12 @@ As opções disponíveis são:
 
 		O Valor predefinido é **0.75**
 
-* **Cores**: Permite a customização completa das cores da interface do
-  MAME, as opções disponíveis são:
+.. _mamemenu-cores:
+
+* **Cores**
+
+  Permite a customização completa das cores da interface do MAME, as
+  opções disponíveis são:
 
 	* **Texto Normal**: Define a cor do texto de toda a interface.
 
@@ -391,26 +401,27 @@ As opções disponíveis são:
 
 * **Idioma**
 
-  Permite customizar o Idioma da interface do MAME, use um
-  clique duplo para abrir a lista e facilitar a seleção.
+  Permite a seleção do Idioma da interface do MAME, faça um clique duplo
+  no campo do idioma para abrir uma listagem com todos os idiomas
+  disponíveis.
 
 		O valor predefinido é **English**
 
-* **Mostrar painéis laterais**
+* **Painéis laterais**
 
   Configura a exibição ou não dos painéis laterais da interface do MAME.
   As opções disponíveis são:
 
-	* **Mostrar Tudo**
-	* **Esconder Filtros**
-	* **Esconder Info/Imagem**
-	* **Esconder Ambos**
+	* **Exiba Todos**
+	* **Esconda os Filtros**
+	* **Esconda Info/Imagem**
+	* **Esconda Ambos**
 
-Configurar diretórios
-~~~~~~~~~~~~~~~~~~~~~
+Configuração dos Diretórios
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Aqui é possível mudar as predefinições de localização dos diretórios
-usados pelo MAME. As opções disponíveis são:
+Aqui é possível mudar as predefinições do locais onde os diretórios
+usados pelo MAME se encontram. As opções disponíveis são:
 
 .. _mamemenu-diretório-roms:
 
@@ -448,7 +459,7 @@ usados pelo MAME. As opções disponíveis são:
 * **Amostras**
 
   Define o caminho do diretório onde se encontram os arquivos de áudio
-  usadas como amostras de som no MAME.
+  usadas como amostras de áudio no MAME.
 
 		O valor predefinido é um diretório chamado **samples** no
 		diretório raiz do MAME.
@@ -467,7 +478,7 @@ usados pelo MAME. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **ini** no
 		diretório raiz do MAME.
 
-* **INIs de categoria**
+* **INIs com as categorias**
 
   Define o caminho do diretório onde se encontram os arquivos *.ini* com
   descritivos de categoria.
@@ -492,7 +503,7 @@ usados pelo MAME. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **cheats** no
 		diretório raiz do MAME. [#]_
 
-* **Retratos**
+* **Instantâneos da tela**
 
   Define o caminho do diretório onde serão armazenados os instantâneos
   da tela e a gravação de vídeo. [#]_
@@ -650,28 +661,31 @@ usados pelo MAME. As opções disponíveis são:
 
 	\clearpage
 
-Opções de Vídeo
+.. _mamemenu-config-video:
+
+Opções do Vídeo
 ~~~~~~~~~~~~~~~
 
-Essas opções sempre serão lidas no inicio do MAME, lembrando que a linha
-de comando **sempre** terá prioridade, independente do que seja definido
-aqui.
+Essas opções sempre serão carregadas na inicialização do MAME, lembrando
+que a linha de comando **SEMPRE** tem prioridade, independente do que
+seja definido aqui.
 
 * **Modo do Vídeo**
 
-  Veja :ref:`-video <mame-commandline-video>`.
+  Para mais informações consulte :ref:`-video <mame-commandline-video>`.
 
 		O valor predefinido é **Auto**
 
-* **Número de Telas**
+* **Quantidade de Telas**
 
-  Predefine a quantidade de telas a serem usadas.
+  Predefine a quantidade de telas que serão usadas.
 
 		O valor predefinido é **1**.
 
 * **GLSL**
 
-  Habilita ou não os efeitos GLSL.
+  Ativa ou não os efeitos GLSL, para mais informações consulte
+  :ref:`-gl_glsl_filter <mame-commandline-glglslfilter>`.
 
 		O valor predefinido é **Desligado**
 
@@ -683,7 +697,7 @@ aqui.
 
 		O valor predefinido é **Ligado**
 
-* **Pré-escala de Bitmap**
+* **Pré-escala do Bitmap**
 
   Opção útil quando máquinas com baixa resolução são ampliadas para uma
   resolução maior, use essa opção para dar uma amenizada nessa
@@ -692,9 +706,9 @@ aqui.
 
 		O valor predefinido é **1**.
 
-* **Modo Janelado**
+* **Modo Janela**
 
-  Faz o MAME exibir a tela em uma janela ou em uma tela inteira.
+  Faz o MAME exibir a tela emulada em uma janela ou em uma tela inteira.
 
 		O valor predefinido é **Desligado**.
 
@@ -704,40 +718,70 @@ aqui.
 
 		O valor predefinido é **Ligado**.
 
-* **Iniciar Maximizado**
+* **Inicie com a Tela Expandida**
 
-  Faz o MAME exibir uma janela na altura máxima da sua tela. 
-
-		O valor predefinido é **Ligado**.
-
-* **Atualização Sincronizada de Quadros**
-
-  Veja :ref:`-syncrefresh <mame-commandline-syncrefresh>`.
-
-* **Aguardar Sincronismo Vertical**
-
-  Veja :ref:`-waitvsync <mame-commandline-waitvsync>`.
-
-Opções de Som
-~~~~~~~~~~~~~
-
-* **Som**
-
-  Habilita o não o áudio.
+  Faz o MAME exibir a tela emulada em uma janela com o tamanho máximo do
+  seu monitor, caso contrário exibe a tela emulada em sua resolução
+  nativa.
 
 		O valor predefinido é **Ligado**.
 
-* **Taxa de amostragem**
+* **Atualização Sincronizada dos Quadros**
 
-  Define a taxa de amostragem que será usada em todas as máquinas.
+  Consulte :ref:`-syncrefresh <mame-commandline-syncrefresh>`.
+
+* **Aguarde o Sincronismo Vertical**
+
+  Consulte :ref:`-waitvsync <mame-commandline-waitvsync>`.
+
+.. raw:: latex
+
+	\clearpage
+
+.. note::
+
+	Quando a emulação estiver acontecendo, estas opções também estão
+	disponíveis.
+	
+		* **Non-Integer Scaling / Escala da Tela com Valores não Inteiros**
+		
+		  Permite a escala da tela com valores não inteiros.
+		
+		* **Keep Aspect / Mantenha a Proporção**
+		
+		  Mantém a proporção 4:3 da tela, para mais informações
+		  consulte :ref:`-[no]keepaspect <mame-commandline-keepaspect>`.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _mamemenu-config-audio:
+
+Opções do Áudio
+~~~~~~~~~~~~~~~
+
+* **Áudio**
+
+  Ativa o áudio ou não, para mais informações consulte
+  :ref:`-sound <mame-commandline-sound>`.
+
+		O valor predefinido é **Ligado**.
+
+* **Taxa da Amostragem do Áudio**
+
+  Define a taxa da amostragem do áudio que será usada em todas as
+  máquinas.
 
 		O valor predefinido é **48000**.
 
-* **Usar amostras externas**
+* **Usar Amostras Externas**
 
   Veja :ref:`-samples <mame-commandline-nosamples>`.
 
-Opções diversas
+.. _mamemenu-config-etc:
+
+Opções Diversas
 ~~~~~~~~~~~~~~~
 
 * **Skip imperfect emulation warnings**
@@ -747,10 +791,10 @@ Opções diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Lembrar da última máquina selecionada**
+* **Re-select last machine launched / Lembrar da última máquina jogada**
 
-  Faz com que o MAME se lembre da última máquina selecionada na
-  interface do MAME.
+  Faz com que o MAME se lembre da última máquina que foi jogada através
+  da interface do MAME.
 
 		O valor predefinido é **Ligado**.
 
@@ -774,15 +818,17 @@ Opções diversas
 
 		O valor predefinido é **Ligado**.
 
-* **Confirmar saída das máquinas**
+* **Confirme se deseja encerrar a máquina ou não**
 
-  Faz com que o MAME sempre peça uma confirmação ao sair.
+  Faz com que o MAME sempre te pergunte se quer realmente encerrar a
+  emulação da máquina ou não.
 
 		O valor predefinido é **Desligado**.
 
-* **Omitir a tela de informação ao iniciar**
+* **Omita a tela de informações ao iniciar**
 
-  Não exibe a tela com informações sobre o sistema.
+  Não exibe a tela com informações sobre o sistema quando iniciar uma
+  máquina.
 
 		O valor predefinido é **Desligado**.
 
@@ -790,14 +836,14 @@ Opções diversas
 
 	\clearpage
 
-* **Manter aspecto 4:3 para instantâneos de tela**
+* **Manter aspecto 4:3 para os instantâneos de tela**
 
   Faz com que todos os prints da tela mantenham uma proporção de
   4:3.
 
 		O valor predefinido é **Ligado**.
 
-* **Usar imagem como plano de fundo**
+* **Usar uma imagem como plano de fundo**
 
   Permite o uso de uma imagem como papel de parede na interface do MAME.
   Escolha uma imagem **.JPG** ou **.PNG** e a renomeie para
@@ -807,31 +853,31 @@ Opções diversas
 
 		O valor predefinido é **Ligado**.
 
-* **Omitir a tela de seleção de BIOS**
+* **Omitir a tela de seleção da BIOS**
 
   Faz com que o MAME inicie a máquina com a primeira BIOS disponível
   para a máquina ao em vez de usar uma lista.
 
 		O valor predefinido é **Desligado**.
 
-* **Omitir partes do cardápio de seleção de software**
+* **Omitir as partes do cardápio da seleção do software**
 
-  Altera a maneira com que a lista de software é exibida, em vez de
-  exibir a lista como é predefinido pelo MAME, a lista será exibida na
-  sequência que os itens estiverem listados no arquivo da respectiva
-  lista.
+  Altera a maneira com que a lista do software é exibida, em vez de
+  exibir a lista na ordem predefinida pelo MAME, exibe a lista na ordem
+  listada no arquivo da respectiva lista.
 
 		O valor predefinido é **Desligado**.
 
-* **Informação automática de aferição**
+* **Informação de aferição automática**
 
-  Exibe na aba de informações gerais ao lado direito da interface do
-  MAME informação quanto a condição **BOA** ou **RUIM** da ROM
-  selecionada. Assim como também verifica se a máquina usa amostras ou
-  não aferindo a condição delas caso esteja **BOA** ou **RUIM**. Caso a
-  máquina não use amostras aparecerá a mensagem **Nenhuma Necessária**.
+  Exibe na aba de informações gerais do lado direito da interface do
+  MAME informação quanto a condição da ROM selecionada se é **BOA** ou
+  **RUIM**. Assim como também verifica se a máquina usa amostras ou
+  não, aferindo se a condição delas seja **BOA** ou **RUIM**. Caso a
+  máquina não use amostras, aparecerá a mensagem **Nenhuma Necessária**.
   Note que essa função deixa a interface do MAME um pouco mais lenta
-  devido as aferições que são feitas a cada seleção da ROM.
+  devido as aferições que são feitas em tempo real a cada seleção da
+  ROM.
 
 		O valor predefinido é **Desligado**.
 
@@ -845,10 +891,12 @@ Opções diversas
 
 	\clearpage
 
-Mapeamento de dispositivos
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _mamemenu-config-devices:
 
-* **Atribuição do dispositivo pistola de luz**
+Mapeamento dos dispositivos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* **Atribuição do Dispositivo Pistola de Luz**
 
   Caso exista um controlador para a pistola de luz, os valores
   disponíveis são **none**, **keyboard**, **mouse**, **Lightgun** e
@@ -856,28 +904,28 @@ Mapeamento de dispositivos
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo trackball**
+* **Atribuição do Dispositivo Trackball**
 
   Caso exista um controlador para o trackball, os valores disponíveis
   são **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo pedal**
+* **Atribuição do Dispositivo Pedal**
 
   Caso exista um controlador para pedais, os valores disponíveis são
   **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo adstick**
+* **Atribuição do Dispositivo Adstick**
 
   Caso exista um controlador para adstick, os valores disponíveis são
   **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo paddle**
+* **Atribuição do Dispositivo Paddle**
 
   Caso exista um controlador para remo, os valores
   disponíveis são **none**, **keyboard**, **mouse**, **Lightgun** e
@@ -885,21 +933,21 @@ Mapeamento de dispositivos
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo dial**
+* **Atribuição do Dispositivo Dial**
 
   Caso exista um controlador para discadores, os valores disponíveis
   são **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo positional**
+* **Atribuição do Dispositivo Positional**
 
   Caso exista um controlador de posição, os valores disponíveis são
   **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo mouse**
+* **Atribuição do Dispositivo Mouse**
 
   Caso exista um controlador para mouse, os valores disponíveis são
   **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
@@ -912,7 +960,7 @@ Mapeamento de dispositivos
 
 .. _mamemenu-general-inputs:
 
-Entradas gerais
+Entradas Gerais
 ~~~~~~~~~~~~~~~
 
 * **interface do usuário**
@@ -1199,6 +1247,10 @@ Entradas gerais
 
 	As teclas predefinidas são **F2** + **Shift Esq**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **UI external DAT view**
 
   Exibe o DAT externo.
@@ -1266,6 +1318,10 @@ Entradas gerais
 
 	As teclas predefinidas são **F6** + **Ctrl Esq**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **Increase prescaling**
 
   Aumenta a pré-escala de dos pixels.
@@ -1284,6 +1340,10 @@ Entradas gerais
   separado por jogador, entre o jogador 1 até o 10. Abaixo a lista das
   opções predefinidas para o jogador 1 que podem ser alteradas na
   própria interface do MAME.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mamemenu-general-inputs-P1:
 
@@ -1909,10 +1969,10 @@ customizadas conforme a necessidade.
 Opções avançadas
 ~~~~~~~~~~~~~~~~
 
-Opções de performance
-^^^^^^^^^^^^^^^^^^^^^
+Opções de Desempenho
+^^^^^^^^^^^^^^^^^^^^
 
-* **Salto de quadros automático**
+* **Salto automático dos quadros**
 
   Ignora quadros de forma automática visando manter a velocidade da
   emulação.
@@ -1926,10 +1986,10 @@ Opções de performance
 
 	Valor predefinido são **0** quadros.
 
-* **Supressão de velocidade**
+* **Supressão da velocidade**
 
   Habilita a supressão de velocidade da emulação para que a máquina
-  emulada rode em sua velocidade nativa ao invés da velocidade do
+  emulada rode em sua velocidade nativa em vez da velocidade do
   processador em que a máquina está sendo emulada.
 
 	Valor predefinido é **Ligado**
@@ -1947,7 +2007,7 @@ Opções de performance
 
 	Valor predefinido é **1**
 
-* **Atualização de velocidade**
+* **Atualização da velocidade**
 
   Controla a velocidade da emulação de forma automática mantendo a taxa
   de atualização de tela mais lenta em referência com a taxa de
@@ -1955,14 +2015,20 @@ Opções de performance
 
 	Valor predefinido é **Desligado**
 
-* **Low Latency**
+* **Low Latency / Baixa latência**
 
   Reduz a latência (atraso) dos dispositivos de entrada como joysticks
-  por exemplo. Para mais informações veja :ref:`-[no]lowlatency
+  por exemplo. Para mais informações consulte :ref:`-[no]lowlatency
   <mame-commandline-lowlatency>`.
 
-Opções de rotação
-^^^^^^^^^^^^^^^^^
+.. raw:: latex
+
+	\clearpage
+
+.. _mamemenu-advanced-screen-rotation:
+
+Opções da Rotação da Tela
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **Rotação**
 
@@ -1971,26 +2037,26 @@ Opções de rotação
 
 	Valor predefinido é **Ligado**
 
-* **Rotacionar para direita**
+* **Rotacionar à direita**
 
   Rotacione a tela em 90 graus sentido horário.
 
 	Valor predefinido é **Desligado**
 
-* **Rotacionar para esquerda**
+* **Rotacionar à esquerda**
 
   Rotacione a tela em 90 graus sentido anti-horário.
 
 	Valor predefinido é **Desligado**
 
-* **Auto rotacionar para direita**
+* **Auto rotacionar à direita**
 
   Rotacione automaticamente a tela em 90 graus sentido horário caso
   a tela esteja orientada verticalmente.
 
 	Valor predefinido é **Desligado**
 
-* **Auto rotacionar para esquerda**
+* **Auto rotacionar à esquerda**
 
   Rotacione automaticamente a tela em 90 graus sentido anti-horário
   caso a tela esteja orientada verticalmente.
@@ -2009,9 +2075,10 @@ Opções de rotação
 
 	Valor predefinido é **Desligado**
 
+.. _mamemenu-advanced-illustration:
 
-Opções de Ilustrações
-^^^^^^^^^^^^^^^^^^^^^
+Opções das Ilustrações
+^^^^^^^^^^^^^^^^^^^^^^
 
 * **Recorte da ilustração**
 
@@ -2020,11 +2087,12 @@ Opções de Ilustrações
 
 	Valor predefinido é **Desligado**
 
+.. _mamemenu-advanced-state-playback:
 
-Opções de Estado/Playback
+Opções do Estado/Playback
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* **Salvar/Restaurar Automático**
+* **Salve/Restaure automático**
 
   Em sistema compatíveis, carrega automaticamente o estado da máquina e
   a salva ao sair.
@@ -2037,7 +2105,7 @@ Opções de Estado/Playback
 
 	Valor predefinido é **Desligado**
 
-* **Função de rebobinamento**
+* **Recurso de rebobinamento**
 
   Reserva uma memória para rebobinamento em Megabytes.
 
@@ -2055,13 +2123,15 @@ Opções de Estado/Playback
 
 	Valor predefinido é **Desligado**
 
-Opções de Entrada
+.. _mamemenu-advanced-input-options:
+
+Opções da Entrada
 ^^^^^^^^^^^^^^^^^
 
-* **Ignora ficha**
+* **Trava da ficha**
 
-  Faz com que a máquina ignore a inserção de fichas em momentos em que
-  a máquina não está pronta para recebê-las.
+  Faz com que a máquina ignore a inserção de fichas em momentos que a
+  máquina não está pronta para recebê-las.
 
 	Valor predefinido é **Ligado**
 
@@ -2083,13 +2153,17 @@ Opções de Entrada
 
 	Valor predefinido é **Desligado**
 
-* **Teclado múltiplo**
+* **Mais de um teclado**
 
   Permite o uso de mais de um teclado para cada entrada compatível.
 
 	Valor predefinido é **Desligado**
 
-* **Mouse múltiplo**
+.. raw:: latex
+
+	\clearpage
+
+* **Mais de um mouse**
 
   Permite o uso de mais de um mouse para cada entrada compatível.
 
@@ -2138,11 +2212,10 @@ Opções de Entrada
 
 	Valor predefinido é **Desligado**
 
-* **Direção contraditória**
+* **Comando contraditório**
 
   Aceita comandos contraditórios e simultâneos no controle digital como
-  o acionamento dos comando esquerda e direita ou cima e baixo ao mesmo
-  tempo.
+  esquerda e direita ou cima e baixo.
 
 	Valor predefinido é **Desligado**
 
@@ -2154,13 +2227,47 @@ Opções de Entrada
 
 .. _mamemenu-config-saving:
 
-Salvar Configuração
-~~~~~~~~~~~~~~~~~~~
+Salve a Configuração
+~~~~~~~~~~~~~~~~~~~~
 
-Salva todas as alterações que foram feitas.
+Salva todas as alterações feitas.
 
-Voltar ao menu anterior
-~~~~~~~~~~~~~~~~~~~~~~~
+Retorne ao menu anterior
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Retorna para a tela anterior.
+
+.. _mamemenu-config-machine:
+
+Configure a Máquina
+-------------------
+
+Permite que você configure individualmente cada máquina selecionada.
+
+* **BIOS**
+
+  Informa se a máquina usa uma BIOS ou não, nas máquinas que usam BIOS é
+  possível escolher qual BIOS você quer que a máquina use.
+
+* **Opções Avançadas**
+
+  Consulte :ref:`mamemenu-advanced-options`.
+
+* **Opções do Vídeo**
+
+  Consulte :ref:`mamemenu-config-video`.
+
+* **Mapeamento dos dispositivos**
+
+  Consulte :ref:`mamemenu-config-devices`.
+
+* **Adicione aos Favoritos**
+
+  Adiciona a máquina selecionada aos seus favoritos.
+
+* **Salve a configuração da máquina**
+
+  Salva a configuração apenas para a máquina selecionada.
 
 ..	[#] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME com
 		interface gráfica.
