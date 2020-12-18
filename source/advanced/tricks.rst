@@ -1246,6 +1246,57 @@ ela, a lista abaixo é um **resumo** com informações da placa apenas::
 	Ignore o aviso **WARNING: radv is not a conformant vulkan
 	implementation, testing use only.**
 
+.. raw:: latex
+
+	\clearpage
+
+.. _advanced-tricks-performance-erro:
+
+Ops, alguma coisa deu errado!
+-----------------------------
+
+Caso a sua distribuição não configure a variável **VK_ICD_FILENAMES**,
+o ``vulkaninfo`` e toda a configuração feita até aqui não vai
+funcionar fazendo com que o teste falhe. Se for o caso, ao rodar o
+comando ``vulkaninfo`` deve aparecer o erro logo no início::
+
+	ERROR: Failed to find Vulkan Driver JSON
+
+Ou pior::
+
+	Cannot create Vulkan instance.
+	This problem is often caused by a faulty installation of the Vulkan
+	driver or attempting to use a GPU that does not support Vulkan.
+	ERROR at ../vulkaninfo/vulkaninfo.h:641:vkCreateInstance failed with
+	ERROR_INCOMPATIBLE_DRIVER
+
+Tanto no o Fedora quanto no o Debian os arquivos \*.json devem estar
+instalados no diretório ``/usr/share/vulkan/icd.d``, caso não estejam
+tenha certeza de ter instalado o pacote ``mesa-vulkan-drivers``, o nome
+do pacote é o mesmo para o Fedora e para o Debian. Tenha certeza que
+todos os arquivos estão lá com o comando::
+
+	sudo find /usr/share -name *_icd.*
+	/usr/share/vulkan/icd.d/intel_icd.x86_64.json
+	/usr/share/vulkan/icd.d/amd_icd.x86_64.json
+	/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+
+Edite o arquivo ``/etc/profile`` e no final do arquivo coloque::
+
+	export XDG_RUNTIME_DIR=/run/user/$UID
+	export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd.x86_64.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json:/usr/share/vulkan/icd.d/intel_icd.x86_64.json
+
+A linha acima deve ser contínua, encerre a sua sessão e faça login
+novamente. No terminal rode o comando ``journalctl -b -p err`` e tenha **CERTEZA**
+que não há qualquer erro relacionado com o vulkan.
+
+Tente rodar novamente o ``vulkaninfo`` e dessa vez ele deve rodar sem
+problemas exibindo todas as informações da sua placa de vídeo.
+
+.. raw:: latex
+
+	\clearpage
+
 .. _advanced-tricks-performance-ancora:
 
 Removendo a âncora
@@ -1282,10 +1333,6 @@ Para conferir qual o perfil ativo faça::
 
 Os perfis com cada configuração ficam no diretório ``/usr/lib/tuned``.
 
-.. raw:: latex
-
-	\clearpage
-
 Para deixar o gerenciamento de energia em modo **performance** crie o
 arquivo ``10-amdgpu.rules`` em ``/etc/udev/rules.d`` com o comando
 ``sudo touch /etc/udev/rules.d/10-amdgpu.rules`` e adicione estas
@@ -1319,10 +1366,26 @@ Execute o comando para verificar a temperatura da sua placa de vídeo::
 	fan1:         N/A
 	edge:         +43.0°C  (crit = +120.0°C, hyst = +90.0°C)
 
+Para encerrar a configuração com chave de ouro, ative a renderização
+direta da placa de vídeo, edite o arquivo ``/usr/share/X11/xorg.conf.d/1
+0-amdgpu.conf`` e adicione a opção ``Option  "DRI" "3"`` como mostra o
+exemplo abaixo::
+
+	Section "OutputClass"
+		Identifier "AMDgpu"
+		MatchDriver "amdgpu"
+		Driver "amdgpu"
+		Option  "DRI" "3"
+	EndSection
+
 Rode um vídeo qualquer, pode ser do Youtube, em seguida execute o
 comando ``radeontop`` e veja se está havendo atividade enquanto o vídeo
 está sendo executado, tecle **c** para ativar o modo colorido. Se não
 houver qualquer atividade é porque há algum erro na sua configuração.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _advanced-tricks-performance-mame:
 
@@ -1349,6 +1412,11 @@ um arquivo ``arcade.ini`` e edite-o com as seguintes configurações::
 	bgfx_backend              vulkan
 	bgfx_screen_chains        crt-geom
 	window                    1
+
+.. note::
+
+	A mesma configuração serve para o **Windows**, tenha certeza de
+	estar usando a última versão dos drivers da sua placa de vídeo.
 
 .. raw:: latex
 
