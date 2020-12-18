@@ -562,7 +562,7 @@ O espelhamento
 
 Duplica o intervalo nos endereços que estiverem acessíveis, definindo
 qualquer um dos 1 bits presentes na máscara. Por exemplo, um intervalo
-``0-0x1f`` com a máscara ``0x300`` estará presente em ``0-0x1f``,
+``0-0x1f`` com um espelho ``0x300`` estará presente em ``0-0x1f``,
 ``0x100-0x11f``, ``0x200-0x21f`` e ``0x300-0x31f``. Os endereços
 informados para o manipulador permanecem no intervalo ``0-0x1f``, os
 bits do espelho não são vistos.
