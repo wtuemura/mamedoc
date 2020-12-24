@@ -987,7 +987,7 @@ quando ele for clicado:
 		<text string="RESET"><bounds x="0.1" y="0.4" width="0.8" height="0.2" /><color red="1.0" green="1.0" blue="1.0" /></text>
 	</element>
 
-Um exemplo de um elemento que desenha um LED de sete segmentos
+Um exemplo de um elemento que desenha um LED com sete segmentos
 usando imagens externas:
 
 .. code-block:: xml
@@ -2040,8 +2040,8 @@ completo do arquivo como mostra o exemplo abaixo: ::
 
 .. _layfile-create-layout:
 
-Criando um arquivo de layout na prática
----------------------------------------
+Criando um arquivo layout na prática
+------------------------------------
 
 Neste capítulo criaremos um layout do zero para a máquina **Galaxian**
 demonstrando como definir todos os parâmetros para que todos os objetos
