@@ -21,7 +21,7 @@ com componentes desenhados de forma condicional e a animação dos
 parâmetros, algumas coisas só podem ser feitas através de scripts. O
 MAME usa um modelo baseado em eventos. Os scripts podem fornecer funções
 que serão chamadas após determinados eventos ou quando determinados
-dados forem requeridos.
+dados forem necessários.
 
 É preciso que o plug-in de layout esteja ativo para que os scripts
 possam ser usados. Por exemplo, use este comando para rodar **BWB Double
@@ -45,7 +45,14 @@ Exemplos práticos
 -----------------
 
 Antes de entrarmos de cabeça nos detalhes técnicos do seu
-funcionamento, começaremos com alguns exemplos usando o script Lua.
+funcionamento, começaremos com alguns exemplos usando o script Lua. É
+importante que você tenha conhecimento prévio de como sistema de
+ilustrações (artwork) do MAME funciona assim como um conhecimento básico
+de como criar scripts em Lua. Para mais obter mais informações sobre
+os arquivos de layout consulte :ref:`layfile`, para uma introdução sobre
+scripts Lua no MAME consulte :ref:`luaengine`, para descrições
+detalhadas das classes Lua usadas pelo MAME consulte
+:ref:`luareference`.
 
 Espial: joystick dividido entre as portas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -109,10 +116,10 @@ entradas do jogador e definir o estado dos elementos nos itens:
             <image state="0x4" file="stick_l.svg" />
             <image state="0x5" file="stick_ul.svg" />
         </element>
-        <!-- caso o plug-in do layout não esteja ativo, nós avisaremos ao usuário  -->
+        <!-- caso o plug-in do layout não esteja ativo, nós avisaremos o usuário -->
         <!-- desenha apenas quando o seu estado for 1, define o seu estado predefinido para 1 assim o aviso fica visível inicialmente -->
         <element name="warning" defstate="1">
-            <text state="1" string="Esta visualização precisa que o plug-in do layout esteja ativo." />
+            <text state="1" string="Esta ilustração precisa que o plug-in do layout esteja ativo." />
         </element>
         <!-- exibindo a tela e o joystick em um gabinete tipo coquetel -->
         <view name="Joystick Display">
@@ -190,8 +197,8 @@ entradas do jogador e definir o estado dos elementos nos itens:
 	\clearpage
 
 O layout tem um elemento ``script`` contendo o script Lua que é invocado
-como uma função através do plugin de layout durante o carregamento do
-arquivo de layout. A visualização do layout foi construída neste ponto,
+como uma função através do plug-in **Layout** durante o carregamento do
+arquivo do layout. A visualização do layout foi construída neste ponto,
 porém o sistema emulado ainda não terminou de ser iniciado. Não é seguro
 acessar as entradas e as saídas neste momento. A variável chave no
 ambiente do script é ``file`` que dá ao script o acesso ao seu arquivo
@@ -211,10 +218,462 @@ seguintes tarefas:
   ``view`` e que possuam um ID (o valor do atributo ``id`` por exemplo).
 * Fornece uma função que será invocada antes que os itens sejam
   renderizados na tela.
-* Oculta o aviso que lembra o usuário para ativar o plugin do layout ao
+* Oculta o aviso que lembra o usuário para ativar o plug-in do layout ao
   definir o estado do elemento para o item com 0 (o componente do texto
   só é desenhado quando o estado do elemento for 1).
 
 A função que é invocada antes dos itens de visualização são renderizados
 na tela, lê as entradas do jogador e embaralha os bits na ordem
 necessária pelo elemento joystick.
+
+.. _layscript-examples-starwars:
+
+Star Wars: animação com dois eixos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Faremos um layout que mostra a posição do manche de voo para o Star Wars
+da Atari. As portas de entrada são simples, cada eixo analógico produz
+um valor na faixa entre 0x00(0) a 0xff(255), inclusive:
+
+.. code-block:: C++
+
+    PORT_START("STICKY")
+    PORT_BIT( 0xff, 0x80, IPT_AD_STICK_Y ) PORT_SENSITIVITY(70) PORT_KEYDELTA(30)
+
+    PORT_START("STICKX")
+    PORT_BIT( 0xff, 0x80, IPT_AD_STICK_X ) PORT_SENSITIVITY(50) PORT_KEYDELTA(30)
+
+E aqui temos o nosso layout:
+
+.. code-block:: XML
+
+    <?xml version="1.0"?>
+    <mamelayout version="2">
+
+        <!-- um quadrado com uma borda branca com 1% da sua largura -->
+        <element name="outline">
+            <rect><bounds x="0.00" y="0.00" width="1.00" height="0.01" /></rect>
+            <rect><bounds x="0.00" y="0.99" width="1.00" height="0.01" /></rect>
+            <rect><bounds x="0.00" y="0.00" width="0.01" height="1.00" /></rect>
+            <rect><bounds x="0.99" y="0.00" width="0.01" height="1.00" /></rect>
+        </element>
+
+        <!-- um retângulo com 10% da linha vertical da sua largura até o meio -->
+        <element name="line">
+            <!-- use um retângulo transparente para impor as dimensões do elemento -->
+            <rect>
+                <bounds x="0" y="0" width="0.1" height="1" />
+                <color alpha="0" />
+            </rect>
+            <!-- está é a linha branca que está visível -->
+            <rect><bounds x="0.045" y="0" width="0.01" height="1" /></rect>
+        </element>
+
+        <!-- o traçado de um quadrado com uma borda interna com 20% e com linhas com 10% do comprimento e da largura do elemento -->
+        <element name="box">
+            <!-- use um retângulo transparente para impor as dimensões do elemento -->
+            <rect>
+                <bounds x="0" y="0" width="0.1" height="0.1" />
+                <color alpha="0" />
+            </rect>
+            <!-- desenha o traçado de um quadrado -->
+            <rect><bounds x="0.02" y="0.02" width="0.06" height="0.01" /></rect>
+            <rect><bounds x="0.02" y="0.07" width="0.06" height="0.01" /></rect>
+            <rect><bounds x="0.02" y="0.02" width="0.01" height="0.06" /></rect>
+            <rect><bounds x="0.07" y="0.02" width="0.01" height="0.06" /></rect>
+        </element>
+
+        <!-- caso o plug-in do layout não esteja ativo, nós avisaremos o usuário -->
+        <!-- desenha apenas quando o seu estado for 1, define o seu estado predefinido para 1 assim o aviso fica visível inicialmente -->
+        <element name="warning" defstate="1">
+            <text state="1" string="Esta ilustração precisa que o plug-in do layout esteja ativo." />
+        </element>
+
+        <!-- visualização exibindo o manche e a sua posição na tela -->
+        <view name="Analog Control Display">
+            <!-- desenha a tela com a correta relação de aspecto -->
+            <screen index="0">
+                <bounds x="0" y="0" width="4" height="3" />
+            </screen>
+
+            <!-- desenha o traçado de um quadrado branco do lado inferior direito da tela -->
+            <!-- o script utiliza o tamanho deste item para determinar os limites do seu movimento -->
+            <element id="outline" ref="outline">
+                <bounds x="4.1" y="1.9" width="1.0" height="1.0" />
+            </element>
+
+            <!-- linha vertical para exibir os dados recebidos do eixo X -->
+            <element id="vertical" ref="line">
+                <!-- o elemento desenha uma linha vertical, sem a necessidade de rotacioná-lo -->
+                <orientation rotate="0" />
+                <!-- centralize horizontalmente no quadrado usando toda a sua altura -->
+                <bounds x="4.55" y="1.9" width="0.1" height="1" />
+            </element>
+
+            <!-- linha horizontal para exibir os dados recebidos do eixo Y -->
+            <element id="horizontal" ref="line">
+                <!-- rotaciona o elemento em 90º para obter uma linha horizontal -->
+                <orientation rotate="90" />
+                <!-- centraliza verticalmente no quadrado, usando toda a largura -->
+                <bounds x="4.1" y="2.35" width="1" height="0.1" />
+            </element>
+
+            <!-- desenhar uma pequena caixa na intersecção das linhas verticais e horizontais -->
+            <element id="box" ref="box">
+                <bounds x="4.55" y="2.35" width="0.1" height="0.1" />
+            </element>
+
+            <!-- desenha um texto de aviso próximo da parte de baixo da tela -->
+            <element id="warning" ref="warning">
+                <bounds x="0.2" y="2.6" width="3.6" height="0.2" />
+            </element>
+        </view>
+
+        <!-- o conteúdo do elemento do script será invocado como uma função pelo plug-in layout -->
+        <!-- use um bloco CDATA para evitar a necessidade da utilização dos símbolos "maior que", "menor que" e sinais tironianos -->
+        <script><![CDATA[
+            -- o arquivo é o objeto do arquivo de layout
+            -- define a função para ser invocada depois de resolver as tags
+            file:set_resolve_tags_callback(
+                    function ()
+                        -- file.device é o dispositivo que fez com que o layout fosse carregado
+                        -- neste caso, é o condutor principal da máquina starwars
+                        -- localize as entradas dos eixos analógicos
+                        local x_input = file.device:ioport("STICKX")
+                        local y_input = file.device:ioport("STICKY")
+
+                        -- localize o esboço do item
+                        local outline_item = file.views["Analog Control Display"].items["outline"]
+
+                        -- variáveis para manter o estado através das chamadas
+                        local outline_bounds    -- a delineação do esboço do quadrado
+                        local width, height     -- largura e altura dos itens animados
+                        local x_scale, y_scale  -- relação das unidades dos eixos para renderizar as coordenadas
+                        local x_pos, y_pos      -- exibe as posições para os itens animados
+
+                        -- define uma função que será invocada quando as dimensões da visualização forem recalculadas
+                        -- isso pode acontecer quando a janela for redimensionada ou as opções de escala forem alteradas
+                        file.views["Analog Control Display"]:set_recomputed_callback(
+                                function ()
+                                    -- obtém a delineação do esboço do quadrado
+                                    outline_bounds = outline_item.bounds
+                                    -- animação dos itens, use 10% da largura e altura do quadrado
+                                    width = outline_bounds.width * 0.1
+                                    height = outline_bounds.height * 0.1
+                                    -- calcula as proporções das unidades do eixo para renderizar as coordenadas
+                                    -- animação dos itens, deixe 90% da largura e altura para o limite do movimento
+                                    -- o limite do percurso de cada eixo fica em 0xff
+                                    x_scale = outline_bounds.width * 0.9 / 0xff
+                                    y_scale = outline_bounds.height * 0.9 / 0xff
+                                end)
+
+                        -- define uma função para ser invocada antes de adicionar a visualização dos itens no destino renderizado
+                        file.views["Analog Control Display"]:set_prepare_items_callback(
+                                function ()
+                                    -- lê os eixos analógicos, eixo Y invertido como zero está na parte de baixo
+                                    local x = x_input:read() & 0xff
+                                    local y = 0xff - (y_input:read() & 0xff)
+                                    -- converte os valores recebidos para as coordenadas do layout
+                                    -- usa a quina superior esquerda do quadrado delineado como a sua origem
+                                    x_pos = outline_bounds.x0 + (x * x_scale)
+                                    y_pos = outline_bounds.y0 + (y * y_scale)
+                                end)
+
+                        -- define uma função para fornecer os limites da linha vertical
+                        file.views["Analog Control Display"].items["vertical"]:set_bounds_callback(
+                                function ()
+                                    -- renderize a delineação de um novo objeto (começando como uma unidade quadrada)
+                                    local result = emu.render_bounds()
+                                    -- define esquerda, cima, largura e altura
+                                    result:set_wh(
+                                            x_pos,                  -- posição X calculada para os itens animados
+                                            outline_bounds.y0,      -- delineação do topo do quadrado
+                                            width,                  -- 10% da largura do quadrado delineado
+                                            outline_bounds.height)  -- altura total do quadrado delineado
+                                    return result
+                                end)
+
+                        -- define uma nova função para informar a delineação da linha horizontal
+                        file.views["Analog Control Display"].items["horizontal"]:set_bounds_callback(
+                                function ()
+                                    -- renderize a delineação de um novo objeto (começando como uma unidade quadrada)
+                                    local result = emu.render_bounds()
+                                    -- define esquerda, cima, largura e altura
+                                    result:set_wh(
+                                            outline_bounds.x0,      -- esquerda do quadrado delineado
+                                            y_pos,                  -- posição Y calculada para os itens animados
+                                            outline_bounds.width,   -- lartura total do quadrado delineado
+                                            height)                 -- 10% da altura do quadrado delineado
+                                    return result
+                                end)
+
+                        -- define uma nova função para informar a delineação da caixa entre a interseção das linhas
+                        file.views["Analog Control Display"].items["box"]:set_bounds_callback(
+                                function ()
+                                    -- renderize uma nova delineação de objeto (começando como uma unidade quadrada)
+                                    local result = emu.render_bounds()
+                                    -- define esquerda, cima, largura e altura
+                                    result:set_wh(
+                                            x_pos,                  -- posição X calculada para os itens animados
+                                            y_pos,                  -- posição Y calculada para os itens animados
+                                            width,                  -- 10% da largura do quadrado delineado
+                                            height)                 -- 10% da altura do quadrado delineado
+                                    return result
+                                end)
+
+                        -- oculta o aviso uma vez que se chagamos até aqui, o escript já está rodando
+                        file.views["Analog Control Display"].items["warning"]:set_state(0)
+                    end)
+        ]]></script>
+
+    </mamelayout>
+
+O layout possui um elemento ``script`` contendo o script Lua que será
+invocado como uma função através do plug-in **Layout** quando o arquivo
+de layout for carregado. Isto ocorre após a construção das visualizações
+do layout, mas antes que o sistema emulado tenha concluído a sua
+inicialização. O objeto do arquivo do layout é fornecido ao script
+através da variável ``file``.
+
+Nós oferecemos uma função que será invocada depois que as tags no
+arquivo do layout forem resolvidas. Esta função faz o seguinte:
+
+* Monitora o recebimento dos dados do eixo analógico.
+* Monitora o item visualizado que traça o contorno da área onde a
+  posição do manche é exibida.
+* Declara algumas variáveis para manter os valores calculados através
+  das chamadas das funções.
+* Fornece a função para ser invocada quando a visualização das dimensões
+  tenham sido recalculadas.
+* Fornece a função para ser invocada antes de adicionar os itens
+  visíveis ao contêiner renderizado.
+* Fornece as funções que fornecerão os limites para os itens animados.
+* Esconde o aviso que alerta o usuário para ativar o plug-in **Layout**
+  ao definir a condição do elemento para o item como 0 (o componente do
+  texto só é desenhado quando o estado do elemento for 1).
+
+A visualização é monitorada através do nome (pelo valor do seu atributo
+``name``) e os itens dentro da visualização são monitoradas através do
+ID (com o valor dos seus respectivos atributos ``id``).
+
+As dimensões de visualização do layout são recalculadas em resposta a
+vários eventos, incluindo o redimensionamento da janela, entrando ou
+saindo do modo de tela cheia, alternando a visibilidade das coleções dos
+itens e mudando o zoom para a configuração da área da tela. Quando isso
+acontece, precisamos atualizar os nossos fatores de tamanho e da escala
+da animação. Obtemos os limites do quadrado onde a posição do manche é
+exibido, calculamos o tamanho dos itens animados e calculamos as
+proporções das unidades do eixo para renderizar as coordenadas do alvo
+para cada direção. É mais eficiente fazer estes cálculos somente caso os
+resultados mudem.
+
+Antes dos itens de visualização serem adicionados no destino da
+renderização, lemos as entradas do eixo analógico e convertemos os
+valores da posição em coordenadas para a animação dos os itens. A
+entrada do eixo Y usa valores maiores para apontar para cima, então
+precisamos inverter o valor subtraindo-o de 0xff (255). Adicionamos nas
+coordenadas do canto superior esquerdo do quadrado onde estamos exibindo
+a posição do manche. Fazemos isso uma vez cada vez que o layout for
+desenhado por questões de eficiência já que podemos usar os valores para
+todos os três itens animados.
+
+Finalmente, fornecemos limites para a animação dos itens quando
+necessário. Estas funções precisam retornar os objetos "render_bounds"
+dando a posição e o tamanho dos itens como coordenadas do alvo que serão
+renderizados.
+
+Como os elementos da linha vertical e da linha horizontal movem-se cada
+um apenas em um único eixo, seria possível animá-los usando os
+recursos de animação do arquivo de layout. Na verdade apenas a caixa na
+interseção da linha precisa de um script. É feito totalmente com script
+para fins ilustrativos.
+
+
+.. _layscript-environment:
+
+O ambiente do script layout
+---------------------------
+
+O ambiente Lua é oferecido pelo plug-in **Layout**. É bem reduzido,
+oferecendo apenas o mínimo necessário:
+
+* O ``file`` oferecendo o objeto do arquivo de layout do script.
+  Possui uma propriedade ``device`` para saber quem foi que fez com que
+  o layout fosse carregado e uma propriedade ``views`` para conseguir as
+  exibições do layout (indexadas através do nome).
+* O ``machine`` oferecendo ao MAME a máquina que está sendo executada no
+  momento.
+* As funções ``emu.render_bounds`` e o ``emu.render_color`` para criar
+  os limites e as cores dos objetos.
+* As funções ``emu.print_error``, ``emu.print_info`` e o
+  ``emu.print_debug`` para diagnosticar a saída.
+* Funções Lua ``pairs``, ``ipairs``, ``table.insert`` e o
+  ``table.remove`` para manipular as tabelas e os outros contêiners.
+* Função Lua ``print`` para gerar texto no console.
+* Função Lua ``string.format`` para a formatação do texto.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layscript-events:
+
+Os eventos do layout
+--------------------
+
+O script do layout do MAME usa um modelo com base em eventos. Os scripts
+podem fornecer funções que serão invocadas após a ocorrência dos
+eventos ou quando os dados forem solicitados. Há três níveis de
+eventos: do arquivo do layout, da visualização do layout e do item de
+visualização de layout.
+
+.. _layscript-events-file:
+
+Os eventos do arquivo layout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Os eventos do arquivo do layout é aplicado no arquivo como um todo e não
+em uma visualização individualmente.
+
+**Resolve as tags**
+
+    ``file:set_resolve_tags_callback(cb)``
+
+	É invocado após o sistema que está sendo emulado ter terminado a
+	sua inicialização, as tags do layout que forem recebidas tenham
+	sido resolvidas e as invocações retornadas tenham sido configuradas.
+	Este é um bom momento para consultar as entradas e configurar os
+	manipuladores dos eventos do item de visualização.
+
+	A função callback não retorna nenhum valor e não também aceita
+	nenhum parâmetro. Use ``nil`` como um argumento para remover o
+	manipulador do evento.
+
+.. _layscript-events-view:
+
+Os eventos de visualização do layout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Os eventos da visualização do Layout sem aplicam para uma visualização
+individual.
+
+**Prepara os itens**
+
+    ``view:set_prepare_items_callback(cb)``
+
+	É invocado antes que a renderização de visualização dos itens sejam
+	adicionados no destino em preparação para conceber o quadro de
+	vídeo.
+
+	A função callback não retorna nenhum valor e não também aceita
+	nenhum parâmetro. Use ``nil`` como um argumento para remover o
+	manipulador do evento.
+
+**Carga prévia**
+
+    ``view:set_preload_callback(cb)``
+
+	É invocado após a carga prévia dos elementos visíveis da
+	visualização. Isso pode acontecer quando a visualização é
+	selecionada pela primeira vez durante a seção ou caso o usuário
+	alterne a exibição da coleção de um elemento. Esteja ciente que isto
+	pode ser invocado várias vezes durante uma seção, evite a repetição
+	de tarefas onerosas ao sistema.
+
+	A função callback não retorna nenhum valor e não também aceita
+	nenhum parâmetro. Use ``nil`` como um argumento para remover o
+	manipulador do evento.
+
+.. raw:: latex
+
+	\clearpage
+
+**O recálculo das dimensões**
+
+    ``view:set_recomputed_callback(cb)``
+
+	É invocado quando as visualizações forem recalculadas. Isso acontece
+	em várias situações, inclusive quando a janela for redimensionada,
+	entrando ou saindo do modo de tela cheia, alternando as
+	visualizações de um item em uma coleção e alterando as configurações
+	de rotação e zoom da tela. Caso esteja animando a posição dos itens
+	visualizados, este é um bom momento para calcular os fatores de
+	escala e posição.
+
+	A função callback não retorna nenhum valor e não também aceita
+	nenhum parâmetro. Use ``nil`` como um argumento para remover o
+	manipulador do evento.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layscript-events-item:
+
+O evento de visualização dos itens do layout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O retorno da visualização dos itens do layout se aplicam aos itens
+individuais dentro da visualização. Eles são usados para sobrescrever a
+condição predefinida do elemento do item, o estado de animação, limites
+e o comportamento da cor.
+
+**Obtém o estado do elemento**
+
+    ``item:set_element_state_callback(cb)``
+
+	Define um callback para obter o estado dos itens. Este controla como o
+	elemento do item é desenhado, para componentes que mudam a aparência
+	dependendo do seu estado para desenhar os componentes de forma
+	condicional e o limite, cor da animação dos componentes. Não tente
+	acessar o ``element_state`` dos itens a partir do callback pois
+	ocorrerá uma recorrência infinita.
+
+	A função callback não retorna nenhum valor e também não aceita
+	nenhum parâmetro. Use ``nil`` como um argumento para restaurar o
+	estado do manipulador do evento (com base nos atributos XML dos
+	itens).
+
+**Obtém o estado da animação**
+
+    ``item:set_animation_state_callback(cb)``
+
+	Define um callback para obter o estado de animação do item. É
+	utilizado para as animações dos limites e das cores da animação. Não
+	tente acessar o ``animation_state`` do item a partir do callback
+	pois ocorrerá uma recorrência infinita.
+
+	A função callback deve retornar um número inteiro e também não
+	aceita nenhum parâmetro. Use ``nil`` como um argumento para
+	restaurar o estado original do manipulador do evento de animação
+	(com base nos atributos XML dos itens e do sub-elemento
+	``animate``).
+
+**Obtém os limites do item**
+
+    ``item:set_bounds_callback(cb)``
+
+	Define um callback para obter os limites do item (a sua posição e o
+	seu tamanho). Não tente acessar o ``bounds`` do item a partir do
+	callback pois ocorrerá uma recorrência infinita.
+
+	A função callback deve retornar os limites da renderização do objeto
+	representando os limites do item em coordenadas do seu destino
+	(geralmente criado ao invocar o ``emu.render_bounds``) e também não
+	aceita nenhum parâmetro. Use ``nil`` como um argumento para
+	restaurar o limite original do manipulador do evento (com base no
+	estado de animação do item e do sub-elemento ``bounds``).
+
+**Obtém a cor do item**
+
+    ``item::set_color_callback(cb)``
+
+	Define um callback para obter a cor de um item (a textura da cor do
+	elemento multiplicado por esta cor)
+
+	A função callback deve retornar a renderização da cor do objeto
+	representando a cor ARGB (geralmente criado ao invocar o
+	``emu.render_color``) e também não aceita nenhuma parâmetro. Use
+	``nil`` como um argumento para restaurar a cor original do
+	manipulador do evento (com base no estado de animação do item e do
+	sub-elemento ``color``).
