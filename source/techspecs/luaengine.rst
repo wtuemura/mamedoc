@@ -2,6 +2,8 @@
 
 	\clearpage
 
+.. _luaengine:
+
 Usando Scripts LUA
 ==================
 
@@ -38,29 +40,32 @@ Características
 Pelo fato da API estar incompleta, abaixo uma lista parcial de recursos
 disponíveis atualmente com os scripts LUA:
 
--  metadata de máquina (versão do app, rom atual, descrição da rom)
--  controle da máquina (iniciar, pausar, resetar, parar)
--  ganchos da máquina (pinta em cima do frame e nos eventos de usuário)
+-  informação da sessão (versão do app, rom atual, descrição da rom)
+-  controle da sessão (iniciar, pausar, resetar, parar)
+-  ganchos dos eventos (pinta em cima do frame e nos eventos de usuário)
 -  introspeção dos dispositivos (enumeração da árvore dos dispositivos,
    memória e registros)
 -  introspeção das telas (listagem de telas, descritivos, contagem dos
    quadros)
--  desenho de um painel (HUD) na tela (texto, linhas, caixas em
+-  desenho da sobreposição na tela (texto, linhas, caixas em
    múltiplas telas)
 -  leitura/escrita de memória (8/16/32/64 bits, signed e unsigned)
 -  controle dos estados e dos registros (enumeração dos estados, obter e
    definir)
+
+Várias classes estão documentadas na página
+:ref:`Lua class reference <luareference>`.
 
 .. _luaengine-usage:
 
 Utilização
 ----------
 
-O MAME suporta o carregamento de scripts LUA (>= 5.3), seja ele escrito
+O MAME suporta o carregamento de scripts LUA (>= 5.3), seja ele digitado
 no console interativo ou se for carregado como um arquivo externo. Para
 usar o console, rode o mame usando o comando ``-console`` ou ``-plugin
-console``, será apresentado a um prompt de comando com um ``[MAME]>``,
-onde será possível redigir o seu script.
+console``, será apresentado ao prompt de comando com um ``[MAME]>``,
+onde será possível interagir o seu script Lua.
 
 Use o comando ``-autoboot_script`` para carregar um script. Por
 predefinição o carregamento do script pode ser atrasado em alguns poucos
@@ -120,17 +125,18 @@ rodada no momento com o comando abaixo::
 Nós agora começaremos a explorar os métodos relacionadas à tela.
 Primeiro, vamos enumerar as telas disponíveis::
 
-    [MAME]> for tag, screen in pairs(manager:machine().screens) do print(tag) end
+    [MAME]> for tag, screen in pairs(manager.machine.screens) do print(tag) end
     :screen
 
-O ``manager:machine()``, este é o objeto raiz da sua máquina atualmente
-em execução: será usada com bastante frequência. **screens** é uma
-tabela com todas as telas disponíveis; a maioria das máquinas tem apenas
-uma tela principal. No nosso caso, a tela principal e única é marcada
-como ``:screen`` e podemos inspecioná-la mais a fundo::
+O ``manager.machine`` é o objeto da :ref:`luareference-core-machine`
+para a sua sessão atual da emulação. Será usada com bastante frequência.
+O **screens** são :ref:`luareference-dev-enum` que produz todas as telas
+no sistema; a maioria das máquinas arcade só tem uma tela principal.
+No nosso caso a única tela principal é marcada como ``:screen`` e
+podemos inspecioná-la mais a fundo::
 
     [MAME]> -- vamos definir um atalho para a tela principal
-    [MAME]> s = manager:machine().screens[":screen"]
+    [MAME]> s = manager.machine.screens[":screen"]
     [MAME]> print(s.width .. "x" .. s.height)
     320x224
 
@@ -157,7 +163,7 @@ da tela geralmente corresponde ao canto superior esquerdo da tela (0,0).
 Da mesma forma para telas, é possível inspecionar todos os dispositivos
 conectados em uma máquina::
 
-    [MAME]> for tag, device in pairs(manager:machine().devices) do print(tag) end
+    [MAME]> for tag, device in pairs(manager.machine.devices) do print(tag) end
     :audiocpu
     :maincpu
     :saveram
@@ -168,7 +174,7 @@ conectados em uma máquina::
 Em alguns casos, também é possível inspecionar e manipular a memória
 e o estado::
 
-    [MAME]> cpu = manager:machine().devices[":maincpu"]
+    [MAME]> cpu = manager.machine.devices[":maincpu"]
     [MAME]> -- enumera, lê e escreve registros de estado
     [MAME]> for k, v in pairs(cpu.state) do print(k) end
     D5

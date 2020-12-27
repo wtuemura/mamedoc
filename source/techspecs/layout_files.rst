@@ -2,6 +2,8 @@
 
 	\clearpage
 
+.. _layfile:
+
 Os arquivos de layout
 =====================
 

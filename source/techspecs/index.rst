@@ -19,4 +19,5 @@ scripts LUA que são executados na estrutura do MAME.
 	floppy
 	nscsi
 	luaengine
+	luareference
 	m6502
