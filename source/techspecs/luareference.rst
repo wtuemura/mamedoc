@@ -4,8 +4,8 @@
 
 .. _luareference:
 
-Referência das Classes Lua do MAME
-==================================
+As referências das Classes Lua do MAME
+======================================
 
 .. contents::
     :local:
@@ -18,7 +18,7 @@ Introdução
 ----------
 
 Vários aspectos do MAME podem ser controlados usando Lua scripts. Muitas
-classes importantes são expostas como objetos Lua.
+classes importantes estão expostas como objetos Lua.
 
 .. _luareference-intro-containers:
 
@@ -85,6 +85,10 @@ maioria destas operações:
 	caso não esteja no contêiner. O índice é o que você passaria ao
 	método ``at`` para obter o valor.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-core:
 
 Classes Principais
@@ -131,6 +135,10 @@ Propriedades
 	:ref:`plug-in Lua <luareference-core-plugin>` que estão presentes,
 	indexados por nome. Os métodos do índice obtém ``at`` e ``index_of``
 	com complexidade O(n).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-core-machine:
 
@@ -207,6 +215,10 @@ Métodos
 	Grava a mensagem no log de erros da máquina. Isso pode ser exibido
 	em uma janela do depurador, gravado em um arquivo ou gravado na
 	saída de erro predefinida.
+
+.. raw:: latex
+
+	\clearpage
 
 Propriedades
 ^^^^^^^^^^^^
@@ -288,6 +300,10 @@ Propriedades
 	momento, geralmente porque a sessão foi pausada ou o sistema emulado
 	não concluiu a inicialização.
 
+.. raw:: latex
+
+	\clearpage
+
 **machine.exit_pending** (somente leitura)
 
 	Um booleano que indica se a sessão da emulação está programada para
@@ -326,6 +342,10 @@ Propriedades
 
 	:ref:`luareference-dev-enum` que produz toda a
 	:ref:`luareference-dev-dislot` no sistema que está sendo emulado.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-core-videoman:
 
@@ -398,6 +418,10 @@ Métodos
 	cima para baixo.  Os valores do pixel são cores no formato RGB
 	compactadas em inteiros com 32 bits.
 
+.. raw:: latex
+
+	\clearpage
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -456,6 +480,10 @@ Propriedades
 
 	Um :ref:`alvo do renderizador <luareference-render-target>` usado
 	para produzir instantâneos e para as gravações de vídeo.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-core-soundman:
 
@@ -531,6 +559,10 @@ Propriedades
 	Um booleano que indica se a saída do áudio está sendo gravada em um
 	arquivo WAV.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-core-outputman:
 
 Gerenciador da saída
@@ -581,6 +613,10 @@ Métodos
 	``nil`` caso não exista. Este método tem complexidade O(n),
 	portanto, evite chamá-lo quando o desempenho for importante.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-core-paramman:
 
 Gerenciador dos parâmetros
@@ -609,6 +645,10 @@ Métodos
 
 	Define o parâmetro informado caso não esteja.
 	Não tem efeito se o parâmetro informado já estiver definido.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-core-uiman:
 
@@ -681,6 +721,10 @@ Propriedades
 	Um Booleano que controla se as estatísticas da criação do perfil
 	devem ser exibidas.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-core-driver:
 
 Os metadados do driver do sistema
@@ -745,6 +789,10 @@ Propriedades
 	seja aplicada.
 	Será um dos ``"rot0"``, ``"rot90"``, ``"rot180"`` ou ``"rot270"``.
 
+.. raw:: latex
+
+	\clearpage
+
 **driver.type** (somente leitura)
 
 	Uma string que fornece um tipo de sistema. Será um dos ``"arcade"``,
@@ -803,6 +851,10 @@ Propriedades
 	Um booleano que indica se o sistema é um protótipo com
 	funcionalidade incompleta.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-core-plugin:
 
 Plug-in Lua
@@ -844,6 +896,9 @@ Propriedades
 
 	Um booleano que indica se o plug-in está ativado.
 
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-dev:
 
@@ -922,6 +977,10 @@ Instanciação
 	:ref:`interface para os dispositivos de imagem no sistema
 	<luareference-dev-diimage>` no sistema.
 
+.. raw:: latex
+
+	\clearpage
+
 **manager.machine.slots**
 
 	Retorna um dispositivo enumerador que irá iterar sobre a
@@ -932,8 +991,7 @@ Instanciação
 
 	Retorna um dispositivo enumerador que irá iterar sobre o
 	:ref:`dispositivo <luareference-dev-device>` na sub-árvore começando
-	em um dispositivo específico. O dispositivo especificado será
-	incluído.
+	em um dispositivo específico. O dispositivo informado será incluído.
 	Caso a profundidade seja informada este deve ser um valor inteiro
 	que irá definir a quantidade máxima dos níveis que serão iterados
 	abaixo do dispositivo informado (Por exemplo, 1 irá limitar a
@@ -983,6 +1041,10 @@ Instanciação
 	definirá a quantidade máxima dos níveis que serão iterados abaixo do
 	dispositivo informado (Por exemplo, 1 irá limitar a iteração do
 	dispositivo e dos dispositivos relacionados).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-dev-device:
 
@@ -1055,6 +1117,10 @@ Métodos
 	Obtém o valor do parâmetro através da tag relativa ao dispositivo ou
 	uma string vazia caso não esteja definida.
 
+.. raw:: latex
+
+	\clearpage
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -1106,6 +1172,10 @@ Propriedades
 	memória. Observe que os nomes são específicos para o tipo do
 	dispositivo e não têm um significado especial.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-dev-screen:
 
 Dispositivo da tela
@@ -1143,7 +1213,7 @@ Métodos
 
 	Obtém o tempo restante até que o raster atinja a posição
 	especificada.  Caso o componente horizontal da posição não é seja
-	especificado, a predefinição é zero (0, ou seja, o início da linha).
+	informado, a predefinição é zero (0, ou seja, o início da linha).
 	O resultado é um número de ponto flutuante em unidades de segundos.
 
 **screen:time_until_vblank_start()**
@@ -1160,25 +1230,28 @@ Métodos
 
 **screen:snapshot([nome_do_arquivo])**
 
-	Salva um instantâneo da tela em formato PNG. Caso nenhum nome de
-	arquivo seja informado, o o caminho do instantâneo configurado e o
+	Salva um print da tela em formato PNG. Caso nenhum nome do arquivo
+	seja informado, o caminho do instantâneo configurado e o
 	formato do nome serão usados. Caso o nome do arquivo informado não
 	seja um caminho absoluto, ele é interpretado em relação ao primeiro
-	caminho do instantâneo configurado. O nome do arquivo pode conter
-	especificadores de conversão que será substituído pelo nome do
-	sistema ou um número incremental.
+	caminho configurado. O nome do arquivo pode conter variáveis que
+	serão substituídas pelo nome do sistema ou por um número
+	incremental.
 
-	Caso contrário, retorna um erro do arquivo caso a leitura do arquivo
-	de instantâneo falhe ou ``nil``.
+	Caso contrário, retorna um erro caso a leitura do arquivo do print
+	da tela falhe ou ``nil``.
+
+.. raw:: latex
+
+	\clearpage
 
 **screen:pixel(x, y)**
 
-	Obtém o pixel no local especificado. As coordenadas estão em pixels,
+	Obtém o pixel no local informado. As coordenadas estão em pixels,
 	com a origem no canto superior esquerdo da área visível, aumentando
 	para o para a direita e para baixo. Retorna um índice da paleta ou
 	de uma cor no formato RGB compactado em um inteiro com 32 bits.
-	Retorna zero (0) se o ponto especificado estiver fora da área
-	visível.
+	Retorna zero (0) se o ponto informado estiver fora da área visível.
 
 **screen:pixels()**
 
@@ -1188,7 +1261,7 @@ Métodos
 	depois de cima para baixo. Os valores dos pixels são índices da
 	paleta ou cores no formato RGB compactadas em inteiros com 32 bits.
 
-**screen:draw_box(esquerda, cima, direita, baixo, [linha], [preenche])**
+**screen:draw_box(esquerda, cima, direita, baixo, [linha], [preencha])**
 
 	Desenha um retângulo delineado com bordas nas posições informadas.
 
@@ -1233,6 +1306,10 @@ Métodos
 	partir do byte mais importante até o byte com menor importância.
 	Caso a cor da linha não seja informada, a cor do texto da IU será
 	usada.
+
+.. raw:: latex
+
+	\clearpage
 
 **screen:draw_text(x|justify, y, texto, [primeiro plano], [plano de fundo])**
 
@@ -1302,6 +1379,10 @@ Propriedades
 	tela. Isso pode ser útil para restaurar o valor original após
 	ajustar o offset Y através do contêiner da tela.
 
+.. raw:: latex
+
+	\clearpage
+
 **screen.xscale** (somente leitura)
 
 	O fator de escala original da tela X, como um número de ponto
@@ -1338,7 +1419,12 @@ Propriedades
 
 **screen.container** (somente leitura)
 
-	O :ref:`luareference-render-container` usado para desenhar a tela.
+	O :ref:`contêiner do renderizador <luareference-render-container>`
+	usado para desenhar a tela.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-dev-cass:
 
@@ -1387,10 +1473,14 @@ Métodos
 
 	Salte para a posição informada na fita.  O tempo é um número de
 	ponto flutuante em unidades de segundos, em relação ao ponto
-	especificado no argumento de_onde. O argumento de_onde deve ser
+	informado no argumento de_onde. O argumento de_onde deve ser
 	``"set"``, ``"cur"`` ou ``"end"`` para realizar a busca com relação
 	ao início da fita, a posição atual ou o fim da fita,
 	respectivamente.
+
+.. raw:: latex
+
+	\clearpage
 
 Propriedades
 ^^^^^^^^^^^^
@@ -1427,6 +1517,10 @@ Propriedades
 
 	A duração da fita como um número de ponto flutuante em unidades de
 	segundos, ou zero (0) caso nenhuma imagem da fita seja montada.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-dev-diimage:
 
@@ -1497,6 +1591,10 @@ Propriedades
 	forçada para alterar as imagens da mídia (geralmente para slots de
 	cartucho que contêm um hardware adicional para os chips de memória).
 
+.. raw:: latex
+
+	\clearpage
+
 **image.image_type_name** (somente leitura)
 
 	Uma string para categorizar o dispositivo da mídia.
@@ -1561,6 +1659,10 @@ Propriedades
 	tenha sido carregada a partir de uma lista de software ou caso
 	contrário, ``nil``.
 
+.. raw:: latex
+
+	\clearpage
+
 **image.software_publisher** (somente leitura)
 
 	O editor do item do software caso a imagem da mídia montada tenha
@@ -1582,6 +1684,10 @@ Propriedades
 **image.device** (somente leitura)
 
 	O :ref:`dispositivo <luareference-dev-device>` subjacente.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-dev-dislot:
 
@@ -1606,7 +1712,7 @@ Propriedades
 
 **slot.fixed** (somente leitura)
 
-	Um booleano que indica se este é um slot com um cartão especificado
+	Um booleano que indica se este é um slot com um cartão informado
 	na configuração da máquina que não possa ser alterada pelo usuário.
 
 **slot.has_selectable_options** (somente leitura)
@@ -1627,6 +1733,10 @@ Propriedades
 **slot.device** (somente leitura)
 
 	O :ref:`dispositivo <luareference-dev-device>` subjacente.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-dev-imagefmt:
 
@@ -1669,6 +1779,10 @@ Propriedades
 	Uma string que descreve as opções disponíveis durante a criação do
 	formato da imagem da mídia. A string não se destina a ser legível
 	para humanos.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-dev-slotopt:
 
@@ -1728,6 +1842,10 @@ Propriedades
 	0-11. Se os oito bits mais importantes não estiverem todos
 	configurados, a frequência será em Hertz.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-mem:
 
 Sistema da memória
@@ -1778,6 +1896,10 @@ Propriedades
 	indexada pela tag absoluta. Os métodos ``at`` e o ``index_of`` têm
 	O(n) complexidade; todas outras operações compatíveis têm
 	complexidade O(1).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-mem-space:
 
@@ -1843,6 +1965,10 @@ Métodos
 	endereço informado. O endereço é traduzido com a intenção de
 	gravação da depuração. Não grava se a tradução do endereço falhar.
 
+.. raw:: latex
+
+	\clearpage
+
 **space:read_direct_i{8,16,32,64}(endereço)**
 
 	Lê um valor inteiro assinado com o tamanho em bits do endereço
@@ -1882,6 +2008,10 @@ Métodos
 	ser 8, 16, 30 ou 64. Caso o passo seja informado, ele deve ser um
 	número positivo dos elementos.
 
+.. raw:: latex
+
+	\clearpage
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -1918,6 +2048,10 @@ Propriedades
 
 	O :ref:`mapa do endereçamento da memória <luareference-mem-map>`
 	configurado para o espaço ou ``nil``.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-mem-map:
 
@@ -1962,6 +2096,10 @@ Propriedades
 	<luareference-mem-mapentry>` não configuradas no mapa do endereço.
 	Usa índices inteiros com base 1.  O operador do índice e o método
 	``at`` tem complexidade O(n).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-mem-mapentry:
 
@@ -2033,6 +2171,10 @@ Propriedades
 
 	O offset inicial na região da memória para as entradas da ROM.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-memory-handlerdata:
 
 Dados do manipulador do mapa de endereçamento da memória
@@ -2075,6 +2217,10 @@ Propriedades
 **data.tag** (somente leitura)
 
 	A tag para portas de E/S, os bancos da memória ou ``nil``.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-mem-share:
 
@@ -2121,6 +2267,10 @@ Métodos
 	Grava um valor inteiro não assinado com o tamanho em bits para o
 	offset informado no compartilhamento da memória.
 
+.. raw:: latex
+
+	\clearpage
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -2149,6 +2299,10 @@ Propriedades
 **share.bytewidth** (somente leitura)
 
 	A largura do elemento nativo do compartilhamento da memória em bytes.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-mem-bank:
 
@@ -2181,6 +2335,10 @@ Propriedades
 **bank.entry** (leitura e escrita)
 
 	O número da entrada com base zero atualmente selecionado.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-mem-region:
 
@@ -2254,6 +2412,9 @@ Propriedades
 
 	A largura do elemento nativo da região da memória em bytes.
 
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input:
 
@@ -2324,6 +2485,10 @@ Métodos
 
 	Isso fornece acesso à configuração geral da entrada.
 
+.. raw:: latex
+
+	\clearpage
+
 **ioport:token_to_input_type(string)**
 
 	Retorna o tipo da entrada e o número do jogador para o tipo da
@@ -2345,6 +2510,10 @@ Propriedades
 	Chaves são tags absolutas.  Os métodos ``at`` e o ``index_of``
 	têm complexidade O(n); todas as outras operações compatíveis têm
 	complexidade O(1).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input-natkbd:
 
@@ -2398,6 +2567,10 @@ Métodos
 	dispositivos de entrada do teclado numérico no sistema, se eles
 	estão ativados e os seus caracteres vinculados.
 
+.. raw:: latex
+
+	\clearpage
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -2435,6 +2608,10 @@ Propriedades
 	indexado através da tag absoluta do dispositivo. O índice get tem
 	O(n) complexidade; todas as outras operações compatíveis têm
 	complexidade O(1).
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input-kbddev:
 
@@ -2490,6 +2667,10 @@ Propriedades
 
 	Um booleano que indica se as entradas do teclado e/ou do teclado
 	numérico do dispositivo estão ativados.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input-ioport:
 
@@ -2560,6 +2741,10 @@ Propriedades
 	Obtém uma tabela do :ref:`campo da porta de E/S
 	<luareference-input-field>` indexados por nome.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-input-field:
 
 Campo da porta de E/S
@@ -2622,6 +2807,10 @@ Métodos
 	Obtém uma tabela dos caracteres correspondentes ao campo para o
 	estado do shift informado. O estado do shift é uma máscara de bits
 	das teclas ativas do shift.
+
+.. raw:: latex
+
+	\clearpage
 
 Propriedades
 ^^^^^^^^^^^^
@@ -2694,6 +2883,10 @@ Propriedades
 
 	Um booleano que indica se o campo está ativado.
 
+.. raw:: latex
+
+	\clearpage
+
 **field.optional** (somente leitura)
 
 	Um booleano que indica se o campo é opcional e não é obrigatório
@@ -2763,6 +2956,10 @@ Propriedades
 	Obtém uma tabela das configurações ativadas atualmente para um
 	interruptor DIP ou o campo de configuração, indexado por valor.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-input-fieldlive:
 
 Estado do campo da porta de E/S em tempo real
@@ -2784,6 +2981,10 @@ Propriedades
 **live.name**
 
 	O nome da exibição do campo.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input-inputman:
 
@@ -2852,6 +3053,10 @@ Métodos
 
 	Obtenha o texto de exibição para uma sequência da entrada.
 
+.. raw:: latex
+
+	\clearpage
+
 **input:seq_to_tokens(sequência)**
 
 	Converta uma sequência da entrada em uma string token. Isso deve ser
@@ -2901,6 +3106,10 @@ Propriedades
 	Pega uma tabela host :ref:`host da classe do dispositivo da entrada
 	<luareference-input-devclass>` indexada por nome.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-input-codepoll:
 
 Código da condição da entrada
@@ -2942,6 +3151,10 @@ Métodos
 	relevante do host que foi ativado desde a última vez que o método
 	foi invocado. Retorna um código de entrada inválido caso nenhuma
 	entrada relevante tenha sido ativada.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input-seqpoll:
 
@@ -3001,6 +3214,10 @@ Propriedades
 	Um booleano que indica se a sequência foi alterada através de alguma
 	entrada do usuário desde o início do processo.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-input-devclass:
 
 Host da classe do dispositivo da entrada
@@ -3039,6 +3256,10 @@ Propriedades
 	Obtém uma tabela :ref:`host do dispositivo da entrada
 	<luareference-input-inputdev>` na classe. As chaves são os índices
 	com base 1.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input-inputdev:
 
@@ -3080,6 +3301,10 @@ Propriedades
 	Obtém as tabelas :ref:`host do item do dispositivo da entrada
 	<luareference-input-inputitem>`, indexado através da ID do item. A
 	ID do item é um valor enumerado.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input-inputitem:
 
@@ -3126,6 +3351,10 @@ Propriedades
 
 	O valor atual do item. Este é um número inteiro assinado onde zero é
 	a posição neutra.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-input-uiinput:
 
@@ -3181,6 +3410,9 @@ Propriedades
 	Se o gerenciador da entrada da IU verificará se há atualizações do
 	quadro das entradas da IU.
 
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-render:
 
@@ -3223,7 +3455,7 @@ Métodos
 
 **bounds:includes(x, y)**
 
-	Retorna um booleano indicando se o ponto especificado está dentro do
+	Retorna um booleano indicando se o ponto informado está dentro do
 	retângulo. O retângulo deve ser normalizado para que funcione
 	(direito maior que o esquerdo e baixo maior do que cima). Os
 	argumentos devem ser números de ponto flutuante.
@@ -3239,6 +3471,10 @@ Métodos
 	Define a posição e o tamanho do retângulo nos termos da posição do
 	canto superior esquerdo, da largura e da altura. Todos os argumentos
 	devem ser em números de ponto flutuante.
+
+.. raw:: latex
+
+	\clearpage
 
 Propriedades
 ^^^^^^^^^^^^
@@ -3280,6 +3516,10 @@ Propriedades
 	necessariamente têm escalas X e Y iguais. Um retângulo representando
 	um quadrado na saída final não necessariamente tem uma proporção de
 	1.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-render-color:
 
@@ -3339,6 +3579,10 @@ Propriedades
 	O valor do canal azul, na faixa entre zero (0, desligado) até um
 	(1, intensidade total).
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-render-manager:
 
 Gerenciador do renderizador
@@ -3380,6 +3624,10 @@ render.max_update_rate (somente leitura)
 	geradas, bem como os alvos ocultos renderizados para coisas como a
 	renderização das capturas da tela. Usa índices inteiros com base 1.
 	O operador de índice e o método ``at`` têm O(n) complexidade.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-render-target:
 
@@ -3449,6 +3697,10 @@ Propriedades
 	verticalmente e o bit 2 (0x04) é definido para espelhar ao longo do
 	canto superior esquerdo inferior e a diagonal direita.
 
+.. raw:: latex
+
+	\clearpage
+
 **target.view_names[]**
 
 	Os nomes das visualizações disponíveis para a renderização deste
@@ -3481,6 +3733,10 @@ Propriedades
 	Um booleano que indica se renderização do alvo está configurado para
 	escalar fazendo com que as telas emuladas preencham toda a
 	janela/tela o quanto for possível.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-render-container:
 
@@ -3543,6 +3799,10 @@ Propriedades
 **container.is_empty** (somente leitura)
 
 	Um booleano que indica se o contêiner não possui itens.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-render-contsettings:
 
@@ -3607,6 +3867,10 @@ Propriedades
 	O offset Y do contêiner. Este é um número de ponto flutuante onde
 	um (1) representa o tamanho Y do contêiner.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-render-layfile:
 
 Arquivo layout
@@ -3660,6 +3924,10 @@ Propriedades
 	referência das telas forem fornecidas pelos dispositivos do cartão
 	do slot caso o os referidos dispositivos do cartão do slot não
 	estiverem presentes no sistema.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-render-layview:
 
@@ -3722,6 +3990,10 @@ Métodos
 	saindo do modo de tela inteira e alterando a configuração de zoom
 	para região da tela.
 
+.. raw:: latex
+
+	\clearpage
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -3771,6 +4043,10 @@ Propriedades
 	Um booleano que indica se a visualização possui itens que não são da
 	tela, incluindo itens que não são visíveis porque o usuário ocultou
 	a coleção dos itens aos quais elas pertencem.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-render-layitem:
 
@@ -3852,6 +4128,10 @@ Métodos
 	Observe que a função não deve acessar a propriedade ``color`` do
 	item, pois isso resultará em uma recursão infinita.
 
+.. raw:: latex
+
+	\clearpage
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -3911,6 +4191,9 @@ Propriedades
 	Obtém o estado atual da animação. Isso invocará a função callback do
 	estado de animação do elemento para lidar com os vínculos.
 
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-debug:
 
@@ -3971,6 +4254,10 @@ Propriedades
 
 	Tanto ``"run"`` se o sistema que estiver sendo emulado estiver
 	rodando, ou ``"stop"`` caso esteja parado no depurador.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-debug-devdebug:
 
@@ -4034,6 +4321,10 @@ Métodos
 	breakpoint caso o número do breakpoint seja informado ou ``nil``
 	caso nenhum seja informado.
 
+.. raw:: latex
+
+	\clearpage
+
 **debug:bplist()**
 
 	Retorna uma tabela dos breakpoints para o dispositivo. As chaves são
@@ -4088,6 +4379,10 @@ Métodos
 	os valores são os
 	:ref:`watchpoints <luareference-debug-watchpoint>`.
 
+.. raw:: latex
+
+	\clearpage
+
 .. _luareference-debug-breakpoint:
 
 Breakpoint
@@ -4133,6 +4428,10 @@ Propriedades
 	Uma ação que o depurador executará quando o breakpoint for atingido
 	e a condição for avaliada como um valor diferente de zero.
 	Uma string vazia caso nenhuma ação seja informada.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-debug-watchpoint:
 
