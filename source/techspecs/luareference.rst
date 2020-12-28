@@ -11,7 +11,6 @@ As referências das Classes Lua do MAME
     :local:
     :depth: 2
 
-
 .. _luareference-intro:
 
 Introdução
@@ -19,6 +18,10 @@ Introdução
 
 Vários aspectos do MAME podem ser controlados usando Lua scripts. Muitas
 classes importantes estão expostas como objetos Lua.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _luareference-intro-containers:
 
