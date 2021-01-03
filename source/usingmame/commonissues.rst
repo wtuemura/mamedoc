@@ -149,7 +149,7 @@ Por que a minha ROM de Neo-Geo não funcionam mais? Como eu faço para que o jog
 ----------------------------------------------------------------------------------------------------------------
 
 Recentemente a BIOS do Neo-Geo foi atualizada para adicionar uma nova
-versão da BIOS Universal. Isso começou entre as versões 0.171 e 0.172 do
+versão da Universe BIOS. Isso começou entre as versões 0.171 e 0.172 do
 MAME que resultou em um erro ao tentar carregar qualquer jogo de
 Neo-Geo com um conjunto **neogeo.zip** desatualizado, isso também afeta
 o conjunto de pacote do jogo **Humble Bundle**.
@@ -518,15 +518,17 @@ O que aconteceu com a opção de Auto Disparo?
 
 Um plug-in Lua mais aprimorado e com mais funcionalidades foi adicionado
 ao MAME 0.210, a opção que antes estava embutida no código fonte foi
-removida no MAME 0.216, este novo plug-in permite a definição de botões
-alternativos para o auto disparo.
+removida no MAME 0.216. Este novo plug-in tem mais funcionalidades do
+que o recurso de auto disparo incorporado na versão anterior, por
+exemplo, você pode configurar um botão alternativo para o auto disparo
+com diferentes taxas de disparo.
 
 Para ativar e configurar o novo sistema de auto disparo, siga as
 instruções abaixo:
 
  * Inicie o MAME sem nenhum sistema.
  * Selecione a opção **Plug-ins**.
- * Habilite a opção **Autofire Plugin**.
+ * Ative a opção **Autofire**.
 
 A configuração é salva no arquivo ``plugin.ini`` dentro do diretório
 raiz do MAME no Windows ou ~/.mame em sistemas \*nix \ e compatíveis.

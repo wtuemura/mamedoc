@@ -72,12 +72,6 @@ maioria destas operações:
 
 **c:find(v)**
 
-	Retorna a chave para o item ``v`` ou ``nil`` caso não esteja na
-	coleção. A chave é o que você passaria ao índice do operador para
-	obter o valor.
-
-**c:find(v)**
-
 	Retorna a chave para o item ``v`` ou ``nil`` caso não esteja no
 	contêiner. A chave é o que você passaria ao índice do operador para
 	obter o valor.

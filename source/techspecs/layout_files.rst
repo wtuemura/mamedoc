@@ -4,8 +4,8 @@
 
 .. _layfile:
 
-Os arquivos de layout
-=====================
+Os arquivos layout
+==================
 
 .. contents:: :local:
 
@@ -15,7 +15,7 @@ Os arquivos de layout
 Introdução
 ----------
 
-Os arquivos de layout [#]_ são usados para informar ao MAME o que exibir
+Os arquivos layout [#]_ são usados para informar ao MAME o que exibir
 enquanto a emulação de um sistema estiver rodando e também como
 organizá-los na tela. O MAME pode renderizar a emulação das telas
 originais dos sistemas, as imagens, os textos, as formas e objetos
@@ -25,7 +25,7 @@ refletir a condição das entradas e das saídas.
 Os layouts podem ser gerados automaticamente com base no número ou no
 tipo da tela que será emulada, ser construído e conectado internamente
 ao binário do MAME ou sendo disponibilizado externamente. Para o MAME os
-arquivos de layout são interpretados como arquivos XML porém utilizam a
+arquivos layout são interpretados como arquivos XML porém utilizam a
 extensão ``.lay``.
 
 .. raw:: latex
@@ -510,13 +510,13 @@ As partes de um layout
 ----------------------
 
 Uma visualização define a disposição de um objeto gráfico a ser exibido.
-O arquivo de layout do MAME pode conter diversas visualizações. As
+O arquivo layout do MAME pode conter diversas visualizações. As
 visualizações são construídas a partir de elementos *elements* e telas
-*screens*. Para simplificar a organização de layouts complexos são
+*screens*. Para simplificar a organização dos layouts complexos são
 compatíveis entre si a repetição dos blocos e dos grupos que podem ser
 reutilizados.
 
-O primeiro elemento do cabeçalho de um arquivo de layout do MAME deve
+O primeiro elemento do cabeçalho de um arquivo layout do MAME deve
 ser um elemento chamado ``mamelayout`` junto com um atributo
 ``version``. O atributo ``version`` deve ser um valor inteiro.
 Atualmente, o MAME suporta apenas a versão 2 e não carregará qualquer
@@ -558,7 +558,7 @@ que estejam entre ``<!--`` e ``-->``:
 	
 	<!--
 		Também é possível incluir longas instruções ou informações
-		relevantes no seu arquivo de layout para que as pessoas saibam
+		relevantes no seu arquivo layout para que as pessoas saibam
 		o que fazer ou como prosseguir caso seja necessário.
 		Identifique os seus arquivos, utilize estes espaços para deixar
 		o seu nome ou apelido, a versão, a data que o layout foi criado
@@ -779,7 +779,7 @@ Há suporte para os seguintes componentes:
 	sua extensão) para ser carregada dentro do canal alfa.
 
 	Alternativamente, os dados da imagem podem ser informados no próprio
-	arquivo de layout utilizando um sub-elemento ``data``. Isto pode ser
+	arquivo layout utilizando um sub-elemento ``data``. Isto pode ser
 	útil para oferecer gráficos SVG simples e legíveis. Será considerado
 	como um erro caso nenhum atributo ``file`` ou ``data`` seja
 	informado.
@@ -796,7 +796,7 @@ Há suporte para os seguintes componentes:
 	dados SVG, o atributo é apenas utilizado com imagens do tipo bitmap.
 
 	O(s) arquivo(s) da(s) imagem(s) devem ser colocados no mesmo
-	diretório que o arquivo de layout. Os formatos da imagem são
+	diretório que o arquivo layout. Os formatos da imagem são
 	detectados durante a analise do conteúdo dos arquivos, os nomes das
 	extensões dos arquivos não são levados em consideração. Note porém
 	que nos sistemas \*nix o nome dos aquivos com maiúsculas e com
@@ -1059,7 +1059,7 @@ Uma visualização (elemento ``view``) define um arranjo dos elementos ou
 das imagens exibidas da tela emulada numa janela ou numa tela.
 As exibições também conectam os elementos, as entradas E/S e as saídas
 emuladas.
-Um arquivo de layout pode conter vários elementos ``view``, caso uma
+Um arquivo layout pode conter vários elementos ``view``, caso uma
 delas corresponda a uma tela inexistente, esta se torna *inválida*.
 
 O MAME exibirá uma mensagem de aviso ignorando toda a visualização que
@@ -1070,7 +1070,7 @@ computadores que tenham apenas controles no painel frontal e onde um
 terminal serial seja opcional.
 
 As visualizações são identificadas através do nome na interface de
-usuário do MAME ou na linha de comando. Para os arquivos de layouts que
+usuário do MAME ou na linha de comando. Para os arquivos dos layouts que
 sejam associados aos dispositivos ou a outros onde o dispositivo do
 controlador principal, os nomes das visualizações dos dispositivos sejam
 precedidos por uma tag (com os dois pontos iniciais omitidos) por
@@ -1132,7 +1132,7 @@ elemento ``view``:
 	:ref:`layfile-parts-elements`) através do atributo do elemento
 	obrigatório ``ref``.
 	Haverá um erro caso nenhum elemento ``ref`` seja definido no arquivo
-	de layout.
+	layout.
 
 	Opcionalmente pode estar conectada em uma porta E/S emulada
 	através dos atributos ``inputtag`` e o ``inputmask`` ou através
@@ -1154,7 +1154,7 @@ elemento ``view``:
 	atributo ``tag`` esteja presente, este deve ser o caminho da
 	etiqueta para a tela com relação ao dispositivo para que provoque a
 	leitura do layout. As telas são desenhadas na ordem em que aparecem
-	no arquivo de layout.
+	no arquivo layout.
 
 	Pode opcionalmente estar conectada em uma porta E/S emulada através
 	dos atributos ``inputtag`` e ``inputmask`` ou através de uma saída
@@ -1174,7 +1174,7 @@ elemento ``view``:
 	Adiciona o conteúdo do grupo na visualização (consulte
 	:ref:`layfile-parts-groups`). O nome do grupo que será adicionado
 	pode ser definido através do atributo ``ref``. Haverá um erro caso
-	nenhum grupo com este atributo seja definido no arquivo de layout.
+	nenhum grupo com este atributo seja definido no arquivo layout.
 	Veja abaixo para mais informações sobre a questão de posicionamento.
 
 **repeat**
@@ -1191,15 +1191,15 @@ elemento ``view``:
 
 	\clearpage
 
-As telas com os elementos ``screen`` e os elementos de layout
-``element`` podem ter um atributo ``id``. Quando presente o atributo
+As telas com os elementos ``screen`` e os elementos ``element`` do
+layout podem ter um atributo ``id``. Quando presente o atributo
 ``id`` deve ser único entre os elementos ``view`` e seu valor não pode
 ser vazio, isso incluí telas (screens) e os elementos instanciados
 através dos grupos reutilizáveis e da repetição dos blocos. Os elementos
 de tela e layout com o atributo ``id`` são identificados através de
 scripts Lua (consulte :ref:`layscript`).
 
-As telas com os elementos ``screen``, elementos de layout ``element`` e
+As telas com os elementos ``screen``, elementos do layout ``element`` e
 os elementos de grupo ``group``, podem ter a sua orientação alterada
 usando o elemento ``orientation``.
 Para as telas, os modificadores de orientação são aplicados em conjunto
@@ -1235,15 +1235,15 @@ O elemento ``orientation`` suporta os seguintes atributos opcionais:
 	ser ``yes`` ou ``no``.
 	O espelhamento ocorre após a rotação.
 
-As telas (elementos ``screen``) e os elementos de layout (elementos
+As telas (elementos ``screen``) e os elementos do layout (elementos
 ``element``) podem conter um atributo ``blend`` para determinar o modo
 de mesclagem. Os valores válidos são ``none`` (sem mesclagem), ``alpha``
 (mesclagem alpha) [#]_, ``multiply`` (multiplicação RGB) [#]_, e ``add``
 (mesclagem aditiva) [#]_. A predefinição para a tela é permitir que o
 driver defina a mesclagem por camada, sendo que o modo de mesclagem dos
-elementos de layout é predefinido como mesclagem alpha.
+elementos do layout é predefinido como mesclagem alpha.
 
-As telas (elementos ``screen``), elementos de layout (elementos
+As telas (elementos ``screen``), elementos do layout (elementos
 ``element``) e elementos de grupo (``group``) podem ser posicionados e
 redimensionados usando um elemento ``bounds``
 (consulte :ref:`layfile-concepts-coordinates` para mais informações).
@@ -1255,7 +1255,7 @@ Na ausência do elemento ``bounds``, os grupos são expandidos sem
 qualquer tradução ou redimensionamento (note que os grupos podem
 posicionar as telas ou elementos fora dos seus limites. Este exemplo
 mostra uma visualização com referência a posição da tela com um elemento
-de layout individual e dois grupos de elementos:
+individual do layout e dois grupos de elementos:
 
 .. code-block:: xml
 
@@ -1266,14 +1266,14 @@ de layout individual e dois grupos de elementos:
         <group ref="keypad"><bounds x="336" y="16" width="140" height="260" /></group>
     </view>
 
-As telas (elementos ``screen``), elementos de layout (``element``) e
-elementos de grupos (``group``) podem ter um sub-elemento ``color``
+As telas (elementos ``screen``), os elementos do layout (``element``) e
+os elementos do grupos (``group``) podem ter um sub-elemento ``color``
 (consulte :ref:`layfile-concepts-colours`) ao definir uma cor
 modificadora. O valor dessa cor será usada como multiplicador para
-alterar as cores componentes da tela ou dos elementos de layout.
+alterar as cores componentes da tela ou dos elementos do layout.
 
-As telas (elementos ``screen``) e os elementos de layout (``element``)
-podem ter a sua cor, posição e tamanho animados ao invormar diversos
+As telas (elementos ``screen``) e os elementos do layout (``element``)
+podem ter a sua cor, posição e tamanho animados ao informar diversos
 elementos ``color`` e/ou sub-elementos ``bounds`` em conjunto com o
 atributo ``state``. Consulte :ref:`layfile-interact-itemanim` para obter
 mais informações.
@@ -1337,7 +1337,7 @@ Para mais informações consulte :ref:`layfile-disable-objects`.
 Grupos reutilizáveis
 ~~~~~~~~~~~~~~~~~~~~
 
-Os grupos permitem que um arranjo de telas ou de elementos de layout
+Os grupos permitem que um arranjo das telas ou dos elementos do layout
 sejam usados várias vezes em uma visualização ou outros grupos. Os
 grupos podem ser de grande ajuda mesmo que seja usado o arranjo apenas
 uma vez, pois eles podem ser usados para agregar parte de um layout
@@ -1347,8 +1347,8 @@ Os grupos são definidos usando elementos ``group`` dentro de elementos
 ``group`` dentro de elementos ``view`` e outros elementos ``group``.
 
 Cada definição de grupo deve ter um atributo ``name`` informando um
-identificador único. Será considerado um erro caso o arquivo de layout
-tenha várias definições de grupos usando um atributo ``name`` idêntico.
+identificador único. Será considerado um erro caso o arquivo layout
+tenham várias definições de grupos usando um atributo ``name`` idêntico.
 O valor do atributo ``name`` é usado quando for justificar a
 visualização de um grupo ou outro. Este é um exemplo da abertura da
 etiqueta para definir o grupo de um elemento dentro do primeiro elemento
@@ -1371,8 +1371,8 @@ exemplo são informados os limites dos valores:
 
 Os elementos de definição dos grupos permitem que todos os elementos
 filhos que forem iguais, sejam exibidos. O posicionamento e as
-orientações das tela, elementos de layout e arranjo desses grupos
-funcionem da mesma maneira que as visualizações.
+orientações das telas, os elementos do layout e o arranjo destes grupos
+para que funcionem da mesma maneira que as visualizações.
 Veja :ref:`layfile-parts-views` para mais informações.
 Um grupo pode justificar outros grupos, porém loops recursivos não são
 permitidos. Será considerado um erro caso um grupo represente a si
@@ -1381,8 +1381,8 @@ mesmo de forma direta ou indireta.
 Os grupos possuem seus próprios sistemas de coordenadas internas.
 Caso um elemento de definição de grupo não tenha um elemento limitador
 ``bounds`` como filho direto, os seus limites serão computados junto com
-a união dos limites de todas as telas, elementos de layout ou grupos
-relacionados.
+a união dos limites de todas as telas, os elementos do layout ou dos
+grupos relacionados.
 Um elemento filho ``bounds`` pode ser usado para definir
 explicitamente grupos limitadores
 (consulte :ref:`layfile-concepts-coordinates` para mais informações).
@@ -1707,7 +1707,7 @@ animação do item, consulte :ref:`layfile-interact-itemanim`).
 
 O atributo ``inputtag`` determina o caminho do identificador de uma
 porta E/S relativa ao dispositivo responsável pelo carregamento do
-arquivo de layout. O atributo ``inputmask`` deve ser um valor inteiro
+arquivo layout. O atributo ``inputmask`` deve ser um valor inteiro
 definindo os bits da região da porta de E/S que o item deve ativar.
 Este exemplo demonstra a instanciação dos botões que podem ser
 clicados:
@@ -1725,7 +1725,7 @@ clicados:
     </element>
 
 Ao lidar com o retorno das informações vindas do mouse o MAME trata
-todos os elementos de layout como sendo retangular e ativa apenas o
+todos os elementos do layout como sendo retangular e ativa apenas o
 primeiro item que possa ser pressionado cuja região inclua a posição do
 ponteiro do mouse.
 
@@ -1789,7 +1789,7 @@ correspondente ao E/S mascarado com o valor do ``inputmask`` caso o
 elemento ``element`` tenha os atributos ``inputtag`` e ``inputmask``
 porém não tenha um atributo ``name``. O atributo ``inputtag``
 determina o caminho do identificador de uma porta E/S relativa ao
-dispositivo responsável pelo carregamento do arquivo de layout. O
+dispositivo responsável pelo carregamento do arquivo layout. O
 atributo ``inputmask`` deve ser um valor inteiro para definir os bits da
 região da porta E/S que o item deve ativar.
 
@@ -1857,7 +1857,7 @@ Quando um sub-elemento ``animate`` estiver presente e tiver um atributo
 ``inputtag``, o estado da animação do item será obtido a partir do valor
 correspondente à porta E/S. O atributo ``inputtag`` determina o caminho
 da etiqueta de uma porta E/S relativa ao dispositivo que provoque a
-leitura do arquivo de layout. São utilizados os valores brutos da porta
+leitura do arquivo layout. São utilizados os valores brutos da porta
 da entrada, os valores baixo-ativo do interruptor não são normalizados.
 
 Na presença de um sub-elemento ``animate`` com o atributo ``name`` o
@@ -1929,10 +1929,10 @@ partir da posição emulada da entrada para controlar as suas posições:
 Lidando com erros
 -----------------
 
-* Para os arquivos internos de layout (fornecidos pelo desenvolvedor),
+* Para os arquivos internos do layout (fornecidos pelo desenvolvedor),
   os erros são detectados através script ``complay.py`` durante uma
   falha de compilação.
-* O MAME irá parar de carregar um arquivo de layout caso encontre um
+* O MAME irá parar de carregar um arquivo layout caso encontre um
   erro de sintaxe, fazendo assim com que nenhuma visualização do
   layout fique disponível.
   Alguns exemplos de erros de sintaxe incluem referências para
@@ -1959,7 +1959,7 @@ são geradas automaticamente:
 * Será exibido a mensagem "*No screens Attached to the system*" ou
   "*Sem telas anexadas ao sistema*" caso o sistema não possua telas e
   tão pouco sejam encontradas visualizações viáveis no sistema interno ou
-  externo de layout.
+  externo do layout.
 * A tela será exibida com a sua proporção física e com a rotação
   aplicada em cada tela que for emulada.
 * A tela será exibida em uma proporção onde os pixels sejam quadrados e
@@ -2001,7 +2001,7 @@ anexados dentro do executável.
 O script pode também detectar muitos erros comuns de formatação
 exibindo mensagens de erro com mais informações das que o MAME exibe.
 
-Observe que o script não executa todo o mecanismo de layout e portanto
+Observe que o script não executa todo o mecanismo do layout e portanto
 não tem a capacidade de detectar erros nos parâmetros usados como
 referências para elementos indefinidos ou para agrupamentos dos grupos
 organizados de forma recursiva.
@@ -2030,8 +2030,8 @@ O status gera os seguintes valores:
 Ao definir um arquivo na saída, este será criado ou substituído caso
 seja concluído com sucesso ou será removido caso haja um erro.
 
-Para aferir um arquivo de layout execute o script apontando o caminho
-completo do arquivo como mostra o exemplo abaixo: ::
+Para aferir e testar um arquivo layout, execute o script apontando o
+caminho completo do arquivo como mostra o exemplo abaixo::
 
 	python scripts/build/complay.py artwork/dino/default.lay
 
@@ -3606,10 +3606,10 @@ como funciona na prática com a máquina
 
 .. _layfile-examples:
 
-Exemplos de outros arquivos de layout
--------------------------------------
+Exemplos de outros arquivos layout
+----------------------------------
 
-Estes arquivos de layout demonstram as várias características do sistema
+Estes arquivos layout demonstram as várias características do sistema
 de visualização, todo eles estão embutidos no MAME.
 
 * `sstrangr.lay <https://git.redump.net/mame/tree/src/mame/layout/sstrangr.lay?h=mame0226>`_
@@ -3661,7 +3661,7 @@ de visualização, todo eles estão embutidos no MAME.
     Usa grupos de forma efetiva como uma linguagem de programação para
     construir a imagem de um protoboard.
 
-.. [#]	Arquivos de disposição dos elementos na tela. (Nota do tradutor)
+.. [#]	Arquivos que organizam a disposição dos elementos gráficos na tela. (Nota do tradutor)
 .. [#]	Em nosso idioma conhecido também como
 		cerquilha, jogo da velha, sustenido e atualmente como
 		**hashtag**. (Nota do tradutor)
