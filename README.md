@@ -37,7 +37,7 @@ sudo dnf install python3-sphinx python2-sphinx python3-sphinx-bootstrap-theme py
 ## Debian
 
 ```
-sudo apt-get install python3-sphinx python3-pip latexmk texlive texlive-science texlive-formats-extra
+sudo apt-get install python3-sphinx python3-pip latexmk texlive texlive-science texlive-formats-extra texlive-fonts-extra librsvg2-bin
 ```
 
 ## Windows
@@ -52,7 +52,7 @@ Na sua conta comum, use o `pip` ou `pip3` para instalar os pacotes
 restantes:
 
 ```
-sudo pip install -U Sphinx sphinxcontrib-svg2pdfconverter
+pip install -U Sphinx sphinxcontrib-svg2pdfconverter
 ```
 
 Caso apareça o erro abaixo:
