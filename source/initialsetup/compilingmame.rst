@@ -1793,8 +1793,7 @@ Ou em caso de erro, tente::
 
 As opções depois do comando make podem ser armazenadas em um
 makefile customizado como descrito em :ref:`PREFIX_MAKEFILE
-<mame-compilation-premake>`, porém o **LDFLAGS** precisa ser definido no
-seu ambiente.
+<mame-compilation-premake>`.
 
 Usando uma instalação do GNU GCC libstdc++ que esteja fora do local tradicional no Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
