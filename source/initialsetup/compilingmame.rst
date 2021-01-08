@@ -1779,9 +1779,10 @@ O MAME pode ser compilado usando a biblioteca padrão C++ "libc++" do
 projeto LLVM. Os pré-requisitos são uma instalação funcional do
 clang/LLVM no seu sistema e a biblioteca de desenvolvimento libc++. No
 Linux Fedora os pacotes necessários são **libcxx**, **libcxx-devel**,
-**libcxxabi** e **libcxxabi-devel**. Defina os compiladores clang C e
-C++ assim como o **-stdlib=libc++** nas opções do compilador C++ e seu
-lincador.
+**libcxxabi** e **libcxxabi-devel**. No Debian os pacotes são
+**libc++1**, **libc++-dev** e **libc++abi-dev**. Defina os compiladores
+clang C e C++ assim como o **-stdlib=libc++** nas opções do compilador
+C++ e do seu lincador.
 O comando completo ficaria assim::
 
 	env LDFLAGS=-stdlib=libc++ make OVERRIDE_CC=clang OVERRIDE_CXX=clang++ ARCHOPTS_CXX=-stdlib=libc++ ARCHOPTS_OBJCXX=-stdlib=libc++
