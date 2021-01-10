@@ -81,6 +81,11 @@ comando abaixo é formado por uma linha só: ::
 
 	sudo aptitude install binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-x86-64 gobjc++-mingw-w64 mingw-w64 mingw-w64-common mingw-w64-tools mingw-w64-x86-64-dev win-iconv-mingw-w64-dev
 
+.. note::
+
+	No Debian 11 (e talvez mais recentes) não é preciso instalar o
+	pacote ``win-iconv-mingw-w64-dev``.
+
 Como estamos fazendo uma compilação entre plataformas é necessário
 usar a versão POSIX para o **gcc**, **ar** e **g++**, o POSIX vem de
 *Interface Portável entre Sistemas Operacionais* que é regida pela
