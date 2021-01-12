@@ -1044,14 +1044,14 @@ Para o Debian são:
 * **libdrm-amdgpu1**
 * **firmware-linux-nonfree**
 * **vulkan-tools**
-* **vulkaninfo**
+* **vulkan-validationlayers**
+* **mesa-opencl-icd**
 * **radeontop**
 * **mesa-vulkan-drivers**
-* **mesa-dri-drivers**
-* **mesa**
+* **libgl1-mesa-dri**
 * **mesa-utils**
-* **libdrm**
-* **libglvnd**
+* **libdrm-amdgpu1**
+* **libglvnd0**
 * **tuned**
 
 .. raw:: latex
