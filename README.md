@@ -52,7 +52,7 @@ Na sua conta comum, use o `pip` ou `pip3` para instalar os pacotes
 restantes:
 
 ```
-pip install -U Sphinx sphinxcontrib-svg2pdfconverter
+pip install -U Sphinx sphinx_rtd_theme sphinxcontrib-svg2pdfconverter
 ```
 
 Caso apareça o erro abaixo:
