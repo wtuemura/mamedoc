@@ -989,9 +989,9 @@ sua dependências e sim apenas na configuração.
 
 .. warning::
 
-	Antes de prosseguir saiba que o driver amdgpu **não tem áudio
-	HDMI**, você vai precisar usar a sua placa de som ou fones de
-	ouvidos.
+	Antes de prosseguir saiba que dependendo da versão do driver amdgpu
+	que você estiver usando ele pode **não ter áudio HDMI**, será
+	preciso usar a sua placa de som ou fones de ouvidos.
 
 .. _advanced-tricks-performance-gpu:
 
@@ -1018,45 +1018,15 @@ Confira qual o driver que está sendo utilizado no momento::
 
 	\clearpage
 
-.. _advanced-tricks-performance-vulkan:
+.. _advanced-tricks-performance-vulkan-fedora:
 
-Ativando o Vulkan
------------------
+Ativando o Vulkan no Fedora
+---------------------------
 
 Nem todos os pacotes e as suas respectivas dependências estão listadas,
-os pacotes básicos para o Fedora são:
+rode o comando abaixo para instalar os pacotes necessários::
 
-* **linux-firmware**
-* **xorg-x11-drv-amdgpu**
-* **vulkan-tools**
-* **vulkaninfo**
-* **radeontop**
-* **mesa-vulkan-drivers**
-* **mesa-dri-drivers**
-* **tuned**
-* **glx-utils**
-
-Para o Debian são:
-
-* **linux-firmware**
-* **firmware-amd-graphics**
-* **xserver-xorg-video-amdgpu**
-* **libdrm-amdgpu1**
-* **firmware-linux-nonfree**
-* **vulkan-tools**
-* **vulkan-validationlayers**
-* **mesa-opencl-icd**
-* **radeontop**
-* **mesa-vulkan-drivers**
-* **libgl1-mesa-dri**
-* **mesa-utils**
-* **libdrm-amdgpu1**
-* **libglvnd0**
-* **tuned**
-
-.. raw:: latex
-
-	\clearpage
+	sudo dnf install linux-firmware xorg-x11-drv-amdgpu vulkan-tools vulkaninfo radeontop mesa-vulkan-drivers mesa-dri-drivers tuned glx-utils
 
 É preciso passar alguns parâmetros para o kernel no arquivo
 ``/etc/default/grub``, na opção ``GRUB_CMDLINE_LINUX`` deve haver algo
@@ -1113,8 +1083,7 @@ seriam::
 
 	\clearpage
 
-No Debian atualize o grub com o comando ``update-grub``, no Fedora
-Linux faça este comando caso o seu PC use EFI::
+Execute o comando abaixo caso o seu PC use EFI::
 
 	sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
@@ -1134,10 +1103,9 @@ com as mesmas opções::
 	options pcie_aspm policy=performance
 	blacklist radeon
 
-Regenere o **initramfs** no Fedora com o comando ``sudo dracut -fv``, no
-Debian faça ``sudo update-initramfs -u`` e **reinicie o seu
-computador**. Para aqueles que tem a opção de usar ambos, escolha um ou
-o outro, **não utilizem os dois juntos!**
+Regenere o **initramfs** no Fedora com o comando ``sudo dracut -fv`` e
+**reinicie o seu computador**. Para aqueles que tem a opção de usar
+ambos, escolha um ou o outro, **não utilizem os dois juntos!**
 Particularmente prefiro usar o **modprobe** em vez do **grub** pois
 qualquer erro que seja feito na configuração do arquivo do grub o seu
 sistema não inicia mais e dá um baita trabalho arrumar depois, já pelo
@@ -1246,10 +1214,6 @@ ela, a lista abaixo é um **resumo** com informações da placa apenas::
 	Ignore o aviso **WARNING: radv is not a conformant vulkan
 	implementation, testing use only.**
 
-.. raw:: latex
-
-	\clearpage
-
 .. _advanced-tricks-performance-erro:
 
 Ops, alguma coisa deu errado!
@@ -1281,6 +1245,10 @@ todos os arquivos estão lá com o comando::
 	/usr/share/vulkan/icd.d/amd_icd.x86_64.json
 	/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
 
+.. raw:: latex
+
+	\clearpage
+
 Edite o arquivo ``/etc/profile`` e no final do arquivo coloque::
 
 	export XDG_RUNTIME_DIR=/run/user/$UID
@@ -1292,6 +1260,110 @@ que não há qualquer erro relacionado com o vulkan.
 
 Tente rodar novamente o ``vulkaninfo`` e dessa vez ele deve rodar sem
 problemas exibindo todas as informações da sua placa de vídeo.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _advanced-tricks-performance-vulkan-debian:
+
+Ativando o Vulkan no Debian 10/11
+---------------------------------
+
+O Debian exige um tratamento todo especial, por ser uma distro bem
+conservadora e que visa a extrema estabilidade a versão dos seus pacotes
+são antigos se comparados com a versão da atualidade, portanto é
+necessário fazer alterações significativas para que seja possível usar o
+driver amdgpu compatível com o vulkan.
+
+Os procedimentos a seguir foram feitos à partir de uma instalação nova
+do Debian 10 (Buster), não recomendamos o procedimento no seu computador
+de uso diário pois você pode perder totalmente o acesso a interface
+gráfica, inclusive do terminal local.
+
+Depois de terminada a instalação adicione um usuário comum e faça
+``usermod -aG sudo nome_do_usuário`` para pode usar o comando ``sudo``,
+encerre a sessão caso esteja logado na interface gráfica.
+
+Pressione **CTRL+ALT+F1** e se logue como **root**, faça um backup do
+arquivo ``/etc/apt/source.list``::
+
+	cp /etc/apt/source.list /etc/apt/source.list~
+
+Faça ``echo "" > /etc/apt/source.list`` para limpar o arquivo e
+adicione o seguinte conteúdo::
+
+	deb http://ftp.br.debian.org/debian/ testing main contrib non-free
+	deb http://ftp.br.debian.org/debian/ testing-updates main contrib non-free
+	deb http://security.debian.org/ testing-security main
+
+Faça o comando ``apt-get update && apt-get upgrade`` e aguarde a
+atualização de todos os pacotes do sistema, isso pode levar um pouco
+mais de meia hora. Quando todo o processo terminar faça o comando
+``apt full-upgrade``, este comando vai atualizar o restante dos pacotes
+que não foram atualizados no processo anterior e atualizar o kernel.
+
+Agora instale os seguintes pacotes, independente de como apareça, a
+linha abaixo é uma linha inteira e sem quebras::
+
+	sudo apt-get install firmware-amd-graphics xserver-xorg-video-amdgpu
+	libgl1-mesa-dri libdrm-amdgpu1 firmware-linux-nonfree libgl1-mesa-dri
+	vulkan-tools radeontop mesa-vulkan-drivers mesa-utils libglvnd0
+	tuned vulkan-validationlayers mesa-opencl-icd lm-sensors
+
+Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
+
+	options radeon si_support=0
+	options amdgpu si_support=1
+	options amdgpu pcie_gen2=1
+	options amdgpu gpu_recovery=1
+	options amdgpu dpm=1
+	options amdgpu deep_color=1
+
+Crie o arquivo ``/etc/modprobe.d/pcie-perf.conf`` com o seguinte
+conteúdo::
+
+	options pcie_aspm policy=performance
+
+Crie o arquivo ``/etc/modprobe.d/blacklist.conf`` com o seguinte
+conteúdo::
+
+	blacklist radeon
+
+.. raw:: latex
+
+	\clearpage
+
+Quando terminar faça o comando ``sudo update-grub`` para atualizar o
+grub e criar um novo initramfs depois ``systemctl reboot`` para
+reiniciar. Rode o comando abaixo e verifique se o driver **amdgpu** está
+em uso::
+
+	lspci -vs 01:00.0|grep driver
+	Kernel driver in use: amdgpu
+	
+	glxinfo -B|grep "OpenGL renderer" && glxinfo -B |grep "OpenGL version"
+	OpenGL renderer string: AMD Radeon HD 7700 Series (VERDE, DRM 3.40.0, 5.10.0-1-amd64, LLVM 11.0.1)
+	OpenGL version string: 4.6 (Compatibility Profile) Mesa 20.3.2
+
+Execute o comando ``vulkaninfo`` e verifique se ele não acusa qualquer
+erro, se tudo estiver certo aparecerá uma lista detalhada com as
+informações da sua placa de vídeo e das extensões que estão ativas para
+ela, a lista abaixo é um **resumo** com informações da placa apenas::
+
+	vulkaninfo |grep GPU
+	WARNING: radv is not a conformant vulkan implementation, testing use only.
+	WARNING: lavapipe is not a conformant vulkan implementation, testing use only.
+		GPU id = 0 (AMD RADV VERDE (ACO))
+		GPU id = 1 (llvmpipe (LLVM 11.0.1, 256 bits))
+		GPU id = 0 (AMD RADV VERDE (ACO))
+		GPU id = 1 (llvmpipe (LLVM 11.0.1, 256 bits))
+		GPU id = 0 (AMD RADV VERDE (ACO))
+		GPU id = 1 (llvmpipe (LLVM 11.0.1, 256 bits))
+	GPU id : 0 (AMD RADV VERDE (ACO)):
+	GPU id : 1 (llvmpipe (LLVM 11.0.1, 256 bits)):
+
+Se chegou até aqui não é preciso definir a variável **VK_ICD_FILENAMES**.
 
 .. raw:: latex
 

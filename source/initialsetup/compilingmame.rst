@@ -1011,7 +1011,7 @@ Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
 problemas, certifique-se que a versão mais recente esteja instalada. ::
 
-	sudo apt-get install git build-essential python libXi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default
+	sudo apt-get install git build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qtbase5-dev lld
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`
