@@ -17,7 +17,7 @@ arquivos sob esta licença.
 MAME é uma marca registrada de Gregory Ember, é necessário uma permissão
 para que se possa usar o nome, o logo e a marca "MAME".
 
-    Direitos autorais (c) 1997-2020 MAMEDev e colaboradores.
+    Direitos autorais (c) 1997-2021 MAMEDev e colaboradores.
 
     Este programa é um software livre; você pode redistribuí-lo e/ou
     modificá-lo sob os termos da Licença Pública Geral GNU como
