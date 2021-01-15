@@ -1114,9 +1114,10 @@ logs. Em termos de desempenho ambos são iguais.
 
 É possível listar todos os parâmetros disponíveis do módulo **amdgpu**
 (ou qualquer outro módulo) com o comando ``modinfo amdgpu|grep parm``,
-quase todos eles estão disponíveis no diretório ``/sys/class/drm/card0/d
-evice/driver/module/parameters/`` e apesar de estarem disponíveis não
-significa que todos eles sejam compatíveis com a sua placa de vídeo.
+quase todos eles estão disponíveis no diretório
+``/sys/class/drm/card0/device/driver/module/parameters/``, apesar de
+estarem disponíveis não significa que todos eles sejam compatíveis com a
+sua placa de vídeo.
 
 Isso nada tem a ver com o MAME e o MAME tão pouco tira proveito desta
 configuração específica, no entanto como já estamos turbinando as
@@ -1281,9 +1282,10 @@ do Debian 10 (Buster), não recomendamos o procedimento no seu computador
 de uso diário pois você pode perder totalmente o acesso a interface
 gráfica, inclusive do terminal local.
 
-Depois de terminada a instalação adicione um usuário comum e faça
-``usermod -aG sudo nome_do_usuário`` para pode usar o comando ``sudo``,
-encerre a sessão caso esteja logado na interface gráfica.
+Depois de terminada a instalação adicione um usuário comum e adicione-o
+ao grupo sudo com o comando ``usermod -aG sudo nome_do_usuário`` para
+que ele possa usar o comando ``sudo``, encerre a sessão caso esteja
+logado na interface gráfica.
 
 Pressione **CTRL+ALT+F1** e se logue como **root**, faça um backup do
 arquivo ``/etc/apt/source.list``::
@@ -1301,7 +1303,8 @@ Faça o comando ``apt-get update && apt-get upgrade`` e aguarde a
 atualização de todos os pacotes do sistema, isso pode levar um pouco
 mais de meia hora. Quando todo o processo terminar faça o comando
 ``apt full-upgrade``, este comando vai atualizar o restante dos pacotes
-que não foram atualizados no processo anterior e atualizar o kernel.
+que não foram atualizados no processo anterior e também vai atualizar o
+kernel.
 
 Agora instale os seguintes pacotes, independente de como apareça, a
 linha abaixo é uma linha inteira e sem quebras::
@@ -1335,7 +1338,7 @@ conteúdo::
 	\clearpage
 
 Quando terminar faça o comando ``sudo update-grub`` para atualizar o
-grub e criar um novo initramfs depois ``systemctl reboot`` para
+grub e criar um novo initramfs seguido de ``systemctl reboot`` para
 reiniciar. Rode o comando abaixo e verifique se o driver **amdgpu** está
 em uso::
 
@@ -1439,9 +1442,9 @@ Execute o comando para verificar a temperatura da sua placa de vídeo::
 	edge:         +43.0°C  (crit = +120.0°C, hyst = +90.0°C)
 
 Para encerrar a configuração com chave de ouro, ative a renderização
-direta da placa de vídeo, edite o arquivo ``/usr/share/X11/xorg.conf.d/1
-0-amdgpu.conf`` e adicione a opção ``Option  "DRI" "3"`` como mostra o
-exemplo abaixo::
+direta da placa de vídeo, edite o arquivo
+``/usr/share/X11/xorg.conf.d/10-amdgpu.conf`` e adicione a opção
+``Option  "DRI" "3"`` como mostra o exemplo abaixo::
 
 	Section "OutputClass"
 		Identifier "AMDgpu"
