@@ -96,7 +96,7 @@ Rode o MAME num terminal para ter acesso ao console Lua::
              /  /
             / _/
 
-    mame 0.226
+    mame 0.228
     Copyright (C) Nicola Salmoria and the MAME team
 
     Lua 5.3
