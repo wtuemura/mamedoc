@@ -76,6 +76,7 @@ V. Mais informações e contato legal
 -----------------------------------
 Para questões relacionadas à licença do MAME, marca comercial ou
 qualquer outra utilização, acesse:
+
 https://www.mamedev.org/
 
 | **MAME ®**

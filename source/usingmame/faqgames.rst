@@ -2050,8 +2050,8 @@ Magnavox Odyssey 2 / Philips Videopac G7000
 
 	  Para utilizar o sintetizador de voz, execute o comando abaixo: ::
 
-		mame64 odyssey2 -cart1 voice -cart2 caminho_completo_para_a_ROM\nome_da_rom.zip
-		mame64 videopac -cart1 voice -cart2 caminho_completo_para_a_ROM\nome_da_rom.zip
+		mame odyssey2 -cart1 voice -cart2 caminho_completo_para_a_ROM\nome_da_rom.zip
+		mame videopac -cart1 voice -cart2 caminho_completo_para_a_ROM\nome_da_rom.zip
 
 .. _faqgames-ponchin:
 
@@ -3864,7 +3864,7 @@ Virtua Racing
 	  pasta qualquer em algum lugar do seu desktop e dentro copie o
 	  executável do MAME, chama o prompt de comando caso esteja no
 	  Windows ou o terminal caso esteja no Linux ou macOS e execute o
-	  comando ``mame64 -cc`` para criar a sua configuração inicial.
+	  comando ``mame -cc`` para criar a sua configuração inicial.
 
 	  Edite o seu arquivo **mame.ini** e altere as opções abaixo: ::
 
@@ -3881,7 +3881,7 @@ Virtua Racing
 
 	  Para configurar a máquina **master** execute o comando abaixo: ::
 
-		mame64 vr -wdog 10 -nvram_directory nvram1
+		mame vr -wdog 10 -nvram_directory nvram1
 
 	  Pressione **F2** para entrar na configuração da máquina, vá até
 	  **Game System**, defina **Link ID** para **Master**, aproveite que
@@ -3904,16 +3904,16 @@ Virtua Racing
 	  No Windows, abra o seu editor de texto preferido e cole as linhas
 	  abaixo: ::
 
-		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15114 -comm_framesync
-		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram2 -comm_localport 15113 -comm_remoteport 15112 -comm_framesync
-		start /b mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram3 -comm_localport 15114 -comm_remoteport 15113 -comm_framesync
+		start /b mame vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15114 -comm_framesync
+		start /b mame vr -window 640x480 -noka -wdog 10 -nvram_directory nvram2 -comm_localport 15113 -comm_remoteport 15112 -comm_framesync
+		start /b mame vr -window 640x480 -noka -wdog 10 -nvram_directory nvram3 -comm_localport 15114 -comm_remoteport 15113 -comm_framesync
 
 	  No Linux ou macOS: ::
 
 		#!/bin/sh
-		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15114 -comm_framesync &
-		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram2 -comm_localport 15113 -comm_remoteport 15112 -comm_framesync &
-		./mame64 vr -window 640x480 -noka -wdog 10 -nvram_directory nvram3 -comm_localport 15114 -comm_remoteport 15113 -comm_framesync
+		./mame vr -window 640x480 -noka -wdog 10 -nvram_directory nvram1 -comm_localport 15112 -comm_remoteport 15114 -comm_framesync &
+		./mame vr -window 640x480 -noka -wdog 10 -nvram_directory nvram2 -comm_localport 15113 -comm_remoteport 15112 -comm_framesync &
+		./mame vr -window 640x480 -noka -wdog 10 -nvram_directory nvram3 -comm_localport 15114 -comm_remoteport 15113 -comm_framesync
 
 	  Salve o arquivo como **vr-multi.bat** no Windows ou **vr-multi**
 	  no Linux ou macOS, para este último é necessário fazer o comando
@@ -3939,16 +3939,16 @@ Virtua Racing
 	  Em um exemplo de configuração de rede ela ficaria assim: ::
 
 		Computador MASTER Player 1
-		mame64 vr -wdog 10 -comm_localhost 192.168.1.1 -comm_localport 15111 -comm_remotehost 192.168.1.10 -comm_remoteport 15110
+		mame vr -wdog 10 -comm_localhost 192.168.1.1 -comm_localport 15111 -comm_remotehost 192.168.1.10 -comm_remoteport 15110
 		
 		Computador SLAVE Player 2
-		mame64 vr -wdog 10 -comm_localhost 192.168.1.2 -comm_localport 15112 -comm_remotehost 192.168.1.1 -comm_remoteport 15111
+		mame vr -wdog 10 -comm_localhost 192.168.1.2 -comm_localport 15112 -comm_remotehost 192.168.1.1 -comm_remoteport 15111
 		
 		Computador SLAVE Player 3
-		mame64 vr -wdog 10 -comm_localhost 192.168.1.3 -comm_localport 15113 -comm_remotehost 192.168.1.2 -comm_remoteport 15112
+		mame vr -wdog 10 -comm_localhost 192.168.1.3 -comm_localport 15113 -comm_remotehost 192.168.1.2 -comm_remoteport 15112
 		...
 		Computador LIVE MONITOR
-		mame64 vr -wdog 10 -comm_localhost 192.168.1.10 -comm_localport 15110 -comm_remotehost 192.168.1.1 -comm_remoteport 15111
+		mame vr -wdog 10 -comm_localhost 192.168.1.10 -comm_localport 15110 -comm_remotehost 192.168.1.1 -comm_remoteport 15111
 
 
 .. _faqgames-warzard:

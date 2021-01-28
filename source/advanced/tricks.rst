@@ -23,7 +23,7 @@ Veja :ref:`Alterando os valores <mamemenu-alt-valores>` antes de
 prosseguir.
 
 O processo é muito simples, inicie uma máquina qualquer como
-``mame64 galaxian``, depois que a máquina iniciar pressione **TAB** e
+``mame galaxian``, depois que a máquina iniciar pressione **TAB** e
 selecione **Entrada (esta máquina)**, no campo **P1 BUTTON 1**
 (primeiro botão de disparo/tiro do jogador 1) e defina o botão de tiro,
 pressione **TAB** novamente para fechar a interface.
@@ -44,7 +44,7 @@ Configurando mais de um botão
 Usando um controle de **Playstation 2** (ou qualquer outro tipo de
 controle) ligado no PC com um adaptador USB como exemplo, faremos uma
 configuração de botões para máquinas **Neo-Geo** executando o comando
-``mame64 kof2000``, pressione **TAB**, depois selecione **Entrada (esta
+``mame kof2000``, pressione **TAB**, depois selecione **Entrada (esta
 máquina)** e configure os botões com a ordem de sua preferência.
 
 Dentro do diretório **cfg** será criado um arquivo chamado
@@ -91,7 +91,7 @@ Baixe uma cópia deste arquivo no link ao lado https://pastebin.com/9Xp97xcd
 
 Agora sempre que quiser usar essa configuração para os botões, basta
 usar a opção :ref:`-ctrlr <mame-commandline-ctrlrpath>`, exemplo
-``mame64 kof2003 -ctrlr neogeo``, você pode também adicionar esta opção
+``mame kof2003 -ctrlr neogeo``, você pode também adicionar esta opção
 ao seu **mame.ini** porém note que esta configuração será aplicada em
 todas as máquinas!
 
@@ -110,7 +110,7 @@ que é ativado ao se pressionar os três botões de soco ao
 **mesmo tempo**, é possível criar um arquivo de configuração para que
 essa ação aconteça ao toque de um botão apenas.
 
-Inicie o MAME com qualquer jogo da série ``mame64 sf2``, pressione
+Inicie o MAME com qualquer jogo da série ``mame sf2``, pressione
 **TAB**, depois selecione **Entrada (esta máquina)**, ao configurar os
 botões para os três socos, pressione **Delete** para apagar o valor,
 logo depois escolha o botão que deseja ser soco fraco, pressione
@@ -231,7 +231,7 @@ encontrados.
 Para jogar com o **Donatello** (jogador 3) na máquina **Teenage
 Mutant Ninja Turtles - Turtles in Time** faça o comando: ::
 
-	mame64 tmnt2 -ctrlr 3P
+	mame tmnt2 -ctrlr 3P
 
 Para inserir o crédito para o jogador 3 (Coin 3) pressione **7**, a
 partida deve iniciar com o **Donatello** ao clicar em qualquer um dos
@@ -337,7 +337,7 @@ todas as outras.
 
 Para criar um mapa customizado para **Final Fight** por exemplo, siga as
 instruções descritas em :ref:`advanced-tricks-mais-de-um-botão`, porém
-usando a máquina **Final Fight** (``mame64 ffight``), uma vez que os
+usando a máquina **Final Fight** (``mame ffight``), uma vez que os
 botões forem definidos e você sair do MAME, encontre o arquivo
 **ffight.cfg** no diretório **cfg** e faça as alterações necessárias.
 Copie-o para o diretório **ctrlr** como **ffight.cfg**. Entre no
@@ -370,7 +370,7 @@ identificando o CRC e SHA1 de cada um, dentre outras funções.
 
 Execute o MAME com o comando: ::
 
-	mame64 -listxml >mame.xml
+	mame -listxml >mame.xml
 
 Baixe o `DatUtil <http://www.logiqx.com/Tools/DatUtil/>`_, extraia-o no
 mesmo diretório do MAME e execute o comando: ::
@@ -1476,7 +1476,7 @@ Antes de prosseguir leia com atenção:
 
 É importante que não haja conflitos de configuração, portanto, faça o
 backup dos seus arquivos ``mame.ini``, ``ui.ini`` e ``plugins.ini``.
-Crie novos arquivos com o comando ``mame64 -cc``.
+Crie novos arquivos com o comando ``mame -cc``.
 
 Vá até onde o seu MAME está instalado, dentro do diretório **ini** crie
 um arquivo ``arcade.ini`` e edite-o com as seguintes configurações::
@@ -1505,7 +1505,7 @@ estatísticas.
    :align: center
 
 Em outro terminal rode a máquina ``ddrmax2`` por exemplo (ou qualquer
-outra do driver **ksys573**) com o comando ``mame64 ddrmax2 -v``, além
+outra do driver **ksys573**) com o comando ``mame ddrmax2 -v``, além
 da mensagem **"WARNING: radv is not a conformant...** não deve haver
 nada fora do normal, repare porém no terminal rodando o **radeontop**
 que as estatísticas passam a se alterar e em especial a frequência do
@@ -1540,7 +1540,7 @@ menor latência onde máquinas rítmicas como a **Dance Dance Revolution**
 e outras do tipo por exemplo, se beneficiam bastante.
 
 Para identificar a sua placa de som no MAME execute o comando
-``mame64 -v -sound portaudio``, ele deverá retornar uma lista com as
+``mame -v -sound portaudio``, ele deverá retornar uma lista com as
 opções disponíveis seja para Windows, Linux ou macOS, para mais
 informações consulte :ref:`-pa_api <mame-commandline-pa_api>`.
 
@@ -1556,7 +1556,7 @@ extras::
 
 Remova a opção ``pa_device`` caso queira deixar que a seleção seja
 automática. Salve o arquivo e rode novamente no terminal o comando
-``mame64 ddrmax2 -v``, dentre as várias informações você deverá ver algo
+``mame ddrmax2 -v``, dentre as várias informações você deverá ver algo
 como mostra o exemplo abaixo para a minha máquina::
 
 	PortAudio: API ALSA has 13 devices
@@ -1615,7 +1615,7 @@ as máquinas do driver **ksys573** passam a usar a configuração com baixa
 latência. O mesmo pode ser feito com outros drivers como a **djmain**
 que é responsável pelas máquinas da série **Beatmania** e
 **Pop'n Music**, lembrando que você pode identificar o nome do driver
-com o comando ``mame64 nome_da_rom -ls``, para mais informações consulte
+com o comando ``mame nome_da_rom -ls``, para mais informações consulte
 o comando :ref:`-listsource <mame-commandline-listsource>`.
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694

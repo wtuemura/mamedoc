@@ -27,7 +27,7 @@ dados forem necessários.
 possam ser usados. Por exemplo, use este comando para rodar **BWB Double
 Take** com o script Lua ativo no layout::
 
-    mame64 -plugins -plugin layout v4dbltak
+    mame -plugins -plugin layout v4dbltak
 
 Adicione esta configuração em um arquivo ``v4dbltak.ini`` dentro do
 diretório **ini** para que esta mesma configuração sempre seja utilizada

@@ -3,9 +3,9 @@ Primeiros passos
 
 Atualmente já é possível sair usando o MAME sem precisar usar qualquer
 parâmetros na linha de comando. Para iniciar a interface gráfica basta
-iniciar o executável clicando duas vezes no **mame.exe** (32 bit) ou
-**mame64.exe** (64 bit). Continue lendo caso tenha interesse em
-desvendar todo o potencial que o MAME pode te oferecer.
+iniciar o executável clicando duas vezes no **mame.exe**. Continue lendo
+caso tenha interesse em desvendar todo o potencial que o MAME pode te
+oferecer.
 
 Em plataformas macOS e plataformas \*nix, certifique-se de configurar a
 fonte do seu sistema para que corresponda ao seu idioma antes de

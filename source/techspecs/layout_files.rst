@@ -2486,7 +2486,7 @@ definir os valores hexadecimais dos comandos, botões, etc.
 
 Para encontrar estes valores, inicie a máquina Galaxian::
 
-	mame64 galaxian
+	mame galaxian
 
 Pressione **TAB** e vá em **Entrada (esta máquina)**.
 Selecione **P1 Left**, no teclado clique na tecla **Delete** para apagar
@@ -2582,7 +2582,7 @@ configuração:
 
 Execute o MAME no terminal ou prompt de comando com a opção abaixo::
 
-	mame64 -output console galaxian
+	mame -output console galaxian
 
 Insira 2 créditos na máquina, repare no terminal que é possível ver os
 valores ``lamp0`` e ``lamp1`` se alternando entre ``0`` (desligado) e
@@ -2805,7 +2805,7 @@ o diretório **artwork**, dentro deste diretório crie um novo chamado
 ``default.lay`` e todos os arquivos **\*.png**. Rode o mame com o
 comando::
 
-	mame64 -window galaxian
+	mame -window galaxian
 
 A tela deve aparecer com a arte e todos os botões em seus respectivos
 lugares, experimente clicar nos botões com o mouse e verá que eles
@@ -3478,7 +3478,7 @@ realizar testes em diferentes máquinas e obter uma visualização simples
 e rápida dos controles, depois de baixar e extrair o arquivo, copie-o
 para o diretório **artwork** e o renomeie com o nome da máquina que será
 testada, para o exemplo usado na foto o nome do diretório é
-**ssriders**. Rodando o comando ``mame64 -windows ssriders`` irá
+**ssriders**. Rodando o comando ``mame -windows ssriders`` irá
 aparecer uma tela com um design branco genérico, será possível escolher
 um modelo para 2 ou 4 jogadores através do menu **Opções de Vídeo**
 (TAB --> Opções de Vídeo), faça as alterações necessárias no arquivo de

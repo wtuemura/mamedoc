@@ -117,7 +117,7 @@ exemplo: ::
 
 Antes do executável do MAME: ::
 
-	SDL_FRAMEBUFFER_ACCELERATION=1 SDL_RENDER_DRIVER=opengl SDL_RENDER_OPENGL_SHADERS=1 ./mame64
+	SDL_FRAMEBUFFER_ACCELERATION=1 SDL_RENDER_DRIVER=opengl SDL_RENDER_OPENGL_SHADERS=1 ./mame
 
 Ou então exportando estas opções para o ambiente, elas serão lidas
 durante a inicialização do MAME: ::
@@ -145,7 +145,7 @@ diretório do MAME, exemplo de um ``run.bat``: ::
 	set SDL_FRAMEBUFFER_ACCELERATION=1
 	set SDL_RENDER_DRIVER=direct3d11
 	set SDL_RENDER_OPENGL_SHADERS=1
-	mame64.exe
+	mame.exe
 
 Ou então deixar isso disponível como variável do sistema, pressione as
 teclas :kbd:`WIN` + :kbd:`R` e execute o comando **sysdm.cpl**, siga

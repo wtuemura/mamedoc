@@ -46,14 +46,14 @@ então defina apenas o driver da máquina que deseja usar com o comando
 Por exemplo, caso queira saber qual a ROM responsável pela máquina
 **DDR Max - Dance Dance Revolution 6th Mix** use o comando: ::
 
-	mame64 "DDR Max"
+	mame "DDR Max"
 	ddrmax            DDR Max - Dance Dance Revolution 6th Mix (G*B19 VER. JAA)    (Konami, 2001)
 
 Com o nome da ROM em mãos, **ddrmax**, podemos descobrir qual o driver
 responsável por ele usando o comando
 :ref:`-listsource / -ls <mame-commandline-listsource>`, exemplo: ::
 
-	mame64 -ls ddrmax
+	mame -ls ddrmax
 	ddrmax           ksys573.cpp
 
 Com o nome do driver em mãos, use-o com com a opção ``SOURCES``, como
@@ -100,13 +100,13 @@ jogue uma vez e só depois seja possível a gravação do ***.avi**.
 
 Execute a máquina com o comando: ::
 
-	mame64 -speed 0.2 -rec dance.inp -sound none ddrmax
+	mame -speed 0.2 -rec dance.inp -sound none ddrmax
 
 Neste estágio o som não é necessário pois estamos gravando apenas os
 comandos, ao terminar pressione **ESQ** para encerrar a emulação e
 gravar o arquivo ``dance.inp``, agora execute o comando abaixo: ::
 
-	mame64 -pb dance.inp -aviwrite ddrmax.avi ddrmax
+	mame -pb dance.inp -aviwrite ddrmax.avi ddrmax
 
 O MAME executará todos os comandos gravados em ``dance.inp`` ao mesmo
 tempo em que grava o vídeo. A jogabilidade não chega a ser tão precisa,

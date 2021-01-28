@@ -144,7 +144,7 @@ Antes, alguns pontos importantes:
 * Nas versões compiladas do git (versão GIT), a versão do MAME acompanha
   um identificador único depois da versão, por exemplo: ::
 
-	./mame64 -help
+	./mame -help
 	MAME v0.205 (mame0205-540-gc8e4dab20c)
 
   Onde:
@@ -165,7 +165,7 @@ Antes, alguns pontos importantes:
   qualquer alteração que não tenha sido feita pelos administradores a
   versão do seu MAME incluirá um identificador **dirty** no final: ::
 
-	./mame64 -help
+	./mame -help
 	MAME v0.205 (mame0205-540-gc8e4dab20c-dirty)
 
   O problema ocorre também caso exista algum residual antigo vindo de
@@ -670,9 +670,6 @@ Configurando o pacote MSYS2 já pronto
   Para versões **x32** ::
 
 	pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-SDL2_ttf
-
-  A nomenclatura do prefixo do emulador mudará para
-  ``sdlmame64.exe`` ou ``sdlmame.exe`` respectivamente.
 
 * Por predefinição o MAME incluirá a versão nativa do depurador para
   Windows, para que também seja incluída a versão Qt do depurador, é
@@ -1303,7 +1300,7 @@ valores válidos são:
 	sendo, gera uma versão 64-bit do executável do MAME ou 32-bit quando
 	não for definido.
 	Caso não haja nenhum problema durante o processo de compilação,
-	haverá um executável do MAME chamado **mame64.exe** para a versão
+	haverá um executável do MAME chamado **mame.exe** para a versão
 	*64-bit* ou **mame.exe** caso você tenha compilado uma versão para
 	*32-bit*.
 
@@ -1697,20 +1694,20 @@ variáveis de ambiente **CFLAGS** e **CXXFLAGS**.
 Ponto de entrada não encontrado
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Caso o seu **sdlmame64.exe** mostre um erro como este ou algo
+Caso o seu **sdlmame.exe** mostre um erro como este ou algo
 parecido: ::
 
 	Não foi possível localizar o ponto de entrada do procedimento
 	_ZNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEC1Ev na
-	biblioteca de vínculo dinâmico D:\MAME\sdlmame64.exe.
+	biblioteca de vínculo dinâmico D:\MAME\sdlmame.exe.
 
 Devido a alteração feita
 `neste commit <https://github.com/mamedev/mame/commit/b0223ac413ccfb0907
-be9741168b4cf43fb67fb9>`_ o executável **sdlmame64.exe** é compilado de
+be9741168b4cf43fb67fb9>`_ o executável **sdlmame.exe** é compilado de
 maneira que ele busque as bibliotecas que ele precisa para funcionar no
 sistema em vez de tê-las embutidas em si.
 
-Assim o executável **sdlmame64.exe** busca pelas seguintes bibliotecas,
+Assim o executável **sdlmame.exe** busca pelas seguintes bibliotecas,
 ``libgcc_s_seh-1.dll``, ``libstdc++-6.dll``, ``libwinpthread-1.dll`` e
 ``SDL2.dll``, todas elas estão dentro do diretório de instalação do seu
 MSYS2 ( exemplo ``C:\msys64\mingw64\bin`` ), é possível adicionar este
@@ -1884,7 +1881,7 @@ A tela de travamento
 ~~~~~~~~~~~~~~~~~~~~
 
 Junto aos binários do MAME existe um arquivo de símbolos, para a versão
-*64-bit* será criado o arquivo **mame64.sym** ou **mame.sym** para a
+*64-bit* será criado o arquivo **mame.sym** ou **mame.sym** para a
 versão *32-bit*. Estes arquivos já vem com a versão oficial assim como
 :ref:`já foi explicado <mame-compile-add-symbols>` como criá-los
 durante a compilação.
@@ -1924,10 +1921,10 @@ o mínimo necessário para se obter um *stack trace* válido. No
 exemplo abaixo estou usando uma versão 64-bit do MAME para Linux, porém
 o procedimento é o mesmo em qualquer outra plataforma.
 
-* Carregue o mame no gdb com o comando ``gdb mame64``, irá aparecer
+* Carregue o mame no gdb com o comando ``gdb mame``, irá aparecer
   algo semelhante com a tela abaixo: ::
 
-	gdb mame64
+	gdb mame
 	GNU gdb (Debian 7.12-6) 7.12.0.20161007-git
 	Copyright (C) 2016 Free Software Foundation, Inc.
 	License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -1942,14 +1939,14 @@ o procedimento é o mesmo em qualquer outra plataforma.
 	<http://www.gnu.org/software/gdb/documentation/>.
 	For help, type "help".
 	Type "apropos word" to search for commands related to "word"...
-	Reading symbols from mame64...done.
+	Reading symbols from mame...done.
 	(gdb)
 
 Para executar a máquina com problema execute ``run`` seguido pelos
 comandos do MAME, exemplo: ::
 
 	(gdb) run kof99
-	Starting program: /home/mame/mame64 kof99
+	Starting program: /home/mame/mame kof99
 	[Thread debugging using libthread_db enabled]
 	Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
 	[New Thread 0x7fffe4f6c700 (LWP 21026)]
@@ -1964,7 +1961,7 @@ O exemplo dado foi com **kof99** porém, pode ser com qualquer outra
 máquina que tenha dado problema, use a máquina até que o MAME trave,
 será exibida uma tela como no exemplo abaixo ::
 
-	Thread 1 "mame64" received signal SIGSEGV, Segmentation fault.
+	Thread 1 "mame" received signal SIGSEGV, Segmentation fault.
 	_int_malloc (av=av@entry=0x7ffff459fb00 <main_arena>, 
 	bytes=bytes@entry=67108864) at malloc.c:3650
 	3650 malloc.c: File or directry not found.

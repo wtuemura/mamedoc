@@ -84,7 +84,7 @@ Demonstração passo a passo
 
 Rode o MAME num terminal para ter acesso ao console Lua::
 
-    $ mame64 -console SUA_ROM
+    $ mame -console SUA_ROM
            /|  /|    /|     /|  /|    _______
           / | / |   / |    / | / |   /      /
          /  |/  |  /  |   /  |/  |  /  ____/

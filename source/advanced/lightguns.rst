@@ -415,7 +415,7 @@ valor que precisamos usar é o **nome do dispositivo** ou o seu **ID**.
 É usando o **lightgun_index** entre 1 e 8 que você vai adicionando todas
 as armas que você tiver no sistema, cada uma com o seu ID único.
 Com a arma ou o mouse conectado, inicie o MAME com o comando
-``mame64 -v``, o MAME deve exibir uma mensagem como essa (ela vai variar
+``mame -v``, o MAME deve exibir uma mensagem como essa (ela vai variar
 muito de caso para caso):
 
 .. code-block:: bash
@@ -491,7 +491,7 @@ dispositivo é o **id=15**, logo a configuração final fica assim:
 	offscreen_reload          1
 
 Salve o seu ``mame.ini`` com as opções acima e inicie o MAME com o
-comando ``mame64 -v``, na saída agora temos:
+comando ``mame -v``, na saída agora temos:
 
 .. code-block:: bash
 
@@ -525,7 +525,7 @@ opção :ref:`-ctrlr <mame-commandline-ctrlrpath>` para que você possa
 carregar a configuração que você já fez para uma máquina mas que podem
 ser usada em outras.
 
-Inicie uma máquina qualquer como **bang** por exemplo, ``mame64 bang``,
+Inicie uma máquina qualquer como **bang** por exemplo, ``mame bang``,
 quando ela iniciar pressione **TAB** para acessar a interface e vá em
 **Entrada (esta máquina)**. Para o **Jogador 1** selecione **Lightgun X
 Analog** e pressione **Enter**, mova a arma da esquerda para direita,
@@ -612,7 +612,7 @@ Independente do arquivo que você tenha gerado edite a linha
 **<system name="bang">** para **<system name="default">** e salve o
 arquivo como **arma.cfg** dentro do diretório **ctrl**. Agora sempre
 que você for iniciar o MAME com essa configuração, basta fazer o comando
-``mame64 -ctrlr arma bang``. Assim o MAME inicia a máquina com as
+``mame -ctrlr arma bang``. Assim o MAME inicia a máquina com as
 suas configurações predefinidas.
 
 Caso não queira fazer isso para cada jogo, adicione a configuração no
@@ -844,17 +844,17 @@ compilação usando a opção **SOURCES**.
 	:ref:`-listsource / -ls <mame-commandline-listsource>` do MAME,
 	por exemplo: ::
 
-		./mame64 -ls area51| awk '{print $2}'
+		./mame -ls area51| awk '{print $2}'
 		jaguar.cpp
 
 *	Copie o arquivo **maquinas**
 	(gerado ou `baixado <https://pastebin.com/zZxvkza2>`_) dento do
 	diretório do MAME e execute o comando abaixo: ::
 
-		while read lista; do ~/mame/mame64 -ls "$lista"; done < maquinas | awk '{print $2}' | awk '!seen[$0]++' | sort -d > drivers
+		while read lista; do ~/mame/mame -ls "$lista"; done < maquinas | awk '{print $2}' | awk '!seen[$0]++' | sort -d > drivers
 
 	O comando vai alimentar o MAME com o nome das máquinas,
-	``~/mame/mame64`` mostra o caminho completo onde se encontra o
+	``~/mame/mame`` mostra o caminho completo onde se encontra o
 	binário do MAME, o comando ``awk '{print $2}'`` vai selecionar
 	apenas a segunda coluna onde estão os **drivers.cpp**, o comando
 	``awk '!seen[$0]++'`` elimina todos os nomes duplicados, já o último
