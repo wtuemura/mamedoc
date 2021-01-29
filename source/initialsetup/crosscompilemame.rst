@@ -119,6 +119,9 @@ Seguido dos comandos abaixo: ::
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-ar /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc-ar
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc
 
+.. raw:: latex
+
+	\clearpage
 
 Configurando as variáveis de ambiente
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,26 +130,20 @@ As variáveis **MINGW64** e **MINGW32** são necessárias para que os
 scripts usados para a compilação do MAME saibam onde encontrá-los.
 **Não use sudo** para o comando abaixo pois queremos aplicá-las nas
 variáveis de ambiente da nossa conta comum e não em uma conta com
-poderes administrativos.
+poderes administrativos::
 
-|	``echo "export MINGW64="/usr/x86_64-w64-mingw32"" >> ~/.bashrc``
-|	``echo "export MINGW32="/usr/i686-w64-mingw32"" >> ~/.bashrc``
-|
-
-.. raw:: latex
-
-	\clearpage
+	echo "export MINGW64="/usr/x86_64-w64-mingw32"" >> ~/.bashrc
+	echo "export MINGW32="/usr/i686-w64-mingw32"" >> ~/.bashrc
 
 Recarregue as configurações do seu terminal com o comando ``. .bashrc``
 (ponto, espaço, ponto bashrc) ou saia e retorne à sua conta. É
 necessário aferir a configuração para que se tenha certeza de que as
 variáveis estão definidas no ambiente corretamente fazendo o comando
-abaixo:
+abaixo::
 
-|	``$ echo $MINGW64 && echo $MINGW32``
-|	``/usr/x86_64-w64-mingw32``
-|	``/usr/i686-w64-mingw32``
-|
+	$ echo $MINGW64 && echo $MINGW32
+	/usr/x86_64-w64-mingw32
+	/usr/i686-w64-mingw32
 
 Caso o seu ambiente não tenha retornado nada, tenha certeza de que as
 instruções acima foram seguidas corretamente, se a sua distribuição
@@ -175,6 +172,9 @@ capítulo :ref:`compiling-mame`: ::
 
 	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
 
+.. raw:: latex
+
+	\clearpage
 
 Compilando o MAME SDL para Windows no Linux
 -------------------------------------------
@@ -196,10 +196,6 @@ exemplo: ::
 	make clean && make OSD=sdl SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 -j5
 
 Ao final da compilação será gerado um arquivo **sdlmame64.exe**.
-
-.. raw:: latex
-
-	\clearpage
 
 Fedora Linux
 ~~~~~~~~~~~~
