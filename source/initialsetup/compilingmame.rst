@@ -1036,16 +1036,23 @@ Apple macOS
 -----------
 
 Alguns pré-requisitos são necessários. Certifique-se de estar no
-*macOS X 10.14 Mavericks* ou mais recente. É **OBRIGATÓRIO** o uso do
-**SDL 2.0.4** ou mais recente para o **OS X**.
+*macOS X 10.14 Mojave* ou mais recente para Intel Macs ou macOS 11.0 Big
+Sur para Apple Silicon. Será também necessário o **SDL 2.0.4** ou mais
+recente para Intel ou **SDL2 2.0.14** no Apple Silicon.
 
-*	Instale o **Xcode** encontrado no Mac App Store
+*	Instale o **Xcode** encontrado no Mac App Store ou o
+	`ADC <https://developer.apple.com/download/more/>`_ (é preciso ter o
+	AppleID).
+*	Para localizar a última versão do Xcode correspondente para a versão
+	do seu macOS visite
+	`xcodereleases.com <https://xcodereleases.com>`_.
 *	Inicie o programa **Xcode**.
 *	Será feito o download de alguns pré-requisitos adicionais.
 	Deixe rodando antes de continuar.
 *	Ao terminar saia do **Xcode** e abra uma janela do **Terminal**
 *	Digite o comando ``xcode-select --install`` para instalar o kit
-	obrigatório de ferramentas para o MAME.
+	obrigatório de ferramentas para compilar o MAME (também disponível
+	como pacote no ADC).
 
 Em seguida, é preciso baixar e instalar o SDL 2.
 
@@ -1053,28 +1060,15 @@ Em seguida, é preciso baixar e instalar o SDL 2.
 	arquivo .dmg para o *macOS*.
 *	Caso o arquivo .dmg não abra sozinho de forma automática, execute-o
 	manualmente.
-*	Clique no 'Macintosh HD' (ou seja lá o nome usado no disco rígido do
-	seu Mac), no painel esquerdo onde está localizado o **Finder**, abra
-	a pasta **Biblioteca** e arraste o arquivo **SDL2.framework** na
-	pasta **Frameworks**.
+*	Clique no 'Macintosh HD' (o HD do seu Mac), no painel esquerdo onde
+	está localizado a janela do **Finder**, abra a pasta **Biblioteca**
+	e arraste o arquivo **SDL2.framework** na pasta **Frameworks**. Será
+	preciso se autenticado com a senha do seu usuário.
 
 Use o Terminal para dar inicio a compilação navegue até onde está o
 código fonte do MAME (comando *cd*) e siga as instruções normais de
 compilação acima para :ref:`todas as plataformas
 <compiling-practical-examples>`.
-
-É possível fazer o MAME funcionar a partir da versão 10.6, porém é um
-pouco mais complicado:
-
-*	É necessário a instalação do **clang-3.7**, **ld64**, **libcxx** e o
-	**python27** do MacPorts.
-*	Em seguida, adicione estas opções ao seu comando **make** ou
-	**useroptions.mak**::
-
-		OVERRIDE_CC=/opt/local/bin/clang-mp-3.7
-		OVERRIDE_CXX=/opt/local/bin/clang++-mp-3.7
-		PYTHON_EXECUTABLE=/opt/local/bin/python2.7
-		ARCHOPTS=-stdlib=libc++
 
 .. raw:: latex
 
