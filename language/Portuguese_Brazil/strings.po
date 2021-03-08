@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-17 12:12+0300\n"
-"PO-Revision-Date: 2021-01-08 04:20-0300\n"
+"PO-Revision-Date: 2021-03-08 09:46-0300\n"
 "Last-Translator:  <Wellington Terumi Uemura, Ashura-X>\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -286,7 +286,7 @@ msgstr "[gerenciador de arquivo]"
 
 #: src/frontend/mame/ui/swlist.cpp:94 src/frontend/mame/ui/filesel.cpp:264
 msgid "[software list]"
-msgstr "[listagem do programa]"
+msgstr "[catalogo de programas]"
 
 #: src/frontend/mame/ui/swlist.cpp:228
 msgid "Switch Item Ordering"

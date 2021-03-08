@@ -435,8 +435,8 @@ usados pelo MAME se encontram. As opções disponíveis são:
 
 * **Software em mídia**
 
-  Define o caminho onde é armazenado a imagem dos arquivos em mídia como
-  CD-ROM, floppy, fita K7 ou qualquer outro programa avulso.
+  Define o caminho onde a imagem em mídia dos arquivos são armazenados
+  como CD-ROM, floppy, fita K7 ou qualquer outro programa avulso.
 
 		O valor predefinido é um diretório chamado **software** no
 		diretório raiz do MAME.
@@ -853,14 +853,14 @@ Opções Diversas
 
 		O valor predefinido é **Ligado**.
 
-* **Omitir a tela de seleção da BIOS**
+* **Omita a tela de seleção da BIOS**
 
   Faz com que o MAME inicie a máquina com a primeira BIOS disponível
   para a máquina ao em vez de usar uma lista.
 
 		O valor predefinido é **Desligado**.
 
-* **Omitir as partes do cardápio da seleção do software**
+* **Omita as partes do cardápio da seleção do software**
 
   Altera a maneira com que a lista do software é exibida, em vez de
   exibir a lista na ordem predefinida pelo MAME, exibe a lista na ordem
@@ -1009,13 +1009,13 @@ Entradas Gerais
 
 * **Reset machine**
 
-  Encerra a emulação e a inicia do zero.
+  Encerra a emulação e a reinicia do zero.
 
 	As teclas predefinidas são **F3** + **Shift Esq**.
 
 * **Soft reset**
 
-  Recomeça o software apenas sem encerrar a emulação.
+  Reinicie sem encerrar a emulação.
 
 	A telcla predefinida é **F3**.
 
