@@ -634,15 +634,31 @@ Exemplo:
 
 **-listmedia** / **-lm** [<*sistema*>]
 
-	Exibe uma lista de compatibilidade de mídia para cada sistema, como
+	Exibe uma lista de mídias ou formatos compatíveis com o sistema como
 	cartucho, cassete, disquete, etc. O comando também exibe as
-	extensões conhecidas para cada sistema, caso elas existam.
+	extensões compatíveis como cada sistema caso elas existam, na
+	dúvida, execute o comando ``mame -lm sistema`` para saber quais os
+	tipo de mídia o MAME aceita e quais delas são compatíveis com o
+	sistema em questão.
 	Exemplo: ::
 
-		mame -lm genesis
+		mame -lm psu
 		SYSTEM           MEDIA NAME       (brief)    IMAGE FILE EXTENSIONS SUPPORTED
 		---------------- --------------------------- -------------------------------
-		genesis          cartridge        (cart)     .smd  .bin  .md   .gen
+		psu              memcard1         (memc1)    .mc   
+		psu              memcard2         (memc2)    .mc   
+		psu              quickload        (quik)     .cpe  .exe  .psf  .psx  
+		psu              cdrom            (cdrm)     .chd  .cue  .toc  .nrg  .gdi  .iso
+
+
+	Caso queira carregar uma ROM num sistema como o Megadrive por
+	exemplo faça ``mame genesis -cart caminho_para_a_rom``. Outros
+	sistemas podem aceitar outros formatos, no caso dos sistemas que
+	rodem CD-ROM por exemplo, a opção pode ser
+	``-cdrom caminho_para_a_imagem`` ou ``-cdrm caminho_para_a_imagem``, 
+	caso o sistema também aceite cartões de memória (memory card), é
+	possível combinar a opção ``-cdrom caminho_para_a_imagem`` com
+	``-memc1 caminho_para_a_imagem``.
 
 .. raw:: latex
 
