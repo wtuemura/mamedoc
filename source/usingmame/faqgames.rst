@@ -2761,7 +2761,7 @@ Pop'n Music 4
 
 		gq986jaa02.chd DIFF CHD ERROR: invalid parent
 
-	  Neste caso exclua o arquivo **diff\gq986jaa02.dif** e rode a
+	  Neste caso exclua o arquivo **diff\\gq986jaa02.dif** e rode a
 	  máquina novamente, a dica serve para todas as outras máquinas caso
 	  o mesmo erro ocorra.
 
