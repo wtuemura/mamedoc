@@ -44,6 +44,11 @@ A
 B
 ~
 
+| :ref:`faqgames-bm3`
+| :ref:`faqgames-bm3core`
+| :ref:`faqgames-bm36th`
+| :ref:`faqgames-bm37th`
+| :ref:`faqgames-bm3final`
 | :ref:`faqgames-bbusters`
 | :ref:`faqgames-blswhstl`
 | :ref:`faqgames-bigdeal`
@@ -56,10 +61,6 @@ B
 | :ref:`faqgames-bubbletr`
 | :ref:`faqgames-bubbles`
 | :ref:`faqgames-bucky`
-
-.. raw:: latex
-
-	\clearpage
 
 C
 ~
@@ -157,6 +158,10 @@ K
 | :ref:`faqgames-kgbird`
 | :ref:`faqgames-karatblzu`
 | :ref:`faqgames-keks`
+| :ref:`faqgames-kbm`
+| :ref:`faqgames-kbh`
+| :ref:`faqgames-kbm2nd`
+| :ref:`faqgames-kbm3rd`
 | :ref:`faqgames-kof`
 | :ref:`faqgames-kingpin`
 | :ref:`faqgames-konam80a`
@@ -210,6 +215,10 @@ O
 P
 ~
 
+| :ref:`faqgames-ppp`
+| :ref:`faqgames-ppd`
+| :ref:`faqgames-ppp11`
+| :ref:`faqgames-ppp1mp`
 | :ref:`faqgames-pacslot`
 | :ref:`faqgames-phantomp`
 | :ref:`faqgames-phrcraze`
@@ -221,6 +230,15 @@ P
 | :ref:`faqgames-poker41`
 | :ref:`faqgames-pkrdewin`
 | :ref:`faqgames-tonypok`
+| :ref:`faqgames-popn4`
+| :ref:`faqgames-popn5`
+| :ref:`faqgames-popn6`
+| :ref:`faqgames-popn7`
+| :ref:`faqgames-popn8`
+| :ref:`faqgames-popnmt`
+| :ref:`faqgames-popnmt2`
+| :ref:`faqgames-popnanm`
+| :ref:`faqgames-popnanm2`
 | :ref:`faqgames-pontoon`
 | :ref:`faqgames-pool10`
 | :ref:`faqgames-potgame`
@@ -547,6 +565,70 @@ Avengers in Galactic Storm
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
+
+.. _faqgames-bm3:
+
+Beatmania III
+-------------
+
+	* **ERROR E160 BACKUPRAM ERROR**
+	* **ERROR E165 RTC ERROR**
+	* **SYSTEM RECOVERY MODE**
+
+	  Pressione **F2**, acesse o
+	  `Firebeat RTC Recovery Password <https://987123879113.github.io/firebeatrtc/>`_
+	  e gere a sua senha. No MAME use a tecla **0** (zero) e **-**
+	  (sinal de menos) para alterar as letras, **9** para apagar e
+	  **F2** para confirmar.
+
+	  Ao terminar de inserir a senha, pressione **F2** duas vezes,
+	  assita este procedimento no Youtube:
+
+	  https://www.youtube.com/watch?v=XXp9u7RKNlQ
+
+.. _faqgames-bm3core:
+
+Beatmania III Append Core Remix
+-------------------------------
+
+	* **ERROR E150 BACKUPRAM ERROR**
+	* **ERROR E166 RTC ERROR**
+	* **SYSTEM RECOVERY MODE**
+
+	  Consulte :ref:`faqgames-bm3`.
+
+.. _faqgames-bm36th:
+
+Beatmania III Append 6th Mix
+----------------------------
+
+	* **ERROR E150 BACKUPRAM ERROR**
+	* **ERROR E166 RTC ERROR**
+	* **SYSTEM RECOVERY MODE**
+
+	  Consulte :ref:`faqgames-bm3`.
+
+.. _faqgames-bm37th:
+
+Beatmania III Append 7th Mix
+----------------------------
+
+	* **ERROR E150 BACKUPRAM ERROR**
+	* **ERROR E166 RTC ERROR**
+	* **SYSTEM RECOVERY MODE**
+
+	  Consulte :ref:`faqgames-bm3`.
+
+.. _faqgames-bm3final:
+
+Beatmania III The Final
+-----------------------
+
+	* **ERROR E150 BACKUPRAM ERROR**
+	* **ERROR E166 RTC ERROR**
+	* **SYSTEM RECOVERY MODE**
+
+	  Consulte :ref:`faqgames-bm3`.
 
 .. _faqgames-bbusters:
 
@@ -1784,6 +1866,72 @@ Keks
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
+.. _faqgames-kbm:
+
+Keyboardmania
+-------------
+
+	* **REAL TIME CLOCK BATTERY NG.**
+	* **BACKUP DATA ERROR**
+	* **E161 BACKUP BATTERY ERROR**
+
+	  Pressione e segure a tecla **F2** até entrar no modo de teste,
+	  mova o cursor para baixo com a tecla **2** e para cima com a tecla
+	  **1**, selecione pressionando ambas as teclas **1** e **2**. Vá
+	  até a opção **SOUND TEST**, selecione **SOUND FLASH INIT**,
+	  pressione a tecla **1** para iniciar e aguarde a conclusão, depois
+	  selecione **EXIT** e retorne para o menu principal. Agora
+	  selecione **BACKUP CLEAR** e confirme com **1**.
+
+	  Segure SHIFT e pressione F3 para concluir.
+
+.. _faqgames-kbh:
+
+Keyboardheaven (Korea)
+----------------------
+
+	* **REAL TIME CLOCK BATTERY NG.**
+	* **BACKUP DATA ERROR**
+	* **SOUND FLASH MEMORY NG.**
+	* **E761 PCM DATA ERROR**
+
+	  Consulte :ref:`faqgames-kbm`.
+
+.. _faqgames-kbm2nd:
+
+Keyboardmania 2nd Mix
+---------------------
+
+	* **E761 PCM DATA ERROR**
+
+	  Pressione **F2**, mova o cursor para baixo com a tecla **2** e
+	  para cima com a tecla **1**, selecione pressionando ambas as
+	  teclas **1** e **2**. Vá até **SOUND CHECK**, selecione
+	  **INITIALIZE SOUND FLASH**, selecione **YES**, confirme e pressione
+	  **1+2**, aguarde até que a tela retorne para o menu anterior,
+	  selecione **EXIT**.
+
+	  Segure SHIFT e pressione F3 para concluir.
+
+.. _faqgames-kbm3rd:
+
+Keyboardmania 3rd Mix
+---------------------
+
+	* **E161 BACKUP BATTERY ERROR**
+	* **E150 BACKUP RAM ERROR**
+
+	  Pressione **F2**, mova o cursor para baixo com a tecla **2** e
+	  para cima com a tecla **1**, selecione pressionando ambas as
+	  teclas **1** e **2**. Vá até **SOUND OPTIONS**, selecione
+	  **INITIALIZE SOUND FLASH**, selecione **YES**, confirme e pressione
+	  **1+2**, aguarde até que a tela retorne para o menu anterior,
+	  selecione **EXIT**. Retorne ao menu principal, selecione
+	  **ALL FACTORY SETTINGS**, selecione **YES**, confirme e pressione
+	  **1+2**.
+
+	  Segure SHIFT e pressione F3 para concluir.
+
 .. _faqgames-kof:
 
 King of Fighters (Série)
@@ -2332,6 +2480,61 @@ NBA Hangtime / NBA Maximum Hangtime
 	  do volume pois podem ocorrer distorções e saturação no áudio. Para
 	  finalizar selecione **Exit to Game Over**.
 
+.. _faqgames-ppp:
+
+ParaParaParadise
+----------------
+
+	* **ERROR E 160 BACKUPRAM ERROR**
+	* **ERROR E 166 RTC UNFORMAT**
+	* **ERROR E 124 FLASH DATA ERROR**
+
+	  Pressione **F2**, vá até **SOUND FLASH INIT** e pressione **1** no
+	  teclado para selecionar a opção, selecione **SOUND FLASH INIT** e
+	  pressione **1** novamente, quando acabar pressione **1**
+	  novamente.
+	  De volta ao menu principal selecione **ALL FACTORY SETTINGS**
+	  pressionando **1** no teclado, selecione **ALL FACTORY SETTINGS**
+	  novamente e pressione **1**, escolha **YES** e confirme com **1**,
+	  ao retornar ao menu principal segure **SHIFT** e pressione **F3**.
+
+	  Assista este procedimento no Youtube:
+
+	  https://www.youtube.com/watch?v=0eKpoKAlFSw
+
+.. _faqgames-ppd:
+
+ParaParaDancing
+---------------
+
+	* **ERROR E 160 BACKUPRAM ERROR**
+	* **ERROR E 166 RTC UNFORMAT**
+	* **ERROR E 124 FLASH DATA ERROR**
+
+	  Consulte :ref:`faqgames-ppp`.
+
+.. _faqgames-ppp11:
+
+ParaParaParadise v1.1
+---------------------
+
+	* **ERROR E 160 BACKUPRAM ERROR**
+	* **ERROR E 166 RTC UNFORMAT**
+	* **ERROR E 124 FLASH DATA ERROR**
+
+	  Consulte :ref:`faqgames-ppp`.
+
+.. _faqgames-ppp1mp:
+
+ParaParaParadise 1st Mix Plus
+-----------------------------
+
+	* **ERROR E 160 BACKUPRAM ERROR**
+	* **ERROR E 166 RTC UNFORMAT**
+	* **ERROR E 124 FLASH DATA ERROR**
+
+	  Consulte :ref:`faqgames-ppp`.
+
 .. _faqgames-pacslot:
 
 Pac-Slot
@@ -2513,6 +2716,147 @@ Poker Master (Tony Poker) Hack
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
+.. _faqgames-popn4:
+
+Pop'n Music 4
+-------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Pressione **F2**, selecione **ALL FACTORY RESET** e confirme,
+	  segure **SHIFT** e pressione **F3**. Na segunda tela de erro
+	  **E165** pressione **F2**, acesse o `Firebeat RTC Recovery
+	  Password <https://987123879113.github.io/firebeatrtc/>`_ e gere a
+	  sua senha. Ao terminar de inserir a senha, pressione F2. segure
+	  **SHIFT** e pressione **F3**.
+
+	  Caso apareça o erro **E750: SPU DVDROM ERROR** depois deste
+	  procedimento, será preciso refazer o ``chd`` com o programa
+	  ``chdman``, é importante usar a versão do ``chdman`` mais recente,
+	  neste exemplo estamos usando a versão que acompanha o **MAME
+	  0.229**.
+
+	  Antes de presseguir, **FAÇA O BACKUP DOS ARQUIVOS QUE VOCÊ FOR
+	  CONVERTER!**
+
+	  Pegue **o maior arquivo** ``chd`` da máquina, neste caso seria o
+	  ``gq986jaa02.chd`` e faça o comando::
+
+		chdman extractraw -i gq986jaa02.chd -o gq986jaa02.chd.iso
+
+	  Renomeie o arquivo ``gq986jaa02.chd`` para algo como
+	  ``backup-gq986jaa02.chd`` e faça o comando::
+
+		chdman createcd -i gq986jaa02.iso -o gq986jaa02.chd
+
+	  .. raw:: latex
+
+		\clearpage
+
+	  Na próxima vez que a maquina iniciar não haverá mais o erro
+	  **E750: SPU DVDROM ERROR**. Caso já tenha tentado rodar a máquina
+	  antes e depois da conversão aparecer o erro::
+
+		gq986jaa02.chd DIFF CHD ERROR: invalid parent
+
+	  Neste caso exclua o arquivo **diff\gq986jaa02.dif** e rode a
+	  máquina novamente, a dica serve para todas as outras máquinas caso
+	  o mesmo erro ocorra.
+
+.. _faqgames-popn5:
+
+Pop'n Music 5
+-------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Consulte :ref:`faqgames-popn4`
+
+.. _faqgames-popn6:
+
+Pop'n Music 6
+-------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Consulte :ref:`faqgames-popn4`
+
+.. _faqgames-popn7:
+
+Pop'n Music 7
+-------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Consulte :ref:`faqgames-popn4`
+
+.. _faqgames-popn8:
+
+Pop'n Music 8
+-------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Consulte :ref:`faqgames-popn4`
+
+.. _faqgames-popnmt:
+
+Pop'n Music Mickey Tunes
+------------------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Consulte :ref:`faqgames-popn4`
+
+.. _faqgames-popnmt2:
+
+Pop'n Music Mickey Tunes!
+-------------------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Consulte :ref:`faqgames-popn4`
+
+.. _faqgames-popnanm:
+
+Pop'n Music Animelo
+-------------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Consulte :ref:`faqgames-popn4`
+
+.. _faqgames-popnanm2:
+
+Pop'n Music Animelo 2
+---------------------
+
+	* **!!ERROR**
+	* **E161: BATTERY ERROR**
+	* **E165: RTC DATA ERROR**
+
+	  Consulte :ref:`faqgames-popn4`
+
+.. raw:: latex
+
+	\clearpage
+
 .. _faqgames-pontoon:
 
 Pontoon
@@ -2548,10 +2892,6 @@ Pool 10
 	código fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-potgame:
 
