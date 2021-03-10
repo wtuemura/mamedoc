@@ -30,7 +30,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '_ex
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx.ext.doctest',
     'edit_on_github',
@@ -41,7 +40,7 @@ edit_on_github_project = 'wtuemura/mamedoc'
 edit_on_github_branch = 'master/source'
 
 # Math
-mathjax_path = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+# mathjax_path = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
