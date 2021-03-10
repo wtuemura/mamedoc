@@ -670,13 +670,13 @@ Essas opções sempre serão carregadas na inicialização do MAME, lembrando
 que a linha de comando **SEMPRE** tem prioridade, independente do que
 seja definido aqui.
 
-* **Modo do Vídeo**
+* **Modo do vídeo**
 
   Para mais informações consulte :ref:`-video <mame-commandline-video>`.
 
 		O valor predefinido é **Auto**
 
-* **Quantidade de Telas**
+* **Quantidade das telas**
 
   Predefine a quantidade de telas que serão usadas.
 
@@ -689,7 +689,7 @@ seja definido aqui.
 
 		O valor predefinido é **Desligado**
 
-* **Filtragem Bilinear**
+* **Filtragem bilinear**
 
   Habilita ou não os filtros de tela para suavizar os gráficos, caso os
   gráficos fiquem muito borrados, experimente habilitar também a opção
@@ -706,7 +706,7 @@ seja definido aqui.
 
 		O valor predefinido é **1**.
 
-* **Modo Janela**
+* **Modo janela**
 
   Faz o MAME exibir a tela emulada em uma janela ou em uma tela inteira.
 
@@ -718,7 +718,7 @@ seja definido aqui.
 
 		O valor predefinido é **Ligado**.
 
-* **Inicie com a Tela Expandida**
+* **Inicie com a tela expandida**
 
   Faz o MAME exibir a tela emulada em uma janela com o tamanho máximo do
   seu monitor, caso contrário exibe a tela emulada em sua resolução
@@ -726,11 +726,11 @@ seja definido aqui.
 
 		O valor predefinido é **Ligado**.
 
-* **Atualização Sincronizada dos Quadros**
+* **Atualização sincronizada dos quadros**
 
   Consulte :ref:`-syncrefresh <mame-commandline-syncrefresh>`.
 
-* **Aguarde o Sincronismo Vertical**
+* **Aguarde o sincronismo vertical**
 
   Consulte :ref:`-waitvsync <mame-commandline-waitvsync>`.
 
@@ -743,11 +743,11 @@ seja definido aqui.
 	Quando a emulação estiver acontecendo, estas opções também estão
 	disponíveis.
 	
-		* **Non-Integer Scaling / Escala da Tela com Valores não Inteiros**
+		* **Non-Integer Scaling / Escala da tela com valores não inteiros**
 		
 		  Permite a escala da tela com valores não inteiros.
 		
-		* **Keep Aspect / Mantenha a Proporção**
+		* **Keep Aspect / Mantenha a proporção**
 		
 		  Mantém a proporção 4:3 da tela, para mais informações
 		  consulte :ref:`-[no]keepaspect <mame-commandline-keepaspect>`.
@@ -768,14 +768,14 @@ Opções do Áudio
 
 		O valor predefinido é **Ligado**.
 
-* **Taxa da Amostragem do Áudio**
+* **Taxa da amostragem do áudio**
 
   Define a taxa da amostragem do áudio que será usada em todas as
   máquinas.
 
 		O valor predefinido é **48000**.
 
-* **Usar Amostras Externas**
+* **Use amostras externas**
 
   Veja :ref:`-samples <mame-commandline-nosamples>`.
 
@@ -798,7 +798,7 @@ Opções Diversas
 
 		O valor predefinido é **Ligado**.
 
-* **Aumentar as imagens no painel direito**
+* **Aumente as imagens no painel direito**
 
   Aumenta o tamanho de qualquer uma das imagens exibidas no painel
   direito da interface do MAME, sempre mantendo a proporcionalidade da
@@ -812,7 +812,7 @@ Opções Diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Exibir o ponteiro do mouse**
+* **Exiba o ponteiro do mouse**
 
   Habilita ou não a exibição do mouse na interface do MAME.
 
@@ -836,14 +836,14 @@ Opções Diversas
 
 	\clearpage
 
-* **Manter aspecto 4:3 para os instantâneos de tela**
+* **Mantnha o aspecto 4:3 para os instantâneos de tela**
 
   Faz com que todos os prints da tela mantenham uma proporção de
   4:3.
 
 		O valor predefinido é **Ligado**.
 
-* **Usar uma imagem como plano de fundo**
+* **Use uma imagem como plano de fundo**
 
   Permite o uso de uma imagem como papel de parede na interface do MAME.
   Escolha uma imagem **.JPG** ou **.PNG** e a renomeie para
@@ -881,7 +881,7 @@ Opções Diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Esconder máquinas sem ROMs da lista de disponíveis**
+* **Esconda as máquinas sem ROMs da lista de disponíveis**
 
   Esconde da lista máquinas eletrônicas que não usam ROMs.
 
@@ -893,10 +893,10 @@ Opções Diversas
 
 .. _mamemenu-config-devices:
 
-Mapeamento dos dispositivos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mapeamento do dispositivo
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* **Atribuição do Dispositivo Pistola de Luz**
+* **Atribuição do dispositivo pistola de luz**
 
   Caso exista um controlador para a pistola de luz, os valores
   disponíveis são **none**, **keyboard**, **mouse**, **Lightgun** e
@@ -904,28 +904,28 @@ Mapeamento dos dispositivos
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do Dispositivo Trackball**
+* **Atribuição do dispositivo trackball**
 
   Caso exista um controlador para o trackball, os valores disponíveis
   são **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do Dispositivo Pedal**
+* **Atribuição do dispositivo pedal**
 
   Caso exista um controlador para pedais, os valores disponíveis são
   **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do Dispositivo Adstick**
+* **Atribuição do dispositivo adstick**
 
   Caso exista um controlador para adstick, os valores disponíveis são
   **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do Dispositivo Paddle**
+* **Atribuição do dispositivo paddle**
 
   Caso exista um controlador para remo, os valores
   disponíveis são **none**, **keyboard**, **mouse**, **Lightgun** e
@@ -933,21 +933,21 @@ Mapeamento dos dispositivos
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do Dispositivo Dial**
+* **Atribuição do dispositivo dial**
 
   Caso exista um controlador para discadores, os valores disponíveis
   são **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do Dispositivo Positional**
+* **Atribuição do dispositivo positional**
 
   Caso exista um controlador de posição, os valores disponíveis são
   **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do Dispositivo Mouse**
+* **Atribuição do dispositivo mouse**
 
   Caso exista um controlador para mouse, os valores disponíveis são
   **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
@@ -969,21 +969,21 @@ Entradas Gerais
   todos eles podem ser alterados conforme a necessidade. Para retornar
   ao valor original tecle **DELETE** duas vezes em cima da opção.
 
-* **On screen display**
+* **On Screen Display**
 
   Exibe um visor na parte inferior da tela durante a emulação para a
   realização de ajustes em tempo real.
 
 	A tecla predefinida é **Til**.
 
-* **Brek in debugger**
+* **Brek in Debugger**
 
   Atalho para entrar no depurador durante a emulação, só funciona caso
   o MAME tenha sido compilado com ferramentas de depuração.
 
 	A tecla predefinida é **Til**.
 
-* **Config menu**
+* **Config Menu**
 
   Chama o cardápio de opções do MAME.
 
@@ -995,43 +995,43 @@ Entradas Gerais
 
 	A tecla predefinida é **P**.
 
-* **Pause - Single step**
+* **Pause - Single Step**
 
   Avança em passos de um quadro.
 
 	As teclas predefinidas são **P** + **Shift Esq**.
 
-* **Rewing - Single step**
+* **Rewing - Single Step**
 
   Retrocede em passos de um quadro.
 
 	As teclas predefinidas são **Til** + **Shift Esq**.
 
-* **Reset machine**
+* **Reset Machine**
 
   Encerra a emulação e a reinicia do zero.
 
 	As teclas predefinidas são **F3** + **Shift Esq**.
 
-* **Soft reset**
+* **Soft Reset**
 
   Reinicie sem encerrar a emulação.
 
 	A telcla predefinida é **F3**.
 
-* **Show gfx**
+* **Show GFX**
 
   Mostra a paleta GFX decodificada e os tilemaps dos jogos.
 
 	A tecla predefinida é **F4**.
 
-* **Frameskip dec**
+* **Frameskip Dec**
 
   Redução do salto de quadros.
 
 	A tecla predefinida é **F8**.
 
-* **Frameskip inc**
+* **Frameskip Inc**
 
   Aumento do salto de quadros.
 
@@ -1044,19 +1044,19 @@ Entradas Gerais
 
 	A tecla predefinida é **F10**.
 
-* **Fast forward**
+* **Fast Forward**
 
   Como o exemplo anterior porém faz a emulação rodar o mais rápido
   possível.
 
-* **Show fps**
+* **Show FPS**
 
   Exibe quantos quadros por segundo a emulação está rodando.
 
 	A tecla predefinida é **PgDn** em versões SDL do MAME e **Insert**
 	no Windows. 
 
-* **Save snapshot**
+* **Save Snapshot**
 
   Salva um instantâneo da tela.
 
@@ -1080,7 +1080,7 @@ Entradas Gerais
 
 	A teclas predefinidas são **F12** + **Shift Esq**.
 
-* **Toggle cheat**
+* **Toggle Cheat**
 
   Habilita a trapaça no jogo.
 
@@ -1092,114 +1092,127 @@ Entradas Gerais
 
 	A tecla predefinida é **Nenhum**.
 
-* **UI up**
+* **UI Up**
 
   Move o cursor para cima.
 
 	A tecla predefinida é **Tecla cima** ou **Cima do controle**.
 
-* **UI down**
+* **UI Down**
 
   Move o cursor para baixo.
 
 	A tecla predefinida é **Tecla baixo** ou **Baixo do controle**.
 
-* **UI left**
+* **UI Left**
 
   Move o cursor para a esquerda.
 
 	A tecla predefinida é **Tecla esquerda** ou **Esquerda do
 	controle**.
 
-* **UI right**
+* **UI Right**
 
   Move o cursor para a direita.
 
 	A tecla predefinida é **Tecla direita** ou **Direita do controle**.
 
-* **UI home**
+* **UI Home**
 
   Move o cursor para o topo da lista.
 
 	A tecla predefinida é **Tecla home**.
 
-* **UI end**
+* **UI End**
 
   Move o cursor para o fim da lista.
 
 	A tecla predefinida é **Tecla end**.
 
-* **UI page up**
+* **UI Page Up**
 
   Move o cursor para o topo da lista saltando 26 linhas por vez.
 
 	A tecla predefinida é **Tecla page up**.
 
-* **UI page down**
+* **UI Page Down**
 
   Move o cursor para o fim da lista saltando 26 linhas por vez.
 
 	A tecla predefinida é **Tecla page down**.
 
-* **UI select**
+* **Focus Next**
+
+  Faz com que foco do cursor passe para a próxima janela da interface.
+
+	A tecla predefinida é **Tab**.
+
+* **Focus Previous**
+
+  Faz com que foco do cursor passe para a anterior anterior da
+  interface.
+
+	A tecla predefinida é **Tab + Shift Esq.**.
+
+* **UI Select**
 
   Tecla de seleção para qualquer item selecionável.
 
 	As teclas predefinidas são **Enter**, **Botão 0 do controle** ou
 	**Tecla enter do teclado numérico**.
 
-* **UI cancel**
+* **UI Cancel**
 
   Tecla para cancelar qualquer ação.
 
 	A tecla predefinida é **Tecla escape ou esq**.
 
-* **UI Display comment**
+* **UI Display Comment**
 
   Tecla para exibir comentário.
 
 	A tecla predefinida é **Tecla espaço**.
 
-* **UI clear**
+* **UI Clear**
 
   Tecla para apagar/zerar uma opção.
 
 	A tecla predefinida é **Tecla delete ou del**.
 
-* **UI zoom in**
+* **UI Zoom In**
 
   Tecla para aproximar (dar zoom) na interface. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
 	A tecla predefinida é **Tecla =**.
 
-* **UI zoom out**
+* **UI Zoom Out**
   Tecla para sair do zoom da interface. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
 	A tecla predefinida é **Tecla -**.
 
-* **UI previous group**
+* **UI Previous Group**
 
   Faz a lista pular para o grupo anterior. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
 	A tecla predefinida é **[**. 
 
-* **UI next group**
+* **UI Next Group**
 
   Faz a lista pular para o próximo grupo. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
 	A tecla predefinida é **]**.
 
-* **UI rotate**
+* **UI Rotate**
 
-  Rotaciona a interface.
+  Gira a interface.
 
 	A tecla predefinida é **R** (não funciona).
 
-* **Show profile**
+* **Show Profile**
 
   Exibe o analisador de desempenho (não funciona).
 
@@ -1211,7 +1224,7 @@ Entradas Gerais
 
 	A tecla predefinida é **Screen lock**.
 
-* **UI paste text**
+* **UI Paste Text**
 
   Cola texto na interface do usuário (não funciona).
 
@@ -1219,29 +1232,29 @@ Entradas Gerais
 
 * **Toggle deugger**
 
-  Alterna o depurador.
+  Alterna o Depurador.
 
 	A tecla predefinida é **F5**.
 
-* **Save state**
+* **Save State**
 
   Salva o estado da máquina.
 
 	As teclas predefinidas são **F7** + **Shift Esq**.
 
-* **Load state**
+* **Load State**
 
   Carrega o estado da máquina.
 
 	A tecla predefinida é **F7**.
 
-* **UI (First) tape start**
+* **UI (First) Tape Start**
 
   Inicia a fita na interface primária.
 
 	A tecla predefinida é **F2**.
 
-* **UI (First) tape stop**
+* **UI (First) Tape Stop**
 
   Para a fita na interface primária.
 
@@ -1251,11 +1264,13 @@ Entradas Gerais
 
 	\clearpage
 
-* **UI external DAT view**
+* **UI External DAT View**
 
-  Exibe o DAT externo.
+  Exibe o DAT externo, para que a visualização do DAT seja possível é
+  preciso ativar o plugin **Data Plugin** na interface ou editando o
+  arquivo ``plugin.ini``, o valor da linha **data** de **0** para **1**.
 
-	As teclas predefinidas são **Alt Esq** + **D** (não funciona).
+	As teclas predefinidas são **Alt Esq** + **D**.
 
 * **UI Add/Remove favorites**
 
@@ -1263,7 +1278,7 @@ Entradas Gerais
 
 	As teclas predefinidas são **Alt Esq** + **F** (não funciona).
 
-* **UI export list**
+* **UI Export List**
 
   Exporta a lista das máquinas em formato:
 
@@ -1273,7 +1288,7 @@ Entradas Gerais
 
 	As teclas predefinidas são **Alt Esq** + **E**.
 
-* **UI Audit unavailable**
+* **UI Audit Unavailable**
 
   Realiza uma auditoria das ROMs removendo as não disponíveis, o
   resultado é salvo no arquivo **mame_avail.ini** dentro do diretório
@@ -1281,40 +1296,34 @@ Entradas Gerais
 
 	A tecla predefinida é **F1**.
 
-* **UI Audit all**
+* **UI Audit All**
 
   Realiza uma auditoria de todas as ROMs, o resultado é salvo no arquivo
   **mame_avail.ini** dentro do diretório **ui**.
 
 	As teclas predefinidas são **F1** + **Shift Esq**.
 
-* **Toggle fullscreen**
+* **Toggle Fullscreen**
 
   Alterna entre tela inteira e janela.
 
 	As teclas predefinidas são **Enter** + **Alt Esq**.
 
-* **Toggle uneven stretch**
+* **Toggle Fullscreen**
 
-  Alterna entre poder esticar a tela com e sem proporção de tamanho.
+  Alterna para tela inteira.
 
-	As teclas predefinidas são **F3** + **Ctrl Esq**.
+	A tecla predefinida é **Enter** + **Alt Esq**.
 
-* **Toggle keepaspect**
-
-  Alterna entre manter ou não a proporção da tela.
-
-	As teclas predefinidas são **F4** + **Ctrl Esq**.
-
-* **Toggle filter**
+* **Toggle Filter**
 
   Alterna entre usar ou não o filtro na tela.
 
 	As teclas predefinidas são **F5** + **Ctrl Esq**.
 
-* **Decrease prescaling**
+* **Decrease Prescaling**
 
-  Reduz a pré-escala de dos pixels.
+  Reduz a pré-escala dos pixels.
 
 	As teclas predefinidas são **F6** + **Ctrl Esq**.
 
@@ -1322,13 +1331,13 @@ Entradas Gerais
 
 	\clearpage
 
-* **Increase prescaling**
+* **Increase Prescaling**
 
   Aumenta a pré-escala de dos pixels.
 
 	As teclas predefinidas são **F7** + **Ctrl Esq**.
 
-* **Record rendered video**
+* **Record Rendered Video**
 
   Grava o vídeo usando todos os efeitos e filtros ativos na tela.
 
@@ -2037,39 +2046,39 @@ Opções da Rotação da Tela
 
 	Valor predefinido é **Ligado**
 
-* **Rotacionar à direita**
+* **Rotacione à direita**
 
   Rotacione a tela em 90 graus sentido horário.
 
 	Valor predefinido é **Desligado**
 
-* **Rotacionar à esquerda**
+* **Rotacione à esquerda**
 
   Rotacione a tela em 90 graus sentido anti-horário.
 
 	Valor predefinido é **Desligado**
 
-* **Auto rotacionar à direita**
+* **Auto rotacione à direita**
 
   Rotacione automaticamente a tela em 90 graus sentido horário caso
   a tela esteja orientada verticalmente.
 
 	Valor predefinido é **Desligado**
 
-* **Auto rotacionar à esquerda**
+* **Auto rotacione à esquerda**
 
   Rotacione automaticamente a tela em 90 graus sentido anti-horário
   caso a tela esteja orientada verticalmente.
 
 	Valor predefinido é **Desligado**
 
-* **Giro X**
+* **Gire X**
 
   Inverte a tela da esquerda para a direita.
 
 	Valor predefinido é **Desligado**
 
-* **Giro Y**
+* **Gire Y**
 
   Inverte a tela da direita para a esquerda.
 
@@ -2095,11 +2104,11 @@ Opções do Estado/Playback
 * **Salve/Restaure automático**
 
   Em sistema compatíveis, carrega automaticamente o estado da máquina e
-  a salva ao sair.
+  a salva ao encerrar.
 
 	Valor predefinido é **Desligado**
 
-* **Retroceder**
+* **Retroceda**
 
   Habilita o rebobinamento do estado da máquina.
 
