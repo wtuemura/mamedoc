@@ -3478,7 +3478,7 @@ realizar testes em diferentes máquinas e obter uma visualização simples
 e rápida dos controles, depois de baixar e extrair o arquivo, copie-o
 para o diretório **artwork** e o renomeie com o nome da máquina que será
 testada, para o exemplo usado na foto o nome do diretório é
-**ssriders**. Rodando o comando ``mame -windows ssriders`` irá
+**ssriders**. Rodando o comando ``mame -window ssriders`` irá
 aparecer uma tela com um design branco genérico, será possível escolher
 um modelo para 2 ou 4 jogadores através do menu **Opções de Vídeo**
 (TAB --> Opções de Vídeo), faça as alterações necessárias no arquivo de
