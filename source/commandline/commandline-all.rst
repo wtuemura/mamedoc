@@ -1134,6 +1134,10 @@ Opções para a configuração
 
 	Para clones apenas, poderá ser chamado de forma recursiva.
 
+.. raw:: latex
+
+	\clearpage
+
 - **<nome-do-driver-da-máquina>.ini**
 
 	Para que as opções sejam aplicadas apenas no driver da máquina, para

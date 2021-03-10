@@ -246,6 +246,9 @@ Pode ser causado por várias razões:
 	Para rodar um "*jogo clonado*" basta colocar a ROM pai dentro da
 	pasta ROMs (sempre zipada).
 
+.. raw:: latex
+
+	\clearpage
 
 .. _ROM-Verify:
 
@@ -303,6 +306,9 @@ optar por usar qualquer esquema de hierarquia e de nomenclatura que
 deseje e não fica restrito às regras acima.
 No entanto, a maioria seguem essas diretrizes.
 
+.. raw:: latex
+
+	\clearpage
 
 .. _Legal-ROMs:
 
@@ -362,6 +368,9 @@ vendendo junto com as ROMs, seria necessário também assinar um contrato
 conosco para obter uma versão licenciada do MAME para rodar apenas as
 ROMs que ele adquiriu de forma legal e mais nada.
 
+.. raw:: latex
+
+	\clearpage
 
 .. _ROM-DVDs:
 
