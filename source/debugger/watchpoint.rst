@@ -28,7 +28,7 @@ wpset
 | O parâmetro de condição opcional <*condition*> permite que você especifique uma expressão que será avaliada cada vez que o watchpoint for atingido. Se o resultado da expressão for verdadeiro (não-zero), o watchpoint irá interromper (halt) a execução; caso contrário, a execução continuará sem nenhuma notificação.
 | O parâmetro opcional de ação <*action*> fornece um comando que é executado sempre que o watchpoint for atingido e a condição <*condition*> for verdadeira. Observe que você pode precisar incorporar a ação entre chaves **{ }** para evitar que as vírgulas e os pontos e vírgulas sejam interpretados como se aplicassem ao próprio comando wpset.
 | Cada watchpoint que for definido é designado a um índice que pode ser usado em outros comandos watchpoint para usar este watchpoint como referência.
-| A fim de ajudar a expressão de condição <*condition*>, duas variáveis estão disponíveis. Para todos os watchpoints, a variável "wpaddr" é definida para o endereço que realmente desencadeou o watchpoint. Para escrever watchpoints, a variável 'wpdata' é definida para os dados que estão endo escritos.
+| A fim de ajudar a expressão de condição <*condition*>, três variáveis estão disponíveis. A variável 'wpaddr' é definida para o endereço que realmente desencadeou o watchpoint, a variável 'wpdata' é definida para os dados que estão sendo lidos ou escritos, a variável 'wpsize' é definido para o tamanho dos dados em bytes.
 |
 | Exemplos:
 |
