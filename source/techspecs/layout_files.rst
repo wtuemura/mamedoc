@@ -1412,8 +1412,7 @@ exemplo:
            O elemento inferior direito posicionado em (13.33,10) com 6.67 de largura e 20 de altura
            Os elementos de visualização calculado com origem em (0,0) 20 de largura e 30 de altura
         -->
-        <element ref="topleft"><bounds x="5" y="10" width="10" height="10" /></element>
-        <element ref="bottomright"><bounds x="25" y="15" width="10" height="10" /></element>
+        <group ref="autobounds"><bounds x="0" y="0" width="20" height="30" /></group>
     </view>
 
 Como todos os elementos inerentemente caem dentro dos limites calculados
@@ -2280,6 +2279,18 @@ Esta planilha foi criada com a intenção de facilitar os cálculos e para
 ser usada no desenvolvimento dos layouts, ela não serve para nada muito
 técnico ou avançado, porém a planilha está aberta, podendo ser alterada
 para atender qualquer outra necessidade que você venha a ter.
+
+.. note::
+
+	Sempre que possível, procure usar valores inteiros na definição da
+	resolução da sua tela. Em certas máquinas como a do exemplo acima
+	não haverá qualquer diferença visível, contudo, certas máquinas não
+	são tão tolerantes assim e podem apresentar pixels distorcidos na
+	tela ou até mesmo artefados estranhos durante o uso de shaders como
+	o CRT-geom por exemplo. Assim, aumente o valor da altura na planilha
+	até quem um valor inteiro seja encontrado.
+	
+	Se fosse o caso do exemplo acima, o valor ideal seria **1662x1899**.
 
 Com o valor calculado em mãos, a resolução final será **1660x2213**.
 Assim temos todos os valores para posicionarmos a nossa tela emulada na
