@@ -1237,11 +1237,12 @@ O elemento ``orientation`` suporta os seguintes atributos opcionais:
 
 As telas (elementos ``screen``) e os elementos do layout (elementos
 ``element``) podem conter um atributo ``blend`` para determinar o modo
-de mesclagem. Os valores válidos são ``none`` (sem mesclagem), ``alpha``
-(mesclagem alpha) [#]_, ``multiply`` (multiplicação RGB) [#]_, e ``add``
-(mesclagem aditiva) [#]_. A predefinição para a tela é permitir que o
-driver defina a mesclagem por camada, sendo que o modo de mesclagem dos
-elementos do layout é predefinido como mesclagem alpha.
+de mesclagem dos elementos gráficos. Os valores válidos são
+``none`` (sem mesclagem), ``alpha`` (transparência) [#]_,
+``multiply`` (soma dos valores RGB) [#]_, e
+``add`` (soma das camadas) [#]_. A predefinição para a tela é alpha
+permitindo que o driver defina a mesclagem dos elementos do layout
+através de camadas.
 
 As telas (elementos ``screen``), elementos do layout (elementos
 ``element``) e elementos de grupo (``group``) podem ser posicionados e
