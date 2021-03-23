@@ -289,18 +289,18 @@ As opções disponíveis são:
 	* **Tipografia da interface**: Aqui é possível definir uma fonte
 	  para toda a interface do MAME.
 
-		O Valor predefinido é **Padrão**
+		O valor predefinido é **Padrão**
 
 	* **Linhas**: Ajusta a dimensão do espaço e o tamanho da fonte,
 	  quanto maior o valor maior a dimensão da interface e menor o texto
 	  na tela.
 
-		O Valor predefinido é **30**
+		O valor predefinido é **30**
 
 	* **Tamanho da caixa de informação**: Ajusta o tamanho da fonte nas
 	  caixas de texto na tela.
 
-		O Valor predefinido é **0.75**
+		O valor predefinido é **0.75**
 
 .. _mamemenu-cores:
 
@@ -691,8 +691,8 @@ seja definido aqui.
 
 * **Filtragem bilinear**
 
-  Habilita ou não os filtros de tela para suavizar os gráficos, caso os
-  gráficos fiquem muito borrados, experimente habilitar também a opção
+  Ativa ou não os filtros de tela para suavizar os gráficos, caso os
+  gráficos fiquem muito borrados, experimente ativar também a opção
   **Pré-escala de bitmap**.
 
 		O valor predefinido é **Ligado**
@@ -808,13 +808,13 @@ Opções Diversas
 
 * **Trapaças**
 
-  Habilita ou não o sistema de trapaças do MAME.
+  Ativa ou não o sistema de trapaças do MAME.
 
 		O valor predefinido é **Desligado**.
 
 * **Exiba o ponteiro do mouse**
 
-  Habilita ou não a exibição do mouse na interface do MAME.
+  Ativa ou não a exibição do mouse na interface do MAME.
 
 		O valor predefinido é **Ligado**.
 
@@ -1082,13 +1082,13 @@ Entradas Gerais
 
 * **Toggle Cheat**
 
-  Habilita a trapaça no jogo.
+  Ativa a trapaça no jogo.
 
 	A tecla predefinida é **F6**.
 
 * **Toggle autofire**
 
-  Habilita o modo turbo dos botões de tiro.
+  Ativa o modo turbo dos botões de tiro.
 
 	A tecla predefinida é **Nenhum**.
 
@@ -1986,43 +1986,49 @@ Opções de Desempenho
   Ignora quadros de forma automática visando manter a velocidade da
   emulação.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Salto de quadro**
 
   Define uma quantidade fixa de quadros a serem ignorados visando manter
   a velocidade da emulação.
 
-	Valor predefinido são **0** quadros.
+	O valor predefinido é **0**
 
 * **Supressão da velocidade**
 
-  Habilita a supressão de velocidade da emulação para que a máquina
+  Ativa a supressão de velocidade da emulação para que a máquina
   emulada rode em sua velocidade nativa em vez da velocidade do
   processador em que a máquina está sendo emulada.
 
-	Valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**
+
+* **Mute when unthrottled / Mute quando a a supressão de velocidade estiver desligado**
+
+  Silencia o áudio quando a supressão de velocidade estiver desligado.
+
+	O valor predefinido é **Desligado**
 
 * **Dormir**
 
   Reduz o consumo de processamento quando o MAME estiver parado sem
   fazer nada.
 
-	Valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**
 
 * **Velocidade**
 
   Controla a velocidade do jogo com relação ao tempo de emulação.
 
-	Valor predefinido é **1**
+	O valor predefinido é **1**
 
-* **Atualização da velocidade**
+* **Adjust speed to match refresh rate / Ajuste a velocidade para coincidir com a taxa de atualização**
 
   Controla a velocidade da emulação de forma automática mantendo a taxa
   de atualização de tela mais lenta em referência com a taxa de
   atualização de tela do computador que está rodando a emulação.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Low Latency / Baixa latência**
 
@@ -2044,57 +2050,56 @@ Opções da Rotação da Tela
   Permite que a orientação da tela mude conforme a orientação de tela do
   jogo.
 
-	Valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**
 
 * **Rotacione à direita**
 
   Rotacione a tela em 90 graus sentido horário.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Rotacione à esquerda**
 
   Rotacione a tela em 90 graus sentido anti-horário.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Auto rotacione à direita**
 
   Rotacione automaticamente a tela em 90 graus sentido horário caso
   a tela esteja orientada verticalmente.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Auto rotacione à esquerda**
 
   Rotacione automaticamente a tela em 90 graus sentido anti-horário
   caso a tela esteja orientada verticalmente.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Gire X**
 
   Inverte a tela da esquerda para a direita.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Gire Y**
 
   Inverte a tela da direita para a esquerda.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 .. _mamemenu-advanced-illustration:
 
 Opções das Ilustrações
 ^^^^^^^^^^^^^^^^^^^^^^
 
-* **Recorte da ilustração**
+* **Zoom to screen area / Aproxime para a área da tela**
 
-  Recorta a imagem usada como ilustração de forma que ocupe toda a tela
-  emulada em apenas um eixo.
+  Aproxima a região da tela emulada na ilustração.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 .. _mamemenu-advanced-state-playback:
 
@@ -2106,31 +2111,31 @@ Opções do Estado/Playback
   Em sistema compatíveis, carrega automaticamente o estado da máquina e
   a salva ao encerrar.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
-* **Retroceda**
+* **Allow rewind / Permita o rebobinamento**
 
-  Habilita o rebobinamento do estado da máquina.
+  Permite o rebobinamento do estado da máquina.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Recurso de rebobinamento**
 
   Reserva uma memória para rebobinamento em Megabytes.
 
-	Valor predefinido é **100**
+	O valor predefinido é **100**
 
-* **Retrato bilinear**
+* **Bilinear filtering for snapshots / Filtro bilinear para os instantâneos**
 
-  Define se os vídeos ou instantâneos de tela terão o filtro aplicado.
+  Define se os vídeos ou os prints da tela terão o filtro aplicado.
 
-	Valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**
 
 * **Burn-in**
 
-  Cria prints de tela com marcas de fósforo queimado.
+  Cria prints da tela com marcas de fósforo queimado.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 .. _mamemenu-advanced-input-options:
 
@@ -2142,31 +2147,31 @@ Opções da Entrada
   Faz com que a máquina ignore a inserção de fichas em momentos que a
   máquina não está pronta para recebê-las.
 
-	Valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**
 
 * **Mouse**
 
   Permite o uso de um mouse nas máquinas.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Controle**
 
   Permite o uso de um controle nas máquinas.
 
-	Valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**
 
 * **Pistola de luz**
 
-  Habilita o uso do uma pistola de luz.
+  Ativa o uso do uma pistola de luz.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Mais de um teclado**
 
   Permite o uso de mais de um teclado para cada entrada compatível.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 .. raw:: latex
 
@@ -2176,7 +2181,7 @@ Opções da Entrada
 
   Permite o uso de mais de um mouse para cada entrada compatível.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Steadykey**
 
@@ -2188,51 +2193,51 @@ Opções da Entrada
   registrar o pressionamento simultâneo das teclas, porém tem a
   desvantagem de deixar a sua capacidade de resposta mais lenta.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **IU ativa**
 
-  Habilita a opção para que a interface do usuário se sobreponha a do
+  Ativa a opção para que a interface do usuário se sobreponha a do
   teclado emulado caso esteja presente.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Recarga fora da tela**
 
   Converte o botão 2 da pistola de luz como recarga fora da tela.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Zona morta do controle**
 
   Permite fazer o ajuste fino do ponto morto do controle ou manche.
 
-	Valor predefinido é **0.3**
+	O valor predefinido é **0.3**
 
 * **Saturação do controle**
 
   Faz o ajuste findo do eixo de fim de curso do controle.
 
-	Valor predefinido é **0.85**
+	O valor predefinido é **0.85**
 
 * **Teclado natural**
 
-  Habilita ou não o uso de um teclado natural.
+  Ativa ou não o uso de um teclado natural.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Comando contraditório**
 
   Aceita comandos contraditórios e simultâneos no controle digital como
   esquerda e direita ou cima e baixo.
 
-	Valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**
 
 * **Impulso de ficha**
 
   Define o tempo de impulso da ficha.
 
-	Valor predefinido é **0**
+	O valor predefinido é **0**
 
 .. _mamemenu-config-saving:
 
