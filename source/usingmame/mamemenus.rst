@@ -31,9 +31,9 @@ diferentes cores de fundo indicando a sua condição.
 Abaixo da lista de máquinas nós temos:
 
 	* **Opções de configuração**: Exibe uma lista das configurações do MAME.
-	* **Configurar a máquina**: Exibe uma lista das opções para configurar a máquina selecionada.
+	* **Configure a máquina**: Exibe uma lista das opções para configurar a máquina selecionada.
 	* **Plug-ins**: Exibe uma lista para a configuração de plug-ins
-	* **Sair**: Encerra o MAME
+	* **Encerrar**: Encerra o MAME
 
 Todos os itens exibidos essa interface podem ser selecionados usando as
 setas do seu teclado (cima, baixo, esquerda, direita) e são selecionadas
@@ -2003,7 +2003,7 @@ Opções de Desempenho
 
 	O valor predefinido é **Ligado**
 
-* **Mute when unthrottled / Mute quando a a supressão de velocidade estiver desligado**
+* **Mute when unthrottled / Mute quando a supressão de velocidade estiver desligado**
 
   Silencia o áudio quando a supressão de velocidade estiver desligado.
 
