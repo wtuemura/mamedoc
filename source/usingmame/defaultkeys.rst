@@ -8,10 +8,11 @@
 Teclas já predefinidas
 ======================
 
-Aqui um pequeno resumo de todas as teclas que já vem pré-configuradas,
-para ver a lista completa de todas as teclas consulte o capítulo
-:ref:`Cardápio de opções <mamemenu>`. Todas as teclas podem ser
-configuradas através da interface do usuário.
+Aqui um pequeno resumo de todas as teclas já pré-configuradas, consulte
+o capítulo :ref:`Cardápio de opções <mamemenu>` para ver a lista
+completa de todas as teclas. Todas as teclas podem ser configuradas
+através da interface do usuário.
+
 
 ================  ===============================================================================
 Tecla             | Ação
@@ -99,10 +100,10 @@ Tecla             | Ação
 **Shift+F11**     | Alterna indicador interno de perfil (caso tenha sido compilado com).
 **Alt+F11**       | Grava vídeo renderizado com filtros HLSL.
 **F12**           | Salva um instantâneo de tela.
-**Alt+F12**       | Tira um instantâneo da tela usando filtros HLSL.
-**Insert**        | [**APENAS JANELA, NÃO SDL**] Avanço rápido.
+**Alt Gr+F12**    | Tira um instantâneo da tela usando filtros HLSL.
+**Insert**        | [**APENAS MS WINDOWS, NÃO SDL**] Avanço rápido.
                   | Enquanto a tecla estiver pressionada, roda o jogo com
-                  | o afogador deligado e com o pulo de quadros no máximo.
+                  | o afogador desligado e com o pulo de quadros no máximo.
 **Page DN**       | [**APENAS SDL**] Avanço rápido.
                   | Enquanto a tecla estiver pressionada, roda o jogo com o afogador de velocidade
                   | desligado e com o pulo de quadros no máximo.
@@ -141,5 +142,5 @@ QWERTY ABNT-2 (107 Teclas)
     :alt: QWERTY ABNT-2 (107)
 
 .. [1] Nem todos os jogos possuem gráficos tilemap decodificados.
-.. [2] **tilemaps** são como pequenos recortes ou pedaços usados para montar uma imagem do jogo.
+.. [2] **tilemaps** são como pequenos recortes ou pedaços usados para montar a imagem do jogo.
 
