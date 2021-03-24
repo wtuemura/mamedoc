@@ -582,7 +582,7 @@ Beatmania III
 	  **F2** para confirmar.
 
 	  Ao terminar de inserir a senha, pressione **F2** duas vezes,
-	  assita este procedimento no Youtube:
+	  assista este procedimento no Youtube:
 
 	  https://www.youtube.com/watch?v=XXp9u7RKNlQ
 
