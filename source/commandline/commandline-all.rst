@@ -3306,7 +3306,7 @@ Opções para a configuração do áudio
 	atraso do áudio porém ajudam a evitar o esvaziamento da memória
 	intermediária (buffer) e as interrupções do áudio.
 
-	Os valores válidos ficam entre **1** e **5**, o valor predefinido é
+	Os valores válidos ficam entre **0** e **5**, o valor predefinido é
 	**2**. ::
 
 		mame galaga -audio_latency 1
