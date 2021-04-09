@@ -3821,6 +3821,10 @@ Opções para as configurações de diferentes entradas
 	**0.0** e **1.0**. Onde **0** é o centro do joystick e **1** o
 	limite externo.
 
+	Em ocasiões onde o joystick aparente ser muito sensível, tente
+	alterar o valor do ``joystick_deadzone`` para **0** e o
+	``joystick_saturation`` para **1**.
+
 	O valor predefinido é **0.3** (**-joystick_deadzone 0.3**). ::
 
 		mame sinistar -joystick_deadzone 0.45
