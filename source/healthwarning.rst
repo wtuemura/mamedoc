@@ -5,9 +5,9 @@ Fotossensibilidade / Ataques Epiléticos
 ---------------------------------------
 
 Um percentual muito baixo de pessoas podem sofrer ataques epiléticos ou
-desmaios quando expostos a determinados padrões ou flashes de luz. A
-exposição a certos padrões ou fundos de tela em uma televisão, tela de
-computador ou jogando videogames pode provocar ataques epiléticos ou
+desmaios quando expostos a determinados padrões, ou "flashes" de luz. A
+exposição a certos padrões, fundos de tela numa televisão, tela de
+computador, jogando videogames, pode provocar ataques epiléticos, ou
 desmaios nestes indivíduos.
 
 Estas condições podem desencadear sintomas epiléticos não detectados

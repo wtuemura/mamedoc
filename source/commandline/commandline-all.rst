@@ -4363,7 +4363,7 @@ Opções diversas
 	Permite que seja alterado o tamanho padrão da RAM (caso exista suporte
 	para tanto no driver). ::
 
-		./mame maclc -ramsize 32M -hard1 mac761.chd
+		mame maclc -ramsize 10M -hard1 mac761.chd
 
 
 .. _mame-commandline-confirmquit:

@@ -30,18 +30,18 @@ Antes, alguns pontos importantes:
   clang é necessário a versão 5 ou mais recente. O executável do MAME
   rodará com a biblioteca GNU libstdc++ versão 7.2 ou mais recente.
 
-* O Windows é a versão nativa do MAME, então uma grande ênfase será dada
-  a compilação neste sistema operacional.
+* A versão nativa do MAME roda no Windows, então uma grande ênfase será
+  dada a compilação neste sistema operacional.
 
 * O **git** é a melhor maneira para baixar o código fonte do MAME e
-  mantê-lo atualizado. Antigamente era preciso baixar o código fonte do
-  site oficial, aplicar dezenas de remendos (patch) para que o mesmo
-  fosse atualizado e corrigido, caso estes remendos fossem aplicados fora
-  de ordem, geravam outros problemas.
+  mantê-lo atualizado. Antigamente era preciso baixar o código fonte
+  do site oficial, aplicar dezenas de correções (patch) para que o
+  mesmo fosse atualizado e corrigido, quando eram aplicados fora da
+  ordem, geravam outros problemas.
   
   Hoje o processo é automatizado com o git, com um simples comando ele
   vai baixar todo o código fonte assim como aplicar todas as
-  modificações feitas ao código de maneira organizada e bem controlada.
+  alterações feitas ao código de maneira organizada e bem controlada.
   
   Cada nova modificação que é enviada ao código fonte do MAME e
   autorizada pelos administradores, o servidor conta como sendo
@@ -53,11 +53,12 @@ Antes, alguns pontos importantes:
   
   Digite *make* no diretório raiz onde se encontra o código fonte do
   MAME para que ele leia as instruções contidas em um arquivo chamado
-  **Makefile** para que uma versão do MAME seja compilada, note porém
-  que é possível usar outras opções fazendo com que a compilação do MAME
-  seja customizada e atenda as suas necessidades, como por exemplo, se
+  **Makefile** para que uma versão do MAME seja compilada, observe que
+  é possível usar outras opções fazendo com que a compilação do MAME
+  seja customizada e atenda as suas necessidades, como, por exemplo, se
   beneficiar das propriedades do seu processador dentre outras opções
   que será mostrada mais adiante.
+
 
   As opções devem **sempre** ser adicionadas depois do comando **make**
   como mostra o exemplo abaixo:
@@ -66,54 +67,58 @@ Antes, alguns pontos importantes:
 
   Várias outras opções podem ser adicionadas desde que estejam separadas
   por espaço, abra o arquivo **makefile** em um editor de texto e veja
-  quais são todas as opções disponíveis.
+  quais são aquelas que estão disponíveis.
 
 * Algumas vezes o processo de compilação é interrompido antes de chegar
   ao fim, os motivos são os mais diversos, pode ser a falta de alguma
-  biblioteca, erro de configuração em algum lugar, uma atualização do
+  biblioteca, um erro de configuração em algum lugar, uma atualização do
   código fonte onde algum desenvolvedor deixou passar algo
-  desapercebido, enfim, estes são problemas comuns encontrados durante o
-  processo de compilação do MAME.
+  desapercebido, enfim, estes são problemas comuns encontrados durante a
+  compilação do MAME.
   
-  Caso o processo tenha parado, repita o comando anterior nos terminais 
-  linux e no MSYS2 basta clicar na tecla para cima do teclado para
-  repetir o comando anterior seguido de **Enter**.
-  Geralmente o processo continua sem maiores problemas, porém caso o
-  processo pare novamente no mesmo lugar, pode haver algum outro
-  problema como a falta de alguma biblioteca. Caso a versão que esteja
-  sendo compilada seja a GIT, aguarde algumas horas, algumas vezes é
-  necessário esperar um dia inteiro até que os desenvolvedores resolvam
-  o problema. Nestes casos não é necessário reportar o erro pois o
-  código fonte do MAME no GIT é atualizado a todo instante.
+  Caso o processo tenha parado, nos terminais linux e no MSYS2 clique na
+  tecla cima do teclado para repetir o comando anterior seguido de
+  **Enter**.
+  Geralmente a compilação continua sem maiores problemas, porém, caso
+  pare novamente no mesmo lugar, pode haver algum outro problema que
+  exija a intervenção de um desenvolvedor.
+  
+  Se a versão que esteja tentando compilar seja a GIT, aguarde algumas
+  horas ou, um dia inteiro até que os desenvolvedores resolvam o
+  problema. Nestes casos não é necessário reportar o erro, pois o código
+  fonte do MAME no GIT é atualizado a todo instante.
 
 * Para que o código fonte do MAME possa ser compilado, há toda uma
   estrutura que precisa ser configurada, no momento que o comando
-  **make** é executado, essa estrutura cria diversos outros aquivos
-  **makefile** onde todas as opções escolhidas são salvas e usadas
-  durante a compilação. Se durante a compilação for necessário alterar
+  **make** é executado, são criados diversos outros aquivos **makefile**
+  onde todas as opções escolhidas são salvas e usadas durante a
+  compilação. Se durante a compilação for necessário alterar
   uma opção ou adicionar outras, é **obrigatório** usar a opção
-  **REGENIE=1** junto com as novas opções para que toda essa estrutura
-  leve em consideração as novas opções e que a mesma seja replicada
-  internamente.
+  **REGENIE=1** para reconfigurar toda a estrutura com as novas opções.
 
 .. raw:: latex
 
 	\clearpage
 
-* Durante o processo de compilação são gerados arquivos objeto ***.o**,
+* Durante o processo de compilação são gerados arquivos objetos ***.o**,
   arquivos de arquivamento ***.a** dentre vários outros, é importante
   que seja feito um **make clean** sempre após uma atualização do código
-  fonte do MAME, quando for fazer uma :ref:`compilação cruzada
-  <mame-crosscompilation>` ou quando for customizar uma compilação.
-  No geral é uma boa prática fazer um **make clean** antes do make para
-  evitar qualquer residual de compilações anteriores.
-  
+  fonte do MAME com o comando ``git pull`` quando for fazer uma
+  :ref:`compilação cruzada <mame-crosscompilation>` ou quando for
+  personalizar uma compilação.
+
   Esta opção faz com que todo o diretório **build** seja apagado, este
-  diretório nada mais é do que um espaço auxiliar usado pela estrutura
+  diretório nada mais é do que um espaço auxiliar usado pelo processo
   de compilação.
 
-* É possível usar os dois comandos em sequência usando **&&** como é
-  mostrado abaixo:
+  É possível atualizar o código fonte com o comando ``git pull`` seguido
+  de ``make REGENIE=1`` para compilar apenas os novos arquivos e
+  aproveitar os arquivos já compilados, porém, não é recomendável uma
+  vez que isso pode causar erros durante a emulação. É uma boa prática
+  fazer um **make clean** antes do make para evitar qualquer residual
+  das compilações anteriores.
+
+* Use dois comandos em sequência com **&&** como é mostrado abaixo:
   
 		``make clean && make <opções>``
   

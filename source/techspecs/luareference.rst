@@ -4340,12 +4340,12 @@ Métodos
 	Caso seja especificada, a condição deve ser uma expressão do
 	depurador que será avaliada sempre que o breakpoint for atingido.
 	A execução só será interrompida caso a expressão seja avaliada como
-	um valor diferente de zero. A a variável ``wpaddr`` é definida para
+	um valor diferente de zero. A variável ``wpaddr`` é definida para
 	o atual endereço que acionou o watchpoint, a variável ``wpdata`` é
 	definida para o dado que está sendo lido ou gravado, a variável
 	``wpsize`` é definida para o tamanho do dado em bytes.
 
-	Caso a condição não seja definida, ela sempre será ativa.
+	Caso a condição não seja definida, ela sempre estará ativa.
 
 **debug:wpenable([wp])**
 

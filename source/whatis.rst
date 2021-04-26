@@ -17,12 +17,12 @@ O principal objetivo do MAME é preservar décadas de história impedindo
 que com a evolução da tecnologia este importante software "vintage" seja
 esquecido e se perca ao longo tempo. Isso se torna possível usando o
 próprio código fonte do MAME para documentar o funcionamento do
-hardware original. Com a evolução do desenvolvimento do MAME,
+equipamento físico original. Com a evolução do desenvolvimento do MAME,
 programas e jogos que foram originalmente desenvolvidos para rodarem
-apenas no seu hardware original, agora através da emulação é possível
-rodá-los novamente usando um PC moderno, sendo referência ao
-funcionamento interno das máquinas emuladas e um efeito colateral bem
-vindo, este porém não é o foco principal do projeto.
+apenas no seu equipamento físico original, agora através da emulação é
+possível rodá-los novamente usando um PC moderno, sendo referência ao
+funcionamento interno das máquinas emuladas e um efeito colateral
+bem-vindo, este, porém não é o foco principal do projeto.
 
 Não é nossa intenção infringir quaisquer direitos autorais assim como as
 patentes dos jogos originais. O MAME e todo seu código-fonte é de
@@ -39,37 +39,38 @@ II. Custo
 O MAME é gratuito, assim como seu código fonte.
 
 O projeto como um todo é distribuído através da Licença Pública Geral
-GNU, versão 2 ou mais recente (GPL-2.0+), porém a maior parte do código
-- incluindo a funcionalidade principal - também estão disponíveis
+GNU, versão 2 ou mais recente (GPL-2.0+), porém, a maior parte do
+código, incluindo a funcionalidade principal, também estão disponíveis
 através da clausula Nº 3 da licença BSD (3-Clause BSD License).
 
 
 III. Software em formato de imagem
 ----------------------------------
 
-Os formatos de imagem de mídias como ROM, CD, disco rígido dentre outros
-formatos, são materiais protegidos por direitos autorais.
-Eles não podem ser distribuídos sem a permissão **explícita** dos
-seu responsáveis que detém a propriedade intelectual destes direitos,
-tão pouco são "abandonware" [1]_ e qualquer dos software compatíveis com
-o MAME jamais perdem os seus direitos autorais.
+Os formatos de imagem de mídias como ROM, CD, CD-ROM, disco rígido
+dentre outros, são materiais protegidos por direitos autorais.
+Eles não podem ser distribuídos sem uma permissão **explícita** dos
+seus responsáveis que detém a propriedade intelectual destes direitos,
+tão pouco são "abandonware" [1]_ e qualquer dos programas compatíveis
+com o MAME jamais perdem os seus direitos autorais.
 
 **O MAME NÃO FOI CRIADO E TÃO POUCO SE DESTINA A SER USADO COMO UMA
 FERRAMENTA DE PIRATARIA OU DE VIOLAÇÃO DE DIREITOS AUTORAIS EM MASSA.
-PORTANTO SOMOS VEEMENTEMENTE CONTRA QUE O MAME SEJA COMERCIALIZADO,
+PORTANTO, SOMOS VEEMENTEMENTE CONTRA QUE O MAME SEJA COMERCIALIZADO,
 ANUNCIADO OU VINCULADO A QUALQUER TIPO DE RECURSOS QUE FORNEÇAM CÓPIAS
-ILEGAIS DE ROM, CD, DISCO RÍGIDO OU OUTRAS IMAGENS DE MÍDIA.**
+ILEGAIS DE ROM, CD, CD-ROM, DISCO RÍGIDO OU OUTRAS IMAGENS DE MÍDIA DE
+QUALQUER TIPO.**
 
 
 IV. Obras derivativas
 ---------------------
 
-O MAME é uma marca registrada, caso queira usar o nome **MAME** como
-parte do seu trabalho ou derivado dele é obrigatório um pedido de
-permissão de uso prévio.
+MAME é uma propriedade intelectual com marca registrada, caso queira
+usar o nome **MAME** como parte do seu trabalho ou derivado dele, **É
+OBRIGATÓRIO** um pedido prévio de permissão de uso.
 
-A versão do MAME deve refletir o número da versão usada em qualquer
-trabalho derivado dele.
+A versão do MAME deve refletir o número da versão usada no momento em
+qualquer trabalho que seja derivado dele.
 
 
 V. Mais informações e contato legal
@@ -84,8 +85,8 @@ https://www.mamedev.org/
 | **MAME é uma marca registrada e propriedade de Gregory Ember**
 |
 
-.. [1]	Abandonware é um software que foi descontinuado e não é mais
-		desenvolvido, mantido, comercializado seja porque ficou
+.. [1]	Abandonware é um "software" que foi descontinuado que não é mais
+		desenvolvido, mantido ou comercializado, seja porque ficou
 		obsoleto, a empresa não existe mais ou qualquer outro motivo que
-		ao olhar do usuário o software foi abandonado, daí o termo
-		*abandonware* ou **abandoned software**. (Nota do Tradutor)
+		ao olhar do usuário o "software" tenha sido abandonado, daí o
+		termo *abandonware* ou **abandoned software**.
