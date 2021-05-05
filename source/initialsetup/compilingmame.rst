@@ -999,7 +999,7 @@ Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
 problemas, certifique-se que a versão mais recente esteja instalada. ::
 
-	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel
+	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel pulseaudio-libs-devel
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`.
@@ -1026,7 +1026,7 @@ Arch Linux
 Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. ::
 
-	sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5 libxi
+	sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5 libxi libpulse
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`
