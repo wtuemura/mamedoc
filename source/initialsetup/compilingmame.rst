@@ -1088,7 +1088,7 @@ Primeiro, baixe e instale o **Emscripten 1.37.29** ou mais recente
 segundo as instruções no `site oficial <https://emscripten.org/docs/gett
 ing_started/downloads.html>`_.
 
-Depois de instalar o Emscripten, será possível compilar o MAME direto,
+Depois de instalar o *Emscripten*, será possível compilar o MAME direto,
 usando a ferramenta '**emmake**'. O MAME completo é muito grande para
 ser carregado numa página web de uma só vez, então é preferível que seja
 compilado versões menores e separadas do MAME através do parâmetro
@@ -1097,9 +1097,9 @@ MAME: ::
 
 	emmake make SUBTARGET=pacmantest SOURCES=src/mame/drivers/pacman.cpp
 
-O parâmetro *SOURCES* deve apontar para pelo menos um arquivo driver
-*\*.cpp*. O comando make tentará localizar e reunir todas as dependências
-para compilar o executável do MAME junto com o driver definido. No
+O parâmetro *SOURCES* deve apontar para pelo menos um arquivo *driver*
+*\*.cpp*. O comando *make* tentará localizar e reunir todas as dependências
+para compilar o executável do MAME junto com o *driver* definido. No
 entanto porém, caso ocorra algum erro e o processo não encontre algum
 arquivo, é necessário declarar manualmente um ou mais arquivos que
 faltam (separados por vírgula). Por exemplo: ::
@@ -1110,14 +1110,27 @@ O valor do parâmetro *SUBTARGET* serve apenas para se diferenciar dentre
 as várias compilações existente e não precisa ser definido caso não seja
 necessário.
 
-O Emscripten oferece suporte à compilação do WebAssembly com um loader
-de JavaScript em vez do JavaScript inteiro, esse é o padrão em versões
-mais recentes. Para ligar ou desligar o WebAssembly de modo forçado,
-adicione ``WEBASSEMBLY=1`` ou ``WEBASSEMBLY=0`` ao comando make.
+O *Emscripten* oferece suporte à compilação do *WebAssembly* com um
+*loader* de *JavaScript* em vez do *JavaScript* inteiro, esse é o padrão
+nas versões mais recentes. Para impor a ativação ou não do
+*WebAssembly*, adicione ``WEBASSEMBLY=1`` ou ``WEBASSEMBLY=0`` ao
+comando *make, respectivamente.
 
-Outros comandos make também poderão ser usados como foi o
-parâmetro **-j** que foi usado visando fazer uso da compilação
-multitarefa.
+Outros parâmetros para o *make* também poderão ser usados assim como foi
+o **-j** para fazer o uso da compilação em *multithread*.
+
+.. note::
+
+		Ao pé da letra, *thread*, significa cordão ou linha. Na
+		computação uma *thread* são diversas tarefas realizadas dentro
+		de um processo, por exemplo, ao rodar o MAME você inicia um
+		processo, dentro deste processo várias "linhas" (*threads*) são
+		criadas onde cada uma delas serão lidas e processadas pelo
+		processador.
+		
+		Então *multithread* é a capacidade do processador e do sistema
+		operacional de organizar e processar as *threads* de forma
+		independente e simultânea.
 
 Quando a compilação atinge a fase da emcc, será exibido uma
 certa quantidade de mensagens de aviso do tipo *"unresolved symbol"*.
@@ -1137,6 +1150,10 @@ parâmetros de linha de comando para o executável.
 
 O `Projeto Emularity <https://github.com/db48x/emularity>`_ oferece tal
 loader.
+
+.. raw:: latex
+
+	\clearpage
 
 Existem amostras de arquivos .html nesse repositório que pode ser
 editado para refletir as suas configurações pessoais e apontar o caminho
@@ -1174,10 +1191,9 @@ Opções gerais para a compilação
 
 **PREFIX_MAKEFILE**
 
-  Define um makefile a ser incluso no processo de compilação que
-  contenha opções adicionais customizadas por você e que terá
-  prioridade caso o mesmo seja encontrado (o nome predefinido é
-  **useroptions.mak**).
+  Define um arquivo *make* que será incluído no processo de compilação
+  que tenha opções adicionais e que terá prioridade caso o mesmo seja
+  encontrado (o nome predefinido é **useroptions.mak**).
   Pode ser útil caso queira alternar entre diferentes configurações de
   compilação de forma simples e rápida.
 
