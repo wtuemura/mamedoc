@@ -1490,6 +1490,16 @@ Opções para a configuração dos diretórios principais
 
 		mame -comment_directory D:\mame\comments
 
+.. _mame-commandline-sharedirectory:
+
+**-share_directory** [<*caminho*>]
+
+	Define o diretório que será compartilhado com a máquina ou o sistema
+	que está sendo emulado. Por exemplo, no caso de um sistema
+	operacional compatível, os arquivos que forem colocados neste
+	diretório será compartilhado com o host emulado. ::
+
+		mame -share_directory D:\mame\share
 
 .. raw:: latex
 

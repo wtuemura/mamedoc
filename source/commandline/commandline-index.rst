@@ -77,16 +77,19 @@ Opções de MIDI e rede
 | :ref:`midiin <mame-commandline-midiin>`
 | :ref:`midiout <mame-commandline-midiout>`
 | :ref:`listnetwork <mame-commandline-listnetwork>`
+|
 
 Opções de saída das notificações de tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`output <mame-commandline-output>`
+|
 
 Opções para a configuração
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`noreadconfig <mame-commandline-noreadconfig>`
+|
 
 Opções para a configuração dos diretórios principais
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,6 +114,7 @@ Opções para a configuração dos diretórios principais
 | :ref:`snapshot_directory <mame-commandline-snapshotdirectory>`
 | :ref:`diff_directory <mame-commandline-diffdirectory>`
 | :ref:`comment_directory <mame-commandline-commentdirectory>`
+| :ref:`share_directory <mame-commandline-sharedirectory>`
 |
 
 Opções para a gravação e a reprodução do estado da emulação
@@ -125,6 +129,7 @@ Opções para a gravação e a reprodução do estado da emulação
 | :ref:`exit_after_playback <mame-commandline-exitafterplayback>`
 | :ref:`record <mame-commandline-record>`
 | :ref:`record_timecode <mame-commandline-recordtimecode>`
+|
 
 Opções para a gravação de áudio e vídeo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,6 +137,7 @@ Opções para a gravação de áudio e vídeo
 | :ref:`mngwrite <mame-commandline-mngwrite>`
 | :ref:`aviwrite <mame-commandline-aviwrite>`
 | :ref:`wavwrite <mame-commandline-wavwrite>`
+|
 
 Opções para os instantâneos de tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,6 +146,7 @@ Opções para os instantâneos de tela
 | :ref:`snapsize <mame-commandline-snapsize>`
 | :ref:`snapview <mame-commandline-snapview>`
 | :ref:`[no]snapbilinear <mame-commandline-nosnapbilinear>`
+|
 
 Opções relacionadas a performance e a velocidade da emulação
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,6 +161,7 @@ Opções relacionadas a performance e a velocidade da emulação
 | :ref:`numprocessors <mame-commandline-numprocessors>`
 | :ref:`bench <mame-commandline-bench>`
 | :ref:`[no]lowlatency <mame-commandline-lowlatency>`
+|
 
 .. raw:: latex
 
@@ -253,6 +261,7 @@ Opções de vídeo OpenGL GLSL
 | :ref:`glsl_shader_mame[0-9] <mame-commandline-glslshadermame>`
 | :ref:`glsl_shader_screen[0-9] <mame-commandline-glslshaderscreen>`
 | :ref:`gl_glsl_vid_attr <mame-commandline-glglslvidattr>`
+|
 
 .. raw:: latex
 
@@ -270,6 +279,7 @@ Opções para a configuração do áudio
 | :ref:`pa_api <mame-commandline-pa_api>`
 | :ref:`pa_device <mame-commandline-pa_device>`
 | :ref:`pa_latency <mame-commandline-pa_latency>`
+|
 
 Opções para as configurações de diferentes entradas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -303,6 +313,7 @@ Opções de entrada habilitadas automaticamente
 | :ref:`lightgun_device <mame-commandline-lightgundevice>`
 | :ref:`positional_device <mame-commandline-positionaldevice>`
 | :ref:`mouse_device <mame-commandline-mousedevice>`
+|
 
 .. raw:: latex
 
@@ -350,6 +361,7 @@ Opções diversas
 | :ref:`ui_mouse <mame-commandline-uimouse>`
 | :ref:`language <mame-commandline-language>`
 | :ref:`[no]nvram_save <mame-commandline-nvramsave>`
+|
 
 .. raw:: latex
 
@@ -372,6 +384,10 @@ Opções do servidor HTTP
 | :ref:`http_port <mame-commandline-httpport>`
 | :ref:`http_root <mame-commandline-httproot>`
 |
+
+.. raw:: latex
+
+	\clearpage
 
 Configurações específicas para o Windows
 ----------------------------------------
@@ -397,11 +413,14 @@ Opções para o modo janela
 
 | :ref:`menu <mame-wcommandline-menu>`
 | :ref:`attach_window <mame-wcommandline-attach_window>`
+|
+
 
 Opções para a entrada de controle para o Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]dual_lightgun <mame-wcommandline-duallightgun>`
+|
 
 .. raw:: latex
 
@@ -419,21 +438,25 @@ Opções relacionadas a performance (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`sdlvideofps <mame-scommandline-sdlvideofps>`
+|
 
 Opções de vídeo (SDL)
 ~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]centerh <mame-scommandline-centerh>`
 | :ref:`[no]centerv <mame-scommandline-centerv>`
+|
 
 Configuração para tela inteira (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`useallheads <mame-scommandline-useallheads>`
+|
 
 Configuração para diferentes tipos de espaços de cor para vídeo (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`scalemode <mame-scommandline-scalemode>`
+|
 
 Configurações para o mapeamento de teclado (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -447,19 +470,17 @@ Configurações para o mapeamento de controle joystick (SDL)
 
 | :ref:`joyidx <mame-scommandline-joyidx>`
 | :ref:`sixaxis <mame-scommandline-sixaxis>`
+|
 
 Configurações para o mapeamento do mouse (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`mouse_index <mame-scommandline-mouseindex>`
+|
 
 Configurações para o mapeamento do teclado (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`mouse_index <mame-scommandline-keybidx>`
-
-.. raw:: latex
-
-	\clearpage
-
+|
 
 Opções para a configuração dos drivers (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
