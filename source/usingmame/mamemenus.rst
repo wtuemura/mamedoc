@@ -2283,6 +2283,83 @@ Permite que você configure individualmente cada máquina selecionada.
 
   Salva a configuração apenas para a máquina selecionada.
 
+.. raw:: latex
+
+	\clearpage
+
+.. _mamemenu-plugins:
+
+Plug-ins
+--------
+
+* **Autofire plugin**
+
+  Configuração de turbo dos botões.
+
+* **Lua SLAX XML parser**
+
+  Interpretador `SLAXML <https://github.com/Phrogz/SLAXML>`_.
+
+* **Hiscore support**
+
+  Suporte para salvar a pontuação das máquinas ou *hiscore* em um
+  arquivo ``hiscore.dat``
+
+* **Console plugin**
+
+  Ativa um console de comandos lua no prompt de comando ou no terminal
+  usado para invocar o MAME.
+
+* **json library**
+
+  Ativa o suporte para arquivos
+  `json <http://dkolf.de/src/dkjson-lua.fsl/home>`_ (*JavaScript Object
+  Notation*) usando Lua.
+
+* **Dummy test plugin**
+
+  Um exemplo vazio com um teste que não faz nada de como criar o seu
+  plug-in.
+
+* **GDB stub plugin**
+
+  Plug-in de depuração do MAME para exibir a ordem dos registros gdb.
+
+* **Cheat plugin**
+
+  Permite a ativação de uma trapaça sem precisar iniciar o mame com a
+  opção ``-cheat``.
+
+* **Timer plugin**
+
+  Registra o tempo jogado ou o tempo que ficou em uma determinada
+  máquina.
+
+* **Data plugin**
+
+  Permite o uso de arquivos \*.dat com informações que serão exibidas
+  para o usuário como o ``command.dat``, estes arquivos ficam dentro
+  do diretório **dats**.
+
+* **Cheat finder helper library**
+
+  Biblioteca para a assistência de localização de novas trapaças.
+
+* **Discord presence**
+
+  Registra a sua presença no `Discord <https://discord.com>`_,
+  exibindo o que você está jogando.
+
+* **Layout helper plugin**
+
+  Usado quando o seu layout precisar rodar scripts Lua.
+
+* **IOPrt name/translation plugin**
+
+  Salva todos os nomes das portas usada pela máquina em
+  ``ctrl\portname\nome_da_maquina.json``. Para usar, inicie a máquina,
+  vá em *Plug-ins* e selecione **Portas das entradas**.
+
 ..	[#] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME com
 		interface gráfica.
 ..	[#] O site do `MAMEICONS <http://icons.mameworld.info/>`_ e
