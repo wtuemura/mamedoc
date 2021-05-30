@@ -406,7 +406,7 @@ mais informações veja :ref:`SSE2 <mame-compilation-sse2>`.
 É possível compilar o MAME usando todas as extensões disponíveis do seu
 processador e não apenas a SSE2 desde que seja também compatível com o
 compilador que estiver usando, use a opção **ARCHOPTS** com
-**-march=native** no seu comando de compilação. Habilitar essas opções
+**-march=native** no seu comando de compilação. Ao ativar estas opções
 pode ou não tirar o máximo de performance possível do seu processador,
 assim como o MAME pode ou não se beneficiar de todas elas. O comando
 completo então ficaria assim, note que a opção **SSE2=1** foi removida.
@@ -422,7 +422,7 @@ problema que não existe na versão oficial, logo, a sua sorte com o uso
 dela pode variar bastante. Por isso saiba que oficialmente os
 desenvolvedores do MAME **não apoiam** o uso dessa opção.
 
-Execute o comando abaixo para saber quais as extensões serão habilitadas
+Execute o comando abaixo para saber quais as extensões serão ativadas
 com a opção **-march=native**:
 
 	``gcc -march=native -Q --help=target|grep enabled``
@@ -474,7 +474,7 @@ o **-march=native** vai usar estas extensões do seu processador: ::
 	-mxop                       		[enabled]
 	-mxsave                     		[enabled]
 
-Apesar de ter todas essas extensões habilitadas, incluindo outras
+Apesar de ter todas essas extensões ativadas, incluindo outras
 variantes do SSE como a SSE3, SSE4 e assim por diante, não espere que a
 performance do MAME aumente de forma considerável, há máquinas onde não
 se nota nada de diferente, muito pelo contrário, há perda em
@@ -592,14 +592,14 @@ o seu **useroptions.mak**: ::
 	#SSE3=1
 	#
 	# Nível de otimização.
-	# 0 Desabilita a otimização favorecendo a depuração.
+	# 0 Desativa a otimização favorecendo a depuração.
 	# 1 Otimização simples sem impacto direto no tamanho final do executável.
-	# 2 Habilita a maioria das otimizações visando performance e tamanho reduzido.
+	# 2 Ativa a maioria das otimizações visando performance e tamanho reduzido.
 	# 3 Máxima otimização ao custo de um tamanho final maior. (padrão)
-	# s Habilita apenas as otimizações que não impactem no tamanho final.
+	# s Ativa apenas as otimizações que não impactem no tamanho final.
 	OPTIMIZE=3
 	#
-	# Essa opção habilita todas as extensões do seu processador, se for usar
+	# Essa opção ativa todas as extensões do seu processador, se for usar
 	# não use as opções SSE2 e SSE3.
 	#ARCHOPTS=-march=native
 	# <- Opções Relacionados com a CPU ->
@@ -1114,7 +1114,7 @@ O *Emscripten* oferece suporte à compilação do *WebAssembly* com um
 *loader* de *JavaScript* em vez do *JavaScript* inteiro, esse é o padrão
 nas versões mais recentes. Para impor a ativação ou não do
 *WebAssembly*, adicione ``WEBASSEMBLY=1`` ou ``WEBASSEMBLY=0`` ao
-comando *make, respectivamente.
+comando *make*, respectivamente.
 
 Outros parâmetros para o *make* também poderão ser usados assim como foi
 o **-j** para fazer o uso da compilação em *multithread*.
@@ -1435,8 +1435,8 @@ Recursos opcionais
 
 **DEBUG**
 
-  Defina como **1** para habilitar as rotinas de verificações adicionais
-  e diagnósticos habilitando o modo de depuração. É importante que
+  Defina como **1** para ativar as rotinas de verificações adicionais
+  e diagnósticos ativando o modo de depuração. É importante que
   saiba que essa opção tem impacto direto na performance do emulador e
   só tem utilidade para desenvolvedores, não compile o MAME com esta
   opção sem saber o que está fazendo. Veja também
@@ -1453,9 +1453,9 @@ Recursos opcionais
 
 		* **0**: Caso queira desabilitar a otimização e favorecendo a depuração.
 		* **1**: Otimização simples sem impacto direto no tamanho final do executável nem no tempo de compilação.
-		* **2**: Habilita a maioria das otimizações visando performance e tamanho reduzido.
+		* **2**: Ativa a maioria das otimizações visando performance e tamanho reduzido.
 		* **3**: Este é o valor predefinido, em favor da performance ao custo de um executável maior.
-		* **s**: Habilita apenas as otimizações que não impactem no tamanho final do executável.
+		* **s**: Ativa apenas as otimizações que não impactem no tamanho final do executável.
 
   A compatibilidade destes valores dependem do compilador que esteja
   sendo usado.
@@ -1464,7 +1464,7 @@ Recursos opcionais
 
 **SYMBOLS**
 
-	Defina como **1** para habilitar a inclusão de símbolos adicionais
+	Defina como **1** para ativar a inclusão de símbolos adicionais
 	de depuração para a plataforma que o executável está sendo
 	compilado, além dos já inclusos (muitas plataformas por predefinição
 	já incluem estes símbolos e os nomes das respectivas funções).
@@ -1660,18 +1660,18 @@ Recursos do código fonte fortify da biblioteca GNU C
 
 A biblioteca GNU C possui opções para realizar verificações durante a
 compilação e verificações durante a execução, use ``_FORTIFY_SOURCE``
-como ``1`` para habilitar o recurso. Essa opção visa melhorar a
+como ``1`` para ativar o recurso. Essa opção visa melhorar a
 segurança ao custo de uma pequena sobrecarga no executável. O MAME não é
 um programa seguro e nós não recomendamos que o MAME seja compilado com
 essa opção definida.
 
 Algumas distribuições Linux como Gentoo e Ubuntu possuem versões
-modificadas do GNU GCC que já vem com o ``_FORTIFY_SOURCE`` habilitado
+modificadas do GNU GCC que já vem com o ``_FORTIFY_SOURCE`` ativado
 com ``1``. Isso gera problemas para a maioria dos projetos e não apenas
 para o MAME, pois afeta diretamente a performance do emulador, dificulta
 que essas verificações adicionais sejam desabilitadas, assim como torna
 difícil definir outros valores para ``_FORTIFY_SOURCE`` como ``2`` por
-exemplo, que habilita verificações ainda mais restritas.
+exemplo, que ativa verificações ainda mais restritas.
 
 Neste caso, você deve realmente pegar no pé dos mantenedores da sua
 distribuição preferida, deixando claro que você não quer que o GNU GCC
