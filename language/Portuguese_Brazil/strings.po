@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-29 22:30+1000\n"
-"PO-Revision-Date: 2021-05-30 05:23-0300\n"
+"PO-Revision-Date: 2021-05-30 06:11-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -728,7 +728,7 @@ msgstr "X ou Y (Auto)"
 
 #: src/frontend/mame/ui/videoopt.cpp:211
 msgid "Non-Integer Scaling"
-msgstr "Escale a tela com valores não inteiros"
+msgstr "Escale a tela com valores não racionais"
 
 #: src/frontend/mame/ui/videoopt.cpp:214
 msgid "Maintain Aspect Ratio"
