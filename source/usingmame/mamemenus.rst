@@ -2354,7 +2354,7 @@ Plug-ins
 
   Usado quando o seu layout precisar rodar scripts Lua.
 
-* **IOPrt name/translation plugin**
+* **IOPort name/translation plugin**
 
   Salva todos os nomes das portas usada pela máquina em
   ``ctrl\portname\nome_da_maquina.json``. Para usar, inicie a máquina,
