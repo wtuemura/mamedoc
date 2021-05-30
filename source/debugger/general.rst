@@ -27,7 +27,7 @@ para uma melhor descrição de cada comando.
 | :ref:`debugger-command-rewind` -- volta no tempo carregando o estado de retrocesso mais recente
 | :ref:`debugger-command-statesave` -- salva um arquivo de estado para o driver atual
 | :ref:`debugger-command-stateload` -- carrega um arquivo de estado para o driver atual
-| :ref:`debugger-command-snap` -- salva um instantâneo da tela.
+| :ref:`debugger-command-snap` -- salva um print da tela.
 | :ref:`debugger-command-source` -- lê os comandos do <*filename*> e os executa um por um
 | :ref:`debugger-command-quit` -- sai do MAME e do depurador
 |
@@ -333,17 +333,17 @@ snap
 
 |  **snap** [[<*filename*>], <*scrnum*>]
 |
-| O comando snap tira um instantâneo da exibição de vídeo atual e a salva no diretório snapshot. Caso o <*filename*> seja definido explicitamente, uma única captura de tela *<scrnum>* é salva sob o nome do arquivo solicitado. Caso <*filename*> seja omitido, todas as telas são salvas usando as mesmas regras predefinidas que a tecla "salvar instantâneo" no MAME.
+| O comando snap tira um print da exibição de vídeo atual e a salva no diretório snapshot. Caso o <*filename*> seja definido explicitamente, uma única captura de tela *<scrnum>* é salva sob o nome do arquivo solicitado. Caso <*filename*> seja omitido, todas as telas são salvas usando as mesmas regras predefinidas que a tecla "salvar print da tela" no MAME.
 |
 | Exemplos:
 |
 |  ``snap``
 |
-| Obtém um instantâneo da tela de vídeo atual e salva no próximo nome de arquivo não conflitante no diretório **snapshot**.
+| Obtém um print da tela de vídeo atual e salva no próximo nome de arquivo não conflitante no diretório **snapshot**.
 |
 |  ``snap shinobi``
 |
-| Obtém um instantâneo da tela de vídeo atual e a salva como 'shinobi.png' no diretório **snapshot**.
+| Obtém um print da tela de vídeo atual e a salva como 'shinobi.png' no diretório **snapshot**.
 |
 | Voltar para :ref:`debugger-general-list`
 |

@@ -370,13 +370,13 @@ Métodos
 
 **video:snapshot()**
 
-	Salva os arquivos do instantâneo da tela de acordo com a
+	Salva os arquivos do print da tela de acordo com a
 	configuração atual. Caso o MAME esteja configurado para obter os
-	instantâneos da tela emulada de forma nativa, um instantâneo da tela
-	será salvo para todas as telas emulada que estiverem visíveis em uma
-	janela ou tela do host com a configuração da exibição atual.
-	Caso o MAME esteja configurado para obter os instantâneos da tela
-	emulada de forma nativa ou seja o sistema não tiver uma tela
+	prints da tela emulada de forma nativa, o print da tela que será
+	salvo será de todas as telas que estiverem visíveis numa janela ou
+	da tela do host com a configuração da exibição atual.
+	Caso o MAME esteja configurado para obter os prints da tela
+	emulada de forma nativa, ou seja, o sistema não tiver uma tela
 	emulada, um print da tela será salvo usando a visualização
 	selecionada no momento.
 
@@ -384,13 +384,13 @@ Métodos
 
 	Interrompe todas as gravações de vídeo em andamento e começa a
 	gravar as telas emuladas que estão visíveis ou a exibição do
-	instantâneo atual da tela, dependendo se o MAME está configurado
-	para tirar instantâneos nativos da tela emulada. Caso o nome do
-	arquivo não seja informado, o nome do arquivo do instantâneo da tela
+	print atual da tela, dependendo se o MAME está configurado
+	para obter os prints nativos da tela emulada. Caso o nome do
+	arquivo não seja informado, o nome do arquivo do print da tela
 	configurada será usada.
 	Caso o nome do arquivo seja um caminho relativo, ele será
 	interpretado em relação ao primeiro diretório da configuração do
-	instantâneo da tela. Se o formato for informado ele deve ser
+	print da tela. Se o formato for informado ele deve ser
 	``"avi"`` ou ``"mng"``. Se o formato não for informado, a
 	predefinição é o AVI.
 
@@ -400,16 +400,16 @@ Métodos
 
 **video:snapshot_size()**
 
-	Retorna a largura e a altura em pixels dos instantâneos criados com
-	a configuração atual do destino e o estado da tela emulada. Isso
+	Retorna a largura e a altura em pixels dos prints da tela criados
+	com a configuração atual do destino e o estado da tela emulada. Isso
 	pode ser configurado de forma explicita pelo usuário, calculado com
-	base na visualização do instantâneo selecionado e na resolução de
+	base na visualização do print selecionado e na resolução de
 	quaisquer telas visíveis e que estejam sendo emuladas.
 
 **video:snapshot_pixels()**
 
-	Retorna os pixels de um instantâneo criado usando a configuração do
-	destino do instantâneo atual em inteiros com 32 bits e compactados
+	Retorna os pixels de um print criado usando a configuração do
+	destino do print atual em inteiros com 32 bits e compactados
 	em uma string binária na ordem Endian do host. Os pixels são
 	organizados em ordem maior da linha, da esquerda para a direita e de
 	cima para baixo.  Os valores do pixel são cores no formato RGB
@@ -463,7 +463,7 @@ Propriedades
 
 **video.snap_native** (somente leitura)
 
-	Um booleano que indica se o gerenciador do vídeo tirará instantâneos
+	Um booleano que indica se o gerenciador do vídeo tirará prints
 	da tela nativa da emulação. Além da definição da configuração
 	relevante, o sistema emulado deve ter pelo menos uma tela que esteja
 	sendo emulada.
@@ -476,7 +476,7 @@ Propriedades
 **video.snapshot_target** (somente leitura)
 
 	Um :ref:`alvo do renderizador <luareference-render-target>` usado
-	para produzir instantâneos e para as gravações de vídeo.
+	para produzir prints da tela e para as gravações de vídeo.
 
 .. raw:: latex
 
@@ -1228,8 +1228,8 @@ Métodos
 **screen:snapshot([nome_do_arquivo])**
 
 	Salva um print da tela em formato PNG. Caso nenhum nome do arquivo
-	seja informado, o caminho do instantâneo configurado e o
-	formato do nome serão usados. Caso o nome do arquivo informado não
+	seja informado, o caminho padrão configurado do print e do formato
+	do nome serão usados. Caso o nome do arquivo informado não
 	seja um caminho absoluto, ele é interpretado em relação ao primeiro
 	caminho configurado. O nome do arquivo pode conter variáveis que
 	serão substituídas pelo nome do sistema ou por um número

@@ -503,9 +503,9 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **cheats** no
 		diretório raiz do MAME. [#]_
 
-* **Instantâneos da tela**
+* **Prints da tela**
 
-  Define o caminho do diretório onde serão armazenados os instantâneos
+  Define o caminho do diretório onde serão armazenados os prints
   da tela e a gravação de vídeo. [#]_
 
 		O valor predefinido é um diretório chamado **snaps** no
@@ -588,7 +588,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * **Chefes**
 
   Define o caminho do diretório onde se encontram as imagens com os
-  instantâneos de tela dos chefes de fase. [#]_
+  prints de tela dos chefes de fase. [#]_
 
 		O valor predefinido é um diretório chamado **bosses** no
 		diretório raiz do MAME.
@@ -612,7 +612,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * **Fim do jogo**
 
   Define o caminho do diretório onde se encontram as imagens com os
-  instantâneos de tela mostrando o **GAME OVER**.
+  prints de tela mostrando o **GAME OVER**.
 
 		O valor predefinido é um diretório chamado **gameover** no
 		diretório raiz do MAME.
@@ -636,7 +636,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * **Placares**
 
   Define o caminho do diretório onde se encontram as imagens com os
-  instantâneos de tela mostrando as maiores pontuações. [#]_
+  prints de tela mostrando as maiores pontuações. [#]_
 
 		O valor predefinido é um diretório chamado **scores** no
 		diretório raiz do MAME.
@@ -644,7 +644,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * **Versus**
 
   Define o caminho do diretório onde se encontram as imagens com os
-  instantâneos de tela mostrando as maiores pontuações.
+  prints de tela mostrando as maiores pontuações.
 
 		O valor predefinido é um diretório chamado **versus** no
 		diretório raiz do MAME.
@@ -836,7 +836,7 @@ Opções Diversas
 
 	\clearpage
 
-* **Mantnha o aspecto 4:3 para os instantâneos de tela**
+* **Mantenha o aspecto 4:3 para os prints de tela**
 
   Faz com que todos os prints da tela mantenham uma proporção de
   4:3.
@@ -2125,7 +2125,7 @@ Opções do Estado/Playback
 
 	O valor predefinido é **100**
 
-* **Bilinear filtering for snapshots / Filtro bilinear para os instantâneos**
+* **Bilinear filtering for snapshots / Filtro bilinear para os prints da tela**
 
   Define se os vídeos ou os prints da tela terão o filtro aplicado.
 
