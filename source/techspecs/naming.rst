@@ -141,7 +141,7 @@ regional ou faça uma descrição concisa entre as diferenças do hardware
 com preferência aos números dos conjuntos arbitrários por exemplo.
 Cerque o texto de desambiguação entre parênteses, preserve a caixa
 original para os nomes e o texto da versão, porém use minúsculas para
-qualquer outra coisa exceto os nomes próprios.
+qualquer outra coisa exceto os nomes próprios e os acrônimos.
 
 .. raw:: latex
 
