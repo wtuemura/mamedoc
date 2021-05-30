@@ -99,8 +99,8 @@ Tecla             | Ação
 **F11**           | Alterna o indicador de velocidade.
 **Shift+F11**     | Alterna indicador interno de perfil (caso tenha sido compilado com).
 **Alt+F11**       | Grava vídeo renderizado com filtros HLSL.
-**F12**           | Salva um instantâneo de tela.
-**Alt Gr+F12**    | Tira um instantâneo da tela usando filtros HLSL.
+**F12**           | Salva um print da tela.
+**Alt Gr+F12**    | Tira um print da tela usando filtros HLSL.
 **Insert**        | [**APENAS MS WINDOWS, NÃO SDL**] Avanço rápido.
                   | Enquanto a tecla estiver pressionada, roda o jogo com
                   | o afogador desligado e com o pulo de quadros no máximo.
