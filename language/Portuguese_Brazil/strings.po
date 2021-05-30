@@ -728,7 +728,7 @@ msgstr "X ou Y (Auto)"
 
 #: src/frontend/mame/ui/videoopt.cpp:211
 msgid "Non-Integer Scaling"
-msgstr "Escale a tela com valores não racionais"
+msgstr "Escale a tela com valores racionais"
 
 #: src/frontend/mame/ui/videoopt.cpp:214
 msgid "Maintain Aspect Ratio"
