@@ -195,7 +195,7 @@ exemplo: ::
 
 	make clean && make OSD=sdl SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 -j5
 
-Ao final da compilação será gerado um arquivo **sdlmame64.exe**.
+Ao final da compilação será gerado um arquivo **sdlmame.exe**.
 
 Fedora Linux
 ~~~~~~~~~~~~
@@ -213,7 +213,7 @@ Para versões 64-bit: ::
 
 	make clean && make TARGETOS=windows CROSS_BUILD=1 OSD=sdl SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1 -j5
 
-Ao final da compilação será gerado um arquivo **sdlmame64.exe**.
+Ao final da compilação será gerado um arquivo **sdlmame.exe**.
 
 .. [1]	Cross compiling no Inglês. (Nota do tradutor)
 .. [2]	Todo o processo no meu computador leva cerca de 4 horas, AMD FX
