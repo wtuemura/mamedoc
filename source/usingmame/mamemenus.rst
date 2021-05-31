@@ -819,7 +819,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * **Prints da tela**
 
   Define o caminho do diretório onde serão armazenados os prints
-  da tela e a gravação de vídeo. [#]_
+  da tela e a gravação de vídeo.
 
 		O valor predefinido é um diretório chamado **snaps** no
 		diretório raiz do MAME.
@@ -2748,9 +2748,6 @@ Plug-ins
 		tais ícones e outras imagens para download.
 ..	[#] O site `Pugsy's Cheat <http://cheat.retrogames.com/>`_ é um dos
 		mais conhecidos que oferece um arquivo de trapaça para download.
-.. 	[#] Em alguns lugares as pessoas também conhecem como "*print de
-		tela*", "*print da tela*", "*captura de tela*", "*fazer um
-		printscreen*", "*fazer um print da tela*", etc.
 ..	[#] O site `MAME Channel <https://www.mamechannel.it/pages/titles.php>`_
 		oferece diferentes telas de títulos para download.
 ..	[#] É possível baixar essas imagens do site `EmuMovies
