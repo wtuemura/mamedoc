@@ -91,10 +91,10 @@ Os filtros disponíveis são:
 
 .. _mamemenu-nao-filtrado:
 
-* **Não filtrado**
+* **Sem filtro**
 
   Exibe toda a lista de máquinas conhecidas e cadastradas no catálogo
-  interno do MAME.
+  interno do MAME sem nenhum filtro.
 
 .. _mamemenu-disponivel:
 
@@ -170,6 +170,10 @@ Os filtros disponíveis são:
 	* **FreePlay**: Lista as máquinas **Arcade** do MAME que possuem a opção de poder jogar de graça.
 	* **MonoChrome**: Lista as máquinas separada por cores.
 	* **Resolution**: Lista as máquinas separadas por resolução.
+
+.. raw:: latex
+
+	\clearpage
 
 O site ainda oferece outros tipos de *.ini* como **version.ini** que
 separa as máquinas por versão em que elas apareceram pela primeira vez
@@ -264,9 +268,317 @@ MAME.
 
   Exibe uma lista de máquinas que usam orientação horizontal de tela.
 
+.. _mamemenu-filtro-personalizado:
+
 * **Filtro Personalizado**
 
   Todo o filtro criado será listado aqui.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _mamemenu-config-during-gameplay:
+
+Durante a emulação
+------------------
+
+Estas opções podem ser acessadas durante a emulação e estão acessíveis
+ao pressionar a tecla TAB.
+
+Entrada (geral)
+~~~~~~~~~~~~~~~
+
+* **Interface do usuário**
+
+  Consulte :ref:`mamemenu-general-inputs`.
+
+.. raw:: html
+
+	<p></p>
+
+* **Controles do jogador [1~10]**
+
+  Consulte :ref:`mamemenu-general-inputs-P1`.
+
+.. raw:: html
+
+	<p></p>
+
+* **Outros controles**
+
+  Consulte :ref:`Outros controles <mamemenu-other-controls>`.
+
+Entrada (esta máquina)
+~~~~~~~~~~~~~~~~~~~~~~
+
+Aqui as entradas podem variar bastante dependendo da máquina emulada.
+Aqui ficam as configurações que serão utilizadas apenas na máquina que
+estiver sendo emulada no momento, as configurações vão desde créditos,
+botões, acesso ao modo de serviço da máquina (caso seja um arcade) ou
+das teclas de um computador pessoal, etc.
+
+Chaves DIP
+~~~~~~~~~~
+
+Aqui ficam as chaves DIP, elas servem para definir as configurações da
+máquina (quando for relevante) como a quantidade de fichas necessárias
+para registrar 1 crédito, se a tela será invertida ou não, se a máquina
+ficará em silêncio ou tocará músicas enquanto ninguém a estiver
+jogando, etc.
+
+Sempre que uma chave for alterada, sempre selecione **Reinicie** para
+que a alteração seja aplicada. Em alguma máquina a ação já pode ser
+vista na tela, contudo, não é sempre o caso.
+
+Informação da contabilidade
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+É o registro interno da máquina que mostra o tempo total que ela ficou
+em execução e a quantidade de fichas que foram colocadas nela.
+
+Informação da máquina
+~~~~~~~~~~~~~~~~~~~~~
+
+Um breve descritivo do nome da máquina, o tipo do processador, do áudio
+e a resolução do vídeo.
+
+.. raw:: latex
+
+	\clearpage
+
+Controles deslizantes
+~~~~~~~~~~~~~~~~~~~~~
+
+* **Volume principal**
+
+  Faz o ajuste do volume do áudio principal do sistema que estiver sendo
+  emulado.
+
+.. raw:: html
+
+	<p></p>
+
+* **Volume com xxx Ch.x**
+
+  Faz o ajuste individual de cada canal de áudio, máquina com áudio mono
+  só tem o ``Ch.0``, já máquinas com canal estéreo possuem ``Ch.0``
+  (esquerdo) e ``Ch.1`` (direito) e assim por diante. A quantidade de
+  canais disponíveis vai depender da máquina que está sendo emulada.
+
+.. raw:: html
+
+	<p></p>
+
+* **Brilho da tela**
+
+  Faz o controle do nível de preto da tela, consulte também
+  :ref:`-brightness <mame-commandline-brightness>`.
+
+		O valor predefinido é **1.0**
+
+* **Contraste da tela**
+
+  Faz o controle do nível de branco da tela, consulte também
+  :ref:`-contrast <mame-commandline-contrast>`.
+
+		O valor predefinido é **1.0**
+
+* **Gama da tela**
+
+  Faz o ajuste da escala de luminância da tela, consulte também
+  :ref:`-gamma <mame-commandline-gamma>`.
+
+		O valor predefinido é **1.0**
+
+* **Extensão horizontal da tela**
+
+  Estica a tela no eixo horizontal.
+
+		O valor predefinido é **1.0**
+
+* **Posição horizontal da tela**
+
+  Desloca a tela no eixo horizontal
+
+		O valor predefinido é **0.0**
+
+* **Extensão vertical da tela**
+
+  Estica a tela no eixo vertical.
+
+		O valor predefinido é **1.0**
+
+* **Posição vertical da tela**
+
+  Desloca a tela no eixo vertical
+
+		O valor predefinido é **0.0**
+
+.. raw:: latex
+
+	\clearpage
+
+Opções do vídeo
+~~~~~~~~~~~~~~~
+
+Tela #X
+^^^^^^^
+
+Caso a máquina possua mais de uma tela, todas elas serão listadas aqui,
+onde "X" indica o número da tela e cada uma delas com as opções
+mostradas abaixo.
+
+* **Nome**
+
+  Caso esteja usando uma **artwork** e ela tiver um nome, ela será
+  exibida aqui indicando que ela pode ser selecionada.
+
+.. raw:: html
+
+	<p></p>
+
+* **Screen 0 Standard (4:3)**
+
+  Faz com que a tela tenha uma proporção padrão de 4:3.
+
+.. raw:: html
+
+	<p></p>
+
+* **Screen 0 Pixel Aspect (X:Y)**
+
+  Faz com que a tela use a proporção original (SAR) como 8:7, 12:7, etc.
+
+.. raw:: html
+
+	<p></p>
+
+* **Cocktail**
+
+  Faz com que a tela fique espelhada no eixo vertical da tela.
+
+.. raw:: html
+
+	<p></p>
+
+* **Rotação**
+
+  Rotaciona a tela, as opções disponíveis são:
+
+	* **CW 90º**: Rotaciona a tela no sentido horário em 90º.
+	* **180º**: Rotaciona a tela em 180º.
+	* **CCW 90º**: Rotaciona a tela no sentido anti-horário em 90º.
+
+		O valor predefinido é **None**
+
+
+* **Aproxime a área da tela**
+
+  Quando a máquina estiver usando uma artwork onde exista uma tela,
+  somente esta região será aproximada.
+
+		O valor predefinido é **Desligado**
+
+* **Escale a tela com valores racionais**
+
+  Faz com que a tela possa ser expandida usando números racionais em vez
+  de números inteiros, isso geralmente causa efeitos indesejados de
+  *"aliasing"* na tela, para mais informações consulte
+  :ref:`-unevenstretch <mame-commandline-unevenstretch>`.
+
+  As opções disponíveis são:
+
+	* **Apenas X**: Expande a tela apenas no eixo X.
+	* **Apenas Y**: Expande a tela apenas no eixo Y.
+	* **X ou Y (Auto)**: Expande a tela em ambos os eixos automaticamente.
+
+		O valor predefinido é **Ligado**
+
+* **Mantenha a proporção da tela**
+
+  Mantém a proporção 4:3 da tela, independente do que as outras
+  configurações façam, consulte também
+  :ref:`-keepaspect <mame-commandline-keepaspect>`.
+
+		O valor predefinido é **Ligado**
+
+.. raw:: latex
+
+	\clearpage
+
+Snapshot
+^^^^^^^^
+
+* **Nome**
+
+  Caso esteja usando uma **artwork** e ela tiver um nome, ela será
+  exibida aqui indicando que é assim que o print de tela será feita.
+
+.. raw:: html
+
+	<p></p>
+
+* **Screen 0 Standard (4:3)**
+
+  Faz um print de tela nesta proporção
+
+.. raw:: html
+
+	<p></p>
+
+* **Screen 0 Pixel Aspect (X:Y)**
+
+  Faz um print da tela usando a proporção original (SAR) como 8:7,
+  12:7, etc.
+
+.. raw:: html
+
+	<p></p>
+
+* **Cocktail**
+
+  Faz um print da tela espelhada no eixo vertical.
+
+.. raw:: html
+
+	<p></p>
+
+* **Rotação**
+
+  Faz um print da tela com a tela rotacionada como demonstrado no
+  exemplo anterior.
+
+		O valor predefinido é **None**
+
+* **Aproxime a área da tela**
+
+  Quando a máquina estiver usando uma artwork onde exista uma tela, o
+  print da tela será feito somente desta região.
+
+		O valor predefinido é **Desligado**
+
+Opções dos Plug-ins
+~~~~~~~~~~~~~~~~~~~
+
+Quando os plug-ins forem ativados na configuração, eles serão listados
+aqui. Qualquer alteração que for feita ao ativar um plugin, ele é
+gravado no arquivo ``plugin.ini`` que fica na mesma pasta do MAME ou em
+``~/.mame`` em sistemas Linux e macOS.
+
+Para mais informações consulte :ref:`Plug-ins <mamemenu-plugins>`.
+
+Visualização da DAT externa
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Esta opção estará disponível quando dois critérios forem atendidos, o
+plug-in **Data plugin** precisa estar ativo e os arquivos **\*.dat**
+(command.dat, gameinit.dat, etc) precisam estar dentro do diretório
+**dats**.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mamemenu-config-options:
 
@@ -283,6 +595,7 @@ pressionando a tecla **Enter** e digitando o valor manualmente.
 As opções disponíveis são:
 
 * **Fontes**
+
   Permite a customização da tipografia da interface, dentro desta opção
   temos:
 
@@ -373,7 +686,7 @@ As opções disponíveis são:
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
 		Verde: **255**, Azul: **0**
 
-	* **Cor de sobreposição do mouse**: Define a cor que texto terá
+	* **Cor da sobreposição do mouse**: Define a cor que texto terá
 	  quando o mouse passar por cima de algum item selecionável.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
@@ -412,7 +725,7 @@ As opções disponíveis são:
   Configura a exibição ou não dos painéis laterais da interface do MAME.
   As opções disponíveis são:
 
-	* **Exiba Todos**
+	* **Mostre tudo**
 	* **Esconda os Filtros**
 	* **Esconda Info/Imagem**
 	* **Esconda Ambos**
@@ -602,6 +915,10 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido são dois diretórios chamados **artwork
 		preview** e **artpreview** no diretório raiz do MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 * **Selecionado**
 
   A ser concluído
@@ -625,7 +942,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **howto** no
 		diretório raiz do MAME.
 
-* **Logo**
+* **Logotipos**
 
   Define o caminho do diretório onde se encontram as imagens ou
   ilustrações com a logomarca das empresas.
@@ -676,9 +993,9 @@ seja definido aqui.
 
 		O valor predefinido é **Auto**
 
-* **Quantidade das telas**
+* **Quantidade de telas**
 
-  Predefine a quantidade de telas que serão usadas.
+  Predefine a quantidade das telas que serão usadas na emulação.
 
 		O valor predefinido é **1**.
 
@@ -697,7 +1014,7 @@ seja definido aqui.
 
 		O valor predefinido é **Ligado**
 
-* **Pré-escala do Bitmap**
+* **Pré-escala do bitmap**
 
   Opção útil quando máquinas com baixa resolução são ampliadas para uma
   resolução maior, use essa opção para dar uma amenizada nessa
@@ -738,24 +1055,6 @@ seja definido aqui.
 
 	\clearpage
 
-.. note::
-
-	Quando a emulação estiver acontecendo, estas opções também estão
-	disponíveis.
-	
-		* **Non-Integer Scaling / Escala da tela com valores não inteiros**
-		
-		  Permite a escala da tela com valores não inteiros.
-		
-		* **Keep Aspect / Mantenha a proporção**
-		
-		  Mantém a proporção 4:3 da tela, para mais informações
-		  consulte :ref:`-[no]keepaspect <mame-commandline-keepaspect>`.
-
-.. raw:: latex
-
-	\clearpage
-
 .. _mamemenu-config-audio:
 
 Opções do Áudio
@@ -768,7 +1067,7 @@ Opções do Áudio
 
 		O valor predefinido é **Ligado**.
 
-* **Taxa da amostragem do áudio**
+* **Taxa da amostragem**
 
   Define a taxa da amostragem do áudio que será usada em todas as
   máquinas.
@@ -860,7 +1159,7 @@ Opções Diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Omita as partes do cardápio da seleção do software**
+* **Omita as partes do cardápio da seleção do programa**
 
   Altera a maneira com que a lista do software é exibida, em vez de
   exibir a lista na ordem predefinida pelo MAME, exibe a lista na ordem
@@ -969,6 +1268,10 @@ Entradas Gerais
   todos eles podem ser alterados conforme a necessidade. Para retornar
   ao valor original tecle **DELETE** duas vezes em cima da opção.
 
+.. raw:: html
+
+	<p></p>
+
 * **On Screen Display**
 
   Exibe um visor na parte inferior da tela durante a emulação para a
@@ -976,7 +1279,7 @@ Entradas Gerais
 
 	A tecla predefinida é **Til**.
 
-* **Brek in Debugger**
+* **Break in Debugger**
 
   Atalho para entrar no depurador durante a emulação, só funciona caso
   o MAME tenha sido compilado com ferramentas de depuração.
@@ -1048,6 +1351,10 @@ Entradas Gerais
 
   Como o exemplo anterior porém faz a emulação rodar o mais rápido
   possível.
+
+.. raw:: html
+
+	<p></p>
 
 * **Show FPS**
 
@@ -1883,6 +2190,8 @@ Predefinições para o jogador 4
 As predefinições para o jogador 5 em diante estão vazias e podem ser
 customizadas conforme a necessidade.
 
+.. _mamemenu-other-controls:
+
 * **Outros controles**
 
   Muda a configuração dos botões usados para crédito, serviço, inicio
@@ -2003,7 +2312,7 @@ Opções de Desempenho
 
 	O valor predefinido é **Ligado**
 
-* **Mute when unthrottled / Mute quando a supressão de velocidade estiver desligado**
+* **Mute quando a supressão de velocidade estiver desligado**
 
   Silencia o áudio quando a supressão de velocidade estiver desligado.
 
@@ -2022,7 +2331,7 @@ Opções de Desempenho
 
 	O valor predefinido é **1**
 
-* **Adjust speed to match refresh rate / Ajuste a velocidade para coincidir com a taxa de atualização**
+* **Ajuste a velocidade para bater com a taxa de atualização**
 
   Controla a velocidade da emulação de forma automática mantendo a taxa
   de atualização de tela mais lenta em referência com a taxa de
@@ -2030,7 +2339,7 @@ Opções de Desempenho
 
 	O valor predefinido é **Desligado**
 
-* **Low Latency / Baixa latência**
+* **Baixa latência**
 
   Reduz a latência (atraso) dos dispositivos de entrada como joysticks
   por exemplo. Para mais informações consulte :ref:`-[no]lowlatency
@@ -2078,13 +2387,13 @@ Opções da Rotação da Tela
 
 	O valor predefinido é **Desligado**
 
-* **Gire X**
+* **Vire o eixo X**
 
   Inverte a tela da esquerda para a direita.
 
 	O valor predefinido é **Desligado**
 
-* **Gire Y**
+* **Vire o eixo Y**
 
   Inverte a tela da direita para a esquerda.
 
@@ -2095,9 +2404,9 @@ Opções da Rotação da Tela
 Opções das Ilustrações
 ^^^^^^^^^^^^^^^^^^^^^^
 
-* **Zoom to screen area / Aproxime para a área da tela**
+* **Aproxime a área da tela**
 
-  Aproxima a região da tela emulada na ilustração.
+  Aproxima a região da tela emulada quando estiver numa ilustração.
 
 	O valor predefinido é **Desligado**
 
@@ -2113,25 +2422,25 @@ Opções do Estado/Playback
 
 	O valor predefinido é **Desligado**
 
-* **Allow rewind / Permita o rebobinamento**
+* **Permita o rebobinamento**
 
   Permite o rebobinamento do estado da máquina.
 
 	O valor predefinido é **Desligado**
 
-* **Recurso de rebobinamento**
+* **Capacidade de rebobinamento**
 
-  Reserva uma memória para rebobinamento em Megabytes.
+  Reserva uma quantidade em Megabytes da memória para rebobinamento.
 
 	O valor predefinido é **100**
 
-* **Bilinear filtering for snapshots / Filtro bilinear para os prints da tela**
+* **Filtro bilinear para os prints da tela**
 
   Define se os vídeos ou os prints da tela terão o filtro aplicado.
 
 	O valor predefinido é **Ligado**
 
-* **Burn-in**
+* **Marca de queimado**
 
   Cria prints da tela com marcas de fósforo queimado.
 
@@ -2263,21 +2572,41 @@ Permite que você configure individualmente cada máquina selecionada.
   Informa se a máquina usa uma BIOS ou não, nas máquinas que usam BIOS é
   possível escolher qual BIOS você quer que a máquina use.
 
+.. raw:: html
+
+	<p></p>
+
 * **Opções Avançadas**
 
   Consulte :ref:`mamemenu-advanced-options`.
+
+.. raw:: html
+
+	<p></p>
 
 * **Opções do Vídeo**
 
   Consulte :ref:`mamemenu-config-video`.
 
+.. raw:: html
+
+	<p></p>
+
 * **Mapeamento dos dispositivos**
 
   Consulte :ref:`mamemenu-config-devices`.
 
+.. raw:: html
+
+	<p></p>
+
 * **Adicione aos Favoritos**
 
   Adiciona a máquina selecionada aos seus favoritos.
+
+.. raw:: html
+
+	<p></p>
 
 * **Salve a configuração da máquina**
 
@@ -2296,19 +2625,35 @@ Plug-ins
 
   Configuração de turbo dos botões.
 
+.. raw:: html
+
+	<p></p>
+
 * **Lua SLAX XML parser**
 
   Interpretador `SLAXML <https://github.com/Phrogz/SLAXML>`_.
+
+.. raw:: html
+
+	<p></p>
 
 * **Hiscore support**
 
   Suporte para salvar a pontuação das máquinas ou *hiscore* em um
   arquivo ``hiscore.dat``
 
+.. raw:: html
+
+	<p></p>
+
 * **Console plugin**
 
   Ativa um console de comandos lua no prompt de comando ou no terminal
   usado para invocar o MAME.
+
+.. raw:: html
+
+	<p></p>
 
 * **json library**
 
@@ -2316,24 +2661,44 @@ Plug-ins
   `json <http://dkolf.de/src/dkjson-lua.fsl/home>`_ (*JavaScript Object
   Notation*) usando Lua.
 
+.. raw:: html
+
+	<p></p>
+
 * **Dummy test plugin**
 
   Um exemplo vazio com um teste que não faz nada de como criar o seu
   plug-in.
 
+.. raw:: html
+
+	<p></p>
+
 * **GDB stub plugin**
 
   Plug-in de depuração do MAME para exibir a ordem dos registros gdb.
+
+.. raw:: html
+
+	<p></p>
 
 * **Cheat plugin**
 
   Permite a ativação de uma trapaça sem precisar iniciar o mame com a
   opção ``-cheat``.
 
+.. raw:: html
+
+	<p></p>
+
 * **Timer plugin**
 
   Registra o tempo jogado ou o tempo que ficou em uma determinada
   máquina.
+
+.. raw:: html
+
+	<p></p>
 
 * **Data plugin**
 
@@ -2341,18 +2706,34 @@ Plug-ins
   para o usuário como o ``command.dat``, estes arquivos ficam dentro
   do diretório **dats**.
 
+.. raw:: html
+
+	<p></p>
+
 * **Cheat finder helper library**
 
   Biblioteca para a assistência de localização de novas trapaças.
+
+.. raw:: html
+
+	<p></p>
 
 * **Discord presence**
 
   Registra a sua presença no `Discord <https://discord.com>`_,
   exibindo o que você está jogando.
 
+.. raw:: html
+
+	<p></p>
+
 * **Layout helper plugin**
 
   Usado quando o seu layout precisar rodar scripts Lua.
+
+.. raw:: html
+
+	<p></p>
 
 * **IOPort name/translation plugin**
 
