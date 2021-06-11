@@ -8,3 +8,4 @@ CONFIGURANDO O MAME PARA SER USADO PELA PRIMEIRA VEZ
 	installingmame
 	compilingmame
 	crosscompilemame
+	configuringmame

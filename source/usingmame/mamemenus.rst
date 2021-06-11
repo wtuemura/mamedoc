@@ -730,6 +730,10 @@ As opções disponíveis são:
 	* **Esconda Info/Imagem**
 	* **Esconda Ambos**
 
+.. raw:: latex
+
+	\clearpage
+
 Configuração dos Diretórios
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -807,6 +811,10 @@ usados pelo MAME se encontram. As opções disponíveis são:
 
 		O valor predefinido é um diretório chamado **icons** no
 		diretório raiz do MAME.
+
+.. raw:: latex
+
+	\clearpage
 
 * **Trapaças**
 
@@ -889,6 +897,10 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **crosshair** no
 		diretório raiz do MAME.
 
+.. raw:: latex
+
+	\clearpage
+
 * **Arte**
 
   Define o caminho do diretório onde se encontram as ilustrações
@@ -914,10 +926,6 @@ usados pelo MAME se encontram. As opções disponíveis são:
 
 		O valor predefinido são dois diretórios chamados **artwork
 		preview** e **artpreview** no diretório raiz do MAME.
-
-.. raw:: latex
-
-	\clearpage
 
 * **Selecionado**
 
@@ -965,6 +973,10 @@ usados pelo MAME se encontram. As opções disponíveis são:
 
 		O valor predefinido é um diretório chamado **versus** no
 		diretório raiz do MAME.
+
+.. raw:: latex
+
+	\clearpage
 
 * **Capas**
 
@@ -1334,6 +1346,10 @@ Entradas Gerais
 
 	A tecla predefinida é **F8**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **Frameskip Inc**
 
   Aumento do salto de quadros.
@@ -1411,6 +1427,10 @@ Entradas Gerais
 
 	A tecla predefinida é **Tecla baixo** ou **Baixo do controle**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **UI Left**
 
   Move o cursor para a esquerda.
@@ -1486,6 +1506,10 @@ Entradas Gerais
 
 	A tecla predefinida é **Tecla delete ou del**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **UI Zoom In**
 
   Tecla para aproximar (dar zoom) na interface. Ainda não funciona em
@@ -1555,6 +1579,10 @@ Entradas Gerais
 
 	A tecla predefinida é **F7**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **UI (First) Tape Start**
 
   Inicia a fita na interface primária.
@@ -1566,10 +1594,6 @@ Entradas Gerais
   Para a fita na interface primária.
 
 	As teclas predefinidas são **F2** + **Shift Esq**.
-
-.. raw:: latex
-
-	\clearpage
 
 * **UI External DAT View**
 
@@ -1628,15 +1652,15 @@ Entradas Gerais
 
 	As teclas predefinidas são **F5** + **Ctrl Esq**.
 
+.. raw:: latex
+
+	\clearpage
+
 * **Decrease Prescaling**
 
   Reduz a pré-escala dos pixels.
 
 	As teclas predefinidas são **F6** + **Ctrl Esq**.
-
-.. raw:: latex
-
-	\clearpage
 
 * **Increase Prescaling**
 
@@ -2559,6 +2583,10 @@ Retorne ao menu anterior
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Retorna para a tela anterior.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _mamemenu-config-machine:
 

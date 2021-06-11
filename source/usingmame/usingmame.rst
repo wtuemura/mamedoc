@@ -7,11 +7,6 @@ iniciar o executável clicando duas vezes no **mame.exe**. Continue lendo
 caso tenha interesse em desvendar todo o potencial que o MAME pode te
 oferecer.
 
-Em plataformas macOS e plataformas \*nix, certifique-se de configurar a
-fonte do seu sistema para que corresponda ao seu idioma antes de
-iniciar, caso contrário não será possível ler o texto devido a falta dos
-glifos e dos outros caracteres.
-
 Para marinheiros de primeira viagem o MAME pode parecer um pouco
 complexo, porém é bem mais simples do que parece. É possível iniciar uma
 máquina selecionando ela na lista que aparece do lado direito da tela ou
