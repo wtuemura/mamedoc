@@ -1215,57 +1215,6 @@ ela, a lista abaixo é um **resumo** com informações da placa apenas::
 	Ignore o aviso **WARNING: radv is not a conformant vulkan
 	implementation, testing use only.**
 
-.. _advanced-tricks-performance-erro:
-
-Ops, alguma coisa deu errado!
------------------------------
-
-Caso a sua distribuição não configure a variável **VK_ICD_FILENAMES**,
-o ``vulkaninfo`` e toda a configuração feita até aqui não vai
-funcionar fazendo com que o teste falhe. Se for o caso, ao rodar o
-comando ``vulkaninfo`` deve aparecer o erro logo no início::
-
-	ERROR: Failed to find Vulkan Driver JSON
-
-Ou pior::
-
-	Cannot create Vulkan instance.
-	This problem is often caused by a faulty installation of the Vulkan
-	driver or attempting to use a GPU that does not support Vulkan.
-	ERROR at ../vulkaninfo/vulkaninfo.h:641:vkCreateInstance failed with
-	ERROR_INCOMPATIBLE_DRIVER
-
-Tanto no o Fedora quanto no o Debian os arquivos \*.json devem estar
-instalados no diretório ``/usr/share/vulkan/icd.d``, caso não estejam
-tenha certeza de ter instalado o pacote ``mesa-vulkan-drivers``, o nome
-do pacote é o mesmo para o Fedora e para o Debian. Tenha certeza que
-todos os arquivos estão lá com o comando::
-
-	sudo find /usr/share -name *_icd.*
-	/usr/share/vulkan/icd.d/intel_icd.x86_64.json
-	/usr/share/vulkan/icd.d/amd_icd.x86_64.json
-	/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
-
-.. raw:: latex
-
-	\clearpage
-
-Edite o arquivo ``/etc/profile`` e no final do arquivo coloque::
-
-	export XDG_RUNTIME_DIR=/run/user/$UID
-	export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd.x86_64.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json:/usr/share/vulkan/icd.d/intel_icd.x86_64.json
-
-A linha acima deve ser contínua, encerre a sua sessão e faça login
-novamente. No terminal rode o comando ``journalctl -b -p err`` e tenha **CERTEZA**
-que não há qualquer erro relacionado com o vulkan.
-
-Tente rodar novamente o ``vulkaninfo`` e dessa vez ele deve rodar sem
-problemas exibindo todas as informações da sua placa de vídeo.
-
-.. raw:: latex
-
-	\clearpage
-
 .. _advanced-tricks-performance-vulkan-debian:
 
 Ativando o Vulkan no Debian 10/11
@@ -1333,14 +1282,10 @@ conteúdo::
 
 	blacklist radeon
 
-.. raw:: latex
-
-	\clearpage
-
-Quando terminar faça o comando ``sudo update-grub`` para atualizar o
-grub e criar um novo initramfs seguido de ``systemctl reboot`` para
-reiniciar. Rode o comando abaixo e verifique se o driver **amdgpu** está
-em uso::
+Quando terminar faça o comando ``sudo update-grub && sudo
+update-initramfs -u`` para atualizar o grub e criar um novo initramfs
+seguido de ``systemctl reboot`` para reiniciar. Rode o comando abaixo e
+verifique se o driver **amdgpu** está em uso::
 
 	lspci -vs 01:00.0|grep driver
 	Kernel driver in use: amdgpu
@@ -1371,6 +1316,133 @@ Se chegou até aqui não é preciso definir a variável **VK_ICD_FILENAMES**.
 .. raw:: latex
 
 	\clearpage
+
+.. _advanced-tricks-performance-erro:
+
+Ops, alguma coisa deu errado!
+-----------------------------
+
+Caso a sua distribuição não configure a variável **VK_ICD_FILENAMES**,
+o ``vulkaninfo`` e toda a configuração feita até aqui não vai
+funcionar fazendo com que o teste falhe. Se for o caso, ao rodar o
+comando ``vulkaninfo`` deve aparecer o erro logo no início::
+
+	ERROR: Failed to find Vulkan Driver JSON
+
+Ou pior::
+
+	Cannot create Vulkan instance.
+	This problem is often caused by a faulty installation of the Vulkan
+	driver or attempting to use a GPU that does not support Vulkan.
+	ERROR at ../vulkaninfo/vulkaninfo.h:641:vkCreateInstance failed with
+	ERROR_INCOMPATIBLE_DRIVER
+
+Tanto no o Fedora quanto no o Debian os arquivos \*.json devem estar
+instalados no diretório ``/usr/share/vulkan/icd.d``, caso não estejam
+tenha certeza de ter instalado o pacote ``mesa-vulkan-drivers``, o nome
+do pacote é o mesmo para o Fedora e para o Debian. Tenha certeza que
+todos os arquivos estão lá com o comando::
+
+	sudo find /usr/share -name *_icd.*
+	/usr/share/vulkan/icd.d/intel_icd.x86_64.json
+	/usr/share/vulkan/icd.d/amd_icd.x86_64.json
+	/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+
+Edite o arquivo ``/etc/profile`` e no final do arquivo coloque::
+
+	export XDG_RUNTIME_DIR=/run/user/$UID
+	export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd.x86_64.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json:/usr/share/vulkan/icd.d/intel_icd.x86_64.json
+
+A linha acima deve ser contínua, encerre a sua sessão e faça login
+novamente. No terminal rode o comando ``journalctl -b -p err`` e tenha **CERTEZA**
+que não há qualquer erro relacionado com o vulkan.
+
+Tente rodar novamente o ``vulkaninfo`` e dessa vez ele deve rodar sem
+problemas exibindo todas as informações da sua placa de vídeo.
+
+.. raw:: latex
+
+	\clearpage
+
+No caso do Linux acusar a falta de algum firmware para o **amdgpu**::
+
+	update-initramfs: Generating /boot/initrd.img-5.10.0-7-amd64
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_gpu_info.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_ta.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_sos.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_ta.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_asd.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_sos.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_rlc.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_mec2.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_mec.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_rlc.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_mec2.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_mec.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_me.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_pfp.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_ce.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_sdma.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_sdma.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/sienna_cichlid_mes.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navi10_mes.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_vcn.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_vcn.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_smc.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_smc.bin for module amdgpu
+	W: Possible missing firmware /lib/firmware/amdgpu/navy_flounder_dmcub.bin for module amdgpu
+
+É possível procurar por eles no site `PKGS <https://pkgs.org>`_,
+geralmente será preciso baixar arquivos de outra distro, descompactar e
+copiar para o local apropriado ou usar o site do
+`Umio-Yasuno <https://github.com/Umio-Yasuno/unofficial-amdgpu-firmware-repo>`_
+que mantém uma lista atualizada dos novos firmwares sempre que eles
+forem aparecendo.
+
+Para evitar ficar copiando manualmente estes arquivos um a um, crie uma
+lista deles::
+
+	arcturus_gpu_info.bin
+	navy_flounder_ta.bin
+	navy_flounder_sos.bin
+	arcturus_ta.bin
+	arcturus_asd.bin
+	arcturus_sos.bin
+	arcturus_rlc.bin
+	arcturus_mec2.bin
+	arcturus_mec.bin
+	navy_flounder_rlc.bin
+	navy_flounder_mec2.bin
+	navy_flounder_mec.bin
+	navy_flounder_me.bin
+	navy_flounder_pfp.bin
+	navy_flounder_ce.bin
+	arcturus_sdma.bin
+	navy_flounder_sdma.bin
+	sienna_cichlid_mes.bin
+	navi10_mes.bin
+	navy_flounder_vcn.bin
+	arcturus_vcn.bin
+	navy_flounder_smc.bin
+	arcturus_smc.bin
+	navy_flounder_dmcub.bin
+
+.. raw:: latex
+
+	\clearpage
+
+Baixe todas as firmwares do site do Umio-Yasuno, e salve esta lista como
+`missing.txt` dentro da pasta **amdgpu**, abra o terminal dentro desta
+pasta e faça o comando::
+
+	for firmware in $(<missing.txt); do sudo cp "$firmware" /lib/firmware/amdgpu; done
+
+Ou para os mais puritanos::
+
+	while read -r firmware; do sudo cp $firmware /lib/firmware/amdgpu; done < missing.txt
+
+Agora atualize o seu initramfs com ``sudo update-initramfs -u`` no
+**Debian** ou ``sudo dracut -fv`` no **Fedora**.
 
 .. _advanced-tricks-performance-ancora:
 
@@ -1432,6 +1504,10 @@ como um todo ou em partes dela, se for o seu caso troque a opção
 ``udevadm control --reload-rules``, novamente, verifique com o comando
 ``journalctl -b -p err`` se não há erros do **amdgpu** em vermelho.
 
+.. raw:: latex
+
+	\clearpage
+
 Execute o comando para verificar a temperatura da sua placa de vídeo::
 
 	sensors
@@ -1457,10 +1533,6 @@ Rode um vídeo qualquer, pode ser do Youtube, em seguida execute o
 comando ``radeontop`` e veja se está havendo atividade enquanto o vídeo
 está sendo executado, tecle **c** para ativar o modo colorido. Se não
 houver qualquer atividade é porque há algum erro na sua configuração.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _advanced-tricks-performance-mame:
 
