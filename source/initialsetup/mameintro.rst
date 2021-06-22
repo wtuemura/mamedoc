@@ -49,13 +49,12 @@ novos recursos.
 Os binários oficiais do MAME são compilados e projetados para serem
 executados rodar em qualquer sistema Windows. Os requisitos mínimos são:
 
-* Processador Intel Core ou equivalente com pelo menos 2.0 GHz
+* Processador Intel Core ou equivalente com pelo menos 2.0 GHz.
 * Sistema Operacional com 64-bit (Windos 7 SP1 ou mais recente, macOS
-  10.14 ou mais recente)
-* 4 GB de RAM
-* DirectX 9.0c para Windows (Não é compatível com o Windows 10)
-* Uma placa gráfica compatível com Direct3D ou OpenGL
-* Qualquer placa de som compatível com DirectSound
+  10.14 ou mais recente).
+* 4 GB de RAM.
+* Uma placa gráfica compatível com Direct3D, OpenGL ou Vulkan.
+* Qualquer placa de som compatível com DirectSound.
 
 Claro, os requisitos mínimos são apenas um pequeno exemplo. Nem sempre é
 possível obter o melhor desempenho usando a configuração acima, porém,
