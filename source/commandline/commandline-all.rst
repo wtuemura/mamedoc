@@ -1325,7 +1325,7 @@ Opções para a configuração dos diretórios principais
 	que estejam separados por ponto e vírgula. O valor predefinido é
 	**crosshair** (isto é, um diretório chamado **crosshair** no
 	diretório raiz do MAME). Caso uma mira seja definida no menu, o MAME
-	procurará por ``nomedosistema\\cross#.png``, em seguida no
+	procurará por ``nomedosistema\cross#.png``, em seguida no
 	**crosshairpath** especificado onde **#** é o número do jogador.
 
 	Caso nenhuma mira seja definida, o MAME usará a sua própria. ::
@@ -1521,7 +1521,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	O valor predefinido é **Desligado** (**-norewind**).
 
 	Caso o depurador esteja no estado *break*, a condição de estado
-	atual é criada a cada 'step in', *step over* ou caso ocorra um
+	atual é criada a cada *step in*, *step over* ou caso ocorra um
 	*step out*. Nesse modo os estados salvos podem ser carregados e
 	rebobinados executando o comando *rewind* ou *rw* no depurador. ::
 
@@ -1548,13 +1548,14 @@ Opções para a gravação e a reprodução do estado da emulação
 **-statename** [<*nome*>]
 
 	Descreve como o MAME deve armazenar os arquivos de estado salvos
-	relativo ao caminho do state_directory. [<*nome*>] é uma string que
-	fornece um modelo a ser usado usado para gerar um nome de arquivo.
+	relativo ao caminho do *state_directory*. [<*nome*>] é uma *string*
+	que fornece um modelo a ser usado usado para gerar um nome de
+	arquivo.
 
 	São disponibilizadas duas substituições simples: o caractere ``/``
 	representa o separador de caminho em qualquer plataforma de destino
-	(até mesmo no Windows); a string ``%g`` representa o nome do driver
-	do sistema atual.
+	(até mesmo no Windows); a *string* ``%g`` representa o nome do
+	driver do sistema atual.
 
 	O valor predefinido é ``%g``, que cria uma pasta separada para cada
 	sistema.
