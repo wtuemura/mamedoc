@@ -16,7 +16,7 @@ separar cada caminho.
 O MAME consegue também identificar o caminho dos locais dos diretórios
 usando as variáveis de ambiente já existente no seu sistema e sua
 sintaxe irá depender do sistema operacional a ser usado. No Windows por
-exemplo, caso a configuração **%APPDATA%\mame\cfg** seja definida, o
+exemplo, caso a configuração **%APPDATA%\\mame\\cfg** seja definida, o
 MAME conseguirá ler a variável **%APPDATA%** e resolver o caminho
 completo para o diretório de dados de aplicativos do usuário.
 
