@@ -9,6 +9,10 @@ Truques para tornar a vida mais fácil
 
 .. contents:: :local:
 
+.. raw:: latex
+
+	\clearpage
+
 .. _advanced-tricks-botões-ordem:
 
 Configurando a ordem dos botões
@@ -1267,10 +1271,9 @@ Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 
 	options radeon si_support=0
 	options amdgpu si_support=1
-	options amdgpu pcie_gen2=1
-	options amdgpu gpu_recovery=1
-	options amdgpu dpm=1
+	options amdgpu dpm=0
 	options amdgpu deep_color=1
+	options amdgpu dc=1
 
 Crie o arquivo ``/etc/modprobe.d/pcie-perf.conf`` com o seguinte
 conteúdo::
@@ -1485,7 +1488,12 @@ arquivo ``10-amdgpu.rules`` em ``/etc/udev/rules.d`` com o comando
 ``sudo touch /etc/udev/rules.d/10-amdgpu.rules`` e adicione estas
 configurações::
 
-	KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="performance"
+	KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
+
+Note porém que ``high`` pode ser incompatível com o modelo da sua placa
+de vídeo, nestes casos tente ``auto`` ou experimente com as outras
+opções `disponíveis <https://dri.freedesktop.org/docs/drm/gpu/amdgpu.html#power-dpm-force-performance-level>`_.
+Na dúvida ou incerteza, não faça esta configuração.
 
 Salve o arquivo e execute o comando
 ``sudo udevadm control --reload-rules`` para atualizar o udev, em
@@ -1503,10 +1511,6 @@ como um todo ou em partes dela, se for o seu caso troque a opção
 ``performance`` por ``high`` seguido do comando
 ``udevadm control --reload-rules``, novamente, verifique com o comando
 ``journalctl -b -p err`` se não há erros do **amdgpu** em vermelho.
-
-.. raw:: latex
-
-	\clearpage
 
 Execute o comando para verificar a temperatura da sua placa de vídeo::
 

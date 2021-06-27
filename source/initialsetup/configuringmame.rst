@@ -28,7 +28,7 @@ sistema operacional.
 
 No Windows, vá até a pasta onde o MAME foi descompactado, escolha um
 ponto vazio da pasta, clique com o botão direito do mouse e escolha
-**Novo -> Atalho**, quando aparecer a janela *"Criar atalho"* em
+**Novo --> Atalho**, quando aparecer a janela *"Criar atalho"* em
 *"Digite o local do item"* insira **cmd** e clique em **OK**. O ícone do
 prompt de comando deverá aparecer dentro da pasta do MAME, clique com o
 *botão direito* em cima dele e selecione **Propriedades**, selecione a
@@ -40,7 +40,7 @@ Clique duas vezes no ícone do prompt de comando e pronto, já estamos no
 diretório do MAME, para criar os arquivos de configuração inicial
 faça::
 
-	mame -createconfig
+	mame -createconfig ou mame -cc
 
 O comando também serve para as versões do Linux e do macOS, este comando
 cria os seguintes arquivos:
@@ -61,9 +61,25 @@ cria os seguintes arquivos:
 	desativado. Consulte :ref:`mamemenu-plugins` para obter mais
 	detalhes sobre os plug-ins que acompanham o MAME.
 
-Nos sistemas operacionais Linux e macOS os arquivos ficam escondidos
-dentro do ``/home/seu_usuário/.mame`` ou simplificando, no diretório
-``~/.mame``.
+No macOS os arquivos ficam em ``~/Application Support/mame``, nos
+sistemas Linux eles ficam em ``/home/seu_usuário/.mame`` ou
+simplificando, no diretório ``~/.mame``.
+
+Observe que o ``mame.ini`` é basicamente um arquivo de texto simples,
+podendo ser editado com qualquer editor de texto (como o Notepad,
+o `Notepad++ <https://notepad-plus-plus.org/downloads/>`_, 
+o `Geany <https://www.geany.org/>`_,
+o `Emacs <https://www.gnu.org/software/emacs/>`_ ou
+o `TextEdit <https://support.apple.com/pt-br/guide/textedit/welcome/mac>`_
+por exemplo) e alterar todas as opções conforme a sua necessidade.
+
+.. note::
+
+	Sempre mantenha um backup destes arquivos!
+
+.. raw:: latex
+
+	\clearpage
 
 .. _configuringmame-rompath:
 
@@ -97,6 +113,10 @@ configurar pois o MAME pode ficar um pouco mais lento até ele fazer a
 varredura de todos os diretórios ao executar a sua interface gráfica.
 Caso haja muitas e muitas ROMs na sua coleção a melhor opção possa ser a
 configuração avançada.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _configuringmame-rompath-advanced:
 
@@ -156,6 +176,10 @@ pasta ``roms``. Caso tenha TODAS AS ROMS do MAME numa mesma pasta, o
 gerenciamento delas pode ficar muito comprometido pois dependendo do
 hardware usado, uma simples navegação dentro desta pasta pode ficar
 extremamente lento dada a imensa quantidade de arquivos.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _configuringmame-graphics:
 
@@ -478,4 +502,3 @@ utilizado com máquinas com 2 botões e assim por diante.
 
 Outras configurações também podem ser feitas, neste caso, consulte todo
 o capítulo :ref:`advanced-tricks`.
-

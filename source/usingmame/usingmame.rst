@@ -1,96 +1,422 @@
+.. raw:: latex
+
+	\clearpage
+
 Primeiros passos
+================
+
+Interface gráfica
+-----------------
+
+Para iniciar a interface gráfica basta iniciar o executável clicando
+duas vezes no **mame** caso esteja usando o Windows, caso esteja no
+terminal do Linux e do macOS e esteja no mesmo diretório onde se
+encontra o binário do MAME, você o executa com o comando ``./mame``.
+Independente do Sistema Operacional, caso o binário esteja no ``PATH``
+do seu sistema, ele pode ser executado simplesmente digitando ``mame``.
+
+Para os marinheiros de primeira viagem o MAME pode parecer um pouco
+complexo, porém é bem mais simples do que parece.
+
+Inicie o MAME clicando duas vezes no executável:
+
+.. figure:: images/mame_main.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Tela principal do MAME
+
+.. raw:: latex
+
+	\clearpage
+
+Boa parte da interface já foi traduzida, para trocar o idioma da
+interface vá em ``Configure Options -> Customize UI``, clique duas vezes
+em ``Language``, role para baixo e selecione **Portuguese (Brazil)**.
+Retorne e **Salve a configuração**.
+
+A versão da tradução compatível com este documento pode ser encontrado
+em `mamedoc <https://github.com/wtuemura/mamedoc>`_ ou mais precisamente
+`aqui <https://github.com/wtuemura/mamedoc/tree/master/language/Portuguese_Brazil>`_.
+
+Baixe o arquivo ``strings.mo`` e copie-o para o diretório
+**language\\Portuguese_Brazil**.
+
+.. figure:: images/mame_main_pt_br.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Tela principal do MAME traduzido
+
+.. raw:: latex
+
+	\clearpage
+
+Ao clicar com o botão direito do mouse no nome da máquina, é possível
+configurar a máquina individualmente caso seja necessário. Tais
+configurações ficam armazenadas em arquivos <*nome_da_máquina*>.ini, no
+Windows fica no mesmo diretório do executável do MAME e no Linux/macOS
+fica em ``~/.mame``.
+
+Apesar de ser possível fazer algumas configurações através da interface,
+nem todas as :ref:`configurações do MAME <universal-command-line>`
+estão acessíveis pela interface, configurações mais específicas ainda
+precisam ser feitas por linha de comando ou por arquivos ``*.ini``.
+
+.. figure:: images/mame_config_machine.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Configuração individual da máquina
+
+.. raw:: latex
+
+	\clearpage
+
+Ainda é possível fazer personalizações visuais como adicionar uma
+:ref:`imagem de fundo <advanced-tricks-imagem-fundo>`, adicionar ícones
+ao lado dos nomes das máquinas:
+
+.. figure:: images/mame_icons.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Ícones
+
+Tais ícones são mantidos fora do projeto MAME pelo
+`progetto-SNAPS <https://www.progettosnaps.net/icons/>`_. A instalação é
+simples, baixe o arquivo mais recente e extraia o diretório **icons** e
+**folders** dentro do diretório do MAME, caso apareça algum erro de
+arquivo já existente basta sobrescrever. Agora ao iniciar o MAME o nomes
+das máquinas mostram um ícone.
+
+.. raw:: latex
+
+	\clearpage
+
+Para iniciar uma máquina na lista que aparece ao centro da tela clique
+2x no nome da máquina desejada. Pressione **F12** durante a execução da
+máquina para que seja salvo um **print da tela** na pasta **snap**.
+Ao encerrar a emulação a imagem da tela vai aparecer do lado direito da
+interface do MAME.
+
+.. figure:: images/mame_print_tela.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Print de tela
+
+Ainda no site do **progetto-SNAPS** é possível encontrar imagens para
+completar todas as abas dentro de **Imagens** como **Gabinetes**,
+**Painéis de controle**, **PCB** e vários outros. Porém quanto mais
+itens visuais forem adicionados, mais e mais o MAME vai demorar para
+iniciar por causa dos arquivos extras, leve isso em consideração.
+
+.. raw:: latex
+
+	\clearpage
+
+As máquinas que você mais gosta de jogar podem ser adicionadas aos
+**Favoritos**, na interface durante a seleção da máquina clique com o
+botão direito em cima do nome da máquina e selecione a opção
+**Adicione aos favoritos**. Caso tenha iniciado o MAME pela linha de
+comando ou caso a máquina já esteja rodando, pressione **TAB** para
+abrir a tela de opções e escolha **Adicione aos favoritos**.
+
+.. figure:: images/mame_favoritos.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Favoritos
+
+Todas as máquinas favoritadas ficam armazenadas num arquivo
+``favorites.ini`` dentro do diretório **ui** que fica no mesmo diretório
+do executável do MAME.
+
+.. raw:: latex
+
+	\clearpage
+
+Linha de comando
 ----------------
 
-Atualmente já é possível sair usando o MAME sem precisar usar qualquer
-parâmetros na linha de comando. Para iniciar a interface gráfica basta
-iniciar o executável clicando duas vezes no **mame.exe**. Continue lendo
-caso tenha interesse em desvendar todo o potencial que o MAME pode te
-oferecer.
+Com o MAME no ``$PATH`` para usuários macOS/Linux ou ``%PATH%`` para
+usuários Windows, inicie a interface do MAME com o comando:
 
-Para marinheiros de primeira viagem o MAME pode parecer um pouco
-complexo, porém é bem mais simples do que parece. É possível iniciar uma
-máquina selecionando ela na lista que aparece do lado direito da tela ou
-pode também iniciar usando a linha de comando:
+	**mame**
 
-	**mame.exe** <*ROM*>
+Para iniciar iniciar uma máquina faça:
 
-Faça assim para iniciar um sistema junto com o seu software:
+	**mame** <*ROM*>
 
-	**mame.exe** <*systema*> <*software*>
+Para iniciar um sistema específico junto com um software faça:
 
-Em **systema** escolha uma das centenas de sistemas emulados, já em
+	**mame** <*sistema*> <*software*>
+
+Em **sistema** escolha uma das centenas de sistemas emulados, já em
 **software** é o nome da máquina [#]_ que deseja rodar. O software
 nada mais é do que um nome de uma ROM ou a imagem de uma mídia. É
-possível também a utilização de **lista de programa** (**softlists**)
-que é um grade catálogo de software ou máquinas de diferentes sistemas
-conhecidos no banco de dados interno do MAME.
+possível também a utilização de um **catálogo de programas**
+(**softlists**), no catálogo tem a lista de programas compatíveis (ou
+não) no banco de dados interno do MAME com o sistema em questão.
 
 Para rodar o **Sonic the Headgehog** na versão do **Sega Genesis
-Americano** execute o comando como mostrado abaixo:
+Americano**, por exemplo, execute o comando como mostrado abaixo:
 
-	**mame.exe genesis sonic**
+	**mame genesis sonic**
 
 Alternativamente, também é possível iniciar MAME apenas com o sistema:
 
-	**mame.exe genesis**
+	**mame genesis**
 
-E escolher numa *lista de jogos* qual deseja iniciar selecionando
-:menuselection:`cart --> lista de programa`, para que essa lista
-funcione é necessário ter um conjunto de máquinas no diretório **roms**.
-Observe que muitas cópias de ROMs antigas, de fitas e discos que
+Selecione **cartridge (cart)**, depois **catálogo de programas** para
+ver uma lista de qual deseja iniciar. Para que essa lista funcione é
+necessário ter um conjunto ROMs compatíveis no diretório **roms**.
+Observe que muitas cópias de ROMs antigas, de fitas e de discos que
 funcionavam em versões anteriores, podem não mais serem reconhecidas
-pelas versões mais novas do MAME, exigindo uma atualização ou as
-renomeie caso o nome tenha mudado ao longo do tempo e seja apenas
-compatível com a última versão do MAME.
-
-Caso seja carregado um sistema arcade ou outro conteúdo que
-não esteja na lista, as coisas ficam um pouco mais complicadas.
+pelas versões mais novas do MAME exigindo algum tipo de atualização.
 
 A estrutura básica da linha de comando fica assim:
 
-	**mame.exe** <*systema*> <*mídia*> <*software*> <*opções*>
+	**mame** <*sistema*> <*mídia*> <*software*> <*opções*>
 
 Onde:
 
 *	<*systema*> é o apelido ou o nome encurtado do sistema que deseja
-	emular (por exemplo, nes, c64, etc).
-*	<*mídia*> é o seletor da mídia desejado carregar (se for um
-	cartucho, tente **-cart** ou **-cart1**; caso seja um disquete,
-	tente **-flop** or **-flop1**; caso seja um CD-ROM, tente
-	**-cdrom**).
+	emular (por exemplo, nes, snes, genesis, c64, etc).
+*	<*mídia*> é o seletor da mídia que deseja carregar, continue lendo
+	para mais detalhes.
 *	<*software*> é o programa ou jogo que deseja carregar (também pode
-	ser usado o caminho completo para o arquivo a ser carregado ou como
-	o nome abreviado do arquivo que esteja na sua lista de software).
+	ser usado o caminho completo para o arquivo que será carregado ou
+	como o nome abreviado do arquivo que esteja na sua lista de
+	software).
 *	<*opções*> quaisquer opções adicionais usadas na linha de comando
 	para os controles, para o vídeo, áudio, etc.
 
-Lembre-se que ao digitar um nome de sistema <*system*> e este ainda não
-exista ou não seja emulado [#]_, o MAME irá sugerir algumas
+.. raw:: latex
+
+	\clearpage
+
+Lembre-se que ao digitar um nome de um sistema <*sistema*> e este ainda
+não exista ou não seja emulado [#]_, o MAME irá sugerir algumas
 opções próximas ao que foi digitado. No caso do desconhecimento de quais
 <*mídias*> estão disponíveis, inicie a emulação como mostra o exemplo
 abaixo:
 
-	**mame.exe** <*systema*> :ref:`-listmedia <mame-commandline-listmedia>` <*opções*>
+	**mame** <*sistema*> :ref:`-listmedia <mame-commandline-listmedia>` <*opções*>
 
+Supondo que ainda seja o **Sega Genesis Americano**:
 
-Para saber quais são as <*opções*> estão disponíveis, leia o capítulo
-:ref:`universal-command-line` deste manual, veja também as
-:ref:`frontends`.
+	**mame genesis -listmedia** 
+
+O MAME vai retornar algo como::
+
+	SYSTEM           MEDIA NAME       (brief)    IMAGE FILE EXTENSIONS SUPPORTED
+	---------------- --------------------------- -------------------------------
+	genesis          cartridge        (cart)     .smd  .bin  .md   .gen
+
+Assim somos informados que o sistema aceita cartucho (*cartridge*)
+através da opção ``-cart`` e os arquivos ROMs com extensões **.smd**,
+**.bin**, **.md** e **.gen**. Traduzindo isso para um comando nós
+teríamos algo como::
+
+	mame genesis -cart /caminho/completo/rom.bin
+
+Ou usando o nome de uma ROM compatível listada no catálogo::
+
+	mame genesis -cart sonic
+
+Além dos consoles o MAME consegue emular computadores como o MSX por
+exemplo, na época dos anos 80 alguns devem se lembrar do
+**Expert XP-800** da Gradiente (expert10) ou o **HotBit HB-8000** da
+Sharp (hotbit11), além destes o MAME consegue emular uma lista enorme de
+outros modelos MSX, para ver a lista completa dos modelos faça::
+
+	mame expert10 -lb
+
+	Source file:         Name:            Parent:
+	msx.cpp              ax150
+	msx.cpp              ax170
+	...
+	msx.cpp              expert10         expert13
+	msx.cpp              expert11         expert13
+	msx.cpp              expert13
+	msx.cpp              expert20
+	msx.cpp              expert3i
+	msx.cpp              expert3t
+	msx.cpp              expertac
+	msx.cpp              expertdp
+	msx.cpp              expertdx
+	msx.cpp              expertpl
+	...
+
+Veja o
+`driver MSX <https://github.com/mamedev/mame/blob/master/src/mame/drivers/msx.cpp#L8642>`_
+do MAME para obter mais detalhes como o ano de lançamento, nome
+completo, etc.
+
+.. raw:: latex
+
+	\clearpage
+
+Vamos iniciar o Expert XP-800 da Gradiente (expert10), porém, verifique
+antes se a ROM existe::
+
+	mame -verifyroms expert10
+	romset expert10 [expert13] is good
+	1 romsets found, 1 were OK.
+
+Caso apareça algo de diferente como::
+
+	romset "expert10" not found!
+
+Será preciso localizar o arquivo na internet, e qual seria ele?
+Pergunte ao MAME que ele ajuda::
+
+	mame expert10 -lr
+	ROMs required for driver "expert10".
+	Name                                   Size Checksum
+	expbios.rom                           32768 CRC(07610d77) SHA1(ef3e010eb57e4476700a3bbff9d2119ab3acdf62)
+
+No caso, precisamos do arquivo **expbios.rom**, ele fica dentro do
+arquivo **expert10.zip** e este arquivo deve estar dentro da pasta
+**roms**.
+
+Agora que está tudo certo e funcionando faça:
+
+	mame expert10
+
+Para identificar quais são os formatos de mídia compatíveis com este
+sistema faça::
+
+	mame expert10 -lm
+	SYSTEM           MEDIA NAME       (brief)    IMAGE FILE EXTENSIONS SUPPORTED
+	---------------- --------------------------- -------------------------------
+	expert10         printout         (prin)     .prn  
+	expert10         cassette         (cass)     .wav  .tap  .cas  
+	expert10         cartridge1       (cart1)    .mx1  .bin  .rom  
+	expert10         cartridge2       (cart2)    .mx1  .bin  .rom
+
+O MAME mostra que ele é compatível com as opções ``-prin``, ``-cass``,
+``-cart1`` e ``-cart2`` e as suas respectivas extensões.
+
+Para ver a lista de slots compatíveis faça::
+
+	mame expert10 -lslot
+	SYSTEM           SLOT NAME        SLOT OPTIONS     SLOT DEVICE NAME
+	---------------- ---------------- ---------------- ----------------------------
+	expert10         centronics       ap2000           Epson ActionPrinter 2000
+	                                  chessmec         Tasc ChessMachine EC Interface
+	                                  covox            Covox Speech Thing
+	                                  covox_stereo     Covox (Stereo-in-1)
+	                                  ex800            Epson EX-800
+	                                  lx800            Epson LX-800
+	                                  lx810l           Espon LX-810L
+	                                  p72              NEC PinWriter P72
+	                                  pl80             COMX PL-80
+	                                  printer          Centronics Printer
+	                                  samdac           SAMDAC
+	                                  smartboard       Tasc SmartBoard SB30 Interface
+	
+	                 cartslot1        bm_012           MSX Cartridge - BM-012
+	                                  moonsound        MSX Cartridge - MoonSound
+	
+	                 cartslot2        bm_012           MSX Cartridge - BM-012
+	                                  moonsound        MSX Cartridge - MoonSound
+
+Para usar quaisquer itens da lista de slots como o
+**Covox Speech Thing** por exemplo, faça::
+
+	mame expert10 -centronics covox
+
+O slot **cartslot1** e **cartslot2** são para os dois cartuchos, para
+usar o **covox** junto com o cartucho de **midi** e o **moonsound**
+faça::
+
+	mame expert10 -centronics covox -cartslot1 bm_012 -cartslot2 moonsound
+
+Também é possível selecionar os mesmos itens através da interface do
+MAME, depois de iniciar o **expert10** pressione **Screen Lock** ou
+**SrcLk** dependendo do teclado, para usar o teclado do seu computador,
+pressione **Tab** e vá em **Dispositivos de slot**:
+
+.. figure:: images/mame_slot_options.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Opções do slot
+
+Repare que todos os itens compatíveis com o sistema também estão
+disponíveis pela interface ao clicar nas setas esquerda e direita do
+teclado. Para surtir efeito é preciso selecionar os itens desejados e
+clicar duas vezes em **Reinicie**.
+
+.. raw:: latex
+
+	\clearpage
+
+Através do **Gerenciador de arquivos** é possível carregar arquivos
+avulsos, talvez uma gravação de uma fita k7 feita por você, a imagem de
+algum cartucho que só você tenha, que tenha baixado, etc.
+
+.. figure:: images/mame_gerenciador.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Opções do slot
+
+Para usar, clique duas vezes na opção desejada e navegue até o caminho
+onde a sua imagem está, os formatos compatíveis foram listados alguns
+parágrafos acima. Assim como foi feito anteriormente, é preciso
+reiniciar para que os itens estejam disponíveis no sistema emulado.
+
+.. raw:: latex
+
+	\clearpage
+
+Para carregar uma imagem de uma fita k7 por exemplo, faça::
+
+	mame expert10 -cass msx/zanac.cas 
+
+Já na interface do sistema carregue a imagem com o comando
+``load"cas:",r``, se  imagem for compatível com o sistema emulado deverá
+aparecer **Found: ZANAC** ou qualquer outra imagem que esteja sendo
+carregada. Caso a mensagem **Found:** não apareça, significa que talvez
+a imagem seja incompatível com esta versão do MSX ou até mesmo a imagem
+está com algum problema, não foi capturada corretamente, etc.
+
+.. figure:: images/mame_load_zanac.png
+	:width: 100%
+	:align: center
+	:figclass: align-center
+	:alt: Carregando imagem ZANAC
+
+No topo da tela há o contador e a leitura da imagem é feita em tempo
+real, assim como é feito no hardware físico. Para acelerar o processo,
+clique em **Screen Lock** ou **SrcLk** dependendo do teclado para usar o
+teclado do computador e pressione **Page Down** ou **PgDn** no Linux ou
+**Insert** no Windows ou as teclas **F8** e **F9** para acelerar a
+emulação e com isso acelerar o processo de leitura. Ao terminar,
+pressione **F9** até aparecer **auto (0/10) 100%** para que a emulação
+volte para a velocidade normal.
+
+Este foi apenas um simples exemplo de centenas de outros sistemas que o
+MAME pode emular como o Macintosh, X68000, etc. 
 
 Precisando de ajuda?
 
-	**mame.exe -help**
+	**mame -help**
 
 O comando exibe algumas opções básicas de uso, a versão do MAME e outras
 informações úteis.
 
-	**mame.exe -showusage**
+	**mame -showusage**
 
 Mostra uma lista (bastante longa) das opções disponíveis na linha de
 comando. As opções principais são descritas na seção
 :ref:`index-commandline` deste manual.
 
-	**mame.exe -showconfig**
+	**mame -showconfig**
 
 Mostra uma lista (bastante longa) das opções de configuração que estão
 sendo usadas pelo MAME. Essas configurações sempre podem ser modificadas
@@ -101,44 +427,6 @@ seção :ref:`index-commandline` deste manual (na maioria dos casos, cada
 opção de configuração listada ali, possui uma versão equivalente para a
 linha de comando).
 
-.. raw:: latex
-
-	\clearpage
-
-Para criar um novo arquivo ``mame.ini`` com as configurações primárias
-já predefinidas:
-
-	**mame.exe -createconfig** ou **mame.exe -cc**
-
-Serão criados 3 arquivos, o ``mame.ini`` que é o arquivo de configuração
-primária, o ``plugins.ini`` que é o arquivo que armazena uma lista
-de plug-ins disponíveis e o ``ui.ini`` que armazena toda a customização
-feita na interface interna como mudar o tamanho e o nome da fonte, a cor
-da interface, etc.
-
-No Windows estes arquivos são criados no mesmo diretório do executável
-do MAME, no macOS ele é criado em ``~/Application Support/mame`` e em
-sistemas \*.nix são criados em ``~/.mame``.
-
-Observe que o ``mame.ini`` é basicamente um arquivo de texto simples,
-que pode ser editado com qualquer editor de texto (como o
-Notepad, `Geany <https://www.geany.org/>`_,
-`Emacs <https://www.gnu.org/software/emacs/>`_ ou
-`TextEdit <https://support.apple.com/pt-br/guide/textedit/welcome/mac>`_
-por exemplo) e alterar todas as opções conforme a sua necessidade. A
-principio, não há a necessidade de nenhum ajuste específico para começar
-a usar o MAME, então é possível basicamente deixar a maioria das opções
-inalteradas.
-
-Caso o MAME venha a ser atualizado, novas opções disponíveis serão
-aplicadas ao ``mame.ini`` anterior [#]_ quando o comando for executado
-novamente.
-
-Neste capítulo revelamos apenas o topo do iceberg, há muito mais para
-ser revelado, entraremos mais a fundo nos próximos capítulos com mais
-detalhes  de todos os comandos compatíveis e de todas as possibilidades
-de customização do MAME.
-
 .. [#]	Os desenvolvedores do MAME preferem usar o termo **máquinas** em
 		vez de **jogos**, talvez visando evitar problemas legais?
 .. [#]	Existe uma diferença entre sistema e máquina, o comando em
@@ -146,7 +434,3 @@ de customização do MAME.
 		máquinas como o CPS1, CP2, ZN, etc. O comando ao ser usado com
 		uma máquina irá retornar um erro "*Unknown system*".
 		(Nota do tradutor)
-.. [#]	Caso haja alguma opção customizada neste arquivo, é
-		recomendável que um backup seja feito antes pois até o presente
-		momento, **este comando não atualiza nada**, ele apaga as
-		informações anteriores e reescreve novas. (Nota do tradutor)
