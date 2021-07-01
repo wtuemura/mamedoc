@@ -107,7 +107,7 @@ Tecla             | Ação
 **Page DN**       | [**APENAS SDL**] Avanço rápido.
                   | Enquanto a tecla estiver pressionada, roda o jogo com o afogador de velocidade
                   | desligado e com o pulo de quadros no máximo.
-**Alt+ENTER**     | Alterna entre o modo janelado e de tela inteira.
+**Alt+ENTER**     | Alterna entre o modo janela e de tela inteira.
 **Scroll Lock**   | Mapeamento padrão para **-uimodekey**.
                   |
                   | Essa tecla permite que os usuários ativem ou desativem o teclado emulado

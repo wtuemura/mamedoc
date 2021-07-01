@@ -2311,11 +2311,11 @@ Opções para a configuração de vídeo
 	na esquerda ou na direita.
 
 	Ao desativar essa opção a tela ou ilustração poderá ser esticada
-	livremente para preencher os espaços vazios no modo janelado. Em
+	livremente para preencher os espaços vazios no modo janela. Em
 	tela cheia a imagem ficará distorcida e fora das proporções.
 
 	Quando essa opção estiver ativa no Windows e o MAME estiver em modo
-	janelado, a proporção de tela será mantido mesmo que 
+	janela, a proporção de tela será mantido mesmo que 
 	a janela seja redimensionada para diferente tamanhos, caso mantenha
 	a tecla **Control** ou **Ctrl** pressionada durante
 	redimensionamento da janela, a proporção será mantida.
@@ -2485,7 +2485,7 @@ Opções para a configuração de vídeo
 	apagamento de vídeo, permitindo que o MAME desenhe o próximo quadro,
 	sincronizando a taxa de quadros da máquina emulada com a taxa de
 	quadros nativa do monitor que estiver sendo usado no Windows, apenas
-	ative esta opção caso esteja utilizando o modo janelado. Em tela
+	ative esta opção caso esteja utilizando o modo janela. Em tela
 	inteira esta opção só é necessária caso a opção ``-triplebuffer``
 	não remova o indesejado efeito "tearing", neste caso, tente usar as
 	duas opções juntas ``-notriplebuffer -waitvsync``. Note que a opção
@@ -2503,7 +2503,7 @@ Opções para a configuração de vídeo
 
 		mame ssf2tu -waitvsync
 
-	O **MAME SDL** funcionará com essa opção em modo janelado caso haja
+	O **MAME SDL** funcionará com essa opção em modo janela caso haja
 	compatibilidade com o seu sistema operacional, da sua placa de vídeo
 	e respectivos drivers.
 
@@ -2735,7 +2735,7 @@ Opções de vídeo para uso com janelas individuais
 	resolução. O comando também funciona com "*auto*" e é equivalente a
 	*0x0@0*.
 
-	No modo janelado essa resolução é usada para determinar o tamanho
+	No modo janela essa resolução é usada para determinar o tamanho
 	máximo para a janela. Essa opção também requer que seja usada a
 	opção :ref:`-switchres <mame-commandline-switchres>` para ativar a
 	comutação de resolução em conjunto com a opção **-video d3d**.

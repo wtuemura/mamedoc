@@ -615,7 +615,7 @@ e Linux, contudo não há a compatibilidade com o macOS ainda.
   G-Sync/FreeSync em 60 hz, haverá problemas com drivers como o
   *Pac-Man* que roda a **60.60606 Hz**, assim como outros que rodam com
   uma velocidade semelhante porém não os 60 Hz exatos.
-* Caso esteja jogando o MAME em modo janelado ou utilizando o sistema
+* Caso esteja jogando o MAME em modo janela ou utilizando o sistema
   de vídeo BGFX, será necessário ter certeza que tenha o G-Sync/FreeSync
   ativado para o driver de vídeo que estiver utilizando nas aplicações
   em modo janela, assim como no modo de tela inteira.
