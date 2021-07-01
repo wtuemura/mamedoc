@@ -125,8 +125,8 @@ Apple II e Mac variam a velocidade de rotação dependendo da faixa (algo
 como até 394 RPM) para terminar como uma Velocidade Linear Constante
 (*Constant Linear Velocity* ou CLV em Inglês). A ideia por trás do
 ZCAV/CLV é extrair mais bits da mídia mantendo o espaçamento mínimo
-entre transições de orientação magnética, oferecendo a melhor
-performance possível entre o espaço ocupado e a velocidade de transição
+entre transições de orientação magnética, oferecendo o melhor
+desempenho possível entre o espaço ocupado e a velocidade de transição
 da cabeça. Parece que a complexidade não foi considerada válida já que
 quase nenhum sistema faz.
 

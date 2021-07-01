@@ -247,7 +247,7 @@ amostragem e por quê não **44.1 kHz** ou **48 kHz** (padrão)?
 
 Como está descrito em :ref:`-samplerate <mame-commandline-samplerate>`,
 quanto mais alto a taxa de amostragem mais processamento é exigido e de
-contrapartida há uma certa perda de performance dependendo do hardware
+contrapartida há uma certa perda de desempenho dependendo do hardware
 que você estiver rodando o MAME, no caso de um computador mediano talvez
 a opção não faça a menor diferença, porém caso esteja rodando o MAME em
 equipamentos com menos poder de processamento esta opção pode ajudar a

@@ -398,7 +398,7 @@ Para compilar uma versão do MAME só com consoles, use o comando abaixo:
 	**make SUBTARGET=mess SYMBOLS=1 SYMLEVEL=1 -j7**
 
 Para compilar uma versão do MAME que tire proveito da extensão SSE2 do
-seu processador melhorando a performance, use o comando abaixo. Para
+seu processador melhorando o desempenho, use o comando abaixo. Para
 mais informações veja :ref:`SSE2 <mame-compilation-sse2>`.
 
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j7**
@@ -407,7 +407,7 @@ mais informações veja :ref:`SSE2 <mame-compilation-sse2>`.
 processador e não apenas a SSE2 desde que seja também compatível com o
 compilador que estiver usando, use a opção **ARCHOPTS** com
 **-march=native** no seu comando de compilação. Ao ativar estas opções
-pode ou não tirar o máximo de performance possível do seu processador,
+pode ou não tirar o máximo de desempenho possível do seu processador,
 assim como o MAME pode ou não se beneficiar de todas elas. O comando
 completo então ficaria assim, note que a opção **SSE2=1** foi removida.
 
@@ -475,18 +475,18 @@ o **-march=native** vai usar estas extensões do seu processador: ::
 	-mxsave                     		[enabled]
 
 Apesar de ter todas essas extensões ativadas, incluindo outras
-variantes do SSE como a SSE3, SSE4 e assim por diante, não espere que a
-performance do MAME aumente de forma considerável, há máquinas onde não
-se nota nada de diferente, muito pelo contrário, há perda em
-performance, já outras podem lhe dar uma performance considerável.
+variantes do SSE como a SSE3, SSE4 e assim por diante, não espere que o
+desempenho do MAME aumente de forma considerável, há máquinas onde não
+se nota nada de diferente, muito pelo contrário, há perda no
+desempenho, já outras podem lhe dar um desempenho considerável.
 
 Em alguns testes a melhor média foi obtida usando apenas as opções
 **SSE3=3 OPTIMIZE=03** e mais nada, apesar do padrão do MAME ser
 **SSE2=1**. Novamente, essa é uma questão muito subjetiva pois depende
 muitas variáveis como a configuração do seu hardware por exemplo, logo a
 sua sorte pode variar bastante. É muito difícil saber com precisão se
-haverá uma melhora na performance ou não pois o MAME depende muito da
-performance do hardware onde ele é executado (quanto mais potente,
+haverá uma melhora no desempenho ou não pois o MAME depende muito do
+desempenho do hardware onde ele é executado (quanto mais potente,
 melhor) e do sistema operacional, dos drivers, etc.
 
 Podemos fazer um teste prático compilando duas versões do MAME para
@@ -594,7 +594,7 @@ o seu **useroptions.mak**: ::
 	# Nível de otimização.
 	# 0 Desativa a otimização favorecendo a depuração.
 	# 1 Otimização simples sem impacto direto no tamanho final do executável.
-	# 2 Ativa a maioria das otimizações visando performance e tamanho reduzido.
+	# 2 Ativa a maioria das otimizações visando desempenho e tamanho reduzido.
 	# 3 Máxima otimização ao custo de um tamanho final maior. (padrão)
 	# s Ativa apenas as otimizações que não impactem no tamanho final.
 	OPTIMIZE=3
@@ -1303,8 +1303,8 @@ valores válidos são:
 
 	**Double Precision Streaming SIMD Extensions**, em resumo, são
 	instruções que otimizam o desempenho em processadores
-	compatíveis. Se definido como **1** o MAME terá uma melhor
-	performance segundo a `nota publicada
+	compatíveis. Se definido como **1** o MAME terá um melhor
+	desempenho segundo a `nota publicada
 	<https://www.mamedev.org/?p=451>`_ no site do MAME.
 
 .. _mame-compilation-ptr64:
@@ -1375,7 +1375,7 @@ Usando ferramentas de compilação alternativas
   ação_Paralela_em_Arquiteturas_Multi-Core/Programação_em_OpenMP>`_.
   No MAME segundo o `FAQ oficial <https://wiki.mamedev.org/index.php/FA
   Q:Performance>`_, são adicionadas novas threads para aceleração de
-  loop, trazendo um   aumento de performance. Para fazer uso desta opção
+  loop, trazendo um aumento de desempenho. Para fazer uso desta opção
   é necessário a instalação do ``libomp-devel`` ou ``libomp-dev`` depend
   ndo da sua distribuição.
 
@@ -1437,7 +1437,7 @@ Recursos opcionais
 
   Defina como **1** para ativar as rotinas de verificações adicionais
   e diagnósticos ativando o modo de depuração. É importante que
-  saiba que essa opção tem impacto direto na performance do emulador e
+  saiba que essa opção tem impacto direto no desempenho do emulador e
   só tem utilidade para desenvolvedores, não compile o MAME com esta
   opção sem saber o que está fazendo. Veja também
   :ref:`compiling-advanced-options-debug`.
@@ -1447,14 +1447,14 @@ Recursos opcionais
 **OPTIMIZE**
 
   Define o nível de otimização. O valor predefinido é **3** onde o
-  foco é performance ao custo de um executável maior no final da
+  foco é desempenho ao custo de um executável maior no final da
   compilação.
   Há também as seguintes opções:
 
 		* **0**: Caso queira desabilitar a otimização e favorecendo a depuração.
 		* **1**: Otimização simples sem impacto direto no tamanho final do executável nem no tempo de compilação.
-		* **2**: Ativa a maioria das otimizações visando performance e tamanho reduzido.
-		* **3**: Este é o valor predefinido, em favor da performance ao custo de um executável maior.
+		* **2**: Ativa a maioria das otimizações visando desempenho e tamanho reduzido.
+		* **3**: Este é o valor predefinido, em favor do desempenho ao custo de um executável maior.
 		* **s**: Ativa apenas as otimizações que não impactem no tamanho final do executável.
 
   A compatibilidade destes valores dependem do compilador que esteja
@@ -1668,7 +1668,7 @@ essa opção definida.
 Algumas distribuições Linux como Gentoo e Ubuntu possuem versões
 modificadas do GNU GCC que já vem com o ``_FORTIFY_SOURCE`` ativado
 com ``1``. Isso gera problemas para a maioria dos projetos e não apenas
-para o MAME, pois afeta diretamente a performance do emulador, dificulta
+para o MAME, pois afeta diretamente o desempenho do emulador, dificulta
 que essas verificações adicionais sejam desabilitadas, assim como torna
 difícil definir outros valores para ``_FORTIFY_SOURCE`` como ``2`` por
 exemplo, que ativa verificações ainda mais restritas.

@@ -1454,7 +1454,7 @@ Removendo a âncora
 
 Em geral as distros linux vem com o modo mais agressivo de economia de
 energia ativo, seria colocar uma âncora em um carro de corrida. Isso
-sacrifica a performance do seu computador visando a economia exagerada
+sacrifica o desempenho do seu computador visando a economia exagerada
 de energia, 
 
 Instale o ``tuned`` com ``sudo dnf install tuned`` no Fedora ou ``sudo
@@ -1597,7 +1597,7 @@ estiver corretamente configurado como demonstramos aqui, a frequência do
 **Memory Clock** e do **Shader Clock** devem recuar logo após o
 encerramento do MAME, caso não recue aguarde aproximadamente uns 10
 minutos e se ainda assim continuarem em 100% significa que você está
-utilizando algum perfil de alta performance que desativou o
+utilizando algum perfil de alto desempenho que desativou o
 gerenciamento de energia, não há problema deixar a sua placa de vídeo
 rodando no máximo desde que você saiba **EXATAMENTE** o que está
 fazendo.

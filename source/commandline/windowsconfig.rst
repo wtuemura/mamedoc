@@ -8,8 +8,8 @@ Configurações específicas para o Windows
 Nesta seção descrevemos todas as opções de configuração disponível
 apenas para a versão nativa do MAME no Windows (não SDL).
 
-Opções de performance
----------------------
+Opções de desempenho
+--------------------
 
 .. _mame-wcommandline-priority:
 

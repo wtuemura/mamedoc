@@ -103,7 +103,7 @@ SDL: ::
 		SDL_WINRT_HANDLE_BACK_BUTTON             (NULL)
 
 Não há qualquer garantia que ao alterar qualquer uma destas opções traga
-alguma melhoria de performance, a sua sorte pode variar bastante
+alguma melhoria do desempenho, a sua sorte pode variar bastante
 dependendo do sistema operacional utilizado, da sua placa de vídeo e dos
 seus respectivos drivers.
 
@@ -158,15 +158,15 @@ reinicie o computador ou encerre a sessão que estiver usando para que as
 modificações sejam aplicadas.
 
 Novamente, não é garantia que ao definir estas opções você note alguma
-melhora na performance da emulação, tudo vai depender do hardware usado
+melhora no desempenho da emulação, tudo vai depender do hardware usado
 e seus respectivos drivers.
 
 .. raw:: latex
 
 	\clearpage
 
-Opções de performance
----------------------
+Opções de desempenho
+--------------------
 
 .. _mame-scommandline-sdlvideofps:
 

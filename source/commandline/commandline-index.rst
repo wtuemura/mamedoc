@@ -148,7 +148,7 @@ Opções para os instantâneos de tela
 | :ref:`[no]snapbilinear <mame-commandline-nosnapbilinear>`
 |
 
-Opções relacionadas a performance e a velocidade da emulação
+Opções relacionadas ao desempenho e a velocidade da emulação
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`[no]autoframeskip <mame-commandline-noautoframeskip>`
@@ -392,8 +392,8 @@ Opções do servidor HTTP
 Configurações específicas para o Windows
 ----------------------------------------
 
-Opções de performance
-~~~~~~~~~~~~~~~~~~~~~
+Opções de desempenho
+~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`priority <mame-wcommandline-priority>`
 | :ref:`profile <mame-wcommandline-profile>`
@@ -434,7 +434,7 @@ Esta seção contém opções de configuração que são específicas para as
 versões SDL compatíveis (incluindo versões Windows que foram compiladas
 com SDL ao invés da sua versão nativa).
 
-Opções relacionadas a performance (SDL)
+Opções relacionadas ao desempenho (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`sdlvideofps <mame-scommandline-sdlvideofps>`

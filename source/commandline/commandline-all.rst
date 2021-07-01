@@ -1862,7 +1862,7 @@ Opções para instantâneos de tela
 	aplicada, o filtro bilinear aplica um leve efeito de embaçamento ou
 	suavização à tela, amenizando um pouco o serrilhado nos contornos
 	gráficos e suavizando a tela do sistema. Desligar essa opção pode
-	fazer a diferença melhorando a performance durante a gravação do
+	fazer a diferença melhorando o desempenho durante a gravação do
 	vídeo.
 
 	O valor predefinido é **Ligado** (**-snapbilinear**). ::
@@ -1873,7 +1873,7 @@ Opções para instantâneos de tela
 
 	\clearpage
 
-Opções relacionadas a performance e a velocidade da emulação
+Opções relacionadas ao desempenho e a velocidade da emulação
 ------------------------------------------------------------
 
 .. _mame-commandline-noautoframeskip:
@@ -1914,7 +1914,7 @@ Opções relacionadas a performance e a velocidade da emulação
 	forma automatizada. O comando diz ao MAME para para interromper a
 	emulação depois de alguns segundos. Ao combinar com outras opções
 	fixas de linha de comando é possível definir um ambiente para
-	realizar testes de performance. Ao encerrar, a opção ``-str``
+	realizar testes de desempenho. Ao encerrar, a opção ``-str``
 	faz com que seja gravado um instantâneo da tela chamado *final.png*
 	no diretório de
 	:ref:`instantâneos <mame-commandline-snapshotdirectory>`.
@@ -1927,7 +1927,7 @@ Opções relacionadas a performance e a velocidade da emulação
 
 	Este comando também é útil para a realização de benchmarks e testes
 	de automação. Ao combinar esta opção com algumas outras, é possível
-	construir uma estrutura de testes de performance do MAME.
+	construir uma estrutura de testes de desempenho do MAME.
 	Adicionalmente a opção ``-str``, faz também que ao final do tempo
 	seja criado um instantâneo de tela chamado **final.png** dentro da
 	pasta de
@@ -1943,9 +1943,9 @@ Opções relacionadas a performance e a velocidade da emulação
 	Ao ativar esta opção, o MAME tenta manter o sistema rodando em
 	sua velocidade nativa, com a opção desabilitada a emulação é
 	executada na velocidade mais rápida possível. Dependendo das
-	características do sistema emulado, a performance final pode
-	limitada pelo seu processador, placa de vídeo ou até mesmo pela
-	performance final da sua memória.
+	características do sistema emulado, o desempenho final pode
+	limitada pelo seu processador, placa de vídeo ou até mesmo pelo
+	desempenho final da sua memória.
 
 	O valor predefinido é **Ligado** (**-throttle**). ::
 
@@ -1960,8 +1960,8 @@ Opções relacionadas a performance e a velocidade da emulação
 	emulação melhorando o rendimento de processamento. Em outras
 	palavras, permite que outros programas tenham mais tempo de CPU
 	assumindo que a emulação não esteja consumindo 100% dos recursos do
-	processador. Esta opção pode causar uma certa intermitência na
-	performance caso outros programas que também demandem processamento
+	processador. Esta opção pode causar uma certa intermitência no
+	desempenho caso outros programas que também demandem processamento
 	estejam rodando junto com o MAME.
 
 	O valor predefinido é **Ligado** (**-sleep**). ::
@@ -2045,7 +2045,7 @@ Opções relacionadas a performance e a velocidade da emulação
 **-bench** [<*n*>]
 
 	Define a quantidade de segundos de emulação em [<*n*>] usado para
-	teste de performance, o comando é um atalho com comando abaixo:
+	teste de desempenho, o comando é um atalho com comando abaixo:
 
 	**-str** [<*n*>] **-video none -sound none -nothrottle** ::
 
@@ -2188,7 +2188,7 @@ Opções para a configuração de vídeo
 	* **none**
 
 	  Não exibe janelas e nem mostra nada na tela. É principalmente
-	  utilizado para realizar testes de performance (*benchmarks*)
+	  utilizado para realizar testes de desempenho (*benchmarks*)
 	  usando apenas a CPU.
 
 **No Windows:**
@@ -2199,7 +2199,7 @@ Opções para a configuração de vídeo
 
 	  Diz ao MAME para renderizar o vídeo usando funções gráficas mais
 	  antigas do Windows.
-	  Em termos de performance é a opção mais lenta porém a mais
+	  Em termos de desempenho é a opção mais lenta porém a mais
 	  compatível com as versões os sistemas Windows mais antigos.
 
 .. _mame-commandline-video-d3d:
@@ -2228,7 +2228,7 @@ Opções para a configuração de vídeo
 	* **soft**
 
 	  Faz com que a tela seja renderizada através de software.
-	  Por não usar nenhum tipo de aceleração de vídeo, a performance da
+	  Por não usar nenhum tipo de aceleração de vídeo, o desempenho da
 	  emulação pode ser penalizada, porém favorecendo uma melhor
 	  compatibilidade em qualquer plataforma.
 
@@ -2550,7 +2550,7 @@ Opções para a configuração de vídeo
 	a tela é renderizada no seu tamanho original antes de ser
 	dimensionada. Com valores maiores a tela é expandida pelo fator
 	definido em [<*fator*>]. Isso gera imagens menos borradas com a
-	opção ``-video d3d`` ao custo da perda de alguma performance.
+	opção ``-video d3d`` ao custo da perda de algum desempenho.
 
 	Os valores válidos são **1** (mínimo) e **8** (máximo).
 
@@ -3058,7 +3058,7 @@ Essas são as opções compatíveis com ``-video opengl``.
 Caso note artefatos renderizados na tela, poderá ser solicitado
 pelos desenvolvedores que você tente alterá-los, porém normalmente estes
 valores devem ser mantidos com seus valores originais para que se
-obtenha a melhor performance possível.
+obtenha a melhor desempenho possível.
 
 .. _mame-commandline-glforcepow2texture:
 
@@ -3190,10 +3190,10 @@ Opções para a configuração do áudio
 **-samplerate** [<*valor*>] / **-sr** [<*valor*>]
 
 	Define a taxa de amostragem do áudio. Valores menores como 11025 por
-	exemplo, reduzem a qualidade da áudio porém a performance da
+	exemplo, reduzem a qualidade da áudio porém o desempenho da
 	emulação melhora.
 	Valores maiores que 48000, aumentam a qualidade do áudio ao custo da
-	perda de performance da emulação.
+	perda do desempenho da emulação.
 
 	O valor predefinido é **48000** (**-samplerate 48000**). ::
 
@@ -3345,7 +3345,7 @@ Opções para a configuração do áudio
 	uma ponte conectando aplicações ao hardware de forma direta. Essa
 	integração permite uma menor latência por haver uma redução no fluxo
 	de dados e por estes dados de áudio serem direcionados diretamente
-	ao dispositivo áudio, a performance é otimizada de maneira geral
+	ao dispositivo áudio, o desempenho é otimizado de maneira geral
 	pois o que se salva em processamento no áudio pode ser aproveitado
 	pelo MAME em outros setores da emulação.
 
@@ -4251,7 +4251,7 @@ Opções diversas
 	na linguagem nativa do sistema hospedeiro. A grande vantagem desta
 	técnica é a melhor adequação do código gerado refletindo num melhor
 	desempenho e eficiência durante a execução. Por outro lado a
-	penalidade para se atingir uma melhor performance e desempenho
+	penalidade para se atingir um melhor desempenho e desempenho
 	reside na necessidade de um grande poder de processamento, muito
 	maior do que o sistema que está sendo emulado.
 
