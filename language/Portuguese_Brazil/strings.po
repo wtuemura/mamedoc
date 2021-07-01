@@ -2217,7 +2217,7 @@ msgstr "padrão"
 
 #: src/frontend/mame/ui/custui.cpp:366
 msgid "UI Font"
-msgstr "Tipografia da interface"
+msgstr "Fonte"
 
 #: src/frontend/mame/ui/custui.cpp:371
 msgid "Bold"
@@ -2237,7 +2237,7 @@ msgstr "Informações e o tamanho do texto"
 
 #: src/frontend/mame/ui/custui.cpp:397
 msgid "UI Fonts Settings"
-msgstr "Configurações das fontes da interface"
+msgstr "Configurações da tipografia da interface"
 
 #: src/frontend/mame/ui/custui.cpp:406
 msgid "Sample text - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
