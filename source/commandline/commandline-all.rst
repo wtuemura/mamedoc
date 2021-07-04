@@ -986,7 +986,7 @@ Opções de MIDI e rede
 	<mame-commandline-listslots>` para identificar o nome do slot.
 	Caso o nome do dispositivo tenha espaço, use aspas. ::
 
-		mame sistema -nome-do-slot -midiin "nome do dispositivo"
+		mame sistema -nome-do-slot -midiin "nome do dispositivo ou arquivo midi"
 
 .. _mame-commandline-midiout:
 

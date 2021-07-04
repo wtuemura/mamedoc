@@ -2336,7 +2336,7 @@ Opções de Desempenho
 
 	O valor predefinido é **Ligado**
 
-* **Mute quando a supressão de velocidade estiver desligado**
+* **Mute quando a supressão da velocidade estiver desligada**
 
   Silencia o áudio quando a supressão de velocidade estiver desligado.
 
@@ -2436,8 +2436,8 @@ Opções das Ilustrações
 
 .. _mamemenu-advanced-state-playback:
 
-Opções do Estado/Playback
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Opções do estado/reprodução
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **Salve/Restaure automático**
 

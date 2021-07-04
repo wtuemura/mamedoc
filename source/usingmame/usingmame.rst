@@ -335,6 +335,14 @@ faça::
 
 	mame expert10 -centronics covox -cartslot1 bm_012 -cartslot2 moonsound
 
+Caso use um sintetizador de MIDI externo como o
+`VirtualMIDISynth <https://coolsoft.altervista.org/en/virtualmidisynth>`_
+(Windows) ou qualquer outro que tenha no seu sistema (descubra qual
+usando a opção :ref:`-listmidi <mame-commandline-listmidi>`), você o conecta
+com o comando::
+
+	mame expert10 -centronics covox -cartslot1 bm_012 -midiout1 "VirtualMIDISynth #1" -cartslot2 moonsound
+
 Também é possível selecionar os mesmos itens através da interface do
 MAME, depois de iniciar o **expert10** pressione **Screen Lock** ou
 **SrcLk** dependendo do teclado, para usar o teclado do seu computador,

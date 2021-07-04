@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-29 22:30+1000\n"
-"PO-Revision-Date: 2021-05-30 06:11-0300\n"
+"PO-Revision-Date: 2021-07-04 19:51-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -442,7 +442,7 @@ msgstr "Supressão da velocidade"
 
 #: src/frontend/mame/ui/submenu.cpp:55
 msgid "Mute when unthrottled"
-msgstr "Mute quando a supressão de velocidade estiver desligado"
+msgstr "Mute quando a supressão da velocidade estiver desligada"
 
 #: src/frontend/mame/ui/submenu.cpp:56
 msgid "Sleep"
@@ -502,7 +502,7 @@ msgstr "Aproxime a área da tela"
 
 #: src/frontend/mame/ui/submenu.cpp:73
 msgid "State/Playback Options"
-msgstr "Opções do estado/playback"
+msgstr "Opções do estado/reprodução"
 
 #: src/frontend/mame/ui/submenu.cpp:74
 msgid "Automatic save/restore"
@@ -1324,7 +1324,7 @@ msgstr "Ficha %1$c: %2$d%3$s\n"
 
 #: src/frontend/mame/ui/miscmenu.cpp:255
 msgid " (locked)"
-msgstr "(travado)"
+msgstr " (travado)"
 
 #: src/frontend/mame/ui/miscmenu.cpp:455
 #, c-format
@@ -1373,7 +1373,7 @@ msgstr "Driver"
 
 #: src/frontend/mame/ui/miscmenu.cpp:813
 msgid "This machine has no BIOS."
-msgstr "Esta máquina não tem BIOS"
+msgstr "Esta máquina não tem BIOS."
 
 #: src/frontend/mame/ui/miscmenu.cpp:822 src/frontend/mame/ui/mainmenu.cpp:134
 msgid "Add To Favorites"
@@ -2749,7 +2749,7 @@ msgstr "  Entradas do usuário    [%1$d entradas]\n"
 #: src/frontend/mame/ui/devopt.cpp:263
 #, c-format
 msgid "  Mahjong inputs    [%1$d inputs]\n"
-msgstr " Entradas para mahjong    [%1$d entradas]\n"
+msgstr "  Entradas para mahjong    [%1$d entradas]\n"
 
 #: src/frontend/mame/ui/devopt.cpp:265
 #, c-format
