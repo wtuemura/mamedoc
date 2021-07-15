@@ -1248,11 +1248,13 @@ Opções para a configuração dos diretórios principais
 
 **-ctrlrpath** [<*caminho*>]
 
-	Define o caminho completo para os arquivos de configuração
-	específico para controle. Mais de um caminho podem ser definidos
-	desde que estejam separados por ponto e vírgula. O valor predefinido
-	é **ctrlr** (isto é, um diretório chamado **ctrlr** no diretório
-	raiz do MAME). ::
+	Define um ou mais caminhos para os arquivos de configuração dos
+	controles. Mais de um caminho pode ser definido desde que estejam
+	separados por ponto e vírgula. É usado em conjunto com a opção
+	``-ctrlr``.
+	
+	O valor predefinido é **ctrlr** (isto é, um diretório chamado
+	**ctrlr** no diretório raiz do MAME). ::
 
 		mame -ctrlrpath D:\mame\ctrlr;D:\emu\meus_controles
 
@@ -3536,15 +3538,18 @@ Opções para as configurações de diferentes entradas
 
 **-ctrlr** [<*controle*>]
 
-	Permite que arquivos ``.cfg`` seja carregados no diretório definido
-	em **ctrlrpath** com as configurações customizadas para controles,
-	outras informações que ali estiverem serão ignoradas. Estes arquivos
-	são criados durante a configuração dos botões do controle de uma
-	máquina, estas configurações são gravadas no diretório **cfg** como
+	Define um arquivo de configuração personalizada do controle,
+	normalmente usado para definir novas atribuições das entradas
+	predefinidas. Todos os diretórios definidos em ``ctrlrpath`` são
+	pesquisados. Os arquivos de configuração do controle utilizam um
+	formato similar ao ``.cfg`` que é utilizado para gravar as
+	configurações do sistema. Estes arquivos são criados durante a
+	configuração dos botões do controle de uma máquina, estas
+	configurações são gravadas no diretório **cfg** como
 	(nome_da_maquina).cfg. Para mais informações, consulte o capítulo
-	:ref:`advanced-tricks-botões-ordem`.
+	:ref:`ctrlrcfg` e o capítulo :ref:`advanced-tricks-botões-ordem`.
 
-	O valor predefinido é **NULO** (nenhum arquivo de controle). ::
+	O valor predefinido é **NULO** (nenhum arquivo de configuração). ::
 
 		mame ssf2tu -ctrlr 6-botoes
 

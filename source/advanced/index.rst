@@ -10,6 +10,7 @@ CONFIGURAÇÕES AVANÇADAS
 	bgfx
 	hlsl
 	glsl
+	ctrlr_config
 	devicemap
 	lightguns
 	slowmomame
