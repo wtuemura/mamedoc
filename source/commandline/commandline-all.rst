@@ -4107,6 +4107,17 @@ Opções voltadas para a depuração
 
 		mame indy_4610 -update_in_pause
 
+.. _mame-commandline-debugger:
+
+**-debugger** [<*tipo*>]
+
+	Seleciona o tipo do depurador que será utilizado, os tipos válidos
+	são ``windows``, ``imgui``, ``gdbstub`` ou ``none``.
+
+	O tipo predefinido é **Nenhum**. ::
+
+		mame -debug -debugger imgui pacman
+
 
 .. _mame-commandline-debuggerport:
 
