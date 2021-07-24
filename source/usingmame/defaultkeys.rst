@@ -44,6 +44,8 @@ Tecla             | Ação
                   | esteja ativa, será capturado um novo estado de retrocesso, assim como este também
                   | será salvo.
 **Shift+~**       | Enquanto estiver pausado, carrega o estado de salvamento de retrocesso mais recente.
+**F1**            | Inicia o processo de auditoria das ROMs que estão marcadas como não disponíveis.
+**Shift+F1**      | Inicia o processo de auditoria das ROMs de todas as máquinas existentes.
 **F2**            | Modo de serviço para jogos que seja compatíveis.
 **F3**            | Reinicia o jogo.
 **Shift+F3**      | Executa uma "reinicialização forçada", fechando e reiniciando a emulação do zero.
