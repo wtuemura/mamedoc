@@ -4174,7 +4174,7 @@ Opções voltadas para a depuração
 	Geralmente, um valor entre **10** e **30** segundos devem ser
 	suficientes.
 
-	Nenhum watchdog vem habilitado. ::
+	O valor predefinido é **Nenhum**. ::
 
 		mame ibm_5150 -watchdog 30
 
@@ -4266,10 +4266,9 @@ Opções diversas
 	instruções reagrupadas em código de alto nível que então é compilado
 	na linguagem nativa do sistema hospedeiro. A grande vantagem desta
 	técnica é a melhor adequação do código gerado refletindo num melhor
-	desempenho e eficiência durante a execução. Por outro lado a
-	penalidade para se atingir um melhor desempenho e desempenho
-	reside na necessidade de um grande poder de processamento, muito
-	maior do que o sistema que está sendo emulado.
+	desempenho e eficiência durante a execução. Por outro lado, é
+	preciso um poder de processamento muito maior para que isso seja
+	possível.
 
 	O valor predefinido é **Ligado** (**-drc**). ::
 
@@ -4336,6 +4335,10 @@ Opções diversas
 	O valor predefinido é **Desligado** (**-nocheat**). ::
 
 		mame kof97 -cheat
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _mame-commandline-skipgameinfo:

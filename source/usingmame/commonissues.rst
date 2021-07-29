@@ -583,9 +583,9 @@ frames**, escolha valores como 2 e 2 ou 3 e 3, etc.
 
 Todas as configurações de auto disparo ficam armazenadas dento do
 diretório **Autofire** com o nome da máquina utilizada seguida da
-extensão *.cfg* (**galaga.cfg** por exemplo). Note haverá problemas caso
-o botão de auto disparo seja definido no mesmo botão já predefinido pelo
-MAME, veja o exemplo da máquina **Gradius**:
+extensão *.cfg* (**galaga.cfg** por exemplo). Observe que haverá
+problemas caso o botão de auto disparo seja definido no mesmo botão já
+predefinido pelo MAME, veja o exemplo da máquina **Gradius**:
 
 Caso o botão de disparo para o jogador 1 seja o mesmo escolhido para o
 auto disparo, ao segurar o botão de disparo o auto disparo não vai
