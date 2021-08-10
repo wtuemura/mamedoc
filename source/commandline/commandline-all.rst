@@ -2341,18 +2341,18 @@ Opções para a configuração de vídeo
 **-[no]unevenstretch** / **-[no]ues**
 
 	Permite que valores não inteiros possam ser usados para o
-	redimensionamento da tela. Isso determina se os pixels que
-	formam a imagem serão ou não distorcidos/esticados durante o
-	processo de redimensionamento.
+	redimensionamento da tela, isso faz com que a imagem possa ter uma
+	forma mais distorcida ou esticada para que ela preencha toda a
+	tela, porém há um preço a ser pago.
 
 	O uso de valores não inteiros geram uma interferência chamada
 	**aliasing** nos pixels [#aliasing]_ [#saaliasing]_. Imagine o mapa
 	de um jogo feito de linhas retas com 1 pixel de largura, quando
-	ocorre o aliasing a linha que originalmente era feita com 1 pixel de
-	largura passa a ter 2 pixels ou mais, essa interferência cria pixels
-	aonde antes não existiam gerando distorções em **todos os pixels**.
-	Abaixo com destaque em vermelho fica fácil visualizar apensar do
-	problema afetar toda a imagem.
+	ocorre o "*aliasing*" a linha que originalmente era feita com 1
+	pixel de largura passa a ter 2 pixels ou mais, essa interferência
+	cria pixels aonde antes não existiam gerando distorções em **todos
+	os pixels**. Abaixo um exemplo com destaque nas regiões marcadas com
+	vermelho, porém nota-se que o problema afeta toda a imagem.
 
 	.. image:: images/pixel-aliasing.png
 		:width: 100%
@@ -2363,17 +2363,27 @@ Opções para a configuração de vídeo
 	de uma TV 16:9 com gráficos feitos para 4:3 ainda que isso gere
 	distorções ao custo da desproporção dos gráficos.
 
-	Este é um assunto bem complexo pois apesar dos pixels do lado
-	esquerdo estarem todos com um formato quadrado perfeito (proporção
-	1:1), a imagem está fora da proporção pois na época os gráficos não
-	foram criados com os pixels no formato de um quadrado perfeito como
-	mostra a imagem do lado esquerdo e sim com 1 pixel mais alto.
+	Este é um assunto bem complexo pois, apesar de todos os pixels do
+	lado esquerdo estarem com os quadrados perfeitos, o que significa
+	uma proporção dos pixels de 1:1, também conhecido como
+	`pixel perfect <https://tanalin.com/en/articles/integer-scaling/>`_,
+	a imagem está com as suas proporções erradas, na época os gráficos
+	não foram desenvolvidos com os pixels no formato de um quadrado
+	perfeito e sim para terem 1 pixel mais alto visando as telas CRT 4:3
+	da época como mostra a imagem do lado direito.
 
 	Assim, apesar dos pixels estarem distorcidos na imagem da direita a
 	proporção dos gráficos está correta! Ao mesmo tempo que apesar dos
 	pixels estarem perfeitos do lado esquerdo a proporção do gráfico
-	está errada. Consulte :ref:`-aspect <mame-commandline-aspect>` e
-	:ref:`-keepaspect <mame-commandline-keepaspect>`
+	está errada.
+	
+	Com esta opção é possível preencher a tela da sua TV 16:9 com
+	gráficos desenvolvidos para uma tela 4:3 ao custo de distorções nos
+	gráficos e isso fica pior ainda com textos.
+	
+	Consulte :ref:`-aspect <mame-commandline-aspect>`, 
+	:ref:`-keepaspect <mame-commandline-keepaspect>` e
+	:ref:`-prescale <mame-commandline-prescale>`.
 
 	O valor predefinido é **Ligado** (**-unevenstretch**). ::
 
@@ -2547,12 +2557,16 @@ Opções para a configuração de vídeo
 
 **-prescale** [<*fator*>]
 
-	Controla a proporcionalidade de redimensionamento da grandeza do
+	Controla a proporcionalidade da grandeza do redimensionamento do
 	vídeo antes da aplicação de filtros ou shaders. No ajuste mínimo
 	a tela é renderizada no seu tamanho original antes de ser
 	dimensionada. Com valores maiores a tela é expandida pelo fator
 	definido em [<*fator*>]. Isso gera imagens menos borradas com a
 	opção ``-video d3d`` ao custo da perda de algum desempenho.
+
+	Experimente ``-prescale 4`` ou valores maiores para amenizar um
+	pouco as distorções causadas pela opção
+	:ref:`unevenstretch <mame-commandline-unevenstretch>`.
 
 	Os valores válidos são **1** (mínimo) e **8** (máximo).
 
@@ -2560,7 +2574,8 @@ Opções para a configuração de vídeo
 
 	Funciona com todos os modos de vídeo no Windows (bgfx, d3d, etc) e
 	nas outras plataformas **APENAS** aquelas que forem compatíveis com
-	o OpenGL. ::
+	o OpenGL, também não funciona com filtros
+	:ref:`GLSL <mame-commandline-glglslfilter>`. ::
 
 		mame ssf2tu -video d3d -prescale 3
 
