@@ -2676,13 +2676,12 @@ Opções de vídeo para uso com janelas individuais
 	o MAME com a opção :ref:`-verbose <mame-commandline-verbose>`.
 	Os nomes de cada tela geralmente estão no formato: *\\\\.\\DISPLAYn*
 	no Windows e *screenN* no macOS e variantes do OpenGL como o Linux
-	por exemplo o **n** ou **N** é um número do monitor que estiver
+	por exemplo, o **n** ou **N** é um número do monitor que estiver
 	conectado.
 
 	O valor predefinido para estas opções é **auto**.
 	O que significa que a primeira janela é colocada na primeira
-	exibição, a segunda janela na segunda exibição e assim por
-	diante. ::
+	exibição, a segunda janela na segunda e assim por diante. ::
 
 		Windows
 		mame pc_cntra -numscreens 2 -screen0 \\.\DISPLAY1 -screen1 \\.\DISPLAY2
@@ -2694,10 +2693,11 @@ Opções de vídeo para uso com janelas individuais
 
 
 	Os parâmetros ``-screen0``, ``-screen1``, ``-screen2``, ``-screen3``
-	aplicam-se as janelas definidas. O parâmetro **screen** se aplica
-	a todas as janelas.
-	As opções definidas da janela substituem os valores da opções de
-	todas as janelas.
+	são específicos para cada janela. Já o parâmetro ``-screen`` aplica
+	a configuração à todas as janelas.
+	As opções definidas para uma janela específica tem prioridade sobre
+	às opções das outras janelas.
+
 
 .. note:: Utilize a opção **-verbose** para exibir quais os displays
           estão disponíveis no seu sistema e qual a sua resolução quando
@@ -2724,14 +2724,18 @@ Opções de vídeo para uso com janelas individuais
 	monitor.
 
 	O parâmetro ``-aspect0``, ``-aspect1``, ``-aspect2`` e ``-aspect3``
-	se aplica a todas as janelas definidas. O parâmetro ``-aspect`` se
-	aplica a todas as janelas.
-	As opções definidas da janela substituem os valores da opções de
-	todas as janelas. Consulte :ref:`-unevenstretch
+	são específicos para cada janela. O parâmetro ``-aspect`` se aplica
+	à todas as janelas.
+	As opções definidas para uma janela específica tem prioridade sobre
+	às opções das outras janelas. Consulte :ref:`-unevenstretch
 	<mame-commandline-unevenstretch>`. ::
 
 		mame contra -aspect 16:9
 		mame pc_cntra -numscreens 2 -aspect0 16:9 -aspect1 5:4
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _mame-commandline-resolution:
