@@ -999,7 +999,7 @@ Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
 problemas, certifique-se que a versão mais recente esteja instalada. ::
 
-	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel pulseaudio-libs-devel
+	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel pulseaudio-libs-devel llvm
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`.
@@ -1013,7 +1013,7 @@ Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
 problemas, certifique-se que a versão mais recente esteja instalada. ::
 
-	sudo apt-get install git build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qtbase5-dev lld
+	sudo apt-get install git build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qtbase5-dev lld llvm
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`
