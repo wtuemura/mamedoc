@@ -1437,7 +1437,8 @@ Opções para a configuração dos diretórios principais
 
 	Define o diretório onde os arquivos de gravação de estado são
 	armazenados. Os arquivos de estado são lidos e gravados mediante a
-	solicitação do usuário ou ao usar a opção ``-autosave``.
+	solicitação do usuário ou ao usar a opção
+	:ref:`-autosave <mame-commandline-noautosave>`.
 
 	O valor predefinido é **sta** (isto é, um diretório de nome
 	**sta** no diretório raiz do MAME). Caso este diretório não
@@ -1597,9 +1598,9 @@ Opções para a gravação e a reprodução do estado da emulação
 
 	Quando ativado, cria automaticamente um arquivo com a condição atual
 	do sistema ao encerrar o MAME e automaticamente tenta recarregá-lo
-	caso o MAME inicie novamente com o mesmo sistema. Isto só funciona
-	para o driver dos sistemas compatíveis que suportam o salvamento da
-	sua condição atual.
+	caso o MAME inicie novamente com o mesmo sistema. A opção só
+	funciona para os sistemas que sejam compatíves com o salvamento do
+	seu estado.
 
 	O valor predefinido é **Desligado** (**-noautosave**). ::
 
@@ -1612,7 +1613,7 @@ Opções para a gravação e a reprodução do estado da emulação
 
 	Faz a reprodução de um arquivo de gravação. Esse recurso não
 	funciona de maneira confiável com todos os sistemas, mas pode ser
-	usado para assistir a uma sessão de jogo gravada anteriormente do
+	usado para assistir a uma sessão do jogo gravado anteriormente do
 	início ao fim. Para tornar as coisas consistentes, apague os
 	arquivos de configuração ``.cfg``, NVRAM ``.nv`` e o cartão de
 	memória.
@@ -1937,6 +1938,11 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 
 		mame ssf2tu -str 60
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-nothrottle:
 
 **-[no]throttle**
@@ -2004,6 +2010,11 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	gravação em câmera lenta. Para mais informações, consulte
 	:ref:`slowmomame <advanced-slowmomame>`.
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-norefreshspeed:
 
 **-[no]refreshspeed** / **-[no]rs**
@@ -2024,9 +2035,6 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 
 		mame ssf2tu -refreshspeed
 
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-numprocessors:
 
