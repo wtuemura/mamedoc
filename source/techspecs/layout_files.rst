@@ -1405,6 +1405,8 @@ exemplo:
         <!-- limites automaticamente calculados com sua origem em (5,10), largura 30, e altura 15 -->
         <element ref="topleft"><bounds x="5" y="10" width="10" height="10" /></element>
         <element ref="bottomright"><bounds x="25" y="15" width="10" height="10" /></element>
+    </group>
+
     <view name="Teste">
         <!--
            Os grupos limitadores são traduzidos e escalonados para preencher 2/3 da escala
@@ -1427,6 +1429,8 @@ posição dos elementos de um grupo estejam fora dos seus limites:
         <bounds x="10" y="10" width="20" height="25" />
         <element ref="topleft"><bounds x="10" y="0" width="10" height="10" /></element>
         <element ref="bottomright"><bounds x="30" y="20" width="10" height="10" /></element>
+    </group>
+
     <view name="Test">
         <!--
            Os grupos limitadores são traduzidos e escalonados para preencher 2/3 da escala
@@ -1444,6 +1448,10 @@ de visualização final. O conteúdo dos grupos não ficam restritos aos
 seus limites. A visualização considera os limites dos elementos atuais
 ao calcular os seus próprios limites e não aos limites do destino
 definido para o grupo.
+
+.. raw:: latex
+
+	\clearpage
 
 Quando um grupo é instanciado [#INSTANCIA]_, ele cria um escopo agrupado
 do parâmetro.
@@ -3588,12 +3596,12 @@ Desativando objetos na tela
 
 Assim como foi descrito em :ref:`layfile-parts-collections` isso é
 possível organizando os objetos da tela dentro dos elementos
-``collections``, quando a visualização tiver esta opção o jogador poderá
-desligar qualquer objeto na tela que tenha sido organizado pelo autor
-para ser removido da tela. Use ``visible`` **yes** ou **no** (também
-funciona com 1 ou 0) dentro do elemento ``collection`` caso queira que
-ele já inicie **ligado** ou **desligado**. Baixe este arquivo para ver
-como funciona na prática com a máquina
+``collections``, quando a visualização tiver esta opção, o jogador
+poderá desligar qualquer objeto na tela desde que tenha sido organizado
+desta maneira pelo autor da arte. Use ``visible`` **yes** ou **no**
+(também funciona com 1 ou 0) dentro do elemento ``collection`` caso
+queira que ele já inicie **ligado** ou **desligado**. Baixe este arquivo
+para ver como funciona na prática com a máquina
 `mspacman <https://www.mediafire.com/file/ltjl0mnczuvc532/mspacman.zip>`_.
 
 .. code-block:: xml
