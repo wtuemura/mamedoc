@@ -435,6 +435,22 @@ seção :ref:`index-commandline` deste manual (na maioria dos casos, cada
 opção de configuração listada ali, possui uma versão equivalente para a
 linha de comando).
 
+Também é possível utilizar a opção ``-showconfig`` quando o MAME já está
+devidamente configurado para listar uma configuração do ``mame.ini``
+sem que você precise abri-lo, por exemplo, para listar o seu
+**rompath** no **Windows** faça::
+
+	mame -showconfig|findstr rompath
+	roms;D:\mame\roms
+
+No Linux ou macOS faça::
+
+	mame -showconfig|grep rompath
+	roms;/mount/media/mame/roms;etc
+
+Algumas vezes é bem mais prático fazer assim do que ter que acessar o
+arquivo ``mame.ini`` diretamente.
+
 .. [#]	Os desenvolvedores do MAME preferem usar o termo **máquinas** em
 		vez de **jogos**, talvez visando evitar problemas legais?
 .. [#]	Existe uma diferença entre sistema e máquina, o comando em
