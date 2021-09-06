@@ -51,40 +51,43 @@ Tecla             | Ação
 **Shift+F3**      | Executa uma "reinicialização forçada", fechando e reiniciando a emulação do zero.
                   | Este produz um reinicio mais limpo e completo do que pressionar apenas o F3.
 **LCtrl+F3**      | [APENAS SDL] - Alterna o alongamento irregular.
-**F4**            | Exibe a paleta GFX decodificada e os tilemaps dos jogos. Pressione **F4** novamente para sair.
+**F4**            | Exibe a paleta GFX decodificada e os *tilemaps* dos jogos. Pressione **F4** novamente para sair.
                   |
-                  | Paleta / modo tabela de cores (colortable):
+                  | Paleta / modo tabela de cores (color table):
                   |  * **[ ]** - alterna entre os modos paleta e tabela de cores
-                  |  * **Cima/Baixo** - rolar uma linha de cada vez para cima e para baixo
+                  |  * **Cima/Baixo** - role uma linha de cada vez para cima e para baixo
                   |  * **Page Up/Page Down** - desloca uma página de cada vez para cima e para baixo
                   |  * **Home/End** - ir para o topo ou final da lista
-                  |  * **-/+** - aumenta ou diminui a quantidade de cores por linha
+                  |  * **-/+** - aumenta ou reduz a quantidade de cores por linha
+                  |  * **0** - restaura a quantidade predefinida de cores por linha
                   |  * **Enter** - altera para o visualizador gráfico entre os modos **paleta**, **gráficos** e **tilemaps**
                   |
                   | Modo gráfico:
                   |  * **[ ]** - alterna entre diferentes conjuntos de gráficos
-                  |  * **Cima/Baixo** - rolar uma linha de cada vez para cima e para baixo
+                  |  * **Cima/Baixo** - role uma linha de cada vez para cima e para baixo
                   |  * **Page Up/Page Down** - desloca uma página de cada vez para cima e para baixo
                   |  * **Home/End** - ir para o topo ou final da lista
                   |  * **Esquerda/Direita** - altera a cor que está sendo exibida
-                  |  * **R** - rotacionar os blocos em *90º* no sentido horário
-                  |  * **-/+** - aumenta/diminui a quantidade de blocos por linha
+                  |  * **R** - rotacione os blocos em *90º* no sentido horário
+                  |  * **-/+** - aumenta/reduz a quantidade de blocos por linha
+                  |  * **0** - restaura a quantidade predefinida dos *tiles* por linha
                   |  * **Enter** - alterna para o visualizador de tilemap
                   |
                   | Modo Tilemap: [1]_ [2]_
                   |  * **[ ]** - alterna entre diferentes tilemaps
-                  |  * **Cima/Baixo/Esquerda/Direita** - rolar *8 pixels* de cada vez
-                  |  * **Shift+Cima/Baixo/Esquerda/Direita** - rolar *1 pixel* de cada vez
-                  |  * **Control+Cima/Baixo/Esquerda/Direita** - rolar *64 pixels* de cada vez
+                  |  * **Cima/Baixo/Esquerda/Direita** - role *8 pixels* por vez
+                  |  * **Shift+Cima/Baixo/Esquerda/Direita** - role *1 pixel* por vez
+                  |  * **Control+Cima/Baixo/Esquerda/Direita** - role *64 pixels* por vez
                   |  * **R** - rotacionar o ângulo de visão do tilemap em *90º* no sentido horário
-                  |  * **-/+** - aumenta/diminui o fator de zoom
+                  |  * **-/+** - aumenta/reduz o fator de zoom
+                  |  * **0** - amplie os pequenos *tilemaps* para preencher toda a tela
                   |  * **Enter** - altera para o modo paleta de cores ou tabela de cores
                   |
 **LCtrl+F4**      | [**APENAS SDL**] - Alterna a relação de aspecto da tela.
 **LCtrl+F5**      | [**APENAS SDL**] - Alterna o Filtro.
 **Alt+Ctrl+F5**   | [**APENAS MS WINDOWS**] - Alterna o processamento HLSL final
 **F6**            | Alterna o modo de trapaça (caso o MAME seja iniciado com a opção **-cheat**)
-**LCtrl+F6**      | Diminui a Proporção de Escala Preliminar
+**LCtrl+F6**      | Reduz a proporção da escala preliminar
 **F7**            | Ler a gravação de estado. Você será solicitado a pressionar uma tecla para
                   | determinar qual a gravação de estado você deseja carregar.
                   |
@@ -95,7 +98,7 @@ Tecla             | Ação
 **LCtrl+F7**      | Aumenta a Proporção de Escala Preliminar
 **Shift+F7**      | Cria uma gravação de estado. Precisa pressionar uma tecla a mais para
                   | identificar o estado, semelhante a opção de carregamento acima.
-**F8**            | Diminui o pulo de quadro.
+**F8**            | Reduz o salto de quadro.
 **F9**            | Aumenta o pulo de quadro.
 **F10**           | Alterna o afogador de velocidade.
 **F11**           | Alterna o indicador de velocidade.
@@ -143,6 +146,6 @@ QWERTY ABNT-2 (107 Teclas)
     :align: center
     :alt: QWERTY ABNT-2 (107)
 
-.. [1] Nem todos os jogos possuem gráficos tilemap decodificados.
+.. [1] Nem todos as máquinas possuem gráficos *tilemap* decodificados.
 .. [2] **tilemaps** são como pequenos recortes ou pedaços usados para montar a imagem do jogo.
 
