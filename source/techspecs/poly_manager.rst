@@ -558,6 +558,10 @@ Este método enfileira um único *triângulo* primitivo para a renderização:
 	É o responsável pelo retorno da chamada que será feita para
 	renderizar cada extensão.
 
+.. raw:: latex
+
+	\clearpage
+
 * **v1**, **v2**, **v3**
 
 	Contém as coordenadas e os parâmetros de iteração para cada vértice
@@ -1050,6 +1054,10 @@ renderização: identificar casos especiais que reduzem o trabalho por
 pixel, e encaminhá-los para separar o retorno da renderização que são
 otimizados para aquele caso especial.
 
+
+.. raw:: latex
+
+	\clearpage
 
 .. _poly_manager-draw_triangle_flat:
 
