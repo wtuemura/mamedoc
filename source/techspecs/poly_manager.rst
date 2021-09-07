@@ -523,10 +523,7 @@ Este método enfileira um único *tile* primitivo para a renderização:
 	Contém as coordenadas e os parâmetros de iteração para o canto
 	superior direito do tile.
 
-**Retorna:**
-
-	A quantidade total dos pixels que foram recortados representado
-	pelas extensões consultadas.
+**Retorna:** A quantidade total dos pixels que foram recortados representado pelas extensões consultadas.
 
 
 .. _poly_manager-render_triangle:
@@ -1407,12 +1404,10 @@ Equivale ao [**index**] numa matriz normal:
 
 	É o índice do item que você deseja consultar.
 
-**Retorna:**
-
-	Uma referência ao objeto em questão. Como uma referência é
-	devolvida, a sua responsabilidade é garantir que o **index**
-	seja inferior a ``count()``, pois não há qualquer mecanismo para
-	devolver um resultado inválido.
+		**Retorna:** Uma referência ao objeto em questão. Como uma
+		referência é devolvida, a sua responsabilidade é garantir que o
+		**index** seja inferior a ``count()``, pois não há qualquer
+		mecanismo para devolver um resultado inválido.
 
 
 .. raw:: latex
