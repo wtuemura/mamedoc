@@ -21,3 +21,4 @@ scripts LUA que são executados na estrutura do MAME.
 	luaengine
 	luareference
 	m6502
+	poly_manager
