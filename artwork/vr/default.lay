@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Onscreen Virtua Racing Wheel
+	 Inspired by nbla000 hangon artwork posted at Mr. Do website:
+	 https://mrdo.mameworld.info/mame_artwork_ingame.php
+	 Graphics, artwork and lay file created by: Wellington Terumi Uemura
+	 https://mamedoc.readthedocs.io/
+	 Date: September 10 2021
+
+	 License: CC by 4.0
+-->
+<mamelayout version="2">
+
+<!-- Load images -->
+
+	<element name="gear up" defstate="0">
+		<image file="gear_up0.png" state="0" />
+		<image file="gear_up1.png" state="1" />
+	</element>
+	<element name="gear down" defstate="0">
+		<image file="gear_down0.png" state="0" />
+		<image file="gear_down1.png" state="1" />
+	</element>
+	<element name="ugear up" defstate="0">
+		<image file="under_gear_up0.png" state="0" />
+		<image file="under_gear_up1.png" state="1" />
+	</element>
+	<element name="ugear down" defstate="0">
+		<image file="under_gear_down0.png" state="0" />
+		<image file="under_gear_down1.png" state="1" />
+	</element>
+	<element name="VR Base" defstate="1">
+		<image file="vr_base.png" state="1" />
+	</element>
+	<element name="VR 1" defstate="0">
+		<image file="red0.png" state="0" />
+		<image file="red1.png" state="1" />
+	</element>
+	<element name="VR 2" defstate="0">
+		<image file="blue0.png" state="0" />
+		<image file="blue1.png" state="1" />
+	</element>
+	<element name="VR 3" defstate="0">
+		<image file="yellow0.png" state="0" />
+		<image file="yellow1.png" state="1" />
+	</element>
+	<element name="VR 4" defstate="0">
+		<image file="green0.png" state="0" />
+		<image file="green1.png" state="1" />
+	</element>
+	<element name="swb" defstate="1">
+		<image file="swb.png" state="1" />
+	</element>
+	<element name="cover" defstate="0">
+		<text string=" " />
+	</element>
+
+<!--
+
+	90º divided by the amount of steps to know how many degree
+	you need to apply until the last animation reaches 90º
+	(or very close to that), in my case it was steps of 5 degrees
+	instead of 5,6. Positive values to turn right and negative to turn
+	left.
+
+	All designs were created using Inkscape.
+
+	1) In Inkscape create a centered wheel in one layer named 'center'.
+	2) Create one empty layer on top of that and name it right 1 (or whatever).
+	3) Select the center wheel and copy (Ctrl + C), make sure you design it's well centered! 
+
+	4) Select your wheel in 'right 1' layer and go to Edit > Paste in place (Ctrl + Alt + V)
+	to place a copy in the exact same position.
+
+	5) With the wheel selected, go to Object > Transform (Ctrl + Alt + M),
+	select the tab 'Rotate', in 'Angle' add 5,000 and click 'Apply' to turn the wheel
+	5 degrees to the right.
+
+	6) Without touching anything press Ctrl + C to copy, in 'Layers' press the plus sign to
+	add another layer on top of 'right 1' now named 'right 2',
+	go to Edit > Paste in place (Ctrl + Alt + V), go to the Transform tab and click 'Apply'
+	to apply more 5 degree over the wheel, repeat until you reach the amount of steeps you
+	need for your animation.
+
+	7) To do the left motion, hide all other layers, make a copy of the center wheel,
+	create a new layer over that named 'left 1', go to Edit > Paste in place (Ctrl + Alt + V),
+	go to the 'Transform' tab and now use a -5,000 instead, repeat the process.
+
+	8) To export, right click in one layers inside the 'Layers' tab and select 'Hide all layers',
+	select your 'center' wheel layer and select all the design parts (better to group them all),
+	go to File > Export PNG image (Shift + Ctrl + E), at the export area a 96 dpi will give you
+	a 1:1 size for your design, depending no the size of the design better to use 150 dpi or
+	even 300 dpi to export a bigger image them shrink them up in the layout so it will look good
+	in a bigger display.
+
+-->
+
+<!-- Here we attach each animation file to a state, not all racing games with a wheel uses states like these. -->
+
+	<element name="wheel" defstate="0x10">
+		<image file="left16.png" state="0x0" />
+		<image file="left15.png" state="0x1" />
+		<image file="left14.png" state="0x2" />
+		<image file="left13.png" state="0x3" />
+		<image file="left12.png" state="0x4" />
+		<image file="left11.png" state="0x5" />
+		<image file="left10.png" state="0x6" />
+		<image file="left9.png" state="0x7" />
+		<image file="left8.png" state="0x8" />
+		<image file="left7.png" state="0x9" />
+		<image file="left6.png" state="0xa" />
+		<image file="left5.png" state="0xb" />
+		<image file="left4.png" state="0xc" />
+		<image file="left3.png" state="0xd" />
+		<image file="left2.png" state="0xe" />
+		<image file="left1.png" state="0xf" />
+		<image file="center.png" state="0x10" />
+		<image file="right1.png" state="0x11" />
+		<image file="right2.png" state="0x12" />
+		<image file="right3.png" state="0x13" />
+		<image file="right4.png" state="0x14" />
+		<image file="right5.png" state="0x15" />
+		<image file="right6.png" state="0x16" />
+		<image file="right7.png" state="0x17" />
+		<image file="right8.png" state="0x18" />
+		<image file="right9.png" state="0x19" />
+		<image file="right10.png" state="0x1a" />
+		<image file="right11.png" state="0x1b" />
+		<image file="right12.png" state="0x1c" />
+		<image file="right14.png" state="0x1d" />
+		<image file="right15.png" state="0x1e" />
+		<image file="right16.png" state="0x1f" />
+	</element>
+
+<element name="accel" defstate="0x0">
+		<image file="pedal0.png" state="0x0" />
+		<image file="pedal1.png" state="0x1" />
+	</element>
+
+<element name="brake" defstate="0x0">
+		<image file="pedal0.png" state="0x0" />
+		<image file="pedal1.png" state="0x1" />
+	</element>
+
+	<view name="Steering Wheel">
+		<screen index="0">
+			<bounds x="0" y="0" width="496" height="384"/>
+		</screen>
+	<collection name="VR Selector" visible="no">
+	<element ref="VR Base">
+		<bounds x="198" y="342.47" width="25" height="33" />
+	</element>
+	<element ref="VR Base">
+		<bounds x="223" y="342.47" width="25" height="33" />
+	</element>
+	<element ref="VR Base">
+		<bounds x="248" y="342.47" width="25" height="33" />
+	</element>
+	<element ref="VR Base">
+		<bounds x="273" y="342.47" width="25" height="33" />
+	</element>
+	<element ref="VR 1" inputtag="IN.0" inputmask="0x20">
+		<bounds x="200.62" y="344.52" width="19.75" height="28.89" />
+	</element>
+	<element ref="VR 2" inputtag="IN.0" inputmask="0x40">
+		<bounds x="225.62" y="344.52" width="19.75" height="28.89" />
+	</element>
+	<element ref="VR 3" inputtag="IN.0" inputmask="0x80">
+		<bounds x="250.62" y="344.52" width="19.75" height="28.89" />
+	</element>
+	<element ref="VR 4" inputtag="IN.1" inputmask="0x01">
+		<bounds x="275.62" y="344.52" width="19.75" height="28.89" />
+	</element>
+	</collection>
+	<collection name="Gear and pedals" visible="yes">
+	<element ref="swb">
+		<bounds x="31.86" y="223.36" width="46.92" height="21.78" />
+	</element>
+	<element ref="cover" blend="add" inputtag="IN.1" inputmask="0x00" inputraw="1">
+		<bounds x="68.31" y="219.99" width="17.286" height="40.00" />
+	</element>
+	<element ref="ugear up" inputtag="IN.1" inputmask="0x20">
+		<bounds x="68.31" y="219.99" width="17.286" height="40.00" />
+	</element>
+	<element ref="cover" blend="add" inputtag="IN.1" inputmask="0x00" inputraw="1">
+		<bounds x="23.24" y="220.24" width="17.286" height="40.00" />
+	</element>
+	<element ref="ugear down" inputtag="IN.1" inputmask="0x10">
+		<bounds x="23.24" y="220.24" width="17.286" height="40.00" />
+	</element>
+	<collection name="Wheel" visible="yes">
+	<element ref="cover" blend="add" inputtag="WHEEL" inputmask="0x00" inputraw="1">
+		<bounds x="14.77" y="200.73" width="79.01" height="79.01" />
+	</element>
+
+<!-- 
+	To make the wheel work you need a correct 'inputmask' value and so far there
+	is no information on how to either calculate or choose that value based on the
+	model1.cpp source:
+
+	PORT_START("WHEEL")
+	PORT_BIT( 0xff, 0x80, IPT_PADDLE ) PORT_SENSITIVITY(100) PORT_KEYDELTA(3)
+
+	PORT_START("ACCEL")
+	PORT_BIT( 0xff, 0x30, IPT_PEDAL ) PORT_MINMAX(1,0xff) PORT_SENSITIVITY(100) PORT_KEYDELTA(16)
+
+	PORT_START("BRAKE")
+	PORT_BIT( 0xff, 0x30, IPT_PEDAL2 ) PORT_MINMAX(1,0xff) PORT_SENSITIVITY(100) PORT_KEYDELTA(16)
+
+	I don't know how and why they choose '0xf8':
+	https://www.mameworld.info/ubbthreads/showflat.php?Cat=2&Number=385076
+-->
+
+		<element ref="wheel" inputtag="WHEEL" inputmask="0xf8" inputraw="1">
+			<bounds x="14.77" y="200.73" width="79.01" height="79.01" />
+		</element>
+	</collection>
+	<element ref="cover" blend="add" inputtag="ACCEL" inputmask="0x00" inputraw="1">
+		<bounds x="57.62" y="283.37" width="23.00" height="50.00" />
+	</element>
+	<element ref="accel" inputtag="ACCEL" inputmask="0xc0">
+		<bounds x="57.62" y="283.37" width="23.00" height="50.00" />
+	</element>
+	<element ref="cover" blend="add" inputtag="BRAKE" inputmask="0x00" inputraw="1">
+		<bounds x="27.93" y="283.37" width="23.00" height="50.00" />
+	</element>
+	<element ref="brake" inputtag="BRAKE" inputmask="0xc0">
+		<bounds x="27.93" y="283.37" width="23.00" height="50.00" />
+		<orientation flipx="yes" />
+	</element>
+	</collection>
+	</view>
+</mamelayout>
