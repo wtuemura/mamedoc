@@ -480,12 +480,12 @@ mostradas abaixo.
 
 		O valor predefinido é **Desligado**
 
-* **Escale a tela com valores inteiros**
+* **Escale a tela com valores racionais**
 
-  Faz com que a tela possa ser expandida usando números inteiros em vez
-  de números fracionados, isso geralmente causa efeitos *"aliasing"* (um
-  efeito colateral de deformação dos pixels) indesejáveis na tela, para
-  mais informações consulte
+  Faz com que a tela possa ser expandida usando números racionais em vez
+  de números inteiros, isso causa efeitos *"aliasing"* (um efeito
+  colateral de deformação dos pixels) indesejáveis na tela, para mais
+  informações consulte
   :ref:`-unevenstretch <mame-commandline-unevenstretch>`.
 
   As opções disponíveis são:
