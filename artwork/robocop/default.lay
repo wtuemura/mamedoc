@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!-- Skeleton joystick for dec0 (robocop)
+	 Created by: Wellington Terumi Uemura
+	 License: CC by 4.0
+	 https://mamedoc.readthedocs.io/
+	 Date: August 02 2021
+-->
+<mamelayout version="2">
+
+<!-- Load artwork images -->
+	<element name="joy_panel">
+		<image file="base.png" />
+	</element>
+	<element name="hit" defstate="0">
+		<image file="hit.png" state="1" />
+	</element>
+
+<!-- Safe zone for our joystick -->
+	<element name="cover" defstate="0">
+		<text string=" " />
+	</element>
+
+<!-- Set our default joystick raw inputs and images-->
+	<element name="commands"		defstate="0xf">
+		<image file="up.png"		state="0xe" />
+		<image file="upright.png"	state="0x6" />
+		<image file="right.png"		state="0x7" />
+		<image file="downright.png"	state="0x5" />
+		<image file="down.png"		state="0xd" />
+		<image file="downleft.png"	state="0x9" />
+		<image file="left.png"		state="0xb" />
+		<image file="upleft.png"	state="0xa" />
+		<image file="center.png"	state="0xf"/>
+	</element>
+
+<!-- Organize our player 1 joystick in one group -->
+<!-- Prevent joystick reaction with the user mouse -->
+	<group name="P1_joystick">
+	<element ref="cover" blend="add" inputtag="INPUTS" inputmask="0x00" inputraw="1">
+		<bounds x="0" y="0" width="1" height="1" />
+	</element>
+	<element ref="commands" inputtag="INPUTS" inputmask="0xf" inputraw="1">
+		<bounds x="0" y="0" width="1" height="1" />
+	</element>
+	</group>
+
+<!-- Our main view name -->
+	<view name="Center">
+
+<!-- The parameters for our screen
+	 bounds x & y set the position
+	 width & height the size
+-->
+	<screen index="0">
+		<bounds x="0" y="0" width="320" height="240" />
+	</screen>
+
+	<collection name="Show joystick" visible="yes">
+	<element ref="joy_panel">
+		<bounds x="80" y="193" width="43" height="25" />
+	</element>
+
+<!-- Set our joystick size and position -->
+	<group ref="P1_joystick">
+		<bounds x="83" y="198" width="15" height="15" />
+	</group>
+
+<!-- Set our buttons positions -->
+<!-- Button 1 -->
+	<element ref="hit" inputtag="INPUTS" inputmask="16">
+		<bounds x="100.4" y="201.2" width="8.5" height="8.5" />
+	</element>
+<!-- Button 2 -->
+	<element ref="hit" inputtag="INPUTS" inputmask="32">
+		<bounds x="110.5" y="201.2" width="8.5" height="8.5" />
+	</element>
+<!-- Button 3 -->
+<!--	<element ref="hit" inputtag="INPUTS" inputmask="64">
+		<bounds x="166.3" y="184" width="8.5" height="8.5" />
+	</element>
+-->
+</collection>
+
+</view>
+</mamelayout>
