@@ -687,7 +687,7 @@ Este método enfileira um único *polígono* primitivo para a renderização:
 
 * **NumVerts**
 
-	É a quantidade de vértices num polígono.
+	É a quantidade dos vértices num polígono.
 
 * **ParamCount**
 
@@ -796,7 +796,7 @@ Z representado por **clipval**, esta borda é aparada.
 
 * **numverts**
 
-	É a quantidade de vértices na entrada da matriz.
+	É a quantidade dos vértices na entrada da matriz.
 
 * **v**
 
@@ -1258,7 +1258,7 @@ bastante preciso neste caso.
 Tópico avançado: A classe poly_array
 ------------------------------------
 
-A **poly_array** tem como modelo uma classe que é utilizada para
+A classe **poly_array** tem como modelo uma classe que é utilizada para
 gerenciar um vetor dinamicamente dimensionado de objetos cuja vida útil
 começa na alocação e termina quando o ``reset()`` for invocado. A classe
 **poly_manager** utiliza internamente vários objetos **poly_array**,
@@ -1266,10 +1266,10 @@ incluindo um para os dados **ObjectType** que foram alocados, um para
 cada renderização primitiva e um para manter todas as extensões
 alocadas.
 
-O **poly_array** tem uma propriedade adicional onde após um *reset*
-retém uma cópia do objeto alocado mais recentemente.  Isto assegura que
-quem invoca sempre pode invocar o ``last()`` e obter imediatamente um
-objeto válido mesmo após um reset.
+Ela também tem uma propriedade adicional onde após um *reset* retém uma
+cópia do objeto alocado mais recentemente. Isto assegura que quem
+invoca sempre pode invocar o ``last()`` e obter imediatamente um objeto
+válido mesmo após um reset.
 
 A classe **poly_array** exige dois modelos de parâmetros::
 
@@ -1284,7 +1284,7 @@ Estes parâmetros são:
 
 * **TrackingCount**
 
-	É a quantidade de objetos que se deseja manter após um *reset*.
+	É a quantidade dos objetos que se deseja manter após um *reset*.
 	Normalmente este valor ou é 0 (não importa rastrear nenhum objeto)
 	ou 1 (só é necessário um objeto); entretanto, caso esteja usando
 	**poly_array** para gerenciar uma coleção compartilhada de objetos
@@ -1295,40 +1295,41 @@ Note que os objetos alocados por **poly_array** são propriedade do
 **poly_array** e serão automaticamente liberados mediante o seu
 encerramento.
 
-O **poly_array** é otimizado para uso em sistemas multi-tarefa de alta
-frequência. Portanto, uma característica adicional da classe em questão
-é o arredondamento do tamanho da alocação do **ArrayType** para o limite
-da linha de cache mais próxima, na suposição onde as entradas vizinhas
-poderiam ser acessadas por núcleos diferentes simultaneamente. Manter
-cada objeto do **ArrayType** na sua própria linha de cache assegura que
-não haja falsos impactos no desempenho do compartilhamento.
+A classe **poly_array** é otimizado para uso em sistemas multi-tarefa de
+alta frequência. Portanto, uma característica adicional da classe em
+questão é o arredondamento do tamanho da alocação do **ArrayType** para
+o limite da linha de cache mais próxima, na suposição onde as entradas
+vizinhas poderiam ser acessadas por núcleos diferentes simultaneamente.
+Manter cada objeto do **ArrayType** na sua própria linha de cache
+assegura que não haja falsos impactos no desempenho do compartilhamento.
 
-Atualmente, o **poly_array** não possui nenhum mecanismo para determinar
-o tamanho da linha de cache em tempo real, portanto, presume-se que
-64 bytes seja um tamanho típico para a linha de cache, que é verdadeiro
-para a maioria dos chips x64 e ARM desde 2021. Este valor pode ser
-modificado alterando-se a constante **CACHE_LINE_SHIFT** definido no
-topo da classe.
+Atualmente, a classe **poly_array** não possui nenhum mecanismo para
+determinar o tamanho da linha de cache em tempo real, portanto,
+presume-se que 64 bytes seja um tamanho típico para a linha de cache,
+que é verdadeiro para a maioria dos chips x64 e ARM desde 2021. Este
+valor pode ser modificado alterando-se a constante **CACHE_LINE_SHIFT**
+definido no topo da classe.
 
-Os objetos alocados pelo **poly_array** são criados em blocos de 64k.
-No momento da construção, um pedaço dos objetos é antecipadamente
+Os objetos alocados pela classe **poly_array** são criados em blocos de
+64k. No momento da construção, um pedaço dos objetos é antecipadamente
 alocado. O tamanho do pedaço é controlado pela constante
 **CHUNK_GRANULARITY** definido no topo da classe.
 
-Como mais objetos são alocados, caso o **poly_array** fique sem espaço,
-mais será alocado de forma dinâmica. Este processo produzirá pedaços
-separados dos objetos até a próxima chamada ``reset()``, quando a
-**poly_array** realocará todos os objetos num vetor contíguo novamente.
+Como mais objetos são alocados, caso a classe **poly_array** fique sem
+espaço, mais será alocado de forma dinâmica. Este processo produzirá
+pedaços separados dos objetos até a próxima chamada ``reset()``, quando
+a **poly_array** realocará todos os objetos num vetor contíguo
+novamente.
 
-No caso onde **poly_array** seja utilizado para gerenciar um pool
-compartilhado dos objetos, ele pode ser configurado para reter vários
-itens alocados mais recentemente utilizando uma **TrackingCount** maior
-que 1. Caso o **poly_array** esteja gerenciando objetos para duas
+No caso onde a **poly_array** seja utilizada para gerenciar um pool
+compartilhado dos objetos, a classe pode ser configurada para reter
+vários itens alocados mais recentemente utilizando uma **TrackingCount**
+maior que 1. Caso a **poly_array** esteja gerenciando objetos para duas
 unidades de textura por exemplo, será possível definir o
-**TrackingCount** igual a 2, e passar o índice da unidade da textura em
-chamadas para ``next()`` e ``last()``. Após um *reset*, o **poly_array**
-lembrará do objeto alocado mais recentemente para cada uma das unidades
-de forma independente.
+**TrackingCount** igual a 2 e passar o índice da unidade da textura em
+chamadas para ``next()`` e ``last()``. Após um *reset*, a classe
+**poly_array** lembrará do objeto alocado mais recentemente para cada
+uma das unidades de forma independente.
 
 
 .. raw:: latex
@@ -1431,7 +1432,7 @@ contiguous
 	ArrayType *contiguous(u32 index, u32 count, u32 &chunk);
 
 Retorna um ponteiro para a base de uma seção contígua dos itens
-**count** iniciando no **index**. Como o **poly_array** se redimensiona
+**count** iniciando no **index**. Como **poly_array** se redimensiona
 dinamicamente, pode não ser possível acessar todos os objetos **count**
 de forma contígua, então a quantidade dos objetos realmente contíguos é
 devolvido no **chunk**:
