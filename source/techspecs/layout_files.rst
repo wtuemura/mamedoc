@@ -3632,13 +3632,13 @@ Exemplos de outros arquivos layout
 Estes arquivos layout demonstram as várias características do sistema
 de visualização, todo eles estão embutidos no MAME.
 
-* `sstrangr.lay <https://git.redump.net/mame/tree/src/mame/layout/sstrangr.lay?h=mame0226>`_
+* `sstrangr.lay <https://git.redump.net/mame/tree/src/mame/layout/sstrangr.lay?h=mame0235>`_
 
     Um caso simples da utilização de transparências coloridas para
     visualizar a separação e o destaque dos elementos em uma tela preto
     e branco.
 
-* `seawolf.lay <https://git.redump.net/mame/tree/src/mame/layout/seawolf.lay?h=mame0226>`_
+* `seawolf.lay <https://git.redump.net/mame/tree/src/mame/layout/seawolf.lay?h=mame0235>`_
 
     Este sismtema utiliza lâmpadas para os elementos importantes do
     jogo. Os modos de mesclagem são utilizados para a transparência
@@ -3646,19 +3646,19 @@ de visualização, todo eles estão embutidos no MAME.
     ``collections`` permitindo que partes do layout sejam desativadas
     seletivamente.
 
-* `armora.lay <https://git.redump.net/mame/tree/src/mame/layout/armora.lay?h=mame0226>`_
+* `armora.lay <https://git.redump.net/mame/tree/src/mame/layout/armora.lay?h=mame0235>`_
 
     A tela deste jogo é vista diretamente através de uma transparência
     colorida em vez de ser refletida a partir de dentro do gabinete.
     Isso significa que a transparência reflete a luz ambiente assim como
     afeta a cor da imagem do vídeo.
 
-* `tranz330.lay <https://git.redump.net/mame/tree/src/mame/layout/tranz330.lay?h=mame0226>`_
+* `tranz330.lay <https://git.redump.net/mame/tree/src/mame/layout/tranz330.lay?h=mame0235>`_
 
     Uma tela e um teclado alfanumérico com vários segmentos. As teclas
     são clicáveis e fornecem feedback visual quando pressionadas.
 
-* `esq2by16.lay <https://git.redump.net/mame/tree/src/mame/layout/esq2by16.lay?h=mame0226>`_
+* `esq2by16.lay <https://git.redump.net/mame/tree/src/mame/layout/esq2by16.lay?h=mame0235>`_
 
     Constrói uma matriz de caracteres com múltiplas linhas. As
     repetições são usadas para evitar a repetição das linhas em um
@@ -3666,17 +3666,17 @@ de visualização, todo eles estão embutidos no MAME.
     As cores de grupo permitem que um único elemento seja usado para
     todas as quatro cores da tela.
 
-* `cgang.lay <https://git.redump.net/mame/tree/src/mame/layout/cgang.lay?h=mame0226>`_
+* `cgang.lay <https://git.redump.net/mame/tree/src/mame/layout/cgang.lay?h=mame0235>`_
 
     Anima a posição dos elementos para simular um jogo de tiro
     eletromecânico. Também demonstra o uso eficaz dos componentes para a
     construção de gráficos complexos.
 
-* `unkeinv.lay <https://git.redump.net/mame/tree/src/mame/layout/unkeinv.lay?h=mame0226>`_
+* `unkeinv.lay <https://git.redump.net/mame/tree/src/mame/layout/unkeinv.lay?h=mame0235>`_
 
     Exibe a posição de um controle deslizante com LEDs.
 
-* `md6802.lay <https://git.redump.net/mame/tree/src/mame/layout/md6802.lay?h=mame0226>`_
+* `md6802.lay <https://git.redump.net/mame/tree/src/mame/layout/md6802.lay?h=mame0235>`_
 
     Usa grupos de forma efetiva como uma linguagem de programação para
     construir a imagem de um protoboard.
