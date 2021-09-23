@@ -2127,7 +2127,9 @@ Como administrador crie o arquivo **clang.list**:
 
 	``sudo touch /etc/apt/sources.list.d/clang.list``
 
-Adicione as linha abaixo ao arquivo clang.list: ::
+Adicione as linha abaixo ao arquivo clang.list, o exemplo foi feito com
+a versão **5.0** porém ajuste para versões mais recentes ou que sejam
+compatíveis com a sua distribuição: ::
 
 	# 5.0
 	deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-5.0 main
@@ -2150,7 +2152,7 @@ Recarregue as configurações do seu terminal com o comando ``. .bashrc``
 
 Compile o MAME como mostra o exemplo abaixo: ::
 
-	make clean && make OVERRIDE_CC=/usr/bin/clang-5.0 OVERRIDE_CXX=/usr/bin/clang++-5.0 OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 -SANITIZE=address -j7
+	make clean && make OVERRIDE_CC=/usr/bin/clang-5.0 OVERRIDE_CXX=/usr/bin/clang++-5.0 OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 SANITIZE=address -j7
 
 .. raw:: latex
 
