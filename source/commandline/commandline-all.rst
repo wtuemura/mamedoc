@@ -3291,10 +3291,6 @@ Opções para a configuração do áudio
 	          serve apenas como uma ferramenta para os desenvolvedores
 	          do MAME.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _mame-commandline-sound:
 
 **-sound** <``auto`` | ``dsound`` | ``sdl`` | ``coreaudio`` | ``xaudio2`` | ``portaudio`` | ``none``>
