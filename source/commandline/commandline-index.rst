@@ -272,6 +272,7 @@ Opções para a configuração do áudio
 
 | :ref:`samplerate <mame-commandline-samplerate>`
 | :ref:`[no]samples <mame-commandline-nosamples>`
+| :ref:`[no]compressor <mame-commandline-nocompressor>`
 | :ref:`volume <mame-commandline-volume>`
 | :ref:`speaker_report <mame-commandline-speakerreport>`
 | :ref:`sound <mame-commandline-sound>`
