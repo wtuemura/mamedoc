@@ -2076,7 +2076,7 @@ Para esta tarefa precisamos dos seguintes itens:
 * A versão básica do layout da máquina Galaxian usando o `método inputraw <http://www.mediafire.com/file/47bm4e5eb3hsm61/inputraw_galaxian.zip>`_.
 * A `versão avançada <http://www.mediafire.com/file/bj9m9j2spqhdanh/advanced_galaxian.zip>`_
   do layout com diferentes versões da máquina Galaxian.
-* O `layout modelo <http://www.mediafire.com/file/cgscfqsh8pb18py/layout_modelo_mame.zip>`_ criado para identificar as posições do controle para 2
+* O `layout modelo <https://www.mediafire.com/file/qq344sz0lz1kyu9/layout_modelo_mame.zip>`_ criado para identificar as posições do controle para 2
   e 4 jogadores.
 * A arte utilizada aqui foi criada por `Etienne MacGyver
   <http://vectorlib.free.fr/Galaxian_Namco/>`_.
@@ -3354,7 +3354,7 @@ valores ``state`` zerados:
 
 .. code-block:: xml
 
-	<element name="controle_J1"		defstate="0xf">
+	<element name="controle"		defstate="0xf">
 		<image file="cima.png"		state="0x0" />
 		<image file="baixo.png"		state="0x0" />
 		<image file="esquerda.png"	state="0x0" />
@@ -3383,12 +3383,12 @@ encontrar todos os valores.
 Máquinas com dois ou mais controles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Em máquinas com dois ou mais controles o princípio é o mesmo, usando a
-máquina **Neo Geo** como exemplo nós teríamos o seguinte:
+Em máquinas com dois ou mais controles como a **Neo Geo** por exemplo,
+nós fazemos assim:
 
 .. code-block:: xml
 
-	<element name="controle_J1"		defstate="0xf">
+	<element name="controle"		defstate="0xf">
 		<image file="baixodireito.png"	state="0x5" />
 		<image file="cimadireita.png"	state="0x6" />
 		<image file="direita.png"	state="0x7" />
@@ -3399,36 +3399,25 @@ máquina **Neo Geo** como exemplo nós teríamos o seguinte:
 		<image file="cima.png"		state="0xe" />
 		<image file="centro.png"	state="0xf" />
 	</element>
-	
-	<element name="controle_J2"		defstate="0xf">
-		<image file="baixodireito.png"	state="0x5" />
-		<image file="cimadireita.png"	state="0x6" />
-		<image file="direita.png"	state="0x7" />
-		<image file="baixoesquerdo.png"	state="0x9" />
-		<image file="cimaesquerda.png"	state="0xa" />
-		<image file="esquerda.png"	state="0xb" />
-		<image file="baixo.png"		state="0xd" />
-		<image file="cima.png"		state="0xe" />
-		<image file="centro.png"	state="0xf" />
 	
 	</element>
 	<element ref="nada" blend="add" inputtag="edge:joy:JOY1" inputmask="0x00" inputraw="yes">
 		<bounds x="158" y="794" width="150" height="150" />
 	</element>
-	<element ref="controle_J1" inputtag="edge:joy:JOY1" inputmask="0xf" inputraw="yes">
+	<element ref="controle" inputtag="edge:joy:JOY1" inputmask="0xf" inputraw="yes">
 		<bounds x="158" y="794" width="150" height="150" />
 	</element>
 	<element ref="nada" blend="add" inputtag="edge:joy:JOY2" inputmask="0x00" inputraw="yes">
 		<bounds x="665" y="794" width="150" height="150" />
 	</element>
-	<element ref="controle_J2" inputtag="edge:joy:JOY2" inputmask="0xf" inputraw="yes">
+	<element ref="controle" inputtag="edge:joy:JOY2" inputmask="0xf" inputraw="yes">
 		<bounds x="665" y="794" width="150" height="150" />
 	</element>
 
 Ambos os controles utilizam os mesmos valores para ``state`` e
 ``defstate``, o que muda é o valor do ``inputtag`` onde
 ``edge:joy:JOY1`` define que este é o controle do **jogador 1** e que
-``edge:joy:JOY2`` é o controle do **jogador2**.
+``edge:joy:JOY2`` é o controle do **jogador 2**.
 
 Contudo há máquinas como a **CPS2** que apresentam o mesmo valor ``IN0``
 no ``inputtag`` para ambos os jogadores, nestes casos devemos recorrer
@@ -3445,26 +3434,13 @@ o valor ``f00`` ou seja ``100 + 200 + 400 + 800 = f00``.
 
 	\clearpage
 
-Este é o valor que deve ser usado em ``defstate`` e ``inputmask`` na
-configuração do controle do 2º jogador como mostra o exemplo abaixo que
-também funcionam para todas as outras máquinas existentes no driver
-**CPS2** do MAME:
+Este é o valor que deve ser usado no ``inputmask`` da configuração do
+controle do 2º jogador como mostra o exemplo abaixo que também funcionam
+para todas as outras máquinas existentes no driver **CPS2** do MAME:
 
 .. code-block:: xml
 
-	<element name="controle_J1"		defstate="0xf">
-		<image file="cimaesquerda.png"	state="0x5" />
-		<image file="cimadireita.png"	state="0x6" />
-		<image file="cima.png"		state="0x7" />
-		<image file="baixoesquerda.png"	state="0x9" />
-		<image file="baixodireita.png"	state="0xa" />
-		<image file="baixo.png"		state="0xb" />
-		<image file="esquerda.png"	state="0xd" />
-		<image file="direita.png"	state="0xe" />
-		<image file="centro.png"	state="0xf" />
-	</element>
-	
-	<element name="controle_J2"		defstate="0xf00">
+	<element name="controle"		defstate="0xf">
 		<image file="cimaesquerda.png"	state="0x5" />
 		<image file="cimadireita.png"	state="0x6" />
 		<image file="cima.png"		state="0x7" />
