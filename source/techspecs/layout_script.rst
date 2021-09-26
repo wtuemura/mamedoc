@@ -192,10 +192,6 @@ entradas do jogador e definir o estado dos elementos nos itens:
         ]]></script>
     </mamelayout>
 
-.. raw:: latex
-
-	\clearpage
-
 O layout tem um elemento ``script`` contendo o script Lua que é invocado
 como uma função através do plug-in **Layout** durante o carregamento do
 arquivo do layout. A visualização do layout foi construída neste ponto,
@@ -487,6 +483,10 @@ um apenas em um único eixo, seria possível animá-los usando os
 recursos de animação do arquivo de layout. Na verdade apenas a caixa na
 interseção da linha precisa de um script. É feito totalmente com script
 para fins ilustrativos.
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _layscript-environment:
