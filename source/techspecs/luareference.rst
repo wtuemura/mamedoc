@@ -92,7 +92,7 @@ Classes Principais
 ------------------
 
 Muitas das classes principais do MAME usadas para implementar a emulação
-de uma sessão estão disponíveis para os scripts Lua.
+de uma sessão, estão disponíveis para os scripts Lua.
 
 .. _luareference-core-mameman:
 

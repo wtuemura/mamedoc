@@ -84,7 +84,7 @@ Vejamos estas definições das entradas para o **Espial**:
 Há dois joysticks, um usado por ambos os jogadores em um gabinete
 vertical ou o primeiro jogador em um gabinete tipo coquetel e um usado
 para o segundo jogador em um gabinete tipo coquetel. Observe que os
-interruptores para o primeiro joystick estão divididos entre as duas
+interruptores para o primeiro joystick está dividido entre as duas
 portas de E/S.
 
 Não há sintaxe no arquivo de layout para construir o estado do elemento
@@ -512,10 +512,6 @@ oferecendo apenas o mínimo necessário:
 * Função Lua ``print`` para gerar texto no console.
 * Função Lua ``string.format`` para a formatação do texto.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _layscript-events:
 
 Os eventos do layout
@@ -548,6 +544,10 @@ em uma visualização individualmente.
 	A função callback não retorna nenhum valor e não também aceita
 	nenhum parâmetro. Use ``nil`` como um argumento para remover o
 	manipulador do evento.
+
+.. raw:: latex
+
+	\clearpage
 
 .. _layscript-events-view:
 
@@ -583,10 +583,6 @@ individual.
 	A função callback não retorna nenhum valor e não também aceita
 	nenhum parâmetro. Use ``nil`` como um argumento para remover o
 	manipulador do evento.
-
-.. raw:: latex
-
-	\clearpage
 
 **O recálculo das dimensões**
 
