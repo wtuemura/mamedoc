@@ -1096,7 +1096,7 @@ Opções para a configuração
 
 - **debug.ini**
 
-	Caso o depurador esteja habilitado.
+	Caso o depurador esteja ativado.
 
 - **<driver>.ini**
 
@@ -1833,7 +1833,7 @@ Opções para instantâneos de tela
 
 **-snapview** [<*tipo*>]
 
-	Define a visualização que será utilizada nos prints da tela e para
+	Define a visualização que será utilizada nas capturas da tela e para
 	gravar os vídeos.
 
 	É predefinido que ambos utilizem a primeira visualização que estiver
@@ -1918,9 +1918,8 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	emulação depois de alguns segundos. Ao combinar com outras opções
 	fixas de linha de comando é possível definir um ambiente para
 	realizar testes de desempenho. Ao encerrar, a opção ``-str``
-	faz com que seja gravado um instantâneo da tela chamado *final.png*
-	no diretório de
-	:ref:`instantâneos <mame-commandline-snapshotdirectory>`.
+	fará uma captura da tela com o nome determinado pela opção
+	:ref:`-snapname <mame-commandline-snapname>`.
 
 	O comando diz ao MAME para interromper a emulação depois de um
 	tempo determinado, o tempo em questão não é o tempo real e sim o
@@ -3144,7 +3143,7 @@ Opções de vídeo OpenGL GLSL
 
 **-gl_glsl_filter** [<*valor*>]
 
-	Habilita a interpolação da imagem **OpenGL GLSL**, os valores
+	Ativa a interpolação da imagem **OpenGL GLSL**, os valores
 	válidos [6]_ são:
 
 	* **0**, Simples: Método de interpolação rápida e menos precisa que
@@ -3689,7 +3688,7 @@ Opções para as configurações de diferentes entradas
 
 **-[no]ui_active**
 
-	Habilita a opção para que a interface do usuário se sobreponha a do
+	Ativa a opção para que a interface do usuário se sobreponha a do
 	teclado emulado caso esteja presente.
 
 	O valor predefinido é **Desligado** (**-noui_active**). ::
@@ -4027,7 +4026,7 @@ Opções Automaticamente Ativas das Entadas Principais
 
 	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
-	Cada uma dessas opções de controle são habilitadas automaticamente
+	Cada uma dessas opções de controle são ativadas automaticamente
 	para o mouse, controle (joystick) ou arma de luz (lightgun)
 	dependendo de uma classe em particular de controle analógico para um
 	sistema em particular. Por exemplo, caso seja definida a opção
@@ -4104,7 +4103,7 @@ Opções voltadas para a depuração
 
 **-[no]debug** / **-[no]d**
 
-	Habilita o depurador embutido no MAME. É predefinido que o depurador
+	Ativa o depurador embutido no MAME. É predefinido que o depurador
 	entre em ação ao pressionar a tela til (**~**) [8]_ durante a
 	emulação.
 	Ele também entra em ação imediatamente ao iniciar a emulação.
@@ -4201,7 +4200,7 @@ Opções voltadas para a depuração
 
 **-watchdog** [<*tempo*>] / **-wdog** [<*tempo*>]
 
-	Habilita o temporizador watchdog interno que vai automaticamente
+	Ativa o temporizador watchdog interno que vai automaticamente
 	matar o processo do MAME caso o tempo de duração definido em
 	[<*tempo*>] passe caso não haja nenhuma atualização de quadro.
 	Tenha em mente que alguns sistemas ficam parados por algum tempo
@@ -4366,7 +4365,7 @@ Opções diversas
 
 	Ativa o cardápio de trapaças, exibindo uma lista de trapaças que
 	ficam armazenadas em um arquivo externo chamado **cheat.7z**.
-	Essa opção também habilita as opções de turbo dos botões.
+	Essa opção também ativa as opções de turbo dos botões.
 
 	O valor predefinido é **Desligado** (**-nocheat**). ::
 
@@ -4521,7 +4520,7 @@ Opções para uso com script
 
 **-console**
 
-	Habilita emulador do Console Lua.
+	Ativa emulador do Console Lua.
 
 	O valor predefinido é **Desligado** (**-noconsole**) ::
 
@@ -4532,7 +4531,7 @@ Opções para uso com script
 
 **-plugins**
 
-	Habilita o uso de plug-ins Lua.
+	Ativa o uso de plug-ins Lua.
 
 	O valor predefinido é **Ligado** (**-plugins**) ::
 
@@ -4568,7 +4567,7 @@ Opções do servidor HTTP
 
 **-http**
 
-	Habilita o servidor de HTTP.
+	Ativa o servidor de HTTP.
 
 	O valor predefinido é **Desligado** (**-nohttp**) ::
 
