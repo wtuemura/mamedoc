@@ -1275,6 +1275,13 @@ Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 	options amdgpu deep_color=1
 	options amdgpu dc=1
 
+.. note::
+
+	Dependendo da versão da sua VGA/GPU você precisa usar
+	``amdgpu dc=1``, caso contrário a tela fica preta no próximo reboot,
+	`consulte este link <https://wiki.gentoo.org/wiki/Talk:AMDGPU>`_
+	para mais informações.
+
 Crie o arquivo ``/etc/modprobe.d/pcie-perf.conf`` com o seguinte
 conteúdo::
 
