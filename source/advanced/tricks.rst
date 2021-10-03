@@ -1273,7 +1273,7 @@ Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 	options amdgpu si_support=1
 	options amdgpu dpm=0
 	options amdgpu deep_color=1
-	options amdgpu dc=1
+	options amdgpu dc=0
 
 Crie o arquivo ``/etc/modprobe.d/pcie-perf.conf`` com o seguinte
 conteúdo::
@@ -1403,7 +1403,10 @@ que mantém uma lista atualizada dos novos firmwares sempre que eles
 forem aparecendo.
 
 Para evitar ficar copiando manualmente estes arquivos um a um, crie uma
-lista deles::
+lista deles, salve a lista acima num arquivo qualquer (``bin.txt``) e
+execute o comando ``cat bin.txt | awk '{print $5}' |
+awk -F "/lib/firmware/amdgpu/" '{print $2}' > missing.txt`` para obter
+a lista abaixo::
 
 	arcturus_gpu_info.bin
 	navy_flounder_ta.bin
@@ -1434,9 +1437,11 @@ lista deles::
 
 	\clearpage
 
-Baixe todas as firmwares do site do Umio-Yasuno, e salve esta lista como
-`missing.txt` dentro da pasta **amdgpu**, abra o terminal dentro desta
-pasta e faça o comando::
+Clone o respositório do site do Umio-Yasuno com o comando
+``git clone https://github.com/Umio-Yasuno/unofficial-amdgpu-firmware-repo.git``
+em algum lugar do seu computador, salve a lista como `missing.txt`,
+copie este arquivo para dentro da pasta **amdgpu**, abra o terminal
+dentro desta pasta e faça o comando::
 
 	for firmware in $(<missing.txt); do sudo cp "$firmware" /lib/firmware/amdgpu; done
 
@@ -1446,6 +1451,23 @@ Ou para os mais puritanos::
 
 Agora atualize o seu initramfs com ``sudo update-initramfs -u`` no
 **Debian** ou ``sudo dracut -fv`` no **Fedora**.
+
+**Para casos onde o amdgpu trava.**
+
+Adicione estas linhas extras ao seu ``/etc/modprobe.d/amdgpu.conf``::
+
+	options amdgpu gpu_recovery=1
+	options amdgpu lockup_timeout=6000
+	options amdgpu noretry=0
+
+A primeira opção ativa a recuperação do amdgpu, isso resolve a questão
+das mensagens de erros "*amdgpu: GPU recovery disabled*" no registro de
+eventos. A segunda opção determina o tempo limite para que a recuperação
+aconteça, o padrão é 10s, o valor foi alterado para 6s. A terceira opção
+é necessária para o processo de recuperação.
+
+Para mais informações consulte
+`amdgpu <https://www.kernel.org/doc/html/v4.20/gpu/amdgpu.html>`_.
 
 .. _advanced-tricks-performance-ancora:
 
