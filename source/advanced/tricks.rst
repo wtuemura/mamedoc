@@ -1273,7 +1273,7 @@ Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 	options amdgpu si_support=1
 	options amdgpu dpm=0
 	options amdgpu deep_color=1
-	options amdgpu dc=0
+	options amdgpu dc=1
 
 Crie o arquivo ``/etc/modprobe.d/pcie-perf.conf`` com o seguinte
 conteúdo::
