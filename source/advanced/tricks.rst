@@ -1404,9 +1404,11 @@ forem aparecendo.
 
 Para evitar ficar copiando manualmente estes arquivos um a um, crie uma
 lista deles, salve a lista acima num arquivo qualquer (``bin.txt``) e
-execute o comando ``cat bin.txt | awk '{print $5}' |
-awk -F "/lib/firmware/amdgpu/" '{print $2}' > missing.txt`` para obter
-a lista abaixo::
+execute o comando::
+
+	cat bin.txt | awk '{print $5}' | awk -F "/lib/firmware/amdgpu/" '{print $2}' > missing.txt
+
+Para gerar a lista abaixo::
 
 	arcturus_gpu_info.bin
 	navy_flounder_ta.bin
@@ -1437,11 +1439,13 @@ a lista abaixo::
 
 	\clearpage
 
-Clone o respositório do site do Umio-Yasuno com o comando
-``git clone https://github.com/Umio-Yasuno/unofficial-amdgpu-firmware-repo.git``
-em algum lugar do seu computador, salve a lista como `missing.txt`,
-copie este arquivo para dentro da pasta **amdgpu**, abra o terminal
-dentro desta pasta e faça o comando::
+Clone o repositório do site do Umio-Yasuno em algum lugar do seu
+computador com o comando::
+
+	git clone https://github.com/Umio-Yasuno/unofficial-amdgpu-firmware-repo.git
+
+Salve a lista como `missing.txt`, copie este arquivo para dentro da
+pasta **amdgpu**, abra o terminal dentro desta pasta e faça o comando::
 
 	for firmware in $(<missing.txt); do sudo cp "$firmware" /lib/firmware/amdgpu; done
 
