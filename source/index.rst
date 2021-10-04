@@ -9,7 +9,7 @@ DOCUMENTAÇÃO MAME
 =================
 
 .. note::
-	Essa publicação é o resultado de um trabalho em contante evolução.
+	Esta publicação é o resultado de um trabalho em contante evolução.
 	Você pode acompanhar se há alguma atualização dos tópicos e assuntos
 	aqui tratados acessando o 
 	`issue tracker <https://github.com/wtuemura/mamedoc/issues>`_.

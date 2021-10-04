@@ -2109,19 +2109,19 @@ há momentos onde não há um *stack trace* ou se tem ele não é informativo
 o suficiente para que os desenvolvedores tenham informações úteis.
 
 Apesar da opção estar disponível nas configurações, ela não é publicada
-e tão pouco seu uso é incentivado, parece que seu uso é reservado a
-*desenvolvedores ascensionados* numa arte oculta qualquer. Talvez a
-explicação seja mais simples do que parece, ao ativar o
+e tão pouco seu uso é incentivado. Talvez a explicação seja mais simples
+do que parece, ao ativar o
 `AddressSanitizer <https://github.com/google/sanitizers/wiki/AddressSanitizer>`_
 o MAME **rodará bem mais lento** que o normal pois o *AddressSanitizer*
 é um detector de erros de memória para C/C++.
 
-Usaremos o Debian 9.97 (stretch) como referência que poderá servir como
-base para outras distribuições. Atualmente o clang já está na versão 7,
-porém a versão 5 continua bem estável e é suficiente para o nosso
-exemplo, caso queira testar versões mais novas, é por sua conta e risco
-pois há questões de conflitos que precisam ser resolvidos e que não
-serão abordados aqui.
+Usaremos o Debian 9.97 (stretch) como referência, serve de base para
+outras distribuições e versões, adapte as configurações aqui mostradas
+para as versões mais recentes caso seja necessário. Atualmente o clang
+já está na versão 7, porém a versão 5 continua bem estável e é
+suficiente para o nosso exemplo, caso queira testar versões mais novas,
+é por sua conta e risco pois talvez hajam questões de conflitos que
+precisam ser resolvidos e que não serão abordados aqui.
 
 Como administrador crie o arquivo **clang.list**:
 
@@ -2143,22 +2143,22 @@ Adicione as linhas abaixo ao arquivo ~/.bashrc do seu home:
 |	``echo "export ASAN_OPTIONS=symbolize=1" >> ~/.bashrc``
 |	``echo "export ASAN_SYMBOLIZER_PATH=/usr/lib/llvm-5.0/bin/llvm-symbolizer" >> ~/.bashrc``
 
-Caso a sua distribuição seja diferente faça o comando
+Caso a sua distribuição seja diferente, faça o comando
 ``locate llvm-symbolizer`` para saber o caminho completo do seu
 **llvm-symbolizer** e adicione ao **ASAN_SYMBOLIZER_PATH**.
 
 Recarregue as configurações do seu terminal com o comando ``. .bashrc``
-(ponto, espaço, ponto bashrc) ou saia e retorne à sua conta.
+(ponto, espaço, ponto bashrc) ou encerre a seção e faça login novamente.
 
 Compile o MAME como mostra o exemplo abaixo: ::
 
-	make clean && make OVERRIDE_CC=/usr/bin/clang-5.0 OVERRIDE_CXX=/usr/bin/clang++-5.0 OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 SANITIZE=address -j7
+	make clean && make OVERRIDE_CC=/usr/bin/clang OVERRIDE_CXX=/usr/bin/clang++ OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 SANITIZE=address -j7
 
 .. raw:: latex
 
 	\clearpage
 
-Ao rodar o mame com a máquina com problema, voce terá um retorno
+Ao rodar o mame com a máquina com problema, você terá um retorno
 semelhante ao exemplo abaixo:
 
 .. code-block:: c
@@ -2203,10 +2203,6 @@ semelhante ao exemplo abaixo:
 	Left alloca redzone:     ca
 	Right alloca redzone:    cb
 	==2227==ABORTING
-
-Pelas experiência que tive o uso do **SANITIZE** não é aconselhável e
-alguns desenvolvedores não gostam, no entanto é o último recurso
-disponível quando tudo mais falha.
 
 .. [1]	No Inglês ABI ou `Application Binary Interface
 		<https://pt.wikipedia.org/wiki/Interface_binária_de_aplicação>`_.

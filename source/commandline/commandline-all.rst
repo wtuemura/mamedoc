@@ -1366,12 +1366,12 @@ Opções para a configuração dos diretórios principais
 
 **-swpath** [<*caminho*>]
 
-	Define um ou mais caminhos onde possam ser encontrados os
-	arquivos de programas avulsos (software). O valor predefinido é
+	Define um ou mais caminhos onde possam ser encontrados arquivos
+	avulsos dos programas (rom, iso, etc). O valor predefinido é
 	**software** (isto é, um diretório chamado **software** no
 	diretório raiz do MAME). ::
 
-		mame -swpath D:\mame\software;D:\emu\discos
+		mame -swpath D:\mame\floppy;D:\emu\discos
 
 
 .. _mame-commandline-cfgdirectory:

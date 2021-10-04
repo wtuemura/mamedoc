@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60.017" height="30.76" version="1.1" viewBox="0 0 15.879 8.1386" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Base</dc:title>
+    <dc:date>27/09/2021</dc:date>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Wellington Terumi Uemura</dc:title>
+     </cc:Agent>
+    </dc:creator>
+    <dc:rights>
+     <cc:Agent>
+      <dc:title>Wellington Terumi Uemura</dc:title>
+     </cc:Agent>
+    </dc:rights>
+    <dc:source>https://mamedoc.readthedocs.io</dc:source>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/by/4.0/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <path d="m1.2539 0.12524h13.372c0.62527 0 1.1286 0.50511 1.1286 1.1325v5.6231c0 0.62741-0.50338 1.1325-1.1286 1.1325h-13.372c-0.62527 0-1.1286-0.50511-1.1286-1.1325v-5.6231c0-0.62741 0.50338-1.1325 1.1286-1.1325z" fill="#ddb" stop-color="#000000" stroke="#b3b366" stroke-width=".25041"/>
+</svg>

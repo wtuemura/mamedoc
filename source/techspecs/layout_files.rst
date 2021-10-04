@@ -1239,7 +1239,7 @@ As telas (elementos ``screen``) e os elementos do layout (elementos
 ``element``) podem conter um atributo ``blend`` para determinar o modo
 de mesclagem dos elementos gráficos. Os valores válidos são
 ``none`` (sem mesclagem), ``alpha`` (transparência) [#]_,
-``multiply`` (soma dos valores RGB) [#]_, e
+``multiply`` (soma dos valores RGB) [#]_ e
 ``add`` (soma das camadas) [#]_. A predefinição para a tela é alpha
 permitindo que o driver defina a mesclagem dos elementos do layout
 através de camadas.
@@ -3595,6 +3595,1157 @@ para ver como funciona na prática com a máquina
    :width: 80%
    :align: center
    :alt: Opções selecionáveis
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _layfile-create_joystick_positions:
+
+Criando as posições de um controle arcade
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para animar os movimentos de um joystick é preciso antes definir os
+limites de onde ele vai operar para que quando tudo estiver pronto a sua
+animação se comporte como a movimentação de um controle arcade
+tradicional. Usando as referências deste limite, nós podemos definir a
+posição de cada movimento do controle.
+
+* No Inkscape, crie um novo arquivo, pressione ``Ctrl+Shift+D`` ou
+  **File -> Document properties**, em **Page** defina **Display units**
+  como **PX**.
+* Crie um círculo preto, defina o seu tamanho em **W:** e **H:**
+  com **7,700 px**, este será aquela peça preta que fica no fim do eixo
+  do joystick, ele vai ajudar a dar a ilusão de movimento.
+* Vá em **Layers** ``Shift+Ctrl+L``, altere o nome deste primeiro layer
+  para **centro base** clique no **+** para adicionar um layer chamado
+  **centro** e um outro chamado **quadrado**, este layer **quadrado**
+  deve ficar abaixo do layer **centro base**.
+* Clique no círculo preto para selecioná-lo, pressione ``Ctrl+D`` para
+  duplicá-lo, escolha uma cor vermelha qualquer, defina o seu tamanho
+  para **9,700 px**. Clique com o botão direito em cima deste círculo
+  vermelho e selecione a opção **Move to Layer...** e mova este círculo
+  para o layer **centro**.
+
+
+.. _layfile-export_svg:
+
+Exportando arquivos SVG
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Para definir o limite eu multiplico **1.8 vezes** o valor do diâmetro
+círculo do controle para determinar o tamanho total desse quadrado. Esse
+valor funciona bem ao fazer um joystick genérico, dependendo do design
+pode ser que um valor multiplicado por **1.5** ou por **2** funcione
+melhor dependendo do modelo/tipo do joystick que você está querendo
+imitar, ajuste e faça testes para ver qual se adapta melhor ao seu
+design e veja se a animação fica boa **na tela**.
+
+* Fazendo os cálculos, **9,700 * 1,8 = 17,46**, vá em **File -> Document
+  Properties** ``Shift+Ctrl+D``, em **Custom size** defina as unidades
+  para **PX** e defina o **Width/Height** para **17,46**, pressione
+  **Enter** para aplicar e feche a janela.
+* Vá em **Object -> Align and distribute**, clique no círculo **preto**,
+  na aba **Align -> Relative To:** escolha **Page**, clique no botão
+  logo abaixo (**Center on vertical axis**), depois (**Center on
+  horizontal axis**) para centralizar o objeto. Clique no círculo
+  vermelho e faça o mesmo com ele.
+* Pressione o **3** no teclado numérico (lado direito do teclado) para
+  que o círculo apareça no centro da tela.
+* Clique 2x no sinal de **-** no teclado numérico ou pressione ``Ctrl``
+  e gire a roda do mouse para traz para recuar um pouco.
+* Crie um quadrado com **17,46 x 17,46 px**.
+* Pressione ``Ctrl+Shift+F`` para abrir o **Fill and Stroke**, ainda com
+  o quadrado selecionado, em **Fill** clique no **X** para remover o
+  preenchimento, mantenha o ``Shift`` pressionado e com o mouse, clique
+  na cor preta na parte debaixo da tela.
+* Novamente na aba **Fill and Stroke**, defina o Width: para ``0,005``,
+  isso cria uma borda bem fina no nosso quadrado, fina o suficiente para
+  ele pode ser selecionado, isso será útil mais adiante.
+* Selecione o quadrado e mova ele para o layer **quadrado**.
+* Na aba **Align and distribute**, clique nos mesmos botões para
+  centralizar o quadrado na página.
+
+.. raw:: latex
+
+	\clearpage
+
+
+Até aqui nós temos uma imagem como esta:
+
+	.. image:: images/joy_center.svg
+		:width: 50%
+		:align: center
+		:alt: joystick centro
+
+Em caso de problema, basta baixar a imagem acima (caso esteja lendo o
+documento no formato HTML) e abra ele no Inkscape para seguir os
+próximos passos e recrie todos layers **quadrado**, **centro base** e
+**centro**, depois mova círculo vermelho para o layer **centro** (clique
+no ícone do olho para escondê-lo) e faça o mesmo com o círculo preto e
+mova ele para o layer **centro base**, faça o mesmo com o quadrado,
+sempre deixando o layer do quadrado abaixo de todos os outros layers.
+
+* Pressione ``Shift+Ctrl+A`` para abrir a aba **Align and distribute**,
+  em **Relative To:** escolha **Last Selected** para alinhar com último
+  objeto que for selecionado.
+* Na aba **Layers** crie as camadas **cima**, **baixo**, **esquerda** e
+  **direita**, clique no olho para escondê-las.
+* Deixe o círculo do centro visível, clique nele e pressione ``Ctrl+D``
+  para duplicar.
+* Com o ``Shift`` pressionado clique no quadrado na borda da página,
+  solte o ``Shift`` e na aba de alinhamento escolha o ícone com a seta
+  para a direita (**Align right sides**), isso alinha o nosso círculo
+  para os limites da página do lado direito.
+* Clique em qualquer ponto vazio da tela para remover a seleção, clique
+  no círculo vermelho e com o botão direito do mouse, escolha a opção
+  para movê-lo para a camada **direita**, o círculo do lado direito
+  deve desaparecer logo em seguida.
+* Clique no círculo vermelho ao centro, pressione ``Ctrl+D`` para
+  duplicar, mantenha ``Shift`` pressionado, clique no quadrado, solte o
+  ``Shift``, na aba de alinhamento clique no ícone a seta para a
+  esquerda (**Align left sides**) para alinhar o círculo para o lado
+  esquerdo, repita o passo anterior e faça o mesmo para as posições
+  **cima** e **baixo**.
+
+.. raw:: latex
+
+	\clearpage
+
+Temos agora as quatro primeiras posições:
+
+	.. image:: images/joy_positions.svg
+		:width: 50%
+		:align: center
+		:alt: Posições do joystick
+
+Na questão das diagonais do joystick, seguindo a mesma lógica, elas
+seriam alinhadas bem nos cantos do quadrado assim com foi feito com as
+outras posições, porém a animação fica estranha, parece que o eixo
+oculto do controle permite que o círculo vá muito além do que deveria.
+Na imagem abaixo temos duas opções, na esquerda as diagonais foram
+alinhadas no limite do quadrado e depois recuados cerca de 5 pontos
+(clicando no **+** e **-** do **X:** e **Y:** trazendo o círculo mais
+para dentro).
+Já na imagem da direita, foi criado um círculo nas mesmas dimensões
+do quadrado (**17,46 x 17,46 px**) e as diagonais foram alinhadas no
+limite do círculo:
+
+	.. image:: images/diagonais.svg
+		:width: 80%
+		:align: center
+		:alt: diagonais
+
+A decisão de usar um ou outro vai depender de como ele se comporta **no
+seu design** e **na tela**, o alinhamento com base em um círculo
+pode parece "*curto*" em determinados designs e assim por diante, por
+isso que **não há uma regra**, cabe ao artista/designer testar e avaliar
+o que fica melhor. No nosso exemplo usamos o alinhamento com base no
+círculo.
+
+	.. image:: images/full_joystick.svg
+		:width: 50%
+		:align: center
+		:alt: joystick completo
+
+Caso use a imagem acima, é preciso criar todos os layers novamente e
+mover cada posição do círculo para cada um dos seus respectivos layers,
+isso é importante para isolar o elemento que será exportado depois.
+
+Depois que todas as posições já estiverem nas suas respectivas camadas
+(layers), começamos o processo de exportação:
+
+* Clique em qualquer um dos layers com o botão direito do mouse e
+  escolha a opção **Hide all layers** para ocultar tudo.
+* Ative (torne visível) apenas os layers, **centro base** e
+  **centro**.
+* Vá em **File -> Save a Copy** ``Shift+Ctrl+Alt+S``, escolha o caminho
+  ``MAME\Artwork\sfa3``, ou a mesma pasta onde está o ``default.lay``
+  que criamos, no nome insira **centro.svg** e na parte debaixo desta
+  janela troque a opção **Inkscape SVG** por **Optimized SVG**, clique
+  em **Save** e cloque **OK** na próxima janela que aparecer.
+* Esconda o layer **centro** e deixe apanas o layer **direita** visível
+  e repita o procedimento anterior, faça o mesmo para cada uma das
+  posições.
+
+As imagens das diagonais têm os seguintes nomes:
+
+* **Diagonal superior direita** ``cimad``
+* **Diagonal superior esquerda** ``cimae``
+* **Diagonal inferior direita** ``baixod``
+* **Diagonal inferior esquerda** ``baixoe``
+
+
+.. _layfile-export_png:
+
+Exportando arquivos PNG
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Existe um pequeno truque que precisa ser feito para exportar imagens
+como estas que precisam estar dentro de algo invisível, pois diferente
+da exportação em SVG, não basta simplesmente deixar visível o que se
+deseja exportar, também é preciso exportar o quadrado junto e aqui
+está o "*pulo do gato*", definimos o **Stroke** (como descrito no
+capítulo anterior) com ``0,005`` ou até mesmo ``0,001`` para que este
+quadrado possa ser selecionável no Inkscape e que quando exportado, a
+borda não apareça quando for carregado pelo MAME.
+
+No final, a imagem exportada ficará dentro de uma área invisível onde
+ocorrerá a animação dos movimentos. É preciso fazer assim pois caso
+contrário, em vez de uma animação de movimentos nós teremos o controle
+sendo jogado de um lado para o outro.
+
+Usando o mesmo arquivo que você usou acima:
+
+* Pressione ``Shift + Ctrl + E`` para abrir a aba **Export PNG image**.
+* Deixe apenas o layout **centro** e **quadrado** visível.
+* Clique no círculo, mantenha o ``Shift`` pressionado e clique no
+  quadrado fazendo com que o círculo e o quadrado fiquem selecionados.
+* Em **Export PNG image**, na aba **Export area** **Selection** vai
+  estar selecionado.
+* Em **Image size** defina ambos para **174**.
+* Em **Filename** defina o caminho completo e o nome do arquivo
+  (centro.png), no caso, exportaremos essa imagem para dentro da pasta
+  **artwork\sfa3**.
+* Faça o mesmo com as outras posições e respeitando o mesmo nome usado
+  anteriormente, porém, com a extensão **.png**, ``centro.png``,
+  ``cima.png``, ``baixo.png``, etc.
+
+
+.. _layfile-working_with_groups:
+
+Trabalhando com grupos
+~~~~~~~~~~~~~~~~~~~~~~
+
+Trabalhar com grupos é como trabalhar com camadas em programas como o
+*Adobe Illustrator* ou o *Inkscape*, você desenha, posiciona os seus
+objetos onde eles precisam ficar e no final você **agrupa** tudo para 
+que o seu design composto de diferentes pedaços fiquem fixos e você
+possa movimentá-los livremente.
+
+O sistema de layout do MAME trabalha da mesma maneira e possui também a
+mesma vantagem, primeiro você define o tamanho da sua área de trabalho,
+define o tamanho e a posição de todos os seus elementos dentro deste
+grupo e faz o que quiser com ele depois.
+
+Sem organizar o seu layout dentro de um grupo, você precisaria
+posicionar todos os seus elementos num ponto da tela e mais tarde caso
+queira movê-los para um outro ponto, você teria que literalmente ajustar
+cada elemento na nova posição da tela.
+
+Exportaremos os gráficos tanto em **.PNG** (gráficos matriciais/pixels)
+quanto em **.SVG** (gráficos vetoriais), o suporte  o MAME ao formato
+**.SVG** é simples, ele consegue carregar arquivos simples porém ele não
+aceita designs complexos e cheio de efeitos. Por isso dependendo da
+complexidade do design é preferível exportar tais gráficos no formato
+**.PNG**.
+
+Os gráficos vetoriais por serem coordenadas em texto e cálculos
+matemáticos para criar as formas geométricas, tamanho, cor, etc; tais
+gráficos não se deterioram quando eles são expandidos, eles mantém as
+suas bordas lisas e o seu arquivo final é extremamente leve, já os
+gráficos matriciais quando a aproximação ultrapassa o seu tamanho
+original ele se deteriora, os pixels que compõem essa imagem começa a
+ficar mais evidente, nas bordas começa a aparecer um serrilhamento, etc.
+Para compensar tal limitação é preciso exportar um gráfico cada vez
+maior e com isso tais imagens ficam cada vez mais pesadas. Quando for
+possível, use SVG, caso o seu design seja mais complexo, use PNG.
+
+Colocaremos um pequeno joystick animado sobreposto num canto da tela,
+porém antes precisamos saber de duas coisas, o tamanho da tela e o
+tamanho do objeto que será colocado nela. Para saber o tamanho da tela,
+inicie uma máquina qualquer como a **sfa3** (``mame sfa3``), pressione
+**Tab -> Informação da máquina**, na parte de **Vídeo** vai estar
+listado ``384 x 224`` (valor em **pixels**).
+
+* Abra o Inkscape, vá em **File -> Document properties...** ou
+  ``Shift+Ctrl+D``, em **Page -> Units** alterne de **mm** para
+  **px** (pixels), em **Width** defina ``384,0`` e em **Height** defina
+  ``224,0``, feche a janela.
+
+Abaixo temos uma imagem para ilustrar o tamanho, a área em azul é a
+área de segurança de quem usa shaders para deixar a tela curvada e com
+scanlines.
+
+	.. image:: images/screen_size.svg
+		:width: 80%
+		:align: center
+		:alt: tamanho da tela
+
+
+Com a nossa área de trabalho definida, precisamos definir o tamanho e a
+posição do nosso joystick na tela, como é um controle animado, ele não
+precisa ser muito grande pois a região já é pequena. No nosso exemplo,
+este controle só vai nos servir como uma referência para o que está
+acontecendo na tela, assim, ele não precisa de muitos detalhes. Na
+imagem abaixo tem uma ilustração da posição que foi escolhida e do
+tamanho.
+
+	.. image:: images/joystick_position.svg
+		:width: 80%
+		:align: center
+		:alt: joystick position
+
+Para o joystick da nossa tela, foi criado um objeto com **60,017 px** de
+largura por **30,760 px** de altura com uma cor qualquer e com a mesma
+cor na porém porém mais escura.
+
+	.. image:: images/base.svg
+		:width: 80%
+		:align: center
+		:alt: base do joystick
+
+Dentro dessa área posicionaremos o joystick, os botões, a arte de fundo
+(se for o caso), etc. Depois obtemos as coordenadas **X** (horizontal),
+**Y** (vertical), **W** (largura) e **H** (altura), como o tamanho da
+tela e dos elementos são pequenos, todos os elementos e as suas bordas
+tem um tamanho um pouco exagerado e com bordas bem grossas, porém pois
+quando tudo isso for projetado na tela o resultado final ficará dentro
+do desejado.
+
+	.. image:: images/base_botoes_joystick.svg
+		:width: 80%
+		:align: center
+		:alt: joystick com os botões
+
+Com todos os elementos posicionados nós temos:
+
+* Joystick, **X** = 2,397, **Y** = 6,378, **W** = 18, **H** = 18
+* Botão 1, **X** = 21,201 **Y** = 4,337  **W** = 9,6 **H** = 9,6
+* Botão 2, **X** = 33,641 **Y** = 4,292 **W** = 9,6 **H** = 9,6
+* Botão 3, **X** = 46,126 **Y** = 4,292 **W** = 9,6 **H** = 9,6
+* Botão 4, **X** = 21,201 **Y** = 16,820 **W** = 9,6 **H** = 9,6
+* Botão 5, **X** = 33,641 **Y** = 16,820 **W** = 9,6 **H** = 9,6
+* Botão 6, **X** = 46,126 **Y** = 16,820 **W** = 9,6 **H** = 9,6
+
+
+.. _layfile-using_svg_files:
+
+Usando os botões gerados pelo MAME e os arquivos SVG
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Na pasta do MAME vá em **Artwork**, crie uma pasta chamada **sfa3**,
+dentro dela crie um novo arquivo texto chamado ``default.lay``, tenha
+certeza de estar criando um arquivo ``default.lay`` e não
+``default.lay.txt``, no Windows é preciso alterar as configurações da
+pasta para `ver a extensão dos arquivos <https://www.softdownload.com.br/como-exibir-extensao-arquivos-windows-10-8-7.html>`_.
+
+Abra o arquivo em um editor de texto, iniciamos o nosso layout pelo
+cabeçalho e colocando todas as informações que achamos relevantes:
+
+.. code-block:: xml
+
+	<?xml version="1.0"?>
+	<mamelayout version="2">
+	<!--
+		Joystick for CPS2
+		Created by: Wellington Terumi Uemura
+		License: CC by 4.0
+		https://mamedoc.readthedocs.io/
+		Date: October 02, 2021
+	-->
+
+
+Aqui nós definimos os tipos (círculos) e as cores de todos os objetos
+que usaremos neste design, vamos criar os círculos coloridos (azul,
+amarelo, vermelho) e um círculo branco ao centro para indicar um botão
+na sua condição normal, quando o jogador pressionar um destes botões
+definidos em ``hit azul``, ``hit amarelo`` e ``hit vermelho`` a cor vai
+se alterar para um tom mais escuro das cores do botão:
+
+.. code-block:: xml
+
+	<!-- elementos gerados -->
+	<!-- Aqui definimos a cor azul e o mesmo é feito com as outras cores -->
+	<element name="azul">
+		<disk><color red="0" green="0.549" blue="0.831" /></disk>
+	</element>
+	<!-- definimos um tom mais escuro da cor do botão, o mesmo é feito com as outras cores -->
+	<element name="hit azul" defstate="1">
+		<disk state="1"><color red="0" green="0.369" blue="0.6" /></disk>
+	</element>
+	<element name="amarelo">
+		<disk><color red="1" green="0.933" blue="0" /></disk>
+	</element>
+	<element name="hit amarelo" defstate="1">
+		<disk state="1"><color red="0.639" green="0.596" blue="0" /></disk>
+	</element>
+	<element name="vermelho">
+		<disk><color red="1" green="0.007" blue="0.105" /></disk>
+	</element>
+	<element name="hit vermelho" defstate="1">
+		<disk state="1"><color red="0.6" green="0" blue="0.058" /></disk>
+	</element>
+
+	<!-- Este é o elemento branco que fica em cima dos círculos coloridos -->
+	<element name="branco">
+		<disk><color red="0.925" green="0.925" blue="0.925" /></disk>
+	</element>
+
+	<!-- Definimos um elemento vazio que será usado para evitar os cliques do mouse -->
+	<element name="tampa" defstate="0">
+		<text string=" " />
+	</element>
+
+	<!-- Agrupamos as imagens que formam o movimento do controle num único elemento -->
+	<element name="comandos"		defstate="0xf">
+		<image file="cima.svg"		state="0x7" />
+		<image file="cimad.svg"		state="0x6" />
+		<image file="direita.svg"	state="0xe" />
+		<image file="baixod.svg"	state="0xa" />
+		<image file="baixo.svg"		state="0xb" />
+		<image file="baixoe.svg"	state="0x9" />
+		<image file="esquerda.svg"	state="0xd" />
+		<image file="cimae.svg"		state="0x5" />
+		<image file="centro.svg"	state="0xf" />
+	</element>
+
+	<!-- Carregamos a imagem da base do nosso controle -->
+	<element name="base">
+		<image file="base.svg" />
+	</element>
+
+Organizamos tudo isso dentro de um grupo e usamos o ``count`` para
+duplicar os nossos botões no eixo vertical. Aqui nós também conectamos
+os respectivos botões ao driver, no caso, a lógica vai funcionar com
+qualquer máquina CPS2. Alguns valores aparecem diferente daqueles que
+nós obtemos, é um ajuste fino necessário para alinhar os objetos na
+tela:
+
+.. code-block:: xml
+
+	<!-- Nome do grupo, este é o joystick do jogador 1 -->
+	<group name="Joystick J1">
+
+	<!-- Definimos o tamanho do grupo -->
+	<bounds x="0" y="0" width="60.017" height="30.760" />
+
+	<!-- Usamos a nossa base do joystick e definimos o seu tamanho -->
+	<element ref="base">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+
+	<!-- São 2 botões no eixo Y (vertical) iniciando na posição 4.292.-->
+	<!-- Incremente 12.528 para definir a posição do segundo botão. -->
+	<!-- Para encontrar o valor 12.528, use o Inkscape para posicionar o botão onde deseja -->
+	<!-- pegue o valor de Y do segundo botão (16,82) e subtraia com o valor -->
+	<!-- de Y do primeiro botão (4,292), ou seja, 16,82 - 4,292 = 12,528. -->
+	<!-- No eixo X inicie em 21.202 e use o valor calculado para definir Y. -->
+	<!-- Crie o nosso elemento com 9.7px x 9.7px -->
+	<!-- O mesmo é feito com os outros botões -->
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="azul"><bounds x="21.202" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="22.202" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="amarelo"><bounds x="33.641" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="34.641" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="vermelho"><bounds x="46.129" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="47.129" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+
+	<!-- Aqui a tampa cobre toda a área do joystick para evitar o click do mouse -->
+	<element ref="tampa" blend="add" inputtag="IN0" inputmask="0x00" inputraw="yes">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+
+	<!-- Invocamos os nossos comandos, definimos a sua posição e tamanho na base do joystick -->
+	<element ref="comandos" inputtag="IN0" inputmask="0xf" inputraw="yes">
+		<bounds x="2.397" y="6.378" width="18" height="18" />
+	</element>
+
+	<!-- Aqui conectamos toda a lógica dos botões -->
+	<element ref="hit azul" inputtag="IN0" inputmask="0x10">
+		<bounds x="22.202" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit azul" inputtag="IN1" inputmask="0x1">
+		<bounds x="22.202" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit amarelo" inputtag="IN0" inputmask="0x20">
+		<bounds x="34.641" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit amarelo" inputtag="IN1" inputmask="0x2">
+		<bounds x="34.641" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit vermelho" inputtag="IN0" inputmask="0x40">
+		<bounds x="47.129" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit vermelho" inputtag="IN1" inputmask="0x4">
+		<bounds x="47.129" y="17.820" width="7.7" height="7.7" />
+	</element>
+	</group>
+
+Como já explicado em :ref:`layfile-screen-position`, as telas CRT da
+época tinham uma proporção de 4:3, assim sendo, precisamos ajudar a
+resolução de tela. Use a planilha disponibilizada em
+:ref:`layfile-tools`, no campo **Digite a altura** insira **224**, note
+que o cálculo retorna um **DAR** com ``298,666666666667``, isso não é
+bom pois causa :ref:`aliasing <mame-commandline-unevenstretch>`, por
+isso precisamos de um valor inteiro.
+
+Substitua ``224`` por ``225``, note que os cálculos retornam valores
+inteiros, é este valor que usaremos para definir o tamanho da nossa
+tela ``300 x 225``. Logo abaixo nós definimos a posição do nosso
+joystick e o seu respectivo tamanho.
+
+.. code-block:: xml
+
+	<!-- Definimos o nome que vai aparecer na seleção -->
+	<view name="Controle">
+
+	<!-- Não precisamos da posição, só do tamanho da tela -->
+	<screen index="0">
+		<bounds x="0" y="0" width="300" height="225" />
+	</screen>
+
+	<!-- Aqui definimos um nome que vai aparecer nas opções para -->
+	<!-- tirar o joystick da tela, será possível ligar e desligar esta opção. -->
+	<!-- Já fica predefinido que quando a emulação começar, o joystick já apareça na tela. -->
+	<collection name="Joystick do jogador 1" visible="yes">
+
+	<!-- Invocamos o nome do grupo, definimos a posição e o seu tamanho -->
+	<group ref="Joystick J1">
+		<bounds x="1.5" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+
+	<!-- Fim do layout -->
+	</view>
+	</mamelayout>
+
+Salve o arquivo, execute o comando no terminal/prompt de comando
+``mame sfa3`` e veja que todos os botões e o controle reagem ao que você
+fizer no seu controle. Pressione **Tab -> Opções do vídeo -> Tela #0**,
+veja que há a opção **Joystick do jogador 1** que pode ser ligada ou
+desligada.
+
+Para adicionar o controle para o jogador 2, basta agora adicionar a
+lista abaixo **depois** do grupo **Joystick J1** e adaptar a lógica para
+o controle 2.
+
+.. code-block:: xml
+
+	<!-- Nome do grupo, este é o joystick do jogador 2 -->
+	<group name="Joystick J2">
+	<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="base">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="azul"><bounds x="21.202" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="22.202" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="amarelo"><bounds x="33.641" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="34.641" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="vermelho"><bounds x="46.129" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="47.129" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+	<element ref="tampa" blend="add" inputtag="IN0" inputmask="0x00" inputraw="yes">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	<element ref="comandos" inputtag="IN0" inputmask="0xf00" inputraw="yes">
+		<bounds x="2.397" y="6.378" width="18" height="18" />
+	</element>
+	<!-- Aqui conectamos toda a lógica dos botões para o J2-->
+	<element ref="hit azul" inputtag="IN0" inputmask="0x1000">
+		<bounds x="22.202" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit azul" inputtag="IN1" inputmask="0x10">
+		<bounds x="22.202" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit amarelo" inputtag="IN0" inputmask="0x2000">
+		<bounds x="34.641" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit amarelo" inputtag="IN1" inputmask="0x20">
+		<bounds x="34.641" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit vermelho" inputtag="IN0" inputmask="0x4000">
+		<bounds x="47.129" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit vermelho" inputtag="IN2" inputmask="0x4000">
+		<bounds x="47.129" y="17.820" width="7.7" height="7.7" />
+	</element>
+	</group>
+
+Para que funcione, nós adicionamos a opção "Controle" e adicionamos a
+opção para o jogador 2 logo depois das configurações do jogador 1.
+
+.. code-block:: xml
+
+	<collection name="Joystick do jogador 1" visible="yes">
+	<group ref="Joystick J1" blend="add">
+		<bounds x="1.5" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+
+	<collection name="Joystick do jogador 2" visible="no">
+	<group ref="Joystick J2" blend="add">
+		<bounds x="238.4" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+
+Salve e rode o **sfa3** novamente, parece que nada mudou, porém ao
+entrar nas opções do vídeo novamente, verá que está disponível a opção
+para o **Joystick do jogador 2** e ele está **desligado**. Quem define
+isso é a opção ``visible="no"``, porém para deixar ele sempre ativo sem
+ter que mexer no arquivo layout, basta deixar o segundo joystick visível
+e encerrar a emulação, isso salva as definições esta máquina e na
+próxima vez o joystick vai aparecer na tela.
+
+
+.. _layfile-simplifying_layout:
+
+Simplificando o layout
+^^^^^^^^^^^^^^^^^^^^^^
+
+Uma outra maneira de se lidar com grupos e evitar a duplicidade de
+configuração como foi feito para o controle do jogador 1 e 2, seria
+organizar a parte visual primeiro num grupo que poderia ser usado por
+ambos e deixar a parte lógica dos botões de fora, invocando a lógica
+individual de cada controle separadamente.
+
+A parte visual do nosso controle ficaria assim:
+
+.. code-block:: xml
+
+	<group name="Joystick">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="base">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="azul"><bounds x="21.202" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="22.202" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="amarelo"><bounds x="33.641" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="34.641" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="4.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="vermelho"><bounds x="46.129" y="~y~" width="9.7" height="9.7" />
+	</element>
+	</repeat>
+	<repeat count="2">
+		<param name="y" start="5.292" increment="12.528" />
+		<param name="i" start="0" increment="1" />
+		<element ref="branco"><bounds x="47.129" y="~y~" width="7.7" height="7.7" />
+	</element>
+	</repeat>
+	<element ref="tampa" blend="add" inputtag="IN0" inputmask="0x00" inputraw="yes">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	</group>
+
+Aqui a parte lógica para o jogador 1.
+
+.. code-block:: xml
+
+	<group name="Logic J1">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="hit azul" inputtag="IN0" inputmask="0x10">
+		<bounds x="22.202" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit azul" inputtag="IN1" inputmask="0x1">
+		<bounds x="22.202" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit amarelo" inputtag="IN0" inputmask="0x20">
+		<bounds x="34.641" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit amarelo" inputtag="IN1" inputmask="0x2">
+		<bounds x="34.641" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit vermelho" inputtag="IN0" inputmask="0x40">
+		<bounds x="47.129" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit vermelho" inputtag="IN1" inputmask="0x4">
+		<bounds x="47.129" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="comandos" inputtag="IN0" inputmask="0xf" inputraw="yes">
+		<bounds x="2.397" y="6.378" width="18" height="18" />
+	</element>
+	</group>
+
+Aqui a parte lógica para o jogador 2.
+
+.. code-block:: xml
+
+	<group name="Logic J2">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="hit azul" inputtag="IN0" inputmask="0x1000">
+		<bounds x="22.202" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit azul" inputtag="IN1" inputmask="0x10">
+		<bounds x="22.202" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit amarelo" inputtag="IN0" inputmask="0x2000">
+		<bounds x="34.641" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit amarelo" inputtag="IN1" inputmask="0x20">
+		<bounds x="34.641" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit vermelho" inputtag="IN0" inputmask="0x4000">
+		<bounds x="47.129" y="5.292" width="7.7" height="7.7" />
+	</element>
+	<element ref="hit vermelho" inputtag="IN2" inputmask="0x4000">
+		<bounds x="47.129" y="17.820" width="7.7" height="7.7" />
+	</element>
+	<element ref="comandos" inputtag="IN0" inputmask="0xf00" inputraw="yes">
+		<bounds x="2.397" y="6.378" width="18" height="18" />
+	</element>
+	</group>
+
+Aqui alteramos a parte final do layout, invocamos primeiro a parte
+visual e depois a parte lógica.
+
+.. code-block:: xml
+
+	<view name="Controle">
+	<screen index="0">
+		<bounds x="0" y="0" width="300" height="225" />
+	</screen>
+
+	<collection name="Joystick do jogador 1" visible="yes">
+	<group ref="Joystick" blend="add">
+		<bounds x="1.5" y="169.239" width="60.017" height="30.760" />
+	</group>
+	<group ref="Logic J1">
+		<bounds x="1.5" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+
+	<collection name="Joystick do jogador 2" visible="no">
+	<group ref="Joystick" blend="add">
+		<bounds x="238.4" y="169.239" width="60.017" height="30.760" />
+	</group>
+	<group ref="Logic J2">
+		<bounds x="238.4" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+
+Ao rodar a máquina novamente verá que toda a parte funcional e das
+opções continuam os mesmos, porém, o nosso arquivo layout está mais
+organizado.
+
+.. _layfile-using_png_files:
+
+Usando imagens PNG para o mesmo tipo de layout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ao trabalhar com imagens PNG é preciso exportar **CADA** elemento do
+nosso joystick, além de todas as posições do controle é preciso exportar
+todo o resto, além disso, é preciso levar em consideração o seu tamanho
+final pois como foi explicado antes, a imagem matricial se deteriora
+caso ela seja expandida para dimensões maiores do que ela foi projetada.
+
+Neste exemplo usaremos design abaixo como referência:
+
+	.. image:: images/base_botoes_joystick.svg
+		:width: 80%
+		:align: center
+		:alt: joystick com os botões
+
+* Abra a imagem no Inkscape, pressione ``Ctrl + A`` para selecionar 
+  todos os elementos, em seguida faça ``Shift + Ctrl + G`` para separar
+  todos os elementos do grupo.
+* Faça ``Shift+Ctrl+E`` ou **File -> Export PNG Image** para abrir a aba
+  de exportação.
+* Clique nos números e pressione **Del** no teclado para excluí-los.
+* Clique no círculo azul com o centro escuro, na aba
+  **Export PNG Image** em **Image size** defina ambos  **Width/Height**
+  como 100 (poderia ser maior mas serve para o nosso exemplo).
+* Em **Filename** exporte para a pasta **artwork/sfa3** com o nome
+  **azul1.png**.
+* Clique no outro botão azul com o centro claro e faça o mesmo, porém
+  exporte com o nome **azul0.png**.
+* Faça o mesmo com os outros botões, no final você deverá ter os
+  arquivos **azul0.png**, **azul0.png**, **amarelo0.png**,
+  **amarelo1.png**, **vermelho0.png** e **vermelho1.png**.
+* Clique na base do nosso joystick, exporte ele com o tamanho
+  **575 x 294** e defina o seu nome como **base.png**.
+
+Com todas as imagens em mãos podemos começar a montar o nosso layout:
+
+.. code-block:: xml
+
+	<?xml version="1.0"?>
+	<mamelayout version="2">
+	<!--
+	Joystick for CPS2
+	Created by: Wellington Terumi Uemura
+	License: CC by 4.0
+	https://mamedoc.readthedocs.io/
+	Date: October 02, 2021
+	-->
+
+
+Em seguida definimos as condicionais dos botões e a nossa tampa:
+
+.. code-block:: xml
+
+	<element name="painel">
+		<image file="base.png" />
+	</element>
+	<element name="azul" defstate="0">
+		<image file="azul0.png" state="0" />
+		<image file="azul1.png" state="1" />
+	</element>
+	<element name="amarelo" defstate="0">
+		<image file="amarelo0.png" state="0" />
+		<image file="amarelo1.png" state="1" />
+	</element>
+	<element name="vermelho" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+	<element name="tampa" defstate="0">
+		<text string=" " />
+	</element>
+
+Aqui nós definimos todas as posições do joystick:
+
+.. code-block:: xml
+
+	<element name="comandos"		defstate="0xf">
+		<image file="cima.png"		state="0x7" />
+		<image file="cimad.png"		state="0x6" />
+		<image file="direita.png"	state="0xe" />
+		<image file="baixod.png"	state="0xa" />
+		<image file="baixo.png"		state="0xb" />
+		<image file="baixoe.png"	state="0x9" />
+		<image file="esquerda.png"	state="0xd" />
+		<image file="cimae.png"		state="0x5" />
+		<image file="centro.png"	state="0xf"/>
+	</element>
+
+Neste primeiro momento, usamos a área que nós definimos para o controle
+**60,017px x 30,760px** e dentro dessa área posicionamos todas as partes
+do controle.
+
+.. code-block:: xml
+
+	<group name="controle J1">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="painel">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	<!-- aqui cobrimos toda a área do joystick para não interagir com o mouse -->
+	<element ref="tampa" blend="add" inputtag="IN0" inputmask="0x00" inputraw="yes">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	<!-- Botão 1 -->
+	<element ref="azul" inputtag="IN0" inputmask="16">
+		<bounds x="21.201" y="4.292" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 4 -->
+	<element ref="azul" inputtag="IN1" inputmask="1">
+		<bounds x="21.201" y="16.820" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 2 -->
+	<element ref="amarelo" inputtag="IN0" inputmask="32">
+		<bounds x="33.641" y="4.292" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 5 -->
+	<element ref="amarelo" inputtag="IN1" inputmask="2">
+		<bounds x="33.641" y="16.820" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 3 -->
+	<element ref="vermelho" inputtag="IN0" inputmask="64">
+		<bounds x="46.126" y="4.292" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 6 -->
+	<element ref="vermelho" inputtag="IN1" inputmask="4">
+		<bounds x="46.126" y="16.820" width="9.6" height="9.6" />
+	</element>
+	<element ref="comandos" inputtag="IN0" inputmask="0xf" inputraw="yes">
+		<bounds x="2.397" y="6.378" width="18" height="18" />
+	</element>
+	</group>
+	<!-- Aqui os parâmetros para o joystick para o segundo jogador -->
+	<group name="controle J2">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="painel">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	<element ref="tampa" blend="add" inputtag="IN0" inputmask="0x00" inputraw="yes">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	<!-- Botão 1 -->
+	<element ref="azul" inputtag="IN0" inputmask="0x1000">
+		<bounds x="21.201" y="4.337" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 4 -->
+	<element ref="azul" inputtag="IN1" inputmask="0x10">
+		<bounds x="21.156" y="16.820" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 2 -->
+	<element ref="amarelo" inputtag="IN0" inputmask="0x2000">
+		<bounds x="33.641" y="4.292" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 5 -->
+	<element ref="amarelo" inputtag="IN1" inputmask="0x20">
+		<bounds x="33.641" y="16.820" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 3 -->
+	<element ref="vermelho" inputtag="IN0" inputmask="0x4000">
+		<bounds x="46.126" y="4.292" width="9.6" height="9.6" />
+	</element>
+	<!-- Botão 6 -->
+	<element ref="vermelho" inputtag="IN2" inputmask="0x4000">
+		<bounds x="46.126" y="16.820" width="9.6" height="9.6" />
+	</element>
+	<element ref="comandos" inputtag="IN0" inputmask="0xf00" inputraw="yes">
+		<bounds x="2.397" y="6.378" width="18" height="18" />
+	</element>
+	</group>
+
+O mesmo caso anterior, definimos o nome e uma resolução *4:3**, no caso,
+**300 x 225**, posicionamos os controles na tela e encerramos o layout.
+
+.. code-block:: xml
+
+	<view name="Controles">
+	<screen index="0">
+		<bounds x="0" y="0" width="300" height="225" />
+	</screen>
+	<collection name="Joystick do jogador 1" visible="yes">
+	<group ref="controle J1">
+		<bounds x="1.5" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+	<collection name="Joystick do jogador 2" visible="no">
+	<group ref="controle J2">
+		<bounds x="238.4" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+	</view>
+	</mamelayout>
+
+Ao testar o layout com as imagens o controle funciona normalmente,
+contudo, repare que nos botões **amarelos** e nos botões **vermelhos**,
+parece que há uma borda preta neles.
+
+	.. image:: images/wtf.png
+		:width: 50%
+		:align: center
+		:alt: mas que m...
+
+Parece que outra pessoa já identificou este problema e ele ainda
+`não foi corrigido <https://github.com/mamedev/mame/issues/7868>`_,
+a solução parece que é criar um quadrado do mesmo tamanho do círculo (ou
+outra cor qualquer menos preto), alinhe com a página, preencha com o
+mesmo amarelo do círculo ``ffee00ff``, baixe o **alpha** para zero
+ficando ``ffee0000`` e exporte a imagem **.png** novamente.
+
+.. _layfile-simplifying_layout2:
+
+Simplificando o layout novamente
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Usando o conhecimento aprendido em :ref:`layfile-using_svg_files`,
+podemos fazer o mesmo com imagens **PNG**, dando a mesma funcionalidade
+porém deixando o layout mais enxuto, separamos o que é visual do lógico
+e depois montamos.
+
+.. code-block:: xml
+
+	<?xml version="1.0"?>
+	<mamelayout version="2">
+	<!--
+	Joystick for CPS2
+	Created by: Wellington Terumi Uemura
+	License: CC by 4.0
+	https://mamedoc.readthedocs.io/
+	Date: October 02, 2021
+	-->
+	
+	<element name="painel">
+		<image file="base.png" />
+	</element>
+	<element name="azul" defstate="0">
+		<image file="azul0.png" state="0" />
+		<image file="azul1.png" state="1" />
+	</element>
+	<element name="amarelo" defstate="0">
+		<image file="amarelo0.png" state="0" />
+		<image file="amarelo1.png" state="1" />
+	</element>
+	<element name="vermelho" defstate="0">
+		<image file="vermelho0.png" state="0" />
+		<image file="vermelho1.png" state="1" />
+	</element>
+	<element name="tampa" defstate="0">
+		<text string=" " />
+	</element>
+	
+	<element name="comandos"            defstate="0xf">
+		<image file="cima.png"          state="0x7" />
+		<image file="cimad.png"         state="0x6" />
+		<image file="direita.png"       state="0xe" />
+		<image file="baixod.png"        state="0xa" />
+		<image file="baixo.png"         state="0xb" />
+		<image file="baixoe.png"        state="0x9" />
+		<image file="esquerda.png"      state="0xd" />
+		<image file="cimae.png"         state="0x5" />
+		<image file="centro.png"        state="0xf"/>
+	</element>
+	
+	<group name="Joystick">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="painel">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	<element ref="tampa" blend="add" inputtag="IN0" inputmask="0x00" inputraw="yes">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	</element>
+	</group>
+	
+	<group name="Logic J1">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="azul" inputtag="IN0" inputmask="0x10">
+		<bounds x="21.202" y="4.292" width="9.7" height="9.7" />
+	</element>
+	<element ref="azul" inputtag="IN1" inputmask="0x1">
+		<bounds x="21.202" y="16.820" width="9.7" height="9.7" />
+	</element>
+	<element ref="amarelo" inputtag="IN0" inputmask="0x20">
+		<bounds x="33.641" y="4.292" width="9.7" height="9.7" />
+	</element>
+	<element ref="amarelo" inputtag="IN1" inputmask="0x2">
+		<bounds x="33.641" y="16.820" width="9.7" height="9.7" />
+	</element>
+	<element ref="vermelho" inputtag="IN0" inputmask="0x40">
+		<bounds x="46.129" y="4.292" width="9.7" height="9.7" />
+	</element>
+	<element ref="vermelho" inputtag="IN1" inputmask="0x4">
+		<bounds x="46.129" y="16.820" width="9.7" height="9.7" />
+	</element>
+	<element ref="comandos" inputtag="IN0" inputmask="0xf" inputraw="yes">
+		<bounds x="2.397" y="6.378" width="18" height="18" />
+	</element>
+	</group>
+	
+	<group name="Logic J2">
+		<bounds x="0" y="0" width="60.017" height="30.760" />
+	<element ref="azul" inputtag="IN0" inputmask="0x1000">
+		<bounds x="21.202" y="4.292" width="9.7" height="9.7" />
+	</element>
+	<element ref="azul" inputtag="IN1" inputmask="0x10">
+		<bounds x="21.202" y="16.820" width="9.7" height="9.7" />
+	</element>
+	<element ref="amarelo" inputtag="IN0" inputmask="0x2000">
+		<bounds x="33.641" y="4.292" width="9.7" height="9.7" />
+	</element>
+	<element ref="amarelo" inputtag="IN1" inputmask="0x20">
+		<bounds x="33.641" y="16.820" width="9.7" height="9.7" />
+	</element>
+	<element ref="vermelho" inputtag="IN0" inputmask="0x4000">
+		<bounds x="46.129" y="4.292" width="9.7" height="9.7" />
+	</element>
+	<element ref="vermelho" inputtag="IN2" inputmask="0x4000">
+		<bounds x="46.129" y="16.820" width="9.7" height="9.7" />
+	</element>
+	<element ref="comandos" inputtag="IN0" inputmask="0xf00" inputraw="yes">
+		<bounds x="2.397" y="6.378" width="18" height="18" />
+	</element>
+	</group>
+	
+	<view name="Controle">
+	<screen index="0">
+		<bounds x="0" y="0" width="300" height="225" />
+	</screen>
+	
+	<collection name="Joystick do jogador 1" visible="yes">
+	<group ref="Joystick" blend="add">
+		<bounds x="1.5" y="169.239" width="60.017" height="30.760" />
+	</group>
+	<group ref="Logic J1">
+		<bounds x="1.5" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+	
+	<collection name="Joystick do jogador 2" visible="no">
+	<group ref="Joystick" blend="add">
+		<bounds x="238.4" y="169.239" width="60.017" height="30.760" />
+	</group>
+	<group ref="Logic J2">
+		<bounds x="238.4" y="169.239" width="60.017" height="30.760" />
+	</group>
+	</collection>
+	</view>
+	</mamelayout>
+
 
 .. raw:: latex
 

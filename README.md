@@ -4,7 +4,7 @@
 | ------------- |:-------------:| 
 HTML, PDF, EPUB| [![Documentation Status](https://readthedocs.org/projects/mamedoc/badge/?version=latest)](https://mamedoc.readthedocs.io/pt/latest/?badge=latest)
 
-Para ler o documento online acesse a página oficial do projeto no link
+Para ler o documento online, acesse a página oficial do projeto no link
 abaixo, lá também se encontram os arquivos em HTML, PDF e e-PUB:
 
 https://mamedoc.readthedocs.io
@@ -18,11 +18,11 @@ https://github.com/mamedev/mame/tree/master/docs
 Este documento não tem qualquer relação com o documento oficial e tão
 pouco com o projeto MAME, apesar de utilizá-lo como referência. Este
 projeto teve inicio como uma tradução porém por diversas razões se
-tornou um trabalho independente sem no entanto ignorar as atualizações
-da documentação oficial e assim como abordando tópicos que não existem
-na documentação oficial, tópicos estes que foram pedidos por alguns
-membros da comunidade brasileira que gostam de emuladores e em especial
-o MAME.
+tornou um trabalho independente, sem no entanto, ignorar as atualizações
+da documentação oficial e ,assim como, abordando tópicos que não existem
+na documentação oficial, alguns tópicos que foram pedidos por alguns
+membros da comunidade brasileira e outros que o autor achou necessário
+adicionar.
 
 # Compilando este documento para outros formatos
 
@@ -121,7 +121,7 @@ para gerar páginas HTML e assim por diante.
 
 # Licença
 
-A [Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/legalcode.pt) em resumo lhe garantem os seguintes direitos:
+A [Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/legalcode.pt), em resumo, lhe garante os seguintes direitos:
 
 - Compartilhar, copiar e redistribuir este material através de qualquer meio ou formato.
 - Adaptar, misturar, transformar e criar a partir dele, para qualquer finalidade, inclusive comercial.
@@ -129,7 +129,7 @@ A [Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licen
 Desde que sejam respeitadas as seguintes condições:
 
 - **Atribuição**, você deve dar o devido crédito, prover um link para a
-  licença e indicar se mudanças foram feitas. Você deve fazê-lo em
+  licença e indicar se foram feitas alterações. Você deve fazê-lo em
   qualquer circunstância razoável, mas de nenhuma maneira que sugira que
   o licenciante apoia você ou o seu uso.
 - **Sem restrições adicionais**, você não pode usar de meios jurídicos
@@ -137,10 +137,10 @@ Desde que sejam respeitadas as seguintes condições:
   ou qualquer outro meio restritivo que venha a aparecer, que impeçam
   outros de fazer legalmente o que o que esta licença já esteja
   permitindo.
+
 Este trabalho de tradução está licenciado sob a Licença Atribuição 4.0
 Internacional Creative Commons por Wellington T. Uemura.
 
 Para visualizar uma cópia desta licença, visite http://creativecommons.org/licenses/by/4.0/ ou mande uma carta para:
 
 Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-

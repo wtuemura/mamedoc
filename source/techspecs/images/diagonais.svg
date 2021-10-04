@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36" height="17.479" version="1.1" viewBox="0 0 9.525 4.6247" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <title>Diagonais</title>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Diagonais</dc:title>
+    <dc:date>27/09/2021</dc:date>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Wellington Terumi Uemura</dc:title>
+     </cc:Agent>
+    </dc:creator>
+    <dc:rights>
+     <cc:Agent>
+      <dc:title>Wellington Terumi Uemura</dc:title>
+     </cc:Agent>
+    </dc:rights>
+    <dc:source>https://mamedoc.readthedocs.io</dc:source>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/by/4.0/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <rect x="4.9003" y="-.00016729" width="4.6247" height="4.6247" opacity=".12" stroke-width=".92493"/>
+ <g>
+  <path d="m7.8107 1.5478a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#1a1aff" stop-color="#000000"/>
+  <path d="m9.181 1.5478a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#1a1aff" stop-color="#000000"/>
+  <path d="m7.8107 3.0768a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#ffff1a" stop-color="#000000"/>
+  <path d="m9.2074 3.0504a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#ffff1a" stop-color="#000000"/>
+ </g>
+ <g>
+  <path d="m8.4959 3.3413a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#008080" stop-color="#000000"/>
+  <path d="m8.4959 1.283a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#008080" stop-color="#000000"/>
+  <path d="m9.525 2.3122a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#008000" stop-color="#000000"/>
+  <path d="m7.4667 2.3122a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#008000" stop-color="#000000"/>
+  <path d="m8.4959 2.3122a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#d40015" stop-color="#000000"/>
+ </g>
+ <circle cx="7.2127" cy="2.3122" r="2.3123" opacity=".35" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="1.078"/>
+ <rect x="2.2879e-7" y="-.00016729" width="4.6247" height="4.6247" opacity=".12" stroke-width=".92493"/>
+ <g>
+  <path d="m2.6722 1.4152a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#1a1aff" stop-color="#000000"/>
+  <path d="m4.4923 1.4152a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#1a1aff" stop-color="#000000"/>
+  <path d="m2.6722 3.2091a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#ffff1a" stop-color="#000000"/>
+  <path d="m4.4923 3.2091a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#ffff1a" stop-color="#000000"/>
+ </g>
+ <g>
+  <path d="m3.5955 3.3413a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#008080" stop-color="#000000"/>
+  <path d="m3.5955 1.283a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#008080" stop-color="#000000"/>
+  <path d="m4.6247 2.3122a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#008000" stop-color="#000000"/>
+  <path d="m2.5664 2.3122a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#008000" stop-color="#000000"/>
+  <path d="m3.5955 2.3122a1.2832 1.2832 0 0 1-1.2832 1.2832 1.2832 1.2832 0 0 1-1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832-1.2832 1.2832 1.2832 0 0 1 1.2832 1.2832z" fill="#d40015" stop-color="#000000"/>
+ </g>
+ <circle cx="2.3123" cy="2.3122" r="2.3123" opacity=".35" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="1.078"/>
+</svg>
