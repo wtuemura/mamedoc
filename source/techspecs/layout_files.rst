@@ -3103,7 +3103,7 @@ tabela abaixo com os valores para algumas máquinas:
      - ``0x9``
      - ``0xb``
      - ``0xa``
-     - ``0x0``
+     - ``0xf``
    * - ddragon
      - ``0xf``
      - ``0xb``
