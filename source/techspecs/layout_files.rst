@@ -15,6 +15,8 @@ Os arquivos layout
 Introdução
 ----------
 
+:kbd:`Alt+Enter`
+
 Os arquivos layout [#]_ são usados para informar ao MAME o que exibir
 enquanto a emulação de um sistema estiver rodando e também como
 organizá-los na tela. O MAME pode renderizar a emulação das telas

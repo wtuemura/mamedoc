@@ -142,12 +142,13 @@ html_favicon = "images/favicon.ico"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 #html_static_path = ['../themes/sphinx_rtd_theme/static']
-html_static_path = ['static']
-html_context = {
-    'css_files': [
-    '_static/css/theme_overrides.css',  # override wide tables in RTD theme
-    ],
-}
+#html_static_path = ['static']
+#html_context = {
+#    'css_files': [
+#    '_static/css/theme_overrides.css',  # override wide tables in RTD theme
+#    ],
+#}
+html_theme_path = ["../themes/"]
 
 # https://github.com/readthedocs/sphinx_rtd_theme/issues/714
 # getting error when try to load custom css
