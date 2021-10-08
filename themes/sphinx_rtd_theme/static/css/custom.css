@@ -1,0 +1,36 @@
+.rst-content code, .rst-content tt, code {
+    white-space: nowrap;
+    max-width: 100%;
+    background: #fff;
+    border: 1px solid #e1e4e5;
+    font-size: 75%;
+    padding: 0 5px;
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,Courier,monospace;
+    color: #e74c3c;
+    overflow-x: auto;
+    border-radius: .25rem;
+    font-size: 75%;
+}
+.rst-content code.literal, .rst-content tt.literal {
+    color: #f08;
+    white-space: normal;
+    padding: .25em .5em;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+kbd {
+    padding: .2rem .4rem;
+    font-size: 87.5%;
+    color: #fff;
+    background-color: #212121;
+    border-radius: .2rem;
+    font-family: monospace;
+}
+.rst-content kbd, .rst-content samp {
+    color: #212121;
+    background-color: #f2f2f2;
+    border: 1px solid #cbcbcb;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2),inset 0 0 0 2px #fff;
+    box-sizing: border-box;
+}
