@@ -2170,7 +2170,7 @@ pode ser a mesma:
 
 Usamos o exemplo abaixo para definir o nome da visualização que vai
 aparecer na interface do MAME para ser selecionada na opção **Vídeo**
-(TAB --> Opções de Vídeo):
+(:menuselection:`TAB --> Opções do vídeo`):
 
 .. code-block:: xml
 
@@ -2179,8 +2179,8 @@ aparecer na interface do MAME para ser selecionada na opção **Vídeo**
 Precisamos informar ao MAME o tamanho exato da imagem, para ver estas
 informações clique com o mouse direito do mouse em cima dela e
 selecione **Propriedades** ou abra o arquivo **arte.png** no Gimp e
-selecione Imagem --> Propriedades da imagem para identificar que a
-imagem tem **3296x4093**:
+selecione :menuselection:`Imagem --> Propriedades da imagem` para
+identificar que a imagem tem **3296x4093**:
 
 .. code-block:: xml
 
@@ -3476,9 +3476,10 @@ para o diretório **artwork** e o renomeie com o nome da máquina que será
 testada, para o exemplo usado na foto o nome do diretório é
 **ssriders**. Rodando o comando ``mame -window ssriders`` irá
 aparecer uma tela com um design branco genérico, será possível escolher
-um modelo para 2 ou 4 jogadores através do menu **Opções de Vídeo**
-(TAB --> Opções de Vídeo), faça as alterações necessárias no arquivo de
-layout e para visualizar na tela pressione **SHIFT+F3**.
+um modelo para 2 ou 4 jogadores através do menu **Opções do Vídeo**
+(:menuselection:`TAB --> Opções do vídeo`), faça as alterações
+necessárias no arquivo de layout e para visualizar na tela pressione
+**SHIFT+F3**.
 
 .. image:: images/modelo-4-controles.png
    :width: 90%
@@ -3553,8 +3554,8 @@ seus respectivos nomes:
 		...
 	</view>
 
-Estas visuzalizações ficam acessíveis através do menu **Opções de
-Vídeo** (TAB --> Opções de Vídeo).
+Estas visuzalizações ficam acessíveis através do menu **Opções do
+Vídeo** (:menuselection:`TAB --> Opções do vídeo`).
 
 .. image:: images/tipos-galaxian.png
    :width: 100%
@@ -3613,8 +3614,8 @@ tradicional. Usando as referências deste limite, nós podemos definir a
 posição de cada movimento do controle.
 
 * No Inkscape, crie um novo arquivo, pressione ``Ctrl+Shift+D`` ou
-  **File -> Document properties**, em **Page** defina **Display units**
-  como **PX**.
+  :menuselection:`File --> Document properties`, em **Page** defina
+  **Display units** como **PX**.
 * Crie um círculo preto, defina o seu tamanho em **W:** e **H:**
   com **7,700 px**, este será aquela peça preta que fica no fim do eixo
   do joystick, ele vai ajudar a dar a ilusão de movimento.
@@ -3642,15 +3643,16 @@ melhor dependendo do modelo/tipo do joystick que você está querendo
 imitar, ajuste e faça testes para ver qual se adapta melhor ao seu
 design e veja se a animação fica boa **na tela**.
 
-* Fazendo os cálculos, **9,700 * 1,8 = 17,46**, vá em **File -> Document
-  Properties** ``Shift+Ctrl+D``, em **Custom size** defina as unidades
+* Fazendo os cálculos, **9,700 * 1,8 = 17,46**, vá em
+  :menuselection:`File --> Document Properties` ``Shift+Ctrl+D``, em
+  **Custom size** defina as unidades
   para **PX** e defina o **Width/Height** para **17,46**, pressione
   **Enter** para aplicar e feche a janela.
-* Vá em **Object -> Align and distribute**, clique no círculo **preto**,
-  na aba **Align -> Relative To:** escolha **Page**, clique no botão
-  logo abaixo (**Center on vertical axis**), depois (**Center on
-  horizontal axis**) para centralizar o objeto. Clique no círculo
-  vermelho e faça o mesmo com ele.
+* Vá em :menuselection:`Object --> Align and distribute`, clique no
+  círculo **preto**, na aba :menuselection:`Align -> Relative To:`
+  escolha **Page**, clique no botão logo abaixo (**Center on vertical
+  axis**), depois (**Center on horizontal axis**) para centralizar o
+  objeto. Clique no círculo vermelho e faça o mesmo com ele.
 * Pressione o **3** no teclado numérico (lado direito do teclado) para
   que o círculo apareça no centro da tela.
 * Clique 2x no sinal de **-** no teclado numérico ou pressione ``Ctrl``
@@ -3760,11 +3762,12 @@ Depois que todas as posições já estiverem nas suas respectivas camadas
   escolha a opção **Hide all layers** para ocultar tudo.
 * Ative (torne visível) apenas os layers, **centro base** e
   **centro**.
-* Vá em **File -> Save a Copy** ``Shift+Ctrl+Alt+S``, escolha o caminho
-  ``MAME\Artwork\sfa3``, ou a mesma pasta onde está o ``default.lay``
-  que criamos, no nome insira **centro.svg** e na parte debaixo desta
-  janela troque a opção **Inkscape SVG** por **Optimized SVG**, clique
-  em **Save** e cloque **OK** na próxima janela que aparecer.
+* Vá em :menuselection:`File --> Save a Copy` ``Shift+Ctrl+Alt+S``,
+  escolha o caminho ``MAME\Artwork\sfa3``, ou a mesma pasta onde está o
+  ``default.lay`` que criamos, no nome insira **centro.svg** e na parte
+  debaixo desta janela troque a opção **Inkscape SVG** por
+  **Optimized SVG**, clique em **Save** e cloque **OK** na próxima
+  janela que aparecer.
 * Esconda o layer **centro** e deixe apanas o layer **direita** visível
   e repita o procedimento anterior, faça o mesmo para cada uma das
   posições.
@@ -3856,13 +3859,13 @@ Colocaremos um pequeno joystick animado sobreposto num canto da tela,
 porém antes precisamos saber de duas coisas, o tamanho da tela e o
 tamanho do objeto que será colocado nela. Para saber o tamanho da tela,
 inicie uma máquina qualquer como a **sfa3** (``mame sfa3``), pressione
-**Tab -> Informação da máquina**, na parte de **Vídeo** vai estar
-listado ``384 x 224`` (valor em **pixels**).
+:menuselection:`Tab --> Informação da máquina`, na parte de **Vídeo** vai
+estar listado ``384 x 224`` (valor em **pixels**).
 
-* Abra o Inkscape, vá em **File -> Document properties...** ou
-  ``Shift+Ctrl+D``, em **Page -> Units** alterne de **mm** para
-  **px** (pixels), em **Width** defina ``384,0`` e em **Height** defina
-  ``224,0``, feche a janela.
+* Abra o Inkscape, vá em :menuselection:`File --> Document properties...`
+  ou ``Shift+Ctrl+D``, em :menuselection:`Page --> Units` alterne de
+  **mm** para **px** (pixels), em **Width** defina ``384,0`` e em
+  **Height** defina ``224,0``, feche a janela.
 
 Abaixo temos uma imagem para ilustrar o tamanho, a área em azul é a
 área de segurança de quem usa shaders para deixar a tela curvada e com
@@ -4142,9 +4145,9 @@ joystick e o seu respectivo tamanho.
 
 Salve o arquivo, execute o comando no terminal/prompt de comando
 ``mame sfa3`` e veja que todos os botões e o controle reagem ao que você
-fizer no seu controle. Pressione **Tab -> Opções do vídeo -> Tela #0**,
-veja que há a opção **Joystick do jogador 1** que pode ser ligada ou
-desligada.
+fizer no seu controle. Pressione
+:menuselection:`Tab --> Opções do vídeo --> Tela #0`, veja que há a
+opção **Joystick do jogador 1** que pode ser ligada ou desligada.
 
 Para adicionar o controle para o jogador 2, basta agora adicionar a
 lista abaixo **depois** do grupo **Joystick J1** e adaptar a lógica para
@@ -4419,8 +4422,8 @@ Neste exemplo usaremos design abaixo como referência:
 * Abra a imagem no Inkscape, pressione ``Ctrl + A`` para selecionar 
   todos os elementos, em seguida faça ``Shift + Ctrl + G`` para separar
   todos os elementos do grupo.
-* Faça ``Shift+Ctrl+E`` ou **File -> Export PNG Image** para abrir a aba
-  de exportação.
+* Faça ``Shift+Ctrl+E`` ou :menuselection:`File --> Export PNG Image`
+  para abrir a aba de exportação.
 * Clique nos números e pressione **Del** no teclado para excluí-los.
 * Clique no círculo azul com o centro escuro, na aba
   **Export PNG Image** em **Image size** defina ambos  **Width/Height**
