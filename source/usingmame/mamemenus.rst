@@ -726,10 +726,10 @@ As opções disponíveis são:
   Configura a exibição ou não dos painéis laterais da interface do MAME.
   As opções disponíveis são:
 
-	* **Mostre tudo**
-	* **Esconda os Filtros**
-	* **Esconda Info/Imagem**
-	* **Esconda Ambos**
+	* **Mostra tudo**
+	* **Esconda os filtros**
+	* **Esconda info/imagem**
+	* **Esconda ambos**
 
 .. raw:: latex
 
@@ -1612,7 +1612,7 @@ Entradas Gerais
 
 * **UI Export List**
 
-  Exporta a lista das máquinas em formato:
+  Exporta a lista das máquinas no formato:
 
 	* **XML** igual ao comando **-listxml**.
 	* **XML** igual ao comando **-listxml** excluindo os dispositivos.
@@ -2629,7 +2629,7 @@ Permite que você configure individualmente cada máquina selecionada.
 
 	<p></p>
 
-* **Adicione aos Favoritos**
+* **Adiciona aos Favoritos**
 
   Adiciona a máquina selecionada aos seus favoritos.
 
@@ -2637,7 +2637,7 @@ Permite que você configure individualmente cada máquina selecionada.
 
 	<p></p>
 
-* **Salve a configuração da máquina**
+* **Salva a configuração da máquina**
 
   Salva a configuração apenas para a máquina selecionada.
 
