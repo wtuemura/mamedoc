@@ -1070,10 +1070,19 @@ Em seguida, é preciso baixar e instalar o SDL 2.
 	e arraste o arquivo **SDL2.framework** na pasta **Frameworks**. Será
 	preciso se autenticado com a senha do seu usuário.
 
-Use o Terminal para dar inicio a compilação navegue até onde está o
+Obtenha o Python 3 e configure:
+
+* Vá até o `site oficial do Python <https://www.python.org/>`_, vá até a
+  página de download e baixe a versão
+  `Python 3.10.0 <https://www.python.org/downloads/release/python-3100/>`_
+  ou mais recente.
+* Role para baixo até a seção "Files" e baixe a versão do macOS
+  (chamado “macOS 64-bit universal2 installer” ou similar).
+* Depois de baixado, execute e siga as instruções de instalação.
+
+Use o Terminal para iniciar a compilação, navegue até onde está o
 código fonte do MAME (comando *cd*) e siga as instruções normais de
-compilação acima para :ref:`todas as plataformas
-<compiling-practical-examples>`.
+compilação acima para :ref:`todas as plataformas <compiling-practical-examples>`.
 
 .. raw:: latex
 
@@ -1675,7 +1684,7 @@ exemplo, que ativa verificações ainda mais restritas.
 
 Neste caso, você deve realmente pegar no pé dos mantenedores da sua
 distribuição preferida, deixando claro que você não quer que o GNU GCC
-tenha comportamentos fora do padrão.
+tenha um comportamento fora do padrão.
 
 Seria melhor que essas distribuições predefinissem essa opção em seu
 próprio ambiente de desenvolvimento de pacotes caso eles acreditem que
@@ -1731,7 +1740,7 @@ caminho nas variáveis de ambiente do Windows:
 1.	Pressione a tecla com a bandeira do Windows ( ela é chamada
 	``WINKEY`` ) junto com a tecla ``Pause``.
 2.	Clique na opção chamada ``Configurações Avançadas do Sistema``.
-3.	Vá em ``Avançado`` --> ``Variáveis de Ambiente``.
+3.	Vá em :menuselection:`Avançado --> Variáveis de Ambiente`.
 4.	Selecione ``Path`` e clique em ``Editar``.
 5.	Clique em ``Novo`` e adicione o caminho onde está instalado o seu
 	MSYS2.
