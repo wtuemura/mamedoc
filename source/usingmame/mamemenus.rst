@@ -30,7 +30,7 @@ diferentes cores de fundo indicando a sua condição.
 
 Abaixo da lista de máquinas nós temos:
 
-	* **Opções de configuração**: Exibe uma lista das configurações do MAME.
+	* **Configurações**: Exibe uma lista das configurações do MAME.
 	* **Configure a máquina**: Exibe uma lista das opções para configurar a máquina selecionada.
 	* **Plug-ins**: Exibe uma lista para a configuração de plug-ins
 	* **Encerrar**: Encerra o MAME
@@ -583,8 +583,8 @@ plug-in **Data plugin** precisa estar ativo e os arquivos **\*.dat**
 
 .. _mamemenu-config-options:
 
-Opções de configuração
-----------------------
+Configurações
+-------------
 
 Personalize a Interface
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2580,7 +2580,7 @@ Salve a Configuração
 
 Salva todas as alterações feitas.
 
-Retorne ao menu anterior
+Retorna ao menu anterior
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Retorna para a tela anterior.
