@@ -206,6 +206,8 @@ htmlhelp_basename = 'MAME'
 
 latex_engine = 'pdflatex'
 
+LATEXMKOPTS="-silent"
+
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
@@ -296,3 +298,18 @@ texinfo_documents = [
 #texinfo_show_urls = 'footnote'
 # Suppress "WARNING: unknown mimetype for ..." https://github.com/IQSS/dataverse/issues/3391
 suppress_warnings = ['epub.unknown_project_files']
+
+# -- Options for Epub ----------------------------------------------------------
+
+epub_theme = 'epub'
+epub_basename = 'mamedoc'
+epub_author = 'Wellington Terumi Uemura'
+epub_publisher = 'https://mamedoc.readthedocs.io/'
+epub_uid = 'web-site'
+epub_scheme = 'url'
+epub_identifier = epub_publisher
+epub_fix_images = False
+epub_max_image_width = 0
+epub_show_urls = 'inline'
+epub_use_index = False
+epub_version = 0.230
