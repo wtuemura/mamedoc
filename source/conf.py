@@ -206,8 +206,6 @@ htmlhelp_basename = 'MAME'
 
 latex_engine = 'pdflatex'
 
-LATEXMKOPTS="-silent"
-
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
