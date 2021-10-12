@@ -204,6 +204,8 @@ htmlhelp_basename = 'MAME'
 
 # -- Options for LaTeX output --------------------------------------------------
 
+latex_engine = 'pdflatex'
+
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
