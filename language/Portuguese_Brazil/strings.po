@@ -2037,42 +2037,42 @@ msgstr "J10 Select"
 #: src/emu/inpttype.ipp:497
 msgctxt "input-name"
 msgid "1 Player Start"
-msgstr "Inicia 1 jogador"
+msgstr "Inicia jogador 1"
 
 #: src/emu/inpttype.ipp:498
 msgctxt "input-name"
 msgid "2 Players Start"
-msgstr "Inicia 2 jogadores"
+msgstr "Inicia jogador 2"
 
 #: src/emu/inpttype.ipp:499
 msgctxt "input-name"
 msgid "3 Players Start"
-msgstr "Inicia 3 jogadores"
+msgstr "Inicia jogador 3"
 
 #: src/emu/inpttype.ipp:500
 msgctxt "input-name"
 msgid "4 Players Start"
-msgstr "Inicia 4 jogadores"
+msgstr "Inicia jogador 4"
 
 #: src/emu/inpttype.ipp:501
 msgctxt "input-name"
 msgid "5 Players Start"
-msgstr "Inicia 5 jogadores"
+msgstr "Inicia jogador 5"
 
 #: src/emu/inpttype.ipp:502
 msgctxt "input-name"
 msgid "6 Players Start"
-msgstr "Inicia 6 jogadores"
+msgstr "Inicia jogador 6"
 
 #: src/emu/inpttype.ipp:503
 msgctxt "input-name"
 msgid "7 Players Start"
-msgstr "Inicia 7 jogadores"
+msgstr "Inicia jogador 7"
 
 #: src/emu/inpttype.ipp:504
 msgctxt "input-name"
 msgid "8 Players Start"
-msgstr "Inicia 8 jogadores"
+msgstr "Inicia jogador 8"
 
 #: src/emu/inpttype.ipp:509
 msgctxt "input-name"
@@ -3272,7 +3272,7 @@ msgstr "IU Foco ant."
 #: src/emu/inpttype.ipp:841
 msgctxt "input-name"
 msgid "UI Select"
-msgstr "Seleciona IU"
+msgstr "IU Seleciona"
 
 #: src/emu/inpttype.ipp:842
 msgctxt "input-name"
@@ -3287,7 +3287,7 @@ msgstr "IU Mostra comentário"
 #: src/emu/inpttype.ipp:844
 msgctxt "input-name"
 msgid "UI Clear"
-msgstr "Limpa IU"
+msgstr "IU Limpa"
 
 #: src/emu/inpttype.ipp:845
 msgctxt "input-name"
@@ -3367,7 +3367,7 @@ msgstr "IU Visualiza DAT externa"
 #: src/emu/inpttype.ipp:860
 msgctxt "input-name"
 msgid "UI Add/Remove favorite"
-msgstr "IU Adiciona/remove favorito"
+msgstr "IU Adiciona/remove favoritos"
 
 #: src/emu/inpttype.ipp:861
 msgctxt "input-name"
@@ -3377,7 +3377,7 @@ msgstr "IU Exporta lista"
 #: src/emu/inpttype.ipp:862
 msgctxt "input-name"
 msgid "UI Audit Media"
-msgstr "IU Audita mídia"
+msgstr "IU Afere mídia"
 
 #: plugins/cheatfind/init.lua:387
 msgid "Other: "
@@ -4292,11 +4292,11 @@ msgstr "Trapaças"
 
 #: src/frontend/mame/ui/submenu.cpp:36
 msgid "Show mouse pointer"
-msgstr "Exiba o ponteiro do mouse"
+msgstr "Exibe o ponteiro do mouse"
 
 #: src/frontend/mame/ui/submenu.cpp:37
 msgid "Confirm quit from machines"
-msgstr "Confirme se deseja encerrar a máquina ou não"
+msgstr "Confirma se deseja encerrar a máquina ou não"
 
 #: src/frontend/mame/ui/submenu.cpp:38
 msgid "Skip information screen at startup"
@@ -4308,15 +4308,15 @@ msgstr "Mantenha o aspecto 4:3 para os prints da tela"
 
 #: src/frontend/mame/ui/submenu.cpp:40
 msgid "Use image as background"
-msgstr "Use uma imagem como plano de fundo"
+msgstr "Usa uma imagem como plano de fundo"
 
 #: src/frontend/mame/ui/submenu.cpp:41
 msgid "Skip BIOS selection menu"
-msgstr "Omita a tela de seleção da BIOS"
+msgstr "Omite a tela da escolha da BIOS"
 
 #: src/frontend/mame/ui/submenu.cpp:42
 msgid "Skip software parts selection menu"
-msgstr "Omita as partes do cardápio da seleção do programa"
+msgstr "Omite as partes do cardápio da seleção do programa"
 
 #: src/frontend/mame/ui/submenu.cpp:43
 msgid "Info auto audit"
@@ -4324,7 +4324,7 @@ msgstr "Informação de aferição automática"
 
 #: src/frontend/mame/ui/submenu.cpp:44
 msgid "Hide romless machine from available list"
-msgstr "Esconda as máquinas sem roms da lista de disponíveis"
+msgstr "Esconde as máquinas sem ROMs da lista de disponíveis"
 
 #: src/frontend/mame/ui/submenu.cpp:50
 msgid "Advanced Options"
@@ -4576,7 +4576,7 @@ msgstr "Atualização sincronizada dos quadros"
 
 #: src/frontend/mame/ui/submenu.cpp:128
 msgid "Wait Vertical Sync"
-msgstr "Aguardar Sincronização Vertical"
+msgstr "Aguarde a sincronização vertical"
 
 #: src/frontend/mame/ui/menu.cpp:666
 msgid "Auto"
@@ -5099,7 +5099,7 @@ msgstr "Indisponível"
 #: src/frontend/mame/ui/utils.cpp:87
 msgctxt "machine-filter"
 msgid "Working"
-msgstr "Funcionando"
+msgstr "Funciona"
 
 #: src/frontend/mame/ui/utils.cpp:88
 msgctxt "machine-filter"
@@ -5732,7 +5732,7 @@ msgstr "Áudio: Imperfeito"
 #: src/frontend/mame/ui/simpleselgame.cpp:368
 #: src/frontend/mame/ui/selmenu.cpp:744
 msgid "Sound: OK"
-msgstr "Som: BOM"
+msgstr "Áudio: BOM"
 
 #: src/frontend/mame/ui/cheatopt.cpp:100
 msgid "All cheats reloaded"

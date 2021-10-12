@@ -26,16 +26,14 @@ diferentes cores de fundo indicando a sua condição.
 
 	* **Verde**: São máquinas com roms completas e que funcionam.
 	* **Vermelha**: São máquinas que não funcionam direito ou tem roms faltando.
-	* **Marrom**: São máquinas que funcionam mas estão imperfeitas na parte de som ou vídeo.
+	* **Laranja**: São máquinas que funcionam mas estão imperfeitas na parte de som ou vídeo.
 
-Abaixo da lista de máquinas nós temos:
+Abaixo da lista das máquinas nós temos:
 
 	* **Configurações**: Exibe uma lista das configurações do MAME.
-	* **Configure a máquina**: Exibe uma lista das opções para configurar a máquina selecionada.
-	* **Plug-ins**: Exibe uma lista para a configuração de plug-ins
-	* **Encerrar**: Encerra o MAME
+	* **Configure a máquina**: Exibe uma lista das opções de configuração da máquina selecionada.
 
-Todos os itens exibidos essa interface podem ser selecionados usando as
+Todos os itens exibidos nessa interface podem ser acessadas usando as
 setas do seu teclado (cima, baixo, esquerda, direita) e são selecionadas
 pressionando a tecla **Enter** do teclado. A interface também aceita o
 uso do mouse fazendo a seleção com um clique e um duplo clique para
@@ -93,21 +91,21 @@ Os filtros disponíveis são:
 
 * **Sem filtro**
 
-  Exibe toda a lista de máquinas conhecidas e cadastradas no catálogo
+  Exibe toda a lista das máquinas conhecidas e cadastradas no catálogo
   interno do MAME sem nenhum filtro.
 
 .. _mamemenu-disponivel:
 
 * **Disponível**
 
-  Exibe a lista de máquinas que o MAME identificou dentro do diretório
+  Exibe a lista das máquinas que o MAME identificou dentro do diretório
   roms.
 
 .. _mamemenu-nao-disponivel:
 
-* **Não disponível**
+* **Indisponível**
 
-  Exibe toda a lista de máquinas conhecidas e cadastradas no catálogo
+  Exibe toda a lista das máquinas conhecidas e cadastradas no catálogo
   interno do MAME que não estão disponíveis, ainda que a interface
   mostre a cor verde.
 
@@ -115,7 +113,7 @@ Os filtros disponíveis são:
 
 * **Funciona**
 
-  Exibe uma lista de máquinas que funcionam e estão em condição verde e
+  Exibe uma lista das máquinas que funcionam e estão em condição verde e
   marrom, as máquinas na condição vermelha ou que ainda não funcionem
   ficam de fora da lista.
 
@@ -130,7 +128,7 @@ Os filtros disponíveis são:
 
 * **Mecânico**
 
-  Exibe toda a lista de máquinas mecânicas conhecidas e cadastradas no
+  Exibe toda a lista das máquinas mecânicas conhecidas e cadastradas no
   catálogo interno do MAME como Pinball por exemplo.
 
 .. _mamemenu-nao-mecanico:
@@ -143,41 +141,38 @@ Os filtros disponíveis são:
 
 * **Categoria**
 
-  Este filtro usa de arquivos *.ini* para separar as máquinas por diversas
-  categoria diferentes como por exemplo gabinetes com 2 jogadores, 4 jogadores,
-  jogo de tiro, de corrida, de tabuleiro, corrida, etc. Em categorias
-  onde a lista seja muito grande, clique duas vezes com o mouse em cima
-  da lista para que uma nova tela seja exibida e fique mais fácil
-  escolher a opção desejada. Note que o uso destes arquivos pode fazer
-  com que o MAME demore um pouco mais para iniciar.
+  Este filtro usa de arquivos *.ini* para separar as máquinas em
+  diversas categoria diferentes como por exemplo gabinetes com 2
+  jogadores, 4 jogadores, jogo de tiro, de corrida, de tabuleiro,
+  corrida, etc. Em categorias onde a lista seja muito grande, clique
+  duas vezes com o mouse em cima da lista para que uma nova tela seja
+  exibida e fique mais fácil de escolher a opção desejada. Note que o
+  uso destes arquivos pode fazer com que o MAME demore um pouco mais
+  para iniciar.
 
   O MAME não incluí nenhum arquivo de categoria, na internet é possível
   acessar o site `Progetto-Snaps <http://www.progettosnaps.net>`_ que
   oferece estes arquivos *.ini* para download `aqui
   <http://www.progettosnaps.net/renameset/>`_. Depois que o arquivo for
   baixado e extraído o diretório **folders** deve ser copiado para o
-  diretório raíz do MAME.
+  diretório raiz do MAME.
 
   Até o presente momento não existe uma tradução dessas categorias para
   o Português Brasileiro. Abaixo estão as categorias existentes até o
   momento e que funcionam com o MAME, as categorias que não funcionam
-  com o MAME foram criadas para serem usadas com o MAMEUI [#]_ e não
-  estão listadas aqui:
+  com o MAME foram criadas para serem usadas com o MAMEUI [#MAMEUIP]_ e
+  não estão listadas aqui:
 
-	* **Cabinets**: Lista as máquinas **Arcade** do MAME estão divididas em tipos de gabinetes.
+	* **Cabinets**: Lista as máquinas **Arcade** do MAME que estão divididas em tipos de gabinetes.
 	* **Category**: Lista as máquinas separadas em categorias como corrida, tabuleiro, tiro, etc.
-	* **Driver**: Lista as máquinas do MAME consideradas de corrida ou que envolva qualquer tipo de direção.
+	* **Driver**: Lista as máquinas por driver como cps1.cpp, 1943.cpp, 3do.cpp, etc.
 	* **FreePlay**: Lista as máquinas **Arcade** do MAME que possuem a opção de poder jogar de graça.
 	* **MonoChrome**: Lista as máquinas separada por cores.
-	* **Resolution**: Lista as máquinas separadas por resolução.
-
-.. raw:: latex
-
-	\clearpage
+	* **Resolution**: Lista as máquinas separadas pela sua resolução.
 
 O site ainda oferece outros tipos de *.ini* como **version.ini** que
 separa as máquinas por versão em que elas apareceram pela primeira vez
-no MAME, note que este aquivos extras não serão abordados neste
+no MAME, note que estes aquivos extras não serão abordados neste
 documento porém já deve ter ficado fácil compreender a sua utilidade no
 MAME.
 
@@ -193,13 +188,13 @@ MAME.
 
 * **BIOS**
 
-  Exibe uma lista de máquinas que precisam de uma BIOS para funcionar.
+  Exibe uma lista das máquinas que precisam de uma BIOS para funcionar.
 
 .. _mamemenu-sembios:
 
 * **Sem BIOS**
 
-  Exibe uma lista de máquinas que não precisam de uma BIOS para
+  Exibe uma lista das máquinas que não precisam de uma BIOS para
   funcionar.
 
 .. _mamemenu-pai:
@@ -213,7 +208,7 @@ MAME.
 
 * **Clones**
 
-  Exibe uma lista de máquinas que são consideradas clones das máquinas
+  Exibe uma lista das máquinas que são consideradas clones das máquinas
   originais.
 
 .. _mamemenu-fabricante:
@@ -230,47 +225,47 @@ MAME.
 
 .. _mamemenu-save-support:
 
-* **Com suporte a salvamento**
+* **É possível salvar**
 
-  Exibe uma lista de máquinas onde o salvamento do estado da máquina
-  seja possível.
+  Exibe uma lista das máquinas onde o salvamento do estado da máquina
+  é possível.
 
 .. _mamemenu-nosave-support:
 
-* **Sem suporte ao salvamento**
+* **Não é possível salvar**
 
-  Exibe uma lista de máquinas onde não é possível salvar o estado da
+  Exibe uma lista das máquinas onde não é possível salvar o estado da
   máquina.
 
 .. _mamemenu-chd:
 
 * **Precisa de CHD**
 
-  Exibe uma lista de máquinas que precisam de uma imagem de disco para
+  Exibe uma lista das máquinas que precisam de uma imagem de disco para
   funcionar.
 
 .. _mamemenu-nochd:
 
 * **Não precisa de CHD**
 
-  Exibe uma lista de máquinas que não precisam de uma imagem de disco
+  Exibe uma lista das máquinas que não precisam de uma imagem de disco
   para funcionar.
 
 .. _mamemenu-tela-vertical:
 
 * **Tela vertical**
 
-  Exibe uma lista de máquinas que usam orientação vertical de tela.
+  Exibe uma lista das máquinas que usam orientação vertical de tela.
 
 .. _mamemenu-tela-horizontal:
 
 * **Tela horizontal**
 
-  Exibe uma lista de máquinas que usam orientação horizontal de tela.
+  Exibe uma lista das máquinas que usam orientação horizontal de tela.
 
 .. _mamemenu-filtro-personalizado:
 
-* **Filtro Personalizado**
+* **Filtro personalizado**
 
   Todo o filtro criado será listado aqui.
 
@@ -284,7 +279,7 @@ Durante a emulação
 ------------------
 
 Estas opções podem ser acessadas durante a emulação e estão acessíveis
-ao pressionar a tecla TAB.
+ao pressionar a tecla **TAB**.
 
 Entrada (geral)
 ~~~~~~~~~~~~~~~
@@ -312,20 +307,19 @@ Entrada (geral)
 Entrada (esta máquina)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Aqui as entradas podem variar bastante dependendo da máquina emulada.
 Aqui ficam as configurações que serão utilizadas apenas na máquina que
-estiver sendo emulada no momento, as configurações vão desde créditos,
-botões, acesso ao modo de serviço da máquina (caso seja um arcade) ou
-das teclas de um computador pessoal, etc.
+estiver sendo emulada no momento e por isso essa lista varia, as
+configurações vão desde créditos, botões, acesso ao modo de serviço da
+máquina (caso seja um arcade), teclas de um computador pessoal, etc.
 
 Chaves DIP
 ~~~~~~~~~~
 
 Aqui ficam as chaves DIP, elas servem para definir as configurações da
-máquina (quando for relevante) como a quantidade de fichas necessárias
+máquina (quando for relevante) como, a quantidade de fichas necessárias
 para registrar 1 crédito, se a tela será invertida ou não, se a máquina
-ficará em silêncio ou tocará músicas enquanto ninguém a estiver
-jogando, etc.
+ficará em silêncio ou reproduzirá qualquer tipo de áudio enquanto
+ninguém a estiver jogando, etc.
 
 Sempre que uma chave for alterada, sempre selecione **Reinicie** para
 que a alteração seja aplicada. Em alguma máquina a ação já pode ser
@@ -340,8 +334,8 @@ em execução e a quantidade de fichas que foram colocadas nela.
 Informação da máquina
 ~~~~~~~~~~~~~~~~~~~~~
 
-Um breve descritivo do nome da máquina, o tipo do processador, do áudio
-e a resolução do vídeo.
+Um breve resumo do nome da máquina, o seu driver, o tipo do processador
+(vídeo, áudio e outros) e a resolução do vídeo.
 
 .. raw:: latex
 
@@ -349,6 +343,9 @@ e a resolução do vídeo.
 
 Controles deslizantes
 ~~~~~~~~~~~~~~~~~~~~~
+
+As opções disponíveis aqui também dependem do tipo da máquina, outros
+ajustes podem aparecer porém os principais são estes:
 
 * **Volume principal**
 
@@ -375,45 +372,45 @@ Controles deslizantes
   Faz o controle do nível de preto da tela, consulte também
   :ref:`-brightness <mame-commandline-brightness>`.
 
-		O valor predefinido é **1.0**
+		O valor predefinido é **1.0**.
 
 * **Contraste da tela**
 
   Faz o controle do nível de branco da tela, consulte também
   :ref:`-contrast <mame-commandline-contrast>`.
 
-		O valor predefinido é **1.0**
+		O valor predefinido é **1.0**.
 
 * **Gama da tela**
 
   Faz o ajuste da escala de luminância da tela, consulte também
   :ref:`-gamma <mame-commandline-gamma>`.
 
-		O valor predefinido é **1.0**
+		O valor predefinido é **1.0**.
 
 * **Extensão horizontal da tela**
 
   Estica a tela no eixo horizontal.
 
-		O valor predefinido é **1.0**
+		O valor predefinido é **1.0**.
 
 * **Posição horizontal da tela**
 
   Desloca a tela no eixo horizontal
 
-		O valor predefinido é **0.0**
+		O valor predefinido é **0.0**.
 
 * **Extensão vertical da tela**
 
   Estica a tela no eixo vertical.
 
-		O valor predefinido é **1.0**
+		O valor predefinido é **1.0**.
 
 * **Posição vertical da tela**
 
   Desloca a tela no eixo vertical
 
-		O valor predefinido é **0.0**
+		O valor predefinido é **0.0**.
 
 .. raw:: latex
 
@@ -427,7 +424,8 @@ Tela #X
 
 Caso a máquina possua mais de uma tela, todas elas serão listadas aqui,
 onde "X" indica o número da tela e cada uma delas com as opções
-mostradas abaixo.
+mostradas abaixo. Aqui também vai aparecer qualquer tipo de ilustração
+da máquina emulada e as suas respectivas opções, quando houver.
 
 * **Nome**
 
@@ -470,7 +468,7 @@ mostradas abaixo.
 	* **180º**: Rotaciona a tela em 180º.
 	* **CCW 90º**: Rotaciona a tela no sentido anti-horário em 90º.
 
-		O valor predefinido é **None**
+		O valor predefinido é **None**.
 
 
 * **Aproxime a área da tela**
@@ -478,7 +476,7 @@ mostradas abaixo.
   Quando a máquina estiver usando uma artwork onde exista uma tela,
   somente esta região será aproximada.
 
-		O valor predefinido é **Desligado**
+		O valor predefinido é **Desligado**.
 
 * **Escale a tela com valores racionais**
 
@@ -494,7 +492,7 @@ mostradas abaixo.
 	* **Apenas Y**: Expande a tela apenas no eixo Y.
 	* **X ou Y (Auto)**: Expande a tela em ambos os eixos automaticamente.
 
-		O valor predefinido é **Ligado**
+		O valor predefinido é **Ligado**.
 
 * **Mantenha a proporção da tela**
 
@@ -502,7 +500,7 @@ mostradas abaixo.
   configurações façam, consulte também
   :ref:`-keepaspect <mame-commandline-keepaspect>`.
 
-		O valor predefinido é **Ligado**
+		O valor predefinido é **Ligado**.
 
 .. raw:: latex
 
@@ -511,10 +509,9 @@ mostradas abaixo.
 Snapshot
 ^^^^^^^^
 
-* **Nome**
-
-  Caso esteja usando uma **artwork** e ela tiver um nome, ela será
-  exibida aqui indicando que é assim que o print de tela será feita.
+Tira um print da tela, caso esteja usando uma **ilustração** e ela tiver
+um nome, faça um clique duplo em cima do nome para que o print da tela
+seja feito.
 
 .. raw:: html
 
@@ -550,16 +547,16 @@ Snapshot
   Faz um print da tela com a tela rotacionada como demonstrado no
   exemplo anterior.
 
-		O valor predefinido é **None**
+		O valor predefinido é **None**.
 
 * **Aproxime a área da tela**
 
   Quando a máquina estiver usando uma artwork onde exista uma tela, o
   print da tela será feito somente desta região.
 
-		O valor predefinido é **Desligado**
+		O valor predefinido é **Desligado**.
 
-Opções dos Plug-ins
+Opções dos plug-ins
 ~~~~~~~~~~~~~~~~~~~
 
 Quando os plug-ins forem ativados na configuração, eles serão listados
@@ -573,9 +570,12 @@ Visualização da DAT externa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Esta opção estará disponível quando dois critérios forem atendidos, o
-plug-in **Data plugin** precisa estar ativo e os arquivos **\*.dat**
-(command.dat, gameinit.dat, etc) precisam estar dentro do diretório
-**dats**.
+plug-in **Data plugin** estiver ativo e os arquivos **\*.dat**
+(command.dat, gameinit.dat, etc) estiverem dentro do diretório **dats**.
+
+Caso o nome da máquina exista dentro do ``command.dat`` por exemplo,
+será exibido uma lista de como jogar, dicas, a lista dos comandos da
+máquina na tela (em Inglês), etc.
 
 .. raw:: latex
 
@@ -603,18 +603,18 @@ As opções disponíveis são:
 	* **Tipografia da interface**: Aqui é possível definir uma fonte
 	  para toda a interface do MAME.
 
-		O valor predefinido é **Padrão**
+		O valor predefinido é **Padrão**.
 
 	* **Linhas**: Ajusta a dimensão do espaço e o tamanho da fonte,
 	  quanto maior o valor maior a dimensão da interface e menor o texto
 	  na tela.
 
-		O valor predefinido é **30**
+		O valor predefinido é **30**.
 
 	* **Tamanho da caixa de informação**: Ajusta o tamanho da fonte nas
 	  caixas de texto na tela.
 
-		O valor predefinido é **0.75**
+		O valor predefinido é **0.75**.
 
 .. _mamemenu-cores:
 
@@ -626,90 +626,90 @@ As opções disponíveis são:
 	* **Texto Normal**: Define a cor do texto de toda a interface.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **255**
+		Verde: **255**, Azul: **255**.
 
 	* **Cor Selecionada**: Define a cor do item que for selecionado.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**
+		Verde: **255**, Azul: **0**.
 
 	* **Fundo do texto normal**: Aparentemente não tem função alguma.
 
 		O valor predefinido é Opacidade: **239**, Vermelho: **0**,
-		Verde: **0**, Azul: **0**
+		Verde: **0**, Azul: **0**.
 
 	* **Cor de fundo selecionada**: Define a cor do item selecionado.
 
 		O valor predefinido é Opacidade: **239**, Vermelho: **128**,
-		Verde: **128**, Azul: **0**
+		Verde: **128**, Azul: **0**.
 
 	* **Cor de subitem**: Define a cor dos itens que estiverem abaixo do
 	  item principal.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **255**
+		Verde: **255**, Azul: **255**.
 
 	* **Clone**: Define a cor do texto de segundo plano.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **128**,
-		Verde: **128**, Azul: **128**
+		Verde: **128**, Azul: **128**.
 
 	* **Borda**: Define a cor das linhas da borda da tela.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **255**
+		Verde: **255**, Azul: **255**.
 
 	* **Fundo**: Define a cor do fundo da tela e máquinas clonadas.
 
 		O valor predefinido é Opacidade: **239**, Vermelho: **16**,
-		Verde: **16**, Azul: **48**
+		Verde: **16**, Azul: **48**.
 
 	* **Chave DIP**: Define a cor das chaves DIP selecionadas em
 	  máquinas que usam tal chaves.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**
+		Verde: **255**, Azul: **0**.
 
 	* **Cor indisponível**: Aparentemente não tem função alguma.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**
+		Verde: **255**, Azul: **0**.
 
 	* **Cor do controle deslizante**: Define a cor dos controles
 	  deslizantes.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**
+		Verde: **255**, Azul: **0**.
 
 	* **Fundo do visualizador GFX**: Define a cor de fundo do
 	  visualizador GFX (tecla **F4**).
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**
+		Verde: **255**, Azul: **0**.
 
 	* **Cor da sobreposição do mouse**: Define a cor que texto terá
 	  quando o mouse passar por cima de algum item selecionável.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **128**
+		Verde: **255**, Azul: **128**.
 
 	* **Cor de fundo da sobreposição do mouse**: Define a cor de fundo
 	  do texto quando o mouse passar por cima de um item selecionável.
 
 		O valor predefinido é Opacidade: **112**, Vermelho: **64**,
-		Verde: **64**, Azul: **0**
+		Verde: **64**, Azul: **0**.
 
 	* **Cor de subposição do mouse**: Aparentemente não tem função
 	  alguma.
 
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **128**
+		Verde: **255**, Azul: **128**.
 
 	* **Cor de fundo da subposição do mouse**: Aparentemente não tem
 	  função alguma.
 
 		O valor predefinido é Opacidade: **176**, Vermelho: **96**,
-		Verde: **96**, Azul: **0**
+		Verde: **96**, Azul: **0**.
 
 .. _mamemenu-idioma:
 
@@ -721,6 +721,12 @@ As opções disponíveis são:
 
 		O valor predefinido é **English**
 
+* **Os nomes dos sistemas**
+
+  No momento só existe a opção **incorporado**.
+
+		O valor predefinido é **incorporado**.
+
 * **Painéis laterais**
 
   Configura a exibição ou não dos painéis laterais da interface do MAME.
@@ -731,11 +737,12 @@ As opções disponíveis são:
 	* **Esconda info/imagem**
 	* **Esconda ambos**
 
+
 .. raw:: latex
 
 	\clearpage
 
-Configuração dos Diretórios
+Configuração dos diretórios
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Aqui é possível mudar as predefinições do locais onde os diretórios
@@ -993,7 +1000,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 
 .. _mamemenu-config-video:
 
-Opções do Vídeo
+Opções do vídeo
 ~~~~~~~~~~~~~~~
 
 Essas opções sempre serão carregadas na inicialização do MAME, lembrando
@@ -1004,7 +1011,7 @@ seja definido aqui.
 
   Para mais informações consulte :ref:`-video <mame-commandline-video>`.
 
-		O valor predefinido é **Auto**
+		O valor predefinido é **Auto**.
 
 * **Quantidade de telas**
 
@@ -1017,7 +1024,7 @@ seja definido aqui.
   Ativa ou não os efeitos GLSL, para mais informações consulte
   :ref:`-gl_glsl_filter <mame-commandline-glglslfilter>`.
 
-		O valor predefinido é **Desligado**
+		O valor predefinido é **Desligado**.
 
 * **Filtragem bilinear**
 
@@ -1025,7 +1032,7 @@ seja definido aqui.
   gráficos fiquem muito borrados, experimente ativar também a opção
   **Pré-escala de bitmap**.
 
-		O valor predefinido é **Ligado**
+		O valor predefinido é **Ligado**.
 
 * **Pré-escala do bitmap**
 
@@ -1042,7 +1049,7 @@ seja definido aqui.
 
 		O valor predefinido é **Desligado**.
 
-* **Manter a proporção da tela**
+* **Mantenha a proporção da tela**
 
   Faz com que a proporção da imagem exibida seja sempre mantida.
 
@@ -1070,7 +1077,7 @@ seja definido aqui.
 
 .. _mamemenu-config-audio:
 
-Opções do Áudio
+Opções do áudio
 ~~~~~~~~~~~~~~~
 
 * **Áudio**
@@ -1079,6 +1086,14 @@ Opções do Áudio
   :ref:`-sound <mame-commandline-sound>`.
 
 		O valor predefinido é **Ligado**.
+
+* **Compressor**
+
+  Tenta manter o nível mais baixo e o mais alto do áudio no mesmo nível,
+  atua também na redução do volume do volume do áudio caso seja muito
+  alto.
+
+O valor predefinido é **Ligado**.
 
 * **Taxa da amostragem**
 
@@ -1093,24 +1108,24 @@ Opções do Áudio
 
 .. _mamemenu-config-etc:
 
-Opções Diversas
+Opções diversas
 ~~~~~~~~~~~~~~~
 
-* **Skip imperfect emulation warnings**
+* **Ignore os avisos de emulação imperfeita**
 
   Faz com que o MAME não exiba as telas de aviso das máquinas com
   emulação imperfeita (tarja amarela).
 
 		O valor predefinido é **Desligado**.
 
-* **Re-select last machine launched / Lembrar da última máquina jogada**
+* **Selecione novamente a última máquina já executada**
 
   Faz com que o MAME se lembre da última máquina que foi jogada através
   da interface do MAME.
 
 		O valor predefinido é **Ligado**.
 
-* **Aumente as imagens no painel direito**
+* **Aumenta as imagens no painel direito**
 
   Aumenta o tamanho de qualquer uma das imagens exibidas no painel
   direito da interface do MAME, sempre mantendo a proporcionalidade da
@@ -1124,13 +1139,13 @@ Opções Diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Exiba o ponteiro do mouse**
+* **Exibe o ponteiro do mouse**
 
   Ativa ou não a exibição do mouse na interface do MAME.
 
 		O valor predefinido é **Ligado**.
 
-* **Confirme se deseja encerrar a máquina ou não**
+* **Confirma se deseja encerrar a máquina ou não**
 
   Faz com que o MAME sempre te pergunte se quer realmente encerrar a
   emulação da máquina ou não.
@@ -1144,10 +1159,6 @@ Opções Diversas
 
 		O valor predefinido é **Desligado**.
 
-.. raw:: latex
-
-	\clearpage
-
 * **Mantenha o aspecto 4:3 para os prints de tela**
 
   Faz com que todos os prints da tela mantenham uma proporção de
@@ -1155,7 +1166,7 @@ Opções Diversas
 
 		O valor predefinido é **Ligado**.
 
-* **Use uma imagem como plano de fundo**
+* **Usa uma imagem como plano de fundo**
 
   Permite o uso de uma imagem como papel de parede na interface do MAME.
   Escolha uma imagem **.JPG** ou **.PNG** e a renomeie para
@@ -1165,14 +1176,14 @@ Opções Diversas
 
 		O valor predefinido é **Ligado**.
 
-* **Omita a tela de seleção da BIOS**
+* **Omite a tela da escolha da BIOS**
 
   Faz com que o MAME inicie a máquina com a primeira BIOS disponível
   para a máquina ao em vez de usar uma lista.
 
 		O valor predefinido é **Desligado**.
 
-* **Omita as partes do cardápio da seleção do programa**
+* **Omite as partes do cardápio da seleção do programa**
 
   Altera a maneira com que a lista do software é exibida, em vez de
   exibir a lista na ordem predefinida pelo MAME, exibe a lista na ordem
@@ -1193,7 +1204,7 @@ Opções Diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Esconda as máquinas sem ROMs da lista de disponíveis**
+* **Esconde as máquinas sem ROMs da lista de disponíveis**
 
   Esconde da lista máquinas eletrônicas que não usam ROMs.
 
@@ -1272,7 +1283,7 @@ Mapeamento do dispositivo
 
 .. _mamemenu-general-inputs:
 
-Entradas Gerais
+Entradas gerais
 ~~~~~~~~~~~~~~~
 
 * **interface do usuário**
@@ -1285,161 +1296,157 @@ Entradas Gerais
 
 	<p></p>
 
-* **On Screen Display**
+* **Visualização na tela**
 
   Exibe um visor na parte inferior da tela durante a emulação para a
   realização de ajustes em tempo real.
 
 	A tecla predefinida é **Til**.
 
-* **Break in Debugger**
+* **Interrompe o depurador**
 
   Atalho para entrar no depurador durante a emulação, só funciona caso
   o MAME tenha sido compilado com ferramentas de depuração.
 
 	A tecla predefinida é **Til**.
 
-* **Config Menu**
+* **Guia de configuração**
 
   Chama o cardápio de opções do MAME.
 
 	A tecla predefinida é **Tab**.
 
-* **Pause**
+* **Pausa**
 
   Pausa a emulação.
 
 	A tecla predefinida é **P**.
 
-* **Pause - Single Step**
+* **Pausa - passo único**
 
   Avança em passos de um quadro.
 
 	As teclas predefinidas são **P** + **Shift Esq**.
 
-* **Rewing - Single Step**
+* **Rebobina - passo único**
 
   Retrocede em passos de um quadro.
 
 	As teclas predefinidas são **Til** + **Shift Esq**.
 
-* **Reset Machine**
+* **Redefine a máquina**
 
   Encerra a emulação e a reinicia do zero.
 
 	As teclas predefinidas são **F3** + **Shift Esq**.
 
-* **Soft Reset**
+* **Redefinição rápida**
 
-  Reinicie sem encerrar a emulação.
+  Reinicia sem encerrar a emulação.
 
 	A telcla predefinida é **F3**.
 
-* **Show GFX**
+* **Mostra os gráficos decodificados**
 
   Mostra a paleta GFX decodificada e os tilemaps dos jogos.
 
 	A tecla predefinida é **F4**.
 
-* **Frameskip Dec**
-
-  Redução do salto de quadros.
-
-	A tecla predefinida é **F8**.
 
 .. raw:: latex
 
 	\clearpage
 
-* **Frameskip Inc**
+* **Pula quadro dec**
 
-  Aumento do salto de quadros.
+  Reduz o salto dos quadros de vídeo, os valores se alteram entre `auto`
+  e entre `10~0`. A predefinição é `auto`, ao pressionar a tecla a opção
+  sai de `auto` para a velocidade mais rápida e vai diminuindo passo a
+  passo até voltar para `auto`
+
+	A tecla predefinida é **F8**.
+
+* **Pula quadro inc**
+
+  Aumenta o salto dos quadros de vídeo,  os valores se alteram entre
+  `auto` e entre `0~10`. A predefinição é `auto`, ao pressionar a tecla,
+  a opção sai de `auto` e aumenta a velocidade passo a passo até atingir
+  `auto`.
 
 	A tecla predefinida é **F9**.
 
-* **Throttle**
+* **Supressor de velocidade**
 
-  Acelerador da emulação, faz a emulação rodar cerca de 3x mais rápido
-  que o normal, não funciona em versões SDL.
+  Acelera a velocidade da emulação da nativa para o máximo possível.
 
 	A tecla predefinida é **F10**.
 
-* **Fast Forward**
+* **Avanço rápido**
 
   Como o exemplo anterior porém faz a emulação rodar o mais rápido
-  possível.
+  possível enquanto a tecla estiver pressionada.
 
 .. raw:: html
 
 	<p></p>
 
-* **Show FPS**
+* **Mostra FPS**
 
   Exibe quantos quadros por segundo a emulação está rodando.
 
 	A tecla predefinida é **PgDn** em versões SDL do MAME e **Insert**
 	no Windows. 
 
-* **Save Snapshot**
+* **Salva print da tela**
 
-  Salva um instantâneo da tela.
-
-	A tecla predefinida é **F12**.
-
-* **Write current timecode**
-
-  Salva o tempo decorrido.
+  Salva um print da tela.
 
 	A tecla predefinida é **F12**.
 
-* **Record MNG**
+* **Salva o código de tempo atual**
+
+  Salva o tempo decorrido num arquivo.
+
+	A tecla predefinida é **F12**.
+
+* **Grava MNG**
 
   Grava um vídeo em formato MNG sem áudio.
 
 	As teclas predefinidas são **F12** + **Shift Esq**.
 
-* **Record AVI**
+* **Grava AVI**
 
   Grava um vídeo em formato AVI.
 
 	A teclas predefinidas são **F12** + **Shift Esq**.
 
-* **Toggle Cheat**
+* **Alterna trapaça**
 
-  Ativa a trapaça no jogo.
+  Ativa ou desativa a trapaça no jogo.
 
 	A tecla predefinida é **F6**.
 
-* **Toggle autofire**
-
-  Ativa o modo turbo dos botões de tiro.
-
-	A tecla predefinida é **Nenhum**.
-
-* **UI Up**
+* **UI Cima**
 
   Move o cursor para cima.
 
 	A tecla predefinida é **Tecla cima** ou **Cima do controle**.
 
-* **UI Down**
+* **UI Baixo**
 
   Move o cursor para baixo.
 
 	A tecla predefinida é **Tecla baixo** ou **Baixo do controle**.
 
-.. raw:: latex
-
-	\clearpage
-
-* **UI Left**
+* **UI Esquerda**
 
   Move o cursor para a esquerda.
 
 	A tecla predefinida é **Tecla esquerda** ou **Esquerda do
 	controle**.
 
-* **UI Right**
+* **UI Direita**
 
   Move o cursor para a direita.
 
@@ -1451,152 +1458,147 @@ Entradas Gerais
 
 	A tecla predefinida é **Tecla home**.
 
-* **UI End**
+* **UI Fim**
 
   Move o cursor para o fim da lista.
 
 	A tecla predefinida é **Tecla end**.
 
-* **UI Page Up**
+* **UI Pág. cima**
 
   Move o cursor para o topo da lista saltando 26 linhas por vez.
 
 	A tecla predefinida é **Tecla page up**.
 
-* **UI Page Down**
+* **UI Pág. baixo**
 
   Move o cursor para o fim da lista saltando 26 linhas por vez.
 
 	A tecla predefinida é **Tecla page down**.
 
-* **Focus Next**
+* **UI Próx. foco**
 
   Faz com que foco do cursor passe para a próxima janela da interface.
 
 	A tecla predefinida é **Tab**.
 
-* **Focus Previous**
+* **UI Foco ant.**
 
   Faz com que foco do cursor passe para a anterior anterior da
   interface.
 
 	A tecla predefinida é **Tab + Shift Esq.**.
 
-* **UI Select**
+* **UI Seleciona**
 
   Tecla de seleção para qualquer item selecionável.
 
 	As teclas predefinidas são **Enter**, **Botão 0 do controle** ou
 	**Tecla enter do teclado numérico**.
 
-* **UI Cancel**
+* **UI Cancela**
 
   Tecla para cancelar qualquer ação.
 
 	A tecla predefinida é **Tecla escape ou esq**.
 
-* **UI Display Comment**
+* **UI Mostra comentário**
 
-  Tecla para exibir comentário.
+  Tecla para exibir um comentário.
 
 	A tecla predefinida é **Tecla espaço**.
 
-* **UI Clear**
+* **UI Limpa**
 
   Tecla para apagar/zerar uma opção.
 
 	A tecla predefinida é **Tecla delete ou del**.
 
-.. raw:: latex
-
-	\clearpage
-
-* **UI Zoom In**
+* **UI Aproxima**
 
   Tecla para aproximar (dar zoom) na interface. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
 	A tecla predefinida é **Tecla =**.
 
-* **UI Zoom Out**
+* **UI Recua**
   Tecla para sair do zoom da interface. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
 	A tecla predefinida é **Tecla -**.
 
-* **UI Previous Group**
+* **UI Aproximação predefinida**
+  Retorna para a aproximação normal da tela.
+
+	A tecla predefinida é **Tecla 0**.
+
+* **UI Grupo anterior**
 
   Faz a lista pular para o grupo anterior. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
 	A tecla predefinida é **[**. 
 
-* **UI Next Group**
+* **UI Próximo grupo**
 
   Faz a lista pular para o próximo grupo. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
 	A tecla predefinida é **]**.
 
-* **UI Rotate**
+* **UI Rotaciona**
 
   Gira a interface.
 
 	A tecla predefinida é **R** (não funciona).
 
-* **Show Profile**
+* **Mostra o perfil**
 
   Exibe o analisador de desempenho (não funciona).
 
 	A teclas predefinidas são **F11** + **Shift Esq**.
 
-* **UI Toggle**
+* **Alterna UI**
 
   Alterna a interface do usuário.
 
 	A tecla predefinida é **Screen lock**.
 
-* **UI Paste Text**
+* **UI Cola texto**
 
   Cola texto na interface do usuário (não funciona).
 
 	As teclas predefinidas são **Screen lock** + **Shift Esq**.
 
-* **Toggle deugger**
-
-  Alterna o Depurador.
-
-	A tecla predefinida é **F5**.
-
-* **Save State**
+* **Salva o estado**
 
   Salva o estado da máquina.
 
 	As teclas predefinidas são **F7** + **Shift Esq**.
 
-* **Load State**
+.. raw:: latex
+
+	\clearpage
+
+* **Carrega o estado**
 
   Carrega o estado da máquina.
 
 	A tecla predefinida é **F7**.
 
-.. raw:: latex
-
-	\clearpage
-
-* **UI (First) Tape Start**
+* **UI (Primeiro) inicia fita**
 
   Inicia a fita na interface primária.
 
 	A tecla predefinida é **F2**.
 
-* **UI (First) Tape Stop**
+* **UI (Primeiro) para fita**
 
   Para a fita na interface primária.
 
 	As teclas predefinidas são **F2** + **Shift Esq**.
 
-* **UI External DAT View**
+* **UI Visualiza DAT externa**
 
   Exibe o DAT externo, para que a visualização do DAT seja possível é
   preciso ativar o plugin **Data Plugin** na interface ou editando o
@@ -1604,13 +1606,13 @@ Entradas Gerais
 
 	As teclas predefinidas são **Alt Esq** + **D**.
 
-* **UI Add/Remove favorites**
+* **UI Adiciona/remove favoritos**
 
-  Adiciona ou remove as máquinas dos favoritos.
+  Adiciona ou remove as máquinas da lista de favoritos.
 
 	As teclas predefinidas são **Alt Esq** + **F** (não funciona).
 
-* **UI Export List**
+* **UI exporta lista**
 
   Exporta a lista das máquinas no formato:
 
@@ -1620,20 +1622,13 @@ Entradas Gerais
 
 	As teclas predefinidas são **Alt Esq** + **E**.
 
-* **UI Audit Unavailable**
+* **UI Afere mídia**
 
-  Realiza uma auditoria das ROMs removendo as não disponíveis, o
+  Realiza uma aferição das ROMs removendo as não disponíveis, o
   resultado é salvo no arquivo **mame_avail.ini** dentro do diretório
   **ui**.
 
 	A tecla predefinida é **F1**.
-
-* **UI Audit All**
-
-  Realiza uma auditoria de todas as ROMs, o resultado é salvo no arquivo
-  **mame_avail.ini** dentro do diretório **ui**.
-
-	As teclas predefinidas são **F1** + **Shift Esq**.
 
 * **Toggle Fullscreen**
 
@@ -1641,27 +1636,22 @@ Entradas Gerais
 
 	As teclas predefinidas são **Enter** + **Alt Esq**.
 
-* **Toggle Fullscreen**
-
-  Alterna para tela inteira.
-
-	A tecla predefinida é **Enter** + **Alt Esq**.
-
 * **Toggle Filter**
 
   Alterna entre usar ou não o filtro na tela.
 
 	As teclas predefinidas são **F5** + **Ctrl Esq**.
 
-.. raw:: latex
-
-	\clearpage
-
 * **Decrease Prescaling**
 
   Reduz a pré-escala dos pixels.
 
 	As teclas predefinidas são **F6** + **Ctrl Esq**.
+
+
+.. raw:: latex
+
+	\clearpage
 
 * **Increase Prescaling**
 
@@ -1675,16 +1665,14 @@ Entradas Gerais
 
 	As teclas predefinidas são **F12** + **Ctrl+Alt Esq**.
 
-* **Player 1 ~ 10 controls**
+Controles do jogador 1 ~ 10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Definições para todos os botões e controles usados pela máquina
   separado por jogador, entre o jogador 1 até o 10. Abaixo a lista das
   opções predefinidas para o jogador 1 que podem ser alteradas na
   própria interface do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _mamemenu-general-inputs-P1:
 
@@ -1694,303 +1682,301 @@ Predefinições para o jogador 1
 .. tabularcolumns:: |l|c|p{5cm}|
 
 +--------------------------------------+-------------------------------+
-|  Player 1 Controls                   | Predefinição                  |
+|  Controles do jogador 1              | Predefinição                  |
 +======================================+===============================+
-|  P1 up                               | up or joy 1 up                |
+|  J1 cima                             | cima ou joy 1 cima            |
 +--------------------------------------+-------------------------------+
-|  P1 down                             | down or joy 1 down            |
+|  J1 baixo                            | baixo ou joy 1 baixo          |
 +--------------------------------------+-------------------------------+
-|  P1 left                             | left or joy 1 left            |
+|  J1 esquerda                         | esquerda ou joy 1 esquerda    |
 +--------------------------------------+-------------------------------+
-|  P1 right                            | right or joy 1 right          |
+|  J1 direita                          | direita ou joy 1 direita      |
 +--------------------------------------+-------------------------------+
-|  P1 right stick/up                   | I or joy 1 button 1           |
+|  J1 lado direito/cima                | I ou joy 1 botão 1            |
 +--------------------------------------+-------------------------------+
-|  P1 right stick/down                 | K or joy 1 button 2           |
+|  J1 lado direito/baixo               | K ou joy 1 botão 2            |
 +--------------------------------------+-------------------------------+
-|  P1 right stick/left                 | J or joy 1 button 0           |
+|  J1 lado direito/esquerdo            | J ou joy 1 botão 0            |
 +--------------------------------------+-------------------------------+
-|  P1 right stick/right                | L or joy 1 button 3           |
+|  J1 lado direito/direito             | L ou joy 1 botão 3            |
 +--------------------------------------+-------------------------------+
-|  P1 left stick/up                    | E or joy 1 up                 |
+|  J1 lado esquerdo/cima               | E ou joy 1 cima               |
 +--------------------------------------+-------------------------------+
-|  P1 left stick/down                  | D or joy 1 down               |
+|  J1 lado esquerdo/baixo              | D ou joy 1 baixo              |
 +--------------------------------------+-------------------------------+
-|  P1 left stick/left                  | S or joy 1 left               |
+|  J1 lado esquerdo/esquerdo           | S ou joy 1 esquerda           |
 +--------------------------------------+-------------------------------+
-|  P1 left stick/right                 | F or joy 1  right             |
+|  J1 lado esquerdo/direito            | F ou joy 1 direita            |
 +--------------------------------------+-------------------------------+
-|  P1 button 1                         | joy 1 button 3                |
+|  J1 botão 1                          | joy 1 botão 3                 |
 +--------------------------------------+-------------------------------+
-|  P1 button 2                         | joy 1 button 6                |
+|  J1 botão 2                          | joy 1 botão 6                 |
 +--------------------------------------+-------------------------------+
-|  P1 button 3                         | joy 1 button 0                |
+|  J1 botão 3                          | joy 1 botão 0                 |
 +--------------------------------------+-------------------------------+
-|  P1 button 4                         | joy 1 button 7                |
+|  J1 botão 4                          | joy 1 botão 7                 |
 +--------------------------------------+-------------------------------+
-|  P1 button 5                         | joy 1 button 2                |
+|  J1 botão 5                          | joy 1 botão 2                 |
 +--------------------------------------+-------------------------------+
-|  P1 button 6                         | joy 1 button 1                |
+|  J1 botão 6                          | joy 1 botão 1                 |
 +--------------------------------------+-------------------------------+
-|  P1 button 7                         | C or joy 1 button 6           |
+|  J1 botão 7                          | C ou joy 1 botão 6            |
 +--------------------------------------+-------------------------------+
-|  P1 button 8                         | V or joy 1 button 7           |
+|  J1 botão 8                          | V ou joy 1 botão 7            |
 +--------------------------------------+-------------------------------+
-|  P1 button 9                         | B or joy 1 button 8           |
+|  J1 botão 9                          | B ou joy 1 botão 8            |
 +--------------------------------------+-------------------------------+
-|  P1 button 10                        | N or joy 1 button 9           |
+|  J1 botão 10                         | N ou joy 1 botão 9            |
 +--------------------------------------+-------------------------------+
-|  P1 button 11                        | M or joy 1 button 10          |
+|  J1 botão 11                         | M ou joy 1 botão 10           |
 +--------------------------------------+-------------------------------+
-|  P1 button 12                        | comma or joy 1 button 11      |
+|  J1 botão 12                         | vírgula ou joy 1 botão 11     |
 +--------------------------------------+-------------------------------+
-|  P1 button 13                        | Stop                          |
+|  J1 botão 13                         | Stop                          |
 +--------------------------------------+-------------------------------+
-|  P1 button 14                        | Slash                         |
+|  J1 botão 14                         | Barra inc. direita            |
 +--------------------------------------+-------------------------------+
-|  P1 button 15                        | Rshift                        |
+|  J1 botão 15                         | Shift Direito                 |
 +--------------------------------------+-------------------------------+
-|  P1 button 16                        | n/a                           |
+|  J1 botão 16                         | n/a                           |
 +--------------------------------------+-------------------------------+
-|  P1 start                            | 1                             |
+|  J1 start                            | 1                             |
 +--------------------------------------+-------------------------------+
-|  P1 select                           | 5                             |
+|  J1 select                           | 5                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong A                        | A                             |
+|  J1 Mahjong A                        | A                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong B                        | B                             |
+|  J1 Mahjong B                        | B                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong C                        | C                             |
+|  J1 Mahjong C                        | C                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong D                        | D                             |
+|  J1 Mahjong D                        | D                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong E                        | E                             |
+|  J1 Mahjong E                        | E                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong F                        | F                             |
+|  J1 Mahjong F                        | F                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong G                        | G                             |
+|  J1 Mahjong G                        | G                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong H                        | H                             |
+|  J1 Mahjong H                        | H                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong I                        | I                             |
+|  J1 Mahjong I                        | I                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong J                        | J                             |
+|  J1 Mahjong J                        | J                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong K                        | K                             |
+|  J1 Mahjong K                        | K                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong L                        | L                             |
+|  J1 Mahjong L                        | L                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong M                        | M                             |
+|  J1 Mahjong M                        | M                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong O                        | O                             |
+|  J1 Mahjong O                        | O                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong P                        | Colon                         |
+|  J1 Mahjong P                        | Dois pontos                   |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Q                        | Q                             |
+|  J1 Mahjong Q                        | Q                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Kan                      | Lcontrol                      |
+|  J1 Mahjong Kan                      | Control esquerdo              |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Pon                      | Lalt                          |
+|  J1 Mahjong Pon                      | Alt esquerdo                  |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Chi                      | Space                         |
+|  J1 Mahjong Chi                      | Espaço                        |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Reach                    | Shift                         |
+|  J1 Mahjong Reach                    | Shift                         |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Ron                      | Z                             |
+|  J1 Mahjong Ron                      | Z                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Bet                      | 3                             |
+|  J1 Mahjong Bet                      | 3                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Last Chance              | Ralt                          |
+|  J1 Mahjong Last Chance              | Alt direito                   |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Score                    | Rcontrol                      |
+|  J1 Mahjong Score                    | Control direito               |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Double Up                | Rshift                        |
+|  J1 Mahjong Double Up                | Shift direito                 |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Flip Flop                | Y                             |
+|  J1 Mahjong Flip Flop                | Y                             |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Big                      | Return                        |
+|  J1 Mahjong Big                      | Return                        |
 +--------------------------------------+-------------------------------+
-|  P1 mahjong Small                    | Backspace                     |
+|  J1 Mahjong Small                    | Backspace                     |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda A/1                     | A                             |
+|  J1 Hanafuda A/1                     | A                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda B/2                     | B                             |
+|  J1 Hanafuda B/2                     | B                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda C/3                     | C                             |
+|  J1 Hanafuda C/3                     | C                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda D/4                     | D                             |
+|  J1 Hanafuda D/4                     | D                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda E/5                     | E                             |
+|  J1 Hanafuda E/5                     | E                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda F/6                     | F                             |
+|  J1 Hanafuda F/6                     | F                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda G/7                     | G                             |
+|  J1 Hanafuda G/7                     | G                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda H/8                     | H                             |
+|  J1 Hanafuda H/8                     | H                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda Yes                     | M                             |
+|  J1 Hanafuda Sim                     | M                             |
 +--------------------------------------+-------------------------------+
-|  P1 hanafuda No                      | N                             |
+|  J1 Hanafuda Não                     | N                             |
 +--------------------------------------+-------------------------------+
-|  High                                | A                             |
+|  Chave dentro (in)                   | Q                             |
 +--------------------------------------+-------------------------------+
-|  Low                                 | S                             |
+|  Chave fora (out)                    | W                             |
 +--------------------------------------+-------------------------------+
-|  Half Gamble                         | D                             |
+|  Serviço                             | 9                             |
 +--------------------------------------+-------------------------------+
-|  Deal                                | 2                             |
+|  Contabilidade                       | 0                             |
 +--------------------------------------+-------------------------------+
-|  Double up                           | 3                             |
+|  Porta                               | O                             |
 +--------------------------------------+-------------------------------+
-|  Take                                | 4                             |
+|  Prêmio                              | I                             |
 +--------------------------------------+-------------------------------+
-|  Stand                               | L                             |
+|  Aposta                              | M                             |
 +--------------------------------------+-------------------------------+
-|  Bet                                 | M                             |
+|  Negocia                             | 2                             |
 +--------------------------------------+-------------------------------+
-|  Key in                              | Q                             |
+|  Mantém                              | L                             |
 +--------------------------------------+-------------------------------+
-|  Key out                             | W                             |
+|  Leva a pontuação                    | 4                             |
 +--------------------------------------+-------------------------------+
-|  Payout                              | I                             |
+|  Dobra                               | 3                             |
 +--------------------------------------+-------------------------------+
-|  Door                                | O                             |
+|  Metade da aposta                    | D                             |
 +--------------------------------------+-------------------------------+
-|  Service                             | 9                             |
+|  Alto                                | A                             |
 +--------------------------------------+-------------------------------+
-|  Book-keeping                        | 0                             |
+|  Baixo                               | S                             |
 +--------------------------------------+-------------------------------+
-|  Hold 1                              | Z                             |
+|  Mantém 1                            | Z                             |
 +--------------------------------------+-------------------------------+
-|  Hold 2                              | X                             |
+|  Mantém 2                            | X                             |
 +--------------------------------------+-------------------------------+
-|  Hold 3                              | C                             |
+|  Mantém 3                            | C                             |
 +--------------------------------------+-------------------------------+
-|  Hold 4                              | V                             |
+|  Mantém 4                            | V                             |
 +--------------------------------------+-------------------------------+
-|  Hold 5                              | B                             |
+|  Mantém 5                            | B                             |
 +--------------------------------------+-------------------------------+
-|  Cancel                              | N                             |
+|  Cancela                             | N                             |
 +--------------------------------------+-------------------------------+
-|  Bet                                 | 1                             |
+|  Interrompe o carretel 1             | X                             |
 +--------------------------------------+-------------------------------+
-|  Stop Reel 1                         | X                             |
+|  Interrompe o carretel 2             | C                             |
 +--------------------------------------+-------------------------------+
-|  Stop Reel 2                         | C                             |
+|  Interrompe o carretel 3             | V                             |
 +--------------------------------------+-------------------------------+
-|  Stop Reel 3                         | V                             |
+|  Interrompe o carretel 4             | B                             |
 +--------------------------------------+-------------------------------+
-|  Stop Reel 4                         | B                             |
+|  Interrompe todos os carreteis       | Z                             |
 +--------------------------------------+-------------------------------+
-|  Stop all reels                      | Z                             |
+|  J1 pedal 1 analógico                | ...                           |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 1 analog                   | ...                           |
+|  J1 pedal 1 analógico inc            | Control esq. ou joy 1 botão 0 |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 1 analog dec               | None                          |
+|  J1 pedal 1 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 1 analog inc               | Lcontrol or joy 1 button 0    |
+|  J1 pedal 2 analog                   | n/a                           |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 2 analog                   | n/a                           |
+|  J1 pedal 2 analógico inc            | Alt esq. ou joy 1 botão 1     |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 2 analog dec               | None                          |
+|  J1 pedal 2 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 2 analog inc               | Lalt or joy 1 button 1        |
+|  J1 pedal 3 analog                   | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 3 analog                   | None                          |
+|  J1 pedal 3 analógico inc            | Espaço ou joy 1 botão 2       |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 3 analog dec               | None                          |
+|  J1 pedal 3 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P1 pedal 3 analog inc               | Space or joy 1 button 2       |
+|  Remo analógico                      | ...                           |
 +--------------------------------------+-------------------------------+
-|  Paddle analog                       | ...                           |
+|  Remo analógico inc                  | Direita                       |
 +--------------------------------------+-------------------------------+
-|  Paddle analog dec                   | Left                          |
+|  Remo analógico dec                  | Esquerda                      |
 +--------------------------------------+-------------------------------+
-|  Paddle analog inc                   | Right                         |
+|  Remo V analog                       | ...                           |
 +--------------------------------------+-------------------------------+
-|  Paddle V analog                     | ...                           |
+|  Remo V analógico inc                | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Paddle V analog dec                 | Up                            |
+|  Remo V analógico dec                | Cima                          |
 +--------------------------------------+-------------------------------+
-|  Paddle V analog inc                 | Down                          |
+|  Posicionamento analógico            | ...                           |
 +--------------------------------------+-------------------------------+
-|  Positional analog                   | ...                           |
+|  Posicionamento analógico inc        | Direita                       |
 +--------------------------------------+-------------------------------+
-|  Positional analog dec               | Right                         |
+|  Posicionamento analógico dec        | Esquerda                      |
 +--------------------------------------+-------------------------------+
-|  Positional analog inc               | Left                          |
+|  Posicionamento V analog             | ...                           |
 +--------------------------------------+-------------------------------+
-|  Positional V analog                 | ...                           |
+|  Posicionamento V analógico inc      | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Positional V analog dec             | Up                            |
+|  Posicionamento V analógico dec      | Cima                          |
 +--------------------------------------+-------------------------------+
-|  Positional V analog inc             | Down                          |
+|  Discador analógico                  | ...                           |
 +--------------------------------------+-------------------------------+
-|  Dial analog                         | ...                           |
+|  Discador analógico inc              | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Dial analog dec                     | Up                            |
+|  Discador analógico dec              | Cima                          |
 +--------------------------------------+-------------------------------+
-|  Dial analog inc                     | Down                          |
+|  Discador V analógico                | ...                           |
 +--------------------------------------+-------------------------------+
-|  Dial V analog                       | ...                           |
+|  Discador V analógico inc            | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Dial V analog dec                   | Up                            |
+|  Discador V analógico dec            | Cima                          |
 +--------------------------------------+-------------------------------+
-|  Dial V analog inc                   | Down                          |
+|  Trilha X analógico                  | ...                           |
 +--------------------------------------+-------------------------------+
-|  Track X analog                      | ...                           |
+|  Trilha X analógico inc              | Direita                       |
 +--------------------------------------+-------------------------------+
-|  Track X analog dec                  | Left                          |
+|  Trilha X analógico dec              | Esquerda                      |
 +--------------------------------------+-------------------------------+
-|  Track X analog inc                  | Right                         |
+|  Trilha Y analógico                  | ...                           |
 +--------------------------------------+-------------------------------+
-|  Track Y analog                      | ...                           |
+|  Trilha Y analógico inc              | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Track Y analog dec                  | Up                            |
+|  Trilha Y analógico dec              | Cima                          |
 +--------------------------------------+-------------------------------+
-|  Track Y analog inc                  | Down                          |
+|  Controle AD X analógico             | ...                           |
 +--------------------------------------+-------------------------------+
-|  AD stick X analog                   | ...                           |
+|  Controle AD X analógico inc         | Direita                       |
 +--------------------------------------+-------------------------------+
-|  AD stick X analog dec               | Left                          |
+|  Controle AD X analógico dec         | Esquerda                      |
 +--------------------------------------+-------------------------------+
-|  AD stick X analog inc               | Right                         |
+|  Controle AD Y analog                | ...                           |
 +--------------------------------------+-------------------------------+
-|  AD stick Y analog                   | ...                           |
+|  Controle AD Y analógico inc         | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  AD stick Y analog dec               | Up                            |
-+--------------------------------------+-------------------------------+
-|  AD stick Y analog inc               | Down                          |
+|  Controle AD Y analógico dec         | Cima                          |
 +--------------------------------------+-------------------------------+
 |  AD stick Z analog                   | ...                           |
 +--------------------------------------+-------------------------------+
-|  AD stick Z analog dec               | A                             |
+|  AD stick Z analógico inc            | Z                             |
 +--------------------------------------+-------------------------------+
-|  AD stick Z analog inc               | Z                             |
+|  AD stick Z analógico dec            | A                             |
 +--------------------------------------+-------------------------------+
-|  Lightgun X analog                   | ...                           |
+|  Pistola de luz X analógico          | ...                           |
 +--------------------------------------+-------------------------------+
-|  Lightgun X analog dec               | Left                          |
+|  Pistola de luz X analógico inc      | Direita                       |
 +--------------------------------------+-------------------------------+
-|  Lightgun X analog inc               | Right                         |
+|  Pistola de luz X analógico dec      | Esquerda                      |
 +--------------------------------------+-------------------------------+
-|  Lightgun Y analog                   | ...                           |
+|  Pistola de luz Y analógico          | ...                           |
 +--------------------------------------+-------------------------------+
-|  Lightgun Y analog dec               | Up                            |
+|  Pistola de luz Y analógico inc      | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Lightgun Y analog inc               | Down                          |
+|  Pistola de luz Y analógico dec      | Cima                          |
 +--------------------------------------+-------------------------------+
-|  Mouse X analog                      | ...                           |
+|  Mouse X analógico                   | ...                           |
 +--------------------------------------+-------------------------------+
-|  Mouse X analog dec                  | Left                          |
+|  Mouse X analógico inc               | Direita                       |
 +--------------------------------------+-------------------------------+
-|  Mouse X analog inc                  | Right                         |
+|  Mouse X analógico dec               | Esquerda                      |
 +--------------------------------------+-------------------------------+
-|  Mouse Y analog                      | ...                           |
+|  Mouse Y analógico                   | ...                           |
 +--------------------------------------+-------------------------------+
-|  Mouse Y analog dec                  | Up                            |
+|  Mouse Y analógico inc               | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Mouse Y analog inc                  | Down                          |
+|  Mouse Y analógico dec               | Cima                          |
 +--------------------------------------+-------------------------------+
 
 .. _mamemenu-general-inputs-P2:
@@ -2001,89 +1987,245 @@ Predefinições para o jogador 2
 .. tabularcolumns:: |l|c|p{5cm}|
 
 +--------------------------------------+-------------------------------+
-|  Player 2 Controls                   | Predefinição                  |
+|  Controles do jogador 2              | Predefinição                  |
 +======================================+===============================+
-|  P2 up                               | R                             |
+|  J2 cima                             | R                             |
 +--------------------------------------+-------------------------------+
-|  P2 down                             | F                             |
+|  J2 baixo                            | F                             |
 +--------------------------------------+-------------------------------+
-|  P2 left                             | D                             |
+|  J2 esquerda                         | D                             |
 +--------------------------------------+-------------------------------+
-|  P2 right                            | G                             |
+|  J2 direita                          | G                             |
 +--------------------------------------+-------------------------------+
-|  P2 button 1                         | A                             |
+|  J2 lado direito/cima                | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P2 button 2                         | S                             |
+|  J2 lado direito/baixo               | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P2 button 3                         | Q                             |
+|  J2 lado direito/esquerdo            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P2 button 4                         | W                             |
+|  J2 lado direito/direito             | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P2 start                            | 2                             |
+|  J2 lado esquerdo/cima               | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P2 select                           | 6                             |
+|  J2 lado esquerdo/baixo              | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P2 pedal 1 analog inc               | A                             |
+|  J2 lado esquerdo/esquerdo           | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P2 pedal 2 analog inc               | S                             |
+|  J2 lado esquerdo/direito            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P2 pedal 3 analog inc               | Q                             |
+|  J2 botão 1                          | A                             |
 +--------------------------------------+-------------------------------+
-|  Paddle 2 analog dec                 | D                             |
+|  J2 botão 2                          | S                             |
 +--------------------------------------+-------------------------------+
-|  Paddle 2 analog inc                 | G                             |
+|  J2 botão 3                          | Q                             |
 +--------------------------------------+-------------------------------+
-|  Paddle V 2 analog dec               | R                             |
+|  J2 botão 4                          | W                             |
 +--------------------------------------+-------------------------------+
-|  Paddle V 2 analog inc               | F                             |
+|  J2 botão 5                          | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Positional 2 analog dec             | D                             |
+|  J2 botão 6                          | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Positional 2 analog inc             | G                             |
+|  J2 botão 7                          | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Positional V 2 analog dec           | R                             |
+|  J2 botão 8                          | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Positional V 2 analog inc           | F                             |
+|  J2 botão 9                          | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Dial 2 analog dec                   | D                             |
+|  J2 botão 10                         | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Dial 2 analog inc                   | G                             |
+|  J2 botão 11                         | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Dial V 2 analog dec                 | R                             |
+|  J2 botão 12                         | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Dial V 2 analog inc                 | F                             |
+|  J2 botão 13                         | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Track X 2 analog dec                | D                             |
+|  J2 botão 14                         | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Track X 2 analog inc                | G                             |
+|  J2 botão 15                         | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Track Y 2 analog dec                | R                             |
+|  J2 botão 16                         | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Track Y 2 analog inc                | F                             |
+|  J2 start                            | 2                             |
 +--------------------------------------+-------------------------------+
-|  AD stick X 2 analog dec             | D                             |
+|  J2 select                           | 6                             |
 +--------------------------------------+-------------------------------+
-|  AD stick X 2 analog inc             | G                             |
+|  J2 Mahjong A                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  AD stick Y 2 analog dec             | R                             |
+|  J2 Mahjong B                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  AD stick Y 2 analog inc             | F                             |
+|  J2 Mahjong C                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Lightgun X 2 analog dec             | D                             |
+|  J2 Mahjong D                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Lightgun X 2 analog inc             | G                             |
+|  J2 Mahjong E                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Lightgun Y analog dec               | R                             |
+|  J2 Mahjong F                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Lightgun Y analog inc               | F                             |
+|  J2 Mahjong G                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Mouse X 2 analog dec                | D                             |
+|  J2 Mahjong H                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Mouse X 2 analog inc                | G                             |
+|  J2 Mahjong I                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Mouse Y 2 analog dec                | R                             |
+|  J2 Mahjong J                        | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Mouse Y 2 analog inc                | F                             |
+|  J2 Mahjong K                        | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong L                        | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong M                        | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong O                        | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong P                        | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Q                        | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Kan                      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Pon                      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Chi                      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Reach                    | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Ron                      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Bet                      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Last Chance              | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Score                    | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Double Up                | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Flip Flop                | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Big                      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Mahjong Small                    | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda A/1                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda B/2                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda C/3                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda D/4                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda E/5                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda F/6                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda G/7                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda H/8                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda Sim                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 Hanafuda Não                     | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 pedal 1 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  J2 pedal 1 analógico inc            | A                             |
++--------------------------------------+-------------------------------+
+|  J2 pedal 1 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 pedal 2 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  J2 pedal 2 analógico inc            | S                             |
++--------------------------------------+-------------------------------+
+|  J2 pedal 2 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 pedal 3 analógico                | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J2 pedal 3 analógico inc            | Q                             |
++--------------------------------------+-------------------------------+
+|  J2 pedal 3 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Remo 2 analógico                    | n/a                           |
++--------------------------------------+-------------------------------+
+|  Remo 2 analógico inc                | G                             |
++--------------------------------------+-------------------------------+
+|  Remo 2 analógico dec                | D                             |
++--------------------------------------+-------------------------------+
+|  Remo V 2 analógico                  | n/a                           |
++--------------------------------------+-------------------------------+
+|  Remo V 2 analógico inc              | F                             |
++--------------------------------------+-------------------------------+
+|  Remo V 2 analógico dec              | R                             |
++--------------------------------------+-------------------------------+
+|  Posicionamento 2 analógico          | n/a                           |
++--------------------------------------+-------------------------------+
+|  Posicionamento 2 analógico inc      | G                             |
++--------------------------------------+-------------------------------+
+|  Posicionamento 2 analógico dec      | D                             |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 2 analógico        | n/a                           |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 2 analógico inc    | F                             |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 2 analógico dec    | R                             |
++--------------------------------------+-------------------------------+
+|  Discador 2 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Discador 2 analógico inc            | G                             |
++--------------------------------------+-------------------------------+
+|  Discador 2 analógico dec            | D                             |
++--------------------------------------+-------------------------------+
+|  Discador V 2 analógico              | n/a                           |
++--------------------------------------+-------------------------------+
+|  Discador V 2 analógico inc          | F                             |
++--------------------------------------+-------------------------------+
+|  Discador V 2 analógico dec          | R                             |
++--------------------------------------+-------------------------------+
+|  Trilha X 2 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Trilha X 2 analógico inc            | G                             |
++--------------------------------------+-------------------------------+
+|  Trilha X 2 analógico dec            | D                             |
++--------------------------------------+-------------------------------+
+|  Trilha Y 2 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Trilha Y 2 analógico inc            | F                             |
++--------------------------------------+-------------------------------+
+|  Trilha Y 2 analógico dec            | R                             |
++--------------------------------------+-------------------------------+
+|  Controle AD X 2 analógico           | n/a                           |
++--------------------------------------+-------------------------------+
+|  Controle AD X 2 analógico inc       | G                             |
++--------------------------------------+-------------------------------+
+|  Controle AD X 2 analógico dec       | D                             |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 2 analógico           | n/a                           |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 2 analógico inc       | F                             |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 2 analógico dec       | R                             |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 2 analógico        | n/a                           |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 2 analógico inc    | G                             |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 2 analógico dec    | D                             |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico          | n/a                           |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico inc      | F                             |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico dec      | R                             |
++--------------------------------------+-------------------------------+
+|  Mouse X 2 analógico                 | n/a                           |
++--------------------------------------+-------------------------------+
+|  Mouse X 2 analógico inc             | G                             |
++--------------------------------------+-------------------------------+
+|  Mouse X 2 analógico dec             | D                             |
++--------------------------------------+-------------------------------+
+|  Mouse Y 2 analógico                 | n/a                           |
++--------------------------------------+-------------------------------+
+|  Mouse Y 2 analógico inc             | F                             |
++--------------------------------------+-------------------------------+
+|  Mouse Y 2 analógico dec             | R                             |
 +--------------------------------------+-------------------------------+
 
 .. _mamemenu-general-inputs-P3:
@@ -2094,87 +2236,169 @@ Predefinições para o jogador 3
 .. tabularcolumns:: |l|c|p{5cm}|
 
 +--------------------------------------+-------------------------------+
-|  Player 3 Controls                   | Predefinição                  |
+|  Controles do jogador 3              | Predefinição                  |
 +======================================+===============================+
-|  P3 up                               | I                             |
+|  J3 cima                             | I                             |
 +--------------------------------------+-------------------------------+
-|  P3 down                             | K                             |
+|  J3 baixo                            | K                             |
 +--------------------------------------+-------------------------------+
-|  P3 left                             | J                             |
+|  J3 esquerda                         | J                             |
 +--------------------------------------+-------------------------------+
-|  P3 right                            | L                             |
+|  J3 direita                          | L                             |
 +--------------------------------------+-------------------------------+
-|  P3 button 1                         | Rcontrol                      |
+|  J3 lado direito/cima                | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P3 button 2                         | Rshift                        |
+|  J3 lado direito/baixo               | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P3 button 3                         | Return                        |
+|  J3 lado direito/esquerdo            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P3 start                            | 3                             |
+|  J3 lado direito/direito             | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P3 select                           | 7                             |
+|  J3 lado esquerdo/cima               | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P3 pedal 1 analog inc               | Rcontrol                      |
+|  J3 lado esquerdo/baixo              | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P3 pedal 3 analog inc               | Rshift                        |
+|  J3 lado esquerdo/esquerdo           | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P3 pedal 3 analog inc               | Return                        |
+|  J3 lado esquerdo/direito            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Paddle 3 analog dec                 | J                             |
+|  J3 botão 1                          | Control direito               |
 +--------------------------------------+-------------------------------+
-|  Paddle 3 analog inc                 | L                             |
+|  J3 botão 2                          | Shift direito                 |
 +--------------------------------------+-------------------------------+
-|  Paddle V 3 analog dec               | I                             |
+|  J3 botão 3                          | Return                        |
 +--------------------------------------+-------------------------------+
-|  Paddle V 3 analog inc               | K                             |
+|  J3 botão 4                          | W                             |
 +--------------------------------------+-------------------------------+
-|  Positional 3 analog dec             | J                             |
+|  J3 botão 5                          | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Positional 3 analog inc             | L                             |
+|  J3 botão 6                          | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Positional V 3 analog dec           | I                             |
+|  J3 botão 7                          | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Positional V 3 analog inc           | K                             |
+|  J3 botão 8                          | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Dial 3 analog dec                   | J                             |
+|  J3 botão 9                          | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Dial 3 analog inc                   | L                             |
+|  J3 botão 10                         | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Dial V 3 analog dec                 | I                             |
+|  J3 botão 11                         | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Dial V 3 analog inc                 | K                             |
+|  J3 botão 12                         | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Track X 3 analog dec                | J                             |
+|  J3 botão 13                         | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Track X 3 analog inc                | L                             |
+|  J3 botão 14                         | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Track Y 3 analog dec                | I                             |
+|  J3 botão 15                         | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Track Y 3 analog inc                | K                             |
+|  J3 botão 16                         | n/a                           |
 +--------------------------------------+-------------------------------+
-|  AD stick X 3 analog dec             | J                             |
+|  J3 start                            | 3                             |
 +--------------------------------------+-------------------------------+
-|  AD stick X 3 analog inc             | L                             |
+|  J3 select                           | 7                             |
 +--------------------------------------+-------------------------------+
-|  AD stick Y 3 analog dec             | I                             |
+|  J3 pedal 1 analógico                | n/a                           |
 +--------------------------------------+-------------------------------+
-|  AD stick Y 3 analog inc             | K                             |
+|  J3 pedal 1 analógico inc            | Control direito               |
 +--------------------------------------+-------------------------------+
-|  Lightgun X 3 analog dec             | J                             |
+|  J3 pedal 1 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Lightgun X 3 analog inc             | L                             |
+|  J3 pedal 2 analógico                | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Lightgun Y analog dec               | I                             |
+|  J3 pedal 2 analógico inc            | Shift direito                 |
 +--------------------------------------+-------------------------------+
-|  Lightgun Y analog inc               | K                             |
+|  J3 pedal 2 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Mouse X 3 analog dec                | J                             |
+|  J3 pedal 3 analógico                | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Mouse X 3 analog inc                | L                             |
+|  J3 pedal 3 analógico inc            | Return                        |
 +--------------------------------------+-------------------------------+
-|  Mouse Y 3 analog dec                | I                             |
+|  J3 pedal 3 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Mouse Y 3 analog inc                | K                             |
+|  Remo 3 analógico                    | n/a                           |
++--------------------------------------+-------------------------------+
+|  Remo 3 analógico inc                | L                             |
++--------------------------------------+-------------------------------+
+|  Remo 3 analógico dec                | J                             |
++--------------------------------------+-------------------------------+
+|  Remo V 3 analógico                  | n/a                           |
++--------------------------------------+-------------------------------+
+|  Remo V 3 analógico inc              | K                             |
++--------------------------------------+-------------------------------+
+|  Remo V 3 analógico dec              | I                             |
++--------------------------------------+-------------------------------+
+|  Posicionamento 3 analógico          | n/a                           |
++--------------------------------------+-------------------------------+
+|  Posicionamento 3 analógico inc      | L                             |
++--------------------------------------+-------------------------------+
+|  Posicionamento 3 analógico dec      | J                             |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 3 analógico        | n/a                           |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 3 analógico inc    | K                             |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 3 analógico dec    | I                             |
++--------------------------------------+-------------------------------+
+|  Discador 3 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Discador 3 analógico inc            | L                             |
++--------------------------------------+-------------------------------+
+|  Discador 3 analógico dec            | J                             |
++--------------------------------------+-------------------------------+
+|  Discador V 3 analógico              | n/a                           |
++--------------------------------------+-------------------------------+
+|  Discador V 3 analógico inc          | K                             |
++--------------------------------------+-------------------------------+
+|  Discador V 3 analógico dec          | I                             |
++--------------------------------------+-------------------------------+
+|  Trilha X 3 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Trilha X 3 analógico inc            | L                             |
++--------------------------------------+-------------------------------+
+|  Trilha X 3 analógico dec            | J                             |
++--------------------------------------+-------------------------------+
+|  Trilha Y 3 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Trilha Y 3 analógico inc            | K                             |
++--------------------------------------+-------------------------------+
+|  Trilha Y 3 analógico dec            | I                             |
++--------------------------------------+-------------------------------+
+|  Controle AD X 3 analógico           | n/a                           |
++--------------------------------------+-------------------------------+
+|  Controle AD X 3 analógico inc       | L                             |
++--------------------------------------+-------------------------------+
+|  Controle AD X 3 analógico dec       | J                             |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 3 analógico           | n/a                           |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 3 analógico inc       | K                             |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 3 analógico dec       | I                             |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 3 analógico        | n/a                           |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 3 analógico inc    | L                             |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 3 analógico dec    | J                             |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico          | n/a                           |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico inc      | K                             |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico dec      | I                             |
++--------------------------------------+-------------------------------+
+|  Mouse X 3 analógico                 | n/a                           |
++--------------------------------------+-------------------------------+
+|  Mouse X 3 analógico inc             | L                             |
++--------------------------------------+-------------------------------+
+|  Mouse X 3 analógico dec             | J                             |
++--------------------------------------+-------------------------------+
+|  Mouse Y 3 analógico                 | n/a                           |
++--------------------------------------+-------------------------------+
+|  Mouse Y 3 analógico inc             | K                             |
++--------------------------------------+-------------------------------+
+|  Mouse Y 3 analógico dec             | I                             |
 +--------------------------------------+-------------------------------+
 
 .. _mamemenu-general-inputs-P4:
@@ -2185,31 +2409,169 @@ Predefinições para o jogador 4
 .. tabularcolumns:: |l|c|p{5cm}|
 
 +--------------------------------------+-------------------------------+
-|  Player 4 Controls                   | Predefinição                  |
+|  Controles do jogador 4              | Predefinição                  |
 +======================================+===============================+
-|  P4 up                               | 8_pad                         |
+|  J4 cima                             | 8 teclado numérico            |
 +--------------------------------------+-------------------------------+
-|  P4 down                             | 2_pad                         |
+|  J4 baixo                            | 2 teclado numérico            |
 +--------------------------------------+-------------------------------+
-|  P4 left                             | 4_pad                         |
+|  J4 esquerda                         | 4 teclado numérico            |
 +--------------------------------------+-------------------------------+
-|  P4 right                            | 6_pad                         |
+|  J4 direita                          | 6 teclado numérico            |
 +--------------------------------------+-------------------------------+
-|  P4 button 1                         | 0_pad                         |
+|  J4 lado direito/cima                | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P4 button 2                         | Del_pad                       |
+|  J4 lado direito/baixo               | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P4 button 3                         | Enter_pad                     |
+|  J4 lado direito/esquerdo            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P4 start                            | 4                             |
+|  J4 lado direito/direito             | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P4 select                           | 8                             |
+|  J4 lado esquerdo/cima               | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P4 pedal 1 analog inc               | 0_pad                         |
+|  J4 lado esquerdo/baixo              | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P4 pedal 2 analog inc               | Del_pad                       |
+|  J4 lado esquerdo/esquerdo           | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  P4 pedal 3 analog inc               | Enter_pad                     |
+|  J4 lado esquerdo/direito            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J4 botão 1                          | 0 teclado numérico            |
++--------------------------------------+-------------------------------+
+|  J4 botão 2                          | Del teclado numérico          |
++--------------------------------------+-------------------------------+
+|  J4 botão 3                          | Return teclado numérico       |
++--------------------------------------+-------------------------------+
+|  J4 botão 4                          | W                             |
++--------------------------------------+-------------------------------+
+|  J4 botão 5                          | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 6                          | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 7                          | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 8                          | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 9                          | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 10                         | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 11                         | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 12                         | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 13                         | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 14                         | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 15                         | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 botão 16                         | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 start                            | 4                             |
++--------------------------------------+-------------------------------+
+|  J4 select                           | 8                             |
++--------------------------------------+-------------------------------+
+|  J4 pedal 1 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 pedal 1 analógico inc            | 0 teclado numérico            |
++--------------------------------------+-------------------------------+
+|  J4 pedal 1 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J4 pedal 2 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  J4 pedal 2 analógico inc            | Del teclado numérico          |
++--------------------------------------+-------------------------------+
+|  J4 pedal 2 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J4 pedal 3 analógico                | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  J4 pedal 3 analógico inc            | Enter teclado numérico        |
++--------------------------------------+-------------------------------+
+|  J4 pedal 3 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Remo 4 analógico                    | n/a                           |
++--------------------------------------+-------------------------------+
+|  Remo 4 analógico inc                | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Remo 4 analógico dec                | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Remo V 4 analógico                  | n/a                           |
++--------------------------------------+-------------------------------+
+|  Remo V 4 analógico inc              | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Remo V 4 analógico dec              | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Posicionamento 4 analógico          | n/a                           |
++--------------------------------------+-------------------------------+
+|  Posicionamento 4 analógico inc      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Posicionamento 4 analógico dec      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 4 analógico        | n/a                           |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 4 analógico inc    | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Posicionamento V 4 analógico dec    | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Discador 4 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Discador 4 analógico inc            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Discador 4 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Discador V 4 analógico              | n/a                           |
++--------------------------------------+-------------------------------+
+|  Discador V 4 analógico inc          | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Discador V 4 analógico dec          | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Trilha X 4 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Trilha X 4 analógico inc            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Trilha X 4 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Trilha Y 4 analógico                | n/a                           |
++--------------------------------------+-------------------------------+
+|  Trilha Y 4 analógico inc            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Trilha Y 4 analógico dec            | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Controle AD X 4 analógico           | n/a                           |
++--------------------------------------+-------------------------------+
+|  Controle AD X 4 analógico inc       | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Controle AD X 4 analógico dec       | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 4 analógico           | n/a                           |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 4 analógico inc       | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Controle AD Y 4 analógico dec       | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 4 analógico        | n/a                           |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 4 analógico inc    | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Pistola de luz X 4 analógico dec    | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico          | n/a                           |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico inc      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Pistola de luz Y analógico dec      | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Mouse X 4 analógico                 | n/a                           |
++--------------------------------------+-------------------------------+
+|  Mouse X 4 analógico inc             | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Mouse X 4 analógico dec             | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Mouse Y 4 analógico                 | n/a                           |
++--------------------------------------+-------------------------------+
+|  Mouse Y 4 analógico inc             | Nenhum                        |
++--------------------------------------+-------------------------------+
+|  Mouse Y 4 analógico dec             | Nenhum                        |
 +--------------------------------------+-------------------------------+
 
 As predefinições para o jogador 5 em diante estão vazias e podem ser
@@ -2224,55 +2586,55 @@ customizadas conforme a necessidade.
   ser alteradas na própria interface do MAME.
 
 +--------------------------------------+-------------------------------+
-|  1 Player start                      |  1                            |
+|  Inicia jogador 1                    |  1                            |
 +--------------------------------------+-------------------------------+
-|  2 Players start                     |  2                            |
+|  Inicia jogador 2                    |  2                            |
 +--------------------------------------+-------------------------------+
-|  3 Players start                     |  3                            |
+|  Inicia jogador 3                    |  3                            |
 +--------------------------------------+-------------------------------+
-|  4 Players start                     |  4                            |
+|  Inicia jogador 4                    |  4                            |
 +--------------------------------------+-------------------------------+
-|  5 Players start                     |  Nenhum                       |
+|  Inicia jogador 5                    |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  6 Players start                     |  Nenhum                       |
+|  Inicia jogador 6                    |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  7 Players start                     |  Nenhum                       |
+|  Inicia jogador 7                    |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  8 Players start                     |  Nenhum                       |
+|  Inicia jogador 8                    |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Coin 1                              |  5                            |
+|  Ficha 1                             |  5                            |
 +--------------------------------------+-------------------------------+
-|  Coin 2                              |  6                            |
+|  Ficha 2                             |  6                            |
 +--------------------------------------+-------------------------------+
-|  Coin 3                              |  7                            |
+|  Ficha 3                             |  7                            |
 +--------------------------------------+-------------------------------+
-|  Coin 4                              |  8                            |
+|  Ficha 4                             |  8                            |
 +--------------------------------------+-------------------------------+
-|  Coin 5                              |  Nenhum                       |
+|  Ficha 5                             |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Coin 6                              |  Nenhum                       |
+|  Ficha 6                             |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Coin 7                              |  Nenhum                       |
+|  Ficha 7                             |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Coin 8                              |  Nenhum                       |
+|  Ficha 8                             |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Coin 9                              |  Nenhum                       |
+|  Ficha 9                             |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Coin 10                             |  Nenhum                       |
+|  Ficha 10                            |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Coin 11                             |  Nenhum                       |
+|  Ficha 11                            |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Coin 12                             |  Nenhum                       |
+|  Ficha 12                            |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Bill1                               |  Backspace                    |
+|  Conta 1                             |  Backspace                    |
 +--------------------------------------+-------------------------------+
-|  Service 1                           |  9                            |
+|  Serviço 1                           |  9                            |
 +--------------------------------------+-------------------------------+
-|  Service 2                           |  0                            |
+|  Serviço 2                           |  0                            |
 +--------------------------------------+-------------------------------+
-|  Service 3                           |  Tecla menos                  |
+|  Serviço 3                           |  Tecla menos                  |
 +--------------------------------------+-------------------------------+
-|  Service 4                           |  Tecla igual                  |
+|  Serviço 4                           |  Tecla igual                  |
 +--------------------------------------+-------------------------------+
 |  Tilt 1                              |  T                            |
 +--------------------------------------+-------------------------------+
@@ -2282,25 +2644,25 @@ customizadas conforme a necessidade.
 +--------------------------------------+-------------------------------+
 |  Tilt 4                              |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Power On                            |  F1                           |
+|  Liga                                |  F1                           |
 +--------------------------------------+-------------------------------+
-|  Power Off                           |  F2                           |
+|  Desliga                             |  F2                           |
 +--------------------------------------+-------------------------------+
-|  Service                             |  F2                           |
+|  Serviço                             |  F2                           |
 +--------------------------------------+-------------------------------+
 |  Tilt                                |  T                            |
 +--------------------------------------+-------------------------------+
-|  Door interlock                      |  Nenhum                       |
+|  Trava interna da porta              |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Memory reset                        |  F1                           |
+|  Redefine a memória                  |  F1                           |
 +--------------------------------------+-------------------------------+
-|  Volume down                         |  Tecla menos                  |
+|  Abaixa o volume                     |  Tecla menos                  |
 +--------------------------------------+-------------------------------+
-|  Volume up                           |  Tecla igual                  |
+|  Aumenta o volume                    |  Tecla igual                  |
 +--------------------------------------+-------------------------------+
-|  Keypad                              |  Nenhum                       |
+|  Teclado numérico                    |  Nenhum                       |
 +--------------------------------------+-------------------------------+
-|  Keyboard                            |  None                         |
+|  Teclado                             |  None                         |
 +--------------------------------------+-------------------------------+
 
 .. raw:: latex
@@ -2312,7 +2674,7 @@ customizadas conforme a necessidade.
 Opções avançadas
 ~~~~~~~~~~~~~~~~
 
-Opções de Desempenho
+Opções de desempenho
 ^^^^^^^^^^^^^^^^^^^^
 
 * **Salto automático dos quadros**
@@ -2320,7 +2682,7 @@ Opções de Desempenho
   Ignora quadros de forma automática visando manter a velocidade da
   emulação.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Salto de quadro**
 
@@ -2335,20 +2697,20 @@ Opções de Desempenho
   emulada rode em sua velocidade nativa em vez da velocidade do
   processador em que a máquina está sendo emulada.
 
-	O valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**.
 
 * **Mute quando a supressão da velocidade estiver desligada**
 
   Silencia o áudio quando a supressão de velocidade estiver desligado.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Dormir**
 
   Reduz o consumo de processamento quando o MAME estiver parado sem
   fazer nada.
 
-	O valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**.
 
 * **Velocidade**
 
@@ -2362,7 +2724,7 @@ Opções de Desempenho
   de atualização de tela mais lenta em referência com a taxa de
   atualização de tela do computador que está rodando a emulação.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Baixa latência**
 
@@ -2384,74 +2746,74 @@ Opções da Rotação da Tela
   Permite que a orientação da tela mude conforme a orientação de tela do
   jogo.
 
-	O valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**.
 
 * **Rotacione à direita**
 
   Rotacione a tela em 90 graus sentido horário.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Rotacione à esquerda**
 
   Rotacione a tela em 90 graus sentido anti-horário.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Auto rotacione à direita**
 
   Rotacione automaticamente a tela em 90 graus sentido horário caso
   a tela esteja orientada verticalmente.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Auto rotacione à esquerda**
 
   Rotacione automaticamente a tela em 90 graus sentido anti-horário
   caso a tela esteja orientada verticalmente.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Vire o eixo X**
 
   Inverte a tela da esquerda para a direita.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Vire o eixo Y**
 
   Inverte a tela da direita para a esquerda.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 .. _mamemenu-advanced-illustration:
 
-Opções das Ilustrações
+Opções das ilustrações
 ^^^^^^^^^^^^^^^^^^^^^^
 
 * **Aproxime a área da tela**
 
   Aproxima a região da tela emulada quando estiver numa ilustração.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 .. _mamemenu-advanced-state-playback:
 
 Opções do estado/reprodução
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* **Salve/Restaure automático**
+* **Salve/restaure automático**
 
   Em sistema compatíveis, carrega automaticamente o estado da máquina e
   a salva ao encerrar.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Permita o rebobinamento**
 
   Permite o rebobinamento do estado da máquina.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Capacidade de rebobinamento**
 
@@ -2463,17 +2825,17 @@ Opções do estado/reprodução
 
   Define se os vídeos ou os prints da tela terão o filtro aplicado.
 
-	O valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**.
 
 * **Marca de queimado**
 
   Cria prints da tela com marcas de fósforo queimado.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 .. _mamemenu-advanced-input-options:
 
-Opções da Entrada
+Opções da entrada
 ^^^^^^^^^^^^^^^^^
 
 * **Trava da ficha**
@@ -2481,31 +2843,31 @@ Opções da Entrada
   Faz com que a máquina ignore a inserção de fichas em momentos que a
   máquina não está pronta para recebê-las.
 
-	O valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**.
 
 * **Mouse**
 
   Permite o uso de um mouse nas máquinas.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Controle**
 
   Permite o uso de um controle nas máquinas.
 
-	O valor predefinido é **Ligado**
+	O valor predefinido é **Ligado**.
 
 * **Pistola de luz**
 
   Ativa o uso do uma pistola de luz.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Mais de um teclado**
 
   Permite o uso de mais de um teclado para cada entrada compatível.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 .. raw:: latex
 
@@ -2515,7 +2877,7 @@ Opções da Entrada
 
   Permite o uso de mais de um mouse para cada entrada compatível.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Steadykey**
 
@@ -2527,20 +2889,20 @@ Opções da Entrada
   registrar o pressionamento simultâneo das teclas, porém tem a
   desvantagem de deixar a sua capacidade de resposta mais lenta.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **IU ativa**
 
   Ativa a opção para que a interface do usuário se sobreponha a do
   teclado emulado caso esteja presente.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Recarga fora da tela**
 
   Converte o botão 2 da pistola de luz como recarga fora da tela.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Zona morta do controle**
 
@@ -2558,92 +2920,20 @@ Opções da Entrada
 
   Ativa ou não o uso de um teclado natural.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Comando contraditório**
 
   Aceita comandos contraditórios e simultâneos no controle digital como
   esquerda e direita ou cima e baixo.
 
-	O valor predefinido é **Desligado**
+	O valor predefinido é **Desligado**.
 
 * **Impulso de ficha**
 
   Define o tempo de impulso da ficha.
 
 	O valor predefinido é **0**
-
-.. _mamemenu-config-saving:
-
-Salve a Configuração
-~~~~~~~~~~~~~~~~~~~~
-
-Salva todas as alterações feitas.
-
-Retorna ao menu anterior
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Retorna para a tela anterior.
-
-.. raw:: latex
-
-	\clearpage
-
-.. _mamemenu-config-machine:
-
-Configure a Máquina
--------------------
-
-Permite que você configure individualmente cada máquina selecionada.
-
-* **BIOS**
-
-  Informa se a máquina usa uma BIOS ou não, nas máquinas que usam BIOS é
-  possível escolher qual BIOS você quer que a máquina use.
-
-.. raw:: html
-
-	<p></p>
-
-* **Opções Avançadas**
-
-  Consulte :ref:`mamemenu-advanced-options`.
-
-.. raw:: html
-
-	<p></p>
-
-* **Opções do Vídeo**
-
-  Consulte :ref:`mamemenu-config-video`.
-
-.. raw:: html
-
-	<p></p>
-
-* **Mapeamento dos dispositivos**
-
-  Consulte :ref:`mamemenu-config-devices`.
-
-.. raw:: html
-
-	<p></p>
-
-* **Adiciona aos Favoritos**
-
-  Adiciona a máquina selecionada aos seus favoritos.
-
-.. raw:: html
-
-	<p></p>
-
-* **Salva a configuração da máquina**
-
-  Salva a configuração apenas para a máquina selecionada.
-
-.. raw:: latex
-
-	\clearpage
 
 .. _mamemenu-plugins:
 
@@ -2770,8 +3060,73 @@ Plug-ins
   ``ctrl\portname\nome_da_maquina.json``. Para usar, inicie a máquina,
   vá em *Plug-ins* e selecione **Portas das entradas**.
 
-..	[#] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME com
-		interface gráfica.
+.. _mamemenu-config-saving:
+
+Salve a Configuração
+~~~~~~~~~~~~~~~~~~~~
+
+Salva todas as alterações feitas.
+
+Retorna ao menu anterior
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Retorna para a tela anterior.
+
+
+.. _mamemenu-config-machine:
+
+Configure a máquina
+-------------------
+
+Permite que você configure individualmente cada máquina selecionada.
+
+* **BIOS**
+
+  Informa se a máquina usa uma BIOS ou não, nas máquinas que usam BIOS é
+  possível escolher qual BIOS você quer que a máquina use.
+
+.. raw:: html
+
+	<p></p>
+
+* **Opções Avançadas**
+
+  Consulte :ref:`mamemenu-advanced-options`.
+
+.. raw:: html
+
+	<p></p>
+
+* **Opções do Vídeo**
+
+  Consulte :ref:`mamemenu-config-video`.
+
+.. raw:: html
+
+	<p></p>
+
+* **Mapeamento dos dispositivos**
+
+  Consulte :ref:`mamemenu-config-devices`.
+
+.. raw:: html
+
+	<p></p>
+
+* **Adiciona aos Favoritos**
+
+  Adiciona a máquina selecionada aos seus favoritos.
+
+.. raw:: html
+
+	<p></p>
+
+* **Salva a configuração da máquina**
+
+  Salva a configuração apenas para a máquina selecionada.
+
+..	[#MAMEUIP] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME
+		com uma interface gráfica diferente.
 ..	[#] O site do `MAMEICONS <http://icons.mameworld.info/>`_ e
 		`Progetto Snaps <http://www.progettosnaps.net/icons>`_ oferecem
 		tais ícones e outras imagens para download.
