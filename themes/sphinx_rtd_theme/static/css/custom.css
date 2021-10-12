@@ -14,7 +14,7 @@
 .rst-content code.literal, .rst-content tt.literal {
     color: #f08;
     white-space: normal;
-    padding: .25em .5em;
+    padding: .21em .4em;
 }
 *, :after, :before {
     box-sizing: border-box;
