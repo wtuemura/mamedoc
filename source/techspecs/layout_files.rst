@@ -3947,6 +3947,7 @@ cabeçalho e colocando todas as informações que achamos relevantes:
 		License: CC by 4.0
 		https://mamedoc.readthedocs.io/
 		Date: October 02, 2021
+		Download: https://www.mediafire.com/file/o8j2cdqonfxyz58/sfa3-v1.zip
 	-->
 
 
@@ -4401,6 +4402,8 @@ Ao rodar a máquina novamente verá que toda a parte funcional e das
 opções continuam os mesmos, porém, o nosso arquivo layout está mais
 organizado.
 
+`Baixe este arquivo completo aqui <https://www.mediafire.com/file/aqxsi79b4j38wh8/sfa3-v2.zip>`_.
+
 .. _layfile-using_png_files:
 
 Usando imagens PNG para o mesmo tipo de layout
@@ -4450,6 +4453,7 @@ Com todas as imagens em mãos podemos começar a montar o nosso layout:
 	License: CC by 4.0
 	https://mamedoc.readthedocs.io/
 	Date: October 02, 2021
+	Download: https://www.mediafire.com/file/90ethuuvvd61mp1/sfa3-v3.zip
 	-->
 
 
@@ -4631,6 +4635,7 @@ e depois montamos.
 	License: CC by 4.0
 	https://mamedoc.readthedocs.io/
 	Date: October 02, 2021
+	Download: https://www.mediafire.com/file/11t2a32xnowi2nl/sfa3-v4.zip
 	-->
 	
 	<element name="painel">
