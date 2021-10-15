@@ -34,3 +34,23 @@ kbd {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2),inset 0 0 0 2px #fff;
     box-sizing: border-box;
 }
+.btn {
+    display: inline-block;
+    line-height: normal;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    font-size: 100%;
+    padding: 6px 12px 8px;
+    border: 1px solid rgba(0,0,0,.1);
+    text-decoration: none;
+    font-weight: 400;
+    font-family: Lato,proxima-nova,Helvetica Neue,Arial,sans-serif;
+    box-shadow: inset 0 1px 2px -1px hsla(0,0%,100%,.5),inset 0 -2px 0 0 rgba(0,0,0,.1);
+    vertical-align: middle;
+    zoom: 1;
+    -webkit-user-drag: none;
+    user-select: none;
+    transition: all .1s linear;
+    border-radius: .35rem;
+}
