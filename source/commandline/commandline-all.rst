@@ -527,7 +527,7 @@ Exemplo:
 
 .. _mame-commandline-romident:
 
-**-romident** [<*caminho\\completo\\para\\a\\rom\\a\\desconhecida*>]
+**-romident** [<*caminho\\completo\\para\\a\\rom\\desconhecida*>]
 
 	Tenta identificar os arquivos ROM desconhecidos comparando-o com
 	os arquivos cadastrados no banco de dados interno do MAME que sejam
