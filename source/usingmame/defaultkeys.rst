@@ -34,8 +34,8 @@ teclas poderão ser diferentes.
 
 .. _default-keys-ui-controls:
 
-MAME User Interface Controls
-----------------------------
+Controles da interface
+----------------------
 
 Estes controles cobrem as teclas básicas de funcionamento do MAME como o
 cardápio de opções, a pausa da máquina, o salvamento e a leitura dos
