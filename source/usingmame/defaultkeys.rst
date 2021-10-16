@@ -1,4 +1,3 @@
-
 .. raw:: latex
 
 	\clearpage
@@ -8,127 +7,786 @@
 Teclas já predefinidas
 ======================
 
-Aqui um pequeno resumo de todas as teclas já pré-configuradas, consulte
-o capítulo :ref:`Cardápio de opções <mamemenu>` para ver a lista
-completa de todas as teclas. Todas as teclas podem ser configuradas
-através da interface do usuário.
+.. contents:: :local:
 
 
-================  ===============================================================================
-Tecla             | Ação
-----------------  -------------------------------------------------------------------------------
-**Escape**        | Encerra a emulação.
-**5**             | Insere crédito nas máquinas do tipo Arcade.
-**1**             | Inicia a partida para o jogador 1 (Player 1).
-**2**             | Inicia a partida para o jogador 2 (Player 2).
-**Tab**           | Exibe um cardápio que dá acesso a diferentes configurações.
-**~**             | Exibe opções configuráveis na parte de baixo da tela, use as seguintes teclas para
-                  | controlá-las:
-                  |
-                  | * **Cima** - selecione o parâmetro anterior para modificar
-                  | * **Baixo** - selecione o próximo parâmetro para modificar
-                  | * **Esquerda** - reduz o valor do parâmetro selecionado
-                  | * **Direita** - incrementa o valor do parâmetro selecionado
-                  | * **Enter** - zera o valor do parâmetro para seu valor inicial
-                  | * **Control+Esquerda** - reduz o valor em passos de *10x*
-                  | * **Shift+Esquerda** - reduz o valor em passos de *0.1x*
-                  | * **Alt+Esquerda** - reduz o valor pela menor quantidade
-                  | * **Control+Direita** - incrementa o valor em passos de *10x*
-                  | * **Shift+Direita** - incrementa o valor em passos de *0.1x*
-                  | * **Alt+Right** - incrementa o valor pela menor quantidade
-                  |
-                  | Se você estiver rodando com a opção **-debug**, esta tecla envia um 'break' para
-                  | a emulação.
-**P**             | Pausa o jogo.
-**Shift+P**       | Enquanto estiver pausado, avança para o próximo quadro. Caso a opção retroceder
-                  | esteja ativa, será capturado um novo estado de retrocesso, assim como este também
-                  | será salvo.
-**Shift+~**       | Enquanto estiver pausado, carrega o estado de salvamento de retrocesso mais recente.
-**F1**            | Inicia o processo de auditoria das ROMs que estão marcadas como não disponíveis.
-**Shift+F1**      | Inicia o processo de auditoria das ROMs de todas as máquinas existentes.
-**F2**            | Modo de serviço para jogos que seja compatíveis.
-**F3**            | Reinicia o jogo.
-**Shift+F3**      | Executa uma "reinicialização forçada", fechando e reiniciando a emulação do zero.
-                  | Este produz um reinicio mais limpo e completo do que pressionar apenas o F3.
-**LCtrl+F3**      | [APENAS SDL] - Alterna o alongamento irregular.
-**F4**            | Exibe a paleta GFX decodificada e os *tilemaps* dos jogos. Pressione **F4** novamente para sair.
-                  |
-                  | Paleta / modo tabela de cores (color table):
-                  |  * **[ ]** - alterna entre os modos paleta e tabela de cores
-                  |  * **Cima/Baixo** - role uma linha de cada vez para cima e para baixo
-                  |  * **Page Up/Page Down** - desloca uma página de cada vez para cima e para baixo
-                  |  * **Home/End** - ir para o topo ou final da lista
-                  |  * **-/+** - aumenta ou reduz a quantidade de cores por linha
-                  |  * **0** - restaura a quantidade predefinida de cores por linha
-                  |  * **Enter** - altera para o visualizador gráfico entre os modos **paleta**, **gráficos** e **tilemaps**
-                  |
-                  | Modo gráfico:
-                  |  * **[ ]** - alterna entre diferentes conjuntos de gráficos
-                  |  * **Cima/Baixo** - role uma linha de cada vez para cima e para baixo
-                  |  * **Page Up/Page Down** - desloca uma página de cada vez para cima e para baixo
-                  |  * **Home/End** - ir para o topo ou final da lista
-                  |  * **Esquerda/Direita** - altera a cor que está sendo exibida
-                  |  * **R** - rotacione os blocos em *90º* no sentido horário
-                  |  * **-/+** - aumenta/reduz a quantidade de blocos por linha
-                  |  * **0** - restaura a quantidade predefinida dos *tiles* por linha
-                  |  * **Enter** - alterna para o visualizador de tilemap
-                  |
-                  | Modo Tilemap: [1]_ [2]_
-                  |  * **[ ]** - alterna entre diferentes tilemaps
-                  |  * **Cima/Baixo/Esquerda/Direita** - role *8 pixels* por vez
-                  |  * **Shift+Cima/Baixo/Esquerda/Direita** - role *1 pixel* por vez
-                  |  * **Control+Cima/Baixo/Esquerda/Direita** - role *64 pixels* por vez
-                  |  * **R** - rotacionar o ângulo de visão do tilemap em *90º* no sentido horário
-                  |  * **-/+** - aumenta/reduz o fator de zoom
-                  |  * **0** - amplie os pequenos *tilemaps* para preencher toda a tela
-                  |  * **Enter** - altera para o modo paleta de cores ou tabela de cores
-                  |
-**LCtrl+F4**      | [**APENAS SDL**] - Alterna a relação de aspecto da tela.
-**LCtrl+F5**      | [**APENAS SDL**] - Alterna o Filtro.
-**Alt+Ctrl+F5**   | [**APENAS MS WINDOWS**] - Alterna o processamento HLSL final
-**F6**            | Alterna o modo de trapaça (caso o MAME seja iniciado com a opção **-cheat**)
-**LCtrl+F6**      | Reduz a proporção da escala preliminar
-**F7**            | Ler a gravação de estado. Você será solicitado a pressionar uma tecla para
-                  | determinar qual a gravação de estado você deseja carregar.
-                  |
-                  | Observe que uma grande quantidade de drivers não são compatíveis com este
-                  | recurso. Você receberá um alerta ao tentar executar essa função com um
-                  | driver que não seja compatível.
-                  |
-**LCtrl+F7**      | Aumenta a Proporção de Escala Preliminar
-**Shift+F7**      | Cria uma gravação de estado. Precisa pressionar uma tecla a mais para
-                  | identificar o estado, semelhante a opção de carregamento acima.
-**F8**            | Reduz o salto de quadro.
-**F9**            | Aumenta o pulo de quadro.
-**F10**           | Alterna o afogador de velocidade.
-**F11**           | Alterna o indicador de velocidade.
-**Shift+F11**     | Alterna indicador interno de perfil (caso tenha sido compilado com).
-**Alt+F11**       | Grava vídeo renderizado com filtros HLSL.
-**F12**           | Salva um print da tela.
-**Alt Gr+F12**    | Tira um print da tela usando filtros HLSL.
-**Insert**        | [**APENAS MS WINDOWS, NÃO SDL**] Avanço rápido.
-                  | Enquanto a tecla estiver pressionada, roda o jogo com
-                  | o afogador desligado e com o pulo de quadros no máximo.
-**Page DN**       | [**APENAS SDL**] Avanço rápido.
-                  | Enquanto a tecla estiver pressionada, roda o jogo com o afogador de velocidade
-                  | desligado e com o pulo de quadros no máximo.
-**Alt+ENTER**     | Alterna entre o modo janela e de tela inteira.
-**Scroll Lock**   | Mapeamento padrão para **-uimodekey**.
-                  |
-                  | Essa tecla permite que os usuários ativem ou desativem o teclado emulado
-                  | em máquinas que precisam. Todas as emulações que precisam de teclados emulados
-                  | começarão nesse modo e você só poderá acessar
-                  | a IU (pressionando TAB), depois de pressionar essa tecla primeiro.
-                  | Você pode mudar a condição inicial do teclado emulado como demonstrado
-                  | logo abaixo com mais detalhes usando a opção **-ui_active**.
-================  ===============================================================================
+.. _default-keys-foreword:
+
+Introdução aos controles
+------------------------
+
+O MAME é compatível com uma vasta gama de diferentes tipos de máquinas,
+e estas, possuem uma considerável quantidade de diferentes entradas
+entre elas. Isso significa que algumas teclas do teclado, alguns botões
+do mouse e alguns botões do joystick serão usados para diversas funções.
+Como resultado, o mapa dos controles mostrados abaixo abaixo são
+separados pelos tipos das máquinas facilitando a busca.
+
+Todos os controles abaixo são totalmente configuráveis através da
+interface do usuário. Os exemplos abaixo são as configurações
+predefinidas. As predefinições mostradas aqui são organizadas com base
+do no teclado US ANSI. Caso tenha um layout de teclado diferente, as
+teclas poderão ser diferentes.
 
 .. raw:: latex
 
 	\clearpage
 
+.. _default-keys-ui-controls:
+
+MAME User Interface Controls
+----------------------------
+
+Estes controles cobrem as teclas básicas de funcionamento do MAME como o
+cardápio de opções, a pausa da máquina, o salvamento e a leitura dos
+estados.
+
+:kbd:`Tab`
+	Chama o cardápio de opções.
+:kbd:`~` (tecla til)
+	Mostra opções na tela.
+
+	Caso esteja usando o MAME com a opção ``-debug``, esta tecla
+	funciona como um ‘*break*’ na emulação.
+
+	Use as opções abaixo quando a opção estiver visível na tela:
+
+	* :kbd:`Cima` - Seleciona o parâmetro anterior.
+	* :kbd:`Baixo` - Seleciona o próximo parâmetro.
+	* :kbd:`Esquerda` - Reduz o valor do parâmetro selecionado.
+	* :kbd:`Direita` - Aumenta o valor do parâmetro selecionado.
+	* :kbd:`Enter` - Redefine o valor do parâmetro para o seu valor predefinido.
+	* :kbd:`Control` + :kbd:`Esquerda` - Reduz o valor em passos de **10x**.
+	* :kbd:`Shift` + :kbd:`Esquerda` - Reduz o valor em passos de **1x**.
+	* :kbd:`Alt` + :kbd:`Esquerda` - Reduz todo o valor.
+	* :kbd:`Control` + :kbd:`Direita` - Aumenta o valor em passos de **10x**.
+	* :kbd:`Shift` + :kbd:`Direita` - Aumenta o valor em passos de **1x**.
+	* :kbd:`Alt` + :kbd:`Direita` - Aumenta o valor no máximo.
+	* :kbd:`End` - Oculta temporariamente a opção visível na tela.
+	* :kbd:`Home` - Traz de volta a opção na tela depois que for oculta.
+
+Seta :kbd:`cima`
+    Destaca a opção anterior da lista da interface.
+Seta :kbd:`baixo`
+    Destaca a opção posterior da lista da interface.
+Seta :kbd:`esquerda`
+    Altera a opção com os valores disponível do lado esquerdo quando uma seta estiver presente.
+Seta :kbd:`direita`
+    Altera a opção com os valores disponível do lado direito quando uma seta estiver presente.
+:kbd:`Home`
+    Destaca a primeira opção da lista.
+:kbd:`End`
+    Destaca a última opção da lista.
+:kbd:`Enter` / **Botão** :kbd:`1` do controle
+    Seleciona a opção que estiver me destaque.
+:kbd:`Espaço`
+    Exibe um comentário na opção selecionada.
+:kbd:`Delete`
+    Limpa/redefine o valor para a predefinição inicial nas configurações
+    de entrada, trapaça e opções do plug-in.
+:kbd:`P`
+    Pausa a emulação.
+:kbd:`Shift` esquerdo + :kbd:`P`
+    Enquanto estiver pausado, avança para o próximo quadro. Se o
+    rebobinamento estiver ativo, um estado é salvo para ser usado pela
+    função de rebobinamento.
+:kbd:`Shift` esquerdo + :kbd:`~`
+    Enquanto estiver pausado, carrega o estado salvo mais recente para
+    ser usado com o rebobinamento.
+:kbd:`F1`
+    Liga a máquina nas máquinas que tenham esta função específica.
+:kbd:`F2`
+    Desliga a máquina nas máquinas que tenham esta função específica.
+:kbd:`F3`
+    Faz um reinicio simples da máquina.
+:kbd:`Shift` esquerdo + :kbd:`F3`
+    Realiza um reinicio "pesado" onde tudo é zerado e carregado do
+    início. Este é um processo mais completo do que quando feito com
+    :kbd:`F3`. 
+:kbd:`F4`
+    Mostra a paleta do jogo, os gráficos decodificados, os gráficos em
+    pedaços, os caracteres e qualquer outro *tilemap* disponível.
+
+    Use :kbd:`Enter` para alternar entre os três modos (paleta,
+    gráficos, e *tilemaps*).
+
+    Pressione :kbd:`F4` novamente para fechar essa tela.
+    Os controles principais de cada modo variam um pouco:
+
+    **Modo paleta/tabela de cores**:
+
+    * :kbd:`[` :kbd:`]` - Alterna entre as paletas.
+    * :kbd:`Cima` / :kbd:`Baixo` - Sobe/desce uma linha por vez.
+    * :kbd:`PgUp` / :kbd:`PgDn` - Sobe/desce uma página por vez.
+    * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista.
+    * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de cores por fila.
+    * :kbd:`0` - Restaura a quantidade de cores por fila.
+    * :kbd:`Enter` - Alterna para o visualizador gráfico.
+
+    **Modo gráfico**:
+
+    * :kbd:`[` :kbd:`]` - Alterna entre diferentes conjuntos gráficos.
+    * :kbd:`Cima` / :kbd:`Baixo` - Sobe/desce uma linha por vez.
+    * :kbd:`PgUp` / :kbd:`PgDn` - Sobe/desce uma página por vez.
+    * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista.
+    * :kbd:`Esquerda` / :kbd:`Direita` - Alterna a cor.
+    * :kbd:`R` - Rotaciona os pedaços em 90 º sentido horário.
+    * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de peças por fila.
+    * :kbd:`0` - Restaura a quantidade das peças por fila.
+    * :kbd:`Enter` - Alterna para o visualizador *tilemap*.
+
+    **Tilemap mode**:
+
+    * :kbd:`[` :kbd:`]` - switch between different tilemaps.
+    * :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 8 pixels por vez.
+    * :kbd:`Shift` + :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 1 pixel por vez.
+    * :kbd:`Control` + :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 64 pixels por vez.
+    * :kbd:`R` - Rotaciona os *tilemaps* em 90 º sentido horário.
+    * :kbd:`-` / :kbd:`+` - Aumenta/reduz o fator de aproximação.
+    * :kbd:`0` - Expande os pequenos *tilemaps* para preencher a tela.
+    * :kbd:`Enter` - Alterna par ao modo paleta/tabela de cores.
+
+    Observação: Nem todos os sistemas possuem gráficos decodificados e/ou *tilemaps*.
+:kbd:`Ctrl` esquerdo + :kbd:`F5`
+    Alterna o filtro.
+    (*Apenas na versão SDL do MAME*)
+:kbd:`Alt` esquerdo + :kbd:`Ctrl` esquerdo + :kbd:`F5`
+    Liga/desliga o processamento HLSL.
+    (*Apenas na versão não SDL do MAME*)
+:kbd:`F6`
+    Liga/desliga a trapaça. (caso a opção ``-cheat`` seja usada)
+:kbd:`Ctrl` + :kbd:`F6`
+    Reduz o prescaling.
+:kbd:`Ctrl` + :kbd:`F7`
+    Aumenta o prescaling.
+:kbd:`F7`
+    Carrega um estado. Você será solicitado a pressionar uma tecla ou
+    escolher no menu para determinar qual o estado deseja carregar.
+
+    *Observe que o recurso de salva o estado ainda não é suportado em
+    uma grande quantidade de drivers. Caso um determinado driver não
+    funcione perfeitamente com este recurso, será exibido um aviso
+    alertando a incompatibilidade.*
+:kbd:`Shift` esquerdo + :kbd:`F7`
+    Salva um estado. É preciso pressionar uma tecla a mais para
+    definir qual tecla será associada ao estado, semelhante à opção
+    anterior. Caso já exista um estado salvo, ele também aparecerá na
+    lista e também poderá ser substituído na lista.
+:kbd:`F8`
+    Reduz o salto de quadros em tempo real.
+:kbd:`F9`
+    Aumenta o salto de quadros em tempo real.
+:kbd:`F10`
+    Liga/desliga o supressor de velocidade.
+:kbd:`F11`
+    Liga/desliga o indicador de velocidade no topo da tela.
+:kbd:`Shift` esquerdo + :kbd:`F11`
+    Alterna a exibição do perfil interno (caso tenha sido compilado com ele).
+:kbd:`Alt` esquerdo + :kbd:`F11`
+    Grava um vídeo com filtros HLSL.
+:kbd:`F12`
+    Grava um print da tela.
+:kbd:`Shift` esquerdo + :kbd:`F12`
+    Começa a gravação de um vídeo MNG.
+:kbd:`Control` esquerdo + :kbd:`Shift` esquerdo + :kbd:`F12`
+    Começa a gravação de um vídeo AVI.
+:kbd:`Alt` esquerdo + :kbd:`F12`
+    Faz um print da tela com um filtro HLSL.
+:kbd:`Insert`
+    Acelera a emulação. Enquanto a tecla estiver pressionada, a
+    emulação é executada sem a supressão de velocidade e com o salto de
+    quadros no máximo.
+    (*Apenas na versão não SDL do MAME*)
+:kbd:`PgDn`
+    Acelera a emulação. Enquanto a tecla estiver pressionada, a
+    emulação é executada sem a supressão de velocidade e com o salto de
+    quadros no máximo.
+    (*Apenas na versão SDL do MAME*)
+:kbd:`Alt` esquerdo + :kbd:`Enter`
+    Alterna entre tela inteira e modo janela.
+:kbd:`ScrLk` / :kbd:`FwdDel` (Mac Desktop) / :kbd:`fn-Del` (Mac Laptop)
+    Mapeamento predefinido para o **uimodekey**.
+
+    Essa tecla alterna entre a interface do MAME e a interface que está
+    sendo emulada, quando a tecla é pressionada é possível usar a tecla
+    :kbd:`Tab` para alterar as opções do MAME e posteriormente retornar
+    na máquina emulada. Consulte também a opção
+    :ref:`-uimodekey<mame-commandline-uimodekey>`
+:kbd:`Esc`
+    Encerra a emulação, retorna para o menu anterior ou cancela uma
+    opção na interface.
+
+.. raw:: latex
+
+	\clearpage
+
+.. _default-selmenu-keys:
+
+Menus para a seleção de programas e sistemas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Os menus de seleção do programa e do sistema usam controles adicionais.
+
+:kbd:`Tab`
+    Move o focus do teclado/controlador para o próximo painel da interface.
+:kbd:`Shift` + :kbd:`Tab`
+    Move o focus do teclado/controlador para o painel anterior da interface.
+:kbd:`Alt` esquerda + :kbd:`F`
+    Adiciona ou remove o sistema ou programa selecionado da lista de favoritos
+    list.
+:kbd:`Alt` esquerdo + :kbd:`E`
+    Exporta a lista dos sistemas exibidos no momento.
+:kbd:`Alt` esquerdo + :kbd:`D`
+    Mostra o visualizador de informações em tamanho real caso as
+    informações estejam disponíveis para o sistema ou para o item
+    selecionado da lista programas. (Mostra as informações carregadas
+    pelo plug-in de dados dos arquivos externos, incluindo o
+    **history.xml** e o **mameinfo.dat**.)
+:kbd:`F1`
+    Inicia a auditoria das ROMs.
+
+
+.. _default-arcade-keys:
+
+Controles predefinidos das máquinas arcade
+------------------------------------------
+
+Esta seção aborda os controles que são aplicáveis à maioria dos tipos
+das máquinas de arcade. Observe que nem todas as máquinas terão todos
+estes controles disponíveis. Todos os controles abaixo são totalmente
+configuráveis na interface do usuário. Esta lista mostra a configuração
+predefinida do teclado.
+
+:kbd:`5` (*fora do teclado numérico*)
+    Ficha do slot 1
+:kbd:`6` (*fora do teclado numérico*)
+    Ficha do slot 2
+:kbd:`7` (*fora do teclado numérico*)
+    Ficha do slot 3
+:kbd:`8` (*fora do teclado numérico*)
+    Ficha do slot 4
+:kbd:`Backspace`
+    Cédula 1 (Para máquinas que tenham um receptor/leitor de cédulas)
+:kbd:`T`
+    Tilt
+
+    Normalmente um interruptor de inclinação ou sensor de impacto que
+    encerra o jogo atual, redefine os créditos e/ou reinicia a máquina
+    caso ela seja derrubada com muita força ou seja deslocada. Mais
+    comumente encontrado nas máquinas de pinball.
+:kbd:`-` (*fora do teclado numérico*)
+    Reduz o volume
+
+    Para máquinas que tenham um controle de volume.
+:kbd:`=` (*fora do teclado numérico*)
+    Aumenta o volume
+
+    Para máquinas que tenham um controle de volume.
+:kbd:`F1`
+    Redefine a memória
+
+    Isso redefine/zera o(s) placar(es), os créditos/prêmios, as
+    estatísticas e/ou as configurações do operados nas máquinas
+    compatíveis.
+:kbd:`F2`
+    Modo de serviço
+
+    Este é um botão existente em algumas máquinas para acessar este
+    modo, em outras máquinas pode ser uma chave ou uma chave DIP.
+:kbd:`9` (*fora do teclado numérico*)
+    Serviço 1
+
+    Estes botões geralmente servem para dar créditos de graça, sem
+    passar pela contabilidade da máquina, ou para navegar no menu de
+    serviço do operador.
+:kbd:`0` (*fora do teclado numérico*)
+    Serviço 2
+:kbd:`-` (*fora do teclado numérico*)
+    Serviço 3
+:kbd:`=` (*fora do teclado numérico*)
+    Serviço 4
+
+
+.. _default-game-keys:
+
+Controles predefinidos para jogos arcade
+----------------------------------------
+
+Esta seção aborda os controles que são aplicáveis aos jogos arcades.
+Todos os controles abaixo são totalmente configuráveis na interface do
+usuário. Esta lista mostra a configuração predefinida do teclado.
+
+:kbd:`5` (*fora do teclado numérico*)
+    Ficha do slot 1
+:kbd:`6` (*fora do teclado numérico*)
+    Ficha do slot 2
+:kbd:`7` (*fora do teclado numérico*)
+    Ficha do slot 3
+:kbd:`8` (*fora do teclado numérico*)
+    Ficha do slot 4
+:kbd:`1` (*fora do teclado numérico*)
+    Inicia o jogador 1 ou o modo com 1 jogador
+:kbd:`2` (*fora do teclado numérico*)
+    Inicia o jogador 2 ou o modo com 2 jogadores
+:kbd:`3` (*fora do teclado numérico*)
+    Inicia o jogador 3 ou o modo com 3 jogadores
+:kbd:`4` (*fora do teclado numérico*)
+    Inicia o jogador 4 ou o modo com 4 jogadores
+
+
+.. _default-player1-keys:
+
+Controles do jogador 1
+~~~~~~~~~~~~~~~~~~~~~~
+
+Seta :kbd:`cima`
+    Jogador 1 cima
+Seta :kbd:`baixo`
+    Jogador 1 baixo
+Seta :kbd:`esquerda`
+    Jogador 1 esquerda
+Seta :kbd:`direita`
+    Jogador 1 direita
+:kbd:`E`
+    Jogador 1 - Cima no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
+:kbd:`D`
+    Jogador 1 - Baixo no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
+:kbd:`S`
+    Jogador 1 - Esquerda no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
+:kbd:`F`
+    Jogador 1 - Direita no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
+:kbd:`I`
+    Jogador 1 - Cima no controle direito nas máquinas com dois controles (p.e. Robotron)
+:kbd:`K`
+    Jogador 1 - Baixo no controle direito nas máquinas com dois controles (p.e. Robotron)
+:kbd:`J`
+    Jogador 1 - Esquerdo no controle direito nas máquinas com dois controles (p.e. Robotron)
+:kbd:`L`
+    Jogador 1 - Direito no controle direito nas máquinas com dois controles (p.e. Robotron)
+:kbd:`Ctrl` esquerdo / **Mouse** :kbd:`B0` / **Pistola 1** **Botão** :kbd:`0`
+    Jogador 1 botão :kbd:`1`
+:kbd:`Alt` esquerdo / **Mouse** :kbd:`B2` / **Pistola 1** **Botão** :kbd:`1`
+    Jogador 1 botão :kbd:`2`
+:kbd:`Espaço` / **Mouse** :kbd:`B1` / **Joystick 1** **Botão** :kbd:`1` ou :kbd:`B`.
+    Jogador 1 botão :kbd:`3`
+:kbd:`Shift` esquerdo
+    Jogador 1 botão :kbd:`4`
+:kbd:`Z`
+    Jogador 1 botão :kbd:`5`
+:kbd:`X`
+    Jogador 1 botão :kbd:`6`
+:kbd:`C`
+    Jogador 1 botão :kbd:`7`
+:kbd:`V`
+    Jogador 1 botão :kbd:`8`
+:kbd:`B`
+    Jogador 1 botão :kbd:`9`
+:kbd:`N`
+    Jogador 1 botão :kbd:`10`
+:kbd:`M`
+    Jogador 1 botão :kbd:`11`
+:kbd:`,`
+    Jogador 1 botão :kbd:`12`
+:kbd:`.`
+    Jogador 1 botão :kbd:`13`
+:kbd:`/`
+    Jogador 1 botão :kbd:`14`
+:kbd:`Shift` direito
+    Jogador 1 botão :kbd:`15`
+
+
+.. _default-player2-keys:
+
+Controles do jogador 2
+~~~~~~~~~~~~~~~~~~~~~~
+
+:kbd:`R`
+    Jogador 2 cima
+:kbd:`F`
+    Jogador 2 baixo
+:kbd:`D`
+    Jogador 2 esquerda
+:kbd:`G`
+    Jogador 2 direita
+:kbd:`A`
+    Jogador 2 botão 1
+:kbd:`S`
+    Jogador 2 botão 2
+:kbd:`Q`
+    Jogador 2 botão 3
+:kbd:`W`
+    Jogador 2 botão 4
+:kbd:`E`
+    Jogador 2 botão 5
+
+
+.. _default-player3-keys:
+
+Controles do jogador 3
+~~~~~~~~~~~~~~~~~~~~~~
+
+:kbd:`I`
+    Jogador 3 cima
+:kbd:`K`
+    Jogador 3 baixo
+:kbd:`J`
+    Jogador 3 esquerda
+:kbd:`L`
+    Jogador 3 direita
+:kbd:`Control` direito
+    Jogador 3 botão 1
+:kbd:`Shift` direito
+    Jogador 3 botão 2
+:kbd:`Enter` (*fora do teclado numérico*)
+    Jogador 3 botão 3
+
+
+.. _default-player4-keys:
+
+Controles do jogador 4
+~~~~~~~~~~~~~~~~~~~~~~
+
+:kbd:`8` (*no teclado numérico*)
+    Jogador 4 cima
+:kbd:`2` (*no teclado numérico*)
+    Jogador 4 baixo
+:kbd:`4` (*no teclado numérico*)
+    Jogador 4 esquerda
+:kbd:`6` (*no teclado numérico*)
+    Jogador 4 direita
+:kbd:`0` (*no teclado numérico*)
+    Jogador 4 botão 1
+:kbd:`.` (*no teclado numérico*)
+    Jogador 4 botão 2
+:kbd:`Enter` (*no teclado numérico*)
+    Jogador 4 botão 3
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _default-mahjong-hanafuda-keys:
+
+Teclas predefinidas para Mahjong e Hanafuda
+-------------------------------------------
+
+A maioria dos jogos de mahjong e hanafuda utilizam um layout padronizado
+de controle. Algumas teclas podem estar ausentes dependendo do tipo de
+jogo. Por exemplo, jogos sem o recurso de bônus podem não ter as teclas
+*Take Score*, *Double Up*, *Big* e *Small*. Jogos sem a característica
+de aposta também podem não ter a tecla *Bet*. Alguns jogos podem não
+usar todas as teclas presentes, alguns por exemplo não usam as teclas
+*Flip Flop* e *Last Chance*.
+
+.. image:: images/mahjongpanel.svg
+    :width: 100%
+    :align: center
+    :alt: Standard mahjong control panel layout
+
+.. raw:: html
+
+	<p></p>
+
+Por causa da grande quantidade de teclas, o MAME apenas oferece a
+configuração padrão para um único conjunto de controles por jogador.
+Para jogos multiplayer de mahjong/hanafuda ou jogos com múltiplas
+posições de jogador, é preciso fazer uma configuração manual das teclas.
+Todas as teclas abaixo são totalmente configuráveis na interface do
+usuário. Esta lista mostra a configuração predefinida do teclado.
+
+
+:kbd:`5` (*fora do teclado numérico*)
+    Ficha do slot 1
+:kbd:`6` (*fora do teclado numérico*)
+    Ficha do slot 2
+:kbd:`7` (*fora do teclado numérico*)
+    Ficha do slot 3
+:kbd:`8` (*fora do teclado numérico*)
+    Ficha do slot 4
+:kbd:`Y`
+    Jogador 1 Mahjong/Hanafuda Flip Flop
+:kbd:`1` (*fora do teclado numérico*)
+    Inicia o jogador 1 ou o modo com 1 jogador
+:kbd:`2` (*fora do teclado numérico*)
+    Jogador 2 start or 2 players mode
+:kbd:`3` (*fora do teclado numérico*)
+    Jogador 3 start or 3 players mode
+
+    Mahjong Bet
+:kbd:`4` (*fora do teclado numérico*)
+    Jogador 4 start or 4 players mode
+:kbd:`Ctrl` direito
+    Jogador 1 Mahjong/Hanafuda Take Score
+:kbd:`Shift` direito
+    Jogador 1 Mahjong/Hanafuda Double Up
+:kbd:`Enter`
+    Jogador 1 Mahjong/Hanafuda Big
+:kbd:`Backspace`
+    Jogador 1 Mahjong/Hanafuda Small
+:kbd:`Alt` direito
+    Jogador 1 Mahjong/Hanafuda Last Chance
+:kbd:`Ctrl`
+    Mahjong Kan
+:kbd:`Alt`
+    Mahjong Pon
+:kbd:`Espaço`
+    Mahjong Chi
+:kbd:`Shift`
+    Mahjong Reach
+:kbd:`Z`
+    Mahjong Ron
+:kbd:`A`
+    Jogador 1 Mahjong/Hanafuda A
+:kbd:`B`
+    Jogador 1 Mahjong/Hanafuda B
+:kbd:`C`
+    Jogador 1 Mahjong/Hanafuda C
+:kbd:`D`
+    Jogador 1 Mahjong/Hanafuda D
+:kbd:`E`
+    Jogador 1 Mahjong/Hanafuda E
+:kbd:`F`
+    Jogador 1 Mahjong/Hanafuda F
+:kbd:`G`
+    Jogador 1 Mahjong/Hanafuda G
+:kbd:`H`
+    Jogador 1 Mahjong/Hanafuda H
+:kbd:`I`
+    Jogador 1 Mahjong I
+:kbd:`J`
+    Jogador 1 Mahjong J
+:kbd:`K`
+    Jogador 1 Mahjong K
+:kbd:`L`
+    Jogador 1 Mahjong L
+:kbd:`M`
+    Jogador 1 Mahjong M
+
+    Jogador 1 Hanafuda Yes
+:kbd:`N`
+    Jogador 1 Mahjong N
+
+    Jogador 1 Hanafuda No
+:kbd:`O`
+    Jogador 1 Taiwanese Mahjong O
+:kbd:`;`
+    Jogador 1 Taiwanese Mahjong P
+:kbd:`Q`
+    Jogador 1 Taiwanese Mahjong Q
+
+
+.. _default-gambling-keys:
+
+Teclas predefinidas para jogos de apostas
+-----------------------------------------
+
+Todas as teclas abaixo são totalmente configuráveis na interface do
+usuário. Esta lista mostra a configuração predefinida do teclado.
+
+Observe que muitos jogos de apostas usam botões para diferentes funções.
+Por exemplo, em jogos do tipo slot o jogo pode usar o botão *Start* para
+parar todos os mostradores rotativos onde não há um botão dedicado para
+isso. Ou em um jogo de poker os botões *hold* podem ser usados para
+controlar o *Double Up* do jogo e também não havendo uma tecla
+específica para os botões *Take Score*, *Double Up*, *High* e  *Low*.
+
+
+:kbd:`5`
+    Ficha do slot 1
+:kbd:`6`
+    Ficha do slot 2
+:kbd:`7`
+    Ficha do slot 3
+:kbd:`8`
+    Ficha do slot 4
+:kbd:`Backspace`
+    Cédula 1 (Para máquinas que tenham um receptor/leitor de cédulas)
+:kbd:`I`
+    Payout
+:kbd:`Q`
+    Key In
+:kbd:`W`
+    Key Out
+:kbd:`F1`
+    Redefine a memória
+:kbd:`9` (*fora do teclado numérico*)
+    Serviço 1
+
+    Estes botões geralmente servem para dar créditos de graça, sem
+    passar pela contabilidade da máquina, ou para navegar no menu de
+    serviço do operador.
+:kbd:`0` (*fora do teclado numérico*)
+    Serviço 2
+    Book-Keeping (para máquinas com este recurso)
+:kbd:`-` (*fora do teclado numérico*)
+    Serviço 3
+:kbd:`=` (*fora do teclado numérico*)
+    Serviço 4
+:kbd:`M`
+    Bet
+:kbd:`1` (*fora do teclado numérico*)
+    Inicia o jogador 1 ou o modo com 1 jogador
+:kbd:`2` (*fora do teclado numérico*)
+    Deal
+:kbd:`L`
+    Stand
+:kbd:`4` (*fora do teclado numérico*)
+    Take Score
+
+    Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
+    este botão coleta as apostas do jogo.
+:kbd:`3` (*fora do teclado numérico*)
+    Double Up
+
+    Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
+    este botão aposta os prêmios do jogo.
+:kbd:`D`
+    Half Gamble
+
+    Usado em muitos jogos para apostar a metade dos prêmios.
+:kbd:`A`
+    High
+:kbd:`S`
+    Low
+:kbd:`O`
+    Door
+
+
+.. _default-blackjack-keys:
+
+Teclas predefinidas para Blackjack
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Todas as teclas abaixo são totalmente configuráveis na interface do
+usuário. Esta lista mostra a configuração predefinida do teclado.
+
+
+:kbd:`1`
+    Inicia o jogador 1 ou o modo com 1 jogador
+
+    Usado para iniciar uma nova rodada em jogos que possuem botões
+    separados para fazer uma nova rodada e obter uma carta a mais.
+:kbd:`2`
+    Deal (hit)
+
+    Usado para obter uma carta a mais e para iniciar uma nova rodada em
+    jogos que não usam diferentes botões para fazer uma nova rodada e
+    para obter uma carta a mais.
+:kbd:`L`
+    Stand
+
+
+.. _default-poker-keys:
+
+Teclas predefinidas para Poker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Todas as teclas abaixo são totalmente configuráveis na interface do
+usuário. Esta lista mostra a configuração predefinida do teclado.
+
+
+:kbd:`1`
+    Inicia o jogador 1 ou o modo com 1 jogador
+
+    Usado para iniciar uma nova rodada em jogos que possuem botões
+    separados para fazer uma nova rodada e obter uma carta a mais.
+:kbd:`2`
+    Deal
+
+    Usado para substituir cartas e para iniciar uma nova rodada em jogos
+    que não usam diferentes botões para fazer uma nova rodada e para
+    substituir cartas.
+:kbd:`Z`
+    Hold 1/discard 1 (Mantém/descarta 1)
+:kbd:`X`
+    Hold 2/discard 2 (Mantém/descarta 2)
+:kbd:`C`
+    Hold 3/discard 3 (Mantém/descarta 2)
+:kbd:`V`
+    Hold 4/discard 4 (Mantém/descarta 4)
+:kbd:`B`
+    Hold 5/discard 5 (Mantém/descarta 1)
+:kbd:`N`
+    Cancela
+
+    Usado em alguns jogo para cancelar a seleção atual nas cartas que
+    serão mantidas/descartadas.
+
+
+.. _default-slots-keys:
+
+Teclas predefinidas para Slots
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Todas as teclas abaixo são totalmente configuráveis na interface do
+usuário. Esta lista mostra a configuração predefinida do teclado.
+
+
+:kbd:`1`
+    Inicia o jogador 1 ou o modo com 1 jogador
+:kbd:`X`
+    Para o mostrador rotativo 1
+:kbd:`C`
+    Para o mostrador rotativo 2
+:kbd:`V`
+    Para o mostrador rotativo 3
+:kbd:`B`
+    Para o mostrador rotativo 4
+:kbd:`Z`
+    Para todos os mostradores rotativos
+
+
+.. _default-computer-keys:
+
+Teclas predefinidas para computadores
+-------------------------------------
+
+Todas as teclas abaixo são totalmente configuráveis na interface do
+usuário. Esta lista mostra a configuração predefinida do teclado.
+
+Observe que os controles podem variar bastante de computador para
+computador, assim sendo, nem todas as teclas serão mostradas aqui. No
+MAME veja a opção "Entrada (esta máquina)" para obter mais detalhes da
+máquina que estiver usando.
+
+
+:kbd:`Tab`
+    Toggles the configuration menu.
+:kbd:`ScrLk` / :kbd:`FwdDel` (Mac Desktop) / :kbd:`fn-Del` (Mac Laptop)
+    Mapeamento predefinido para o **uimodekey**.
+
+    Essa tecla alterna entre a interface do MAME e a interface que está
+    sendo emulada, quando a tecla é pressionada é possível usar a tecla
+    :kbd:`Tab` para alterar as opções do MAME e posteriormente retornar
+    na máquina emulada. Consulte também a opção
+    :ref:`-uimodekey<mame-commandline-uimodekey>`
+:kbd:`F2`
+    Inicia a fita das máquinas que possuem leitores de fitas.
+:kbd:`Shift` + :kbd:`F2`
+    Interrompe a leitura da fita.
+:kbd:`Shift` esquerdo + :kbd:`ScrLk`
+    Cola a partir da área de transferência do sistema para a máquina
+    emulada.
+**Teclas numéricas**
+    Estas teclas são as mesmas usadas na máquina emulada.
+
+
+.. _default-othermachine-keys:
+
+Outras máquinas
+---------------
+
+Todas as teclas abaixo são totalmente configuráveis na interface do
+usuário. 
+
+Observe que os controles podem variar bastante de computador para
+computador, assim sendo, nem todas as teclas serão mostradas aqui. No
+MAME veja a opção "Entrada (esta máquina)" para obter mais detalhes da
+máquina que estiver usando.
+
 Comparativo entre os mapas de teclado
-=====================================
+-------------------------------------
 
 QWERTY US (104 Teclas)
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -145,7 +803,3 @@ QWERTY ABNT-2 (107 Teclas)
     :width: 100%
     :align: center
     :alt: QWERTY ABNT-2 (107)
-
-.. [1] Nem todos as máquinas possuem gráficos *tilemap* decodificados.
-.. [2] **tilemaps** são como pequenos recortes ou pedaços usados para montar a imagem do jogo.
-

@@ -1232,7 +1232,7 @@ msgstr "Mecânico"
 #: src/frontend/mame/ui/utils.cpp:90
 msgctxt "machine-filter"
 msgid "Not Mechanical"
-msgstr "Não Mecânico"
+msgstr "Não mecânico"
 
 #: src/frontend/mame/ui/utils.cpp:91
 msgctxt "machine-filter"
