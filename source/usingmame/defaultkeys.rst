@@ -43,7 +43,10 @@ estados.
 
 :kbd:`Tab`
 	Chama o cardápio de opções.
-:kbd:`~` (tecla til)
+
+| :kbd:`~` (tecla til no teclado americano)
+| :kbd:`'` (tecla ápice no teclado ABNT-2, a mesma tecla das aspas)
+
 	Mostra opções na tela.
 
 	Caso esteja usando o MAME com a opção ``-debug``, esta tecla
