@@ -595,7 +595,7 @@ pressionando a tecla **Enter** e digitando o valor manualmente.
 
 As opções disponíveis são:
 
-* **Fontes**
+* **Tipografia da interface**
 
   Permite a customização da tipografia da interface, dentro desta opção
   temos:
@@ -705,7 +705,7 @@ As opções disponíveis são:
 		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
 		Verde: **255**, Azul: **128**.
 
-	* **Cor de fundo da subposição do mouse**: Aparentemente não tem
+	* **Cor debaixo do mouse**: Aparentemente não tem
 	  função alguma.
 
 		O valor predefinido é Opacidade: **176**, Vermelho: **96**,
@@ -733,9 +733,9 @@ As opções disponíveis são:
   As opções disponíveis são:
 
 	* **Mostra tudo**
-	* **Esconda os filtros**
-	* **Esconda info/imagem**
-	* **Esconda ambos**
+	* **Esconde os filtros**
+	* **Esconde info/imagem**
+	* **Esconde ambos**
 
 
 .. raw:: latex
@@ -1055,7 +1055,7 @@ seja definido aqui.
 
 		O valor predefinido é **Ligado**.
 
-* **Inicie com a tela expandida**
+* **Inicia com a tela expandida**
 
   Faz o MAME exibir a tela emulada em uma janela com o tamanho máximo do
   seu monitor, caso contrário exibe a tela emulada em sua resolução
@@ -1159,7 +1159,7 @@ Opções diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Mantenha o aspecto 4:3 para os prints de tela**
+* **Mantenha o aspecto 4:3 nos prints da tela**
 
   Faz com que todos os prints da tela mantenham uma proporção de
   4:3.
@@ -1170,7 +1170,7 @@ Opções diversas
 
   Permite o uso de uma imagem como papel de parede na interface do MAME.
   Escolha uma imagem **.JPG** ou **.PNG** e a renomeie para
-  **backgound.jpg** ou **backgound.png**. Para fazer uso dela coloque-a
+  **background.jpg** ou **background.png**. Para fazer uso dela coloque-a
   no diretório raiz do MAME (no mesmo diretório onde o executável do
   MAME se encontra).
 
@@ -1248,7 +1248,7 @@ Mapeamento do dispositivo
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo paddle**
+* **Atribuição do dispositivo remo**
 
   Caso exista um controlador para remo, os valores
   disponíveis são **none**, **keyboard**, **mouse**, **Lightgun** e
@@ -1256,7 +1256,7 @@ Mapeamento do dispositivo
 
 		O valor predefinido é **keyboard**.
 
-* **Atribuição do dispositivo dial**
+* **Atribuição do dispositivo discador**
 
   Caso exista um controlador para discadores, os valores disponíveis
   são **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
@@ -1283,8 +1283,8 @@ Mapeamento do dispositivo
 
 .. _mamemenu-general-inputs:
 
-Entradas gerais
-~~~~~~~~~~~~~~~
+Todas as entradas
+~~~~~~~~~~~~~~~~~
 
 * **interface do usuário**
 
@@ -1606,7 +1606,7 @@ Entradas gerais
 
 	As teclas predefinidas são **Alt Esq** + **D**.
 
-* **UI Adiciona/remove favoritos**
+* **UI Adiciona ou remove um favorito**
 
   Adiciona ou remove as máquinas da lista de favoritos.
 
