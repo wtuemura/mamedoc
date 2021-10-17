@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-09 10:52+1100\n"
-"PO-Revision-Date: 2021-10-15 21:55-0300\n"
+"PO-Revision-Date: 2021-10-16 19:57-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Este driver precisa de imagens para ser carregado nos seguintes "
 "dispositivo(s): "
 
-#: src/frontend/mame/ui/ui.cpp:1268
+#: src/frontend/mame/ui/ui.cpp:1290
 #, c-format
 msgid ""
 "UI controls enabled\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Os controles da IU foram ativados\n"
 "Use %1$s para alternar"
 
-#: src/frontend/mame/ui/ui.cpp:1270
+#: src/frontend/mame/ui/ui.cpp:1292
 #, c-format
 msgid ""
 "UI controls disabled\n"
@@ -53,7 +53,7 @@ msgstr ""
 "Os controles da IU foram desativados\n"
 "Use %1$s para alternar"
 
-#: src/frontend/mame/ui/ui.cpp:1464
+#: src/frontend/mame/ui/ui.cpp:1486
 #, c-format
 msgid ""
 "Are you sure you want to quit?\n"
@@ -66,185 +66,185 @@ msgstr ""
 "Pressione ''%1$s'' para encerrar,\n"
 "Pressione ''%2$s'' para retornar à emulação."
 
-#: src/frontend/mame/ui/ui.cpp:1514
+#: src/frontend/mame/ui/ui.cpp:1536
 msgid "Master Volume"
 msgstr "Volume principal"
 
-#: src/frontend/mame/ui/ui.cpp:1523
+#: src/frontend/mame/ui/ui.cpp:1545
 #, c-format
 msgid "%1$s Volume"
 msgstr "Volume com %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1545
+#: src/frontend/mame/ui/ui.cpp:1567
 #, c-format
 msgid "Overclock CPU %1$s"
 msgstr "Overclock da CPU %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1553
+#: src/frontend/mame/ui/ui.cpp:1575
 #, c-format
 msgid "Overclock %1$s sound"
 msgstr "Overclock %1$s do áudio"
 
-#: src/frontend/mame/ui/ui.cpp:1572
+#: src/frontend/mame/ui/ui.cpp:1594
 #, c-format
 msgid "%1$s Refresh Rate"
 msgstr "Taxa de atualização da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1577
+#: src/frontend/mame/ui/ui.cpp:1599
 #, c-format
 msgid "%1$s Brightness"
 msgstr "Brilho da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1579
+#: src/frontend/mame/ui/ui.cpp:1601
 #, c-format
 msgid "%1$s Contrast"
 msgstr "Contraste da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1581
+#: src/frontend/mame/ui/ui.cpp:1603
 #, c-format
 msgid "%1$s Gamma"
 msgstr "Gama da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1585
+#: src/frontend/mame/ui/ui.cpp:1607
 #, c-format
 msgid "%1$s Horiz Stretch"
 msgstr "Extensão horizontal da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1587
+#: src/frontend/mame/ui/ui.cpp:1609
 #, c-format
 msgid "%1$s Horiz Position"
 msgstr "Posição horizontal da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1589
+#: src/frontend/mame/ui/ui.cpp:1611
 #, c-format
 msgid "%1$s Vert Stretch"
 msgstr "Extensão vertical da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1591
+#: src/frontend/mame/ui/ui.cpp:1613
 #, c-format
 msgid "%1$s Vert Position"
 msgstr "Posição vertical da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1607
+#: src/frontend/mame/ui/ui.cpp:1629
 #, c-format
 msgid "Laserdisc '%1$s' Horiz Stretch"
 msgstr "Laserdisc '%1$s' extensão horizontal"
 
-#: src/frontend/mame/ui/ui.cpp:1610
+#: src/frontend/mame/ui/ui.cpp:1632
 #, c-format
 msgid "Laserdisc '%1$s' Horiz Position"
 msgstr "Laserdisc '%1$s' posição horizontal"
 
-#: src/frontend/mame/ui/ui.cpp:1612
+#: src/frontend/mame/ui/ui.cpp:1634
 #, c-format
 msgid "Laserdisc '%1$s' Vert Stretch"
 msgstr "Laserdisc '%1$s' extensão vertical"
 
-#: src/frontend/mame/ui/ui.cpp:1615
+#: src/frontend/mame/ui/ui.cpp:1637
 #, c-format
 msgid "Laserdisc '%1$s' Vert Position"
 msgstr "Laserdisc '%1$s' posição vertical"
 
-#: src/frontend/mame/ui/ui.cpp:1625
+#: src/frontend/mame/ui/ui.cpp:1647
 msgid "Vector Flicker"
 msgstr "Cintilação vetorial"
 
-#: src/frontend/mame/ui/ui.cpp:1626
+#: src/frontend/mame/ui/ui.cpp:1648
 msgid "Beam Width Minimum"
 msgstr "Largura mínima do feixe de luz"
 
-#: src/frontend/mame/ui/ui.cpp:1627
+#: src/frontend/mame/ui/ui.cpp:1649
 msgid "Beam Width Maximum"
 msgstr "Largura máxima do feixe de luz"
 
-#: src/frontend/mame/ui/ui.cpp:1628
+#: src/frontend/mame/ui/ui.cpp:1650
 msgid "Beam Dot Size"
 msgstr "Tamanho do ponto do feixe de luz"
 
-#: src/frontend/mame/ui/ui.cpp:1629
+#: src/frontend/mame/ui/ui.cpp:1651
 msgid "Beam Intensity Weight"
 msgstr "Peso da intensidade do feixe de luz"
 
-#: src/frontend/mame/ui/ui.cpp:1642
+#: src/frontend/mame/ui/ui.cpp:1664
 #, c-format
 msgid "Crosshair Scale %1$s"
 msgstr "Escala da mira da %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1642 src/frontend/mame/ui/ui.cpp:1644
+#: src/frontend/mame/ui/ui.cpp:1664 src/frontend/mame/ui/ui.cpp:1666
 msgid "X"
 msgstr "X"
 
-#: src/frontend/mame/ui/ui.cpp:1642 src/frontend/mame/ui/ui.cpp:1644
+#: src/frontend/mame/ui/ui.cpp:1664 src/frontend/mame/ui/ui.cpp:1666
 msgid "Y"
 msgstr "Y"
 
-#: src/frontend/mame/ui/ui.cpp:1644
+#: src/frontend/mame/ui/ui.cpp:1666
 #, c-format
 msgid "Crosshair Offset %1$s"
 msgstr "Compensação da mira %1$s"
 
-#: src/frontend/mame/ui/ui.cpp:1676
+#: src/frontend/mame/ui/ui.cpp:1698
 #, c-format
 msgid "%1$3ddB"
 msgstr "%1$3ddB"
 
-#: src/frontend/mame/ui/ui.cpp:1719
+#: src/frontend/mame/ui/ui.cpp:1741
 #, c-format
 msgid "%1$d%%"
 msgstr "%1$d%%"
 
-#: src/frontend/mame/ui/ui.cpp:1734
+#: src/frontend/mame/ui/ui.cpp:1756
 #, c-format
 msgid "%1$3.0f%%"
 msgstr "%1$3.0f%%"
 
-#: src/frontend/mame/ui/ui.cpp:1757 src/frontend/mame/ui/ui.cpp:1777
-#: src/frontend/mame/ui/ui.cpp:1796 src/frontend/mame/ui/ui.cpp:1814
-#: src/frontend/mame/ui/ui.cpp:1833 src/frontend/mame/ui/ui.cpp:1852
-#: src/frontend/mame/ui/ui.cpp:1871 src/frontend/mame/ui/ui.cpp:1890
-#: src/frontend/mame/ui/ui.cpp:1911 src/frontend/mame/ui/ui.cpp:1932
-#: src/frontend/mame/ui/ui.cpp:1953 src/frontend/mame/ui/ui.cpp:1974
+#: src/frontend/mame/ui/ui.cpp:1779 src/frontend/mame/ui/ui.cpp:1799
+#: src/frontend/mame/ui/ui.cpp:1818 src/frontend/mame/ui/ui.cpp:1836
+#: src/frontend/mame/ui/ui.cpp:1855 src/frontend/mame/ui/ui.cpp:1874
+#: src/frontend/mame/ui/ui.cpp:1893 src/frontend/mame/ui/ui.cpp:1912
+#: src/frontend/mame/ui/ui.cpp:1933 src/frontend/mame/ui/ui.cpp:1954
+#: src/frontend/mame/ui/ui.cpp:1975 src/frontend/mame/ui/ui.cpp:1996
 #, c-format
 msgid "%1$.3f"
 msgstr "%1$.3f"
 
-#: src/frontend/mame/ui/ui.cpp:1989 src/frontend/mame/ui/ui.cpp:2004
-#: src/frontend/mame/ui/ui.cpp:2019 src/frontend/mame/ui/ui.cpp:2034
-#: src/frontend/mame/ui/ui.cpp:2049
+#: src/frontend/mame/ui/ui.cpp:2011 src/frontend/mame/ui/ui.cpp:2026
+#: src/frontend/mame/ui/ui.cpp:2041 src/frontend/mame/ui/ui.cpp:2056
+#: src/frontend/mame/ui/ui.cpp:2071
 #, c-format
 msgid "%1$1.2f"
 msgstr "%1$1.2f"
 
-#: src/frontend/mame/ui/ui.cpp:2065
+#: src/frontend/mame/ui/ui.cpp:2087
 #, c-format
 msgid "Crosshair Scale X %1$1.3f"
 msgstr "Escala da mira X %1$1.3f"
 
-#: src/frontend/mame/ui/ui.cpp:2065
+#: src/frontend/mame/ui/ui.cpp:2087
 #, c-format
 msgid "Crosshair Scale Y %1$1.3f"
 msgstr "Escala da mira Y %1$1.3f"
 
-#: src/frontend/mame/ui/ui.cpp:2082
+#: src/frontend/mame/ui/ui.cpp:2104
 #, c-format
 msgid "Crosshair Offset X %1$1.3f"
 msgstr "Compensação da mira X %1$1.3f"
 
-#: src/frontend/mame/ui/ui.cpp:2082
+#: src/frontend/mame/ui/ui.cpp:2104
 #, c-format
 msgid "Crosshair Offset Y %1$1.3f"
 msgstr "Compensação da mira Y %1$1.3f"
 
-#: src/frontend/mame/ui/ui.cpp:2189
+#: src/frontend/mame/ui/ui.cpp:2191
 msgid "**Error saving ui.ini**"
 msgstr "**Houve um erro ao salvar o ui.ini**"
 
-#: src/frontend/mame/ui/ui.cpp:2248
+#: src/frontend/mame/ui/ui.cpp:2250
 #, c-format
 msgid "**Error saving %s.ini**"
 msgstr "**Houve um erro ao salvar o %s.ini**"
 
-#: src/frontend/mame/ui/ui.cpp:2252 src/frontend/mame/ui/miscmenu.cpp:763
+#: src/frontend/mame/ui/ui.cpp:2254 src/frontend/mame/ui/miscmenu.cpp:763
 msgid ""
 "\n"
 "    Configuration saved    \n"
@@ -684,24 +684,24 @@ msgstr "Atualização sincronizada dos quadros"
 msgid "Wait Vertical Sync"
 msgstr "Aguarde a sincronização vertical"
 
-#: src/frontend/mame/ui/menu.cpp:368 src/frontend/mame/ui/menu.cpp:672
+#: src/frontend/mame/ui/menu.cpp:368 src/frontend/mame/ui/menu.cpp:687
 #: src/frontend/mame/ui/videoopt.cpp:192 plugins/cheatfind/init.lua:766
 #: plugins/cheatfind/init.lua:777 plugins/cheat/init.lua:668
 msgid "On"
 msgstr "Ligado"
 
-#: src/frontend/mame/ui/menu.cpp:368 src/frontend/mame/ui/menu.cpp:675
+#: src/frontend/mame/ui/menu.cpp:368 src/frontend/mame/ui/menu.cpp:690
 #: src/frontend/mame/ui/videoopt.cpp:208 plugins/cheatfind/init.lua:763
 #: plugins/cheatfind/init.lua:774 plugins/cheat/init.lua:671
 #: plugins/cheat/init.lua:680
 msgid "Off"
 msgstr "Desligado"
 
-#: src/frontend/mame/ui/menu.cpp:678
+#: src/frontend/mame/ui/menu.cpp:693
 msgid "Auto"
 msgstr "Automático"
 
-#: src/frontend/mame/ui/menu.cpp:1190
+#: src/frontend/mame/ui/menu.cpp:1256
 #: src/frontend/mame/ui/simpleselgame.cpp:289
 msgid "Return to Previous Menu"
 msgstr "Retorna ao menu anterior"
@@ -1462,13 +1462,14 @@ msgctxt "swlist-info"
 msgid "Software list/item"
 msgstr "Lista do programa/item"
 
-#: src/frontend/mame/ui/datmenu.cpp:85 src/frontend/mame/ui/selmenu.cpp:2696
+#: src/frontend/mame/ui/datmenu.cpp:87 src/frontend/mame/ui/selmenu.cpp:2709
 msgid "Software List Info"
 msgstr "Informação da lista do programa"
 
-#: src/frontend/mame/ui/datmenu.cpp:398
-msgid "Revision: "
-msgstr "Revisão: "
+#: src/frontend/mame/ui/datmenu.cpp:474
+#, c-format
+msgid "Revision: %1$s"
+msgstr "Revisão: %1$s"
 
 #: src/frontend/mame/ui/miscmenu.cpp:78 src/frontend/mame/ui/confswitch.cpp:165
 #: src/frontend/mame/ui/slotopt.cpp:203
@@ -1584,7 +1585,7 @@ msgstr "Salva a configuração da máquina"
 msgid "Configure Machine:"
 msgstr "Configure a máquina:"
 
-#: src/frontend/mame/ui/miscmenu.cpp:873 src/frontend/mame/ui/selmenu.cpp:2634
+#: src/frontend/mame/ui/miscmenu.cpp:873 src/frontend/mame/ui/selmenu.cpp:2649
 msgid " (default)"
 msgstr " (padrão)"
 
@@ -1784,7 +1785,7 @@ msgid "Configure Options"
 msgstr "Configurações"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:284
-#: src/frontend/mame/ui/selmenu.cpp:1287
+#: src/frontend/mame/ui/selmenu.cpp:1288
 msgid "Exit"
 msgstr "Encerrar"
 
@@ -1803,7 +1804,7 @@ msgid "%1$-.100s"
 msgstr "%1$-.100s"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:328
-#: src/frontend/mame/ui/selmenu.cpp:677 src/frontend/mame/ui/selmenu.cpp:708
+#: src/frontend/mame/ui/selmenu.cpp:678 src/frontend/mame/ui/selmenu.cpp:709
 #, c-format
 msgid "%1$s, %2$-.100s"
 msgstr "%1$s, %2$-.100s"
@@ -1814,52 +1815,52 @@ msgid "Driver: %1$-.100s"
 msgstr "Driver: %1$-.100s"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:347
-#: src/frontend/mame/ui/selmenu.cpp:723
+#: src/frontend/mame/ui/selmenu.cpp:724
 msgid "Overall: NOT WORKING"
 msgstr "Globalmente: NÃO FUNCIONA"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:349
-#: src/frontend/mame/ui/selmenu.cpp:725
+#: src/frontend/mame/ui/selmenu.cpp:726
 msgid "Overall: Unemulated Protection"
 msgstr "Globalmente: Proteção sem emulação"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:351
-#: src/frontend/mame/ui/selmenu.cpp:727
+#: src/frontend/mame/ui/selmenu.cpp:728
 msgid "Overall: Working"
 msgstr "Geral: Funciona"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:355
-#: src/frontend/mame/ui/selmenu.cpp:731
+#: src/frontend/mame/ui/selmenu.cpp:732
 msgid "Graphics: Unimplemented, "
 msgstr "Gráficos: Ainda não foi implementado, "
 
 #: src/frontend/mame/ui/simpleselgame.cpp:357
-#: src/frontend/mame/ui/selmenu.cpp:733
+#: src/frontend/mame/ui/selmenu.cpp:734
 msgid "Graphics: Imperfect, "
 msgstr "Gráficos: Imperfeitos, "
 
 #: src/frontend/mame/ui/simpleselgame.cpp:359
-#: src/frontend/mame/ui/selmenu.cpp:735
+#: src/frontend/mame/ui/selmenu.cpp:736
 msgid "Graphics: OK, "
 msgstr "Gráficos: BOM, "
 
 #: src/frontend/mame/ui/simpleselgame.cpp:362
-#: src/frontend/mame/ui/selmenu.cpp:738
+#: src/frontend/mame/ui/selmenu.cpp:739
 msgid "Sound: None"
 msgstr "Áudio: Nenhum"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:364
-#: src/frontend/mame/ui/selmenu.cpp:740
+#: src/frontend/mame/ui/selmenu.cpp:741
 msgid "Sound: Unimplemented"
 msgstr "Áudio: Não implementado"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:366
-#: src/frontend/mame/ui/selmenu.cpp:742
+#: src/frontend/mame/ui/selmenu.cpp:743
 msgid "Sound: Imperfect"
 msgstr "Áudio: Imperfeito"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:368
-#: src/frontend/mame/ui/selmenu.cpp:744
+#: src/frontend/mame/ui/selmenu.cpp:745
 msgid "Sound: OK"
 msgstr "Som: OK"
 
@@ -2340,114 +2341,114 @@ msgstr "Faça um clique duplo ou pressione %1$s para alterar o valor da cor"
 msgid "Menu Preview"
 msgstr "Pré-visualização do menu"
 
-#: src/frontend/mame/ui/custui.cpp:639
+#: src/frontend/mame/ui/custui.cpp:643
 msgctxt "color-sample"
 msgid "Normal"
 msgstr "Normal"
 
-#: src/frontend/mame/ui/custui.cpp:640
+#: src/frontend/mame/ui/custui.cpp:644
 msgctxt "color-sample"
 msgid "Subitem"
 msgstr "Subitem"
 
-#: src/frontend/mame/ui/custui.cpp:641
+#: src/frontend/mame/ui/custui.cpp:645
 msgctxt "color-sample"
 msgid "Selected"
 msgstr "Selecionado"
 
-#: src/frontend/mame/ui/custui.cpp:642
+#: src/frontend/mame/ui/custui.cpp:646
 msgctxt "color-sample"
 msgid "Mouse Over"
 msgstr "Sobreposição do mouse"
 
-#: src/frontend/mame/ui/custui.cpp:643
+#: src/frontend/mame/ui/custui.cpp:647
 msgctxt "color-sample"
 msgid "Clone"
 msgstr "Clone"
 
-#: src/frontend/mame/ui/custui.cpp:843
+#: src/frontend/mame/ui/custui.cpp:875
 msgid "ARGB Settings"
 msgstr "Configurações ARGB"
 
-#: src/frontend/mame/ui/custui.cpp:848 src/frontend/mame/ui/custui.cpp:851
+#: src/frontend/mame/ui/custui.cpp:880 src/frontend/mame/ui/custui.cpp:883
 msgctxt "color-channel"
 msgid "Alpha"
 msgstr "Alpha"
 
-#: src/frontend/mame/ui/custui.cpp:856 src/frontend/mame/ui/custui.cpp:859
+#: src/frontend/mame/ui/custui.cpp:888 src/frontend/mame/ui/custui.cpp:891
 msgctxt "color-channel"
 msgid "Red"
 msgstr "Vermelho"
 
-#: src/frontend/mame/ui/custui.cpp:864 src/frontend/mame/ui/custui.cpp:867
+#: src/frontend/mame/ui/custui.cpp:896 src/frontend/mame/ui/custui.cpp:899
 msgctxt "color-channel"
 msgid "Green"
 msgstr "Verde"
 
-#: src/frontend/mame/ui/custui.cpp:872 src/frontend/mame/ui/custui.cpp:875
+#: src/frontend/mame/ui/custui.cpp:904 src/frontend/mame/ui/custui.cpp:907
 msgctxt "color-channel"
 msgid "Blue"
 msgstr "Azul"
 
-#: src/frontend/mame/ui/custui.cpp:878
+#: src/frontend/mame/ui/custui.cpp:910
 msgid "Choose from palette"
 msgstr "Escolha da paleta"
 
-#: src/frontend/mame/ui/custui.cpp:921
+#: src/frontend/mame/ui/custui.cpp:957
 msgid "Color preview:"
 msgstr "Pré-visualização da cor:"
 
-#: src/frontend/mame/ui/custui.cpp:1013
+#: src/frontend/mame/ui/custui.cpp:1049
 msgctxt "color-preset"
 msgid "White"
 msgstr "Branco"
 
-#: src/frontend/mame/ui/custui.cpp:1014
+#: src/frontend/mame/ui/custui.cpp:1050
 msgctxt "color-preset"
 msgid "Silver"
 msgstr "Prata"
 
-#: src/frontend/mame/ui/custui.cpp:1015
+#: src/frontend/mame/ui/custui.cpp:1051
 msgctxt "color-preset"
 msgid "Gray"
 msgstr "Cinza"
 
-#: src/frontend/mame/ui/custui.cpp:1016
+#: src/frontend/mame/ui/custui.cpp:1052
 msgctxt "color-preset"
 msgid "Black"
 msgstr "Preto"
 
-#: src/frontend/mame/ui/custui.cpp:1017
+#: src/frontend/mame/ui/custui.cpp:1053
 msgctxt "color-preset"
 msgid "Red"
 msgstr "Vermelho"
 
-#: src/frontend/mame/ui/custui.cpp:1018
+#: src/frontend/mame/ui/custui.cpp:1054
 msgctxt "color-preset"
 msgid "Orange"
 msgstr "Laranja"
 
-#: src/frontend/mame/ui/custui.cpp:1019
+#: src/frontend/mame/ui/custui.cpp:1055
 msgctxt "color-preset"
 msgid "Yellow"
 msgstr "Amarelo"
 
-#: src/frontend/mame/ui/custui.cpp:1020
+#: src/frontend/mame/ui/custui.cpp:1056
 msgctxt "color-preset"
 msgid "Green"
 msgstr "Verde"
 
-#: src/frontend/mame/ui/custui.cpp:1021
+#: src/frontend/mame/ui/custui.cpp:1057
 msgctxt "color-preset"
 msgid "Blue"
 msgstr "Azul"
 
-#: src/frontend/mame/ui/custui.cpp:1022
+#: src/frontend/mame/ui/custui.cpp:1058
 msgctxt "color-preset"
 msgid "Violet"
 msgstr "Violeta"
 
-#: src/frontend/mame/ui/about.cpp:60 src/frontend/mame/ui/selmenu.cpp:754
+#: src/frontend/mame/ui/about.cpp:60 src/frontend/mame/ui/selmenu.cpp:755
 #, c-format
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
@@ -2670,49 +2671,49 @@ msgstr "Seleção parcial do programa:"
 msgid "BIOS selection:"
 msgstr "Seleção da BIOS:"
 
-#: src/frontend/mame/ui/selmenu.cpp:681
+#: src/frontend/mame/ui/selmenu.cpp:682
 #, c-format
 msgid "Software is clone of: %1$-.100s"
 msgstr "O programa é um clone do: %1$-.100s"
 
-#: src/frontend/mame/ui/selmenu.cpp:683
+#: src/frontend/mame/ui/selmenu.cpp:684
 msgid "Software is parent"
 msgstr "O programa é o principal"
 
-#: src/frontend/mame/ui/selmenu.cpp:688
+#: src/frontend/mame/ui/selmenu.cpp:689
 msgid "Supported: No"
 msgstr "Há suporte: Não"
 
-#: src/frontend/mame/ui/selmenu.cpp:693
+#: src/frontend/mame/ui/selmenu.cpp:694
 msgid "Supported: Partial"
 msgstr "Há suporte: Parcial"
 
-#: src/frontend/mame/ui/selmenu.cpp:698
+#: src/frontend/mame/ui/selmenu.cpp:699
 msgid "Supported: Yes"
 msgstr "Há suporte: Sim"
 
-#: src/frontend/mame/ui/selmenu.cpp:714
+#: src/frontend/mame/ui/selmenu.cpp:715
 msgid "Driver is parent"
 msgstr "É o driver principal"
 
-#: src/frontend/mame/ui/selmenu.cpp:716 src/frontend/mame/ui/selmenu.cpp:718
+#: src/frontend/mame/ui/selmenu.cpp:717 src/frontend/mame/ui/selmenu.cpp:719
 #, c-format
 msgid "Driver is clone of: %1$-.100s"
 msgstr "O Driver é um clone do: %1$-.100s"
 
-#: src/frontend/mame/ui/selmenu.cpp:1287
+#: src/frontend/mame/ui/selmenu.cpp:1288
 msgid "Return to previous menu"
 msgstr "Retorna ao menu anterior"
 
-#: src/frontend/mame/ui/selmenu.cpp:2237
+#: src/frontend/mame/ui/selmenu.cpp:2246
 msgid "Images"
 msgstr "Imagens"
 
-#: src/frontend/mame/ui/selmenu.cpp:2238
+#: src/frontend/mame/ui/selmenu.cpp:2247
 msgid "Infos"
 msgstr "Informações"
 
-#: src/frontend/mame/ui/selmenu.cpp:2547
+#: src/frontend/mame/ui/selmenu.cpp:2562
 msgid ""
 "Required ROM/disk images for the selected system are missing or incorrect. "
 "Please acquire the correct files or select a different system.\n"
@@ -2723,7 +2724,7 @@ msgstr ""
 "selecione um sistema diferente.\n"
 "\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2563
+#: src/frontend/mame/ui/selmenu.cpp:2578
 msgid ""
 "Required ROM/disk images for the selected software are missing or incorrect. "
 "Please acquire the correct files or select a different software item.\n"
@@ -2734,333 +2735,333 @@ msgstr ""
 "selecione um programa diferente.\n"
 "\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2579
+#: src/frontend/mame/ui/selmenu.cpp:2594
 msgid "incorrect checksum"
 msgstr "checksum incorreto"
 
-#: src/frontend/mame/ui/selmenu.cpp:2582
+#: src/frontend/mame/ui/selmenu.cpp:2597
 msgid "incorrect length"
 msgstr "comprimento incorreto"
 
-#: src/frontend/mame/ui/selmenu.cpp:2585
+#: src/frontend/mame/ui/selmenu.cpp:2600
 msgid "not found"
 msgstr "não foi encontrado"
 
-#: src/frontend/mame/ui/selmenu.cpp:2596
+#: src/frontend/mame/ui/selmenu.cpp:2611
 #, c-format
 msgid "%1$s (%2$s) - %3$s\n"
 msgstr "%1$s (%2$s) - %3$s\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2598
+#: src/frontend/mame/ui/selmenu.cpp:2613
 #, c-format
 msgid "%1$s - %2$s\n"
 msgstr "%1$s - %2$s\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2602
+#: src/frontend/mame/ui/selmenu.cpp:2617
 msgid "Press any key to continue."
 msgstr "Pressione qualquer tecla pra continuar."
 
-#: src/frontend/mame/ui/selmenu.cpp:2732
+#: src/frontend/mame/ui/selmenu.cpp:2746
 msgid "General Info"
 msgstr "Informações gerais"
 
-#: src/frontend/mame/ui/selmenu.cpp:2940
+#: src/frontend/mame/ui/selmenu.cpp:2898
 #, c-format
-msgid "Romset\t%1$-.100s\n"
-msgstr "Romset\t%1$-.100s\n"
+msgid "Romset\t%1$s\n"
+msgstr "Romset\t%1$s\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2941
+#: src/frontend/mame/ui/selmenu.cpp:2899
 #, c-format
 msgid "Year\t%1$s\n"
 msgstr "Ano\t%1$s\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2942
+#: src/frontend/mame/ui/selmenu.cpp:2900
 #, c-format
-msgid "Manufacturer\t%1$-.100s\n"
-msgstr "Fabricante\t%1$-.100s\n"
+msgid "Manufacturer\t%1$s\n"
+msgstr "Fabricante\t%1$s\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2949
+#: src/frontend/mame/ui/selmenu.cpp:2907
 #, c-format
-msgid "Driver is Clone of\t%1$-.100s\n"
-msgstr "O Driver é um clone do\t%1$-.100s\n"
+msgid "Driver is Clone of\t%1$s\n"
+msgstr "O Driver é um clone do\t%1$s\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2954
+#: src/frontend/mame/ui/selmenu.cpp:2912
 msgid "Driver is Parent\t\n"
 msgstr "É o driver principal\t\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2958
+#: src/frontend/mame/ui/selmenu.cpp:2916
 msgid "Analog Controls\tYes\n"
 msgstr "Controles analógicos\tSim\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2960
+#: src/frontend/mame/ui/selmenu.cpp:2918
 msgid "Keyboard Inputs\tYes\n"
 msgstr "Entradas do teclado\tSim\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2963
+#: src/frontend/mame/ui/selmenu.cpp:2921
 msgid "Overall\tNOT WORKING\n"
 msgstr "Globalmente\tNÃO FUNCIONA\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2965
+#: src/frontend/mame/ui/selmenu.cpp:2923
 msgid "Overall\tUnemulated Protection\n"
 msgstr "Globalmente\tProteção não emulada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2967
+#: src/frontend/mame/ui/selmenu.cpp:2925
 msgid "Overall\tWorking\n"
 msgstr "Globalmente\tFunciona\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2970
+#: src/frontend/mame/ui/selmenu.cpp:2928
 msgid "Graphics\tUnimplemented\n"
 msgstr "Gráficos\tNão implementado\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2972
+#: src/frontend/mame/ui/selmenu.cpp:2930
 msgid "Graphics\tWrong Colors\n"
 msgstr "Graficos\tCores erradas\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2974
+#: src/frontend/mame/ui/selmenu.cpp:2932
 msgid "Graphics\tImperfect Colors\n"
 msgstr "Gráficos\tCores imperfeitas\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2976
+#: src/frontend/mame/ui/selmenu.cpp:2936
 msgid "Graphics\tImperfect\n"
 msgstr "Gráficos\tImperfeitos\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2978
+#: src/frontend/mame/ui/selmenu.cpp:2936
 msgid "Graphics\tOK\n"
 msgstr "Gráficos\tBOM\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2981
+#: src/frontend/mame/ui/selmenu.cpp:2939
 msgid "Sound\tNone\n"
 msgstr "Áudio\tNenhum\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2983
+#: src/frontend/mame/ui/selmenu.cpp:2941
 msgid "Sound\tUnimplemented\n"
 msgstr "Áudio\tNão implementado\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2985
+#: src/frontend/mame/ui/selmenu.cpp:2943
 msgid "Sound\tImperfect\n"
 msgstr "Áudio\tImperfeito\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2987
+#: src/frontend/mame/ui/selmenu.cpp:2945
 msgid "Sound\tOK\n"
 msgstr "Áudio\tBOM\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2990
+#: src/frontend/mame/ui/selmenu.cpp:2948
 msgid "Capture\tUnimplemented\n"
 msgstr "Captura\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2992
+#: src/frontend/mame/ui/selmenu.cpp:2950
 msgid "Capture\tImperfect\n"
 msgstr "Captura\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2995
+#: src/frontend/mame/ui/selmenu.cpp:2953
 msgid "Camera\tUnimplemented\n"
 msgstr "Câmera\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:2997
+#: src/frontend/mame/ui/selmenu.cpp:2955
 msgid "Camera\tImperfect\n"
 msgstr "Câmera\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3000
+#: src/frontend/mame/ui/selmenu.cpp:2958
 msgid "Microphone\tUnimplemented\n"
 msgstr "Microfone\tNão implementado\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3002
+#: src/frontend/mame/ui/selmenu.cpp:2960
 msgid "Microphone\tImperfect\n"
 msgstr "Microfone\tImperfeito\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3005
+#: src/frontend/mame/ui/selmenu.cpp:2963
 msgid "Controls\tUnimplemented\n"
 msgstr "Controles\tNão implementados\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3007
+#: src/frontend/mame/ui/selmenu.cpp:2965
 msgid "Controls\tImperfect\n"
 msgstr "Controles\tImperfeitos\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3010
+#: src/frontend/mame/ui/selmenu.cpp:2968
 msgid "Keyboard\tUnimplemented\n"
 msgstr "Teclado\tNão implementado\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3012
+#: src/frontend/mame/ui/selmenu.cpp:2970
 msgid "Keyboard\tImperfect\n"
 msgstr "Teclado\tImperfeito\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3015
+#: src/frontend/mame/ui/selmenu.cpp:2973
 msgid "Mouse\tUnimplemented\n"
 msgstr "Mouse\tNão implementado\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3017
+#: src/frontend/mame/ui/selmenu.cpp:2975
 msgid "Mouse\tImperfect\n"
 msgstr "Mouse\tImperfeito\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3020
+#: src/frontend/mame/ui/selmenu.cpp:2978
 msgid "Media\tUnimplemented\n"
 msgstr "Mídia\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3022
+#: src/frontend/mame/ui/selmenu.cpp:2980
 msgid "Media\tImperfect\n"
 msgstr "Mídia\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3025
+#: src/frontend/mame/ui/selmenu.cpp:2983
 msgid "Disk\tUnimplemented\n"
 msgstr "Disco\tNão implementado\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3027
+#: src/frontend/mame/ui/selmenu.cpp:2985
 msgid "Disk\tImperfect\n"
 msgstr "Disco\tImperfeito\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3030
+#: src/frontend/mame/ui/selmenu.cpp:2988
 msgid "Printer\tUnimplemented\n"
 msgstr "Impressora\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3032
+#: src/frontend/mame/ui/selmenu.cpp:2990
 msgid "Printer\tImperfect\n"
 msgstr "Impressora\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3035
+#: src/frontend/mame/ui/selmenu.cpp:2993
 msgid "Mag. Tape\tUnimplemented\n"
 msgstr "Fita magnética\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3037
+#: src/frontend/mame/ui/selmenu.cpp:2995
 msgid "Mag. Tape\tImperfect\n"
 msgstr "Fita magnética\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3040
+#: src/frontend/mame/ui/selmenu.cpp:2998
 msgid "Punch Tape\tUnimplemented\n"
 msgstr "Fita perfurada\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3042
+#: src/frontend/mame/ui/selmenu.cpp:3000
 msgid "Punch Tape\tImperfect\n"
 msgstr "Fita perfurada\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3045
+#: src/frontend/mame/ui/selmenu.cpp:3003
 msgid "Mag. Drum\tUnimplemented\n"
 msgstr "Cab. mag.\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3047
+#: src/frontend/mame/ui/selmenu.cpp:3005
 msgid "Mag. Drum\tImperfect\n"
 msgstr "Cab. mag.\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3050
+#: src/frontend/mame/ui/selmenu.cpp:3008
 msgid "(EP)ROM\tUnimplemented\n"
 msgstr "(EP)ROM\tNão implementado\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3052
+#: src/frontend/mame/ui/selmenu.cpp:3010
 msgid "(EP)ROM\tImperfect\n"
 msgstr "(EP)ROM\tImperfeito\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3055
+#: src/frontend/mame/ui/selmenu.cpp:3013
 msgid "Communications\tUnimplemented\n"
 msgstr "Comunicações\tNão implementadas\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3057
+#: src/frontend/mame/ui/selmenu.cpp:3015
 msgid "Communications\tImperfect\n"
 msgstr "Comunicações\tImperfeitas\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3060
+#: src/frontend/mame/ui/selmenu.cpp:3018
 msgid "LAN\tUnimplemented\n"
 msgstr "LAN\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3062
+#: src/frontend/mame/ui/selmenu.cpp:3020
 msgid "LAN\tImperfect\n"
 msgstr "LAN\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3065
+#: src/frontend/mame/ui/selmenu.cpp:3023
 msgid "WAN\tUnimplemented\n"
 msgstr "WAN\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3067
+#: src/frontend/mame/ui/selmenu.cpp:3025
 msgid "WAN\tImperfect\n"
 msgstr "WAN\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3070
+#: src/frontend/mame/ui/selmenu.cpp:3028
 msgid "Timing\tUnimplemented\n"
 msgstr "Cronometragem\tNão implementada\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3072
+#: src/frontend/mame/ui/selmenu.cpp:3030
 msgid "Timing\tImperfect\n"
 msgstr "Cronometragem\tImperfeita\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3074
+#: src/frontend/mame/ui/selmenu.cpp:3032
 msgid "Mechanical Machine\tYes\n"
 msgstr "Máquina mecânica\tSim\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3074
+#: src/frontend/mame/ui/selmenu.cpp:3032
 msgid "Mechanical Machine\tNo\n"
 msgstr "Máquina mecânica\tNão\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3075
+#: src/frontend/mame/ui/selmenu.cpp:3033
 msgid "Requires Artwork\tYes\n"
 msgstr "Precisa de ilustração\tSim\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3075
+#: src/frontend/mame/ui/selmenu.cpp:3033
 msgid "Requires Artwork\tNo\n"
 msgstr "Precisa de ilustração\tNão\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3076
+#: src/frontend/mame/ui/selmenu.cpp:3034
 msgid "Requires Clickable Artwork\tYes\n"
 msgstr "Requer Arte Clicável\tSim\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3076
+#: src/frontend/mame/ui/selmenu.cpp:3034
 msgid "Requires Clickable Artwork\tNo\n"
 msgstr "Precisa de ilustração clicável\tNão\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3078
+#: src/frontend/mame/ui/selmenu.cpp:3036
 msgid "Support Cocktail\tNo\n"
 msgstr "É compatível com o modo coquetel\tNão\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3079
+#: src/frontend/mame/ui/selmenu.cpp:3037
 msgid "Driver is BIOS\tYes\n"
 msgstr "O driver é BIOS\tSim\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3079
+#: src/frontend/mame/ui/selmenu.cpp:3037
 msgid "Driver is BIOS\tNo\n"
 msgstr "O driver é BIOS\tNão\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3080
+#: src/frontend/mame/ui/selmenu.cpp:3038
 msgid "Support Save\tYes\n"
 msgstr "É possível salvar\tSim\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3080
+#: src/frontend/mame/ui/selmenu.cpp:3038
 msgid "Support Save\tNo\n"
 msgstr "É possível salvar\tNão\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3081
+#: src/frontend/mame/ui/selmenu.cpp:3039
 msgid "Screen Orientation\tVertical\n"
 msgstr "Orientação da tela\tVertical\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3081
+#: src/frontend/mame/ui/selmenu.cpp:3039
 msgid "Screen Orientation\tHorizontal\n"
 msgstr "Orientação da tela\tHorizontal\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3091
+#: src/frontend/mame/ui/selmenu.cpp:3049
 msgid "Requires CHD\tYes\n"
 msgstr "Precisa de CHD\tSim\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3091
+#: src/frontend/mame/ui/selmenu.cpp:3049
 msgid "Requires CHD\tNo\n"
 msgstr "Precisa de CHD\tNão\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3104
+#: src/frontend/mame/ui/selmenu.cpp:3062
 msgid "ROM Audit Result\tOK\n"
 msgstr "Condição da ROM\tBOM\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3106
+#: src/frontend/mame/ui/selmenu.cpp:3064
 msgid "ROM Audit Result\tBAD\n"
 msgstr "Condição da ROM\tRUIM\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3109
+#: src/frontend/mame/ui/selmenu.cpp:3067
 msgid "Samples Audit Result\tNone Needed\n"
 msgstr "Condição das amostras\tNenhuma necessária\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3111
+#: src/frontend/mame/ui/selmenu.cpp:3069
 msgid "Samples Audit Result\tOK\n"
 msgstr "Condição das amostras\tBOM\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3113
+#: src/frontend/mame/ui/selmenu.cpp:3071
 msgid "Samples Audit Result\tBAD\n"
 msgstr "Condição das amostras\tRUIM\n"
 
-#: src/frontend/mame/ui/selmenu.cpp:3117
+#: src/frontend/mame/ui/selmenu.cpp:3075
 msgid ""
 "ROM Audit \tDisabled\n"
 "Samples Audit \tDisabled\n"
@@ -6614,7 +6615,7 @@ msgstr "Personalizado"
 msgid "Cheat Name"
 msgstr "Nome da trapaça"
 
-#: plugins/cheatfind/init.lua:398 plugins/cheatfind/init.lua:973
+#: plugins/cheatfind/init.lua:398 plugins/cheatfind/init.lua:977
 #, lua-format
 msgid "Default name is %s"
 msgstr "O nome padrão é %s"
@@ -6674,143 +6675,143 @@ msgid "Changes to this only take effect when \"Start new search\" is selected"
 msgstr ""
 "As mudanças nisto só tem efeito quando \"Iniciar nova busca\" for selecionada"
 
-#: plugins/cheatfind/init.lua:510
+#: plugins/cheatfind/init.lua:511
 msgid "Automatic"
 msgstr "Automático"
 
-#: plugins/cheatfind/init.lua:510
+#: plugins/cheatfind/init.lua:511
 msgid "Manual"
 msgstr "Manual"
 
-#: plugins/cheatfind/init.lua:511
+#: plugins/cheatfind/init.lua:512
 msgid "Pause Mode"
 msgstr "Modo de pausa"
 
-#: plugins/cheatfind/init.lua:518
+#: plugins/cheatfind/init.lua:519
 msgid "Manually toggle pause when needed"
 msgstr "Alterna manualmente a pausa quando for necessário"
 
-#: plugins/cheatfind/init.lua:521
+#: plugins/cheatfind/init.lua:522
 msgid "Automatically toggle pause with on-screen menus"
 msgstr "Alterna automaticamente a pausa quando estiver nos menus na tela"
 
-#: plugins/cheatfind/init.lua:542
+#: plugins/cheatfind/init.lua:543
 msgid "All slots cleared and current state saved to Slot 1"
 msgstr "Todos os slots limpos e o state atual foi salvo no Slot 1"
 
-#: plugins/cheatfind/init.lua:554
+#: plugins/cheatfind/init.lua:555
 msgid "Start new search"
 msgstr "Iniciar nova busca"
 
-#: plugins/cheatfind/init.lua:565
+#: plugins/cheatfind/init.lua:566
 #, lua-format
 msgid "Memory state saved to Slot %d"
 msgstr "State da memória salvo no Slot %d"
 
-#: plugins/cheatfind/init.lua:581
+#: plugins/cheatfind/init.lua:583
 #, lua-format
 msgid "Save current memory state to Slot %d"
 msgstr "Salvar o state da memória atual no Slot %d"
 
-#: plugins/cheatfind/init.lua:612
+#: plugins/cheatfind/init.lua:614
 #, lua-format
 msgid "%d total matches found"
 msgstr "Um total de %d combinações foram encontradas"
 
-#: plugins/cheatfind/init.lua:620
+#: plugins/cheatfind/init.lua:623
 #, lua-format
 msgid "Perform Compare : Slot %d %s Slot %d"
 msgstr "Realiza a comparação : Slot %d %s Slot %d"
 
-#: plugins/cheatfind/init.lua:621
+#: plugins/cheatfind/init.lua:624
 #, lua-format
 msgid "Perform Compare  :  Slot %d %s Slot %d %s %d"
 msgstr "Realiza a comparação  :  Slot %d %s Slot %d %s %d"
 
-#: plugins/cheatfind/init.lua:622
+#: plugins/cheatfind/init.lua:625
 #, lua-format
 msgid "Perform Compare  :  Slot %d BITWISE%s Slot %d"
 msgstr "Realiza a comparação  :  Slot %d BITWISE%s Slot %d"
 
-#: plugins/cheatfind/init.lua:623
+#: plugins/cheatfind/init.lua:626
 #, lua-format
 msgid "Perform Compare  :  Slot %d %s %d"
 msgstr "Realiza a comparação  :  Slot %d %s %d"
 
-#: plugins/cheatfind/init.lua:664 plugins/cheatfind/init.lua:706
+#: plugins/cheatfind/init.lua:667 plugins/cheatfind/init.lua:709
 #, lua-format
 msgid "Slot %d"
 msgstr "Slot %d"
 
-#: plugins/cheatfind/init.lua:675
+#: plugins/cheatfind/init.lua:678
 msgid "Left less than right"
 msgstr "Esquerda menor do que a direita"
 
-#: plugins/cheatfind/init.lua:677
+#: plugins/cheatfind/init.lua:680
 msgid "Left greater than right"
 msgstr "Esquerda maior do que a direita"
 
-#: plugins/cheatfind/init.lua:679
+#: plugins/cheatfind/init.lua:682
 msgid "Left equal to right"
 msgstr "Esquerda igual a direita"
 
-#: plugins/cheatfind/init.lua:681
+#: plugins/cheatfind/init.lua:684
 msgid "Left not equal to right"
 msgstr "Esquerda não é igual a direita"
 
-#: plugins/cheatfind/init.lua:683
+#: plugins/cheatfind/init.lua:686
 msgid "Left equal to right with bitmask"
 msgstr "Esquerdo igual ao direito com bitmask"
 
-#: plugins/cheatfind/init.lua:685
+#: plugins/cheatfind/init.lua:688
 msgid "Left not equal to right with bitmask"
 msgstr "Esquerdo não igual ao direito com bitmask"
 
-#: plugins/cheatfind/init.lua:687
+#: plugins/cheatfind/init.lua:690
 msgid "Left less than value"
 msgstr "Esquerdo menor do que o valor"
 
-#: plugins/cheatfind/init.lua:689
+#: plugins/cheatfind/init.lua:692
 msgid "Left greater than value"
 msgstr "Esquerdo maior do que o valor"
 
-#: plugins/cheatfind/init.lua:691
+#: plugins/cheatfind/init.lua:694
 msgid "Left equal to value"
 msgstr "Esquerda igual ao valor"
 
-#: plugins/cheatfind/init.lua:693
+#: plugins/cheatfind/init.lua:696
 msgid "Left not equal to value"
 msgstr "Esquerda não é igual ao valor"
 
-#: plugins/cheatfind/init.lua:715
+#: plugins/cheatfind/init.lua:718
 msgid "Value"
 msgstr "Valor"
 
-#: plugins/cheatfind/init.lua:717
+#: plugins/cheatfind/init.lua:720
 msgid "Difference"
 msgstr "Diferença"
 
-#: plugins/cheatfind/init.lua:722
+#: plugins/cheatfind/init.lua:725
 msgid "Any"
 msgstr "Qualquer"
 
-#: plugins/cheatfind/init.lua:728
+#: plugins/cheatfind/init.lua:731
 msgid "Data Format"
 msgstr "Formato dos Dados"
 
-#: plugins/cheatfind/init.lua:734
+#: plugins/cheatfind/init.lua:737
 msgid "Slot 1 Value"
 msgstr "Valor do Slot 1"
 
-#: plugins/cheatfind/init.lua:734
+#: plugins/cheatfind/init.lua:737
 msgid "Last Slot Value"
 msgstr "Último Valor do Slot"
 
-#: plugins/cheatfind/init.lua:737
+#: plugins/cheatfind/init.lua:740
 msgid "Test/Write Poke Value"
 msgstr "Testar/Gravar o Valor da Cutucada"
 
-#: plugins/cheatfind/init.lua:744
+#: plugins/cheatfind/init.lua:747
 msgid ""
 "Use this if you want to poke the Slot 1 value (eg. You started with "
 "something but lost it)"
@@ -6818,7 +6819,7 @@ msgstr ""
 "Use isto se você quer cutucar o Slot 1 (ex: Você começou com algo mas o "
 "perdeu)"
 
-#: plugins/cheatfind/init.lua:746
+#: plugins/cheatfind/init.lua:749
 msgid ""
 "Use this if you want to poke the Last Slot value (eg. You started without an "
 "item but finally got it)"
@@ -6826,7 +6827,7 @@ msgstr ""
 "Use isto se você quer cutucar o valor do Último Slot (ex: Você começou sem "
 "um item mas finalmente o conseguiu)"
 
-#: plugins/cheatfind/init.lua:748
+#: plugins/cheatfind/init.lua:751
 #, lua-format
 msgid "Use this if you want to poke %s"
 msgstr "Use isto se você quer cutucar o %s"
@@ -6835,48 +6836,48 @@ msgstr "Use isto se você quer cutucar o %s"
 msgid "Aligned only"
 msgstr "Só alinhado"
 
-#: plugins/cheatfind/init.lua:787
+#: plugins/cheatfind/init.lua:791
 msgid "Undo last search -- #"
 msgstr "Desfazer a última busca -- #"
 
-#: plugins/cheatfind/init.lua:791
+#: plugins/cheatfind/init.lua:795
 msgid "Match block"
 msgstr "Combinar com o bloco"
 
-#: plugins/cheatfind/init.lua:794
+#: plugins/cheatfind/init.lua:798
 msgid "All"
 msgstr "Tudo"
 
-#: plugins/cheatfind/init.lua:903
+#: plugins/cheatfind/init.lua:907
 #, lua-format
 msgid "Test Cheat %08X_%02X"
 msgstr "Testar Trapaça %08X_%02X"
 
-#: plugins/cheatfind/init.lua:943
+#: plugins/cheatfind/init.lua:947
 msgid "Cheat engine not available"
 msgstr "A engine da trapaça não está disponível"
 
-#: plugins/cheatfind/init.lua:999
+#: plugins/cheatfind/init.lua:1003
 msgid "Test"
 msgstr "Teste"
 
-#: plugins/cheatfind/init.lua:999
+#: plugins/cheatfind/init.lua:1003
 msgid "Write"
 msgstr "Gravar"
 
-#: plugins/cheatfind/init.lua:999
+#: plugins/cheatfind/init.lua:1003
 msgid "Watch"
 msgstr "Observar"
 
-#: plugins/cheatfind/init.lua:1016
+#: plugins/cheatfind/init.lua:1020
 msgid "Page"
 msgstr "Página"
 
-#: plugins/cheatfind/init.lua:1034
+#: plugins/cheatfind/init.lua:1039
 msgid "Clear Watches"
 msgstr "Limpar Observações"
 
-#: plugins/cheatfind/init.lua:1049
+#: plugins/cheatfind/init.lua:1054
 msgid "Cheat Finder"
 msgstr "Localizador de Trapaças"
 
@@ -6953,15 +6954,15 @@ msgstr "Pressione o botão pra tecla de atalho ou espere pra sair sem mudar"
 msgid "Number of frames button will be pressed"
 msgstr "A quantidade dos quadros que o botão será pressionado"
 
-#: plugins/autofire/autofire_menu.lua:169
+#: plugins/autofire/autofire_menu.lua:165
 msgid "Number of frames button will be released"
 msgstr "A quantidade dos quadros que o botão não será pressionado"
 
-#: plugins/autofire/autofire_menu.lua:181
+#: plugins/autofire/autofire_menu.lua:179
 msgid "Edit autofire button"
 msgstr "Editar botão do auto-disparar"
 
-#: plugins/autofire/autofire_menu.lua:189 plugins/cheat/init.lua:650
+#: plugins/autofire/autofire_menu.lua:187 plugins/cheat/init.lua:650
 msgid "Done"
 msgstr "Feito"
 
@@ -7011,7 +7012,7 @@ msgstr "Definir teclas de atalho"
 msgid "Activated: %s = %s"
 msgstr "Ativado: %s = %s"
 
-#: plugins/cheat/init.lua:782 plugins/cheat/init.lua:840
+#: plugins/cheat/init.lua:787 plugins/cheat/init.lua:845
 #, lua-format
 msgid "Activated: %s"
 msgstr "Ativado: %s"
@@ -7021,12 +7022,12 @@ msgstr "Ativado: %s"
 msgid "Enabled: %s"
 msgstr "Ativado: %s"
 
-#: plugins/cheat/init.lua:849
+#: plugins/cheat/init.lua:854
 #, lua-format
 msgid "Disabled: %s"
 msgstr "Desativado: %s"
 
-#: plugins/cheat/init.lua:908
+#: plugins/cheat/init.lua:913
 #, lua-format
 msgid "%s added"
 msgstr "%s adicionado"
@@ -7100,10 +7101,6 @@ msgstr "MAMEinfo"
 #~ msgid "Add or remove favorites"
 #~ msgstr "Adicionar ou remover favoritos"
 
-#, c-format
-#~ msgid "Romset: %1$-.100s"
-#~ msgstr "Romset: %1$-.100s"
-
 #~ msgid "Custom UI Settings"
 #~ msgstr "Configurações Personalizadas da IU"
 
@@ -7159,10 +7156,6 @@ msgstr "MAMEinfo"
 
 #~ msgid "This machine has no input map."
 #~ msgstr "Esta máquina não tem mapa da entrada."
-
-#, c-format
-#~ msgid "romset: %1$-.100s"
-#~ msgstr "romset: %1$-.100s"
 
 #~ msgid "View"
 #~ msgstr "Visualizar"
