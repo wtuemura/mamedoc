@@ -2768,7 +2768,7 @@ msgstr "Informações gerais"
 #: src/frontend/mame/ui/selmenu.cpp:2898
 #, c-format
 msgid "Romset\t%1$s\n"
-msgstr "Romset\t%1$s\n"
+msgstr "Nome da rom\t%1$s\n"
 
 #: src/frontend/mame/ui/selmenu.cpp:2899
 #, c-format
