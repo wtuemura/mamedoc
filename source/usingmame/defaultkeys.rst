@@ -47,7 +47,7 @@ estados.
 | :kbd:`~` (tecla til no teclado americano)
 | :kbd:`'` (tecla ápice no teclado ABNT-2, a mesma tecla das aspas)
 
-	Mostra opções na tela.
+	Mostra as opções na tela.
 
 	Caso esteja usando o MAME com a opção ``-debug``, esta tecla
 	funciona como um ‘*break*’ na emulação.
@@ -235,8 +235,7 @@ Os menus de seleção do programa e do sistema usam controles adicionais.
 :kbd:`Shift` + :kbd:`Tab`
     Move o focus do teclado/controlador para o painel anterior da interface.
 :kbd:`Alt` esquerda + :kbd:`F`
-    Adiciona ou remove o sistema ou programa selecionado da lista de favoritos
-    list.
+    Adiciona ou remove o sistema ou programa selecionado da lista de favoritos.
 :kbd:`Alt` esquerdo + :kbd:`E`
     Exporta a lista dos sistemas exibidos no momento.
 :kbd:`Alt` esquerdo + :kbd:`D`
@@ -246,7 +245,7 @@ Os menus de seleção do programa e do sistema usam controles adicionais.
     pelo plug-in de dados dos arquivos externos, incluindo o
     **history.xml** e o **mameinfo.dat**.)
 :kbd:`F1`
-    Inicia a auditoria das ROMs.
+    Inicia a auditoria das ROMs e das imagens de disco.
 
 
 .. _default-arcade-keys:

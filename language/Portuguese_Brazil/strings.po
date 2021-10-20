@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-09 10:52+1100\n"
-"PO-Revision-Date: 2021-10-16 19:57-0300\n"
+"PO-Revision-Date: 2021-10-20 14:34-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -1862,7 +1862,7 @@ msgstr "Áudio: Imperfeito"
 #: src/frontend/mame/ui/simpleselgame.cpp:368
 #: src/frontend/mame/ui/selmenu.cpp:745
 msgid "Sound: OK"
-msgstr "Som: OK"
+msgstr "Som: BOM"
 
 #: src/frontend/mame/ui/cheatopt.cpp:87 plugins/cheat/init.lua:751
 #, c-format, lua-format
