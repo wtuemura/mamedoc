@@ -2653,7 +2653,7 @@ msgstr "Adiciona ou remove um favorito"
 
 #: src/frontend/mame/ui/selmenu.cpp:97
 msgid "Export displayed list to file"
-msgstr "Exporte a lista exibida para um arquivo"
+msgstr "Exporta a lista exibida para um arquivo"
 
 #: src/frontend/mame/ui/selmenu.cpp:98
 msgid "Audit media"
