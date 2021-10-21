@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-09 10:52+1100\n"
-"PO-Revision-Date: 2021-10-21 03:21-0300\n"
+"PO-Revision-Date: 2021-10-21 07:52-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -1571,7 +1571,7 @@ msgstr "Esta máquina não tem BIOS."
 
 #: src/frontend/mame/ui/miscmenu.cpp:823 src/frontend/mame/ui/mainmenu.cpp:168
 msgid "Add To Favorites"
-msgstr "Adiciona aos favoritos"
+msgstr "Adicione aos favoritos"
 
 #: src/frontend/mame/ui/miscmenu.cpp:825 src/frontend/mame/ui/mainmenu.cpp:170
 msgid "Remove From Favorites"
@@ -1693,7 +1693,7 @@ msgstr "Pressione %1$s para adicionar\n"
 #: src/frontend/mame/ui/inputmap.cpp:515
 #, c-format
 msgid "Press %1$s to clear\n"
-msgstr "Pressione %1$s para zerar\n"
+msgstr "Pressione %1$s para restaurar o valor original\n"
 
 #: src/frontend/mame/ui/inputmap.cpp:516
 #, c-format
@@ -2565,7 +2565,7 @@ msgstr "Continue na máquina"
 #: src/frontend/mame/ui/selmenu.cpp:76
 msgctxt "selmenu-artwork"
 msgid "Snapshots"
-msgstr "Ilustrações"
+msgstr "Captura da tela"
 
 #: src/frontend/mame/ui/selmenu.cpp:77
 msgctxt "selmenu-artwork"

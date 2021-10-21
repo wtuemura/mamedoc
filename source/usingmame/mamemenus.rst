@@ -509,9 +509,9 @@ da máquina emulada e as suas respectivas opções, quando houver.
 Snapshot
 ^^^^^^^^
 
-Tira um print da tela, caso esteja usando uma **ilustração** e ela tiver
-um nome, faça um clique duplo em cima do nome para que o print da tela
-seja feito.
+Faz uma captura da tela, caso esteja usando uma **ilustração** e ela
+tiver um nome, faça um clique duplo em cima do nome para que a captura
+da tela seja feito.
 
 .. raw:: html
 
@@ -527,7 +527,7 @@ seja feito.
 
 * **Screen 0 Pixel Aspect (X:Y)**
 
-  Faz um print da tela usando a proporção original (SAR) como 8:7,
+  Faz uma captura da tela usando a proporção original (SAR) como 8:7,
   12:7, etc.
 
 .. raw:: html
@@ -536,7 +536,7 @@ seja feito.
 
 * **Cocktail**
 
-  Faz um print da tela espelhada no eixo vertical.
+  Faz uma captura da tela espelhada no eixo vertical.
 
 .. raw:: html
 
@@ -544,15 +544,15 @@ seja feito.
 
 * **Rotação**
 
-  Faz um print da tela com a tela rotacionada como demonstrado no
+  Faz uma captura da tela com a tela rotacionada como demonstrado no
   exemplo anterior.
 
 		O valor predefinido é **None**.
 
 * **Aproxime a área da tela**
 
-  Quando a máquina estiver usando uma artwork onde exista uma tela, o
-  print da tela será feito somente desta região.
+  Quando a máquina estiver usando uma artwork onde exista uma tela, a
+  captura da tela será feita somente desta área.
 
 		O valor predefinido é **Desligado**.
 
@@ -3112,7 +3112,7 @@ Permite que você configure individualmente cada máquina selecionada.
 
 	<p></p>
 
-* **Adiciona aos Favoritos**
+* **Adicione aos favoritos**
 
   Adiciona a máquina selecionada aos seus favoritos.
 

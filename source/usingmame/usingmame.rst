@@ -31,9 +31,10 @@ Inicie o MAME clicando duas vezes no executável:
 	\clearpage
 
 Boa parte da interface já foi traduzida, para trocar o idioma da
-interface vá em ``Configure Options -> Customize UI``, clique duas vezes
-em ``Language``, role para baixo e selecione **Portuguese (Brazil)**.
-Retorne e **Salve a configuração**.
+interface vá em :guilabel:`Configure Options` -->
+:guilabel:`Customize UI`, clique duas vezes em :guilabel:`Language`,
+role para baixo e selecione :guilabel:`Portuguese (Brazil)`. Retorne e
+:guilabel:`Salve a configuração`.
 
 A versão da tradução compatível com este documento pode ser encontrado
 em `mamedoc <https://github.com/wtuemura/mamedoc>`_ ou mais precisamente
@@ -95,33 +96,35 @@ das máquinas mostram um ícone.
 	\clearpage
 
 Para iniciar uma máquina na lista que aparece ao centro da tela clique
-2x no nome da máquina desejada. Pressione **F12** durante a execução da
-máquina para que seja salvo um **print da tela** na pasta **snap**.
-Ao encerrar a emulação a imagem da tela vai aparecer do lado direito da
-interface do MAME.
+2x no nome da máquina desejada. Pressione :kbd:`F12` durante a execução
+da máquina para que seja salvo uma **captura da tela** na pasta
+**snap**. Ao encerrar a emulação a imagem da tela vai aparecer do lado
+direito da interface do MAME.
 
-.. figure:: images/mame_print_tela.png
+.. figure:: images/mame_captura_tela.png
 	:width: 100%
 	:align: center
 	:figclass: align-center
-	:alt: Print de tela
+	:alt: Captura da tela
 
 Ainda no site do **progetto-SNAPS** é possível encontrar imagens para
-completar todas as abas dentro de **Imagens** como **Gabinetes**,
-**Painéis de controle**, **PCB** e vários outros. Porém quanto mais
-itens visuais forem adicionados, mais e mais o MAME vai demorar para
-iniciar por causa dos arquivos extras, leve isso em consideração.
+completar todas as abas dentro de :guilabel:`Imagens` como
+:guilabel:`Gabinetes`, :guilabel:`Painéis de controle`, :guilabel:`PCI`
+e vários outros. Porém quanto mais itens visuais forem adicionados, mais
+e mais o MAME vai demorar para iniciar por causa dos arquivos extras,
+leve isso em consideração.
 
 .. raw:: latex
 
 	\clearpage
 
 As máquinas que você mais gosta de jogar podem ser adicionadas aos
-**Favoritos**, na interface durante a seleção da máquina clique com o
-botão direito em cima do nome da máquina e selecione a opção
-**Adicione aos favoritos**. Caso tenha iniciado o MAME pela linha de
-comando ou caso a máquina já esteja rodando, pressione **TAB** para
-abrir a tela de opções e escolha **Adicione aos favoritos**.
+:guilabel:`Favoritos`, na interface durante a seleção da máquina clique
+com o botão direito em cima do nome da máquina e selecione a opção
+:guilabel:`Adicione aos favoritos`. Caso tenha iniciado o MAME pela
+linha de comando ou caso a máquina já esteja rodando, pressione
+:kbd:`TAB` para abrir a tela de opções e escolha
+:guilabel:`Adicione aos favoritos`.
 
 .. figure:: images/mame_favoritos.png
 	:width: 100%
@@ -259,8 +262,8 @@ completo, etc.
 
 	\clearpage
 
-Vamos iniciar o Expert XP-800 da Gradiente (expert10), porém, verifique
-antes se a ROM existe::
+Vamos iniciar o **Expert XP-800** da Gradiente (expert10), porém,
+verifique antes se a ROM existe::
 
 	mame -verifyroms expert10
 	romset expert10 [expert13] is good
@@ -329,9 +332,9 @@ Para usar quaisquer itens da lista de slots como o
 
 	mame expert10 -centronics covox
 
-O slot **cartslot1** e **cartslot2** são para os dois cartuchos, para
-usar o **covox** junto com o cartucho de **midi** e o **moonsound**
-faça::
+O slot :guilabel:`cartslot1` e :guilabel:`cartslot2` são para os dois
+cartuchos, para usar o **covox** junto com o cartucho de **midi** e o
+**moonsound** faça::
 
 	mame expert10 -centronics covox -cartslot1 bm_012 -cartslot2 moonsound
 
@@ -344,9 +347,9 @@ com o comando::
 	mame expert10 -centronics covox -cartslot1 bm_012 -midiout1 "VirtualMIDISynth #1" -cartslot2 moonsound
 
 Também é possível selecionar os mesmos itens através da interface do
-MAME, depois de iniciar o **expert10** pressione **Screen Lock** ou
-**SrcLk** dependendo do teclado, para usar o teclado do seu computador,
-pressione **Tab** e vá em **Dispositivos de slot**:
+MAME, depois de iniciar o **expert10** pressione :kbd:`ScrLk` para usar
+o teclado do seu computador, pressione :kbd:`Tab` e vá em
+:guilabel:`Dispositivos de slot`:
 
 .. figure:: images/mame_slot_options.png
 	:width: 100%
@@ -357,15 +360,16 @@ pressione **Tab** e vá em **Dispositivos de slot**:
 Repare que todos os itens compatíveis com o sistema também estão
 disponíveis pela interface ao clicar nas setas esquerda e direita do
 teclado. Para surtir efeito é preciso selecionar os itens desejados e
-clicar duas vezes em **Reinicie**.
+clicar duas vezes em :guilabel:`Redefine` para que o MAME seja
+reiniciado com estas opções definidas.
 
 .. raw:: latex
 
 	\clearpage
 
-Através do **Gerenciador de arquivos** é possível carregar arquivos
-avulsos, talvez uma gravação de uma fita k7 feita por você, a imagem de
-algum cartucho que só você tenha, que tenha baixado, etc.
+Através do :guilabel:`Gerenciador de arquivos` é possível carregar
+arquivos avulsos, talvez uma gravação de uma fita k7 feita por você, a
+imagem de algum cartucho que só você tenha, que tenha baixado, etc.
 
 .. figure:: images/mame_gerenciador.png
 	:width: 100%
@@ -386,7 +390,10 @@ Para carregar uma imagem de uma fita k7 por exemplo, faça::
 
 	mame expert10 -cass msx/zanac.cas 
 
-Já na interface do sistema carregue a imagem com o comando
+Observe que ``msx/zanac.cas`` é uma pasta chamada **msx** dentro do
+diretório onde o executável do MAME se encontra, se os seus arquivos
+estão num outro lugar, informe o caminho completo para este arquivo. Já
+na interface do sistema carregue a imagem com o comando
 ``load"cas:",r``, se  imagem for compatível com o sistema emulado deverá
 aparecer **Found: ZANAC** ou qualquer outra imagem que esteja sendo
 carregada. Caso a mensagem **Found:** não apareça, significa que talvez
@@ -401,12 +408,12 @@ está com algum problema, não foi capturada corretamente, etc.
 
 No topo da tela há o contador e a leitura da imagem é feita em tempo
 real, assim como é feito no hardware físico. Para acelerar o processo,
-clique em **Screen Lock** ou **SrcLk** dependendo do teclado para usar o
-teclado do computador e pressione **Page Down** ou **PgDn** no Linux ou
-**Insert** no Windows ou as teclas **F8** e **F9** para acelerar a
-emulação e com isso acelerar o processo de leitura. Ao terminar,
-pressione **F9** até aparecer **auto (0/10) 100%** para que a emulação
-volte para a velocidade normal.
+clique em :kbd:`SrcLk` para usar o teclado do computador e pressione
+:kbd:`PgDn` no Linux ou :kbd`Insert` no Windows ou as teclas :kbd:`F8` e
+:kbd:`F9` para acelerar a emulação e com isso acelerar o processo de
+leitura. Ao terminar, pressione :kbd:`F9` até aparecer
+:guilabel:`auto (0/10) 100%` no topo da tela para que a emulação volte
+para a velocidade normal.
 
 Este foi apenas um simples exemplo de centenas de outros sistemas que o
 MAME pode emular como o Macintosh, X68000, etc. 
