@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-09 10:52+1100\n"
-"PO-Revision-Date: 2021-10-20 21:10-0300\n"
+"PO-Revision-Date: 2021-10-21 03:21-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -410,7 +410,7 @@ msgstr "Omite a tela de informações ao iniciar"
 
 #: src/frontend/mame/ui/submenu.cpp:39
 msgid "Force 4:3 aspect for snapshot display"
-msgstr "Mantenha o aspecto 4:3 nos prints da tela"
+msgstr "Mantenha o aspecto 4:3 nas capturas da tela"
 
 #: src/frontend/mame/ui/submenu.cpp:40
 msgid "Use image as background"
@@ -530,7 +530,7 @@ msgstr "Capacidade de rebobinamento"
 
 #: src/frontend/mame/ui/submenu.cpp:77
 msgid "Bilinear filtering for snapshots"
-msgstr "Filtro bilinear para os prints da tela"
+msgstr "Filtro bilinear para as capturas da tela"
 
 #: src/frontend/mame/ui/submenu.cpp:78
 msgid "Burn-in"
@@ -1953,7 +1953,7 @@ msgstr "INIs com as categorias"
 #: src/frontend/mame/ui/dirmenu.cpp:51
 msgctxt "path-option"
 msgid "Snapshots"
-msgstr "Prints da tela"
+msgstr "Capturas da tela"
 
 #: src/frontend/mame/ui/dirmenu.cpp:52
 msgctxt "path-option"
@@ -6413,7 +6413,7 @@ msgstr "Mostra FPS"
 #: src/emu/inpttype.ipp:826
 msgctxt "input-name"
 msgid "Save Snapshot"
-msgstr "Salva print da tela"
+msgstr "Salva uma captura da tela"
 
 #: src/emu/inpttype.ipp:827
 msgctxt "input-name"
@@ -6433,7 +6433,7 @@ msgstr "Grava AVI"
 #: src/emu/inpttype.ipp:830
 msgctxt "input-name"
 msgid "Toggle Cheat"
-msgstr "Alterna trapaça"
+msgstr "Liga/Desliga trapaça"
 
 #: src/emu/inpttype.ipp:831
 msgctxt "input-name"

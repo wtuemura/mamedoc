@@ -832,9 +832,9 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **cheats** no
 		diretório raiz do MAME. [#]_
 
-* **Prints da tela**
+* **Capturas da tela**
 
-  Define o caminho do diretório onde serão armazenados os prints
+  Define o caminho do diretório onde serão armazenadas as capturas
   da tela e a gravação de vídeo.
 
 		O valor predefinido é um diretório chamado **snaps** no
@@ -1159,10 +1159,9 @@ Opções diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Mantenha o aspecto 4:3 nos prints da tela**
+* **Mantenha o aspecto 4:3 nas capturas da tela**
 
-  Faz com que todos os prints da tela mantenham uma proporção de
-  4:3.
+  Impõem uma proporção de 4:3 em todas as capturas da tela.
 
 		O valor predefinido é **Ligado**.
 
@@ -1397,9 +1396,9 @@ Todas as entradas
 	A tecla predefinida é **PgDn** em versões SDL do MAME e **Insert**
 	no Windows. 
 
-* **Salva print da tela**
+* **Salva uma captura da tela**
 
-  Salva um print da tela.
+  Captura a tela emulada e a salva no diretório predefinido.
 
 	A tecla predefinida é **F12**.
 
@@ -1421,7 +1420,7 @@ Todas as entradas
 
 	A teclas predefinidas são **F12** + **Shift Esq**.
 
-* **Alterna trapaça**
+* **Liga/Desliga trapaça**
 
   Ativa ou desativa a trapaça no jogo.
 
@@ -2821,15 +2820,15 @@ Opções do estado/reprodução
 
 	O valor predefinido é **100**
 
-* **Filtro bilinear para os prints da tela**
+* **Filtro bilinear para as capturas da tela**
 
-  Define se os vídeos ou os prints da tela terão o filtro aplicado.
+  Define se os vídeos ou as capturas da tela terão o filtro aplicado.
 
 	O valor predefinido é **Ligado**.
 
 * **Marca de queimado**
 
-  Cria prints da tela com marcas de fósforo queimado.
+  Cria uma captura da tela com marcas de fósforo queimado.
 
 	O valor predefinido é **Desligado**.
 

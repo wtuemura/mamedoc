@@ -188,13 +188,13 @@ Seta :kbd:`direita`
 :kbd:`Alt` esquerdo + :kbd:`F11`
     Grava um vídeo com filtros HLSL.
 :kbd:`F12`
-    Grava um print da tela.
+    Grava uma captura da tela.
 :kbd:`Shift` esquerdo + :kbd:`F12`
     Começa a gravação de um vídeo MNG.
 :kbd:`Control` esquerdo + :kbd:`Shift` esquerdo + :kbd:`F12`
     Começa a gravação de um vídeo AVI.
 :kbd:`Alt` esquerdo + :kbd:`F12`
-    Faz um print da tela com um filtro HLSL.
+    Faz uma captura da tela com um filtro HLSL.
 :kbd:`Insert`
     Acelera a emulação. Enquanto a tecla estiver pressionada, a
     emulação é executada sem a supressão de velocidade e com o salto de
