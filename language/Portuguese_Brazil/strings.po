@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-09 10:52+1100\n"
-"PO-Revision-Date: 2021-10-20 14:34-0300\n"
+"PO-Revision-Date: 2021-10-20 21:10-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -398,7 +398,7 @@ msgstr "Trapaças"
 
 #: src/frontend/mame/ui/submenu.cpp:36
 msgid "Show mouse pointer"
-msgstr "Exibe o ponteiro do mouse"
+msgstr "Mostra o ponteiro do mouse"
 
 #: src/frontend/mame/ui/submenu.cpp:37
 msgid "Confirm quit from machines"
@@ -406,7 +406,7 @@ msgstr "Confirma se deseja encerrar a máquina ou não"
 
 #: src/frontend/mame/ui/submenu.cpp:38
 msgid "Skip information screen at startup"
-msgstr "Omita a tela de informações ao iniciar"
+msgstr "Omite a tela de informações ao iniciar"
 
 #: src/frontend/mame/ui/submenu.cpp:39
 msgid "Force 4:3 aspect for snapshot display"
@@ -646,7 +646,7 @@ msgstr "Quantidade de telas"
 
 #: src/frontend/mame/ui/submenu.cpp:118
 msgid "Triple Buffering"
-msgstr "Buffering Triplo"
+msgstr "Buffering triplo"
 
 #: src/frontend/mame/ui/submenu.cpp:119
 msgid "HLSL"
@@ -713,7 +713,7 @@ msgstr "Tela #%d"
 
 #: src/frontend/mame/ui/videoopt.cpp:184
 msgid "Zoom to Screen Area"
-msgstr "Aumentar o Zoom pra Área da Tela"
+msgstr "Aproxime a área da tela"
 
 #: src/frontend/mame/ui/videoopt.cpp:196
 msgid "X Only"
@@ -767,7 +767,7 @@ msgstr "áudio"
 #: src/frontend/mame/ui/info.cpp:37
 msgctxt "emulation-feature"
 msgid "capture hardware"
-msgstr "capturar hardware"
+msgstr "captura hardware"
 
 #: src/frontend/mame/ui/info.cpp:38
 msgctxt "emulation-feature"
@@ -1870,7 +1870,7 @@ msgid ""
 "Cheat Comment:\n"
 "%s"
 msgstr ""
-"Comentário da Trapaça:\n"
+"Comentário da trapaça:\n"
 "%s"
 
 #: src/frontend/mame/ui/cheatopt.cpp:100
@@ -1879,7 +1879,7 @@ msgstr "Todas as trapaças foram recarregadas"
 
 #: src/frontend/mame/ui/cheatopt.cpp:140 plugins/cheat/init.lua:698
 msgid "Reset All"
-msgstr "Redefine Tudo"
+msgstr "Redefine tudo"
 
 #: src/frontend/mame/ui/cheatopt.cpp:143 plugins/cheat/init.lua:699
 msgid "Reload All"
@@ -7069,7 +7069,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"--- INFO do DRIVER ---\n"
+"--- INFO DO DRIVER ---\n"
 "Driver: "
 
 #: plugins/data/data_messinfo.lua:21

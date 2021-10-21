@@ -1139,7 +1139,7 @@ Opções diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Exibe o ponteiro do mouse**
+* **Mostra o ponteiro do mouse**
 
   Ativa ou não a exibição do mouse na interface do MAME.
 
@@ -1152,7 +1152,7 @@ Opções diversas
 
 		O valor predefinido é **Desligado**.
 
-* **Omita a tela de informações ao iniciar**
+* **Omite a tela de informações ao iniciar**
 
   Não exibe a tela com informações sobre o sistema quando iniciar uma
   máquina.
