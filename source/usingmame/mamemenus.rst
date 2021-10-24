@@ -564,7 +564,7 @@ aqui. Qualquer alteração que for feita ao ativar um plugin, ele é
 gravado no arquivo ``plugin.ini`` que fica na mesma pasta do MAME ou em
 ``~/.mame`` em sistemas Linux e macOS.
 
-Para mais informações consulte :ref:`Plug-ins <mamemenu-plugins>`.
+Para mais informações consulte :ref:`Plug-ins <plugins-intro>`.
 
 Visualização da DAT externa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

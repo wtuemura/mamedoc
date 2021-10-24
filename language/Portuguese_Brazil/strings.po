@@ -1683,7 +1683,7 @@ msgstr "[root%1$s]"
 #: src/frontend/mame/ui/inputmap.cpp:513
 #, c-format
 msgid "Press %1$s to set\n"
-msgstr "Pressione o %1$s pra configurar\n"
+msgstr "Pressione o %1$s para configurar\n"
 
 #: src/frontend/mame/ui/inputmap.cpp:514
 #, c-format
@@ -2073,7 +2073,7 @@ msgstr "Adiciona %1$s pasta(s) - Busca: %2$s_"
 
 #: src/frontend/mame/ui/dirmenu.cpp:433
 msgid "Press TAB to set"
-msgstr "Pressione TAB pra definir"
+msgstr "Pressione TAB para definir"
 
 #: src/frontend/mame/ui/dirmenu.cpp:517
 #, c-format
@@ -2759,7 +2759,7 @@ msgstr "%1$s - %2$s\n"
 
 #: src/frontend/mame/ui/selmenu.cpp:2617
 msgid "Press any key to continue."
-msgstr "Pressione qualquer tecla pra continuar."
+msgstr "Pressione qualquer tecla para continuar."
 
 #: src/frontend/mame/ui/selmenu.cpp:2746
 msgid "General Info"
@@ -6901,29 +6901,29 @@ msgstr "Portas de entrada"
 
 #: plugins/autofire/init.lua:103
 msgid "Failed to load autofire menu"
-msgstr "Falhou em carregar o menu do auto-disparar"
+msgstr "Houve uma falha ao carregar o menu do turbo"
 
 #: plugins/autofire/init.lua:110
 msgid "Autofire"
-msgstr "Auto-disparar"
+msgstr "Turbo"
 
 #: plugins/autofire/autofire_menu.lua:58
 msgid "Autofire buttons"
-msgstr "Botões do auto-disparar"
+msgstr "Botões turbo"
 
 #: plugins/autofire/autofire_menu.lua:59
 #, lua-format
 msgid "Press %s to delete"
-msgstr "Pressione %s pra apagar"
+msgstr "Pressione %s para excluir"
 
 #: plugins/autofire/autofire_menu.lua:68
 #, lua-format
 msgid "%s [%d Hz]"
-msgstr ""
+msgstr "%s [%d Hz]"
 
 #: plugins/autofire/autofire_menu.lua:75 plugins/autofire/autofire_menu.lua:204
 msgid "Add autofire button"
-msgstr "Adicionar botão do auto-disparar"
+msgstr "Adiciona um botão turbo"
 
 #: plugins/autofire/autofire_menu.lua:103
 #: plugins/autofire/autofire_menu.lua:104
@@ -6936,19 +6936,19 @@ msgstr "Entrada"
 
 #: plugins/autofire/autofire_menu.lua:106
 msgid "Hotkey"
-msgstr "Tecla de Atalho"
+msgstr "Tecla de atalho"
 
 #: plugins/autofire/autofire_menu.lua:107
 msgid "On frames"
-msgstr "Frames ligados"
+msgstr "Quadros ligados"
 
 #: plugins/autofire/autofire_menu.lua:108
 msgid "Off frames"
-msgstr "Frames desligados"
+msgstr "Quadros desligados"
 
 #: plugins/autofire/autofire_menu.lua:115 plugins/cheat/init.lua:618
 msgid "Press button for hotkey or wait to leave unchanged"
-msgstr "Pressione o botão pra tecla de atalho ou espere pra sair sem mudar"
+msgstr "Pressione o botão para definir a tecla de atalho ou aguarde para deixar como está"
 
 #: plugins/autofire/autofire_menu.lua:155
 msgid "Number of frames button will be pressed"
@@ -6960,7 +6960,7 @@ msgstr "A quantidade dos quadros que o botão não será pressionado"
 
 #: plugins/autofire/autofire_menu.lua:179
 msgid "Edit autofire button"
-msgstr "Editar botão do auto-disparar"
+msgstr "Edita o botão do turbo"
 
 #: plugins/autofire/autofire_menu.lua:187 plugins/cheat/init.lua:650
 msgid "Done"
@@ -6968,19 +6968,19 @@ msgstr "Feito"
 
 #: plugins/autofire/autofire_menu.lua:239
 msgid "Select an input for autofire"
-msgstr "Selecione uma entrada pra auto-disparar"
+msgstr "Selecione uma entrada para o botão turbo"
 
 #: plugins/timer/init.lua:94
 msgid "Current time"
-msgstr "Tempo Atual"
+msgstr "Tempo atual"
 
 #: plugins/timer/init.lua:96
 msgid "Total time"
-msgstr "Tempo Total"
+msgstr "Tempo total"
 
 #: plugins/timer/init.lua:98
 msgid "Play Count"
-msgstr "Contador de Jogadas"
+msgstr "Contador das jogadas"
 
 #: plugins/timer/init.lua:106
 msgid "Timer"
@@ -6988,12 +6988,12 @@ msgstr "Cronômetro"
 
 #: plugins/cheat/init.lua:606
 msgid "Select cheat to set hotkey"
-msgstr "Selecione uma trapaça pra definir a tecla de atalho"
+msgstr "Selecione uma tecla para definir o atalho da trapaça"
 
 #: plugins/cheat/init.lua:607
 #, lua-format
 msgid "Press %s to clear hotkey"
-msgstr "Pressione o %s pra limpar a tecla de atalho"
+msgstr "Pressione %s para limpar a tecla do atalho"
 
 #: plugins/cheat/init.lua:645
 msgid "None"
@@ -7005,7 +7005,7 @@ msgstr "Definir"
 
 #: plugins/cheat/init.lua:697
 msgid "Set hotkeys"
-msgstr "Definir teclas de atalho"
+msgstr "Define as teclas de atalho"
 
 #: plugins/cheat/init.lua:785
 #, lua-format
@@ -7046,7 +7046,7 @@ msgstr "Sysinfo"
 
 #: plugins/data/data_hiscore.lua:1220 plugins/data/data_hiscore.lua:1268
 msgid "High Scores"
-msgstr "Maiores Pontuações"
+msgstr "Maiores pontuações"
 
 #: plugins/data/data_marp.lua:136
 msgid "MARPScore"
