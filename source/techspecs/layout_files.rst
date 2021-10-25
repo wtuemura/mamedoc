@@ -2050,8 +2050,8 @@ caminho completo do arquivo como mostra o exemplo abaixo::
 
 .. _layfile-create-layout:
 
-Criando um arquivo layout na prática
-------------------------------------
+Criando diferentes arquivos layout na prática
+---------------------------------------------
 
 Neste capítulo criaremos um layout do zero para a máquina **Galaxian**
 demonstrando como definir todos os parâmetros para que todos os objetos
@@ -4754,6 +4754,285 @@ e depois montamos.
 	</view>
 	</mamelayout>
 
+
+.. raw:: latex
+
+	\clearpage
+
+.. _layfile-split-screen:
+
+Dividindo a tela com um controle ou outro tipo de informação
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Usar uma tela dividida com um controle pode ser útil para jogos do tipo
+*Mahjong* por exemplo, o uso do teclado do PC ou até mesmo um joystick
+comum em tais jogos pode ser confuso, deixando o controle visível e com
+a possibilidade de poder clicar nos botões na tela, assim você se
+preocupa com  o jogo e não em lidar com o mapeamento do teclado.
+
+Neste exemplo usaremos a máquina *Lovely Pop Mahjong JangJang Shimasho
+(Japan)*, ela usa o driver
+`ssv.cpp <https://github.com/mamedev/mame/blob/master/src/mame/drivers/ssv.cpp>`_,
+precisamos acessá-lo para identificar todas as suas entradas e
+posteriormente, mapear todos os botões.
+
+Para os controles usaremos uma variação do controle do capítulo
+:ref:`default-mahjong-hanafuda-keys`:
+
+.. image:: images/mahjongpanel2.svg
+    :width: 100%
+    :align: center
+    :alt: Controle de Mahjong
+
+.. raw:: html
+
+	<p></p>
+
+Crie a pasta ``artwork\janjans1``, dentro dela copie o arquivo **.svg**
+acima, crie também o arquivo ``default.lay`` e abra-o num editor de
+texto.
+
+Iniciamos o layout com o básico:
+
+.. code-block:: xml
+
+	<?xml version="1.0"?>
+	<mamelayout version="2">
+
+	<!--
+		Joystick Mahjang for janjans1
+		Created by: Wellington Terumi Uemura
+		License: CC by 4.0
+		https://mamedoc.readthedocs.io/
+		Date: October 25, 2021
+		Download: https://www.mediafire.com/file/gq1mgezijhcvx2p/janjans1.zip
+	-->
+	<!-- Aqui carregamos o nosso controle -->
+	<element name="base">
+		<image file="mahjongpanel2.svg" />
+	</element>
+
+	<!--
+		Aqui deixamos reservado para uso futuro, como iluminar as teclas
+		depois de serem clicadas por exemplo, porém, distrai demais.
+		Assim deixamos ele vazio.
+	-->
+	<element name="btn" defstate="1">
+		<text string=" ">
+			<color red="0.0" green="0.0" blue="0.0" />
+			<bounds x="0" y="0" width="58.038" height="58.038" />
+		</text>
+	</element>
+
+Agora precisamos ver no driver como os botões estão definidos para poder
+conectá-los na imagem do nosso controle, na data de criação deste texto,
+essa informação começa na
+`linha 1033 <https://github.com/mamedev/mame/blob/master/src/mame/drivers/ssv.cpp#L1033>`_:
+
+.. code-block:: xml
+
+	<!-- Definimos o tamanho da nossa área de trabalho dentro de um grupo -->
+	<group name="Controle_mah">
+		<bounds x="0" y="0" width="1136" height="216.63" />
+
+	<!-- Informamos o tamanho original da imagem do nosso controle -->
+	<element ref="base">
+		<bounds x="0" y="0" width="1136" height="216.63" />
+	</element>
+
+	<!--
+		Aqui mapeamos todos os botões segundo o driver, abrindo a nossa
+		imagem no Inkscape e desagrupando todos os elementos
+		(Shift + Ctrl + G), ao clicar na região amarelo claro do botão
+		"Start" por exemplo, nós temos as coordenadas e o seu respectivo
+		tamanho no topo da tela (lembrando que os valores devem estar em
+		px!).
+		É assim que obtemos os valores de posição e tamanho que usamos
+		abaixo.
+	-->
+		<!-- PON -->
+		<element ref="btn" inputtag="KEY0" inputmask="0x4">
+			<bounds x="442.969" y="159.961" width="58.038" height="58.038" />
+		</element>
+		<!-- L -->
+		<element ref="btn" inputtag="KEY0" inputmask="0x8">
+			<bounds x="882.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- H -->
+		<element ref="btn" inputtag="KEY0" inputmask="0x10">
+			<bounds x="562.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- D -->
+		<element ref="btn" inputtag="KEY0" inputmask="0x20">
+			<bounds x="242.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+
+		<!-- RON -->
+		<element ref="btn" inputtag="KEY1" inputmask="0x2">
+			<bounds x="715.014" y="159.961" width="58.038" height="58.038" />
+		</element>
+		<!-- CHI -->
+		<element ref="btn" inputtag="KEY1" inputmask="0x4">
+			<bounds x="522.965" y="159.961" width="58.038" height="58.038" />
+		</element>
+		<!-- K -->
+		<element ref="btn" inputtag="KEY1" inputmask="0x8">
+			<bounds x="802.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- G -->
+		<element ref="btn" inputtag="KEY1" inputmask="0x10">
+			<bounds x="482.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- C -->
+		<element ref="btn" inputtag="KEY1" inputmask="0x20">
+			<bounds x="162.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+
+
+		<!-- BET -->
+		<element ref="btn" inputtag="KEY2" inputmask="0x1">
+			<bounds x="122.981" y="159.961" width="58.038" height="58.038" />
+		</element>
+		<!-- REACH -->
+		<element ref="btn" inputtag="KEY2" inputmask="0x2">
+			<bounds x="602.965" y="159.961" width="58.038" height="58.038" />
+		</element>
+		<!-- N -->
+		<element ref="btn" inputtag="KEY2" inputmask="0x4">
+			<bounds x="1075" y="47.961" width="58.038" height="58.038" />
+		</element>
+		<!-- J -->
+		<element ref="btn" inputtag="KEY2" inputmask="0x8">
+			<bounds x="722.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- F -->
+		<element ref="btn" inputtag="KEY2" inputmask="0x10">
+			<bounds x="402.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- B -->
+		<element ref="btn" inputtag="KEY2" inputmask="0x20">
+			<bounds x="82.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+
+		<!-- START -->
+		<element ref="btn" inputtag="KEY3" inputmask="0x1">
+			<bounds x="42.980" y="159.961" width="58.038" height="58.038" />
+		</element>
+		<!-- KAN -->
+		<element ref="btn" inputtag="KEY3" inputmask="0x2">
+			<bounds x="362.965" y="159.961" width="58.038" height="58.038" />
+		</element>
+		<!-- M -->
+		<element ref="btn" inputtag="KEY3" inputmask="0x4">
+			<bounds x="962.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- I -->
+		<element ref="btn" inputtag="KEY3" inputmask="0x8">
+			<bounds x="642.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- E -->
+		<element ref="btn" inputtag="KEY3" inputmask="0x10">
+			<bounds x="322.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+		<!-- A -->
+		<element ref="btn" inputtag="KEY3" inputmask="0x20">
+			<bounds x="2.979" y="47.960" width="58.038" height="58.038" />
+		</element>
+	</group>
+
+Resolvida a questão dos controles, agora é preciso definir como vamos
+disponibilizar os objetos na tela. Ao iniciar a máquina com
+``mame janjans1`` e ao clicar em
+:guilabel:`Tab` --> :guilabel:`Informação da máquina`, o driver informa
+que o tamanho da tela é ``336`` x ``240``.
+
+* Inicie o Inkscape, defina o *Units* e a página em **px**, defina o
+  tamanho da página como ``336`` por ``240`` (**px**).
+* Importe para esta página a imagem do controle fornecida acima, durante
+  a importação da imagem deve aparecer uma tela, em **DPI for rendered
+  SVG** mantenha ``96`` DPI.
+* Clique no cadeado entre os valores **W:** e **H:** para travar a
+  proporção.
+* Em **W:** coloque ``336,0`` e pressione :kbd:`Enter` para aplicar,
+  agora temos um objeto na tela com ``336`` por ``63,904``.
+* Somando a altura do objeto com a altura da tela ``63,904`` + ``240``
+  nós temos uma altura total de ``303,904``.
+* Pressione :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`D` e na altura da página
+  coloque ``303,904`` **px**.
+* Desenhe um quadrado que vai simular a nossa tela com ``336`` por
+  ``240`` alinhado no **Topo da página**.
+* Posicione a imagem do controle logo abaixo e alinhe, isso lhe dará uma
+  visão geral daquilo que pretende fazer.
+* Como o controle fica muito colado com a tela, descemos o controle
+  cerca de um toque do direcional para baixo.
+* Faça :kbd:`Ctrl` + :kbd:`A` para selecionar tudo seguido de
+  :kbd:`Ctrl` + :kbd:`G` para agrupar ambos os objetos, agora temos uma
+  altura final com ``305,904``.
+* Faça novamente :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`D` e atualize a
+  altura da página em **px**, isso é importante para obter as devidas
+  coordenadas para o posicionamento dos elementos na tela.
+
+Se deu tudo certo até aqui, você deve ter algo semelhante ao exemplo
+abaixo:
+
+.. image:: images/screen_size2.svg
+    :width: 100%
+    :align: center
+    :alt: Tamanho da tela com o controle
+
+.. raw:: html
+
+	<p></p>
+
+Agora faça :kbd:`Ctrl` + :kbd:`A` seguido de :kbd:`Shift` + :kbd:`Ctrl`
++ :kbd:`G` para desagrupar o objeto tela do controle, repare que ao
+clicar no objeto tela e depois no controle, nós obtemos as coordenadas
+e seus respectivos tamanhos, é com estas informações que
+usamos para concluir o nosso layout:
+
+.. code-block:: xml
+
+	<!-- Nome -->
+	<view name="Controle">
+		<!-- Delimitamos a nossa área de exibição -->
+		<bounds x="0" y="0" width="336" height="305.904" />
+	<screen index="0">
+		<!-- O tamanho original da tela -->
+		<bounds x="0" y="0" width="336" height="240" />
+	</screen>
+		<!-- Invocamos o nosso controle -->
+		<group ref="Controle_mah">
+		<bounds x="0.4" y="242" width="335" height="63.904" />
+	</group>
+	</view>
+	</mamelayout>
+
+Observe que os valores **X**, **Y** e **width** de ``Controle_mah``
+estão um pouco diferentes do que obtivemos com o *Inkscape*, não é algo
+comum, porém, algumas vezes é necessário para fazer um ajuste fino de
+alinhamento para que os elementos apareçam em seus devidos lugares na
+tela do MAME.
+
+Com tudo pronto, rodamos a máquina novamente com ``mame janjans1`` e
+entramos no modo de serviço (:kbd:`Tab` --> :guilabel:`Chaves DIP` -->
+:guilabel:`Service Mode` --> :guilabel:`On` depois
+:guilabel:`Redefine`, clique no botão **A** na tela uma vez para pular o
+teste de cores e novamente para entrar no modo de teste e pressione
+:kbd:`Tab` para fechar a informação na tela).
+
+.. image:: images/tela_controle_mahjong.png
+    :width: 100%
+    :align: center
+    :alt: Tamanho da tela com o controle
+
+.. raw:: html
+
+	<p></p>
+
+Ao clicar nos botões da tela os botões da emulação deverão se alterar
+entre **ON** e **OFF** indicando que todos os botões funcionam. Retorne
+ao :guilabel:`Service Mode`, mude a chave para :guilabel:`Off` e clique
+em :guilabel:`Redefine` para reiniciar a máquina.
 
 .. raw:: latex
 
