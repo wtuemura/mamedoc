@@ -337,7 +337,7 @@ da tela, não se esqueça de clicar em :guilabel:`Done` ao concluir:
 Esta macro é utilizada pelo personagem **Zanguief** para fazer o nosso
 conhecido "*Pilão Giratório*", também conhecido como *Spinning
 Piledriver* e *Screw Pile Driver* com *soco fraco* ao pressionar a tecla
-:kbd:`B` com o jogador 1 estando do lado esquerdo da tela, não se
+:kbd:`C` com o jogador 1 estando do lado esquerdo da tela, não se
 esqueça de clicar em :guilabel:`Done` ao concluir:
 
 * **Name**: J1 Screw Pile Driver
