@@ -21,7 +21,7 @@ MAME conseguirá ler a variável **%APPDATA%** e resolver o caminho
 completo para o diretório de dados de aplicativos do usuário.
 
 Em sistemas estilo UNIX como macOS e Linux que utilizam o interpretador
-de comandos Bourne Shell, aconteceria o mesmo caso o caminho seja
+de comandos *Bourne Shell*, aconteceria o mesmo caso o caminho seja
 definido nas configurações como **/home/${USER}/.mame/cfg**. Assim como
 o sinal de porcentagem **%** é usado em uma palavra para se definir uma
 variável no ambiente do Windows, o sinal de til ``~`` serve como um

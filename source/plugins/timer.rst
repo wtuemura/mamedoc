@@ -12,9 +12,9 @@ Observe que este plugin registra o tempo real e não o tempo emulado.
 Ou seja, ele registra a duração em tempo real decorrida enquanto a
 emulação está sendo executada conforme o sistema operacional. Isso pode
 ser menor do que o decorrimento do tempo emulado caso desligue o
-:ref:`mame-commandline-nothrottle`, use o recurso de "avanço rápido"
-do MAME ou pode ser maior do que o tempo emulado decorrido caso pause a
-emulação de se a emulação.
+:ref:`-[no]throttle <mame-commandline-nothrottle>`, use o recurso de
+"avanço rápido" do MAME ou pode ser maior do que o tempo emulado
+decorrido caso pause a emulação de se a emulação.
 
 As estatísticas são armazenadas num arquivo ``timer.db`` na pasta
 **timer** (consulte a opção

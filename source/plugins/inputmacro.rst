@@ -230,11 +230,12 @@ da Konami. Isso tira a maior parte da destreza (e da diversão) do jogo:
 Esta macro alterna rapidamente entre os botões 1 e 3 do jogo fazendo com
 que você consiga correr no jogo.
 
-Street Fighter II Shoryuken
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Street Fighter II
+~~~~~~~~~~~~~~~~~
 
-Esta macro permite que você faça o *Shoryuken* (*Dragon punch*) com o
-jogador 1 estando do lado esquerdo da tela:
+Esta macro permite que você faça o *Shoryuken* (*Dragon punch*) ao
+pressionar a tecla :kbd:`M` com o jogador 1 estando do lado esquerdo da
+tela, não se esqueça de clicar em :guilabel:`Done` ao concluir:
 
 * **Name**: J1 Shoryuken SF
 * **Activation sequence**: Kbd M
@@ -258,5 +259,109 @@ jogador 1 estando do lado esquerdo da tela:
   * **Input 2**: J1 Direita
   * **Input 3**: P1 Jab Punch
 
-A macro realiza o golpe com um simples pressionar da tecla :kbd:`M` do
-teclado, caso mantenha a tecla pressionada, nada acontece.
+A macro realiza o golpe e caso mantenha a tecla pressionada, nada
+acontece.
+
+Esta é a macro para o *Hadouken* com *soco fraco* ao pressionar a tecla
+:kbd:`N` com o jogador 1 estando do lado esquerdo da tela, não se
+esqueça de clicar em :guilabel:`Done` ao concluir:
+
+* **Name**: J1 Hadouken SF
+* **Activation sequence**: Kbd N
+* **On release**: Complete macro
+* **When held**: Release
+* **Step 1**:
+
+  * **Delay (frames)**: 0
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Baixo
+* **Step 2**:
+
+  * **Delay (frames)**: 1
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Direita
+  * **Input 2**: J1 Baixo
+* **Step 3**:
+
+  * **Delay (frames)**: 0
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Direita
+  * **Input 2**: P1 Strong Punch
+
+Esta macro é utilizada pelo personagem **Guile** para soltar o *Sonic
+Boom* com *soco médio* ao pressionar a tecla :kbd:`B` com o jogador 1
+estando do lado esquerdo da tela, não se esqueça de clicar em
+:guilabel:`Done` ao concluir:
+
+* **Name**: J1 Sonic Boom
+* **Activation sequence**: Kbd B
+* **On release**: Complete macro
+* **When held**: Release
+* **Step 1**:
+
+  * **Delay (frames)**: 0
+  * **Duration (frames)**: 60
+  * **Input 1**: J1 Esquerda
+* **Step 2**:
+
+  * **Delay (frames)**: 1
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Direita
+* **Step 3**:
+
+  * **Delay (frames)**: 0
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Direita
+  * **Input 2**: P1 Strong Punch
+
+Esta macro faz o tal "*facão do Guile*" (Flash Kick) com *chute fraco*
+ao pressionar a tecla :kbd:`V` com o jogador 1 estando do lado esquerdo
+da tela, não se esqueça de clicar em :guilabel:`Done` ao concluir:
+
+* **Name**: J1 Flash Kick
+* **Activation sequence**: Kbd V
+* **On release**: Complete macro
+* **When held**: Release
+* **Step 1**:
+
+  * **Delay (frames)**: 0
+  * **Duration (frames)**: 60
+  * **Input 1**: J1 Baixo
+* **Step 2**:
+
+  * **Delay (frames)**: 1
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Cima
+  * **Input 2**: P1 Short Kick
+
+Esta macro é utilizada pelo personagem **Zanguief** para fazer o nosso
+conhecido "*Pilão Giratório*", também conhecido como *Spinning
+Piledriver* e *Screw Pile Driver* com *soco fraco* ao pressionar a tecla
+:kbd:`B` com o jogador 1 estando do lado esquerdo da tela, não se
+esqueça de clicar em :guilabel:`Done` ao concluir:
+
+* **Name**: J1 Screw Pile Driver
+* **Activation sequence**: Kbd C
+* **On release**: Complete macro
+* **When held**: Release
+* **Step 1**:
+
+  * **Delay (frames)**: 0
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Direita
+* **Step 2**:
+
+  * **Delay (frames)**: 1
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Baixo
+* **Step 3**:
+
+  * **Delay (frames)**: 1
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Esquerda
+* **Step 4**:
+
+  * **Delay (frames)**: 1
+  * **Duration (frames)**: 1
+  * **Input 1**: J1 Cima
+  * **Input 2**: P1 Strong Punch
