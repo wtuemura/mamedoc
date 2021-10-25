@@ -234,7 +234,7 @@ Street Fighter II Shoryuken
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Esta macro permite que você faça o *Shoryuken* (*Dragon punch*) com o
-jogador estando do lado esquerdo da tela:
+jogador 1 estando do lado esquerdo da tela:
 
 * **Name**: J1 Shoryuken SF
 * **Activation sequence**: Kbd M
@@ -259,4 +259,4 @@ jogador estando do lado esquerdo da tela:
   * **Input 3**: P1 Jab Punch
 
 A macro realiza o golpe com um simples pressionar da tecla :kbd:`M` do
-teclado, caso mantenha a tecla pressionada, nada é feito.
+teclado, caso mantenha a tecla pressionada, nada acontece.

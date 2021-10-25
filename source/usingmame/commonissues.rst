@@ -522,8 +522,8 @@ por um período de tempo maior.
 
 .. _Autofire:
 
-O que aconteceu com a opção de Auto Disparo?
---------------------------------------------
+O que aconteceu com a opção de auto disparo? (turbo)
+----------------------------------------------------
 
 Um plug-in Lua mais aprimorado e com mais funcionalidades foi adicionado
 ao MAME 0.210, a opção que antes estava embutida no código fonte foi
@@ -536,71 +536,18 @@ Para ativar e configurar o novo sistema de auto disparo, siga as
 instruções abaixo:
 
  * Inicie o MAME sem nenhum sistema.
- * Selecione a opção **Plug-ins**.
- * Ative a opção **Autofire**.
+ * Selecione a opção :guilabel:`Configuração` na parte debaixo da tela
+ * Selecione a opção :guilabel:`Plug-ins`.
+ * Ative a opção :guilabel:`Autofire plugin` (utilize as teclas
+   :kbd:`esquerda` / :kbd:`direita` para alternar entre ligado e
+   desligado).
 
 A configuração é salva no arquivo ``plugin.ini`` dentro do diretório
 raiz do MAME no Windows ou ~/.mame em sistemas \*nix \ e compatíveis.
-Inicie um sistema de sua preferência, pressione **TAB** para que seja
-exibida a interface do MAME e vá para **Opções dos Plug-ins -->
-Autofire**. Caso já exista uma configuração de auto disparo definida,
-ela será exibida, caso contrário a interface pedirá para que um botão de
-auto disparo seja definido.
 
-Na ausência de uma configuração selecione **add autofire button** e a
-seguinte interface será exibida:
-
- * **Input**
-
-	Escolha qual o botão que deseja usar a função de auto disparo.
-
- * **Hotkey**
-
-	Escolha qual o botão de atalho deseja utilizar.
-
- * **On frames**
-
-	Quantidade de quadros em que o botão será pressionado.
-
- * **Off frames**
-
-	Quantidade de quadros em que o botão será liberado.
-
-Clique duas vezes em **Input** para escolher o botão a ser usado, para
-a máquina *Galaga* por exemplo, o jogador 1 usará **P1 Button 1**.
-**Hotkey** é o botão que será usado para o auto disparo no momento que
-for pressionado, ele pode ser qualquer botão do controle ou do teclado.
-Note porém que desde a versão 0.216 ainda não há suporte para botões do
-mouse.
-
-Na opção **On frames** e **Off frames** você define a velocidade do
-acionamento ou não acionamento do botão em quantidade de quadros. Alguns
-sistemas não tem a capacidade de identificar velocidades muito rápidas
-do acionamento dos botões como a máquina **Alcon** por exemplo assim
-como várias outras. Caso se depare com essas máquinas reduza a
-velocidade do acionamento aumentando o valor de **On frames** e **Off
-frames**, escolha valores como 2 e 2 ou 3 e 3, etc.
-
-Todas as configurações de auto disparo ficam armazenadas dento do
-diretório **Autofire** com o nome da máquina utilizada seguida da
-extensão *.cfg* (**galaga.cfg** por exemplo). Observe que haverá
-problemas caso o botão de auto disparo seja definido no mesmo botão já
-predefinido pelo MAME, veja o exemplo da máquina **Gradius**:
-
-Caso o botão de disparo para o jogador 1 seja o mesmo escolhido para o
-auto disparo, ao segurar o botão de disparo o auto disparo não vai
-funcionar pois o botão nunca é liberado pelo jogador que o mantém
-pressionado. O mesmo ocorre caso outro botão de auto disparo seja
-escolhido e ambos os botões de disparo e auto disparo forem pressionados
-ao mesmo tempo. Caso escolha o botão 3 do seu controle para usar o auto
-disparo e o mesmo botão for usado para ativar um "power up", toda a vez
-que o personagem recolher o item de "power up" este será ativado pelo
-auto disparo pois este estará sempre pressionado junto com o botão de
-auto disparo.
-
-É obrigatório que o botão de auto disparo escolhido seja qualquer outro
-botão que já não esteja sendo utilizado ou que não tenha nenhuma função
-no sistema.
+Consulte o capítulo :ref:`plugins-autofire` para obter mais informações
+de como usar o turbo ou acesse :ref:`plugins` para saber como usar os
+plug-ins do MAME.
 
 .. _gsync-freesync:
 

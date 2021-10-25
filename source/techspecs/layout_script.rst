@@ -23,17 +23,18 @@ MAME usa um modelo baseado em eventos. Os scripts podem fornecer funções
 que serão chamadas após determinados eventos ou quando determinados
 dados forem necessários.
 
-É preciso que o plug-in de layout esteja ativo para que os scripts
-possam ser usados. Por exemplo, use este comando para rodar **BWB Double
-Take** com o script Lua ativo no layout::
+É preciso que o :ref:`layout plugin <plugins-layout>` esteja ativo.
+Por exemplo, use este comando para rodar **BWB Double Take** com o
+script Lua ativo no layout é possível usar este comando::
 
     mame -plugins -plugin layout v4dbltak
 
-Adicione esta configuração em um arquivo ``v4dbltak.ini`` dentro do
-diretório **ini** para que esta mesma configuração sempre seja utilizada
-quando o sistema for iniciado.
+Adicione esta configuração num arquivo ``v4dbltak.ini`` dentro do
+diretório **ini** para que a configuração do layout e do plug-in sempre
+seja utilizada quando o sistema for iniciado. Consulte :ref:`plugins`
+para mais informações.
 
-Para mais informações consulte o capítulo :ref:`advanced-multi-CFG`.
+Consulte também o capítulo :ref:`advanced-multi-CFG`.
 
 .. raw:: latex
 
