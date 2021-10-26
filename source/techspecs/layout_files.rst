@@ -3874,7 +3874,7 @@ scanlines.
 	.. image:: images/screen_size.svg
 		:width: 80%
 		:align: center
-		:alt: tamanho da tela
+		:alt: Tamanho da tela
 
 
 Com a nossa área de trabalho definida, precisamos definir o tamanho e a
@@ -4975,7 +4975,7 @@ que o tamanho da tela é ``336`` x ``240``.
 Se deu tudo certo até aqui, você deve ter algo semelhante ao exemplo
 abaixo:
 
-.. image:: images/screen_size2.svg
+.. image:: images/screen_size_mahjong.svg
     :width: 100%
     :align: center
     :alt: Tamanho da tela com o controle
