@@ -4944,7 +4944,7 @@ Resolvida a questão dos controles, agora é preciso definir como vamos
 disponibilizar os objetos na tela. Ao iniciar a máquina com
 ``mame janjans1`` e ao clicar em
 :guilabel:`Tab` --> :guilabel:`Informação da máquina`, o driver informa
-que o tamanho da tela é ``336`` x ``240``.
+que o tamanho da tela tem ``336`` x ``240``.
 
 * Inicie o Inkscape, defina o *Units* e a página em **px**, defina o
   tamanho da página como ``336`` por ``240`` (**px**).
@@ -5015,10 +5015,10 @@ tela do MAME.
 
 Com tudo pronto, rodamos a máquina novamente com ``mame janjans1`` e
 entramos no modo de serviço (:kbd:`Tab` --> :guilabel:`Chaves DIP` -->
-:guilabel:`Service Mode` --> :guilabel:`On` depois
-:guilabel:`Redefine`, clique no botão **A** na tela uma vez para pular o
-teste de cores e novamente para entrar no modo de teste e pressione
-:kbd:`Tab` para fechar a informação na tela).
+:guilabel:`Service Mode` --> :guilabel:`On`, depois
+:guilabel:`Redefine`. Clique no botão **A** na tela uma vez para pular o
+teste de cores, clique novamente para entrar no modo de teste e
+pressione :kbd:`Tab` para fechar o quadro de informação na tela).
 
 .. image:: images/tela_controle_mahjong.png
     :width: 100%
@@ -5029,10 +5029,10 @@ teste de cores e novamente para entrar no modo de teste e pressione
 
 	<p></p>
 
-Ao clicar nos botões da tela os botões da emulação deverão se alterar
-entre **ON** e **OFF** indicando que todos os botões funcionam. Retorne
-ao :guilabel:`Service Mode`, mude a chave para :guilabel:`Off` e clique
-em :guilabel:`Redefine` para reiniciar a máquina.
+Ao clicar nos botões da tela, os botões da emulação deverão se alterar
+entre **ON** e **OFF** indicando que todos os botões estão funcionando.
+Retorne ao :guilabel:`Service Mode`, mude a chave para :guilabel:`Off`
+e clique em :guilabel:`Redefine` para reiniciar a máquina.
 
 .. raw:: latex
 
