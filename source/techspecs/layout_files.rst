@@ -2222,7 +2222,7 @@ quadriculado e a parte preta da imagem do lado **ESQUERDO** para
 encontrar o valor de **x** e em **CIMA** para encontrar o valor de
 **y**, para facilitar foram posicionados duas linhas azuis na imagem
 abaixo indicando a posição que o mouse deve estar para obter as
-coordenadas que são **817** e **575**:
+coordenadas que são ``817`` e ``575``:
 
 .. image:: images/gimp-coordenadas-linhas.png
    :width: 80%
@@ -2235,7 +2235,7 @@ de seleção contígua**, clique dentro da área quadriculada da imagem para
 selecioná-la. Em seguida pressione a tecla **R** ou a **Ferramenta de
 seleção retangular** e clique em qualquer região da área quadriculada,
 no painel à esquerda deve aparecer os mesmos valores para a coordenada
-**x (817)** e **y (575)**:
+**x** (``817``) e **y** (``575``):
 
 .. image:: images/gimp-coordenadas-selecao.png
    :width: 80%
@@ -2295,15 +2295,15 @@ para atender qualquer outra necessidade que você venha a ter.
 	resolução da sua tela. Em certas máquinas como a do exemplo acima
 	não haverá qualquer diferença visível, contudo, certas máquinas não
 	são tão tolerantes assim e podem apresentar pixels distorcidos na
-	tela ou até mesmo artefados estranhos durante o uso de shaders como
+	tela ou até mesmo artefatos estranhos durante o uso de shaders como
 	o CRT-geom por exemplo. Assim, aumente o valor da altura na planilha
 	até quem um valor inteiro seja encontrado.
 	
 	Se fosse o caso do exemplo acima, o valor ideal seria **1662x1899**.
 
-Com o valor calculado em mãos, a resolução final será **1660x2213**.
-Assim temos todos os valores para posicionarmos a nossa tela emulada na
-tela (screen) e a sua correta proporção:
+Com o valor calculado em mãos, a resolução final será
+``1660`` x ``2213``. Assim temos todos os valores para posicionarmos a
+nossa tela emulada na tela (screen) e a sua correta proporção:
 
 .. code-block:: xml
 
@@ -2319,7 +2319,7 @@ tela (screen) e a sua correta proporção:
 do efeito que você queira dar ao seu design. O MAME organiza o layout em
 camadas obedecendo a ordem em que elas forem definidas no arquivo de
 layout, então a composição da sua tela emulada e o gráfico pode começar
-com a arte gráfica no fundo e a tela emulada em cima desta arte:
+com a ilustração no fundo e a tela emulada em cima desta arte:
 
 .. code-block:: xml
 
@@ -2411,13 +2411,13 @@ o que quer que seja, será preciso estar com a arte que será usada no
 MAME já aberta no Gimp, pegue a imagem de um botão por exemplo e
 arraste para a tela do Gimp, ele deverá aparecer como uma camada,
 posicione-o na região desejada e se for o caso redimensione-o usando a
-ferramenta de redimensionamento **Shift+S**, para o botão escolhi o
-tamanho de **190 px**. Quando concluir selecione a camada do botão com o
-botão direito do mouse e escolha **Alfa para a seleção**, em seguida
-pressione **R** ou escolha **Ferramenta de seleção retangular** e clique
-na imagem do botão, na barra à esquerda já deve aparecer as informações
-do tamanho e a posição na tela que seria **x 1105** e **y 3314** com o
-tamanho de **190x190**.
+ferramenta de redimensionamento :kbd:`Shift` + :kbd:`S`, para o botão
+escolhi o tamanho de ``190`` **px**. Quando concluir selecione a camada
+do botão com o botão direito do mouse e escolha :guilabel:`Alfa para a
+seleção`, em seguida pressione :kbd:`R` ou escolha :guilabel:`Ferramenta
+de seleção retangular` e clique na imagem do botão, na barra à esquerda
+já deve aparecer as informações do tamanho e a posição na tela que seria
+**x** ``1105`` e **y** ``3314`` com o tamanho de ``190`` x ``190``.
 
 .. image:: images/gimp-coordenadas-selecao2.png
    :width: 80%
@@ -2457,8 +2457,8 @@ Posicione o ponteiro do mouse bem em cima onde as linhas se cruzam para
 ver as coordenadas na parte de baixo da tela do Gimp, fica mais fácil
 fazer um zoom com 300% ou mais, assim os valores podem ser encontrados
 de forma mais precisa, para isso, posicione o ponteiro no ponto
-desejado, mantenha pressionado **CTRL** e movimente a roda do mouse para
-cima para aplicar o zoom na região do ponteiro do mouse:
+desejado, mantenha pressionado :kbd:`Ctrl` e movimente a roda do mouse
+para cima para aplicar o zoom na região do ponteiro do mouse:
 
 .. code-block:: xml
 
@@ -2508,18 +2508,18 @@ Para encontrar estes valores, inicie a máquina Galaxian::
 
 	mame galaxian
 
-Pressione **TAB** e vá em **Entrada (esta máquina)**.
-Selecione **P1 Left**, no teclado clique na tecla **Delete** para apagar
-o seu valor e usando o seu controle, joystick ou teclado, clique no
-direcional para o lado esquerdo, faça o mesmo para **P1 Right** e
-**P1 Button 1**, quando terminar pressione **TAB** seguido de **ESQ**
-para encerrar a emulação.
+Pressione :kbd:`Tab` e vá em :guilabel:`Entrada (esta máquina)`.
+Selecione :guilabel:`P1 Left`, no teclado clique na tecla :kbd:`Del`
+para excluir o valor e usando o seu controle, joystick ou teclado,
+clique no direcional para o lado esquerdo, faça o mesmo para
+:guilabel:`P1 Right` e :guilabel:`P1 Button 1`, quando terminar,
+pressione :kbd:`Tab` seguido de :kbd:`Esq` para encerrar a emulação.
 
 Será criado dentro do diretório **cfg** um arquivo chamado
-**galaxian.cfg**, abra-o em um editor de texto e veja que para cada
+``galaxian.cfg``, abra-o em um editor de texto e veja que para cada
 configuração feita para os controles e para o botão há um valor
 específico para eles, aqui um exemplo usando um controle de
-Playstation 2::
+*Playstation 2*::
 
     <input>
         <port tag=":IN0" type="P1_JOYSTICK_LEFT" mask="4" defvalue="0">
@@ -2543,8 +2543,8 @@ Playstation 2::
 
 	\clearpage
 
-Para o botão de disparo **P1_BUTTON1** por exemplo, temos o valor da
-porta ``tag=":IN0"`` que usaremos em ``inputtag`` e o valor
+Para o botão de disparo :guilabel:`P1_BUTTON1` por exemplo, temos o
+valor da porta ``tag=":IN0"`` que usaremos em ``inputtag`` e o valor
 ``mask="16"`` que usaremos em ``inputmask``, assim a nossa configuração
 fica assim:
 
@@ -2579,17 +2579,17 @@ para as máquinas Neo Geo ficaria ``inputtag="edge:joy:JOY1"``.
 Alertas e retornos externos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A máquina Galaxian possui uma porta que sinaliza através de um sinal
+A máquina *Galaxian* possui uma porta que sinaliza através de um sinal
 luminoso quando 1 crédito é inserido, o sinal da lâmpada passa a piscar
 indicando que o jogador deve clicar nele para iniciar a partida para o
 jogador 1 e o mesmo ocorre quando dois créditos são inseridos indicando
 o inicio da partida para o jogador 1 ou para o jogador 2. A versão da
-máquina Galaxian Italiana não possui tais luzes porém vamos adicioná-las
-mesmo assim para fins didáticos.
+máquina *Galaxian* Italiana não possui tais luzes porém vamos
+adicioná-las mesmo assim para fins didáticos.
 
 Usando o Gimp, posicione os botões para o jogador 1 e para o jogador 2,
-escolhemos o tamanho de **200x200 px** e então chegamos na seguinte
-configuração:
+escolhemos o tamanho de ``200`` x ``200`` **px** e então chegamos na
+seguinte configuração:
 
 .. code-block:: xml
 
@@ -2613,11 +2613,11 @@ respectivos jogadores.
 É possível montar este layout de duas maneiras, posicionando a nossa
 lâmpada uma a uma ou utilizando ``cont`` em conjunto com os
 :ref:`layfile-concepts-params`. Imagine o seguinte cenário, você está
-montando um layout onde precisa colocar lamp0 até lamp100 na tela, é
+montando um layout onde precisa colocar *lamp0* até *lamp100* na tela, é
 possível fazer isso de forma manual ou usar parâmetros para facilitar
 escrevendo poucas linhas e deixando que o MAME lide com o resto.
 
-Dada a simplicidade da máquina Galaxian não é preciso usar qualquer
+Dada a simplicidade da máquina *Galaxian* não é preciso usar qualquer
 parâmetro porém usaremos mesmo assim para que fique fácil a compreensão
 de como isso funciona.
 
@@ -2632,7 +2632,7 @@ São duas lâmpadas ``lamp0`` e ``lamp1`` então contamos até 2:
 	<repeat count="2">
 
 No parâmetro nós definimos que a variável ``i`` inicie uma contagem, que
-comece a partir do 0 (zero) e termine em 1.
+comece a partir do ``0`` (zero) e termine em ``1``.
 
 .. code-block:: xml
 
@@ -2657,8 +2657,8 @@ possa ficar alinhado exatamente onde queremos realizado o cálculo
 abaixo.
 O cálculo serve para descobrir quantos pixels a mais eu preciso para
 deslocar o anel azul da primeira coordenada no eixo y a partir da
-posição do **J1** (3408) até a segunda coordenada vertical do eixo y
-(3753) do **J2**. A conta foi organizada para que o minuendo tenha o
+posição do **J1** (``3408``) até a segunda coordenada vertical do eixo y
+(``3753``) do **J2**. A conta foi organizada para que o minuendo tenha o
 maior valor que o subtraendo para que se obtenha um número inteiro
 positivo::
 
@@ -2667,8 +2667,8 @@ positivo::
 	increment = 345 
 
 Definimos uma variável **y** para facilitar a identificação do eixo y
-(vertical), nós começamos na coordenada **3408** e para que o anel azul
-fique em cima do botão **J2** precisamos deslocá-lo **345** pixels.
+(vertical), nós começamos na coordenada ``3408`` e para que o anel azul
+fique em cima do botão **J2** precisamos deslocá-lo ``345`` pixels.
 
 .. code-block:: xml
 
@@ -2677,7 +2677,7 @@ fique em cima do botão **J2** precisamos deslocá-lo **345** pixels.
 Aqui é onde toda a mágica acontece, usaremos as variáveis que definimos
 para que elas sejam substituídas automaticamente pelos seus respectivos
 valores, aqui o valor da variável ``~i~`` será automaticamente
-substituído por **0** e **1**, então ``lamp~i~`` se transforma em
+substituído por ``0`` e ``1``, então ``lamp~i~`` se transforma em
 ``lamp0`` e ``lamp1`` respectivamente, repare que utilizamos apenas 1
 linha para isso, se fosse o caso para 100 lamps seria a mesma coisa:
 
@@ -2701,13 +2701,13 @@ desta forma para o MAME:
 		<image file="pisca1.png" state="1" />
 	</element>
 
-O valor de 'lamp0' sempre retorna 0 (zero) quando estiver desligado e 1
-(um) quando estiver ligado, o mesmo acontece com 'lamp1', como não é
-preciso definir nada para quando ``lamp0`` e ``lamp1`` estiverem
-desligados basta definir apenas a condição de ligado, portanto
-``defstate="0"`` estabelece a sua condição inicial é 0 ou não faça nada,
-o anel azul só vai aparecer caso a sua condição mude para 1 através do
-``state="1"``.
+O valor de ``lamp0`` sempre retorna ``0`` (zero) quando estiver
+desligado e ``1`` (um) quando estiver ligado, o mesmo acontece com
+``lamp1``, como não é preciso definir nada para quando ``lamp0`` e
+``lamp1`` estiverem desligados basta definir apenas a condição de
+ligado, portanto ``defstate="0"`` estabelece a sua condição inicial é
+``0`` ou não faça nada, o anel azul só vai aparecer caso a sua condição
+mude para 1 através do ``state="1"``.
 
 .. raw:: latex
 
@@ -2715,11 +2715,11 @@ o anel azul só vai aparecer caso a sua condição mude para 1 através do
 
 As variáveis ``~x~`` e ``~y~`` são substituídas pelos seus respectivos
 valores que foram definidos anteriormente fazendo com que a imagem do
-anel azul seja posicionada corretamente no eixo x (horizontal) e no
-eixo y (vertical), assim como definimos que o seu tamanho será pouca
+anel azul seja posicionada corretamente no eixo **x** (horizontal) e no
+eixo **y** (vertical), assim como definimos que o seu tamanho será pouca
 coisa maior que o desenho do botão para que ele cubra um pouco a mais
-dos limites do botão, assim o valor seria de **250 pixels** de largura
-e **250 pixels** de altura.
+dos limites do botão, assim o valor seria de ``250`` **pixels** de
+largura por ``250`` **pixels** de altura.
 
 .. code-block:: xml
 
@@ -2863,9 +2863,9 @@ arquivo **galaxian.ini** e dentro dele adicione estas opções::
 	# No Linux use
 	glsl_shader_mame0 glsl/osd/CRT-geom
 
-Ao rodar o galaxian novamente a tela terá uma aparência de um CRT, caso
-queira manter a aparência porém eliminando um pouco a curvatura da tela,
-edite o arquivo **CRT-geom.vsh** e use estas configurações::
+Ao rodar o *galaxian* novamente a tela terá uma aparência de um CRT,
+caso queira manter a aparência porém eliminando um pouco a curvatura da
+tela, edite o arquivo **CRT-geom.vsh** e use estas configurações::
 
 	// START of parameters
 	
@@ -2993,7 +2993,7 @@ necessário encontrar os valores para ``defstate``, ``inputmask`` e para
 O ``defstate`` e o ``inputmask`` utilizam o mesmo valor, este valor
 **precisa ser calculado**, para isso acessamos o
 `código fonte do driver Galaxian <https://github.com/mamedev/mame/blob/m
-aster/src/mame/drivers/galaxian.cpp#L2634>`_, bem na linha **2634** de
+aster/src/mame/drivers/galaxian.cpp#L2836>`_, bem na linha ``2634`` de
 cara já temos o nosso ``inputtag`` com o valor ``IN0`` que utilizamos
 acima, observe quem nem sempre o valor do ``inputtag`` está disponível
 assim tão fácil, o driver **Playstaion** (psx) por exemplo utiliza
@@ -3006,12 +3006,13 @@ A Galaxian tem apenas duas direções, esquerda e direita, preste atenção
 ao valor ``0x04`` para ``IPT_JOYSTICK_LEFT`` e ``0x08`` para
 ``IPT_JOYSTICK_RIGHT``. Abra a calculadora do seu celular ou do seu
 sistema operacional em modo programador ou qualquer função que consiga
-somar valores em **hexadecimais** e some os valores ``4 + 8`` para obter
-``c`` ou ``0xc``, este é o valor do nosso ``defstate`` e ``inputmask``
-**específicos para esta máquina**, dependendo da máquina este valor pode
-mudar, é possível ter uma ideia vendo a tabela logo abaixo.
+somar valores em **hexadecimais** e some os valores ``4`` + ``8`` para
+obter ``c`` ou ``0xc``, este é o valor do nosso ``defstate`` e
+``inputmask`` **específicos para esta máquina**, dependendo da máquina
+este valor pode mudar, é possível ter uma ideia vendo a tabela logo
+abaixo.
 
-Já os valores para ``state`` vão de **0x0** até **0xf** nas máquinas
+Já os valores para ``state`` vão de ``0x0`` até ``0xf`` nas máquinas
 mais comuns, porém em outras máquinas mais complexas como as máquinas
 de corrida de carro e de moto que usam um volante ou guidão, os valores
 vão muito além disso. O assunto foge ao escopo do que estamos
@@ -3363,16 +3364,16 @@ valores ``state`` zerados:
 	</element>
 
 Comece alterando o valor ``state`` para o comando **cima**, comece com
-``0x1`` e vá subindo, clique **SHIFT+F3** a cada alteração para ver se
-alteração surtiu algum efeito. É muito comum encontrar um determinado
-valor onde você aciona o controle para cima e ocorre uma animação para
-qualquer outra direção, supondo que a animação que apareceu foi para
-baixo, altere o valor do ``state`` relacionado com **baixo.png** e
-continue incrementando o valor até chegar em ``0xf``, depois comece
-novamente a partir de ``0x1``. Observe que alguns valores já testados e
-que não retornaram nenhuma animação agora passam a responder, continue
-definindo os valores encontrados para as suas respectivas posições até
-encontrar todos os valores.
+``0x1`` e vá subindo, clique :kbd:`Shift` + :kbd:`F3` a cada alteração
+para ver se alteração surtiu algum efeito. É muito comum encontrar um
+determinado valor onde você aciona o controle para cima e ocorre uma
+animação para qualquer outra direção, supondo que a animação que
+apareceu foi para baixo, altere o valor do ``state`` relacionado com
+**baixo.png** e continue incrementando o valor até chegar em ``0xf``,
+depois comece novamente a partir de ``0x1``. Observe que alguns valores
+já testados e que não retornaram nenhuma animação agora passam a
+responder, continue definindo os valores encontrados para as suas
+respectivas posições até encontrar todos os valores.
 
 .. raw:: latex
 
@@ -3427,7 +3428,7 @@ nós temos os 4 valores para a porta do 2º jogador ``PORT_PLAYER(2)``,
 temos o valor ``100`` para a direita, ``200`` para a esquerda, ``400``
 para baixo e ``800`` para cima. Assim foi feito anteriormente, some
 todos os valores hexadecimais com uma calculadora compatível para obter
-o valor ``f00`` ou seja ``100 + 200 + 400 + 800 = f00``.
+o valor ``f00`` ou seja ``100`` + ``200`` + ``400`` + ``800`` = ``f00``.
 
 
 .. raw:: latex
@@ -3476,10 +3477,10 @@ para o diretório **artwork** e o renomeie com o nome da máquina que será
 testada, para o exemplo usado na foto o nome do diretório é
 **ssriders**. Rodando o comando ``mame -window ssriders`` irá
 aparecer uma tela com um design branco genérico, será possível escolher
-um modelo para 2 ou 4 jogadores através do menu **Opções do Vídeo**
-(:menuselection:`TAB --> Opções do vídeo`), faça as alterações
-necessárias no arquivo de layout e para visualizar na tela pressione
-**SHIFT+F3**.
+um modelo para 2 ou 4 jogadores através do menu
+:guilabel:`Opções do Vídeo` (:kbd:`TAB` --> :menuselection:`Opções
+do vídeo`), faça as alterações necessárias no arquivo de layout e para
+visualizar na tela pressione :kbd:`Shift` + :kbd:`F3`.
 
 .. image:: images/modelo-4-controles.png
    :width: 90%
@@ -3531,7 +3532,7 @@ exemplo, ter diferentes versões de visualização para a máquina
 :ref:`layfile-tools`) temos o exemplo da **Galaxian** Italiana, Americana
 e a Japonesa com diferentes configurações para os botões para o 1º e 2º
 jogador, algumas utilizam botões simples e outras usam os botões
-iluminados da NAMCO.
+iluminados da *NAMCO*.
 
 As configurações para as diferentes visualizações devem ficar entre os
 elementos ``view``. Assim como é feito com um layout simples, primeiro
@@ -3554,8 +3555,8 @@ seus respectivos nomes:
 		...
 	</view>
 
-Estas visuzalizações ficam acessíveis através do menu **Opções do
-Vídeo** (:menuselection:`TAB --> Opções do vídeo`).
+Estas visuzalizações ficam acessíveis através do menu :guilabel:`Opções
+do Vídeo` (:kbd:`TAB` --> :guilabel:`Opções do vídeo`).
 
 .. image:: images/tipos-galaxian.png
    :width: 100%
@@ -3576,9 +3577,9 @@ possível organizando os objetos da tela dentro dos elementos
 ``collections``, quando a visualização tiver esta opção, o jogador
 poderá desligar qualquer objeto na tela desde que tenha sido organizado
 desta maneira pelo autor da arte. Use ``visible`` **yes** ou **no**
-(também funciona com 1 ou 0) dentro do elemento ``collection`` caso
-queira que ele já inicie **ligado** ou **desligado**. Baixe este arquivo
-para ver como funciona na prática com a máquina
+(também funciona com ``1`` ou ``0``) dentro do elemento ``collection``
+caso queira que ele já inicie **ligado** ou **desligado**. Baixe este
+arquivo para ver como funciona na prática com a máquina
 `mspacman <https://www.mediafire.com/file/ltjl0mnczuvc532/mspacman.zip>`_.
 
 .. code-block:: xml
@@ -3613,21 +3614,23 @@ animação se comporte como a movimentação de um controle arcade
 tradicional. Usando as referências deste limite, nós podemos definir a
 posição de cada movimento do controle.
 
-* No Inkscape, crie um novo arquivo, pressione ``Ctrl+Shift+D`` ou
-  :menuselection:`File --> Document properties`, em **Page** defina
-  **Display units** como **PX**.
+* No Inkscape, crie um novo arquivo, pressione :kbd:`Ctrl` +
+  :kbd:`Shift` + :kbd:`D` ou :guilabel:`File` --> :guilabel:`Document
+  properties`, em :guilabel:`Page` defina :guilabel:`Display units` como
+  **PX**.
 * Crie um círculo preto, defina o seu tamanho em **W:** e **H:**
-  com **7,700 px**, este será aquela peça preta que fica no fim do eixo
-  do joystick, ele vai ajudar a dar a ilusão de movimento.
-* Vá em **Layers** ``Shift+Ctrl+L``, altere o nome deste primeiro layer
-  para **centro base** clique no **+** para adicionar um layer chamado
-  **centro** e um outro chamado **quadrado**, este layer **quadrado**
-  deve ficar abaixo do layer **centro base**.
-* Clique no círculo preto para selecioná-lo, pressione ``Ctrl+D`` para
-  duplicá-lo, escolha uma cor vermelha qualquer, defina o seu tamanho
-  para **9,700 px**. Clique com o botão direito em cima deste círculo
-  vermelho e selecione a opção **Move to Layer...** e mova este círculo
-  para o layer **centro**.
+  com ``7,700`` **px**, este será aquela peça preta que fica no fim do
+  eixo do joystick, ele vai ajudar a dar a ilusão de movimento.
+* Vá em **Layers** :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`L`, altere o nome
+  deste primeiro layer para **centro base** clique no :guilabel:`+` para
+  adicionar um layer chamado  **centro** e um outro chamado
+  **quadrado**, este layer **quadrado** deve ficar abaixo do layer
+  **centro base**.
+* Clique no círculo preto para selecioná-lo, pressione :kbd:`Ctrl` +
+  :kbd:`D` para duplicá-lo, escolha uma cor vermelha qualquer, defina o
+  seu tamanho para ``9,700`` **px**. Clique com o botão direito em cima
+  deste círculo vermelho e selecione a opção :guilabel:`Move to
+  Layer...` e mova este círculo para o layer **centro**.
 
 
 .. _layfile-export_svg:
@@ -3635,38 +3638,41 @@ posição de cada movimento do controle.
 Exportando arquivos SVG
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Para definir o limite eu multiplico **1.8 vezes** o valor do diâmetro
-círculo do controle para determinar o tamanho total desse quadrado. Esse
-valor funciona bem ao fazer um joystick genérico, dependendo do design
-pode ser que um valor multiplicado por **1.5** ou por **2** funcione
-melhor dependendo do modelo/tipo do joystick que você está querendo
-imitar, ajuste e faça testes para ver qual se adapta melhor ao seu
-design e veja se a animação fica boa **na tela**.
+Para definir o limite eu multiplico ``1.8`` **vezes** o valor do
+diâmetro círculo do controle para determinar o tamanho total desse
+quadrado. Este valor funciona bem ao fazer um joystick genérico,
+dependendo do design pode ser que um valor multiplicado por ``1.5`` ou
+por ``2`` funcione melhor dependendo do modelo/tipo do joystick que você
+está querendo imitar, ajuste e faça testes para ver qual se adapta
+melhor ao seu design e veja se a animação fica boa **na tela**.
 
-* Fazendo os cálculos, **9,700 * 1,8 = 17,46**, vá em
-  :menuselection:`File --> Document Properties` ``Shift+Ctrl+D``, em
-  **Custom size** defina as unidades
-  para **PX** e defina o **Width/Height** para **17,46**, pressione
-  **Enter** para aplicar e feche a janela.
-* Vá em :menuselection:`Object --> Align and distribute`, clique no
-  círculo **preto**, na aba :menuselection:`Align -> Relative To:`
-  escolha **Page**, clique no botão logo abaixo (**Center on vertical
-  axis**), depois (**Center on horizontal axis**) para centralizar o
-  objeto. Clique no círculo vermelho e faça o mesmo com ele.
-* Pressione o **3** no teclado numérico (lado direito do teclado) para
-  que o círculo apareça no centro da tela.
-* Clique 2x no sinal de **-** no teclado numérico ou pressione ``Ctrl``
-  e gire a roda do mouse para traz para recuar um pouco.
-* Crie um quadrado com **17,46 x 17,46 px**.
-* Pressione ``Ctrl+Shift+F`` para abrir o **Fill and Stroke**, ainda com
-  o quadrado selecionado, em **Fill** clique no **X** para remover o
-  preenchimento, mantenha o ``Shift`` pressionado e com o mouse, clique
-  na cor preta na parte debaixo da tela.
-* Novamente na aba **Fill and Stroke**, defina o Width: para ``0,005``,
-  isso cria uma borda bem fina no nosso quadrado, fina o suficiente para
-  ele pode ser selecionado, isso será útil mais adiante.
+* Fazendo os cálculos, ``9,700`` * ``1,8`` = ``17,46``, vá em
+  :guilabel:`File` --> :guilabel:`Document Properties` (:kbd`Shift` +
+  :kbd`Ctrl` + :kbd`D`), em :guilabel:`Custom size` defina as unidades
+  para **PX** e defina também o :guilabel:`Width/Height` para ``17,46``,
+  pressione **Enter** para aplicar e feche a janela.
+* Vá em :guilabel:`Object` --> :guilabel:`Align and distribute`, clique
+  no círculo **preto**, na aba :guilabel:`Align` -> :guilabel:`Relative
+  To:` escolha :guilabel:`Page`, clique no botão logo abaixo
+  (:guilabel:`Center on vertical axis`), depois (:guilabel:`Center on
+  horizontal axis`) para centralizar o objeto. Clique no círculo
+  vermelho e faça o mesmo com ele. * Pressione o :kbd:`3` no teclado
+  numérico (lado direito do teclado) para que o círculo apareça no
+  centro da tela.
+* Clique 2x no sinal de :kbd:`-` no teclado numérico ou pressione
+  :kbd:`Ctrl` e gire a roda do mouse para traz para recuar um pouco.
+* Crie um quadrado com ``17,46`` x ``17,46 px``.
+* Pressione :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`F` para abrir o
+  :guilabel:`Fill and Stroke`, ainda com o quadrado selecionado, em
+  :guilabel:`Fill` clique no :guilabel:`X` para remover o preenchimento,
+  mantenha o :kbd:`Shift` pressionado e com o mouse, clique na cor preta
+  na parte debaixo da tela.
+* Novamente na aba :guilabel:`Fill and Stroke`, defina
+  :guilabel:`Width:` para ``0,005``, isso cria uma borda bem fina no
+  nosso quadrado, fina o suficiente para ele pode ser selecionado, isso
+  será útil mais adiante.
 * Selecione o quadrado e mova ele para o layer **quadrado**.
-* Na aba **Align and distribute**, clique nos mesmos botões para
+* Na aba :guilabel:`Align and distribute`, clique nos mesmos botões para
   centralizar o quadrado na página.
 
 .. raw:: latex
@@ -3689,27 +3695,28 @@ no ícone do olho para escondê-lo) e faça o mesmo com o círculo preto e
 mova ele para o layer **centro base**, faça o mesmo com o quadrado,
 sempre deixando o layer do quadrado abaixo de todos os outros layers.
 
-* Pressione ``Shift+Ctrl+A`` para abrir a aba **Align and distribute**,
-  em **Relative To:** escolha **Last Selected** para alinhar com último
-  objeto que for selecionado.
-* Na aba **Layers** crie as camadas **cima**, **baixo**, **esquerda** e
-  **direita**, clique no olho para escondê-las.
-* Deixe o círculo do centro visível, clique nele e pressione ``Ctrl+D``
-  para duplicar.
-* Com o ``Shift`` pressionado clique no quadrado na borda da página,
-  solte o ``Shift`` e na aba de alinhamento escolha o ícone com a seta
-  para a direita (**Align right sides**), isso alinha o nosso círculo
-  para os limites da página do lado direito.
+* Pressione :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`A` para abrir a aba
+  :guilabel:`Align and distribute`, em :guilabel:`Relative To:` escolha
+  :guilabel:`Last Selected` para alinhar com último objeto que for
+  selecionado.
+* Na aba :guilabel:`Layers` crie as camadas **cima**, **baixo**,
+  **esquerda** e **direita**, clique no olho para escondê-las.
+* Deixe o círculo do centro visível, clique nele e pressione
+  :kbd:`Ctrl` + :kbd:`D` para duplicar.
+* Com o :kbd:`Shift` pressionado clique no quadrado na borda da página,
+  solte o :kbd:`Shift` e na aba de alinhamento escolha o ícone com a
+  seta para a direita (:guilabel:`Align right sides`), isso alinha o
+  nosso círculo para os limites da página do lado direito.
 * Clique em qualquer ponto vazio da tela para remover a seleção, clique
   no círculo vermelho e com o botão direito do mouse, escolha a opção
   para movê-lo para a camada **direita**, o círculo do lado direito
   deve desaparecer logo em seguida.
-* Clique no círculo vermelho ao centro, pressione ``Ctrl+D`` para
-  duplicar, mantenha ``Shift`` pressionado, clique no quadrado, solte o
-  ``Shift``, na aba de alinhamento clique no ícone a seta para a
-  esquerda (**Align left sides**) para alinhar o círculo para o lado
-  esquerdo, repita o passo anterior e faça o mesmo para as posições
-  **cima** e **baixo**.
+* Clique no círculo vermelho ao centro, pressione :kbd:`Ctrl` + :kbd:`D`
+  para duplicar, mantenha :kbd:`Shift` pressionado, clique no quadrado,
+  solte o :kbd:`Shift`, na aba de alinhamento clique no ícone a seta
+  para a esquerda (:guilabel:`Align left sides`) para alinhar o círculo
+  para o lado esquerdo, repita o passo anterior e faça o mesmo para as
+  posições **cima** e **baixo**.
 
 .. raw:: latex
 
@@ -3728,11 +3735,11 @@ outras posições, porém a animação fica estranha, parece que o eixo
 oculto do controle permite que o círculo vá muito além do que deveria.
 Na imagem abaixo temos duas opções, na esquerda as diagonais foram
 alinhadas no limite do quadrado e depois recuados cerca de 5 pontos
-(clicando no **+** e **-** do **X:** e **Y:** trazendo o círculo mais
-para dentro).
+(clicando no :guilabel:`+` e :guilabel:`-` do :guilabel:`X:` e
+:guilabel:`Y:` trazendo o círculo mais para dentro).
 Já na imagem da direita, foi criado um círculo nas mesmas dimensões
-do quadrado (**17,46 x 17,46 px**) e as diagonais foram alinhadas no
-limite do círculo:
+do quadrado (``17,46`` x ``17,46`` **px**) e as diagonais foram
+alinhadas no limite do círculo:
 
 	.. image:: images/diagonais.svg
 		:width: 80%
@@ -3759,15 +3766,16 @@ Depois que todas as posições já estiverem nas suas respectivas camadas
 (layers), começamos o processo de exportação:
 
 * Clique em qualquer um dos layers com o botão direito do mouse e
-  escolha a opção **Hide all layers** para ocultar tudo.
+  escolha a opção :guilabel:`Hide all layers` para ocultar tudo.
 * Ative (torne visível) apenas os layers, **centro base** e
   **centro**.
-* Vá em :menuselection:`File --> Save a Copy` ``Shift+Ctrl+Alt+S``,
-  escolha o caminho ``MAME\Artwork\sfa3``, ou a mesma pasta onde está o
-  ``default.lay`` que criamos, no nome insira **centro.svg** e na parte
-  debaixo desta janela troque a opção **Inkscape SVG** por
-  **Optimized SVG**, clique em **Save** e cloque **OK** na próxima
-  janela que aparecer.
+* Vá em :guilabel:`File` --> :guilabel:`Save a Copy` ou :kbd:`Shift` +
+  :kbd:`Ctrl` + :kbd:`Alt` + :kbd:`S`, escolha o caminho
+  **MAME\\Artwork\\sfa3**, ou a mesma pasta onde está o ``default.lay``
+  que criamos, no nome insira **centro.svg** e na parte debaixo desta
+  janela troque a opção :guilabel:`Inkscape SVG` por
+  :guilabel:`Optimized SVG`, clique em :guilabel:`Save` e clique em
+  :guilabel:`OK` na próxima janela que aparecer.
 * Esconda o layer **centro** e deixe apanas o layer **direita** visível
   e repita o procedimento anterior, faça o mesmo para cada uma das
   posições.
@@ -3789,9 +3797,9 @@ Existe um pequeno truque que precisa ser feito para exportar imagens
 como estas que precisam estar dentro de algo invisível, pois diferente
 da exportação em SVG, não basta simplesmente deixar visível o que se
 deseja exportar, também é preciso exportar o quadrado junto e aqui
-está o "*pulo do gato*", definimos o **Stroke** (como descrito no
-capítulo anterior) com ``0,005`` ou até mesmo ``0,001`` para que este
-quadrado possa ser selecionável no Inkscape e que quando exportado, a
+está o "*pulo do gato*", definimos o :guilabel:`Stroke` (como descrito
+no capítulo anterior) com ``0,005`` ou até mesmo ``0,001`` para que este
+quadrado possa ser selecionável no *Inkscape* e que quando exportado, a
 borda não apareça quando for carregado pelo MAME.
 
 No final, a imagem exportada ficará dentro de uma área invisível onde
@@ -3801,16 +3809,17 @@ sendo jogado de um lado para o outro.
 
 Usando o mesmo arquivo que você usou acima:
 
-* Pressione ``Shift + Ctrl + E`` para abrir a aba **Export PNG image**.
+* Pressione :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`E` para abrir a aba
+  :guilabel:`Export PNG image`.
 * Deixe apenas o layout **centro** e **quadrado** visível.
-* Clique no círculo, mantenha o ``Shift`` pressionado e clique no
+* Clique no círculo, mantenha o :kbd:`Shift` pressionado e clique no
   quadrado fazendo com que o círculo e o quadrado fiquem selecionados.
-* Em **Export PNG image**, na aba **Export area** **Selection** vai
-  estar selecionado.
-* Em **Image size** defina ambos para **174**.
-* Em **Filename** defina o caminho completo e o nome do arquivo
-  (centro.png), no caso, exportaremos essa imagem para dentro da pasta
-  **artwork\sfa3**.
+* Em :guilabel:`Export PNG image`, na aba :guilabel:`Export area` o
+  :guilabel:`Selection` vai estar selecionado.
+* Em :guilabel:`Image size` defina ambos para ``174``.
+* Em :guilabel:`Filename` defina o caminho completo e o nome do arquivo
+  (``centro.png``), no caso, exportaremos essa imagem para dentro da
+  pasta **artwork\sfa3**.
 * Faça o mesmo com as outras posições e respeitando o mesmo nome usado
   anteriormente, porém, com a extensão **.png**, ``centro.png``,
   ``cima.png``, ``baixo.png``, etc.
@@ -3859,13 +3868,14 @@ Colocaremos um pequeno joystick animado sobreposto num canto da tela,
 porém antes precisamos saber de duas coisas, o tamanho da tela e o
 tamanho do objeto que será colocado nela. Para saber o tamanho da tela,
 inicie uma máquina qualquer como a **sfa3** (``mame sfa3``), pressione
-:menuselection:`Tab --> Informação da máquina`, na parte de **Vídeo** vai
-estar listado ``384 x 224`` (valor em **pixels**).
+:kbd:`Tab` --> :guilabel:`Informação da máquina`, na parte de **Vídeo**
+vai estar listado ``384`` x ``224`` (valor em **pixels**).
 
-* Abra o Inkscape, vá em :menuselection:`File --> Document properties...`
-  ou ``Shift+Ctrl+D``, em :menuselection:`Page --> Units` alterne de
-  **mm** para **px** (pixels), em **Width** defina ``384,0`` e em
-  **Height** defina ``224,0``, feche a janela.
+* Abra o Inkscape, vá em :guilabel:`File` --> :guilabel:`Document
+  properties...` ou :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`D`, em
+  :guilabel:`Page` --> :guilabel:`Units` alterne de :guilabel:`mm` para
+  :guilabel:`px` (pixels), em :guilabel:`Width` defina ``384,0`` e em
+  :guilabel:`Height` defina ``224,0``, feche a janela.
 
 Abaixo temos uma imagem para ilustrar o tamanho, a área em azul é a
 área de segurança de quem usa shaders para deixar a tela curvada e com
@@ -3890,9 +3900,9 @@ tamanho.
 		:align: center
 		:alt: joystick position
 
-Para o joystick da nossa tela, foi criado um objeto com **60,017 px** de
-largura por **30,760 px** de altura com uma cor qualquer e com a mesma
-cor na porém porém mais escura.
+Para o joystick da nossa tela, foi criado um objeto com ``60,017``
+**px** de largura por ``30,760`` **px** de altura com uma cor qualquer e
+com a mesma cor na porém porém mais escura.
 
 	.. image:: images/base.svg
 		:width: 80%
@@ -3914,13 +3924,13 @@ do desejado.
 
 Com todos os elementos posicionados nós temos:
 
-* Joystick, **X** = 2,397, **Y** = 6,378, **W** = 18, **H** = 18
-* Botão 1, **X** = 21,201 **Y** = 4,337  **W** = 9,6 **H** = 9,6
-* Botão 2, **X** = 33,641 **Y** = 4,292 **W** = 9,6 **H** = 9,6
-* Botão 3, **X** = 46,126 **Y** = 4,292 **W** = 9,6 **H** = 9,6
-* Botão 4, **X** = 21,201 **Y** = 16,820 **W** = 9,6 **H** = 9,6
-* Botão 5, **X** = 33,641 **Y** = 16,820 **W** = 9,6 **H** = 9,6
-* Botão 6, **X** = 46,126 **Y** = 16,820 **W** = 9,6 **H** = 9,6
+* Joystick, **X** = ``2,397``, **Y** = ``6,378``, **W** = ``18``, **H** = ``18``
+* Botão 1, **X** = ``21,201``, **Y** = ``4,337``,  **W** = ``9,6``, **H** = ``9,6``
+* Botão 2, **X** = ``33,641``, **Y** = ``4,292``, **W** = ``9,6``, **H** = ``9,6``
+* Botão 3, **X** = ``46,126``, **Y** = ``4,292``, **W** = ``9,6``, **H** = ``9,6``
+* Botão 4, **X** = ``21,201``, **Y** = ``16,820``, **W** = ``9,6``, **H** = ``9,6``
+* Botão 5, **X** = ``33,641``, **Y** = ``16,820``, **W** = ``9,6``, **H** = ``9,6``
+* Botão 6, **X** = ``46,126``, **Y** = ``16,820``, **W** = ``9,6``, **H** = ``9,6``
 
 
 .. _layfile-using_svg_files:
@@ -4013,7 +4023,7 @@ se alterar para um tom mais escuro das cores do botão:
 Organizamos tudo isso dentro de um grupo e usamos o ``count`` para
 duplicar os nossos botões no eixo vertical. Aqui nós também conectamos
 os respectivos botões ao driver, no caso, a lógica vai funcionar com
-qualquer máquina CPS2. Alguns valores aparecem diferente daqueles que
+qualquer máquina *CPS2*. Alguns valores aparecem diferente daqueles que
 nós obtemos, é um ajuste fino necessário para alinhar os objetos na
 tela:
 
@@ -4109,14 +4119,15 @@ tela:
 Como já explicado em :ref:`layfile-screen-position`, as telas CRT da
 época tinham uma proporção de 4:3, assim sendo, precisamos ajudar a
 resolução de tela. Use a planilha disponibilizada em
-:ref:`layfile-tools`, no campo **Digite a altura** insira **224**, note
-que o cálculo retorna um **DAR** com ``298,666666666667``, isso não é
-bom pois causa :ref:`aliasing <mame-commandline-unevenstretch>`, por
-isso precisamos de um valor inteiro.
+:ref:`layfile-tools`, no campo :guilabel:`Digite a altura' insira
+``224``, note que o cálculo retorna um **DAR** com ``298,666666666667``,
+isso não é bom pois causa
+:ref:`aliasing <mame-commandline-unevenstretch>`, então, precisamos
+de um valor inteiro.
 
 Substitua ``224`` por ``225``, note que os cálculos retornam valores
 inteiros, é este valor que usaremos para definir o tamanho da nossa
-tela ``300 x 225``. Logo abaixo nós definimos a posição do nosso
+tela ``300`` x ``225``. Logo abaixo nós definimos a posição do nosso
 joystick e o seu respectivo tamanho.
 
 .. code-block:: xml
@@ -4147,8 +4158,9 @@ joystick e o seu respectivo tamanho.
 Salve o arquivo, execute o comando no terminal/prompt de comando
 ``mame sfa3`` e veja que todos os botões e o controle reagem ao que você
 fizer no seu controle. Pressione
-:menuselection:`Tab --> Opções do vídeo --> Tela #0`, veja que há a
-opção **Joystick do jogador 1** que pode ser ligada ou desligada.
+:kbd:`Tab` --> :guilabel:`Opções do vídeo` --> :guilabel:`Tela #0`, veja
+que há a opção :guilabel:`Joystick do jogador 1` que pode ser ligada
+ou desligada.
 
 Para adicionar o controle para o jogador 2, basta agora adicionar a
 lista abaixo **depois** do grupo **Joystick J1** e adaptar a lógica para
@@ -4244,11 +4256,12 @@ opção para o jogador 2 logo depois das configurações do jogador 1.
 
 Salve e rode o **sfa3** novamente, parece que nada mudou, porém ao
 entrar nas opções do vídeo novamente, verá que está disponível a opção
-para o **Joystick do jogador 2** e ele está **desligado**. Quem define
-isso é a opção ``visible="no"``, porém para deixar ele sempre ativo sem
-ter que mexer no arquivo layout, basta deixar o segundo joystick visível
-e encerrar a emulação, isso salva as definições esta máquina e na
-próxima vez o joystick vai aparecer na tela.
+para o :guilabel:`Joystick do jogador 2` e ele está
+:guilabel:`desligado`. Quem define isso é a opção ``visible="no"``,
+porém para deixar ele sempre ativo sem ter que mexer no arquivo layout,
+basta deixar o segundo joystick visível e encerrar a emulação, isso
+salva as definições esta máquina e na próxima vez o joystick vai
+aparecer na tela.
 
 
 .. _layfile-simplifying_layout:
@@ -4422,24 +4435,25 @@ Neste exemplo usaremos design abaixo como referência:
 		:align: center
 		:alt: joystick com os botões
 
-* Abra a imagem no Inkscape, pressione ``Ctrl + A`` para selecionar 
-  todos os elementos, em seguida faça ``Shift + Ctrl + G`` para separar
-  todos os elementos do grupo.
-* Faça ``Shift+Ctrl+E`` ou :menuselection:`File --> Export PNG Image`
-  para abrir a aba de exportação.
-* Clique nos números e pressione **Del** no teclado para excluí-los.
+* Abra a imagem no Inkscape, pressione :kbd:`Ctrl` + :kbd:`A` para
+  selecionar todos os elementos, em seguida faça :kbd:`Shift` +
+  :kbd:`Ctrl` + :kbd:`G` para separar todos os elementos do grupo.
+* Faça :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`E` ou :guilabel:`File` -->
+  :guilabel:`Export PNG Image` para abrir a aba de exportação.
+* Clique nos números e pressione :kbd:`Del` para excluí-los.
 * Clique no círculo azul com o centro escuro, na aba
-  **Export PNG Image** em **Image size** defina ambos  **Width/Height**
-  como 100 (poderia ser maior mas serve para o nosso exemplo).
-* Em **Filename** exporte para a pasta **artwork/sfa3** com o nome
-  **azul1.png**.
+  :guilabel:`Export PNG Image` em :guilabel:`Image size` defina ambos
+  :guilabel:`Width/Height` como ``100`` (poderia ser maior mas serve
+  para o nosso exemplo).
+* Em :guilabel:`Filename` exporte para a pasta **artwork/sfa3** com o
+  nome ``azul1.png``.
 * Clique no outro botão azul com o centro claro e faça o mesmo, porém
-  exporte com o nome **azul0.png**.
+  exporte com o nome ``azul0.png``.
 * Faça o mesmo com os outros botões, no final você deverá ter os
-  arquivos **azul0.png**, **azul0.png**, **amarelo0.png**,
-  **amarelo1.png**, **vermelho0.png** e **vermelho1.png**.
+  arquivos ``azul0.png``, ``azul0.png``, ``amarelo0.png``,
+  ``amarelo1.png``, ``vermelho0.png`` e ``vermelho1.png``.
 * Clique na base do nosso joystick, exporte ele com o tamanho
-  **575 x 294** e defina o seu nome como **base.png**.
+  ``575`` x ``294`` e defina o seu nome como ``base.png``.
 
 Com todas as imagens em mãos podemos começar a montar o nosso layout:
 
@@ -4448,12 +4462,12 @@ Com todas as imagens em mãos podemos começar a montar o nosso layout:
 	<?xml version="1.0"?>
 	<mamelayout version="2">
 	<!--
-	Joystick for CPS2
-	Created by: Wellington Terumi Uemura
-	License: CC by 4.0
-	https://mamedoc.readthedocs.io/
-	Date: October 02, 2021
-	Download: https://www.mediafire.com/file/90ethuuvvd61mp1/sfa3-v3.zip
+		Joystick for CPS2
+		Created by: Wellington Terumi Uemura
+		License: CC by 4.0
+		https://mamedoc.readthedocs.io/
+		Date: October 02, 2021
+		Download: https://www.mediafire.com/file/90ethuuvvd61mp1/sfa3-v3.zip
 	-->
 
 
@@ -4497,8 +4511,8 @@ Aqui nós definimos todas as posições do joystick:
 	</element>
 
 Neste primeiro momento, usamos a área que nós definimos para o controle
-**60,017px x 30,760px** e dentro dessa área posicionamos todas as partes
-do controle.
+``60,017`` x ``30,760`` **px** e dentro dessa área posicionamos todas
+as partes do controle.
 
 .. code-block:: xml
 
@@ -4577,8 +4591,9 @@ do controle.
 	</element>
 	</group>
 
-O mesmo caso anterior, definimos o nome e uma resolução *4:3**, no caso,
-**300 x 225**, posicionamos os controles na tela e encerramos o layout.
+O mesmo caso anterior, definimos o nome e uma resolução **4:3**, no
+caso, ``300`` x ``225``, posicionamos os controles na tela e encerramos
+o layout.
 
 .. code-block:: xml
 
@@ -4630,12 +4645,12 @@ e depois montamos.
 	<?xml version="1.0"?>
 	<mamelayout version="2">
 	<!--
-	Joystick for CPS2
-	Created by: Wellington Terumi Uemura
-	License: CC by 4.0
-	https://mamedoc.readthedocs.io/
-	Date: October 02, 2021
-	Download: https://www.mediafire.com/file/11t2a32xnowi2nl/sfa3-v4.zip
+		Joystick for CPS2
+		Created by: Wellington Terumi Uemura
+		License: CC by 4.0
+		https://mamedoc.readthedocs.io/
+		Date: October 02, 2021
+		Download: https://www.mediafire.com/file/11t2a32xnowi2nl/sfa3-v4.zip
 	-->
 	
 	<element name="painel">
@@ -4888,7 +4903,6 @@ essa informação começa na
 			<bounds x="162.979" y="47.960" width="58.038" height="58.038" />
 		</element>
 
-
 		<!-- BET -->
 		<element ref="btn" inputtag="KEY2" inputmask="0x1">
 			<bounds x="122.981" y="159.961" width="58.038" height="58.038" />
@@ -4946,15 +4960,15 @@ disponibilizar os objetos na tela. Ao iniciar a máquina com
 :guilabel:`Tab` --> :guilabel:`Informação da máquina`, o driver informa
 que o tamanho da tela tem ``336`` x ``240``.
 
-* Inicie o Inkscape, defina o *Units* e a página em **px**, defina o
-  tamanho da página como ``336`` por ``240`` (**px**).
+* Inicie o Inkscape, defina o :guilabel:`Units` e a página em **px**,
+  defina o tamanho da página como ``336`` por ``240`` **px**.
 * Importe para esta página a imagem do controle fornecida acima, durante
-  a importação da imagem deve aparecer uma tela, em **DPI for rendered
-  SVG** mantenha ``96`` DPI.
-* Clique no cadeado entre os valores **W:** e **H:** para travar a
+  a importação da imagem deve aparecer uma tela, em
+  :guilabel:`DPI for rendered SVG` mantenha :guilabel:`96` DPI.
+* Clique no cadeado entre os valores :guilabel:`W:` e `H:` para travar a
   proporção.
-* Em **W:** coloque ``336,0`` e pressione :kbd:`Enter` para aplicar,
-  agora temos um objeto na tela com ``336`` por ``63,904``.
+* Em :guilabel:`W:` coloque ``336,0`` e pressione :kbd:`Enter` para
+  aplicar, agora temos um objeto na tela com ``336`` por ``63,904``.
 * Somando a altura do objeto com a altura da tela ``63,904`` + ``240``
   nós temos uma altura total de ``303,904``.
 * Pressione :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`D` e na altura da página
@@ -5029,7 +5043,7 @@ pressione :kbd:`Tab` para fechar o quadro de informação na tela).
 
 	<p></p>
 
-Ao clicar nos botões da tela, os botões da emulação deverão se alterar
+Ao clicar nos botões da tela, os botões da emulação deverão se alternar
 entre **ON** e **OFF** indicando que todos os botões estão funcionando.
 Retorne ao :guilabel:`Service Mode`, mude a chave para :guilabel:`Off`
 e clique em :guilabel:`Redefine` para reiniciar a máquina.
@@ -5037,6 +5051,7 @@ e clique em :guilabel:`Redefine` para reiniciar a máquina.
 .. raw:: latex
 
 	\clearpage
+
 
 .. _layfile-examples:
 

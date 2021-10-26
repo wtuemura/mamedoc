@@ -237,6 +237,16 @@ Esta macro permite que você faça o *Shoryuken* (*Dragon punch*) ao
 pressionar a tecla :kbd:`M` com o jogador 1 estando do lado esquerdo da
 tela, não se esqueça de clicar em :guilabel:`Done` ao concluir:
 
+.. note::
+
+	A partir da versão **0.237** os direcionais e muitas outras opções
+	já estão traduzidas para o nosso idioma, caso as opções dos
+	direcionais estejam diferentes, atualize a sua tradução com a versão
+	compatível com esta documentação baixando o arquivo
+	`strings.mo <https://github.com/wtuemura/mamedoc/tree/master/language/Portuguese_Brazil>`_
+	e substituindo o arquivo que está na pasta
+	**language\\Portuguese_Brazil**.
+
 * **Name**: J1 Shoryuken SF
 * **Activation sequence**: Kbd M
 * **On release**: Complete macro
@@ -336,7 +346,7 @@ da tela, não se esqueça de clicar em :guilabel:`Done` ao concluir:
 
 Esta macro é utilizada pelo personagem **Zanguief** para fazer o nosso
 conhecido "*Pilão Giratório*", também conhecido como *Spinning
-Piledriver* e *Screw Pile Driver* com *soco fraco* ao pressionar a tecla
+Piledriver* e *Screw Pile Driver* com *soco médio* ao pressionar a tecla
 :kbd:`C` com o jogador 1 estando do lado esquerdo da tela, não se
 esqueça de clicar em :guilabel:`Done` ao concluir:
 
