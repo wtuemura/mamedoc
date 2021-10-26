@@ -3346,7 +3346,8 @@ indicativo que você está no caminho certo pois indica que a combinação
 Nos casos onde a animação aparece invertida na tela como por exemplo se
 ao clicar para cima o controle na tela aparece para baixo e assim por
 diante, basta inverter os valores dos seus respectivos ``state`` e
-clicar em **SHIFT+F3** para recarregar o arquivo e ver como ficou.
+clicar em :kbd:`Shift` + :kbd:`F3` para recarregar o arquivo e ver como
+ficou.
 
 Há casos onde nenhum dos valores da tabela mostrada acima vai funcionar
 com a máquina que você estiver desenvolvendo o layout mesmo que os
@@ -3619,14 +3620,15 @@ posição de cada movimento do controle.
   :kbd:`Shift` + :kbd:`D` ou :guilabel:`File` --> :guilabel:`Document
   properties`, em :guilabel:`Page` defina :guilabel:`Display units` como
   **PX**.
-* Crie um círculo preto, defina o seu tamanho em **W:** e **H:**
-  com ``7,700`` **px**, este será aquela peça preta que fica no fim do
-  eixo do joystick, ele vai ajudar a dar a ilusão de movimento.
-* Vá em **Layers** :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`L`, altere o nome
-  deste primeiro layer para **centro base** clique no :guilabel:`+` para
-  adicionar um layer chamado  **centro** e um outro chamado
-  **quadrado**, este layer **quadrado** deve ficar abaixo do layer
-  **centro base**.
+* Crie um círculo preto, defina o seu tamanho em :guilabel:`W:` e
+  :guilabel:`H:` com ``7,700`` **px**, este será aquela peça preta que
+  fica no fim do eixo do joystick, ele vai ajudar a dar a ilusão de
+  movimento.
+* Vá em :guilabel:`Layers` ou :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`L`,
+  altere o nome deste primeiro layer para **centro base** clique no
+  :guilabel:`+` para adicionar um layer chamado  **centro** e um outro
+  chamado **quadrado**, este layer **quadrado** deve ficar abaixo do
+  layer **centro base**.
 * Clique no círculo preto para selecioná-lo, pressione :kbd:`Ctrl` +
   :kbd:`D` para duplicá-lo, escolha uma cor vermelha qualquer, defina o
   seu tamanho para ``9,700`` **px**. Clique com o botão direito em cima
@@ -3648,8 +3650,8 @@ está querendo imitar, ajuste e faça testes para ver qual se adapta
 melhor ao seu design e veja se a animação fica boa **na tela**.
 
 * Fazendo os cálculos, ``9,700`` * ``1,8`` = ``17,46``, vá em
-  :guilabel:`File` --> :guilabel:`Document Properties` (:kbd`Shift` +
-  :kbd`Ctrl` + :kbd`D`), em :guilabel:`Custom size` defina as unidades
+  :guilabel:`File` --> :guilabel:`Document Properties` (:kbd:`Shift` +
+  :kbd:`Ctrl` + :kbd:`D`), em :guilabel:`Custom size` defina as unidades
   para **PX** e defina também o :guilabel:`Width/Height` para ``17,46``,
   pressione **Enter** para aplicar e feche a janela.
 * Vá em :guilabel:`Object` --> :guilabel:`Align and distribute`, clique
