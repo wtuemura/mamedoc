@@ -3479,7 +3479,7 @@ testada, para o exemplo usado na foto o nome do diretório é
 **ssriders**. Rodando o comando ``mame -window ssriders`` irá
 aparecer uma tela com um design branco genérico, será possível escolher
 um modelo para 2 ou 4 jogadores através do menu
-:guilabel:`Opções do Vídeo` (:kbd:`TAB` --> :menuselection:`Opções
+:guilabel:`Opções do Vídeo` (:kbd:`TAB` --> :guilabel:`Opções
 do vídeo`), faça as alterações necessárias no arquivo de layout e para
 visualizar na tela pressione :kbd:`Shift` + :kbd:`F3`.
 
@@ -4120,7 +4120,7 @@ tela:
 Como já explicado em :ref:`layfile-screen-position`, as telas CRT da
 época tinham uma proporção de 4:3, assim sendo, precisamos ajudar a
 resolução de tela. Use a planilha disponibilizada em
-:ref:`layfile-tools`, no campo :guilabel:`Digite a altura' insira
+:ref:`layfile-tools`, no campo :guilabel:`Digite a altura` insira
 ``224``, note que o cálculo retorna um **DAR** com ``298,666666666667``,
 isso não é bom pois causa
 :ref:`aliasing <mame-commandline-unevenstretch>`, então, precisamos
@@ -4966,8 +4966,8 @@ que o tamanho da tela tem ``336`` x ``240``.
 * Importe para esta página a imagem do controle fornecida acima, durante
   a importação da imagem deve aparecer uma tela, em
   :guilabel:`DPI for rendered SVG` mantenha :guilabel:`96` DPI.
-* Clique no cadeado entre os valores :guilabel:`W:` e `H:` para travar a
-  proporção.
+* Clique no cadeado entre os valores :guilabel:`W:` e :guilabel:`H:`
+  para travar a proporção.
 * Em :guilabel:`W:` coloque ``336,0`` e pressione :kbd:`Enter` para
   aplicar, agora temos um objeto na tela com ``336`` por ``63,904``.
 * Somando a altura do objeto com a altura da tela ``63,904`` + ``240``
