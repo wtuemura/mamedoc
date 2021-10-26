@@ -2170,7 +2170,7 @@ pode ser a mesma:
 
 Usamos o exemplo abaixo para definir o nome da visualização que vai
 aparecer na interface do MAME para ser selecionada na opção **Vídeo**
-(:menuselection:`TAB --> Opções do vídeo`):
+(:kbd:`Tab` --> :guilabel:`Opções do vídeo`):
 
 .. code-block:: xml
 
@@ -2178,9 +2178,9 @@ aparecer na interface do MAME para ser selecionada na opção **Vídeo**
 
 Precisamos informar ao MAME o tamanho exato da imagem, para ver estas
 informações clique com o mouse direito do mouse em cima dela e
-selecione **Propriedades** ou abra o arquivo **arte.png** no Gimp e
-selecione :menuselection:`Imagem --> Propriedades da imagem` para
-identificar que a imagem tem **3296x4093**:
+selecione **Propriedades** ou abra o arquivo ``arte.png`` no *Gimp* e
+selecione :guilabel:`Imagem` --> :guilabel:`Propriedades da imagem` para
+identificar que a imagem tem ``3296`` x ``4093``:
 
 .. code-block:: xml
 
@@ -2203,7 +2203,7 @@ vai lidar com as coordenadas da posição **horizontal** e o **eixo y**
 da **vertical**.
 
 Para descobrir os valores **x** e **y** abra o arquivo **arte.png** no
-Gimp, na parte de baixo do Gimp próximo ao zoom ficam as coordenadas
+*Gimp*, na parte de baixo da tela próximo ao zoom ficam as coordenadas
 **x,y** como mostra a imagem abaixo. É dali que obtemos os valores e
 eles aparecem conforme movimentamos o mouse:
 
@@ -2230,12 +2230,12 @@ coordenadas que são ``817`` e ``575``:
    :alt: Coordenadas
 
 Uma maneira ainda mais fácil de se obter estes valores é pressionando a
-tecla **U** do seu teclado para selecionar a "varinha" ou a **Ferramenta
-de seleção contígua**, clique dentro da área quadriculada da imagem para
-selecioná-la. Em seguida pressione a tecla **R** ou a **Ferramenta de
-seleção retangular** e clique em qualquer região da área quadriculada,
-no painel à esquerda deve aparecer os mesmos valores para a coordenada
-**x** (``817``) e **y** (``575``):
+tecla :kbd:`U` do seu teclado para selecionar a "varinha" ou a
+:guilabel:`Ferramenta de seleção contígua`, clique dentro da área
+quadriculada da imagem para selecioná-la. Em seguida pressione a tecla
+:kbd:`R` ou a :guilabel:`Ferramenta de seleção retangular` e clique em
+qualquer região da área quadriculada, no painel à esquerda deve aparecer
+os mesmos valores para a coordenada **x** (``817``) e **y** (``575``):
 
 .. image:: images/gimp-coordenadas-selecao.png
    :width: 80%
@@ -2266,7 +2266,7 @@ valor qualquer, caso um valor seja inserido no segundo campo será feito
 o cálculo da largura com base nos dados da primeira linha, se nenhum
 valor for inserido, nada será calculado. O segundo campo em verde serve
 para situações como demonstrada acima onde você identifica uma área
-qualquer e quer saber qual seria a proporção 4:3 ideal para ela, você
+qualquer e quer saber qual seria a proporção *4:3 ideal* para ela, você
 insere o valor da altura quando a tela for horizontal ou largura quando
 a tela estiver na vertical para que a planilha calcule os valores.
 
@@ -2299,7 +2299,8 @@ para atender qualquer outra necessidade que você venha a ter.
 	o CRT-geom por exemplo. Assim, aumente o valor da altura na planilha
 	até quem um valor inteiro seja encontrado.
 	
-	Se fosse o caso do exemplo acima, o valor ideal seria **1662x1899**.
+	Se fosse o caso do exemplo acima, o valor ideal seria
+	``1662`` x ``1899``.
 
 Com o valor calculado em mãos, a resolução final será
 ``1660`` x ``2213``. Assim temos todos os valores para posicionarmos a
@@ -2408,8 +2409,8 @@ Posicionando os botões na tela
 
 Para posicionar qualquer outra imagem na tela como botões, controles ou
 o que quer que seja, será preciso estar com a arte que será usada no
-MAME já aberta no Gimp, pegue a imagem de um botão por exemplo e
-arraste para a tela do Gimp, ele deverá aparecer como uma camada,
+MAME já aberta no *Gimp*, pegue a imagem de um botão por exemplo e
+arraste para a tela do *Gimp*, ele deverá aparecer como uma camada,
 posicione-o na região desejada e se for o caso redimensione-o usando a
 ferramenta de redimensionamento :kbd:`Shift` + :kbd:`S`, para o botão
 escolhi o tamanho de ``190`` **px**. Quando concluir selecione a camada
@@ -2454,7 +2455,7 @@ abaixo:
    :alt: Centralizado
 
 Posicione o ponteiro do mouse bem em cima onde as linhas se cruzam para
-ver as coordenadas na parte de baixo da tela do Gimp, fica mais fácil
+ver as coordenadas na parte de baixo da tela do *Gimp*, fica mais fácil
 fazer um zoom com 300% ou mais, assim os valores podem ser encontrados
 de forma mais precisa, para isso, posicione o ponteiro no ponto
 desejado, mantenha pressionado :kbd:`Ctrl` e movimente a roda do mouse
@@ -2587,7 +2588,7 @@ o inicio da partida para o jogador 1 ou para o jogador 2. A versão da
 máquina *Galaxian* Italiana não possui tais luzes porém vamos
 adicioná-las mesmo assim para fins didáticos.
 
-Usando o Gimp, posicione os botões para o jogador 1 e para o jogador 2,
+Usando o *Gimp*, posicione os botões para o jogador 1 e para o jogador 2,
 escolhemos o tamanho de ``200`` x ``200`` **px** e então chegamos na
 seguinte configuração:
 
@@ -2841,7 +2842,7 @@ O MAME aceita trabalhar com o diretório como está ou então comprimindo-o
 em formato .zip ou .7zip. Ao usar a arte como um diretório permite que
 você altere alguma coisa enquanto realiza testes, caso altere o arquivo
 ou alguma imagem, é possível recarregar todos eles sem precisar encerrar
-o MAME pressionando **SHIFT+F3**.
+o MAME pressionando :kbd:`Shift` + :kbd:`F3`.
 
 .. raw:: latex
 
@@ -2851,7 +2852,7 @@ Caso queira aplicar shaders na tela para dar um efeito de uma tela CRT
 como mostra a foto, baixe `este arquivo <https://drive.google.com/file/d
 /0B10tgIdlTMwYSWt2emJtbU81NGc/view?usp=sharing>`_, descompacte-o dentro
 de um diretório chamado **glsl**. Vá até o diretório **ini** e crie o
-arquivo **galaxian.ini** e dentro dele adicione estas opções::
+arquivo ``galaxian.ini`` e dentro dele adicione estas opções::
 
 	video                     opengl
 	gl_glsl                   1
@@ -2865,7 +2866,7 @@ arquivo **galaxian.ini** e dentro dele adicione estas opções::
 
 Ao rodar o *galaxian* novamente a tela terá uma aparência de um CRT,
 caso queira manter a aparência porém eliminando um pouco a curvatura da
-tela, edite o arquivo **CRT-geom.vsh** e use estas configurações::
+tela, edite o arquivo ``CRT-geom.vsh`` e use estas configurações::
 
 	// START of parameters
 	
@@ -2894,8 +2895,8 @@ tela, edite o arquivo **CRT-geom.vsh** e use estas configurações::
 	// END of parameters
 
 Caso queira aplicar essas configurações para **TODAS** as máquinas
-classificadas como **Arcade**, então renomeie o arquivo **galaxian.ini**
-para **arcade.ini**, assim a máquina **Galaxian** e muitas outras terão
+classificadas como **Arcade**, então renomeie o arquivo ``galaxian.ini``
+para ``arcade.ini``, assim a máquina **Galaxian** e muitas outras terão
 este efeito na tela.
 
 Altere o valor do ``overscan`` de ``vec2(1.01,1.01)`` para
@@ -2944,7 +2945,7 @@ controles e adicionando 3 imagens para simular um joystick:
 		<image file="centro.png"	state="0x0" />
 	</element>
 
-Assim como foi feito anteriormente, usamos o Gimp para posicionar o
+Assim como foi feito anteriormente, usamos o *Gimp* para posicionar o
 joystick na região que queremos que ele apareça, com as coordenadas em
 mãos nós montamos toda a lógica dele:
 
@@ -3614,7 +3615,7 @@ animação se comporte como a movimentação de um controle arcade
 tradicional. Usando as referências deste limite, nós podemos definir a
 posição de cada movimento do controle.
 
-* No Inkscape, crie um novo arquivo, pressione :kbd:`Ctrl` +
+* No *Inkscape*, crie um novo arquivo, pressione :kbd:`Ctrl` +
   :kbd:`Shift` + :kbd:`D` ou :guilabel:`File` --> :guilabel:`Document
   properties`, em :guilabel:`Page` defina :guilabel:`Display units` como
   **PX**.
@@ -3688,7 +3689,7 @@ Até aqui nós temos uma imagem como esta:
 		:alt: joystick centro
 
 Em caso de problema, basta baixar a imagem acima (caso esteja lendo o
-documento no formato HTML) e abra ele no Inkscape para seguir os
+documento no formato HTML) e abra ele no *Inkscape* para seguir os
 próximos passos e recrie todos layers **quadrado**, **centro base** e
 **centro**, depois mova círculo vermelho para o layer **centro** (clique
 no ícone do olho para escondê-lo) e faça o mesmo com o círculo preto e
@@ -3871,7 +3872,7 @@ inicie uma máquina qualquer como a **sfa3** (``mame sfa3``), pressione
 :kbd:`Tab` --> :guilabel:`Informação da máquina`, na parte de **Vídeo**
 vai estar listado ``384`` x ``224`` (valor em **pixels**).
 
-* Abra o Inkscape, vá em :guilabel:`File` --> :guilabel:`Document
+* Abra o *Inkscape*, vá em :guilabel:`File` --> :guilabel:`Document
   properties...` ou :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`D`, em
   :guilabel:`Page` --> :guilabel:`Units` alterne de :guilabel:`mm` para
   :guilabel:`px` (pixels), em :guilabel:`Width` defina ``384,0`` e em
@@ -4435,7 +4436,7 @@ Neste exemplo usaremos design abaixo como referência:
 		:align: center
 		:alt: joystick com os botões
 
-* Abra a imagem no Inkscape, pressione :kbd:`Ctrl` + :kbd:`A` para
+* Abra a imagem no *Inkscape*, pressione :kbd:`Ctrl` + :kbd:`A` para
   selecionar todos os elementos, em seguida faça :kbd:`Shift` +
   :kbd:`Ctrl` + :kbd:`G` para separar todos os elementos do grupo.
 * Faça :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`E` ou :guilabel:`File` -->
@@ -4960,7 +4961,7 @@ disponibilizar os objetos na tela. Ao iniciar a máquina com
 :guilabel:`Tab` --> :guilabel:`Informação da máquina`, o driver informa
 que o tamanho da tela tem ``336`` x ``240``.
 
-* Inicie o Inkscape, defina o :guilabel:`Units` e a página em **px**,
+* Inicie o *Inkscape*, defina o :guilabel:`Units` e a página em **px**,
   defina o tamanho da página como ``336`` por ``240`` **px**.
 * Importe para esta página a imagem do controle fornecida acima, durante
   a importação da imagem deve aparecer uma tela, em
