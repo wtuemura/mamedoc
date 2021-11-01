@@ -47,7 +47,7 @@ Alterando os valores
 A interface é bem intuitiva, os controles para modificar os valores
 predefinidos funcionam da seguinte maneira:
 
-*	``mouse`` - Move o cursor na tela, seleciona os itens, as teclas
+*	**Mouse** - Move o cursor na tela, seleciona os itens, as teclas
 	cima, baixo, esquerda e direita fazem o mesmo.
 *	**Clique duplo ou Enter** - Aguarda a entrada do usuário (controle,
 	teclado, etc).
