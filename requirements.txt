@@ -1,2 +1,3 @@
 Sphinx
 sphinxcontrib-svg2pdfconverter
+docutils<0.18
