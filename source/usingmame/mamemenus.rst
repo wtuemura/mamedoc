@@ -24,19 +24,19 @@ fabricante, ano, a condição som e imagem e se a máquina funciona ou não.
 Dependendo da condição das máquinas a interface do MAME exibirá
 diferentes cores de fundo indicando a sua condição.
 
-	* **Verde**: São máquinas com roms completas e que funcionam.
-	* **Vermelha**: São máquinas que não funcionam direito ou tem roms faltando.
-	* **Laranja**: São máquinas que funcionam mas estão imperfeitas na parte de som ou vídeo.
+	* :guilabel:`Verde`: São máquinas com roms completas e que funcionam.
+	* :guilabel:`Vermelha`: São máquinas que não funcionam direito ou tem roms faltando.
+	* :guilabel:`Laranja`: São máquinas que funcionam mas estão imperfeitas na parte de som ou vídeo.
 
 Abaixo da lista das máquinas nós temos:
 
-	* **Configurações**: Exibe uma lista das configurações do MAME.
-	* **Configure a máquina**: Exibe uma lista das opções de configuração da máquina selecionada.
+	* :guilabel:`Configurações`: Exibe uma lista das configurações do MAME.
+	* :guilabel:`Configure a máquina`: Exibe uma lista das opções de configuração da máquina selecionada.
 
 Todos os itens exibidos nessa interface podem ser acessadas usando as
 setas do seu teclado (cima, baixo, esquerda, direita) e são selecionadas
-pressionando a tecla **Enter** do teclado. A interface também aceita o
-uso do mouse fazendo a seleção com um clique e um duplo clique para
+pressionando a tecla :kbd:`Enter` do teclado. A interface também aceita
+o uso do mouse fazendo a seleção com um clique e um duplo clique para
 abrir a opção ou rodar uma máquina.
 
 .. _mamemenu-alt-valores:
@@ -47,7 +47,7 @@ Alterando os valores
 A interface é bem intuitiva, os controles para modificar os valores
 predefinidos funcionam da seguinte maneira:
 
-*	**Mouse** - Move o cursor na tela, seleciona os itens, as teclas
+*	``mouse`` - Move o cursor na tela, seleciona os itens, as teclas
 	cima, baixo, esquerda e direita fazem o mesmo.
 *	**Clique duplo ou Enter** - Aguarda a entrada do usuário (controle,
 	teclado, etc).
@@ -77,33 +77,33 @@ lançadas naquele ano.
 Supondo que eu queira encontrar a máquina **Double Dragon**, faremos de
 conta que eu não me lembro, eu só lembro do ano *1987* e que o
 fabricante dela foi a *Technos Japan*. Vamos até o
-**Filtro Personalizado**, no primeiro filtro adicionamos um filtro para
-o **Ano** e colocamos *1987*, adicionamos mais um filtro para o
-**Fabricante** e escolhemos *Techmos Japan*, ao retornarmos ao menu
-anterior o MAME exibirá uma lista das máquinas que atendam aos critérios
-definidos por nós. Neste exemplo então o MAME vai retornar 6 diferentes
-máquinas **Double Dragon**, **Super Dodge Ball** e **Nekketsu Koukou
-Dodgeball Bu**.
+:guilabel:`Filtro Personalizado`, no primeiro filtro adicionamos um
+filtro para o :guilabel:`Ano` e colocamos ``1987``, adicionamos mais um
+filtro para o :guilabel:`Fabricante` e escolhemos *Techmos Japan*, ao
+retornarmos ao menu anterior o MAME exibirá uma lista das máquinas que
+atendam aos critérios definidos por nós. Neste exemplo então o MAME vai
+retornar 6 diferentes máquinas **Double Dragon**, **Super Dodge Ball** e
+**Nekketsu Koukou Dodgeball Bu**.
 
 Os filtros disponíveis são:
 
 .. _mamemenu-nao-filtrado:
 
-* **Sem filtro**
+* :guilabel:`Sem filtro`
 
   Exibe toda a lista das máquinas conhecidas e cadastradas no catálogo
   interno do MAME sem nenhum filtro.
 
 .. _mamemenu-disponivel:
 
-* **Disponível**
+* :guilabel:`Disponível`
 
   Exibe a lista das máquinas que o MAME identificou dentro do diretório
   roms.
 
 .. _mamemenu-nao-disponivel:
 
-* **Indisponível**
+* :guilabel:`Indisponível`
 
   Exibe toda a lista das máquinas conhecidas e cadastradas no catálogo
   interno do MAME que não estão disponíveis, ainda que a interface
@@ -111,7 +111,7 @@ Os filtros disponíveis são:
 
 .. _mamemenu-funciona:
 
-* **Funciona**
+* :guilabel:`Funciona`
 
   Exibe uma lista das máquinas que funcionam e estão em condição verde e
   marrom, as máquinas na condição vermelha ou que ainda não funcionem
@@ -119,27 +119,27 @@ Os filtros disponíveis são:
 
 .. _mamemenu-nao-funciona:
 
-* **Não funciona**
+* :guilabel:`Não funciona`
 
   Exibe apenas máquinas que tenham condição vermelha e que não
   funcionam.
 
 .. _mamemenu-mecanico:
 
-* **Mecânico**
+* :guilabel:`Mecânico`
 
   Exibe toda a lista das máquinas mecânicas conhecidas e cadastradas no
   catálogo interno do MAME como Pinball por exemplo.
 
 .. _mamemenu-nao-mecanico:
 
-* **Não mecânico**
+* :guilabel:`Não mecânico`
 
   Repete a lista :ref:`Não filtrado <mamemenu-nao-filtrado>`.
 
 .. _mamemenu-categoria:
 
-* **Categoria**
+* :guilabel:`Categoria`
 
   Este filtro usa de arquivos *.ini* para separar as máquinas em
   diversas categoria diferentes como por exemplo gabinetes com 2
@@ -157,20 +157,24 @@ Os filtros disponíveis são:
   baixado e extraído o diretório **folders** deve ser copiado para o
   diretório raiz do MAME.
 
+  .. raw:: latex
+
+	\clearpage
+
   Até o presente momento não existe uma tradução dessas categorias para
   o Português Brasileiro. Abaixo estão as categorias existentes até o
   momento e que funcionam com o MAME, as categorias que não funcionam
   com o MAME foram criadas para serem usadas com o MAMEUI [#MAMEUIP]_ e
   não estão listadas aqui:
 
-	* **Cabinets**: Lista as máquinas **Arcade** do MAME que estão divididas em tipos de gabinetes.
-	* **Category**: Lista as máquinas separadas em categorias como corrida, tabuleiro, tiro, etc.
-	* **Driver**: Lista as máquinas por driver como cps1.cpp, 1943.cpp, 3do.cpp, etc.
-	* **FreePlay**: Lista as máquinas **Arcade** do MAME que possuem a opção de poder jogar de graça.
-	* **MonoChrome**: Lista as máquinas separada por cores.
-	* **Resolution**: Lista as máquinas separadas pela sua resolução.
+	* :guilabel:`Cabinets`: Lista as máquinas **Arcade** do MAME que estão divididas em tipos de gabinetes.
+	* :guilabel:`Category`: Lista as máquinas separadas em categorias como corrida, tabuleiro, tiro, etc.
+	* :guilabel:`Driver`: Lista as máquinas por driver como cps1.cpp, 1943.cpp, 3do.cpp, etc.
+	* :guilabel:`FreePlay`: Lista as máquinas **Arcade** do MAME que possuem a opção de poder jogar de graça.
+	* :guilabel:`MonoChrome`: Lista as máquinas separada por cores.
+	* :guilabel:`Resolution`: Lista as máquinas separadas pela sua resolução.
 
-O site ainda oferece outros tipos de *.ini* como **version.ini** que
+O site ainda oferece outros tipos de *.ini* como ``version.ini`` que
 separa as máquinas por versão em que elas apareceram pela primeira vez
 no MAME, note que estes aquivos extras não serão abordados neste
 documento porém já deve ter ficado fácil compreender a sua utilidade no
@@ -178,94 +182,94 @@ MAME.
 
 .. _mamemenu-favoritos:
 
-* **Favoritos**
+* :guilabel:`Favoritos`
 
   Exibe uma lista das máquinas que foram favoritadas, para adicionar uma
   máquina à lista de favoritos, pressione **TAB**, no menu que aparecer
-  selecione **Adicione aos Favoritos**.
+  selecione **Adiciona aos favoritos**.
 
 .. _mamemenu-bios:
 
-* **BIOS**
+* :guilabel:`BIOS`
 
   Exibe uma lista das máquinas que precisam de uma BIOS para funcionar.
 
 .. _mamemenu-sembios:
 
-* **Sem BIOS**
+* :guilabel:`Sem BIOS`
 
   Exibe uma lista das máquinas que não precisam de uma BIOS para
   funcionar.
 
 .. _mamemenu-pai:
 
-* **Principais**
+* :guilabel:`Principais`
 
   Quando existirem máquinas derivadas da máquina principal exibe
   uma lista das máquinas que são originadas desta matriz.
 
 .. _mamemenu-clones:
 
-* **Clones**
+* :guilabel:`Clones`
 
   Exibe uma lista das máquinas que são consideradas clones das máquinas
   originais.
 
 .. _mamemenu-fabricante:
 
-* **Fabricante**
+* :guilabel:`Fabricante`
 
   Exibe uma lista com todos os fabricantes catalogados pelo MAME.
 
 .. _mamemenu-ano:
 
-* **Ano**
+* :guilabel:`Ano`
 
   Exibe uma lista das máquinas separadas por ano de lançamento.
 
 .. _mamemenu-save-support:
 
-* **É possível salvar**
+* :guilabel:`É possível salvar`
 
   Exibe uma lista das máquinas onde o salvamento do estado da máquina
   é possível.
 
 .. _mamemenu-nosave-support:
 
-* **Não é possível salvar**
+* :guilabel:`Não é possível salvar`
 
   Exibe uma lista das máquinas onde não é possível salvar o estado da
   máquina.
 
 .. _mamemenu-chd:
 
-* **Precisa de CHD**
+* :guilabel:`Precisa de CHD`
 
   Exibe uma lista das máquinas que precisam de uma imagem de disco para
   funcionar.
 
 .. _mamemenu-nochd:
 
-* **Não precisa de CHD**
+* :guilabel:`Não precisa de CHD`
 
   Exibe uma lista das máquinas que não precisam de uma imagem de disco
   para funcionar.
 
 .. _mamemenu-tela-vertical:
 
-* **Tela vertical**
+* :guilabel:`Tela vertical`
 
   Exibe uma lista das máquinas que usam orientação vertical de tela.
 
 .. _mamemenu-tela-horizontal:
 
-* **Tela horizontal**
+* :guilabel:`Tela horizontal`
 
   Exibe uma lista das máquinas que usam orientação horizontal de tela.
 
 .. _mamemenu-filtro-personalizado:
 
-* **Filtro personalizado**
+* :guilabel:`Filtro personalizado`
 
   Todo o filtro criado será listado aqui.
 
@@ -284,7 +288,7 @@ ao pressionar a tecla **TAB**.
 Entrada (geral)
 ~~~~~~~~~~~~~~~
 
-* **Interface do usuário**
+* :guilabel:`Interface do usuário`
 
   Consulte :ref:`mamemenu-general-inputs`.
 
@@ -292,7 +296,7 @@ Entrada (geral)
 
 	<p></p>
 
-* **Controles do jogador [1~10]**
+* :guilabel:`Controles do jogador [1~10]`
 
   Consulte :ref:`mamemenu-general-inputs-P1`.
 
@@ -300,7 +304,7 @@ Entrada (geral)
 
 	<p></p>
 
-* **Outros controles**
+* :guilabel:`Outros controles`
 
   Consulte :ref:`Outros controles <mamemenu-other-controls>`.
 
@@ -347,7 +351,7 @@ Controles deslizantes
 As opções disponíveis aqui também dependem do tipo da máquina, outros
 ajustes podem aparecer porém os principais são estes:
 
-* **Volume principal**
+* :guilabel:`Volume principal`
 
   Faz o ajuste do volume do áudio principal do sistema que estiver sendo
   emulado.
@@ -356,7 +360,7 @@ ajustes podem aparecer porém os principais são estes:
 
 	<p></p>
 
-* **Volume com xxx Ch.x**
+* :guilabel:`Volume com xxx Ch.x`
 
   Faz o ajuste individual de cada canal de áudio, máquina com áudio mono
   só tem o ``Ch.0``, já máquinas com canal estéreo possuem ``Ch.0``
@@ -367,50 +371,50 @@ ajustes podem aparecer porém os principais são estes:
 
 	<p></p>
 
-* **Brilho da tela**
+* :guilabel:`Brilho da tela`
 
   Faz o controle do nível de preto da tela, consulte também
   :ref:`-brightness <mame-commandline-brightness>`.
 
-		O valor predefinido é **1.0**.
+		O valor predefinido é ``1.0``.
 
-* **Contraste da tela**
+* :guilabel:`Contraste da tela`
 
   Faz o controle do nível de branco da tela, consulte também
   :ref:`-contrast <mame-commandline-contrast>`.
 
-		O valor predefinido é **1.0**.
+		O valor predefinido é ``1.0``.
 
-* **Gama da tela**
+* :guilabel:`Gama da tela`
 
   Faz o ajuste da escala de luminância da tela, consulte também
   :ref:`-gamma <mame-commandline-gamma>`.
 
-		O valor predefinido é **1.0**.
+		O valor predefinido é ``1.0``.
 
-* **Extensão horizontal da tela**
+* :guilabel:`Extensão horizontal da tela`
 
   Estica a tela no eixo horizontal.
 
-		O valor predefinido é **1.0**.
+		O valor predefinido é ``1.0``.
 
-* **Posição horizontal da tela**
+* :guilabel:`Posição horizontal da tela`
 
   Desloca a tela no eixo horizontal
 
-		O valor predefinido é **0.0**.
+		O valor predefinido é ``0.0``.
 
-* **Extensão vertical da tela**
+* :guilabel:`Extensão vertical da tela`
 
   Estica a tela no eixo vertical.
 
-		O valor predefinido é **1.0**.
+		O valor predefinido é ``1.0``.
 
-* **Posição vertical da tela**
+* :guilabel:`Posição vertical da tela`
 
   Desloca a tela no eixo vertical
 
-		O valor predefinido é **0.0**.
+		O valor predefinido é ``0.0``.
 
 .. raw:: latex
 
@@ -427,7 +431,7 @@ onde "X" indica o número da tela e cada uma delas com as opções
 mostradas abaixo. Aqui também vai aparecer qualquer tipo de ilustração
 da máquina emulada e as suas respectivas opções, quando houver.
 
-* **Nome**
+* :guilabel:`Nome`
 
   Caso esteja usando uma **artwork** e ela tiver um nome, ela será
   exibida aqui indicando que ela pode ser selecionada.
@@ -436,7 +440,7 @@ da máquina emulada e as suas respectivas opções, quando houver.
 
 	<p></p>
 
-* **Screen 0 Standard (4:3)**
+* :guilabel:`Tela 0 padrão (4:3)`
 
   Faz com que a tela tenha uma proporção padrão de 4:3.
 
@@ -444,7 +448,7 @@ da máquina emulada e as suas respectivas opções, quando houver.
 
 	<p></p>
 
-* **Screen 0 Pixel Aspect (X:Y)**
+* :guilabel:`Tela 0 relação de aspecto (X:Y)`
 
   Faz com que a tela use a proporção original (SAR) como 8:7, 12:7, etc.
 
@@ -452,7 +456,7 @@ da máquina emulada e as suas respectivas opções, quando houver.
 
 	<p></p>
 
-* **Cocktail**
+* :guilabel:`Cocktail`
 
   Faz com que a tela fique espelhada no eixo vertical da tela.
 
@@ -460,25 +464,25 @@ da máquina emulada e as suas respectivas opções, quando houver.
 
 	<p></p>
 
-* **Rotação**
+* :guilabel:`Rotação`
 
   Rotaciona a tela, as opções disponíveis são:
 
-	* **CW 90º**: Rotaciona a tela no sentido horário em 90º.
-	* **180º**: Rotaciona a tela em 180º.
-	* **CCW 90º**: Rotaciona a tela no sentido anti-horário em 90º.
+	* :guilabel:`CW 90º`: Rotaciona a tela no sentido horário em 90º.
+	* :guilabel:`180º`: Rotaciona a tela em 180º.
+	* :guilabel:`CCW 90º`: Rotaciona a tela no sentido anti-horário em 90º.
 
-		O valor predefinido é **None**.
+		O valor predefinido é ``None``.
 
 
-* **Aproxime a área da tela**
+* :guilabel:`Aproxime a área da tela`
 
   Quando a máquina estiver usando uma artwork onde exista uma tela,
   somente esta região será aproximada.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Escale a tela com valores racionais**
+* :guilabel:`Escale a tela com valores racionais`
 
   Faz com que a tela possa ser expandida usando números racionais em vez
   de números inteiros, isso causa efeitos *"aliasing"* (um efeito
@@ -488,19 +492,19 @@ da máquina emulada e as suas respectivas opções, quando houver.
 
   As opções disponíveis são:
 
-	* **Apenas X**: Expande a tela apenas no eixo X.
-	* **Apenas Y**: Expande a tela apenas no eixo Y.
-	* **X ou Y (Auto)**: Expande a tela em ambos os eixos automaticamente.
+	* :guilabel:`Apenas X`: Expande a tela apenas no eixo X.
+	* :guilabel:`Apenas Y`: Expande a tela apenas no eixo Y.
+	* :guilabel:`X ou Y (Auto)`: Expande a tela em ambos os eixos automaticamente.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Mantenha a proporção da tela**
+* :guilabel:`Mantenha a relação de aspecto`
 
   Mantém a proporção 4:3 da tela, independente do que as outras
   configurações façam, consulte também
   :ref:`-keepaspect <mame-commandline-keepaspect>`.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
 .. raw:: latex
 
@@ -517,7 +521,7 @@ da tela seja feito.
 
 	<p></p>
 
-* **Screen 0 Standard (4:3)**
+* :guilabel:`Tela 0 padrão (4:3)`
 
   Faz um print de tela nesta proporção
 
@@ -525,7 +529,7 @@ da tela seja feito.
 
 	<p></p>
 
-* **Screen 0 Pixel Aspect (X:Y)**
+* :guilabel:`Tela 0 relação de aspecto (X:Y)`
 
   Faz uma captura da tela usando a proporção original (SAR) como 8:7,
   12:7, etc.
@@ -534,7 +538,7 @@ da tela seja feito.
 
 	<p></p>
 
-* **Cocktail**
+* :guilabel:`Cocktail`
 
   Faz uma captura da tela espelhada no eixo vertical.
 
@@ -542,19 +546,19 @@ da tela seja feito.
 
 	<p></p>
 
-* **Rotação**
+* :guilabel:`Rotação`
 
   Faz uma captura da tela com a tela rotacionada como demonstrado no
   exemplo anterior.
 
-		O valor predefinido é **None**.
+		O valor predefinido é ``None``.
 
-* **Aproxime a área da tela**
+* :guilabel:`Aproxime a área da tela`
 
-  Quando a máquina estiver usando uma artwork onde exista uma tela, a
-  captura da tela será feita somente desta área.
+  Quando a máquina estiver usando uma ilustração onde exista um recorte
+  de uma tela, a captura da tela será feita somente desta região.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
 Opções dos plug-ins
 ~~~~~~~~~~~~~~~~~~~
@@ -595,125 +599,156 @@ pressionando a tecla **Enter** e digitando o valor manualmente.
 
 As opções disponíveis são:
 
-* **Tipografia da interface**
+* :guilabel:`Tipografia da interface`
 
   Permite a customização da tipografia da interface, dentro desta opção
   temos:
 
-	* **Tipografia da interface**: Aqui é possível definir uma fonte
-	  para toda a interface do MAME.
+	* :guilabel:`Tipografia da interface`
 
-		O valor predefinido é **Padrão**.
+	  Aqui é possível definir uma
+	  fonte para toda a interface do MAME.
 
-	* **Linhas**: Ajusta a dimensão do espaço e o tamanho da fonte,
-	  quanto maior o valor maior a dimensão da interface e menor o texto
-	  na tela.
+		O valor predefinido é ``Padrão``.
 
-		O valor predefinido é **30**.
+	* :guilabel:`Linhas`
 
-	* **Tamanho da caixa de informação**: Ajusta o tamanho da fonte nas
-	  caixas de texto na tela.
+	  Ajusta a dimensão do espaço e o tamanho da fonte, quanto maior o
+	  valor maior a dimensão da interface e menor o texto na tela.
 
-		O valor predefinido é **0.75**.
+		O valor predefinido é ``30``.
+
+	* :guilabel:`Tamanho da caixa de informação`
+
+	  Ajusta o tamanho da fonte nas caixas de texto na tela.
+
+		O valor predefinido é ``0.75``.
 
 .. _mamemenu-cores:
 
-* **Cores**
+* :guilabel:`Cores`
 
   Permite a customização completa das cores da interface do MAME, as
   opções disponíveis são:
 
-	* **Texto Normal**: Define a cor do texto de toda a interface.
+	* :guilabel:`Texto Normal`
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **255**.
+	  Define a cor do texto de toda a interface.
 
-	* **Cor Selecionada**: Define a cor do item que for selecionado.
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``255``.
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**.
+	* :guilabel:`Cor Selecionada`
 
-	* **Fundo do texto normal**: Aparentemente não tem função alguma.
+	  Define a cor do item que for selecionado.
 
-		O valor predefinido é Opacidade: **239**, Vermelho: **0**,
-		Verde: **0**, Azul: **0**.
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``0``.
 
-	* **Cor de fundo selecionada**: Define a cor do item selecionado.
+	* :guilabel:`Fundo do texto normal`
 
-		O valor predefinido é Opacidade: **239**, Vermelho: **128**,
-		Verde: **128**, Azul: **0**.
+	  Aparentemente não tem função  alguma.
 
-	* **Cor de subitem**: Define a cor dos itens que estiverem abaixo do
-	  item principal.
+		O valor predefinido é Opacidade: ``239``, Vermelho: ``0``,
+		Verde: ``0``, Azul: ``0``.
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **255**.
+	* :guilabel:`Cor de fundo selecionada`
 
-	* **Clone**: Define a cor do texto de segundo plano.
+	  Define a cor do item selecionado.
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **128**,
-		Verde: **128**, Azul: **128**.
+		O valor predefinido é Opacidade: ``239``, Vermelho: ``128``,
+		Verde: ``128``, Azul: ``0``.
 
-	* **Borda**: Define a cor das linhas da borda da tela.
+	* :guilabel:`Cor de subitem`
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **255**.
+	  Define a cor dos itens que estiverem abaixo do item principal.
 
-	* **Fundo**: Define a cor do fundo da tela e máquinas clonadas.
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``255``.
 
-		O valor predefinido é Opacidade: **239**, Vermelho: **16**,
-		Verde: **16**, Azul: **48**.
+	* :guilabel:`Clone`
 
-	* **Chave DIP**: Define a cor das chaves DIP selecionadas em
-	  máquinas que usam tal chaves.
+	  Define a cor do texto de segundo plano.
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**.
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``128``,
+		Verde: ``128``, Azul: ``128``.
 
-	* **Cor indisponível**: Aparentemente não tem função alguma.
+	* :guilabel:`Borda`
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**.
+	  Define a cor das linhas da borda da tela.
 
-	* **Cor do controle deslizante**: Define a cor dos controles
-	  deslizantes.
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``255``.
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**.
+	* :guilabel:`Fundo`
 
-	* **Fundo do visualizador GFX**: Define a cor de fundo do
-	  visualizador GFX (tecla **F4**).
+	  Define a cor do fundo da tela e máquinas clonadas.
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **0**.
+		O valor predefinido é Opacidade: ``239``, Vermelho: ``16``,
+		Verde: ``16``, Azul: ``48``.
 
-	* **Cor da sobreposição do mouse**: Define a cor que texto terá
-	  quando o mouse passar por cima de algum item selecionável.
+	* :guilabel:`Chave DIP`
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **128**.
+	  Define a cor das chaves DIP selecionadas em máquinas que usam tal
+	  chaves.
 
-	* **Cor de fundo da sobreposição do mouse**: Define a cor de fundo
-	  do texto quando o mouse passar por cima de um item selecionável.
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``0``.
 
-		O valor predefinido é Opacidade: **112**, Vermelho: **64**,
-		Verde: **64**, Azul: **0**.
+	* :guilabel:`Cor indisponível`
 
-	* **Cor de subposição do mouse**: Aparentemente não tem função
-	  alguma.
+	  Aparentemente não tem função alguma.
 
-		O valor predefinido é Opacidade: **255**, Vermelho: **255**,
-		Verde: **255**, Azul: **128**.
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``0``.
 
-	* **Cor debaixo do mouse**: Aparentemente não tem
-	  função alguma.
+	* :guilabel:`Cor do controle deslizante`
 
-		O valor predefinido é Opacidade: **176**, Vermelho: **96**,
-		Verde: **96**, Azul: **0**.
+	  Define a cor dos controles deslizantes.
+
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``0``.
+
+	* :guilabel:`Fundo do visualizador GFX`
+
+	  Define a cor de fundo do visualizador GFX (tecla :kbd:`F4`).
+
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``0``.
+
+	* :guilabel:`Cor da sobreposição do mouse`
+
+	  Define a cor que texto terá quando o mouse passar por cima de
+	  algum item selecionável.
+
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``128``.
+
+	* :guilabel:`Cor de fundo da sobreposição do mouse`
+
+	  Define a cor de fundo do texto quando o mouse passar por cima de
+	  um item selecionável.
+
+		O valor predefinido é Opacidade: ``112``, Vermelho: ``64``,
+		Verde: ``64``, Azul: ``0``.
+
+	* :guilabel:`Cor de subposição do mouse`
+
+	  Aparentemente não tem função alguma.
+
+		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
+		Verde: ``255``, Azul: ``128``.
+
+	* :guilabel:`Cor debaixo do mouse`
+
+	  Aparentemente não tem função alguma.
+
+		O valor predefinido é Opacidade: ``176``, Vermelho: ``96``,
+		Verde: ``96``, Azul: ``0``.
 
 .. _mamemenu-idioma:
 
-* **Idioma**
+* :guilabel:`Idioma`
 
   Permite a seleção do Idioma da interface do MAME, faça um clique duplo
   no campo do idioma para abrir uma listagem com todos os idiomas
@@ -721,36 +756,32 @@ As opções disponíveis são:
 
 		O valor predefinido é **English**
 
-* **Os nomes dos sistemas**
+* :guilabel:`Os nomes dos sistemas`
 
   No momento só existe a opção **incorporado**.
 
 		O valor predefinido é **incorporado**.
 
-* **Painéis laterais**
+* :guilabel:`Painéis laterais`
 
   Configura a exibição ou não dos painéis laterais da interface do MAME.
   As opções disponíveis são:
 
-	* **Mostra tudo**
-	* **Esconde os filtros**
-	* **Esconde info/imagem**
-	* **Esconde ambos**
+	* :guilabel:`Mostra tudo`
+	* :guilabel:`Esconde os filtros`
+	* :guilabel:`Esconde info/imagem`
+	* :guilabel:`Esconde ambos`
 
 
-.. raw:: latex
-
-	\clearpage
-
-Configuração dos diretórios
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuração das pastas
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Aqui é possível mudar as predefinições do locais onde os diretórios
 usados pelo MAME se encontram. As opções disponíveis são:
 
 .. _mamemenu-diretório-roms:
 
-* **ROMs**
+* :guilabel:`ROMs`
 
   Define o caminho do diretório onde se encontram as ROMs. Veja também
   :ref:`-rompath <mame-commandline-rompath>`.
@@ -758,7 +789,8 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **roms** no diretório
 		raiz do MAME.
 
-* **Software em mídia**
+
+* :guilabel:`Software em mídia`
 
   Define o caminho onde a imagem em mídia dos arquivos são armazenados
   como CD-ROM, floppy, fita K7 ou qualquer outro programa avulso.
@@ -766,150 +798,16 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **software** no
 		diretório raiz do MAME.
 
-* **Interface do usuário**
-  Define o caminho do diretório onde se encontram os arquivos de
-  configuração da interface visual do MAME.
 
-		O valor predefinido é um diretório chamado **ui** no
-		diretório raiz do MAME.
-
-* **Idioma**
-
-  Define o caminho do diretório onde se encontram os arquivos de idioma
-  da interface do MAME.
-
-		O valor predefinido é um diretório chamado **language** no
-		diretório raiz do MAME.
-
-* **Amostras**
-
-  Define o caminho do diretório onde se encontram os arquivos de áudio
-  usadas como amostras de áudio no MAME.
+* :guilabel:`Amostras de áudio`
+  Define o caminho do diretório onde se encontram os arquivos das
+  amostras de áudio.
 
 		O valor predefinido é um diretório chamado **samples** no
 		diretório raiz do MAME.
 
-* **DATs**
 
-  Define o caminho do diretório onde se encontram os arquivos *.dat*.
-
-		O valor predefinido são os diretórios **dats** e **history** no
-		diretório raiz do MAME.
-
-* **INIs**
-
-  Define o caminho do diretório onde se encontram os arquivos *.ini*.
-
-		O valor predefinido é um diretório chamado **ini** no
-		diretório raiz do MAME.
-
-* **INIs com as categorias**
-
-  Define o caminho do diretório onde se encontram os arquivos *.ini* com
-  descritivos de categoria.
-
-		O valor predefinido é um diretório chamado **folders** no
-		diretório raiz do MAME.
-
-* **Ícones**
-
-  Define o caminho do diretório onde se encontram os arquivos *.ico*
-  para serem usados como ícones que ficam ao lado do nome da máquina.
-  [#]_
-
-		O valor predefinido é um diretório chamado **icons** no
-		diretório raiz do MAME.
-
-.. raw:: latex
-
-	\clearpage
-
-* **Trapaças**
-
-  Define o caminho do diretório onde se encontra o arquivo de trapaça.
-  Este arquivo também pode ser deixado na pasta raiz do MAME.
-
-		O valor predefinido é um diretório chamado **cheats** no
-		diretório raiz do MAME. [#]_
-
-* **Capturas da tela**
-
-  Define o caminho do diretório onde serão armazenadas as capturas
-  da tela e a gravação de vídeo.
-
-		O valor predefinido é um diretório chamado **snaps** no
-		diretório raiz do MAME.
-
-* **Gabinetes**
-
-  Define o caminho do diretório onde se encontram as imagens dos
-  gabinetes.
-
-		O valor predefinido são dois diretórios chamados **cabinets** e
-		**cabdevs** no diretório raiz do MAME.
-
-* **Panfletos**
-
-  Define o caminho do diretório onde se encontram as imagens dos
-  panfletos.
-
-		O valor predefinido é um diretório chamado **flyers** no
-		diretório raiz do MAME.
-
-* **Títulos**
-
-  Define o caminho do diretório onde se encontram as imagens que mostram
-  a tela de título da máquina.
-
-		O valor predefinido é um diretório chamado **titles** no
-		diretório raiz do MAME. [#]_
-
-* **Ends**
-
-  Define o caminho do diretório onde se encontram as imagens que mostram
-  a tela de um final de jogo da máquina.
-
-		O valor predefinido é um diretório chamado **ends** no
-		diretório raiz do MAME.
-
-* **PCBs**
-
-  Define o caminho do diretório onde se encontram fotos que mostram
-  a placa de circuito impresso da máquina.
-
-		O valor predefinido é um diretório chamado **pcb** no
-		diretório raiz do MAME.
-
-* **Marquises**
-
-  Define o caminho do diretório onde se encontram as imagens com a arte
-  gráfica que ficavam na parte de cima da máquina.
-
-		O valor predefinido é um diretório chamado **marquees** no
-		diretório raiz do MAME.
-
-* **Painéis de controle**
-
-  Define o caminho do diretório onde se encontram as imagens ou as fotos
-  com a arte gráfica do painel onde se encontram os diferentes controles
-  e botões do arcade.
-
-		O valor predefinido é um diretório chamado **cpanel** no
-		diretório raiz do MAME.
-
-* **Mira**
-
-  Define o caminho do diretório onde se encontram as imagens com uma
-  arte gráfica em formato de mira que serão usadas por jogos de tiro.
-
-		O valor predefinido é um diretório chamado **crosshair** no
-		diretório raiz do MAME.
-
-.. raw:: latex
-
-	\clearpage
-
-* **Arte**
+* :guilabel:`Ilustrações`
 
   Define o caminho do diretório onde se encontram as ilustrações
   gráficas que fazem o preenchimento de fundo da tela das máquinas.
@@ -918,39 +816,216 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **artwork** no
 		diretório raiz do MAME.
 
-* **Chefes**
 
-  Define o caminho do diretório onde se encontram as imagens com os
-  prints de tela dos chefes de fase. [#]_
+* :guilabel:`Miras`
+
+  Define o caminho do diretório onde se encontram as imagens com uma
+  arte gráfica em formato de mira que serão usadas por jogos de tiro.
+
+		O valor predefinido é um diretório chamado **crosshair** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Arquivos de trapaça`
+
+  Define o caminho do diretório onde se encontra o arquivo de trapaça.
+  Este arquivo também pode ser deixado na pasta raiz do MAME.
+
+		O valor predefinido é um diretório chamado **cheats** no
+		diretório raiz do MAME. [#CHEAT]_
+
+..	[#CHEAT] O site `Pugsy's Cheat <http://cheat.retrogames.com/>`_ é um dos
+		mais conhecidos que oferece um arquivo de trapaça para download.
+
+
+* :guilabel:`Plug-ins`
+
+  Define o caminho do diretório onde se encontram os plug-ins do MAME.
+
+		O valor predefinido é um diretório chamado **plugins** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Traduções da interface`
+
+  Define o caminho do diretório onde se encontram os arquivos de
+  tradução da interface do MAME.
+
+		O valor predefinido é um diretório chamado **language** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`INIs`
+
+  Define o caminho do diretório onde se encontram os arquivos *.ini*.
+
+		O valor predefinido é um diretório chamado **ini** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Configurações da interface`
+
+  Define o caminho do diretório onde se encontram os arquivos *.ini* da
+  configuração da interface.
+
+		O valor predefinido é um diretório chamado **ui** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Dados do plug-in`
+
+  Define o caminho do diretório onde os dados do plug-in serão gravados.
+
+		O valor predefinido é o mesmo diretório raiz do MAME.
+
+
+* :guilabel:`DATs`
+
+  Define o caminho do diretório onde se encontram os arquivos *.dat*.
+
+		O valor predefinido são os diretórios **dats**, **history** e no
+		diretório raiz do MAME.
+
+
+* :guilabel:`INIs com as categorias`
+
+  Define o caminho do diretório onde se encontram os arquivos *.ini* com
+  descritivos de categoria.
+
+		O valor predefinido é um diretório chamado **folders** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Capturas da tela`
+
+  Define o caminho do diretório onde serão armazenadas as capturas
+  da tela e a gravação de vídeo.
+
+		O valor predefinido é um diretório chamado **snaps** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Ícones`
+
+  Define o caminho do diretório onde se encontram os arquivos *.ico*
+  para serem usados como ícones que ficam ao lado do nome da máquina.
+  [#ICONS]_
+
+..	[#ICONS] O site do `MAMEICONS <http://icons.mameworld.info/>`_ e
+		`Progetto Snaps <http://www.progettosnaps.net/icons>`_ oferecem
+		tais ícones e outras imagens para download.
+
+		O valor predefinido é um diretório chamado **icons** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Painéis de controle`
+
+  Define o caminho do diretório onde se encontram as imagens ou as fotos
+  com a arte gráfica do painel onde se encontram os diferentes controles
+  e botões do arcade.
+
+		O valor predefinido é um diretório chamado **cpanel** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Gabinetes`
+
+  Define o caminho do diretório onde se encontram as imagens dos
+  gabinetes.
+
+		O valor predefinido são dois diretórios chamados **cabinets** e
+		**cabdevs** no diretório raiz do MAME.
+
+
+* :guilabel:`Marquises`
+
+  Define o caminho do diretório onde se encontram as imagens com a arte
+  gráfica que ficavam na parte de cima da máquina.
+
+		O valor predefinido é um diretório chamado **marquees** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`PCIs`
+
+  Define o caminho do diretório onde se encontram fotos que mostram
+  a placa de circuito impresso da máquina.
+
+		O valor predefinido é um diretório chamado **pcb** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Panfletos`
+
+  Define o caminho do diretório onde se encontram as imagens dos
+  panfletos.
+
+		O valor predefinido é um diretório chamado **flyers** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Títulos das telas`
+
+  Define o caminho do diretório onde se encontram as imagens que mostram
+  a tela de título da máquina.
+
+		O valor predefinido é um diretório chamado **titles** no
+		diretório raiz do MAME. [#TITLES]_
+
+..	[#TITLES] O site `MAME Channel <https://www.mamechannel.it/pages/titles.php>`_
+		oferece diferentes telas de títulos para download.
+
+
+* :guilabel:`Finais dos jogos`
+
+  Define o caminho do diretório onde se encontram as imagens com a
+  captura de tela mostrando o final do jogo.
+
+		O valor predefinido é um diretório chamado **ends** no
+		diretório raiz do MAME.
+
+
+* :guilabel:`Chefes`
+
+  Define o caminho do diretório onde se encontram as imagens com a
+  captura de tela dos chefes de fase. [#BOSS]_
 
 		O valor predefinido é um diretório chamado **bosses** no
 		diretório raiz do MAME.
 
-* **Amostra das artes**
+..	[#BOSS] É possível baixar essas imagens do site `EmuMovies
+		<https://emumovies.com/files/file/3493-mame-bosses-pack/>`_.
+
+
+* :guilabel:`Amostras das ilustrações`
 
   Define o caminho do diretório onde se encontram as imagens com as
   amostras das ilustrações, essas amostras tem um tamanho menor se
   comparadas com as ilustrações completas.
 
-		O valor predefinido são dois diretórios chamados **artwork
-		preview** e **artpreview** no diretório raiz do MAME.
+		O valor predefinido é um diretório chamado **artwork preview** e
+		**artpreiew** no diretório raiz do MAME.
 
-* **Selecionado**
 
-  A ser concluído
+* :guilabel:`Seleciona`
+
+  A ser concluído.
 
 		O valor predefinido é um diretório chamado **select** no
 		diretório raiz do MAME.
 
-* **Fim do jogo**
 
-  Define o caminho do diretório onde se encontram as imagens com os
-  prints de tela mostrando o **GAME OVER**.
+* :guilabel:`Telas do game over`
+
+  Define o caminho do diretório onde se encontram as imagens que mostram
+  a tela de **GAME OVER**.
 
 		O valor predefinido é um diretório chamado **gameover** no
 		diretório raiz do MAME.
 
-* **Como**
+
+* :guilabel:`Como fazer`
 
   Define o caminho do diretório onde se encontram as imagens ou fotos
   daqueles panfletos que mostravam as instruções de como jogar.
@@ -958,7 +1033,8 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **howto** no
 		diretório raiz do MAME.
 
-* **Logotipos**
+
+* :guilabel:`Logotipos`
 
   Define o caminho do diretório onde se encontram as imagens ou
   ilustrações com a logomarca das empresas.
@@ -966,27 +1042,30 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		O valor predefinido é um diretório chamado **logos** no
 		diretório raiz do MAME.
 
-* **Placares**
 
-  Define o caminho do diretório onde se encontram as imagens com os
-  prints de tela mostrando as maiores pontuações. [#]_
+* :guilabel:`Placares`
+
+  Define o caminho do diretório onde se encontram as imagens com a
+  captura de tela mostrando as maiores pontuações. [#PLACAR]_
+
+..	[#] É possível baixar essas imagens do site `High-Score
+		<http://highscore.com/>`_ e
+		`Cubeman <http://www.cubeman.org/mame1.html>`_.
 
 		O valor predefinido é um diretório chamado **scores** no
 		diretório raiz do MAME.
 
-* **Versus**
 
-  Define o caminho do diretório onde se encontram as imagens com os
-  prints de tela mostrando as maiores pontuações.
+* :guilabel:`Versus`
+
+  Define o caminho do diretório onde se encontram as imagens com a
+  captura de tela mostrando as maiores pontuações.
 
 		O valor predefinido é um diretório chamado **versus** no
 		diretório raiz do MAME.
 
-.. raw:: latex
 
-	\clearpage
-
-* **Capas**
+* :guilabel:`Capas`
 
   Define o caminho do diretório onde se encontram as imagens com as
   capas dos jogos.
@@ -1007,67 +1086,76 @@ Essas opções sempre serão carregadas na inicialização do MAME, lembrando
 que a linha de comando **SEMPRE** tem prioridade, independente do que
 seja definido aqui.
 
-* **Modo do vídeo**
+* :guilabel:`Modo do vídeo`
 
   Para mais informações consulte :ref:`-video <mame-commandline-video>`.
 
-		O valor predefinido é **Auto**.
+		O valor predefinido é ``Auto``.
 
-* **Quantidade de telas**
+
+* * :guilabel:`Quantidade de telas`
 
   Predefine a quantidade das telas que serão usadas na emulação.
 
-		O valor predefinido é **1**.
+		O valor predefinido é ``1``.
 
-* **GLSL**
+
+* :guilabel:`GLSL`
 
   Ativa ou não os efeitos GLSL, para mais informações consulte
   :ref:`-gl_glsl_filter <mame-commandline-glglslfilter>`.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Filtragem bilinear**
+
+* :guilabel:`Filtragem bilinear`
 
   Ativa ou não os filtros de tela para suavizar os gráficos, caso os
   gráficos fiquem muito borrados, experimente ativar também a opção
-  **Pré-escala de bitmap**.
+  :guilabel:`escala prévia do bitmap`.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Pré-escala do bitmap**
+
+* :guilabel:`Escala prévia do bitmap`
 
   Opção útil quando máquinas com baixa resolução são ampliadas para uma
   resolução maior, use essa opção para dar uma amenizada nessa
   aparência, essa opção geralmente é utilizada em conjunto com a opção
   **Filtragem bilinear**.
 
-		O valor predefinido é **1**.
+		O valor predefinido é ``1``.
 
-* **Modo janela**
+
+* :guilabel:`Modo janela`
 
   Faz o MAME exibir a tela emulada em uma janela ou em uma tela inteira.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Mantenha a proporção da tela**
 
-  Faz com que a proporção da imagem exibida seja sempre mantida.
+* :guilabel:`Mantenha a relação de aspecto`
 
-		O valor predefinido é **Ligado**.
+  Faz com que a proporção da tela seja sempre mantida.
 
-* **Inicia com a tela expandida**
+		O valor predefinido é ``Ligado``.
+
+
+* :guilabel:`Inicia com a tela expandida`
 
   Faz o MAME exibir a tela emulada em uma janela com o tamanho máximo do
   seu monitor, caso contrário exibe a tela emulada em sua resolução
   nativa.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Atualização sincronizada dos quadros**
+
+* :guilabel:`Atualização síncrona dos quadros`
 
   Consulte :ref:`-syncrefresh <mame-commandline-syncrefresh>`.
 
-* **Aguarde o sincronismo vertical**
+
+* :guilabel:`Aguarde a sincronização vertical`
 
   Consulte :ref:`-waitvsync <mame-commandline-waitvsync>`.
 
@@ -1080,29 +1168,33 @@ seja definido aqui.
 Opções do áudio
 ~~~~~~~~~~~~~~~
 
-* **Áudio**
+
+* :guilabel:`Áudio`
 
   Ativa o áudio ou não, para mais informações consulte
   :ref:`-sound <mame-commandline-sound>`.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Compressor**
+
+* :guilabel:`Compressor`
 
   Tenta manter o nível mais baixo e o mais alto do áudio no mesmo nível,
   atua também na redução do volume do volume do áudio caso seja muito
   alto.
 
-O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Taxa da amostragem**
+
+* :guilabel:`Taxa da amostragem`
 
   Define a taxa da amostragem do áudio que será usada em todas as
   máquinas.
 
-		O valor predefinido é **48000**.
+		O valor predefinido é ``48000``.
 
-* **Use amostras externas**
+
+* :guilabel:`Use amostras externas`
 
   Veja :ref:`-samples <mame-commandline-nosamples>`.
 
@@ -1111,61 +1203,74 @@ O valor predefinido é **Ligado**.
 Opções diversas
 ~~~~~~~~~~~~~~~
 
-* **Ignore os avisos de emulação imperfeita**
+
+* :guilabel:`Ignore os avisos de emulação imperfeita`
 
   Faz com que o MAME não exiba as telas de aviso das máquinas com
   emulação imperfeita (tarja amarela).
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Selecione novamente a última máquina já executada**
+
+* :guilabel:`Selecione novamente a última máquina já executada`
 
   Faz com que o MAME se lembre da última máquina que foi jogada através
   da interface do MAME.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Aumenta as imagens no painel direito**
+
+* :guilabel:`Aumenta as imagens no painel direito`
 
   Aumenta o tamanho de qualquer uma das imagens exibidas no painel
   direito da interface do MAME, sempre mantendo a proporcionalidade da
   imagem.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Trapaças**
+
+* :guilabel:`Trapaças`
 
   Ativa ou não o sistema de trapaças do MAME.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Mostra o ponteiro do mouse**
+
+* :guilabel:`Mostra o ponteiro do mouse`
 
   Ativa ou não a exibição do mouse na interface do MAME.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Confirma se deseja encerrar a máquina ou não**
+
+* :guilabel:`Confirma se deseja encerrar a máquina ou não`
 
   Faz com que o MAME sempre te pergunte se quer realmente encerrar a
   emulação da máquina ou não.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Omite a tela de informações ao iniciar**
+.. raw:: latex
+
+	\clearpage
+
+
+* :guilabel:`Omite a tela de informações ao iniciar`
 
   Não exibe a tela com informações sobre o sistema quando iniciar uma
   máquina.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Mantenha o aspecto 4:3 nas capturas da tela**
+
+* :guilabel:`Mantenha o aspecto 4:3 nas capturas da tela`
 
   Impõem uma proporção de 4:3 em todas as capturas da tela.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Usa uma imagem como plano de fundo**
+
+* :guilabel:`Usa uma imagem como plano de fundo`
 
   Permite o uso de uma imagem como papel de parede na interface do MAME.
   Escolha uma imagem **.JPG** ou **.PNG** e a renomeie para
@@ -1173,24 +1278,27 @@ Opções diversas
   no diretório raiz do MAME (no mesmo diretório onde o executável do
   MAME se encontra).
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
-* **Omite a tela da escolha da BIOS**
+
+* :guilabel:`Omite a tela da escolha da BIOS`
 
   Faz com que o MAME inicie a máquina com a primeira BIOS disponível
   para a máquina ao em vez de usar uma lista.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Omite as partes do cardápio da seleção do programa**
+
+* :guilabel:`Omite as partes do cardápio da seleção do programa`
 
   Altera a maneira com que a lista do software é exibida, em vez de
   exibir a lista na ordem predefinida pelo MAME, exibe a lista na ordem
   listada no arquivo da respectiva lista.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Informação de aferição automática**
+
+* :guilabel:`Informação de aferição automática`
 
   Exibe na aba de informações gerais do lado direito da interface do
   MAME informação quanto a condição da ROM selecionada se é **BOA** ou
@@ -1201,13 +1309,14 @@ Opções diversas
   devido as aferições que são feitas em tempo real a cada seleção da
   ROM.
 
-		O valor predefinido é **Desligado**.
+		O valor predefinido é ``Desligado``.
 
-* **Esconde as máquinas sem ROMs da lista de disponíveis**
+
+* :guilabel:`Esconde as máquinas sem ROMs da lista de disponíveis`
 
   Esconde da lista máquinas eletrônicas que não usam ROMs.
 
-		O valor predefinido é **Ligado**.
+		O valor predefinido é ``Ligado``.
 
 .. raw:: latex
 
@@ -1218,63 +1327,69 @@ Opções diversas
 Mapeamento do dispositivo
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* **Atribuição do dispositivo pistola de luz**
+
+* :guilabel:`Atribuição do dispositivo pistola de luz`
 
   Caso exista um controlador para a pistola de luz, os valores
-  disponíveis são **none**, **keyboard**, **mouse**, **Lightgun** e
-  **joystick**.
+  disponíveis são ``None``, ``keyboard``, ``mouse``, ``lightgun`` e
+  ``joystick``.
 
-		O valor predefinido é **keyboard**.
+		O valor predefinido é ``keyboard``.
 
-* **Atribuição do dispositivo trackball**
+
+* :guilabel:`Atribuição do dispositivo trackball`
 
   Caso exista um controlador para o trackball, os valores disponíveis
-  são **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
+  são ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
 
-		O valor predefinido é **keyboard**.
+		O valor predefinido é ``keyboard``.
 
-* **Atribuição do dispositivo pedal**
+
+* :guilabel:`Atribuição do dispositivo pedal`
 
   Caso exista um controlador para pedais, os valores disponíveis são
-  **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
+  ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
 
-		O valor predefinido é **keyboard**.
+		O valor predefinido é ``keyboard``.
 
-* **Atribuição do dispositivo adstick**
+
+* :guilabel:`Atribuição do dispositivo adstick`
 
   Caso exista um controlador para adstick, os valores disponíveis são
-  **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
+  ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
 
-		O valor predefinido é **keyboard**.
+		O valor predefinido é ``keyboard``.
 
-* **Atribuição do dispositivo remo**
+
+* :guilabel:`Atribuição do dispositivo remo`
 
   Caso exista um controlador para remo, os valores
-  disponíveis são **none**, **keyboard**, **mouse**, **Lightgun** e
-  **joystick**.
+  disponíveis são ``None``, ``keyboard``, ``mouse``, ``lightgun`` e
+  ``joystick``.
 
-		O valor predefinido é **keyboard**.
+		O valor predefinido é ``keyboard``.
 
-* **Atribuição do dispositivo discador**
+
+* :guilabel:`Atribuição do dispositivo discador`
 
   Caso exista um controlador para discadores, os valores disponíveis
-  são **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
+  são ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
 
-		O valor predefinido é **keyboard**.
+		O valor predefinido é ``keyboard``.
 
-* **Atribuição do dispositivo positional**
+* :guilabel:`Atribuição do dispositivo posicional`
 
   Caso exista um controlador de posição, os valores disponíveis são
-  **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
+  ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
 
-		O valor predefinido é **keyboard**.
+		O valor predefinido é ``keyboard``.
 
-* **Atribuição do dispositivo mouse**
+* :guilabel:`Atribuição do dispositivo mouse`
 
   Caso exista um controlador para mouse, os valores disponíveis são
-  **none**, **keyboard**, **mouse**, **Lightgun** e **joystick**.
+  ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
 
-		O valor predefinido é **mouse**.
+		O valor predefinido é ``mouse``.
 
 .. raw:: latex
 
@@ -1285,7 +1400,8 @@ Mapeamento do dispositivo
 Todas as entradas
 ~~~~~~~~~~~~~~~~~
 
-* **interface do usuário**
+
+* :guilabel:`interface do usuário`
 
   Aqui estão os principais atalhos já predefinidos da interface do MAME,
   todos eles podem ser alterados conforme a necessidade. Para retornar
@@ -1295,92 +1411,105 @@ Todas as entradas
 
 	<p></p>
 
-* **Visualização na tela**
+
+* :guilabel:`Visualização na tela`
 
   Exibe um visor na parte inferior da tela durante a emulação para a
   realização de ajustes em tempo real.
 
-	A tecla predefinida é **Til**.
+	A tecla predefinida é :kbd:`~`.
 
-* **Interrompe o depurador**
+
+* :guilabel:`Interrompe o depurador`
 
   Atalho para entrar no depurador durante a emulação, só funciona caso
   o MAME tenha sido compilado com ferramentas de depuração.
 
-	A tecla predefinida é **Til**.
+	A tecla predefinida é :kbd:`~`.
 
-* **Guia de configuração**
+
+* :guilabel:`Guia de configuração`
 
   Chama o cardápio de opções do MAME.
 
-	A tecla predefinida é **Tab**.
+	A tecla predefinida é :kbd:`Tab`.
 
-* **Pausa**
+
+* :guilabel:`Pausa`
 
   Pausa a emulação.
 
-	A tecla predefinida é **P**.
+	A tecla predefinida é :kbd:`P`.
 
-* **Pausa - passo único**
+
+* :guilabel:`Pausa - passo único`
 
   Avança em passos de um quadro.
 
-	As teclas predefinidas são **P** + **Shift Esq**.
+	As teclas predefinidas são :kbd:`P` + :kbd:`Shift` :kbd:`Esq`.
 
-* **Rebobina - passo único**
+
+* :guilabel:`Rebobina - passo único`
 
   Retrocede em passos de um quadro.
 
-	As teclas predefinidas são **Til** + **Shift Esq**.
+	As teclas predefinidas são :kbd:`Til` + :kbd:`Shift` :kbd:`Esq`.
 
-* **Redefine a máquina**
+
+* :guilabel:`Redefine a máquina`
 
   Encerra a emulação e a reinicia do zero.
 
-	As teclas predefinidas são **F3** + **Shift Esq**.
+	As teclas predefinidas são :kbd:`F3` + :kbd:`Shift` :kbd:`Esq`.
 
-* **Redefinição rápida**
+
+* :guilabel:`Redefinição rápida`
 
   Reinicia sem encerrar a emulação.
 
-	A telcla predefinida é **F3**.
+	A telcla predefinida é :kbd:`F3`.
 
-* **Mostra os gráficos decodificados**
 
-  Mostra a paleta GFX decodificada e os tilemaps dos jogos.
+* :guilabel:`Mostra os gráficos decodificados`
 
-	A tecla predefinida é **F4**.
+  Mostra a paleta GFX decodificada e os *tilemaps* dos jogos.
+
+	A tecla predefinida é :kbd:`F4`.
 
 
 .. raw:: latex
 
 	\clearpage
 
-* **Pula quadro dec**
 
-  Reduz o salto dos quadros de vídeo, os valores se alteram entre `auto`
-  e entre `10~0`. A predefinição é `auto`, ao pressionar a tecla a opção
-  sai de `auto` para a velocidade mais rápida e vai diminuindo passo a
-  passo até voltar para `auto`
+* :guilabel:`Pula quadro dec`
 
-	A tecla predefinida é **F8**.
+  Reduz o salto dos quadros de vídeo, os valores se alteram entre
+  ``auto`` e entre ``10~0``. A predefinição é `auto`, ao pressionar a
+  tecla a opção sai de ``auto`` para a velocidade mais rápida e vai
+  diminuindo passo a passo até voltar para ``auto``
 
-* **Pula quadro inc**
+	A tecla predefinida é :kbd:`F8`.
+
+
+* :guilabel:`Pula quadro inc`
 
   Aumenta o salto dos quadros de vídeo,  os valores se alteram entre
-  `auto` e entre `0~10`. A predefinição é `auto`, ao pressionar a tecla,
-  a opção sai de `auto` e aumenta a velocidade passo a passo até atingir
-  `auto`.
+  ``auto`` e entre ``0~10``. A predefinição é ``auto``, ao pressionar a
+  tecla, a opção sai de ``auto`` e aumenta a velocidade passo a passo
+  até atingir ``auto``.
 
-	A tecla predefinida é **F9**.
+	A tecla predefinida é :kbd:`F9`.
 
-* **Supressor de velocidade**
+
+* :guilabel:`Supressor de velocidade`
 
   Acelera a velocidade da emulação da nativa para o máximo possível.
 
-	A tecla predefinida é **F10**.
+	A tecla predefinida é :kbd:`F10`.
 
-* **Avanço rápido**
+
+* :guilabel:`Avanço rápido`
 
   Como o exemplo anterior porém faz a emulação rodar o mais rápido
   possível enquanto a tecla estiver pressionada.
@@ -1389,229 +1518,266 @@ Todas as entradas
 
 	<p></p>
 
-* **Mostra FPS**
+
+* :guilabel:`Mostra FPS`
 
   Exibe quantos quadros por segundo a emulação está rodando.
 
-	A tecla predefinida é **PgDn** em versões SDL do MAME e **Insert**
-	no Windows. 
+	A tecla predefinida é :kbd:`PgDn` em versões SDL do MAME e
+	:kbd:`Insert` no Windows. 
 
-* **Salva uma captura da tela**
+
+* :guilabel:`Salva uma captura da tela`
 
   Captura a tela emulada e a salva no diretório predefinido.
 
-	A tecla predefinida é **F12**.
+	A tecla predefinida é :kbd:`F12`.
 
-* **Salva o código de tempo atual**
+
+* :guilabel:`Salva o código de tempo atual`
 
   Salva o tempo decorrido num arquivo.
 
-	A tecla predefinida é **F12**.
+	A tecla predefinida é :kbd:`F12`.
 
-* **Grava MNG**
+
+* :guilabel:`Grava MNG`
 
   Grava um vídeo em formato MNG sem áudio.
 
-	As teclas predefinidas são **F12** + **Shift Esq**.
+	As teclas predefinidas são :kbd:`F12` + :kbd:`Shift` :kbd:`Esq`.
 
-* **Grava AVI**
+
+* :guilabel:`Grava AVI`
 
   Grava um vídeo em formato AVI.
 
-	A teclas predefinidas são **F12** + **Shift Esq**.
+	A teclas predefinidas são :kbd:`F12` + :kbd:`Shift` :kbd:`Esq`.
 
-* **Liga/Desliga trapaça**
 
-  Ativa ou desativa a trapaça no jogo.
+* :guilabel:`Liga/Desliga trapaça`
 
-	A tecla predefinida é **F6**.
+  Ativa ou desativa a trapaça no jogo, só funciona quando usado a
+  opção ``cheat`` na linha de comando.
 
-* **UI Cima**
+	A tecla predefinida é :kbd:`F6`.
+
+
+* :guilabel:`UI Cima`
 
   Move o cursor para cima.
 
-	A tecla predefinida é **Tecla cima** ou **Cima do controle**.
+	A tecla predefinida é :kbd:`cima` ou **Cima** no controle.
 
-* **UI Baixo**
+
+* :guilabel:`UI Baixo`
 
   Move o cursor para baixo.
 
-	A tecla predefinida é **Tecla baixo** ou **Baixo do controle**.
+	A tecla predefinida é :kbd:`baixo` ou **Baixo** no controle.
 
-* **UI Esquerda**
+
+* :guilabel:`UI Esquerda`
 
   Move o cursor para a esquerda.
 
-	A tecla predefinida é **Tecla esquerda** ou **Esquerda do
-	controle**.
+	A tecla predefinida é :kbd:`esquerda` ou **Esquerda** no
+	controle.
 
-* **UI Direita**
+
+* :guilabel:`UI Direita`
 
   Move o cursor para a direita.
 
-	A tecla predefinida é **Tecla direita** ou **Direita do controle**.
+	A tecla predefinida é :kbd:`direita` ou **Direita** no controle.
 
-* **UI Home**
+
+* :guilabel:`UI Home`
 
   Move o cursor para o topo da lista.
 
-	A tecla predefinida é **Tecla home**.
+	A tecla predefinida é :kbd:`home`.
 
-* **UI Fim**
+
+* :guilabel:`UI Fim`
 
   Move o cursor para o fim da lista.
 
-	A tecla predefinida é **Tecla end**.
+	A tecla predefinida é :kbd:`end`.
 
-* **UI Pág. cima**
+
+* :guilabel:`UI Pág. cima`
 
   Move o cursor para o topo da lista saltando 26 linhas por vez.
 
-	A tecla predefinida é **Tecla page up**.
+	A tecla predefinida é :kbd:`PgUp`.
 
-* **UI Pág. baixo**
+
+* :guilabel:`UI Pág. baixo`
 
   Move o cursor para o fim da lista saltando 26 linhas por vez.
 
-	A tecla predefinida é **Tecla page down**.
+	A tecla predefinida é :kbd:`PgDn`.
 
-* **UI Próx. foco**
+
+* :guilabel:`UI Próx. foco`
 
   Faz com que foco do cursor passe para a próxima janela da interface.
 
-	A tecla predefinida é **Tab**.
+	A tecla predefinida é :kbd:`Tab`.
 
-* **UI Foco ant.**
+
+* :guilabel:`UI Foco ant.`
 
   Faz com que foco do cursor passe para a anterior anterior da
   interface.
 
-	A tecla predefinida é **Tab + Shift Esq.**.
+	A tecla predefinida é :kbd:`Tab` + :kbd:`Shift` :kbd:`Esq`.
 
-* **UI Seleciona**
+
+* :guilabel:`UI Seleciona`
 
   Tecla de seleção para qualquer item selecionável.
 
-	As teclas predefinidas são **Enter**, **Botão 0 do controle** ou
-	**Tecla enter do teclado numérico**.
+	As teclas predefinidas são :kbd:`Enter`, **Botão 0 do controle** ou
+	:kbd:`Enter` do teclado numérico.
 
-* **UI Cancela**
+
+* :guilabel:`UI Cancela`
 
   Tecla para cancelar qualquer ação.
 
-	A tecla predefinida é **Tecla escape ou esq**.
+	A tecla predefinida é :kbd:`Esc`.
 
-* **UI Mostra comentário**
+
+* :guilabel:`UI Mostra comentário`
 
   Tecla para exibir um comentário.
 
-	A tecla predefinida é **Tecla espaço**.
+	A tecla predefinida é barra de :kbd:`espaço`.
 
-* **UI Limpa**
+
+* :guilabel:`UI Limpa`
 
   Tecla para apagar/zerar uma opção.
 
-	A tecla predefinida é **Tecla delete ou del**.
+	A tecla predefinida é :kbd:`Del`.
 
-* **UI Aproxima**
+* :guilabel:`UI Aproxima`
 
   Tecla para aproximar (dar zoom) na interface. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
-	A tecla predefinida é **Tecla =**.
+	A tecla predefinida é :kbd:`=`.
 
-* **UI Recua**
+
+* :guilabel:`UI Recua`
   Tecla para sair do zoom da interface. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
-	A tecla predefinida é **Tecla -**.
+	A tecla predefinida é :kbd:`-`.
 
-* **UI Aproximação predefinida**
+
+* :guilabel:`UI Aproximação predefinida`
   Retorna para a aproximação normal da tela.
 
-	A tecla predefinida é **Tecla 0**.
+	A tecla predefinida é :kbd:`0`.
 
-* **UI Grupo anterior**
+
+* :guilabel:`UI Grupo anterior`
 
   Faz a lista pular para o grupo anterior. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
-	A tecla predefinida é **[**. 
+	A tecla predefinida é :kbd:`[`. 
 
-* **UI Próximo grupo**
+
+* :guilabel:`UI Próximo grupo`
 
   Faz a lista pular para o próximo grupo. Ainda não funciona em
   teclados ABNT, apenas em teclados tipo ANSI.
 
-	A tecla predefinida é **]**.
+	A tecla predefinida é :kbd:`]`.
 
-* **UI Rotaciona**
+
+* :guilabel:`UI Rotaciona`
 
   Gira a interface.
 
-	A tecla predefinida é **R** (não funciona).
+	A tecla predefinida é :kbd:`R` (não funciona).
 
-* **Mostra o perfil**
 
-  Exibe o analisador de desempenho (não funciona).
+* :guilabel:`Mostra o perfil`
 
-	A teclas predefinidas são **F11** + **Shift Esq**.
+  Exibe o analisador de desempenho.
 
-* **Alterna UI**
+	A teclas predefinidas são :kbd:`F11` + :kbd:`Shift` :kbd:`Esq`.
+
+
+* :guilabel:`Alterna UI`
 
   Alterna a interface do usuário.
 
-	A tecla predefinida é **Screen lock**.
+	A tecla predefinida é :kbd:`SrcLk`.
 
-* **UI Cola texto**
 
-  Cola texto na interface do usuário (não funciona).
+* :guilabel:`UI Cola texto`
 
-	As teclas predefinidas são **Screen lock** + **Shift Esq**.
+  Cola texto na interface do usuário.
 
-* **Salva o estado**
+	As teclas predefinidas são :kbd:`SrcLk` + :kbd:`Shift` :kbd:`Esq`.
+
+
+* :guilabel:`Salva o estado`
 
   Salva o estado da máquina.
 
-	As teclas predefinidas são **F7** + **Shift Esq**.
+	As teclas predefinidas são :kbd:`F7` + :kbd:`Shift` :kbd:`Esq`.
 
 .. raw:: latex
 
 	\clearpage
 
-* **Carrega o estado**
+
+* :guilabel:`Carrega o estado`
 
   Carrega o estado da máquina.
 
-	A tecla predefinida é **F7**.
+	A tecla predefinida é :kbd:`F7`.
 
-* **UI (Primeiro) inicia fita**
+
+* :guilabel:`UI (Primeiro) inicia fita`
 
   Inicia a fita na interface primária.
 
-	A tecla predefinida é **F2**.
+	A tecla predefinida é :kbd:`F2`.
 
-* **UI (Primeiro) para fita**
+
+* :guilabel:`UI (Primeiro) para fita`
 
   Para a fita na interface primária.
 
-	As teclas predefinidas são **F2** + **Shift Esq**.
+	As teclas predefinidas são :kbd:`F2` + :kbd:`Shift` :kbd:`Esq`.
 
-* **UI Visualiza DAT externa**
+
+* :guilabel:`UI Visualiza DAT externa`
 
   Exibe o DAT externo, para que a visualização do DAT seja possível é
-  preciso ativar o plugin **Data Plugin** na interface ou editando o
-  arquivo ``plugin.ini``, o valor da linha **data** de **0** para **1**.
+  preciso ativar o plugin :guilabel:`Data Plugin` na interface ou
+  editando o arquivo ``plugin.ini``, o valor da linha **data** de ``0``
+  para ``1``.
 
-	As teclas predefinidas são **Alt Esq** + **D**.
+	As teclas predefinidas são :kbd:`Alt` :kbd:`Esq` + :kbd:`D`.
 
-* **UI Adiciona ou remove um favorito**
+
+* :guilabel:`UI Adiciona ou remove um favorito`
 
   Adiciona ou remove as máquinas da lista de favoritos.
 
-	As teclas predefinidas são **Alt Esq** + **F** (não funciona).
+	As teclas predefinidas são :kbd:`Alt` :kbd:`Esq` + :kbd:`F`.
 
-* **UI exporta lista**
+
+* :guilabel:`UI exporta lista`
 
   Exporta a lista das máquinas no formato:
 
@@ -1619,50 +1785,57 @@ Todas as entradas
 	* **XML** igual ao comando **-listxml** excluindo os dispositivos.
 	* **TXT** igual ao comando **-listfull**.
 
-	As teclas predefinidas são **Alt Esq** + **E**.
+	As teclas predefinidas são :kbd:`Alt` :kbd:`Esq` + :kbd:`E`.
 
-* **UI Afere mídia**
+
+* :guilabel:`UI Afere mídia`
 
   Realiza uma aferição das ROMs removendo as não disponíveis, o
-  resultado é salvo no arquivo **mame_avail.ini** dentro do diretório
+  resultado é salvo no arquivo ``mame_avail.ini`` dentro do diretório
   **ui**.
 
-	A tecla predefinida é **F1**.
+	A tecla predefinida é :kbd:`F1`.
 
-* **Toggle Fullscreen**
+
+* :guilabel:`Alterna para tela inteira`
 
   Alterna entre tela inteira e janela.
 
-	As teclas predefinidas são **Enter** + **Alt Esq**.
+	As teclas predefinidas são :kbd:`Enter` + :kbd:`Alt` :kbd:`Esq`.
 
-* **Toggle Filter**
+
+* :guilabel:`Liga/desliga o filtro`
 
   Alterna entre usar ou não o filtro na tela.
 
-	As teclas predefinidas são **F5** + **Ctrl Esq**.
+	As teclas predefinidas são :kbd:`F5` + :kbd:`Ctrl` :kbd:`Esq`.
 
-* **Decrease Prescaling**
 
-  Reduz a pré-escala dos pixels.
+* :guilabel:`Reduz a escala prévia`
 
-	As teclas predefinidas são **F6** + **Ctrl Esq**.
+  Reduz a escala prévia dos pixels.
+
+	As teclas predefinidas são :kbd:`F6` + :kbd:`Ctrl` :kbd:`Esq`.
 
 
 .. raw:: latex
 
 	\clearpage
 
-* **Increase Prescaling**
 
-  Aumenta a pré-escala de dos pixels.
+* :guilabel:`Reduz a escala prévia`
 
-	As teclas predefinidas são **F7** + **Ctrl Esq**.
+  Aumenta a escala prévia de dos pixels.
 
-* **Record Rendered Video**
+	As teclas predefinidas são :kbd:`F7` + :kbd:`Ctrl` :kbd:`Esq`.
+
+
+* :guilabel:`Grava um vídeo com efeitos`
 
   Grava o vídeo usando todos os efeitos e filtros ativos na tela.
 
-	As teclas predefinidas são **F12** + **Ctrl+Alt Esq**.
+	As teclas predefinidas são :kbd:`F12` + :kbd:`Ctrl` + :kbd:`Alt`
+	:kbd:`Esq`.
 
 Controles do jogador 1 ~ 10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2676,56 +2849,63 @@ Opções avançadas
 Opções de desempenho
 ^^^^^^^^^^^^^^^^^^^^
 
-* **Salto automático dos quadros**
+* :guilabel:`Salto automático dos quadros`
 
   Ignora quadros de forma automática visando manter a velocidade da
   emulação.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Salto de quadro**
+
+* :guilabel:`Salto de quadro`
 
   Define uma quantidade fixa de quadros a serem ignorados visando manter
   a velocidade da emulação.
 
-	O valor predefinido é **0**
+	O valor predefinido é ``0``
 
-* **Supressão da velocidade**
+
+* :guilabel:`Supressão da velocidade`
 
   Ativa a supressão de velocidade da emulação para que a máquina
   emulada rode em sua velocidade nativa em vez da velocidade do
   processador em que a máquina está sendo emulada.
 
-	O valor predefinido é **Ligado**.
+	O valor predefinido é ``Ligado``.
 
-* **Mute quando a supressão da velocidade estiver desligada**
+
+* :guilabel:`Mute quando a supressão da velocidade estiver desligada`
 
   Silencia o áudio quando a supressão de velocidade estiver desligado.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Dormir**
+
+* :guilabel:`Dormir`
 
   Reduz o consumo de processamento quando o MAME estiver parado sem
   fazer nada.
 
-	O valor predefinido é **Ligado**.
+	O valor predefinido é ``Ligado``.
 
-* **Velocidade**
+
+* :guilabel:`Velocidade`
 
   Controla a velocidade do jogo com relação ao tempo de emulação.
 
-	O valor predefinido é **1**
+	O valor predefinido é ``1``
 
-* **Ajuste a velocidade para bater com a taxa de atualização**
+
+* :guilabel:`Ajuste a velocidade para bater com a taxa de atualização`
 
   Controla a velocidade da emulação de forma automática mantendo a taxa
   de atualização de tela mais lenta em referência com a taxa de
   atualização de tela do computador que está rodando a emulação.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Baixa latência**
+
+* :guilabel:`Baixa latência`
 
   Reduz a latência (atraso) dos dispositivos de entrada como joysticks
   por exemplo. Para mais informações consulte :ref:`-[no]lowlatency
@@ -2740,145 +2920,164 @@ Opções de desempenho
 Opções da Rotação da Tela
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* **Rotação**
+
+* :guilabel:`Rotação`
 
   Permite que a orientação da tela mude conforme a orientação de tela do
   jogo.
 
-	O valor predefinido é **Ligado**.
+	O valor predefinido é ``Ligado``.
 
-* **Rotacione à direita**
+
+* :guilabel:`Rotacione à direita`
 
   Rotacione a tela em 90 graus sentido horário.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Rotacione à esquerda**
+
+* :guilabel:`Rotacione à esquerda`
 
   Rotacione a tela em 90 graus sentido anti-horário.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Auto rotacione à direita**
+
+* :guilabel:`Auto rotacione à direita`
 
   Rotacione automaticamente a tela em 90 graus sentido horário caso
   a tela esteja orientada verticalmente.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Auto rotacione à esquerda**
+
+* :guilabel:`Auto rotacione à esquerda`
 
   Rotacione automaticamente a tela em 90 graus sentido anti-horário
   caso a tela esteja orientada verticalmente.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Vire o eixo X**
+
+* :guilabel:`Vire o eixo X`
 
   Inverte a tela da esquerda para a direita.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Vire o eixo Y**
+
+* :guilabel:`Vire o eixo Y`
 
   Inverte a tela da direita para a esquerda.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
 .. _mamemenu-advanced-illustration:
 
 Opções das ilustrações
 ^^^^^^^^^^^^^^^^^^^^^^
 
-* **Aproxime a área da tela**
+
+* :guilabel:`Aproxime a área da tela`
 
   Aproxima a região da tela emulada quando estiver numa ilustração.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
 .. _mamemenu-advanced-state-playback:
 
 Opções do estado/reprodução
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* **Salve/restaure automático**
+
+* :guilabel:`Salve/restaure automático`
 
   Em sistema compatíveis, carrega automaticamente o estado da máquina e
   a salva ao encerrar.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Permita o rebobinamento**
+
+* :guilabel:`Permita o rebobinamento`
 
   Permite o rebobinamento do estado da máquina.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Capacidade de rebobinamento**
+
+* :guilabel:`Capacidade de rebobinamento`
 
   Reserva uma quantidade em Megabytes da memória para rebobinamento.
 
-	O valor predefinido é **100**
+	O valor predefinido é ``100``
 
-* **Filtro bilinear para as capturas da tela**
+
+* :guilabel:`Filtro bilinear para as capturas da tela`
 
   Define se os vídeos ou as capturas da tela terão o filtro aplicado.
 
-	O valor predefinido é **Ligado**.
+	O valor predefinido é ``Ligado``.
 
-* **Marca de queimado**
+
+* :guilabel:`Marca de queimado`
 
   Cria uma captura da tela com marcas de fósforo queimado.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
 .. _mamemenu-advanced-input-options:
 
 Opções da entrada
 ^^^^^^^^^^^^^^^^^
 
-* **Trava da ficha**
+
+* :guilabel:`Trava da ficha`
 
   Faz com que a máquina ignore a inserção de fichas em momentos que a
   máquina não está pronta para recebê-las.
 
-	O valor predefinido é **Ligado**.
+	O valor predefinido é ``Ligado``.
 
-* **Mouse**
+
+* :guilabel:`Mouse`
 
   Permite o uso de um mouse nas máquinas.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Controle**
+
+* :guilabel:`Controle`
 
   Permite o uso de um controle nas máquinas.
 
-	O valor predefinido é **Ligado**.
+	O valor predefinido é ``Ligado``.
 
-* **Pistola de luz**
+
+* :guilabel:`Pistola de luz`
 
   Ativa o uso do uma pistola de luz.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Mais de um teclado**
+* :guilabel:`Mais de um teclado`
 
   Permite o uso de mais de um teclado para cada entrada compatível.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
 .. raw:: latex
 
 	\clearpage
 
-* **Mais de um mouse**
+
+* :guilabel:`Mais de um mouse`
 
   Permite o uso de mais de um mouse para cada entrada compatível.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Steadykey**
+
+* :guilabel:`Steadykey`
 
   Alguns sistemas exigem que dois ou mais botões sejam pressionados
   exatamente ao mesmo tempo para realizar movimentos ou comandos
@@ -2888,51 +3087,58 @@ Opções da entrada
   registrar o pressionamento simultâneo das teclas, porém tem a
   desvantagem de deixar a sua capacidade de resposta mais lenta.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **IU ativa**
+
+* :guilabel:`IU ativa`
 
   Ativa a opção para que a interface do usuário se sobreponha a do
   teclado emulado caso esteja presente.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Recarga fora da tela**
+
+* :guilabel:`Recarga fora da tela`
 
   Converte o botão 2 da pistola de luz como recarga fora da tela.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Zona morta do controle**
+
+* :guilabel:`Zona morta do controle`
 
   Permite fazer o ajuste fino do ponto morto do controle ou manche.
 
-	O valor predefinido é **0.3**
+	O valor predefinido é ``0.3``
 
-* **Saturação do controle**
+
+* :guilabel:`Saturação do controle`
 
   Faz o ajuste findo do eixo de fim de curso do controle.
 
-	O valor predefinido é **0.85**
+	O valor predefinido é ``0.85``
 
-* **Teclado natural**
+
+* :guilabel:`Teclado natural`
 
   Ativa ou não o uso de um teclado natural.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Comando contraditório**
+
+* :guilabel:`Comando contraditório`
 
   Aceita comandos contraditórios e simultâneos no controle digital como
   esquerda e direita ou cima e baixo.
 
-	O valor predefinido é **Desligado**.
+	O valor predefinido é ``Desligado``.
 
-* **Impulso de ficha**
+
+* :guilabel:`Impulso de ficha`
 
   Define o tempo de impulso da ficha.
 
-	O valor predefinido é **0**
+	O valor predefinido é ``0``
 
 .. _mamemenu-plugins:
 
@@ -2943,7 +3149,7 @@ Consulte :ref:`plugins`.
 
 .. _mamemenu-config-saving:
 
-Salve a Configuração
+Salva a Configuração
 ~~~~~~~~~~~~~~~~~~~~
 
 Salva todas as alterações feitas.
@@ -2961,7 +3167,8 @@ Configure a máquina
 
 Permite que você configure individualmente cada máquina selecionada.
 
-* **BIOS**
+
+* :guilabel:`BIOS`
 
   Informa se a máquina usa uma BIOS ou não, nas máquinas que usam BIOS é
   possível escolher qual BIOS você quer que a máquina use.
@@ -2970,7 +3177,8 @@ Permite que você configure individualmente cada máquina selecionada.
 
 	<p></p>
 
-* **Opções Avançadas**
+
+* :guilabel:`Opções Avançadas`
 
   Consulte :ref:`mamemenu-advanced-options`.
 
@@ -2978,7 +3186,8 @@ Permite que você configure individualmente cada máquina selecionada.
 
 	<p></p>
 
-* **Opções do Vídeo**
+
+* :guilabel:`Opções do Vídeo`
 
   Consulte :ref:`mamemenu-config-video`.
 
@@ -2986,7 +3195,8 @@ Permite que você configure individualmente cada máquina selecionada.
 
 	<p></p>
 
-* **Mapeamento dos dispositivos**
+
+* :guilabel:`Mapeamento dos dispositivos`
 
   Consulte :ref:`mamemenu-config-devices`.
 
@@ -2994,7 +3204,8 @@ Permite que você configure individualmente cada máquina selecionada.
 
 	<p></p>
 
-* **Adicione aos favoritos**
+
+* :guilabel:`Adiciona aos favoritos`
 
   Adiciona a máquina selecionada aos seus favoritos.
 
@@ -3002,21 +3213,10 @@ Permite que você configure individualmente cada máquina selecionada.
 
 	<p></p>
 
-* **Salva a configuração da máquina**
+
+* :guilabel:`Salva a configuração da máquina`
 
   Salva a configuração apenas para a máquina selecionada.
 
 ..	[#MAMEUIP] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME
 		com uma interface gráfica diferente.
-..	[#] O site do `MAMEICONS <http://icons.mameworld.info/>`_ e
-		`Progetto Snaps <http://www.progettosnaps.net/icons>`_ oferecem
-		tais ícones e outras imagens para download.
-..	[#] O site `Pugsy's Cheat <http://cheat.retrogames.com/>`_ é um dos
-		mais conhecidos que oferece um arquivo de trapaça para download.
-..	[#] O site `MAME Channel <https://www.mamechannel.it/pages/titles.php>`_
-		oferece diferentes telas de títulos para download.
-..	[#] É possível baixar essas imagens do site `EmuMovies
-		<https://emumovies.com/files/file/3493-mame-bosses-pack/>`_.
-..	[#] É possível baixar essas imagens do site `High-Score
-		<http://highscore.com/>`_ e
-		`Cubeman <http://www.cubeman.org/mame1.html>`_.
