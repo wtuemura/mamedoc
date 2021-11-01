@@ -76,10 +76,12 @@ Seta :kbd:`esquerda`
     Altera a opção com os valores disponível do lado esquerdo quando uma seta estiver presente.
 Seta :kbd:`direita`
     Altera a opção com os valores disponível do lado direito quando uma seta estiver presente.
-:kbd:`Home`
-    Destaca a primeira opção da lista.
-:kbd:`End`
-    Destaca a última opção da lista.
+:kbd:`Home` / :kbd:`End`
+    Destaca a primeira ou a última opção da lista.
+:kbd:`[` :kbd:`]`
+    Move para o grupo anterior ou para o próximo grupo nos menus
+    compatíveis da IU (por exemplo, move para as entradas do dispositivo
+    anterior ou para o seguinte no menu Input (esta Máquina)).
 :kbd:`Enter` / **Botão** :kbd:`1` do controle
     Seleciona a opção que estiver me destaque.
 :kbd:`Espaço`
@@ -138,9 +140,9 @@ Seta :kbd:`direita`
     * :kbd:`0` - Restaura a quantidade das peças por fila.
     * :kbd:`Enter` - Alterna para o visualizador *tilemap*.
 
-    **Tilemap mode**:
+    **Modo Tilemap**:
 
-    * :kbd:`[` :kbd:`]` - switch between different tilemaps.
+    * :kbd:`[` :kbd:`]` - Alterna entre diferentes tilemaps.
     * :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 8 pixels por vez.
     * :kbd:`Shift` + :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 1 pixel por vez.
     * :kbd:`Control` + :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 64 pixels por vez.
@@ -150,6 +152,7 @@ Seta :kbd:`direita`
     * :kbd:`Enter` - Alterna par ao modo paleta/tabela de cores.
 
     Observação: Nem todos os sistemas possuem gráficos decodificados e/ou *tilemaps*.
+
 :kbd:`Ctrl` esquerdo + :kbd:`F5`
     Alterna o filtro.
     (*Apenas na versão SDL do MAME*)
@@ -786,6 +789,8 @@ Observe que os controles podem variar bastante de computador para
 computador, assim sendo, nem todas as teclas serão mostradas aqui. No
 MAME veja a opção "Entrada (esta máquina)" para obter mais detalhes da
 máquina que estiver usando.
+
+.. _default-comparative-kbd:
 
 Comparativo entre os mapas de teclado
 -------------------------------------

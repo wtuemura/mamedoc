@@ -682,6 +682,14 @@ Métodos
 	da entrada em mais situações do que quando as suas janelas têm o
 	foco da IU.
 
+**ui:get_general_input_setting(type, [jogador])**
+
+	Obtém uma descrição da sequência de entrada configurada para o tipo
+	da entrada indicada e o jogador adequado para usar nos prompts. O
+	tipo da entrada é um valor enumerado. O número do jogador é um
+	índice com base no número zero. Caso o número do jogador não seja
+	informado, é assumido o valor zero.
+
 Propriedades
 ^^^^^^^^^^^^
 

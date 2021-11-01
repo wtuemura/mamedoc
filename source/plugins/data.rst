@@ -19,6 +19,11 @@ suporte, escolha :guilabel:`Configurações` -->
 :guilabel:`Configurações dos diretórios` -- > :guilabel:`Dats`. Também é
 possível definir o seu ``historypath`` no seu arquivo ``ui.ini``.
 
+Ao carregar grandes arquivos de dados tais como o **history.xml**, isso
+pode acarretar num tempo maior de carregamento, atrasando a abertura da
+tela do MAME. Assim sendo, seja paciente ao iniciar o MAME após
+atualizar ou adicionar novos arquivos de dados.
+
 .. raw:: latex
 
 	\clearpage

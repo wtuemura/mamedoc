@@ -5,11 +5,10 @@ NOÇÕES GERAIS DE USO E CONFIGURAÇÃO
 	:titlesonly:
 
 	usingmame
+	ui
 	defaultkeys
 	mamemenus
 	frontends
 	aboutromsets
 	commonissues
 	faqgames
-
-
