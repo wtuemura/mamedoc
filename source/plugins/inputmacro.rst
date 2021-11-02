@@ -220,7 +220,7 @@ da Konami. Isso tira a maior parte da destreza (e da diversão) do jogo:
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
   * **Entrada 1**: P1 Button 3
-* **Step 3**:
+* **Etapa 3**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
@@ -260,13 +260,13 @@ tela, não se esqueça de clicar em :guilabel:`Feito` ao concluir:
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
   * **Entrada 1**: J1 Baixo
-* **Step 3**:
+* **Etapa 3**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
   * **Entrada 1**: J1 Baixo
   * **Entrada 2**: J1 Direita
-  * **Input 3**: P1 Jab Punch
+  * **Entrada 3**: P1 Jab Punch
 
 A macro realiza o golpe e caso mantenha a tecla pressionada, nada
 acontece.
@@ -290,7 +290,7 @@ esqueça de clicar em :guilabel:`Feito` ao concluir:
   * **Duração (quadros)**: 1
   * **Entrada 1**: J1 Direita
   * **Entrada 2**: J1 Baixo
-* **Step 3**:
+* **Etapa 3**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
@@ -316,7 +316,7 @@ estando do lado esquerdo da tela, não se esqueça de clicar em
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
   * **Entrada 1**: J1 Direita
-* **Step 3**:
+* **Etapa 3**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
@@ -363,12 +363,12 @@ esqueça de clicar em :guilabel:`Feito` ao concluir:
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
   * **Entrada 1**: J1 Baixo
-* **Step 3**:
+* **Etapa 3**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
   * **Entrada 1**: J1 Esquerda
-* **Step 4**:
+* **Etapa 4**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
