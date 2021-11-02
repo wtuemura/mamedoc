@@ -23,7 +23,7 @@ trapacear nos jogos que exigem sequências rápidas como os eventos de
 corrida no *Track & Field* ou em minijogos como o *Daisu-Kiss*.
 
 Para configurar o plug-in pressione :kbd:`Tab` durante a emulação,
-selecione :guilabel:`Opções dos plug-ins` --> :guilabel:`Input Macros`.
+selecione :guilabel:`Opções dos plug-ins` --> :guilabel:`Macros`.
 Caso existam macros para o sistema atual elas estarão listadas na tela,
 
 Selecione uma macro para editá-la ou escolha :guilabel:`Add macro` para
@@ -40,7 +40,7 @@ as macros de entrada para Daisu-Kiss serão salvas no arquivo
 ``daiskiss.cfg`` dentro da pasta **inputmacro**. O conteúdo do arquivo
 tem o formato JSON.
 
-clique em :guilabel:`Add macro` para criar a sua macro.
+clique em :guilabel:`Adiciona macro` para criar a sua macro.
 
 .. _plugins-inputmacro-settings:
 
@@ -58,7 +58,7 @@ sistema não consegue acompanhar o comando que foi passado. A macro
 depois concluída tem a opção de não fazer nada (libera os controles),
 pode ser continuada ou repetir a sequência novamente.
 
-*	:guilabel:`Name` / :guilabel:`Nome`
+*	:guilabel:`Nome`
 
 		Define o nome da macro. Pressione :kbd:`Enter` no teclado ou o
 		**botão 1** do controle para editar o nome que estiver ali ou
@@ -66,33 +66,33 @@ pode ser continuada ou repetir a sequência novamente.
 		teclas direcionais para mover o cursor e a tecla :kbd:`Esc` para
 		cancelar a edição.
 
-*	:guilabel:`Activation sequence` / :guilabel:`Ativação`
+*	:guilabel:`Ativação`
 
 		Define uma tecla, um botão ou a combinação deles para ativar a
 		macro. Tenha ciência que as entradas tradicionais continuam valendo,
 		assim sendo, procure escolher os botões/teclas de atalho que não
 		tenham nenhuma função dentro da emulação.
 
-*	:guilabel:`On release` / :guilabel:`Ao soltar`
+*	:guilabel:`Ao soltar`
 
 		Define o que deve acontecer quando a ativação da sequência for
 		iniciada antes da conclusão da macro.
-		:guilabel:`Stop immediately` interrompe a macro assim que ela
-		for concluída. :guilabel:`Complete macro` a macro será
-		processada até o último passo.
+		:guilabel:`Pare` interrompe a macro assim que ela
+		terminar. :guilabel:`Conclua a macro` a macro será
+		processada até o última etapa.
 
-*	:guilabel:`When held` / :guilabel:`Enquanto estiver pressionado`
+*	:guilabel:`Enquanto estiver pressionado`
 
 		Use para definir o que deve acontecer caso o botão ou a tecla
 		de ativação seja mantida pressionada depois que a macro for
 		concluída.
 
-		* :guilabel:`Release`
+		* :guilabel:`Libera`
 
 			Executa a macro e não ativa novamente até que a ativação
 			aconteça novamente.
 
-		* :guilabel:`Prolong step <n>`
+		* :guilabel:`Mantenha a etapa <n> ativa`
 
 			O **n** é o número do último passo da macro, neste caso, o 
 			passo final da macro permanece ativa até que a ativação
@@ -100,7 +100,7 @@ pode ser continuada ou repetir a sequência novamente.
 			botão de tiro, ele vai funcionar como um turbo até que o
 			botão seja liberado.
 
-		* :guilabel:`Loop to <n>`
+		* :guilabel:`Repita até a etapa <n>`
 
 			o **n** é o número do passo que deseja que seja repetido,
 			incluindo o atraso, caso a ativação se mantenha mantida após
@@ -108,14 +108,14 @@ pode ser continuada ou repetir a sequência novamente.
 
 Casa passo possui um atraso, duração e configuração da entrada:
 
-	* :guilabel:`Delay` / :guilabel:`Atraso`
+	* :guilabel:`Atraso (quadros)`
 
 		Define a quantidade de quadros que se deve aguardar antes que a
 		entrada seja ativada, durante o atraso nenhuma entrada é ativada
 		pela macro. É possível redefinir o valor da configuração para
 		zero ao pressionar a tecla :kbd:`Del`.
 
-	* :guilabel:`Duration` / :guilabel:`Duração`
+	* :guilabel:`Duração (quadros)`
 
 		Define a quantidade da duração dos quadros que devem ser
 		mantidos pressionados antes de prosseguir para o próximo passo
@@ -123,48 +123,47 @@ Casa passo possui um atraso, duração e configuração da entrada:
 		valor da configuração para zero ao pressionar a tecla
 		:kbd:`Del`.
 
-	* :guilabel:`Input` / :guilabel:`Entrada`
+	* :guilabel:`Entrada`
 
 		Define a entrada que será ativada no passo, no momento apenas as
 		entradas digitais são compatíveis. Clique em
-		:guilabel:`Add input` para escolher uma entrada de uma lista
-		(esta opção aparece apenas depois de definir a primeira
+		:guilabel:`Adiciona entrada` para escolher uma entrada de uma
+		lista (esta opção aparece apenas depois de definir a primeira
 		entrada). Caso o passo tenha diversas entradas, selecione uma
 		delas use a tecla :kbd:`Del` para excluir (todas as etapas
 		devem ter pelo menos mais de uma entrada, caso contrário não é
 		possível excluir a única entrada existente na etapa).
 
-	* :guilabel:`Delete step` / :guilabel:`Excluí etapa`
+	* :guilabel:`Excluí etapa`
 
 		Em macros com mais de uma etapa, use esta opção para excluí-la
 		(esta opção não aparece se a macro possuir apenas uma etapa).
 		Verifique antes se as configurações das opções
-		:guilabel:`On release` e :guilabel:`When held` estão corretas
-		**depois** de excluir uma etapa.
+		:guilabel:`Ao soltar` e :guilabel:`Enquanto estiver pressionado`
+		estão corretas **depois** de excluir uma etapa.
 
 Para adicionar uma etapa, selecione
-:guilabel:`Add step at position` /
-:guilabel:`Adicione uma etapa na posição` (depois dos passos já
+:guilabel:`Adiciona uma etapa na posição` (depois dos passos já
 existentes), use as teclas direcionais :kbd:`Esquerda` / :kbd:`Direita`
 ou clique com o mouse nas setas para definir a posição desejada para a
 inserção do novo passo, pressione então :kbd:`Enter` (ou clique duas
 vezes no item) para adicionar a nova etapa. Será solicitado que você
 defina a primeira entrada para a nova etapa. Lembre-se de verificar as
-configurações :guilabel:`On release` e :guilabel:`When held` depois de
-adicionar as etapas. O item :guilabel:`Add step at position` só
-aparecerá depois que for definido a primeira entrada para a etapa
-inicialmente criada durante a criação de uma nova macro.
+configurações :guilabel:`Ao soltar` e :guilabel:`Enquanto estiver
+pressionado` depois de adicionar as etapas. O item :guilabel:`Adiciona
+uma etapa na posição` só aparecerá depois que for definido a primeira
+entrada para a etapa inicialmente criada durante a criação de uma nova
+macro.
 
-Ao criar uma nova macro há uma opção :guilabel:`Cancel` /
-:guilabel:`Cancela` que muda para :guilabel:`Create` / :guilabel:`Cria`
-depois de definir a ativação e a primeira entrada para a etapa
-inicial. Selecione :guilabel:`Create` para finalizar a criação da macro
-e retornar à lista de entradas para a macro. A nova macro será
+Ao criar uma nova macro há uma opção :guilabel:`Cancela` que muda para
+:guilabel:`Cria` depois de definir a ativação e a primeira entrada para
+a etapa inicial. Selecione :guilabel:`Cria` para finalizar a criação da
+macro e retornar à lista de entradas para a macro. A nova macro será
 adicionada no final da lista. Pressione a tecla :kbd:`Esc` ou selecione
-:guilabel:`Cancel` antes de definir a ativação/entrada para retornar ao
+:guilabel:`Cancela` antes de definir a ativação/entrada para retornar ao
 menu anterior sem criar a nova macro.
 
-Ao editar uma macro já existente, selecione :guilabel:`Done` ou
+Ao editar uma macro já existente, selecione :guilabel:`Feito` ou
 pressione a tecla :kbd:`Esc` para retornar à lista de macros de entrada,
 as alterações já entram em vigor imediatamente.
 
@@ -180,20 +179,20 @@ Permite a funcionalidade de turbo ao jogador 1 usando a barra de espaço.
 O mesmo efeito pode ser obtido usando o :ref:`plugins-autofire`, porém,
 o exemplo abaixo demonstra o uso de uma macro:
 
-* **Name**: Turbo P1
-* **Activation sequence**: Kbd Space
-* **On release**: Stop immediately
-* **When held**: Loop to step 2
-* **Step 1**:
+* **Nome**: Turbo P1
+* **Ativação**: Kbd Space
+* **Ao soltar**: Pare
+* **Enquanto estiver pressionado**: Repita até a etapa 2
+* **Etapa 1**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 2
-  * **Input 1**: P1 Button 1
-* **Step 2**:
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 2
+  * **Entrada 1**: P1 Button 1
+* **Etapa 2**:
 
-  * **Delay (frames)**: 4
-  * **Duration (frames)**: 2
-  * **Input 1**: P1 Button 1
+  * **Atraso (quadros)**: 4
+  * **Duração (quadros)**: 2
+  * **Entrada 1**: P1 Button 1
 
 A primeira etapa não possui nenhum atraso para que o disparo comece
 assim que a barra de espaço seja pressionada. O segundo passo tem um
@@ -207,25 +206,25 @@ Trapaceando na corrida em Track & Field
 Isso permite que você corra segurando apenas um botão no *Track & Field*
 da Konami. Isso tira a maior parte da destreza (e da diversão) do jogo:
 
-* **Name**: Corrida J1
-* **Activation sequence**: Kbd Shift
-* **On release**: Stop immediately
-* **When held**: Loop to step 2
-* **Step 1**:
+* **Nome**: Corrida J1
+* **Ativação**: Kbd Shift
+* **Ao soltar**: Pare
+* **Enquanto estiver pressionado**: Repita até a etapa 2
+* **Etapa 1**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 1
-  * **Input 1**: P1 Button 1
-* **Step 2**:
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: P1 Button 1
+* **Etapa 2**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: P1 Button 3
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: P1 Button 3
 * **Step 3**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: P1 Button 1
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: P1 Button 1
 
 Esta macro alterna rapidamente entre os botões 1 e 3 do jogo fazendo com
 que você consiga correr no jogo.
@@ -235,7 +234,7 @@ Street Fighter II
 
 Esta macro permite que você faça o *Shoryuken* (*Dragon punch*) ao
 pressionar a tecla :kbd:`M` com o jogador 1 estando do lado esquerdo da
-tela, não se esqueça de clicar em :guilabel:`Done` ao concluir:
+tela, não se esqueça de clicar em :guilabel:`Feito` ao concluir:
 
 .. note::
 
@@ -247,26 +246,26 @@ tela, não se esqueça de clicar em :guilabel:`Done` ao concluir:
 	e substituindo o arquivo que está na pasta
 	**language\\Portuguese_Brazil**.
 
-* **Name**: J1 Shoryuken SF
-* **Activation sequence**: Kbd M
-* **On release**: Complete macro
-* **When held**: Release
-* **Step 1**:
+* **Nome**: J1 Shoryuken SF
+* **Ativação**: Kbd M
+* **Ao soltar**: Conclua a macro
+* **Enquanto estiver pressionado**: Libera
+* **Etapa 1**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Direita
-* **Step 2**:
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Direita
+* **Etapa 2**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Baixo
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Baixo
 * **Step 3**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Baixo
-  * **Input 2**: J1 Direita
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Baixo
+  * **Entrada 2**: J1 Direita
   * **Input 3**: P1 Jab Punch
 
 A macro realiza o golpe e caso mantenha a tecla pressionada, nada
@@ -274,104 +273,104 @@ acontece.
 
 Esta é a macro para o *Hadouken* com *soco fraco* ao pressionar a tecla
 :kbd:`N` com o jogador 1 estando do lado esquerdo da tela, não se
-esqueça de clicar em :guilabel:`Done` ao concluir:
+esqueça de clicar em :guilabel:`Feito` ao concluir:
 
-* **Name**: J1 Hadouken SF
-* **Activation sequence**: Kbd N
-* **On release**: Complete macro
-* **When held**: Release
-* **Step 1**:
+* **Nome**: J1 Hadouken SF
+* **Ativação**: Kbd N
+* **Ao soltar**: Conclua a macro
+* **Enquanto estiver pressionado**: Libera
+* **Etapa 1**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Baixo
-* **Step 2**:
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Baixo
+* **Etapa 2**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Direita
-  * **Input 2**: J1 Baixo
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Direita
+  * **Entrada 2**: J1 Baixo
 * **Step 3**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Direita
-  * **Input 2**: P1 Strong Punch
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Direita
+  * **Entrada 2**: P1 Strong Punch
 
 Esta macro é utilizada pelo personagem **Guile** para soltar o *Sonic
 Boom* com *soco médio* ao pressionar a tecla :kbd:`B` com o jogador 1
 estando do lado esquerdo da tela, não se esqueça de clicar em
-:guilabel:`Done` ao concluir:
+:guilabel:`Feito` ao concluir:
 
-* **Name**: J1 Sonic Boom
-* **Activation sequence**: Kbd B
-* **On release**: Complete macro
-* **When held**: Release
-* **Step 1**:
+* **Nome**: J1 Sonic Boom
+* **Ativação**: Kbd B
+* **Ao soltar**: Conclua a macro
+* **Enquanto estiver pressionado**: Libera
+* **Etapa 1**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 60
-  * **Input 1**: J1 Esquerda
-* **Step 2**:
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 60
+  * **Entrada 1**: J1 Esquerda
+* **Etapa 2**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Direita
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Direita
 * **Step 3**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Direita
-  * **Input 2**: P1 Strong Punch
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Direita
+  * **Entrada 2**: P1 Strong Punch
 
 Esta macro faz o tal "*facão do Guile*" (Flash Kick) com *chute fraco*
 ao pressionar a tecla :kbd:`V` com o jogador 1 estando do lado esquerdo
-da tela, não se esqueça de clicar em :guilabel:`Done` ao concluir:
+da tela, não se esqueça de clicar em :guilabel:`Feito` ao concluir:
 
-* **Name**: J1 Flash Kick
-* **Activation sequence**: Kbd V
-* **On release**: Complete macro
-* **When held**: Release
-* **Step 1**:
+* **Nome**: J1 Flash Kick
+* **Ativação**: Kbd V
+* **Ao soltar**: Conclua a macro
+* **Enquanto estiver pressionado**: Libera
+* **Etapa 1**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 60
-  * **Input 1**: J1 Baixo
-* **Step 2**:
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 60
+  * **Entrada 1**: J1 Baixo
+* **Etapa 2**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Cima
-  * **Input 2**: P1 Short Kick
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Cima
+  * **Entrada 2**: P1 Short Kick
 
 Esta macro é utilizada pelo personagem **Zanguief** para fazer o nosso
 conhecido "*Pilão Giratório*", também conhecido como *Spinning
 Piledriver* e *Screw Pile Driver* com *soco médio* ao pressionar a tecla
 :kbd:`C` com o jogador 1 estando do lado esquerdo da tela, não se
-esqueça de clicar em :guilabel:`Done` ao concluir:
+esqueça de clicar em :guilabel:`Feito` ao concluir:
 
-* **Name**: J1 Screw Pile Driver
-* **Activation sequence**: Kbd C
-* **On release**: Complete macro
-* **When held**: Release
-* **Step 1**:
+* **Nome**: J1 Screw Pile Driver
+* **Ativação**: Kbd C
+* **Ao soltar**: Conclua a macro
+* **Enquanto estiver pressionado**: Libera
+* **Etapa 1**:
 
-  * **Delay (frames)**: 0
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Direita
-* **Step 2**:
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Direita
+* **Etapa 2**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Baixo
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Baixo
 * **Step 3**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Esquerda
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Esquerda
 * **Step 4**:
 
-  * **Delay (frames)**: 1
-  * **Duration (frames)**: 1
-  * **Input 1**: J1 Cima
-  * **Input 2**: P1 Strong Punch
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: J1 Cima
+  * **Entrada 2**: P1 Strong Punch
