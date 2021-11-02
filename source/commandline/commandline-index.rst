@@ -139,8 +139,8 @@ Opções para a gravação de áudio e vídeo
 | :ref:`wavwrite <mame-commandline-wavwrite>`
 |
 
-Opções para os instantâneos de tela
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções para a captura da tela
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`snapname <mame-commandline-snapname>`
 | :ref:`snapsize <mame-commandline-snapsize>`
@@ -303,8 +303,8 @@ Opções para as configurações de diferentes entradas
 | :ref:`coin_impulse <mame-commandline-coinimpulse>`
 |
 
-Opções de entrada habilitadas automaticamente
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções de entrada ativadas automaticamente
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`paddle_device <mame-commandline-paddledevice>`
 | :ref:`adstick_device <mame-commandline-adstickdevice>`
