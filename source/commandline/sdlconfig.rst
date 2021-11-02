@@ -63,10 +63,6 @@ veja :ref:`Microsoft Windows <compiling-windows>`. ::
 	Leave renderer_sdl2::create
 	DirectSound: Primary buffer: 48000 Hz, 16 bits, 2 channels
 
-.. raw:: latex
-
-	\clearpage
-
 Aqui temos as opções disponíveis para a customização em todas as versões
 SDL: ::
 
@@ -128,10 +124,6 @@ Já para as versões do **Windows** você pode definir estas opções como
 variáveis do ambiente no prompt de comando antes de iniciar o MAME com
 os comandos:
 
-.. raw:: latex
-
-	\clearpage
-
 ::
 
 	set SDL_FRAMEBUFFER_ACCELERATION=1
@@ -149,13 +141,14 @@ diretório do MAME, exemplo de um ``run.bat``: ::
 
 Ou então deixar isso disponível como variável do sistema, pressione as
 teclas :kbd:`WIN` + :kbd:`R` e execute o comando **sysdm.cpl**, siga
-para --> **Avançado** --> **Variáveis de Ambiente**, na parte de baixo
-da tela onde está escrito **Variáveis do sistema** clique em **Novo**,
-na próxima janela que aparecer adicione o **Nome da variável** que
-deseja definir, no campo **Valor** defina o valor apropriado. O valor
-para ``SDL_RENDER_DRIVER`` seria ``direct3d11`` e assim por diante,
-reinicie o computador ou encerre a sessão que estiver usando para que as
-modificações sejam aplicadas.
+para --> :guilabel:`Avançado` --> :guilabel:`Variáveis de Ambiente`, na
+parte de baixo da tela onde está escrito :guilabel:`Variáveis do
+sistema` clique em :guilabel:`Novo`, na próxima janela que aparecer
+adicione o :guilabel:`Nome da variável` que deseja definir, no campo
+:guilabel:`Valor` defina o valor apropriado. O valor para
+``SDL_RENDER_DRIVER`` seria ``direct3d11`` e assim por diante, reinicie
+o computador ou encerre a sessão que estiver usando para que as
+alterações sejam aplicadas.
 
 Novamente, não é garantia que ao definir estas opções você note alguma
 melhora no desempenho da emulação, tudo vai depender do hardware usado
@@ -185,7 +178,7 @@ Opções de vídeo
 
 	Centraliza o eixo horizontal da tela.
 
-		O valor predefinido é **Ligado** (**-centerh**).
+		O valor predefinido é ``Ligado`` (**-centerh**).
 
 .. _mame-scommandline-centerv:
 
@@ -193,7 +186,7 @@ Opções de vídeo
 
 	Centraliza o eixo vertical da tela.
 
-		O valor predefinido é **Ligado** (**-centerv**).
+		O valor predefinido é ``Ligado`` (**-centerv**).
 
 
 Configuração para tela inteira
@@ -205,7 +198,7 @@ Configuração para tela inteira
 
 	Partilha a tela inteira com diferentes monitores.
 
-		O valor predefinido é **none** (nenhum).
+		O valor predefinido é ``none`` (nenhum).
 
 
 Configurações específicas quando o driver de vídeo for software
@@ -218,7 +211,7 @@ Configurações específicas quando o driver de vídeo for software
 	Modos de escala da família de espaços de cor, esta opção funciona
 	apenas com **-video soft**.
 
-		O valor predefinido é **none** (nenhum).
+		O valor predefinido é ``none`` (nenhum).
 
 
 .. raw:: latex
@@ -234,7 +227,7 @@ Configurações para o mapeamento do teclado
 
 	Permite que você ative o uso de um mapa de teclado personalizado.
 
-		O valor predefinido é **Desligado** (**-nokeymap**).
+		O valor predefinido é ``Desligado`` (**-nokeymap**).
 
 .. _mame-scommandline-keymapfile:
 
@@ -245,10 +238,10 @@ Configurações para o mapeamento do teclado
 	com um mapa de teclado para o teclado ABNT2 chamado
 	**km_br_LINUX.map** no diretório **keymaps**. Um mapa é útil para
 	que o mapeamento das teclas já predefinidas coincidam com o mapa de
-	um teclado ABNT2 por exemplo, assim a tecla **~** (til) que fica
+	um teclado ABNT2 por exemplo, assim a tecla :kbd:`~` (til) que fica
 	acima da tecla TAB no teclado ANSI Americano pode ser remapeado para
-	a tecla que fica do lado direito da tecla **Ç** (cê-cedilha) em um
-	teclado ABNT2.
+	a tecla que fica do lado direito da tecla :kbd:`Ç` (cê-cedilha) em
+	um teclado ABNT2.
 	
 	O valor predefinido é **keymap.dat**.
 
@@ -267,16 +260,16 @@ Configurações para o mapeamento do controle joystick
 
 Nome do controle joystick mapeado para um determinado slot do joystick.
 
-		O valor predefinido é **auto**.
+		O valor predefinido é ``auto``.
 
 .. _mame-scommandline-sixaxis:
 
 **-sixaxis**
 
-	Usar um tratamento especial para lidar com os controles SixAxis do
+	Usar um tratamento especial para lidar com os controles *SixAxis* do
 	PS3.
 
-		O valor predefinido é **Desligado** (**-nosixaxis**)
+		O valor predefinido é ``Desligado`` (**-nosixaxis**)
 
 
 Configurações para o mapeamento do mouse
@@ -293,7 +286,7 @@ Configurações para o mapeamento do mouse
 
 Faça o mapeamento do mouse para uma das 8 entradas.
 
-		O valor predefinido é **auto**.
+		O valor predefinido é ``auto``.
 
 Configurações para o mapeamento do teclado
 ------------------------------------------
@@ -309,7 +302,7 @@ Configurações para o mapeamento do teclado
 
 Faça o mapeamento do teclado para uma das 8 entradas.
 
-		O valor predefinido é **auto**.
+		O valor predefinido é ``auto``.
 
 
 Opções para a configuração dos drivers
@@ -317,30 +310,30 @@ Opções para a configuração dos drivers
 
 .. _mame-scommandline-videodriver:
 
-**-videodriver** <``x11`` | ``directfb`` | ``...`` | ``auto``>
+**-videodriver** < ``x11`` | ``directfb`` | ``...`` | ``auto`` >
 
 	Define um driver de vídeo SDL a ser usado, a disponibilidade de
 	alguns destes drivers depende do sistema operacional.
 	
-		O valor predefinido é **auto**
+		O valor predefinido é ``auto``
 
 .. _mame-scommandline-renderdriver:
 
-**-renderdriver** <``opengl`` | ``directfb`` | ``...`` | ``auto``>
+**-renderdriver** < ``opengl`` | ``directfb`` | ``...`` | ``auto`` >
 
 	Define o driver de renderização SDL a ser usado, a disponibilidade
 	de alguns destes drivers depende do sistema operacional.
 	
-		O valor predefinido é **auto**
+		O valor predefinido é ``auto``
 
 .. _mame-scommandline-audiodriver:
 
-**-audiodriver** <``pulseaudio`` | ``alsa`` | ``arts`` | ``...`` | ``auto``>
+**-audiodriver** < ``pulseaudio`` | ``alsa`` | ``arts`` | ``...`` | ``auto`` >
 
 	Define o driver de áudio SDL a ser usado, a disponibilidade de
 	alguns destes drivers depende do sistema operacional.
 	
-		O valor predefinido é **auto**
+		O valor predefinido é ``auto``
 
 .. _mame-scommandline-gllib:
 
@@ -348,5 +341,5 @@ Opções para a configuração dos drivers
 
 	Define o **libGL.so** alternativo a ser usado.
 
-		O valor predefinido para o sistema é **auto**
+		O valor predefinido para o sistema é ``auto``
 
