@@ -4615,8 +4615,8 @@ Opções voltadas para a depuração
 **-[no]debug** / **-[no]d**
 
 	Ativa o depurador embutido no MAME. É predefinido que o depurador
-	entre em ação ao pressionar a tecla til :kbd:`~` [8]_ durante a
-	emulação.
+	entre em ação ao pressionar a tecla *til* :kbd:`~` [8]_ e
+	*acento grave* :kbd:`\`` durante a emulação.
 	Ele também entra direto no depurador depois que a emulação é
 	redefinida, caso esta opção esteja ativa. Consulte
 	:ref:`-debugger <mame-commandline-debugger>` para obter mais

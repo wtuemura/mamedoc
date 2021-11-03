@@ -42,8 +42,8 @@ portáteis, etc.
     Um simples programa para o Windows para iniciar os sistemas no MAME.
     É escrito em C++,
     `o código fonte está no GitHub <https://github.com/Mataniko/IV-Play>`__.
-`EmuLoader <http://emuloader.mameworld.info/>`__ (Microsoft Windows)
-    O *Emuloader* oferece uma interface Windows para iniciar sistemas
+`Emu Loader <http://emuloader.mameworld.info/>`__ (Microsoft Windows)
+    O *Emu loader* oferece uma interface Windows para iniciar sistemas
     e diversos emuladores, incluindo o MAME, Supermodel e o DEMUL. É
     escrito em Delphi Pascal, o código fonte está disponível na
     `página de download do projeto <https://emuloader.mameworld.info/downloads.htm>`__.

@@ -44,8 +44,9 @@ estados.
 :kbd:`Tab`
 	Chama o cardápio de opções.
 
-| :kbd:`~` (tecla til no teclado americano)
-| :kbd:`'` (tecla ápice no teclado ABNT-2, a mesma tecla das aspas)
+| :kbd:`~`  (tecla til no teclado americano)
+| :kbd:`\`` (tecla *acento agudo* no teclado ABNT-2)
+| :kbd:`'`  (tecla ápice no teclado ABNT-2, a mesma tecla das aspas)
 
 	Mostra as opções na tela.
 
