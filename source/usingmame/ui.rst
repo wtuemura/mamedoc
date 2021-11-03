@@ -50,39 +50,70 @@ as diferenças entre o teclado Americano e o ABNT-2 usado no Brasil.
 As configurações correspondentes com o mapeamento padrão do teclado são:
 
 Seta :kbd:`cima` (IU Cima)
-    Destaca o item anterior ou o último caso o primeiro esteja
-    destacado.
+
+	Destaca o item anterior ou o último caso o primeiro esteja
+	destacado.
+
 Seta :kbd:`baixo` (IU Baixo)
-    Destaca o próximo item da lista ou o primeiro caso o último esteja
-    destacado.
+
+	Destaca o próximo item da lista ou o primeiro caso o último esteja
+	destacado.
+
 Seta :kbd:`esquerda` (IU Esquerda)
-    For menu items that are adjustable settings, reduce the value or select the
-    previous setting (these menu items show left- and right-facing triangles
-    beside the value).
+
+	Para itens do menu que podem ser ajustados, reduz o valor ou
+	seleciona o valor anterior (tais configurações mostram setas
+	indicativas).
+
 Seta :kbd:`direita` (IU Direita)
-    Para itens do menu que podem ser ajustados, seus valores podem ser
-    incrementados ou selecionados para a próxima configuração (tais
-    configurações mostram setas indicativas).
-:kbd:`Enter` / :kbd:`Return` e :kbd:`Enter` do teclado numérico (UI Seleciona)
-    Seleciona o item em destaque.
-Forward Delete ou :kbd:`Fn` + :kbd:`Delete` em alguns teclados compactos (UI Limpa)
-    Limpa a configuração ou redefine para o valor predefinido
+
+	Para itens do menu que podem ser ajustados, aumenta o valor ou
+	seleciona o valor posterior (tais configurações mostram setas
+	indicativas).
+
+:kbd:`Enter` / :kbd:`Return` e :kbd:`Enter` do teclado numérico (UI
+Seleciona)
+
+	Seleciona o item em destaque.
+
+:kbd:`Forward` :kbd:`Delete` ou :kbd:`Fn` + :kbd:`Delete` em alguns
+teclados compactos (UI Limpa)
+
+	Limpa a configuração ou redefine para o valor predefinido
+
 :kbd:`Esc` (UI Cancela)
-    Limpa o campo de busca, caso contrário, fecha o menu, retorna ao
-    menu anterior ou retorna para a emulação no menu principal (também
-    há um item na parte do menu que funciona igual).
+
+	Limpa o campo de busca, caso contrário, fecha o menu, retorna ao
+	menu anterior ou retorna para a emulação no menu principal (também
+	há um item na parte do menu que funciona igual).
+
 :kbd:`Home` (UI Home)
-    Destaca o primeiro item e rola para o topo do menu.
+
+	Destaca o primeiro item e rola para o topo do menu.
+
+.. raw:: latex
+
+	\clearpage
+
 :kbd:`End` (UI End)
-    Destaca o último item e rola para a parte debaixo do menu.
+
+	Destaca o último item e rola para a parte debaixo do menu.
+
 :kbd:`PgUp` (UI Pág. cima)
-    Rola a página do menu para cima.
+
+	Rola a página do menu para cima.
+
 :kbd:`PgDn` (UI Pág. baixo)
-    Rola a página do menu para baixo.
+
+	Rola a página do menu para baixo.
+
 :kbd:`[` (UI Grupo anterior)
-    Move os itens do grupo anterior (não é utilizado em todos os menus).
+
+	Move os itens do grupo anterior (não é utilizado em todos os menus).
+
 :kbd:`]` (UI Próximo grupo)
-    Move o próximo item do grupo (não é utilizado em todos os menus).
+
+	Move o próximo item do grupo (não é utilizado em todos os menus).
 
 
 .. _ui-menus-gamectrl:
@@ -164,14 +195,229 @@ combinações dos botões para o :guilabel:`Menu de configuração` /
 seja possível usar o MAME sem usar um teclado.
 
 
+.. _ui-inptcfg:
+
+Configurando as entradas
+------------------------
+
+O MAME precisa de um sistema de entrada flexível para sustentar todos os
+mecanismos de controle da vasta gama de sistemas emulados por ele. Nas
+entradas que têm apenas dois estados distintos, *ligado* e *desligado*
+ou *ativo* e *inativo*, estas entradas são chamadas de digitais. Todas
+as outras entradas são chamadas de analógicas, mesmo que isso não seja
+estritamente verdadeiro.
+
+Para atribuir os controles da interface do usuário do MAME ou as
+entradas predefinidas em todos os sistemas, selecione
+:guilabel:`Entrada (geral)` no menu principal durante a emulação ou
+selecione :guilabel:`Configurações` do menu de seleção do sistema, em
+seguida, selecione :guilabel:`Todas as entradas` e a partir daí,
+selecione uma categoria.
+
+Para atribuir entradas na máquina em funcionamento, selecione no menu
+principal a opção :guilabel:`Entrada (Esta máquina)` durante a emulação.
+As entradas estão agrupadas por dispositivo e ordenadas por tipo. É
+possível mover entre os dispositivos com o próximo grupo e as
+teclas/botões do grupo anterior usando as teclas :kbd:`[` e :kbd:`]`.
+
+Os menus de atribuição da entrada mostram o nome da entrada emulada ou
+o controle da interface do usuário à esquerda, a entrada (ou combinação
+das entradas) à direita.
+
+Para ajustar a sensibilidade, a velocidade da centralização automática,
+as configurações da inversão ou para ver como os controles analógicos
+emulados reagem, selecione :guilabel:`Controles analógicos` no menu
+principal durante a emulação. (Este item só aparece nos sistemas com
+controles analógicos).
+
+
+.. _ui-inptcfg-digital:
+
+Configurações da entrada digital
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cada entrada digital emulada tem uma única atribuição configurável.
+Visando uma maior flexibilidade, o MAME pode combinar as entradas do
+host (as teclas, os botões e os eixos do joystick) usando operações
+lógicas ``and``, ``not`` e ``or``. Isso fica melhor ilustrado com alguns
+exemplos:
+
+Tecla :kbd:`1`
+
+	Neste simples exemplo, ao pressionar a tecla :kbd:`1` no teclado,
+	ativa a entrada emulada ou o controle da interface do usuário.
+
+Tecla direcional :kbd:`Baixo` ou baixo no direcional do joystick 1
+
+	Pressionando a seta para baixo no teclado ou no controle, ativa a
+	entrada emulada ou o controle da interface do usuário.
+
+Tecla :kbd:`P`
+
+	Ao pressionar a tecla :kbd:`P` do teclado ao mesmo tempo que **não**
+	for pressionado :kbd:`Shift`, a tecla ativa a entrada emulada ou o
+	controle da interface do usuário. O MAME não mostra operações
+	implícitas ``and``.
+
+Tecla :kbd:`P` + :kbd:`Shift` esquerdo ou :kbd:`P` + :kbd:`Shift` direito
+
+	Ao pressionar a tecla :kbd:`P` do teclado ao mesmo tempo que
+	pressiona as teclas :kbd:`Shift`, ativa a entrada ou o controle da
+	interface do usuário. Novamente, as operações implícitas ``and`` não
+	são mostradas.
+
+Tecnicamente, o MAME utiliza a soma boleana da lógica dos produtos para
+combinar as entradas.
+
+Quando uma configuração para a entrada digital é destacada, o quadro
+abaixo do menu mostra se a seleção irá definir a atribuição ou anexar
+uma operação ``or`` a ela. Pressione :guilabel:`IU Esquerda/Direita`
+antes de selecionar se a configuração será para alternar entre a
+configuração ou se será para anexar uma operação ``or``. Pressione
+:guilabel:`IU Limpa` (:kbd:`Del` ou :kbd:`forward` :kbd:`delete`) para
+apagar a configuração ou restaurar a atribuição original.
+
+Ao selecionar uma configuração de entrada digital, o MAME esperará que
+você digite uma entrada ou uma combinação das entradas para uma operação
+lógica ``and``:
+
+* Pressione uma tecla, um botão ou mova o controle analógico uma vez
+  para adicionar uma operação ``and``.
+* Pressione uma tecla, um botão ou mova o controle analógico duas vezes
+  para adicionar uma operação ``not`` na operação ``and``. Ao pressionar
+  a mesma tecla, botão ou movendo o mesmo controle analógico mais de uma
+  vez, isso faz com que se ligue ou desligue a operação ``not`` várias
+  vezes.
+* Ao pressionar :guilabel:`IU Cancela` (tecla :kbd:`Esc`) **antes** da
+  ativação de qualquer outra entrada, isso limpa ou restaura a
+  atribuição original.
+* Ao pressionar :guilabel:`IU Cancela` **depois** da ativação de
+  qualquer outra entrada, a configuração da entrada permanece a mesma.
+* A nova configuração é mostrada abaixo do menu. Aguarde cerca de um
+  segundo depois da ativação para que a nova configuração seja aceita.
+
+Veja aqui como criar algumas configurações de exemplo:
+
+Tecla :kbd:`1`
+
+	Pressione uma vez a tecla :kbd:`1` no teclado, aguarde 1 segundo
+	para aceitar a nova configuração.
+
+Tecla :kbd:`F12` :kbd:`Shift` :kbd:`Alt`
+
+	Pressione uma vez a tecla :kbd:`P` no teclado, pressione uma vez a
+	tecla :kbd:`Shift` esquerda, pressione uma vez a tecla :kbd:`Alt`
+	esquerda, aguarde cerca de um segundo para que a nova configuração
+	seja aceita.
+
+Tecla :kbd:`P`
+
+	Pressione uma vez a tecla :kbd:`P`, pressione duas vezes a tecla
+	:kbd:`Shift` esquerda, pressione duas vezes a tecla :kbd:`Shift`
+	direita, aguarde cerca de um segundo para que a nova configuração
+	seja aceita.
+
+
+.. _ui-inptcfg-analog:
+
+Configurações da entrada analógica
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Cada entrada analógica emulada possui três configurações de atribuição:
+
+* Use a configuração do *axis setting* (ajuste do eixo) para atribuir um
+  eixo analógico como controle de uma entrada analógica. As
+  configurações do eixo utiliza o nome da entrada com o sufixo "Analog"
+  (Analógico). O ajuste do eixo para o volante na máquina *Ridge Racer*
+  por exemplo, é chamado de :guilabel:`Steering Wheel Analog`.
+* Use o :guilabel:`increment setting` para atribuir à entrada (ou na
+  combinação delas) o aumento do seu valor. A configuração para este
+  incremento utiliza o nome :guilabel:`Analog Inc`. Por exemplo, a
+  configuração de incremento no volante da máquina *Ridge Racer* se
+  chama :guilabel:`Steering Wheel Analog Inc`. Esta é a entrada digital
+  para esta máquina, caso um eixo analógico seja atribuído à ela, o MAME
+  não vai incrementar o valor emulado numa velocidade proporcional.
+* Use o :guilabel:`decrement setting` para atribuir à entrada (ou na
+  combinação delas) a redução do seu valor. A configuração para este
+  incremento utiliza o nome :guilabel:`Analog Dec`. Por exemplo, a
+  configuração de incremento no volante da máquina *Ridge Racer* se
+  chama :guilabel:`Steering Wheel Analog Dec`. Esta é a entrada digital
+  para esta máquina, caso um eixo analógico seja atribuído à ela, o MAME
+  não vai incrementar o valor emulado numa velocidade proporcional.
+
+Os ajustes de aumento e de redução são muito mais úteis para controlar
+uma entrada analógica usando controles digitais (as teclas do teclado,
+os botões do joystick ou um teclado direcional por exemplo). Eles são
+configurados da mesma maneira que as entradas digitais (:ref:`ver
+acima <ui-inptcfg-digital>`). **É de extrema importância que não se
+atribua o mesmo controle ao ajuste do eixo, assim como os ajustes para o
+aumento e/ou para a redução na mesma entrada ao mesmo tempo.**
+Por exemplo, caso atribua o ajuste analógico :guilabel:`Steering Wheel
+Analog` do *Ridge Racer* ao eixo X ao analógico esquerdo no seu
+controle, você não deve atribuir nem o ajuste analógico
+:guilabel:`Steering Wheel Analog Inc` nem o ajuste :guilabel:`Steering
+Wheel Analog Dec` ao eixo X do mesmo analógico.
+
+Para realizar o ajuste da sensibilidade, da velocidade centralização
+automática, das configurações de inversão para entradas analógicas ou
+para ver como elas respondem às suas configurações, selecione a opção
+:guilabel:`Controles analógicos` no menu principal durante a emulação.
+A configuração das entradas estão agrupadas por dispositivo e ordenadas
+por tipo. É possível mover entre os dispositivos com o próximo grupo e
+as teclas/botões do grupo anterior usando as teclas :kbd:`[` e :kbd:`]`.
+O estado das entradas analógicas é mostrado abaixo do menu e elas reagem
+em tempo real. Pressione a tecla responsável pela
+:guilabel:`Visualização na tela` (a tecla :kbd:`~` e :kbd:`\`` num
+teclado US ANSI QWERTY e as teclas :kbd:`"` e :kbd:`'` num teclado
+ABNT-2) para ocultar o menu principal, facilitando o teste sem alterar
+as configurações. Pressione novamente a mesma tecla ou botão
+para mostrar o menu completo novamente.
+
+.. raw:: latex
+
+	\clearpage
+
+Cada entrada analógica possuí quatro configurações no menu
+:guilabel:`Analog Controls`:
+
+* Os controles de configuração :guilabel:`increment` /
+  :guilabel:`decrement` (aumento / redução) controlam o quão rápido os
+  valores da entrada aumenta ou reduz em resposta aos controles
+  atribuídos nos ajustes de :guilabel:`increment` /
+  :guilabel:`decrement`.
+* A configuração :guilabel:`auto-centering speed` (velocidade
+  autocentrante) controla o quão rápido o valor da entrada retorna ao
+  estado neutro quando os controles atribuídos às configurações de
+  :guilabel:`increment` / :guilabel:`decrement` são liberados.
+* O ajuste :guilabel:`reverse` (inverso) permite inverter a direção
+  da resposta recebida dos controles. Isso se aplica aos controles
+  atribuídos ao ajuste do eixo e aos ajustes de :guilabel:`increment` /
+  :guilabel:`decrement`.
+* O ajuste :guilabel:`sensitivity` (sensibilidade) ajusta a resposta
+  recebida do controle atribuído ao ajuste do eixo.
+
+Use as teclas ou botões da :kbd:`esquerda` e :kbd:`direita` para ajustar
+a configuração em destaque. Ao selecionar uma configuração ou ao
+pressionar a tecla :kbd:`Del` (:kbd:`Forward` :kbd:`Delete`) restabelece
+o seu valor inicial.
+
+As unidades para as configurações da velocidade **increment/decrement**,
+**auto-centering speed** e **sensitivity** estão vinculadas à
+implementação do driver/dispositivo. As configurações da velocidade
+**increment/decrement**, **auto-centering speed** também são vinculadas
+à taxa dos quadros da tela principal do sistema. A resposta aos
+controles atribuídos às configurações de **increment/decrement** também
+será alterada caso o sistema altere a taxa de quadros desta tela.
+
+
 .. _ui-selmenu:
 
 O menu de seleção de programa e de sistema
 ------------------------------------------
 
 Ao iniciar o MAME sem definir um sistema na linha de comando, será
-mostrado o menu para a seleção de sistemas (assumindo que a
-:ref:`opção ui <mame-commandline-ui>` esteja definido como ``cabinet``).
+mostrado o menu para a seleção de sistemas (assumindo que a opção
+:ref:`-ui <mame-commandline-ui>` esteja definido como ``cabinet``).
 O menu para a seleção de sistemas também será exibido caso você
 escolha :guilabel:`Selecione uma nova máquina` no menu principal
 durante a emulação. A seleção de um sistema que usa listas de programas
@@ -269,20 +515,29 @@ diferenças entre o teclado Americano e o ABNT-2 usado no Brasil.
 As configurações correspondentes com o mapeamento padrão do teclado são:
 
 :kbd:`Tab` (IU Próx. foco)
-    Foca a próxima região. A ordem é a lista de sistema/programa,
-    configurações (caso esteja disponível), a lista dos filtros (caso
-    esteja visível), abas de informação/imagem (caso estejam visíveis).
+
+	Foca a próxima região. A ordem é a lista de sistema/programa,
+	configurações (caso esteja disponível), a lista dos filtros (caso
+	esteja visível), abas de informação/imagem (caso estejam visíveis).
+
 :kbd:`Shift` + :kbd:`Tab` (IU Foco ant.)
-    Move o foco para a região anterior.
+
+	Move o foco para a região anterior.
+
 :kbd:`Alt` + :kbd:`D` (IU Visualiza DAT externa)
-    Mostra o visualizador de informações em tela inteira.
+
+	Mostra o visualizador de informações em tela inteira.
+
 :kbd:`Alt` + :kbd:`F` (IU Adiciona/remove favoritos)
-    Add or remove the highlighted system or software item from the favourites
-    list.
+
+	Adiciona ou remove o sistema ou programa em destaque na lista de
+	favoritos.
+
 :kbd:`F1` (IU Afere mídia)
-    Realiza uma aferição das ROMs e das imagens dos discos dos sistemas.
-    Os resultados são salvos e utilizados pelos filtros
-    :guilabel:`Disponível` e :guilabel:`Indisponível`.
+
+	Realiza uma aferição das ROMs e das imagens dos discos dos sistemas.
+	Os resultados são salvos e utilizados pelos filtros
+	:guilabel:`Disponível` e :guilabel:`Indisponível`.
 
 Quando o foco estiver na lista de filtros, é possível usar o
 controle de navegação do menu (:kbd:`cima`, :kbd:`baixo`, :kbd:`Home` e

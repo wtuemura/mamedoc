@@ -25,8 +25,9 @@ separados pelos tipos das máquinas facilitando a busca.
 Todos os controles abaixo são totalmente configuráveis através da
 interface do usuário. Os exemplos abaixo são as configurações
 predefinidas. As predefinições mostradas aqui são organizadas com base
-do no teclado US ANSI. Caso tenha um layout de teclado diferente, as
-teclas poderão ser diferentes.
+do no teclado **US ANSI QWERTY**. Caso tenha um layout de teclado
+diferente, as teclas poderão ser diferentes, consulte o capítulo
+:ref:`default-comparative-kbd` para ver as diferenças.
 
 .. raw:: latex
 
@@ -44,9 +45,10 @@ estados.
 :kbd:`Tab`
 	Chama o cardápio de opções.
 
-| :kbd:`~`  (tecla til no teclado americano)
-| :kbd:`\`` (tecla *acento agudo* no teclado ABNT-2)
-| :kbd:`'`  (tecla ápice no teclado ABNT-2, a mesma tecla das aspas)
+| :kbd:`~`	(tecla *til* no teclado US ANSI QWERTY)
+| :kbd:`\``	(tecla *acento agudo* no teclado US ANSI QWERTY)
+| :kbd:`"`	(tecla *aspas* no teclado ABNT-2)
+| :kbd:`'`	(tecla *ápice* no teclado ABNT-2)
 
 	Mostra as opções na tela.
 
@@ -69,13 +71,13 @@ estados.
 	* :kbd:`End` - Oculta temporariamente a opção visível na tela.
 	* :kbd:`Home` - Traz de volta a opção na tela depois que for oculta.
 
-Seta :kbd:`cima`
+Seta direcional :kbd:`cima`
     Destaca a opção anterior da lista da interface.
-Seta :kbd:`baixo`
+Seta direcional :kbd:`baixo`
     Destaca a opção posterior da lista da interface.
-Seta :kbd:`esquerda`
+Seta direcional :kbd:`esquerda`
     Altera a opção com os valores disponível do lado esquerdo quando uma seta estiver presente.
-Seta :kbd:`direita`
+Seta direcional :kbd:`direita`
     Altera a opção com os valores disponível do lado direito quando uma seta estiver presente.
 :kbd:`Home` / :kbd:`End`
     Destaca a primeira ou a última opção da lista.
@@ -345,13 +347,13 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
 Controles do jogador 1
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Seta :kbd:`cima`
+Seta direcional :kbd:`cima`
     Jogador 1 cima
-Seta :kbd:`baixo`
+Seta direcional :kbd:`baixo`
     Jogador 1 baixo
-Seta :kbd:`esquerda`
+Seta direcional :kbd:`esquerda`
     Jogador 1 esquerda
-Seta :kbd:`direita`
+Seta direcional :kbd:`direita`
     Jogador 1 direita
 :kbd:`E`
     Jogador 1 - Cima no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
