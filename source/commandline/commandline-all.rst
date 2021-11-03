@@ -4218,7 +4218,7 @@ Opções para as configurações de diferentes entradas
 	Para tanto o MAME divide o alcance do controle analógico numa grade
 	com 9x9 muito semelhante ao desenho abaixo:
 
-	.. image:: images/9x9grid.png
+	.. image:: images/9x9grid.svg
 		:width: 50%
 		:align: center
 		:alt: Grade 9x9
@@ -4231,7 +4231,7 @@ Opções para as configurações de diferentes entradas
 	Como por exemplo, um joystick com 8 posições geralmente se assemelha
 	com a imagem abaixo:
 
-	.. image:: images/8way.png
+	.. image:: images/8way.svg
 		:width: 50%
 		:align: center
 		:alt: Joystick com 8 posições
@@ -4259,7 +4259,7 @@ Opções para as configurações de diferentes entradas
 	exemplo de um mapa para um joystick com 8 posições que coincide com
 	a imagem anterior.
 
-	.. image:: images/joymap.png
+	.. image:: images/joymap.svg
 		:width: 100%
 		:align: center
 		:alt: exemplo mapa 8 posições
@@ -4309,7 +4309,7 @@ Opções para as configurações de diferentes entradas
 	(pegadiço) se torna importante para evitar problemas com as
 	diagonais. Geralmente seria escolhido um mapa semelhante com este:
 
-	.. image:: images/4way.png
+	.. image:: images/4way.svg
 		:width: 50%
 		:align: center
 		:alt: Joystick com 4 posições
@@ -4325,7 +4325,7 @@ Opções para as configurações de diferentes entradas
 
 	O mapa então ficaria muito parecido com isso:
 
-	.. image:: images/joymap-sticky.png
+	.. image:: images/joymap-sticky.svg
 		:width: 100%
 		:align: center
 		:alt: Joystick com 4 posições sticky
