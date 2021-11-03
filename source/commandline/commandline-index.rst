@@ -128,7 +128,6 @@ Opções para a gravação e a reprodução do estado da emulação
 | :ref:`playback <mame-commandline-playback>`
 | :ref:`exit_after_playback <mame-commandline-exitafterplayback>`
 | :ref:`record <mame-commandline-record>`
-| :ref:`record_timecode <mame-commandline-recordtimecode>`
 |
 
 Opções para a gravação de áudio e vídeo

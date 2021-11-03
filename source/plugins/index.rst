@@ -78,4 +78,5 @@ partida ao escrever os seus próprios plug-ins.
     hiscore
     inputmacro
     layout
+    timecode
     timer

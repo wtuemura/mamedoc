@@ -1890,22 +1890,6 @@ Opções para a gravação e a reprodução do estado da emulação
 			mame ssf2tu -rec perfect
 
 
-.. _mame-commandline-recordtimecode:
-
-**-record_timecode**
-
-	Diz ao MAME para criar um arquivo de **timecode**. Ele contém uma
-	linha com os tempos decorridos a cada pressão da tecla de atalho
-	(*O valor predefinido é* :kbd:`F12`). Esta opção funciona apenas
-	quando o modo de gravação está ativo (opção ``-record``). O arquivo
-	é salvo na pasta *inp*. É predefinido que nenhum arquivo de
-	*timecode* seja gravado.
-
-	Exemplo:
-		.. code-block:: shell
-
-			mame ssf2tu -rec perfect -record_timecode
-
 .. raw:: latex
 
 	\clearpage
