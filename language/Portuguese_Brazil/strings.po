@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-31 10:10+1100\n"
-"PO-Revision-Date: 2021-11-3 04:54-0300\n"
+"PO-Revision-Date: 2021-11-3 15:07-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -3683,12 +3683,12 @@ msgstr "J1 Hanafuda Não"
 #: src/emu/inpttype.ipp:103
 msgctxt "input-name"
 msgid "Key In"
-msgstr "Chave dentro (In)"
+msgstr "Insere crédito"
 
 #: src/emu/inpttype.ipp:104
 msgctxt "input-name"
 msgid "Key Out"
-msgstr "Chave fora (out)"
+msgstr "Saca crédito"
 
 #: src/emu/inpttype.ipp:105 src/emu/inpttype.ipp:540
 msgctxt "input-name"
@@ -5453,7 +5453,7 @@ msgstr "Ficha 12"
 #: src/emu/inpttype.ipp:517
 msgctxt "input-name"
 msgid "Bill 1"
-msgstr "Cédula 1"
+msgstr "Leitor de cédula 1"
 
 #: src/emu/inpttype.ipp:522
 msgctxt "input-name"
