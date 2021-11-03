@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-31 10:10+1100\n"
-"PO-Revision-Date: 2021-10-31 06:18-0300\n"
+"PO-Revision-Date: 2021-11-3 04:54-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -5453,7 +5453,7 @@ msgstr "Ficha 12"
 #: src/emu/inpttype.ipp:517
 msgctxt "input-name"
 msgid "Bill 1"
-msgstr "Conta 1"
+msgstr "Cédula 1"
 
 #: src/emu/inpttype.ipp:522
 msgctxt "input-name"
@@ -6083,152 +6083,152 @@ msgstr "Trilha Y 10"
 #: src/emu/inpttype.ipp:704
 msgctxt "input-name"
 msgid "AD Stick X"
-msgstr "Controle AD X"
+msgstr "Controle Stick AD X"
 
 #: src/emu/inpttype.ipp:705
 msgctxt "input-name"
 msgid "AD Stick X 2"
-msgstr "Controle AD X 2"
+msgstr "Controle Stick AD X 2"
 
 #: src/emu/inpttype.ipp:706
 msgctxt "input-name"
 msgid "AD Stick X 3"
-msgstr "Controle AD X 3"
+msgstr "Controle Stick AD X 3"
 
 #: src/emu/inpttype.ipp:707
 msgctxt "input-name"
 msgid "AD Stick X 4"
-msgstr "Controle AD X 4"
+msgstr "Controle Stick AD X 4"
 
 #: src/emu/inpttype.ipp:708
 msgctxt "input-name"
 msgid "AD Stick X 5"
-msgstr "Controle AD X 5"
+msgstr "Controle Stick AD X 5"
 
 #: src/emu/inpttype.ipp:709
 msgctxt "input-name"
 msgid "AD Stick X 6"
-msgstr "Controle AD X 6"
+msgstr "Controle Stick AD X 6"
 
 #: src/emu/inpttype.ipp:710
 msgctxt "input-name"
 msgid "AD Stick X 7"
-msgstr "Controle AD X 7"
+msgstr "Controle Stick AD X 7"
 
 #: src/emu/inpttype.ipp:711
 msgctxt "input-name"
 msgid "AD Stick X 8"
-msgstr "Controle AD X 8"
+msgstr "Controle Stick AD X 8"
 
 #: src/emu/inpttype.ipp:712
 msgctxt "input-name"
 msgid "AD Stick X 9"
-msgstr "Controle AD X 9"
+msgstr "Controle Stick AD X 9"
 
 #: src/emu/inpttype.ipp:713
 msgctxt "input-name"
 msgid "AD Stick X 10"
-msgstr "Controle AD X 10"
+msgstr "Controle Stick AD X 10"
 
 #: src/emu/inpttype.ipp:718
 msgctxt "input-name"
 msgid "AD Stick Y"
-msgstr "Controle AD Y"
+msgstr "Controle Stick AD Y"
 
 #: src/emu/inpttype.ipp:719
 msgctxt "input-name"
 msgid "AD Stick Y 2"
-msgstr "Controle AD Y 2"
+msgstr "Controle Stick AD Y 2"
 
 #: src/emu/inpttype.ipp:720
 msgctxt "input-name"
 msgid "AD Stick Y 3"
-msgstr "Controle AD Y 3"
+msgstr "Controle Stick AD Y 3"
 
 #: src/emu/inpttype.ipp:721
 msgctxt "input-name"
 msgid "AD Stick Y 4"
-msgstr "Controle AD Y 4"
+msgstr "Controle Stick AD Y 4"
 
 #: src/emu/inpttype.ipp:722
 msgctxt "input-name"
 msgid "AD Stick Y 5"
-msgstr "Controle AD Y 5"
+msgstr "Controle Stick AD Y 5"
 
 #: src/emu/inpttype.ipp:723
 msgctxt "input-name"
 msgid "AD Stick Y 6"
-msgstr "Controle AD Y 6"
+msgstr "Controle Stick AD Y 6"
 
 #: src/emu/inpttype.ipp:724
 msgctxt "input-name"
 msgid "AD Stick Y 7"
-msgstr "Controle AD Y 7"
+msgstr "Controle Stick AD Y 7"
 
 #: src/emu/inpttype.ipp:725
 msgctxt "input-name"
 msgid "AD Stick Y 8"
-msgstr "Controle AD Y 8"
+msgstr "Controle Stick AD Y 8"
 
 #: src/emu/inpttype.ipp:726
 msgctxt "input-name"
 msgid "AD Stick Y 9"
-msgstr "Controle AD Y 9"
+msgstr "Controle Stick AD Y 9"
 
 #: src/emu/inpttype.ipp:727
 msgctxt "input-name"
 msgid "AD Stick Y 10"
-msgstr "Controle AD Y 10"
+msgstr "Controle Stick AD Y 10"
 
 #: src/emu/inpttype.ipp:732
 msgctxt "input-name"
 msgid "AD Stick Z"
-msgstr "Controle AD Z"
+msgstr "Controle Stick AD Z"
 
 #: src/emu/inpttype.ipp:733
 msgctxt "input-name"
 msgid "AD Stick Z 2"
-msgstr "Controle AD Z 2"
+msgstr "Controle Stick AD Z 2"
 
 #: src/emu/inpttype.ipp:734
 msgctxt "input-name"
 msgid "AD Stick Z 3"
-msgstr "Controle AD Z 3"
+msgstr "Controle Stick AD Z 3"
 
 #: src/emu/inpttype.ipp:735
 msgctxt "input-name"
 msgid "AD Stick Z 4"
-msgstr "Controle AD Z 4"
+msgstr "Controle Stick AD Z 4"
 
 #: src/emu/inpttype.ipp:736
 msgctxt "input-name"
 msgid "AD Stick Z 5"
-msgstr "Controle AD Z 5"
+msgstr "Controle Stick AD Z 5"
 
 #: src/emu/inpttype.ipp:737
 msgctxt "input-name"
 msgid "AD Stick Z 6"
-msgstr "Controle AD Z 6"
+msgstr "Controle Stick AD Z 6"
 
 #: src/emu/inpttype.ipp:738
 msgctxt "input-name"
 msgid "AD Stick Z 7"
-msgstr "Controle AD Z 7"
+msgstr "Controle Stick AD Z 7"
 
 #: src/emu/inpttype.ipp:739
 msgctxt "input-name"
 msgid "AD Stick Z 8"
-msgstr "Controle AD Z 8"
+msgstr "Controle Stick AD Z 8"
 
 #: src/emu/inpttype.ipp:740
 msgctxt "input-name"
 msgid "AD Stick Z 9"
-msgstr "Controle AD Z 9"
+msgstr "Controle Stick AD Z 9"
 
 #: src/emu/inpttype.ipp:741
 msgctxt "input-name"
 msgid "AD Stick Z 10"
-msgstr "Controle AD Z 10"
+msgstr "Controle Stick AD Z 10"
 
 #: src/emu/inpttype.ipp:746
 msgctxt "input-name"
@@ -6668,12 +6668,12 @@ msgstr "Carrega o estado"
 #: src/emu/inpttype.ipp:853
 msgctxt "input-name"
 msgid "UI (First) Tape Start"
-msgstr "IU (Primeiro) inicia fita"
+msgstr "(Primeira) IU, inicia a fita"
 
 #: src/emu/inpttype.ipp:854
 msgctxt "input-name"
 msgid "UI (First) Tape Stop"
-msgstr "IU (Primeiro) para fita"
+msgstr "(Primeira) IU, interrompe a fita"
 
 #: src/emu/inpttype.ipp:855
 msgctxt "input-name"
@@ -7012,7 +7012,7 @@ msgstr "Testar Trapaça %08X_%02X"
 
 #: plugins/cheatfind/init.lua:947
 msgid "Cheat engine not available"
-msgstr "A engine da trapaça não está disponível"
+msgstr "O motor da trapaça não está disponível"
 
 #: plugins/cheatfind/init.lua:1003
 msgid "Test"
@@ -7020,11 +7020,11 @@ msgstr "Teste"
 
 #: plugins/cheatfind/init.lua:1003
 msgid "Write"
-msgstr "Gravar"
+msgstr "Grava"
 
 #: plugins/cheatfind/init.lua:1003
 msgid "Watch"
-msgstr "Observar"
+msgstr "Observa"
 
 #: plugins/cheatfind/init.lua:1020
 msgid "Page"
@@ -7032,11 +7032,11 @@ msgstr "Página"
 
 #: plugins/cheatfind/init.lua:1039
 msgid "Clear Watches"
-msgstr "Limpar Observações"
+msgstr "Limpa observações"
 
 #: plugins/cheatfind/init.lua:1054
 msgid "Cheat Finder"
-msgstr "Localizador de Trapaças"
+msgstr "Localizador de trapaças"
 
 #: plugins/portname/init.lua:103
 msgid "Save input names to file"
@@ -7315,12 +7315,12 @@ msgstr "%03d:%02d:%02d"
 #: plugins/timer/init.lua:98
 msgctxt "plugin-timer"
 msgid "Current time"
-msgstr "Tempo atual"
+msgstr "Em curso"
 
 #: plugins/timer/init.lua:99
 msgctxt "plugin-timer"
 msgid "Total time"
-msgstr "Tempo total"
+msgstr "Total decorrido"
 
 #: plugins/timer/init.lua:100
 msgctxt "plugin-timer"
