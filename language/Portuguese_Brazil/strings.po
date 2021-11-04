@@ -2160,7 +2160,7 @@ msgid ""
 "Auditing ROMs for machine %2$u of %3$u...\n"
 "%1$s"
 msgstr ""
-"Auditando %2$u ROMs de %3$u...\n"
+"Aferindo %2$u ROMs de %3$u...\n"
 "%1$s"
 
 #: src/frontend/mame/ui/auditmenu.cpp:116
