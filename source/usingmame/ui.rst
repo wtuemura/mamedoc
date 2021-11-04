@@ -270,7 +270,7 @@ Tecla :kbd:`1`
     Pressione uma vez a tecla :kbd:`1` no teclado, aguarde 1 segundo
     para aceitar a nova configuração.
 Tecla :kbd:`F12` :kbd:`Shift` :kbd:`Alt`
-    Pressione uma vez a tecla :kbd:`P` no teclado, pressione uma vez a
+    Pressione uma vez a tecla :kbd:`F12` no teclado, pressione uma vez a
     tecla :kbd:`Shift` esquerda, pressione uma vez a tecla :kbd:`Alt`
     esquerda, aguarde cerca de um segundo para que a nova configuração
     seja aceita.
