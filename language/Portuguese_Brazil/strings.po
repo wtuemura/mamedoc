@@ -7253,7 +7253,7 @@ msgstr "Entrada %d"
 #: plugins/inputmacro/inputmacro_menu.lua:369
 msgctxt "plugin-inputmacro"
 msgid "Add input"
-msgstr "Adiciona entrada"
+msgstr "Nova entrada"
 
 #: plugins/inputmacro/inputmacro_menu.lua:374
 msgctxt "plugin-inputmacro"
@@ -7304,7 +7304,7 @@ msgstr "[nenhuma macro]"
 #: plugins/inputmacro/inputmacro_menu.lua:538
 msgctxt "plugin-inputmacro"
 msgid "Add macro"
-msgstr "Adiciona macro"
+msgstr "Nova macro"
 
 #: plugins/timer/init.lua:89
 #, lua-format

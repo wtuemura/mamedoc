@@ -40,14 +40,14 @@ as macros de entrada para Daisu-Kiss serão salvas no arquivo
 ``daiskiss.cfg`` dentro da pasta **inputmacro**. O conteúdo do arquivo
 tem o formato JSON.
 
-clique em :guilabel:`Adiciona macro` para criar a sua macro.
+clique em :guilabel:`Nova macro` para criar a sua macro.
 
 .. _plugins-inputmacro-settings:
 
 Editando as macros
 ------------------
 
-Ambas as opções para adicionar um novo macro como para alterar as suas
+Ambas as opções para adicionar uma nova macro como para alterar as suas
 configurações são as mesmas.
 
 As macros são criadas numa sequência de *etapas*, opcionalmente cada
@@ -127,7 +127,7 @@ Casa passo possui um atraso, duração e configuração da entrada:
 
 		Define a entrada que será ativada no passo, no momento apenas as
 		entradas digitais são compatíveis. Clique em
-		:guilabel:`Adiciona entrada` para escolher uma entrada de uma
+		:guilabel:`Nova entrada` para escolher uma entrada de uma
 		lista (esta opção aparece apenas depois de definir a primeira
 		entrada). Caso o passo tenha diversas entradas, selecione uma
 		delas use a tecla :kbd:`Del` para excluir (todas as etapas
