@@ -26,14 +26,14 @@ um teclado é necessário para realizar as configurações iniciais.
 As configurações predefinidas mais importantes da interface são as
 seguintes:
 
-:kbd:`ScrLk` (Scroll Lock) ou **Forward Delete** no macOS (IU Alterna)
+:kbd:`ScrLk` (Scroll Lock) ou **Forward Delete** no macOS (``IU Alterna``)
     Durante a emulação de sistemas com teclado, ativa ou desativa os
     controles da interface. O MAME iniciar com os controles da interface
     desativados nos sistemas que usam teclados, a não ser que a opção
     :ref:`ui_active <mame-commandline-uiactive>` esteja ligada.
 :kbd:`Tab` (Menu de configuração)
     Mostra ou esconde o menu durante a emulação.
-:kbd:`Esc` (UI Cancela)
+:kbd:`Esc` (``UI Cancela``)
     Retorna para a seleção de sistemas ou encerra o MAME caso ele tenha
     sido iniciado com um determinado sistema (a partir da linha de
     comando ou caso esteja usando um
@@ -59,40 +59,40 @@ as diferenças entre o teclado Americano e o ABNT-2 usado no Brasil.
 
 As configurações correspondentes com o mapeamento padrão do teclado são:
 
-Seta :kbd:`cima` (IU Cima)
+Seta :kbd:`cima` (``IU Cima``)
     Destaca o item anterior ou o último caso o primeiro esteja
     destacado.
-Seta :kbd:`baixo` (IU Baixo)
+Seta :kbd:`baixo` (``IU Baixo``)
     Destaca o próximo item da lista ou o primeiro caso o último esteja
     destacado.
-Seta :kbd:`esquerda` (IU Esquerda)
+Seta :kbd:`esquerda` (``IU Esquerda``)
     Para itens do menu que podem ser ajustados, reduz o valor ou
     seleciona o valor anterior (tais configurações mostram setas
     indicativas).
-Seta :kbd:`direita` (IU Direita)
+Seta :kbd:`direita` (``IU Direita``)
     Para itens do menu que podem ser ajustados, aumenta o valor ou
     seleciona o valor posterior (tais configurações mostram setas
     indicativas).
-:kbd:`Enter` / :kbd:`Return` e :kbd:`Enter` do teclado numérico (UI Seleciona)
+:kbd:`Enter` / :kbd:`Return` e :kbd:`Enter` do teclado numérico (``UI Seleciona``)
     Seleciona o item em destaque.
 :kbd:`Forward` :kbd:`Delete` ou :kbd:`Fn` + :kbd:`Delete` em alguns
-    teclados compactos (UI Limpa)
+    teclados compactos (``UI Limpa``)
     Limpa a configuração ou redefine para o valor predefinido
-:kbd:`Esc` (UI Cancela)
+:kbd:`Esc` (``UI Cancela``)
     Limpa o campo de busca, caso contrário, fecha o menu, retorna ao
     menu anterior ou retorna para a emulação no menu principal (também
     há um item na parte do menu que funciona igual).
-:kbd:`Home` (UI Home)
+:kbd:`Home` (``UI Home``)
     Destaca o primeiro item e rola para o topo do menu.
-:kbd:`End` (UI End)
+:kbd:`End` (``UI End``)
     Destaca o último item e rola para a parte debaixo do menu.
-:kbd:`PgUp` (UI Pág. cima)
+:kbd:`PgUp` (``UI Pág. cima``)
     Rola a página do menu para cima.
-:kbd:`PgDn` (UI Pág. baixo)
+:kbd:`PgDn` (``UI Pág. baixo``)
     Rola a página do menu para baixo.
-:kbd:`[` (UI Grupo anterior)
+:kbd:`[` (``UI Grupo anterior``)
     Move os itens do grupo anterior (não é utilizado em todos os menus).
-:kbd:`]` (UI Próximo grupo)
+:kbd:`]` (``UI Próximo grupo``)
     Move o próximo item do grupo (não é utilizado em todos os menus).
 
 
@@ -117,28 +117,26 @@ teclado, é preciso definir os botões do joystick (ou a combinação dos
 seus botões) para estes controles também:
 
 * :guilabel:`Menu de configuração` / :guilabel:`Tab`
-  Para mostrar ou dispensar o menu durante a emulação
-* :guilabel:`UI Cancela`
-  Para fechar os menus, retornar para a tela de seleção, para encerar
-  a emulação ou para fechar o MAME.
-* :guilabel:`UI Limpa`
-  Não é basicamente essencial para a emulação, porém é usado para
-  limpar ou redefinir algumas configurações.
-* :guilabel:`UI Home`, :guilabel:`UI End`, :guilabel:`UI Pág. cima`,
-  :guilabel:`UI Pág. baixo`, :guilabel:`UI Grupo anterior` e
-  :guilabel:`UI Próximo grupo`
-  Não são essenciais, contudo, tornam a navegação mais fácil em alguns
-  menus.
+    Para mostrar ou dispensar o menu durante a emulação
+* ``IU Cancela``
+    Para fechar os menus, retornar para a tela de seleção, para encerar
+    a emulação ou para fechar o MAME.
+* ``IU Limpa``
+    Não é basicamente essencial para a emulação, porém é usado para
+    limpar ou redefinir algumas configurações.
+* ``IU Home``, ``IU End``, ``IU Pág. cima``, ``IU Pág. baixo``,
+    ``IU Grupo anterior`` e ``IU Próximo grupo``
+    Não são essenciais, contudo, tornam a navegação mais fácil em alguns
+    menus.
 
 Caso não esteja usando um front-end externo para rodar os sistemas no
 MAME, atribua os botões do joystick (ou combinações dos botões) nestes
 controles para fazer pleno uso dos menus de seleção do sistema:
 
-* :guilabel:`IU Próx. foco`, :guilabel:`IU Foco ant.`
-  Para navegar entre os painéis.
-* :guilabel:`IU Adiciona/Remove favoritos`, :guilabel:`IU Exporta lista`
-  :guilabel:`IU Audita mídia`
-  Caso queira acessar estes recursos sem um teclado ou mouse.
+* ``IU Próx. foco``, ``IU Foco ant.``
+    Para navegar entre os painéis.
+* ``IU Adiciona/Remove favoritos``, ``IU Exporta lista`` e ``IU Audita mídia``
+    Caso queira acessar estes recursos sem um teclado ou mouse.
 
 
 .. _ui-menus-mouse:
@@ -161,7 +159,7 @@ MAME suporta a navegação através dos menus usando um mouse ou
 
 Caso tenha botões adicionais no mouse, talvez queira atribuir
 combinações dos botões para o :guilabel:`Menu de configuração` /
-:guilabel:`Tab`, :guilabel:`Pausa` e/ou :guilabel:`IU Cancela` para que
+:guilabel:`Tab`, :guilabel:`Pausa` e/ou :guilabel:`Cancela` para que
 seja possível usar o MAME sem usar um teclado.
 
 
@@ -239,11 +237,11 @@ combinar as entradas.
 
 Quando uma configuração para a entrada digital é destacada, o quadro
 abaixo do menu mostra se a seleção irá definir a atribuição ou anexar
-uma operação ``or`` a ela. Pressione :guilabel:`IU Esquerda/Direita`
-antes de selecionar se a configuração será para alternar entre a
-configuração ou se será para anexar uma operação ``or``. Pressione
-:guilabel:`IU Limpa` (:kbd:`Del` ou :kbd:`forward` :kbd:`delete`) para
-apagar a configuração ou restaurar a atribuição original.
+uma operação ``or`` a ela. Pressione ``IU Esquerda/Direita`` antes de
+selecionar se a configuração será para alternar entre a configuração ou
+se será para anexar uma operação ``or``. Pressione :kbd:`Del` ou
+:kbd:`forward` :kbd:`delete` para excluir a configuração ou restaurar a
+atribuição original.
 
 Ao selecionar uma configuração de entrada digital, o MAME esperará que
 você digite uma entrada ou uma combinação das entradas para uma operação
@@ -256,11 +254,10 @@ lógica ``and``:
   a mesma tecla, botão ou movendo o mesmo controle analógico mais de uma
   vez, isso faz com que se ligue ou desligue a operação ``not`` várias
   vezes.
-* Ao pressionar :guilabel:`IU Cancela` (tecla :kbd:`Esc`) **antes** da
-  ativação de qualquer outra entrada, isso limpa ou restaura a
-  atribuição original.
-* Ao pressionar :guilabel:`IU Cancela` **depois** da ativação de
-  qualquer outra entrada, a configuração da entrada permanece a mesma.
+* Ao pressionar :kbd:`Esc` **antes** da ativação de qualquer outra
+  entrada, isso limpa ou restaura a atribuição original.
+* Ao pressionar :kbd:`Esc` **depois** da ativação de qualquer outra
+  entrada, a configuração da entrada permanece a mesma.
 * A nova configuração é mostrada abaixo do menu. Aguarde cerca de um
   segundo depois da ativação para que a nova configuração seja aceita.
 
@@ -326,50 +323,90 @@ controle, você não deve atribuir nem o ajuste analógico
 :guilabel:`Steering Wheel Analog Inc` nem o ajuste :guilabel:`Steering
 Wheel Analog Dec` ao eixo X do mesmo analógico.
 
-Você pode atribuir um ou mais eixos analógicos ao ajuste do eixo para
-uma entrada analógica. Quando vários eixos são atribuídos ao ajuste do
-eixo usando um operando ``or``, só terá efeito no primeiro eixo que não
-estiver na posição neutra. Vamos supor que para o *Atari Star Wars* seja
-atribuído o ajuste de eixo analógico :guilabel:`AD Stick X` para o
-:guilabel:`Joy 1 LSX` ou :guilabel:`Joy 1 RSX` num controle estilo Xbox.
-Você será capaz de controlar o eixo X usando o eixo X analógico
-esquerdo. Caso o analógico esquerdo esteja na posição neutra
-(centralizado) no eixo X, você será capaz de controlar o eixo X usando o
-eixo X do analógico direito; contudo, caso o analógico esquerdo esteja
-*fora do centro* no eixo X, o eixo X do analógico direito será ignorado.
+É possível atribuir um ou mais eixos analógicos ao ajuste do eixo de uma
+entrada analógica emulada. Quando diversos eixos são atribuídos em um
+ajuste do eixo, eles são adicionados juntos, porém os controles de
+posição absoluta anularão os controles de posição relativa. Por exemplo,
+suponha que para a máquina **Arkanoid** você atribua o ajuste do eixo 
+guilabel:`Dial Analog` ao :guilabel:`Mouse X` ou :guilabel:`Joy 1 LSX`
+ou :guilabel:`Joy 1 RSX` ao mouse num controle estilo Xbox. Será
+possível controlar a palheta com o mouse ou com o eixo analógico,
+porém o mouse só terá efeito caso ambos os eixos analógicos estejam na
+posição neutra (centralizados) no eixo X. Se qualquer um dos eixos
+analógicos não estiver devidamente centralizado no eixo X, o mouse não
+surtirá qualquer efeito, pois um mouse é um controle de posição
+relativa, enquanto um joystick é um controle de posição absoluta.
 
-O MAME permite a atribuição do alcance total de um eixo ou o alcance de
-um lado da posição neutra (*meio eixo*) ao ajuste de um eixo. A
-atribuição de um meio eixo é usada normalmente nos pedais ou nas outras
-entradas absolutas onde a posição neutra está numa extremidade do
-alcance da faixa de entrada. Vamos supor que para a máquina *Ridge
-Racer* você atribua o ajuste analógico do pedal de freio à parte de um
-eixo vertical do joystick abaixo da posição neutra. Caso controle esteja
-na posição neutra na vertical ou acima dela, o pedal do freio será
-liberado; já se o joystick estiver abaixo da posição neutra na vertical,
-o pedal do freio será aplicado proporcionalmente. Metade dos eixos são
-exibidos com o nome do eixo seguido por um sinal de mais ou menos
-(:guilabel:`+` ou :guilabel:`-`). O sinal de **mais** se refere à parte do
-eixo abaixo ou à direita da posição neutra; o sinal de **menos** se
-refere à parte do eixo acima ou à esquerda da posição neutra. Para os
-controles do pedal ou do gatilho analógico, a faixa ativa é tratada como
-estando acima da posição neutra (a metade do eixo indicada por um sinal
-de **menos**).
+Para os controles de posição absoluta como joysticks e pedais, O MAME
+permite a atribuição do alcance total de um eixo ou o alcance de um lado
+da posição neutra (*meio eixo*) ao ajuste de um eixo. A atribuição de um
+"meio eixo" é usada normalmente nos pedais ou nas outras entradas
+absolutas onde a posição neutra está numa extremidade do alcance da
+faixa de entrada. Vamos supor que para a máquina **Ridge Racer** você
+atribua o ajuste analógico do pedal de freio à parte de um eixo vertical
+do joystick abaixo da posição neutra. Caso controle esteja na posição
+neutra na vertical ou acima dela, o pedal do freio será liberado; já se
+o joystick estiver abaixo da posição neutra na vertical, o pedal do
+freio será aplicado proporcionalmente. Metade dos eixos são exibidos com
+o nome do eixo seguido por um sinal de mais ou menos (:guilabel:`+` ou
+:guilabel:`-`). O sinal de **mais** se refere à parte do eixo abaixo ou
+à direita da posição neutra; o sinal de **menos** se refere à parte do
+eixo acima ou à esquerda da posição neutra. Para os controles dos pedais
+ou do gatilho analógico, a faixa ativa é tratada como estando acima da
+posição neutra (a metade do eixo indicada por um sinal de **menos**).
 
-Ao selecionar a configuração de um eixo, o MAME aguardará pela sua
+Quando as teclas ou os botões são atribuídos a um ajuste do eixo, eles
+ativam condicionalmente os controles analógicos que forem atribuídos ao
+ajuste. Isto pode ser usado em conjunto com um controle de posição
+absoluta para criar um controle
+":ref:`pegadiço <mame-commandline-joystickmap>`".
+
+Aqui estão alguns exemplos de algumas das atribuições possíveis para o
+ajuste dos eixos assumindo que seja usado um controle do Xbox e um
+mouse:
+
+Joy 1 RSY
+    Faça um movimento vertical no analógico direito para atribuir essa
+    entrada à emulação.
+Mouse X ou Joy 1 LT ou Joy 1 RT Reverse
+    Faça um movimento horizontal, ou ative os gatilhos esquerda e
+    direita para atribuir essa entrada à emulação. O gatilho
+    direito é invertido, assim sendo, ele trabalha na direção inversa em
+    relação ao gatilho esquerdo.
+Joy 1 LB Joy 1 LSX
+    Faça um movimento horizontal no analógico esquerdo para atribuir
+    essa entrada à emulação, porém *apenas* enquanto estiver mantendo
+    pressionado o botão superior esquerdo. Caso o botão superior direito
+    seja liberado enquanto o analógico esquerdo não estiver centralizado
+    no eixo horizontal, a entrada da emulação manterá seu valor até o
+    botão superior direito seja pressionado novamente (um controle
+    "pegadiço").
+não Joy 1 RB Joy 1 RSX ou Joy 1 RB Joy 1 RSX Inverso
+    Faça um movimento horizontal no analógico direito para atribuir essa
+    entrada à emulação, mas inverta o controle caso o botão superior
+    direito seja mantido pressionado.
+
+Ao selecionar a configuração de um eixo, o MAME vai aguardar a sua
 resposta:
 
 * Movimente um controle analógico para atribuí-lo ao ajuste de um eixo.
-* Ao anexar a um ajuste, mova o último controle analógico que foi
-  atribuído para alternar entre a extensão total do eixo e a parte do
-  eixo em ambos os lados da posição neutra.
+* Pressione uma tecla ou botão (ou uma combinação deles) *antes* ao
+  mover um controle analógico para ativá-lo condicionalmente.
+* Ao anexar a um ajuste, caso o último controle seja um controle com
+  posição absoluta, mova o mesmo controle novamente para alternar
+  entre a extensão total do eixo, a parte do eixo em ambos os lados da
+  posição neutra e a faixa completa do eixo invertido.
+* Ao anexar a um ajuste, caso o último controle atribuído seja um
+  controle de posição relativa, mova o mesmo controle novamente para
+  alternar a direção do controle entre ligado ou desligado.
 * Ao anexar um ajuste, movimente um controle analógico desde que não
-  seja o último controle atribuído, para adicionar uma operação ``or``.
-* Ao pressionar :guilabel:`UI Cancela` (:kbd:`Esc`) **antes** de ativar
-  uma entrada do eixo, isso faz com que a configuração seja limpa,
-  restaurando a sua atribuição original.
-* Ao pressionar :guilabel:`UI Cancela` (:kbd:`Esc`) **depois** de ativar
-  uma entrada do eixo, isso mantém a sua atribuição original.
+  seja o último controle atribuído ou pressione uma tecla ou botão para
+  adicionar uma operação ``or``.
+* Ao pressionar :kbd:`Esc` **antes** de ativar uma entrada do eixo,
+  isso faz com que a configuração seja limpa, restaurando a sua
+  atribuição original.
+* Ao pressionar :kbd:`Esc` **depois** de ativar uma entrada do eixo,
+  isso mantém a sua atribuição original.
 * A nova configuração é mostrada abaixo do menu. Espere um segundo
   depois de ativar uma entrada para que a nova configuração seja aceita.
 
@@ -506,13 +543,8 @@ nome completo, fabricante e pelo nome abreviado. Caso esteja usando
 nomes de sistemas traduzidos, os nomes fonéticos também serão
 pesquisados caso estejam presentes. Os programas são pesquisados pela
 descrição, por títulos alternativos (elementos ``alt_title`` nas listas
-de programas) e pelo nome abreviado. :guilabel:`UI Cancela` (tecla
-:kbd:`Esc`) irá limpar a busca caso uma esteja sendo feita no momento.
-
-
-.. raw:: latex
-
-	\clearpage
+de programas) e pelo nome abreviado. A tecla :kbd:`Esc` limpa a busca
+caso uma esteja sendo feita no momento.
 
 
 .. _ui-selmenu-nav:
@@ -531,26 +563,26 @@ diferenças entre o teclado Americano e o ABNT-2 usado no Brasil.
 
 As configurações correspondentes com o mapeamento padrão do teclado são:
 
-:kbd:`Tab` (IU Próx. foco)
+:kbd:`Tab` (``IU Próx. foco``)
     Foca a próxima região. A ordem é a lista de sistema/programa,
     configurações (caso esteja disponível), a lista dos filtros (caso
     esteja visível), abas de informação/imagem (caso estejam visíveis).
-:kbd:`Shift` + :kbd:`Tab` (IU Foco ant.)
+:kbd:`Shift` + :kbd:`Tab` (``IU Foco ant.``)
     Move o foco para a região anterior.
-:kbd:`Alt` + :kbd:`D` (IU Visualiza DAT externa)
+:kbd:`Alt` + :kbd:`D` (``IU Visualiza DAT externa``)
     Mostra o visualizador de informações em tela inteira.
-:kbd:`Alt` + :kbd:`F` (IU Adiciona/remove favoritos)
+:kbd:`Alt` + :kbd:`F` (``IU Adiciona/remove favoritos``)
     Adiciona ou remove o sistema ou programa em destaque na lista de
     favoritos.
-:kbd:`F1` (IU Afere mídia)
+:kbd:`F1` (``IU Afere mídia``)
     Realiza uma aferição das ROMs e das imagens dos discos dos sistemas.
     Os resultados são salvos e utilizados pelos filtros
     :guilabel:`Disponível` e :guilabel:`Indisponível`.
 
 Quando o foco estiver na lista de filtros, é possível usar o
 controle de navegação do menu (:kbd:`cima`, :kbd:`baixo`, :kbd:`Home` e
-:kbd:`End`) para destacar um filtro e :guilabel:`IU Seleciona`
-(:kbd:`Enter`/ :kbd:`Return`) para selecioná-lo.
+:kbd:`End`) para destacar um filtro e :kbd:`Enter` / :kbd:`Return` para
+selecioná-lo.
 
 Quando o destaque estiver em qualquer região além das abas de
 :guilabel:`Informação` / :guilabel:`imagem`, é possível alterar a
@@ -559,6 +591,11 @@ Quando o destaque estiver nas abas :guilabel:`imagens` /
 :guilabel:`Informações`, é possível rolar o texto com as informações a
 informação :kbd:`cima`, :kbd:`baixo`, :kbd:`PgUp`, :kbd:`PgDn`,
 :kbd:`Home` e :kbd:`End`.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _ui-simpleselmenu:
