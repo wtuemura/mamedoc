@@ -27,7 +27,7 @@ definido sempre seja mapeado com a mesma identificação.
 O uso do mapdevice
 ------------------
 O **mapdevice** é um elemento de configuração definido através de um
-marcador salvo em um arquivo no formato xml. São necessários dois
+marcador salvo num arquivo no formato xml. São necessários dois
 atributos, o ``device`` e o ``controller``.
 Nota: Essa configuração só entra em vigor quando for adicionada ao
 arquivo de configuração **ctrl**. 

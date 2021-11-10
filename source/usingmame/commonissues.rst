@@ -150,7 +150,7 @@ Por que a minha ROM de Neo-Geo não funcionam mais? Como eu faço para que o jog
 
 Recentemente a BIOS do Neo-Geo foi atualizada para adicionar uma nova
 versão da Universe BIOS. Isso começou entre as versões 0.171 e 0.172 do
-MAME que resultou em um erro ao tentar carregar qualquer jogo de
+MAME que resultou num erro ao tentar carregar qualquer jogo de
 Neo-Geo com um conjunto **neogeo.zip** desatualizado, isso também afeta
 o conjunto de pacote do jogo **Humble Bundle**.
 
@@ -198,7 +198,7 @@ Pode ser causado por várias razões:
 	versões do MAME não eram tão chatas sobre esta questão, porém as
 	versões mais recentes são.
 
-	Além disso, podem haver mais características de um jogo emulado em uma
+	Além disso, podem haver mais características de um jogo emulado numa
 	versão posterior que não havia na versão anterior, o que exige a
 	execução de mais códigos dentro do MAME para rodar essa nova ROM.
 
@@ -435,8 +435,8 @@ autorais nos EUA e muito menos no Brasil ou em qualquer outro lugar.
 
 .. _commercial-use:
 
-E se eu comprar um gabinete com ROMs legalizadas, posso disponibilizá-lo em um local público para que eu possa ganhar dinheiro?
--------------------------------------------------------------------------------------------------------------------------------
+E se eu comprar um gabinete com ROMs legalizadas, posso disponibilizá-lo num local público para que eu possa ganhar dinheiro?
+-----------------------------------------------------------------------------------------------------------------------------
 
 Geralmente não.
 
@@ -578,6 +578,6 @@ taxas de atualização que sejam bem diferentes do que o seu PC esteja
 executando. Como por exemplo, os primeiras três versões do
 **Mortal Kombat** roda a **54.706841 Hz**.
 
-.. [#OPL2]	OPL é um acrônimo de "*FM Operator Type-L*" ou em uma tradução
+.. [#OPL2]	OPL é um acrônimo de "*FM Operator Type-L*" ou numa tradução
 		livre, *Operador de Modulação em Frequência Tipo L*, o 2 é o
 		número do modelo. (Nota do tradutor)

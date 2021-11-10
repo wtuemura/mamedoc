@@ -81,7 +81,7 @@ máquina após a instanciação do dispositivo::
 
 Estas funções associam um mapa a um determinado espaço. A associação dos
 mapas dos endereços com espaços que não existem são ignorados sem
-qualquer aviso. A primeira forma toma uma referência em um objeto e um
+qualquer aviso. A primeira forma toma uma referência num objeto e um
 método para chamar este objeto. A segunda forma assume um método para
 invocar o dispositivo atual que está sendo configurado. A terceira forma
 toma um ``address_map_constructor`` para ser copiado. Em cada caso a

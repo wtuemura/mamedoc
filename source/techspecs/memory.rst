@@ -49,7 +49,7 @@ Os mapas de endereçamento
 Um mapa de endereçamento é uma descrição estática da decodificação
 prevista quando um barramento for utilizado. Ele se conecta à memória,
 a outros dispositivos e a outros métodos, geralmente é instalado na
-inicialização em um endereçamento. Esta descrição é armazenada em uma
+inicialização de um endereçamento. Esta descrição é armazenada numa
 estrutura **address_map** que é preenchida programaticamente.
 
 
@@ -73,7 +73,7 @@ Todos eles têm nomes com permissão de acesso.
 Visualizações
 ~~~~~~~~~~~~~
 
-As visualizações são uma forma de misturar diferentes submapas em uma
+As visualizações são uma forma de misturar diferentes submapas numa
 faixa da memória com comutação rápida. É para ser usado quando diversos
 dispositivos mapearem nos mesmos endereços e forem comutados
 externamente. Elas devem ser criadas como um objeto do dispositivo e
@@ -129,7 +129,7 @@ localizadores. Observe que como cada localizador chamando um
 	
 	[device constructor] m_share(\*this, "name", size, endianness),
 
-Um compartilhamento da memória pode ser criado caso ele não exista em um
+Um compartilhamento da memória pode ser criado caso ele não exista num
 mapa da memória através dessa classe de criação. Caso já exista basta
 recupera-la. Esta classe se comporta como um ponteiro mas também tem o
 método ``target()`` para obter o objeto ``memory_share`` e os métodos de
@@ -195,7 +195,7 @@ localizadores.
 	
 	[device constructor] m_bank(\*this, "name"),
 
-Um compartilhamento da memória pode ser criado caso ele não exista em um
+Um compartilhamento da memória pode ser criado caso ele não exista num
 mapa da memória através dessa classe de criação. Caso já exista basta
 recupera-la.
 
@@ -387,7 +387,7 @@ ambos na entrada atual.  O protótipo do método pode levar diversas
 formas que tornam alguns elementos opcionais.  uNN representa ``u8``,
 ``u16``, ``u32`` ou ``u64`` dependendo da largura dos dados do
 manipulador. O manipulador pode ser menos largo do que o próprio
-barramento (por exemplo, um dispositivo de 8 bits em um barramento com
+barramento (por exemplo, um dispositivo de 8 bits num barramento com
 32 bits).
 
 O offset informado é criado a partir do endereço de acesso.  Começa com
@@ -399,8 +399,8 @@ byte, porém em alguns casos dos CIs das portas de E/S com os registros
 de direção por bit, a resolução pode estar no nível de bits.
 
 
-O método em um dispositivo diferente
-''''''''''''''''''''''''''''''''''''
+O método num dispositivo diferente
+''''''''''''''''''''''''''''''''''
 
 ::
 
@@ -456,8 +456,8 @@ Existem dois casos onde não qualificador é aceitável:
 * ``ram()`` dá uma zona ram anônima não acessível fora do
   espaço de endereçamento.
 
-* ``rom()`` quando o mapa da memória é utilizado em um ``AS_PROGRAM``
-  espaço de um dispositivo (CPU) cujos nomes também sejam o nome de uma
+* ``rom()`` quando o mapa da memória é utilizado num ``AS_PROGRAM``
+  do espaço do dispositivo (CPU) cujos nomes também sejam o nome de uma
   região.
   Em seguida, a zona da memória aponta para essa região no offset
   correspondente ao início da zona.
@@ -467,7 +467,7 @@ Existem dois casos onde não qualificador é aceitável:
 	(...).rom().region("name", offset)
 
 O qualificador da região permite fazer um ponto somente leitura da zona
-para o conteúdo de uma determinada região em um determinado offset.
+para o conteúdo de uma determinada região num determinado offset.
 
 ::
 
@@ -622,7 +622,7 @@ O manuseio da seleção do CI na subunidade
 	(...).cselect(16/32/64)
 
 Quando um dispositivo está conectado na parte do barramento, como um
-byte em um barramento de 16 bits, o manipulador do destino só é ativado
+byte num barramento de 16 bits, o manipulador do destino só é ativado
 quando essa parte for de fato acessada.  Em alguns casos o acesso do
 byte num barramento de 16-bits 68000 o hardware atual verifica apenas o
 word do endereço e não se o byte correto é acessado.  O ``cswidth``
@@ -638,7 +638,7 @@ Configuração da visualização
    map(start, end).view(m_view);
    m_view[0](start1, end1).[...];
 
-Uma visualização é configurada em um mapa de endereços com o método de
+Uma visualização é configurada num mapa de endereços com o método de
 visualização. O único qualificador aceito é o espelho. A versão
 "desativada" da visualização incluirá o que estava na faixa antes da
 configuração da visualização.
@@ -654,7 +654,7 @@ totalidade dela.
 As variantes só podem ser configuradas uma vez que a própria
 visualização tenha sido configurada com o método ``view``.
 
-Uma visualização só pode ser colocada em um mapa de endereços e em
+Uma visualização só pode ser colocada num mapa de endereços e em
 apenas uma posição. Caso várias visualizações tenham o mesmo conteúdo ou
 similar, lembre-se que a criação de um mapa não é mais do que uma
 chamada do método e a criação de um segundo método para configurar uma
@@ -683,7 +683,7 @@ alguns problemas:
 * Alterando os mapeamentos de forma repetida pode causar lentidão
 * O estado do espaço do endereçamento não é registrado nos estados
   salvos, portanto, deve ser reconstruído após o carregamento do estado
-* Podem ser ocultados em qualquer lugar, em vez de agrupados em um mapa
+* Podem ser ocultados em qualquer lugar, em vez de agrupados num mapa
   do endereçamento, que pode ser menos legível
 
 Os métodos em vez de decompor as informações no manipulador, o
@@ -747,7 +747,7 @@ Observe que como todos os delegados, eles também podem envolver lambdas.
 	space.install_readwrite_handler(addrstart, addrend, addrmask, addrmirror, addrselect, read_delegate, write_delegate, *unitmask*, *cswidth*)
 
 Estes seis métodos permitem instalar manipuladores empacotados por
-delegados em um espaço de endereçamento. seja plano ou com máscara,
+delegados num espaço de endereçamento. seja plano ou com máscara,
 espelho e select. No caso de leitura e escrita, ambos os delegados devem
 ter o mesmo tipo (smo stuff) para evitar uma explosão combinatória de
 tipos dos métodos.
@@ -764,7 +764,7 @@ O mapeamento direto da faixa do intervalo da memória
 	space.install_ram(addrstart, addrend, void \*pointer)
 	space.install_ram(addrstart, addrend, addrmirror, void \*pointer)
 
-Instala um bloco de memória em um espaço do endereço com ou sem espelho.
+Instala um bloco de memória num espaço do endereço com ou sem espelho.
 a ROM é somente leitura, a ram é leitura/gravação, ``writeonly`` é
 somente gravação. O ponteiro não deve ser nulo, este método não alocará
 a memória.
@@ -781,8 +781,8 @@ O mapeamento do banco
 	space.install_readwrite_bank(addrstart, addrend, memory_bank \*bank)
 	space.install_readwrite_bank(addrstart, addrend, addrmirror, memory_bank \*bank)
 
-Instala para a leitura, a gravação ou ambos em um banco existente da
-memória em um espaço de endereçamento.
+Instala para a leitura, gravação ou ambos num banco já existente da
+memória num espaço de endereçamento.
 
 O mapeamento da porta
 ~~~~~~~~~~~~~~~~~~~~~
@@ -830,7 +830,7 @@ A instalação do mapa do dispositivo
 
 	space.install_device(addrstart, addrend, device, map, *unitmask*, *cswidth*)
 
-Instala um endereço do dispositivo com um mapa de endereçamento em um
+Instala um endereço do dispositivo com um mapa de endereçamento num
 determinado espaço.
 
 Instalação da visualização
@@ -843,12 +843,12 @@ Instalação da visualização
 
 	view[0].install...
 
-Instala uma visualização em um espaço. Isto só pode ser feito uma vez e
+Instala uma visualização num espaço. Isto só pode ser feito uma vez e
 em apenas um espaço e a visualização não deve ter sido configurada antes
 através da API do mapa de endereços. Uma vez instalada a visualização
 pode ser selecionada através de indexação para chamar um método de
 mapeamento dinâmico sobre ela.
 
-Uma visualização pode ser instalada em uma variante de outra
+Uma visualização pode ser instalada numa variante de outra
 visualização sem problemas com a única restrição usual de uma única
 instalação.

@@ -595,7 +595,7 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
 Observe que muitos jogos de apostas usam botões para diferentes funções.
 Por exemplo, em jogos do tipo slot o jogo pode usar o botão *Start* para
 parar todos os mostradores rotativos onde não há um botão dedicado para
-isso. Ou em um jogo de poker os botões *hold* podem ser usados para
+isso. Ou num jogo de poker os botões *hold* podem ser usados para
 controlar o *Double Up* do jogo e também não havendo uma tecla
 específica para os botões *Take Score*, *Double Up*, *High* e  *Low*.
 

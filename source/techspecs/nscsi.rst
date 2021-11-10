@@ -43,8 +43,8 @@ o protocolo SCSI implementado, facilitando a criação de dispositivos
 SCSI genéricos como se fossem discos rígidos ou leitores de CD-ROM.
 
 
-Conectando um barramento SCSI em um driver
-------------------------------------------
+Conectando um barramento SCSI num driver
+----------------------------------------
 
 O subsistema nscsi aproveita as interfaces de slot e a nomenclatura do
 dispositivo para permitir uma implementação e configuração de barramento
@@ -65,7 +65,7 @@ Por exemplo:
 A interface **_INTERNAL** indica um dispositivo que não é selecionável
 pelo usuário, o que é útil para o controlador.
 
-Então na configuração da máquina (ou em uma configuração de fragmento)
+Então na configuração da máquina (ou numa configuração de fragmento)
 primeiro é necessário adicionar o barramento e em seguida os
 dispositivos (potenciais) como dispositivos de sub-dispositivos do
 barramento com o SCSI ID como seu nome, exemplo:
@@ -257,7 +257,7 @@ Para facilitar as coisas uma certa quantidade de "*enums*" é definida:
   que em condições boas).
 - O enum **SC_\*** fornece os comandos SCSI.
 - O enum **SM_\*** fornece as mensagens SCSI, com exceção do
-  identificador (que é ``80-ff``, realmente não se encaixa em um enum).
+  identificador (que é ``80-ff``, realmente não se encaixa num enum).
 
 
 O que falta no **scsi_full_device**

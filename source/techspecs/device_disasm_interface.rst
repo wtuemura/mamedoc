@@ -65,9 +65,9 @@ quatro métodos de acesso::
 	u32 util::disasm_interface::data_buffer::\ **r32**\ (offs_t pc) const
 	u64 util::disasm_interface::data_buffer::\ **r64**\ (offs_t pc) const
 
-Eles leem os dados em um determinado endereço e pegam o endianness e os
+Eles leem os dados num determinado endereço e pegam o endianness e os
 PCs não lineares por acessos maiores que a largura do barramento.
-A variante do depurador também armazena em cache os dados lidos em um
+A variante do depurador também armazena em cache os dados lidos num
 bloco, então por essa razão um não deve ler os dados muito longe da base
 pc (ficar entre de 16K ou então, ter cuidado ao tentar seguir acessos
 indiretos, por exemplo).

@@ -88,7 +88,7 @@ recompilar o MAME, abra o seu ``mame.ini`` e altere o caminho do
 **snapshot_directory** para um driver lento, como um HDD externo via
 **USB1**, um leitor de cartão lento e assim por diante. Devido a
 lentidão do destino, o MAME ficará ocupado esperando a gravação do
-arquivo ***.avi** resultando em um gameplay em câmera lenta.
+arquivo ***.avi** resultando num gameplay em câmera lenta.
 
 Usando a opção speed
 ~~~~~~~~~~~~~~~~~~~~

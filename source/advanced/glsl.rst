@@ -106,7 +106,7 @@ navegar dentre as várias opções, enquanto as teclas esquerda e direita
 irão permitir que você altere o valor dessas opções. Os resultados
 aparecerão em tempo real conforme elas forem sendo alteradas.
 
-Depois de encontrar as configurações desejadas, anote os números em um
+Depois de encontrar as configurações desejadas, anote os números num
 bloco de notas e saia do MAME.
 
 Alterando as configurações

@@ -11,7 +11,7 @@ para uma melhor descrição de cada comando.
 | :ref:`debugger-command-cheatrange` -- adiciona uma região da memória a pesquisa de trapaça selecionada
 | :ref:`debugger-command-cheatnext` -- continua a pesquisa de uma trapaça comparando-a com o último valor
 | :ref:`debugger-command-cheatnextf` -- continua a pesquisa de uma trapaça comparando-a com o primeiro valor
-| :ref:`debugger-command-cheatlist` -- mostra uma lista de pesquisa de trapaças que tiveram correspondências ou salve-as em um nome de arquivo <filename>
+| :ref:`debugger-command-cheatlist` -- mostra uma lista de pesquisa de trapaças que tiveram correspondências ou salve-as num nome de arquivo <filename>
 | :ref:`debugger-command-cheatundo` -- desfaz a última pesquisa de trapaça (estado apenas)
 |
 

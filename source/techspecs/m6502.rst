@@ -15,7 +15,7 @@ sub-instruções sejam observáveis de maneira precisa.
 Foi projetado visando 3 coisas:
 
 - cada ciclo do barramento deve acontecer no exato momento que
-  aconteceria em uma CPU real assim como cada acesso.
+  aconteceria numa CPU real assim como cada acesso.
 
 - as instruções podem ser interrompidas a qualquer momento e depois
   reiniciado deste ponto de forma transparente
@@ -269,7 +269,7 @@ Interface da Memória
 
 Para uma melhor reutilização do opcode com as variantes MMU/banking, foi
 criada uma subclasse de acesso à memória.
-É chamado de **memory_interface**, que declarado em um dispositivo
+É chamado de **memory_interface**, que declarado num dispositivo
 *m6502_device* e provê os seguintes auxiliares:
 
 ====================================    ===========================================================
@@ -300,7 +300,7 @@ de máquina de dois níveis com atualizações apenas nos limites. Para ser
 mais exato, o ``inst_state`` informa qual o estado principal no momento.
 É igual ao byte opcode quando **0-255** e **0xff00** significarem
 um reset. É sempre válido e usado por instruções como rmb.
-O ``inst_substate`` indica em qual etapa estamos em uma instrução, mas é
+O ``inst_substate`` indica em qual etapa estamos numa instrução, mas é
 definida somente quando uma instrução tiver sido interrompida.
 Vamos voltar ao código asl <abs>:
 
@@ -388,7 +388,7 @@ boa chance de que o decremento teste com um par zerado seja compilado em
 algo eficiente.
 
 Todas essas funções de opcode denominam-se através de dois métodos
-virtuais, **do_exec_full** e **do_exec_partial**, que são gerados em uma
+virtuais, **do_exec_full** e **do_exec_partial**, que são gerados numa
 declaração de chaveamento com 257 entradas. Uma função virtual que
 implemente um interruptor tem uma boa chance de ser melhor do que
 ponteiros para métodos de chamada, que custam caro.
@@ -523,7 +523,7 @@ seja alternando para o modo 16-bits ou alterando alguns acessos de
 registro para o acessos à memória. Isso é feito tendo várias tabelas de
 despacho para a CPU, o *d<CPU>.lst* não tem mais 257 entradas e sim
 256*n+1. A variável **inst_state_base** deve selecionar qual a tabela de
-instruções usar em um determinado momento. Deve ser um múltiplo de, e é
+instruções usar num determinado momento. Deve ser um múltiplo de, e é
 de fato simplesmente *OR* para o byte de primeira instrução visando
 obter o índice da tabela de despacho (*inst_state*).
 

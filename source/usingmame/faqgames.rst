@@ -813,7 +813,7 @@ Bucky O'Hare
 Captain Commando
 ----------------
 
-	* **Eu me lembro que jogava em uma máquina com 4 jogadores mas o
+	* **Eu me lembro que jogava numa máquina com 4 jogadores mas o
 	  jogo só permite 2. Como posso configurar essa máquina para 4
 	  jogadores?**
 
@@ -1014,7 +1014,7 @@ Dark Horse Legend
 Daytona USA
 -----------
 
-	  Essa máquina já vem predefinida como **MASTER** em uma
+	  Essa máquina já vem predefinida como **MASTER** numa
 	  configuração de cabine dupla (TWIN). É necessário a configuração
 	  seja alterada para **SINGLE**.
 
@@ -1131,7 +1131,7 @@ DrumMania
 Dream Soccer '94
 ----------------
 
-	* **Eu me lembro que jogava em uma máquina com 4 jogadores mas o
+	* **Eu me lembro que jogava numa máquina com 4 jogadores mas o
 	  jogo só permite 2. Como posso configurar essa máquina para 4
 	  jogadores?**
 
@@ -1146,7 +1146,7 @@ Dream Soccer '94
 Dungeons & Dragons: Shadow over Mystara
 ---------------------------------------
 
-	* **Eu me lembro que jogava em uma máquina com 4 jogadores mas o
+	* **Eu me lembro que jogava numa máquina com 4 jogadores mas o
 	  jogo só permite 2. Como posso configurar essa máquina para 4
 	  jogadores?**
 
@@ -1837,7 +1837,7 @@ K.G Bird
 Karate Blazers
 --------------
 
-	* **Eu me lembro que jogava em uma máquina com 4 jogadores mas o
+	* **Eu me lembro que jogava numa máquina com 4 jogadores mas o
 	  jogo só permite 2. Como posso configurar essa máquina para 4
 	  jogadores?**
 
@@ -2603,13 +2603,13 @@ Player's Edge Plus (Set038) Set Chip
 	  para ser usado depois que um novo jogo for carregado.
 
 	  Suponha que tenha o CI 'pepp0516' instalado e queira configurá-lo.
-	  Em uma máquina real talvez queira adicionar um validador de notas
+	  Numa máquina real talvez queira adicionar um validador de notas
 	  (bill validator), a única maneira de fazê-lo seria removendo o CI
 	  'pepp0516', substituí-lo pelo 'peset038' e depois reiniciar a
 	  máquina. Então o programa deste CI roda para que você defina as
 	  configurações e depois o substituia pelo 'pepp0516' novamente.
 
-	  A única maneira de simular isso em um emulador é rodar a
+	  A única maneira de simular isso num emulador é rodar a
 	  configuração do jogo 'pepp0516', encerrar a emulação, copiar o
 	  arquivo ``pepp0516.nv`` para ``peset038.nv`` e depois rodar o
 	  programa 'peset038'. Isso é necessário pois para funcionar você
@@ -3218,7 +3218,7 @@ Revolution X
 Rim Rockin' Basketball
 ----------------------
 
-	* **Eu me lembro que jogava em uma máquina com 4 jogadores mas o
+	* **Eu me lembro que jogava numa máquina com 4 jogadores mas o
 	  jogo só permite 2. Como posso configurar essa máquina para 4
 	  jogadores?**
 
@@ -4276,7 +4276,7 @@ Virtua Racing
 	  diferentes diretórios **nvram**. No Windows, é necessário instalar
 	  o `OpenVPN <https://openvpn.net/community-downloads/>`_ mais
 	  recente para que o MAME possa ver e usar os adaptadores de rede.
-	  Em um exemplo de configuração de rede ela ficaria assim: ::
+	  Num exemplo de configuração de rede ela ficaria assim: ::
 
 		Computador MASTER Player 1
 		mame vr -wdog 10 -comm_localhost 192.168.1.1 -comm_localport 15111 -comm_remotehost 192.168.1.10 -comm_remoteport 15110
@@ -4468,7 +4468,7 @@ Zero 2
 Zero Team 2000 (zerotm2k)
 -------------------------
 
-	* **Eu me lembro que jogava em uma máquina com 4 jogadores mas o
+	* **Eu me lembro que jogava numa máquina com 4 jogadores mas o
 	  jogo só permite 2. Como posso configurar essa máquina para 4
 	  jogadores?**
 

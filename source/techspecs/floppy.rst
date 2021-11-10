@@ -18,7 +18,7 @@ com que as proteções também funcionem de forma transparente. O objetivo
 
 - uma classe manipuladora de imagem fala com a classe de imagem de
   disquete visando simular o drive de disquete, fornecendo todos os
-  sinais existentes em um conector de disquete.
+  sinais existentes num conector de disquete.
 
 - dispositivos controladores que conversam com o manipulador de imagem e
   fornecem as interfaces de registo para o host que todos nós conhecemos
@@ -37,7 +37,7 @@ O disquete
 ~~~~~~~~~~
 
 O disquete é um disco que armazena as orientações magnéticas em sua
-superfície, dispostas em uma série de círculos concêntricos chamado de
+superfície, dispostas numa série de círculos concêntricos chamado de
 faixas ou cilindros [1]_. As suas principais características são o seu
 tamanho que vai de um diâmetro em torno de 2.8 polegadas
 (63.5 milímetros) até 8 polegadas (200 milímetros), seu número de lados
@@ -116,7 +116,7 @@ A velocidade mais comum é de 300 RPM para cada faixa, com 360 rpm
 encontrado para os disquetes de alta densidade com 5.25 polegadas e a
 maioria dos disquetes com 8 polegadas. A velocidade dos primeiros
 disquetes giravam em torno de 90 RPM ou até mesmo 150 RPM para um
-disquete de alta densidade em um Amiga. Ter uma velocidade rotacional
+disquete de alta densidade num Amiga. Ter uma velocidade rotacional
 fixa para todo o disco é chamada de Velocidade Angular Constante
 (CAV em inglês) usada por quase todos ou Velocidade Angular Constante
 Zoneada (ZCAV em inglês, usado no C64), dependendo se a taxa de bits de
@@ -141,11 +141,11 @@ ou AGC em Inglês) e um detector de pico são colocados de forma a
 trabalhar em conjunto com da cabeça para fornecer pulsos limpos.
 O AGC aumenta lentamente o nível de amplificação até que um sinal
 ultrapasse um limite pré determinado, em seguida ajusta seu ganho para
-que o dito sinal esteja estável em um nível fixo dentro deste limite.
+que o dito sinal esteja estável num nível fixo dentro deste limite.
 Conforme a oscilação vai acontecendo o AGC entra em ação novamente.
 Isso faz com que o amplificador se calibre para os sinais lidos no
 disquete, desde que as transições de fluxo aconteçam com uma certa
-frequência. Em uma zona muito longa, ocorre a captação de ruídos
+frequência. Numa zona muito longa, ocorre a captação de ruídos
 aleatórios do ambiente, fazendo com que a amplificação deste sinal
 ultrapasse o limite pré estabelecido, criando pulsos falsos onde não
 existem nenhum. Muito longa neste caso são aquelas que acontecem entre
@@ -220,7 +220,7 @@ a seção. Por exemplo o tamanho padrão de uma célula MFM para um disquete
 de dupla densidade com 3 polegadas é de 2us, também combinada com uma
 velocidade de rotação com 300 RPM, dá um tamanho angular de 1/100.000
 por volta. Outra maneira de dizer a mesma coisa é que há 100K (cem mil)
-células em uma pista de dupla densidade de um disquete de 3 polegadas.
+células numa pista de dupla densidade de um disquete de 3 polegadas.
 
 Em cada célula pode ou não haver uma transição de orientação magnética,
 por exemplo, uma pulsação vindo de uma leitura ou ir para a escrita da
@@ -243,7 +243,7 @@ Certas proteções usam isso para tornar os formatos não reconhecíveis
 pelo controlador do sistema, quebrando a regra de três zeros ou brincar
 com as durações e tamanhos das células.
 
-Bit endocing é a arte de transformar dados brutos em uma célula de
+Bit endocing é a arte de transformar dados brutos numa célula de
 configuração 0/1 que respeite as os dois limites.
 
 Codificação FM
@@ -292,7 +292,7 @@ Codificação GCR
 
 As codificações *Group Coded Recording*, ou GCR, são uma classe de
 codificações onde cadeias de bits com pelo menos tamanho de meio byte ou
-4 bit são codificadas em um determinado fluxo de células dado por uma
+4 bit são codificadas num determinado fluxo de células dado por uma
 tabela. Ele foi usado particularmente pelo Apple II, o Mac e o C64, e
 cada sistema tem sua própria tabela ou tabelas.
 
@@ -333,8 +333,8 @@ Depois que o fluxo de dados da célula é extraído, a decodificação
 depende da codificação. No caso de FM e MFM, a única questão é
 reconhecer os bits de dados dos bits de clock, enquanto no GCR a posição
 inicial do primeiro grupo deve ser encontrada. O segundo nível de
-sincronização é tratado em um nível mais alto usando padrões não
-encontrados em um fluxo normal.
+sincronização é tratado num nível mais alto usando padrões não
+encontrados num fluxo normal.
 
 
 Organização de nível no setor
@@ -345,7 +345,7 @@ aleatório para blocos de dados de tamanhos razoáveis. Permite a seleção
 de faixas para um primeiro nível de acesso aleatório e dimensionamento,
 mas os 6 K de uma faixa de densidade dupla seria muito grande para ser
 lidado por um bloco. 256/512 bytes são considerados um valor mais
-apropriado. Para o efeito, dados em uma faixa são organizados como uma
+apropriado. Para o efeito, dados numa faixa são organizados como uma
 série de (cabeçalho do setor, dados do setor) pares onde o cabeçalho do
 setor indicam informações importantes, como o número do setor, tamanho,
 e os dados do setor que contém os dados. Os setores tem que ser
@@ -497,11 +497,11 @@ magnético da superfície.
 
 O tipo de mídia é dividido em duas partes. A primeira metade indica o
 fator de forma física, ou seja, todas as mídias com esse fator podem ser
-fisicamente inseridas em um leitor que puder manuseá-lo.
+fisicamente inseridas num leitor que puder manuseá-lo.
 A segunda metade indicam as variantes que são geralmente detectáveis
 pelo leitor, tais como a densidade e o número de lados.
 
-Trilha de dados consiste em uma série valores lsb primários em 32-bits
+A trilha de dados consiste numa série valores lsb primários em 32-bits
 representando as células magnéticas. Os bits 0-27 indicam a posição
 absoluta do início da célula (não o tamanho) e os bits 28-31 indicam os
 tipos. Os tipos podem ser:
@@ -564,7 +564,7 @@ deve conter:
   converte para a representação interna
 
 - **save(file, floppy_image)** (se implementado) convertido da
-  representação interna e salva em uma imagem
+  representação interna e salva numa imagem
 
 Todos estes métodos são previstos para serem sem estado.
 
@@ -610,7 +610,7 @@ Métodos de conversão orientados à leitura
 |                 **int level_count)**
 
   Pega um buffer de formato interno onde a parte da posição representa o
-  ângulo até a próxima mudança e o transforma em um fluxo normal de
+  ângulo até a próxima mudança e o transforma num fluxo normal de
   posição, primeiro garantindo que o tamanho total seja normalizado para
   uma volta completa.
 
@@ -756,6 +756,6 @@ assíncrona, de maneira independentemente da hora atual, por exemplo.
 		semelhantes aos disquetes, mas incluem uma série de discos
 		empilhados com uma cabeça de leitura/gravação em cada um deles.
 		As cabeças estão fisicamente ligadas e todas apontam para o
-		mesmo círculo em cada disco em um determinado momento, fazendo
+		mesmo círculo em cada disco num determinado momento, fazendo
 		com que a área acessada pareça com um cilindro.
 		Daí o nome. (Nota do tradutor)

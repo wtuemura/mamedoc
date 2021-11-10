@@ -52,19 +52,19 @@ Os tipos do localizador dos objetos
 
 **required_memory_bank, optional_memory_bank**
 
-	Encontra um banco de memória instanciado em um mapa dos endereços.
+	Encontra um banco de memória instanciado num mapa dos endereços.
 	O alvo é o objeto ``memory_bank``.
 
 **memory_bank_creator**
 
-	Encontra um banco de memória instanciado em um mapa dos endereços ou
+	Encontra um banco de memória instanciado num mapa dos endereços ou
 	o cria caso ele ainda não exista. O alvo é o objeto ``memory_bank``.
 	Não há versão opcional, porque o objeto no destino sempre será
 	encontrado ou será criado.
 
 **required_ioport, optional_ioport**
 
-	Encontra uma porta de E/S nas definições da porta de entrada em um
+	Encontra uma porta de E/S nas definições da porta de entrada num
 	dispositivo. O alvo é o objeto ``ioport_port``.
 
 **required_address_space, optional_address_space**
@@ -83,7 +83,7 @@ Os tipos do localizador dos objetos
 **required_shared_ptr<PointerType>, optional_shared_ptr<PointerType>**
 
 	Encontra o ponteiro base de um compartilhamento da memória
-	instanciado em um mapa dos endereços.
+	instanciado num mapa dos endereços.
 	O argumento do modelo ``PointerType`` é o tipo do destino
 	(geralmente um tipo inteiro e sem assinatura). O alvo é o primeiro
 	elemento na região compartilhada da memória.
@@ -91,7 +91,7 @@ Os tipos do localizador dos objetos
 **memory_share_creator<PointerType>**
 
 	Encontra o ponteiro base de um compartilhamento da memória
-	instanciado em um mapa dos endereços, ou o cria caso um ainda não
+	instanciado num mapa dos endereços, ou o cria caso um ainda não
 	exista.
 	O argumento do modelo ``PointerType`` é o tipo do destino
 	(geralmente um tipo inteiro sem assinatura). O alvo é o primeiro
@@ -263,7 +263,7 @@ como arrays.
 As conexões entre os dispositivos
 ---------------------------------
 
-Os dispositivos precisam estar conectados em um sistema. No Sun SBus por
+Os dispositivos precisam estar conectados num sistema. No Sun SBus por
 exemplo, o dispositivo precisa de acesso à CPU do host e ao espaço do
 endereço. É assim que declaramos os localizadores na classe do
 dispositivo (com todas as distrações removidas)::
@@ -303,7 +303,7 @@ Há algumas coisas que podem ser observadas aqui:
 
 * Os membros do localizador são declarados para tudo que o
   dispositivo precisar acessar.
-* O dispositivo não sabe como se encaixará em um sistema maior, o
+* O dispositivo não sabe como se encaixará num sistema maior, o
   localizadores são construídos com argumentos fictícios.
 * As funções do membro da configuração são providas para definir a tag
   para o host da CPU e a tag e o índice para o espaço do endereço
@@ -863,7 +863,7 @@ Os localizadores dos objetos do sistema de memória,
 São frequentemente utilizados no lugar das etiquetas literais durante a
 instalação dos bancos da memória no espaço dos endereços.
 
-Um exemplo do uso do localizador do banco de memória em um endereço no
+Um exemplo do uso do localizador do banco de memória num endereço no
 mapa:
 
 .. code-block:: C++

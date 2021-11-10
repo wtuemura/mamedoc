@@ -136,7 +136,7 @@ gint
 
 |  **gi[nt]** [<*irqline*>]
 |
-| O comando "*gint*" retoma a execução do código atual. O controle não será retornado ao depurador até que um breakpoint ou watchpoint seja atingido ou até que um IRQ seja declarado e reconhecido na CPU atual. Você pode definir um <*irqline*> caso deseje interromper a execução apenas em uma determinada linha de IRQ que estiver sendo declarada e confirmada. Caso o <*irqline*> seja omitido, então qualquer linha IRQ irá parar a execução.
+| O comando "*gint*" retoma a execução do código atual. O controle não será retornado ao depurador até que um breakpoint ou watchpoint seja atingido ou até que um IRQ seja declarado e reconhecido na CPU atual. Você pode definir um <*irqline*> caso deseje interromper a execução apenas numa determinada linha de IRQ que estiver sendo declarada e confirmada. Caso o <*irqline*> seja omitido, então qualquer linha IRQ irá parar a execução.
 |
 | Exemplos:
 |
@@ -206,7 +206,7 @@ ignore
 
 |  **ignore** [<*cpu*>[,<*cpu*>[,...]]]
 |
-| Ignora a <*cpu*> definida ao usar o depurador. Isso significa que você nunca verá a execução nessa CPU e tão pouco poderá definir breakpoints nela. Para desfazer essa mudança, use o comando 'observe'. Você pode definir diferentes *<cpu>s* em um único comando. Note também que você não tem permissão para ignorar todas as CPUs; pelo menos um deve estar ativo em todos os momentos.
+| Ignora a <*cpu*> definida ao usar o depurador. Isso significa que você nunca verá a execução nessa CPU e tão pouco poderá definir breakpoints nela. Para desfazer essa mudança, use o comando 'observe'. Você pode definir diferentes *<cpu>s* num único comando. Note também que você não tem permissão para ignorar todas as CPUs; pelo menos um deve estar ativo em todos os momentos.
 |
 | Exemplos:
 |
@@ -232,7 +232,7 @@ observe
 
 |  **observe** [<*cpu*>[,<*cpu*>[,...]]]
 |
-| Reativa a interação com a <*cpu*> definida no depurador. Este comando desfaz os efeitos do comando 'ignore'. Você pode especificar diferentes <*cpu*>s em um único comando.
+| Reativa a interação com a <*cpu*> definida no depurador. Este comando desfaz os efeitos do comando 'ignore'. Você pode especificar diferentes <*cpu*>s num único comando.
 |
 | Exemplos:
 |
@@ -264,7 +264,7 @@ trace
 |
 | <*detectloops*> deve ser **true** ou **false**.
 |
-| Caso o 'noloop' seja omitido, o rastreamento terá loops detectados e será condensado em uma única linha. Caso o 'noloop' seja definido, o rastreio irá conter cada opcode conforme for sendo executado.
+| Caso o 'noloop' seja omitido, o rastreamento terá loops detectados e será condensado numa única linha. Caso o 'noloop' seja definido, o rastreio irá conter cada opcode conforme for sendo executado.
 |
 | Caso o 'logerror' seja definido, a saída do logerror irá aumentar o rastreamento. Se você deseja obter informações adicionais sobre cada vestígio de log, você pode acrescentar o parâmetro <*action*> que é um comando que é executado antes que cada traço que for registrado. Geralmente, isso é usado para incluir um comando 'tracelog'. Observe que você pode precisar incorporar a ação entre chaves **{ }** para evitar que as vírgulas e os pontos-e-vírgulas sejam interpretados como se aplicassem ao próprio comando trace.
 |
@@ -320,7 +320,7 @@ traceover
 |
 | Quando o rastreamento atinge uma sub-rotina ou chamada, a sub-rotina será ignorada pelo rastreamento. O mesmo algoritmo é usado como é usado no comando *step over*. Isso significa que o rastreio não funcionará corretamente quando as chamadas forem recursivas ou o endereço de retorno não estiver seguindo imediatamente a instrução de chamada.
 |
-| <*detectloops*> deve ser true ou false. Caso o <*detectloops*> seja *true* ou *omitido*, o rastreio terá loops detectados e condensados em uma única linha. Caso seja *false*, o rastreio conterá todos os opcode à medida que forem executados.
+| <*detectloops*> deve ser true ou false. Caso o <*detectloops*> seja *true* ou *omitido*, o rastreio terá loops detectados e condensados numa única linha. Caso seja *false*, o rastreio conterá todos os opcode à medida que forem executados.
 | Se o <*cpu*> for omitido, a CPU atualmente ativa será a especificada.
 | Ao habilitar o rastreamento, especifique o nome do arquivo <*filename*> no parâmetro.
 | Para desabilitar o rastreamento, substitui a palavra-chave 'off' para <*filename*>.

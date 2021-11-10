@@ -176,8 +176,8 @@ Alterando as configurações
 	As vírgulas sempre saem do lado de fora da cadeia (veja o exemplo do
 	**House Mannequin**).
 
-	Em uma combinação de só uma janela, no caso de jogos com uma única
-	tela, como o **Pac Man** em um monitor físico de PC, você pode
+	Numa combinação de só uma janela, no caso de jogos com uma única
+	tela, como o **Pac Man** num monitor físico de PC, você pode
 	definir a opção como:
 
 		``bgfx_screen_chains hlsl``
@@ -195,11 +195,11 @@ Alterando as configurações
 	Isso também funciona com jogos que usam uma única tela caso você
 	queira espelhar a saída dela para vários outros monitores físicos.
 	Por exemplo, você pode configurar o jogo **Pac Man** para ter uma
-	saída não filtrada para ser usada em uma transmissão de vídeo
+	saída não filtrada para ser usada numa transmissão de vídeo
 	enquanto a saída para segunda tela é configurada para exibir uma
 	tela com os efeitos hlsl.
 
-	Em um jogo com múltiplas telas em várias janelas como o jogo
+	Num jogo com múltiplas telas em várias janelas como o jogo
 	**Darius** usando três monitores físicos, defina as opções como
 	mostra abaixo de forma individual para cada janela:
 

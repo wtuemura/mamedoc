@@ -38,7 +38,7 @@ Configurações de tela inteira
 **-[no]triplebuffer** / **-[no]tb**
 
 	Ativa ou não o "triple buffering", buffering é o nome da técnica ou
-	função que faz o armazenamento prévio de dados em uma memória
+	função que faz o armazenamento prévio de dados numa memória
 	preliminar. Normalmente o MAME escreve "a seco" diretamente na tela
 	sem fazer firulas com a memória preliminar. Porém com essa opção
 	ativa o MAME cria e escreve seus ciclos intermediários e em ordem

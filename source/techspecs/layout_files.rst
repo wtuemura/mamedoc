@@ -47,7 +47,7 @@ Os layouts do MAME possuem dois tipos de números, números inteiros e os
 de ponto flutuante.
 
 Os números inteiros podem ser usados com notação decimal ou hexadecimal.
-Um número decimal inteiro consiste em um prefixo opcional **#**
+Um número decimal inteiro consiste num prefixo opcional **#**
 (hash [#]_), um caractere opcional **+/-** (mais ou menos) ou uma
 sequência de dígitos entre **0-9**.
 
@@ -259,7 +259,7 @@ em conjunto com os atributos ``name``, ``start``, ``increment``,
 Os parâmetros dos geradores só podem aparecer de dentro dos elementos
 ``repeat`` (consulte :ref:`layfile-parts-repeats` para obter mais
 informações) e também não devem ser reatribuídos dentro do mesmo escopo
-(um parâmetro com um nome idêntico pode ser atribuído em um escopo
+(um parâmetro com um nome idêntico pode ser atribuído num escopo
 através da sua ramificação). Abaixo alguns parâmetros de exemplos dos
 geradores:
 
@@ -301,7 +301,7 @@ maior importância.
 Caso ambos os parâmetros ``lshift`` e ``rshift`` sejam passados, estes
 serão compensados antes dos valores serem aplicados. Significa que
 não é possível usar atributos iguais tanto para o ``lshift`` como para o
-`rshift`` por exemplo para limpar os bits em um valor do final do
+`rshift`` por exemplo para limpar os bits num valor do final do
 parâmetro após a primeira iteração.
 
 Será considerado um erro caso o elemento ``param`` não esteja em
@@ -310,9 +310,9 @@ considerado um erro caso ambos os elementos ``param`` tiverem  os mesmos
 atributos ``value`` ou qualquer um dos mesmos atributos ``start``,
 ``increment``, ``lshift``, ou ``rshift``.
 
-Um elemento ``param`` define ou reatribui o seu valor em um parâmetro no
+Um elemento ``param`` define ou reatribui o seu valor num parâmetro no
 escopo atual mais interno. Não é possível definir ou reatribuir os
-parâmetros em um escopo de contenção.
+parâmetros num escopo de contenção.
 
 .. raw:: latex
 
@@ -331,14 +331,14 @@ disponíveis e fornecem informações sobre a máquina que está em execução:
 	Um exemplo do caminho completo da etiqueta [#TAG]_ dispositivo que será
 	responsável pela leitura do layout, seria ``:`` para o driver do
 	controlador do dispositivo raiz ou ``:tty:ie15`` para o terminal
-	conectado em uma porta. Este parâmetro é uma sequência de caracteres
+	conectado numa porta. Este parâmetro é uma sequência de caracteres
 	definida no escopo global de visualização do layout.
 
 **devicebasetag**
 
 	A base da etiqueta do dispositivo que será responsável pela leitura
 	do layout, como por exemplo ``root`` para o driver do dispositivo
-	raiz ou ``ie15`` para o terminal que estiver conectado em uma porta.
+	raiz ou ``ie15`` para o terminal que estiver conectado numa porta.
 	Este parâmetro é uma sequência de caracteres definida no escopo
 	global do layout.
 
@@ -603,7 +603,7 @@ Os seguintes elementos são permitidos dentro do primeiro elemento
 **element**
 
     Define um elemento, um dos objetos primários a serem organizados
-    em uma Visualização. Consulte :ref:`layfile-parts-elements` para
+    numa Visualização. Consulte :ref:`layfile-parts-elements` para
     obter mais informações.
 
 **group**
@@ -670,7 +670,7 @@ nos grupos ou nas visualizações. Haverá um erro caso o arquivo de
 layout tenha vários elementos ``name`` com valores iguais.
 Os elementos podem de forma opcional, ser utilizado para informar um
 valor padrão do seu estado através do atributo ``defstate`` caso esteja
-conectado em uma saída emulada ou em uma porta E/S. O valor do atributo
+conectado numa saída emulada ou numa porta E/S. O valor do atributo
 ``defstate`` deve possuir um valor inteiro e positivo, os valores
 negativos geram erros e fazem com que o layout não seja mais carregado.
 
@@ -821,8 +821,8 @@ Há suporte para os seguintes componentes:
 
 **dotmatrix**
 
-	Desenha um segmento horizontal de oito pixels em um mostrador em
-	formato de matriz de pontos, usando pixels circulares em uma cor
+	Desenha um segmento horizontal de oito pixels num mostrador em
+	formato de matriz de pontos, usando pixels circulares numa cor
 	determinada. Os bits que determinam o estado do elemento definem
 	quais os pixels que estarão acesos, com o bit de menor importância
 	correspondendo ao pixel mais à esquerda. Os pixels que estiverem
@@ -834,9 +834,9 @@ Há suporte para os seguintes componentes:
 
 **dotmatrix5dot**
 
-	Desenha um segmento horizontal de cinco pixels em um mostrador em
-	formato de matriz de pontos, usando pixels circulares em uma cor
-	determinada. Os bits que determinam o estado do elemento definem
+	Desenha um segmento horizontal de cinco pixels num mostrador em
+	formato de matriz de pontos, usando pixels circulares numa
+	determinada cor. Os bits que determinam o estado do elemento definem
 	quais os pixels que estarão acesos, com o bit de menor importância
 	correspondendo ao pixel mais à esquerda. Os pixels que estiverem
 	apagados são desenhados com uma intensidade menor (**0x20/0xff**).
@@ -844,7 +844,7 @@ Há suporte para os seguintes componentes:
 **dotmatrixdot**
 
 	Desenha um único elemento de um mostrador em formato de de matriz de
-	pontos com pixels circulares em uma determinada cor. O bit de menor
+	pontos com pixels circulares numa determinada cor. O bit de menor
 	importância do estado do elemento determina se o pixel vai estar
 	aceso. Um pixel apagado é desenhado com uma intensidade menor
 	(**0x20/0xff**).
@@ -852,7 +852,7 @@ Há suporte para os seguintes componentes:
 **led7seg**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico comum com
-	dezesseis segmentos e o mostrador em uma cor determinada. Os oito bits
+	dezesseis segmentos e o mostrador numa determinada cor. Os oito bits
 	baixos do estado do elemento controlam quais os segmentos estarão
 	acesos. Começando pelo bit de menor importância a sequência de
 	atualização dos bits correspondentes começam no segmento superior,
@@ -875,7 +875,7 @@ Há suporte para os seguintes componentes:
 **led14seg**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico padrão com
-	catorze segmentos em uma cor determinada. Os 14 bits mais baixos do
+	catorze segmentos numa determinada cor. Os 14 bits mais baixos do
 	controle de estado do elemento determinam quais os segmentos estarão
 	acesos.
 	Começando pelo bit com menor importância, os bits correspondentes ao
@@ -890,7 +890,7 @@ Há suporte para os seguintes componentes:
 **led14segsc**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico padrão com
-	catorze segmentos com ponto decimal/vírgula em uma cor determinada.
+	catorze segmentos com ponto decimal/vírgula numa determinada cor.
 	Os 16 bits baixos do elemento controlam quais segmentos estarão
 	acesos. Os 14 bits baixos correspondem aos mesmos segmentos que no
 	componente ``led14seg``. Os dois bits adicionais correspondem ao
@@ -904,7 +904,7 @@ Há suporte para os seguintes componentes:
 **led16seg**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico padrão com
-	dezesseis segmentos em uma cor determinada. Os 16 bit baixos do
+	dezesseis segmentos numa determinada cor. Os 16 bit baixos do
 	elemento controlam quais os elementos que estarão acesos. Começando
 	pelo bit de menor importância a sequência de atualização dos bits
 	correspondentes começam da metade esquerda da barra superior, a
@@ -919,7 +919,7 @@ Há suporte para os seguintes componentes:
 **led16segsc**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico padrão com
-	dezesseis segmentos e o ponto decimal em uma determinada cor.
+	dezesseis segmentos e o ponto decimal numa determinada cor.
 	Os 16 bits baixos do elemento controlam quais os segmentos estarão
 	acesos. Os 18 bits inferiores correspondem aos mesmos controles do
 	estado dos segmentos que em ``led16seg``. Os dois bits adicionais
@@ -929,7 +929,7 @@ Há suporte para os seguintes componentes:
 **simplecounter**
 
 	Exibe o valor numérico do estado do elemento usando a fonte do
-	sistema em uma cor determinada. O valor é formatado em notação
+	sistema numa determinada cor. O valor é formatado em notação
 	decimal. Um atributo ``digits`` pode ser informado para definir a
 	quantidade mínima de dígitos que serão exibidos. Se presente, o
 	atributo ``digits`` deve ser um número inteiro, na sua ausência será
@@ -1134,7 +1134,7 @@ elemento ``view``:
 	Haverá um erro caso nenhum elemento ``ref`` seja definido no arquivo
 	layout.
 
-	Opcionalmente pode estar conectada em uma porta E/S emulada
+	Opcionalmente pode estar conectada numa porta E/S emulada
 	através dos atributos ``inputtag`` e o ``inputmask`` ou através
 	da emulação de uma saída usando um atributo ``name``. Consulte
 	:ref:`layfile-interact-clickable` e também 
@@ -1156,14 +1156,14 @@ elemento ``view``:
 	leitura do layout. As telas são desenhadas na ordem em que aparecem
 	no arquivo layout.
 
-	Pode opcionalmente estar conectada em uma porta E/S emulada através
+	Pode opcionalmente estar conectada numa porta E/S emulada através
 	dos atributos ``inputtag`` e ``inputmask`` ou através de uma saída
 	emulada através do atributo ``name``. Consulte
 	:ref:`layfile-interact-clickable` para obter mais informações.
 
 **collection**
 
-	Adiciona as telas ou os itens em uma coleção de itens que poderão
+	Adiciona as telas ou os itens numa coleção de itens que poderão
 	ser exibidos ou escondidos pelo usuário (consulte
 	:ref:`layfile-parts-collections`). O nome da coleção é definida
 	através do atributo ``name``. Há um limite de até 32 ``collection``
@@ -1183,7 +1183,7 @@ elemento ``view``:
 	atributo ``count``. O atributo ``count`` deve ser um número inteiro
 	e positivo. O elemento ``repeat`` aceita os elementos ``element``,
 	``screen``, ``group`` mais os elementos ``repeat`` que funcionam da
-	mesma maneira que quando colocados em uma visualização direta.
+	mesma maneira que quando colocados numa visualização direta.
 	Consulte :ref:`layfile-parts-repeats` para saber como usar os
 	elementos ``repeat``.
 
@@ -1287,8 +1287,8 @@ Coleções
 
 As coleções das telas ou dos elementos do layout que são agrupados de
 maneira que possam ser exibidos ou não pelo usuário conforme a sua
-necessidade caso este esteja definido pelo autor do layout. Em uma
-visualização única é possível ambas as visualizações e um teclado
+necessidade caso este esteja definido pelo autor do layout. Numa
+visualização única, é possível ambas as visualizações e um teclado
 numérico (keypad) selecionável por exemplo, permitir que o usuário
 esconda o teclado numérico deixando visível apenas a visualização. As
 coleções são criadas através do elemento ``collection`` dentro dos
@@ -1339,7 +1339,7 @@ Grupos reutilizáveis
 ~~~~~~~~~~~~~~~~~~~~
 
 Os grupos permitem que um arranjo das telas ou dos elementos do layout
-sejam usados várias vezes em uma visualização ou outros grupos. Os
+sejam usados várias vezes numa visualização ou outros grupos. Os
 grupos podem ser de grande ajuda mesmo que seja usado o arranjo apenas
 uma vez, pois eles podem ser usados para agregar parte de um layout
 complexo.
@@ -1359,7 +1359,7 @@ etiqueta para definir o grupo de um elemento dentro do primeiro elemento
 
     <group name="panel">
 
-Este grupo pode então ser justificado em uma visualização ou em outro
+Este grupo pode então ser justificado numa visualização ou em outro
 elemento ``group`` usando um elemento de grupo como referência.
 Opcionalmente os limites de destino, a orientação e as modificações
 das cores poderão ser informados também.
@@ -1539,7 +1539,7 @@ unidades de espaço entre elas, controladas pelas saídas ``digit0`` até
 
 	\clearpage
 
-Oito mostradores com matrix de ponto medindo cinco por sete em uma
+Oito mostradores com matrix de ponto medindo cinco por sete numa
 linha, com pixels controlados por ``Dot_000`` até ``Dot_764``
 (dentro de um elemento ``group`` ou ``view``):
 
@@ -1661,7 +1661,7 @@ para cinco tipos de interatividades:
 
 **Itens que podem ser clicados**
 
-	Caso um item em uma visualização esteja vinculado com uma região dos
+	Caso um item numa visualização esteja vinculado com uma região dos
 	interruptores da porta E/S, será possível clicar no item para ativar
 	o interruptor ou um botão emulado.
 
@@ -1970,14 +1970,14 @@ são geradas automaticamente:
   externo do layout.
 * A tela será exibida com a sua proporção física e com a rotação
   aplicada em cada tela que for emulada.
-* A tela será exibida em uma proporção onde os pixels sejam quadrados e
+* A tela será exibida numa proporção onde os pixels sejam quadrados e
   com a rotação aplicada para cada tela emulada onde a proporção
   configurada para o pixel não corresponda a proporção física.
 * Serão exibidos duas cópias da imagem da tela uma uma sobreposta a
   outra com um pequeno espaço entre elas caso o sistema emule apenas uma
   tela.
   A cópia da parte de cima será rotacionada em 180 graus. Esta visão
-  pode ser usada em um cabine tipo cocktail, que disponibiliza uma mesa
+  pode ser usada num cabine tipo cocktail, que disponibiliza uma mesa
   onde os jogadores se sentam frente a frente e cada um com a sua tela,
   ou alternando os jogos que não girem automaticamente a tela para o
   segundo jogador.
@@ -2517,7 +2517,7 @@ clique no direcional para o lado esquerdo, faça o mesmo para
 pressione :kbd:`Tab` seguido de :kbd:`Esq` para encerrar a emulação.
 
 Será criado dentro do diretório **cfg** um arquivo chamado
-``galaxian.cfg``, abra-o em um editor de texto e veja que para cada
+``galaxian.cfg``, abra-o num editor de texto e veja que para cada
 configuração feita para os controles e para o botão há um valor
 específico para eles, aqui um exemplo usando um controle de
 *Playstation 2*::
@@ -3750,7 +3750,7 @@ alinhadas no limite do círculo:
 		:alt: diagonais
 
 A decisão de usar um ou outro vai depender de como ele se comporta **no
-seu design** e **na tela**, o alinhamento com base em um círculo
+seu design** e **na tela**, o alinhamento com base num círculo
 pode parece "*curto*" em determinados designs e assim por diante, por
 isso que **não há uma regra**, cabe ao artista/designer testar e avaliar
 o que fica melhor. No nosso exemplo usamos o alinhamento com base no
@@ -3947,7 +3947,7 @@ certeza de estar criando um arquivo ``default.lay`` e não
 ``default.lay.txt``, no Windows é preciso alterar as configurações da
 pasta para `ver a extensão dos arquivos <https://www.softdownload.com.br/como-exibir-extensao-arquivos-windows-10-8-7.html>`_.
 
-Abra o arquivo em um editor de texto, iniciamos o nosso layout pelo
+Abra o arquivo num editor de texto, iniciamos o nosso layout pelo
 cabeçalho e colocando todas as informações que achamos relevantes:
 
 .. code-block:: xml
@@ -5067,7 +5067,7 @@ de visualização, todo eles estão embutidos no MAME.
 * `sstrangr.lay <https://git.redump.net/mame/tree/src/mame/layout/sstrangr.lay?h=mame0235>`_
 
     Um caso simples da utilização de transparências coloridas para
-    visualizar a separação e o destaque dos elementos em uma tela preto
+    visualizar a separação e o destaque dos elementos numa tela preto
     e branco.
 
 * `seawolf.lay <https://git.redump.net/mame/tree/src/mame/layout/seawolf.lay?h=mame0235>`_
@@ -5093,8 +5093,8 @@ de visualização, todo eles estão embutidos no MAME.
 * `esq2by16.lay <https://git.redump.net/mame/tree/src/mame/layout/esq2by16.lay?h=mame0235>`_
 
     Constrói uma matriz de caracteres com múltiplas linhas. As
-    repetições são usadas para evitar a repetição das linhas em um
-    caractere, dos caracteres em uma linha e das linhas em uma página.
+    repetições são usadas para evitar a repetição das linhas num
+    caractere, dos caracteres numa linha e das linhas numa página.
     As cores de grupo permitem que um único elemento seja usado para
     todas as quatro cores da tela.
 

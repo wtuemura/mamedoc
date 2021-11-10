@@ -52,7 +52,7 @@ Antes, alguns pontos importantes:
   o compilador e outras ferramentas.
   
   Digite *make* no diretório raiz onde se encontra o código fonte do
-  MAME para que ele leia as instruções contidas em um arquivo chamado
+  MAME para que ele leia as instruções contidas num arquivo chamado
   **Makefile** para que uma versão do MAME seja compilada, observe que
   é possível usar outras opções fazendo com que a compilação do MAME
   seja customizada e atenda as suas necessidades, como, por exemplo, se
@@ -66,7 +66,7 @@ Antes, alguns pontos importantes:
 		``make VERBOSE=1``
 
   Várias outras opções podem ser adicionadas desde que estejam separadas
-  por espaço, abra o arquivo **makefile** em um editor de texto e veja
+  por espaço, abra o arquivo **makefile** num editor de texto e veja
   quais são aquelas que estão disponíveis.
 
 * Algumas vezes o processo de compilação é interrompido antes de chegar
@@ -126,7 +126,7 @@ Antes, alguns pontos importantes:
   primeiro terminar. Caso a compilação pare por algum erro, tente
   repetir apenas o comando **make**.
 
-* As opções usada pelo make podem ser adicionadas em um arquivo
+* As opções usada pelo make podem ser adicionadas num arquivo
   **useroptions.mak**. Muito útil em casos onde a lista de opções para
   a compilação são grandes e repetitivas, dentro do arquivo as opções se
   organizam da seguinte maneira: ::
@@ -242,7 +242,7 @@ energia elétrica. É possível acelerar todo este processo usando o
 **ccache**, este programa armazena uma cópia da sua compilação, fazendo
 com que apenas o código fonte que foi atualizado seja compilado, todo
 o resto vem do armazenamento que o **ccache** fazendo com que a
-compilação termine em um tempo muito menor, estamos falando em compilar
+compilação termine num tempo muito menor, estamos falando em compilar
 todo o código fonte do MAME em segundos com o **ccache**, sem ele,
 uma compilação pode levar horas.
 
@@ -414,7 +414,7 @@ completo então ficaria assim, note que a opção **SSE2=1** foi removida.
 	**make SYMBOLS=1 SYMLEVEL=1 ARCHOPTS=-march=native -j7**
 
 O ponto negativo é que os binários gerados com essa opção só irão
-funcionar em processadores iguais ao seu, caso compile uma versão em um
+funcionar em processadores iguais ao seu, caso compile uma versão num
 processador i3 da Intel, essa versão não vai funcionar em qualquer outro
 processador i7 por exemplo, o mesmo vale para os processadores da AMD.
 Assim como ao ativar estas extensões o seu MAME pode apresentar algum
@@ -428,7 +428,7 @@ com a opção **-march=native**:
 	``gcc -march=native -Q --help=target|grep enabled``
 
 Dependendo do modelo do processador o comando retornará mais ou menos
-extensões disponíveis, em um processador AMD FX(tm)-8350 com 8 núcleos
+extensões disponíveis, num processador AMD FX(tm)-8350 com 8 núcleos
 o **-march=native** vai usar estas extensões do seu processador: ::
 
 	-m64                        		[enabled]
@@ -498,7 +498,7 @@ rodar apenas o **pacman** usado opções diferentes: ::
 	Opção 2
 	make SOURCES=src/mame/drivers/pacman.cpp SUBTARGET=pacman ARCHOPTS=-march=native OPTIMIZE=3
 
-Rodamos o nosso MAME por 90 segundos em um AMD FX(tm)-8350 4 Ghz
+Rodamos o nosso MAME por 90 segundos num AMD FX(tm)-8350 4 Ghz
 (8 núcleos), 16 GiB de memória DDR3 1866 Mhz, AMD R7 250E 1 GiB, Windows
 10 x64 usando a opção :ref:`bench <mame-commandline-bench>`:
 
@@ -512,7 +512,7 @@ Para a **opção 2** nós temos:
 
 	``Average speed: 6742.91% (89 seconds)``
 
-Agora compilando o MAME para rodar em um Linux Debian 9.7 x64, usando as
+Agora compilando o MAME para rodar num Linux Debian 9.7 x64, usando as
 mesmas opções, o mesmo driver, o mesmo código fonte e usando exatamente
 o mesmo hardware, nós temos um resultado bem diferente:
 
@@ -620,7 +620,7 @@ Microsoft Windows
 
 O MAME para Windows é compilado usando o ambiente MSYS2. Será necessário
 o Windows 7 ou mais recente e uma instalação atualizada do MSYS2.
-Recomendamos veementemente que o MAME seja compilado em um sistema
+Recomendamos veementemente que o MAME seja compilado num sistema
 64-bit, talvez seja necessário fazer ajustes para que a compilação
 funcione com sistemas 32-bit.
 
@@ -694,7 +694,7 @@ Preparando a instalação do MSYS2 manualmente
 A versão nativa do MAME para Windows é compilada usando o ambiente
 de desenvolvimento MSYS2, é necessário ter o Windows 7 ou mais recente
 assim como uma versão atualizada do MSYS2. É aconselhável compilar o
-MAME em um sistema operacional de 64-bit, para sistemas 32-bit é
+MAME num sistema operacional de 64-bit, para sistemas 32-bit é
 necessário fazer algumas alterações. Baixe e instale o ambiente de
 desenvolvimento MSYS2 direto da página do
 `MSYS2 <https://www.msys2.org/>`_.
@@ -934,12 +934,12 @@ Linux. Existe uma página no wiki do `Arch Linux
 relevantes e que ensinam como usar a ferramenta pacman.
 
 O ambiente MSYS2 incluí dois tipos de ferramentas: As ferramentas MSYS2
-desenvolvidas para trabalhar em um ambiente semelhante ao UNIX no
+desenvolvidas para trabalhar num ambiente semelhante ao UNIX no
 Windows e as ferramentas MinGW que foram desenvolvidas para trabalhar em
 um ambiente Windows. As ferramentas do MSYS2 são instaladas no
 ``/usr/bin`` enquanto as ferramentas do MinGW são instaladas no
 ``/mingw64/bin`` ou ``/mingw32/bin`` sempre relativo ao diretório de
-instalação do MSYS2. As ferramentas do MSYS2 trabalham melhor em um
+instalação do MSYS2. As ferramentas do MSYS2 trabalham melhor num
 terminal do MSYS2 enquanto as ferramentas do MinGW trabalham melhor com
 o prompt de comando do Windows.
 
@@ -1166,7 +1166,7 @@ loader.
 
 Existem amostras de arquivos .html nesse repositório que pode ser
 editado para refletir as suas configurações pessoais e apontar o caminho
-do seu arquivo js recém compilado do MAME. Para usar o MAME em um servidor
+do seu arquivo js recém compilado do MAME. Para usar o MAME num servidor
 web, os arquivos abaixo são necessários:
 
 *	O arquivo .js compilado do MAME
@@ -1498,7 +1498,7 @@ Recursos opcionais
 **STRIP_SYMBOLS**
 
 	Defina como **1** para que os símbolos de depuração em vez de
-	ficarem embutidos no MAME, sejam armazenado em um arquivo externo
+	ficarem embutidos no MAME, sejam armazenado num arquivo externo
 	com extensão "**.sym**", este arquivo é extraído na versão do
 	Windows. Esta opção é útil para aliviar o tamanho final do MAME já
 	que **SYMLEVEL** com valores maiores que **1** geram uma grande
@@ -1812,16 +1812,16 @@ Ou em caso de erro, tente::
 
 	env LDFLAGS=-stdlib=libc++ make OVERRIDE_CC=clang OVERRIDE_CXX=clang++ ARCHOPTS_OBJCXX=-stdlib=libc++ LDOPTS=-fuse-ld=lld -stdlib=libc++
 
-As opções depois do comando make podem ser armazenadas em um
+As opções depois do comando make podem ser armazenadas num
 makefile customizado como descrito em :ref:`PREFIX_MAKEFILE
 <mame-compilation-premake>`.
 
 Usando uma instalação do GNU GCC libstdc++ que esteja fora do local tradicional no Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O GNU GCC pode ter sido compilado e instalado em um local diferente caso
+O GNU GCC pode ter sido compilado e instalado num local diferente caso
 o mantenedor do mesmo utilize a opção ``--prefix=`` junto com o comando
-``configure``. Isso pode ser útil caso queira compilar o MAME em uma
+``configure``. Isso pode ser útil caso queira compilar o MAME numa
 distribuição Linux que ainda use a versão do GNU libstdc++ que anteceda
 o C++17. Caso queira compilar o MAME com uma verão alternativa
 do GNU GCC que esteja instalada em seu sistema, defina o caminho
@@ -1832,7 +1832,7 @@ como mostrado abaixo: ::
 
 	make OVERRIDE_CC=/opt/local/gcc72/bin/gcc OVERRIDE_CXX=/opt/local/gcc72/bin/g++ ARCHOPTS=-Wl,-R,/opt/local/gcc72/lib64
 
-Essas configurações podem ser armazenadas em um makefile customizado
+Essas configurações podem ser armazenadas num makefile customizado
 como descrito em :ref:`PREFIX_MAKEFILE <mame-compilation-premake>` caso
 pretenda utilizá-las regularmente.
 

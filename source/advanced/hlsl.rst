@@ -116,7 +116,7 @@ navegar dentre as várias opções, enquanto as teclas esquerda e direita
 irão permitir que você altere o valor dessas opções. Os resultados
 aparecerão em tempo real conforme elas forem sendo alteradas.
 
-Depois de encontrar as configurações desejadas, anote os números em um
+Depois de encontrar as configurações desejadas, anote os números num
 bloco de notas e saia do MAME.
 
 
@@ -210,7 +210,7 @@ Alterando as configurações
 
 	Definem quantos pixels devem ser usados na tela para exibir o
 	tamanho u/v da textura. Caso use o exemplo acima e configurar a
-	quantidade textura x/y em uma proporção de **12,12** pixels, ela
+	quantidade textura x/y numa proporção de **12,12** pixels, ela
 	será exibida com uma proporção **1:1** na tela.
 	
 	Caso defina a quantidade da textura x/y em proporção **24,24** ela

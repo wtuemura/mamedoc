@@ -7,9 +7,9 @@ Comandos da anotação do código do depurador
 Na interface de depuração do MAME você pode digitar **help <command>**
 para uma melhor descrição de cada comando.
 
-| :ref:`debugger-command-comadd` -- Inclui um comentário ao código desmontado em um determinado endereço
+| :ref:`debugger-command-comadd` -- Inclui um comentário ao código desmontado num determinado endereço
 | :ref:`debugger-command-comdelete` -- remove o comentário de um determinado endereço
-| :ref:`debugger-command-comsave` -- salva o comentário atual em um arquivo
+| :ref:`debugger-command-comsave` -- salva o comentário atual num arquivo
 | :ref:`debugger-command-comlist` -- imprime os comentários disponíveis de um arquivo
 | :ref:`debugger-command-commit` -- aplica um comadd e depois comsave
 |
@@ -41,7 +41,7 @@ comdelete
 
 |  **comdelete**
 |
-| Apaga o comentário em um offset determinado da memória. O comentário que é excluído está no banco de memória ativo no momento.
+| Apaga o comentário num offset determinado da memória. O comentário que é excluído está no banco de memória ativo no momento.
 |
 | Exemplos:
 |
@@ -89,7 +89,7 @@ commit
 
 |  **commit[/*]** <*address*>,<*comment*>
 |
-| Inclui uma string <*comment*> ao código desmontado no <*address*> e salva num arquivo. Basicamente é o mesmo que comadd + comsave em uma única linha.
+| Inclui uma string <*comment*> ao código desmontado no <*address*> e salva num arquivo. Basicamente é o mesmo que comadd + comsave numa única linha.
 | O atalho para este comando é ``\'\/\*\'``
 |
 | Exemplos:

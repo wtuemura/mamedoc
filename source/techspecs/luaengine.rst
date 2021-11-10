@@ -76,7 +76,7 @@ Para controlar a execução do seu código é possível usar uma abordagem do
 tipo *loop-bases* ou *event-based*. Não encorajamos o uso deste último
 devido ao alto consumo de recursos e faz a continuidade de controle
 desnecessariamente complicada. Em vez disso, sugerimos o registro de
-ganchos personalizados que poderão ser invocados em um evento específico
+ganchos personalizados que poderão ser invocados num evento específico
 (como a cada renderização de quadro por exemplo).
 
 Demonstração passo a passo
@@ -161,7 +161,7 @@ Todas as cores são no formato ARGB (8 bit por canal), enquanto a origem
 da tela geralmente corresponde ao canto superior esquerdo da tela (0,0).
 
 Da mesma forma para telas, é possível inspecionar todos os dispositivos
-conectados em uma máquina::
+conectados numa máquina::
 
     [MAME]> for tag, device in pairs(manager.machine.devices) do print(tag) end
     :audiocpu

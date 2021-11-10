@@ -15,7 +15,7 @@ numa plataforma diferente da qual ela se destina. Como usar o ambiente
 Linux para compilar um programa que rode no Windows, Mac ou qualquer
 outra plataforma compatível com o MAME.
 Nas instruções a seguir iremos  configurar um ambiente de compilação
-cruzada em uma plataforma Linux para compilar uma versão do MAME voltada
+cruzada numa plataforma Linux para compilar uma versão do MAME voltada
 para o Microsoft Windows, apesar do processo abaixo ser voltado para
 Windows, ele pode servir também de modelo para compilar o MAME em outras
 plataformas compatíveis além do Windows.
@@ -129,7 +129,7 @@ Configurando as variáveis de ambiente
 As variáveis **MINGW64** e **MINGW32** são necessárias para que os
 scripts usados para a compilação do MAME saibam onde encontrá-los.
 **Não use sudo** para o comando abaixo pois queremos aplicá-las nas
-variáveis de ambiente da nossa conta comum e não em uma conta com
+variáveis de ambiente da nossa conta comum e não numa conta com
 poderes administrativos::
 
 	echo "export MINGW64="/usr/x86_64-w64-mingw32"" >> ~/.bashrc

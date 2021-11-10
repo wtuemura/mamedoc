@@ -82,9 +82,9 @@ Vejamos estas definições das entradas para o **Espial**:
     PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON1 )
     PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT )  PORT_8WAY
 
-Há dois joysticks, um usado por ambos os jogadores em um gabinete
-vertical ou o primeiro jogador em um gabinete tipo coquetel e um usado
-para o segundo jogador em um gabinete tipo coquetel. Observe que os
+Há dois joysticks, um usado por ambos os jogadores num gabinete
+vertical ou o primeiro jogador num gabinete tipo coquetel e um usado
+para o segundo jogador num gabinete tipo coquetel. Observe que os
 interruptores para o primeiro joystick está dividido entre as duas
 portas de E/S.
 
@@ -122,7 +122,7 @@ entradas do jogador e definir o estado dos elementos nos itens:
         <element name="warning" defstate="1">
             <text state="1" string="Esta ilustração precisa que o plug-in do layout esteja ativo." />
         </element>
-        <!-- exibindo a tela e o joystick em um gabinete tipo coquetel -->
+        <!-- exibindo a tela e o joystick num gabinete tipo coquetel -->
         <view name="Joystick Display">
             <!-- desenha a tela com a proporção correta -->
             <screen index="0">
@@ -480,7 +480,7 @@ dando a posição e o tamanho dos itens como coordenadas do alvo que serão
 renderizados.
 
 Como os elementos da linha vertical e da linha horizontal movem-se cada
-um apenas em um único eixo, seria possível animá-los usando os
+um apenas num único eixo, seria possível animá-los usando os
 recursos de animação do arquivo de layout. Na verdade apenas a caixa na
 interseção da linha precisa de um script. É feito totalmente com script
 para fins ilustrativos.
@@ -530,7 +530,7 @@ Os eventos do arquivo layout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Os eventos do arquivo do layout é aplicado no arquivo como um todo e não
-em uma visualização individualmente.
+numa visualização individualmente.
 
 **Resolve as tags**
 
@@ -592,7 +592,7 @@ individual.
 	É invocado quando as visualizações forem recalculadas. Isso acontece
 	em várias situações, inclusive quando a janela for redimensionada,
 	entrando ou saindo do modo de tela cheia, alternando as
-	visualizações de um item em uma coleção e alterando as configurações
+	visualizações de um item numa coleção e alterando as configurações
 	de rotação e zoom da tela. Caso esteja animando a posição dos itens
 	visualizados, este é um bom momento para calcular os fatores de
 	escala e posição.

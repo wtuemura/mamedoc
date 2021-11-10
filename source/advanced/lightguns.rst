@@ -25,7 +25,7 @@ própria tecnologia. Neste `vídeo <https://youtu.be/2Dw7NFm1ZfY?t=981>`_
 **Super Scope**, apesar de estar em Inglês, acredito que a ilustração do
 autor seja de fácil compreensão.
 
-Hoje vivemos em um mundo onde as telas de CRT deixaram de ser
+Hoje vivemos num mundo onde as telas de CRT deixaram de ser
 fabricadas já faz algum tempo, atualmente no entanto, existem armas
 desenvolvidas para funcionar com telas mais modernas como LCD, Plasma,
 OLED, etc. Temos por exemplo a arma **Aimtrak** da empresa `Ultimarc
@@ -261,7 +261,7 @@ Vale lembrar que algumas distribuições Linux migraram para o Wayland,
 apesar da migração o Wayland ainda compartilha configurações muito
 semelhantes ao Xorg/X11, no entanto são poucas as distribuições que
 ainda usam o arquivo de configuração **xorg.conf** assim como, o
-diretório de configuração pode estar localizado em um outro lugar
+diretório de configuração pode estar localizado num outro lugar
 qualquer, assim a sua sorte pode variar bastante.
 
 Para que mais de uma arma funcione de forma correta, é necessário
@@ -634,9 +634,9 @@ Habilitando a arma apenas em jogos que precisam
 --------------------------------------------------
 
 O problema de usar o ``mame.ini`` é que o MAME **sempre** vai carregar e
-habilitar a arma em maquinas que não precisam, em um PC com bastante
+habilitar a arma em maquinas que não precisam, num PC com bastante
 recursos pode não ser problema, no entanto, caso o MAME esteja rodando
-em um ambiente com recursos limitados isso pode ser um problema. Ou
+num ambiente com recursos limitados isso pode ser um problema. Ou
 simplesmente, é como o autor deste texto que gosta das coisas bem
 organizadas.
 
@@ -648,8 +648,8 @@ conhecidas** e salvar a configuração acima **EM CADA UM DESTES
 ARQUIVOS**. Ainda bem que temos as ferramentas certas no **Linux**
 para nos ajudar, certo?
 
-Todos os procedimentos abaixo são feitos em um ambiente **Linux** mas
-podem funcionar em um ambiente `MINGW <http://www.mingw.org/>`_
+Todos os procedimentos abaixo são feitos num ambiente **Linux** mas
+podem funcionar num ambiente `MINGW <http://www.mingw.org/>`_
 ou similares.
 
 .. _arma-luz-maquinas:
@@ -670,7 +670,7 @@ ou similares.
 	``mkdir arma`` para criar o diretório seguido de ``cd arma``
 	para entrar nele.
 *	Execute o comando abaixo para filtrar apenas os nomes das máquinas
-	que queremos e em seguida salvamos eles em um arquivo chamado
+	que queremos e em seguida salvamos eles num arquivo chamado
 	`maquinas <https://pastebin.com/zZxvkza2>`_ em formato de fim de
 	linha para Unix: ::
 
@@ -680,7 +680,7 @@ ou similares.
 	convertido antes de ser usado no Windows com o comando ``sed -i
 	's/$/\r/' cfg.txt``.
 
-*	Copie e cole a configuração abaixo em um arquivo texto e salve
+*	Copie e cole a configuração abaixo num arquivo texto e salve
 	**dentro do diretório arma** localizado no diretório raiz do MAME
 	como `cfg.txt <https://pastebin.com/UYu6P3gM>`_, no exemplo estou
 	usando **mouse** como **lightgun_device**, caso esteja usando uma
@@ -781,7 +781,7 @@ impossível saber se o arquivo foi copiado de forma correta ou não para o
 destino, nestes casos a melhor opção é usar o programa **rsync** que
 durante o processo de cópia verifica a integridade do arquivo no
 destivo, além de ser a melhor opção para a cópia de arquivos nós podemos
-também registrar em um arquivo toda a operação que ele fez, seja bem
+também registrar num arquivo toda a operação que ele fez, seja bem
 sucedida ou não, assim basta usar o comando anterior com algumas
 alterações: ::
 
@@ -886,7 +886,7 @@ compilação usando a opção **SOURCES**.
 		...
 
 *	Apesar da lista ter sido gerada, ela ainda não é útil para nós pois
-	precisamos que ela esteja disposta em uma só linha e separada por
+	precisamos que ela esteja disposta numa só linha e separada por
 	vírgula, para isso executamos o comando abaixo: ::
 
 		cat list-drivers | sed ':a;N;$!ba;s/\n/,/g' > compile-drivers

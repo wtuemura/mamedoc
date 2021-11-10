@@ -210,7 +210,7 @@ Métodos
 **machine:logerror(msg)**
 
 	Grava a mensagem no log de erros da máquina. Isso pode ser exibido
-	em uma janela do depurador, gravado em um arquivo ou gravado na
+	numa janela do depurador, gravado num arquivo ou gravado na
 	saída de erro predefinida.
 
 .. raw:: latex
@@ -409,7 +409,7 @@ Métodos
 
 	Retorna os pixels de uma captura criado usando a configuração do
 	destino da captura atual em inteiros com 32 bits e compactados
-	em uma string binária na ordem Endian do host. Os pixels são
+	numa string binária na ordem Endian do host. Os pixels são
 	organizados em ordem maior da linha, da esquerda para a direita e de
 	cima para baixo.  Os valores do pixel são cores no formato RGB
 	compactadas em inteiros com 32 bits.
@@ -501,7 +501,7 @@ Métodos
 
 **sound:start_recording([nome_do_arquivo])**
 
-	Inicia a gravação em um arquivo WAV. Não tem efeito se estiver
+	Inicia a gravação num arquivo WAV. Não tem efeito se estiver
 	gravando. Caso o nome do arquivo não seja informado usa o nome do
 	arquivo WAV configurado (da linha de comando ou do arquivo INI) ou
 	não tem efeito se nenhum nome do arquivo WAV estiver configurado.
@@ -552,7 +552,7 @@ Propriedades
 
 **sound.recording** (somente leitura)
 
-	Um booleano que indica se a saída do áudio está sendo gravada em um
+	Um booleano que indica se a saída do áudio está sendo gravada num
 	arquivo WAV.
 
 .. raw:: latex
@@ -838,7 +838,7 @@ Propriedades
 **driver.unofficial** (somente leitura)
 
 	Um booleano que indica se esta é uma modificação não oficial do
-	usuário porém comum em um sistema.
+	usuário porém comum num sistema.
 
 **driver.no_sound_hw** (somente leitura)
 
@@ -995,7 +995,7 @@ Instanciação
 
 	Retorna um dispositivo enumerador que irá iterar sobre o
 	:ref:`dispositivo <luareference-dev-device>` na sub-árvore começando
-	em um dispositivo específico. O dispositivo informado será incluído.
+	num dispositivo específico. O dispositivo informado será incluído.
 	Caso a profundidade seja informada este deve ser um valor inteiro
 	que irá definir a quantidade máxima dos níveis que serão iterados
 	abaixo do dispositivo informado (Por exemplo, 1 irá limitar a
@@ -1005,7 +1005,7 @@ Instanciação
 
 	Retorna um dispositivo enumerador que irá iterar sobre o
 	:ref:`dispositivo da tela <luareference-dev-screen>` na sub-árvore
-	começando em um dispositivo específico. O dispositivo informado será
+	começando num dispositivo específico. O dispositivo informado será
 	incluído se for um dispositivo tela. Caso a profundidade seja
 	informada este deve ser um valor inteiro que irá definir a
 	quantidade máxima dos níveis que serão iterados abaixo do
@@ -1016,7 +1016,7 @@ Instanciação
 
 	Retorna um dispositivo enumerador que irá iterar sobre o
 	:ref:`dispositivo da imagem em fita cassete <luareference-dev-cass>`
-	na sub-árvore começando em um dispositivo específico. O dispositivo
+	na sub-árvore começando num dispositivo específico. O dispositivo
 	informado será incluído se for um dispositivo cassete. Caso a
 	profundidade seja informada este deve ser um valor inteiro que irá
 	definir a quantidade máxima dos níveis que serão iterados abaixo do
@@ -1027,7 +1027,7 @@ Instanciação
 
 	Retorna um dispositivo enumerador que irá iterar sobre a
 	:ref:`interface para os dispositivos de imagem
-	<luareference-dev-diimage>` na sub-árvore começando em um
+	<luareference-dev-diimage>` na sub-árvore começando num
 	dispositivo específico. O dispositivo informado será incluído caso
 	seja uma mídia de um dispositivo de imagem. Caso a profundidade seja
 	informada este deve ser um valor inteiro que definirá a quantidade
@@ -1039,7 +1039,7 @@ Instanciação
 
 	Retorna um dispositivo enumerador que irá iterar sobre a
 	:ref:`interface para os dispositivos slot <luareference-dev-dislot>`
-	na sub-árvore começando em um dispositivo específico. O dispositivo
+	na sub-árvore começando num dispositivo específico. O dispositivo
 	informado será incluído se for um dispositivo slot. Caso a
 	profundidade seja informada este deve ser um valor inteiro que
 	definirá a quantidade máxima dos níveis que serão iterados abaixo do
@@ -1076,12 +1076,12 @@ Métodos
 
 **device:subtag(tag)**
 
-	Converte uma tag com relação ao dispositivo em uma tag absoluta.
+	Converte uma tag com relação ao dispositivo numa tag absoluta.
 
 **device:siblingtag(tag)**
 
 	Converte uma tag com relação ao dispositivo principal do dispositivo
-	em uma tag absoluta.
+	numa tag absoluta.
 
 **device:memshare(tag)**
 
@@ -1254,13 +1254,13 @@ Métodos
 	Obtém o pixel no local informado. As coordenadas estão em pixels,
 	com a origem no canto superior esquerdo da área visível, aumentando
 	para o para a direita e para baixo. Retorna um índice da paleta ou
-	de uma cor no formato RGB compactado em um inteiro com 32 bits.
+	de uma cor no formato RGB compactado num inteiro com 32 bits.
 	Retorna zero (0) se o ponto informado estiver fora da área visível.
 
 **screen:pixels()**
 
 	Retorna todos os pixels visíveis como inteiros com 32 bits
-	empacotados em uma string binária em ordenado como Endian. Pixels
+	empacotados numa string binária em ordenado como Endian. Pixels
 	são organizados em ordem maior da linha, da esquerda para direita e
 	depois de cima para baixo. Os valores dos pixels são índices da
 	paleta ou cores no formato RGB compactadas em inteiros com 32 bits.
@@ -1554,7 +1554,7 @@ Métodos
 
 **image:load_software(nome)**
 
-	Carrega uma imagem da mídia descrita em uma lista de software.
+	Carrega uma imagem da mídia descrita numa lista de software.
 	Retorna ``"pass"`` ou ``"fail"``.
 
 **image:unload()**
@@ -1813,7 +1813,7 @@ Propriedades
 **option.name** (somente leitura)
 
 	O nome da opção do slot. Este é o valor usado para selecionar esta
-	opção na linha de comando ou em um arquivo INI.
+	opção na linha de comando ou num arquivo INI.
 
 **option.device_fullname** (somente leitura)
 
@@ -1866,7 +1866,7 @@ Gerenciador da memória
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Encapsula a classe ``memory_manager`` do MAME que permite os
-compartilhamentos da memória, os bancos e as regiões em um sistema que
+compartilhamentos da memória, os bancos e as regiões num sistema que
 será enumerado.
 
 Instanciação
@@ -2027,7 +2027,7 @@ Propriedades
 
 	A granularidade do endereço para o espaço do endereçamento informado
 	como a transferência necessária para traduzir o endereço de um byte
-	em um endereço nativo. Os valores positivos se transferem para o bit
+	num endereço nativo. Os valores positivos se transferem para o bit
 	mais importante (à esquerda) e os valores negativos se transferem
 	em direção ao byte com menor importância (à direita).
 
@@ -2475,7 +2475,7 @@ Métodos
 
 	Deve ser invocado com os valores obtidos a partir dos campos da
 	porta de E/S para informar o agrupamento canônico da configuração da
-	entrada em uma IU.
+	entrada numa IU.
 
 **ioport:type_seq(tipo, [jogador], [tipo_da_sequência])**
 
@@ -3039,7 +3039,7 @@ Métodos
 
 **input:code_from_token(token)**
 
-	Converta uma string do token em um código de entrada. Retorna o
+	Converta uma string do token num código de entrada. Retorna o
 	código de entrada inválido se o token não for válido ou caso
 	pertença a um dispositivo de entrada que não está presente.
 
@@ -3063,12 +3063,12 @@ Métodos
 
 **input:seq_to_tokens(sequência)**
 
-	Converta uma sequência da entrada em uma string token. Isso deve ser
+	Converta uma sequência da entrada numa string token. Isso deve ser
 	usado quando for salvar ma configuração.
 
 **input:seq_from_tokens(tokens)**
 
-	Converta uma string token em uma sequência de entrada. Isso deve ser
+	Converta uma string token numa sequência de entrada. Isso deve ser
 	usado quando for carregar uma configuração.
 
 **input:axis_code_poller()**
@@ -3939,7 +3939,7 @@ Visualização do layout
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Encapsula a classe ``layout_view`` do MAME que representa uma
-visualização que pode ser renderizada em um determinado alvo.  As
+visualização que pode ser renderizada num determinado alvo.  As
 visualizações são criadas a partir dos arquivos layout, podem ser
 carregados a partir da arte externa, interna do MAME ou gerada
 automaticamente com base nas telas do sistema que está sendo emulado.
@@ -4004,7 +4004,7 @@ Propriedades
 **view.items[]** (somente leitura)
 
 	O elemento do layout e da tela de :ref:`visualização do item do
-	layout <luareference-render-layitem>` em uma visualização. Este
+	layout <luareference-render-layitem>` numa visualização. Este
 	contêiner não suporta iteração por chave usando ``pairs``; só é
 	compatível a iteração através do índice usando ``ipairs``. A chave é
 	o valor do atributo ``id``, caso esteja presente. Apenas itens com
@@ -4058,7 +4058,7 @@ Visualização do item do layout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Encapsula a classe ``layout_view::item`` do MAME que representa um item
-em uma visualização. Um item é desenhado como uma superfície retangular
+numa visualização. Um item é desenhado como uma superfície retangular
 texturizada. A textura é fornecida por uma tela emulada ou um elemento
 do layout.
 
@@ -4089,7 +4089,7 @@ Métodos
 	elemento (com base nos vínculos no arquivo layout).
 
 	Observe que a função não deve acessar a propriedade
-	``element_state`` do item, pois isso resultará em uma recursão
+	``element_state`` do item, pois isso resultará numa recursão
 	infinita. Este callback não será usado para obter o estado de
 	animação para o item, mesmo se o item não tiver vínculos explícitos
 	do estado de animação no arquivo layout.
@@ -4103,7 +4103,7 @@ Métodos
 	arquivo layout).
 
 	Observe que a função não deve acessar a propriedade
-	``animation_state`` do item, pois isso resultará em uma recursão
+	``animation_state`` do item, pois isso resultará numa recursão
 	infinita.
 
 **item.set_bounds_callback(cb)**
@@ -4117,7 +4117,7 @@ Métodos
 	arquivo layout).
 
 	Observe que a função não deve acessar a propriedade ``bounds`` do
-	item, pois isso resultará em uma recursão infinita.
+	item, pois isso resultará numa recursão infinita.
 
 **item.set_color_callback(cb)**
 
@@ -4130,7 +4130,7 @@ Métodos
 	herdados no arquivo layout).
 
 	Observe que a função não deve acessar a propriedade ``color`` do
-	item, pois isso resultará em uma recursão infinita.
+	item, pois isso resultará numa recursão infinita.
 
 .. raw:: latex
 

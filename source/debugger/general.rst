@@ -140,7 +140,7 @@ printf
 |
 |  ``printf "A=%d, B=%d\\nC=%d",a,b,a+b``
 |
-| Imprime **A=<aval>**, **B=<bval>** em uma linha e **C=<a+bval>** na segunda linha.
+| Imprime **A=<aval>**, **B=<bval>** numa linha e **C=<a+bval>** na segunda linha.
 |
 | Voltar para :ref:`debugger-general-list`
 |
@@ -167,7 +167,7 @@ logerror
 |
 |  ``logerror "A=%d, B=%d\\nC=%d",a,b,a+b``
 |
-| Registra **A=<aval>**, **B=<bval>** em uma linha, e **C=<a+bval>** na segunda linha.
+| Registra **A=<aval>**, **B=<bval>** numa linha, e **C=<a+bval>** na segunda linha.
 |
 | Voltar para :ref:`debugger-general-list`
 |
@@ -189,7 +189,7 @@ tracelog
 |
 |  ``printf "A=%d, B=%d\\nC=%d",a,b,a+b``
 |
-| Registra **A=<aval>**, **B=<bval>** em uma linha, e **C=<a+bval>** na segunda.
+| Registra **A=<aval>**, **B=<bval>** numa linha, e **C=<a+bval>** na segunda.
 |
 | Voltar para :ref:`debugger-general-list`
 |
@@ -241,7 +241,7 @@ trackmem
 
 |  **trackmem** [<*bool*>,<*cpu*>,<*bool*>]
 |
-| O comando "*trackmem*" registra o PC a cada vez que um endereço de memória é gravado. O primeiro argumento booleano ativa e desativa o processo. O segundo argumento é um seletor de CPU; caso nenhuma CPU seja especificada, a CPU atual é selecionada automaticamente. O terceiro argumento é um booleano denotando se os dados existentes devem ser limpos ou não. Favor consultar o comando :ref:`debugger-command-pcatmem` para obter informações sobre como recuperar esses dados. Além disso, clicar com o botão direito em uma janela de memória exibirá o PC registrado para o endereço fornecido.
+| O comando "*trackmem*" registra o PC a cada vez que um endereço de memória é gravado. O primeiro argumento booleano ativa e desativa o processo. O segundo argumento é um seletor de CPU; caso nenhuma CPU seja especificada, a CPU atual é selecionada automaticamente. O terceiro argumento é um booleano denotando se os dados existentes devem ser limpos ou não. Favor consultar o comando :ref:`debugger-command-pcatmem` para obter informações sobre como recuperar esses dados. Além disso, clicar com o botão direito numa janela de memória exibirá o PC registrado para o endereço fornecido.
 |
 | Exemplos:
 |
@@ -265,9 +265,9 @@ pcatmem
 |
 | **pcatmemp <address>[,<cpu>]** -- consulta qual PC escreveu para um dado endereço de memória do programa para o CPU atual
 | **pcatmemd <address>[,<cpu>]** -- consulta qual PC escreveu para um endereço de dados na memória para a CPU atual
-| **pcatmemi <address>[,<cpu>]** -- consulta qual PC escreveu para um endereço de I/O para a CPU atual (você também pode consultar esta informação clicando com o botão direito em uma janela de memória)
+| **pcatmemi <address>[,<cpu>]** -- consulta qual PC escreveu para um endereço de I/O para a CPU atual (você também pode consultar esta informação clicando com o botão direito numa janela de memória)
 |
-| O comando "*pcatmem*" retorna qual PC gravou em um determinado endereço de memória para a CPU atual. O primeiro argumento é o endereço solicitado. O segundo argumento é um seletor de CPU; caso nenhuma CPU seja especificada, a CPU atual é selecionada automaticamente. Clicar com o botão direito em uma janela de memória também exibirá o PC registrado para o endereço fornecido.
+| O comando "*pcatmem*" retorna qual PC gravou num determinado endereço de memória para a CPU atual. O primeiro argumento é o endereço solicitado. O segundo argumento é um seletor de CPU; caso nenhuma CPU seja especificada, a CPU atual é selecionada automaticamente. Clicar com o botão direito numa janela da memória também exibirá o PC registrado para o endereço fornecido.
 |
 | Exemplo:
 |

@@ -307,7 +307,7 @@ Cada entrada analógica emulada possui três configurações de atribuição:
   incremento utiliza o nome :guilabel:`Analog Dec`. Por exemplo, a
   configuração de incremento no volante da máquina *Ridge Racer* se
   chama :guilabel:`Steering Wheel Analog Dec`. Esta é a entrada digital
-  para esta máquina, caso um eixo analógico seja atribuído à ela, o MAME
+  para esta máquina, caso um eixo analógico seja atribuído a ela, o MAME
   não vai incrementar o valor emulado numa velocidade proporcional.
 
 Os ajustes de aumento e de redução são muito mais úteis para controlar
@@ -324,7 +324,7 @@ controle, você não deve atribuir nem o ajuste analógico
 Wheel Analog Dec` ao eixo X do mesmo analógico.
 
 É possível atribuir um ou mais eixos analógicos ao ajuste do eixo de uma
-entrada analógica emulada. Quando diversos eixos são atribuídos em um
+entrada analógica emulada. Quando diversos eixos são atribuídos num
 ajuste do eixo, eles são adicionados juntos, porém os controles de
 posição absoluta anularão os controles de posição relativa. Por exemplo,
 suponha que para a máquina **Arkanoid** você atribua o ajuste do eixo 
@@ -514,7 +514,7 @@ partes:
   informação caso o sistema ou programa destacado estiver na sua lista
   de favoritos.
 * À esquerda há a lista dos filtros com as suas respectivas opções.
-  Clique em um filtro para aplicá-lo à lista de sistemas/programas.
+  Clique num filtro para aplicá-lo à lista de sistemas/programas.
   Alguns filtros mostram um menu com opções adicionais (informar o
   fabricante para o filtro do :guilabel:`Fabricante`, ou definir um
   arquivo e grupo para o filtro de :guilabel:`Categoria` por exemplo).
@@ -526,7 +526,7 @@ partes:
   Esteja ciente que os filtros ainda permanecem aplicados mesmo que a
   lista dos filtros fique escondida.
 * À direita há o visualizador de informações. Este possui duas abas para
-  mostrar imagens e informações. Clique em uma aba para alternar entre
+  mostrar imagens e informações. Clique numa aba para alternar entre
   elas; clique nos triângulos à esquerda ou à direita ao lado do título
   da imagem/informação para alternar entre as imagens ou as fontes de
   informação.

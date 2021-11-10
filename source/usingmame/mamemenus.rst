@@ -1129,7 +1129,7 @@ seja definido aqui.
 
 * :guilabel:`Modo janela`
 
-  Faz o MAME exibir a tela emulada em uma janela ou em uma tela inteira.
+  Faz o MAME exibir a tela emulada numa janela ou numa tela inteira.
 
 		O valor predefinido é ``Desligado``.
 
@@ -1143,7 +1143,7 @@ seja definido aqui.
 
 * :guilabel:`Inicia com a tela expandida`
 
-  Faz o MAME exibir a tela emulada em uma janela com o tamanho máximo do
+  Faz o MAME exibir a tela emulada numa janela com o tamanho máximo do
   seu monitor, caso contrário exibe a tela emulada em sua resolução
   nativa.
 

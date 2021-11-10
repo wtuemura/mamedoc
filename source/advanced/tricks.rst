@@ -52,7 +52,7 @@ configuração de botões para máquinas **Neo-Geo** executando o comando
 máquina)** e configure os botões com a ordem de sua preferência.
 
 Dentro do diretório **cfg** será criado um arquivo chamado
-``kof2000.cfg``, abra ele em um editor de texto qualquer, no topo do
+``kof2000.cfg``, abra ele num editor de texto qualquer, no topo do
 arquivo modifique o ``<system name=kof2000>`` para
 ``<system name=default>`` e salve este arquivo no diretório **ctrlr**
 como ``neogeo.cfg``. No nosso exemplo a ordem dos botões ficou assim, o
@@ -201,7 +201,7 @@ com máquinas que aceitem 2 ou mais jogadores.
 Inicie a máquina que deseja configurar e siga as instruções descritas no
 capítulo :ref:`advanced-tricks-mais-de-um-botão` para gerar o seu
 arquivo com a configuração personalizada para o seu controle. Abra o
-arquivo em um editor de textos e logo no começo haverá algo do tipo
+arquivo num editor de textos e logo no começo haverá algo do tipo
 (pode variar dependendo do seu controle):
 
 .. code-block:: xml
@@ -345,7 +345,7 @@ usando a máquina **Final Fight** (``mame ffight``), uma vez que os
 botões forem definidos e você sair do MAME, encontre o arquivo
 **ffight.cfg** no diretório **cfg** e faça as alterações necessárias.
 Copie-o para o diretório **ctrlr** como **ffight.cfg**. Entre no
-diretório **ini** e crie um arquivo chamado **ffight.ini**, abra-o em um
+diretório **ini** e crie um arquivo chamado **ffight.ini**, abra-o num
 editor de texto e adicione: ::
 
 	ctrlr ffight
@@ -457,7 +457,7 @@ facilita muito a nossa vida.
   (igual -listxml)**, depois de alguns segundos será gerado um arquivo
   **exported.xml** dentro do diretório **ui**.
 * Assim como foi explicado no :ref:`capítulo anterior <advanced-tricks-dat-sistema>`,
-  é possível usar o DatUtil para transformar o arquivo XML em um arquivo
+  é possível usar o DatUtil para transformar o arquivo XML num arquivo
   DAT compatível com um dos gerenciadores listados no capítulo anterior
   ou utilizar diretamente o arquivo XML nos gerenciadores que
   não dependam de um arquivo DAT.
@@ -629,7 +629,7 @@ utilizar o terminal do Linux, macOS ou o comando prompt do Windows. [#]_
 
 Segundo mostra `este artigo
 <https://devblogs.microsoft.com/powershell/outputencoding-to-the-rescue/>`_
-hospedado em um blog de desenvolvimento da Microsoft, a codificação
+hospedado num blog de desenvolvimento da Microsoft, a codificação
 predefinida do PowerShell não é UTF-8, originalmente ele vem
 como `us-ascii <https://en.wikipedia.org/wiki/Code_page_20127>`_:
 
@@ -713,7 +713,7 @@ uma seção do PowerShell seja iniciada.
 Resolvendo o problema "please call attendant" das máquinas DrumMania
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As máquinas **DruMania 4th Mix** em diante não iniciam e param em uma
+As máquinas **DruMania 4th Mix** em diante não iniciam e param numa
 tela de erro como mostra a imagem abaixo:
 
 .. figure:: images/drummania-attendant.png
@@ -1486,7 +1486,7 @@ Removendo a âncora
 ------------------
 
 Em geral as distros linux vem com o modo mais agressivo de economia de
-energia ativo, seria colocar uma âncora em um carro de corrida. Isso
+energia ativo, seria colocar uma âncora num carro de corrida. Isso
 sacrifica o desempenho do seu computador visando a economia exagerada
 de energia, 
 

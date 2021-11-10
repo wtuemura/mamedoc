@@ -24,7 +24,7 @@ integrado [1]_ na placa-mãe do arcade (ou outro dispositivo eletrônico)
 em formato binário.
 
 Para a maioria dos consoles e portáteis, os CIs individuais são
-frequentemente (mas nem sempre) mesclados em um único arquivo.
+frequentemente (mas nem sempre) mesclados num único arquivo.
 Já as máquinas arcade a coisa é um pouco mais complicada devido ao seu
 design, você normalmente precisará de dados encontrados em diferentes
 circuitos espalhados pela placa.
@@ -32,7 +32,7 @@ Ao agrupar todos os arquivos do Puckman juntos, você obterá um conjunto
 de ROMs [2]_ do jogo Puckman.
 
 Um exemplo de uma imagem ROM seria o arquivo **pm1_prg1.6e** que estaria
-armazenada em um conjunto de ROM **Puckman**.
+armazenada num conjunto de ROM **Puckman**.
 
 
 Por que ROM e não algum outro nome?
@@ -102,7 +102,7 @@ mesclado.
 Um **conjunto mesclado** (*merged set*) de ROMs, contêm os arquivos do
 conjunto pai e um ou mais conjuntos de clones armazenados dentro de um
 mesmo arquivo. Caso o conjunto do Puckman, Midway Pac-Man (USA) seja
-combinado juntamente com várias versões piratas (bootleg) em um único
+combinado juntamente com várias versões piratas (bootleg) num único
 arquivo chamado **PUCKMAN.ZIP** por exemplo, o resultado final é o
 chamado *merged set*. Um conjunto mesclado completo com o pai e todos
 os clones usam menos espaço do que um conjunto dividido (*split set*).
@@ -185,7 +185,7 @@ conjuntos sempre que for necessário, visando a precisão e mantendo as
 coisas da maneira mais correta possível sempre no limite do conhecimento
 que a equipe tem a cada novo lançamento do MAME.
 
-Isso resulta em uma compatibilidade muito irregular para os conjuntos de
+Isso resulta numa compatibilidade muito irregular para os conjuntos de
 ROMs que deixam de funcionar nas versões mais antigas do MAME.
 Alguns jogos podem não ter mudado muito entre 20 ou 30 novas versões
 do MAME, assim como outros podem ter mudado drasticamente entre as novas

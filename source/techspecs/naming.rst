@@ -125,7 +125,7 @@ título oficial em Alfabeto Latino seja conhecido, use uma transliteração
 padrão.
 Para as entradas na lista de software onde uma transliteração é usada
 para a descrição do elemento (atributo ``description``), coloque o
-título em um elemento de informação (atributo ``info``) com um atributo
+título num elemento de informação (atributo ``info``) com um atributo
 ``name="alt_title"``.
 
 Para os itens de software que possuam diferentes títulos (diferentes

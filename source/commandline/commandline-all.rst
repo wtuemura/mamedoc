@@ -25,7 +25,7 @@ completo para o diretório de dados de aplicativos do usuário.
 Em sistemas estilo UNIX como macOS e Linux que utilizam o interpretador
 de comandos *Bourne Shell*, aconteceria o mesmo caso o caminho seja
 definido nas configurações como **/home/${USER}/.mame/cfg**. Assim como
-o sinal de porcentagem **%** é usado em uma palavra para se definir uma
+o sinal de porcentagem **%** é usado numa palavra para se definir uma
 variável no ambiente do *Windows*, o sinal de til :kbd:`~` serve como um
 redirecionador para o diretório home do usuário, assim em vez de se
 digitar o caminho completo **/home/${USER}/.mame/cfg** é possível
@@ -87,7 +87,7 @@ Opções de ajuda e verificação
 
 **-validate** / **-valid** <*palavra chave*>
 
-	Executa validação interna em um ou mais drivers e dispositivos
+	Executa uma validação interna num ou mais drivers e dispositivos
 	no sistema. Execute isso antes de enviar qualquer alterações para
 	nós visando garantir qualquer tipo de violação em nenhuma das
 	regras do sistema principal.
@@ -118,7 +118,7 @@ Opções de ajuda e verificação
 
 **-verifyroms** <*palavra chave*>
 
-	Verifica a condição dos arquivos de imagem ROM em uma determinada
+	Verifica a condição dos arquivos de imagem ROM numa determinada
 	máquina. Serão verificados todas as máquinas e diretórios válidos
 	que estejam dentro do ``rompath`` (caminho da rom):
 
@@ -211,7 +211,7 @@ Opções de ajuda e verificação
 
 **-verifysoftlist** / **-vlist** <*nome da lista de programa*>
 
-	Verifica ROMs ausentes com base em uma lista de software
+	Verifica ROMs ausentes com base numa lista de software
 	predeterminado na pasta **hash**.
 	É predefinido que a busca e a verificação será feita em todos os
 	drivers e arquivos ``.zip`` em diretórios válidos no *rompath*
@@ -311,7 +311,7 @@ Opções para listagem
 
 É predefinido que todos os comandos ``-list`` abaixo, exibam informações
 na saída predefinida do sistema, geralmente é a tela do terminal onde
-o comando foi digitado. Caso queira gravar a informação em um arquivo
+o comando foi digitado. Caso queira gravar a informação num arquivo
 texto, adicione o exemplo abaixo ao final do seu comando:
 
 	**>** *nome do arquivo*
@@ -513,7 +513,7 @@ Exemplo:
 **-listcrc** <*palavra chave*>...]
 
 	Exibe uma lista completa com CRCs de todas as imagens ROM
-	que compõem uma máquina, nomes de sistema ou dispositivo em um
+	que compõem uma máquina, nomes de sistema ou dispositivo num
 	formato simples que pode ser facilmente filtrado por comandos como
 	``grep``, ``awk`` e ``sed`` no Linux e macOS ou
 	`findstr <https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/findstr>`_ no Windows.
@@ -1288,7 +1288,7 @@ Opções para a configuração
 
 **-[no]writeconfig** / **-[no]wc**
 
-	Grava as configurações feitas no driver da máquina em um arquivo
+	Grava as configurações feitas no driver da máquina num arquivo
 	(driver).ini ao encerrar da emulação. O valor predefinido é
 	``Desligado`` (``-nowriteconfig``).
 
@@ -1666,7 +1666,7 @@ Opções para a configuração dos diretórios principais
 
 	Define o diretório onde os arquivos de comentário do depurador são
 	armazenados. Os arquivos de comentário do depurador são escritos
-	pelo depurador quando comentários são adicionados em um sistema
+	pelo depurador quando comentários são adicionados num sistema
 	desmontado (disassembly).
 
 	O valor predefinido é ``comments`` (isto é, um diretório chamado
@@ -1908,12 +1908,12 @@ Opções para a gravação de áudio e vídeo
 
 **-mngwrite** <*nome do arquivo*>.mng
 
-	Escreve cada quadro de vídeo em um arquivo <*nome do arquivo*> no
+	Escreve cada quadro de vídeo num arquivo <*nome do arquivo*> no
 	formato MNG, produzindo uma animação da sessão.
 	Note que ``-mngwrite`` só grava quadros de vídeo, não grava qualquer
 	áudio, use a opção ``-wavwrite`` para gravar o áudio e
 	posteriormente use uma ferramenta de edição de áudio qualquer para
-	unir os dois, ou use ``-aviwrite`` para gravar áudio e vídeo em um
+	unir os dois, ou use ``-aviwrite`` para gravar áudio e vídeo num
 	único arquivo.
 
 	O valor predefinido é ``NULO`` (sem gravação).
@@ -2390,9 +2390,9 @@ Opções para a rotação da tela
 **-[no]autorol**
 
 	Essas opções são projetadas para uso com telas giratórias que giram
-	apenas em uma única direção. Caso a tela gire somente no sentido
+	apenas numa única direção. Caso a tela gire somente no sentido
 	horário, use o comando ``-autorol`` para garantir que o sistema
-	encha a tela horizontalmente ou verticalmente em uma das direções
+	encha a tela horizontalmente ou verticalmente numa das direções
 	desejadas. Caso a sua tela gire somente no sentido anti-horário,
 	use ``-autoror``.
 
@@ -2552,7 +2552,7 @@ Opções para a configuração de vídeo
 
 **-[no]window** / **-[no]w**
 
-	Inicia a tela do MAME em uma janela em vez da tela inteira.
+	Inicia a tela do MAME numa janela em vez da tela inteira.
 
 	O valor predefinido é ``Desligado`` (``-nowindow``).
 
@@ -3144,7 +3144,7 @@ Opções de vídeo para uso com janelas individuais
 	**Opções de Vídeo**, escolha a visualização que mais lhe agrada e
 	encerre a emulação. No diretório **cfg** haverá um arquivo de
 	configuração com **nomedarom.cfg** (se usarmos o exemplo abaixo o
-	nome do arquivo será ``neobombe.cfg``), abra-o em um editor de texto
+	nome do arquivo será ``neobombe.cfg``), abra-o num editor de texto
 	qualquer, no campo **view** veja qual a opção está sendo usada e
 	use-a na linha de comando como mostra o exemplo abaixo:
 
@@ -3676,7 +3676,7 @@ Opções para a configuração do áudio
 	Imprime um relatório na tela dizendo se houve ou não um ceifamento
 	ou *"clipping"* da onda gerada pela saída de áudio no alto-falante.
 	Este ceifamento causa distorções no áudio devido a saturação do
-	sinal, tornando as curvas de uma onda senoide em uma onda quadrada.
+	sinal, tornando as curvas de uma onda senoide numa onda quadrada.
 	
 	Os valores válidos são:
 
@@ -3791,7 +3791,7 @@ Opções para a configuração do áudio
 
 	*PortAudio* é um novo recurso adicionado na versão `0.182
 	<https://www.mamedev.org/?p=436>`_ do MAME, o *PortAudio* é uma
-	*API*, "*Application Programming Interface*" ou em uma tradução livre
+	*API*, "*Application Programming Interface*" ou numa tradução livre
 	"*Interface de Programação para Aplicações*". A *API* funciona como
 	uma ponte conectando aplicações ao hardware de forma direta. Essa
 	integração permite uma menor latência por haver uma redução no fluxo
@@ -3827,7 +3827,7 @@ Opções para a configuração do áudio
 	  compatibilidade.
 
 	* **Windows WASAPI**: É um acrônimo para "*Windows Audio Session
-	  API*" ou em uma tradução livre, "*API da seção de áudio do
+	  API*" ou numa tradução livre, "*API da seção de áudio do
 	  Windows*". Foi introduzido no **Windows Vista**, a grande vantagem
 	  do *WASAPI* é poder enviar os fluxos de dados de áudio direto para
 	  o dispositivo de áudio sem ter que passar por nenhum tipo de
@@ -4201,7 +4201,7 @@ Opções para as configurações de diferentes entradas
 **-joystick_map** / **-joymap** <*mapa*>
 
 	Controla como os valores do joystick analógico são mapeados para os
-	controles em um joystick digital.
+	controles num joystick digital.
 
 	Sistemas como o Pac-Man utilizam um controle digital com quatro
 	posições (4-way joystick) que exibe um comportamento inapropriado
@@ -4237,7 +4237,7 @@ Opções para as configurações de diferentes entradas
 		:alt: Joystick com 8 posições
 
 	Este mapeamento oferece uma grande margem de manobra para os ângulos
-	aceitos em uma determinada direção, assim sendo bem próximo da área
+	aceitos numa determinada direção, assim sendo bem próximo da área
 	da direção desejada. Sem isso, caso esteja um pouco fora do eixo
 	central enquanto segura o controle para a esquerda, a máquina não
 	vai reconhecer a ação de forma adequada.
@@ -4395,7 +4395,7 @@ Opções para as configurações de diferentes entradas
 **-natural**
 
 	Permite que o usuário defina se deve ou não usar um teclado natural.
-	Isso permite que o seu sistema em um modo *nativo* dependendo da sua
+	Isso permite que o seu sistema num modo *nativo* dependendo da sua
 	região, permitindo compatibilidade para teclados fora do padrão
 	"QWERTY".
 
@@ -4409,7 +4409,7 @@ Opções para as configurações de diferentes entradas
 
 	No modo "teclado natural", o MAME tenta traduzir os caracteres para
 	as teclas digitadas. O sistema operacional traduz pressionamentos
-	de tecla a caracteres (da mesma forma quando se digita em um
+	de tecla a caracteres (da mesma forma quando se digita num
 	editor de texto) e o MAME tenta traduzir esses caracteres para
 	pressionamentos de tecla emulados.
 
@@ -4578,7 +4578,7 @@ Opções voltadas para a depuração
 	sistema caso um esteja presente.
 
 	É predefinido que as mensagens de erro sejam enviadas para a saída
-	padrão, geralmente é exibido no terminal, prompt de comando ou em um
+	padrão, geralmente é exibido no terminal, prompt de comando ou num
 	arquivo de log de sistema. No *Windows*, caso um depurador esteja
 	sendo usado como o depurador do *Visual Studio* ou *WinDbg*, as
 	mensagens de erros serão enviadas para estes em vez de serem exibidas
@@ -4923,7 +4923,7 @@ Opções diversas
 
 **-drc_log_uml**
 
-	Grave um registro descompilado DRC UML em um arquivo de registro
+	Grave um registro descompilado DRC UML num arquivo de registro
 	(log).
 
 	O valor predefinido é (``-nodrc_log_uml``).
@@ -4976,7 +4976,7 @@ Opções diversas
 **-[no]cheat** / **-[no]c**
 
 	Ativa o cardápio de trapaças, exibindo uma lista de trapaças que
-	ficam armazenadas em um arquivo externo chamado ``cheat.7z``.
+	ficam armazenadas num arquivo externo chamado ``cheat.7z``.
 	Essa opção também ativa as opções de turbo dos botões.
 
 	O valor predefinido é ``Desligado`` (``-nocheat``).
@@ -5282,7 +5282,7 @@ Opções do servidor HTTP
 .. [2]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)
-.. [3]	Quando uma imagem ficava estática em uma tela de tubo CRT
+.. [3]	Quando uma imagem ficava estática numa tela de tubo CRT
 		durante muito tempo, a fina película de fósforo que fica por de
 		trás da tela de vidro sofria uma leve **queima** nas regiões de
 		maior intensidade ficando uma marca no lugar. Uma vez marcada,

@@ -151,7 +151,7 @@ Usando diferentes arquivos de configuração
 
 O MAME oferece a possibilidade de criar diferentes tipos de configuração
 separada por algumas categorias ou pelo nome dos drivers em vez de
-concentrar todas as configurações em um único arquivo como o
+concentrar todas as configurações num único arquivo como o
 ``mame.ini``. E para que isso?
 
 O MAME possuí dezenas de opções disponíveis para configurar outra
@@ -229,7 +229,7 @@ configuração para o controle que estiver usando e salvá-la como
 :ref:`advanced-tricks-mais-de-um-botão`.
 
 Mesmo sem termos alterado o **mame.ini**, a emulação da máquina **Final
-Fight** por exemplo agora roda em uma janela ao invés de tela
+Fight** por exemplo agora roda numa janela ao invés de tela
 inteira, se tentarmos rodar uma outra máquina como a **Super Street
 Fighter II: The New Challengers** veremos que ela inicia em tela
 inteira e sem qualquer configuração de joystick, isso ocorre porque esta
@@ -239,7 +239,7 @@ Então para que as configurações feitas para o sistea **CPS-1** se
 apliquem no sistema **CPS-2**, basta copiar e colar o arquivo
 ``cps1.ini`` e renomear a cópia para ``cps2.ini``. Agora ao rodar
 **Super Street Fighter II: The New Challengers** novamente, a emulação
-já roda em uma janela e a sua configuração de joystick também já estará
+já roda numa janela e a sua configuração de joystick também já estará
 configurada.
 
 Note que em **samplerate** estamos usando **32 kHz** como taxa de

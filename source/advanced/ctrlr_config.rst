@@ -110,7 +110,7 @@ encurtado de uma outra versão da mesma máquina), ``stvbios`` (um nome
 encurtado do nome da BIOS do sistema) ou ``stv.cpp`` (nome do arquivo
 fonte/driver onde o sistema foi definido).
 
-Em um outro exemplo, será aplicado aos sistemas "*The Invaders*",
+Num outro exemplo, será aplicado aos sistemas "*The Invaders*",
 "*Super Invader Attack*" (um bootleg do The Invaders) e "*Dodgem*" caso
 um elemento ``system`` onde o atributo ``name`` tenha o valor
 ``zac2650.cpp``.

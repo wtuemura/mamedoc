@@ -61,7 +61,7 @@ possível obter o melhor desempenho usando a configuração acima, porém,
 o MAME deverá rodar sem maiores problemas. As versões mais recentes do
 MAME tendem a exigir mais recursos do equipamento do que as suas versões
 anteriores, assim, as versões mais antigas do MAME poderão ter um
-desempenho melhor em um PC mais fraco ao custo de perder as melhorias
+desempenho melhor num PC mais fraco ao custo de perder as melhorias
 feitas nos sistemas existentes, dos novos sistemas que foram adicionados
 e das correções posteriores a versão do MAME que estiver usando.
 
@@ -98,6 +98,6 @@ mesmo, ou procurando por eles na internet por sua conta e risco.
 O MAME não fornece, disponibiliza ou vem acompanhado com nenhum deles
 justamente pelo fato destes conteúdos estarem protegidos por leis de
 direitos autorais. Caso tenha interesse em encontrar algum software que
-rode em uma das máquinas já emuladas, lembre-se, o Google e outros sites
+rode numa das máquinas já emuladas, lembre-se, o Google e outros sites
 de pesquisa são os seus melhores amigos.
 

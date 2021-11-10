@@ -106,7 +106,7 @@ Subcomandos
 	* <*format*> é o nome do formato da imagem, coco_jvc_rsdos por exemplo
 	* <*imagename*> é o nome de destino da imagem; é possível especificar um arquivo ZIP como nome da imagem
 
-	Cria um subdiretório em uma imagem
+	Cria um subdiretório numa imagem
 
 **rmdir**
 
@@ -115,7 +115,7 @@ Subcomandos
 	* <*format*> é o nome do formato da imagem, coco_jvc_rsdos por exemplo
 	* <*imagename*> é o nome de destino da imagem; é possível especificar um arquivo ZIP como nome da imagem
 
-	Apaga um subdiretório em uma imagem
+	Apaga um subdiretório numa imagem
 
 **readsector**
 
@@ -124,7 +124,7 @@ Subcomandos
 	* <*format*> é o nome do formato da imagem, coco_jvc_rsdos por exemplo
 	* <*imagename*> é o nome de destino da imagem; é possível especificar um arquivo ZIP como nome da imagem
 
-	Lê o setor de uma imagem e grava em um nome de arquivo <*filename*> específico.
+	Lê o setor de uma imagem e grava num nome de arquivo <*filename*> específico.
 
 **writesector**
 
@@ -163,7 +163,7 @@ Filtros
 -------
 
 Os filtros são uma maneira de processar a maneira que os dados estão
-sendo escritos ou lidos em uma imagem. Os filtros podem ser usados nos
+sendo escritos ou lidos numa imagem. Os filtros podem ser usados nos
 comandos **get**, **put** e **getall** ao usar a opção ``--filter=xxxx``
 na linha de comando. Atualmente, os seguintes filtros são compatíveis:
 
