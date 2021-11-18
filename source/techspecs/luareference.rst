@@ -40,8 +40,8 @@ maioria destas operações:
 
 **c[k]**
 
-	Retorna o item que corresponda a tecla ``k`` ou ``nil`` caso a chave
-	não esteja presente.
+	Retorna o item que corresponda a tecla :kbd:`k` ou ``nil`` caso a
+	chave não esteja presente.
 
 **pairs(c)**
 
@@ -61,9 +61,9 @@ maioria destas operações:
 
 **c:get(k)**
 
-	Retorna o item que corresponda a tecla ``k`` ou ``nil`` caso a chave
-	não esteja presente. Normalmente é o equivalente ao operador do
-	índice.
+	Retorna o item que corresponda a tecla :kbd:`k` ou ``nil`` caso a
+	tecla não esteja presente. Normalmente é o equivalente ao operador
+	do índice.
 
 **c:at(i)**
 
@@ -424,7 +424,8 @@ Propriedades
 **video.speed_factor** (somente leitura)
 
 	Ajuste de velocidade da emulação configurada em escala de mil (ou
-	seja, a proporção para a velocidade normal multiplicada por 1.000).
+	seja, a proporção para a velocidade normal multiplicada por
+	``1.000``).
 
 **video.throttled** (leitura e escrita)
 
@@ -435,7 +436,7 @@ Propriedades
 **video.throttle_rate** (leitura e escrita)
 
 	A velocidade de emulação desejada como uma proporção da velocidade
-	total ajustada através do fator de velocidade (ou seja, 1 é a
+	total ajustada através do fator de velocidade (ou seja, ``1`` é a
 	velocidade normal ajustada pelo fator de velocidade, números maiores
 	são mais rápidos e números menores são mais lentos).
 
@@ -619,8 +620,8 @@ Gerenciador dos parâmetros
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Encapsula a classe ``parameters_manager`` do MAME que fornece um
-armazenamento simples do valor da chave paraos  metadados das definições
-da ROM do sistema.
+armazenamento simples do valor da chave para os  metadados das
+definições da ROM do sistema.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -695,16 +696,17 @@ Propriedades
 
 **ui.options** (somente leitura)
 
-	As :ref:`luareference-core-coreopts` da IU para a sessão atual.
+	As :ref:`luareference-core-coreopts` da interface para a sessão
+	atual.
 
 **ui.line_height** (somente leitura)
 
-	A altura configurada da linha de texto da IU como uma proporção da
-	altura do contêiner da IU.
+	A altura configurada da linha de texto da interface como uma
+	proporção da altura do contêiner da interface.
 
 **ui.menu_active** (somente leitura)
 
-	Um booleano que indica se um elemento da IU interativa está
+	Um booleano que indica se um elemento da interface interativa está
 	atualmente ativa.
 	Os exemplos incluem os menus e os controles deslizantes.
 
@@ -1255,7 +1257,8 @@ Métodos
 	com a origem no canto superior esquerdo da área visível, aumentando
 	para o para a direita e para baixo. Retorna um índice da paleta ou
 	de uma cor no formato RGB compactado num inteiro com 32 bits.
-	Retorna zero (0) se o ponto informado estiver fora da área visível.
+	Retorna zero (``0``) se o ponto informado estiver fora da área
+	visível.
 
 **screen:pixels()**
 
@@ -1265,51 +1268,55 @@ Métodos
 	depois de cima para baixo. Os valores dos pixels são índices da
 	paleta ou cores no formato RGB compactadas em inteiros com 32 bits.
 
-**screen:draw_box(esquerda, cima, direita, baixo, [linha], [preencha])**
+**screen:draw_box(esquerda, cima, direita, baixo, [linha], [preenchimento])**
 
 	Desenha um retângulo delineado com bordas nas posições informadas.
 
 	As coordenadas são números de ponto flutuante em unidades de pixels
-	da tela, com a origem em (0, 0). Observe que os pixels da tela
-	geralmente não são quadrados. A sistema de coordenadas é rotacionada
-	caso a tela seja girada, o que geralmente é o caso para as telas de
-	formato vertical. Antes da rotação, a origem está na parte superior
-	esquerda e as coordenadas aumentam para a direita e para baixo.
-	Coordenadas são limitadas à área da tela.
+	da tela emulada, com a origem em (``0, 0``). Observe que os pixels da
+	tela emulada geralmente não são quadrados. O sistema de coordenadas é
+	rotacionada caso a tela seja girada, o que geralmente é o caso para
+	as telas no formato vertical. Antes da rotação, a origem está na
+	parte superior esquerda e as coordenadas aumentam para a direita e
+	para baixo.
+	As coordenadas são limitadas à área da tela.
 
-	O preenchimento e as cores das linhas estão no formato ARGB
-	alfa/vermelho/verde/azul.
-	Os valores dos canais estão no intervalo de 0 (transparente ou
-	desligado) até 255 inclusive (opaco ou com intensidade total). Os
-	valores dos canais da cor não são previamente multiplicados pelo
-	valor alfa. Os valores do canal devem ser compactados em bytes de um
-	Inteiro com 32 bits não assinado, na ordem alfa, vermelho, verde,
-	azul a partir do byte mais importante até o bit com menor
-	importância. Caso a cor da linha não seja informado, a cor do texto
-	da IU é usada; caso a cor do preenchimento não seja informada, a cor
-	do fundo da IU será usada.
+	As cores de preenchimento e da linha estão no formato
+	alfa/vermelho/verde/azul (ARGB). Os valores dos canais estão no
+	intervalo entre ``0`` (transparente ou desligado) e ``255`` (opaco
+	ou com intensidade total), inclusive. Os valores dos canais das
+	cores não são previamente multiplicados pelo valor alfa. Os valores
+	dos canais devem ser empacotados em bytes de um inteiro com 32 bits
+	sem assinatura na ordem alfa, vermelho, verde, azul do byte mais
+	importante para o de menor importância. Caso a cor da linha não seja
+	informada, é usada a cor do texto da interface; caso a cor de
+	preenchimento não seja informada, é usada a cor de fundo da
+	interface.
+
 
 **screen:draw_line(x1, y1, x2, y2, baixo, [cor])**
 
 	Desenha uma linha a partir de (x1, y1) a (x2, y2).
 
 	As coordenadas são números de ponto flutuante em unidades de pixels
-	da tela, com a origem em (0, 0). Observe que os pixels da tela
-	geralmente não são quadrados. A sistema de coordenadas é rotacionada
-	caso a tela seja girada, o que geralmente é o caso para as telas de
-	formato vertical. Antes da rotação, a origem está na parte superior
-	esquerda e as coordenadas aumentam para a direita e para baixo.
-	Coordenadas são limitadas à área da tela.
+	da tela emulada, com a origem em (``0, 0``). Observe que os pixels da
+	tela emulada geralmente não são quadrados. O sistema de coordenadas
+	é rotacionada caso a tela seja girada, o que geralmente é o caso
+	para as telas no formato vertical. Antes da rotação, a origem está
+	na parte superior esquerda e as coordenadas aumentam para a direita
+	e para baixo.
+	As coordenadas são limitadas à área da tela.
 
-	A cor da linha está no formato ARGB alfa/vermelho/verde/azul. Os
-	valores do canal estão no intervalo de 0 (transparente ou desligado)
-	até 255 inclusive (opaco ou com intensidade total). Os valores dos
-	canais da cor não são previamente multiplicados pelo valor alpha.
-	Os valores do canal devem ser compactados em bytes com 32 bits
-	inteiros e não assinado na ordem alfa, vermelho, verde, azul a
-	partir do byte mais importante até o byte com menor importância.
-	Caso a cor da linha não seja informada, a cor do texto da IU será
-	usada.
+	A cor da linha está no formato alfa/vermelho/verde/azul (ARGB). Os
+	valores dos canais estão no intervalo entre ``0`` (transparente ou
+	desligado) e ``255`` (opaco ou com intensidade total), inclusive. Os
+	valores dos canais das cores não são previamente multiplicados pelo
+	valor alfa. Os valores dos canais devem ser empacotados em bytes de
+	um inteiro com 32 bits sem assinatura na ordem alfa, vermelho,
+	verde, azul do byte mais importante para o de menor importância.
+	Caso a cor da linha não seja informada, é usada a cor do texto da
+	interface.
+
 
 .. raw:: latex
 
@@ -1329,24 +1336,25 @@ Métodos
 	coordenada Y da altura máxima do texto.
 
 	As coordenadas são números de ponto flutuante em unidades de pixels
-	da tela, com a origem em (0, 0).  Observe que os pixels da tela
-	geralmente não são quadrados. A sistema de coordenadas é rotacionada
-	caso a tela seja girada, o que geralmente é o caso para as telas com
-	formato vertical. Antes da rotação, a origem está na parte superior
-	esquerda e as coordenadas aumentam para a direita e para baixo.
-	Coordenadas são limitadas à área da tela.
+	da tela emulada, com a origem em (``0, 0``). Observe que os pixels da
+	tela emulada geralmente não são quadrados. O sistema de coordenadas
+	é rotacionada caso a tela seja girada, o que geralmente é o caso
+	para as telas no formato vertical. Antes da rotação, a origem está
+	na parte superior esquerda e as coordenadas aumentam para a direita
+	e para baixo.
+	As coordenadas são limitadas à área da tela.
 
 	As cores do primeiro plano e do plano de fundo estão no formato ARGB
-	alfa/vermelho/verde/azul mídia. Os valores dos canais estão no
-	intervalo de 0 (transparente ou desligado) até 255 inclusive (opaco
+	alfa/vermelho/verde/azul. Os valores dos canais estão no
+	intervalo de 0 (transparente ou desligado) até ``255`` inclusive (opaco
 	ou com intensidade total). Os valores dos canais da cor não são
 	previamente multiplicados pelo valor alpha.
-	Os valores do canal devem ser compactados em bytes com 32 bits
-	inteiros não assinado na ordem alfa, vermelho, verde, azul a partir
-	do byte mais importante até o byte com menor importância. Caso a cor
-	do primeiro plano não seja informada, a cor do texto da IU será
-	usada; caso a cor de fundo não for informada, a cor do fundo da IU
-	será usada.
+	Os valores do canal devem ser empacotados em bytes com 32 bits
+	inteiros não assinados pelo valor do canal alfa, na ordem alpha,
+	vermelho, verde, azul a partir do byte mais importante até o byte
+	com menor importância. Caso a cor do primeiro plano não seja
+	informado, a cor do texto da interface será usada; caso a cor de
+	fundo não seja informada, a cor do fundo da interface será usada.
 
 Propriedades
 ^^^^^^^^^^^^
@@ -1856,9 +1864,9 @@ Sistema da memória
 ------------------
 
 A interface Lua do MAME expõe vários objetos da memória do sistema,
-incluindo os espaços de endereçamento, compartilhamentos da memória,
-bancos da memória e as regiões da memória.  Os scripts podem ler e
-escrever a partir do sistema de memória emulado.
+incluindo os espaços de endereçamento, compartilhamentos, seus bancos e
+as regiões da memória.  Os scripts podem ler e escrever a partir do
+sistema emulado da memória.
 
 .. _luareference-mem-manager:
 
@@ -2776,7 +2784,7 @@ Métodos
 	Define o valor do campo da porta de E/S.  Para os campos digitais,
 	o valor é comparado com zero para determinar se o campo deve estar
 	ativo; para os campos analógicos, o valor deve estar alinhado à
-	direita e na faixa correta.
+	direita e no intervalo correto.
 
 **field:set_input_seq(tipo_da_sequência, sequência)**
 
@@ -3441,7 +3449,7 @@ Instanciação
 **emu.render_bounds()**
 
 	Cria os limites da renderização de um objeto que representa uma
-	unidade quadrada com o canto superior esquerdo em (0, 0) e canto
+	unidade quadrada com o canto superior esquerdo em (``0, 0``) e canto
 	inferior direito em (1, 1). Observe que ao renderizar as coordenadas
 	do alvo elas não possuem necessariamente as mesmas escalas X e Y,
 	então isso pode não representar a geração de um quadrado.
@@ -3565,22 +3573,22 @@ Propriedades
 
 **color.a** (leitura e escrita)
 
-	O valor alfa, na faixa entre zero (0, transparente) até um (1,
+	O valor alfa, no intervalo entre zero (0, transparente) até um (1,
 	opaco).
 
 **color.r** (leitura e escrita)
 
-	O valor do canal vermelho, na faixa entre zero (0, desligado) até um
-	(1, intensidade total).
+	O valor do canal vermelho, no intervalo entre zero (0, desligado)
+	até um (1, intensidade total).
 
 **color.g** (leitura e escrita)
 
-	O valor do canal verde, na faixa entre zero (0, desligado) até um
-	(1, intensidade total).
+	O valor do canal verde, no intervalo entre zero (0, desligado) até
+	um (1, intensidade total).
 
 **color.b** (leitura e escrita)
 
-	O valor do canal azul, na faixa entre zero (0, desligado) até um
+	O valor do canal azul, no intervalo entre zero (0, desligado) até um
 	(1, intensidade total).
 
 .. raw:: latex
@@ -3696,10 +3704,10 @@ Propriedades
 **target.orientation** (leitura e escrita)
 
 	Os sinalizadores de orientação do alvo. Esta é uma máscara bit
-	inteira, onde o bit 0 (0x01) é definido para espelhar
-	horizontalmente, o bit 1 (0x02) é definido para espelhar
-	verticalmente e o bit 2 (0x04) é definido para espelhar ao longo do
-	canto superior esquerdo inferior e a diagonal direita.
+	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
+	horizontalmente, o bit ``1`` (``0x02``) é definido para espelhar
+	verticalmente e o bit ``2`` (``0x04``) é definido para espelhar ao
+	longo do canto superior esquerdo inferior e a diagonal direita.
 
 .. raw:: latex
 
@@ -3763,6 +3771,99 @@ Instanciação
 	Obtém a renderização do contêiner usado para desenhar uma
 	determinada tela.
 
+Métodos
+^^^^^^^
+
+**container:draw_box(left, top, right, bottom, [line], [fill])**
+
+	Desenha um retângulo delineado com bordas nas posições indicadas.
+
+	As coordenadas são números de ponto flutuante no intervalo entre
+	``0`` (zero) até ``1`` (um), com (``0, 0``) na parte superior
+	esquerda e (``1, 1``) na parte inferior direita da janela ou da tela
+	que mostra a interface do usuário. Observe que a relação de aspecto
+	geralmente não é quadrada.
+	As coordenadas são limitadas à área da janela ou da tela.
+
+	As cores de preenchimento e da linha estão no formato
+	alfa/vermelho/verde/azul (ARGB). Os valores dos canais estão no
+	intervalo entre ``0`` (transparente ou desligado) e ``255`` (opaco
+	ou com intensidade total), inclusive. Os valores dos canais das
+	cores não são previamente multiplicados pelo valor alfa. Os valores
+	dos canais devem ser empacotados em bytes de um inteiro com 32 bits
+	sem assinatura na ordem alfa, vermelho, verde, azul do byte mais
+	importante para o de menor importância. Caso a cor da linha não seja
+	informada, é usada a cor do texto da interface; caso a cor de
+	preenchimento não seja informada, é usada a cor de fundo da
+	interface.
+
+
+**container:draw_line(x1, y1, x2, y2, bottom, [cor])**
+
+	Desenha uma linha a partir de (x1, y1) até (x2, y2).
+
+	As coordenadas são números de ponto flutuante no intervalo entre
+	``0`` (zero) até ``1`` (um), com (``0, 0``) na parte superior
+	esquerda e (``1, 1``) na parte inferior direita da janela ou da tela
+	que mostra a interface do usuário. Observe que a relação de aspecto
+	geralmente não é quadrada.
+	As coordenadas são limitadas à área da janela ou da tela.
+
+	As coordenadas são números de ponto flutuante em unidades de pixels
+	da tela emulada, com a origem em (``0, 0``). Observe que os pixels
+	da tela emulada geralmente não são quadrados. O sistema de
+	coordenadas é rotacionada caso a tela seja girada, o que geralmente
+	é o caso para as telas no formato vertical. Antes da rotação, a
+	origem está na parte superior esquerda e as coordenadas aumentam
+	para a direita e para baixo.
+	As coordenadas são limitadas à área da tela.
+
+	A cor da linha está no formato alfa/vermelho/verde/azul (ARGB). Os
+	valores dos canais estão no intervalo entre ``0`` (transparente ou
+	desligado) e ``255`` (opaco ou com intensidade total), inclusive. Os
+	valores dos canais das cores não são previamente multiplicados pelo
+	valor alfa. Os valores dos canais devem ser empacotados em bytes de
+	um inteiro com 32 bits sem assinatura na ordem alfa, vermelho,
+	verde, azul do byte mais importante para o de menor importância.
+	Caso a cor da linha não seja informada, é usada a cor do texto da
+	interface.
+
+.. raw:: latex
+
+	\clearpage
+
+**container:draw_text(x|justify, y, text, [primeiro plano], [plano de fundo])**
+
+	Desenha uma linha na posição definida. Se a tela for racionada o
+	texto também será.
+
+	Quando o primeiro argumento for um número, o texto será alinhado à
+	esquerda nesta coordenada X. Quando o primeiro argumento for um
+	texto, este deve ser ``"left"``, ``"center"`` ou ``"right"`` para
+	que o texto seja desenhado e alinhado à esquerda/ao centro/à direita
+	da janela ou da tela respectivamente. O segundo argumento define a
+	coordenada Y da ascensão máxima do texto.
+
+	As coordenadas são números de ponto flutuante no intervalo entre
+	``0`` (zero) até ``1`` (um), com (``0, 0``) na parte superior
+	esquerda e (``1, 1``) na parte inferior direita da janela ou da tela
+	que mostra a interface do usuário. Observe que a relação de aspecto
+	geralmente não é quadrada.
+	As coordenadas são limitadas à área da janela ou da tela.
+
+	As cores do primeiro plano e do plano de fundo estão no formato ARGB
+	alfa/vermelho/verde/azul. Os valores dos canais estão no
+	intervalo entre ``0`` (transparente ou desligado) até ``255``
+	inclusive (opaco ou com intensidade total). Os valores dos canais da
+	cor não são previamente multiplicados pelo valor alpha.
+	Os valores do canal devem ser empacotados em bytes com 32 bits
+	inteiros não assinados pelo valor do canal alfa, na ordem alpha,
+	vermelho, verde, azul a partir do byte mais importante até o byte
+	com menor importância. Caso a cor do primeiro plano não seja
+	informado, a cor do texto da interface será usada; caso a cor de
+	fundo não seja informada, a cor do fundo da interface será usada.
+
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -3775,10 +3876,10 @@ Propriedades
 **container.orientation** (leitura e escrita)
 
 	Os sinalizadores de orientação do contêiner. Esta é uma máscara bit
-	inteira, onde o bit 0 (0x01) é definido para espelhar
-	horizontalmente, o bit 1 (0x02) é definido para espelhar
-	verticalmente e o bit 2 (0x04) é definido para espelhar ao longo do
-	canto superior esquerdo inferior e a diagonal direita.
+	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
+	horizontalmente, o bit ``1`` (``0x02``) é definido para espelhar
+	verticalmente e o bit ``2`` (``0x04``) é definido para espelhar ao
+	longo do canto superior esquerdo inferior e a diagonal direita.
 
 **container.xscale** (leitura e escrita)
 
@@ -3831,10 +3932,10 @@ Propriedades
 **settings.orientation** (leitura e escrita)
 
 	Os sinalizadores de orientação do contêiner. Esta é uma máscara bit
-	inteira, onde o bit 0 (0x01) é definido para espelhar
-	horizontalmente, o bit 1 (0x02) é definido para espelhar
-	verticalmente e o bit 2 (0x04) é definido para espelhar ao longo do
-	canto superior esquerdo inferior e a diagonal direita.
+	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
+	horizontalmente, o bit ``1`` (``0x02``) é definido para espelhar
+	verticalmente e o bit ``2`` (``0x04``) é definido para espelhar ao
+	longo do canto superior esquerdo inferior e a diagonal direita.
 
 **settings.brightness** (leitura e escrita)
 
@@ -4171,18 +4272,20 @@ Propriedades
 **item.blend_mode** (somente leitura)
 
 	Obtém modo de mesclagem do item.
-	Este é um valor inteiro, onde 0 significa sem mesclagem, 1 significa
-	mesclagem alfa, 2 significa multiplicação por RGB, 3 significa
-	mesclagem aditiva e -1 permite que os itens dentro de um contêiner
-	determinem os seus próprios modos de mesclagem.
+	Este é um valor inteiro, onde ``0`` significa sem mesclagem, ``1``
+	significa mesclagem alfa, ``2`` significa multiplicação por RGB,
+	``3`` significa mesclagem aditiva e ``-1`` permite que os itens
+	dentro de um contêiner determinem os seus próprios modos de
+	mesclagem.
 
 **item.orientation** (somente leitura)
 
 	Obtém os sinalizadores da orientação do item.
-	Esta é uma máscara bit inteira onde o bit 0 (0x01) é definido para
-	espelhar horizontalmente, o bit 1 (0x02) é definido para espelhar
-	verticalmente e o bit 2 (0x04) é definido para espelhar ao longo da
-	diagonal superior esquerda e inferior direita.
+	Esta é uma máscara bit inteira onde o bit ``0`` (``0x01``) é
+	definido para espelhar horizontalmente, o bit ``1`` (``0x02``) é
+	definido para espelhar verticalmente e o bit ``2`` (``0x04``) é
+	definido para espelhar ao longo da diagonal superior esquerda e
+	inferior direita.
 
 **item.element_state** (somente leitura)
 
