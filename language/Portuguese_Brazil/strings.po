@@ -587,7 +587,7 @@ msgstr "Impulso da ficha"
 
 #: src/frontend/mame/ui/submenu.cpp:102
 msgid "Device Mapping"
-msgstr "Mapeamento do dispositivo"
+msgstr "Opções dos dispositivos de entrada"
 
 #: src/frontend/mame/ui/submenu.cpp:103
 msgid "Lightgun Device Assignment"
