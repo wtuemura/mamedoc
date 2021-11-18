@@ -155,7 +155,8 @@ direita, elas serão substituídas pelas teclas numéricas **8**, **2**,
 Observe que as substituições indicadas usando os elementos ``remap``
 se aplicam apenas às entradas que usam a atribuição padrão do MAME para
 o tipo do controle. Ou seja, elas só se aplicam às atribuições padrão
-para os tipos de controle definidos no menu "**Entradas (gerais)**".
+para os tipos de controle definidos no menu
+:guilabel:`Entradas (gerais)`.
 Eles não se aplicam às atribuições padrão das entradas definidas nas
 definições das portas de E/S do driver/dispositivo (usando a macro
 ``PORT_CODE``).
@@ -200,31 +201,31 @@ controles.
 
 	\clearpage
 
-A configuração acima define as seguintes atribuições para as entradas:
+A configuração acima define as seguintes atribuições das entradas:
 
 * **Config Menu** (Interface do usuário)
 
-	Tecla **Tab**, ou pressionando as teclas 1 e 2 simultaneamente
+	Tecla :kbd:`Tab`, ou pressionando as teclas 1 e 2 simultaneamente
 
 * **UI Cancel** (Interface do usuário)
 
-	Tecla **ESC**, ou pressionando as teclas 2 e 6 simultaneamente
+	Tecla :kbd:`ESC`, ou pressionando as teclas 2 e 6 simultaneamente
 
 * **P1 Button 1** (Controles do jogador 1)
 
-	Tecla **C**, ou o botão 1 do joystick 1
+	Tecla :kbd:`C`, ou o botão 1 do joystick 1
 
 * **P1 Button 2** (Controles do jogador 1)
 
-	Tecla **Shift** esquerda, ou o botão 2 do joystick 1
+	Tecla :kbd:`Shift` esquerda, ou o botão 2 do joystick 1
 
 * **P1 Button 3** (Controles do jogador 1)
 
-	Tecla **Z**, ou o botão 3 do joystick 1
+	Tecla :kbd:`Z`, ou o botão 3 do joystick 1
 
 * **P1 Button 4** (Controles do jogador 1)
 
-	Tecla **X**, ou o botão 4 do joystick 1
+	Tecla :kbd:`X`, ou o botão 4 do joystick 1
 
 Repare que isto será aplicado somente às entradas do controle do MAME.
 Ou seja, os elementos ``port`` sem os atributos ``tag`` substituem
@@ -251,7 +252,7 @@ o valor ``default``). A atribuição da entrada predefinida do host pode
 ser substituída assim como também é possível alternar as configurações
 dos controles digitais.
 
-Os atributos ``tag``, ``type``, ``mask`` and ``defvalue`` são usados
+Os atributos ``tag``, ``type``, ``mask`` e o ``defvalue`` são usados
 para identificar a entrada em questão. É possível encontrar os valores
 usados para uma determinada entrada do host alternando a sua atribuição,
 encerrando o MAME e verificando os valores no arquivo de configuração do
@@ -274,5 +275,5 @@ Abaixo um exemplo que substitui as entradas predefinidas para o
     </system>
 
 Esta configuração define as entradas para o esterçamento esquerdo e
-direito para as teclas **K** e **J** respectivamente, desativando também
-as configurações do câmbio para a entrada da troca de marchas.
+direito para as teclas :kbd:`K` e :kbd:`J` respectivamente, desativando
+também as configurações do câmbio para a entrada da troca de marchas.
