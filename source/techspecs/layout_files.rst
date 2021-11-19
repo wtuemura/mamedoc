@@ -656,9 +656,8 @@ mais informações de como conectar um elemento numa porta ou na saída
 E/S de uma emulação).
 Qualquer componente de um elemento pode estar restrito apenas ao desenho
 quando o estado do elemento tiver um valor em particular. Alguns
-componentes (como os mostradores com múltiplos segmentos e os
-mostradores rotativos [#]_ (reels) por exemplo) que usam diretamente o
-seu estado para determinar a sua aparência final.
+componentes (como os mostradores com múltiplos segmentos por exemplo)
+que usam diretamente o seu estado para determinar a sua aparência final.
 
 Cada elemento possui o seu próprio sistema interno de coordenadas. Os
 limites dos elementos dos sistema de coordenadas são computados através
@@ -943,13 +942,6 @@ Há suporte para os seguintes componentes:
 	que deve ser um número inteiro onde **0** significa alinhar
 	ao centro, **1** alinhar à esquerda e **2** alinhar à direita.
 	Na sua ausência, o texto será centralizado automaticamente.
-
-**reel**
-
-	Usado para desenhar os cilindros usados por máquinas de caça
-	níquel.
-	Os atributos compatíveis são ``symbollist``, ``stateoffset``,
-	``numsymbolsvisible``, ``reelreversed`` e ``beltreel``.
 
 .. raw:: latex
 
@@ -5121,9 +5113,6 @@ de visualização, todo eles estão embutidos no MAME.
 .. [#]	O termo *shift* é muito amplo, também pode ser
 		interpretado como desvio, mudança, turno, inversão, câmbio, etc.
 		(Nota do tradutor)
-.. [#]	Reels, `mostradores mecânicos
-		<https://i.postimg.cc/FF2GYc9v/Reels.jpg>`_ usados nas máquinas
-		caça niqueis. (Nota do tradutor)
 .. [#]	`Aqui <https://www.youtube.com/watch?v=-rrP4Prx1rc>`_ um exemplo
 		destes mostradores. (Nota do tradutor)
 .. [#]	Alpha Blending
