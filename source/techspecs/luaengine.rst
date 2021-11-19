@@ -4,7 +4,7 @@
 
 .. _luaengine:
 
-Usando Scripts LUA
+Usando scripts LUA
 ==================
 
 .. contents:: :local:

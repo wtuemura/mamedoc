@@ -67,8 +67,8 @@ maioria destas operações:
 
 **c:at(i)**
 
-	Retorna o valor no índice com base 1 (1-based) ``i`` ou ``nil`` caso
-	não esteja fora do alcance.
+	Retorna o valor no índice com base ``1`` (1-based) ``i`` ou ``nil``
+	caso não esteja fora do alcance.
 
 **c:find(v)**
 
@@ -78,9 +78,9 @@ maioria destas operações:
 
 **c:index_of(v)**
 
-	Retorna o índice com base 1 (1-based) para o item ``v`` or ``nil``
-	caso não esteja no contêiner. O índice é o que você passaria ao
-	método ``at`` para obter o valor.
+	Retorna o índice com base ``1`` (1-based) para o item ``v`` ou
+	``nil`` caso não esteja no contêiner. O índice é o que você passaria
+	ao método ``at`` para obter o valor.
 
 .. raw:: latex
 
@@ -93,6 +93,140 @@ Classes Principais
 
 Muitas das classes principais do MAME usadas para implementar a emulação
 de uma sessão, estão disponíveis para os scripts Lua.
+
+.. _luareference-core-attotime:
+
+Attotime
+~~~~~~~~
+
+Encapsula a classe ``attotime`` do MAME, o que representa um intervalo
+de tempo de alta precisão. Os valores *attotime* suportam a adição e a
+subtração com outros valores *attotime*, assim como a multiplicação e a
+divisão por números inteiros.
+
+Instanciação
+^^^^^^^^^^^^
+
+**emu.attotime()**
+
+	Cria um valor *attotime* representando zero (ou seja, sem tempo
+	decorrido).
+
+**emu.attotime(segundos, attosegundos)**
+
+	Cria um *attotime* com as partes inteiras e fracionárias
+	específicas.
+
+**emu.attotime(attotime)**
+
+	Cria uma cópia de um valor *attotime* existente no momento.
+
+**emu.attotime.from_double(segundos)**
+
+	Cria um valor *attotime* representando um número específico em
+	segundos.
+
+**emu.attotime.from_ticks(períodos, frequência)**
+
+	Cria um *attotime* representando um número específico dos períodos
+	da frequência informada em Hertz.
+
+**emu.attotime.from_seconds(segundos)**
+
+	Cria um *attotime* representando um número inteiro específico
+	em segundos.
+
+**emu.attotime.from_msec(milissegundos)**
+
+	Cria um *attotime* representando um número inteiro específico
+	em milissegundos.
+
+**emu.attotime.from_usec(microssegundos)**
+
+	Cria um *attotime* representando um número inteiro específico
+	em microssegundos.
+
+**emu.attotime.from_nsec(nanossegundos)**
+
+	Cria um *attotime* representando um número inteiro específico
+	em nanossegundos.
+
+
+Métodos
+^^^^^^^
+
+**t:as_double()**
+
+	Retorna o intervalo de tempo em segundos como um valor de ponto
+	flutuante.
+
+**t:as_hz()**
+
+	Interpreta o intervalo como um período e retorna o valor
+	correspondente da frequência em Hertz como um ponto flutuante.
+	Retorna zero caso ``t.is_never`` seja verdadeiro. O intervalo não
+	deve ser zero.
+
+**t:as_khz()**
+
+	Interpreta o intervalo como um período e retorna o valor
+	correspondente da frequência em quilo hertz como um ponto flutuante.
+	Retorna zero caso ``t.is_never`` seja verdadeiro. O intervalo não
+	deve ser zero.
+
+**t:as_mhz()**
+
+	Interpreta o intervalo como um período e retorna o valor
+	correspondente da frequência em mega hertz como um ponto flutuante.
+	Retorna zero caso ``t.is_never`` seja verdadeiro. O intervalo não
+	deve ser zero.
+
+**t:as_ticks(frequência)**
+
+	Retorna o intervalo como um número inteiro em períodos da frequência
+	definida. O valor da frequência é definida em Hertz.
+
+Propriedades
+^^^^^^^^^^^^
+
+**t.is_zero** (somente leitura)
+
+	Um booleano indicando se o valor não representa um tempo
+	transcorrido.
+
+**t.is_never** (somente leitura)
+
+	U booleano indicando se o valor for maior que a quantidade máxima de
+	segundos inteiros que possam ser representados (tratados como um
+	tempo inalcançável no futuro ou num estouro).
+
+**t.attoseconds** (somente leitura)
+
+	A fração do intervalo dos segundos em atossegundos.
+
+**t.seconds** (somente leitura)
+
+	A quantidade de segundos inteiros no intervalo.
+
+**t.msec** (somente leitura)
+
+	A quantidade de milissegundos inteiros na porção de segundos
+	fracionários do intervalo.
+
+**t.usec** (somente leitura)
+
+	A quantidade de microssegundos inteiros na porção de segundos
+	fracionários do intervalo.
+
+**t.nsec** (somente leitura)
+
+	A quantidade de nanossegundos inteiros na porção de segundos
+	fracionários do intervalo.
+
+.. raw:: latex
+
+	\clearpage
+
 
 .. _luareference-core-mameman:
 
@@ -219,6 +353,11 @@ Métodos
 
 Propriedades
 ^^^^^^^^^^^^
+
+**machine.time (somente leitura)**
+
+	O tempo decorrida da emulação para a sessão atual assim como em
+	:ref:`attotime <luareference-core-attotime>`.
 
 **machine.system** (somente leitura)
 
@@ -685,11 +824,12 @@ Métodos
 
 **ui:get_general_input_setting(type, [jogador])**
 
-	Obtém uma descrição da sequência da entrada configurada para o tipo
-	da entrada indicada e o jogador adequado para usar nos prompts. O
-	tipo da entrada é um valor enumerado. O número do jogador é um
-	índice com base no número zero. Caso o número do jogador não seja
-	informado, é assumido o valor zero.
+	Obtém uma descrição da :ref:`sequência da entrada
+	<luareference-input-iptseq>` configurada para o tipo da entrada
+	indicada e o jogador adequado para usar nos prompts. O tipo da
+	entrada é um valor enumerado. O número do jogador é um índice com
+	base no número zero. Caso o número do jogador não seja informado, é
+	assumido o valor zero.
 
 Propriedades
 ^^^^^^^^^^^^
@@ -1273,7 +1413,7 @@ Métodos
 	Desenha um retângulo delineado com bordas nas posições informadas.
 
 	As coordenadas são números de ponto flutuante em unidades de pixels
-	da tela emulada, com a origem em (``0, 0``). Observe que os pixels da
+	da tela emulada, com a origem em (``0``, ``0``). Observe que os pixels da
 	tela emulada geralmente não são quadrados. O sistema de coordenadas é
 	rotacionada caso a tela seja girada, o que geralmente é o caso para
 	as telas no formato vertical. Antes da rotação, a origem está na
@@ -1299,7 +1439,7 @@ Métodos
 	Desenha uma linha a partir de (x1, y1) a (x2, y2).
 
 	As coordenadas são números de ponto flutuante em unidades de pixels
-	da tela emulada, com a origem em (``0, 0``). Observe que os pixels da
+	da tela emulada, com a origem em (``0``, ``0``). Observe que os pixels da
 	tela emulada geralmente não são quadrados. O sistema de coordenadas
 	é rotacionada caso a tela seja girada, o que geralmente é o caso
 	para as telas no formato vertical. Antes da rotação, a origem está
@@ -1336,7 +1476,7 @@ Métodos
 	coordenada Y da altura máxima do texto.
 
 	As coordenadas são números de ponto flutuante em unidades de pixels
-	da tela emulada, com a origem em (``0, 0``). Observe que os pixels da
+	da tela emulada, com a origem em (``0``, ``0``). Observe que os pixels da
 	tela emulada geralmente não são quadrados. O sistema de coordenadas
 	é rotacionada caso a tela seja girada, o que geralmente é o caso
 	para as telas no formato vertical. Antes da rotação, a origem está
@@ -2106,7 +2246,7 @@ Propriedades
 
 	As :ref:`entradas do endereçamento da memória
 	<luareference-mem-mapentry>` não configuradas no mapa do endereço.
-	Usa índices inteiros com base 1.  O operador do índice e o método
+	Usa índices inteiros com base ``1``.  O operador do índice e o método
 	``at`` tem complexidade O(n).
 
 .. raw:: latex
@@ -2487,19 +2627,33 @@ Métodos
 
 **ioport:type_seq(tipo, [jogador], [tipo_da_sequência])**
 
-	Obtenha a sequência da entrada configurada para o tipo de entrada
-	informada, o número do jogador e o tipo da sequência. O tipo da
-	entrada é um valor enumerado. O número do jogador é um índice com
-	base zero. Se o número do jogador não for informado, será presumido
-	que seja zero. Caso o tipo da sequência seja informada ela deve ser
-	``"standard"``, ``"increment"`` ou ``"decrement"``; caso não seja,
-	será presumido que seja ``"standard"``.
+	Obtenha a configuração do tipo da :ref:`sequência da entrada
+	<luareference-input-iptseq>` especificada, o número do jogador.
+	O tipo da entrada é um valor enumerado. O número do jogador é um
+	índice com base zero. Se o número do jogador não for informado,
+	será presumido que seja zero. Caso o tipo da sequência seja
+	informada ela deve ser ``"standard"``, ``"increment"`` ou
+	``"decrement"``; caso não seja, será presumido que seja
+	``"standard"``.
 
 	Isso fornece acesso à configuração geral da entrada.
+
 
 .. raw:: latex
 
 	\clearpage
+
+**ioport:set_type_seq** (tipo, jogador, seqtype, seq)
+
+	Define a configuração da
+	:ref:`sequência de entrada <luareference-input-iptseq>` para o tipo
+	da entrada definida, o número do jogador e o tipo da sequência. O
+	tipo da entrada é um valor enumerado. O número do jogador é um
+	índice com base zero. Se o número do jogador não for informado, será
+	presumido que seja zero. Caso o tipo da sequência seja informada ela
+	deve ser ``"standard"``, ``"increment"`` ou ``"decrement"``.
+
+	Isso permite que a configuração geral da entrada possa ser definida.
 
 **ioport:token_to_input_type(string)**
 
@@ -2788,31 +2942,34 @@ Métodos
 
 **field:set_input_seq(tipo_da_sequência, sequência)**
 
-	Define a sequência de entrada para o tipo da sequência informada.
-	Isso é usado para definir as configurações da entrada por máquina.
+	Define a :ref:`sequência de entrada <luareference-input-iptseq>`
+	para o tipo da sequência informada. Isso é usado para definir as
+	configurações da entrada por máquina.
 	O tipo da sequência deve ser ``"standard"``, ``"increment"`` ou
 	``"decrement"``.
 
 **field:input_seq(tipo_da_sequência)**
 
-	Obtenha a sequência da entrada configurada para o tipo da sequência
-	informada. Isso obtém as configurações da entrada por máquina. O
-	tipo da sequência deve ser ``"standard"``, ``"increment"`` ou
+	Obtenha a :ref:`sequência de entrada <luareference-input-iptseq>`
+	configurada para o tipo da sequência informada. Isso obtém as
+	configurações da entrada por máquina.
+	O tipo da sequência deve ser ``"standard"``, ``"increment"`` ou
 	``"decrement"``.
 
 **field:set_default_input_seq(tipo_da_sequência, sequência)**
 
-	Define a sequência da entrada predefinida para o tipo da sequência
-	informada. É usado para definir as configurações gerais da entrada.
+	Define a :ref:`sequência de entrada <luareference-input-iptseq>`
+	predefinida para o tipo da sequência informada. É usado para
+	definir as configurações gerais da entrada.
 	O tipo da sequência deve ser ``"standard"``, ``"increment"`` ou
 	``"decrement"``.
 
 **field:default_input_seq(tipo_da_sequência)**
 
-	Obtém a sequência da entrada predefinida para o tipo da sequência
-	informada. Obtém as configurações gerais da entrada. O tipo da
-	sequência deve ser ``"standard"``, ``"increment"`` ou
-	``"decrement"``.
+	Obtém a :ref:`sequência de entrada <luareference-input-iptseq>`
+	predefinida para o tipo da sequência informada.
+	Obtém as configurações gerais da entrada. O tipo da sequência deve
+	ser ``"standard"``, ``"increment"`` ou ``"decrement"``.
 
 **field:keyboard_codes(shift)**
 
@@ -3053,17 +3210,19 @@ Métodos
 
 **input:seq_pressed(sequência)**
 
-	Retorna um booleano indicando se a sequência de entrada informada
-	foi realmente pressionada.
+	Retorna um booleano indicando se a :ref:`sequência da entrada
+	<luareference-input-iptseq>` informada foi realmente pressionada.
 
 **input:seq_clean(sequência)**
 
-	Remova os elementos inválidos da sequência da entrada informada.
-	Retorna uma nova, sequência limpa da entrada.
+	Remova os elementos inválidos da :ref:`sequência da entrada
+	<luareference-input-iptseq>` informada. Retorna uma nova, sequência
+	limpa da entrada.
 
 **input:seq_name(sequência)**
 
-	Obtenha o texto de exibição para uma sequência da entrada.
+	Obtenha o texto de exibição para uma :ref:`sequência da entrada
+	<luareference-input-iptseq>`.
 
 .. raw:: latex
 
@@ -3071,13 +3230,15 @@ Métodos
 
 **input:seq_to_tokens(sequência)**
 
-	Converta uma sequência da entrada numa string token. Isso deve ser
-	usado quando for salvar ma configuração.
+	Converta uma :ref:`sequência da entrada <luareference-input-iptseq>`
+	numa string token. Isso deve ser usado quando for salvar na
+	configuração.
 
 **input:seq_from_tokens(tokens)**
 
-	Converta uma string token numa sequência de entrada. Isso deve ser
-	usado quando for carregar uma configuração.
+	Converta uma string token numa :ref:`sequência da entrada
+	<luareference-input-iptseq>`. Isso deve ser usado quando for
+	carregar uma configuração.
 
 **input:axis_code_poller()**
 
@@ -3101,14 +3262,16 @@ Métodos
 **input:axis_sequence_poller()**
 
 	Retorna uma :ref:`sequência da condição da entrada
-	<luareference-input-seqpoll>` para obter uma sequência da entrada
-	para configurar uma entrada analógica.
+	<luareference-input-seqpoll>` para obter uma
+	:ref:`sequência da entrada <luareference-input-iptseq>` para
+	configurar uma entrada analógica.
 
 **input:axis_sequence_poller()**
 
 	Retorna uma :ref:`sequência da condição da entrada
-	<luareference-input-seqpoll>` para obter uma sequência da entrada
-	para configurar uma entrada digital.
+	<luareference-input-seqpoll>` para obter uma
+	:ref:`sequência da entrada <luareference-input-iptseq>` para
+	configurar uma entrada digital.
 
 Propriedades
 ^^^^^^^^^^^^
@@ -3214,8 +3377,9 @@ Propriedades
 
 **poller.sequence (somente leitura)**
 
-	A sequência da entrada atual.  Isso é atualizado durante o processo
-	de obtenção. É possível para que a sequência se torne inválida.
+	A :ref:`sequência da entrada <luareference-input-iptseq>` atual. É
+	atualizado durante o processo de obtenção. É possível para que a
+	sequência se torne inválida.
 
 **poller.valid (somente leitura)**
 
@@ -3225,6 +3389,70 @@ Propriedades
 
 	Um booleano que indica se a sequência foi alterada através de alguma
 	entrada do usuário desde o início do processo.
+
+.. _luareference-input-iptseq:
+
+Sequência da entrada
+~~~~~~~~~~~~~~~~~~~~
+
+Encapsula a classe ``input_seq`` do MAME que representa a combinação das
+entradas do host que possam ser lidos ou designados para uma determinada
+entrada da emulação. As sequências da entrada podem ser manipuladas
+usando os métodos do
+:ref:`gerenciador da entrada <luareference-input-inputman>`. 
+Use um
+:ref:`obtentor da sequência de entrada <luareference-input-seqpoll>`
+para obter uma sequência da entrada a partir do usuário.
+
+Instanciação
+^^^^^^^^^^^^
+
+**emu.input_seq()**
+
+	Cria uma sequência vazia da entrada.
+
+**emu.input_seq(seq)**
+
+	Cria uma cópia de uma sequência já existente da entrada.
+
+Métodos
+^^^^^^^
+
+**seq:reset()**
+
+	Limpa a sequência da entrada, removendo todos os itens.
+
+**seq:set_default()**
+
+	Define a sequência da entrada num único item contendo o valor meta
+	que definindo qual a configuração padrão deve ser usada.
+
+Propriedades
+^^^^^^^^^^^^
+
+**seq.empty** (somente leitura)
+
+	Um booleano indicando se a sequência da entrada está vazia (não
+	possui quaisquer itens, indicando uma entrada sem atribuição).
+
+**seq.length** (somente leitura)
+
+	A quantidade dos itens na sequência da entrada.
+
+**seq.is_valid** (somente leitura)
+
+	Um booleano indicando se a sequência da entrada é válida. Para ser
+	válido, deve conter pelo menos um item, todos os itens devem possuir
+	códigos válidos, todos os grupos dos produtos devem conter pelo
+	menos um item que não seja negado e os itens referentes aos eixos
+	absolutos e relativos não devem ser misturados dentro de um grupo de
+	produtos.
+
+**seq.is_default** (somente leitura)
+
+	Um booleano indicando se a sequência da entrada define se a
+	configuração deve ser usada.
+
 
 .. raw:: latex
 
@@ -3267,7 +3495,7 @@ Propriedades
 
 	Obtém uma tabela :ref:`host do dispositivo da entrada
 	<luareference-input-inputdev>` na classe. As chaves são os índices
-	com base 1.
+	com base ``1``.
 
 .. raw:: latex
 
@@ -3449,7 +3677,7 @@ Instanciação
 **emu.render_bounds()**
 
 	Cria os limites da renderização de um objeto que representa uma
-	unidade quadrada com o canto superior esquerdo em (``0, 0``) e canto
+	unidade quadrada com o canto superior esquerdo em (``0``, ``0``) e canto
 	inferior direito em (1, 1). Observe que ao renderizar as coordenadas
 	do alvo elas não possuem necessariamente as mesmas escalas X e Y,
 	então isso pode não representar a geração de um quadrado.
@@ -3634,7 +3862,7 @@ render.max_update_rate (somente leitura)
 
 	A lista da renderização dos alvos, incluindo as janelas e as telas
 	geradas, bem como os alvos ocultos renderizados para coisas como a
-	renderização das capturas da tela. Usa índices inteiros com base 1.
+	renderização das capturas da tela. Usa índices inteiros com base ``1``.
 	O operador de índice e o método ``at`` têm O(n) complexidade.
 
 .. raw:: latex
@@ -3668,7 +3896,7 @@ Propriedades
 
 **target.index** (somente leitura)
 
-	O índice do destino de renderização com base 1. Isso tem
+	O índice do destino de renderização com base ``1``. Isso tem
 	complexidade O(n).
 
 **target.width** (somente leitura)
@@ -3716,7 +3944,7 @@ Propriedades
 **target.view_names[]**
 
 	Os nomes das visualizações disponíveis para a renderização deste
-	alvo. Usa base 1 e índices inteiros.  Os métodos ``find`` e o
+	alvo. Usa base ``1`` e índices inteiros.  Os métodos ``find`` e o
 	``index_of`` têm O(n) complexidade; todas as outras operações
 	compatíveis têm complexidade O(1).
 
@@ -3728,7 +3956,7 @@ Propriedades
 
 **target.view_index** (leitura e escrita)
 
-	O índice base 1 da visualização selecionada para a renderização
+	O índice base ``1`` da visualização selecionada para a renderização
 	deste alvo.
 
 **target.visibility_mask** (read-only)
@@ -3779,8 +4007,8 @@ Métodos
 	Desenha um retângulo delineado com bordas nas posições indicadas.
 
 	As coordenadas são números de ponto flutuante no intervalo entre
-	``0`` (zero) até ``1`` (um), com (``0, 0``) na parte superior
-	esquerda e (``1, 1``) na parte inferior direita da janela ou da tela
+	``0`` (zero) até ``1`` (um), com (``0``, ``0``) na parte superior
+	esquerda e (``1``, ``1``) na parte inferior direita da janela ou da tela
 	que mostra a interface do usuário. Observe que a relação de aspecto
 	geralmente não é quadrada.
 	As coordenadas são limitadas à área da janela ou da tela.
@@ -3798,20 +4026,20 @@ Métodos
 	interface.
 
 
-**container:draw_line(x1, y1, x2, y2, bottom, [cor])**
+**container:draw_line(x1, y1, x2, y2, [cor])**
 
-	Desenha uma linha a partir de (x1, y1) até (x2, y2).
+	Desenha uma linha a partir de (``x1``, ``y1``) até (``x2``, ``y2``).
 
 	As coordenadas são números de ponto flutuante no intervalo entre
-	``0`` (zero) até ``1`` (um), com (``0, 0``) na parte superior
-	esquerda e (``1, 1``) na parte inferior direita da janela ou da tela
-	que mostra a interface do usuário. Observe que a relação de aspecto
-	geralmente não é quadrada.
+	``0`` (zero) até ``1`` (um), com (``0``, ``0``) na parte superior
+	esquerda e (``1``, ``1``) na parte inferior direita da janela ou da
+	tela que mostra a interface do usuário. Observe que a relação de
+	aspecto geralmente não é quadrada.
 	As coordenadas são limitadas à área da janela ou da tela.
 
 	As coordenadas são números de ponto flutuante em unidades de pixels
-	da tela emulada, com a origem em (``0, 0``). Observe que os pixels
-	da tela emulada geralmente não são quadrados. O sistema de
+	da tela emulada, com a origem em (``0``, ``0``). Observe que os
+	pixels da tela emulada geralmente não são quadrados. O sistema de
 	coordenadas é rotacionada caso a tela seja girada, o que geralmente
 	é o caso para as telas no formato vertical. Antes da rotação, a
 	origem está na parte superior esquerda e as coordenadas aumentam
@@ -3845,10 +4073,10 @@ Métodos
 	coordenada Y da ascensão máxima do texto.
 
 	As coordenadas são números de ponto flutuante no intervalo entre
-	``0`` (zero) até ``1`` (um), com (``0, 0``) na parte superior
-	esquerda e (``1, 1``) na parte inferior direita da janela ou da tela
-	que mostra a interface do usuário. Observe que a relação de aspecto
-	geralmente não é quadrada.
+	``0`` (zero) até ``1`` (um), com (``0``, ``0``) na parte superior
+	esquerda e (``1``, ``1``) na parte inferior direita da janela ou da
+	tela que mostra a interface do usuário. Observe que a relação de
+	aspecto geralmente não é quadrada.
 	As coordenadas são limitadas à área da janela ou da tela.
 
 	As cores do primeiro plano e do plano de fundo estão no formato ARGB
@@ -4003,7 +4231,7 @@ Métodos
 	manipuladores dos itens da visualização principal tenham sido
 	configurados. A função não deve aceitar nenhum argumento.
 
-	Invoque com ``nil`` para remover o callback.
+	Use com ``nil`` para remover o *callback*.
 
 Propriedades
 ^^^^^^^^^^^^
@@ -4070,14 +4298,14 @@ Métodos
 	Define uma função para realizar tarefas adicionais antes que os
 	itens da visualização sejam adicionados na renderização do alvo em
 	preparação para o desenho de um quadro de vídeo. A função não deve
-	aceitar quaisquer argumentos. Invoque com ``nil`` para remover o
-	callback.
+	aceitar quaisquer argumentos. Use com ``nil`` para remover o
+	*callback*.
 
 **view:set_preload_callback(cb)**
 
 	Define uma função para realizar tarefas adicionais após pré-carregar
 	a visualização dos itens visíveis. A função não deve aceitar
-	quaisquer argumentos. Invoque com ``nil`` para remover o callback.
+	quaisquer argumentos. Use com ``nil`` para remover o *callback*.
 	Esta função pode ser invocada quando o usuário seleciona uma
 	visualização ou torna a visualização do item de uma coleção visível.
 	Ele pode ser invocado várias vezes para obter uma exibição,
@@ -4087,8 +4315,8 @@ Métodos
 
 	Defina uma função para realizar tarefas adicionais depois que as
 	dimensões da visualizações tenham sido recomputadas.
-	A função não deve aceitar quaisquer argumentos. Invoque com ``nil``
-	para remover o callback.
+	A função não deve aceitar quaisquer argumentos. Use com ``nil``
+	para remover o *callback*.
 
 	As coordenadas da visualização são recalculadas em vários eventos,
 	incluindo a janela que estiver sendo redimensionada, entrando ou
@@ -4158,7 +4386,7 @@ Propriedades
 Visualização do item do layout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``layout_view::item`` do MAME que representa um item
+Encapsula a classe ``layout_view_item`` do MAME que representa um item
 numa visualização. Um item é desenhado como uma superfície retangular
 texturizada. A textura é fornecida por uma tela emulada ou um elemento
 do layout.
@@ -4181,57 +4409,120 @@ Métodos
 	animação na ausência dos vínculos. O argumento deve ser um número
 	inteiro.
 
-**item.set_element_state_callback(cb)**
+**item:set_element_state_callback(cb)**
 
 	Define uma função a ser invocada para obter o estado do elemento
 	para o item. A função não deve aceitar quaisquer argumentos e deve
 	retornar um número inteiro.
-	Invoque com ``nil`` para restaurar o estado original do callback do
+	Use com ``nil`` para restaurar o estado original do *callback* do
 	elemento (com base nos vínculos no arquivo layout).
 
 	Observe que a função não deve acessar a propriedade
-	``element_state`` do item, pois isso resultará numa recursão
+	``element_state`` do item, pois isso resultará numa repetição
 	infinita. Este callback não será usado para obter o estado de
 	animação para o item, mesmo se o item não tiver vínculos explícitos
 	do estado de animação no arquivo layout.
 
-**item.set_animation_state_callback(cb)**
+**item:set_animation_state_callback(cb)**
 
 	Define uma função que será invocada para obter o estado de animação
 	do item. A função não deve aceitar quaisquer argumentos e deve
-	retornar um número inteiro. Invoque com ``nil`` para restaurar o
-	estado de animação original do callback (com base nos vínculos no
+	retornar um número inteiro. Use com ``nil`` para restaurar o
+	estado de animação original do *callback* (com base nos vínculos no
 	arquivo layout).
 
 	Observe que a função não deve acessar a propriedade
-	``animation_state`` do item, pois isso resultará numa recursão
+	``animation_state`` do item, pois isso resultará numa repetição
 	infinita.
 
-**item.set_bounds_callback(cb)**
+**item:set_bounds_callback(cb)**
 
 	Define uma função a ser chamada para obter os limites do item.
 	A função não deve aceitar qualquer argumento e deve retornar um
 	:ref:`limites do renderizador <luareference-render-bounds>` do
-	objeto nas coordenadas do alvo renderizado. Invoque com ``nil`` para
-	restaurar o estado do limite original do callback (com base no
+	objeto nas coordenadas do alvo renderizado. Use com ``nil`` para
+	restaurar o estado do limite original do *callback* (com base no
 	estado da animação do item e nos elementos ``bounds`` herdados no
 	arquivo layout).
 
 	Observe que a função não deve acessar a propriedade ``bounds`` do
-	item, pois isso resultará numa recursão infinita.
+	item, pois isso resultará numa repetição infinita.
 
-**item.set_color_callback(cb)**
+**item:set_color_callback(cb)**
 
 	Defina uma função que será invocada para obter a cor do
 	multiplicador para o item. A função não deve aceitar qualquer
 	argumento e deve retornar um objeto
 	:ref:`renderização da cor <luareference-render-color>`.
-	Invoque com ``nil`` para restaurar a cor original do callback
+	Use com ``nil`` para restaurar a cor original do *callback*
 	(com base no estado da animação do item e dos elementos ``color``
 	herdados no arquivo layout).
 
 	Observe que a função não deve acessar a propriedade ``color`` do
-	item, pois isso resultará numa recursão infinita.
+	item, pois isso resultará numa repetição infinita.
+
+**item:set_scroll_size_x_callback(cb)**
+
+	Define uma função que será invocada para obter o tamanho da janela
+	de rolagem horizontal como uma proporção da largura do elemento
+	associado. A função não deve aceitar nenhum argumento e retornar um
+	valor de ponto flutuante. Use com ``nil`` para restaurar o
+	tamanho padrão da rolagem horizontal da janela (com base no
+	elemento ``xscroll`` relacionado no arquivo de layout XML).
+
+	Observe que a função não deve acessar a propriedade
+	``scroll_size_x`` do item, pois isto resultará numa repetição
+	infinita.
+
+**item:set_scroll_size_y_callback(cb)**
+
+	Define uma função que será invocada para obter o tamanho da janela
+	de rolagem vertical como uma proporção da altura do elemento
+	associado. A função não deve aceitar nenhum argumento e retornar um
+	valor de ponto flutuante. Use com ``nil`` para restaurar o tamanho
+	padrão da rolagem horizontal da janela (com base no elemento
+	``yscroll`` relacionado no arquivo de layout XML).
+
+	Observe que a função não deve acessar a propriedade
+	``scroll_size_y`` do item, pois isto resultará numa repetição
+	infinita.
+
+**item:set_scroll_pos_x_callback(cb)**
+
+	Define uma função que será invocada para obter a posição da rolagem
+	horizontal. Um valor zero coloca a janela de rolagem horizontal na
+	borda esquerda do elemento associado. Se o item não se enrola
+	horizontalmente, um valor ``1.0`` posiciona a janela de rolagem
+	horizontal na borda direita do elemento associado; se o item se
+	enrola horizontalmente, um valor ``1.0`` corresponde ao enrolamento
+	de retorno à borda esquerda do elemento associado. A função não deve
+	aceitar nenhum argumento e deve retornar um valor de ponto
+	flutuante. Use com ``nil``` para restaurar a posição padrão da
+	rolagem horizontal (com base nas ligações no elemento relativo
+	``xscroll`` no arquivo de layout XML).
+
+	Observe que a função não deve acessar a propriedade
+	``scroll_pos_x`` do item, pois isto resultará numa repetição
+	infinita.
+
+**item:set_scroll_pos_y_callback(cb)**
+
+	Define uma função que será invocada para obter a posição da rolagem
+	vertical. Um valor zero coloca a janela de rolagem vertical na
+	borda superior do elemento associado. Se o item não se enrola
+	verticalmente, um valor ``1.0`` posiciona a janela de rolagem
+	vertical na borda de baixo do elemento associado; se o item se
+	enrola verticalmente, um valor ``1.0`` corresponde ao enrolamento
+	de retorno à borda esquerda do elemento associado. A função não deve
+	aceitar nenhum argumento e deve retornar um valor de ponto
+	flutuante. Use com ``nil``` para restaurar a posição padrão da
+	rolagem horizontal (com base nas ligações no elemento relativo
+	``yscroll`` no arquivo de layout XML).
+
+	Observe que a função não deve acessar a propriedade
+	``scroll_pos_y`` do item, pois isto resultará numa repetição
+	infinita.
+
 
 .. raw:: latex
 
@@ -4269,6 +4560,44 @@ Propriedades
 	Este faz a :ref:`renderização da cor <luareference-render-color>`
 	do objeto.
 
+**item.scroll_wrap_x** (somente leitura)
+
+	Um booleano indicando se o item se enrola horizontalmente.
+
+**item.scroll_wrap_y** (somente leitura)
+
+	Um booleano indicando se o item se enrola verticalmente.
+
+**item.scroll_size_x** (leitura/escrita)
+
+	Obtenha o tamanho da janela de rolagem horizontal do item para a
+	condição atual, ou configure o tamanho da janela de rolagem
+	horizontal para usar na ausência de ligações. Este é um valor de
+	ponto flutuante que representa uma proporção da largura do elemento
+	associado.
+
+**item.scroll_size_y** (leitura/escrita)
+
+	Obtenha o tamanho da janela de rolagem vertical do item para a
+	condição atual, ou configure o tamanho da janela de rolagem
+	vertical para usar na ausência de ligações. Este é um valor de
+	ponto flutuante que representa uma proporção da largura do elemento
+	associado.
+
+**item.scroll_pos_x** (leitura/escrita)
+
+	Obtenha a posição de rolagem horizontal do item para a condição
+	atual, ou defina o tamanho da posição de rolagem horizontal que deve
+	ser usada na ausência das ligações.
+	Este é um valor de ponto flutuante.
+
+**item.scroll_pos_y** (leitura/escrita)
+
+	Obtenha a posição de rolagem vertical do item para a condição
+	atual, ou defina o tamanho da posição de rolagem vertical que deve
+	ser usada na ausência das ligações.
+	Este é um valor de ponto flutuante.
+
 **item.blend_mode** (somente leitura)
 
 	Obtém modo de mesclagem do item.
@@ -4277,6 +4606,11 @@ Propriedades
 	``3`` significa mesclagem aditiva e ``-1`` permite que os itens
 	dentro de um contêiner determinem os seus próprios modos de
 	mesclagem.
+
+
+.. raw:: latex
+
+	\clearpage
 
 **item.orientation** (somente leitura)
 

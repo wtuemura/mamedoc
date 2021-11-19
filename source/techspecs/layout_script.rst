@@ -542,9 +542,9 @@ numa visualização individualmente.
 	Este é um bom momento para consultar as entradas e configurar os
 	manipuladores dos eventos do item de visualização.
 
-	A função callback não retorna nenhum valor e não também aceita
-	nenhum parâmetro. Use ``nil`` como um argumento para remover o
-	manipulador do evento.
+	O *callback*  não retorna nenhum valor e também não aceita
+	parâmetros. Use ``nil`` como um argumento para remover o manipulador
+	do evento.
 
 .. raw:: latex
 
@@ -566,9 +566,9 @@ individual.
 	adicionados no destino em preparação para conceber o quadro de
 	vídeo.
 
-	A função callback não retorna nenhum valor e não também aceita
-	nenhum parâmetro. Use ``nil`` como um argumento para remover o
-	manipulador do evento.
+	O *callback*  não retorna nenhum valor e também não aceita
+	parâmetros. Use ``nil`` como um argumento para remover o manipulador
+	do evento.
 
 **Carga prévia**
 
@@ -581,9 +581,9 @@ individual.
 	pode ser invocado várias vezes durante uma seção, evite a repetição
 	de tarefas onerosas ao sistema.
 
-	A função callback não retorna nenhum valor e não também aceita
-	nenhum parâmetro. Use ``nil`` como um argumento para remover o
-	manipulador do evento.
+	O *callback*  não retorna nenhum valor e não também aceita nenhum
+	parâmetro. Use ``nil`` como um argumento para remover o manipulador
+	do evento.
 
 **O recálculo das dimensões**
 
@@ -597,9 +597,9 @@ individual.
 	visualizados, este é um bom momento para calcular os fatores de
 	escala e posição.
 
-	A função callback não retorna nenhum valor e não também aceita
-	nenhum parâmetro. Use ``nil`` como um argumento para remover o
-	manipulador do evento.
+	O *callback*  não retorna nenhum valor e não também aceita nenhum
+	parâmetro. Use ``nil`` como um argumento para remover o manipulador
+	do evento.
 
 .. raw:: latex
 
@@ -619,42 +619,40 @@ e o comportamento da cor.
 
     ``item:set_element_state_callback(cb)``
 
-	Define um callback para obter o estado dos itens. Este controla como o
-	elemento do item é desenhado, para componentes que mudam a aparência
-	dependendo do seu estado para desenhar os componentes de forma
-	condicional e o limite, cor da animação dos componentes. Não tente
-	acessar o ``element_state`` dos itens a partir do callback pois
-	ocorrerá uma recorrência infinita.
+	Define um *callback* para obter o estado dos itens. Este controla
+	como o elemento do item é desenhado, para componentes que mudam a
+	aparência dependendo do seu estado para desenhar os componentes de
+	forma condicional e o limite, cor da animação dos componentes. Não
+	tente acessar o ``element_state`` dos itens a partir do *callback*
+	pois pois isso resultará numa repetição infinita.
 
-	A função callback não retorna nenhum valor e também não aceita
-	nenhum parâmetro. Use ``nil`` como um argumento para restaurar o
-	estado do manipulador do evento (com base nos atributos XML dos
-	itens).
+	O *callback*  não retorna nenhum valor e também não aceita
+	parâmetros. Use ``nil`` como um argumento para restaurar o estado do
+	manipulador do evento (com base nos atributos XML dos itens).
 
 **Obtém o estado da animação**
 
     ``item:set_animation_state_callback(cb)``
 
-	Define um callback para obter o estado de animação do item. É
+	Define um *callback* para obter o estado de animação do item. É
 	utilizado para as animações dos limites e das cores da animação. Não
-	tente acessar o ``animation_state`` do item a partir do callback
+	tente acessar o ``animation_state`` do item a partir do *callback*
 	pois ocorrerá uma recorrência infinita.
 
-	A função callback deve retornar um número inteiro e também não
-	aceita nenhum parâmetro. Use ``nil`` como um argumento para
-	restaurar o estado original do manipulador do evento de animação
-	(com base nos atributos XML dos itens e do sub-elemento
-	``animate``).
+	O *callback*  deve retornar um número inteiro e também não aceita
+	nenhum parâmetro. Use ``nil`` como um argumento para restaurar o
+	estado original do manipulador do evento de animação (com base nos
+	atributos XML dos itens e do sub-elemento ``animate``).
 
 **Obtém os limites do item**
 
     ``item:set_bounds_callback(cb)``
 
-	Define um callback para obter os limites do item (a sua posição e o
-	seu tamanho). Não tente acessar o ``bounds`` do item a partir do
-	callback pois ocorrerá uma recorrência infinita.
+	Define um *callback* para obter os limites do item (a sua posição e
+	o seu tamanho). Não tente acessar o ``bounds`` do item a partir do
+	*callback* pois ocorrerá uma recorrência infinita.
 
-	A função callback deve retornar os limites da renderização do objeto
+	O *callback*  deve retornar os limites da renderização do objeto
 	representando os limites do item em coordenadas do seu destino
 	(geralmente criado ao invocar o ``emu.render_bounds``) e também não
 	aceita nenhum parâmetro. Use ``nil`` como um argumento para
@@ -663,14 +661,89 @@ e o comportamento da cor.
 
 **Obtém a cor do item**
 
-    ``item::set_color_callback(cb)``
+    ``item:set_color_callback(cb)``
 
-	Define um callback para obter a cor de um item (a textura da cor do
-	elemento multiplicado por esta cor)
+	Define um *callback* para obter a cor de um item (a textura da cor
+	do elemento multiplicado por esta cor)
 
-	A função callback deve retornar a renderização da cor do objeto
+	O *callback*  deve retornar a renderização da cor do objeto
 	representando a cor ARGB (geralmente criado ao invocar o
-	``emu.render_color``) e também não aceita nenhuma parâmetro. Use
-	``nil`` como um argumento para restaurar a cor original do
-	manipulador do evento (com base no estado de animação do item e do
-	sub-elemento ``color``).
+	``emu.render_color``) e também não aceita parâmetros. Use ``nil``
+	como um argumento para restaurar a cor original do manipulador do
+	evento (com base no estado de animação do item e do sub-elemento
+	``color``).
+
+
+.. raw:: latex
+
+	\clearpage
+
+**Obtém o tamanho da rolagem horizontal do item da janela**
+
+    ``item:set_scroll_size_x_callback(cb)``
+
+	Define um *callback* para obter o tamanho da rolagem horizontal do
+	item da janela. Isto permite que o script controle o quanto do
+	elemento será exibido pelo item. Não tente acessar a propriedade
+	``scroll_size_x`` do item a partir do *callback*, pois isso
+	resultará numa repetição infinita.
+
+	O *callback*  deve retornar um número de ponto flutuante
+	representando o tamanho horizontal da janela como uma proporção da
+	largura dos elementos associados e não aceita quaisquer parâmetros.
+	Um valor ``1.0`` exibirá a largura total do elemento; valores
+	menores exibem as partes com uma proporção menor do elemento. Use
+	``nil`` como um argumento para restaurar o tamanho padrão da rolagem
+	horizontal da janela (com base no sub-elemento ``xscroll``).
+
+**Obtém o tamanho da rolagem vertical do item da janela**
+
+    ``item:set_scroll_size_y_callback(cb)``
+
+	Define um *callback* para obter o tamanho da rolagem vertical do
+	item da janela. Isto permite que o script controle o quanto do
+	elemento será exibido pelo item. Não tente acessar a propriedade
+	``scroll_size_y`` do item a partir do *callback*, pois isso
+	resultará numa repetição infinita.
+
+	O *callback*  deve retornar um número de ponto flutuante
+	representando o tamanho vertical da janela como uma proporção da
+	altura dos elementos associados e não aceita quaisquer parâmetros.
+	Um valor ``1.0`` exibirá a altura total do elemento; valores
+	menores exibem as partes com uma proporção menor do elemento. Use
+	``nil`` como um argumento para restaurar o tamanho padrão da rolagem
+	vertical da janela (com base no sub-elemento ``yscroll``).
+
+**Obtém a posição da rolagem horizontal do item**
+
+    ``item:set_scroll_pos_x_callback(cb)``
+
+	Define um *callback* para obter a posição da rolagem horizontal do
+	item. Isto permite que o script controle qual parte do elemento seja
+	exibido pelo item. Não tente acessar a propriedade ``scroll_pos_x``
+	do item a partir do *callback*, pois isso resultará numa repetição
+	infinita.
+
+	O *callback*  deve retornar um número de ponto flutuante e não
+	aceita parâmetros. Um valor ``0.0`` alinha a borda esquerda do
+	elemento com a borda esquerda do item; valores maiores deslocam para
+	à direita. Use ``nil`` como um argumento para restaurar o
+	manipulador da posição da rolagem horizontal padrão (com base nas
+	ligações no sub-elemento ``xscroll``).
+
+**Obtém a posição da rolagem vertical do item**
+
+    ``item:set_scroll_pos_y_callback(cb)``
+
+	Define um *callback* para obter a posição da rolagem vertical do
+	item. Isto permite que o script controle qual parte do elemento seja
+	exibido pelo item. Não tente acessar a propriedade ``scroll_pos_y``
+	do item a partir do *callback*, pois isso resultará numa repetição
+	infinita.
+
+	O *callback*  deve retornar um número de ponto flutuante e não
+	aceita parâmetros. Um valor ``0.0`` alinha a borda superior do
+	elemento com a borda superior do item; valores maiores deslocam para
+	baixo. Use ``nil`` como um argumento para restaurar o manipulador da
+	posição da rolagem vertical padrão (com base nas ligações no
+	sub-elemento ``yscroll``).
