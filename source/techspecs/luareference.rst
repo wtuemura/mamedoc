@@ -4568,7 +4568,7 @@ Propriedades
 
 	Um booleano indicando se o item se enrola verticalmente.
 
-**item.scroll_size_x** (leitura/escrita)
+**item.scroll_size_x** (leitura e escrita)
 
 	Obtenha o tamanho da janela de rolagem horizontal do item para a
 	condição atual, ou configure o tamanho da janela de rolagem
@@ -4576,7 +4576,7 @@ Propriedades
 	ponto flutuante que representa uma proporção da largura do elemento
 	associado.
 
-**item.scroll_size_y** (leitura/escrita)
+**item.scroll_size_y** (leitura e escrita)
 
 	Obtenha o tamanho da janela de rolagem vertical do item para a
 	condição atual, ou configure o tamanho da janela de rolagem
@@ -4584,14 +4584,14 @@ Propriedades
 	ponto flutuante que representa uma proporção da largura do elemento
 	associado.
 
-**item.scroll_pos_x** (leitura/escrita)
+**item.scroll_pos_x** (leitura e escrita)
 
 	Obtenha a posição de rolagem horizontal do item para a condição
 	atual, ou defina o tamanho da posição de rolagem horizontal que deve
 	ser usada na ausência das ligações.
 	Este é um valor de ponto flutuante.
 
-**item.scroll_pos_y** (leitura/escrita)
+**item.scroll_pos_y** (leitura e escrita)
 
 	Obtenha a posição de rolagem vertical do item para a condição
 	atual, ou defina o tamanho da posição de rolagem vertical que deve
