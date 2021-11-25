@@ -818,36 +818,6 @@ Há suporte para os seguintes componentes:
 	Caso o atributo ``align`` esteja ausente o texto será
 	centralizado automaticamente.
 
-**dotmatrix**
-
-	Desenha um segmento horizontal de oito pixels num mostrador em
-	formato de matriz de pontos, usando pixels circulares numa cor
-	determinada. Os bits que determinam o estado do elemento definem
-	quais os pixels que estarão acesos, com o bit de menor importância
-	correspondendo ao pixel mais à esquerda. Os pixels que estiverem
-	apagados são desenhados com uma intensidade menor (**0x20/0xff**).
-
-.. raw:: latex
-
-	\clearpage
-
-**dotmatrix5dot**
-
-	Desenha um segmento horizontal de cinco pixels num mostrador em
-	formato de matriz de pontos, usando pixels circulares numa
-	determinada cor. Os bits que determinam o estado do elemento definem
-	quais os pixels que estarão acesos, com o bit de menor importância
-	correspondendo ao pixel mais à esquerda. Os pixels que estiverem
-	apagados são desenhados com uma intensidade menor (**0x20/0xff**).
-
-**dotmatrixdot**
-
-	Desenha um único elemento de um mostrador em formato de de matriz de
-	pontos com pixels circulares numa determinada cor. O bit de menor
-	importância do estado do elemento determina se o pixel vai estar
-	aceso. Um pixel apagado é desenhado com uma intensidade menor
-	(**0x20/0xff**).
-
 **led7seg**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico comum com
@@ -859,6 +829,10 @@ Há suporte para os seguintes componentes:
 	segmento superior esquerdo, a barra central e o ponto decimal.
 	Os pixels que estiverem apagados são desenhados com uma intensidade
 	menor (**0x20/0xff**).
+
+.. raw:: latex
+
+	\clearpage
 
 **led8seg_gts1**
 
@@ -896,10 +870,6 @@ Há suporte para os seguintes componentes:
 	ponto decimal e a vírgula. Os pixels que estiverem apagados são
 	desenhados com uma intensidade menor (**0x20/0xff**).
 
-.. raw:: latex
-
-	\clearpage
-
 **led16seg**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico padrão com
@@ -925,6 +895,10 @@ Há suporte para os seguintes componentes:
 	correspondem ao ponto decimal e a vírgula. Os pixels que estiverem
 	apagados são desenhados com uma intensidade menor (**0x20/0xff**).
 
+.. raw:: latex
+
+	\clearpage
+
 **simplecounter**
 
 	Exibe o valor numérico do estado do elemento usando a fonte do
@@ -942,10 +916,6 @@ Há suporte para os seguintes componentes:
 	que deve ser um número inteiro onde **0** significa alinhar
 	ao centro, **1** alinhar à esquerda e **2** alinhar à direita.
 	Na sua ausência, o texto será centralizado automaticamente.
-
-.. raw:: latex
-
-	\clearpage
 
 Um exemplo de um elemento que desenha um texto estático do lado esquerdo
 da tela:
@@ -997,10 +967,6 @@ usando imagens externas:
 		<image file="a_g.png" statemask="0x40" />
 		<image file="a_dp.png" statemask="0x80" />
 	</element>
-
-.. raw:: latex
-
-	\clearpage
 
 Um exemplo de um gráfico com barras que crescem verticalmente e mudam da
 cor verde, passando pelo amarelo e para o vermelho à medida que o nível
