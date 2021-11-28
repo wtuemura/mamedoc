@@ -753,64 +753,74 @@ Observe que como todos os delegados, eles também podem envolver lambdas.
 
 ::
 
-	space.install_read_handler(addrstart, addrend, read_delegate, *unitmask*, *cswidth*)
-	space.install_read_handler(addrstart, addrend, addrmask, addrmirror, addrselect, read_delegate, *unitmask*, *cswidth*)
-	space.install_write_handler(addrstart, addrend, write_delegate, *unitmask*, *cswidth*)
-	space.install_write_handler(addrstart, addrend, addrmask, addrmirror, addrselect, write_delegate, *unitmask*, *cswidth*)
-	space.install_readwrite_handler(addrstart, addrend, read_delegate, write_delegate, *unitmask*, *cswidth*)
-	space.install_readwrite_handler(addrstart, addrend, addrmask, addrmirror, addrselect, read_delegate, write_delegate, *unitmask*, *cswidth*)
+	space.install_read_handler(addrstart, addrend, read_delegate, unitmask, cswidth, flags)
+	space.install_read_handler(addrstart, addrend, addrmask, addrmirror, addrselect, read_delegate, unitmask, cswidth, flags)
+	space.install_write_handler(addrstart, addrend, write_delegate, unitmask, cswidth, flags)
+	space.install_write_handler(addrstart, addrend, addrmask, addrmirror, addrselect, write_delegate, unitmask, cswidth, flags)
+	space.install_readwrite_handler(addrstart, addrend, read_delegate, write_delegate, unitmask, cswidth, flags)
+	space.install_readwrite_handler(addrstart, addrend, addrmask, addrmirror, addrselect, read_delegate, write_delegate, unitmask, cswidth, flags)
 
-Estes seis métodos permitem instalar manipuladores empacotados por
-delegados num espaço de endereçamento. seja plano ou com máscara,
-espelho e select. No caso de leitura e escrita, ambos os delegados devem
-ter o mesmo tipo (smo stuff) para evitar uma explosão combinatória de
-tipos dos métodos.
+Estes seis métodos permitem instalar manipuladores empacotados num
+espaço de endereçamento em tempo real, seja plano, com máscara, *mirror*
+(espelho) e *select* (seleção). No caso de leitura e escrita, ambos os
+delegados devem ter o mesmo tipo (coisa ``smo``) para evitar uma
+explosão combinatória dos tipos dos métodos. Os argumentos ``unitmask``,
+``cswidth`` e ``flags`` são opcionais.
 
 O mapeamento direto da faixa do intervalo da memória
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-	space.install_rom(addrstart, addrend, void \*pointer)
-	space.install_rom(addrstart, addrend, addrmirror, void \*pointer)
-	space.install_writeonly(addrstart, addrend, void \*pointer)
-	space.install_writeonly(addrstart, addrend, addrmirror, void \*pointer)
-	space.install_ram(addrstart, addrend, void \*pointer)
-	space.install_ram(addrstart, addrend, addrmirror, void \*pointer)
+	space.install_rom(addrstart, addrend, void *pointer)
+	space.install_rom(addrstart, addrend, addrmirror, void *pointer)
+	space.install_rom(addrstart, addrend, addrmirror, flags, void *pointer)
+	space.install_writeonly(addrstart, addrend, void *pointer)
+	space.install_writeonly(addrstart, addrend, addrmirror, void *pointer)
+	space.install_writeonly(addrstart, addrend, addrmirror, flags, void *pointer)
+	space.install_ram(addrstart, addrend, void *pointer)
+	space.install_ram(addrstart, addrend, addrmirror, void *pointer)
+	space.install_ram(addrstart, addrend, addrmirror, flags, void *pointer)
 
-Instala um bloco de memória num espaço do endereço com ou sem espelho.
-a ROM é somente leitura, a ram é leitura/gravação, ``writeonly`` é
-somente gravação. O ponteiro não deve ser nulo, este método não alocará
-a memória.
+Instala um bloco de memória num espaço do endereço com ou sem espelho e
+sinalização. A ``_rom`` é somente leitura, a ``_ram`` é leitura e
+escrita, ``_writeonly`` é somente gravação. O ponteiro não deve ser
+nulo, este método não aloca memória.
 
 O mapeamento do banco
 ~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-	space.install_read_bank(addrstart, addrend, memory_bank \*bank)
-	space.install_read_bank(addrstart, addrend, addrmirror, memory_bank \*bank)
-	space.install_write_bank(addrstart, addrend, memory_bank \*bank)
-	space.install_write_bank(addrstart, addrend, addrmirror, memory_bank \*bank)
-	space.install_readwrite_bank(addrstart, addrend, memory_bank \*bank)
-	space.install_readwrite_bank(addrstart, addrend, addrmirror, memory_bank \*bank)
+	space.instal_read_bank(addrstart, addrend, memory_bank *bank)
+	space.install_read_bank(addrstart, addrend, addrmirror, memory_bank *bank)
+	space.install_read_bank(addrstart, addrend, addrmirror, flags, memory_bank *bank)
+	space.install_write_bank(addrstart, addrend, memory_bank *bank)
+	space.install_write_bank(addrstart, addrend, addrmirror, memory_bank *bank)
+	space.install_write_bank(addrstart, addrend, addrmirror, flags, memory_bank *bank)
+	space.install_readwrite_bank(addrstart, addrend, memory_bank *bank)
+	space.install_readwrite_bank(addrstart, addrend, addrmirror, memory_bank *bank)
+	space.install_readwrite_bank(addrstart, addrend, addrmirror, flags, memory_bank *bank)
 
-Instala para a leitura, gravação ou ambos num banco já existente da
-memória num espaço de endereçamento.
+Num espaço de endereçamento, instala um banco já existente da memória
+para leitura, gravação ou ambos.
 
 O mapeamento da porta
 ~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-	space.install_read_port(addrstart, addrend, const char \*rtag)
-	space.install_read_port(addrstart, addrend, addrmirror, const char \*rtag)
-	space.install_write_port(addrstart, addrend, const char \*wtag)
-	space.install_write_port(addrstart, addrend, addrmirror, const char \*wtag)
-	space.install_readwrite_port(addrstart, addrend, const char \*rtag, const char \*wtag)
-	space.install_readwrite_port(addrstart, addrend, addrmirror, const char \*rtag, const char \*wtag)
+	space.install_read_port(addrstart, addrend, const char *rtag)
+	space.install_read_port(addrstart, addrend, addrmirror, const char *rtag)
+	space.install_read_port(addrstart, addrend, addrmirror, flags, const char *rtag)
+	space.install_write_port(addrstart, addrend, const char *wtag)
+	space.install_write_port(addrstart, addrend, addrmirror, const char *wtag)
+	space.install_write_port(addrstart, addrend, addrmirror, flags, const char *wtag)
+	space.install_readwrite_port(addrstart, addrend, const char *rtag, const char *wtag)
+	space.install_readwrite_port(addrstart, addrend, addrmirror, const char *rtag, const char *wtag)
+	space.install_readwrite_port(addrstart, addrend, addrmirror, flags, const char *rtag, const char *wtag)
 
-Instala a leitura, a gravação ou ambas as portas através do nome.
+Instala portas através de um nome para leitura, a gravação ou ambas.
 
 Os acessos abandonados
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -834,8 +844,8 @@ Os acessos não mapeados
 	space.unmap_readwrite(addrstart, addrend, *addrmirror*)
 
 Desfaz o mapeamento dos acessos (por exemplo, faz o registro log do
-acesso como não mapeado) para o alcance de uma determinada faixa do
-intervalo com um espelho opcional.
+acesso como não mapeado) para uma determinada faixa do intervalo com
+espelho opcional e sinalização.
 
 A instalação do mapa do dispositivo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -845,7 +855,8 @@ A instalação do mapa do dispositivo
 	space.install_device(addrstart, addrend, device, map, *unitmask*, *cswidth*)
 
 Instala um endereço do dispositivo com um mapa de endereçamento num
-determinado espaço.
+determinado espaço. Os argumentos ``unitmask``, ``cswidth`` e ``flags``
+são opcionais.
 
 Instalação da visualização
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
