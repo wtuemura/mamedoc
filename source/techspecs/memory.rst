@@ -630,6 +630,20 @@ permite informar a memória do sistema para acionar o manipulador caso
 uma parte mais ampla do barramento seja acessada.
 O parâmetro é a largura do gatilho (seria 16 no caso do 68000).
 
+
+A sinalização do usuário
+''''''''''''''''''''''''
+
+::
+
+	(...).flags(16-bits mask)
+
+Este parâmetro permite que o usuário defina as sinalizações no
+manipulador e que podem então ser recuperadas através do acesso de um
+dispositivo, alterando o seu comportamento.  Um exemplo da utilização do
+i960 que marca dessa maneira as zonas de risco (elas têm um suporte
+específico no nível de hardware).
+
 Configuração da visualização
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
