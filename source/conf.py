@@ -211,6 +211,28 @@ latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
 
+# Get LaTeX to handle Unicode correctly
+'inputenc': r'\usepackage[utf8x]{inputenc}',
+'utf8extra': ('\\ifdefined\\DeclareUnicodeCharacter\n'
+                  ' \\ifdefined\\DeclareUnicodeCharacterAsOptional\n'
+                  '  \\DeclareUnicodeCharacter{"00A0}{\\nobreakspace}\n'
+                  '  \\DeclareUnicodeCharacter{"2500}{\\sphinxunichar{2500}}\n'
+                  '  \\DeclareUnicodeCharacter{"2502}{\\sphinxunichar{2502}}\n'
+                  '  \\DeclareUnicodeCharacter{"2514}{\\sphinxunichar{2514}}\n'
+                  '  \\DeclareUnicodeCharacter{"251C}{\\sphinxunichar{251C}}\n'
+                  '  \\DeclareUnicodeCharacter{"2572}{\\textbackslash}\n'
+                  ' \\else\n'
+                  '  \\DeclareUnicodeCharacter{00A0}{\\nobreakspace}\n'
+                  '  \\DeclareUnicodeCharacter{2500}{\\sphinxunichar{2500}}\n'
+                  '  \\DeclareUnicodeCharacter{2502}{\\sphinxunichar{2502}}\n'
+                  '  \\DeclareUnicodeCharacter{2514}{\\sphinxunichar{2514}}\n'
+                  '  \\DeclareUnicodeCharacter{251C}{\\sphinxunichar{251C}}\n'
+                  '  \\DeclareUnicodeCharacter{0301}{\\sphinxunichar{0301}}\n'
+                  '  \\DeclareUnicodeCharacter{200B}{\\sphinxunichar{200B}}\n'
+                  '  \\DeclareUnicodeCharacter{2572}{\\textbackslash}\n'
+                  ' \\fi\n'
+                  '\\fi'),
+
 # The font size ('10pt', '11pt' or '12pt').
 'pointsize': '10pt',
 
