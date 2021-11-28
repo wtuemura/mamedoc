@@ -827,9 +827,9 @@ Os acessos abandonados
 
 ::
 
-	space.nop_read(addrstart, addrend, *addrmirror*)
-	space.nop_write(addrstart, addrend, *addrmirror*)
-	space.nop_readwrite(addrstart, addrend, *addrmirror*)
+	space.nop_read(addrstart, addrend, addrmirror, flags)
+	space.nop_write(addrstart, addrend, addrmirror, flags)
+	space.nop_readwrite(addrstart, addrend, addrmirror, flags)
 
 Descarta os acessos para uma faixa do intervalo determinado com um
 espelho opcional.
@@ -839,9 +839,9 @@ Os acessos não mapeados
 
 ::
 
-	space.unmap_read(addrstart, addrend, *addrmirror*)
-	space.unmap_write(addrstart, addrend, *addrmirror*)
-	space.unmap_readwrite(addrstart, addrend, *addrmirror*)
+    space.unmap_read(addrstart, addrend, addrmirror, flags)
+    space.unmap_write(addrstart, addrend, addrmirror, flags)
+    space.unmap_readwrite(addrstart, addrend, addrmirror, flags)
 
 Desfaz o mapeamento dos acessos (por exemplo, faz o registro log do
 acesso como não mapeado) para uma determinada faixa do intervalo com
