@@ -482,10 +482,10 @@ da máquina emulada e as suas respectivas opções, quando houver.
 
 		O valor predefinido é ``Desligado``.
 
-* :guilabel:`Escale a tela com valores racionais`
+* :guilabel:`Escale a tela com valores inteiros`
 
-  Faz com que a tela possa ser expandida usando números racionais em vez
-  de números inteiros, isso causa efeitos *"aliasing"* (um efeito
+  Faz com que a tela possa ser expandida usando números facionados em
+  vez de números inteiros, isso causa efeitos *"aliasing"* (um efeito
   colateral de deformação dos pixels) indesejáveis na tela, para mais
   informações consulte
   :ref:`-unevenstretch <mame-commandline-unevenstretch>`.
@@ -1420,7 +1420,7 @@ Todas as entradas
 	A tecla predefinida é :kbd:`~`.
 
 
-* :guilabel:`Interrompe o depurador`
+* :guilabel:`Entra no depurador`
 
   Atalho para entrar no depurador durante a emulação, só funciona caso
   o MAME tenha sido compilado com ferramentas de depuração.

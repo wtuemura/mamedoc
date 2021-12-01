@@ -1,130 +1,194 @@
+.. raw:: latex
+
+	\clearpage
+
 .. _debugger-watchpoints-list:
 
-Comandos watchpoint do depurador
-================================
+Comandos do ponto de controle do depurador
+==========================================
 
+.. line-block::
 
-Na interface de depuração do MAME você pode digitar **help <command>**
-para uma melhor descrição de cada comando.
+    :ref:`debugger-command-wpset`
+        Define o |pdc| do acesso da memória.
+    :ref:`debugger-command-wpclear`
+        Apaga os |pdcs|.
+    :ref:`debugger-command-wpdisable`
+        Desativa os |pdcs|.
+    :ref:`debugger-command-wpenable`
+        Ativa os |pdcs|.
+    :ref:`debugger-command-wplist`
+        Lista os |pdcs|.
 
-|	:ref:`debugger-command-wpset` -- define o espaço de watchpoint para o programa, dados e I/O
-|	:ref:`debugger-command-wpclear` -- limpa todos ou nenhum watchpoint caso nenhum <*wpnum*> seja definido
-|	:ref:`debugger-command-wpdisable` -- desabilita todos ou um determinado watchpoint caso nenhum <*wpnum*> seja definido
-|	:ref:`debugger-command-wpenable` -- habilita todos ou um determinado watchpoint caso nenhum <*wpnum*> seja definido
-|	:ref:`debugger-command-wplist` -- lista todos os watchpoints
-|
+Os |pdcs| [#watchpoint]_ interrompe a execução do depurador quando uma
+*CPU* acessa um ponto numa determinada faixa da memória.
 
- .. _debugger-command-wpset:
+.. [#watchpoint]	Watchpoint no Inglês.
+
+.. _debugger-command-wpset:
 
 wpset
 -----
 
-|  **wp[{d|i}][set]** <*address*>,<*length*>,<*type*>[,<*condition*>[,<*action*>]]
-|
-| define um novo "*watchpoint*" começando no endereço definido <*address*> e estendendo para <*length*>. O intervalo inclusivo do watchpoint é <*address*> através de <*address*> + <*length*> - 1.
-| O comando "*wpset*" define um watchpoint na memória do programa; o comando "*wpdset*" define um watchpoint nos dados da memória; e o comando "*wpiset*" define um watchpoint no I/O da memória.
-| O parâmetro <*type*> especifica que tipo de acesso apanhar. Pode ser um dos três valores: 'r' para um watchpoint de leitura 'w' para um watchpoint de gravação e 'rw' para um watchpoint de leitura/escrita.
-|
-| O parâmetro de condição opcional <*condition*> permite que você especifique uma expressão que será avaliada cada vez que o watchpoint for atingido. Se o resultado da expressão for verdadeiro (não-zero), o watchpoint irá interromper (halt) a execução; caso contrário, a execução continuará sem nenhuma notificação.
-| O parâmetro opcional de ação <*action*> fornece um comando que é executado sempre que o watchpoint for atingido e a condição <*condition*> for verdadeira. Observe que você pode precisar incorporar a ação entre chaves **{ }** para evitar que as vírgulas e os pontos e vírgulas sejam interpretados como se aplicassem ao próprio comando wpset.
-| Cada watchpoint que for definido é designado a um índice que pode ser usado em outros comandos watchpoint para usar este watchpoint como referência.
-| A fim de ajudar a expressão de condição <*condition*>, duas variáveis estão disponíveis, a variável 'wpaddr' é definida para o endereço que realmente desencadeou o watchpoint, a variável 'wpdata' é definida para os dados que estão sendo lidos ou escritos, a variável 'wpsize' é definido para o tamanho dos dados em bytes.
-|
-| Exemplos:
-|
-|  ``wp 1234,6,rw``
-|
-| Define um watchpoint que interromperá a execução sempre que uma leitura ou escrita acontecer no intervalo de endereço **1234-1239**, inclusive.
-|
-|  ``wp 23456,a,w,wpdata == 1``
-|
-| Define um watchpoint que interromperá a execução sempre que uma escrita no intervalo do endereço **23456-2345f** e os dados escritos forem iguais a **1**.
-|
-|  ``wp 3456,20,r,1,{printf "Read @ %08X\\n",wpaddr; g}``
-|
-| Define um watchpoint que interromperá a execução sempre que uma leitura acontecer no intervalo de endereço **3456-3475**. Quando isso acontecer, imprime **Read @ <wpaddr>** e continua a execução.
-|
-|  ``temp0 = 0; wp 45678,1,w,wpdata==f0,{temp0++; g}``
-|
-| Define um watchpoint que interromperá a execução sempre que uma escrita acontecer no endereço **45678** e o valor que estiver sendo escrito for igual a **f0**. Quando isso acontecer, incrementa a variável **temp0** e resume a execução.
-|
-| Voltar para :ref:`debugger-watchpoints-list`
-|
+**wp[{d|i|o}][set]** <*endereço*>[:<*faixa*>],<*comprimento*>,<*tipo*>[,<*condição*>[,<*ação*>]]
 
- .. _debugger-command-wpclear:
+Define um novo |pdc| iniciando em determinado <*endereço*> que se
+estende através do parâmetro <*comprimento*>. Toda a faixa do |pdc| é o
+<*endereço*> através do <*endereço*>+<*comprimento*>-1, inclusive. O
+<*endereço*> pode ser opcionalmente seguido pela |fde| da *CPU*
+(consulte :ref:`debugger-devicespec` para obter mais detalhes). Quando
+nenhuma |fde| for definida, |osdc|. O comando ``wpset`` retorna a
+primeira |fde| que for exposta pela *CPU*, ``wpdset`` |rfi| 1 (dados),
+``wpiset`` |rfi| 2 (E/S), já ``wposet`` |rfi| 3 (*opcodes*). O parâmetro
+<*tipo*> determina o tipo de acesso que serão retidos, ele pode ser um
+destes 3 valores ``r`` para os acessos de leitura, ``w`` para os acessos
+para a escrita ou ``rw`` para ambos os acessos de leitura e escrita.
+
+Já o parâmetro opcional <*condição*> permite que uma expressão seja
+definida para que ela seja avaliada cada vez que um |pdc| seja
+alcançado. Quando o resultado da expressão for verdadeiro (não zero) o
+|pdc| interromperá a execução, caso contrário, a execução continuará sem
+qualquer notificação. O parâmetro opcional <*ação*> oferece um comando
+para ser executado sempre que um |pdc| seja alcançado e a <*condição*>
+seja verdadeira. |oqts| ``wpset``.
+
+Cada |pdc| que for definido é atribuído a um índice numérico que pode
+ser utilizado como referência em outros comandos do |pdc|. Durante a
+sessão os índices do |pdc| são únicos.
+
+Duas variáves estão disponíveis para tornar as expressões <*condição*>
+mais uteis: para todos os |pdcs|, a variável ``wpaddr`` é definido no
+endereço de acesso que foi alcançado; para a gravação no |pdc|, a
+variável ``wpdata`` é definida nos dados que estão sendo gravados.
+
+Exemplos:
+
+.. line-block::
+
+    ``wp 1234,6,rw``
+        |duqi| sempre que uma leitura ou escrita acontecer na primeira faixa de endereço entre ``1234-1239``.
+    ``wp 23456:data,a,w,wpdata == 1``
+        |duqi| sempre que uma gravação ocorrer no espaço ``data`` na faixa de endereço entre ``23456-2345f`` e a gravação dos dados seja igual à ``1``.
+    ``wp 3456:maincpu,20,r,1,{ printf "Read @ %08X\n",wpaddr ; g }``
+        Define um |pdc| na *CPU* |ccad| ``:maincpu`` a execução será interrompida sempre que ocorrer uma leitura na primeira faixa de endereço entre ``3456-3475``. Quando ocorrer, imprima ``Read @ <wpaddr>`` no console do depurador e a execução é resumida.
+    ``temp0 = 0 ; wp 45678,1,w,wpdata==f0,{ temp0++ ; g }``
+        Define um |pdc| na *CPU* que estiver visível que interromperá a execução sempre que ocorrer uma gravação no endereço ``45678`` e onde o valor que será escrito seja igual à ``f0``. Quando ocorrer, incremente o valor ``temp0`` e  a execução é resumida.
+
+|ret| :ref:`debugger-watchpoints-list`.
+
+
+.. _debugger-command-wpclear:
 
 wpclear
 -------
 
-|  **wpclear** [<*wpnum*>]
-|
-| O comando "*wpclear*" limpa o watchpoint. Caso o <*wpnum*> seja definido, apenas o watchpoint solicitado é limpo, caso contrário, todos os watchpoints serão limpos.
-|
-| Exemplos:
-|
-|  ``wpclear 3``
-|
-| Limpa o **indexador 3** do watchpoint.
-|
-|  ``wpclear``
-|
-| Limpa todos os watchpoints.
-|
-| Voltar para :ref:`debugger-watchpoints-list`
-|
+**wpclear** [<*wpnum*>[,…]]
 
- .. _debugger-command-wpdisable:
+Apaga os |pdcs|. Quando o <*wpnum*> for definido, as referências dos
+|pdcs| serão apagadas. Ao não ser definido, todos os |pdcs| serão
+apagados.
+
+Exemplos:
+
+.. line-block::
+
+    ``wpclear 3``
+        Apaga o |pdc| com o índice ``3``.
+    ``wpclear``
+        Apaga todos os |pdcs|.
+
+|ret| :ref:`debugger-watchpoints-list`.
+
+
+.. _debugger-command-wpdisable:
 
 wpdisable
 ---------
 
-|  **wpdisable** [<*wpnum*>]
-|
-| O comando "*wpdisable*" desabilita um watchpoint. Caso o <*wpnum*> seja definido, apenas o watchpoint solicitado é desativado, caso contrário, todos os watchpoints serão desativados. Note que desabilitar um watchpoint ele não é apagado, o watchpoint fica registrado temporariamente como inativo.
-|
-| Exemplos:
-|
-|  ``wpdisable 3``
-|
-| Desabilita o **indexador 3** do watchpoint.
-|
-|  ``wpdisable``
-|
-| Desabilita todos os watchpoints.
-|
-| Voltar para :ref:`debugger-watchpoints-list`
-|
+**wpdisable** [<*wpnum*>[,…]]
 
- .. _debugger-command-wpenable:
+Desativa os |pdcs|. Quando o <*wpnum*> for definido, as referências dos
+|pdcs| serão desativadas. Ao não ser definido, todos os |pdcs| serão
+desativados.
+
+Observe que ao desativar um |pdc| ele não é excluído, marca
+temporariamente o |pdc| como inativo. Os |pdcs| que forem desativados
+não causam a interrupção da execução, as condições associadas às
+expressões não serão avaliadas e seus respectivos comandos não serão
+executados.
+
+Exemplos:
+
+.. line-block::
+
+    ``wpdisable 3``
+        Desativa o |pdc| com o índice ``3``.
+    ``wpdisable``
+        Desativa todos os |pdcs|.
+
+|ret| :ref:`debugger-watchpoints-list`.
+
+
+.. _debugger-command-wpenable:
 
 wpenable
 --------
 
-|  **wpenable** [<*wpnum*>]
-|
-| O comando "*wpenable*" habilita um watchpoint. Caso o <*wpnum*> seja definido, apenas o "*watchpoint*" solicitado é ativado, caso contrário, todos os watchpoints serão ativados.
-|
-| Exemplos:
-|
-|  ``wpenable 3``
-|
-| ativa todos os **index 3**.
-|
-|  wpenable
-|
-| ativa todos os watchpoints.
-|
-| Voltar para :ref:`debugger-watchpoints-list`
-|
+**wpenable** [<*wpnum*>[,…]]
 
- .. _debugger-command-wplist:
+Ativa os |pdcs|. Quando o <*wpnum*> for definido, as referências dos
+|pdcs| serão ativadas. Ao não ser definido, todos os |pdcs| serão
+ativados.
+
+Exemplos:
+
+.. line-block::
+
+    ``wpenable 3``
+        Ativa o |pdc| com o índice ``3``.
+    ``wpenable``
+        Ativa todos os |pdcs|.
+
+|ret| :ref:`debugger-watchpoints-list`.
+
+
+.. _debugger-command-wplist:
 
 wplist
 ------
 
-|  **wplist**
-|
-|  O comando "*wplist*" lista todos os watchpoints atuais, junto com o seu indexador e quaisquer condições anexadas a eles.
-|
-| Voltar para :ref:`debugger-watchpoints-list`
-|
+**wplist** [<*CPU*>]
+
+Lista os |pdcs| atuais junto com seus índices e quaisquer ações ou
+condições associadas. Quando nenhuma <*CPU*> for definida, os |pdcs| em
+todas as *CPUs* do sistema serão listadas, ao ser definida, apenas os
+|pdcs| para esta *CPU* será listada. A <*CPU*> pode ser determinada por
+uma etiqueta ou através de um número do depurador. (consulte
+:ref:`debugger-devicespec` para obter mais detalhes).
+
+Exemplos:
+
+.. line-block::
+
+    ``wplist``
+        Lista todos os |pdcs|.
+    ``wplist .``
+        Lista todos os |pdcs| para a *CPU* que estiver visível.
+    ``wplist maincpu``
+        Lista todos os |pdcs| para a *CPU* |ccad| ``:maincpu``.
+
+|ret| :ref:`debugger-watchpoints-list`.
+
+
+.. |pdc| replace:: ponto de controle
+.. |pdcs| replace:: pontos de controle
+.. |ret| replace:: Retorna para
+.. |fde| replace:: faixa de endereços
+.. |osdc| replace:: o sufixo do comando define a faixa do endereço
+.. |oqts| replace:: Observe que talvez seja necessário cercar a ação
+   dentro de chaves ``{`` ``}`` garantindo que as vírgulas e os
+   ponto-e-vírgulas dentro do comando não sejam interpretadas no
+   contexto do próprio comando
+.. |rfi| replace:: retorna para a faixa do índice
+.. |duqi| replace:: Define um |pdc| que interromperá uma execução na *CPU* que estiver visível
+.. |ccad| replace:: com o caminho absoluto da etiqueta

@@ -753,7 +753,7 @@ msgstr "X ou Y (Auto)"
 
 #: src/frontend/mame/ui/videoopt.cpp:210
 msgid "Non-Integer Scaling"
-msgstr "Escale a tela com valores racionais"
+msgstr "Escale a tela com valores inteiros"
 
 #: src/frontend/mame/ui/videoopt.cpp:213
 msgid "Maintain Aspect Ratio"
@@ -6504,7 +6504,7 @@ msgstr "Visualização na tela"
 #: src/emu/inpttype.ipp:809
 msgctxt "input-name"
 msgid "Break in Debugger"
-msgstr "Interrompe no depurador"
+msgstr "Entra no depurador"
 
 #: src/emu/inpttype.ipp:810
 msgctxt "input-name"

@@ -3,102 +3,126 @@
 Comandos da anotação do código do depurador
 ===========================================
 
+.. line-block::
 
-Na interface de depuração do MAME você pode digitar **help <command>**
-para uma melhor descrição de cada comando.
+    :ref:`debugger-command-comadd`
+        Inclui um comentário num determinado endereço do código desmontado.
+    :ref:`debugger-command-comdelete`
+        Remove o comentário de um determinado endereço.
+    :ref:`debugger-command-comsave`
+        Salva o comentário atual num arquivo.
+    :ref:`debugger-command-comlist`
+        Imprime os comentários disponíveis a partir de um arquivo.
+    :ref:`debugger-command-commit`
+        Aplica um ``comadd`` seguido de ``comsave``
 
-| :ref:`debugger-command-comadd` -- Inclui um comentário ao código desmontado num determinado endereço
-| :ref:`debugger-command-comdelete` -- remove o comentário de um determinado endereço
-| :ref:`debugger-command-comsave` -- salva o comentário atual num arquivo
-| :ref:`debugger-command-comlist` -- imprime os comentários disponíveis de um arquivo
-| :ref:`debugger-command-commit` -- aplica um comadd e depois comsave
-|
-
- .. _debugger-command-comadd:
+.. _debugger-command-comadd:
 
 comadd
 ------
 
-|  **comadd[//]** <*address*>,<*comment*>
-|
-| Inclui uma string <*comment*> ao código desmontado em <*address*>. O atalho para este comando é só '//'
-|
-| Exemplos:
-|
-|  ``comadd 0, hello world.``
-|
-| Inclui o comentário 'hello world.' ao código no endereço **0x0**
-|
-|  ``// 10, opcode não documentado!``
-|
-| Inclui o comentário 'opcode não documentado!' ao código no endereço **0x10**
-|
+**comadd** <*endereço*>,<*comentário*>
+
+Define o comentário indicado num determinado endereço do código
+desmontado |nace|. Este comando pode ser abreviado para ``//``.
+
+Exemplos:
+
+.. line-block::
+
+    ``comadd 0,hello world.``
+        Inclui o comentário "hello world." ao código no endereço ``0``.
+    ``// 10,opcode não documentado!``
+        Inclui o comentário "**opcode não documentado!**" ao código no endereço ``10``.
+
+|ret| :ref:`debugger-annotation-list`.
+
 
  .. _debugger-command-comdelete:
 
 comdelete
 ---------
 
-|  **comdelete**
-|
-| Apaga o comentário num offset determinado da memória. O comentário que é excluído está no banco de memória ativo no momento.
-|
-| Exemplos:
-|
-|  ``comdelete 10``
-|
-| Apaga o comentário do código no endereço **0x10** (usando as configurações do banco atual de memória)
-|
+**comdelete**
+
+Excluí determinado endereço |nace|.
+
+Exemplo:
+
+.. line-block::
+
+    ``comdelete 10``
+        Excluí o comentário do código no endereço ``10`` |nace|.
+
+|ret| :ref:`debugger-annotation-list`.
 
  .. _debugger-command-comsave:
 
 comsave
 -------
 
-|  **comsave**
-|
-| Salva as observações de trabalho no arquivo de comentário XML do driver.
-|
-| Exemplos:
-|
-|  ``comsave``
-|
-| Salva os comentários no arquivo de comentários do driver
-|
+Grava os comentários atuais no arquivo de comentários XML para o sistema
+emulado. Este arquivo será carregado pelo depurador na próxima vez em
+que o sistema for executado com a depuração ativada. A opção que define
+onde estes arquivos são salvos é definido pela opção
+:ref:`comment_directory <mame-commandline-commentdirectory>`.
+
+Exemplo:
+
+.. line-block::
+
+    ``comsave``
+        Grava os comentários atuais no arquivo de comentários do sistema.
+
+|ret| :ref:`debugger-annotation-list`.
+
 
  .. _debugger-command-comlist:
 
 comlist
 -------
 
-|  **comlist**
-|
-| Imprime o comentário atual disponível em formato legível para humanos na janela de saída do depurador.
-|
-| Exemplos:
-|
-|  ``comlist``
-|
-| Mostra os comentários disponíveis atualmente.
-|
+Faz a leitura dos comentários armazenados no arquivo de comentário XML
+para o sistema emulado e os imprime no console de depuração. Este
+comando não afeta os comentários da sessão atual pois faz a leitura
+direta do arquivo. A opção que define onde estes arquivos são salvos é
+definido pela opção
+:ref:`comment_directory <mame-commandline-commentdirectory>`.
+
+Exemplo:
+
+.. line-block::
+
+    ``comlist``
+        Mostra os comentários armazenados num arquivo de comentário do sistema.
+
+|ret| :ref:`debugger-annotation-list`.
+
 
  .. _debugger-command-commit:
 
 commit
 ------
 
-|  **commit[/*]** <*address*>,<*comment*>
-|
-| Inclui uma string <*comment*> ao código desmontado no <*address*> e salva num arquivo. Basicamente é o mesmo que comadd + comsave numa única linha.
-| O atalho para este comando é ``\'\/\*\'``
-|
-| Exemplos:
-|
-|  ``commit 0, hello world.``
-|
-| Inclui o comentário 'hello world.' ao código no endereço **0x0**
-|
-|  ``// 10, undocumented opcode!``
-|
-| Inclui o comentário 'opcode não documentado!' ao código no endereço **0x10**
-|
+**commit** <*endereço*>,<*comentário*>
+
+Define o comentário indicado em determinado endereço no código
+desmontado |nace| e grava os comentários no arquivo para o sistema que
+estiver sendo emulado no momento. (é equivalente ao comando
+:ref:`debugger-command-comadd` seguido de
+:ref:`debugger-command-comsave`). Este comando pode ser abreviado para
+``/*``.
+
+Exemplos:
+
+.. line-block::
+
+    ``commit 0,hello world.``
+        Inclui o comentário "hello world." ao código no endereço ``0`` |nace| e salva os comentários.
+    ``/* 10,opcode não documentado!``
+        Inclui o comentário "opcode não documentado!" ao código no endereço ``10`` |nace| e salva os comentários.
+
+|ret| :ref:`debugger-annotation-list`.
+
+.. |ret| replace:: Retorna para
+.. |nace| replace:: na *CPU* que estiver visível

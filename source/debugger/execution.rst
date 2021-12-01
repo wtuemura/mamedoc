@@ -3,24 +3,42 @@
 Comandos de execução do depurador
 =================================
 
+.. line-block::
 
-Na interface de depuração do MAME você pode digitar **help <command>**
-para uma melhor descrição de cada comando.
+    :ref:`debugger-command-step`
+        Passo único para instruções <*quantidade*> (:kbd:`F11`).
+    :ref:`debugger-command-over`
+        Passo único durante instruções <*quantidade*> (:kbd:`F10`).
+    :ref:`debugger-command-out`
+        Passo único até que o manipulador atual da sub-rotina/execução
+        retorne (:kbd:`Shift`-:kbd:`F11`).
+    :ref:`debugger-command-go`
+        |1| (:kbd:`F5`).
+    :ref:`debugger-command-gex`
+        |1| até que a exceção seja criada.
+    :ref:`debugger-command-gint`
+        |1| até que a interrupção seja obtida (:kbd:`F7`).
+    :ref:`debugger-command-gtime`
+        |1| até que o atraso determinado tenha decorrido.
+    :ref:`debugger-command-gvblank`
+        Retoma a execução até o próximo |vbi| [#VBI]_ (:kbd:`F8`).
+    :ref:`debugger-command-next`
+        |1| até a próxima alternância da *CPU* (:kbd:`F6`).
+    :ref:`debugger-command-focus`
+        Foca o depurador apenas na <*CPU*>.
+    :ref:`debugger-command-ignore`
+        Para a depuração na <*CPU*>.
+    :ref:`debugger-command-observe`
+        Retoma a depuração na <*CPU*>.
+    :ref:`debugger-command-trace`
+        Rastreia a determinada *CPU* para um arquivo.
+    :ref:`debugger-command-traceover`
+        Rastreia a determinada *CPU* para um arquivo, mas ignore as
+        sub-rotinas.
+    :ref:`debugger-command-traceflush`
+        Elimina todos os arquivos de rastreamento que estiverem abertos.
 
-| :ref:`debugger-command-step` -- passo único para instruções <*count*> (F11)
-| :ref:`debugger-command-over` -- passo único durante instruções <*count*> (F10)
-| :ref:`debugger-command-out` -- passo único até o manipulador atual de subrotina/execução seja terminado (Shift-F11)
-| :ref:`debugger-command-go` -- resume a execução, define breakpoint temporário no endereço <*address*> (F5)
-| :ref:`debugger-command-gint` -- resume a execução, define breakpoint temporário se <*irqline*> for tomada (F7)
-| :ref:`debugger-command-gtime` -- resume a execução até que o atraso determinado termine
-| :ref:`debugger-command-gvblank` -- resume a execução, define breakpoint temporário até o próximo VBLANK (F8)
-| :ref:`debugger-command-next` -- executa até que o próximo CPU alterne (F6)
-| :ref:`debugger-command-focus` -- foca o depurados apenas na <*cpu*>
-| :ref:`debugger-command-ignore` -- para a depuração na <*cpu*>
-| :ref:`debugger-command-observe` -- continua a depuração na <*cpu*>
-| :ref:`debugger-command-trace` -- rastreia o dado CPU para um arquivo (defaults to active CPU)
-| :ref:`debugger-command-traceover` -- rastreia o dado CPU para um arquivo, mas pule as subrotinas (defaults to active CPU)
-| :ref:`debugger-command-traceflush` -- elimine todos os arquivo open trace.
+.. [#VBI]	Vertical Blanking Interval, também conhecido como intervalo vertical ou VBLANK.
 
 
  .. _debugger-command-step:
@@ -28,21 +46,22 @@ para uma melhor descrição de cada comando.
 step
 ----
 
-|  **s[tep]** [<*count*>=1]
-|
-| O comando "*step*" avança uma ou mais instruções na CPU que estiverem sendo executadas. É predefinido que o comando execute apenas uma instrução a cada vez que for chamado. Também é possível dar um passo em diferentes instruções ao incluir o parâmetro opcional <*count*>.
-|
-| Exemplos:
-|
-|  ``s``
-|
-| Avança apenas uma instrução da CPU.
-|
-|  ``step 4``
-|
-| Avança quatro instruções da CPU.
-|
-| Voltar para :ref:`debugger-execution-list`
+**s[tep]** [<*quantidade*>]
+
+Avança uma ou mais instruções sobre a *CPU* que estiver atualmente em
+execução. Executa uma instrução caso <*quantidade*> seja omitido ou a
+<*quantidade*> de passos para as instruções caso seja informada.
+
+Exemplos:
+
+.. line-block::
+
+    ``s``
+        Avança uma instrução na *CPU* atual.
+    ``step 4``
+        Avança 4 instruções na *CPU* atual.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-over:
@@ -50,23 +69,31 @@ step
 over
 ----
 
-|  **o[ver]** [<*count*>=1]
-|
-| O comando "*over*" avança um passo simples sobre uma ou mais instruções que estiverem sendo executadas na CPU, passando por cima de chamadas de sub-rotina e traps do manipulador de exceção, contando-os como uma única instrução. Observe que, ao passar por cima de uma chamada de sub-rotina o código pode ser executado em outras CPUs antes da conclusão da chamada. É predefinido que o comando execute apenas uma instrução a cada vez que for chamado. Também é possível dar um passo em diferentes instruções ao incluir o parâmetro opcional <*count*>.
-|
-| Observe que a funcionalidade step over pode não estar implementada em todos os tipos de CPU. Caso não esteja, então o comando 'over' se comportará exatamente como o comando 'step'.
-|
-| Exemplos:
-|
-|  ``o``
-|
-| Avança e passa por cima de apenas uma instrução da CPU.
-|
-|  ``over 4``
-|
-| Avança e passa por cima sobre quatro instruções da CPU atual.
-|
-| Voltar para :ref:`debugger-execution-list`
+**o[ver]** [<*quantidade*>]
+
+O comando ``over`` avança um único passo sobre uma ou mais instruções
+que estiverem sendo executadas na *CPU*, passando por cima das chamadas da
+sub-rotina e das capturas do manipulador e contando-os como uma única
+instrução. Observe que, ao passar por cima de uma chamada da sub-rotina
+o código pode ser executado nas outras *CPUs* antes do retorno da chamada.
+
+Passa por cima de uma instrução caso a <*quantidade*> seja omitida, ou
+passe por cima das instruções caso a <*quantidade*> seja informada.
+
+Observe que esta funcionalidade pode não estar implementada em todos os
+tipos de *CPU*. Caso não esteja, então o comando ``over`` se comportará
+exatamente como o comando :ref:`debugger-command-step`.
+
+Exemplos:
+
+.. line-block::
+
+    ``o``
+        Avança uma instrução na *CPU* atual.
+    ``over 4``
+        Avança 4 instruções na *CPU* atual.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-out:
@@ -74,19 +101,27 @@ over
 out
 ---
 
-|  **out**
-|
-| O comando "*out*" avança passos simples até encontrar um retorno da sub-rotina ou retorno da instrução em exceção. Observe que, como ele detecta o retorno das condições de exceção, caso você tente sair de uma sub-rotina e ocorrer uma interrupção/exceção antes de atingir o final, você poderá parar prematuramente no final do manipulador de exceções.
-|
-| Observe que a funcionalidade de saída não pode estar implementada em todos os tipos de CPU. Caso não esteja, então o comando 'out' se comportará exatamente como o comando 'step'.
-|
-| Exemplos:
-|
-|  ``out``
-|
-| Avance até que a sub-rotina atual ou o manipulador de exceções retorne.
-|
-| Voltar para :ref:`debugger-execution-list`
+**out**
+
+O comando ``out`` avança um único passo até encontrar um retorno da
+sub-rotina ou caso o retorno de uma instrução em exceção seja
+encontrada. Observe que como ele detecta o retorno das condições da
+exceção, caso tente sair de uma sub-rotina e uma interrupção/exceção
+ocorra antes de atingir o final, será possível interromper o final das
+exceções do manipulador prematuramente.
+
+Observe que a funcionalidade para sair pode não estar implementada em
+todos os tipos de *CPU*. Caso não esteja, então o comando ``out`` se
+comportará exatamente como o comando :ref:`debugger-command-step`.
+
+Exemplo:
+
+.. line-block::
+
+    ``out``
+        Continua os passos até que uma sub-rotina ou um manipulador das exceções retorne.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-go:
@@ -94,21 +129,105 @@ out
 go
 --
 
-|  **g[o]** [<*address*>]
-|
-| O comando "*go*" retoma a execução do código atual. O controle não será retornado ao depurador até que um breakpoint ou um watchpoint seja atingido, ou até que você interrompa manualmente usando a chave designada. O comando go usa um parâmetro opcional *<address>* que é um breakpoint incondicional que é definido antes de ser executado e removido automaticamente quando for pressionado.
-|
-| Exemplos:
-|
-|  ``g``
-|
-| Retomar a execução até o próximo **break/watchpoint** ou até uma parada manual.
-|
-|  ``g 1234``
-|
-| Retomar a execução parando no endereço **1234** a não ser que algo nos pare primeiro.
-|
-| Voltar para :ref:`debugger-execution-list`
+**g[o]** [<*endereço*>]
+
+|1|. O controle não será devolvido ao depurador até que
+um ponto de interrupção ou que um ponto de controle [#WATCHPOINT]_ seja
+atingido ou até que você faça uma interrupção manual. Caso o
+<*endereço*> opcional seja fornecido, um ponto temporário de interrupção
+incondicional será definido na *CPU* que estiver visível no endereço
+determinado. Este ponto será eliminado automaticamente quando for
+atingido.
+
+	.. [#WATCHPOINT]	Watchpoint no Inglês
+
+Exemplos:
+
+.. line-block::
+
+    ``g``
+        |1| até que o ponto de interrupção/controle seja atingido ou até que uma interrupção (*break*) seja manualmente requisitada.
+    ``g 1234``
+        |1| parando no endereço 1234 até que outra condição faça com que a execução pare antes dela.
+
+|ret| :ref:`debugger-execution-list`.
+
+
+.. _debugger-command-gex:
+
+gex
+---
+
+**ge[x]** [<*exceção*>,[<*condição*>]]
+
+|1|. O controle não será devolvido ao depurador até que
+um ponto de interrupção ou de controle seja atingido, ou até que seja
+levantada uma condição de exceção na *CPU* atual. Use o parâmetro opcional
+<*exceção*> para parar a execução apenas numa condição de exceção
+específica. Caso a <*exceção*> não seja usada, a execução irá parar em
+qualquer condição de exceção.
+
+O parâmetro opcional <*condição*> permite determinar uma expressão que
+será avaliada cada vez que uma condição específica de exceção for
+levantada. Caso o resultado da expressão seja verdadeiro (não zero), a
+exceção interromperá a execução; caso contrário, a execução continuará
+sem qualquer notificação.
+
+Exemplos:
+
+.. line-block::
+
+    ``gex``
+        |1| até que o ponto de interrupção/controle seja atingido ou até que uma condição de exceção seja levantada na *CPU* atual.
+    ``ge 2``
+        |1| até que o ponto de interrupção/controle seja atingido ou até que uma condição de exceção 2 seja levantada na *CPU* atual.
+
+|ret| :ref:`debugger-execution-list`.
+
+
+.. _debugger-command-gint:
+
+gint
+----
+
+**gi[nt]** [<*irqline*>]
+
+|1|. |2|, ou até que uma interrupção seja confirmada e reconhecida na
+CPU atual. |3| <*irqline*> para parar a execução apenas na interrupção
+determinada da linha que está sendo confirmada e reconhecida. Caso
+<*irqline*> não seja usado, a execução será parada quando qualquer
+interrupção for reconhecida.
+
+Exemplos:
+
+.. line-block::
+
+    ``gi``
+        |4| ou até que uma interrupção seja confirmada e reconhecida na *CPU* atual.
+    ``gint 4``
+        |4| ou até que uma interrupção requeira que a linha 4 seja confirmada e reconhecida na *CPU* atual.
+
+|ret| :ref:`debugger-execution-list`.
+
+
+.. _debugger-command-gtime:
+
+gtime
+-----
+
+**gt[ime]** <*milissegundos*>
+
+|1|. O controle não será devolvido ao depurador até que o tempo interno
+da emulação tenha decorrido. O intervalo é determinado em milissegundos.
+
+Exemplo:
+
+.. line-block::
+
+    ``gtime #10000``
+        Retoma a execução por 10 segundos do tempo de emulação.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-gvblank:
@@ -116,57 +235,18 @@ go
 gvblank
 -------
 
-|  **gv[blank]**
-|
-| O comando "*gvblank*" retoma a execução do código atual. O controle não será retornado ao depurador até que um breakpoint ou watchpoint seja atingido ou até que o próximo **VBLANK** ocorra no emulador.
-|
-| Exemplos:
-|
-|  ``gv``
-|
-| Retomar a execução até o próximo **break/watchpoint** ou até o próximo **VBLANK**.
-|
-| Voltar para :ref:`debugger-execution-list`
+**gv[blank]**
 
+|1|. |2|, ou até que se inicie o |vbi| para uma tela emulada.
 
- .. _debugger-command-gint:
+Exemplos:
 
-gint
-----
+.. line-block::
 
-|  **gi[nt]** [<*irqline*>]
-|
-| O comando "*gint*" retoma a execução do código atual. O controle não será retornado ao depurador até que um breakpoint ou watchpoint seja atingido ou até que um IRQ seja declarado e reconhecido na CPU atual. Você pode definir um <*irqline*> caso deseje interromper a execução apenas numa determinada linha de IRQ que estiver sendo declarada e confirmada. Caso o <*irqline*> seja omitido, então qualquer linha IRQ irá parar a execução.
-|
-| Exemplos:
-|
-|  ``gi``
-|
-| Retomar a execução até o próximo **break/watchpoint** ou até que qualquer IRQ seja declarado e reconhecido na CPU atual.
-|
-|  ``gint 4``
-|
-| Retomar a execução até a próxima **break/watchpoint** ou até que a linha IRQ seja declarada e confirmada na CPU atual.
-|
-| Voltar para :ref:`debugger-execution-list`
+    ``gv``
+        |4| ou até que um |vbi| se inicie.
 
-
- .. _debugger-command-gtime:
-
-gtime
------
-
-|  **gt[ime]** <*milliseconds*>
-|
-| O comando "*gtime*" retoma a execução do código atual. O controle não será retornado ao depurador até que um atraso especificado tenha decorrido. O atraso é em milissegundos.
-|
-| Examplo:
-|
-|  ``gtime #10000``
-|
-| Retomar a execução por dez segundos
-|
-| Voltar para :ref:`debugger-execution-list`
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-next:
@@ -174,11 +254,20 @@ gtime
 next
 ----
 
-|  **n[ext]**
-|
-| O comando "*next*" retoma a execução e continua a execução até a próxima vez que uma CPU diferente for planejada. Note que se você usou 'ignore' para ignorar certas CPUs, você não irá parar até que uma CPU não-'ignore' seja agendada.
-|
-| Voltar para :ref:`debugger-execution-list`
+**n[ext]**
+
+Retoma a execução até que uma *CPU* diferente seja agendada. Caso seja
+ignorada pelo uso dos comandos :ref:`debugger-command-ignore` ou
+:ref:`debugger-command-focus` a execução da CPU não vai parar.
+
+Exemplo:
+
+.. line-block::
+
+    ``n``
+        |1|, parando quando uma *CPU* diferente que não foi ignorada estiver agendada.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-focus:
@@ -186,17 +275,24 @@ next
 focus
 -----
 
-|  **focus** <*cpu*>
-|
-| O comando "*focus*" Define o foco do depurador exclusivamente para o dado <*cpu*>. Isso é equivalente a especificar 'ignore' em todas as outras CPUs.
-|
-| Example:
-|
-|  ``focus 1``
-|
-| Concentre-se exclusivamente CPU **#1** enquanto ignora todas as outras CPUs ao usar o depurador.
-|
-| Voltar para :ref:`debugger-execution-list`
+**focus** <*CPU*>
+
+Foca de forma exclusiva na <*CPU*> definida ignorando todas as outras. O
+argumento <*CPU*> pode ser a etiqueta de um dispositivo ou um número de
+depuração da *CPU* (|cpom|). É o mesmo que usar o comando
+:ref:`debugger-command-ignore` para ignorar todas as *CPUs* que não seja
+a *CPU* que foi definida.
+
+Exemplos:
+
+.. line-block::
+
+    ``focus 1``
+        Concentre-se exclusivamente na segunda CPU do sistema (|ibz|), ignorando todas as outras CPUs.
+    ``focus audiopcb:melodycpu``
+        Concentre-se exclusivamente na CPU |ccad| ``:audiopcb:melodycpu``.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-ignore:
@@ -204,25 +300,31 @@ focus
 ignore
 ------
 
-|  **ignore** [<*cpu*>[,<*cpu*>[,...]]]
-|
-| Ignora a <*cpu*> definida ao usar o depurador. Isso significa que você nunca verá a execução nessa CPU e tão pouco poderá definir breakpoints nela. Para desfazer essa mudança, use o comando 'observe'. Você pode definir diferentes *<cpu>s* num único comando. Note também que você não tem permissão para ignorar todas as CPUs; pelo menos um deve estar ativo em todos os momentos.
-|
-| Exemplos:
-|
-|  ``ignore 1``
-|
-| Ignore o CPU **#1** ao usar o depurador.
-|
-|  ``ignore 2,3,4``
-|
-| Ignora a CPU **#2**, **#3** e **#4** ao usar o depurador.
-|
-|  ``ignore``
-|
-| Liste todas as CPUs atualmente ignoradas.
-|
-| Voltar para :ref:`debugger-execution-list`
+**ignore** [<*CPU*>[,<*CPU*>[,…]]]
+
+Ignora determinadas *CPUs* no depurador. As *CPUs* podem ser definidas
+através de uma etiqueta ou pelo número da CPU no depurador (|cpom|). O
+depurador nunca mostra a execução para as *CPUs* que forem ignoradas e
+os pontos de interrupção ou de observação nas CPUs ignoradas não têm
+qualquer efeito. Caso nenhuma *CPUs* seja indicada, as *CPUs* atualmente
+ignoradas serão listadas. Utilize o comando
+:ref:`debugger-command-observe` para parar de ignorar uma *CPU*.
+
+Observe que você não pode ignorar todas as *CPUs*; pelo menos uma *CPU*
+deve ser observada o tempo todo.
+
+Exemplos:
+
+.. line-block::
+
+    ``ignore audiocpu``
+        Ignora a CPU |ccad| ``:audiocpu`` |auod|.
+    ``ignore 2,3,4``
+        Ignora a terceira, quarta e quinta *CPU* no sistema (|ibz|) |auod|.
+    ``ignore``
+        Lista as CPUs que estiverem sendo ignoradas pelo depurador.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-observe:
@@ -230,25 +332,26 @@ ignore
 observe
 -------
 
-|  **observe** [<*cpu*>[,<*cpu*>[,...]]]
-|
-| Reativa a interação com a <*cpu*> definida no depurador. Este comando desfaz os efeitos do comando 'ignore'. Você pode especificar diferentes <*cpu*>s num único comando.
-|
-| Exemplos:
-|
-|  ``observe 1``
-|
-| Pare de ignorar a CPU **#1** ao usar o depurador.
-|
-|  ``observe 2,3,4``
-|
-| Pare de ignorar a CPU **#2**, **#3** e **#4** quando usar o depurador.
-|
-|  ``observe``
-|
-| Liste todas as CPUs sendo observadas atualmente.
-|
-| Voltar para :ref:`debugger-execution-list`
+**observe** [<*CPU*>[,<*CPU*>[,…]]]
+
+Permite a interação com determinada *CPU* no depurador. As *CPUs* podem
+ser definidas através de etiquetas ou pelo número da *CPU* (|cpom|).
+Este comando reverte o comando :ref:`debugger-command-ignore`. Quando
+nenhuma *CPUs* for definida, apenas as *CPUs* observadas no momento
+serão listadas.
+
+Exemplos:
+
+.. line-block::
+
+    ``observe audiocpu``
+        Para de ignorar a CPU |ccad| ``:audiocpu`` |auod|.
+    ``observe 2,3,4``
+        Para de ignorar a 3ª, 4ª, 5ª *CPU* no sistema (|ibz|) |auod|.
+    ``observe``
+        Lista as CPUs que estão atualmente sendo observadas pelo depurador.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-trace:
@@ -256,57 +359,55 @@ observe
 trace
 -----
 
-|  **trace** {<*filename*> | *OFF*}[,<*cpu*>[,[*noloop* | *logerror*][,<*action*>]]]
-|
-| Inicia ou para o rastreio da execução da <*cpu*> definida. Caso a <*cpu*> seja omitida a CPU que estiver ativa no momento será definida.
-|
-| Ao habilitar o rastreamento, defina um nome do arquivo <*filename*> no parâmetro. Para desabilitar o rastreamento, substitua a palavra-chave 'off' no <*filename*>.
-|
-| <*detectloops*> deve ser **true** ou **false**.
-|
-| Caso o 'noloop' seja omitido, o rastreamento terá loops detectados e será condensado numa única linha. Caso o 'noloop' seja definido, o rastreio irá conter cada opcode conforme for sendo executado.
-|
-| Caso o 'logerror' seja definido, a saída do logerror irá aumentar o rastreamento. Se você deseja obter informações adicionais sobre cada vestígio de log, você pode acrescentar o parâmetro <*action*> que é um comando que é executado antes que cada traço que for registrado. Geralmente, isso é usado para incluir um comando 'tracelog'. Observe que você pode precisar incorporar a ação entre chaves **{ }** para evitar que as vírgulas e os pontos-e-vírgulas sejam interpretados como se aplicassem ao próprio comando trace.
-|
-|
-| Exemplos:
-|
-|  ``trace joust.tr``
-|
-| Iniciar o rastreamento da CPU atualmente ativa, registrando a saída para 'joust.tr'.
-|
-|  ``trace dribling.tr,0``
-|
-| Comece a rastrear a execução da CPU **#0**, registrando a saída para 'dribling.tr'.
-|
-|  ``trace starswep.tr,0,noloop``
-|
-| Comece a rastrear a execução da CPU **#0**, registrando a saída em 'starswep.tr', com a detecção de loop desativada.
-|
-|  trace starswep.tr,0,logerror
-|
-| Comece a rastrear a execução da CPU **#0**, registrando a saída (junto com a saída logerror) para 'starswep.tr'.
-|
-|  ``trace starswep.tr,0,logerror|noloop``
-|
-| Comece a rastrear a execução da CPU **#0**, registrando a saída (junto com a saída logerror) para 'starswep.tr' com a detecção de loop desativada.
-|
-|  ``trace >>pigskin.tr``
-|
-| Comece a rastrear a CPU atualmente ativa, anexando a saída de log para 'pigskin.tr'.
-|
-|  ``trace off,0``
-|
-| Desativar o rastreio na CPU **#0**.
-|
-|  ``trace asteroid.tr,0,,{tracelog "A=%02X ",a}``
-|
-|
-|  ``trace dribling.tr,0``
-|
-| Comece a rastrear a execução da CPU **#0**, registrando a saída para 'dribling.tr'. Antes de cada linha, a saída **A=<aval>** para o tracelog.
-|
-| Voltar para :ref:`debugger-execution-list`
+**trace** {<*nome_do_arquivo*>|off}[,<*CPU*>[,[noloop|logerror][,<*ação*>]]]
+
+Inicia ou interrompe o rastreamento da execução de determinada <*CPU*>
+ou da <*CPU*> atualmente visível caso nenhuma tenha sido definida. Para
+ativar o rastreamento defina o nome do arquivo para o registro do
+rastreamento no parâmetro <*nome_do_arquivo*>. Para desativar o
+rastreamento use o termo ``off`` no parâmetro <*nome_do_arquivo*>.
+Quando o argumento <nome_do_arquivo> começar com dois chevrons (``>>``),
+ele é tratado como uma diretiva para abrir o arquivo para anexar em vez
+de gravar por cima.
+
+O terceiro parâmetro opcional é um campo sinalizador. As sinalizações
+compatíveis são ``noloop`` e ``logerror``. As diversas sinalizações
+devem ser separadas por caracteres ``|`` (barra vertical). Por padrão,
+os laços são detectados e condensados numa única linha. Quando a
+sinalização ``noloop`` for definida, os *loops* não serão detectados e
+todas as instruções serão registradas como já executadas. Quando a
+sinalização ``logerror`` for definida, a saída do registro de erro será
+incluída no registro de rastreamento.
+
+O parâmetro opcional <*ação*> é um comando de depuração para ser
+executado antes que cada mensagem de rastreamento seja registrada.
+Geralmente, isto incluirá um comando
+:ref:`debugger-command-tracelog` ou :ref:`debugger-command-tracesym`
+incluindo informações adicionais no registro de rastreamento. |oqts|
+``trace``.
+
+Exemplos:
+
+.. line-block::
+
+    ``trace joust.tr``
+        |irde| |dcav|, |rasa| ``joust.tr``.
+    ``trace dribling.tr,maincpu``
+        |irde| |ccad| ``:maincpu:``, |rasa| ``dribling.tr``.
+    ``trace starswep.tr,,noloop``
+        |irde| |dcav|, |rasa| ``starswep.tr``, com a detecção de loop desativada.
+    ``trace starswep.tr,1,logerror``
+        |irde| da segunda CPU do sistema (|ibz|), registrando a saída junto com a saída do registro de erro no arquivo ``starswep.tr``.
+    ``trace starswep.tr,0,logerror|noloop``
+        |irde| da primeira CPU do sistema (|ibz|), registrando a saída junto com a saída do registro de erro no arquivo ``starswep.tr``, com a detecção de loop desativada.
+    ``trace >>pigskin.tr``
+        |irde| |dcav|, agregando a saída do registro ao arquivo ``pigskin.tr``.
+    ``trace off,0``
+        Desativa o rastreamento para a primeira CPU no sistema (|ibz|).
+    ``trace asteroid.tr,,,{tracelog "A=%02X ",a}``
+        |irde| |dcav|, |rasa| ``asteroid.tr``. Antes de cada linha registra ``A=<aval>`` ao registro de rastreamento.
+
+|ret| :ref:`debugger-execution-list`.
 
 
  .. _debugger-command-traceover:
@@ -314,42 +415,38 @@ trace
 traceover
 ---------
 
-|  **traceover** {<*filename*> | *OFF*}[,<*cpu*>[,<*detectloops*>[,<*action*>]]]
-|
-| Inicia ou para o rastreio na execução da <*cpu*> especificada.
-|
-| Quando o rastreamento atinge uma sub-rotina ou chamada, a sub-rotina será ignorada pelo rastreamento. O mesmo algoritmo é usado como é usado no comando *step over*. Isso significa que o rastreio não funcionará corretamente quando as chamadas forem recursivas ou o endereço de retorno não estiver seguindo imediatamente a instrução de chamada.
-|
-| <*detectloops*> deve ser true ou false. Caso o <*detectloops*> seja *true* ou *omitido*, o rastreio terá loops detectados e condensados numa única linha. Caso seja *false*, o rastreio conterá todos os opcode à medida que forem executados.
-| Se o <*cpu*> for omitido, a CPU atualmente ativa será a especificada.
-| Ao habilitar o rastreamento, especifique o nome do arquivo <*filename*> no parâmetro.
-| Para desabilitar o rastreamento, substitui a palavra-chave 'off' para <*filename*>.
-| Se você deseja obter informações adicionais sobre cada vestígio de log, você pode acrescentar o parâmetro <*action*> que é um comando que é executado antes de cada rastreio que for registrado. Geralmente, isso é usado para incluir um comando 'tracelog'. Observe que você pode precisar incorporar a ação entre chaves **{ }** para evitar que as vírgulas e os pontos-e-vírgulas sejam interpretados como se aplicassem ao próprio comando trace.
-|
-|
-| Exemplos:
-|
-|  ``traceover joust.tr``
-|
-| Iniciar o rastreamento da CPU atualmente ativa, registrando a saída para 'joust.tr'.
-|
-|  ``traceover dribling.tr,0``
-|
-| Comece a rastrear a execução da CPU **#0**, registrando a saída para 'dribling.tr'.
-|
-|  ``traceover starswep.tr,0,false``
-|
-| Comece a rastrear a execução da CPU **#0**, registrando a saída para 'starswep.tr', com a detecção de loop desativada.
-|
-|  ``traceover off,0``
-|
-| Desativar o rastreio na CPU **#0**.
-|
-|  ``traceover asteroid.tr,0,true,{tracelog "A=%02X ",a}``
-|
-| Comece a rastrear a execução da CPU **#0**, registrando a saída para 'dribling.tr'. Antes de cada linha, a saída **A=<aval>** para o tracelog.
-|
-| Voltar para :ref:`debugger-execution-list`
+**traceover** {<*nome_do_arquivo*>|off}[,<*CPU*>[,[noloop|logerror][,<*ação*>]]]
+
+Inicia ou interrompe o rastreamento da execução de determinada <*CPU*>
+ou da <*CPU*> atualmente visível caso nenhuma tenha sido definida. No
+momento que o retorno a sub-rotina é encontrada, o rastreamento será ignorado 
+
+No momento que uma chamada de sub-rotina é encontrada, a sub-rotina será
+ignorada pelo rastreamento. É usado o mesmo algoritmo que é usado no
+comando :ref:`step over <debugger-command-over>`. Ele não funcionará
+corretamente com funções recursivas ou caso o endereço retornado não
+siga imediatamente a instrução da chamada.
+
+Este comando aceita os mesmos parâmetros que o comando
+:ref:`debugger-command-trace`. Favor consultar a seção correspondente
+para uma descrição mais detalhada das opções e para obter mais exemplos.
+
+Exemplos:
+
+.. line-block::
+
+    ``traceover joust.tr``
+        |irde| |dcav|, |rasa| ``joust.tr``.
+    ``traceover dribling.tr,maincpu``
+        |irde| |ccad| ``:maincpu:``, |rasa| ``dribling.tr``.
+    ``traceover starswep.tr,,noloop``
+        |irde| |dcav|, |rasa| ``starswep.tr``, com a detecção de loop desativada.
+    ``traceover off,0``
+        Desativa o rastreamento para a primeira CPU no sistema (|ibz|).
+    ``traceover asteroid.tr,,,{tracelog "A=%02X ",a}``
+        |irde| |dcav|, |rasa| ``asteroid.tr``. Antes de cada linha registra ``A=<aval>`` ao registro de rastreamento.
+
+|ret| :ref:`debugger-execution-list`
 
 
  .. _debugger-command-traceflush:
@@ -357,8 +454,37 @@ traceover
 traceflush
 ----------
 
-|  **traceflush**
-|
-| Libera todos os arquivos de rastreamento abertos.
-|
-| Voltar para :ref:`debugger-execution-list`
+**traceflush**
+
+Grava no disco todos os arquivos dos registros de rastreamento que
+estiverem abertos.
+
+Exemplo:
+
+.. line-block::
+
+    ``traceflush``
+        Grava todos os arquivos dos registros de rastreamento.
+
+|ret| :ref:`debugger-execution-list`
+
+.. |1| replace:: Retoma a execução
+.. |2| replace:: O controle não será devolvido ao depurador até que um
+   ponto de interrupção ou de controle seja atingido
+.. |3| replace:: Use o parâmetro opcional
+.. |4| replace:: Retoma a execução até que o ponto de
+   interrupção/controle seja atingido
+.. |ret| replace:: Retorna para
+.. |vbi| replace:: intervalo de apagamento vertical
+.. |ibz| replace:: num índice com base zero
+.. |auod| replace:: ao utilizar o depurador
+.. |ccad| replace:: com o caminho absoluto da etiqueta
+.. |irde| replace:: Inicia o rastreio da execução
+.. |dcav| replace:: na CPU que estiver visível no momento
+.. |cpom| replace:: consulte :ref:`debugger-devicespec` para obter mais
+   detalhes
+.. |rasa| replace:: registrando a saída no arquivo
+.. |oqts| replace:: Observe que talvez seja necessário cercar a ação
+   dentro de chaves ``{`` ``}`` garantindo que as vírgulas e os
+   ponto-e-vírgulas dentro do comando não sejam interpretadas no
+   contexto do próprio comando

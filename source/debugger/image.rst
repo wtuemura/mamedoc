@@ -1,62 +1,92 @@
+.. raw:: latex
+
+	\clearpage
+
+
 .. _debugger-image-list:
 
-Comandos para depuração da imagem
-=================================
+Comandos para a depuração de imagens
+====================================
 
-Na interface de depuração do MAME você pode digitar **help <command>**
-para uma melhor descrição de cada comando.
+.. line-block::
 
-| :ref:`debugger-command-images` -- lista todos os dispositivos de imagens arquivos montados
-| :ref:`debugger-command-mount` -- monta um arquivo para um dispositivo
-| :ref:`debugger-command-unmount` -- desmonta um aquivo de uma dispositivo específico
-|
+    :ref:`debugger-command-images`
+        Lista todos os dispositivos de imagem e todas as que estiverem montadas.
+    :ref:`debugger-command-mount`
+        Monta o arquivo da imagem num determinado dispositivo.
+    :ref:`debugger-command-unmount`
+        Desmonta a imagem.
 
- .. _debugger-command-images:
+.. _debugger-command-images:
 
 images
 ------
 
-|  **images**
-|
-| Usado para exibir na tela uma lista de dispositivos de imagens disponíveis.
-|
-| Exemplos:
-|
-|  ``images``
-|
-| Mosta uma lista de dispositivos e arquivos montados para o driver atual.
-|
+**images**
 
- .. _debugger-command-mount:
+Faz a listagem dos nomes das instâncias dos dispositivos de imagens de
+mídia no sistema e as imagens montadas no momento, caso haja alguma.
+Os nomes curtos das instâncias também são listados, |acpa|. Os itens da
+lista de programa que estiverem montados são exibidos com um nome na
+lista, com um nome curto do programa e da sua parte separados por
+dois-pontos; outras imagens que estiverem montadas são mostradas como
+nome de arquivo.
+
+Exemplo:
+
+.. line-block::
+
+    ``images``
+        Lista o nome da imagem e as imagens que estiverem montadas.
+
+|ret| :ref:`debugger-image-list`.
+
+
+.. _debugger-command-mount:
 
 mount
 -----
 
-|  **mount** <*device*>,<*filename*>
-|
-| Monta o dispositivo <*device*> com o nome de arquivo <*filename*> da imagem.
-|
-| O nome do arquivo <*filename*> pode ser o item na lista de software ou o caminho completo do arquivo.
-|
-| Exemplos:
-|
-|  ``mount cart,aladdin``
-|
-| Monta a lista de software com o item aladdin no dispositivo de cartucho.
-|
+**mount** <*instância*>,<*nome_do_arquivo*>
 
- .. _debugger-command-unmount:
+Monta um arquivo num dispositivo. O dispositivo pode ser especificado
+pela sua instância ou pelo seu nome curto, |acpa|.
+
+Alguns dispositivos de mídia permitem que os itens da lista de programas
+sejam montados usando este comando, ao oferecer um nome curto do item da
+lista no lugar parâmetro <*nome_do_arquivo*>.
+
+Exemplos:
+
+.. line-block::
+
+    ``mount flop1,os1xutls.td0``
+        Monta o arquivo ``os1xutls.td0`` no dispositivo com o nome ``flop1``.
+    ``mount cart,10yard``
+        Monta o item da lista de programas ``10yard`` no dispositivo ``cart``.
+
+|ret| :ref:`debugger-image-list`.
+
+
+.. _debugger-command-unmount:
 
 unmount
 -------
 
-|  **unmount** <*device*>
-|
-| Desmonta o arquivo de imagem do dispositivo <*device*>.
-|
-| Exemplos:
-|
-|  ``unmount cart``
-|
-| Desmonta qualquer arquivo montado no dispositivo cart.
-|
+**unmount <instance>**
+
+Desmonta a imagem que estiver montada no dispositivo (caso haja alguma).
+O dispositivo pode ser informado pelo seu nome completo ou nome curto,
+|acpa|.
+
+Exemplo:
+
+.. line-block::
+
+    ``unmount cart``
+        Desmonta qualquer imagem que estiver montada com o nome ``cart``.
+
+|ret| :ref:`debugger-image-list`.
+
+.. |ret| replace:: Retorna para
+.. |acpa| replace:: assim como é permitido através da linha de comando
