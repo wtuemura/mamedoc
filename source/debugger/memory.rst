@@ -169,7 +169,7 @@ parte da sequência ou da *string* falhe além do
 dump
 ----
 
-**dump[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>],<*comprimento*>[,<*grupo*>[,<*ascii*>[,<*tamanho_da_linha*>]]]**
+**dump[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>],<*comprimento*>[,<*grupo*>[,<*ascii*>[,<*tamanho_da_linha*>]]]
 
 Faz o despejo do conteúdo da memória num arquivo texto definido pelo
 parâmetro <*nome_do_arquivo*>.
