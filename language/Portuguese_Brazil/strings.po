@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-19 02:50+1100\n"
-"PO-Revision-Date: 2021-11-18 17:06-0300\n"
+"PO-Revision-Date: 2021-12-02 17:06-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -1574,16 +1574,16 @@ msgstr "O %s.txt salvo no diretório ui."
 
 #: src/frontend/mame/ui/miscmenu.cpp:683
 msgid "Export list in XML format (like -listxml)"
-msgstr "Exporta a lista no formato XML (igual -listxml)"
+msgstr "Exporta a lista em formato XML (igual -listxml)"
 
 #: src/frontend/mame/ui/miscmenu.cpp:684
 msgid "Export list in XML format (like -listxml, but exclude devices)"
 msgstr ""
-"Exporta a lista no formato XML (igual -listxml, mas excluindo os dispositivos)"
+"Exporta a lista em formato XML (igual -listxml, mas excluindo os dispositivos)"
 
 #: src/frontend/mame/ui/miscmenu.cpp:685
 msgid "Export list in TXT format (like -listfull)"
-msgstr "Exporta a lista no formato TXT (igual -listfull)"
+msgstr "Exporta a lista em formato TXT (igual -listfull)"
 
 #: src/frontend/mame/ui/miscmenu.cpp:792
 msgid "BIOS"

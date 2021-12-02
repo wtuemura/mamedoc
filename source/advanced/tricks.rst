@@ -27,12 +27,13 @@ Veja :ref:`Alterando os valores <mamemenu-alt-valores>` antes de
 prosseguir.
 
 O processo é muito simples, inicie uma máquina qualquer como
-``mame galaxian``, depois que a máquina iniciar pressione **TAB** e
-selecione **Entrada (esta máquina)**, no campo **P1 BUTTON 1**
-(primeiro botão de disparo/tiro do jogador 1) e defina o botão de tiro,
-pressione **TAB** novamente para fechar a interface.
+``mame galaxian``, depois que a máquina iniciar pressione :kbd:`TAB` e
+selecione :guilabel:`Entrada (esta máquina)`, no campo
+:guilabel:`P1 BUTTON 1` (primeiro botão de disparo/tiro do jogador 1) e
+defina o botão de tiro, pressione :kbd:`TAB` novamente para fechar a
+interface.
 
-Depois de confirmar o funcionamento do botão, pressione **ESQ** para
+Depois de confirmar o funcionamento do botão, pressione :kbd:`Esc` para
 encerrar a emulação e criar um arquivo ``galaxian.cfg`` no diretório
 **cfg**.
 
@@ -48,8 +49,9 @@ Configurando mais de um botão
 Usando um controle de **Playstation 2** (ou qualquer outro tipo de
 controle) ligado no PC com um adaptador USB como exemplo, faremos uma
 configuração de botões para máquinas **Neo-Geo** executando o comando
-``mame kof2000``, pressione **TAB**, depois selecione **Entrada (esta
-máquina)** e configure os botões com a ordem de sua preferência.
+``mame kof2000``, pressione :kbd:`TAB`, depois selecione
+:guilabel:`Entrada (esta máquina)` e configure os botões com a ordem da
+sua preferência.
 
 Dentro do diretório **cfg** será criado um arquivo chamado
 ``kof2000.cfg``, abra ele num editor de texto qualquer, no topo do
@@ -59,7 +61,8 @@ como ``neogeo.cfg``. No nosso exemplo a ordem dos botões ficou assim, o
 **quadrado** é **soco fraco**, o **triângulo** é **soco forte**, o
 **xis** é **chute fraco** e o **círculo** é **chute forte**:
 
-Baixe uma cópia deste arquivo no link ao lado https://pastebin.com/9Xp97xcd
+Baixe uma cópia deste arquivo no link ao lado
+https://pastebin.com/9Xp97xcd
 
 .. code-block:: xml
 
@@ -96,7 +99,7 @@ Baixe uma cópia deste arquivo no link ao lado https://pastebin.com/9Xp97xcd
 Agora sempre que quiser usar essa configuração para os botões, basta
 usar a opção :ref:`-ctrlr <mame-commandline-ctrlrpath>`, exemplo
 ``mame kof2003 -ctrlr neogeo``, você pode também adicionar esta opção
-ao seu **mame.ini** porém note que esta configuração será aplicada em
+ao seu ``mame.ini`` porém note que esta configuração será aplicada em
 todas as máquinas!
 
 Para aplicar essa configuração apenas nas máquinas **Neo-Geo**, veja o
@@ -115,12 +118,13 @@ que é ativado ao se pressionar os três botões de soco ao
 essa ação aconteça ao toque de um botão apenas.
 
 Inicie o MAME com qualquer jogo da série ``mame sf2``, pressione
-**TAB**, depois selecione **Entrada (esta máquina)**, ao configurar os
-botões para os três socos, pressione **Delete** para apagar o valor,
-logo depois escolha o botão que deseja ser soco fraco, pressione
-**Enter** e escolha quase será o seu botão de **três socos**. Caso
-tenha feito tudo certo, deverá aparecer algo como **Joy 1 button 0 or
-Joy 1 button 1**, é muito importante aparecer o **OR** entre os botões.
+:kbd:`TAB`, depois selecione :guilabel:`Entrada (esta máquina)`, ao
+configurar os botões para os três socos, pressione :kbd:`Del` para
+apagar o valor, logo depois escolha o botão que deseja ser soco fraco,
+pressione :kbd:`Enter` e escolha quase será o seu botão de
+**três socos**. Caso tenha feito tudo certo, deverá aparecer algo como
+**Joy 1 button 0 or Joy 1 button 1**, é muito importante aparecer o
+**OR** entre os botões.
 
 Usando o mesmo controle de **Playstation 2** a ordem dos botões ficou
 dessa forma, o **quadrado** é **soco fraco**, o **triângulo** é **soco
@@ -129,7 +133,8 @@ forte**, o **Xis** é **chute médio**, o **círculo** é **chute forte**, o
 identificado como **JOYCODE_1_BUTTON5** faz o papel dos **três botões de
 soco**:
 
-Baixe uma cópia deste arquivo no link ao lado https://pastebin.com/p6dB9DMy
+Baixe uma cópia deste arquivo no link ao lado
+https://pastebin.com/p6dB9DMy
 
 .. code-block:: xml
 
@@ -210,15 +215,16 @@ arquivo num editor de textos e logo no começo haverá algo do tipo
     <port tag=":P1" type="P1_JOYSTICK_LEFT" mask="1" defvalue="1">
 
 O que nos interessa são todas as partes que definem os comando para
-**P1**, no seu editor de texto pressione **CTRL+H** ou o comando usado
-para substituir texto e substitua **P1** por **P2** ficando assim:
+**P1**, no seu editor de texto pressione :kbd:`CTRL` + :kbd:`H` ou o
+comando usado para substituir texto e substitua **P1** por **P2**
+ficando assim:
 
 .. code-block:: xml
 
 	
     <port tag=":P2" type="P2_JOYSTICK_LEFT" mask="1" defvalue="1">
 
-Salve este arquivo como `2P.cfg` para ser usado como jogador 2, faça o
+Salve este arquivo como ``2P.cfg`` para ser usado como jogador 2, faça o
 mesmo para o jogador 3 e 4. Não foi disponibilizado aqui todas as linhas
 que foram substituídas, porém, veja como fica a configuração completa
 para `2P.cfg <https://pastebin.com/tSkGwMgi>`_,
@@ -237,10 +243,11 @@ Mutant Ninja Turtles - Turtles in Time** faça o comando: ::
 
 	mame tmnt2 -ctrlr 3P
 
-Para inserir o crédito para o jogador 3 (Coin 3) pressione **7**, a
-partida deve iniciar com o **Donatello** ao clicar em qualquer um dos
-botões do controle, abaixo tem uma colinha para facilitar, para ver a
-listagem completa consulte o capítulo :ref:`mamemenu`.
+Para inserir o crédito para o jogador 3 (Coin 3) pressione
+:kbd:`7`, a partida deve iniciar com o **Donatello** ao clicar em
+qualquer um dos botões do controle, abaixo tem uma colinha para
+facilitar, para ver a listagem completa consulte o capítulo
+:ref:`mamemenu`.
 
 .. tabularcolumns:: |l|c|c|c|c|
 
@@ -283,11 +290,11 @@ crie um arquivo chamado ``neogeo.ini``. Neste arquivo nós configuraremos
 os seguintes parâmetros:
 
 *	Que a Bios seja a **UniBios v 4.0**
-*	Que a minha configuração de controle chamada **neogeo**.
-	seja sempre carregada.
+*	Que a minha configuração do controle seja chamada **neogeo**.
+	Que ela seja sempre carregada.
 *	Que o áudio tenha uma taxa de amostragem com **32000 Hz**.
-*	O filtro esteja ativo.
-*	O prescale seja maior que **1**.
+*	Que o filtro esteja ativo.
+*	Que o prescale seja maior que **1**.
 *	Que a proporção de tela seja mantida.
 
 .. note:: 
@@ -343,9 +350,9 @@ Para criar um mapa customizado para **Final Fight** por exemplo, siga as
 instruções descritas em :ref:`advanced-tricks-mais-de-um-botão`, porém
 usando a máquina **Final Fight** (``mame ffight``), uma vez que os
 botões forem definidos e você sair do MAME, encontre o arquivo
-**ffight.cfg** no diretório **cfg** e faça as alterações necessárias.
-Copie-o para o diretório **ctrlr** como **ffight.cfg**. Entre no
-diretório **ini** e crie um arquivo chamado **ffight.ini**, abra-o num
+``ffight.cfg`` no diretório **cfg** e faça as alterações necessárias.
+Copie-o para o diretório **ctrlr** como ``ffight.cfg``. Entre no
+diretório **ini** e crie um arquivo chamado ``ffight.ini``, abra-o num
 editor de texto e adicione: ::
 
 	ctrlr ffight
@@ -355,7 +362,7 @@ iniciada ela usará o novo mapa de botões que foi criado só para ela.
 
 Repare que não é necessário que o arquivo de configuração tenha o mesmo
 nome da máquina, é possível renomear estes arquivos como por exemplo,
-**2-botoes.cfg**, **3-botoes.cfg**, **4-botoes.cfg** e compartilhar
+``2-botoes.cfg``, ``3-botoes.cfg``, ``4-botoes.cfg`` e compartilhar
 estas configurações conforme necessário.
 
 .. _advanced-tricks-dat-sistema:
@@ -408,7 +415,7 @@ E assim por diante, para criar um DAT em formato **RomCenter** troque o
 arquivo XML genérico aceito pelos outros gerenciadores use ``gx`` ou
 ``generic``. Para mais informações sobre outros formatos leia o arquivo
 **Readme.txt** que acompanha o DatUtil, para ver alguns outros exemplos
-práticos do uso do DatUtil acesse `este link
+práticos do programa, acesse `este link
 <https://forum.recalbox.com/topic/4537/tutorial-datutil>`_.
 
 Estes mesmos arquivos ``neogeo.dat``, ``cps2.dat`` e qualquer outro que
@@ -446,21 +453,24 @@ tenham interesse em montar todo um ambiente de desenvolvimento só para
 isso, é possível criar essa lista através da interface do MAME, o que
 facilita muito a nossa vida.
 
-* Faça o download da última versão do arquivo category.ini no site
+* Faça o download da última versão do arquivo ``category.ini`` no site
   `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_ e extraia
   o diretório **folders** dentro do diretório do MAME.
-* Inicie o MAME, no lado esquerdo da interface selecione **Categoria**,
-  em **Arquivo** escolha **Working Arcade Clean.ini**, em **Incluir
-  Clones** escolha **Não** e clique em **Voltar ao Menu Anterior**.
+* Inicie o MAME, no lado esquerdo da interface selecione
+  :guilabel:`Categoria`, em :guilabel:`Arquivo` escolha
+  :guilabel:`Working Arcade Clean.ini`, em :guilabel:`Incluir Clones`
+  escolha :guilabel:`Não` e clique em :guilabel:`Retorna ao menu
+  anterior`.
 * No topo da interface, clique com o mouse no ícone do disquete para
-  exportar a lista e escolha **Exportar lista em formato XML
-  (igual -listxml)**, depois de alguns segundos será gerado um arquivo
+  exportar a lista e escolha :guilabel:`Exporta a lista em formato XML
+  (igual -listxml)`, depois de alguns segundos será gerado um arquivo
   **exported.xml** dentro do diretório **ui**.
-* Assim como foi explicado no :ref:`capítulo anterior <advanced-tricks-dat-sistema>`,
-  é possível usar o DatUtil para transformar o arquivo XML num arquivo
-  DAT compatível com um dos gerenciadores listados no capítulo anterior
-  ou utilizar diretamente o arquivo XML nos gerenciadores que
-  não dependam de um arquivo DAT.
+* Assim como foi explicado no
+  :ref:`capítulo anterior <advanced-tricks-dat-sistema>`, é possível usar
+  o *DatUtil* para transformar o arquivo XML num arquivo DAT compatível
+  com um dos gerenciadores listados no capítulo anterior ou utilizar
+  diretamente o arquivo XML nos gerenciadores que não dependam de um
+  arquivo DAT (como o Clrmamepro).
 * Convertendo ou não o arquivo XML em DAT, use o seu gerenciador
   preferido para **reconstruir (Rebuild)** as ROMs, usando o diretório
   onde as suas ROMs se encontram e com o destino o diretório onde deseja
@@ -485,9 +495,9 @@ apenas com ROMs arcade.
 * Renomeie o arquivo **exported.xml** que está dentro do diretório
   **ui** para **arcade-clean.xml** assim é possível ter um controle do
   arquivo que está sendo carregado.
-* Localize o diretório onde o Clrmamepro foi instalado e copie o arquivo
-  **arcade-clean.xml** para dentro do diretório **datfiles**.
-* Rode o Clrmamepro no campo direito onde diz **Profile** deve estar
+* Localize o diretório onde o *Clrmamepro* foi instalado e copie o
+  arquivo **arcade-clean.xml** para dentro do diretório **datfiles**.
+* Rode o *Clrmamepro* no campo direito onde diz **Profile** deve estar
   vazio.
 
 .. figure:: images/Clrmamepro-add-dat.png
@@ -496,9 +506,10 @@ apenas com ROMs arcade.
 	:figclass: align-center
 	:alt: Add DatFile
 
-* Clique em **Add DatFile...** e selecione o arquivo
-  **arcade-clean.xml**, na próxima tela apenas clique em OK.
-* Clique em **Load / Update**, na próxima tela selecione **Default**.
+* Clique em :guilabel:`Add DatFile...` e selecione o arquivo
+  ``arcade-clean.xml``, na próxima tela apenas clique em :guilabel:`OK`.
+* Clique em :guilabel:`Load / Update`, na próxima tela selecione
+  :guilabel:`Default`.
 
 .. figure:: images/Clrmamepro-load.png
 	:width: 300
@@ -506,9 +517,9 @@ apenas com ROMs arcade.
 	:figclass: align-center
 	:alt: Load Update
 
-* Durante a leitura deve aparecer alguns erros do tipo **DatFile
-  Problem**, apenas clique em **OK TO ALL**.
-* Ao concluir clique no ícone **Rebuilder**.
+* Durante a leitura deve aparecer alguns erros do tipo
+  :guilabel:`DatFile Problem`, apenas clique em :guilabel:`OK TO ALL`.
+* Ao concluir clique no ícone :guilabel:`Rebuilder`.
 
 .. figure:: images/Clrmamepro-rebuilder.png
 	:width: 250
@@ -520,9 +531,10 @@ apenas com ROMs arcade.
 
 	\clearpage
 
-* Sem alterar nenhuma das opções, vá em **Source** e selecione o
-  diretório onde se encontram todas as suas ROMs. Em **Destination**
-  selecione o diretório de destino onde será criada a sua nova ROMSET.
+* Sem alterar nenhuma das opções, vá em :guilabel:`Source` e selecione o
+  diretório onde se encontram todas as suas ROMs. Em
+  :guilabel:`Destination` selecione o diretório de destino onde será
+  criada a sua nova *ROMSET*.
 
 .. figure:: images/Clrmamepro-rebuilder-screen.png
 	:width: 300
@@ -533,12 +545,12 @@ apenas com ROMs arcade.
 * **ATENÇÃO! Não escolha o mesmo diretório de origem**, escolha um
   diretório completamente diferente e se possível que seja em outro HDD,
   cartão de memória, pen-drive, etc!
-* Clique em **Rebuild...** para iniciar e aguarde pois dependendo da
-  quantidade de arquivos todo o processo será demorado.
+* Clique em :guilabel:`Rebuild...` para iniciar e aguarde pois
+  dependendo da quantidade de arquivos todo o processo será demorado.
 
-Ao final do processo você terá um ROMSET apenas com as ROMs das máquinas arcades,
-o mesmo pode ser feito para qualquer outro sistema, Mega Drive/Genesis, SNES,
-o céu é o limite!
+Ao final do processo você terá um *ROMSET* apenas com as ROMs das
+máquinas arcades, o mesmo pode ser feito para qualquer outro sistema,
+Mega Drive/Genesis, SNES, o céu é o limite!
 
 .. _advanced-tricks-using-scripts:
 
@@ -546,17 +558,17 @@ Usando Scripts
 --------------
 
 Uma outra maneira para obter o mesmo resultado é através da utilização
-de pequenos scripts usando a linha de comandos, apesar de ser um
+de pequenos *scripts* usando a linha de comandos, apesar de ser um
 processo mais manual e um pouco trabalhoso, o processo acaba sendo mais
 poderoso pois permite que a filtragem e a seleção dos arquivos possa ser
 mais refinada e podendo ser utilizada em qualquer sistema operacional e
 não algo exclusivo do Windows apenas.
 
-* Faça o download da última versão do arquivo category.ini no site
-  `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_
-* Abra e extraia apenas o arquivo **Working Arcade.ini**
-* Apague tudo e deixe apenas o que estiver depois de ``[ROOT_FOLDER]``
-* Salve este arquivo modificado como **arcade.txt**
+* Faça o download da última versão do arquivo ``category.ini`` no site
+  `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_.
+* Abra e extraia apenas o arquivo ``Working Arcade.ini``.
+* Apague tudo e deixe apenas o que estiver depois de ``[ROOT_FOLDER]``.
+* Salve este arquivo modificado como ``arcade.txt``.
 
 .. _advanced-tricks-command-windows:
 
@@ -871,7 +883,7 @@ Usando uma imagem de fundo no MAME
 interface como um papel de parede e somado com a opção de customização é
 possível dar uma aparência toda sua na interface. Escolha a imagem que
 deseja usar em formato .jpg ou .png e renomeie o arquivo para
-**background.jpg** ou **background.png**, cuidado para não usar imagens
+``background.jpg`` ou ``background.png``, cuidado para não usar imagens
 muito pesadas, prefira o formato **.jpg**.
 
 Eu usei um fundo do filme `Tron
@@ -895,7 +907,7 @@ de wallpaper qualquer na internet.
 	:alt: Interface customizada2
 
 Lembrando que todo o fundo é um papel de parede, tirando as opções do
-MAME nada na tela do Iron Man é funcional. Para as cores eu estou
+MAME nada na tela do *Iron Man* é funcional. Para as cores eu estou
 utilizando as configurações abaixo: ::
 
 	# UI OPTIONS
@@ -924,7 +936,7 @@ Na tela do Iron Man a única diferença é a cor da borda: ::
 
 	ui_border_color           ff076f85
 
-Salve estas opções no seu **ui.ini**. Caso queira brincar com as cores,
+Salve estas opções no seu ``ui.ini``. Caso queira brincar com as cores,
 eu gosto do site `Hex Colors Tools <https://www.hexcolortool.com/>`_.
 No site é possível você entrar com o valor de cores em hex (#000000) e
 ela oferece a possibilidade de variar a cor para mais claro ou mais
@@ -974,12 +986,12 @@ desempenho se limita ao desenvolvimento do MAME, se os drivers
 responsáveis pela máquina em questão já foram concluídas ou não, se o
 desenvolvimento da emulação como um todo já foi concluída ou não, etc.
 
-Os testes foram realizados com o Debian 10.7 (Buster) e o Fedora 33
-usando uma AMD Radeon HD 7750 porém as configurações descritas aqui
-devem ser compatíveis com outras distribuições Linux ou talvez sirva
-como um guia para outros modelos de placas de vídeo. Não entraremos nas
-questões de instalação de pacotes dada a complexidade de cobrir todas as
-sua dependências e sim apenas na configuração.
+Os testes foram realizados com o **Debian 10.7** (Buster) e o
+**Fedora 33** usando uma **AMD Radeon HD 7750** porém as configurações
+descritas aqui devem ser compatíveis com outras distribuições Linux ou
+talvez sirva como um guia para outros modelos de placas de vídeo. Não
+entraremos nas questões de instalação de pacotes dada a complexidade de
+cobrir todas as sua dependências e sim apenas na configuração.
 
 .. note::
 
@@ -1008,7 +1020,7 @@ No terminal execute o comando::
 	01:00.0 VGA compatible controller: Advanced Micro Devices, Inc.
 	[AMD/ATI] Cape Verde PRO [Radeon HD 7750/8740 / R7 250E]
 
-O que nos interessa é o nome do chipset da placa **Cape Verde**, ela é
+O que nos interessa é o nome do *chipset* da placa **Cape Verde**, ela é
 da família **Southern Islands** ou **SI**. Consulte `a lista completa
 <https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units#Fea
 tures_Overview>`_.
@@ -1149,8 +1161,8 @@ Regenere o **initramfs** e reinicie.
 	dos anos 90 o Windows exibia esta configuração como **True Color**.
 	Com o **Deep Color** nós temos **12 bit** por canal, ou seja, 4096
 	(2^12) variações de cores para cada componente, estamos falando de
-	um total de **68.719.476.736** (4096^3) ou cerca de 68.7 bilhões de
-	cores.
+	um total de **68.719.476.736** (4096^3) ou cerca de **68.7 bilhões
+	de cores**.
 
 .. tabularcolumns:: |c|
 
@@ -1277,7 +1289,7 @@ Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 
 .. note::
 
-	Dependendo da versão da sua VGA/GPU você precisa usar
+	Dependendo da versão da sua *VGA/GPU* você precisa usar
 	``amdgpu dc=1``, caso contrário a tela fica preta no próximo reboot,
 	`consulte este link <https://wiki.gentoo.org/wiki/Talk:AMDGPU>`_
 	para mais informações.
@@ -1406,7 +1418,7 @@ No caso do Linux acusar a falta de algum firmware para o **amdgpu**::
 geralmente será preciso baixar arquivos de outra distro, descompactar e
 copiar para o local apropriado ou usar o site do
 `Umio-Yasuno <https://github.com/Umio-Yasuno/unofficial-amdgpu-firmware-repo>`_
-que mantém uma lista atualizada dos novos firmwares sempre que eles
+que mantém uma lista atualizada dos novos *firmwares* sempre que eles
 forem aparecendo.
 
 Para evitar ficar copiando manualmente estes arquivos um a um, crie uma
@@ -1446,12 +1458,12 @@ Para gerar a lista abaixo::
 
 	\clearpage
 
-Clone o repositório do site do Umio-Yasuno em algum lugar do seu
+Clone o repositório do site do **Umio-Yasuno** em algum lugar do seu
 computador com o comando::
 
 	git clone https://github.com/Umio-Yasuno/unofficial-amdgpu-firmware-repo.git
 
-Salve a lista como `missing.txt`, copie este arquivo para dentro da
+Salve a lista como ``missing.txt``, copie este arquivo para dentro da
 pasta **amdgpu**, abra o terminal dentro desta pasta e faça o comando::
 
 	for firmware in $(<missing.txt); do sudo cp "$firmware" /lib/firmware/amdgpu; done
@@ -1474,8 +1486,8 @@ Adicione estas linhas extras ao seu ``/etc/modprobe.d/amdgpu.conf``::
 A primeira opção ativa a recuperação do amdgpu, isso resolve a questão
 das mensagens de erros "*amdgpu: GPU recovery disabled*" no registro de
 eventos. A segunda opção determina o tempo limite para que a recuperação
-aconteça, o padrão é 10s, o valor foi alterado para 6s. A terceira opção
-é necessária para o processo de recuperação.
+aconteça, o padrão é ``10s``, o valor foi alterado para ``6s``. A
+terceira opção é necessária para o processo de recuperação.
 
 Para mais informações consulte
 `amdgpu <https://www.kernel.org/doc/html/v4.20/gpu/amdgpu.html>`_.
@@ -1625,7 +1637,7 @@ também haverá um aumento do consumo da memória de vídeo **VRAM**.
    :scale: 60%
    :align: center
 
-Na janela do MAME pressione **ESQ** para encerrar a emulação, se tudo
+Na janela do MAME pressione :kbd:`Esc` para encerrar a emulação, se tudo
 estiver corretamente configurado como demonstramos aqui, a frequência do
 **Memory Clock** e do **Shader Clock** devem recuar logo após o
 encerramento do MAME, caso não recue aguarde aproximadamente uns 10
