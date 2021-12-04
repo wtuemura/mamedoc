@@ -1359,11 +1359,11 @@ Ou pior::
 	ERROR at ../vulkaninfo/vulkaninfo.h:641:vkCreateInstance failed with
 	ERROR_INCOMPATIBLE_DRIVER
 
-Tanto no o Fedora quanto no o Debian os arquivos \*.json devem estar
+Tanto no Fedora quanto no Debian os arquivos \*.json devem estar
 instalados no diretório ``/usr/share/vulkan/icd.d``, caso não estejam
 tenha certeza de ter instalado o pacote ``mesa-vulkan-drivers``, o nome
-do pacote é o mesmo para o Fedora e para o Debian. Tenha certeza que
-todos os arquivos estão lá com o comando::
+do pacote é o mesmo tanto para Fedora quanto para o Debian. Verifique a
+existência dos arquivos com o comando::
 
 	sudo find /usr/share -name *_icd.*
 	/usr/share/vulkan/icd.d/intel_icd.x86_64.json
@@ -1376,8 +1376,8 @@ Edite o arquivo ``/etc/profile`` e no final do arquivo coloque::
 	export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd.x86_64.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json:/usr/share/vulkan/icd.d/intel_icd.x86_64.json
 
 A linha acima deve ser contínua, encerre a sua sessão e faça login
-novamente. No terminal rode o comando ``journalctl -b -p err`` e tenha **CERTEZA**
-que não há qualquer erro relacionado com o vulkan.
+novamente. No terminal rode o comando ``journalctl -b -p err`` e tenha
+**CERTEZA** que não há qualquer erro relacionado com o vulkan.
 
 Tente rodar novamente o ``vulkaninfo`` e dessa vez ele deve rodar sem
 problemas exibindo todas as informações da sua placa de vídeo.
