@@ -1370,9 +1370,9 @@ Mapeamento do dispositivo
 		O valor predefinido é ``keyboard``.
 
 
-* :guilabel:`Atribuição do dispositivo discador`
+* :guilabel:`Atribuição do controle rotativo`
 
-  Caso exista um controlador para discadores, os valores disponíveis
+  Caso exista um controle com um disco rotativo, os valores disponíveis
   são ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
 
 		O valor predefinido é ``keyboard``.
@@ -2084,17 +2084,17 @@ Predefinições para o jogador 1
 +--------------------------------------+-------------------------------+
 |  Posicionamento V analógico dec      | Cima                          |
 +--------------------------------------+-------------------------------+
-|  Discador analógico                  | ...                           |
+|  Rotativo analógico                  | ...                           |
 +--------------------------------------+-------------------------------+
-|  Discador analógico inc              | Baixo                         |
+|  Rotativo analógico inc              | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Discador analógico dec              | Cima                          |
+|  Rotativo analógico dec              | Cima                          |
 +--------------------------------------+-------------------------------+
-|  Discador V analógico                | ...                           |
+|  Rotativo V analógico                | ...                           |
 +--------------------------------------+-------------------------------+
-|  Discador V analógico inc            | Baixo                         |
+|  Rotativo V analógico inc            | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Discador V analógico dec            | Cima                          |
+|  Rotativo V analógico dec            | Cima                          |
 +--------------------------------------+-------------------------------+
 |  Trilha X analógico                  | ...                           |
 +--------------------------------------+-------------------------------+
@@ -2339,17 +2339,17 @@ Predefinições para o jogador 2
 +--------------------------------------+-------------------------------+
 |  Posicionamento V 2 analógico dec    | R                             |
 +--------------------------------------+-------------------------------+
-|  Discador 2 analógico                | n/a                           |
+|  Rotativo 2 analógico                | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Discador 2 analógico inc            | G                             |
+|  Rotativo 2 analógico inc            | G                             |
 +--------------------------------------+-------------------------------+
-|  Discador 2 analógico dec            | D                             |
+|  Rotativo 2 analógico dec            | D                             |
 +--------------------------------------+-------------------------------+
-|  Discador V 2 analógico              | n/a                           |
+|  Rotativo V 2 analógico              | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Discador V 2 analógico inc          | F                             |
+|  Rotativo V 2 analógico inc          | F                             |
 +--------------------------------------+-------------------------------+
-|  Discador V 2 analógico dec          | R                             |
+|  Rotativo V 2 analógico dec          | R                             |
 +--------------------------------------+-------------------------------+
 |  Trilha X 2 analógico                | n/a                           |
 +--------------------------------------+-------------------------------+
@@ -2512,17 +2512,17 @@ Predefinições para o jogador 3
 +--------------------------------------+-------------------------------+
 |  Posicionamento V 3 analógico dec    | I                             |
 +--------------------------------------+-------------------------------+
-|  Discador 3 analógico                | n/a                           |
+|  Rotativo 3 analógico                | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Discador 3 analógico inc            | L                             |
+|  Rotativo 3 analógico inc            | L                             |
 +--------------------------------------+-------------------------------+
-|  Discador 3 analógico dec            | J                             |
+|  Rotativo 3 analógico dec            | J                             |
 +--------------------------------------+-------------------------------+
-|  Discador V 3 analógico              | n/a                           |
+|  Rotativo V 3 analógico              | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Discador V 3 analógico inc          | K                             |
+|  Rotativo V 3 analógico inc          | K                             |
 +--------------------------------------+-------------------------------+
-|  Discador V 3 analógico dec          | I                             |
+|  Rotativo V 3 analógico dec          | I                             |
 +--------------------------------------+-------------------------------+
 |  Trilha X 3 analógico                | n/a                           |
 +--------------------------------------+-------------------------------+
@@ -2685,17 +2685,17 @@ Predefinições para o jogador 4
 +--------------------------------------+-------------------------------+
 |  Posicionamento V 4 analógico dec    | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Discador 4 analógico                | n/a                           |
+|  Rotativo 4 analógico                | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Discador 4 analógico inc            | Nenhum                        |
+|  Rotativo 4 analógico inc            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Discador 4 analógico dec            | Nenhum                        |
+|  Rotativo 4 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Discador V 4 analógico              | n/a                           |
+|  Rotativo V 4 analógico              | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Discador V 4 analógico inc          | Nenhum                        |
+|  Rotativo V 4 analógico inc          | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Discador V 4 analógico dec          | Nenhum                        |
+|  Rotativo V 4 analógico dec          | Nenhum                        |
 +--------------------------------------+-------------------------------+
 |  Trilha X 4 analógico                | n/a                           |
 +--------------------------------------+-------------------------------+

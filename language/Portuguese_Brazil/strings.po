@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 02:50+1100\n"
-"PO-Revision-Date: 2021-12-09 20:17-0300\n"
+"PO-Revision-Date: 2021-12-11 16:32-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -611,7 +611,7 @@ msgstr "Atribuição do dispositivo remo"
 
 #: src/frontend/mame/ui/submenu.cpp:108
 msgid "Dial Device Assignment"
-msgstr "Atribuição do dispositivo discador"
+msgstr "Atribuição do controle rotativo"
 
 #: src/frontend/mame/ui/submenu.cpp:109
 msgid "Positional Device Assignment"
@@ -3431,7 +3431,7 @@ msgstr "%p baixo"
 #, c-format
 msgctxt "input-name"
 msgid "%p Left"
-msgstr "%p esquerdo"
+msgstr "%p esquerda"
 
 #: src/emu/inpttype.ipp:25 src/emu/inpttype.ipp:143 src/emu/inpttype.ipp:224
 #: src/emu/inpttype.ipp:258 src/emu/inpttype.ipp:292 src/emu/inpttype.ipp:326
@@ -3440,7 +3440,7 @@ msgstr "%p esquerdo"
 #, c-format
 msgctxt "input-name"
 msgid "%p Right"
-msgstr "%p direito"
+msgstr "%p direita"
 
 #: src/emu/inpttype.ipp:26 src/emu/inpttype.ipp:144 src/emu/inpttype.ipp:225
 #: src/emu/inpttype.ipp:259 src/emu/inpttype.ipp:293 src/emu/inpttype.ipp:327
@@ -4444,102 +4444,102 @@ msgstr "Posicionamento V 10"
 #: src/emu/inpttype.ipp:648
 msgctxt "input-name"
 msgid "Dial"
-msgstr "Discador"
+msgstr "Rotativo"
 
 #: src/emu/inpttype.ipp:649
 msgctxt "input-name"
 msgid "Dial 2"
-msgstr "Discador 2"
+msgstr "Rotativo 2"
 
 #: src/emu/inpttype.ipp:650
 msgctxt "input-name"
 msgid "Dial 3"
-msgstr "Discador 3"
+msgstr "Rotativo 3"
 
 #: src/emu/inpttype.ipp:651
 msgctxt "input-name"
 msgid "Dial 4"
-msgstr "Discador 4"
+msgstr "Rotativo 4"
 
 #: src/emu/inpttype.ipp:652
 msgctxt "input-name"
 msgid "Dial 5"
-msgstr "Discador 5"
+msgstr "Rotativo 5"
 
 #: src/emu/inpttype.ipp:653
 msgctxt "input-name"
 msgid "Dial 6"
-msgstr "Discador 6"
+msgstr "Rotativo 6"
 
 #: src/emu/inpttype.ipp:654
 msgctxt "input-name"
 msgid "Dial 7"
-msgstr "Discador 7"
+msgstr "Rotativo 7"
 
 #: src/emu/inpttype.ipp:655
 msgctxt "input-name"
 msgid "Dial 8"
-msgstr "Discador 8"
+msgstr "Rotativo 8"
 
 #: src/emu/inpttype.ipp:656
 msgctxt "input-name"
 msgid "Dial 9"
-msgstr "Discador 9"
+msgstr "Rotativo 9"
 
 #: src/emu/inpttype.ipp:657
 msgctxt "input-name"
 msgid "Dial 10"
-msgstr "Discador 10"
+msgstr "Rotativo 10"
 
 #: src/emu/inpttype.ipp:662
 msgctxt "input-name"
 msgid "Dial V"
-msgstr "Discador V"
+msgstr "Rotativo V"
 
 #: src/emu/inpttype.ipp:663
 msgctxt "input-name"
 msgid "Dial V 2"
-msgstr "Discador V 2"
+msgstr "Rotativo V 2"
 
 #: src/emu/inpttype.ipp:664
 msgctxt "input-name"
 msgid "Dial V 3"
-msgstr "Discador V 3"
+msgstr "Rotativo V 3"
 
 #: src/emu/inpttype.ipp:665
 msgctxt "input-name"
 msgid "Dial V 4"
-msgstr "Discador V 4"
+msgstr "Rotativo V 4"
 
 #: src/emu/inpttype.ipp:666
 msgctxt "input-name"
 msgid "Dial V 5"
-msgstr "Discador V 5"
+msgstr "Rotativo V 5"
 
 #: src/emu/inpttype.ipp:667
 msgctxt "input-name"
 msgid "Dial V 6"
-msgstr "Discador V 6"
+msgstr "Rotativo V 6"
 
 #: src/emu/inpttype.ipp:668
 msgctxt "input-name"
 msgid "Dial V 7"
-msgstr "Discador V 7"
+msgstr "Rotativo V 7"
 
 #: src/emu/inpttype.ipp:669
 msgctxt "input-name"
 msgid "Dial V 8"
-msgstr "Discador V 8"
+msgstr "Rotativo V 8"
 
 #: src/emu/inpttype.ipp:670
 msgctxt "input-name"
 msgid "Dial V 9"
-msgstr "Discador V 9"
+msgstr "Rotativo V 9"
 
 #: src/emu/inpttype.ipp:671
 msgctxt "input-name"
 msgid "Dial V 10"
-msgstr "Discador V 10"
+msgstr "Rotativo V 10"
 
 #: src/emu/inpttype.ipp:676
 msgctxt "input-name"
