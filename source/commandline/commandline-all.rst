@@ -2416,7 +2416,7 @@ Opções para a rotação da tela
 	aplicadas.
 
 	O valor predefinido para ambas as opções é ``Desligado``
-	(``-noflipx** **-noflipy``).
+	(``-noflipx`` ``-noflipy``).
 
 	Exemplo:
 		.. code-block:: shell

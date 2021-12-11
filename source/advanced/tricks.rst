@@ -1647,5 +1647,30 @@ gerenciamento de energia, não há problema deixar a sua placa de vídeo
 rodando no máximo desde que você saiba **EXATAMENTE** o que está
 fazendo.
 
+Excluindo arquivos NVRAM (batch script)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Algumas vezes é preciso excluir o diretório **NVRAM** de determinada
+máquina durante a depuração ou até mesmo antes de
+um :ref:`-record <mame-commandline-record>` e antes de iniciar um
+:ref:`-playback <mame-commandline-playback>` por motivos já
+explicados nestes capítulos. Contudo, caso a exclusão destes diretórios
+seja constante, use o batch script abaixo, salve o script como
+``limpa.bat`` e copie-o para dentro da pasta do MAME ou onde a pasta
+**NVRAM** se encontra. Execute-o no prompt de comando
+``limpa nome_da_rom`` para apagar a pasta com os dados NVRAM da ROM::
+
+    @echo off
+    IF %1.==. GOTO NOOP
+    rmdir /s /q nvram\%1
+    GOTO End
+    
+    :NOOP
+      ECHO use limpa nome_da_rom
+    GOTO End
+    
+    :End
+    exit /B
+
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694

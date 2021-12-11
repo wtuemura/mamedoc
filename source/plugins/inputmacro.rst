@@ -111,17 +111,19 @@ Casa passo possui um atraso, duração e configuração da entrada:
 	* :guilabel:`Atraso (quadros)`
 
 		Define a quantidade de quadros que se deve aguardar antes que a
-		entrada seja ativada, durante o atraso nenhuma entrada é ativada
-		pela macro. É possível redefinir o valor da configuração para
+		ação seja feita, ou seja, durante o atraso nenhuma entrada é
+		ativada. É possível redefinir o valor da configuração para
 		zero ao pressionar a tecla :kbd:`Del`.
 
 	* :guilabel:`Duração (quadros)`
 
-		Define a quantidade da duração dos quadros que devem ser
-		mantidos pressionados antes de prosseguir para o próximo passo
-		(ou completá-lo caso ele seja o último). É possível redefinir o
-		valor da configuração para zero ao pressionar a tecla
-		:kbd:`Del`.
+		Define a quantidade de tempo (quadros) que o botão ou direcional
+		deve ser mantido pressionado antes de prosseguir para o próximo
+		passo (ou completá-lo caso ele seja o último). Alguns jogos
+		registram o comando logo nos primeiros quadros, já outros
+		precisam de 3 ou mais quadros para registrar a ação. É possível
+		redefinir o valor da configuração para zero ao pressionar a
+		tecla :kbd:`Del`.
 
 	* :guilabel:`Entrada`
 
@@ -180,19 +182,19 @@ O mesmo efeito pode ser obtido usando o :ref:`plugins-autofire`, porém,
 o exemplo abaixo demonstra o uso de uma macro:
 
 * **Nome**: Turbo P1
-* **Ativação**: Kbd Space
+* **Ativação**: Tecla :kbd:`Espaço`
 * **Ao soltar**: Pare
 * **Enquanto estiver pressionado**: Repita até a etapa 2
 * **Etapa 1**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 2
-  * **Entrada 1**: P1 Button 1
+  * **Entrada 1**: Jogador 1 botão 1
 * **Etapa 2**:
 
   * **Atraso (quadros)**: 4
   * **Duração (quadros)**: 2
-  * **Entrada 1**: P1 Button 1
+  * **Entrada 1**: Jogador 1 botão 1
 
 A primeira etapa não possui nenhum atraso para que o disparo comece
 assim que a barra de espaço seja pressionada. O segundo passo tem um
@@ -207,24 +209,24 @@ Isso permite que você corra segurando apenas um botão no *Track & Field*
 da Konami. Isso tira a maior parte da destreza (e da diversão) do jogo:
 
 * **Nome**: Corrida J1
-* **Ativação**: Kbd Shift
+* **Ativação**: Tecla :kbd:`Shift`
 * **Ao soltar**: Pare
 * **Enquanto estiver pressionado**: Repita até a etapa 2
 * **Etapa 1**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
-  * **Entrada 1**: P1 Button 1
+  * **Entrada 1**: Jogador 1 botão 1
 * **Etapa 2**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: P1 Button 3
+  * **Entrada 1**: Jogador 1 botão 3
 * **Etapa 3**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: P1 Button 1
+  * **Entrada 1**: Jogador 1 botão 1
 
 Esta macro alterna rapidamente entre os botões 1 e 3 do jogo fazendo com
 que você consiga correr no jogo.
@@ -246,26 +248,26 @@ tela, não se esqueça de clicar em :guilabel:`Feito` ao concluir:
 	e substituindo o arquivo que está na pasta
 	**language\\Portuguese_Brazil**.
 
-* **Nome**: J1 Shoryuken SF
-* **Ativação**: Kbd M
+* **Nome**: Jogador 1 Shoryuken SF
+* **Ativação**: Tecla :kbd:`M`
 * **Ao soltar**: Conclua a macro
 * **Enquanto estiver pressionado**: Libera
 * **Etapa 1**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Direita
+  * **Entrada 1**: Jogador 1 direita
 * **Etapa 2**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Baixo
+  * **Entrada 1**: Jogador 1 baixo
 * **Etapa 3**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Baixo
-  * **Entrada 2**: J1 Direita
+  * **Entrada 1**: Jogador 1 baixo
+  * **Entrada 2**: Jogador 1 direita
   * **Entrada 3**: P1 Jab Punch
 
 A macro realiza o golpe e caso mantenha a tecla pressionada, nada
@@ -275,26 +277,26 @@ Esta é a macro para o *Hadouken* com *soco fraco* ao pressionar a tecla
 :kbd:`N` com o jogador 1 estando do lado esquerdo da tela, não se
 esqueça de clicar em :guilabel:`Feito` ao concluir:
 
-* **Nome**: J1 Hadouken SF
-* **Ativação**: Kbd N
+* **Nome**: Jogador 1 Hadouken SF
+* **Ativação**: Tecla :kbd:`N`
 * **Ao soltar**: Conclua a macro
 * **Enquanto estiver pressionado**: Libera
 * **Etapa 1**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Baixo
+  * **Entrada 1**: Jogador 1 baixo
 * **Etapa 2**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Direita
-  * **Entrada 2**: J1 Baixo
+  * **Entrada 1**: Jogador 1 direita
+  * **Entrada 2**: Jogador 1 baixo
 * **Etapa 3**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Direita
+  * **Entrada 1**: Jogador 1 direita
   * **Entrada 2**: P1 Strong Punch
 
 Esta macro é utilizada pelo personagem **Guile** para soltar o *Sonic
@@ -302,45 +304,45 @@ Boom* com *soco médio* ao pressionar a tecla :kbd:`B` com o jogador 1
 estando do lado esquerdo da tela, não se esqueça de clicar em
 :guilabel:`Feito` ao concluir:
 
-* **Nome**: J1 Sonic Boom
-* **Ativação**: Kbd B
+* **Nome**: Jogador 1 Sonic Boom
+* **Ativação**: Tecla :kbd:`B`
 * **Ao soltar**: Conclua a macro
 * **Enquanto estiver pressionado**: Libera
 * **Etapa 1**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 60
-  * **Entrada 1**: J1 Esquerda
+  * **Entrada 1**: Jogador 1 esquerda
 * **Etapa 2**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Direita
+  * **Entrada 1**: Jogador 1 direita
 * **Etapa 3**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Direita
+  * **Entrada 1**: Jogador 1 direita
   * **Entrada 2**: P1 Strong Punch
 
 Esta macro faz o tal "*facão do Guile*" (Flash Kick) com *chute fraco*
 ao pressionar a tecla :kbd:`V` com o jogador 1 estando do lado esquerdo
 da tela, não se esqueça de clicar em :guilabel:`Feito` ao concluir:
 
-* **Nome**: J1 Flash Kick
-* **Ativação**: Kbd V
+* **Nome**: Jogador 1 Flash Kick
+* **Ativação**: Tecla :kbd:`V`
 * **Ao soltar**: Conclua a macro
 * **Enquanto estiver pressionado**: Libera
 * **Etapa 1**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 60
-  * **Entrada 1**: J1 Baixo
+  * **Entrada 1**: Jogador 1 baixo
 * **Etapa 2**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Cima
+  * **Entrada 1**: Jogador 1 cima
   * **Entrada 2**: P1 Short Kick
 
 Esta macro é utilizada pelo personagem **Zanguief** para fazer o nosso
@@ -349,28 +351,113 @@ Piledriver* e *Screw Pile Driver* com *soco médio* ao pressionar a tecla
 :kbd:`C` com o jogador 1 estando do lado esquerdo da tela, não se
 esqueça de clicar em :guilabel:`Feito` ao concluir:
 
-* **Nome**: J1 Screw Pile Driver
-* **Ativação**: Kbd C
+* **Nome**: Jogador 1 Screw Pile Driver
+* **Ativação**: Tecla :kbd:`C`
 * **Ao soltar**: Conclua a macro
 * **Enquanto estiver pressionado**: Libera
 * **Etapa 1**:
 
   * **Atraso (quadros)**: 0
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Direita
+  * **Entrada 1**: Jogador 1 direita
 * **Etapa 2**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Baixo
+  * **Entrada 1**: Jogador 1 baixo
 * **Etapa 3**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Esquerda
+  * **Entrada 1**: Jogador 1 esquerda
 * **Etapa 4**:
 
   * **Atraso (quadros)**: 1
   * **Duração (quadros)**: 1
-  * **Entrada 1**: J1 Cima
+  * **Entrada 1**: Jogador 1 cima
   * **Entrada 2**: P1 Strong Punch
+
+Bad Dudes vs. Dragonninja
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Esta acro faz o personagem dar um chute giratório, escolha o botão de
+atalho que achar mais apropriado para o seu controle.
+
+* **Nome**: Giratória
+* **Ativação**: Tecla :kbd:`X`
+* **Ao soltar**: Conclua a macro
+* **Enquanto estiver pressionado**: Libera
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 4
+  * **Entrada 1**: P1 Jump
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 3
+  * **Entrada 1**: P1 Jump
+  * **Entrada 2**: P1 Atack
+
+Top Ranking Stars
+~~~~~~~~~~~~~~~~~
+
+Esta macro é um exemplo de como ativar golpes especiais em jogos que
+precisam que os comandos sejam mantidos pressionados por mais tempo para
+que o comando seja corretamente identificado e executado. O comando é
+para o especial "*Stardust*" do personagem *Shouichi Kanou*. Escolha o
+botão de atalho que achar mais apropriado para o seu controle.
+
+* **Nome**: Stardust
+* **Ativação**: Tecla :kbd:`S`
+* **Ao soltar**: Conclua a macro
+* **Enquanto estiver pressionado**: Libera
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 4
+  * **Entrada 1**: Jogador 1 baixo
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 4
+  * **Entrada 1**: Jogador 1 baixo
+  * **Entrada 2**: Jogador 1 direita
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 4
+  * **Entrada 1**: Jogador 1 direita
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: Jogador 1 botão 2
+
+A macro abaixo serve para o segundo especial do mesmo personagem.
+
+* **Nome**: Stardust 2
+* **Ativação**: Tecla :kbd:`A`
+* **Ao soltar**: Conclua a macro
+* **Enquanto estiver pressionado**: Libera
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 4
+  * **Entrada 1**: Jogador 1 cima
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 4
+  * **Entrada 1**: Jogador 1 cima
+  * **Entrada 2**: Jogador 1 direita
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: 1
+  * **Duração (quadros)**: 4
+  * **Entrada 1**: Jogador 1 direita
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: 0
+  * **Duração (quadros)**: 1
+  * **Entrada 1**: Jogador 1 botão 3
