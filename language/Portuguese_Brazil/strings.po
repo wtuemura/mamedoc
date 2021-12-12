@@ -309,7 +309,7 @@ msgstr "Plug-ins"
 
 #: src/frontend/mame/ui/optsmenu.cpp:81
 msgid "Save Configuration"
-msgstr "Salve a configuração"
+msgstr "Salva a configuração"
 
 #: src/frontend/mame/ui/optsmenu.cpp:148
 msgid "Settings"
