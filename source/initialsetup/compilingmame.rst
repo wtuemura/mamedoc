@@ -1385,8 +1385,8 @@ Usando ferramentas de compilação alternativas
   No MAME segundo o `FAQ oficial <https://wiki.mamedev.org/index.php/FA
   Q:Performance>`_, são adicionadas novas threads para aceleração de
   loop, trazendo um aumento de desempenho. Para fazer uso desta opção
-  é necessário a instalação do ``libomp-devel`` ou ``libomp-dev`` depend
-  ndo da sua distribuição.
+  é necessário a instalação do ``libomp-devel`` ou ``libomp-dev``
+  dependendo da sua distribuição.
 
 .. _mame-compilation-optional-resources:
 

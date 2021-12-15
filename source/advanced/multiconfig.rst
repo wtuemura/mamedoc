@@ -19,76 +19,124 @@ organização das configurações.
 A ordem da leitura dos arquivos
 -------------------------------
 
+O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
+
 1. A linha de comando é interpretada primeiro e tem prioridade sobre
-   qualquer outro arquivo *.ini*.
+   qualquer outro arquivo **.ini**.
 
-2. O ``mame.ini`` (ou qualquer outra plataforma que use um *.ini* como o
-   ``mess.ini`` por exemplo) são interpretadas duas vezes. Na primeira
-   passada pode alterar várias configurações de caminho, a segunda
-   passagem é feita para ver se há um arquivo de configuração válido
-   nesse novo local (caso haja, altera as configurações com as
-   informações desse arquivo).
+.. raw:: html
 
+	<p></p>
 
-3. O ``debug.ini`` se estiver no modo de depuração. Este é um arquivo de
-   configuração avançado que a maioria das pessoas não precisam sequer
-   se preocupar com ele.
+2. O arquivo ``mame.ini`` (ou qualquer outra plataforma que use um
+   *.ini* como o ``mess.ini`` por exemplo) são interpretados duas vezes.
+   Na primeira passada é feito a leitura de diferentes configurações, a
+   segunda é feita para ver se existe outro arquivo de configuração com
+   um outro tipo de configuração válida (caso exista, altera as
+   configurações com as informações deste segundo arquivo).
 
-4. Arquivos INI de orientação de tela (seja ``horizont.ini`` ou
+.. raw:: html
+
+	<p></p>
+
+3. O arquivo ``debug.ini`` caso esteja em modo de depuração. Este é um
+   arquivo de configuração avançada, a maioria das pessoas não precisam
+   sequer se preocupar com ele.
+
+.. raw:: html
+
+	<p></p>
+
+4. Os arquivos INI de orientação da tela (seja o ``horizont.ini`` ou o
    ``vertical.ini``).
-   O jogo Pac-Man por exemplo usa uma tela vertical, assim o arquivo
-   ``vertical.ini`` é lido. Enquanto jogo **Street Fighter Alpha** é um
-   jogo com tela horizontal, assim o arquivo ``horizont.ini`` é lido.
+   Use o arquivo ``vertical.ini`` para aplicar as configurações numa
+   máquina com tela vertical como a **Pac-Man** por exemplo. Já para
+   máquinas com tela horizontal, use o arquivo ``horizont.ini`` para
+   aplicar as configurações nas máquinas como a
+   **Street Fighter Alpha**.
 
-   Geralmente o arquivo ``horizont.ini`` será lodo em sistemas sem
-   monitores, com monitores diversos com orientações diferentes ou
-   monitores conectados em dispositivos de slot.
+   Geralmente o arquivo ``horizont.ini`` será lido nos sistemas sem
+   monitor, nos monitores com diversas orientações diferentes ou
+   monitores conectados em dispositivos tipo slot.
 
+.. raw:: html
+
+	<p></p>
 
 5. Arquivos INI voltado para diferentes sistemas (``arcade.ini``,
-   ``console.ini``, ``computer.ini``, ou ``othersys.ini``).
-   Tanto o jogo **Pac-Man** quanto o jogo **Street Fighter Alpha**
-   são jogos de arcade, então o arquivo a ser lido seria o
-   ``arcade.ini``, enquanto um console como o **Atari 2600** o
-   ``console.ini`` será lido.
+   ``console.ini``, ``computer.ini`` ou ``othersys.ini``).
+   Tanto a máquina **Pac-Man** quanto a máquina **Street Fighter Alpha**
+   são jogos classificados como **arcade**, logo, o arquivo
+   ``arcade.ini`` é lido para obter as configurações para esta
+   categoria, já modelos de console que estejam dentro da categoria
+   **console** como o **Atari 2600** o aquivo ``console.ini`` é lido
+   para obter configurações que sejam específicas para esta categoria.
 
-6. Os arquivos INI voltados para diferentes tipos de tela
-   (``vector.ini`` para jogos vetoriais, ``raster.ini`` para jogos
-   rasterizados, ``lcd.ini`` para jogos em telas de cristal
-   líquido (LCD), EL, Plasma).
-   Ambos os jogos **Pac-Man** e **Street Fighter Alpha** são jogos
-   rasterizados, então o arquivo a ser lido seria o ``raster.ini``,
-   enquanto Tempest é um jogo com tela vetorial, então o arquivo
-   a ser lido é o ``vector.ini``.
+.. raw:: html
+
+	<p></p>
+
+6. Os arquivos INI voltados para diferentes tipos de tela como
+   ``vector.ini`` para jogos vetoriais, ``raster.ini`` para jogos
+   rasterizados, ``lcd.ini`` para jogos ou consoles que usem telas de
+   cristal líquido (LCD), EL, plasma, etc.
+   Ambas as máquinas como a **Pac-Man** e a **Street Fighter Alpha** são
+   rasterizadas [#raster]_ [#raster2]_, assim o arquivo ``raster.ini`` é lido para
+   obter e aplicar as configurações específicas deste tipo de máquina,
+   já a máquina **Tempest** é uma máquina com tela vetorial, assim o
+   arquivo ``vector.ini`` é lido e as configurações vetoriais são
+   aplicadas apenas nas máquinas desta categoria.
    
-   Para sistemas que tenham mais de um monitor como *House Mannequin*,
-   que usa um monitor CRT raster e um um par de telas em cristal
-   líquido, são lidos os arquivos ``raster.ini`` e ``lcd.ini`` relevantes
-   ao primeiro monitor e as outras respectivas telas.
+   Para sistemas que tenham mais de um monitor como a
+   **House Mannequin** (faça o teste com ``mame housemnq -numscreens
+   3``) que usa um monitor *CRT raster* e um par de telas de cristal
+   líquido, os arquivos ``raster.ini`` e ``lcd.ini`` são lidos e as suas
+   respectivas configurações aplicadas nas suas
+   respectivas telas.
 
-7. Os arquivos INI voltados para arquivos fonte do driver. O MAME
-   tentará ler ``source/``\ *<sourcefile>*\ ``.ini`` onde <*sourcefile*>
-   é o nome do arquivo de código fonte onde o driver do sistema for
-   definido. O código fonte de um sistema pode ser encontrado usando o
-   comando **mame -listsource <pattern>**, exemplo. ::
+.. [#raster]	São imagens compostas por pixels.
+.. [#raster2]	https://pt.wikipedia.org/wiki/Raster
+
+.. raw:: html
+
+	<p></p>
+
+7. Os arquivos INI voltados para os arquivos de código fonte (driver).
+   O MAME tentará ler ``source/``\ *<sourcefile>*\ ``.ini`` onde
+   <*sourcefile*> é o nome do arquivo de código fonte onde a máquina
+   estiver definida. O código fonte de um sistema pode ser encontrado
+   usando o comando ``mame -listsource <nome_da_rom>``, exemplo::
 
 	mame.exe -listsource sfa
 	sfa             cps2.cpp
 
-   O Banpresto **Sailor Moon**, Atlus **Dodonpachi** e Nihon System
-   **Dangun Feveron** por exemplo, todos rodam em hardware semelhante e
-   estão listados no arquivo de código fonte ``cave.cpp``, assim todos
-   eles usarão o arquivo ``source/cave.ini`` neste caso.
+   A Banpresto **Sailor Moon**, a Atlus **Dodonpachi** e a Nihon System
+   **Dangun Feveron** por exemplo, todos rodam num hardware semelhante e
+   estão listados no arquivo de código fonte chamado ``cave.cpp``, assim
+   sendo, todos eles usarão o arquivo ``source/cave.ini`` para obter as
+   suas configurações.
 
-8. Arquivos INI para BIOS (caso seja aplicável). O **The Last Soldier**
-   por exemplo usa a BIOS do **Neo-Geo MVS**, assim o arquivo
-   ``neogeo.ini`` será lido. Nenhum arquivo INI será lido em sistemas
-   que não usem uma BIOS.
+.. raw:: html
+
+	<p></p>
+
+8. Os arquivos INI para BIOS (caso seja aplicável). A máquina
+   **The Last Soldier** por exemplo, usa a BIOS do **Neo-Geo MVS**,
+   então o arquivo ``neogeo.ini`` será lido. Nenhum arquivo INI será
+   lido nos sistemas que não usem uma BIOS.
+
+.. raw:: html
+
+	<p></p>
 
 9. Arquivo INI da mesma família. O **The Last Soldier** é um clone do
    **The Last Blade / Bakumatsu Roman - Gekka no Kenshi**, assim o arquivo
    ``lastblad.ini`` será lido. Nenhum arquivo INI da mesma família será
    lido.
+
+.. raw:: html
+
+	<p></p>
 
 10. Arquivo INI do sistema. Usando o exemplo anterior, o arquivo
     ``lastsold.ini`` será lido para o **The Last Soldier**.
@@ -102,7 +150,7 @@ A ordem da leitura dos arquivos
 Exemplos da sequência de leitura dos arquivos
 ---------------------------------------------
 
-* O Brix que é um clone de Zzyzzyxx. (**mame brix**)
+* O Brix que é um clone de Zzyzzyxx. (``mame brix``)
 
   1. Linha de comando
   2. ``mame.ini`` (global)
@@ -115,7 +163,7 @@ Exemplos da sequência de leitura dos arquivos
   9. ``zzyzzyxx.ini`` (sistema da mesma família)
   10. ``brix.ini`` (sistema)
 
-* Super Street Fighter 2 Turbo (**mame ssf2t**)
+* Super Street Fighter 2 Turbo (``mame ssf2t``)
 
   1. Linha de comando
   2. ``mame.ini`` (global)
@@ -128,7 +176,7 @@ Exemplos da sequência de leitura dos arquivos
   9. (nenhum sistema da mesma família)
   10. ``ssf2t.ini`` (sistema)
 
-* Final Arch (**mame finlarch**)
+* Final Arch (``mame finlarch``)
 
   1. Command line
   2. ``mame.ini`` (global)
@@ -157,29 +205,81 @@ concentrar todas as configurações num único arquivo como o
 O MAME possuí dezenas de opções disponíveis para configurar outra
 dezena de coisas como áudio, vídeo, controladores diversos, etc. A linha
 de comando pode ficar bem grande e complexa dependendo do sistema a ser
-emulado e variar de sistema para sistema. Criando diferentes tipos de
-arquivos de configuração, é possível armazenar as diferentes opções
-individuais para cada sistema encurtando também o tamanho da linha de
-comando uma vez que as opções agora podem ficar armazenadas em seus
-respectivos arquivos de configuração.
+emulado e variar de sistema para sistema. Ao criar diferentes
+configurações é possível individualizar diferentes definições criar
+diferentes **perfis** para diferentes tipos de máquinas, sistemas,
+dispositivos, etc.
 
-Podemos citar como exemplo a opção de vídeo, no Windows o MAME por
-predefinição escolhe ``d3d`` como a melhor opção, porém caso seja
-necessário o uso de outras opções como ``opengl`` ou até mesmo ``gdi``
-se for o caso, em vez de usar esta opção toda a vez que for iniciar
-alguma emulação, é possível definir como um padrão para todos os
-sistemas dentro do arquivo ``mame.ini``.
+Podemos citar como exemplo a opção de vídeo, por predefinição, no
+Windows o MAME escolhe ``d3d`` como a melhor opção, contudo, em sistemas
+Windows mais recentes como o Windows 10/11, a melhor opção seria
+``bgfx`` em conjunto com um :ref:`bgfx_backend <advanced-bgfx-backend>`
+apropriado como o ``d3d12`` ou melhor ainda, o ``vulkan`` caso a sua
+placa de vídeo seja compatível. É possível definir essa configuração
+como um padrão para todos os sistemas dentro do arquivo ``mame.ini``.
 
-O arquivo ``mame.ini`` afeta a configuração de forma global porém
-algumas vezes há a necessidade de customizar apenas alguns sistemas em
-específico sem que haja qualquer tipo de configuração cruzada onde a
-configuração de um sistema afete o outro e vice versa. Como definir uma
-configuração apenas para sistemas que usem vetores sem que essa
-configuração afete sistemas que usem pixel (raster) por exemplo.
+O arquivo ``mame.ini`` afeta a configuração de forma global, ou seja,
+tudo o que for configurado nele **vale para tudo** e isso pode causar
+diversos problemas. Por exemplo, a máquina **Arkanoid** usa um controle
+com um disco giratório (chamado de *spinner controller*), no MAME é
+possível usar um joystick, um controle tipo *gamepad* e o mouse.
+
+Porém ao definir ``mouse 1`` no ``mame.ini`` a máquina **Arkanoid**
+funcionará perfeitamente com o mouse, mas como o ``mame.ini`` serve como
+um arquivo de configuração **global**, a opção ``mouse 1`` faz com que
+todas as outras máquinas, ainda que não usem o mouse, passem a usá-lo.
+Então ao iniciar a máquina **Street Fighter II** por exemplo, o seu
+mouse é sequestrado pelo MAME e assim ficará enquanto o MAME estiver
+sendo executado ou até que você pressione a tecla :kbd:`P` para pausar a
+emulação e reaver o controle do mouse pelo seu sistema operacional.
+
+No seu desktop talvez isso não seja um problema, contudo, imagine a
+mesma situação numa máquina arcade rodando o MAME aonde você não tenha
+um acesso fácil ao teclado, ficar "sem mouse" no seu sistema e por não
+saber deste detalhe ficar quebrando a cabeça sem entender o que está
+acontecendo perdendo horas alterando as configurações.
+
+É para casos como este que as configurações individuais são importantes
+e é por isso que é preciso personalizar certas definições em alguns
+casos. Usando o **Arkanoid** como exemplo, para que apenas esta máquina
+use a opção ``mouse 1``, crie o arquivo ``ini\arkanoid.ini`` e nele
+coloque a opção desejada, exemplo::
+
+	mouse 1
+
+Ao salvar o arquivo e ao iniciar a máquina, repare que é possível usar o
+mouse como controle. Além desta configuração ser aplicada na máquina
+**Arkanoid**, ela também será aplicada em todas as máquinas onde as suas
+ROMs comecem com **arkanoid**, exemplo:
+
+.. code-block:: shell
+
+    arkanoid          "Arkanoid (World, older)"
+    arkanoidj         "Arkanoid (Japan, newer)"
+    arkanoidja        "Arkanoid (Japan, newer w/level select)"
+    arkanoidjb        "Arkanoid (Japan, older)"
+    arkanoidjbl       "Arkanoid (bootleg with MCU, set 1)"
+    arkanoidjbl2      "Arkanoid (bootleg with MCU, set 2)"
+    arkanoidu         "Arkanoid (US, newer)"
+    arkanoiduo        "Arkanoid (US, older)"
+
+Fazendo assim nós também evitamos um conflito de configurações cruzadas
+onde a configuração de um sistema afete o outro e vice versa. Assim
+podemos ter configurações específicas para sistemas que usem vetores sem
+que estas configurações afete sistemas rasterizados ou sistemas que
+sequer usem telas por exemplo.
+
+Criando uma configuração arcade
+-------------------------------
 
 Aqui uma sugestão de configuração para máquinas **arcade** e **CPS-1**
-onde vamos definir diferentes parâmetros porém sem alterar nada em
-**mame.ini**.
+onde vamos definir diferentes parâmetros, porém, sem alterar nada no
+``mame.ini``, tenham certeza que todas as ROMs estejam na pasta
+**roms**, para o nosso exemplo usaremos as ROMs ``sf2.zip``,
+``ssf2.zip`` e ``qsound_hle.zip``. Na configuração *arcade* por exemplo,
+nós definimos apenas os parâmetros que será genérico para todas as
+máquinas desta categoria e assim faremos para a todas as máquinas que
+estiverem dentro do driver **CPS-1**.
 
 **Arcade**
 
@@ -187,134 +287,95 @@ onde vamos definir diferentes parâmetros porém sem alterar nada em
 	  **ini** e cole estas configurações que vão afetar apenas as
 	  máquinas que são consideradas **arcade**:
 
-.. code-block:: kconfig
+.. code-block:: shell
 
-	video                     opengl
-	waitvsync                 0
-	snapbilinear              0
-	audio_latency             2
-	refreshspeed              1
-	filter                    0
-	window                    1
+    video                     bgfx
+    bgfx_backend              vulkan
+    snapbilinear              0
+    refreshspeed              1
+    filter                    0
 
 
-Note que as opções aqui sugeridas são as mais genéricas possíveis para
-que funcionem com a maioria dos computadores, depois que compreender o
-conceito utilize as melhores opções que atendam as suas necessidades e
-que sejam compatíveis com a sua máquina. Essa configuração cobre o
-mínimo necessário e é seguro o suficiente para todas as máquinas na
-categoria **arcade**, para mais informações sobre cada opção usada aqui
-veja o :ref:`index-commandline`.
+Observe que as opções sugeridas aqui são as mais genéricas possíveis
+para que funcionem com a maioria dos computadores mais recentes cobrindo
+o mínimo necessário.
 
-Já para configurações específicas voltada para máquinas **CPS-1**
-usaremos apenas opções que são relevantes para ela, como quantidade de
-botões, taxa de amostragem do áudio, etc.
+Já nesta outra configuração nós definimos, por exemplo, o controle que
+queremos usar **apenas com as máquinas CPS-1** e nenhuma outra.
 
 **CPS-1**
 
 	* Crie o arquivo texto ``cps1.ini`` dentro do diretório
 	  **ini\\source**, com as seguintes opções:
 
-.. code-block:: kconfig
+.. code-block:: shell
 
-	samplerate                32000
-	unevenstretch             0
-	steadykey                 1
-	ctrlr                     6-botoes
-
+    samplerate                44100
+    steadykey                 1
+    ctrlr                     6-botoes
+    window                    1
 
 Para que a opção **6-botoes** funcione é necessário criar uma
 configuração para o controle que estiver usando e salvá-la como
 **6-botoes.cfg** no diretório **ctrl**, veja mais detalhes em
 :ref:`advanced-tricks-mais-de-um-botão`.
 
-Mesmo sem termos alterado o **mame.ini**, a emulação da máquina **Final
-Fight** por exemplo agora roda numa janela ao invés de tela
-inteira, se tentarmos rodar uma outra máquina como a **Super Street
-Fighter II: The New Challengers** veremos que ela inicia em tela
-inteira e sem qualquer configuração de joystick, isso ocorre porque esta
-máquina não roda em hardware **CPS-1** e sim no hardware **CPS-2**.
+Inicie a máquina **Street Fighter II: The World Warrior** (``mame sf2``)
+e repare que mesmo sem alterar o ``mame.ini`` ela inicia numa janela em
+vez de tela inteira e o mapeamento dos nossos botões está de acordo com
+o que configuramos.
 
-Então para que as configurações feitas para o sistea **CPS-1** se
-apliquem no sistema **CPS-2**, basta copiar e colar o arquivo
-``cps1.ini`` e renomear a cópia para ``cps2.ini``. Agora ao rodar
-**Super Street Fighter II: The New Challengers** novamente, a emulação
-já roda numa janela e a sua configuração de joystick também já estará
-configurada.
+Agora se iniciarmos a máquina **Super Street Fighter II: The New
+Challengers** (``mame ssf2``) repare que a emulação começa em **tela
+inteira** e o mapeamento dos botões está diferente do que foi
+configurado.
+Isso acontece porque a máquina pertence a um driver diferente da
+**CPS-1**, ela usa o driver para **CPS-2**. Para aplicar as mesmas
+configurações para as máquinas do driver **CPS-2**, vá até a pasta
+**ini**, copie e cole o arquivo ``cps1.ini``, depois renomeie o arquivo
+colado como ``cps2.ini``. Agora ao repetir o teste, a máquina começa
+numa janela e com os botões configurados.
 
-Note que em **samplerate** estamos usando **32 kHz** como taxa de
-amostragem e por quê não **44.1 kHz** ou **48 kHz** (padrão)?
+Aplicando efeitos na tela
+-------------------------
 
-Como está descrito em :ref:`-samplerate <mame-commandline-samplerate>`,
-quanto mais alto a taxa de amostragem mais processamento é exigido e de
-contrapartida há uma certa perda de desempenho dependendo do hardware
-que você estiver rodando o MAME, no caso de um computador mediano talvez
-a opção não faça a menor diferença, porém caso esteja rodando o MAME em
-equipamentos com menos poder de processamento esta opção pode ajudar a
-salvar alguns ciclos de processamento que podem ser melhor aproveitados
-em outro lugar.
+Jogos como **Street Fighter** e tantos outros na época utilizavam
+**raster graphics**, onde a imagem na tela é formada por pixels,
+no Brasil estes gráficos são também conhecidos como mapa de bits ou
+bitmap. Diferente de hoje, as imagens eram desenhadas em linhas de
+escaneamento para formar uma imagem nas antigas tela de tubo de raios
+catódicos ou CRT. Tal efeito assim como seus defeitos, podem ser
+reproduzidas. Abordaremos aqui apenas a configuração básica porém o
+assunto já foi abordado nos capítulos sobre
+:ref:`BGFX <advanced-bgfx>`, :ref:`GLSL <advanced-glsl>` e
+:ref:`HLSL <advanced-hlsl>`.
 
-No caso específico do hardware do **CPS-1** segundo mostra o datasheet
-do CI responsável pelo som da placa `OKIM6295
-<https://vgmrips.net/wiki/Oki_MSM6295>`_ a taxa de amostragem dele fica
-entre **25.6 kHz** e **32 kHz**, logo usar **44.1 kHz** e valores mais
-altos não vão melhorar a qualidade do som, tanto que se usarmos a taxa
-de amostragem mais baixa na máquina **Street Fighter II: The World
-Warrior**:
+Para aplicar um simples efeito de scanlines em máquinas com **raster
+graphics**, crie o arquivo ``raster.ini`` dentro do diretório **ini**:
 
-.. code-block:: kconfig
-
-	samplerate                25600
-
-Não há qualquer diferença notável no som e pode ser bem provável que no
-hardware original nenhum título talvez chegue a usar o máximo de
-**32 kHz**.
-
-O mesmo acontece com o hardware **CPS-2**, segundo mostra o `código
-fonte <https://github.com/mamedev/mame/blob/master/src/devices/sound/qsound.cpp>`_
-deste driver, a taxa máxima de amostragem é de **24.03846 kHz**. Logo ao
-utilizarmos um valor de **32 kHz** estamos dentro de um limite
-aceitável.
-
-Jogos como **Final Fight**, **Street Fighter** e tantos outros na época
-utilizavam **raster graphics** [#]_, onde a imagem na tela é formada
-por pixels, no Brasil estes gráficos são também conhecidos como mapa de
-bits ou bitmap. Diferente de hoje, as imagens eram desenhadas em linhas
-de escaneamento para formar uma imagem nas antigas tela de tubo de raios
-catódicos ou CRT. O efeito era chamado de **scanlines**, tal efeito de
-linhas de escaneamento assim como o efeito e os defeitos da telas CRT
-podem ser reproduzidas, abordaremos aqui apenas a configuração porém o
-assunto já foi abordado nos capítulos sobre :ref:`BGFX <advanced-bgfx>`,
-:ref:`GLSL <advanced-glsl>` e :ref:`HLSL <advanced-hlsl>`.
-
-Para aplicar um efeito simples de scanlines em máquinas com **raster
-graphics**, crie um arquivo ``raster.ini`` dentro do diretório **ini**:
-
-.. code-block:: kconfig
+.. code-block:: shell
 
 	prescale                  3
 	effect                    scanlines
 
-Agora ao rodar a máquina **Street Fighter II: The World Warrior** você
-deve notar algumas linhas de escaneamento na tela, outros efeitos podem
+Agora ao rodar a máquina **Street Fighter II: The World Warrior**
+(``mame sf2``) note que há algumas linhas na tela, outros efeitos podem
 ser baixados do `MameWorld <https://www.mameworld.info/ubbthreads/showflat.php?Cat=&Number=92158&page=0>`_.
-Apesar dos efeitos de sobreposição darem apenas um "look" simplificado
-de uma tela CRT a sua vantagem é consumir poucos recursos, já para quem
-tem um hardware um pouco mais parrudo é aí que entra a simulação da tela
-CRT com BGFX, GLSL e HLSL.
-
-.. raw:: latex
-
-	\clearpage
+Apesar dos efeitos de sobreposição darem apenas uma aparência muito
+simplificada de uma tela CRT, a sua vantagem é consumir poucos
+recursos, porém há muito tempo que não se utiliza mais a opção
+``effect`` já que nos dias de hoje há opções mais modernas. Para quem
+tem um hardware um pouco mais sofisticado, use a simulação as opções do
+BGFX, GLSL e HLSL.
 
 Baixe os shaders GLSL do
 `mameau <https://www.mameau.com/linux/mame-glsl-shaders-setup/>`_,
 extraia o diretório **osd** no diretório raiz do MAME e experimente esta
-configuração no seu arquivo ``ini\\raster.ini``:
+configuração no seu arquivo ``ini\raster.ini``:
 
 **raster.ini**
 
-.. code-block:: kconfig
+.. code-block:: shell
 
 	filter                  0
 	gl_glsl                 1
@@ -325,10 +386,10 @@ configuração no seu arquivo ``ini\\raster.ini``:
 Rode novamente a máquina **Street Fighter II: The World Warrior** e
 repare que a tela já possuí curvatura, linhas de escaneamento,
 distorções e outras características semelhantes a uma tela CRT,
-incluindo seus defeitos.
+incluindo os seus defeitos.
 
-Particularmente prefiro apenas manter as características de linhas de
-escaneamento sem os defeitos do CRT, sem distorções, saturação, nada.
+Particularmente prefiro apenas manter as características das linhas de
+escaneamento do CRT sem os defeitos, as distorções, a saturação, nada.
 Gosto de usar o
 `pix <http://www.mediafire.com/file/6o3m5vttxtdh7o8/pix.zip>`_ que é um
 filtro que evita distorções de pixels (integer scaling) quando você
@@ -337,7 +398,7 @@ aumenta a resolução da tela junto com o efeito
 
 **Minha Configuração**
 
-.. code-block:: kconfig
+.. code-block:: shell
 
 	filter                  1
 	gl_glsl                 1
@@ -345,52 +406,69 @@ aumenta a resolução da tela junto com o efeito
 	glsl_shader_mame0       glsl\pix\pixellate
 	effect                  ApertureMRES
 
-Assim como essas configurações funcionam para arcades é possível
-também fazer o mesmo para consoles como o **Sega Genesis/Mega Drive**,
-**Super Nintendo** dentre outros.
+Repare que ao usar o arquivo ``raster.ini`` para armazenar as
+configurações dos efeitos da tela, ela também será aplicada em qualquer
+outra máquina que seja definida como "raster" como consoles de
+video-game, computadores pessoais, etc. Então prefira salvar tais
+configurações dentro do arquivo ``arcade.ini``.
 
-Lembrando que os consoles também usam **raster graphics!** Tenha certeza
-de colocar um **#** na frente de cada opção dentro do arquivo
-``raster.ini`` para que o MAME ignore estas opções, troque o nome do
-arquivo para ``_raster.ini`` ou apague-o, caso contrário haverá conflito
-de configurações gerando alguns efeitos indesejáveis. Para casos como
-estes é preferível configurar cada sistema individualmente ou encontrar
-uma forma que funcione com todos, faça como preferir.
+Criando configurações específicas para consoles
+-----------------------------------------------
+
+Da mesma maneira que estas configurações funcionam com arcades é
+possível também fazer o mesmo para consoles como o
+**Sega Genesis/Mega Drive**, **Super Nintendo** dentre outros, aqui
+alguns exemplos.
 
 **Sega Genesis / Mega Drive**
 
 	* Crie um arquivo ``megadriv.ini`` dentro do diretório
 	  **ini\\source** com as seguintes opções:
 
-.. code-block:: kconfig
+.. code-block:: shell
 
-	romapath                  caminho_completo_roms
-	samplerate                32000
-	steadykey                 1
-	ctrlr                     megadrive
+    romapath                  mame_rom_dir;caminho_completo_roms
+    samplerate                32000
+    ctrlr                     megadrive
 
 **Super Nintendo**
 
 	* Crie um arquivo ``snes.ini`` dentro do diretório **ini\\source**
 	  com as seguintes opções:
 
-.. code-block:: kconfig
+.. code-block:: shell
 
-	romapath                  caminho_completo_roms
-	samplerate                32000
-	steadykey                 1
-	ctrlr                     snes
+    romapath                  mame_rom_dir;caminho_completo_roms
+    samplerate                32000
+    ctrlr                     snes
 
-.. raw:: latex
+**Neo Geo**
 
-	\clearpage
+	* Crie o arquivo ``neogeo.ini`` dentro do diretório **ini\\source**
+	  com as seguintes opções:
+
+.. code-block:: shell
+
+    romapath                  mame_rom_dir;caminho_completo_roms
+    bios                      unibios40
+    ctrlr                     neogeo
+    filter                    1
+    prescale                  2
+    keepaspect                1
+
+Criando configurações para consoles em geral
+--------------------------------------------
+
+Da mesma maneira que é possível personalizar a configuração individual
+de cada console, também é possível usar 1 arquivo para configurar todas
+as máquinas classificadas como console.
 
 **Consoles em geral**
 
 	* Crie o arquivo ``consoles.ini`` dentro do diretório **ini** com as
 	  seguintes opções:
 
-.. code-block:: kconfig
+.. code-block:: shell
 
 	video                   opengl
 	snapbilinear            0
@@ -402,12 +480,10 @@ uma forma que funcione com todos, faça como preferir.
 	glsl_shader_mame0       osd\shader\glsl_plain
 	glsl_shader_mame1       osd\CRT-geom
 
-Agora o efeito de tela CRT é aplicado em qualquer máquina definida
-**console** pelo MAME assim como ambos os consoles já tem configurado
-o caminho para onde está armazenada as suas respectivas ROMs (sim, você
-não precisa usar apenas o diretório **roms** para isso, pode ser
-qualquer um que desejar) e a configuração de joystick para cada um
-deles.
+Nesta configuração nós aplicamos os efeitos de tela em qualquer máquina
+definida como **console** e ainda mantemos as configurações individuais
+criadas anteriormente, assim nós mantemos as configurações do mapeamento
+dos botões do controle por exemplo.
 
 O céu é o limite, na internet é possível encontrar muito mais shaders
 como o `MAME-PSGS <https://github.com/mgzme/MAME-PSGS>`_,
@@ -415,12 +491,6 @@ como o `MAME-PSGS <https://github.com/mgzme/MAME-PSGS>`_,
 e assim por diante.
 
 Apesar de não abordar todas as possibilidades de configurações possíveis
-esperamos que estes exemplos tenham lhe ajudado a configurar o MAME de
-maneira mais eficiente para cada sistema sem ficar limitado apenas ao
-arquivo ``mame.ini``.
-
-.. [#]	https://pt.wikipedia.org/wiki/Raster
-
-.. raw:: latex
-
-	\clearpage
+esperamos que estes exemplos sejam suficientes para lhe ajudar a
+configurar o MAME de maneira mais eficiente para cada sistema sem ficar
+limitado apenas ao arquivo ``mame.ini``.

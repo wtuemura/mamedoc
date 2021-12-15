@@ -45,8 +45,8 @@ ajudá-lo, mas você também poderá pedir mais opiniões em qualquer um dos
 fóruns conhecidos sobre o MAME espalhados pela internet.
 
 
-Resolução e relação de aspecto da tela
---------------------------------------
+Resolução e a relação de aspecto da tela
+----------------------------------------
 
 
 A resolução é um assunto muito importante para as configurações do hlsl.
@@ -103,10 +103,10 @@ melhor copiar as opções do **bgfx** do ``mame.ini`` para um outro
 arquivo de configuração e fazer as modificações lá.
 
 Particularmente, você vai querer que as configurações
-**bgfx_screen_chains** sejam específicas es customizáveis para cada jogo
-individualmente ao invés de uma única configuração para todos os jogos.
+**bgfx_screen_chains** sejam específicas e personalizáveis para cada
+máquina em vez de uma única configuração para todas.
 
-Salve o arquivo ``.ini`` e já estamos pronto para começar.
+Salve o arquivo ``.ini`` e já estamos prontos para começar.
 
 .. raw:: latex
 
@@ -115,11 +115,15 @@ Salve o arquivo ``.ini`` e já estamos pronto para começar.
 Alterando as configurações
 --------------------------
 
+.. _advanced-bgfx-path:
+
 **bgfx_path**
 
  	Seus arquivos de sombreamento **bgfx** (*bgfx shader*) são
  	armazenados aqui. Por definição, o nome desta pasta é **bgfx**, fica
  	na pasta raiz do MAME.
+
+.. _advanced-bgfx-backend:
 
 **bgfx_backend**
 
@@ -151,6 +155,8 @@ Alterando as configurações
 
 		O valor predefinido é **auto**.
 
+.. _advanced-bgfx-debug:
+
 **bgfx_debug**
 
 	Ativa as funcionalidades de depuração, voltado apenas para os
@@ -170,7 +176,7 @@ Alterando as configurações
 	Nós fazemos um distinção entre dispositivos de tela emuladas (na
 	qual a chamamos de **screen** ou **tela**) e tela física
 	(na qual a chamaremos de **window** ou **janela**, configurável
-	através da opção **-numscreens**). Nós usamos dois pontos ``:`` para
+	através da opção ``-numscreens``). Nós usamos dois pontos ``:`` para
 	separar janelas e vírgulas ``,`` para separar as telas.
 	
 	As vírgulas sempre saem do lado de fora da cadeia (veja o exemplo do
@@ -221,7 +227,7 @@ Alterando as configurações
 	Como queremos dar a cada jogador sua própria tela cheia
 	(dois monitores físicos) junto com o LCD, nós fazemos assim: ::
 
-	-numscreens 2 -view0 "Player 1" -view1 "Player 2" -video bgfx -bgfx_screen_chains hlsl,unfiltered,unfiltered:hlsl,unfiltered,unfiltered
+	-numscreens 2 -view0 "Player 1" -view1 "Player 2" -video bgfx bgfx_screen_chains hlsl,unfiltered,unfiltered:hlsl,unfiltered,unfiltered
 
 	Isso configura a visualização de cada tela respectivamente, mantendo
 	o efeito de tela CRT com HLSL para cada janela física enquanto fica
@@ -235,10 +241,14 @@ Alterando as configurações
 	Observe que as vírgulas estão nas bordas externas e qualquer
 	dois-pontos estão no meio. [#]_
 
+.. _advanced-bgfx-shadow_mask:
+
 **bgfx_shadow_mask**
 
 	Especifica o arquivo PNG para ser usado como efeito de máscara de
 	sombra. Por definição o nome do arquivo é ``slot-mask.png``.
+
+.. _advanced-bgfx-lut:
 
 **bgfx_lut**
 
@@ -246,11 +256,13 @@ Alterando as configurações
 
 		O Valor predefinido é **nenhum**
 
+.. _advanced-bgfx-avi_name:
+
 **bgfx_avi_name**
 
 	Essa opção permite que você possa definir um nome de arquivo AVI
 	para gravar o vídeo da máquina emulada com os efeitos
-	``-bgfx_avi_name pacman.avi`` por exemplo.
+	``bgfx_avi_name pacman.avi`` por exemplo.
 
 		O Valor predefinido é **auto**
 
@@ -259,8 +271,8 @@ Alterando as configurações
 	\clearpage
 
 
-Customizando as configurações de bgfx hlsl dentro do MAME
----------------------------------------------------------
+Customizando as configurações bgfx hlsl dentro do MAME
+------------------------------------------------------
 
 .. note::
 

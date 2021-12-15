@@ -3,8 +3,8 @@
 
 	\clearpage
 
-Desabilitando o interruptor de câmbio
-=====================================
+Desativando o interruptor de câmbio
+===================================
 
 
 Este é um recurso avançado para lidar com o interruptor de certas
@@ -72,5 +72,5 @@ como mostra o exemplo abaixo:
 
 
 Salve e saia.
-Para desabilitar, simplesmente remova a opção **toggle="no"** de cada
+Para desativar, simplesmente remova a opção **toggle="no"** de cada
 arquivo de .CFG que desejar.

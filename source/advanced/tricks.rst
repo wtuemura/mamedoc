@@ -102,10 +102,6 @@ usar a opção :ref:`-ctrlr <mame-commandline-ctrlrpath>`, exemplo
 ao seu ``mame.ini`` porém note que esta configuração será aplicada em
 todas as máquinas!
 
-Para aplicar essa configuração apenas nas máquinas **Neo-Geo**, veja o
-capítulo de :ref:`Configuração individual por sistema
-<advanced-tricks-configuração-individual>`.
-
 .. _advanced-tricks-botões-combinação:
 
 Combinando os botões
@@ -274,62 +270,6 @@ Repare que há máquinas como as da série **Muscle Bomber** por exemplo, é
 necessário pressionar os botões relacionados ao inicio da partida de
 cada jogador e não apenas pressionar os botões do controle para iniciar
 a partida.
-
-.. raw:: latex
-
-	\clearpage
-
-
-.. _advanced-tricks-configuração-individual:
-
-Criando uma configuração customizada para cada sistema
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-No diretório **ini** crie um diretório chamado **source** e dentro dele
-crie um arquivo chamado ``neogeo.ini``. Neste arquivo nós configuraremos
-os seguintes parâmetros:
-
-*	Que a Bios seja a **UniBios v 4.0**
-*	Que a minha configuração do controle seja chamada **neogeo**.
-	Que ela seja sempre carregada.
-*	Que o áudio tenha uma taxa de amostragem com **32000 Hz**.
-*	Que o filtro esteja ativo.
-*	Que o prescale seja maior que **1**.
-*	Que a proporção de tela seja mantida.
-
-.. note:: 
-
-	De acordo com `este post <https://vgmrips.net/forum/viewtopi
-	c.php?f=3&t=155>`_ o YM2610 trabalha com uma taxa de amostragem de
-	18.5 kHz (18500 Hz), logo a configuração de 22050 Hz até 32000 Hz
-	deva ser suficiente uma vez que a taxa de amostragem de áudio do
-	MAME é predefinida em 48 kHz ou 48000 Hz e essa alta taxa de
-	amostragem não traz nenhum benefício para a emulação como já foi
-	descrito em :ref:`-samplerate <mame-commandline-samplerate>`.
-
-.. warning::
-
-	Tenha certeza que a sua placa de som tenha suporte para esta taxa de
-	amostragem, caso não tenha, utilize **44100**. Quando a taxa de
-	amostragem não for compatível você pode sofrer com problemas como
-	falta de áudio, cortes, estalos, ruídos, etc.
-
-Assim temos as seguintes opções para o nosso ``neogeo.ini``:
-
-.. code-block:: kconfig
-
-	bios                      unibios40
-	ctrlr                     neogeo
-	samplerate                32000
-	filter                    1
-	prescale                  2
-	keepaspect                1
-
-Agora sempre que qualquer máquina **Neo-Geo** for iniciada ela sempre
-usará estas configurações, todas as outras máquinas não relacionadas
-com **Neo-Geo** usarão as configurações predefinidas pelo MAME sem haver
-conflitos de configuração, assim como, não será mais necessário
-especificar todas essas opções na linha de comando.
 
 .. _advanced-tricks-configuração-controle-por-maquina:
 
