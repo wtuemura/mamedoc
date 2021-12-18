@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 02:50+1100\n"
-"PO-Revision-Date: 2021-12-11 16:32-0300\n"
+"PO-Revision-Date: 2021-12-18 07:17-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -753,7 +753,7 @@ msgstr "X ou Y (Auto)"
 
 #: src/frontend/mame/ui/videoopt.cpp:210
 msgid "Non-Integer Scaling"
-msgstr "Escale a tela com valores inteiros"
+msgstr "Escale a tela com valores não inteiros"
 
 #: src/frontend/mame/ui/videoopt.cpp:213
 msgid "Maintain Aspect Ratio"
@@ -2307,7 +2307,7 @@ msgstr "Texto normal"
 #: src/frontend/mame/ui/custui.cpp:626
 msgctxt "color-option"
 msgid "Selected color"
-msgstr "Cor selecionada"
+msgstr "Cor do texto selecionado"
 
 #: src/frontend/mame/ui/custui.cpp:627
 msgctxt "color-option"
@@ -2317,7 +2317,7 @@ msgstr "Fundo do texto normal"
 #: src/frontend/mame/ui/custui.cpp:628
 msgctxt "color-option"
 msgid "Selected background color"
-msgstr "Cor de fundo selecionada"
+msgstr "Cor de fundo da seleção"
 
 #: src/frontend/mame/ui/custui.cpp:629
 msgctxt "color-option"

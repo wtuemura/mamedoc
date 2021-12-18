@@ -482,7 +482,7 @@ da máquina emulada e as suas respectivas opções, quando houver.
 
 		O valor predefinido é ``Desligado``.
 
-* :guilabel:`Escale a tela com valores inteiros`
+* :guilabel:`Escale a tela com valores não inteiros`
 
   Faz com que a tela possa ser expandida usando números facionados em
   vez de números inteiros, isso causa efeitos *"aliasing"* (um efeito
