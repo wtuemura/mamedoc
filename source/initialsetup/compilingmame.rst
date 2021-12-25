@@ -1093,9 +1093,9 @@ compilação acima para :ref:`todas as plataformas <compiling-practical-examples
 Javascript Emscripten e HTML
 ----------------------------
 
-Primeiro, baixe e instale o **Emscripten 1.37.29** ou mais recente
-segundo as instruções no `site oficial <https://emscripten.org/docs/gett
-ing_started/downloads.html>`_.
+Primeiro, baixe e instale o **Emscripten 2.0.25** ou mais recente
+segundo as instruções no
+`site oficial <https://emscripten.org/docs/getting_started/downloads.html>`_.
 
 Depois de instalar o *Emscripten*, será possível compilar o MAME direto,
 usando a ferramenta '**emmake**'. O MAME completo é muito grande para
