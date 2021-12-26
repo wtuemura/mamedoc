@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 02:50+1100\n"
-"PO-Revision-Date: 2021-12-18 07:17-0300\n"
+"PO-Revision-Date: 2021-12-28 03:04-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -607,7 +607,7 @@ msgstr "Atribuição do dispositivo adstick"
 
 #: src/frontend/mame/ui/submenu.cpp:107
 msgid "Paddle Device Assignment"
-msgstr "Atribuição do dispositivo remo"
+msgstr "Atribuição do dispositivo de acionamento"
 
 #: src/frontend/mame/ui/submenu.cpp:108
 msgid "Dial Device Assignment"
@@ -1281,7 +1281,7 @@ msgstr "BIOS"
 #: src/frontend/mame/ui/utils.cpp:94
 msgctxt "machine-filter"
 msgid "Not BIOS"
-msgstr "Não BIOS"
+msgstr "Sem BIOS"
 
 #: src/frontend/mame/ui/utils.cpp:95
 msgctxt "machine-filter"
@@ -4244,102 +4244,102 @@ msgstr "%p pedal 3"
 #: src/emu/inpttype.ipp:592
 msgctxt "input-name"
 msgid "Paddle"
-msgstr "Remo"
+msgstr "Acionador"
 
 #: src/emu/inpttype.ipp:593
 msgctxt "input-name"
 msgid "Paddle 2"
-msgstr "Remo 2"
+msgstr "Acionador 2"
 
 #: src/emu/inpttype.ipp:594
 msgctxt "input-name"
 msgid "Paddle 3"
-msgstr "Remo 3"
+msgstr "Acionador 3"
 
 #: src/emu/inpttype.ipp:595
 msgctxt "input-name"
 msgid "Paddle 4"
-msgstr "Remo 4"
+msgstr "Acionador 4"
 
 #: src/emu/inpttype.ipp:596
 msgctxt "input-name"
 msgid "Paddle 5"
-msgstr "Remo 5"
+msgstr "Acionador 5"
 
 #: src/emu/inpttype.ipp:597
 msgctxt "input-name"
 msgid "Paddle 6"
-msgstr "Remo 6"
+msgstr "Acionador 6"
 
 #: src/emu/inpttype.ipp:598
 msgctxt "input-name"
 msgid "Paddle 7"
-msgstr "Remo 7"
+msgstr "Acionador 7"
 
 #: src/emu/inpttype.ipp:599
 msgctxt "input-name"
 msgid "Paddle 8"
-msgstr "Remo 8"
+msgstr "Acionador 8"
 
 #: src/emu/inpttype.ipp:600
 msgctxt "input-name"
 msgid "Paddle 9"
-msgstr "Remo 9"
+msgstr "Acionador 9"
 
 #: src/emu/inpttype.ipp:601
 msgctxt "input-name"
 msgid "Paddle 10"
-msgstr "Remo 10"
+msgstr "Acionador 10"
 
 #: src/emu/inpttype.ipp:606
 msgctxt "input-name"
 msgid "Paddle V"
-msgstr "Remo V"
+msgstr "Acionador V"
 
 #: src/emu/inpttype.ipp:607
 msgctxt "input-name"
 msgid "Paddle V 2"
-msgstr "Remo V 2"
+msgstr "Acionador V 2"
 
 #: src/emu/inpttype.ipp:608
 msgctxt "input-name"
 msgid "Paddle V 3"
-msgstr "Remo  V 3"
+msgstr "Acionador  V 3"
 
 #: src/emu/inpttype.ipp:609
 msgctxt "input-name"
 msgid "Paddle V 4"
-msgstr "Remo V 4"
+msgstr "Acionador V 4"
 
 #: src/emu/inpttype.ipp:610
 msgctxt "input-name"
 msgid "Paddle V 5"
-msgstr "Remo V 5"
+msgstr "Acionador V 5"
 
 #: src/emu/inpttype.ipp:611
 msgctxt "input-name"
 msgid "Paddle V 6"
-msgstr "Remo V 6"
+msgstr "Acionador V 6"
 
 #: src/emu/inpttype.ipp:612
 msgctxt "input-name"
 msgid "Paddle V 7"
-msgstr "Remo V 7"
+msgstr "Acionador V 7"
 
 #: src/emu/inpttype.ipp:613
 msgctxt "input-name"
 msgid "Paddle V 8"
-msgstr "Remo V 8"
+msgstr "Acionador V 8"
 
 #: src/emu/inpttype.ipp:614
 msgctxt "input-name"
 msgid "Paddle V 9"
-msgstr "Remo V 9"
+msgstr "Acionador V 9"
 
 #: src/emu/inpttype.ipp:615
 msgctxt "input-name"
 msgid "Paddle V 10"
-msgstr "Remo V 10"
+msgstr "Acionador V 10"
 
 #: src/emu/inpttype.ipp:620
 msgctxt "input-name"

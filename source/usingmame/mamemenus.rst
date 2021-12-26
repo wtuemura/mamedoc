@@ -1361,9 +1361,9 @@ Mapeamento do dispositivo
 		O valor predefinido é ``keyboard``.
 
 
-* :guilabel:`Atribuição do dispositivo remo`
+* :guilabel:`Atribuição do dispositivo de acionamento`
 
-  Caso exista um controlador para remo, os valores
+  Caso exista um controlador para acionamento, os valores
   disponíveis são ``None``, ``keyboard``, ``mouse``, ``lightgun`` e
   ``joystick``.
 
@@ -2060,17 +2060,17 @@ Predefinições para o jogador 1
 +--------------------------------------+-------------------------------+
 |  J1 pedal 3 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Remo analógico                      | ...                           |
+|  Acionador analógico                 | ...                           |
 +--------------------------------------+-------------------------------+
-|  Remo analógico inc                  | Direita                       |
+|  Acionador analógico inc             | Direita                       |
 +--------------------------------------+-------------------------------+
-|  Remo analógico dec                  | Esquerda                      |
+|  Acionador analógico dec             | Esquerda                      |
 +--------------------------------------+-------------------------------+
-|  Remo V analog                       | ...                           |
+|  Acionador V analog                  | ...                           |
 +--------------------------------------+-------------------------------+
-|  Remo V analógico inc                | Baixo                         |
+|  Acionador V analógico inc           | Baixo                         |
 +--------------------------------------+-------------------------------+
-|  Remo V analógico dec                | Cima                          |
+|  Acionador V analógico dec           | Cima                          |
 +--------------------------------------+-------------------------------+
 |  Posicionamento analógico            | ...                           |
 +--------------------------------------+-------------------------------+
@@ -2315,17 +2315,17 @@ Predefinições para o jogador 2
 +--------------------------------------+-------------------------------+
 |  J2 pedal 3 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Remo 2 analógico                    | n/a                           |
+|  Acionador 2 analógico               | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Remo 2 analógico inc                | G                             |
+|  Acionador 2 analógico inc           | G                             |
 +--------------------------------------+-------------------------------+
-|  Remo 2 analógico dec                | D                             |
+|  Acionador 2 analógico dec           | D                             |
 +--------------------------------------+-------------------------------+
-|  Remo V 2 analógico                  | n/a                           |
+|  Acionador V 2 analógico             | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Remo V 2 analógico inc              | F                             |
+|  Acionador V 2 analógico inc         | F                             |
 +--------------------------------------+-------------------------------+
-|  Remo V 2 analógico dec              | R                             |
+|  Acionador V 2 analógico dec         | R                             |
 +--------------------------------------+-------------------------------+
 |  Posicionamento 2 analógico          | n/a                           |
 +--------------------------------------+-------------------------------+
@@ -2488,17 +2488,17 @@ Predefinições para o jogador 3
 +--------------------------------------+-------------------------------+
 |  J3 pedal 3 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Remo 3 analógico                    | n/a                           |
+|  Acionador 3 analógico               | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Remo 3 analógico inc                | L                             |
+|  Acionador 3 analógico inc           | L                             |
 +--------------------------------------+-------------------------------+
-|  Remo 3 analógico dec                | J                             |
+|  Acionador 3 analógico dec           | J                             |
 +--------------------------------------+-------------------------------+
-|  Remo V 3 analógico                  | n/a                           |
+|  Acionador V 3 analógico             | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Remo V 3 analógico inc              | K                             |
+|  Acionador V 3 analógico inc         | K                             |
 +--------------------------------------+-------------------------------+
-|  Remo V 3 analógico dec              | I                             |
+|  Acionador V 3 analógico dec         | I                             |
 +--------------------------------------+-------------------------------+
 |  Posicionamento 3 analógico          | n/a                           |
 +--------------------------------------+-------------------------------+
@@ -2661,17 +2661,17 @@ Predefinições para o jogador 4
 +--------------------------------------+-------------------------------+
 |  J4 pedal 3 analógico dec            | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Remo 4 analógico                    | n/a                           |
+|  Acionador 4 analógico               | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Remo 4 analógico inc                | Nenhum                        |
+|  Acionador 4 analógico inc           | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Remo 4 analógico dec                | Nenhum                        |
+|  Acionador 4 analógico dec           | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Remo V 4 analógico                  | n/a                           |
+|  Acionador V 4 analógico             | n/a                           |
 +--------------------------------------+-------------------------------+
-|  Remo V 4 analógico inc              | Nenhum                        |
+|  Acionador V 4 analógico inc         | Nenhum                        |
 +--------------------------------------+-------------------------------+
-|  Remo V 4 analógico dec              | Nenhum                        |
+|  Acionador V 4 analógico dec         | Nenhum                        |
 +--------------------------------------+-------------------------------+
 |  Posicionamento 4 analógico          | n/a                           |
 +--------------------------------------+-------------------------------+
