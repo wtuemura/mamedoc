@@ -162,16 +162,16 @@ Alterando as configurações
 	Ativa as funcionalidades de depuração, voltado apenas para os
 	desenvolvedores.
 
-		``bgfx_screen_chains``
+**bgfx_screen_chains**
 
 	Determina como manipular a renderização **bgfx** tela a tela. As
 	opções disponíveis são:
 
-	* **default** Saída predefinida de filtro bilinear.
+	* **default** Gera uma tela com filtro bilinear.
 
-	* **unfiltered** Saída sem filtro, mais próxima do original.
+	* **unfiltered** Geral uma tela sem filtro.
 
-	* **hlsl** -- Saída com simulação de tela hlsl usando sombreadores.
+	* **hlsl** Simula uma tela CRT usando shaders hlsl.
 
 	Nós fazemos um distinção entre dispositivos de tela emuladas (na
 	qual a chamamos de **screen** ou **tela**) e tela física
