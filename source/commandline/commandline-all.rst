@@ -2676,7 +2676,7 @@ Opções para a configuração de vídeo
 	gráficos desenvolvidos para uma tela 4:3 ao custo de distorções nos
 	gráficos e isso fica pior ainda com textos.
 	
-	Consulte :ref:`-aspect <mame-commandline-aspect>`, 
+	Consulte também :ref:`-aspect <mame-commandline-aspect>`, 
 	:ref:`-keepaspect <mame-commandline-keepaspect>` e
 	:ref:`-prescale <mame-commandline-prescale>`.
 
@@ -2888,15 +2888,15 @@ Opções para a configuração de vídeo
 
 	Experimente ``-prescale 4`` ou valores maiores para amenizar um
 	pouco as distorções causadas pela opção
-	:ref:`unevenstretch <mame-commandline-unevenstretch>`.
+	:ref:`-unevenstretch <mame-commandline-unevenstretch>`.
 
 	Os valores válidos são ``1`` (mínimo) e ``8`` (máximo).
 
 	O valor predefinido é ``1``.
 
-	Funciona com todos os modos de vídeo no Windows (bgfx, d3d, etc) e
-	nas outras plataformas **APENAS** aquelas que forem compatíveis com
-	o OpenGL, também não funciona com filtros
+	Funciona com todos os modos de vídeo no Windows (bgfx, d3d, etc),
+	nas outras plataformas funciona **APENAS** naquelas que forem
+	compatíveis com o OpenGL. Não funciona com filtros
 	:ref:`GLSL <mame-commandline-glglslfilter>`.
 
 	Exemplo:
@@ -2915,9 +2915,9 @@ Opções para a configuração de vídeo
 
 	Quando desabilitado terá uma imagem pura e com aparência mais
 	serrilhada, esta opção também ocasiona artefatos na tela em caso de
-	redimensionamento. Caso não goste da aparência filtrada e amaciada
-	da imagem, tente incrementar o valor da opção ``-prescale`` ao em
-	vez de desabilitar todos os filtros. Veja também
+	redimensionamento. Caso não goste da aparência amaciada da imagem,
+	tente incrementar o valor da opção ``-prescale`` em vez de desativar
+	todos os filtros. Consulte também a opção
 	:ref:`-gl_glsl_filter <mame-commandline-glglslfilter>`.
 
 	O valor predefinido é ``Ligado`` (``-filter``).

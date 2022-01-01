@@ -259,7 +259,7 @@ tela, não se esqueça de clicar em :guilabel:`Feito` ao concluir:
   * **Entrada 1**: :guilabel:`Jogador 1 direita`
 * **Etapa 2**:
 
-  * **Atraso (quadros)**: :guilabel:`1`
+  * **Atraso (quadros)**: :guilabel:`0`
   * **Duração (quadros)**: :guilabel:`1`
   * **Entrada 1**: :guilabel:`Jogador 1 baixo`
 * **Etapa 3**:
@@ -288,10 +288,10 @@ esqueça de clicar em :guilabel:`Feito` ao concluir:
   * **Entrada 1**: :guilabel:`Jogador 1 baixo`
 * **Etapa 2**:
 
-  * **Atraso (quadros)**: :guilabel:`1`
+  * **Atraso (quadros)**: :guilabel:`0`
   * **Duração (quadros)**: :guilabel:`1`
-  * **Entrada 1**: :guilabel:`Jogador 1 direita`
-  * **Entrada 2**: :guilabel:`Jogador 1 baixo`
+  * **Entrada 1**: :guilabel:`Jogador 1 baixo`
+  * **Entrada 2**: :guilabel:`Jogador 1 direita`
 * **Etapa 3**:
 
   * **Atraso (quadros)**: :guilabel:`0`
@@ -315,17 +315,12 @@ estando do lado esquerdo da tela, não se esqueça de clicar em
   * **Entrada 1**: :guilabel:`Jogador 1 esquerda`
 * **Etapa 2**:
 
-  * **Atraso (quadros)**: :guilabel:`1`
-  * **Duração (quadros)**: :guilabel:`1`
-  * **Entrada 1**: :guilabel:`Jogador 1 direita`
-* **Etapa 3**:
-
   * **Atraso (quadros)**: :guilabel:`0`
-  * **Duração (quadros)**: :guilabel:`1`
+  * **Duração (quadros)**: :guilabel:`2`
   * **Entrada 1**: :guilabel:`Jogador 1 direita`
   * **Entrada 2**: :guilabel:`P1 Strong Punch`
 
-Esta macro faz o tal "*facão do Guile*" (Flash Kick) com *chute fraco*
+Esta macro faz o tal "*facão do Guile*" (*Flash Kick*) com *chute fraco*
 ao pressionar a tecla :kbd:`V` com o jogador 1 estando do lado esquerdo
 da tela, não se esqueça de clicar em :guilabel:`Feito` ao concluir:
 
@@ -340,8 +335,8 @@ da tela, não se esqueça de clicar em :guilabel:`Feito` ao concluir:
   * **Entrada 1**: :guilabel:`Jogador 1 baixo`
 * **Etapa 2**:
 
-  * **Atraso (quadros)**: :guilabel:`1`
-  * **Duração (quadros)**: :guilabel:`1`
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`2`
   * **Entrada 1**: :guilabel:`Jogador 1 cima`
   * **Entrada 2**: :guilabel:`P1 Short Kick`
 
