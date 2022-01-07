@@ -2,8 +2,12 @@
 
 	\clearpage
 
+.. _usingmame:
+
 Primeiros passos
 ================
+
+.. contents:: :local:
 
 Interface gráfica
 -----------------
@@ -139,6 +143,8 @@ do executável do MAME.
 .. raw:: latex
 
 	\clearpage
+
+.. _usingmame_command_line:
 
 Linha de comando
 ----------------
@@ -448,15 +454,41 @@ sem que você precise abri-lo, por exemplo, para listar o seu
 **rompath** no **Windows** faça::
 
 	mame -showconfig|findstr rompath
-	roms;D:\mame\roms
+	rompath                   roms;D:\mame\roms
 
 No Linux ou macOS faça::
 
 	mame -showconfig|grep rompath
-	roms;/mount/media/mame/roms;etc
+	rompath                   roms;/mount/media/mame/roms;etc
 
 Algumas vezes é bem mais prático fazer assim do que ter que acessar o
 arquivo ``mame.ini`` diretamente.
+
+.. _usingmame_chd_files:
+
+Arquivos CHD
+------------
+
+Além das ROMs, algumas máquinas também precisam de arquivos **.CHD**
+para funcionarem. Estes arquivos são cópias das mídias originais (HDD,
+CD, DVD, etc) compactadas num formato proprietário, para mais detalhes
+consulte :ref:`aboutromsets_rom_chd`.
+
+O MAME procura por estes arquivos dentro do diretório **roms**, eles
+devem estar dentro de diretórios próprios com o mesmo nome da ROM a qual
+os arquivos CHD's estão associados, por exemplo, a máquina **Street
+Fighter III: New Generation (Euro 970204)** precisa que a ROM
+``sfiii.zip`` esteja dentro da pasta **roms** e o arquivo **.CHD**
+``cap-sf3-3.chd`` precisa estar dentro de um diretório com o mesmo nome
+da ROM, ou seja, uma pasta ``sfiii`` dentro da pasta **roms**::
+
+    roms
+       |
+       +-sfiii.zip
+       |
+       +-sfiii
+             +-cap-sf3-3.chd
+
 
 .. [#]	Os desenvolvedores do MAME preferem usar o termo **máquinas** em
 		vez de **jogos**, talvez visando evitar problemas legais?

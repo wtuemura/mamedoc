@@ -4,6 +4,8 @@
 
 	\clearpage
 
+.. _aboutromsets:
+
 Sobre as ROMs e os seus conjuntos
 =================================
 
@@ -15,6 +17,8 @@ comuns e abordar detalhes simples que você precisa saber para usar
 o MAME de forma mais eficaz.
 
 Vamos começar explicando o que é ROM.
+
+.. _aboutromsets_rom:
 
 O que é uma imagem ROM?
 -----------------------
@@ -34,6 +38,7 @@ de ROMs [2]_ do jogo Puckman.
 Um exemplo de uma imagem ROM seria o arquivo **pm1_prg1.6e** que estaria
 armazenada num conjunto de ROM **Puckman**.
 
+.. _aboutromsets_rom_name:
 
 Por que ROM e não algum outro nome?
 -----------------------------------
@@ -50,6 +55,7 @@ dentro um circuito integrado onde esteja armazenado o programa do que
 quer que seja, logo, o nome deste conteúdo tornou-se conhecido como uma
 "imagem ROM" ou apenas "ROM" para simplificar.
 
+.. _aboutromsets_division:
 
 Pais, Clones, Divisão e Mesclagem
 ---------------------------------
@@ -135,6 +141,7 @@ chaves DIP para o jogo Galaga, assim como para outros jogos, você também
 precisará do conjunto de dispositivos armazenado no arquivo
 **NAMCO51.ZIP** e assim também para outros jogos que precisem dele.
 
+.. _aboutromsets_problems:
 
 Solucionando problemas dos seus conjuntos de ROMs e um pouco de história
 ------------------------------------------------------------------------
@@ -202,6 +209,7 @@ mais, há várias coisas a serem verificadas:
 O MAME sempre informará quais os arquivos estão faltando, dentro de
 quais conjuntos e onde eles foram procurados.
 
+.. _aboutromsets_rom_chd:
 
 ROMs e CHDs
 -----------
