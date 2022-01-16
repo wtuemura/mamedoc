@@ -45,7 +45,7 @@ sudo apt-get install python3-sphinx python3-pip latexmk texlive texlive-science 
 No Windows é preciso ter o MSYS2 e instalar os seguintes pacotes:
 
 ```
-pacman -S mingw-w64-x86_64-librsvg mingw-w64-x86_64-python-sphinx mingw-w64-x86_64-python-sphinxcontrib-svg2pdfconverter
+pacman -S mingw-w64-x86_64-librsvg mingw-w64-x86_64-python-sphinx mingw-w64-x86_64-python-sphinxcontrib-svg2pdfconverter mingw-w64-x86_64-texlive-latex-extra mingw-w64-x86_64-texlive-fonts-recommended
 ```
 
 Na sua conta comum, use o `pip` ou `pip3` para instalar os pacotes
