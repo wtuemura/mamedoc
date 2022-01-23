@@ -4,8 +4,8 @@
 
 .. _ctrlrcfg:
 
-Os arquivos de configuração para o controle
-===========================================
+Arquivos de configuração para controles
+=======================================
 
 .. contents:: :local:
 

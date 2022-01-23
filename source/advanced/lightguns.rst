@@ -630,8 +630,8 @@ Lembrando que é possível também fazer como foi ensinado em
 
 .. _arma-em-jogos-que-precisam:
 
-Habilitando a arma apenas em jogos que precisam
---------------------------------------------------
+Ativando a arma apenas nos jogos que precisam
+---------------------------------------------
 
 O problema de usar o ``mame.ini`` é que o MAME **sempre** vai carregar e
 habilitar a arma em maquinas que não precisam, num PC com bastante
@@ -662,7 +662,7 @@ ou similares.
  	categorias diferentes, dentre elas há a categoria de jogos de tiro
  	que usam armas definido na lista como **[Shooting / Guns]**,
  	usaremos os nomes desta lista para preparar a nossa.
-*	Acesse `este link <http://www.progettosnaps.net/renameset/>`_ do
+*	Acesse `este link <http://www.progettosnaps.net/>`_ do
 	site Project-Snaps e baixe o arquivo **category.ini** mais recente.
 *	Abra o arquivo compactado e extraia o diretório **folders** no
 	diretório raiz do MAME.
