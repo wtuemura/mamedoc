@@ -4,22 +4,49 @@
 	 https://mrdo.mameworld.info/mame_artwork_ingame.php
 	 Graphics, artwork and lay file created by: Wellington Terumi Uemura
 	 https://mamedoc.readthedocs.io/
-	 Date: September 10 2021
+
+	 Creation date: September 10 2021
+	 Update: January 23 2022
+	 Add VR and leader lights, start button.
 
 	 License: CC by 4.0
 -->
 <mamelayout version="2">
 
+	<element name="vr_base">
+		<rect><color red="0" green="0" blue="0" /></rect>
+	</element>
+	<element name="VR 1" defstate="0">
+		<rect state="0"><color red="0.419" green="0" blue="0" /></rect>
+		<rect state="1"><color red="1" green="0" blue="0" /></rect>
+	</element>
+	<element name="VR 2" defstate="0">
+		<rect state="0"><color red="0" green="0" blue="0.419" /></rect>
+		<rect state="1"><color red="0" green="0" blue="1" /></rect>
+	</element>
+	<element name="VR 3" defstate="0">
+		<rect state="0"><color red="0.419" green="0.419" blue="0" /></rect>
+		<rect state="1"><color red="1" green="1" blue="0" /></rect>
+	</element>
+	<element name="VR 4" defstate="0">
+		<rect state="0"><color red="0" green="0.419" blue="0" /></rect>
+		<rect state="1"><color red="0" green="1" blue="0" /></rect>
+	</element>
+	<element name="stlamp" defstate="0">
+		<disk state="0"><color red="0.419" green="0.419" blue="0" /></disk>
+		<disk state="1"><color red="1" green="1" blue="0" /></disk>
+	</element>
+	<element name="llamp green" defstate="0">
+		<disk state="0"><color red="0.043" green="0.356" blue="0.301" /></disk>
+		<disk state="1"><color red="0.231" green="0.905" blue="0.788" /></disk>
+	</element>
+	<element name="llamp red" defstate="0">
+		<disk state="0"><color red="0.549" green="0.082" blue="0.078" /></disk>
+		<disk state="1"><color red="0.905" green="0.239" blue="0.235" /></disk>
+	</element>
+
 <!-- Load images -->
 
-	<element name="gear up" defstate="0">
-		<image file="gear_up0.png" state="0" />
-		<image file="gear_up1.png" state="1" />
-	</element>
-	<element name="gear down" defstate="0">
-		<image file="gear_down0.png" state="0" />
-		<image file="gear_down1.png" state="1" />
-	</element>
 	<element name="ugear up" defstate="0">
 		<image file="under_gear_up0.png" state="0" />
 		<image file="under_gear_up1.png" state="1" />
@@ -31,24 +58,20 @@
 	<element name="VR Base" defstate="1">
 		<image file="vr_base.png" state="1" />
 	</element>
-	<element name="VR 1" defstate="0">
-		<image file="red0.png" state="0" />
-		<image file="red1.png" state="1" />
-	</element>
-	<element name="VR 2" defstate="0">
-		<image file="blue0.png" state="0" />
-		<image file="blue1.png" state="1" />
-	</element>
-	<element name="VR 3" defstate="0">
-		<image file="yellow0.png" state="0" />
-		<image file="yellow1.png" state="1" />
-	</element>
-	<element name="VR 4" defstate="0">
-		<image file="green0.png" state="0" />
-		<image file="green1.png" state="1" />
-	</element>
 	<element name="swb" defstate="1">
 		<image file="swb.png" state="1" />
+	</element>
+	<element name="silk" defstate="1">
+		<image file="silk.png" state="1" />
+	</element>
+	<element name="vr_btn_cover">
+		<image file="btn_cover.png" />
+	</element>
+	<element name="start">
+		<image file="start.png" />
+	</element>
+	<element name="tlight">
+		<image file="lcover.png" />
 	</element>
 	<element name="cover" defstate="0">
 		<text string=" " />
@@ -141,55 +164,79 @@
 		<image file="pedal1.png" state="0x1" />
 	</element>
 
+	<group name="vrb">
+		<bounds x="0" y="0" width="99.840" height="32.960" />
+	<element name="out3" ref="VR 1" inputtag="IN.0" inputmask="0x20">
+		<bounds x="4" y="1.5" width="21" height="31" />
+	</element>
+	<element name="out4" ref="VR 2" inputtag="IN.0" inputmask="0x40">
+		<bounds x="28" y="1.5" width="21" height="31" />
+	</element>
+	<element name="out5" ref="VR 3" inputtag="IN.0" inputmask="0x80">
+		<bounds x="52" y="1.5" width="21" height="31" />
+	</element>
+	<element name="out6" ref="VR 4" inputtag="IN.1" inputmask="0x01">
+		<bounds x="76" y="1.5" width="21" height="31" />
+	</element>
+	<element ref="vr_btn_cover">
+		<bounds x="-1.154" y="-3.833" width="102.606" height="41.680" />
+	</element>
+	<element ref="silk">
+		<bounds x="-4.2" y="-9.9" width="108.525" height="52.262" />
+	</element>
+	</group>
+
+	<group name="leader">
+		<bounds x="0" y="0" width="153.205" height="52.962" />
+	<element ref="tlight">
+		<bounds x="0" y="8.642" width="20.340" height="11.492" />
+	</element>
+	<element name="out7" ref="llamp red">
+		<bounds x="3.048" y="11.864" width="14.243" height="14.243" />
+	</element>
+	<element ref="tlight">
+		<bounds x="0" y="26.855" width="20.340" height="11.492" />
+	</element>
+	<element name="out7" ref="llamp green">
+		<bounds x="3.048" y="30.076" width="14.243" height="14.243" />
+	</element>
+	<element ref="tlight">
+		<bounds x="132.865" y="8.642" width="20.340" height="11.492" />
+	</element>
+	<element name="out7" ref="llamp red">
+		<bounds x="135.913" y="11.864" width="14.243" height="14.243" />
+	</element>
+	<element ref="tlight">
+		<bounds x="132.865" y="26.855" width="20.340" height="11.492" />
+	</element>
+	<element name="out7" ref="llamp green">
+		<bounds x="135.913" y="30.076" width="14.243" height="14.243" />
+	</element>
+	</group>
+
 	<view name="Steering Wheel">
 		<screen index="0">
 			<bounds x="0" y="0" width="496" height="384"/>
 		</screen>
-	<collection name="VR Selector" visible="no">
-	<element ref="VR Base">
-		<bounds x="198" y="342.47" width="25" height="33" />
-	</element>
-	<element ref="VR Base">
-		<bounds x="223" y="342.47" width="25" height="33" />
-	</element>
-	<element ref="VR Base">
-		<bounds x="248" y="342.47" width="25" height="33" />
-	</element>
-	<element ref="VR Base">
-		<bounds x="273" y="342.47" width="25" height="33" />
-	</element>
-	<element ref="VR 1" inputtag="IN.0" inputmask="0x20">
-		<bounds x="200.62" y="344.52" width="19.75" height="28.89" />
-	</element>
-	<element ref="VR 2" inputtag="IN.0" inputmask="0x40">
-		<bounds x="225.62" y="344.52" width="19.75" height="28.89" />
-	</element>
-	<element ref="VR 3" inputtag="IN.0" inputmask="0x80">
-		<bounds x="250.62" y="344.52" width="19.75" height="28.89" />
-	</element>
-	<element ref="VR 4" inputtag="IN.1" inputmask="0x01">
-		<bounds x="275.62" y="344.52" width="19.75" height="28.89" />
-	</element>
-	</collection>
+
 	<collection name="Gear and pedals" visible="yes">
 	<element ref="swb">
 		<bounds x="31.86" y="223.36" width="46.92" height="21.78" />
 	</element>
-	<element ref="cover" blend="add" inputtag="IN.1" inputmask="0x00" inputraw="1">
+	<element ref="cover" blend="add" inputtag="IN.1" inputmask="0x00" inputraw="yes">
 		<bounds x="68.31" y="219.99" width="17.286" height="40.00" />
 	</element>
 	<element ref="ugear up" inputtag="IN.1" inputmask="0x20">
 		<bounds x="68.31" y="219.99" width="17.286" height="40.00" />
 	</element>
-	<element ref="cover" blend="add" inputtag="IN.1" inputmask="0x00" inputraw="1">
+	<element ref="cover" blend="add" inputtag="IN.1" inputmask="0x00" inputraw="yes">
 		<bounds x="23.24" y="220.24" width="17.286" height="40.00" />
 	</element>
 	<element ref="ugear down" inputtag="IN.1" inputmask="0x10">
 		<bounds x="23.24" y="220.24" width="17.286" height="40.00" />
 	</element>
-	<collection name="Wheel" visible="yes">
-	<element ref="cover" blend="add" inputtag="WHEEL" inputmask="0x00" inputraw="1">
-		<bounds x="14.77" y="200.73" width="79.01" height="79.01" />
+	<element ref="cover" blend="add" inputtag="WHEEL" inputmask="0x00" inputraw="yes">
+		<bounds x="14.77" y="194.169" width="79.020" height="141.111" />
 	</element>
 
 <!-- 
@@ -210,23 +257,41 @@
 	https://www.mameworld.info/ubbthreads/showflat.php?Cat=2&Number=385076
 -->
 
-		<element ref="wheel" inputtag="WHEEL" inputmask="0xf8" inputraw="1">
+	<element ref="wheel" inputtag="WHEEL" inputmask="0xf8" inputraw="yes">
 			<bounds x="14.77" y="200.73" width="79.01" height="79.01" />
-		</element>
-	</collection>
-	<element ref="cover" blend="add" inputtag="ACCEL" inputmask="0x00" inputraw="1">
+	</element>
+	<element ref="cover" blend="add" inputtag="ACCEL" inputmask="0x00" inputraw="yes">
 		<bounds x="57.62" y="283.37" width="23.00" height="50.00" />
 	</element>
 	<element ref="accel" inputtag="ACCEL" inputmask="0xc0">
 		<bounds x="57.62" y="283.37" width="23.00" height="50.00" />
 	</element>
-	<element ref="cover" blend="add" inputtag="BRAKE" inputmask="0x00" inputraw="1">
+	<element ref="cover" blend="add" inputtag="BRAKE" inputmask="0x00" inputraw="yes">
 		<bounds x="27.93" y="283.37" width="23.00" height="50.00" />
 	</element>
 	<element ref="brake" inputtag="BRAKE" inputmask="0xc0">
 		<bounds x="27.93" y="283.37" width="23.00" height="50.00" />
 		<orientation flipx="yes" />
 	</element>
+	</collection>
+
+	<collection name="VR View" visible="yes">
+	<group ref="vrb">
+	<bounds x="198" y="336" width="99.840" height="32.960" />
+	</group>
+	</collection>
+	<collection name="Start button" visible="no">
+	<element name="out2" ref="stlamp" inputtag="START1" inputmask="0x10" inputraw="yes">
+		<bounds x="6.768" y="270.682" width="18" height="18" />
+	</element>
+	<element ref="start">
+	<bounds x="2.949" y="266.863" width="26.311" height="26.311" />
+	</element>
+	</collection>
+	<collection name="Leader lights" visible="no">
+	<group ref="leader">
+	<bounds x="171.5" y="326" width="153.205" height="52.962" />
+	</group>
 	</collection>
 	</view>
 </mamelayout>
