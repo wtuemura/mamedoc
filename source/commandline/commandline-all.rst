@@ -3586,20 +3586,6 @@ Opções de vídeo OpenGL GLSL
 			mame suprmrio -gl_glsl -glsl_shader_screen0 gaussx -glsl_shader_screen1 gaussy -glsl_shader_screen2 CRT-geom-halation
 
 
-.. _mame-commandline-glglslvidattr:
-
-**-gl_glsl_vid_attr**
-
-	Ative o manuseio do GLSL em OpenGL de brilho e contraste.
-	Melhor desempenho do sistema RGB.
-
-	O valor predefinido é ``Ligado`` (``-gl_glsl_vid_attr``).
-
-	Exemplo:
-		.. code-block:: shell
-
-			mame pacman -gl_glsl -gl_glsl_vid_attr off
-
 .. raw:: latex
 
 	\clearpage
@@ -3778,14 +3764,14 @@ Opções para a configuração do áudio
 
 .. note::
 
-	| Para PortAudio, consulte :ref:`-pa_latency <mame-commandline-pa_latency>`.
+	| Para PortAudio, consulte :ref:`-pa_latency <mame-commandline-palatency>`.
 	| O XAudio2 calcula a latência do áudio com passos de ``10ms``.
 	| O DSound calcula a latência do áudio com passos de ``10ms``.
 	| O CoreAudio calcula a latência do áudio com passos de ``25ms``.
 	| O SDL calcula a latência do áudio com passos de ``10ms``.
 
 
-.. _mame-commandline-pa_api:
+.. _mame-commandline-paapi:
 
 **-pa_api** <*interface*>
 
@@ -3924,12 +3910,12 @@ Opções para a configuração do áudio
 	O valor predefinido é ``NULO`` (Nenhuma interface *PortAudio*).
 
 
-.. _mame-commandline-pa_device:
+.. _mame-commandline-padevice:
 
 **-pa_device** <*dispositivo*>
 
 	Define qual o dispositivo de áudio usar, assim como mostrado em
-	:ref:`-pa_api <mame-commandline-pa_api>`, escolha um dos
+	:ref:`-pa_api <mame-commandline-paapi>`, escolha um dos
 	dispositivos listados. O nome do dispositivo fica do lado direito da
 	lista e entre aspas. Usando o exemplo para o Windows nós usaremos:
 
@@ -3971,7 +3957,7 @@ Opções para a configuração do áudio
 
 	\clearpage
 
-.. _mame-commandline-pa_latency:
+.. _mame-commandline-palatency:
 
 **-pa_latency** <*segundos*>
 
@@ -4392,7 +4378,7 @@ Opções para as configurações de diferentes entradas
 
 .. _mame-commandline-natural:
 
-**-natural**
+**-[no]natural**
 
 	Permite que o usuário defina se deve ou não usar um teclado natural.
 	Isso permite que o seu sistema num modo *nativo* dependendo da sua
@@ -4439,7 +4425,7 @@ Opções para as configurações de diferentes entradas
 
 .. _mame-commandline-joystickcontradictory:
 
-**-joystick_contradictory**
+**-[no]joystick_contradictory**
 
 	Aceita a entrada de comandos contraditórios e simultâneos no
 	controle digital como **Esquerda e Direita** ou **Cima e Baixo** ao
@@ -4907,7 +4893,7 @@ Opções diversas
 
 .. _mame-commandline-drcusec:
 
-**-drc_use_c**
+**-[no]drc_use_c**
 
 	Impor o uso do DRC usando a infra-estrutura em código C.
 
@@ -4921,7 +4907,7 @@ Opções diversas
 
 .. _mame-commandline-drcloguml:
 
-**-drc_log_uml**
+**-[no]drc_log_uml**
 
 	Grave um registro descompilado DRC UML num arquivo de registro
 	(log).
@@ -4936,7 +4922,7 @@ Opções diversas
 
 .. _mame-commandline-drclognative:
 
-**-drc_log_native**
+**-[no]drc_log_native**
 
 	Grave o DRC nativo e descompilado num registro de log em formato
 	assembler.
@@ -5053,7 +5039,7 @@ Opções diversas
 
 .. _mame-commandline-confirmquit:
 
-**-confirm_quit**
+**-[no]confirm_quit**
 
 	Remove o aviso na tela "*Tem certeza que deseja encerrar?*" ao
 	pressionar a tecla :kbd:`Esc`.
@@ -5073,7 +5059,7 @@ Opções diversas
 
 .. _mame-commandline-uimouse:
 
-**-ui_mouse**
+**-[no]ui_mouse**
 
 	Exibe o ponteiro do mouse na interface do usuário do MAME.
 

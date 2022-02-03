@@ -163,7 +163,7 @@ Opções de desempenho
 
 .. _mame-scommandline-sdlvideofps:
 
-**-sdlvideofps**
+**-[no]sdlvideofps**
 
 	Ativa a saída de dados para benchmark no subsistema de vídeo SDL
 	incluindo o driver de vídeo do seu sistema, o servidor X (caso seja

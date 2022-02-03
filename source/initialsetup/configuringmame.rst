@@ -246,7 +246,7 @@ Para identificar a sua placa de som no MAME execute o comando
 ``mame -v -sound portaudio``, ele deverá retornar uma lista com as
 opções disponíveis seja para Windows, Linux ou macOS. Para mais
 informações, primeiro consulte a opção
-:ref:`-pa_api <mame-commandline-pa_api>` para identificar corretamente
+:ref:`-pa_api <mame-commandline-paapi>` para identificar corretamente
 o seu hardware antes de continuar.
 
 Abra novamente o seu arquivo ``arcade.ini`` e adicione estas opções
