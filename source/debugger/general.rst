@@ -85,7 +85,7 @@ do
 O comando ``do`` simplesmente avalia a expressão fornecida. Geralmente é
 utilizado para definir ou alterar a variável do estado do dispositivo
 (os registros da *CPU* por exemplo) ou para escrever na memória.
-Consulte :ref:`debugger-expressions` |pomd| sobre a sintaxe da
+Consulte :ref:`debugger-express` |pomd| sobre a sintaxe da
 expressão.
 
 

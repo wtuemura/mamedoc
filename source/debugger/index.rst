@@ -136,7 +136,7 @@ deve tomar o significado mais provável para um dispositivo ou uma
 especificação na região do endereçamento.
 
 
-.. _debugger-expressions:
+.. _debugger-express:
 
 A sintaxe das expressões do depurador
 -------------------------------------
@@ -200,6 +200,8 @@ As principais diferenças em relação à expressão semântica com C:
   expressão são sempre avaliados.
 
 
+.. _debugger-express-num:
+
 Números
 ~~~~~~~
 
@@ -222,6 +224,8 @@ Exemplos:
 * ``0b123`` é **inválido**.
 
 
+.. _debugger-express-bool:
+
 Valores booleanos
 ~~~~~~~~~~~~~~~~~
 
@@ -242,8 +246,10 @@ definidos.
    `mais informações <https://homepages.dcc.ufmg.br/~rodolfo/aedsi-2-06/cadeiadecaractere/cadeiadecaractere.html>`_.
 
 
-Acessos à memória
-~~~~~~~~~~~~~~~~~
+.. _debugger-express-mem:
+
+Acesso à memória
+~~~~~~~~~~~~~~~~
 
 Os operadores do prefixo de acesso à memória permitem a leitura e a
 escrita nas regiões dos endereços emulados. Os operadores do prefixo da
@@ -370,6 +376,8 @@ O acesso à memória pode ser usado com ambos os ``lvalues`` e
 ``rvalues``, assim é possível escrever ``b@100 = ff`` para armazenar um
 byte na memória.
 
+
+.. _debugger-express-func:
 
 Funções
 ~~~~~~~

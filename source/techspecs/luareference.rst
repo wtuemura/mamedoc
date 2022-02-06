@@ -16,8 +16,8 @@ As referências das Classes Lua do MAME
 Introdução
 ----------
 
-Vários aspectos do MAME podem ser controlados usando Lua scripts. Muitas
-classes importantes estão expostas como objetos Lua.
+Vários aspectos do MAME podem ser controlados usando Lua *scripts*.
+Muitas classes importantes estão expostas como objetos Lua.
 
 .. raw:: latex
 
@@ -92,7 +92,7 @@ Classes Principais
 ------------------
 
 Muitas das classes principais do MAME usadas para implementar a emulação
-de uma sessão, estão disponíveis para os scripts Lua.
+de uma sessão, estão disponíveis para os *scripts* Lua.
 
 .. _luareference-core-attotime:
 
@@ -189,36 +189,36 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**t.is_zero** (somente leitura)
+**t.is_zero** |sole|
 
 	Um booleano indicando se o valor não representa um tempo
 	transcorrido.
 
-**t.is_never** (somente leitura)
+**t.is_never** |sole|
 
 	U booleano indicando se o valor for maior que a quantidade máxima de
 	segundos inteiros que possam ser representados (tratados como um
 	tempo inalcançável no futuro ou num estouro).
 
-**t.attoseconds** (somente leitura)
+**t.attoseconds** |sole|
 
 	A fração do intervalo dos segundos em atossegundos.
 
-**t.seconds** (somente leitura)
+**t.seconds** |sole|
 
 	A quantidade de segundos inteiros no intervalo.
 
-**t.msec** (somente leitura)
+**t.msec** |sole|
 
 	A quantidade de milissegundos inteiros na porção de segundos
 	fracionários do intervalo.
 
-**t.usec** (somente leitura)
+**t.usec** |sole|
 
 	A quantidade de microssegundos inteiros na porção de segundos
 	fracionários do intervalo.
 
-**t.nsec** (somente leitura)
+**t.nsec** |sole|
 
 	A quantidade de nanossegundos inteiros na porção de segundos
 	fracionários do intervalo.
@@ -248,19 +248,19 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**manager.machine** (somente leitura)
+**manager.machine** |sole|
 
 	:ref:`luareference-core-machine` para a sessão da emulação atual.
 
-**manager.ui** (somente leitura)
+**manager.ui** |sole|
 
 	:ref:`luareference-core-uiman` para a sessão da emulação atual.
 
-**manager.options** (somente leitura)
+**manager.options** |sole|
 
 	As :ref:`luareference-core-emuopts` para a sessão da emulação atual.
 
-**manager.plugins[]** (somente leitura)
+**manager.plugins[]** |sole|
 
 	Obtém informações sobre o
 	:ref:`plug-in Lua <luareference-core-plugin>` que estão presentes,
@@ -354,83 +354,83 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**machine.time (somente leitura)**
+**machine.time** |sole|
 
 	O tempo decorrida da emulação para a sessão atual assim como em
 	:ref:`attotime <luareference-core-attotime>`.
 
-**machine.system** (somente leitura)
+**machine.system** |sole|
 
 	:ref:`luareference-core-driver` para o sistema atual.
 
-**machine.parameters** (somente leitura)
+**machine.parameters** |sole|
 
 	O :ref:`gerenciador dos parâmetros <luareference-core-paramman>`
 	para a sessão da emulação atual.
 
-**machine.video** (somente leitura)
+**machine.video** |sole|
 
 	O :ref:`gerenciador do vídeo <luareference-core-videoman>` para a
 	sessão da emulação atual.
 
-**machine.sound** (somente leitura)
+**machine.sound** |sole|
 
 	O :ref:`gerenciador do áudio <luareference-core-soundman>` para a
 	sessão da emulação atual.
 
-**machine.output** (somente leitura)
+**machine.output** |sole|
 
 	O :ref:`gerenciador da saída <luareference-core-outputman>` para a
 	sessão da emulação atual.
 
-**machine.memory** (somente leitura)
+**machine.memory** |sole|
 
 	O :ref:`gerenciador da memória <luareference-mem-manager>` para a
 	sessão da emulação atual.
 
-**machine.ioport** (somente leitura)
+**machine.ioport** |sole|
 
 	O :ref:`gerenciador da porta de E/S <luareference-input-ioportman>`
 	para a sessão da emulação atual.
 
-**machine.input** (somente leitura)
+**machine.input** |sole|
 
 	O :ref:`gerenciador da entrada <luareference-input-inputman>` para a
 	sessão da emulação atual.
 
-**machine.natkeyboard** (somente leitura)
+**machine.natkeyboard** |sole|
 
 	Obtém o
 	:ref:`gerenciador do teclado natural <luareference-input-natkbd>`,
 	usado para controlar a entrada do teclado e do teclado numérico no
 	sistema emulado.
 
-**machine.uiinput** (somente leitura)
+**machine.uiinput** |sole|
 
 	O :ref:`gerenciador da entrada da IU <luareference-input-uiinput>`
 	para a sessão da emulação atual.
 
-**machine.render** (somente leitura)
+**machine.render** |sole|
 
 	O :ref:`gerenciador do renderizador <luareference-render-manager>`
 	para a sessão da emulação atual.
 
-**machine.debugger** (somente leitura)
+**machine.debugger** |sole|
 
 	O :ref:`gerenciador do depurador <luareference-debug-manager>` para
 	a sessão da emulação atual ou ``nil`` se o depurador não estiver
 	ativado.
 
-**machine.options** (somente leitura)
+**machine.options** |sole|
 
 	As :ref:`luareference-core-emuopts` definidas pelo usuário para a
 	sessão da emulação atual.
 
-**machine.samplerate** (somente leitura)
+**machine.samplerate** |sole|
 
 	A taxa de amostragem da saída do áudio em Hertz.
 
-**machine.paused** (somente leitura)
+**machine.paused** |sole|
 
 	Um booleano que indica se a emulação não está em execução no
 	momento, geralmente porque a sessão foi pausada ou o sistema emulado
@@ -440,41 +440,41 @@ Propriedades
 
 	\clearpage
 
-**machine.exit_pending** (somente leitura)
+**machine.exit_pending** |sole|
 
 	Um booleano que indica se a sessão da emulação está programada para
 	encerrar.
 
-**machine.hard_reset_pending** (somente leitura)
+**machine.hard_reset_pending** |sole|
 
 	Um booleano que indica se uma reinicialização forçada do sistema
 	emulado está pendente.
 
-**machine.devices** (somente leitura)
+**machine.devices** |sole|
 
 	:ref:`luareference-dev-enum` que produz todos os
 	:ref:`dispositivos <luareference-dev-device>` no sistema que está
 	sendo emulado.
 
-**machine.screens** (somente leitura)
+**machine.screens** |sole|
 
 	:ref:`luareference-dev-enum` que produz todos os
 	:ref:`dispositivos da tela <luareference-dev-screen>` no sistema que
 	está sendo emulado.
 
-**machine.cassettes** (somente leitura)
+**machine.cassettes** |sole|
 
 	:ref:`luareference-dev-enum` que produz todos os
 	:ref:`dispositivos da imagem em fita cassete
 	<luareference-dev-cass>` no sistema que está sendo emulado.
 
-**machine.images** (somente leitura)
+**machine.images** |sole|
 
 	:ref:`luareference-dev-enum` que produz toda a
 	:ref:`interface para os dispositivos de imagem
 	<luareference-dev-diimage>` no sistema que está sendo emulado.
 
-**machine.slots** (somente leitura)
+**machine.slots** |sole|
 
 	:ref:`luareference-dev-enum` que produz toda a
 	:ref:`luareference-dev-dislot` no sistema que está sendo emulado.
@@ -548,7 +548,7 @@ Métodos
 
 	Retorna os pixels de uma captura criado usando a configuração do
 	destino da captura atual em inteiros com 32 bits e compactados
-	numa string binária na ordem Endian do host. Os pixels são
+	numa *string* binária com ordem Endian do host. Os pixels são
 	organizados em ordem maior da linha, da esquerda para a direita e de
 	cima para baixo.  Os valores do pixel são cores no formato RGB
 	compactadas em inteiros com 32 bits.
@@ -560,59 +560,59 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**video.speed_factor** (somente leitura)
+**video.speed_factor** |sole|
 
 	Ajuste de velocidade da emulação configurada em escala de mil (ou
 	seja, a proporção para a velocidade normal multiplicada por
 	``1.000``).
 
-**video.throttled** (leitura e escrita)
+**video.throttled** |lees|
 
 	Um booleano que indica se o MAME deve esperar antes das atualizações
 	do vídeo para evitar a execução mais rápida do que a velocidade
 	desejada.
 
-**video.throttle_rate** (leitura e escrita)
+**video.throttle_rate** |lees|
 
 	A velocidade de emulação desejada como uma proporção da velocidade
 	total ajustada através do fator de velocidade (ou seja, ``1`` é a
 	velocidade normal ajustada pelo fator de velocidade, números maiores
 	são mais rápidos e números menores são mais lentos).
 
-**video.frameskip** (leitura e escrita)
+**video.frameskip** |lees|
 
 	A quantidade dos quadros emulados do vídeo para serem ignorados a
 	cada doze ou -1 para ajustar automaticamente a quantidade de
 	quadros para ignorar visando para manter a velocidade da emulação
 	desejada.
 
-**video.speed_percent** (somente leitura)
+**video.speed_percent** |sole|
 
 	A velocidade emulada atualmente em porcentagem da velocidade total
 	ajustada pelo fator da velocidade.
 
-**video.effective_frameskip** (somente leitura)
+**video.effective_frameskip** |sole|
 
 	A quantidade dos doze quadros emulados que são ignorados.
 
-**video.skip_this_frame** (somente leitura)
+**video.skip_this_frame** |sole|
 
 	Um booleano que indica se o gerenciador do vídeo vai ignorar as
 	telas emuladas para o quadro atual.
 
-**video.snap_native** (somente leitura)
+**video.snap_native** |sole|
 
 	Um booleano que indica se o gerenciador do vídeo fará capturas
 	nativa da tela emulada. Além da definição da configuração relevante,
 	o sistema emulado deve ter pelo menos uma tela que esteja sendo
 	emulada.
 
-**video.is_recording** (somente leitura)
+**video.is_recording** |sole|
 
 	Um booleano que indica se alguma gravação de vídeo está em
 	andamento.
 
-**video.snapshot_target** (somente leitura)
+**video.snapshot_target** |sole|
 
 	Um :ref:`alvo do renderizador <luareference-render-target>` usado
 	para produzir as capturas da tela e para as gravações de vídeo.
@@ -657,40 +657,40 @@ Métodos
 
 **sound:get_samples()**
 
-	Retorna o conteúdo atual do buffer da amostra gerada como uma string
-	binária. As amostras são inteiros com 16 bits na ordem dos bytes do
-	host. As amostras dos canais estéreo esquerdo e direito são
+	Retorna o conteúdo atual do buffer da amostra gerada como uma
+	*string* binária. As amostras são inteiros com 16 bits na ordem dos
+	bytes do host. As amostras dos canais estéreo esquerdo e direito são
 	intercaladas.
 
 Propriedades
 ^^^^^^^^^^^^
 
-**sound.muted** (somente leitura)
+**sound.muted** |sole|
 
 	Um booleano que indica se a saída do áudio está silenciada por algum
 	motivo.
 
-**sound.ui_mute** (leitura e escrita)
+**sound.ui_mute** |lees|
 
 	Um booleano que indica se a saída do áudio está silenciada a pedido
 	do usuário.
 
-**sound.debugger_mute** (leitura e escrita)
+**sound.debugger_mute** |lees|
 
 	Um booleano que indica se a saída do áudio está silenciada a pedido
 	do depurador.
 
-**sound.system_mute** (leitura e escrita)
+**sound.system_mute** |lees|
 
 	Um booleano que indica se a saída do áudio foi silenciada a pedido
 	do sistema que está sendo emulado.
 
-**sound.attenuation** (leitura e escrita)
+**sound.attenuation** |lees|
 
 	A atenuação do volume da saída em decibéis. Geralmente deve ser um
 	número inteiro negativo ou zero.
 
-**sound.recording** (somente leitura)
+**sound.recording** |sole|
 
 	Um booleano que indica se a saída do áudio está sendo gravada num
 	arquivo WAV.
@@ -775,7 +775,7 @@ Métodos
 **parameters:lookup(tag)**
 
 	Obtém o valor do parâmetro informado caso esteja definido ou uma
-	string vazia se não estiver.
+	*string* vazia se não estiver.
 
 **parameters:add(tag, valor)**
 
@@ -812,7 +812,7 @@ Métodos
 
 **ui:get_string_width(str)**
 
-	Obtém a largura de uma string como uma proporção da largura do
+	Obtém a largura de uma *string* como uma proporção da largura do
 	contêiner da IU na fonte atualmente utilizada na altura configurada
 	da linha da IU.
 
@@ -834,35 +834,35 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**ui.options** (somente leitura)
+**ui.options** |sole|
 
 	As :ref:`luareference-core-coreopts` da interface para a sessão
 	atual.
 
-**ui.line_height** (somente leitura)
+**ui.line_height** |sole|
 
 	A altura configurada da linha de texto da interface como uma
 	proporção da altura do contêiner da interface.
 
-**ui.menu_active** (somente leitura)
+**ui.menu_active** |sole|
 
 	Um booleano que indica se um elemento da interface interativa está
 	atualmente ativa.
 	Os exemplos incluem os menus e os controles deslizantes.
 
-**ui.single_step** (leitura e escrita)
+**ui.single_step** |lees|
 
 	Um Booleano que controla se o sistema emulado deve ser pausado
 	automaticamente quando o próximo quadro for desenhado.
 	Esta propriedade é redefinida automaticamente quando acontecer a
 	pausa automática.
 
-**ui.show_fps** (leitura e escrita)
+**ui.show_fps** |lees|
 
 	Um Booleano que controla se a velocidade atual da emulação e as
 	configurações do salto de quadro devem ser exibidas.
 
-**ui.show_profiler** (leitura e escrita)
+**ui.show_profiler** |lees|
 
 	Um Booleano que controla se as estatísticas da criação do perfil
 	devem ser exibidas.
@@ -893,106 +893,106 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**driver.name** (somente leitura)
+**driver.name** |sole|
 
 	O nome abreviado do sistema, conforme usado na linha de comando,
 	nos arquivos de configuração e ao pesquisar os recursos.
 
-**driver.description** (somente leitura)
+**driver.description** |sole|
 
 	O nome completo da exibição do sistema.
 
-**driver.year** (somente leitura)
+**driver.year** |sole|
 
 	O ano do lançamento do sistema. Pode conter pontos de interrogação
 	caso não seja totalmente conhecido.
 
-**driver.manufacturer** (somente leitura)
+**driver.manufacturer** |sole|
 
 	O fabricante, o desenvolvedor ou o distribuidor do sistema.
 
-**driver.parent** (somente leitura)
+**driver.parent** |sole|
 
 	O nome abreviado do sistema principal para fins de organização ou
 	``"0"`` se o sistema não venha de uma matriz.
 
-**driver.compatible_with** (somente leitura)
+**driver.compatible_with** |sole|
 
 	O nome abreviado de um sistema onde este sistema seja compatível
 	com o software ou ``nil`` caso o sistema não esteja listado como
 	compatível com um outro sistema.
 
-**driver.source_file** (somente leitura)
+**driver.source_file** |sole|
 
 	O arquivo de origem onde este driver do sistema estiver definido.
 	O formato do caminho depende do conjunto das ferramentas onde o
 	emulador foi compilado.
 
-**driver.rotation** (somente leitura)
+**driver.rotation** |sole|
 
-	Uma string que indica a rotação aplicada a todas as telas no sistema
-	depois que a orientação da tela informada na configuração da máquina
-	seja aplicada.
+	Uma *string* que indica a rotação aplicada a todas as telas no
+	sistema depois que a orientação da tela informada na configuração da
+	máquina seja aplicada.
 	Será um dos ``"rot0"``, ``"rot90"``, ``"rot180"`` ou ``"rot270"``.
 
 .. raw:: latex
 
 	\clearpage
 
-**driver.type** (somente leitura)
+**driver.type** |sole|
 
-	Uma string que fornece um tipo de sistema. Será um dos ``"arcade"``,
-	``"console"``, ``"computer"`` ou ``"other"``.
+	Uma *string* que fornece um tipo de sistema. Será um dos
+	``"arcade"``, ``"console"``, ``"computer"`` ou ``"other"``.
 	Isso é apenas para fins informativos e pode não estar disponível no
 	futuro.
 
-**driver.not_working** (somente leitura)
+**driver.not_working** |sole|
 
 	Um booleano que indica se o sistema está marcado como não
 	funcionando.
 
-**driver.supports_save** (somente leitura)
+**driver.supports_save** |sole|
 
 	Um booleano que indica se o sistema oferece suporte para salvar os
 	estados.
 
-**driver.no_cocktail** (somente leitura)
+**driver.no_cocktail** |sole|
 
 	Um booleano que indica se a inversão da tela no modo coquetel não é
 	compatível.
 
-**driver.is_bios_root** (somente leitura)
+**driver.is_bios_root** |sole|
 
 	Um booleano que indica se este sistema representa um sistema que
 	executa o software a partir de uma mídia removível sem que a mídia
 	esteja presente.
 
-**driver.requires_artwork** (somente leitura)
+**driver.requires_artwork** |sole|
 
 	Um booleano que indica se o sistema requer uma arte externa para ser
 	utilizável.
 
-**driver.clickable_artwork** (somente leitura)
+**driver.clickable_artwork** |sole|
 
 	Um booleano que indica se o sistema requer recursos clicáveis na
 	arte para que possam ser utilizáveis.
 
-**driver.unofficial** (somente leitura)
+**driver.unofficial** |sole|
 
 	Um booleano que indica se esta é uma modificação não oficial do
 	usuário porém comum num sistema.
 
-**driver.no_sound_hw** (somente leitura)
+**driver.no_sound_hw** |sole|
 
 	Um booleano que indica se o sistema não possui hardware com saída de
 	áudio.
 
-**driver.mechanical** (somente leitura)
+**driver.mechanical** |sole|
 
 	Um booleano que indica se o sistema depende de recursos mecânicos
 	que não podem ser simulados corretamente.
 
-**driver.is_incomplete** (somente leitura)
+**driver.is_incomplete** |sole|
 
 	Um booleano que indica se o sistema é um protótipo com
 	funcionalidade incompleta.
@@ -1019,26 +1019,26 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**plugin.name** (somente leitura)
+**plugin.name** |sole|
 
 	O nome abreviado do plug-in usado na configuração e durante o
 	acesso.
 
-**plugin.description** (somente leitura)
+**plugin.description** |sole|
 
 	Exibe o nome do plug-in.
 
-**plugin.type** (somente leitura)
+**plugin.type** |sole|
 
 	O tipo do plug-in. Pode ser ``"plugin"`` para os plug-ins que podem
 	ser carregados pelo usuário ou ``"library"`` para as bibliotecas que
 	fornecem funcionalidades comum aos diferentes plug-ins.
 
-**plugin.directory** (somente leitura)
+**plugin.directory** |sole|
 
 	O caminho para o diretório que contém os arquivos de plug-in.
 
-**plugin.start** (somente leitura)
+**plugin.start** |sole|
 
 	Um booleano que indica se o plug-in está ativado.
 
@@ -1261,7 +1261,7 @@ Métodos
 **device:parameter(tag)**
 
 	Obtém o valor do parâmetro através da tag relativa ao dispositivo ou
-	uma string vazia caso não esteja definida.
+	uma *string* vazia caso não esteja definida.
 
 .. raw:: latex
 
@@ -1270,47 +1270,47 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**device.tag** (somente leitura)
+**device.tag** |sole|
 
 	A tag absoluta do dispositivo em forma canônica.
 
-**device.basetag** (somente leitura)
+**device.basetag** |sole|
 
 	O último componente da tag do dispositivo (Por exemplo, quando a sua
 	tag for relativa ao dispositivo principal) ou ``"root"`` para o
 	dispositivo raiz da máquina.
 
-**device.name** (somente leitura)
+**device.name** |sole|
 
 	Exibe o nome completo para o tipo do dispositivo.
 
-**device.shortname** (somente leitura)
+**device.shortname** |sole|
 
 	O nome curto do tipo do dispositivo (usado, por exemplo, na linha de
 	comando, ao procurar por recursos como ROMs ou a ilustração e em
 	vários arquivos de dados).
 
-**device.owner** (somente leitura)
+**device.owner** |sole|
 
 	A relação direta do dispositivo na árvore do dispositivo ou ``nil``
 	para o dispositivo raiz do dispositivo da máquina.
 
-**device.configured** (somente leitura)
+**device.configured** |sole|
 
 	Um booleano que indica se o dispositivo concluiu a configuração.
 
-**device.started** (somente leitura)
+**device.started** |sole|
 
 	Um booleano que indica se o dispositivo concluiu a inicialização.
 
-**device.debug** (somente leitura)
+**device.debug** |sole|
 
 	A :ref:`interface de depuração do dispositivo
 	<luareference-debug-devdebug>` para o dispositivo caso seja um
 	dispositivo CPU ou ``nil`` caso não seja ou se o depurador não
 	estiver ativado.
 
-**device.spaces[]** (somente leitura)
+**device.spaces[]** |sole|
 
 	A tabela dos :ref:`espaços do endereçamento da memória
 	<luareference-mem-space>` do dispositivo, indexado por nome.
@@ -1403,7 +1403,7 @@ Métodos
 **screen:pixels()**
 
 	Retorna todos os pixels visíveis como inteiros com 32 bits
-	empacotados numa string binária em ordenado como Endian. Pixels
+	empacotados numa *string* binária em ordenado como Endian. Pixels
 	são organizados em ordem maior da linha, da esquerda para direita e
 	depois de cima para baixo. Os valores dos pixels são índices da
 	paleta ou cores no formato RGB compactadas em inteiros com 32 bits.
@@ -1469,7 +1469,7 @@ Métodos
 
 	Caso o primeiro argumento seja um número, o texto será alinhado à
 	esquerda nesta coordenada X. Caso o primeiro argumento seja uma
-	string, ela deve ser ``"left"``, ``"center"`` ou ``"right"`` para
+	*string*, ela deve ser ``"left"``, ``"center"`` ou ``"right"`` para
 	desenhar o texto alinhado à esquerda na borda esquerda da tela,
 	centralizado horizontalmente na tela ou alinhado à direita na borda
 	direita da tela respectivamente. O segundo argumento determina a
@@ -1499,77 +1499,77 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**screen.width** (somente leitura)
+**screen.width** |sole|
 
 	A largura do bitmap produzido pela tela emulada em pixels.
 
-**screen.height** (somente leitura)
+**screen.height** |sole|
 
 	A altura do bitmap produzido pela tela emulada em pixels.
 
-**screen.refresh** (somente leitura)
+**screen.refresh** |sole|
 
 	A taxa de atualização configurada da tela em Hertz (isso pode não
 	refletir o valor atual).
 
-**screen.refresh_attoseconds** (somente leitura)
+**screen.refresh_attoseconds** |sole|
 
 	O intervalo de atualização configurado da tela em attosegundos
 	(isso pode não refletir o valor atual).
 
-**screen.xoffset** (somente leitura)
+**screen.xoffset** |sole|
 
-	O offset predefinido da posição X da tela. Este é um número de ponto
-	flutuante onde um (1) corresponde ao tamanho X do contêiner da tela.
-	Isso pode ser útil para restaurar o valor original após ajustar o
-	offset X através do contêiner da tela.
+	O *offset* predefinido da posição X da tela. |eeun| onde um (1)
+	corresponde ao tamanho X do contêiner da tela. Isso pode ser útil
+	para restaurar o valor original após ajustar o *offset* X através do
+	contêiner da tela.
 
-**screen.yoffset** (somente leitura)
+**screen.yoffset** |sole|
 
-	O offset predefinido da posição Y da tela.  Este é um número de
-	ponto flutuante onde um (1) corresponde ao tamanho Y do contêiner da
-	tela. Isso pode ser útil para restaurar o valor original após
-	ajustar o offset Y através do contêiner da tela.
+	O *offset* predefinido da posição Y da tela.  |eeun| onde um (1)
+	corresponde ao tamanho Y do contêiner da tela. Isso pode ser útil
+	para restaurar o valor original após ajustar o *offset* Y através do
+	contêiner da tela.
 
 .. raw:: latex
 
 	\clearpage
 
-**screen.xscale** (somente leitura)
+**screen.xscale** |sole|
 
 	O fator de escala original da tela X, como um número de ponto
 	flutuante. Isso pode ser útil para restaurar o valor original após
 	ajustar a escala X através do contêiner da tela.
 
-**screen.yscale** (somente leitura)
+**screen.yscale** |sole|
 
 	O fator de escala original da tela Y, como um número de ponto
 	flutuante. Isso pode ser útil para restaurar o valor original após
 	ajustar a escala Y através do contêiner da tela.
 
-**screen.pixel_period** (somente leitura)
+**screen.pixel_period** |sole|
 
 	O intervalo necessário para desenhar um pixel horizontal, como um
 	número de ponto flutuante em em unidades de segundos.
 
-**screen.scan_period** (somente leitura)
+**screen.scan_period** |sole|
 
 	O intervalo necessário para desenhar uma linha de varredura
 	(incluindo o intervalo horizontal de apagamento), como um número de
 	ponto flutuante em unidades de segundos.
 
-**screen.frame_period** (somente leitura)
+**screen.frame_period** |sole|
 
 	O intervalo necessário para desenhar um quadro completo (incluindo
 	os intervalos de apagamento), como um número de ponto flutuante em
 	unidades de segundos.
 
-**screen.frame_number** (somente leitura)
+**screen.frame_number** |sole|
 
 	A quantidade dos quadros da tela atual. Isso aumenta monotonicamente
 	cada intervalo dos quadros.
 
-**screen.container** (somente leitura)
+**screen.container** |sole|
 
 	O :ref:`contêiner do renderizador <luareference-render-container>`
 	usado para desenhar a tela.
@@ -1637,35 +1637,35 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**cassette.is_stopped** (somente leitura)
+**cassette.is_stopped** |sole|
 
 	Um booleano que indica se a fita está parada (ou seja, não está
 	gravando e nem reproduzindo).
 
-**cassette.is_playing** (somente leitura)
+**cassette.is_playing** |sole|
 
 	Um booleano que indica se a reprodução está ativada (ou seja, o
 	cassete vai reproduzir se o motor estiver ativado).
 
-**cassette.is_recording** (somente leitura)
+**cassette.is_recording** |sole|
 
 	Um booleano que indica se a gravação está ativada (ou seja, o
 	gravador da fita vai gravar se o motor estiver ativado).
 
-**cassette.motor_state** (leitura e escrita)
+**cassette.motor_state** |lees|
 
 	Um booleano que indica se o motor do cassete está ativado.
 
-**cassette.speaker_state** (leitura e escrita)
+**cassette.speaker_state** |lees|
 
 	Um booleano que indica se o alto-falante do cassete está ativado.
 
-**cassette.position** (somente leitura)
+**cassette.position** |sole|
 
 	A posição atual como um número de ponto flutuante em unidades de
 	segundos com relação ao início da fita.
 
-**cassette.length** (somente leitura)
+**cassette.length** |sole|
 
 	A duração da fita como um número de ponto flutuante em unidades de
 	segundos, ou zero (0) caso nenhuma imagem da fita seja montada.
@@ -1716,28 +1716,28 @@ Métodos
 
 **image:display()**
 
-	Retorna uma string do “front panel display” para o dispositivo, caso
-	seja compatível. Isso pode ser usado para exibir as informações de
-	status, como a posição atual da cabeça ou do estado do motor.
+	Retorna uma *string* do “front panel display” para o dispositivo,
+	caso seja compatível. Isso pode ser usado para exibir as informações
+	de status, como a posição atual da cabeça ou do estado do motor.
 
 Propriedades
 ^^^^^^^^^^^^
 
-**image.is_readable** (somente leitura)
+**image.is_readable** |sole|
 
 	Um booleano que indica se o dispositivo oferece suporte à leitura.
 
-**image.is_writeable** (somente leitura)
+**image.is_writeable** |sole|
 
 	Um booleano que indica se o dispositivo oferece suporte para
 	gravação.
 
-**image.must_be_loaded** (somente leitura)
+**image.must_be_loaded** |sole|
 
 	Um booleano que indica se o dispositivo requer que uma imagem da
 	mídia seja carregada para começar.
 
-**image.is_reset_on_load** (somente leitura)
+**image.is_reset_on_load** |sole|
 
 	Um booleano que indica se o dispositivo requer uma reinicialização
 	forçada para alterar as imagens da mídia (geralmente para slots de
@@ -1747,65 +1747,65 @@ Propriedades
 
 	\clearpage
 
-**image.image_type_name** (somente leitura)
+**image.image_type_name** |sole|
 
-	Uma string para categorizar o dispositivo da mídia.
+	Uma *string* para categorizar o dispositivo da mídia.
 
-**image.instance_name** (somente leitura)
+**image.instance_name** |sole|
 
 	O nome da instância do dispositivo na configuração atual. Isso é
 	usado para configurar a carga da imagem da mídia na linha de comando
 	ou nos arquivos INI. Isso não é estável, pode ter um número anexado
 	que pode mudar dependendo da configuração do slot.
 
-**image.brief_instance_name** (somente leitura)
+**image.brief_instance_name** |sole|
 
 	O nome curto da instância do dispositivo na configuração atual. Isto
 	é, usado para definir a imagem da mídia que será carregada na linha
 	de comando ou nos arquivos INI.  Isso não é estável, pode ter um
 	número anexado que pode mudar dependendo da configuração do slot.
 
-**image.formatlist[]** (somente leitura)
+**image.formatlist[]** |sole|
 
 	O :ref:`formato da imagem da mídia <luareference-dev-imagefmt>` são
 	suportados pelo dispositivo, indexado por nome. O operador do índice
-	e dos métodos ``index_of`` têm Complexidade O(n); todas as outras
+	e dos métodos ``index_of`` têm complexidade O(n); todas as outras
 	operações compatíveis têm complexidade O(1).
 
-**image.exists** (somente leitura)
+**image.exists** |sole|
 
 	Um booleano que indica se um arquivo de imagem da mídia está
 	montado.
 
-**image.readonly** (somente leitura)
+**image.readonly** |sole|
 
 	Um booleano que indica se um arquivo de imagem da mídia está montado
 	em mode de somente leitura.
 
-**image.filename** (somente leitura)
+**image.filename** |sole|
 
 	O caminho completo para o arquivo montado da imagem da mídia ou
 	``nil`` se nenhuma imagem da mídia estiver montada.
 
-**image.crc** (somente leitura)
+**image.crc** |sole|
 
 	A verificação de redundância cíclica com 32 bits do conteúdo do
 	arquivo da imagem montada caso a imagem não tenha sido carregada a
 	partir de uma lista de software, é montado como somente leitura e
 	não for um CD-ROM, caso contrário é zero (0).
 
-**image.loaded_through_softlist** (somente leitura)
+**image.loaded_through_softlist** |sole|
 
 	Um booleano que indica se a imagem da mídia montada foi carregada a
 	partir de uma lista de software ou ``false`` caso nenhuma imagem da
 	mídia tenha sido montada.
 
-**image.software_list_name** (somente leitura)
+**image.software_list_name** |sole|
 
 	O nome curto da lista de software caso a imagem da mídia montada
 	tenha sido carregada a partir de uma lista de software.
 
-**image.software_longname** (somente leitura)
+**image.software_longname** |sole|
 
 	O nome completo do item do software caso a imagem da mídia montada
 	tenha sido carregada a partir de uma lista de software ou caso
@@ -1815,25 +1815,25 @@ Propriedades
 
 	\clearpage
 
-**image.software_publisher** (somente leitura)
+**image.software_publisher** |sole|
 
 	O editor do item do software caso a imagem da mídia montada tenha
 	sido carregada a partir de uma lista de software ou caso contrário,
 	``nil``.
 
-**image.software_year** (somente leitura)
+**image.software_year** |sole|
 
 	O ano de lançamento do item do software caso a imagem da mídia
 	montada tenha sido carregada a partir de uma lista de software ou
 	caso contrário, ``nil``.
 
-**image.software_parent** (somente leitura)
+**image.software_parent** |sole|
 
 	O nome abreviado do item do software principal caso a imagem da
 	mídia montada tenha sido carregada a partir de uma lista de software
 	ou caso contrário, ``nil``.
 
-**image.device** (somente leitura)
+**image.device** |sole|
 
 	O :ref:`dispositivo <luareference-dev-device>` subjacente.
 
@@ -1862,27 +1862,27 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**slot.fixed** (somente leitura)
+**slot.fixed** |sole|
 
 	Um booleano que indica se este é um slot com um cartão informado
 	na configuração da máquina que não possa ser alterada pelo usuário.
 
-**slot.has_selectable_options** (somente leitura)
+**slot.has_selectable_options** |sole|
 
 	Um booleano que indica se o slot tem alguma opção selecionável pelo
 	usuário (ao contrário das opções que só podem ser selecionadas
 	programaticamente, normalmente para os slots fixos ou para carregar
 	as imagens da mídia).
 
-**slot.options[]** (somente leitura)
+**slot.options[]** |sole|
 
 	As :ref:`opções do slot <luareference-dev-slotopt>` que descrevem os
 	dispositivos herdados que podem ser instanciados pelo slot,
-	indexados pelo valor da opção. A métodos ``at`` e o ``index_of``
-	possuí O(n) complexidade; todas as outras operações compatíveis têm
+	indexados pelo valor da opção. Os métodos ``at`` e ``index_of``
+	possuem complexidade O(n); todas as outras operações compatíveis têm
 	complexidade O(1).
 
-**slot.device** (somente leitura)
+**slot.device** |sole|
 
 	O :ref:`dispositivo <luareference-dev-device>` subjacente.
 
@@ -1911,25 +1911,25 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**format.name** (somente leitura)
+**format.name** |sole|
 
 	Um nome abreviado usado para identificar o formato. Isso geralmente
 	corresponde a extensão do nome do arquivo principal usado para o
 	formato.
 
-**format.description** (somente leitura)
+**format.description** |sole|
 
 	O nome completo do formato.
 
-**format.extensions[]** (somente leitura)
+**format.extensions[]** |sole|
 
 	Produz uma tabela das extensões do nome do arquivo usados no
 	formato.
 
-**format.option_spec** (somente leitura)
+**format.option_spec** |sole|
 
-	Uma string que descreve as opções disponíveis durante a criação do
-	formato da imagem da mídia. A string não se destina a ser legível
+	Uma *string* que descreve as opções disponíveis durante a criação do
+	formato da imagem da mídia. A *string* não se destina a ser legível
 	para humanos.
 
 .. raw:: latex
@@ -1958,41 +1958,41 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**option.name** (somente leitura)
+**option.name** |sole|
 
 	O nome da opção do slot. Este é o valor usado para selecionar esta
 	opção na linha de comando ou num arquivo INI.
 
-**option.device_fullname** (somente leitura)
+**option.device_fullname** |sole|
 
 	O nome completo da exibição do tipo do dispositivo instanciado por
 	esta opção.
 
-**option.device_shortname** (somente leitura)
+**option.device_shortname** |sole|
 
 	O nome abreviado do tipo de dispositivo instanciado por esta opção.
 
-**option.selectable** (somente leitura)
+**option.selectable** |sole|
 
 	Um Booleano que indica se a opção pode ser selecionada pelo usuário
 	(as opções que não são selecionáveis pelo usuário geralmente são
 	usados para os slots fixos ou para carregar as imagens da mídia).
 
-**option.default_bios** (somente leitura)
+**option.default_bios** |sole|
 
 	A configuração padrão da BIOS para o dispositivo instanciado usando
 	esta opção, ou ``nil`` caso a BIOS informada nas definições da ROM
 	do dispositivo seja usada.
 
-**option.clock** (somente leitura)
+**option.clock** |sole|
 
-	A frequência do clock configurada para o dispositivo instanciado
+	A frequência do *clock* configurada para o dispositivo instanciado
 	usando esta opção. Este é um número inteiro com 32 bits não
 	assinado. Se os oito primeiros bits mais importantes forem
-	configurados, é uma proporção da frequência do clock do dispositivo
-	principal, com o numerador nos bits 12-23 e o denominador nos bits
-	0-11. Se os oito bits mais importantes não estiverem todos
-	configurados, a frequência será em Hertz.
+	configurados, é uma proporção da frequência do *clock* do
+	dispositivo principal, com o numerador nos bits 12-23 e o
+	denominador nos bits 0-11. Se os 8 bits mais importantes não
+	estiverem todos configurados, a frequência será em Hertz.
 
 .. raw:: latex
 
@@ -2005,7 +2005,7 @@ Sistema da memória
 
 A interface Lua do MAME expõe vários objetos da memória do sistema,
 incluindo os espaços de endereçamento, compartilhamentos, seus bancos e
-as regiões da memória.  Os scripts podem ler e escrever a partir do
+as regiões da memória.  Os *scripts* podem ler e escrever a partir do
 sistema emulado da memória.
 
 .. _luareference-mem-manager:
@@ -2155,7 +2155,7 @@ Métodos
 
 **space:read_range(inicio, fim, largura, [passo])**
 
-	Lê um intervalo de endereços como uma string binária. O endereço
+	Lê um intervalo de endereços como uma *string* binária. O endereço
 	final deve ser maior ou igual ao endereço inicial.  A largura deve
 	ser 8, 16, 30 ou 64. Caso o passo seja informado, ele deve ser um
 	número positivo dos elementos.
@@ -2167,11 +2167,11 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**space.name** (somente leitura)
+**space.name** |sole|
 
 	O nome da exibição do espaço do endereço.
 
-**space.shift** (somente leitura)
+**space.shift** |sole|
 
 	A granularidade do endereço para o espaço do endereçamento informado
 	como a transferência necessária para traduzir o endereço de um byte
@@ -2179,24 +2179,24 @@ Propriedades
 	mais importante (à esquerda) e os valores negativos se transferem
 	em direção ao byte com menor importância (à direita).
 
-**space.index** (somente leitura)
+**space.index** |sole|
 
 	O índice do espaço com base zero. Alguns índices do espaço têm
 	significados especiais para o depurador.
 
-**space.address_mask** (somente leitura)
+**space.address_mask** |sole|
 
 	A máscara do espaço do endereço.
 
-**space.data_width** (somente leitura)
+**space.data_width** |sole|
 
 	A largura dos dados para o espaço em bits.
 
-**space.endianness** (somente leitura)
+**space.endianness** |sole|
 
 	O Endianness do espaço (``"big"`` ou ``"little"``).
 
-**space.map** (somente leitura)
+**space.map** |sole|
 
 	O :ref:`mapa do endereçamento da memória <luareference-mem-map>`
 	configurado para o espaço ou ``nil``.
@@ -2224,25 +2224,25 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**map.spacenum** (somente leitura)
+**map.spacenum** |sole|
 
 	A quantidade do espaço de endereço do espaço de endereço onde o mapa
 	está associado.
 
-**map.device** (somente leitura)
+**map.device** |sole|
 
 	O dispositivo que possui o endereçamento onde o mapa está associado.
 
-**map.unmap_value** (somente leitura)
+**map.unmap_value** |sole|
 
 	O valor constante para retornar a partir das leituras não mapeadas.
 
-**map.global_mask** (somente leitura)
+**map.global_mask** |sole|
 
 	Máscara global que será aplicada a todos os endereços ao acessar o
 	espaço.
 
-**map.entries[]** (somente leitura)
+**map.entries[]** |sole|
 
 	As :ref:`entradas do endereçamento da memória
 	<luareference-mem-mapentry>` não configuradas no mapa do endereço.
@@ -2272,56 +2272,56 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**entry.address_start** (somente leitura)
+**entry.address_start** |sole|
 
 	Endereço inicial do intervalo da entrada.
 
-**entry.address_end** (somente leitura)
+**entry.address_end** |sole|
 
 	Endereço final do intervalo da entrada (inclusive).
 
-**entry.address_mirror** (somente leitura)
+**entry.address_mirror** |sole|
 
 	Bits do espelho do endereço.
 
-**entry.address_mask** (somente leitura)
+**entry.address_mask** |sole|
 
 	Bits da máscara do endereço.  É válido apenas para os manipuladores.
 
-**entry.mask** (somente leitura)
+**entry.mask** |sole|
 
 	Máscara da pista, indicando quais as linhas dos dados do barramento
 	estão conectadas ao manipulador.
 
-**entry.cswidth** (somente leitura)
+**entry.cswidth** |sole|
 
 	A largura do gatilho para um manipulador que não está conectado a
 	todas as linhas de dados.
 
-**entry.read** (somente leitura)
+**entry.read** |sole|
 
 	Os :ref:`dados do manipulador do mapa de endereçamento da memória
 	<luareference-memory-handlerdata>` para a leitura do manipulador.
 
-**entry.write** (somente leitura)
+**entry.write** |sole|
 
 	Os :ref:`dados do manipulador do mapa de endereçamento da memória
 	<luareference-memory-handlerdata>` para a escrita no manipulador.
 
-**entry.share** (somente leitura)
+**entry.share** |sole|
 
 	A tag do compartilhamento da memória para tornar as entradas da RAM
 	acessíveis ou ``nil``.
 
-**entry.region** (somente leitura)
+**entry.region** |sole|
 
 	A tag explícita da região da memória para entradas da ROM, ou
 	``nil``.  Para entradas da ROM, o ``nil`` deduz a região da tag do
 	dispositivo.
 
-**entry.region_offset** (somente leitura)
+**entry.region_offset** |sole|
 
-	O offset inicial na região da memória para as entradas da ROM.
+	O *offset* inicial na região da memória para as entradas da ROM.
 
 .. raw:: latex
 
@@ -2351,22 +2351,22 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**data.handlertype** (somente leitura)
+**data.handlertype** |sole|
 
 	O tipo do manipulador. Será um dos ``"none"``, ``"ram"``, ``"rom"``,
 	``"nop"``, ``"unmap"``, ``"delegate"``, ``"port"``, ``"bank"``,
 	``"submap"`` ou ``"unknown"``.  Observe que os vários valores dos
 	tipos do manipulador podem produzir ``"delegate"`` ou ``"unknown"``.
 
-**data.bits** (somente leitura)
+**data.bits** |sole|
 
 	A largura dos dados para o manipulador em bits.
 
-**data.name** (somente leitura)
+**data.name** |sole|
 
 	Nome de exibição para o manipulador ou ``nil``.
 
-**data.tag** (somente leitura)
+**data.tag** |sole|
 
 	A tag para portas de E/S, os bancos da memória ou ``nil``.
 
@@ -2401,23 +2401,23 @@ Métodos
 
 **share:read_i{8,16,32,64}(offs)**
 
-	Lê um valor inteiro assinado do tamanho em bits do offset informado
-	no compartilhamento da memória.
+	Lê um valor inteiro assinado do tamanho em bits do *offset*
+	informado no compartilhamento da memória.
 
 **share:read_u{8,16,32,64}(offs)**
 
 	Lê um valor inteiro não assinado com o tamanho em bits a partir do
-	offset do compartilhamento da memória.
+	*offset* do compartilhamento da memória.
 
 **share:write_i{8,16,32,64}(offs, valor)**
 
-	Grava um valor inteiro assinado com o tamanho em bits para o offset
-	informado no compartilhamento da memória.
+	Grava um valor inteiro assinado com o tamanho em bits para o
+	*offset* informado no compartilhamento da memória.
 
 **share:write_u{8,16,32,64}(offs, valor)**
 
 	Grava um valor inteiro não assinado com o tamanho em bits para o
-	offset informado no compartilhamento da memória.
+	*offset* informado no compartilhamento da memória.
 
 .. raw:: latex
 
@@ -2426,29 +2426,29 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**share.tag** (somente leitura)
+**share.tag** |sole|
 
 	A marca absoluta do compartilhamento da memória.
 
-**share.size** (somente leitura)
+**share.size** |sole|
 
 	O tamanho do compartilhamento da memória em bytes.
 
-**share.length** (somente leitura)
+**share.length** |sole|
 
 	O comprimento do compartilhamento da memória em elementos da largura
 	nativa.
 
-**share.endianness** (somente leitura)
+**share.endianness** |sole|
 
 	O endianness do compartilhamento da memória (``"big"`` ou
 	``"little"``).
 
-**share.bitwidth** (somente leitura)
+**share.bitwidth** |sole|
 
 	A largura do elemento nativo do compartilhamento da memória em bits.
 
-**share.bytewidth** (somente leitura)
+**share.bytewidth** |sole|
 
 	A largura do elemento nativo do compartilhamento da memória em bytes.
 
@@ -2480,11 +2480,11 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**bank.tag** (somente leitura)
+**bank.tag** |sole|
 
     A tag absoluta do banco da memória.
 
-**bank.entry** (leitura e escrita)
+**bank.entry** |lees|
 
 	O número da entrada com base zero atualmente selecionado.
 
@@ -2519,48 +2519,48 @@ Métodos
 
 **region:read_i{8,16,32,64}(offs)**
 
-	Lê um valor inteiro assinado do tamanho em bits do offset informado
-	na região da memória.
+	Lê um valor inteiro assinado do tamanho em bits do *offset*
+	informado na região da memória.
 
 **region:read_u{8,16,32,64}(offs)**
 
 	Lê um valor inteiro não assinado com o tamanho em bits a partir do
-	offset da região da memória.
+	*offset* da região da memória.
 
 **region:write_i{8,16,32,64}(offs, valor)**
 
-	Grava um valor inteiro assinado com o tamanho em bits para o offset
-	informado da região da memória.
+	Grava um valor inteiro assinado com o tamanho em bits para o
+	*offset* informado da região da memória.
 
 **region:write_u{8,16,32,64}(offs, valor)**
 
 	Grava um valor inteiro não assinado com o tamanho em bits para o
-	offset informado na região da memória.
+	*offset* informado na região da memória.
 
 Propriedades
 ^^^^^^^^^^^^
 
-**region.tag** (somente leitura)
+**region.tag** |sole|
 
 	A tag absoluta da região da memória.
 
-**region.size** (somente leitura)
+**region.size** |sole|
 
 	O tamanho da região da memória em bytes.
 
-**region.length** (somente leitura)
+**region.length** |sole|
 
 	O comprimento da região da memória com elementos nativos de largura.
 
-**region.endianness** (somente leitura)
+**region.endianness** |sole|
 
 	O endianness da região de memória (``"big"`` ou ``"little"``).
 
-**region.bitwidth** (somente leitura)
+**region.bitwidth** |sole|
 
 	A largura do elemento nativo da região da memória em bits.
 
-**region.bytewidth** (somente leitura)
+**region.bytewidth** |sole|
 
 	A largura do elemento nativo da região da memória em bytes.
 
@@ -2573,8 +2573,8 @@ Propriedades
 Sistema de entrada
 ------------------
 
-Permite que os scripts obtenham a inserção vinda do usuário e acessem as
-portas de E/S no sistema emulado.
+Permite que os *scripts* obtenham a inserção vinda do usuário e acessem
+as portas de E/S no sistema emulado.
 
 .. _luareference-input-ioportman:
 
@@ -2602,9 +2602,12 @@ Métodos
 **ioport:type_pressed(tipo, [jogador])**
 
 	Retorna um booleano indicando se a entrada informada foi atualmente
-	pressionada. O tipo da entrada da porta é um valor enumerado. O
-	número do jogador é um índice com base zero. Se o número do jogador
-	não for informado, será presumido que seja zero.
+	pressionada. O tipo da entrada pode ser um valor enumerado ou um
+	:ref:`tipo de acesso <luareference-input-inputtype>`. Caso o tipo de
+	acesso seja um valor enumerado, número do jogador é um índice com
+	base zero. Se o número do jogador não for informado, será presumido
+	que seja zero, sendo o tipo da entrada um tipo de acesso, o número
+	do jogador não poderá ser informado de forma separada.
 
 **ioport:type_name(tipo, [jogador])**
 
@@ -2613,7 +2616,7 @@ Métodos
 	do jogador é um índice com base zero. Se o número do jogador não for
 	informado, será presumido que seja zero.
 
-**ioport:type_group(tipo, jogador)**
+**ioport:type_group(tipo, [jogador])**
 
 	Retorna a entrada do grupo para o tipo da entrada informada e o
 	número do jogador. O tipo da entrada é um valor enumerado. O número
@@ -2628,13 +2631,17 @@ Métodos
 **ioport:type_seq(tipo, [jogador], [tipo_da_sequência])**
 
 	Obtenha a configuração do tipo da :ref:`sequência da entrada
-	<luareference-input-iptseq>` especificada, o número do jogador.
-	O tipo da entrada é um valor enumerado. O número do jogador é um
-	índice com base zero. Se o número do jogador não for informado,
-	será presumido que seja zero. Caso o tipo da sequência seja
-	informada ela deve ser ``"standard"``, ``"increment"`` ou
-	``"decrement"``; caso não seja, será presumido que seja
-	``"standard"``.
+	<luareference-input-iptseq>` para um determinado tipo de acesso, o
+	número do jogador e o tipo da sequência. O tipo da entrada pode ser
+	um valor enumerado ou um
+	:ref:`tipo de acesso <luareference-input-inputtype>`. Caso o tipo de
+	acesso seja um valor enumerado, o número do jogador pode ser
+	informado como um índice com base zero, caso contrário, será
+	presumido que seja zero, sendo o tipo da entrada um tipo de acesso,
+	o número do jogador não poderá ser informado de forma separada.
+	Havendo a informação do tipo da sequência, ela deve ser
+	``"standard"``, ``"increment"`` ou ``"decrement"``, na sua ausência,
+	será presumido que seja ``"standard"``.
 
 	Isso fornece acesso à configuração geral da entrada.
 
@@ -2643,31 +2650,40 @@ Métodos
 
 	\clearpage
 
-**ioport:set_type_seq** (tipo, jogador, seqtype, seq)
+**ioport:set_type_seq** (tipo, [jogador], tipo_da_sequência, sequência)
 
 	Define a configuração da
-	:ref:`sequência de entrada <luareference-input-iptseq>` para o tipo
-	da entrada definida, o número do jogador e o tipo da sequência. O
-	tipo da entrada é um valor enumerado. O número do jogador é um
-	índice com base zero. Se o número do jogador não for informado, será
-	presumido que seja zero. Caso o tipo da sequência seja informada ela
-	deve ser ``"standard"``, ``"increment"`` ou ``"decrement"``.
+	:ref:`sequência de entrada <luareference-input-iptseq>` para um
+	determinado tipo de acesso, o número do jogador e o tipo da
+	sequência. O tipo da entrada pode ser um valor enumerado ou um
+	:ref:`tipo de acesso <luareference-input-inputtype>`. Caso o tipo de
+	acesso seja um valor enumerado, o número do jogador pode ser
+	informado como um índice com base zero, sendo o tipo da entrada um
+	tipo de acesso, o número do jogador não poderá ser informado de
+	forma separada. A sequência deve ser ``"standard"``, ``"increment"``
+	ou ``"decrement"``.
 
 	Isso permite que a configuração geral da entrada possa ser definida.
 
 **ioport:token_to_input_type(string)**
 
-	Retorna o tipo da entrada e o número do jogador para o tipo da
-	entrada do token informado.
+	Retorna uma *string* com o tipo da entrada e o número do jogador
+	para o tipo da entrada do token informado.
 
 **ioport:input_type_to_token(tipo, [jogador])**
 
-	Retorna a string do token para o tipo da entrada informada e o
+	Retorna uma *string* do token para o tipo da entrada informada e o
 	número do jogador. Se o número do jogador não for informado, será
 	presumido que seja zero.
 
 Propriedades
 ^^^^^^^^^^^^
+
+**ioport.types[]** |sole|
+
+	Obtém o :ref:`tipo de acesso <luareference-input-inputtype>`
+	compatível. As teclas são índices arbitrários. Todas as operações
+	compatíveis possuem complexidade O(1).
 
 **ioport.ports[]**
 
@@ -2729,7 +2745,7 @@ Métodos
 
 **natkeyboard:dump()**
 
-	Retorna uma string com uma descrição legível do teclado e dos
+	Retorna uma *string* com uma descrição legível do teclado e dos
 	dispositivos de entrada do teclado numérico no sistema, se eles
 	estão ativados e os seus caracteres vinculados.
 
@@ -2740,27 +2756,27 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**natkeyboard.empty** (somente leitura)
+**natkeyboard.empty** |sole|
 
 	Um booleano que indica se o buffer da entrada do gerenciador do
 	teclado natural está vazio.
 
-**natkeyboard.full** (somente leitura)
+**natkeyboard.full** |sole|
 
 	Um booleano que indica se o buffer da entrada do gerenciador do
 	teclado natural está cheio.
 
-**natkeyboard.can_post** (somente leitura)
+**natkeyboard.can_post** |sole|
 
 	Um booleano que indica se o sistema emulado suporta a postagem dos
 	dados dos caracteres através do gerenciador do teclado natural.
 
-**natkeyboard.is_posting** (somente leitura)
+**natkeyboard.is_posting** |sole|
 
 	Um booleano que indica se os dados postados dos caracteres estão
 	sendo entregues ao sistema que está sendo emulado.
 
-**natkeyboard.in_use** (leitura e escrita)
+**natkeyboard.in_use** |lees|
 
 	Um booleano que indica se o modo “teclado natural” está ativado.
 	Quando O modo “teclado natural” está ativado o gerenciador do
@@ -2800,36 +2816,36 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**keyboard.device** (somente leitura)
+**keyboard.device** |sole|
 
 	O dispositivo subjacente.
 
-**keyboard.tag** (somente leitura)
+**keyboard.tag** |sole|
 
 	A tag absoluta do dispositivo subjacente.
 
-**keyboard.basetag** (somente leitura)
+**keyboard.basetag** |sole|
 
 	O último componente da tag do dispositivo subjacente ou ``"root"``
 	para o dispositivo raiz da máquina.
 
-**keyboard.name** (somente leitura)
+**keyboard.name** |sole|
 
 	A descrição legível para as pessoas do tipo do dispositivo
 	subjacente.
 
-**keyboard.shortname** (somente leitura)
+**keyboard.shortname** |sole|
 
 	O identificador do tipo do dispositivo subjacente.
 
-**keyboard.is_keypad** (somente leitura)
+**keyboard.is_keypad** |sole|
 
 	Um booleano que indica se o dispositivo subjacente possui as
 	entradas do teclado numérico, mas não para a entradas do teclado.
 	Isso é usado para determinar quais dispositivos da entrada do
 	teclado deve ser ativado por padrão.
 
-**keyboard.enabled** (leitura e escrita)
+**keyboard.enabled** |lees|
 
 	Um booleano que indica se as entradas do teclado e/ou do teclado
 	numérico do dispositivo estão ativados.
@@ -2884,25 +2900,25 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**port.device**  (somente leitura)
+**port.device**  |sole|
 
 	O dispositivo que possui a porta de E/S.
 
-**port.tag** (somente leitura)
+**port.tag** |sole|
 
 	A etiqueta absoluta da porta E/S
 
-**port.active** (somente leitura)
+**port.active** |sole|
 
 	Uma máscara indicando quais os bits da porta E/S correspondem aos
 	campos ativos (isto é, os bits que não não utilizados ou não foram
 	atribuídos).
 
-**port.live** (somente leitura)
+**port.live** |sole|
 
 	O estado ativo da porta de E/S.
 
-**port.fields[]** (somente leitura)
+**port.fields[]** |sole|
 
 	Obtém uma tabela do :ref:`campo da porta de E/S
 	<luareference-input-field>` indexados por nome.
@@ -2984,71 +3000,71 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**field.device** (somente leitura)
+**field.device** |sole|
 
 	O dispositivo que possui a porta que o campo pertence.
 
-**field.port** (somente leitura)
+**field.port** |sole|
 
 	A :ref:`porta de E/S <luareference-input-ioport>` que o campo
 	pertence.
 
-**field.live** (somente leitura)
+**field.live** |sole|
 
 	O :ref:`estado do campo da porta de E/S em tempo real
 	<luareference-input-fieldlive>` do campo.
 
-**field.type** (somente leitura)
+**field.type** |sole|
 
 	O tipo da entrada do campo.  Este é um valor enumerado.
 
-**field.name** (somente leitura)
+**field.name** |sole|
 
 	O nome da exibição do campo.
 
-**field.default_name** (somente leitura)
+**field.default_name** |sole|
 
 	O nome da configuração para o campo do sistema emulado (não pode
-	ser substituído por scripts ou plug-ins).
+	ser substituído por *scripts* ou plug-ins).
 
-**field.player** (somente leitura)
+**field.player** |sole|
 
 	O número do jogador para o campo com base zero.
 
-**field.mask** (somente leitura)
+**field.mask** |sole|
 
 	Os Bits na porta de E/S correspondente a este campo.
 
-**field.defvalue** (somente leitura)
+**field.defvalue** |sole|
 
 	O valor predefinido do campo
 
-**field.sensitivity** (somente leitura)
+**field.sensitivity** |sole|
 
 	A sensibilidade ou ganho para os campos analógicos
 
-**field.way** (somente leitura)
+**field.way** |sole|
 
 	A quantidade das direções permitidas através do restritor da
 	placa/portão para um joystick digital ou zero (0) para as outras
 	entradas.
 
-**field.type_class** (somente leitura)
+**field.type_class** |sole|
 
 	O tipo da classe para o campo da entrada para um dos ``"keyboard"``,
 	``"controller"``, ``"config"``, ``"dipswitch"`` ou ``"misc"``.
 
-**field.is_analog** (somente leitura)
+**field.is_analog** |sole|
 
 	Um booleano que indica se o campo é um eixo analógico ou controle
 	posicional.
 
-**field.is_digital_joystick** (somente leitura)
+**field.is_digital_joystick** |sole|
 
 	Um booleano que indica se o campo corresponde ao comutador de um
 	joystick digital.
 
-**field.enabled** (somente leitura)
+**field.enabled** |sole|
 
 	Um booleano que indica se o campo está ativado.
 
@@ -3056,71 +3072,72 @@ Propriedades
 
 	\clearpage
 
-**field.optional** (somente leitura)
+**field.optional** |sole|
 
 	Um booleano que indica se o campo é opcional e não é obrigatório
 	para uso no sistema que está sendo emulado.
 
-**field.cocktail** (somente leitura)
+**field.cocktail** |sole|
 
 	Um booleano que indica se o campo é usado apenas quando o sistema é
 	configurado para um gabinete de mesa tipo coquetel.
 
-**field.toggle** (somente leitura)
+**field.toggle** |sole|
 
 	Um booleano que indica se o campo corresponde a uma botão do
 	hardware tipo liga/desliga ou um botão de pressão.
 
-**field.rotated** (somente leitura)
+**field.rotated** |sole|
 
 	Um booleano que indica se o campo corresponde a um controle que é
 	rotacionado em relação à orientação padrão.
 
-**field.analog_reverse** (somente leitura)
+**field.analog_reverse** |sole|
 
 	Um booleano que indica se o campo corresponde a um controle
 	analógico que aumenta na direção oposta à convenção (por exemplo,
 	valores maiores quando um pedal é solto ou um joystick é movido para
 	a esquerda).
 
-**field.analog_reset** (somente leitura)
+**field.analog_reset** |sole|
 
 	Um booleano que indica se o campo corresponde a um incremental da
 	posição da entrada (por exemplo, um dial ou eixo do trackball) que
 	deve ser redefinida para zero para cada quadro do vídeo.
 
-**field.analog_wraps** (somente leitura)
+**field.analog_wraps** |sole|
 
 	Um booleano que indica se o campo corresponde a uma entrada
 	analógica que encapsula a partir de uma extremidade da sua faixa
 	para a outra (por exemplo, uma posição incremental como a entrada de
 	um dial ou o eixo do trackball).
 
-**field.analog_invert** (somente leitura)
+**field.analog_invert** |sole|
 
 	Um booleano que indica se o campo corresponde a uma entrada
 	analógica que tem o seu valor complementado.
 
-**field.impulse** (somente leitura)
+**field.impulse** |sole|
 
 	Um booleano que indica se o campo corresponde a uma entrada digital
 	que é ativado por um determinado período de tempo fixo.
 
-**field.crosshair_scale** (somente leitura)
+**field.crosshair_scale** |sole|
 
 	O fator de escala para traduzir o intervalo do campo para a posição
 	da mira. Um valor de um (1) que traduz o intervalo total do campo
 	para a largura total ou altura da tela.
 
-**field.crosshair_offset** (somente leitura)
+**field.crosshair_offset** |sole|
 
-	O offset para traduzir o intervalo do campo para a posição da mira.
+	O *offset* para traduzir o intervalo do campo para a posição da
+	mira.
 
-**field.user_value** (leitura e escrita)
+**field.user_value** |lees|
 
 	O valor da chave DIP ou das definições da configuração.
 
-**field.settings[]** (somente leitura)
+**field.settings[]** |sole|
 
 	Obtém uma tabela das configurações ativadas atualmente para um
 	interruptor DIP ou o campo de configuração, indexado por valor.
@@ -3128,6 +3145,7 @@ Propriedades
 .. raw:: latex
 
 	\clearpage
+
 
 .. _luareference-input-fieldlive:
 
@@ -3154,6 +3172,60 @@ Propriedades
 .. raw:: latex
 
 	\clearpage
+
+
+.. _luareference-input-inputtype:
+
+Tipo do acesso
+~~~~~~~~~~~~~~
+
+Envelopa a classe ``input_type_entry`` do MAME, faz a representação do
+tipo de acesso ou do tipo de acesso da interface do usuário no emulador.
+Os tipo de acesso são identificados de forma única através da combinação
+do índice do jogador e do tipo do valor da sua enumeração.
+
+Instanciação
+^^^^^^^^^^^^
+
+**manager.machine.ioport.types[índice]**
+
+	Obtém um tipo de acesso compatível.
+
+Propriedades
+^^^^^^^^^^^^
+
+**type.type** |sole|
+
+	Um valor enumerado que representa o tipo de acesso.
+
+**type.group** |sole|
+
+	Um valor inteiro que fornece o agrupamento para o tipo de acesso.
+	Deve ser utilizado para fornecer um agrupamento canônico numa
+	configuração de entrada da interface do usuário (IU).
+
+**type.player** |sole|
+
+	Número do jogador com base zero ou zero para controles não
+	relacionados com o jogador.
+
+**type.token** |sole|
+
+	A *string* de um token para o tipo de acesso, usado nos arquivos de
+	configuração.
+
+**type.name** |sole|
+
+	O nome do tela para o tipo de acesso.
+
+**type.is_analog** |sole|
+
+	Um boleando que indica se o tipo de acesso é analógico ou digital.
+	As entradas que possuam apenas as condições ligado ou desligado são
+	consideradas digitais, enquanto todas as outras são consideradas
+	analógicas ainda que elas representem apenas valores discretos ou
+	posições.
+
 
 .. _luareference-input-inputman:
 
@@ -3199,12 +3271,12 @@ Métodos
 
 **input:code_to_token(código)**
 
-	Obtenha a string do token para um código da entrada. Isso deve ser
+	Obtenha a *string* do token para um código da entrada. Isso deve ser
 	usado ao salvar uma configuração.
 
 **input:code_from_token(token)**
 
-	Converta uma string do token num código de entrada. Retorna o
+	Converta uma *string* do token num código de entrada. Retorna o
 	código de entrada inválido se o token não for válido ou caso
 	pertença a um dispositivo de entrada que não está presente.
 
@@ -3231,12 +3303,12 @@ Métodos
 **input:seq_to_tokens(sequência)**
 
 	Converta uma :ref:`sequência da entrada <luareference-input-iptseq>`
-	numa string token. Isso deve ser usado quando for salvar na
+	numa *string* token. Isso deve ser usado quando for salvar na
 	configuração.
 
 **input:seq_from_tokens(tokens)**
 
-	Converta uma string token numa :ref:`sequência da entrada
+	Converta uma *string* token numa :ref:`sequência da entrada
 	<luareference-input-iptseq>`. Isso deve ser usado quando for
 	carregar uma configuração.
 
@@ -3276,7 +3348,7 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**input.device_classes[]** (somente leitura)
+**input.device_classes[]** |sole|
 
 	Pega uma tabela host :ref:`host da classe do dispositivo da entrada
 	<luareference-input-devclass>` indexada por nome.
@@ -3375,17 +3447,17 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**poller.sequence (somente leitura)**
+**poller.sequence** |sole|
 
 	A :ref:`sequência da entrada <luareference-input-iptseq>` atual. É
 	atualizado durante o processo de obtenção. É possível para que a
 	sequência se torne inválida.
 
-**poller.valid (somente leitura)**
+**poller.valid** |sole|
 
 	Um booleano que indica se a sequência da entrada atual é válida.
 
-**poller.modified (somente leitura)**
+**poller.modified** |sole|
 
 	Um booleano que indica se a sequência foi alterada através de alguma
 	entrada do usuário desde o início do processo.
@@ -3430,16 +3502,16 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**seq.empty** (somente leitura)
+**seq.empty** |sole|
 
 	Um booleano indicando se a sequência da entrada está vazia (não
 	possui quaisquer itens, indicando uma entrada sem atribuição).
 
-**seq.length** (somente leitura)
+**seq.length** |sole|
 
 	A quantidade dos itens na sequência da entrada.
 
-**seq.is_valid** (somente leitura)
+**seq.is_valid** |sole|
 
 	Um booleano indicando se a sequência da entrada é válida. Para ser
 	válido, deve conter pelo menos um item, todos os itens devem possuir
@@ -3448,7 +3520,7 @@ Propriedades
 	absolutos e relativos não devem ser misturados dentro de um grupo de
 	produtos.
 
-**seq.is_default** (somente leitura)
+**seq.is_default** |sole|
 
 	Um booleano indicando se a sequência da entrada define se a
 	configuração deve ser usada.
@@ -3477,21 +3549,21 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**devclass.name** (somente leitura)
+**devclass.name** |sole|
 
 	O nome da classe do dispositivo.
 
-**devclass.enabled** (somente leitura)
+**devclass.enabled** |sole|
 
 	Um booleano que indica se a classe do dispositivo está ativo.
 
-**devclass.multi** (somente leitura)
+**devclass.multi** |sole|
 
 	Um booleano que indica se a classe do dispositivo oferece suporte a
 	vários dispositivos ou as entradas de todos os dispositivos da
 	classe são combinadas e tratadas como um único dispositivo.
 
-**devclass.devices[]** (somente leitura)
+**devclass.devices[]** |sole|
 
 	Obtém uma tabela :ref:`host do dispositivo da entrada
 	<luareference-input-inputdev>` na classe. As chaves são os índices
@@ -3519,24 +3591,24 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**inputdev.name** (somente leitura)
+**inputdev.name** |sole|
 
 	Nome da exibição do dispositivo.  Não há garantia de que isso seja
 	exclusivo.
 
-**inputdev.id** (somente leitura)
+**inputdev.id** |sole|
 
-	String do identificador exclusivo para o dispositivo. Isso pode não
-	ser legível para as pessoas.
+	A *string* do identificador exclusivo para o dispositivo. Isso pode
+	não ser legível para as pessoas.
 
-**inputdev.devindex** (somente leitura)
+**inputdev.devindex** |sole|
 
 	O índice do dispositivo dentro da classe de dispositivo. Isso não é
 	necessariamente o mesmo que o índice na propriedade ``devices`` da
 	classe do dispositivo o índice do ``devindex`` podem não ser
 	contíguos.
 
-**inputdev.items** (somente leitura)
+**inputdev.items** |sole|
 
 	Obtém as tabelas :ref:`host do item do dispositivo da entrada
 	<luareference-input-inputitem>`, indexado através da ID do item. A
@@ -3565,7 +3637,7 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**item.name** (somente leitura)
+**item.name** |sole|
 
 	O nome da exibição da entrada do item.  Observe que este é apenas o
 	nome do próprio item que não inclui o nome do dispositivo. O nome
@@ -3573,21 +3645,21 @@ Propriedades
 	``code_name`` no :ref:`gerenciador da entrada
 	<luareference-input-inputman>` com o código do item.
 
-**item.code** (somente leitura)
+**item.code** |sole|
 
 	O código de identificação da entrada do item. Isso é usado por
 	vários métodos do :ref:`gerenciador da entrada
 	<luareference-input-inputman>`.
 
-**item.token** (somente leitura)
+**item.token** |sole|
 
-	A string token do item da entrada. Observe que este é um fragmento
+	A *string* token do item da entrada. Observe que este é um fragmento
 	do token para o o próprio item que não inclui a parte do
 	dispositivo. O token completo para o item pode ser obtido ao invocar
 	o método ``code_to_token`` no :ref:`gerenciador da entrada
 	<luareference-input-inputman>` com o código do item.
 
-**item.current** (somente leitura)
+**item.current** |sole|
 
 	O valor atual do item. Este é um número inteiro assinado onde zero é
 	a posição neutra.
@@ -3645,7 +3717,7 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**uiinput.presses_enabled (leitura e escrita)**
+**uiinput.presses_enabled** |lees|
 
 	Se o gerenciador da entrada da IU verificará se há atualizações do
 	quadro das entradas da IU.
@@ -3719,37 +3791,37 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**bounds.x0** (leitura e escrita)
+**bounds.x0** |lees|
 
 	A coordenada mais à esquerda no retângulo (ou seja, a coordenada X
 	do lado da borda esquerda ou no canto superior esquerdo).
 
-**bounds.x1** (leitura e escrita)
+**bounds.x1** |lees|
 
 	A coordenada mais à direita no retângulo (ou seja, a coordenada X da
 	borda direita ou do canto inferior direito).
 
-**bounds.y0** (leitura e escrita)
+**bounds.y0** |lees|
 
 	A coordenada superior no retângulo (ou seja, a coordenada Y da parte
 	da borda superior ou no canto superior esquerdo).
 
-**bounds.y1** (leitura e escrita)
+**bounds.y1** |lees|
 
 	A coordenada mais inferior do retângulo (ou seja, a coordenada Y da
 	borda inferior ou do canto inferior direito).
 
-**bounds.width** (leitura e escrita)
+**bounds.width** |lees|
 
 	A largura do retângulo. Ao definir esta propriedade a posição da
 	extremidade direita muda.
 
-**bounds.height** (leitura e escrita)
+**bounds.height** |lees|
 
 	A altura do retângulo. Ao definir esta propriedade a posição da
 	borda inferior muda.
 
-**bounds.aspect** (somente leitura)
+**bounds.aspect** |sole|
 
 	A proporção entre a largura e altura do retângulo. Observe que o
 	alvo geralmente é usado em coordenadas de renderização que não
@@ -3799,22 +3871,22 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**color.a** (leitura e escrita)
+**color.a** |lees|
 
 	O valor alfa, no intervalo entre zero (0, transparente) até um (1,
 	opaco).
 
-**color.r** (leitura e escrita)
+**color.r** |lees|
 
 	O valor do canal vermelho, no intervalo entre zero (0, desligado)
 	até um (1, intensidade total).
 
-**color.g** (leitura e escrita)
+**color.g** |lees|
 
 	O valor do canal verde, no intervalo entre zero (0, desligado) até
 	um (1, intensidade total).
 
-**color.b** (leitura e escrita)
+**color.b** |lees|
 
 	O valor do canal azul, no intervalo entre zero (0, desligado) até um
 	(1, intensidade total).
@@ -3842,23 +3914,23 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-render.max_update_rate (somente leitura)
+render.max_update_rate |sole|
 
-    A taxa de atualização máxima em Hertz.  Este é um número de ponto flutuante.
+    A taxa de atualização máxima em Hertz. |eeun|.
 
-**render.ui_target** (somente leitura)
+**render.ui_target** |sole|
 
 	O :ref:`alvo do renderizador <luareference-render-target>` usado
 	para desenhar a interface do usuário (incluindo os menus, os
 	controles deslizantes e as mensagens de pop-up). Geralmente é a
 	primeira janela ou a primeira tela do host.
 
-**render.ui_container** (somente leitura)
+**render.ui_container** |sole|
 
 	O :ref:`contêiner do renderizador <luareference-render-container>`
 	usado para desenhar a interface do usuário.
 
-**render.targets[]** (somente leitura)
+**render.targets[]** |sole|
 
 	A lista da renderização dos alvos, incluindo as janelas e as telas
 	geradas, bem como os alvos ocultos renderizados para coisas como a
@@ -3894,42 +3966,42 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**target.index** (somente leitura)
+**target.index** |sole|
 
 	O índice do destino de renderização com base ``1``. Isso tem
 	complexidade O(n).
 
-**target.width** (somente leitura)
+**target.width** |sole|
 
 	A geração da largura da renderização do alvo em pixels.  Este é um
 	número inteiro.
 
-**target.height** (somente leitura)
+**target.height** |sole|
 
 	A geração da altura da renderização do alvo em pixels. Este é um
 	número inteiro.
 
-**target.pixel_aspect** (somente leitura)
+**target.pixel_aspect** |sole|
 
 	A geração da renderização da proporção entre a largura e a altura
 	dos pixels. Isto é um número de ponto flutuante.
 
-**target.hidden** (somente leitura)
+**target.hidden** |sole|
 
 	Um booleano que indica se este alvo é uma renderização interna que
 	não é exibido diretamente para o usuário (por exemplo, o alvo da
 	renderização usado para criar as capturas da tela).
 
-**target.is_ui_target** (somente leitura)
+**target.is_ui_target** |sole|
 
 	Um booleano que indica se este é o destino de renderização usado
 	para exibir a interface do usuário.
 
-**target.max_update_rate** (leitura e escrita)
+**target.max_update_rate** |lees|
 
 	A taxa de atualização máxima para a renderização do alvo em Hertz.
 
-**target.orientation** (leitura e escrita)
+**target.orientation** |lees|
 
 	Os sinalizadores de orientação do alvo. Esta é uma máscara bit
 	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
@@ -3948,27 +4020,27 @@ Propriedades
 	``index_of`` têm O(n) complexidade; todas as outras operações
 	compatíveis têm complexidade O(1).
 
-**target.current_view** (somente leitura)
+**target.current_view** |sole|
 
 	A visualização selecionada atualmente para o alvo renderizado. Isto
 	é um objeto da :ref:`visualização do layout
 	<luareference-render-layview>`.
 
-**target.view_index** (leitura e escrita)
+**target.view_index** |lees|
 
 	O índice base ``1`` da visualização selecionada para a renderização
 	deste alvo.
 
-**target.visibility_mask** (read-only)
+**target.visibility_mask** |sole|
 
 	Uma máscara bit inteira indicando quais as coleções dos itens estão
 	visíveis no momento da visualização atual.
 
-**target.screen_overlay** (leitura e escrita)
+**target.screen_overlay** |lees|
 
 	Um booleano que indica se as sobreposições da tela estão ativadas.
 
-**target.zoom_to_screen** (leitura e escrita)
+**target.zoom_to_screen** |lees|
 
 	Um booleano que indica se renderização do alvo está configurado para
 	escalar fazendo com que as telas emuladas preencham toda a
@@ -4095,13 +4167,13 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**container.user_settings** (leitura e escrita)
+**container.user_settings** |lees|
 
 	A :ref:`configuração do usuário do contêiner
 	<luareference-render-contsettings>`. Pode ser usado para controlar
 	uma série de ajustes de imagem.
 
-**container.orientation** (leitura e escrita)
+**container.orientation** |lees|
 
 	Os sinalizadores de orientação do contêiner. Esta é uma máscara bit
 	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
@@ -4109,27 +4181,25 @@ Propriedades
 	verticalmente e o bit ``2`` (``0x04``) é definido para espelhar ao
 	longo do canto superior esquerdo inferior e a diagonal direita.
 
-**container.xscale** (leitura e escrita)
+**container.xscale** |lees|
 
-	O fator de escala X do contêiner. Este é um número de ponto
-	flutuante.
+	O fator de escala X do contêiner. |eeun|.
 
-**container.yscale** (leitura e escrita)
+**container.yscale** |lees|
 
-	O fator de escala Y do contêiner. Este é um número de ponto
-	flutuante.
+	O fator de escala Y do contêiner. |eeun|.
 
-**container.xoffset** (leitura e escrita)
+**container.xoffset** |lees|
 
-	O offset X do contêiner.  Este é um número de ponto flutuante onde
-	um (1) corresponde ao tamanho X do contêiner.
+	O *offset* X do contêiner. |eeun| onde um (1) corresponde ao
+	tamanho X do contêiner.
 
-**container.yoffset** (leitura e escrita)
+**container.yoffset** |lees|
 
-	O offset Y do contêiner.  Este é um número de ponto flutuante onde
-	um (1) corresponde ao tamanho Y do contêiner.
+	O *offset* Y do contêiner. |eeun| onde um (1) corresponde ao tamanho
+	Y do contêiner.
 
-**container.is_empty** (somente leitura)
+**container.is_empty** |sole|
 
 	Um booleano que indica se o contêiner não possui itens.
 
@@ -4157,7 +4227,7 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**settings.orientation** (leitura e escrita)
+**settings.orientation** |lees|
 
 	Os sinalizadores de orientação do contêiner. Esta é uma máscara bit
 	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
@@ -4165,40 +4235,35 @@ Propriedades
 	verticalmente e o bit ``2`` (``0x04``) é definido para espelhar ao
 	longo do canto superior esquerdo inferior e a diagonal direita.
 
-**settings.brightness** (leitura e escrita)
+**settings.brightness** |lees|
 
-	O ajuste do brilho aplicado ao contêiner. Este é um número de ponto
-	flutuante.
+	O ajuste do brilho aplicado ao contêiner. |eeun|.
 
-**settings.contrast** (leitura e escrita)
+**settings.contrast** |lees|
 
-	O ajuste do contraste aplicado ao contêiner. Este é um número de
-	ponto flutuante.
+	O ajuste do contraste aplicado ao contêiner. |eeun|.
 
-**settings.gamma** (leitura e escrita)
+**settings.gamma** |lees|
 
-	O ajuste gama aplicado ao contêiner. Este é um número de ponto
-	flutuante.
+	O ajuste gama aplicado ao contêiner. |eeun|.
 
-**settings.xscale** (leitura e escrita)
+**settings.xscale** |lees|
 
-	O fator de escala X do contêiner. Este é um número de ponto
-	flutuante.
+	O fator de escala X do contêiner. |eeun|.
 
-**settings.yscale** (leitura e escrita)
+**settings.yscale** |lees|
 
-	O fator de escala Y do contêiner. Este é um número de ponto
-	flutuante.
+	O fator de escala Y do contêiner. |eeun|.
 
-**settings.xoffset** (leitura e escrita)
+**settings.xoffset** |lees|
 
-	O offset X do contêiner. Este é um número de ponto flutuante onde
-	um (1) representa o tamanho X do contêiner.
+	O *offset* X do contêiner. |eeun| onde um (1) representa o tamanho X
+	do contêiner.
 
-**settings.yoffset** (leitura e escrita)
+**settings.yoffset** |lees|
 
-	O offset Y do contêiner. Este é um número de ponto flutuante onde
-	um (1) representa o tamanho Y do contêiner.
+	O *offset* Y do contêiner. |eeun| onde um (1) representa o tamanho Y
+	do contêiner.
 
 .. raw:: latex
 
@@ -4209,16 +4274,16 @@ Propriedades
 Arquivo layout
 ~~~~~~~~~~~~~~
 
-Encapsula a classe ``layout_file`` do MAME que representa as
-visualizações carregadas a partir de um arquivo layout para uso do
-destino de uma renderização.
+Encapsula a classe ``layout_file`` do MAME, faz a representação das
+visualizações carregadas a partir de um :ref:`arquivo layout <layfile>`
+que pode ser utilizado para uma renderização final.
 
 Instanciação
 ^^^^^^^^^^^^
 
-Um objeto do arquivo layout é fornecido ao seu script layout na variável
-``file``. Os objetos do arquivo layout não são instanciados diretamente
-a partir dos scripts Lua.
+Um objeto do arquivo layout é fornecido ao seu *script* layout na
+variável ``file``. Os objetos do arquivo layout não são instanciados
+diretamente a partir dos *scripts* Lua.
 
 Métodos
 ^^^^^^^
@@ -4236,13 +4301,13 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**layout.device** (somente leitura)
+**layout.device** |sole|
 
 	O dispositivo que fez com que o arquivo layout fosse carregado.
 	Normalmente o dispositivo raiz da máquina no caso dos layouts
 	externos.
 
-**layout.views[]** (somente leitura)
+**layout.views[]** |sole|
 
 	As :ref:luareference-render-layview` criados a partir do arquivo
 	layout.
@@ -4276,12 +4341,16 @@ automaticamente com base nas telas do sistema que está sendo emulado.
 Instanciação
 ^^^^^^^^^^^^
 
-Os scripts do layout em geralmente
-
 **manager.machine.render.targets[índice].current_view**
 
 	Obtém a visualização selecionada atualmente para renderizar um
 	determinado alvo.
+
+**file.views[nome]**
+
+	Obtém a visualização de um determinado nome definido a partir de um
+	:ref:`arquivo de layout <luareference-render-layfile>`. De maneira
+	geral, é assim que um *script* de layout obtém as visualizações.
 
 Métodos
 ^^^^^^^
@@ -4330,7 +4399,7 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**view.items[]** (somente leitura)
+**view.items[]** |sole|
 
 	O elemento do layout e da tela de :ref:`visualização do item do
 	layout <luareference-render-layitem>` numa visualização. Este
@@ -4341,29 +4410,29 @@ Propriedades
 	index get tem complexidade O(1) e os métodos ``at`` e o ``index_of``
 	têm complexidade O(n).
 
-**view.name** (somente leitura)
+**view.name** |sole|
 
 	Exibe o nome da visualização.
 	Isso pode ser qualificado para indicar o dispositivo que causou o
-	carregamento do arquivo layout, quando não é o dispositivo raiz da
-	máquina.
+	carregamento do :ref:`arquivo layout <layfile>`, quando não for o
+	dispositivo raiz da máquina.
 
-**view.unqualified_name** (somente leitura)
+**view.unqualified_name** |sole|
 
 	O nome não qualificado da visualização, exatamente como aparece no
 	atributo ``name`` no arquivo layout.
 
-**view.visible_screen_count** (somente leitura)
+**view.visible_screen_count** |sole|
 
 	A quantidade dos itens nas telas que estão atualmente ativados na
 	visualização.
 
-**view.effective_aspect** (somente leitura)
+**view.effective_aspect** |sole|
 
 	A proporção efetiva entre a largura e a altura da visualização com a
 	sua configuração atual.
 
-**view.bounds** (somente leitura)
+**view.bounds** |sole|
 
 	O :ref:`limites do renderizador <luareference-render-bounds>` do
 	objeto que representa os limites efetivos da visualização na sua
@@ -4415,11 +4484,11 @@ Métodos
 	para o item. A função não deve aceitar quaisquer argumentos e deve
 	retornar um número inteiro.
 	Use com ``nil`` para restaurar o estado original do *callback* do
-	elemento (com base nos vínculos no arquivo layout).
+	elemento (com base nos vínculos do arquivo layout).
 
 	Observe que a função não deve acessar a propriedade
 	``element_state`` do item, pois isso resultará numa repetição
-	infinita. Este callback não será usado para obter o estado de
+	infinita. Este *callback* não será usado para obter o estado de
 	animação para o item, mesmo se o item não tiver vínculos explícitos
 	do estado de animação no arquivo layout.
 
@@ -4428,7 +4497,7 @@ Métodos
 	Define uma função que será invocada para obter o estado de animação
 	do item. A função não deve aceitar quaisquer argumentos e deve
 	retornar um número inteiro. Use com ``nil`` para restaurar o
-	estado de animação original do *callback* (com base nos vínculos no
+	estado de animação original do *callback* (com base nos vínculos do
 	arquivo layout).
 
 	Observe que a função não deve acessar a propriedade
@@ -4442,8 +4511,8 @@ Métodos
 	:ref:`limites do renderizador <luareference-render-bounds>` do
 	objeto nas coordenadas do alvo renderizado. Use com ``nil`` para
 	restaurar o estado do limite original do *callback* (com base no
-	estado da animação do item e nos elementos ``bounds`` herdados no
-	arquivo layout).
+	estado da animação do item e nos elementos ``bounds`` herdados a
+	partir do arquivo layout).
 
 	Observe que a função não deve acessar a propriedade ``bounds`` do
 	item, pois isso resultará numa repetição infinita.
@@ -4456,7 +4525,7 @@ Métodos
 	:ref:`renderização da cor <luareference-render-color>`.
 	Use com ``nil`` para restaurar a cor original do *callback*
 	(com base no estado da animação do item e dos elementos ``color``
-	herdados no arquivo layout).
+	herdados a partir do arquivo layout).
 
 	Observe que a função não deve acessar a propriedade ``color`` do
 	item, pois isso resultará numa repetição infinita.
@@ -4497,7 +4566,7 @@ Métodos
 	enrola horizontalmente, um valor ``1.0`` corresponde ao enrolamento
 	de retorno à borda esquerda do elemento associado. A função não deve
 	aceitar nenhum argumento e deve retornar um valor de ponto
-	flutuante. Use com ``nil``` para restaurar a posição padrão da
+	flutuante. Use com ``nil`` para restaurar a posição padrão da
 	rolagem horizontal (com base nas ligações no elemento relativo
 	``xscroll`` no arquivo de layout XML).
 
@@ -4515,7 +4584,7 @@ Métodos
 	enrola verticalmente, um valor ``1.0`` corresponde ao enrolamento
 	de retorno à borda esquerda do elemento associado. A função não deve
 	aceitar nenhum argumento e deve retornar um valor de ponto
-	flutuante. Use com ``nil``` para restaurar a posição padrão da
+	flutuante. Use com ``nil`` para restaurar a posição padrão da
 	rolagem horizontal (com base nas ligações no elemento relativo
 	``yscroll`` no arquivo de layout XML).
 
@@ -4531,44 +4600,44 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
-**item.id** (somente leitura)
+**item.id** |sole|
 
 	Obtenha o identificador opcional do item. Este é o valor do
-	atributo ``id`` no arquivo layout caso esteja presente ou ``nil``.
+	atributo ``id`` no arquivo layout, caso esteja presente ou ``nil``.
 
-**item.bounds_animated** (somente leitura)
+**item.bounds_animated** |sole|
 
 	Um booleano que indica se os limites do item dependem de seu estado
 	de animação.
 
-**item.color_animated** (somente leitura)
+**item.color_animated** |sole|
 
 	Um booleano que indica se a cor do item depende de seu estado de
 	animação.
 
-**item.bounds** (somente leitura)
+**item.bounds** |sole|
 
 	Os limites do item para o estado atual.
 	Este é um
 	:ref:`limitador do renderizador <luareference-render-bounds>` do
 	objeto nas coordenadas do alvo renderizado.
 
-**item.color** (somente leitura)
+**item.color** |sole|
 
 	A cor do item para o estado atual.
 	A cor da tela ou da textura do elemento é multiplicada por esta cor.
 	Este faz a :ref:`renderização da cor <luareference-render-color>`
 	do objeto.
 
-**item.scroll_wrap_x** (somente leitura)
+**item.scroll_wrap_x** |sole|
 
 	Um booleano indicando se o item se enrola horizontalmente.
 
-**item.scroll_wrap_y** (somente leitura)
+**item.scroll_wrap_y** |sole|
 
 	Um booleano indicando se o item se enrola verticalmente.
 
-**item.scroll_size_x** (leitura e escrita)
+**item.scroll_size_x** |lees|
 
 	Obtém o tamanho da janela de rolagem horizontal do item para a
 	condição atual, ou configure o tamanho da janela de rolagem
@@ -4576,7 +4645,7 @@ Propriedades
 	ponto flutuante que representa uma proporção da largura do elemento
 	associado.
 
-**item.scroll_size_y** (leitura e escrita)
+**item.scroll_size_y** |lees|
 
 	Obtém o tamanho da janela de rolagem vertical do item para a
 	condição atual, ou configure o tamanho da janela de rolagem
@@ -4584,20 +4653,20 @@ Propriedades
 	ponto flutuante que representa uma proporção da largura do elemento
 	associado.
 
-**item.scroll_pos_x** (leitura e escrita)
+**item.scroll_pos_x** |lees|
 
 	Obtém a posição de rolagem horizontal do item para a condição atual,
 	ou defina o tamanho da posição de rolagem horizontal que deve ser
 	usada na ausência das ligações. Este é um valor de ponto flutuante.
 
-**item.scroll_pos_y** (leitura e escrita)
+**item.scroll_pos_y** |lees|
 
 	Obtém a posição de rolagem vertical do item para a condição
 	atual, ou defina o tamanho da posição de rolagem vertical que deve
 	ser usada na ausência das ligações.
 	Este é um valor de ponto flutuante.
 
-**item.blend_mode** (somente leitura)
+**item.blend_mode** |sole|
 
 	Obtém modo de mesclagem do item.
 	Este é um valor inteiro, onde ``0`` significa sem mesclagem, ``1``
@@ -4611,7 +4680,7 @@ Propriedades
 
 	\clearpage
 
-**item.orientation** (somente leitura)
+**item.orientation** |sole|
 
 	Obtém os sinalizadores da orientação do item.
 	Esta é uma máscara bit inteira onde o bit ``0`` (``0x01``) é
@@ -4620,16 +4689,16 @@ Propriedades
 	definido para espelhar ao longo da diagonal superior esquerda e
 	inferior direita.
 
-**item.element_state** (somente leitura)
+**item.element_state** |sole|
 
 	Obtenha o estado atual do elemento.
-	Isso invocará a função callback do estado do elemento para lidar com
-	os vínculos.
+	Isso invocará a função *callback* do estado do elemento para lidar
+	com os vínculos.
 
-**item.animation_state** (somente leitura)
+**item.animation_state** |sole|
 
-	Obtém o estado atual da animação. Isso invocará a função callback do
-	estado de animação do elemento para lidar com os vínculos.
+	Obtém o estado atual da animação. Isso invocará a função *callback*
+	do estado de animação do elemento para lidar com os vínculos.
 
 .. raw:: latex
 
@@ -4641,9 +4710,265 @@ Depurador
 ---------
 
 Alguns dos principais recursos de depuração do MAME podem ser
-controlados a partir do script Lua. O depurador deve ser ativado para
-usar os recursos de depuração (normalmente usando ``-debug`` na linha de
-comando).
+controlados a partir de um *script* Lua. O depurador deve estar ativado
+para que seja possível usar os recursos de depuração (normalmente
+usando ``-debug`` na linha de comando).
+
+
+.. _luareference-debug-symtable:
+
+Tabela de símbolos
+~~~~~~~~~~~~~~~~~~
+
+Envelopa a classe ``symbol_table`` do MAME, fornece o nome dos símbolos
+que pode ser usado nas expressões. Note que a tabela de símbolos pode
+ser criada e até mesmo utilizada quando o depurador não estiver ativado.
+
+Instanciação
+^^^^^^^^^^^^
+
+**emu.symbol_table(machine, [parent], [device])**
+
+	Cria uma nova tabela de símbolos dentro do contexto de uma
+	determinada máquina, fornecendo de forma opcional, a tabela
+	principal dos símbolos. Caso a tabela principal dos símbolos seja
+	fornecida, esta não deve ser destruída antes da nova tabela de
+	símbolos. No caso de um dispositivo ser definido e implementar o
+	``device_memory_interface``, este será utilizado como a base para a
+	busca dos endereços e das regiões da memória. Note que caso um
+	dispositivo que não implemente um ``device_memory_interface`` seja
+	fornecido, este não será utilizado (os endereços e a região da
+	memória serão buscadas com relação à raiz do dispositivo).
+
+Métodos
+^^^^^^^
+
+**symbols:set_memory_modified_func(cb)**
+
+	Define uma função a ser chamada quando a memória for alterada
+	através da tabela de símbolos. Nenhum argumento é passado para a
+	função e quaisquer valores retornados são ignorados. Invoque com
+	``nil`` para eliminar o *callback*.
+
+**symbols:add(nome, [valor])**
+
+	|dusi| |onds|. Ao
+	informar um valor, este deve ser um número inteiro. Durante o
+	fornecimento do valor, um símbolo só de leitura é adicionado em
+	conjunto com o valor informado. Na ausência deste valor, é criado um
+	símbolo de leitura/escrita com valor zero. |osss|.
+
+**symbols:add(nome, getter, [setter], [formato])**
+
+	|dusi| usando a chamada *getter* e a chamada
+	opcional *setter*. Onde |onds|. A chamada *getter* deve uma função
+	que retorne um valor inteiro para o valor do símbolo. Caso seja
+	informado, o *setter* deve ser uma função que aceite um único valor
+	inteiro para o novo valor do símbolo. Um formato *string* para
+	exibir o valor do símbolo pode ser usado de forma opcional. |osss|.
+
+**symbols:add(nome, minparams, maxparams, execute)**
+
+	|dafu|. Onde |onds|. O valor mínimo e máximo da quantidade dos
+	valores devem ser inteiros. |osss|.
+
+	.. raw:: latex
+
+		\clearpage
+
+**symbols:find(nome)**
+
+	Retorna o :ref:`acesso do símbolo <luareference-debug-symentry>` com
+	um determinado nome ou ``nil`` caso não haja um símbolo com um
+	determinado nome na tabela de símbolos.
+
+**symbols:find_deep(nome)**
+
+	Retorna o :ref:`acesso do símbolo <luareference-debug-symentry>` com
+	um determinado nome ou ``nil`` caso não haja um símbolo com um
+	determinado nome na tabela de símbolos ou em quaisquer outra tabela
+	de símbolos relacionada.
+
+**symbols:value(nome)**
+
+	Retorna o valor inteiro do símbolo com um determinado nome ou zero
+	caso não haja um símbolo com um determinado nome na tabela de
+	símbolos ou em quaisquer outra tabela de símbolos relacionada.
+	|guec| o símbolo com um determinado nome seja uma função de um
+	determinado símbolo.
+
+**symbols:set_value(nome, valor)**
+
+	Define o valor de um símbolo com um determinado nome. |guec| o
+	símbolo com um determinado nome seja um símbolo inteiro, somente
+	leitura, ou caso seja uma função de um determinado símbolo.
+	Não há qualquer efeito caso não exista um símbolo com determinado
+	nome na tabela ou em quaisquer tabelas de símbolos relacionados.
+
+**symbols:memory_value(nome, espaço, offset, tamanho, disable_se)**
+
+	Lê o valor a partir da memória. Oferece um nome ou uma etiqueta no
+	espaço de endereçamento, na região da memória onde a leitura será
+	feita ou ``nil`` para usar o espaço de endereçamento ou a região da
+	memória imposta por ``space``. Consulte
+	:ref:`acesso à memória <debugger-express-mem>` para conhecer os
+	tipos de acesso e as definições que podem ser utilizadas com
+	``space``. O tamanho do acesso pode ser ``1``, ``2``, ``4`` ou ``8``
+	e deve ser definido em bytes. O ``disable_se`` determina se os
+	efeitos colaterais do acesso à memória deve ser desativado ou não.
+
+**symbols:set_memory_value(nome, espaço, offset, valor, tamanho, disable_se)**
+
+	Escreve um valor na memória. Oferece um nome ou uma etiqueta no
+	espaço de endereçamento, na região da memória onde a leitura será
+	feita ou ``nil`` para usar o espaço de endereçamento ou a região da
+	memória imposta por ``space``. Consulte
+	:ref:`acesso à memória <debugger-express-mem>` para conhecer os
+	tipos de acesso e as definições que podem ser utilizadas com
+	``space``. O tamanho do acesso pode ser ``1``, ``2``, ``4`` ou ``8``
+	e deve ser definido em bytes. O ``disable_se`` determina se os
+	efeitos colaterais do acesso à memória deve ser desativado ou não.
+
+Propriedades
+^^^^^^^^^^^^
+
+**symbols.entries[]**
+
+	O :ref:`acesso do símbolo <luareference-debug-symentry>` na tabela
+	de símbolos indexada por nomes. Os métodos ``at`` e ``index_of`` têm
+	complexidade O(n). Todas as outras operações possuem complexidade
+	O(1).
+
+**symbols.parent** |sole|
+
+	A tabela de símbolos relacionados ou ``nil`` caso não haja nada
+	relacionado na tabela de símbolos.
+
+
+.. _luareference-debug-expression:
+
+A interpretação das expressões
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Envelopa a classe ``parsed_expression``, representa uma expressão
+simbólica do depurador. Repare que as expressões que forem interpretadas
+podem ser criadas e até mesmo utilizadas quando o depurador não estiver
+ativado.
+
+Instanciação
+^^^^^^^^^^^^
+
+**emu.parsed_expression(símbolo)**
+
+	Cria uma expressão vazia que usará a 
+	:ref:`tabela de símbolos <luareference-debug-symtable>` para fazer
+	uma procura pelos símbolos.
+
+**emu.parsed_expression(símbolos, string, [default_base])**
+
+	Cria uma expressão ao analisar uma *string*, também é usada um
+	:ref:`tabela de símbolos <luareference-debug-symtable>` para fazer
+	uma procura pelos símbolos. Na ausência de uma base padrão para fazer
+	a busca literal dos inteiros, o hexadecimal 16 é usado.
+	|guec| a *string* tenha erros de sintaxe ou utilize símbolos
+	não definidos.
+
+**emu.parsed_expression(expressão)**
+
+	Cria uma cópia de uma expressão existente e que já tenha sido
+	analisada.
+
+Métodos
+^^^^^^^
+
+**expression:set_default_base(base)**
+
+	Define a base padrão para a interpretação dos literais numéricos. A
+	base deve ser um valor inteiro e positivo.
+
+**expression:parse(string)**
+
+	Analisar uma cadeia de expressões de depuração. Faz a substituição
+	do conteúdo atual da expressão caso não esteja vazia. |guec| a
+	*string* tenha erros de sintaxe ou utilize símbolos não definidos.
+	O conteúdo da expressão anterior não é preservada ao tentar analisar
+	uma cadeia de expressões inválidas.
+
+**expression:execute()**
+
+	Faz a avaliação da expressão, como resultado, retorna um inteiro não
+	assinado. |guec| a expressão não puder ser analisada (ao invocar a
+	função com uma quantidade de argumentos inválidos por exemplo).
+
+Propriedades
+^^^^^^^^^^^^
+
+**expression.is_empty** |sole|
+
+	Um booleano que indica se a expressão possui *tokens*.
+
+**expression.original_string** |sole|
+
+	A *string* original que foi analisada para criar uma expressão.
+
+**expression.symbols** |lees|
+
+	A :ref:`tabela de símbolos <luareference-debug-symtable>` usada para
+	procurar pelos símbolos numa expressão.
+
+.. _luareference-debug-symentry:
+
+Acesso do símbolo
+~~~~~~~~~~~~~~~~~
+
+Envelopa a classe ``symbol_entry`` do MAME, faz a representação do
+acesso numa :ref:`tabela de símbolos <luareference-debug-symtable>`.
+
+Instanciação
+^^^^^^^^^^^^
+
+**symbols:find(nome)**
+
+	Obtém o acesso do símbolo que um determinado nome a partir da
+	:ref:`tabela de símbolos <luareference-debug-symtable>`, porém, não
+	faz a procura pela tabela de símbolos relacionada.
+
+**symbols:deep_find(nome)**
+
+	Obtém o acesso do símbolo que um determinado nome a partir da
+	:ref:`tabela de símbolos <luareference-debug-symtable>`, fazendo a
+	procura repercussiva da tabela de símbolos relacionada.
+
+
+Propriedades
+^^^^^^^^^^^^
+
+**entry.name** |sole|
+
+	O nome do acesso do símbolo.
+
+**entry.format** |sole|
+
+	O formato da *string* usada para converter o acesso do símbolo para
+	ser exibido como texto na tela.
+
+**entry.is_function** |sole|
+
+	Um booleano indicando se o acesso do símbolo é uma função que pode
+	ser invocada.
+
+**entry.is_lval** |sole|
+
+	Um booleano indicando se o acesso do símbolo é um símbolo inteiro
+	que pode ser definido (se ele pode ser usado no lado esquerdo das
+	expressões da atribuição por exemplo).
+
+**entry.value** |lees|
+
+	Um valor inteiro do acesso do símbolo. |guec| caso tente definir um
+	valor caso o acesso do símbolo seja de apenas leitura, assim como,
+	ao tentar obter ou definir o valor da função de um símbolo.
+
 
 .. _luareference-debug-manager:
 
@@ -4666,31 +4991,31 @@ Métodos
 
 **debugger:command(str)**
 
-	Execute um comando no console do depurador.  O argumento é a string
+	Execute um comando no console do depurador. O argumento é a *string*
 	do comando. A saída é enviada ao console do depurador e ao console
 	Lua.
 
 Propriedades
 ^^^^^^^^^^^^
 
-**debugger.consolelog[]** (somente leitura)
+**debugger.consolelog[]** |sole|
 
 	As linhas no log do console (saída dos comandos do depurador).
 	Este contêiner suporta apenas o comprimento das operações do índice.
 
-**debugger.errorlog[]** (read-only)
+**debugger.errorlog[]** |sole|
 
 	As linhas no registro log de erros (saída ``logerror``).
 	Este contêiner suporta apenas o comprimento das operações do índice.
 
-**debugger.visible_cpu** (leitura e escrita)
+**debugger.visible_cpu** |lees|
 
 	O dispositivo CPU com foco no depurador. As alterações se tornam
 	visíveis no console do depurador depois da próxima etapa.
 	Não há efeito quando configurando para um dispositivo que não seja
 	uma CPU.
 
-**debugger.execution_state** (leitura e escrita)
+**debugger.execution_state** |lees|
 
 	Tanto ``"run"`` se o sistema que estiver sendo emulado estiver
 	rodando, ou ``"stop"`` caso esteja parado no depurador.
@@ -4841,32 +5166,32 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**breakpoint.index** (somente leitura)
+**breakpoint.index** |sole|
 
 	O índice do breakpoint. Pode ser usado para ativar, desativar ou
 	limpar o breakpoint através da :ref:`interface de depuração do
 	dispositivo <luareference-debug-devdebug>`.
 
-**breakpoint.enabled** (somente leitura)
+**breakpoint.enabled** |sole|
 
 	Um booleano que indica se o breakpoint no momento está ativo.
 
-**breakpoint.address** (somente leitura)
+**breakpoint.address** |sole|
 
 	O endereço do breakpoint.
 
-**breakpoint.condition** (somente leitura)
+**breakpoint.condition** |sole|
 
 	Uma expressão do depurador avaliada cada vez que o breakpoint for
 	atingido. A ação só será disparada caso esta expressão seja avaliada
-	como um valor diferente de zero. Uma string vazia caso nenhuma
+	como um valor diferente de zero. Uma *string* vazia caso nenhuma
 	condição seja informada.
 
-**breakpoint.action** (somente leitura)
+**breakpoint.action** |sole|
 
 	Uma ação que o depurador executará quando o breakpoint for atingido
 	e a condição for avaliada como um valor diferente de zero.
-	Uma string vazia caso nenhuma ação seja informada.
+	Uma *string* vazia caso nenhuma ação seja informada.
 
 .. raw:: latex
 
@@ -4892,39 +5217,48 @@ Instanciação
 Propriedades
 ^^^^^^^^^^^^
 
-**watchpoint.index** (somente leitura)
+**watchpoint.index** |sole|
 
 	O índice do watchpoint. Pode ser usado para ativar, desativar ou
 	limpar o watchpoint através da :ref:`interface de depuração do
 	dispositivo <luareference-debug-devdebug>`.
 
-**watchpoint.enabled** (somente leitura)
+**watchpoint.enabled** |sole|
 
 	Um booleano que indica se o watchpoint no momento está ativo.
 
-**watchpoint.type** (somente leitura)
+**watchpoint.type** |sole|
 
 	O tipo deve ser ``"r"``, ``"w"`` ou ``"rw"`` para a leitura, a
 	escrita ou a leitura e a escrita do watchpoint.
 
-**watchpoint.address** (somente leitura)
+**watchpoint.address** |sole|
 
 	O endereço inicial do intervalo dos endereços do watchpoint.
 
-**watchpoint.length** (somente leitura)
+**watchpoint.length** |sole|
 
 	O comprimento do intervalo dos endereços do watchpoint.
 
-**watchpoint.condition** (somente leitura)
+**watchpoint.condition** |sole|
 
 	Uma expressão do depurador avaliada cada vez que o watchpoint for
 	atingido. A ação só será disparada caso esta expressão seja avaliada
-	como um valor diferente de zero. Uma string vazia caso nenhuma
+	como um valor diferente de zero. Uma *string* vazia caso nenhuma
 	condição seja informada.
 
-**watchpoint.action** (somente leitura)
+**watchpoint.action** |sole|
 
 	Uma ação que o depurador executará quando o watchpoint for atingido
 	e a condição for avaliada como um valor diferente de zero.
-	Uma string vazia caso nenhuma ação seja informada.
+	Uma *string* vazia caso nenhuma ação seja informada.
 
+.. |osss| replace:: O símbolo será substituído na existência de um
+	símbolo com um determinado nome já existente na tabela de símbolos.
+.. |guec| replace:: Gera um erro caso
+.. |dusi| replace:: Denomina um símbolo inteiro
+.. |dafu| replace:: Denomina a função de um símbolo
+.. |onds| replace:: seu nome deve ser uma *string*
+.. |eeun| replace:: Este é um número de ponto flutuante
+.. |sole| replace:: (somente leitura)
+.. |lees| replace:: (leitura e escrita)
