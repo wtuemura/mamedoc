@@ -2455,21 +2455,23 @@ Opções para a configuração de vídeo
 
 .. _mame-commandline-video-bgfx:
 
-	* **bgfx**
+	* **bgfx** (preferível)
 
-	  Determina o novo renderizador acelerado por hardware.
+	  Determina o novo renderizador acelerado por hardware, utilize esta
+	  opção caso a sua placa de vídeo seja compatível.
 
 .. _mame-commandline-video-opengl:
 
 	* **opengl**
 
 	  Faz a renderização do vídeo usando `OpenGL <https://www.tecmundo.com.br/video-game-e-jogos/872-o-que-e-opengl-.htm>`_,
-	  use em sistemas Windows compatíveis quando por algum motivo a opção
-	  ``d3d`` causar problemas.
+	  use em sistemas Windows compatíveis quando por algum motivo as
+	  outras opções causarem problemas.
 
-	  Em sistemas não Windows, essa é a opção responsável para que a
-	  renderização da tela aconteça através de aceleração por hardware,
-	  caso seja compatível com o seu sistema operacional.
+	  Em sistemas não Windows, essa é a opção predefinida para a
+	  renderização da tela e para fazer a aceleração via hardware,
+	  caso seja compatível com o seu sistema operacional e pela sua
+	  placa de vídeo.
 
 .. _mame-commandline-video-none:
 
@@ -2492,15 +2494,24 @@ Opções para a configuração de vídeo
 
 .. _mame-commandline-video-d3d:
 
-	* **d3d**
+	* **d3d** (obsoleto)
 
 	  Diz ao MAME para renderizar a tela com o **Direct3D**.
 	  Isso produz uma saída com uma melhor qualidade se comparada com a
 	  opção que o **gdi** assim como permite opções adicionais de
-	  renderização da tela e aceleração gráfica via hardware.
+	  renderização da tela e aceleração gráfica via hardware. 
 
 	  É recomendável ter uma placa de vídeo mediana (2002+)
 	  ou uma placa de vídeo Intel embutida modelo *HD3000* ou superior.
+
+	  .. note:: Esta opção já é obsoleta para um hardware mais moderno,
+		prefira a opção ``bgfx`` usando o
+		:ref:`bgfx_backend <advanced-bgfx-backend>` com ``d3d11`` ou a
+		versão mais recente. Caso a sua placa seja compatível, use
+		``vulkan`` para obter o melhor desempenho possível (isso também
+		depende da compatibilidade relacionada ao desenvolvimento do
+		MAME, do driver da sua placa de vídeo e do sistema operacional
+		usado).
 
 .. raw:: latex
 
@@ -2526,12 +2537,14 @@ Opções para a configuração de vídeo
 
 * **Predefinições:**
 
-	No Windows é **d3d**.
+	No Windows é ``d3d``.
 
-	No macOS é **opengl** pois é quase certo que exista uma pilha
+	No macOS é ``opengl`` pois é quase certo que exista uma pilha
 	OpenGL compatível.
 
-	O valor predefinido para todos os outros sistemas é **soft**.
+	No Linux é ``opengl``.
+
+	O valor predefinido para todos os outros sistemas é ``soft``.
 
 	Exemplo:
 		.. code-block:: shell

@@ -133,13 +133,15 @@ Alterando as configurações
 	são as opções disponíveis:
 
 	* ``d3d9`` Renderizador do Direct3D 9.0 (Requer o Windows XP ou
-	  mais recente).
+	  uma versão mais nova do Windows).
 
-	* ``d3d11`` Renderizador do Direct3D 11.0 (Requer Windows Vista
-	  com o D3D11 atualizado ou o  Windows 7 ou mais recente).
+	* ``d3d11`` Renderizador do Direct3D 11.0 (Requer o Windows Vista
+	  com o D3D11 atualizado, o  Windows 7 ou uma versão mais nova do
+	  Windows).
 
-	* ``d3d12`` Renderizador do Direct3D 12.0 (Requer Windows 10 ou mais
-	  recente, assim como uma placa de vídeo com driver compatível).
+	* ``d3d12`` Renderizador do Direct3D 12.0 (Requer o Windows 10 ou
+	  uma versão mais nova do Windows, assim como uma placa de vídeo
+	  com um driver compatível).
 
 	* ``opengl`` Renderizador OpenGL (Requer Drivers compatíveis com
 	  OpenGL, pode não funcionar bem  com algumas placas de vídeo mais
@@ -150,10 +152,11 @@ Alterando as configurações
 
 	* ``vulkan`` Renderizador Vulkan (via hardware), compatível
 	  atualmente com OpenGL ES 3.1, OpenGL 4.X ou versões mais recentes.
-	  Requer drivers compatíveis para as placas de vídeo atuais e pode
-	  não ser compatível com placas de vídeo ou drivers mais antigos.
+	  Requer drivers compatíveis para as placas de vídeo mais atuais e
+	  pode não ser compatível com as placas de vídeo ou com drivers mais
+	  antigos.
 
-		O valor predefinido é **auto**.
+		O valor predefinido é ``auto``.
 
 .. _advanced-bgfx-debug:
 
@@ -254,7 +257,7 @@ Alterando as configurações
 
 	Use um arquivo LUT para aplicar diferentes efeitos de textura.
 
-		O Valor predefinido é **nenhum**
+		O Valor predefinido é ``nenhum``
 
 .. _advanced-bgfx-avi_name:
 
@@ -264,7 +267,7 @@ Alterando as configurações
 	para gravar o vídeo da máquina emulada com os efeitos
 	``bgfx_avi_name pacman.avi`` por exemplo.
 
-		O Valor predefinido é **auto**
+		O Valor predefinido é ``auto``
 
 .. raw:: latex
 
