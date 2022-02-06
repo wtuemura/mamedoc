@@ -2046,7 +2046,7 @@ Opções para a captura da tela
 **-snapview** <*tipo*>
 
 	Define a visualização que será utilizada nas capturas da tela e para
-	gravar os vídeos.
+	gravar vídeos.
 
 	É predefinido que ambos utilizem a primeira visualização que estiver
 	disponível ou somente da primeira tela. Ao usar esta opção é
@@ -2056,7 +2056,7 @@ Opções para a captura da tela
 
 	Observe que o <*tipo*> não precisa ser o nome exato,
 	em vez disso, o MAME selecionará a primeira exibição cujo nome
-	corresponda com o que for definido através do <*tipo*>, suponto
+	corresponda com o que for definido através do <*tipo*>, supondo
 	que o nome seja **Cabine Animada** basta usar **Cabine** ou
 	**cabine**.
 
@@ -2064,6 +2064,17 @@ Opções para a captura da tela
 	:guilabel:`Nativa em (15:14)` ainda que o nome não combine
 	perfeitamente. O <*tipo*> também pode ser "auto" onde será escolhida
 	a primeira exibição de todas que existirem.
+
+	Nos casos onde você utiliza uma visualização com mais de uma opção
+	ou que tenha nomes estranhos, nomes com caracteres não ASCII ou algo
+	do tipo:
+
+	* :guilabel:`XXYYZZ_01`
+	* :guilabel:`XXYYZZ_02`
+	* :guilabel:`XXYYZZ_03`
+
+	 Use ``-snapview XXYYZZ_03`` para definir exatamente a visualização
+	 desejada na sua captura.
 
 	O valor predefinido é ``internal``.
 
