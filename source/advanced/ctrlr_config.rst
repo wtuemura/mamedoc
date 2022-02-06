@@ -203,29 +203,31 @@ controles.
 
 A configuração acima define as seguintes atribuições das entradas:
 
-* **Config Menu** (Interface do usuário)
+* **Config Menu** (Interface do usuário).
 
-	Tecla :kbd:`Tab`, ou pressionando as teclas 1 e 2 simultaneamente
+	Tecla :kbd:`Tab`, ou pressionando as teclas :kbd:`1` e :kbd:`2`
+	simultaneamente.
 
-* **UI Cancel** (Interface do usuário)
+* **UI Cancel** (Interface do usuário).
 
-	Tecla :kbd:`ESC`, ou pressionando as teclas 2 e 6 simultaneamente
+	Tecla :kbd:`ESC`, ou pressionando as teclas :kbd:`2` e :kbd:`6`
+	simultaneamente.
 
-* **P1 Button 1** (Controles do jogador 1)
+* **P1 Button 1** (Controles do jogador 1).
 
-	Tecla :kbd:`C`, ou o botão 1 do joystick 1
+	Tecla :kbd:`C`, ou o botão 1 do joystick 1.
 
-* **P1 Button 2** (Controles do jogador 1)
+* **P1 Button 2** (Controles do jogador 1).
 
-	Tecla :kbd:`Shift` esquerda, ou o botão 2 do joystick 1
+	Tecla :kbd:`Shift` esquerda, ou o botão 2 do joystick 1.
 
-* **P1 Button 3** (Controles do jogador 1)
+* **P1 Button 3** (Controles do jogador 1).
 
-	Tecla :kbd:`Z`, ou o botão 3 do joystick 1
+	Tecla :kbd:`Z`, ou o botão 3 do joystick 1.
 
-* **P1 Button 4** (Controles do jogador 1)
+* **P1 Button 4** (Controles do jogador 1).
 
-	Tecla :kbd:`X`, ou o botão 4 do joystick 1
+	Tecla :kbd:`X`, ou o botão 4 do joystick 1.
 
 Repare que isto será aplicado somente às entradas do controle do MAME.
 Ou seja, os elementos ``port`` sem os atributos ``tag`` substituem
