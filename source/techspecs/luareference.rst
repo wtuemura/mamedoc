@@ -103,6 +103,34 @@ Classes Principais
 Muitas das classes principais do MAME usadas para implementar a emulação
 de uma sessão, estão disponíveis para os *scripts* Lua.
 
+
+.. _luareference-core-notifiersub:
+
+Notificador da assinatura
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Envelopa a classe ``util::notifier_subscription`` do MAME, faz o
+gerenciamento de uma assinatura numa notificação de difusão.
+
+Métodos
+^^^^^^^
+
+
+**subscription:unsubscribe()**
+
+	Faz a remoção da notificação das assinaturas . A assinatura se torna
+	inativa e nenhuma outra notificação será recebida.
+
+Propriedades
+^^^^^^^^^^^^
+
+**subscription.is_active** |sole|
+
+	Um booleano indicando se a assinatura está ativa. A assinatura se
+	torna inativa depois que a assinatura for explicitamente cancelada
+	ou caso o notificador subjacente seja destruído.
+
+
 .. _luareference-core-attotime:
 
 Attotime
@@ -940,6 +968,10 @@ Métodos
 	entrada é um valor enumerado. O número do jogador é um índice com
 	base no número zero. Caso o número do jogador não seja informado, é
 	assumido o valor zero.
+
+.. raw:: latex
+
+	\clearpage
 
 Propriedades
 ^^^^^^^^^^^^
@@ -2439,15 +2471,15 @@ Métodos
 
 **space:add_change_notifier(callback)**
 
-	Adiciona uma 
-	:ref:`assinatura de alteração do manipulador <luareference-mem-spacechangenotif>`
-	ao espaço de endereçamento. A função de retorno é repassada numa
-	*string* simples como um argumento, seja ``r`` caso os manipuladores
-	de leitura tenham se alterado de forma potencial, ``w`` no caso dos
-	manipuladores de escrita e ``rw`` em ambos os casos.
+	Adiciona um *callback* para receber as notificações das alterações
+	do manipulador no espaço de endereçamento. A função de *callback* é
+	repassada numa *string* simples como um argumento, seja ``r`` caso
+	os manipuladores de leitura tenham se alterado de forma potencial,
+	``w`` no caso dos manipuladores de escrita e ``rw`` em ambos os
+	casos.
 
-	Observe que a alteração da assinatura do manipulador deve ser
-	removida de forma explícita antes do encerramento da emulação.
+	Retorna um
+	:ref:`notificador da assinatura <luareference-core-notifiersub>`. 
 
 
 **space:install_read_tap(início, fim, nome, callback)**
@@ -2465,8 +2497,6 @@ Métodos
 	*callback* como um número inteiro. Caso o *callback* não retorne um
 	valor inteiro, os dados não serão alterados.
 
-	Observe que os manipuladores *pass-through* devem ser removidos de
-	forma explícita antes do encerramento da emulação.
 
 **space:install_write_tap(início, fim, nome, callback)**
 
@@ -2481,9 +2511,6 @@ Métodos
 	dados que estão sendo escritos, retorne o valor alterado da função
 	do *callback* como um número inteiro. Caso o *callback* não retorne
 	um valor inteiro, os dados não serão alterados.
-
-	Observe que os manipuladores *pass-through* devem ser removidos de
-	forma explícita antes do encerramento da emulação.
 
 Propriedades
 ^^^^^^^^^^^^
@@ -2530,34 +2557,6 @@ Propriedades
 	configurado para o espaço ou ``nil``.
 
 
-.. _luareference-mem-spacechangenotif:
-
-Notificador da alteração do espaço de endereçamento
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Faz o rastreamento de uma determinada assinatura do manipulador do
-:ref:`espaço de endereçamento da memória <luareference-mem-space>`.
-Observe que a assinatura deve ser removida antes do encerramento da
-emulação.
-
-Instanciação
-^^^^^^^^^^^^
-
-**manager.machine.devices[tag].spaces[nome]:add_change_notifier(callback)**
-
-	Faz a adição de um manipulador para alterar a assinatura de um
-	:ref:`espaço de endereçamento da memória <luareference-mem-space>`.
-
-Métodos
-^^^^^^^
-
-
-**notifier:remove()**
-
-	Faz a remoção da assinatura da notificação. O *callback** associado
-	não será invocado nas futuras alterações do manipulador para a
-	região do endereço.
-
 .. _luareference-mem-tap:
 
 Manipulador pass-through
@@ -2567,8 +2566,7 @@ Faz o rastreio do manipulador *pass-through* instalado num
 :ref:`espaço de endereçamento da memória <luareference-mem-space>`. Ele
 recebe as notificações dos acessos numa determinada faixa de
 endereçamento, pode alterar os dados que são lidos ou escritos se assim
-for preciso. Observe que a assinatura deve ser removida antes do
-encerramento da emulação.
+for preciso.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -2645,6 +2643,10 @@ Instanciação
 
 	Obtém o mapa do endereço configurado para o espaço de um endereço ou
 	``nil`` caso nenhum mapa seja configurado.
+
+.. raw:: latex
+
+	\clearpage
 
 Propriedades
 ^^^^^^^^^^^^
@@ -5476,13 +5478,28 @@ Instanciação
 ^^^^^^^^^^^^
 
 
-**emu.symbol_table(machine, [parent], [device])**
+**emu.symbol_table(máquina)**
 
 	Cria uma nova tabela de símbolos dentro do contexto de uma
-	determinada máquina, fornecendo de forma opcional, a tabela
-	principal dos símbolos. Caso a tabela principal dos símbolos seja
-	fornecida, esta não deve ser destruída antes da nova tabela de
-	símbolos. No caso de um dispositivo ser definido e implementar o
+	determinada máquina,
+
+
+**emu.symbol_table(parent, [dispositivo])**
+
+	Cria uma nova tabela de símbolos dentro de uma determinada tabela
+	relacionada dos símbolos. No caso de um dispositivo ser definido e
+	implemente um ``device_memory_interface``, este será utilizado como
+	a base para a busca dos endereços e das regiões da memória. Note que
+	caso um dispositivo que não implemente um
+	``device_memory_interface`` seja fornecido, este não será utilizado
+	(os endereços e a região da memória serão buscadas com relação à
+	raiz do dispositivo).
+
+
+**emu.symbol_table(dispositivo)**
+
+	Cria uma nova tabela de símbolos dentro do contexto de um
+	determinado dispositivo. Caso um dispositivo implemente o
 	``device_memory_interface``, este será utilizado como a base para a
 	busca dos endereços e das regiões da memória. Note que caso um
 	dispositivo que não implemente um ``device_memory_interface`` seja
@@ -5509,6 +5526,12 @@ Métodos
 	conjunto com o valor informado. Na ausência deste valor, é criado um
 	símbolo de leitura/escrita com valor zero. |osss|.
 
+	Retorna o :ref:`acesso do símbolo <luareference-debug-symentry>`.
+
+.. raw:: latex
+
+	\clearpage
+
 
 **symbols:add(nome, getter, [setter], [formato])**
 
@@ -5519,15 +5542,14 @@ Métodos
 	inteiro para o novo valor do símbolo. Um formato *string* para
 	exibir o valor do símbolo pode ser usado de forma opcional. |osss|.
 
+	Retorna o :ref:`acesso do símbolo <luareference-debug-symentry>`.
 
 **symbols:add(nome, minparams, maxparams, execute)**
 
 	|dafu|. Onde |onds|. O valor mínimo e máximo da quantidade dos
 	valores devem ser inteiros. |osss|.
 
-	.. raw:: latex
-
-		\clearpage
+	Retorna o :ref:`acesso do símbolo <luareference-debug-symentry>`.
 
 
 **symbols:find(nome)**
@@ -5636,12 +5658,6 @@ Instanciação
 	|guec| a *string* tenha erros de sintaxe ou utilize símbolos
 	não definidos.
 
-
-**emu.parsed_expression(expressão)**
-
-	Cria uma cópia de uma expressão existente e que já tenha sido
-	analisada.
-
 Métodos
 ^^^^^^^
 
@@ -5694,24 +5710,32 @@ Acesso do símbolo
 
 Envelopa a classe ``symbol_entry`` do MAME, faz a representação do
 acesso numa :ref:`tabela de símbolos <luareference-debug-symtable>`.
+Observe que as entradas dos símbolos não devem ser usados depois que a
+tabela dos símbolos a que pertencem seja destruída.
 
 Instanciação
 ^^^^^^^^^^^^
 
 
-**symbols:find(nome)**
+**symbols:add(nome, [valor])**
 
-	Obtém o acesso do símbolo que um determinado nome a partir da
-	:ref:`tabela de símbolos <luareference-debug-symtable>`, porém, não
-	faz a procura pela tabela de símbolos relacionada.
+	Adiciona um símbolo inteiro à
+	:ref:`tabela de símbolos <luareference-debug-symtable>`, retornando
+	um novo símbolo para o acesso.
 
 
-**symbols:deep_find(nome)**
+**symbols:add(nome, getter, [setter], [formato])**
 
-	Obtém o acesso do símbolo que um determinado nome a partir da
-	:ref:`tabela de símbolos <luareference-debug-symtable>`, fazendo a
-	procura repercussiva da tabela de símbolos relacionada.
+	Adiciona um símbolo inteiro à
+	:ref:`tabela de símbolos <luareference-debug-symtable>`, retornando
+	um novo símbolo para o acesso.
 
+
+**symbols:add(nome, minparams, maxparams, execute)**
+
+	Adiciona uma nova função à
+	:ref:`tabela de símbolos <luareference-debug-symtable>`, retornando
+	um novo símbolo para o acesso.
 
 Propriedades
 ^^^^^^^^^^^^
@@ -5821,7 +5845,7 @@ Instanciação
 ^^^^^^^^^^^^
 
 
-**manager.machine.devices[tag]:debug()**
+**manager.machine.devices[tag].debug**
 
 	Retorna a interface do depurador para um dispositivo emulado da CPU
 	ou ``nil`` caso o dispositivo não seja uma CPU.
@@ -5958,7 +5982,7 @@ Instanciação
 ^^^^^^^^^^^^
 
 
-**manager.machine.devices[tag]:debug():bplist()[bp]**
+**manager.machine.devices[tag].debug:bplist()[bp]**
 
 	Obtém o breakpoint informado para um dispositivo emulada da CPU ou
 	``nil`` caso nenhum breakpoint corresponda ao índice informado.
@@ -5974,7 +5998,7 @@ Propriedades
 	dispositivo <luareference-debug-devdebug>`.
 
 
-**breakpoint.enabled** |sole|
+**breakpoint.enabled** |lees|
 
 	Um booleano que indica se o breakpoint no momento está ativo.
 
@@ -6015,7 +6039,7 @@ Instanciação
 ^^^^^^^^^^^^
 
 
-**manager.machine.devices[tag]:debug():wplist(espaço)[wp]**
+**manager.machine.devices[tag].debug:wplist(espaço)[wp]**
 
 	Obtém o watchpoint informado para um watchpoint de um dispositivo
 	emulado da CPU ou ``nil`` caso nenhum watchpoint no espaço de
@@ -6032,7 +6056,7 @@ Propriedades
 	dispositivo <luareference-debug-devdebug>`.
 
 
-**watchpoint.enabled** |sole|
+**watchpoint.enabled** |lees|
 
 	Um booleano que indica se o watchpoint no momento está ativo.
 
