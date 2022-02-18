@@ -2535,7 +2535,7 @@ Opções para a configuração de vídeo
 	  emulação pode ser penalizada, porém favorecendo uma melhor
 	  compatibilidade em qualquer plataforma.
 
-* **Predefinições:**
+* **Predefinições até a versão 0.240:**
 
 	No Windows é ``d3d``.
 
@@ -2551,6 +2551,11 @@ Opções para a configuração de vídeo
 
 			mame ssf2tu -video bgfx
 
+* **Predefinições depois da versão 0.241:**
+
+	Todos os sistemas passam a utilizar ``bgfx`` [#bgfx]_.
+
+.. [#bgfx] https://github.com/mamedev/mame/commit/eee7d7d155d527996890a90c952f9856675c965d
 
 .. _mame-commandline-numscreens:
 
