@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-09 02:50+1100\n"
-"PO-Revision-Date: 2021-12-28 03:04-0300\n"
+"PO-Revision-Date: 2022-02-18 05:29-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -4208,7 +4208,7 @@ msgstr "Redefine a memória"
 #: src/emu/inpttype.ipp:544
 msgctxt "input-name"
 msgid "Volume Down"
-msgstr "Abaixa o volume"
+msgstr "Reduz o volume"
 
 #: src/emu/inpttype.ipp:545
 msgctxt "input-name"
