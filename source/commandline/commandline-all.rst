@@ -1817,7 +1817,8 @@ Opções para a gravação e a reprodução do estado da emulação
 	usado para assistir a uma sessão do jogo gravado anteriormente do
 	início ao fim. Para tornar as coisas consistentes, apague os
 	arquivos de configuração ``.cfg``, NVRAM ``.nv`` e o cartão de
-	memória.
+	memória. Consulte o comando :ref:`-record <mame-commandline-record>`
+	para obter mais informações importantes.
 
 	O valor predefinido é ``NULO`` (sem reprodução).
 
@@ -1846,7 +1847,7 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. warning::
 
-	Em máquinas que não usam **NVRAM** como a packman, mspackman e
+	Em máquinas que não usam **NVRAM** como a pacman, mspacman e
 	talvez outras, elas também perdem o sincronismo e algumas vezes
 	criam anomalias (bugs) apenas durante a reprodução, neste caso
 	apague o arquivo que mantém o registro do **high score** dentro do
@@ -1888,6 +1889,18 @@ Opções para a gravação e a reprodução do estado da emulação
 		.. code-block:: shell
 
 			mame ssf2tu -rec perfect
+
+.. warning::
+
+	Em algumas máquinas como a **neogeo** por exemplo, é preciso excluir
+	a **NVRAM** da máquina **ANTES** de iniciar uma gravação e **ANTES**
+	de reproduzir com :ref:`-playback <mame-commandline-playback>`, caso
+	contrário, a reprodução pode iniciar num estágio diferente (na série
+	"*The King of Fighters*" por exemplo) e fazendo com que a ação não
+	bata com o que foi gravado ou até mesmo haja uma interrupção da
+	reprodução muito antes do fim. Por exemplo, se for iniciar a
+	gravação da máquina **kof2002**, na pasta **NVRAM**, exclua a pasta
+	**kof2002** e também a pasta **kof2002_16** caso ela exista.
 
 
 .. raw:: latex
