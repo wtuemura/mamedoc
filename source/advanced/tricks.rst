@@ -997,8 +997,8 @@ seriam::
 
 .. warning::
 
-	Observe que independente de como apareça aqui neste documento a
-	linha acima é direta e contínua!
+	Observe que independente de como a linha acima apareça aqui neste
+	documento, ela é direta e contínua!
 
 * **pcie_aspm.policy**
 
