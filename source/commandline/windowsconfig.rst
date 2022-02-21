@@ -18,10 +18,10 @@ Opções de desempenho
 	Define a prioridade de tarefas (*threads*) usadas pelo MAME. Não há
 	nenhuma tarefa predefinida para que não haja interferência com
 	outros aplicativos.
-	Os valores válidos ficam entre **-15** até **1** onde **1** é a
+	Os valores válidos ficam entre ``-15`` até ``1`` onde ``1`` é a
 	maior prioridade.
 
-		O valor predefinido é **0** (**prioridade NORMAL**).
+		O valor predefinido é ``0`` (**prioridade NORMAL**).
 
 .. _mame-wcommandline-profile:
 
@@ -37,17 +37,19 @@ Configurações de tela inteira
 
 **-[no]triplebuffer** / **-[no]tb**
 
-	Ativa ou não o "triple buffering", buffering é o nome da técnica ou
-	função que faz o armazenamento prévio de dados numa memória
-	preliminar. Normalmente o MAME escreve "a seco" diretamente na tela
-	sem fazer firulas com a memória preliminar. Porém com essa opção
-	ativa o MAME cria e escreve seus ciclos intermediários e em ordem
-	usando três memórias preliminares. Essa é uma maneira de tentar
-	manter o fluxo contínuo de dados, evitando interrupções. Dentre as
-	três, apenas a primeira é exibida, a segunda fica na espera sendo
-	acumulada e a terceira fica sendo escrita constantemente.
-	A opção ``-triplebuffer`` sobrescreve a opção ``-waitvsync`` caso a
-	memória preliminar seja criada com sucesso.
+	Ativa ou não o "*triple buffering*", *buffering* é o nome da técnica
+	ou função que faz o armazenamento prévio de dados numa memória
+	preliminar, por analogia, funciona como uma caixa d'água para que o
+	depois de cheia o fluxo na saída seja constante. Normalmente o MAME
+	escreve "a seco" diretamente na tela sem fazer firulas com a memória
+	preliminar. Porém com essa opção ativa o MAME cria e escreve seus
+	ciclos intermediários e em ordem usando três memórias preliminares.
+	Essa é uma maneira de tentar manter o fluxo contínuo de dados,
+	evitando interrupções. Dentre as três, apenas a primeira é exibida,
+	a segunda fica na espera sendo acumulada e a terceira fica sendo
+	escrita constantemente. A opção ``-triplebuffer`` sobrescreve a
+	opção ``-waitvsync`` caso a memória preliminar seja criada com
+	sucesso.
 	
 	Essa opção não funciona com ``-video gdi``.
 	
@@ -58,28 +60,28 @@ Configurações de tela inteira
 **-full_screen_brightness** <*valor*> / **-fsb** <*valor*>
 
 	Controla o brilho ou nível de preto da tela.
-	Selecionando valores menores (até **0.1**) produzirá uma tela mais
-	escura, enquanto valores maiores (até **2.0**) produzirão uma tela
+	Selecionando valores menores (até ``0.1``) produzirá uma tela mais
+	escura, enquanto valores maiores (até ``2.0``) produzirão uma tela
 	mais clara.
 
 	Note que nem todas as placa de vídeo são compatíveis com essa opção.
 	Essa opção também não funciona com ``-video gdi``.
 
-		O valor predefinido é **1.0**.
+		O valor predefinido é ``1.0``.
 
 .. _mame-wcommandline-fullscreencontrast:
 
 **-full_screen_contrast** <*valor*> / **-fsc** <*valor*>
 
 	Controla o contraste ou nível de branco da tela.
-	Selecionando valores menores (até **0.1**) produzirá uma tela mais
-	apagada, enquanto valores maiores (até **2.0**) produzirão uma tela
+	Selecionando valores menores (até ``0.1``) produzirá uma tela mais
+	apagada, enquanto valores maiores (até ``2.0``) produzirão uma tela
 	mais saturada.
 
 	Note que nem todas as placa de vídeo são compatíveis com essa opção.
 	Essa opção também não funciona com ``-video gdi``.
 
-		O valor predefinido é **1.0**.
+		O valor predefinido é ``1.0``.
 
 .. raw:: latex
 
@@ -96,7 +98,7 @@ Configurações de tela inteira
 	Note que nem todas as placa de vídeo são compatíveis com essa opção.
 	Essa opção não funciona com ``-video gdi``.
 
-		O valor predefinido é **1.0**.
+		O valor predefinido é ``1.0``.
 
 Opções para o modo janela
 -------------------------
@@ -108,7 +110,7 @@ Opções para o modo janela
 	Habilita uma barra de menu caso esteja disponível e implementado na
 	interface do usuário.
 
-		O valor predefinido é **0**.
+		O valor predefinido é ``0``.
 
 .. _mame-wcommandline-attach_window:
 
