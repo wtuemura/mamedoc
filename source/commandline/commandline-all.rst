@@ -2591,6 +2591,10 @@ Opções para a configuração de vídeo
 			mame ssf2tu -window
 
 
+.. raw:: latex
+
+	\clearpage
+
 .. _mame-commandline-maximize:
 
 **-[no]maximize** / **-[no]max**
@@ -2609,11 +2613,6 @@ Opções para a configuração de vídeo
 		.. code-block:: shell
 
 			mame ssf2tu -window -maximize
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-keepaspect:
@@ -3577,12 +3576,10 @@ Opções de vídeo OpenGL GLSL
 
 			mame ssf2tu -gl_glsl -gl_glsl_filter 0
 
+
 .. _mame-commandline-glslshadermame:
 
-|	**-glsl_shader_mame0**
-|	**-glsl_shader_mame1**
-|	...
-|	**-glsl_shader_mame9**
+**-glsl_shader_mame[0-9]**
 
 	Define um efeito shader personalizado do OpenGL GLSL do MAME no
 	slot fornecido entre (``0-9``). É possível aplicar um para a cada
@@ -3599,10 +3596,7 @@ Opções de vídeo OpenGL GLSL
 
 .. _mame-commandline-glslshaderscreen:
 
-| **-glsl_shader_screen0**
-| **-glsl_shader_screen1**
-| ...
-| **-glsl_shader_screen9**
+**-glsl_shader_screen[0-9]**
 
 	Define um efeito shader personalizado do OpenGL GLSL do MAME que for
 	escalada na tela para ser processada através da sua placa de vídeo
@@ -3861,6 +3855,10 @@ Opções para a configuração do áudio
 	  qualidade dos drivers usados, gera problemas com a hibernação do
 	  *Windows* quando há problemas com os drivers, a melhor opção é
 	  ficar com o *Windows WASAPI*.
+
+	.. raw:: latex
+
+		\clearpage
 
 	Para escolher qual interface usar, inicie o mame como mostra o
 	exemplo abaixo:
@@ -4758,7 +4756,7 @@ Opções voltadas para a depuração
 
 	A fonte predefinida da janela é **Lucida Console**.
 	A fonte predefinida do Mac (**Cocoa**) é o padrão de fonte de
-	tamanho fixo do sistema (geralmente a fonte **Monaco``).
+	tamanho fixo do sistema (geralmente a fonte **Monaco**).
 	A fonte padrão do Qt é **Courier New**.
 
 	Exemplo:
