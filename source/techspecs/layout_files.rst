@@ -834,17 +834,6 @@ Há suporte para os seguintes componentes:
 
 	\clearpage
 
-**led8seg_gts1**
-
-	Desenha um mostrador fluorescente digital de oito segmentos do tipo
-	usado em máquinas de fliperama *Gottlieb System 1* [#]_ (na verdade
-	uma parte da Futaba). Comparado com um mostrador padrão com sete
-	segmentos, esses mostradores não têm ponto decimal, a barra do meio
-	horizontal está quebrada no centro, assim como no meio da barra
-	vertical controlada pelo bit que controlaria o ponto decimal num
-	mostrador comum com sete segmentos. Os pixels que estiverem apagados
-	são desenhados com uma intensidade menor (**0x20/0xff**).
-
 **led14seg**
 
 	Desenha um mostrador LED ou fluorescente alfanumérico padrão com
@@ -5079,8 +5068,6 @@ de visualização, todo eles estão embutidos no MAME.
 .. [#]	O termo *shift* é muito amplo, também pode ser
 		interpretado como desvio, mudança, turno, inversão, câmbio, etc.
 		(Nota do tradutor)
-.. [#]	`Aqui <https://www.youtube.com/watch?v=-rrP4Prx1rc>`_ um exemplo
-		destes mostradores. (Nota do tradutor)
 .. [#]	Alpha Blending
 .. [#]	RGB multiplication
 .. [#]	Additive blending
