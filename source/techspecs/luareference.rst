@@ -1741,7 +1741,7 @@ Propriedades
 
 **screen.xoffset** |sole|
 
-	O *offset* predefinido da posição X da tela. |eeun| onde um (1)
+	O *offset* predefinido da posição X da tela. |eeun| onde um (``1``)
 	corresponde ao tamanho X do contêiner da tela. Isso pode ser útil
 	para restaurar o valor original após ajustar o *offset* X através do
 	contêiner da tela.
@@ -1749,7 +1749,7 @@ Propriedades
 
 **screen.yoffset** |sole|
 
-	O *offset* predefinido da posição Y da tela.  |eeun| onde um (1)
+	O *offset* predefinido da posição Y da tela.  |eeun| onde um (``1``)
 	corresponde ao tamanho Y do contêiner da tela. Isso pode ser útil
 	para restaurar o valor original após ajustar o *offset* Y através do
 	contêiner da tela.
@@ -1911,7 +1911,7 @@ Propriedades
 **cassette.length** |sole|
 
 	A duração da fita como um número de ponto flutuante em unidades de
-	segundos, ou zero (0) caso nenhuma imagem da fita seja montada.
+	segundos, ou zero (``0``) caso nenhuma imagem da fita seja montada.
 
 .. raw:: latex
 
@@ -3466,7 +3466,7 @@ Instanciação
 ^^^^^^^^^^^^
 
 
-**manager.machine.ioport.ports[tag]:field[máscara]**
+**manager.machine.ioport.ports[tag]:field(máscara)**
 
 	Obtém um campo para a porta informada através dos bits da máscara.
 
@@ -3485,6 +3485,12 @@ Métodos
 	o valor é comparado com zero para determinar se o campo deve estar
 	ativo; para os campos analógicos, o valor deve estar alinhado à
 	direita e no intervalo correto.
+
+
+**field:clear_value()**
+
+	Limpa o valor programado excedente e restaura o comportamento
+	regular do campo.
 
 
 **field:set_input_seq(tipo_da_sequência, sequência)**
@@ -3581,18 +3587,30 @@ Propriedades
 
 **field.defvalue** |sole|
 
-	O valor predefinido do campo
+	O valor predefinido do campo.
+
+
+**field.minvalue** |sole|
+
+	O valor mínimo permitido nos campos analógicos ou ``nil`` nos campos
+	digitais.
+
+
+**field.maxvalue** |sole|
+
+	O valor máximo permitido nos campos analógicos ou ``nil`` nos campos
+	digitais.
 
 
 **field.sensitivity** |sole|
 
-	A sensibilidade ou ganho para os campos analógicos
+	A sensibilidade ou ganho para os campos analógicos.
 
 
 **field.way** |sole|
 
 	A quantidade das direções permitidas através do restritor da
-	placa/portão para um joystick digital ou zero (0) para as outras
+	placa/portão para um joystick digital ou zero (``0``) para as outras
 	entradas.
 
 
@@ -3685,8 +3703,8 @@ Propriedades
 **field.crosshair_scale** |sole|
 
 	O fator de escala para traduzir o intervalo do campo para a posição
-	da mira. Um valor de um (1) que traduz o intervalo total do campo
-	para a largura total ou altura da tela.
+	da mira. Um valor de um (``1``) que traduz o intervalo total do
+	campo para a largura total ou altura da tela.
 
 
 **field.crosshair_offset** |sole|
@@ -4511,7 +4529,7 @@ Instanciação
 
 	Cria a renderização de um objeto colorido com o alfa, vermelho,
 	verde e os valores do canal azul. Os argumentos devem ser todos
-	números de ponto flutuante no intervalo de zero (0) até um (1).
+	números de ponto flutuante no intervalo de zero (``0``) até um (1).
 
 Métodos
 ^^^^^^^
@@ -4521,7 +4539,7 @@ Métodos
 
 	Define os valores dos canais alfa, vermelho, verde e azul da cor do
 	objeto. Os argumentos devem ser todos números de ponto flutuante no
-	intervalo de zero (0) até um (1).
+	intervalo de zero (``0``) até um (1).
 
 Propriedades
 ^^^^^^^^^^^^
@@ -4884,14 +4902,14 @@ Propriedades
 
 **container.xoffset** |lees|
 
-	O *offset* X do contêiner. |eeun| onde um (1) corresponde ao
+	O *offset* X do contêiner. |eeun| onde um (``1``) corresponde ao
 	tamanho X do contêiner.
 
 
 **container.yoffset** |lees|
 
-	O *offset* Y do contêiner. |eeun| onde um (1) corresponde ao tamanho
-	Y do contêiner.
+	O *offset* Y do contêiner. |eeun| onde um (``1``) corresponde ao
+	tamanho Y do contêiner.
 
 
 **container.is_empty** |sole|
@@ -4961,14 +4979,14 @@ Propriedades
 
 **settings.xoffset** |lees|
 
-	O *offset* X do contêiner. |eeun| onde um (1) representa o tamanho X
-	do contêiner.
+	O *offset* X do contêiner. |eeun| onde um (``1``) representa o
+	tamanho X do contêiner.
 
 
 **settings.yoffset** |lees|
 
-	O *offset* Y do contêiner. |eeun| onde um (1) representa o tamanho Y
-	do contêiner.
+	O *offset* Y do contêiner. |eeun| onde um (``1``) representa o
+	tamanho Y do contêiner.
 
 .. raw:: latex
 
