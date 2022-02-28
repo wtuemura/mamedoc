@@ -153,7 +153,7 @@ Bancos - memory_bank
 
 ::
 
-	class memory_bank {
+	class memory_region {
 	const std::string &tag() const;
 	int entry() const;
 	void set_entry(int entrynum);
