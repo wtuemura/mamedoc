@@ -3604,7 +3604,8 @@ Propriedades
 
 **field.sensitivity** |sole|
 
-	A sensibilidade ou ganho para os campos analógicos.
+	A sensibilidade ou ganho para os campos analógicos ou ``nil`` nos
+	campos digitais.
 
 
 **field.way** |sole|
