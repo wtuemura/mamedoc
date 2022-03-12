@@ -8,6 +8,7 @@ NOÇÕES GERAIS DE USO E CONFIGURAÇÃO
 	ui
 	defaultkeys
 	mamemenus
+	assetsearch
 	frontends
 	aboutromsets
 	commonissues

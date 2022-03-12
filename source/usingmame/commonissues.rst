@@ -496,7 +496,7 @@ Tente configurar as opções
 (dependendo de qual tipo de dispositivo de entrada ele seja) vindo da
 entrada direta para uma das outras opções como o dinput ou win32.
 
-Consulte também o capítulo :ref:`osd-commandline-options` para saber
+Consulte também o capítulo :ref:`mame-commandline-osdoptions` para saber
 mais detalhes de outros provedores compatíveis.
 
 

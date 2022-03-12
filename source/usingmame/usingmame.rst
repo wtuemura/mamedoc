@@ -64,7 +64,7 @@ Windows fica no mesmo diretório do executável do MAME e no Linux/macOS
 fica em ``~/.mame``.
 
 Apesar de ser possível fazer algumas configurações através da interface,
-nem todas as :ref:`configurações do MAME <universal-command-line>`
+nem todas as :ref:`configurações do MAME <mame-commandline-universal>`
 estão acessíveis pela interface, configurações mais específicas ainda
 precisam ser feitas por linha de comando ou por arquivos ``*.ini``.
 

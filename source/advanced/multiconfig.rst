@@ -8,7 +8,9 @@ Múltiplos arquivos de configuração
 O MAME tem um poderoso sistema de configuração que permite ajustar as
 opções de cada jogo, sistema ou até mesmo um tipo de monitor em
 específico de maneira individual, porém requer um cuidado especial na
-organização das configurações.
+organização das configurações, para mais detalhes de como o MAME
+encontra as suas configurações, consulte também o capítulo
+:ref:`assetsearch`.
 
 .. raw:: latex
 

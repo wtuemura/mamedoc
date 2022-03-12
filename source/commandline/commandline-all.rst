@@ -1,4 +1,4 @@
-.. _universal-command-line:
+.. _mame-commandline-universal:
 
 Opções Universais para a linha de comando
 =========================================
@@ -56,6 +56,8 @@ script executável com o comando **chmod u+x meumame**, agora ao executar
 o script, uma janela do terminal se abrirá, o MAME será executado e o
 diretório de trabalho será definido no mesmo local do script.
 
+.. _mame-commandline-patterns:
+
 Conjunto de instruções
 ----------------------
 
@@ -71,6 +73,8 @@ sistema ou sistemas e dispositivos. É aconselhável colocar aspas em
 torno dos seus arranjos para evitar que o seu ambiente tente
 interpretá-los de forma independente em relação aos nomes dos arquivos
 que desejamos usar (por exemplo, ``mame -validate "pac\*"``).
+
+.. _mame-commandline-coreverbs:
 
 Opções de ajuda e verificação
 -----------------------------
@@ -238,6 +242,9 @@ Opções de ajuda e verificação
 
 	\clearpage
 
+
+.. _mame-commandline-configverbs:
+
 Opções de configuração
 ----------------------
 
@@ -305,6 +312,9 @@ Opções de configuração
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-fronendverbs:
 
 Opções para listagem
 --------------------
@@ -796,7 +806,8 @@ Exemplo:
 
 	\clearpage
 
-.. _osd-commandline-options:
+
+.. _mame-commandline-osdoptions:
 
 Opções relacionadas ao que é exibido na tela (OSD)
 --------------------------------------------------
@@ -1141,6 +1152,9 @@ Opções de MIDI e rede
 
 	\clearpage
 
+
+.. _mame-commandline-osdoutput:
+
 Opções de saída das notificações de tela
 ----------------------------------------
 
@@ -1189,6 +1203,9 @@ Opções de saída das notificações de tela
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-configoptions:
 
 Opções para a configuração
 --------------------------
@@ -1302,7 +1319,10 @@ Opções para a configuração
 
 	\clearpage
 
-Opções para a configuração dos diretórios principais
+
+.. _mame-commandline-pathoptions:
+
+Opções para a configuração dos principais diretórios 
 ----------------------------------------------------
 
 .. _mame-commandline-homepath:
@@ -3499,8 +3519,11 @@ Opções para máquinas que usem gráficos vetoriais
 
 	\clearpage
 
-Opções para a depuração de vídeo OpenGL
----------------------------------------
+
+.. _mame-commandline-opengloptions:
+
+Opções das principais características do vídeo OpenGL
+-----------------------------------------------------
 
 Essas são as opções compatíveis com ``-video opengl``.
 Caso note artefatos renderizados na tela, poderá ser solicitado
@@ -3544,6 +3567,9 @@ obtenha a melhor desempenho possível.
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-openglglsl:
 
 Opções de vídeo OpenGL GLSL
 ---------------------------
@@ -3625,6 +3651,9 @@ Opções de vídeo OpenGL GLSL
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-soundoptions:
 
 Opções para a configuração do áudio
 -----------------------------------
@@ -4018,6 +4047,9 @@ Opções para a configuração do áudio
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-inputoptions:
 
 Opções para as configurações de diferentes entradas
 ---------------------------------------------------
@@ -4500,8 +4532,11 @@ Opções para as configurações de diferentes entradas
 
 	\clearpage
 
-Opções Automaticamente Ativas das Entadas Principais
-----------------------------------------------------
+
+.. _mame-commandline-inputenable:
+
+Opções das entadas principais ativadas automaticamente
+------------------------------------------------------
 
 .. _mame-commandline-paddledevice:
 
@@ -4572,6 +4607,9 @@ Opções Automaticamente Ativas das Entadas Principais
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-debugging:
 
 Opções voltadas para a depuração
 --------------------------------
@@ -4821,6 +4859,9 @@ Opções voltadas para a depuração
 
 	\clearpage
 
+
+.. _mame-commandline-commoptions:
+
 Opções para a configuração da rede
 ----------------------------------
 
@@ -4903,6 +4944,9 @@ Opções para a configuração da rede
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-miscoptions:
 
 Opções diversas
 ---------------
@@ -5243,6 +5287,9 @@ Opções para uso com script
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-webserver:
 
 Opções do servidor HTTP
 -----------------------
