@@ -3626,6 +3626,10 @@ Propriedades
 	Um booleano que indica se o campo é um eixo analógico ou controle
 	posicional.
 
+.. raw:: latex
+
+	\clearpage
+
 
 **field.is_digital_joystick** |sole|
 
@@ -3636,10 +3640,6 @@ Propriedades
 **field.enabled** |sole|
 
 	Um booleano que indica se o campo está ativado.
-
-.. raw:: latex
-
-	\clearpage
 
 
 **field.optional** |sole|
@@ -3713,6 +3713,10 @@ Propriedades
 	O *offset* para traduzir o intervalo do campo para a posição da
 	mira.
 
+.. raw:: latex
+
+	\clearpage
+
 
 **field.user_value** |lees|
 
@@ -3723,10 +3727,6 @@ Propriedades
 
 	Obtém uma tabela das configurações ativadas atualmente para um
 	interruptor DIP ou o campo de configuração, indexado por valor.
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _luareference-input-fieldlive:
@@ -3752,10 +3752,6 @@ Propriedades
 **live.name**
 
 	O nome da exibição do campo.
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _luareference-input-inputtype:
@@ -3790,6 +3786,10 @@ Propriedades
 	Um valor inteiro que fornece o agrupamento para o tipo de acesso.
 	Deve ser utilizado para fornecer um agrupamento canônico numa
 	configuração de entrada da interface do usuário (IU).
+
+.. raw:: latex
+
+	\clearpage
 
 
 **type.player** |sole|
@@ -3897,10 +3897,6 @@ Métodos
 	Obtenha o texto de exibição para uma :ref:`sequência da entrada
 	<luareference-input-iptseq>`.
 
-.. raw:: latex
-
-	\clearpage
-
 
 **input:seq_to_tokens(sequência)**
 
@@ -3962,10 +3958,6 @@ Propriedades
 	Pega uma tabela host :ref:`host da classe do dispositivo da entrada
 	<luareference-input-devclass>` indexada por nome.
 
-.. raw:: latex
-
-	\clearpage
-
 
 .. _luareference-input-codepoll:
 
@@ -4013,10 +4005,6 @@ Métodos
 	relevante do host que foi ativado desde a última vez que o método
 	foi invocado. Retorna um código de entrada inválido caso nenhuma
 	entrada relevante tenha sido ativada.
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _luareference-input-seqpoll:
@@ -4279,6 +4267,7 @@ Instanciação
 
 	Obtém um item individual da entrada do host.  A ID do item é um
 	valor enumerado.
+
 
 Propriedades
 ^^^^^^^^^^^^
@@ -5714,6 +5703,10 @@ Métodos
 	Define a base padrão para a interpretação dos literais numéricos. A
 	base deve ser um valor inteiro e positivo.
 
+.. raw:: latex
+
+	\clearpage
+
 
 **expression:parse(string)**
 
@@ -5797,6 +5790,10 @@ Propriedades
 
 	O formato da *string* usada para converter o acesso do símbolo para
 	ser exibido como texto na tela.
+
+.. raw:: latex
+
+	\clearpage
 
 
 **entry.is_function** |sole|
