@@ -5612,9 +5612,10 @@ Métodos
 	memória imposta por ``space``. Consulte
 	:ref:`acesso à memória <debugger-express-mem>` para conhecer os
 	tipos de acesso e as definições que podem ser utilizadas com
-	``space``. O tamanho do acesso pode ser ``1``, ``2``, ``4`` ou ``8``
-	e deve ser definido em bytes. O ``disable_se`` determina se os
-	efeitos colaterais do acesso à memória deve ser desativado ou não.
+	``space``. O tamanho do acesso pode ter ``1``, ``2``, ``4`` ou ``8``
+	bytes. O argumento ``disable_se`` determina
+	se os efeitos colaterais do acesso à memória deve ser desativado ou
+	não.
 
 
 **symbols:set_memory_value(nome, espaço, offset, valor, tamanho, disable_se)**
@@ -5625,9 +5626,36 @@ Métodos
 	memória imposta por ``space``. Consulte
 	:ref:`acesso à memória <debugger-express-mem>` para conhecer os
 	tipos de acesso e as definições que podem ser utilizadas com
-	``space``. O tamanho do acesso pode ser ``1``, ``2``, ``4`` ou ``8``
-	e deve ser definido em bytes. O ``disable_se`` determina se os
-	efeitos colaterais do acesso à memória deve ser desativado ou não.
+	``space``. O tamanho do acesso pode ter ``1``, ``2``, ``4`` ou ``8``
+	bytes. O argumento ``disable_se`` determina
+	se os efeitos colaterais do acesso à memória deve ser desativado ou
+	não.
+
+.. raw:: latex
+
+	\clearpage
+
+
+**symbols:read_memory(espaço, endereço, tamanho, apply_translation)**
+
+	Lê um valor a partir de um espaço de endereçamento. O tamanho do
+	acesso pode ter ``1``, ``2``, ``4`` ou ``8`` bytes. Caso o argumento
+	``apply_translation`` seja verdadeiro, o endereço será traduzido com
+	a intensão de leitura do depurador ou retornará o valor do tamanho
+	requisitado com todos os bits definidos caso a tradução do endereço
+	falhe.
+
+
+**symbols:write_memory(espaço, endereço, dado, tamanho, apply_translation)**
+
+	Escreve um valor num determinado espaço de endereçamento. O tamanho
+	do acesso pode ter ``1``, ``2``, ``4`` ou ``8`` bytes. Caso o
+	argumento ``apply_translation`` seja verdadeiro, o endereço será
+	traduzido com a intensão de escrita do depurador. A função de
+	alteração da tabela dos símbolos da memória será invocada depois que
+	o valor for escrito. caso a tradução do endereço falhe, o valor não
+	será escrito e a função de alteração da tabela dos símbolos da
+	memória não será invocada.
 
 Propriedades
 ^^^^^^^^^^^^
