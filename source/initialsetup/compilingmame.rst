@@ -1732,10 +1732,10 @@ maneira que ele busque as bibliotecas que ele precisa para funcionar no
 sistema em vez de tê-las embutidas em si.
 
 Assim o executável **sdlmame.exe** busca pelas seguintes bibliotecas,
-``libgcc_s_seh-1.dll``, ``libstdc++-6.dll``, ``libwinpthread-1.dll`` e
-``SDL2.dll``, todas elas estão dentro do diretório de instalação do seu
-MSYS2 ( exemplo ``C:\msys64\mingw64\bin`` ), é possível adicionar este
-caminho nas variáveis de ambiente do Windows:
+``libgcc_s_seh-1.dll``, ``libstdc++-6.dll``, ``libwinpthread-1.dll``,
+``libgomp-1.dll`` e ``SDL2.dll``, todas elas estão dentro do diretório
+de instalação do seu MSYS2 ( exemplo ``C:\msys64\mingw64\bin`` ), é
+possível adicionar este caminho nas variáveis de ambiente do Windows:
 
 1.	Pressione a tecla com a bandeira do Windows ( ela é chamada
 	``WINKEY`` ) junto com a tecla ``Pause``.
@@ -1759,6 +1759,25 @@ MAME que fará com que este utilize a versão atualizada do arquivo
 **libstdc++-6.dll**. Caso não queira lidar com variáveis de ambiente,
 é possível também copiar as bibliotecas acima listadas para o diretório
 onde se encontra o seu SDL MAME.
+
+Outra maneira de corrigir o problema sem ter que alterar as variáveis de
+ambiente do Windows é copiar as seguintes DLLs para a mesma pasta do seu
+**sdlmame.exe**::
+
+	libgcc_s_seh-1.dll
+	libgomp-1.dll
+	libstdc++-6.dll
+	libwinpthread-1.dll
+	SDL2.dll
+	SDL2_ttf.dll
+
+Note que até a presente versão deste texto, estas são as DLLs que a
+a versão SDL do MAME pede, pode ser que num determinado momento o MAME
+possa pedir outras Dlls, e se for o caso de estar faltando alguma dll,
+o próprio Windows vai mostrar uma nova mensagem de erro dizendo qual a
+dll que está faltando ao rodar o **sdlmame.exe**, neste caso, vá até a
+pasta ``C:\msys64\mingw64\bin`` e copie a dll que falta para dentro da
+pasta do MAME.
 
 .. raw:: latex
 
