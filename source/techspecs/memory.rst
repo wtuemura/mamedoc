@@ -14,7 +14,7 @@ O subsistema da memória (``emumem`` e o ``addrmap``) combina várias
 funções úteis para a emulação do sistema:
 
 * a decodificação do barramento do endereço e o despacho com cache
-* as descrições estáticas de um mapa de endereçamento
+* as descrições estáticas de um espaço de endereçamento
 * a alocação da RAM e do registro para o registro do estado
 * a interação com as regiões da memória para acessar a rom
 
@@ -33,20 +33,20 @@ O Endereçamento
 Um espaço de endereçamento implementado na classe **address_space**,
 representa um barramento endereçável com vários sub-dispositivos em
 potenciais conectados que exigem uma decodificação. Possui várias linhas
-de dados (8, 16, 32 ou 64) chamada largura de dados, várias linhas de
-endereços (1 a 32) chamado largura de endereço e um **endianness**.
-Além disso uma mudança de endereço permite que barramentos que tenham
-uma granularidade atômica diferente de 1 byte.
+de dados (``8``, ``16``, ``32`` ou ``64``) chamada largura dos dados,
+várias linhas de endereços (``1`` a ``32``) chamado largura do endereço
+e um **endianness**. Além disso uma mudança de endereço permite que
+barramentos que tenham uma granularidade atômica diferente de 1 byte.
 
 Os objetos do espaço de endereço fornecem uma série de métodos para o
 acesso a leitura e a gravação, assim como uma segunda série de métodos
 para alterar dinamicamente a decodificação.
 
 
-Os mapas de endereçamento
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Os espaços de endereçamento
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Um mapa de endereçamento é uma descrição estática da decodificação
+Um espaço de endereçamento é uma descrição estática da decodificação
 prevista quando um barramento for utilizado. Ele se conecta à memória,
 a outros dispositivos e a outros métodos, geralmente é instalado na
 inicialização de um endereçamento. Esta descrição é armazenada numa
@@ -56,16 +56,16 @@ estrutura **address_map** que é preenchida programaticamente.
 As ações, os bancos e as regiões
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Os compartilhamentos da memória são zonas da memória que são alocadas e
-podem ser colocadas em vários lugares no mesmo espaço de endereço ou em
-um endereço diferente, eles também podem ser acessado de forma direta a
-partir dos dispositivos.
+Os compartilhamentos da memória são regiões da memória que são alocadas
+e podem ser colocadas em vários lugares no mesmo espaço de endereço ou
+em um endereço diferente, eles também podem ser acessado de forma direta
+a partir dos dispositivos.
 
-Os bancos de memória são zonas que acessam a memória de forma indireta
+Os bancos de memória são regiões que acessam a memória de forma indireta
 dando a possibilidade de se alterar de forma dinâmica e eficiente a zona
 de uma região específica.
 
-As regiões da memória são zonas da memória de somente leitura onde as
+As regiões da memória são regiões da memória de somente leitura onde as
 ROMs são carregadas.
 
 Todos eles têm nomes com permissão de acesso.
@@ -84,6 +84,11 @@ Os submapas intercambiáveis, também conhecidos como variantes, são
 nomeados através de um número inteiro. Uma indexação interna através de
 um mapa garante que qualquer valor inteiro possa ser usado.
 
+
+.. raw:: latex
+
+	\clearpage
+
 Os objetos da memória
 ---------------------
 
@@ -94,7 +99,7 @@ Compartilhamentos - memory_share
 
 	class memory_share {
 		const std::string &name() const;
-		void \*ptr() const;
+		void *ptr() const;
 		size_t bytes() const;
 		endianness_t endianness() const;
 		u8 bitwidth() const;
@@ -115,8 +120,8 @@ partir da classe do driver.
 	required_shared_ptr_array<uNN, count> m_share_ptr_array;
 	optional_shared_ptr_array<uNN, count> m_share_ptr_array;
 	
-	[device constructor] m_share_ptr(\*this, "name"),
-	[device constructor] m_share_ptr_array(\*this, "name%u", 0U),
+	[device constructor] m_share_ptr(*this, "name"),
+	[device constructor] m_share_ptr_array(*this, "name%u", 0U),
 
 No nível do dispositivo, um ponteiro para a zona de memória pode ser
 facilmente recuperada através da construção de um destes quatro
@@ -127,7 +132,7 @@ localizadores. Observe que como cada localizador chamando um
 
 	memory_share_creator<uNN> m_share;
 	
-	[device constructor] m_share(\*this, "name", size, endianness),
+	[device constructor] m_share(*this, "name", size, endianness),
 
 Um compartilhamento da memória pode ser criado caso ele não exista num
 mapa da memória através dessa classe de criação. Caso já exista basta
@@ -138,7 +143,7 @@ compartilhamento de informação ``bytes()``, ``endianness()``,
 
 ::
 
-	memory_share \*memshare(string tag) const;
+	memory_share *memshare(string tag) const;
 
 O método do dispositivo ``memshare`` recupera um compartilhamento da
 memória por nome.  Cuidado pois a pesquisa pode ser dispendiosa, em vez
@@ -153,14 +158,14 @@ Bancos - memory_bank
 
 ::
 
-	class memory_region {
-	const std::string &tag() const;
-	int entry() const;
-	void set_entry(int entrynum);
-	void configure_entry(int entrynum, void \*base);
-	void configure_entries(int startentry, int numentry, void \*base, offs_t stride);
-	void set_base(void \*base);
-	void \*base() const;
+	class memory_bank {
+		const std::string &tag() const;
+		int entry() const;
+		void set_entry(int entrynum);
+		void configure_entry(int entrynum, void *base);
+		void configure_entries(int startentry, int numentry, void *base, offs_t stride);
+		void set_base(void *base);
+		void *base() const;
 	};
 
 Um banco de memória é um desreferenciamento do nome da zona da memória
@@ -169,7 +174,7 @@ que pode ser mapeada nos espaços de endereçamento.  Ele aponta para
 relação entre um número da entrada e um ponteiro base. O
 ``configure_entries`` faz o mesmo através das diversas entradas
 consecutivas que abrangem uma zona da memória. Alternativamente o
-``set_base`` define a base para a entrada 0 e a seleciona.
+``set_base`` define a base para a entrada ``0`` e a seleciona.
 
 O ``set_entry`` permite selecionar de forma dinâmica e eficientemente
 a entrada ativa atual, o ``entry()`` obtém esta seleção de volta e
@@ -182,8 +187,8 @@ a entrada ativa atual, o ``entry()`` obtém esta seleção de volta e
 	required_memory_bank_array<count> m_bank_array;
 	optional_memory_bank_array<count> m_bank_array;
 	
-	[device constructor] m_bank(\*this, "name"),
-	[device constructor] m_bank_array(\*this, "name%u", 0U),
+	[device constructor] m_bank(*this, "name"),
+	[device constructor] m_bank_array(*this, "name%u", 0U),
 
 No nível do dispositivo, um ponteiro para o objeto do banco da memória
 pode ser facilmente recuperado ao construir um destes quatro
@@ -193,17 +198,17 @@ localizadores.
 
 	memory_bank_creator m_bank;
 	
-	[device constructor] m_bank(\*this, "name"),
+	[device constructor] m_bank(*this, "name"),
 
-Um compartilhamento da memória pode ser criado caso ele não exista num
-mapa da memória através dessa classe de criação. Caso já exista basta
-recupera-la.
+Um banco de memória pode ser criado caso ele não exista num mapa de
+memória através dessa classe de criação. Caso já exista basta
+recuperá-la.
 
 ::
 
-	memory_bank \*membank(string tag) const;
+	memory_bank *membank(string tag) const;
 
-O método do dispositivo ``memshare`` recupera um compartilhamento da
+O método do dispositivo ``membank`` recupera um compartilhamento da
 memória por nome.  Cuidado pois a pesquisa pode ser dispendiosa, em vez
 disso prefira os localizadores.
 
@@ -216,25 +221,25 @@ Regiões - memory_region
 
 ::
 
-	class memory_bank {
-	u8 \*base();
-	u8 \*end();
-	u32 bytes() const;
-	const std::string &name() const;
-	endianness_t endianness() const;
-	u8 bitwidth() const;
-	u8 bytewidth() const;
-	u8 &as_u8(offs_t offset = 0);
-	u16 &as_u16(offs_t offset = 0);
-	u32 &as_u32(offs_t offset = 0);
-	u64 &as_u64(offs_t offset = 0);
+	class memory_region {
+		u8 *base();
+		u8 *end();
+		u32 bytes() const;
+		const std::string &name() const;
+		endianness_t endianness() const;
+		u8 bitwidth() const;
+		u8 bytewidth() const;
+		u8 &as_u8(offs_t offset = 0);
+		u16 &as_u16(offs_t offset = 0);
+		u32 &as_u32(offs_t offset = 0);
+		u64 &as_u64(offs_t offset = 0);
 	}
 
 Uma região é usada para armazenar dados de somente leitura, como as ROMs
 ou o resultado das descriptografias fixadas. O seu conteúdo não são
 salvos, é por isso que eles não devem ser gravado a partir do sistema
 emulado. Eles na realidade não possuem uma largura intrínseca
-(``base()`` sempre retorna um u8 \*), que é histórico e praticamente
+(``base()`` sempre retorna um ``u8 *``), que é histórico e praticamente
 impossível de consertar neste ponto.  Os métodos ``as_*`` permitem
 acessá-los a partir de uma determinada largura.
 
@@ -245,8 +250,8 @@ acessá-los a partir de uma determinada largura.
 	required_memory_region_array<count> m_region_array;
 	optional_memory_region_array<count> m_region_array;
 	
-	[device constructor] m_region(\*this, "name"),
-	[device constructor] m_region_array(\*this, "name%u", 0U),
+	[device constructor] m_region(*this, "name"),
+	[device constructor] m_region_array(*this, "name%u", 0U),
 
 No nível do dispositivo, um ponteiro para o objeto da região da memória
 pode ser facilmente recuperado através da construção de um destes quatro
@@ -254,9 +259,9 @@ localizadores.
 
 ::
 
-	memory_region \*memregion(string tag) const;
+	memory_region *memregion(string tag) const;
 
-O método do dispositivo ``memshare`` recupera um compartilhamento da
+O método do dispositivo ``memregion`` recupera um compartilhamento da
 memória por nome. Cuidado pois a pesquisa pode ser dispendiosa, em vez
 disso prefira os localizadores.
 
@@ -295,15 +300,20 @@ selecionadas utilizando o método ``select`` ou a visualização pode ser
 desativada utilizando o método ``disable``. Uma visualização desativada
 pode ser reativada a qualquer momento.
 
+
+.. raw:: latex
+
+	\clearpage
+
 O API dos mapas de endereçamentos
 ---------------------------------
 
 A estrutura geral da API
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Um mapa de endereçamento é um método onde um dispositivo que preenche a
-estrutura de um **address_map** geralmente chamada de **mapa**, passada
-através de uma referência. O método então pode definir alguma
+Um espaço de endereçamento é um método onde um dispositivo que preenche
+a estrutura de um **address_map** geralmente chamada de **mapa**,
+passada através de uma referência. O método então pode definir alguma
 configuração global através de métodos específicos e em seguida,
 oferecer as entradas orientadas para o intervalo de endereços que
 indicam o que deve acontecer quando um intervalo específico for
@@ -547,7 +557,7 @@ intervalo corta o submapa caso seja necessário. Observe que os
 qualificadores do intervalo (definidos posteriormente) se aplicam.
 
 Atualmente, apenas manipuladores são permitidos nos submapas e não nas
-zonas da memória ou nos bancos.
+regiões da memória ou nos bancos.
 
 
 Os qualificadores de alcance
@@ -628,21 +638,21 @@ byte num barramento de 16-bits 68000 o hardware atual verifica apenas o
 word do endereço e não se o byte correto é acessado.  O ``cswidth``
 permite informar a memória do sistema para acionar o manipulador caso
 uma parte mais ampla do barramento seja acessada.
-O parâmetro é a largura do gatilho (seria 16 no caso do 68000).
+O parâmetro é a largura do gatilho (seria ``16`` no caso do 68000).
 
 
-A sinalização do usuário
+O sinalizador do usuário
 ''''''''''''''''''''''''
 
 ::
 
 	(...).flags(16-bits mask)
 
-Este parâmetro permite que o usuário defina as sinalizações no
+Este parâmetro permite que o usuário defina os sinalizadores no
 manipulador e que podem então ser recuperadas através do acesso de um
-dispositivo, alterando o seu comportamento.  Um exemplo da utilização do
-i960 que marca dessa maneira as zonas de risco (elas têm um suporte
-específico no nível de hardware).
+dispositivo, alterando o seu comportamento. Um exemplo da utilização do
+``i960`` que marca dessa maneira as regiões de risco (elas têm um
+suporte específico a nível de hardware).
 
 Configuração da visualização
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -854,12 +864,12 @@ A instalação do mapa do dispositivo
 
 	space.install_device(addrstart, addrend, device, map, *unitmask*, *cswidth*)
 
-Instala um endereço do dispositivo com um mapa de endereçamento num
+Instala um endereço do dispositivo com um espaço de endereçamento num
 determinado espaço. Os argumentos ``unitmask``, ``cswidth`` e ``flags``
 são opcionais.
 
-Instalação da visualização
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+A instalação da visualização
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -868,11 +878,11 @@ Instalação da visualização
 
 	view[0].install...
 
-Instala uma visualização num espaço. Isto só pode ser feito uma vez e
-em apenas um espaço e a visualização não deve ter sido configurada antes
-através da API do mapa de endereços. Uma vez instalada a visualização
-pode ser selecionada através de indexação para chamar um método de
-mapeamento dinâmico sobre ela.
+Instala uma visualização num determinado espaço. Isto só pode ser feito
+uma vez e em apenas um espaço e a visualização não deve ter sido
+configurada antes através da API do espaço de endereços. Uma vez
+instalada a visualização pode ser selecionada através de indexação para
+chamar um método de mapeamento dinâmico sobre ela.
 
 Uma visualização pode ser instalada numa variante de outra
 visualização sem problemas com a única restrição usual de uma única
