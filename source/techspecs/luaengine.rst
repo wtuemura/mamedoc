@@ -4,7 +4,7 @@
 
 .. _luaengine:
 
-Usando scripts LUA
+Usando scripts Lua
 ==================
 
 .. contents:: :local:
@@ -15,22 +15,23 @@ Usando scripts LUA
 Introdução
 ----------
 
-Agora é possível controlar o MAME externamente usando scripts LUA [1]_.
+Agora é possível controlar o MAME externamente usando scripts Lua [1]_.
 Essa funcionalidade apareceu inicialmente na versão **0.148**, quando o
-``luaengine`` foi implementado. Hoje em dia, a interface LUA é rica o
+``luaengine`` foi implementado. Hoje em dia, a interface Lua é rica o
 suficiente para manipular os estados dos dispositivos, acesso aos
 registros do CPU, ler e escrever a memória, desenhar um painel
 customizado na tela, etc.
 
-Internamente, o MAME faz o uso intensivo de ``luabridge`` para
-implementar esse recurso: a ideia é expor muitos dos recursos internos
-de forma mais transparente possível.
+Internamente, para implementar este recurso, o MAME faz o uso intensivo
+do `Sol3 <https://github.com/ThePhD/sol2>`_. A ideia é expor muitos dos
+recursos internos de forma mais transparente possível.
 
-Aqui fica o alerta: A API LUA ainda não é considerada estável havendo a
+Aqui fica o alerta: A API Lua ainda não é considerado estável, havendo a
 possibilidade de ser alterada sem nenhum aviso prévio. No entanto,
 podemos demonstrar metodologias onde é possível saber qual a versão do
-API está sendo rodada e quais os objetos são os mais usados durante a
-execução.
+API está sendo rodada e a maioria dos objetos suportados por tempo de
+execução que você pode utilizar.
+
 
 .. _luaengine-features:
 
@@ -38,46 +39,43 @@ Características
 ---------------
 
 Pelo fato da API estar incompleta, abaixo uma lista parcial de recursos
-disponíveis atualmente com os scripts LUA:
+disponíveis atualmente com os scripts Lua:
 
--  informação da sessão (versão do app, rom atual, descrição da rom)
--  controle da sessão (iniciar, pausar, resetar, parar)
--  ganchos dos eventos (pinta em cima do frame e nos eventos de usuário)
--  introspeção dos dispositivos (enumeração da árvore dos dispositivos,
-   memória e registros)
--  introspeção das telas (listagem de telas, descritivos, contagem dos
-   quadros)
--  desenho da sobreposição na tela (texto, linhas, caixas em
-   múltiplas telas)
--  leitura/escrita de memória (8/16/32/64 bits, signed e unsigned)
--  controle dos estados e dos registros (enumeração dos estados, obter e
-   definir)
+-  os metadados da máquina (versão do programa, o sistema emulado no momento, detalhes da ROM).
+-  controle da máquina (iniciar, pausar, redefinir, interromper).
+-  ganchos da máquina (pintura em cima do frame e nos eventos do usuário).
+-  introspeção dos dispositivos (enumeração da árvore dos dispositivos, memória e registros).
+-  introspeção das telas (listagem de telas, detalhes da tela, contagem dos quadros).
+-  desenho de sobreposição na tela (texto, linhas, caixas em diversas telas).
+-  leitura/escrita da memória (``8``, ``16``, ``32`` e ``64`` bits, *signed* e *unsigned*).
+-  controle dos estados e dos registros (enumeração dos estados, *get* e *set*).
 
 Várias classes estão documentadas na página
 :ref:`Lua class reference <luareference>`.
+
 
 .. _luaengine-usage:
 
 Utilização
 ----------
 
-O MAME suporta o carregamento de scripts LUA (>= 5.3), seja ele digitado
+O MAME suporta o carregamento de scripts Lua (>= 5.3), seja ele digitado
 no console interativo ou se for carregado como um arquivo externo. Para
-usar o console, rode o mame usando o comando ``-console`` ou ``-plugin
-console``, será apresentado ao prompt de comando com um ``[MAME]>``,
-onde será possível interagir o seu script Lua.
+usar o console, rode o MAME usando o comando ``-console`` ou ``-plugin
+console``, será mostrado um *prompt* de comando com um ``[MAME]>``
+onde é possível interagir e digitar o seu script.
 
 Use o comando ``-autoboot_script`` para carregar um script. Por
-predefinição o carregamento do script pode ser atrasado em alguns poucos
-segundos, essa predefinição pode ser substituída com o comando 
+predefinição, o carregamento do script pode ser atrasado em alguns
+poucos segundos, essa predefinição pode ser substituída com a opção 
 ``-autoboot_delay``.
 
 Para controlar a execução do seu código é possível usar uma abordagem do
 tipo *loop-bases* ou *event-based*. Não encorajamos o uso deste último
-devido ao alto consumo de recursos e faz a continuidade de controle
-desnecessariamente complicada. Em vez disso, sugerimos o registro de
-ganchos personalizados que poderão ser invocados num evento específico
-(como a cada renderização de quadro por exemplo).
+devido ao alto consumo de recursos e que faz o controle do fluxo de
+continuidade desnecessariamente complicado. Em vez disso, sugerimos o
+registro de ganchos personalizados que poderão ser invocados num evento
+específico (como a cada renderização do quadro por exemplo).
 
 Demonstração passo a passo
 --------------------------
@@ -135,7 +133,7 @@ no sistema; a maioria das máquinas arcade só tem uma tela principal.
 No nosso caso a única tela principal é marcada como ``:screen`` e
 podemos inspecioná-la mais a fundo::
 
-    [MAME]> -- vamos definir um atalho para a tela principal
+    [MAME]> -- mantendo a referência para a tela principal numa variável
     [MAME]> s = manager.machine.screens[":screen"]
     [MAME]> print(s.width .. "x" .. s.height)
     320x224
@@ -199,6 +197,6 @@ e o estado::
     [MAME]> print(mem:read_i8(0xc000))
     41
 
-.. [1]	Acesse o `site do projeto LUA
+.. [1]	Acesse o `site do projeto Lua
 		<https://www.lua.org/portugues.html>`_ para maiores informações.
 		(Nota do tradutor)
