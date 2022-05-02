@@ -661,8 +661,8 @@ Configurando o pacote MSYS2 já pronto
   renderizador de fontes, etc. Em vez disso, caso queira compilar
   o MAME usando o SDL (Simple DirectMedia Layer), adicione a
   opção ``OSD=sdl`` nas opções de compilação do make. É necessário que
-  seja instalado os pacotes de desenvolvimento do SDL no MSYS2 da
-  versão **2.0.3** ou mais recente.
+  seja instalado os pacotes de desenvolvimento do SDL 2 no MSYS2 da
+  versão **2.0.6** ou mais recente.
 
   Caso queira compilar uma verção SDL (Simple DirectMedia Layer) do MAME
   para Windows em vez da versão nativa, instale os pacotes SDL com o
@@ -996,8 +996,9 @@ Fedora Linux
 ~~~~~~~~~~~~
 
 Alguns pré-requisitos precisam ser atendidos na sua distro antes de
-continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
-problemas, certifique-se que a versão mais recente esteja instalada. ::
+continuar. As versões anteriores ao SDL 2 versão **2.0.6** não possuem a
+funcionalidade necessária, certifique-se que a versão mais recente
+esteja instalada::
 
 	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel pulseaudio-libs-devel llvm
 
@@ -1010,8 +1011,9 @@ Debian e Ubuntu (incluindo dispositivos Raspberry Pi e ODROID)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alguns pré-requisitos precisam ser atendidos na sua distro antes de
-continuar. As versões anteriores ao SDL *2 2.0.3* ou *2.0.4* tem
-problemas, certifique-se que a versão mais recente esteja instalada. ::
+continuar. As versões anteriores ao SDL 2 versão **2.0.6** não possuem a
+funcionalidade necessária, certifique-se que a versão mais recente
+esteja instalada::
 
 	sudo apt-get install git build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qtbase5-dev lld llvm
 
@@ -1042,8 +1044,11 @@ Apple macOS
 
 Alguns pré-requisitos são necessários. Certifique-se de estar no
 *macOS X 10.14 Mojave* ou mais recente para Intel Macs ou macOS 11.0 Big
-Sur para Apple Silicon. Será também necessário o **SDL 2.0.4** ou mais
-recente para Intel ou **SDL2 2.0.14** no Apple Silicon.
+Sur para Apple Silicon. Será também necessário o SDL2 **2.0.6** ou mais
+recente para Intel ou o **SDL2 2.0.14** no Apple Silicon. Será preciso
+também instalar o Python 3 - atualmente está incluso no *Xcode command
+line tools*, porém é possível instalá-lo de forma avulsa ou obtê-lo
+através do gerenciador de pacotes *Homebrew package manager*.
 
 *	Instale o **Xcode** encontrado no Mac App Store ou o
 	`ADC <https://developer.apple.com/download/more/>`_ (é preciso ter o
@@ -1070,12 +1075,13 @@ Em seguida, é preciso baixar e instalar o SDL 2.
 	e arraste o arquivo **SDL2.framework** na pasta **Frameworks**. Será
 	preciso se autenticado com a senha do seu usuário.
 
-Obtenha o Python 3 e configure:
+Caso ainda não tenha, obtenha o Python 3 e configure:
 
-* Vá até o `site oficial do Python <https://www.python.org/>`_, vá até a
-  página de download e baixe a versão
-  `Python 3.10.0 <https://www.python.org/downloads/release/python-3100/>`_
-  ou mais recente.
+* Vá até o site oficial do Python, navegue nos `downloads para o macOS
+  <https://www.python.org/downloads/macos/>`_, clique no link para fazer
+  o download do instalador para a última versão estável (até o momento
+  da atualização deste texto, seria o
+  `Python 3.10.4 <https://www.python.org/ftp/python/3.10.4/python-3.10.4-macos11.pkg>`_).
 * Role para baixo até a seção "Files" e baixe a versão do macOS
   (chamado “macOS 64-bit universal2 installer” ou similar).
 * Depois de baixado, execute e siga as instruções de instalação.
@@ -1138,8 +1144,8 @@ o **-j** para fazer o uso da compilação em *multithread*.
 		processador.
 		
 		Então *multithread* é a capacidade do processador e do sistema
-		operacional de organizar e processar as *threads* de forma
-		independente e simultânea.
+		operacional de organizar e processar diferentes processos de
+		forma independente e ao mesmo tempo.
 
 Quando a compilação atinge a fase da emcc, será exibido uma
 certa quantidade de mensagens de aviso do tipo *"unresolved symbol"*.
