@@ -43,6 +43,8 @@ Comandos gerais do depurador
         Grava uma captura da tela.
     :ref:`debugger-command-source`
         Faz a leitura dos comando a partir do arquivo e os executa individualmente.
+    :ref:`debugger-command-time`
+        Imprime o tempo atual da máquina no console
     :ref:`debugger-command-quit`
         Encerra o depurador e a emulação.
 
