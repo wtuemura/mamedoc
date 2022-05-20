@@ -55,7 +55,8 @@ estados.
 	Caso esteja usando o MAME com a opção ``-debug``, esta tecla
 	funciona como um ‘*break*’ na emulação.
 
-	Use as opções abaixo quando a opção estiver visível na tela:
+	É possível utilizar as teclas abaixo quando um controle deslizante
+	estiver visível na tela:
 
 	* :kbd:`Cima` - Seleciona o parâmetro anterior.
 	* :kbd:`Baixo` - Seleciona o próximo parâmetro.
@@ -139,8 +140,8 @@ Seta direcional :kbd:`direita`
     * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista.
     * :kbd:`Esquerda` / :kbd:`Direita` - Alterna a cor.
     * :kbd:`R` - Rotaciona os pedaços em 90 º sentido horário.
-    * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de peças por fila.
-    * :kbd:`0` - Restaura a quantidade das peças por fila.
+    * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir os blocos).
+    * :kbd:`0` - Restaura a quantidade das blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir os blocos).
     * :kbd:`Enter` - Alterna para o visualizador *tilemap*.
 
     **Modo Tilemap**:
