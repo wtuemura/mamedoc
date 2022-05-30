@@ -6,24 +6,30 @@ Comandos de execução do depurador
 .. line-block::
 
     :ref:`debugger-command-step`
-        Passo único para instruções <*quantidade*> (:kbd:`F11`).
+        Passo único para instruções <*quantidade*> ( :kbd:`F11` ).
     :ref:`debugger-command-over`
-        Passo único durante instruções <*quantidade*> (:kbd:`F10`).
+        Passo único durante instruções <*quantidade*> ( :kbd:`F10` ).
     :ref:`debugger-command-out`
         Passo único até que o manipulador atual da sub-rotina/execução
-        retorne (:kbd:`Shift`-:kbd:`F11`).
+        retorne ( :kbd:`Shift`-:kbd:`F11` ).
     :ref:`debugger-command-go`
-        |1| (:kbd:`F5`).
+        |1| ( :kbd:`F5` ).
+    :ref:`debugger-command-gbt`
+        |1| até que a próxima verdadeira ramificação seja executada.
+    :ref:`debugger-command-gbf`
+        |1| até que a próxima falsa ramificação seja executada.
     :ref:`debugger-command-gex`
         |1| até que a exceção seja criada.
     :ref:`debugger-command-gint`
-        |1| até que a interrupção seja obtida (:kbd:`F7`).
+        |1| até que a interrupção seja obtida ( :kbd:`F7` ).
+    :ref:`debugger-command-gni`
+        |1| até a próxima instrução mais adiante.
     :ref:`debugger-command-gtime`
         |1| até que o atraso determinado tenha decorrido.
     :ref:`debugger-command-gvblank`
-        Retoma a execução até o próximo |vbi| [#VBI]_ (:kbd:`F8`).
+        |1| até o próximo |vbi| [#VBI]_ ( :kbd:`F8` ).
     :ref:`debugger-command-next`
-        |1| até a próxima alternância da *CPU* (:kbd:`F6`).
+        |1| até a próxima alternância da *CPU* ( :kbd:`F6` ).
     :ref:`debugger-command-focus`
         Foca o depurador apenas na <*CPU*>.
     :ref:`debugger-command-ignore`
@@ -153,6 +159,70 @@ Exemplos:
 |ret| :ref:`debugger-execution-list`.
 
 
+.. _debugger-command-gbf:
+
+gbf
+---
+
+**gbf [<condição>]**
+
+Retoma a execução. O controle não será devolvido ao depurador até que um
+ponto de interrupção ou de controle seja acionado ou até que uma
+ramificação condicional ou uma instrução ignorada não seja tomada, após
+qualquer slot atrasado.
+
+O parâmetro opcional **<condição>** permite que você especifique uma
+expressão que será avaliada cada vez que uma ramificação condicional
+seja encontrada. Caso o resultado da expressão seja verdadeiro
+(não zero), a execução será interrompida se a ramificação não tiver sido
+tomada; caso contrário, a execução continuará sem qualquer notificação.
+
+Exemplos:
+
+.. line-block::
+
+    ``gbf``
+        |1| até que o ponto de interrupção/controle seja atingido ou até
+        a próxima ramificação falsa.
+    ``gbf {pc != 1234}``
+        |1| até que a próxima ramificação seja falsa, independente da
+        instrução no endereço ``1234``.
+
+|ret| :ref:`debugger-execution-list`
+
+
+.. _debugger-command-gbt:
+
+gbt
+---
+
+**gbt [<condição>]**
+
+Retoma a execução. O controle não será devolvido ao depurador até que um
+ponto de interrupção ou de controle seja acionado ou até que uma
+ramificação condicional ou uma instrução ignorada seja tomada, seguido
+de qualquer slot atrasado.
+
+O parâmetro opcional **<condição>** permite que você especifique uma
+expressão que será avaliada cada vez que uma ramificação condicional
+seja encontrada. Caso o resultado da expressão seja verdadeiro
+(não zero), a execução será interrompida após a ramificação ter sido
+tomada; caso contrário, a execução continuará sem qualquer notificação.
+
+Examplos:
+
+.. line-block::
+
+    ``gbt``
+        |1| até que o ponto de interrupção/controle seja atingido ou até
+        a próxima ramificação verdadeira.
+    ``gbt {pc != 1234}``
+        |1| até que a próxima ramificação seja verdadeira, independente
+        da instrução no endereço ``1234``.
+
+|ret| :ref:`debugger-execution-list`
+
+
 .. _debugger-command-gex:
 
 gex
@@ -208,6 +278,38 @@ Exemplos:
         |4| ou até que uma interrupção requeira que a linha 4 seja confirmada e reconhecida na *CPU* atual.
 
 |ret| :ref:`debugger-execution-list`.
+
+
+.. _debugger-command-gni:
+
+gni
+---
+
+**gni [<quantidade>]**
+
+Retoma a execução. O controle não será devolvido ao depurador até que um
+ponto de interrupção ou de controle seja acionado. Um ponto de
+interrupção temporário e incondicional é definido no endereço do
+programa **<quantidade>** atual, sendo passado de forma sequencial. Ele
+é automaticamente removido quando este ponto de interrupção é acionado.
+
+O parâmetro **<quantidade>** é opcional e retorna para o padrão ``1``
+quando nada for definido. O comando não faz nada caso **<quantidade>**
+seja definido como ``0``. O valor limite para **<quantidade>** é o
+decimal ``512``.
+
+Exemplos:
+
+    ``gni``
+        |1| até que o ponto de interrupção/controle seja atingido,
+        incluindo o ponto de interrupção temporário definido no endereço
+        da instrução seguinte.
+    ``gni 2``
+        |1| até que o ponto de interrupção/controle seja atingido. Um
+        ponto de interrupção é definido após duas instruções passarem da
+        atual.
+
+|ret| :ref:`debugger-execution-list`
 
 
 .. _debugger-command-gtime:
