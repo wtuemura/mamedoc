@@ -56,7 +56,7 @@ número da *CPU* no depurador:
 
 Quando uma etiqueta é iniciada com um circunflexo ``^`` ou ponto
 ``.``, ela é interpretada com relação a *CPU* |qevm|, caso contrário,
-ela é interpretada com relação ao dispositivo raiz da máquina. Quando um
+ela é interpretada com relação ao dispositivo raiz do sistema. Quando um
 argumento do dispositivo for ambíguo como uma etiqueta ou um número da
 *CPU*, ele será interpretado como uma etiqueta.
 
@@ -284,8 +284,8 @@ separar os diversos efeitos de um acesso de escrita, por exemplo:
   saída do MC68HC05 compara o registro com byte alto (*OCRH*) e impede a
   comparação até que a saída compare o registro com byte baixo (*OCRL*)
   seja escrita para evitar as condições de corrida. Como o depurador
-  pode escrever em ambos os locais ao mesmo tempo do ponto de vista da
-  máquina que está sendo emulada, assim no geral, a condição de corrida
+  pode escrever em ambos os locais ao mesmo tempo do ponto de vista do
+  sistema que está sendo emulado, assim no geral, a condição de corrida
   não é relevante. Ela é mais propensa a erros quando se pode
   acidentalmente definir seu estado oculto quando tudo o que se
   realmente deseja fazer é alterar o valor, assim ao escrever no *OCRH*
@@ -433,7 +433,7 @@ ajuda seja exibida diretamente na tela do depurador.
 .. |etq| replace:: com a etiqueta
 .. |ibz| replace:: num índice com base zero
 .. |neep| replace:: do endereçamento
-.. |ndrm| replace:: no dispositivo raiz da máquina
+.. |ndrm| replace:: no dispositivo raiz do sistema
 .. |dua| replace:: determina um acesso
 .. |sec| replace:: suprime os efeitos colaterais
 .. |delp| replace:: define um endereço lógico predefinido para a região
