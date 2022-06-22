@@ -34,7 +34,7 @@ funciona salvando o conteúdo da memória e depois filtrando os locais de
 acordo com a maneira que os valores se alteram.
 
 Demonstraremos o uso da funcionalidade da busca por uma trapaça de
-vida infinita para a máquina **Raiden** (``raiden``):
+vida infinita para o sistema **Raiden** (``raiden``):
 
 * Inicie o jogo com o depurador ativo (``mame raiden -window -debug``).
   Na **janela do depurador** pressione :kbd:`F5` para que o jogo rode e
