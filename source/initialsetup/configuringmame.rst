@@ -159,11 +159,11 @@ No Linux ou macOS::
 	rompath                   /media/genesis/roms
 
 Isso pode ser feito com qualquer outro sistema, basta identificar o
-driver, criar um arquivo ``*.ini`` com o nome do driver dentro da pasta
-``ini\sources``. Lembrando que caso o sistema que será executado utilize
-algum tipo de BIOS como o Neo Geo por exemplo, é preciso apontar o
-caminho completo onde se encontra a BIOS do sistema e o caminho completo
-das ROMS do sistema.
+driver, criar um arquivo ``*.ini`` com o nome do driver (sem o ``.cpp``)
+dentro da pasta ``ini\sources``. Lembrando que caso o sistema que será
+executado utilize algum tipo de BIOS como o Neo Geo por exemplo, é
+preciso apontar o caminho completo onde se encontra a BIOS do sistema e
+o caminho completo das ROMS do sistema.
 
 Se for o caso do Neo Geo, crie o arquivo ``ini\sources\neogeo.ini``,
 dentro do arquivo ``neogeo.ini`` adicione::
@@ -189,22 +189,24 @@ Configurando os gráficos
 A maneira mais simples de fazer a configuração gráfica do MAME é
 clicando duas vezes em seu executável ou o invocando através do terminal
 ou do prompt de comando sem qualquer opção, quando a interface aparecer,
-com o mouse dê um clique duplo em **Opções de configuração** e depois em
-**Opções do vídeo** e escolha uma das opções disponíveis, para mais
-detalhes consulte :ref:`-video <mame-commandline-video>`.
+com o mouse dê um clique duplo em :guilabel:`Definições gerais` e depois
+em :guilabel:`Opções do vídeo` e escolha uma das opções disponíveis em
+:guilabel:`Modo do vídeo`, para mais detalhes consulte
+:ref:`-video <mame-commandline-video>`.
 
-Se for possível prefira a opção **bgfx**, caso contrário **opengl** e em
-último caso **d3d**. O MAME ainda usa o Direct3D versão 9 porém do
-Windows 7 em diante o Direct 3D 9 não é mais compatível com as versões
-mais novas do Windows.
+Se for possível prefira a opção :guilabel:`bgfx`, caso contrário
+:guilabel:`opengl` e em último caso **d3d**. O MAME ainda usa o Direct3D
+versão 9 porém do Windows 7 em diante o Direct 3D 9 não é mais
+compatível com as versões mais novas do Windows.
 
-Para tirar proveito da aceleração da sua placa de vídeo, prefira usar a
-versão do Direct3D do bgfx, neste caso, abra o seu ``mame.ini``,
-localize a opção ``vídeo`` e troque ``auto`` por ``bgfx``, exemplo::
+Note que apesar de ser possível selecionar o modo do vídeo, para tirar
+proveito da aceleração da sua placa de vídeo, prefira usar a versão do
+Direct3D do bgfx, neste caso, abra o seu ``mame.ini``, localize a opção
+``vídeo`` e troque ``auto`` por ``bgfx``, exemplo::
 
 	video                     bgfx
 
-Agora procure a opção ``bgfx_backend`` e troque ``auto`` por ``d3d11``
+Agora, procure a opção ``bgfx_backend`` e troque ``auto`` por ``d3d11``
 ou ``d3d12`` caso a sua placa de vídeo seja compatível::
 
 	bgfx_backend              d3d12
@@ -215,20 +217,24 @@ própria interface do MAME, na linha de comando ou do prompt execute o
 
 As configurações que já vem definidas são suficientes para a grande
 maioria dos usuários, caso não queira que o MAME inicie ocupando a tela
-inteira por exemplo, altere a opção **Modo janela** para **Ligado**,
-depois faça um duplo clique em **Retorne ao menu anterior** e novamente
-em **Salve a configuração** para armazenar as alterações no
+inteira por exemplo, altere a opção :guilabel:`Modo janela` para
+:guilabel:`Ligado`, depois faça um duplo clique em
+:guilabel:`Retorne ao menu anterior` e novamente em
+:guilabel:`Salve a configuração` para armazenar as alterações no
 **mame.ini**.
 
 Tenha ciência que nada que seja feito aqui vai "quebrar" o MAME,
 contudo, pode ser que por alguma questão de incompatibilidade, o MAME
 não abra mais a interface, rode sem som, com tela preta ou algum outro
 tipo de problema. Neste caso, faça o backup dos seus arquivos
-``mame.ini``, ``ui.ini`` e ``plugins.ini``, crie uma nova configuração e
-tente novos ajustes, evite aqueles que causaram problemas.
+``mame.ini``, ``ui.ini`` e ``plugins.ini``, crie uma nova configuração
+com o comando ``mame -cc`` e tente novos ajustes, evite aqueles que
+causaram problemas. Para mais informações consulte
+:ref:`-createconfig <mame-commandline-createconfig>`.
 
 Para mais detalhes sobre todas as opções da parte da configuração do
-vídeo, consulte :ref:`mamemenu-config-video` para saber mais.
+vídeo, consulte :ref:`mamemenu-config-video`, :ref:`advanced-bgfx`
+para saber mais.
 
 .. _configuringmame-audio:
 
@@ -238,8 +244,8 @@ Configurando o áudio
 Assim como na configuração de vídeo, num primeiro momento, o MAME
 detecta e configura o áudio de forma automática para que funcione com o
 hardware existente. Porém é possível obter uma menor latência (atraso)
-no áudio e assim melhorar o seu desempenho, máquinas rítmicas como a
-**Dance Dance Revolution** e outras do tipo podem se beneficiar bastante
+no áudio e assim melhorar o seu desempenho, os sistemas como a **Dance
+Dance Revolution** e outras do tipo, podem se beneficiar bastante
 de uma latência menor.
 
 Para identificar a sua placa de som no MAME execute o comando
@@ -262,7 +268,7 @@ extras::
 Remova a opção ``pa_device`` caso queira deixar que a seleção seja
 automática. Salve o arquivo e rode novamente no terminal o comando
 ``mame ddrmax2 -v``, dentre as várias informações você deverá ver algo
-como mostra o exemplo abaixo para a minha máquina::
+como mostra o exemplo abaixo para o meu computador::
 
 	PortAudio: API ALSA has 13 devices
 	PortAudio: ALSA: "Xonar STX: Multichannel (hw:0,0)" (default)
@@ -284,13 +290,12 @@ como mostra o exemplo abaixo para a minha máquina::
 	PortAudio: Allowed additional buffering latency is 30.00 ms/1440 frames
 
 Experimente jogar uma partida e repare que houve uma melhora
-considerável no sincronismo do som com a ação na tela.
-
-Para obter o benefício de uma latência menor, o uso da placa de som se
-torna exclusiva para o MAME, ou seja, caso você goste de usar o MAME
-enquanto escuta música de fundo ou ouvir o som do Youtube, Spotify,
-Tidal ou qualquer outro site ou programa que use a placa de som, o áudio
-pode **não funcionar**.
+considerável no sincronismo do som com a ação na tela. Para obter o
+benefício de uma latência menor, o uso da placa de som se torna
+exclusiva para o MAME, ou seja, caso você goste de usar o MAME enquanto
+escuta música de fundo ou ouvir o som do Youtube, Spotify, Tidal ou
+qualquer outro site ou programa que use a placa de som, o áudio pode
+**não funcionar**.
 
 Neste caso altere a configuração do arquivo ``arcade.ini`` para::
 
@@ -298,11 +303,11 @@ Neste caso altere a configuração do arquivo ``arcade.ini`` para::
 	sound                   sdl
 	samplerate              44100
 
-Para manter o benefício do áudio com baixa latência para todas as
-máquinas do driver **ksys573** como a **Dance Dance Revolution**, entre
-no diretório  **ini** e crie o diretório **source**, dentro dele crie o
-arquivo ``ksys573.ini`` com as configurações de áudio usadas
-anteriormente::
+Para manter o benefício do áudio com baixa latência para todos os
+sistemas referentes ao driver **ksys573** como a **Dance Dance
+Revolution**, entre no diretório  **ini** e crie o diretório **source**,
+dentro dele crie o arquivo ``ksys573.ini`` com as configurações de áudio
+usadas anteriormente::
 
 	# Audio
 	sound                   portaudio
@@ -310,12 +315,12 @@ anteriormente::
 	pa_api                  ALSA
 	pa_device               "Xonar STX: Multichannel (hw:0,0)"
 
-Todas as máquinas que estão dentro da categoria "Arcade" agora passam a
+Todos os sistemas que estão dentro da categoria "Arcade" agora passam a
 usar a interface comum de áudio e que funciona junto com quaisquer
-outros programas ou serviços de áudio e só as máquinas do driver
+outros programas ou serviços de áudio e apenas os sistemas do driver
 **ksys573** passam a usar a configuração com baixa latência.
 O mesmo pode ser feito com outros drivers como a **djmain** que é
-responsável pelas máquinas da série **Beatmania** e **Pop'n Music**,
+responsável pelos sistemas da série **Beatmania** e **Pop'n Music**,
 lembrando que você pode identificar o nome do driver com o comando
 ``mame nome_da_rom -ls``, para mais informações consulte o comando
 :ref:`-listsource <mame-commandline-listsource>`.
@@ -330,32 +335,40 @@ Configurando os controles
 -------------------------
 
 O MAME aceita dois tipos de configuração para os controles, a primeira é
-a configuração feita através da interface, depois de iniciar um jogo
+a configuração feita através da interface, depois de iniciar um sistema
 qualquer como o "*Street Fighter II*" da Capcom ``mame sf2``, pressione
-**TAB -> Entrada (esta máquina)**:
+:kbd:`Tab` e selecione :guilabel:`Configurações da entrada` ->
+:guilabel:`Atribuições da entrada (este sistema)`:
 
 .. figure:: images/default-ctrl.png
-	:width: 80%
 	:align: center
 	:figclass: align-center
 	:alt: Controles predefinidos
 
-Aqui temos a configuração que já vem predefinida para está máquina, o
-**P1** são as definições para o jogador 1 e assim por diante. Selecione
-a configuração para **Up (cima)** e pressione **Del** no teclado para
-excluir a configuração, agora pressione **cima** no seu controle ou no
-manche do seu arcade e faça o mesmo para as outras posições. A sequência
-dos botões para o soco estão como **Jab Punch (soco fraco)**,
-**Strong Punch (soco médio)** e **Fierce Punch (soco forte)**. Para o
-chute nós temos **Short Kick (chute fraco)**,
-**Forward Kick (chute médio)** e **Roundhouse Kick (chute forte)**.
+Aqui temos a configuração que já vem predefinida para este sistema, o
+**P1** são as definições para o **jogador 1** e assim por diante.
+Selecione a configuração para **Up (cima)** e pressione :kbd:`Enter` no
+teclado e pressione **cima** no seu controle, manche ou joystick e faça
+o mesmo para as outras definições.
+
+A sequência dos botões de soco para este sistema estão organizados como:
+
+* :guilabel:`Jab Punch` (soco fraco)
+* :guilabel:`Strong Punch` (soco médio)
+* :guilabel:`Fierce Punch` (soco forte)
+
+Para o chute nós temos:
+
+* :guilabel:`Short Kick` (chute fraco)
+* :guilabel:`Forward Kick` (chute médio)
+* :guilabel:`Roundhouse Kick` (chute forte)
 
 No final, o nome para cada tipo de controle pode ficar um pouco
 diferente, isso pode variar muito dependendo do modelo e do adaptador
-usado, neste exemplo usando um adaptador USB para Playstation 2. A
-configuração usada neste controle é **quadrado (soco fraco)**,
-**L1 (soco médio)**, **triângulo (soco forte)**, **R1 (chute fraco)**,
-**xis (chute médio)**, **círculo (chute forte)**.
+usado. No exemplo da foto abaixo e usando um adaptador USB para
+Playstation 2 nós fizemos a seguinte configuração, **quadrado (soco
+fraco)**, **L1 (soco médio)**, **triângulo (soco forte)**, **R1 (chute
+fraco)**, **xis (chute médio)**, **círculo (chute forte)**.
 
 .. raw:: latex
 
@@ -364,7 +377,6 @@ configuração usada neste controle é **quadrado (soco fraco)**,
 Isso nos deixa com a seguinte configuração:
 
 .. figure:: images/new-ctrl.png
-	:width: 80%
 	:align: center
 	:figclass: align-center
 	:alt: Nova configuração
@@ -440,12 +452,12 @@ cria uma configuração com o nome desta ROM ``sf2.cfg`` na pasta ``cfg``:
 O MAME sempre vai procurar pela configuração ``sf2.cfg`` sempre que a
 ROM ``sf2`` for carregada.
 
-Porém, existem diferentes versões desta máquina em diferentes sistemas
-como CPS-1, CPS-2, CPS-3 e várias outras que usam um esquema semelhante
-de botões. Para evitar o trabalho de se criar uma configuração destas
-para cada máquina individualmente, é possível aplicar esta exata
-configuração **por sistema**, ou seja, todas as máquinas do sistema
-CPS-1 por exemplo, podem usar uma só configuração.
+Porém, existem diferentes versões deste sistema em diferentes drivers
+como o CPS-1, CPS-2, CPS-3 e várias outras que usam um esquema
+semelhante de botões. Para evitar o trabalho de se criar uma
+configuração destas para cada sistema individualmente, é possível
+aplicar esta exata configuração **por sistema**, ou seja, todas os
+sistemas do driver CPS-1 por exemplo, podem usar uma só configuração.
 
 Para isso, copie o arquivo ``sf2.cfg`` da pasta ``cfg`` para a pasta
 ``ctrlr``, esta pasta fica junto com o executável do MAME, caso o seu
@@ -465,40 +477,43 @@ troque o **sf2** da linha ``<system name="sf2">`` para **default** ou
 
 	\clearpage
 
-Para aplicar a configuração para **TODAS** as máquinas do sistema CPS-1,
-crie uma pasta chamada ``sources`` dentro da pasta ``ini``, dentro da
-pasta ``sources`` crie um arquivo chamado ``cps1.ini``, abra-o no
-editor de texto e adicione a opção::
+Para aplicar a configuração para **TODOS** os sistemas do driver CPS-1,
+crie uma pasta chamada chamada ``sources`` dentro da pasta ``ini``,
+dentro da pasta ``sources`` crie um arquivo chamado ``cps1.ini``, abra-o
+no editor de texto e adicione a opção::
 
 	ctrlr                 street
 
 Note que ``street`` se refere ao ``street.cfg`` que criamos
 **sem o .cfg**. Apague o seu arquivo ``sf2.cfg`` da pasta ``cfg`` e
-inicie novamente a máquina, novamente pressione **TAB -> Entrada
-(esta máquina)**, repare que o MAME carrega as configurações do seu
-controle. Encerre a emulação novamente, tente outra máquina como a
-``sf2ce``, repare que esta máquina também está usando as configurações
-do seu controle, o mesmo vai acontecer para todas as máquinas deste
-driver.
+inicie novamente o sistema, pressione :kbd:`Tab` e selecione
+:guilabel:`Configurações da entrada` ->
+:guilabel:`Atribuições da entrada (este sistema)`, repare que o MAME
+carregou as configurações do seu controle. Encerre a emulação novamente,
+tente outro sistema como a ``sf2ce``, repare que este sistema também
+vai estar usando as configurações que você definiu para o seu controle,
+o mesmo vai acontecer para todos os outros sistemas deste driver.
 
-Neste driver também há máquinas de tiro, pancadaria, dentre outros.
-Nestes casos é preciso criar uma configuração por máquina. Por exemplo,
-a máquina "*Carrier Air Wing (cawing)*" possuí 3 botões, é possível usar
-o mesmo tipo de configuração já ensinado anteriormente com
-**TAB -> Entrada (esta máquina)** em cada máquina ou pegar a
-configuração que for criada, neste caso seria ``cfg\cawing.cfg``,
-alterar o **system name** para **default** como também já foi explicado
-anteriormente, porém agora, salve este arquivo como ``3-botões.cfg``
-dentro da pasta ``ctrlr``.
+Neste driver também há sistemas de tiro, pancadaria, dentre outros.
+Nestes casos é preciso criar uma configuração por sistema. Por exemplo,
+o "*Carrier Air Wing (cawing)*" possuí 3 botões, é possível usar
+o mesmo tipo de configuração já ensinado anteriormente com :kbd:`Tab` ->
+:guilabel:`Configurações da entrada` ->
+:guilabel:`Atribuições da entrada (este sistema)` em cada sistema ou
+pegar a configuração que for criada, neste caso seria
+``cfg\cawing.cfg``, alterar o **system name** para **default** como
+também já foi explicado anteriormente, porém agora, salve este arquivo
+como ``3-botoes.cfg`` dentro da pasta ``ctrlr``.
 
 Vá até a pasta ``ini`` e crie um ini com o nome da ROM ou
 ``cawing.ini``, abra o arquivo num editor, adicione a opção e salve::
 
 	ctrlr                 3-botões
 
-Assim as outras máquinas usam a configuração ``street`` enquanto a
-``cawing`` usa a configuração com 3 botões. O mesmo princípio pode ser
-utilizado com máquinas com 2 botões e assim por diante.
+Assim os outros sistemas usam a configuração ``street`` para jogos com
+6 botões enquanto a ``cawing`` usa a configuração com 3 botões. O mesmo
+princípio pode ser utilizado com sistemas que usam 2 botões e assim por
+diante.
 
-Outras configurações também podem ser feitas, neste caso, consulte todo
-o capítulo :ref:`advanced-tricks`.
+Outras configurações também podem ser feitas, neste caso, consulte o
+capítulo :ref:`advanced-tricks`.

@@ -4,8 +4,8 @@
 
 .. _ctrlrcfg:
 
-Arquivos de configuração para controles
-=======================================
+Arquivos de configuração para os controles
+==========================================
 
 .. contents:: :local:
 
@@ -55,9 +55,10 @@ Estrutura básica
 
 A sua estrutura segue um formato similar ao formato usado pela
 configuração do sistema que o MAME usa para salvar coisas como as
-configurações da entrada e dados da contabilidade da máquina.
-Neste exemplo temos a estrutura geral de um arquivo de configuração de
-um controle:
+configurações da entrada e os dados da contabilidade da máquina (criado
+na pasta que for definido usando a opção
+:ref:`cfg_directory <mame-commandline-cfgdirectory>`). Neste exemplo
+temos a estrutura geral de um arquivo de configuração de um controle:
 
 .. code-block:: XML
 
@@ -149,8 +150,8 @@ O atributo ``origcode`` define o *token* para a entrada do host que será
 substituído, o atributo ``newcode`` define o *token* para a entrada do
 host que será substituído. Neste caso, são as atribuições que usa o
 cursor para cima, para baixo e as setas para a esquerda e para a
-direita, elas serão substituídas pelas teclas numéricas **8**, **2**,
-**4** e **6** do teclado numérico.
+direita, elas serão substituídas pelas teclas numéricas :kbd:`8`,
+:kbd:`2`, :kbd:`4` e :kbd:`6` do teclado numérico.
 
 Observe que as substituições indicadas usando os elementos ``remap``
 se aplicam apenas às entradas que usam a atribuição padrão do MAME para
