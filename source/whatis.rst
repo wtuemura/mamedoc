@@ -22,15 +22,15 @@ equipamento físico original. Com a evolução do desenvolvimento do MAME,
 programas e jogos que foram originalmente desenvolvidos para rodarem
 apenas no seu equipamento físico original, agora através da emulação é
 possível rodá-los novamente usando um PC moderno, sendo referência ao
-funcionamento interno das máquinas emuladas e um efeito colateral
+funcionamento interno dos sistemas emulados e um efeito colateral
 bem-vindo, este, porém não é o foco principal do projeto.
 
 Não é nossa intenção infringir quaisquer direitos autorais assim como as
 patentes dos softwares ou sistemas. O MAME e todo o seu código-fonte é
 de criação autoral, disponível gratuitamente. O emulador requer se
 utiliza das ROMs originais, CD, disco rígido e outras imagens em mídia
-usadas originalmente pelas máquinas ou pelos sistemas para operar e que
-devem ser providenciadas pelo usuário. Nenhuma parte do código fonte
+usadas originalmente pelos sistemas ou pelos drivers para operar e que
+devem ser providenciados pelo usuário. Nenhuma parte do código fonte
 original do sistema ou de qualquer outro software estão inclusos no
 executável do MAME.
 
