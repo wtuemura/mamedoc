@@ -72,8 +72,8 @@ quando precisar:
 Associando os mapas aos espaços
 -------------------------------
 
-A associação dos mapas aos espaços é feito no nível da configuração da
-máquina após a instanciação do dispositivo::
+A associação dos mapas aos espaços é feito no nível da configuração do
+sistema após a instanciação do dispositivo::
 
 	void set_addrmap(int spacenum, T &obj, Ret (U::*func)(Params...));
 	void set_addrmap(int spacenum, Ret (T::*func)(Params...));
@@ -89,7 +89,7 @@ função deve poder ser invocada como argumento através da referência de
 um objeto ``address_map``.
 
 Como exemplo aqui está o mapa de configuração do endereço do mapa para a
-CPU principal nas máquinas Hana Yayoi e na Hana Fubiki com todas as
+CPU principal nos sistemas Hana Yayoi e na Hana Fubiki com todas as
 distrações removidas::
 
 	class hnayayoi_state : public driver_device
