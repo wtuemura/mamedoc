@@ -288,11 +288,11 @@ Propriedades
 
 .. _luareference-core-mameman:
 
-Gerenciador da máquina do MAME
+Gerenciador do sistema do MAME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``mame_machine_manager`` do MAME que contém a
-máquina em execução, o gerenciador da IU e os outros componentes
+Encapsula a classe ``mame_machine_manager`` do MAME que contém o
+sistema em execução, o gerenciador da IU e os outros componentes
 globais.
 
 Instanciação
@@ -301,7 +301,7 @@ Instanciação
 
 **manager**
 
-	O gerenciador da máquina do MAME está disponível como uma variável
+	O gerenciador do sistema do MAME está disponível como uma variável
 	global no ambiente Lua.
 
 Propriedades
@@ -336,7 +336,7 @@ Propriedades
 
 .. _luareference-core-machine:
 
-A máquina em execução
+O sistema em execução
 ~~~~~~~~~~~~~~~~~~~~~
 
 Encapsula a classe ``running_machine`` do MAME que representa uma
@@ -350,7 +350,7 @@ Instanciação
 
 **manager.machine**
 
-	Obtém a instância da máquina em execução para a sessão de emulação
+	Obtém a instância do sistema em execução para a sessão de emulação
 	atual.
 
 Métodos
@@ -385,10 +385,10 @@ Métodos
 
 **machine:save(nome_do_arquivo)**
 
-	Agenda o salvamento do estado da máquina no arquivo informado. Caso
+	Agenda o salvamento do estado do sistema no arquivo informado. Caso
 	o nome do arquivo seja um caminho relativo, ele será considerado
 	relativo ao primeiro diretório do estado de salvamento configurado.
-	Este método retorna imediatamente antes que o estado da máquina seja
+	Este método retorna imediatamente antes que o estado do sistema seja
 	salvo. Caso este método seja chamado quando uma operação de salvar
 	ou de carregar já esteja pendente, a operação pendente anterior será
 	cancelada.
@@ -396,11 +396,11 @@ Métodos
 
 **machine:load(nome_do_arquivo)**
 
-	Agenda o carregamento do estado da máquina a partir do arquivo
+	Agenda o carregamento do estado do sistema a partir do arquivo
 	informado. Caso o nome do arquivo seja um caminho relativo, os
 	diretórios configurados para do estado de salvamento serão
-	pesquisados. Este método retorna imediatamente antes que o estado da
-	máquina seja salvo. Caso este método seja chamado quando uma
+	pesquisados. Este método retorna imediatamente antes que o estado do
+	sistema seja salvo. Caso este método seja chamado quando uma
 	operação de salvar ou de carregar já esteja pendente, a operação
 	pendente anterior será cancelada.
 
@@ -414,7 +414,7 @@ Métodos
 
 **machine:logerror(msg)**
 
-	Grava a mensagem no log de erros da máquina. Isso pode ser exibido
+	Grava a mensagem no log de erros do sistema. Isso pode ser exibido
 	numa janela do depurador, gravado num arquivo ou gravado na
 	saída de erro predefinida.
 
@@ -1090,8 +1090,8 @@ Propriedades
 **driver.rotation** |sole|
 
 	Uma *string* que indica a rotação aplicada a todas as telas no
-	sistema depois que a orientação da tela informada na configuração da
-	máquina seja aplicada.
+	sistema depois que a orientação da tela informada na configuração do
+	sistema seja aplicado.
 	Será um dos ``"rot0"``, ``"rot90"``, ``"rot180"`` ou ``"rot270"``.
 
 .. raw:: latex
@@ -1254,7 +1254,7 @@ O(1) caso o resultado seja colocado em cache, porém, a busca de um
 dispositivo sem cache é custosa. O método ``at`` tem complexidade O(n).
 
 Caso crie um enumerador dos dispositivos com um ponto de partida
-diferente do dispositivo da máquina principal, a entrega de uma tag
+diferente do dispositivo do sistema principal, a entrega de uma tag
 completa ou uma tag contendo as referências principais para o operador
 do índice pode fazer com que retorne um dispositivo que não seria
 descoberto pela iteração. Se você criar um enumerador dos dispositivos
@@ -1394,7 +1394,7 @@ Instanciação
 **manager.machine.devices[tag]**
 
 	Obtém um dispositivo através de uma tag com relação ao dispositivo
-	da máquina principal ou ``nil`` caso o dispositivo não exista.
+	do sistema principal ou ``nil`` caso o dispositivo não exista.
 
 
 **manager.machine.devices[tag]:subdevice(tag)**
@@ -1478,7 +1478,7 @@ Propriedades
 
 	O último componente da tag do dispositivo (Por exemplo, quando a sua
 	tag for relativa ao dispositivo principal) ou ``"root"`` para o
-	dispositivo raiz da máquina.
+	dispositivo raiz do sistema.
 
 
 **device.name** |sole|
@@ -1496,7 +1496,7 @@ Propriedades
 **device.owner** |sole|
 
 	A relação direta do dispositivo na árvore do dispositivo ou ``nil``
-	para o dispositivo raiz do dispositivo da máquina.
+	para o dispositivo raiz do dispositivo do sistema.
 
 
 **device.configured** |sole|
@@ -1544,7 +1544,7 @@ Instanciação
 **manager.machine.screens[tag]**
 
 	Obtém um dispositivo tela através da tag em relação ao dispositivo
-	da máquina raiz, ou ``nil`` caso o dispositivo não exista ou caso
+	do sistema raiz, ou ``nil`` caso o dispositivo não exista ou caso
 	não seja um dispositivo tela.
 
 Classes de base
@@ -1561,8 +1561,8 @@ Métodos
 	Retorna o ângulo de rotação em graus (será um de 0, 90, 180 ou 270),
 	ou se a tela está virada da esquerda para a direita e se está
 	invertida de cima para baixo. Essa é a orientação final da tela
-	depois que a orientação tenha sido definida na configuração da
-	máquina e a rotação tenha sido aplicada.
+	depois que a orientação tenha sido definida na configuração do
+	sistema e a rotação tenha sido aplicada.
 
 
 **screen:time_until_pos(v, [h])**
@@ -1824,7 +1824,7 @@ Instanciação
 **manager.machine.cassettes[tag]**
 
 	Obtém a imagem de um dispositivo cassete por tag em relação ao
-	dispositivo da máquina raiz ou ``nil`` caso o dispositivo não exista
+	dispositivo do sistema raiz ou ``nil`` caso o dispositivo não exista
 	ou caso não seja a imagem de um dispositivo cassete.
 
 Classes de base
@@ -1932,8 +1932,8 @@ Instanciação
 
 **manager.machine.images[tag]**
 
-	Obtém um dispositivo de imagem por tag em relação ao dispositivo da
-	máquina raiz, ou ``nil`` caso o dispositivo não exista ou caso não
+	Obtém um dispositivo de imagem por tag em relação ao dispositivo do
+	sistema raiz, ou ``nil`` caso o dispositivo não exista ou caso não
 	seja um dispositivo de imagem da mídia.
 
 Métodos
@@ -2126,7 +2126,7 @@ Instanciação
 **manager.machine.slots[tag]**
 
 	Obtém um dispositivo slot atavés da tag com relação ao dispositivo
-	da máquina raiz ou ``nil`` caso o dispositivo não exista ou caso não
+	do sistema raiz ou ``nil`` caso o dispositivo não exista ou caso não
 	seja um dispositivo slot.
 
 Propriedades
@@ -2136,7 +2136,7 @@ Propriedades
 **slot.fixed** |sole|
 
 	Um booleano que indica se este é um slot com um cartão informado
-	na configuração da máquina que não possa ser alterada pelo usuário.
+	na configuração do sistema que não possa ser alterado pelo usuário.
 
 
 **slot.has_selectable_options** |sole|
@@ -3074,8 +3074,8 @@ Instanciação
 
 **manager.machine:ioport()**
 
-	Obtém a instância do gerenciador global da porta de E/S para a
-	máquina emulada.
+	Obtém a instância do gerenciador global da porta de E/S para o
+	sistema emulado.
 
 Métodos
 ^^^^^^^
@@ -3206,8 +3206,8 @@ Instanciação
 
 **manager.machine.natkeyboard**
 
-	Obtém a instância do gerenciador do teclado natural global para a
-	máquina que está sendo emulada.
+	Obtém a instância do gerenciador do teclado natural global para o
+	sistema que está sendo emulado.
 
 Métodos
 ^^^^^^^
@@ -3215,15 +3215,15 @@ Métodos
 
 **natkeyboard:post(texto)**
 
-	Publique um texto literal na máquina emulada.  A máquina deve ter
+	Publique um texto literal no sistema emulado. O sistema deve ter
 	uma entrada de teclado com os caracteres vinculados e o dispositivo
 	correto da entrada do teclado deve estar ativado.
 
 
 **natkeyboard:post_coded(texto)**
 
-	Publique o texto na máquina que está sendo emulada. Códigos entre
-	chaves são interpretados no texto. A máquina deve ter as entradas do
+	Publique o texto no sistema que está sendo emulado. Códigos entre
+	chaves são interpretados no texto. O sistema deve ter as entradas do
 	teclado com os caracteres vinculados e o dispositivo correto da
 	entrada do teclado deve estar ativado.
 
@@ -3237,8 +3237,8 @@ Métodos
 
 **natkeyboard:paste()**
 
-	Publique o conteúdo da área de transferência do host na máquina
-	emulada. A máquina deve ter as entradas do teclado com caracteres
+	Publique o conteúdo da área de transferência do host no sistema
+	emulado. O sistema deve ter as entradas do teclado com caracteres
 	vinculados e o dispositivo correto da entrada do teclado deve estar
 	ativado.
 
@@ -3338,7 +3338,7 @@ Propriedades
 **keyboard.basetag** |sole|
 
 	O último componente da tag do dispositivo subjacente ou ``"root"``
-	para o dispositivo raiz da máquina.
+	para o dispositivo raiz do sistema.
 
 
 **keyboard.name** |sole|
@@ -3497,7 +3497,7 @@ Métodos
 
 	Define a :ref:`sequência de entrada <luareference-input-iptseq>`
 	para o tipo da sequência informada. Isso é usado para definir as
-	configurações da entrada por máquina.
+	configurações da entrada por sistema.
 	O tipo da sequência deve ser ``"standard"``, ``"increment"`` ou
 	``"decrement"``.
 
@@ -3506,7 +3506,7 @@ Métodos
 
 	Obtenha a :ref:`sequência de entrada <luareference-input-iptseq>`
 	configurada para o tipo da sequência informada. Isso obtém as
-	configurações da entrada por máquina.
+	configurações da entrada por sistema.
 	O tipo da sequência deve ser ``"standard"``, ``"increment"`` ou
 	``"decrement"``.
 
@@ -4323,7 +4323,7 @@ Instanciação
 **manager.machine.uiinput**
 
 	Obtém a instância do gerenciador da entrada global da IU para a
-	máquina.
+	sistema.
 
 Métodos
 ^^^^^^^
@@ -5005,8 +5005,8 @@ Métodos
 
 **layout:set_resolve_tags_callback(cb)**
 
-	Define uma função para realizar tarefas adicionais depois que a
-	máquina emulada tenha finalizado a sua inicialização, quando as tags
+	Define uma função para realizar tarefas adicionais depois que o
+	sistema emulado tenha finalizado a sua inicialização, quando as tags
 	nas visualizações do layout tenham sido resolvidas e os
 	manipuladores dos itens da visualização principal tenham sido
 	configurados. A função não deve aceitar nenhum argumento.
@@ -5020,7 +5020,7 @@ Propriedades
 **layout.device** |sole|
 
 	O dispositivo que fez com que o arquivo layout fosse carregado.
-	Normalmente o dispositivo raiz da máquina no caso dos layouts
+	Normalmente o dispositivo raiz do sistema no caso dos layouts
 	externos.
 
 
@@ -5141,7 +5141,7 @@ Propriedades
 	Exibe o nome da visualização.
 	Isso pode ser qualificado para indicar o dispositivo que causou o
 	carregamento do :ref:`arquivo layout <layfile>`, quando não for o
-	dispositivo raiz da máquina.
+	dispositivo raiz do sistema.
 
 
 **view.unqualified_name** |sole|
@@ -5486,10 +5486,10 @@ Instanciação
 ^^^^^^^^^^^^
 
 
-**emu.symbol_table(máquina)**
+**emu.symbol_table(sistema)**
 
 	Cria uma nova tabela de símbolos dentro do contexto de uma
-	determinada máquina,
+	determinado sistema,
 
 
 **emu.symbol_table(parent, [dispositivo])**
