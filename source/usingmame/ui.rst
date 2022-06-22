@@ -182,8 +182,8 @@ selecione :guilabel:`Configurações` do menu de seleção do sistema, em
 seguida, selecione :guilabel:`Todas as entradas` e a partir daí,
 selecione uma categoria.
 
-Para atribuir entradas na máquina em funcionamento, selecione no menu
-principal a opção :guilabel:`Entrada (Esta máquina)` durante a emulação.
+Para atribuir entradas no sistema em funcionamento, selecione no menu
+principal a opção :guilabel:`Entrada (este sistema)` durante a emulação.
 As entradas estão agrupadas por dispositivo e ordenadas por tipo. É
 possível mover entre os dispositivos com o próximo grupo e as
 teclas/botões do grupo anterior usando as teclas :kbd:`[` e :kbd:`]`.
@@ -293,21 +293,21 @@ Cada entrada analógica emulada possui três configurações de atribuição:
 * Use a configuração do *axis setting* (ajuste do eixo) para atribuir um
   eixo analógico como controle de uma entrada analógica. As
   configurações do eixo utiliza o nome da entrada com o sufixo "Analog"
-  (Analógico). O ajuste do eixo para o volante na máquina *Ridge Racer*
+  (Analógico). O ajuste do eixo para o volante no sistema *Ridge Racer*
   por exemplo, é chamado de :guilabel:`Steering Wheel Analog`.
 * Use o :guilabel:`increment setting` para atribuir à entrada (ou na
   combinação delas) o aumento do seu valor. A configuração para este
   incremento utiliza o nome :guilabel:`Analog Inc`. Por exemplo, a
-  configuração de incremento no volante da máquina *Ridge Racer* se
+  configuração de incremento no volante do sistema *Ridge Racer* se
   chama :guilabel:`Steering Wheel Analog Inc`. Esta é a entrada digital
-  para esta máquina, caso um eixo analógico seja atribuído à ela, o MAME
+  para este sistema, caso um eixo analógico seja atribuído à ele, o MAME
   não vai incrementar o valor emulado numa velocidade proporcional.
 * Use o :guilabel:`decrement setting` para atribuir à entrada (ou na
   combinação delas) a redução do seu valor. A configuração para este
   incremento utiliza o nome :guilabel:`Analog Dec`. Por exemplo, a
-  configuração de incremento no volante da máquina *Ridge Racer* se
+  configuração de incremento no volante do sistema *Ridge Racer* se
   chama :guilabel:`Steering Wheel Analog Dec`. Esta é a entrada digital
-  para esta máquina, caso um eixo analógico seja atribuído a ela, o MAME
+  para este sistema, caso um eixo analógico seja atribuído a ele, o MAME
   não vai incrementar o valor emulado numa velocidade proporcional.
 
 Os ajustes de aumento e de redução são muito mais úteis para controlar
@@ -327,7 +327,7 @@ Wheel Analog Dec` ao eixo X do mesmo analógico.
 entrada analógica emulada. Quando diversos eixos são atribuídos num
 ajuste do eixo, eles são adicionados juntos, porém os controles de
 posição absoluta anularão os controles de posição relativa. Por exemplo,
-suponha que para a máquina **Arkanoid** você atribua o ajuste do eixo 
+suponha que para o sistema **Arkanoid** você atribua o ajuste do eixo 
 guilabel:`Dial Analog` ao :guilabel:`Mouse X` ou :guilabel:`Joy 1 LSX`
 ou :guilabel:`Joy 1 RSX` ao mouse num controle estilo Xbox. Será
 possível controlar a palheta com o mouse ou com o eixo analógico,
@@ -342,7 +342,7 @@ permite a atribuição do alcance total de um eixo ou o alcance de um lado
 da posição neutra (*meio eixo*) ao ajuste de um eixo. A atribuição de um
 "meio eixo" é usada normalmente nos pedais ou nas outras entradas
 absolutas onde a posição neutra está numa extremidade do alcance da
-faixa de entrada. Vamos supor que para a máquina **Ridge Racer** você
+faixa de entrada. Vamos supor que para o sistema **Ridge Racer** você
 atribua o ajuste analógico do pedal de freio à parte de um eixo vertical
 do joystick abaixo da posição neutra. Caso controle esteja na posição
 neutra na vertical ou acima dela, o pedal do freio será liberado; já se
@@ -468,7 +468,7 @@ Ao iniciar o MAME sem definir um sistema na linha de comando, será
 mostrado o menu para a seleção de sistemas (assumindo que a opção
 :ref:`-ui <mame-commandline-ui>` esteja definido como ``cabinet``).
 O menu para a seleção de sistemas também será exibido caso você
-escolha :guilabel:`Selecione uma nova máquina` no menu principal
+escolha :guilabel:`Selecione um novo sistema` no menu principal
 durante a emulação. A seleção de um sistema que usa listas de programas
 mostra um menu de seleção semelhante.
 
@@ -604,7 +604,7 @@ O menu de seleção simplificada do sistema
 -----------------------------------------
 
 Caso inicie o MAME sem especificar um sistema na linha de comando (ou
-caso escolha :guilabel:`Selecione uma nova máquina` durante a emulação)
+caso escolha :guilabel:`Selecione um novo sistema` durante a emulação)
 com a opção :ref:`-ui <mame-commandline-ui>` definida como ``simple``,
 a seleção simplificada do sistema será mostrada. A seleção simplificada
 exibe 15 sistemas selecionados aleatoriamente desde que possuam as suas
