@@ -98,6 +98,6 @@ mesmo, ou procurando por eles na internet por sua conta e risco.
 O MAME não fornece, disponibiliza ou vem acompanhado com nenhum deles
 justamente pelo fato destes conteúdos estarem protegidos por leis de
 direitos autorais. Caso tenha interesse em encontrar algum software que
-rode numa das máquinas já emuladas, lembre-se, o Google e outros sites
+rode numa dos sistema já emulados, lembre-se, o Google e outros sites
 de pesquisa são os seus melhores amigos.
 
