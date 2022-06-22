@@ -211,7 +211,7 @@ etiquetas passadas ao objeto em construção.
 	\clearpage
 
 A ramificação dos dispositivos são instanciados na função do membro de
-configuração da máquina do dispositivo:
+configuração do sistema do dispositivo:
 
 .. code-block:: C++
 
@@ -228,12 +228,12 @@ Os localizadores são passados para os tipos dos dispositivos para
 fornecer as etiquetas ao instanciar os dispositivos herdados. Depois de
 instanciar um dispositivo ramificado desta forma, o objeto pode ser
 utilizado como um ponteiro para o dispositivo até o final da
-configuração da função do membro de configuração da máquina. Observe que
+configuração da função do membro de configuração do sistema. Observe que
 para usar um localizador como este, o seu dispositivo base
 deve ser o mesmo que o dispositivo que está sendo configurado (o
-ponteiro ``this`` da função do membro de configuração da máquina).
+ponteiro ``this`` da função do membro de configuração do sistema).
 
-Após a inicialização da máquina emulada os localizadores podem ser
+Após a inicialização do sistema emulado, os localizadores podem ser
 usados da mesma maneira que os ponteiros:
 
 .. code-block:: C++
@@ -338,7 +338,7 @@ Há suporte para três coisas:
 * Para os localizadores dos dispositivos, uma referência para uma
   instância do tipo de dispositivo do destino, definindo o alvo para
   este dispositivo. Observe que não irá funcionar caso o dispositivo
-  seja posteriormente substituído na configuração da máquina. Em geral
+  seja posteriormente substituído na configuração do sistema. Em geral
   é mais utilizado com ``*this``.
 
 O construtor adicional que define a configuração inicial delega para o
@@ -793,7 +793,7 @@ a base do dispositivo e a etiqueta relativa a ele. Já o segundo
 formulário configura a etiqueta relativa como também configura de forma
 implícita a base do dispositivo que atualmente está sendo configurado,
 este formulário só deve ser invocado a partir das funções de
-configuração da máquina. O terceiro formulário configura a base do
+configuração do sistema. O terceiro formulário configura a base do
 objeto base e a etiqueta relacionada para o alvo atual de um outro
 localizador de objetos.
 
