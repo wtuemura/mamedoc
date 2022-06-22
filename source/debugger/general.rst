@@ -44,7 +44,7 @@ Comandos gerais do depurador
     :ref:`debugger-command-source`
         Faz a leitura dos comando a partir do arquivo e os executa individualmente.
     :ref:`debugger-command-time`
-        Imprime o tempo atual do sistema no console
+        Imprime o tempo atual do sistema no console.
     :ref:`debugger-command-quit`
         Encerra o depurador e a emulação.
 
@@ -579,6 +579,23 @@ Exemplo:
 
     ``source break_and_trace.cmd``
         Carrega e executa os comandos do depurador a partir do arquivo ``break_and_trace.cmd``.
+
+|ret| :ref:`debugger-general-list`.
+
+
+.. _debugger-command-time:
+
+time
+----
+
+Imprime o tempo total decorrido da emulação no console do depurador.
+
+Exemplos:
+
+.. line-block::
+
+    ``time``
+        Imprime o tempo decorrido da emulação.
 
 |ret| :ref:`debugger-general-list`.
 
