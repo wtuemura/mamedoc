@@ -884,7 +884,7 @@ Crazy Monkey
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos enquanto o
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos enquanto o
 	  contador regride. Ao concluir saia da tela de serviço com :kbd:`F2` e
 	  reinicie com :kbd:`F3`.
 
@@ -1336,7 +1336,7 @@ Fruit Cocktail
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos enquanto
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos enquanto
 	  o contador regride. Ao concluir saia da tela de serviço com :kbd:`F2`
 	  e reinicie com :kbd:`F3`.
 
@@ -1398,7 +1398,7 @@ Garage
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos enquanto o
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos enquanto o
 	  contador regride. Ao concluir saia da tela de serviço com :kbd:`F2` e
 	  reinicie com :kbd:`F3`.
 
@@ -1612,10 +1612,10 @@ sempre acionado, é necessário calibrar os controles!**
 	* **Analog Shifter** (Câmbio de marchas mecânico/analógico): Este
 	  tipo de câmbio é encontrado em algumas versões de gabinete não
 	  compactos. É mapeado para o joystick analógico do Player 2 no eixo
-	  X/Y que é predefinido nas teclas **R**, **F**, :kbd:`D`, **G**.
+	  X/Y que é predefinido nas teclas :kbd:`R`, :kbd:`F`, :kbd:`D`, :kbd:`G`.
 	* **Digital Shifter** (Câmbio de marchas digital): Este tipo de
 	  câmbio é encontrada nas versões compactas do gabinete. É mapeado
-	  para os botões :kbd:`2`, :kbd:`3`, :kbd:`4` e **5** do Player 1. A
+	  para os botões :kbd:`2`, :kbd:`3`, :kbd:`4` e :kbd:`5` do Player 1. A
 	  primeira marcha é o botão :kbd:`2` (padrão: :kbd:`Alt` esquerdo),
 	  a segunda marcha é o botão :kbd:`3` (padrão: :kbd:`Espaço`), a
 	  terceira marcha é o botão :kbd:`4` (padrão: :kbd:`Shift`
@@ -1640,11 +1640,11 @@ usando um teclado.
 	   pressionado :kbd:`1`.
 	4. Engate a primeira marcha, vire a ignição pressionando :kbd:`1`.
 	   Ainda com a primeira engatada como mostra o canto superior
-	   esquerdo, mantenha pressionado as teclas :kbd:`D` e **R** por 5
+	   esquerdo, mantenha pressionado as teclas :kbd:`D` e :kbd:`R` por 5
 	   segundos, ainda com as teclas pressionadas, pressione :kbd:`1`.
 	5. Engate a quarta marcha, vire a ignição pressionando :kbd:`1`.
 	   Como a quarta marcha está no canto inferior direito, mantenha
-	   pressionado as teclas **F** e **G** por 10 segundos, ainda com as
+	   pressionado as teclas :kbd:`F` e :kbd:`G` por 10 segundos, ainda com as
 	   teclas pressionadas, pressione :kbd:`1`.
 	6. Mova o assento todo para frente e pressione :kbd:`1`. O feedback
 	   do acento ainda não é emulado pelo MAME então pressione :kbd:`1`.
@@ -1654,9 +1654,9 @@ usando um teclado.
 	   até que apareça **New max 4064** e não pressione :kbd:`1` antes
 	   do tempo ou será necessário refazer tudo novamente.
 	9. Pise firmemente uma vez no freio e solte, faça este procedimento
-	   pressionando e segurando por 3 segundos a tecla **ALT ESQUERDA**,
-	   depois solte. Se tudo der certo, deverá aparecer **Range 4096** e
-	   em seguida o jogo deve continuar.
+	   pressionando e segurando por 3 segundos a tecla :kbd:`Alt`
+	   :kbd:`Esquerdo`, depois solte. Se tudo der certo, deverá aparecer
+	   **Range 4096** e em seguida o jogo deve continuar.
 
 	  Não foi tão difícil assim, foi?
 
@@ -1711,7 +1711,7 @@ Island / Island 2
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos
 	  enquanto o contador regride. Ao concluir saia da tela serviço com
 	  :kbd:`F2` e reinicie com :kbd:`F3`.
 
@@ -1861,7 +1861,7 @@ Keks
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos
 	  enquanto o contador regride. Ao concluir saia da tela de serviço
 	  com :kbd:`F2` e reinicie com :kbd:`F3`.
 
@@ -1916,7 +1916,7 @@ Keyboardmania 2nd Mix
 	  e para cima com a tecla :kbd:`1`, selecione pressionando ambas as
 	  teclas :kbd:`1` e :kbd:`2`. Vá até **SOUND CHECK**, selecione
 	  **INITIALIZE SOUND FLASH**, selecione **YES**, confirme e
-	  pressione :kbd`1` + :kbd:`2`, aguarde até que a tela retorne para
+	  pressione :kbd:`1` + :kbd:`2`, aguarde até que a tela retorne para
 	  o menu anterior, selecione **EXIT**.
 
 	  Segure SHIFT e pressione F3 para concluir.
@@ -1933,10 +1933,10 @@ Keyboardmania 3rd Mix
 	  e para cima com a tecla :kbd:`1`, selecione pressionando ambas as
 	  teclas :kbd:`1` e :kbd:`2`. Vá até **SOUND OPTIONS**, selecione
 	  **INITIALIZE SOUND FLASH**, selecione **YES**, confirme e
-	  pressione :kbd`1` + :kbd:`2`, aguarde até que a tela retorne para
+	  pressione :kbd:`1` + :kbd:`2`, aguarde até que a tela retorne para
 	  o menu anterior, selecione **EXIT**. Retorne ao menu principal,
 	  selecione **ALL FACTORY SETTINGS**, selecione **YES**, confirme e
-	  pressione :kbd`1` + :kbd:`2`.
+	  pressione :kbd:`1` + :kbd:`2`.
 
 	  Segure SHIFT e pressione F3 para concluir.
 
@@ -2143,7 +2143,7 @@ Lucky Haunter
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos
 	  enquanto o contador regride. Ao concluir saia da tela de serviço
 	  com :kbd:`F2` e reinicie com :kbd:`F3`.
 
@@ -2402,7 +2402,7 @@ Multi Fish
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos
 	  enquanto o contador regride. Ao concluir saia da tela de serviço
 	  com :kbd:`F2` e reinicie com :kbd:`F3`.
 
@@ -2586,7 +2586,7 @@ Pirate
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos
 	  enquanto o contador regride. Ao concluir saia da tela de serviço
 	  com :kbd:`F2` e reinicie com :kbd:`F3`.
 
@@ -3184,7 +3184,7 @@ Resident
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos
 	  enquanto o contador regride. Ao concluir saia da tela de serviço
 	  com :kbd:`F2` e reinicie com :kbd:`F3`.
 
@@ -3260,7 +3260,7 @@ Rock Climber (rclimb_3)
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos
 	  enquanto o contador regride. Ao concluir saia da tela de serviço
 	  com :kbd:`F2` e reinicie com :kbd:`F3`.
 
@@ -3743,7 +3743,7 @@ Sweet Life
 
 	  Para inicializar o sistema, ative o modo de serviço com :kbd:`F2`
 	  e pressione :kbd:`F3`. Mova o ponteiro até **INIT** com :kbd:`C` e
-	  pressione :kbd:`1`. Mantenha **Z (Cancel)** por 5 segundos
+	  pressione :kbd:`1`. Mantenha :kbd:`Z` **(Cancel)** por 5 segundos
 	  enquanto o contador regride. Ao concluir saia da tela de serviço
 	  com :kbd:`F2` e reinicie com :kbd:`F3`.
 
