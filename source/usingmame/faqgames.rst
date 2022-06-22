@@ -948,7 +948,7 @@ Cyber Cycles
 	  corretamente. Mantenha a tecla de serviço :kbd:`9` pressionada e
 	  pressione :kbd:`F2` até ver a frase **INITIALIZING** ou
 	  **INITIALIZED** na tela, em seguida pressione :kbd:`F2` e encerre
-	  o sistema pressionando :kbd:`Esq` para ter absoluta certeza que a
+	  o sistema pressionando :kbd:`Esc` para ter absoluta certeza que a
 	  calibração tenha sido gravada corretamente.
 
 .. _faqgames-cybsled:
@@ -960,7 +960,7 @@ Cyber Sled
 	  reinicie, pressione :kbd:`0` para chamar a tela de serviço, segure a
 	  tecla :kbd:`9` e dê um toque em :kbd:`F3`. Uma tela com a frase **Volume
 	  Adjust** deverá aparecer. Desligue a chave **DSW2**, pressione
-	  :kbd:`0` e encerre o sistema pressionando :kbd:`Esq`. Agora os controles
+	  :kbd:`0` e encerre o sistema pressionando :kbd:`Esc`. Agora os controles
 	  devem estar alinhados automaticamente permitindo a movimentação
 	  correta no jogo e nos menus de serviço.
 
@@ -1478,7 +1478,7 @@ Série Golden Tee Fore!
 	  Pressione :kbd:`F2` para entrar na tela de serviço, selecione
 	  **Volume Adjustment** e aumente o nível de som conforme o seu
 	  gosto, pressione :kbd:`F2` para sair da tela de serviço. Desde que o
-	  MAME seja encerrado da forma correta (pressionando :kbd:`Esq`) as
+	  MAME seja encerrado da forma correta (pressionando :kbd:`Esc`) as
 	  configurações de volume de som serão mantidas na memória NVRAM e
 	  será utilizada posteriormente.
 
@@ -4255,18 +4255,18 @@ Virtua Racing
 	  já está aí e altere a cor do veículo, caso contrário todos serão
 	  vermelhos. A opção ``-wdog 10`` serve para encerrar o MAME caso
 	  ele trave. Salve, ao retornar para a tela de configuração
-	  pressione :kbd:`Esq`.
+	  pressione :kbd:`Esc`.
 
 	  Para configurar o sistema **slave** (player 2) faça o mesmo, porém
 	  na linha de comando troque o **nvram1** por **nvram2**, em
 	  **Link ID** defina como **Slave** e não se esqueça de alterar a
 	  cor do carro. Salve, ao retornar para a tela de configuração
-	  pressione :kbd:`Esq`.
+	  pressione :kbd:`Esc`.
 
 	  Para configurar o sistema **live monitor** faça o mesmo, porém
 	  na linha de comando troque o **nvram2** por **nvram3**, em
 	  **Link ID** defina como **Live**. Salve, ao retornar para a tela
-	  de configuração pressione :kbd:`Esq`.
+	  de configuração pressione :kbd:`Esc`.
 
 	  No Windows, abra o seu editor de texto preferido e cole as linhas
 	  abaixo: ::
