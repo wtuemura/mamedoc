@@ -41,9 +41,9 @@ Características
 Pelo fato da API estar incompleta, abaixo uma lista parcial de recursos
 disponíveis atualmente com os scripts Lua:
 
--  os metadados da máquina (versão do programa, o sistema emulado no momento, detalhes da ROM).
--  controle da máquina (iniciar, pausar, redefinir, interromper).
--  ganchos da máquina (pintura em cima do frame e nos eventos do usuário).
+-  os metadados do sistema (versão do programa, o sistema emulado no momento, detalhes da ROM).
+-  controle do sistema (iniciar, pausar, redefinir, interromper).
+-  ganchos do sistema (pintura em cima do frame e nos eventos do usuário).
 -  introspeção dos dispositivos (enumeração da árvore dos dispositivos, memória e registros).
 -  introspeção das telas (listagem de telas, detalhes da tela, contagem dos quadros).
 -  desenho de sobreposição na tela (texto, linhas, caixas em diversas telas).
@@ -129,7 +129,7 @@ Primeiro, vamos enumerar as telas disponíveis::
 O ``manager.machine`` é o objeto da :ref:`luareference-core-machine`
 para a sua sessão atual da emulação. Será usada com bastante frequência.
 O **screens** são :ref:`luareference-dev-enum` que produz todas as telas
-no sistema; a maioria das máquinas arcade só tem uma tela principal.
+no sistema; a maioria dos sistemas arcade só tem uma tela principal.
 No nosso caso a única tela principal é marcada como ``:screen`` e
 podemos inspecioná-la mais a fundo::
 
@@ -159,7 +159,7 @@ Todas as cores são no formato ARGB (8 bit por canal), enquanto a origem
 da tela geralmente corresponde ao canto superior esquerdo da tela (0,0).
 
 Da mesma forma para telas, é possível inspecionar todos os dispositivos
-conectados numa máquina::
+conectados num sistema::
 
     [MAME]> for tag, device in pairs(manager.machine.devices) do print(tag) end
     :audiocpu
