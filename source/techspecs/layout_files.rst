@@ -324,7 +324,7 @@ Parâmetros já predefinidos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Uma certa quantidade de valores predefinidos nos parâmetros já estão
-disponíveis e fornecem informações sobre a máquina que está em execução:
+disponíveis e fornecem informações sobre o sistema que está em execução:
 
 **devicetag**
 
@@ -491,7 +491,7 @@ disponíveis e fornecem informações sobre a máquina que está em execução:
 
 
 Para parâmetros relacionados à tela, elas são numeradas do zero na
-ordem em que aparecem na configuração da máquina. Todas as telas estão
+ordem em que aparecem na configuração do sistema. Todas as telas estão
 inclusas (não apenas nos sub-dispositivos do dispositivo que fizeram com
 que o layout fosse carregado). **X/width** e **Y/height** referem-se as
 dimensões horizontal e vertical da tela *antes* da rotação ser aplicada.
@@ -1097,7 +1097,7 @@ elemento ``view``:
 	``tag``).
 	Caso esteja presente, o atributo ``index`` deve ter um valor inteiro
 	e positivo. As telas são numeradas através da ordem em que aparecem
-	na configuração da máquina, começando com zero (**0**). Caso o
+	na configuração do sistema, começando com zero (**0**). Caso o
 	atributo ``tag`` esteja presente, este deve ser o caminho da
 	etiqueta para a tela com relação ao dispositivo para que provoque a
 	leitura do layout. As telas são desenhadas na ordem em que aparecem
@@ -1150,8 +1150,8 @@ As telas com os elementos ``screen``, elementos do layout ``element`` e
 os elementos de grupo ``group``, podem ter a sua orientação alterada
 usando o elemento ``orientation``.
 Para as telas, os modificadores de orientação são aplicados em conjunto
-com os modificadores de orientação definido na tela do dispositivo e na
-máquina.
+com os modificadores de orientação definido na tela do dispositivo e no
+sistema.
 O elemento ``orientation`` suporta os seguintes atributos opcionais:
 
 **rotate**
@@ -1726,7 +1726,7 @@ estado de um elemento afeta sua aparência.
 O valor do estado do elemento será obtido através do valor da saída
 emulada que corresponda a tal nome caso o elemento ``element`` tenha um
 atributo ``name``. Observe que os nomes das saídas são globais
-e podem se tornar um problema quando uma máquina utilizar várias
+e podem se tornar um problema quando um sistema utilizar várias
 instâncias do mesmo tipo do dispositivo. Este exemplo mostra como
 os monitores digitais podem ser conectados na saída emulada:
 
@@ -1818,7 +1818,7 @@ da entrada, os valores baixo-ativo do interruptor não são normalizados.
 Na presença de um sub-elemento ``animate`` com o atributo ``name`` o
 estado da animação do item será obtido através do valor do nome
 correspondente a saída emulada. Observe que os nomes das saídas são
-globais e podem se tornar um problema quando uma máquina utilizar várias
+globais e podem se tornar um problema quando um sistema utilizar várias
 instâncias do mesmo tipo do dispositivo.
 
 O estado da animação será mascarado com o valor ``mask`` e deslocada
@@ -2000,7 +2000,7 @@ caminho completo do arquivo como mostra o exemplo abaixo::
 Criando diferentes arquivos layout na prática
 ---------------------------------------------
 
-Neste capítulo criaremos um layout do zero para a máquina **Galaxian**
+Neste capítulo criaremos um layout do zero para o sistema **Galaxian**
 demonstrando como definir todos os parâmetros para que todos os objetos
 apareçam na tela em seus devidos lugares e com o tamanho correto, no
 final será possível ver a capacidade do MAME de apresentar o design
@@ -2019,10 +2019,10 @@ Para esta tarefa precisamos dos seguintes itens:
   o `Geany <https://www.geany.org/>`_ para \*nix e macOS.
 * `Gimp <https://www.gimp.org/>`_.
 * A `versão básica <http://www.mediafire.com/file/knpn3uzmrjrxets/basic_galaxian.zip>`_
-  do layout da máquina Galaxian usada neste documento.
-* A versão básica do layout da máquina Galaxian usando o `método inputraw <http://www.mediafire.com/file/47bm4e5eb3hsm61/inputraw_galaxian.zip>`_.
+  do layout do sistema Galaxian usada neste documento.
+* A versão básica do layout do sistema Galaxian usando o `método inputraw <http://www.mediafire.com/file/47bm4e5eb3hsm61/inputraw_galaxian.zip>`_.
 * A `versão avançada <http://www.mediafire.com/file/bj9m9j2spqhdanh/advanced_galaxian.zip>`_
-  do layout com diferentes versões da máquina Galaxian.
+  do layout com diferentes versões do sistema Galaxian.
 * O `layout modelo <https://www.mediafire.com/file/qq344sz0lz1kyu9/layout_modelo_mame.zip>`_ criado para identificar as posições do controle para 2
   e 4 jogadores.
 * A arte utilizada aqui foi criada por `Etienne MacGyver
@@ -2031,7 +2031,7 @@ Para esta tarefa precisamos dos seguintes itens:
   feita com `LibreOffice <https://pt-br.libreoffice.org>`_ para
   facilitar o cálculo da relação de aspecto da tela.
 * Os botões foram criados pela minha amiga **u/cd4053b**.
-* A rom da máquina **Galaxian**.
+* A rom do sistema **Galaxian**.
 * O MAME configurado e instalado no seu computador.
 
 A versão básica do **Galaxian** já deve ter um arquivo ``default.lay``
@@ -2063,9 +2063,9 @@ adicione as duas primeiras linhas:
 Salve o arquivo como ``default.lay``.
 
 O próximo passo é definir um nome para a nossa imagem de fundo, estamos
-usando o nome "Italiano" pois é a versão italiana da máquina Galaxian e
+usando o nome "Italiano" pois é a versão italiana do sistema Galaxian e
 também precisamos anexar junto ao nome a imagem que servirá como o fundo
-da nossa máquina:
+do nosso sistema:
 
 .. code-block:: xml
 
@@ -2239,8 +2239,8 @@ para atender qualquer outra necessidade que você venha a ter.
 .. note::
 
 	Sempre que possível, procure usar valores inteiros na definição da
-	resolução da sua tela. Em certas máquinas como a do exemplo acima
-	não haverá qualquer diferença visível, contudo, certas máquinas não
+	resolução da sua tela. Em certos sistemas como a do exemplo acima
+	não haverá qualquer diferença visível, contudo, certos sistemas não
 	são tão tolerantes assim e podem apresentar pixels distorcidos na
 	tela ou até mesmo artefatos estranhos durante o uso de shaders como
 	o CRT-geom por exemplo. Assim, aumente o valor da altura na planilha
@@ -2315,7 +2315,7 @@ aproveitar o recorte do design.
 	\clearpage
 
 Na Galaxian não dá para perceber este recorte da tela pois tanto a arte
-quanto a tela são pretas, porém com outras máquinas é possível por
+quanto a tela são pretas, porém com outros sistemas é possível por
 exemplo, colocar uma moldura em volta da tela com efeitos de sombra,
 como mostra `este exemplo <https://www.mediafire.com/file/gwt9yvwkgj14ws
 f/mslug2.zip>`_:
@@ -2448,15 +2448,15 @@ processo é bem simples:
 
 Para conectar os botões e para dar as suas funções lógicas é necessário
 encontrar os valores para ``inputtag`` e ``inputmask`` onde ``inputtag``
-é o nome da porta usada pela máquina para os controles e botões do
-jogador 1, 2, etc. Já ``inputmask`` é o valor usado pela máquina para
+é o nome da porta usada pelo sistema para os controles e botões do
+jogador 1, 2, etc. Já ``inputmask`` é o valor usado pelo sistema para
 definir os valores hexadecimais dos comandos, botões, etc.
 
-Para encontrar estes valores, inicie a máquina Galaxian::
+Para encontrar estes valores, inicie o sistema Galaxian::
 
 	mame galaxian
 
-Pressione :kbd:`Tab` e vá em :guilabel:`Entrada (esta máquina)`.
+Pressione :kbd:`Tab` e vá em :guilabel:`Atribuições da entrada (este sistema)`.
 Selecione :guilabel:`P1 Left`, no teclado clique na tecla :kbd:`Del`
 para excluir o valor e usando o seu controle, joystick ou teclado,
 clique no direcional para o lado esquerdo, faça o mesmo para
@@ -2511,28 +2511,28 @@ fica assim:
 Na primeira definimos  que vamos associar a imagem **esquerda** na
 entrada ``IN0`` e que seu código (máscara) para este botão é **4** e
 assim sucessivamente, com isso nós conectamos e damos funções para as
-imagens na parte lógica da máquina fazendo com que o MAME passe a
+imagens na parte lógica do sistema fazendo com que o MAME passe a
 interpretá-las de forma animada na tela quando o botão for pressionado
 no seu joystick ou seja acionado na tela quando for clicado pelo mouse.
 
 Observe que não é preciso copiar os dois pontos **iniciais** existentes
-em ``tag=":IN0"``, copie apenas o seu valor ``IN0``. Cada máquina possuí
-a sua configuração específica, no caso das máquinas Neo Geo por exemplo
+em ``tag=":IN0"``, copie apenas o seu valor ``IN0``. Cada sistema possuí
+a sua configuração específica, no caso dos sistemas Neo Geo por exemplo
 a **tag** aparece como ``tag=":edge:joy:JOY1"``, apenas ignore os dois
 pontos iniciais e copie **todo** o resto, ou seja, a nossa ``inputtag``
-para as máquinas Neo Geo ficaria ``inputtag="edge:joy:JOY1"``.
+para os sistemas Neo Geo ficaria ``inputtag="edge:joy:JOY1"``.
 
 .. _layfile-button-alerta-retorno:
 
 Alertas e retornos externos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A máquina *Galaxian* possui uma porta que sinaliza através de um sinal
+O sistema *Galaxian* possui uma porta que sinaliza através de um sinal
 luminoso quando 1 crédito é inserido, o sinal da lâmpada passa a piscar
 indicando que o jogador deve clicar nele para iniciar a partida para o
 jogador 1 e o mesmo ocorre quando dois créditos são inseridos indicando
-o inicio da partida para o jogador 1 ou para o jogador 2. A versão da
-máquina *Galaxian* Italiana não possui tais luzes porém vamos
+o inicio da partida para o jogador 1 ou para o jogador 2. A versão do
+sistema *Galaxian* Italiana não possui tais luzes porém vamos
 adicioná-las mesmo assim para fins didáticos.
 
 Usando o *Gimp*, posicione os botões para o jogador 1 e para o jogador 2,
@@ -2552,7 +2552,7 @@ Execute o MAME no terminal ou prompt de comando com a opção abaixo::
 
 	mame -output console galaxian
 
-Insira 2 créditos na máquina, repare no terminal que é possível ver os
+Insira 2 créditos na sistema, repare no terminal que é possível ver os
 valores ``lamp0`` e ``lamp1`` se alternando entre ``0`` (desligado) e
 ``1`` (ligado), são estes sinais que usaremos para fazer piscar uma
 imagem na tela simulando uma lâmpada e indicando os créditos para os
@@ -2565,7 +2565,7 @@ montando um layout onde precisa colocar *lamp0* até *lamp100* na tela, é
 possível fazer isso de forma manual ou usar parâmetros para facilitar
 escrevendo poucas linhas e deixando que o MAME lide com o resto.
 
-Dada a simplicidade da máquina *Galaxian* não é preciso usar qualquer
+Dada a simplicidade do sistema *Galaxian* não é preciso usar qualquer
 parâmetro porém usaremos mesmo assim para que fique fácil a compreensão
 de como isso funciona.
 
@@ -2841,9 +2841,9 @@ tela, edite o arquivo ``CRT-geom.vsh`` e use estas configurações::
 	
 	// END of parameters
 
-Caso queira aplicar essas configurações para **TODAS** as máquinas
+Caso queira aplicar essas configurações para **TODAS** os sistemas
 classificadas como **Arcade**, então renomeie o arquivo ``galaxian.ini``
-para ``arcade.ini``, assim a máquina **Galaxian** e muitas outras terão
+para ``arcade.ini``, assim o sistema **Galaxian** e muitos outros terão
 este efeito na tela.
 
 Altere o valor do ``overscan`` de ``vec2(1.01,1.01)`` para
@@ -2858,7 +2858,7 @@ Altere o valor do ``overscan`` de ``vec2(1.01,1.01)`` para
 Adicionando diagonais nos controles com 8 direções usando o inputraw
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Algumas máquinas possuem controles simples como a própria **Galaxian**
+Alguns sistemas possuem controles simples como a própria **Galaxian**
 tem apenas 2 direções, **esquerda** e **direita**, outras como
 **Pacman** possuem 4 direções, **cima**, **baixo**, **esquerda**,
 **direita**. Nestes casos a criação de um layout animado para o controle
@@ -2866,7 +2866,7 @@ por exemplo é bem simples, basta adicionar uma imagem para cada posição
 associando-a com os seus respectivos ``inputtag`` e ``inputmask`` para
 que seja possível ver a sua animação na tela quando cada uma das
 posições forem acionadas, no entanto a coisa muda um pouco quando se
-trata de uma máquina com um joystick com 8 direções (ou mais).
+trata de um sistema com um joystick com 8 direções (ou mais).
 
 Nestes casos, quando qualquer uma das diagonais é acionada o MAME
 sobrepõem outras imagens uma em cima da outra, caso a diagonal superior
@@ -2880,7 +2880,7 @@ duas outras imagens dentre diversas outras soluções.
 
 Outra maneira de lidar com o problema é utilizar o ``inputraw``, com
 esta opção o MAME faz a leitura dos dados diretamente da entrada do
-controle, vamos aproveitar o layout que acabamos de criar para a máquina
+controle, vamos aproveitar o layout que acabamos de criar para o sistema
 **Galaxian** e ver como isso ficaria modificando a lógica para os
 controles e adicionando 3 imagens para simular um joystick:
 
@@ -2932,7 +2932,7 @@ mouse:
 		<bounds x="1010" y="3260" width="250" height="250" />
 	</element>
 
-Ao executar a máquina novamente o controle não mais responde aos cliques
+Ao executar o sistema novamente o controle não mais responde aos cliques
 do mouse.
 
 Como estamos trabalhando com dados vindos diretamente dos controles, é
@@ -2945,7 +2945,7 @@ aster/src/mame/drivers/galaxian.cpp#L2836>`_, bem na linha ``2634`` de
 cara já temos o nosso ``inputtag`` com o valor ``IN0`` que utilizamos
 acima, observe quem nem sempre o valor do ``inputtag`` está disponível
 assim tão fácil, o driver **Playstaion** (psx) por exemplo utiliza
-``port1:digital_pad:PSXPAD0``, já a máquina **Neo Geo** usa
+``port1:digital_pad:PSXPAD0``, já o sistema **Neo Geo** usa
 ``edge:joy:JOY1`` e assim por diante. Para casos como estes é preferível
 neste caso é preferível utilizar a maneira descrita no capítulo
 :ref:`layfile-button-logica`.
@@ -2956,12 +2956,12 @@ ao valor ``0x04`` para ``IPT_JOYSTICK_LEFT`` e ``0x08`` para
 sistema operacional em modo programador ou qualquer função que consiga
 somar valores em **hexadecimais** e some os valores ``4`` + ``8`` para
 obter ``c`` ou ``0xc``, este é o valor do nosso ``defstate`` e
-``inputmask`` **específicos para esta máquina**, dependendo da máquina
+``inputmask`` **específicos para este sistema**, dependendo do sistema
 este valor pode mudar, é possível ter uma ideia vendo a tabela logo
 abaixo.
 
-Já os valores para ``state`` vão de ``0x0`` até ``0xf`` nas máquinas
-mais comuns, porém em outras máquinas mais complexas como as máquinas
+Já os valores para ``state`` vão de ``0x0`` até ``0xf`` nos sistemas
+mais comuns, porém em outros sistemas mais complexas como os sistemas
 de corrida de carro e de moto que usam um volante ou guidão, os valores
 vão muito além disso. O assunto foge ao escopo do que estamos
 apresentando aqui então recomendo o belo trabalho do
@@ -2973,7 +2973,7 @@ pode chegar.
 Até o presente momento não há uma ferramenta que ajude a obter os
 valores para ``state`` e portanto eles devem ser encontrados de forma
 **manual** o que dá um certo trabalho, para facilitar, veja o exemplo da
-tabela abaixo com os valores para algumas máquinas:
+tabela abaixo com os valores para alguns sistemas:
 
 .. _layfile-codigos-direcionais:
 
@@ -3276,15 +3276,15 @@ acionamento do direcional uma das posições sumir da tela, significa que:
 * O valor do ``state`` está errado.
 * O valor do ``defstate`` não foi calculado corretamente.
 
-Todos estes valores variam de máquina para máquina, em determinadas
-máquinas por exemplo, ainda que o valor ``inputtag`` esteja incorreto a
+Todos estes valores variam de sistema para sistema, em determinados
+sistemas por exemplo, ainda que o valor ``inputtag`` esteja incorreto a
 imagem do controle relacionada ao ponto neutro ou **centro** poderá
 aparecer ou não e em outras vezes apesar da imagem do ponto neutro
 aparecer, não haverá qualquer animação do controle na tela. Para a
-maioria das máquinas avaliadas o ``state`` para o ponto neutro funciona
-com o valor ``0xf``, contudo há algumas máquinas onde o valor precisa
+maioria dos sistemas avaliadas o ``state`` para o ponto neutro funciona
+com o valor ``0xf``, contudo há alguns sistemas onde o valor precisa
 ser alterado para ``0x0`` para que funcione ou algum outro valor onde
-este irá depender do tipo da máquina emulada. Quando você movimenta os
+este irá depender do tipo do sistema emulado. Quando você movimenta os
 direcionais e nota que o controle fica piscando na tela, este é um bom
 indicativo que você está no caminho certo pois indica que a combinação
 ``inputtag`` e ``inputmask`` está correta e apenas os valores para o
@@ -3297,7 +3297,7 @@ clicar em :kbd:`Shift` + :kbd:`F3` para recarregar o arquivo e ver como
 ficou.
 
 Há casos onde nenhum dos valores da tabela mostrada acima vai funcionar
-com a máquina que você estiver desenvolvendo o layout mesmo que os
+com o sistema que você estiver desenvolvendo o layout, mesmo que os
 valores estejam corretos para ``inputtag``, ``defstate`` e
 ``inputmask``. Nestes casos inicie a sua configuração com todos os
 valores ``state`` zerados:
@@ -3330,10 +3330,10 @@ respectivas posições até encontrar todos os valores.
 
 .. _layfile-dois-ou-mais:
 
-Máquinas com dois ou mais controles
+Sistemas com dois ou mais controles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Em máquinas com dois ou mais controles como a **Neo Geo** por exemplo,
+Em sistemas com dois ou mais controles como a **Neo Geo** por exemplo,
 nós fazemos assim:
 
 .. code-block:: xml
@@ -3369,7 +3369,7 @@ Ambos os controles utilizam os mesmos valores para ``state`` e
 ``edge:joy:JOY1`` define que este é o controle do **jogador 1** e que
 ``edge:joy:JOY2`` é o controle do **jogador 2**.
 
-Contudo há máquinas como a **CPS2** que apresentam o mesmo valor ``IN0``
+Contudo há sistemas na **CPS2** que apresentam o mesmo valor ``IN0``
 no ``inputtag`` para ambos os jogadores, nestes casos devemos recorrer
 novamente ao código fonte do MAME para este driver, observando a linha
 `#1001 <https://github.com/mamedev/mame/blob/master/src/mame/drivers/cps2.cpp#L1001>`_
@@ -3386,7 +3386,7 @@ o valor ``f00`` ou seja ``100`` + ``200`` + ``400`` + ``800`` = ``f00``.
 
 Este é o valor que deve ser usado no ``inputmask`` da configuração do
 controle do 2º jogador como mostra o exemplo abaixo que também funcionam
-para todas as outras máquinas existentes no driver **CPS2** do MAME:
+para todas as outros sistemas existentes no driver **CPS2** do MAME:
 
 .. code-block:: xml
 
@@ -3420,9 +3420,9 @@ para todas as outras máquinas existentes no driver **CPS2** do MAME:
 	\clearpage
 
 Utilize o **layout modelo** disponibilizado em :ref:`layfile-tools` para
-realizar testes em diferentes máquinas e obter uma visualização simples
+realizar testes em diferentes sistemas e obter uma visualização simples
 e rápida dos controles, depois de baixar e extrair o arquivo, copie-o
-para o diretório **artwork** e o renomeie com o nome da máquina que será
+para o diretório **artwork** e o renomeie com o nome do sistema que será
 testada, para o exemplo usado na foto o nome do diretório é
 **ssriders**. Rodando o comando ``mame -window ssriders`` irá
 aparecer uma tela com um design branco genérico, será possível escolher
@@ -3476,7 +3476,7 @@ Um único arquivo para diferentes visualizações
 Com os layouts também é possível montar diferentes visualizações não
 ficando limitado a apenas uma, ou seja, é possível dar a opção ao
 jogador para escolher aquilo que ele possa querer ver na tela como por
-exemplo, ter diferentes versões de visualização para a máquina
+exemplo, ter diferentes versões de visualização para o sistema
 **Galaxian**. No arquivo da versão completa (disponível em
 :ref:`layfile-tools`) temos o exemplo da **Galaxian** Italiana, Americana
 e a Japonesa com diferentes configurações para os botões para o 1º e 2º
@@ -3510,7 +3510,7 @@ do Vídeo` (:kbd:`TAB` --> :guilabel:`Opções do vídeo`).
 .. image:: images/tipos-galaxian.png
    :width: 100%
    :align: center
-   :alt: As diferentes versões da máquina Galaxian
+   :alt: As diferentes versões do sistema Galaxian
 
 .. raw:: latex
 
@@ -3528,7 +3528,7 @@ poderá desligar qualquer objeto na tela desde que tenha sido organizado
 desta maneira pelo autor da arte. Use ``visible`` **yes** ou **no**
 (também funciona com ``1`` ou ``0``) dentro do elemento ``collection``
 caso queira que ele já inicie **ligado** ou **desligado**. Baixe este
-arquivo para ver como funciona na prática com a máquina
+arquivo para ver como funciona na prática com o sistema
 `mspacman <https://www.mediafire.com/file/ltjl0mnczuvc532/mspacman.zip>`_.
 
 .. code-block:: xml
@@ -3817,8 +3817,8 @@ possível, use SVG, caso o seu design seja mais complexo, use PNG.
 Colocaremos um pequeno joystick animado sobreposto num canto da tela,
 porém antes precisamos saber de duas coisas, o tamanho da tela e o
 tamanho do objeto que será colocado nela. Para saber o tamanho da tela,
-inicie uma máquina qualquer como a **sfa3** (``mame sfa3``), pressione
-:kbd:`Tab` --> :guilabel:`Informação da máquina`, na parte de **Vídeo**
+inicie um sistema qualquer como a **sfa3** (``mame sfa3``), pressione
+:kbd:`Tab` --> :guilabel:`Informação do sistema`, na parte de **Vídeo**
 vai estar listado ``384`` x ``224`` (valor em **pixels**).
 
 * Abra o *Inkscape*, vá em :guilabel:`File` --> :guilabel:`Document
@@ -3973,9 +3973,9 @@ se alterar para um tom mais escuro das cores do botão:
 Organizamos tudo isso dentro de um grupo e usamos o ``count`` para
 duplicar os nossos botões no eixo vertical. Aqui nós também conectamos
 os respectivos botões ao driver, no caso, a lógica vai funcionar com
-qualquer máquina *CPS2*. Alguns valores aparecem diferente daqueles que
-nós obtemos, é um ajuste fino necessário para alinhar os objetos na
-tela:
+qualquer sistema dentro do driver *CPS2*. Alguns valores aparecem
+diferente daqueles que nós obtemos, é um ajuste fino necessário para
+alinhar os objetos na tela:
 
 .. code-block:: xml
 
@@ -4210,7 +4210,7 @@ para o :guilabel:`Joystick do jogador 2` e ele está
 :guilabel:`desligado`. Quem define isso é a opção ``visible="no"``,
 porém para deixar ele sempre ativo sem ter que mexer no arquivo layout,
 basta deixar o segundo joystick visível e encerrar a emulação, isso
-salva as definições esta máquina e na próxima vez o joystick vai
+salva as definições este sistema e na próxima vez o joystick vai
 aparecer na tela.
 
 
@@ -4361,7 +4361,7 @@ visual e depois a parte lógica.
 	</group>
 	</collection>
 
-Ao rodar a máquina novamente verá que toda a parte funcional e das
+Ao rodar o sistema novamente verá que toda a parte funcional e das
 opções continuam os mesmos, porém, o nosso arquivo layout está mais
 organizado.
 
@@ -4735,7 +4735,7 @@ comum em tais jogos pode ser confuso, deixando o controle visível e com
 a possibilidade de poder clicar nos botões na tela, assim você se
 preocupa com  o jogo e não em lidar com o mapeamento do teclado.
 
-Neste exemplo usaremos a máquina *Lovely Pop Mahjong JangJang Shimasho
+Neste exemplo usaremos o sistema *Lovely Pop Mahjong JangJang Shimasho
 (Japan)*, ela usa o driver
 `ssv.cpp <https://github.com/mamedev/mame/blob/master/src/mame/drivers/ssv.cpp>`_,
 precisamos acessá-lo para identificar todas as suas entradas e
@@ -4905,9 +4905,9 @@ essa informação começa na
 	</group>
 
 Resolvida a questão dos controles, agora é preciso definir como vamos
-disponibilizar os objetos na tela. Ao iniciar a máquina com
+disponibilizar os objetos na tela. Ao iniciar o sistema com
 ``mame janjans1`` e ao clicar em
-:guilabel:`Tab` --> :guilabel:`Informação da máquina`, o driver informa
+:guilabel:`Tab` --> :guilabel:`Informação do sistema`, o driver informa
 que o tamanho da tela tem ``336`` x ``240``.
 
 * Inicie o *Inkscape*, defina o :guilabel:`Units` e a página em **px**,
@@ -4977,7 +4977,7 @@ comum, porém, algumas vezes é necessário para fazer um ajuste fino de
 alinhamento para que os elementos apareçam em seus devidos lugares na
 tela do MAME.
 
-Com tudo pronto, rodamos a máquina novamente com ``mame janjans1`` e
+Com tudo pronto, rodamos o sistema novamente com ``mame janjans1`` e
 entramos no modo de serviço (:kbd:`Tab` --> :guilabel:`Chaves DIP` -->
 :guilabel:`Service Mode` --> :guilabel:`On`, depois
 :guilabel:`Redefine`. Clique no botão **A** na tela uma vez para pular o
@@ -4996,7 +4996,7 @@ pressione :kbd:`Tab` para fechar o quadro de informação na tela).
 Ao clicar nos botões da tela, os botões da emulação deverão se alternar
 entre **ON** e **OFF** indicando que todos os botões estão funcionando.
 Retorne ao :guilabel:`Service Mode`, mude a chave para :guilabel:`Off`
-e clique em :guilabel:`Redefine` para reiniciar a máquina.
+e clique em :guilabel:`Redefine` para reiniciar o sistema.
 
 .. raw:: latex
 
