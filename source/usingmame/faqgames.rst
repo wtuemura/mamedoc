@@ -1647,7 +1647,7 @@ usando um teclado.
 	   pressionado as teclas **F** e **G** por 10 segundos, ainda com as
 	   teclas pressionadas, pressione :kbd:`1`.
 	6. Mova o assento todo para frente e pressione :kbd:`1`. O feedback
-	  do acento ainda não é emulado pelo MAME então pressione :kbd:`1`.
+	   do acento ainda não é emulado pelo MAME então pressione :kbd:`1`.
 	7. Mova o acento todo para trás e pressione :kbd:`1`.
 	8. Tire o pé do freio e pressione :kbd:`1` para abortar. Agora essa 
 	   é a parte complicada, ao ver esta tela, não faça nada. Aguarde
