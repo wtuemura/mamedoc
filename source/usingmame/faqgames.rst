@@ -1548,7 +1548,8 @@ Hang Pilot
 
 	  Para reinicializar a EEPROM, mantenha :kbd:`F2` pressionado e
 	  toque em :kbd:`F3` uma vez. Não solte :kbd:`F2` até que apareça a
-	  mensagem dizendo **Initializing EEPROM**. Reinicie com **SHIFT + F3**.
+	  mensagem dizendo **Initializing EEPROM**. Reinicie com
+	  :kbd:`Shift` + :kbd:`F3`.
 
 .. note::
 
