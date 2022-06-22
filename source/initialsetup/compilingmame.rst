@@ -327,7 +327,7 @@ Exemplos práticos para todas as plataformas
 
 A estrutura do MAME já vem preparada de forma que seja possível compilar
 toda a estrutura ou apenas uma parte dela como arcades por exemplo,
-consoles, portáteis ou até mesmo uma máquina em específico como Neo-Geo,
+consoles, portáteis ou até mesmo um sistema em específico como Neo-Geo,
 CPS1, CPS2, etc. Assim como consoles como Megadrive/Genesis, Super
 Nintendo, Playstation e assim por diante.
 
@@ -387,7 +387,7 @@ o jogo **Pac Man**, use o comando abaixo:
 	**make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1**
 
 O MAME também permite de maneira prática que seja possível compilar uma
-versão só com máquinas ARCADE, nessa versão os portáteis, consoles,
+versão só com sistemas ARCADE, nessa versão os portáteis, consoles,
 computadores, dentre outras ficam de fora.
 Caso queira uma versão arcade do MAME use o comando abaixo:
 
@@ -476,7 +476,7 @@ o **-march=native** vai usar estas extensões do seu processador: ::
 
 Apesar de ter todas essas extensões ativadas, incluindo outras
 variantes do SSE como a SSE3, SSE4 e assim por diante, não espere que o
-desempenho do MAME aumente de forma considerável, há máquinas onde não
+desempenho do MAME aumente de forma considerável, há sistemas onde não
 se nota nada de diferente, muito pelo contrário, há perda no
 desempenho, já outras podem lhe dar um desempenho considerável.
 
@@ -529,15 +529,14 @@ do Debian, uma versão foi compilada nativamente e a outra usando
 :ref:`compilação cruzada <mame-crosscompilation>`. Como é possível ver
 nestes exemplos a questão de otimização do MAME não é uma ciência exata,
 apesar da versão do Linux ter levado a melhor, há casos onde dependendo
-da máquina escolhida, a versão do Windows leva a melhor, assim como
+do sistema escolhido, a versão do Windows leva a melhor, assim como
 também há casos onde há um empate técnico, nenhum dos dois levam
 vantagens significativas.
 
 Para aqueles que se interessarem por benchmarks, `aqui tem um site
 <http://www.mameui.info/Bench.htm>`_ interessante que publica de tempos
 em tempos e inclusive uma versão diária do GIT, uma comparação com
-diferentes máquinas e diferentes
-versões do MAME.
+diferentes sistemas e diferentes versões do MAME.
 
 Use estas opções em conjunto com o comando make ou definindo-as como
 variáveis de ambiente ou ainda adicionando-as ao seu
@@ -887,7 +886,7 @@ desativá-los, adicionar uma regra de exclusão do diretório do MSYS2
 (**c:\\mysys64** ou **c:\\mysys32**) ou até mesmo removê-los até que
 você consiga montar o seu ambiente sem problemas.
 
-Uma outra alternativa interessante seria usar uma máquina virtual para
+Uma outra alternativa interessante seria usar um sistema virtual para
 compilar o MAME ou para montar o ambiente sem qualquer erro.
 
 .. _compiling-windows-visual-studio:
@@ -1255,10 +1254,10 @@ Opções gerais para a compilação
   seja escolhido o valor predefinido é **mame**. Os valores mais usados
   são:
 
-		* **arcade**: Compila uma versão do MAME apenas com máquinas classificadas como arcade.
+		* **arcade**: Compila uma versão do MAME apenas com sistemas classificados como arcade.
 		* **dummy**: Compila uma versão bem simplificada do mame com apenas o driver da Coleco.
 		* **mame**: Compila uma versão do MAME com arcade, mess e virtual.
-		* **mess**: Compila uma versão do MAME só com máquinas catalogadas como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
+		* **mess**: Compila uma versão do MAME só com sistemas catalogados como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
 		* **nl**: Compila todos os drivers classificados como *netlist*.
 		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita a obrigação de se compilar todo o código fonte do MAME para testar apenas uma modificação feita na interface por exemplo.
 		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
@@ -1894,11 +1893,11 @@ dispositivo que estão usando ou até mesmo um outro lugar onde o MAME
 esteja sendo executado. Isso porém não acontece com quem baixa a versão
 já compilada do MAME do site oficial.
 
-Experimente apagar o arquivo de configuração da última máquina que foi
-rodada, fica no diretório **cfg**, apague também o arquivo de memória
+Experimente apagar o arquivo de configuração da último sistema que foi
+rodado, fica no diretório **cfg**, apague também o arquivo de memória
 que fica do diretório **nvram**. Em ambos os diretórios o nome do
-arquivo ou diretório será o mesmo que o nome da máquina usada, supondo
-que teve problemas com a máquina **Street Fighter Alpha**, no diretório
+arquivo ou diretório será o mesmo que o nome do sistema usado, supondo
+que teve problemas com o sistema **Street Fighter Alpha**, no diretório
 **nvram** apague o diretório **sfa**, no diretório **cfg**, apague o
 arquivo **sfa.cfg**. Verifique se não existe nenhuma configuração
 customizada dentro do diretório **ini** como **arcade.ini** ou qualquer
@@ -1991,7 +1990,7 @@ o procedimento é o mesmo em qualquer outra plataforma.
 	Reading symbols from mame...done.
 	(gdb)
 
-Para executar a máquina com problema execute ``run`` seguido pelos
+Para executar o sistema com problema execute ``run`` seguido pelos
 comandos do MAME, exemplo: ::
 
 	(gdb) run kof99
@@ -2006,8 +2005,8 @@ comandos do MAME, exemplo: ::
 	[New Thread 0x7fffe9ab5700 (LWP 21031)]
 	[New Thread 0x7fffe9a74700 (LWP 21032)]
 
-O exemplo dado foi com **kof99** porém, pode ser com qualquer outra
-máquina que tenha dado problema, use a máquina até que o MAME trave,
+O exemplo dado foi com **kof99** porém, pode ser com qualquer outro
+sistema que tenha dado problema, use a sistema até que o MAME trave,
 será exibida uma tela como no exemplo abaixo ::
 
 	Thread 1 "mame" received signal SIGSEGV, Segmentation fault.
@@ -2192,7 +2191,7 @@ Compile o MAME como mostra o exemplo abaixo: ::
 
 	\clearpage
 
-Ao rodar o mame com a máquina com problema, você terá um retorno
+Ao rodar o MAME com o sistema com problema, você terá um retorno
 semelhante ao exemplo abaixo:
 
 .. code-block:: c
