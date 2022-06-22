@@ -39,7 +39,7 @@ A largura do barramento de dados é 0 para byte, 1 para word, etc.
 
 	void set_map(map);
 
-Use este método na configuração do tempo da máquina para que seja
+Use este método na configuração do tempo do sistema para que seja
 providenciado a conexão de um mapa de endereçamento ao barramento.
 Tem prioridade sobre uma região da ROM, caso uma esteja presente.
 
@@ -59,7 +59,7 @@ Caso a região da ROM definida com a tag ``set_device_rom_tag`` esteja
 presente, seja informada nas definições da ROM para o sistema ou seja
 idêntica a tag do dispositivo, esta será selecionada como a ROM correta.
 Um mapeamento do endereço terá prioridade sobre uma região da ROM caso
-uma esteja presente na configuração da máquina.
+uma esteja presente na configuração do sistema.
 
 ::
 
