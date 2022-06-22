@@ -233,7 +233,7 @@ Opções para os ajustes de imagem da tela
 | :ref:`effect <mame-commandline-effect>`
 
 
-Opções para máquinas que usem gráficos vetoriais
+Opções para sistemas que usem gráficos vetoriais
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`beam_width_min <mame-commandline-beamwidthmin>`
