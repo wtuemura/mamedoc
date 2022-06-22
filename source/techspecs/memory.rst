@@ -20,7 +20,7 @@ funções úteis para a emulação do sistema:
 
 Os dispositivos criam espaços de endereçamento, como por exemplo um
 barramento decodificável, através do ``device_memory_interface``.  A
-configuração da máquina define o endereço dos mapas para colocar nos
+configuração do sistema define o endereço dos mapas para colocar nos
 espaços de endereçamento, assim o dispositivo pode ler e escrever
 através do barramento.
 
