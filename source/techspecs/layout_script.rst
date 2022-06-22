@@ -156,7 +156,7 @@ entradas do jogador e definir o estado dos elementos nos itens:
             file:set_resolve_tags_callback(
                     function ()
                         -- file.device é o dispositivo que causou a leitura do layout
-                        -- neste caso, é o principal controlador da máquina espial
+                        -- neste caso, é o principal controlador do sistema espial
                         -- consulta as duas portas E/S que precisamos ler
                         local in1 = file.device:ioport("IN1")
                         local in2 = file.device:ioport("IN2")
@@ -334,7 +334,7 @@ E aqui temos o nosso layout:
             file:set_resolve_tags_callback(
                     function ()
                         -- file.device é o dispositivo que fez com que o layout fosse carregado
-                        -- neste caso, é o condutor principal da máquina starwars
+                        -- neste caso, é o condutor principal do sistema starwars
                         -- localize as entradas dos eixos analógicos
                         local x_input = file.device:ioport("STICKX")
                         local y_input = file.device:ioport("STICKY")
@@ -502,7 +502,7 @@ oferecendo apenas o mínimo necessário:
   Possui uma propriedade ``device`` para saber quem foi que fez com que
   o layout fosse carregado e uma propriedade ``views`` para conseguir as
   exibições do layout (indexadas através do nome).
-* O ``machine`` oferecendo ao MAME a máquina que está sendo executada no
+* O ``machine`` oferecendo ao MAME o sistema que está sendo executado no
   momento.
 * As funções ``emu.render_bounds`` e o ``emu.render_color`` para criar
   os limites e as cores dos objetos.
