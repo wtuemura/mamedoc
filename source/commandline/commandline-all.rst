@@ -122,8 +122,8 @@ Opções de ajuda e verificação
 
 **-verifyroms** <*palavra chave*>
 
-	Verifica a condição dos arquivos de imagem ROM numa determinada
-	máquina. Serão verificados todas as máquinas e diretórios válidos
+	Verifica a condição dos arquivos da imagem ROM num determinado
+	sistema. Serão verificados todos os sistemas e diretórios válidos
 	que estejam dentro do ``rompath`` (caminho da rom):
 
 	Exemplo:
@@ -133,9 +133,9 @@ Opções de ajuda e verificação
 			romset pacman [puckman] is good
 			1 romsets found, 1 were OK.
 
-	É possível usar um asterisco ao final do nome da máquina para que
-	seja exibido uma lista com todas as outras máquinas relacionadas com
-	o nome da máquina principal e a sua condição atual, exemplo:
+	É possível usar um asterisco ao final do nome do sistema para que
+	seja exibido uma lista com todos os outros sistemas relacionadas com
+	o nome do sistema principal e a sua condição atual, exemplo:
 
 	Exemplo:
 		.. code-block:: shell
@@ -152,7 +152,7 @@ Opções de ajuda e verificação
 			romset pacmaniao [pacmania] is bad
 			...
 
-	Todas as máquinas e arquivos de imagem ROM serão verificadas caso
+	Todos os sistemas e os arquivos da imagem ROM serão verificadas caso
 	nenhum nome seja informado.
 
 .. _mame-commandline-verifysamples:
@@ -254,7 +254,7 @@ Opções de configuração
 
 	Cria um arquivo ``mame.ini`` pré-configurado. Todas as opções de
 	configuração (não verbos) descritos abaixo podem ser permanentemente
-	alterados, basta editar este arquivo de configuração.
+	alterados ao fazer a edição deste arquivo de configuração.
 
 	Exemplo:
 		.. code-block:: shell
@@ -339,14 +339,14 @@ Exemplo:
 
 .. _mame-commandline-listxml:
 
-**-listxml** / **-lx** < ``dispositivo`` | ``sistema`` | ``máquina`` >
+**-listxml** / **-lx** < ``dispositivo`` | ``driver`` | ``sistema`` >
 
 	Gera uma lista detalhada e completa de toda a informação que o MAME
 	mantém em seu banco de dados interno sobre os seus dispositivos,
-	sistemas, máquinas, nome do driver assim como muitas outras
+	sistemas, drivers, nome do driver assim como muitas outras
 	informações em formato XML. A sua saída pode ser limitada informando
-	um nome de dispositivo (**ym2203** por exemplo), um sistema
-	(**megadriv** por exemplo) ou máquina (**sf2** por exemplo).
+	um nome de dispositivo (**ym2203** por exemplo), um driver
+	(**megadriv** por exemplo) ou sistema (**sf2** por exemplo).
 
 	Geralmente a saída deste comando é usado para ser redirecionado em
 	um arquivo texto que posteriormente é utilizado por outras
@@ -382,7 +382,7 @@ Exemplo:
 
 **-listfull** / **-ll** <*palavra chave*>
 
-	Exibe uma lista com o nome da máquina pesquisada e a sua
+	Exibe uma lista com o nome do sistema pesquisado e a sua
 	descrição:
 
 	Exemplo:
@@ -392,9 +392,9 @@ Exemplo:
 			Name:             Description:
 			pacman            "Pac-Man (Midway)"
 
-	É possível usar um asterisco ao final do nome da máquina para que seja
-	exibido uma lista com todas as outras máquinas relacionadas com o
-	nome da máquina principal e as suas respectivas descrições,
+	É possível usar um asterisco ao final do nome do sistema para que
+	seja exibido uma lista com todas as outros sistemas relacionadas com
+	o nome do driver principal e as suas respectivas descrições,
 	exemplo:
 
 	Exemplo:
@@ -434,7 +434,7 @@ Exemplo:
 			snespal           "Super Nintendo Entertainment System (PAL)"
 			...
 
-	Todas as máquinas ou sistemas serão listados caso nenhum nome seja
+	Todos os sistemas ou drivers serão listados caso nenhum nome seja
 	informado.
 
 .. raw:: latex
@@ -459,8 +459,8 @@ Exemplo:
 			pacman           pacman.cpp
 
 	É possível também utilizar um curinga (asterisco) ao final do nome
-	da máquina para que seja exibido uma lista com todas as outras
-	máquinas que estejam relacionadas com o nome da máquina principal,
+	do sistema para que seja exibido uma lista com todos os outros
+	sistemas que estejam relacionadas com o nome do sistema principal,
 	exemplo:
 
 	Exemplo:
@@ -472,14 +472,14 @@ Exemplo:
 			...
 			pacmania         namcos1.cpp
 
-	Todas as máquinas serão listadas caso nenhuma palavra chave seja
+	Todos os sistemas serão listadas caso nenhuma palavra chave seja
 	informada.
 
 .. _mame-commandline-listclones:
 
 **-listclones** / **-lc** <*palavra chave*>
 
-	Exibe uma lista de clones de uma determinada máquina. O MAME irá
+	Exibe uma lista de clones de um determinado sistema. O MAME irá
 	listar todos os clones em seu banco de dados porém a lista pode
 	ser filtrada com o uso de uma palavra chave após o comando.
 	Exemplo:
@@ -499,7 +499,7 @@ Exemplo:
 **-listbrothers** / **-lb** <*palavra chave*>
 
 	Exibe uma lista com o nome do driver, da ROM principal e parentes
-	que compartilhem do mesmo driver da máquina pesquisada. Exemplo:
+	que compartilhem do mesmo driver do sistema pesquisado.
 
 	Exemplo:
 		.. code-block:: shell
@@ -523,13 +523,12 @@ Exemplo:
 **-listcrc** <*palavra chave*>...]
 
 	Exibe uma lista completa com CRCs de todas as imagens ROM
-	que compõem uma máquina, nomes de sistema ou dispositivo num
+	que compõem um sistema, os nomes do sistema ou do dispositivo num
 	formato simples que pode ser facilmente filtrado por comandos como
 	``grep``, ``awk`` e ``sed`` no Linux e macOS ou
 	`findstr <https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/findstr>`_ no Windows.
 	Caso nenhuma palavra chave seja usada como filtro após o comando,
 	o MAME irá listar *tudo* que estiver em seu banco de dados interno.
-	Exemplo:
 
 	Exemplo:
 		.. code-block:: shell
@@ -544,15 +543,15 @@ Exemplo:
 
 **-listroms** / **-lr** <*palavra chave*>
 
-	Exibe uma lista com todos os arquivos ROM que fazem parte de uma
-	máquina ou dispositivo. A lista mostra o nome dos arquivos ROM,
+	Exibe uma lista com todos os arquivos ROM que fazem parte de um
+	sistema ou dispositivo. A lista mostra o nome dos arquivos ROM,
 	os valores CRC e SHA1, assim como mostra também se uma das ROMs
 	contidas no arquivo estão sinalizadas como **BAD_DUMP**.
 	Isso significa que o conteúdo extraído não é válido, pode conter
 	erro, não foi extraído de forma correta ou de forma apropriada,
 	por algum motivo não pode ser validada, etc. Caso nenhuma palavra
 	chave seja usada como filtro após o comando, o MAME irá listar
-	**tudo** que estiver em seu banco de dados interno. Exemplo:
+	**tudo** que estiver em seu banco de dados interno.
 
 	Exemplo:
 		.. code-block:: shell
@@ -569,10 +568,10 @@ Exemplo:
 
 **-listsamples** <*palavra chave*>
 
-	Exibe uma lista das amostras que fazem parte de uma determinada
-	máquina, nomes de sistema ou nome de dispositivos. Caso nenhum termo
-	seja usado como filtro depois do comando, *todos* os resultados dos
-	sistemas e dispositivos serão exibidos. Exemplo:
+	Exibe uma lista das amostras que fazem parte de um determinado
+	sistema, dos nomes de um sistema ou os nomes dos dispositivos. Caso
+	nenhum termo seja usado como filtro depois do comando, *todos* os
+	resultados dos sistemas e dos dispositivos serão exibidos.
 
 	Exemplo:
 		.. code-block:: shell
@@ -597,11 +596,11 @@ Exemplo:
 
 	Tenta identificar os arquivos ROM desconhecidos comparando-o com
 	os arquivos cadastrados no banco de dados interno do MAME que sejam
-	utilizados por apenas uma máquina ou que também sejam
+	utilizados por apenas um sistema ou que também sejam
 	compartilhados por mais de um arquivo ``.zip`` específico. Este
 	comando também pode ser usado para tentar identificar conjuntos de
 	ROM retirados de placas desconhecidas. A opção vai identificar os
-	arquivos compactados ou não. Exemplo:
+	arquivos compactados ou não.
 
 	Exemplo:
 		.. code-block:: shell
@@ -632,9 +631,9 @@ Exemplo:
 **-listdevices** / **-ld** <*palavra chave*>
 
 	Exibe as especificações técnicas e todos os dispositivos conhecidos
-	e conectados na máquina. Caso os slots sejam populados por
+	e conectados no sistema. Caso os slots sejam populados por
 	dispositivos, todos os slots adicionais que esses dispositivos
-	fornecerem ficarão visíveis com ``-listdevices`` também. Exemplo:
+	fornecerem ficarão visíveis com ``-listdevices`` também.
 
 	Exemplo:
 		.. code-block:: shell
@@ -664,7 +663,7 @@ Exemplo:
 **-listslots** / **-lslot** <*sistema*>
 
 	Exibe uma lista com todos os slots disponíveis para o sistema e suas
-	respectivas opções, caso estejam disponíveis. Exemplo:
+	respectivas opções, caso estejam disponíveis.
 
 	Exemplo:
 		.. code-block:: shell
@@ -690,8 +689,8 @@ Exemplo:
 											neptunex         Neptune-X
 											x68k_midi        X68000 MIDI Interface
 
-	Nem todos os itens opcionais acima estão conectados quando a
-	máquina é iniciada, sendo necessário que o item descrito em
+	Nem todos os itens opcionais acima estão conectados quando o
+	sistema é iniciado, sendo necessário que o item descrito em
 	**SLOT NAME** seja utilizado em conjunto com o **SLOT OPTIONS**,
 	como por exemplo, para utilizar o dispositivo MIDI do seu computador
 	faça:
@@ -1091,7 +1090,7 @@ Opções de MIDI e rede
 
 	Informe manualmente o dispositivo MIDI de entrada da sua preferência
 	caso o seu computador ou sistema utilize mais de um. O comando
-	apenas funciona nas máquinas compatíveis e que estejam funcionando
+	apenas funciona nos sistemas compatíveis e que estejam funcionando
 	com uma entrada MIDI. Consulte também a opção :ref:`-listslot
 	<mame-commandline-listslots>` para identificar o nome do slot.
 	Caso o nome do dispositivo tenha espaço, use aspas.
@@ -1107,7 +1106,7 @@ Opções de MIDI e rede
 
 	Informe manualmente o dispositivo MIDI de saída da sua preferência
 	caso o seu computador ou sistema utilize mais de um. O comando
-	apenas funciona nas máquinas compatíveis e que estejam funcionando
+	apenas funciona nos sistemas compatíveis e que estejam funcionando
 	com uma entrada MIDI. Consulte também a opção :ref:`-listslot
 	<mame-commandline-listslots>` para identificar o nome do slot.
 	Caso o nome do dispositivo tenha espaço, use aspas.
@@ -1165,7 +1164,7 @@ Opções de saída das notificações de tela
 	Escolhe como o MAME lidará com o processamento das notificações da
 	saída. É utilizado para conectar saídas externas como uma luz de LED
 	dos botões iluminados de start para os jogadores 1 e 2 em
-	determinadas máquinas arcade, assim como qualquer outro tipo de
+	determinados sistemas arcade, assim como qualquer outro tipo de
 	iluminação externa caso esteja disponível.
 
 	Exemplo:
@@ -1181,7 +1180,7 @@ Opções de saída das notificações de tela
 	Jogador 1 (1P) começar a piscar os valores começaram a alternar na
 	tela.
 
-	Aqui no caso da máquina "Breakers":
+	Aqui no caso do sistema "Breakers":
 
 	Exemplo:
 		.. code-block:: shell
@@ -1192,7 +1191,7 @@ Opções de saída das notificações de tela
 			digit3 = 63
 			digit4 = 63
 
-	Cada máquina terá a sua própria característica.
+	Cada sistema terá a sua própria característica.
 
 	É possível escolher entre: ``auto``, ``none``, ``console`` ou
 	``network``.
@@ -1269,10 +1268,10 @@ Opções para a configuração
 
 	\clearpage
 
-- **<nome-do-driver-da-máquina>.ini**
+- **<nome-do-driver-do-sistema>.ini**
 
-	Para que as opções sejam aplicadas apenas no driver da máquina, para
-	saber qual o nome do driver de uma determinada máquina faça o
+	Para que as opções sejam aplicadas apenas no driver do sistema, para
+	saber qual o nome do driver de um determinado sistema faça o
 	comando:
 
 	Exemplo:
@@ -1305,7 +1304,7 @@ Opções para a configuração
 
 **-[no]writeconfig** / **-[no]wc**
 
-	Grava as configurações feitas no driver da máquina num arquivo
+	Grava as configurações feitas no driver do sistema num arquivo
 	(driver).ini ao encerrar da emulação. O valor predefinido é
 	``Desligado`` (``-nowriteconfig``).
 
@@ -1390,7 +1389,7 @@ Opções para a configuração dos principais diretórios
 **-artpath** <*caminho*>
 
 	Define o caminho completo para os arquivos com as ilustrações
-	gráficas (*artworks*) das máquinas. Essas ilustrações são imagens
+	gráficas (*artworks*) dos sistemas. Essas ilustrações são imagens
 	que cobrem o fundo da tela e oferecem alguns efeitos interessantes.
 	Mais de um caminho podem ser definidos desde que estejam separados
 	por ponto e vírgula. O valor predefinido é ``artwork`` (isto é,
@@ -1556,12 +1555,12 @@ Opções para a configuração dos principais diretórios
 
 	Define o diretório onde os arquivos de configuração são armazenados.
 	Os arquivos de configuração armazenam as customizações feitas pelo
-	usuário e são lidas na inicialização do MAME ou de uma máquina
-	emulada, depois quaisquer alterações são salvas ao encerrar o MAME.
+	usuário e são lidas na inicialização do MAME ou de um sistema
+	emulado, depois quaisquer alterações são salvas ao encerrar o MAME.
 
 	Os arquivos de configuração preservam as configurações da ordem dos
 	botões do seu controle ou joystick, configurações das chaves DIP,
-	informações da contabilidade da máquina e a organização das janelas
+	informações da contabilidade do sistema e a organização das janelas
 	do depurador.
 
 	O valor predefinido é ``cfg`` (isto é, um diretório com o nome
@@ -1607,7 +1606,7 @@ Opções para a configuração dos principais diretórios
 	armazenados. As gravações da entrada são criadas através da opção
 	**-record** e reproduzidas através da opção **-playback**. A opção
 	grava todos os comando e acionamentos de botões que forem feitos
-	durante a operação da máquina.
+	durante a operação do sistema.
 
 	O valor predefinido é ``inp`` (ou seja, um diretório de nome
 	**inp** no diretório raiz do MAME). Caso este diretório não
@@ -1703,7 +1702,7 @@ Opções para a configuração dos principais diretórios
 
 **-share_directory** <*caminho*>
 
-	Define o diretório que será compartilhado com a máquina ou o sistema
+	Define o diretório que será compartilhado com o sistema ou o driver
 	que está sendo emulado. Por exemplo, no caso de um sistema
 	operacional compatível, os arquivos que forem colocados neste
 	diretório será compartilhado com o host emulado.
@@ -1853,21 +1852,21 @@ Opções para a gravação e a reprodução do estado da emulação
 	configuração, a NVRAM, e o cartão de memória não coincidam com o
 	original, inclusive caso seja utilizado uma versão do MAME muito
 	diferente daquela usada na gravação. É recomendável que a
-	configuração (.cfg), a NVRAM (.nv) ou o diretório com o nome da
-	máquina dentro do diretório **nvram** sejam excluídos antes de
+	configuração (.cfg), a NVRAM (.nv) ou o diretório com o nome do
+	sistema dentro do diretório **nvram** sejam excluídos antes de
 	iniciar uma gravação ou uma reprodução.
 
 .. warning::
 
-	Para que o playback funcione em algumas máquinas de alguns drivers,
+	Para que o playback funcione em alguns sistemas de alguns drivers,
 	elas precisam da **NVRAM** como por exemplo a CPS1, a CPS2 e a CPS3,
 	manter ou não o arquivo de configuração nestes casos não faz a menor
 	diferença. Então caso você vá compartilhar a gravação com alguém,
-	tenha certeza de enviar o arquivo **NVRAM** da máquina em questão.
+	tenha certeza de enviar o arquivo **NVRAM** do sistema em questão.
 
 .. warning::
 
-	Em máquinas que não usam **NVRAM** como a pacman, mspacman e
+	Em sistemas que não usam **NVRAM** como a pacman, mspacman e
 	talvez outras, elas também perdem o sincronismo e algumas vezes
 	criam anomalias (bugs) apenas durante a reprodução, neste caso
 	apague o arquivo que mantém o registro do **high score** dentro do
@@ -1912,14 +1911,14 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. warning::
 
-	Em algumas máquinas como a **neogeo** por exemplo, é preciso excluir
-	a **NVRAM** da máquina **ANTES** de iniciar uma gravação e **ANTES**
+	Em alguns sistemas como a **neogeo** por exemplo, é preciso excluir
+	a **NVRAM** do sistema **ANTES** de iniciar uma gravação e **ANTES**
 	de reproduzir com :ref:`-playback <mame-commandline-playback>`, caso
 	contrário, a reprodução pode iniciar num estágio diferente (na série
 	"*The King of Fighters*" por exemplo) e fazendo com que a ação não
 	bata com o que foi gravado ou até mesmo haja uma interrupção da
 	reprodução muito antes do fim. Por exemplo, se for iniciar a
-	gravação da máquina **kof2002**, na pasta **NVRAM**, exclua a pasta
+	gravação do sistema **kof2002**, na pasta **NVRAM**, exclua a pasta
 	**kof2002** e também a pasta **kof2002_16** caso ela exista.
 
 
@@ -1930,7 +1929,7 @@ Opções para a gravação e a reprodução do estado da emulação
 Opções para a gravação de áudio e vídeo
 ---------------------------------------
 
-	Há casos onde certas máquinas alternam a resolução da tela
+	Há casos onde certos sistemas alternam a resolução da tela
 	atrapalhando a gravação de vídeo, algumas gravações podem ficar com
 	um tamanho de tela todo preto com um vídeo menor no meio ou em algum
 	outro canto da tela, use essas duas opções caso isso aconteça,
@@ -2194,7 +2193,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	O comando diz ao MAME para interromper a emulação depois de um
 	tempo determinado, o tempo em questão não é o tempo real e sim o
 	tempo interno da emulação, assim, caso seja definido 30 segundos,
-	pode ser que dependendo da máquina que esteja sendo emulada, a parada
+	pode ser que dependendo do sistema que esteja sendo emulado, a parada
 	só venha a acontecer depois de algum tempo.
 
 	Este comando também é útil para a realização de benchmarks e testes
@@ -2281,7 +2280,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 			mame ssf2tu -speed 1.25
 
 	Quando utilizado em conjunto com :ref:`-rec
-	<mame-commandline-record>` é possível colocar o máquina em
+	<mame-commandline-record>` é possível colocar o sistema em
 	velocidade lenta como ``-speed 0.3`` enquanto grava. Ao terminar, a
 	reprodução com a opção :ref:`-pb <mame-commandline-playback>`
 	ocorrerá em velocidade normal, exemplo:
@@ -2596,7 +2595,7 @@ Opções para a configuração de vídeo
 
 	Diz ao MAME quantas telas devem ser criadas. Para a maioria dos
 	sistemas só exite uma, porém alguns sistemas originalmente usavam
-	mais de uma (*como as máquinas Darius e máquinas Arcade
+	mais de uma (*como os sistemas Darius e os sistemas Arcade
 	PlayChoice-10 por exemplo*). Cada tela (até 4), possem as suas
 	próprias configurações, taxa de proporção de tela, resolução e
 	exibição, que podem ser definidas usando as opções abaixo.
@@ -2872,7 +2871,7 @@ Opções para a configuração de vídeo
 
 	No **Windows**, ``-waitvsync`` será bloqueado até o próximo
 	apagamento de vídeo, permitindo que o MAME desenhe o próximo quadro,
-	sincronizando a taxa de quadros da máquina emulada com a taxa de
+	sincronizando a taxa de quadros do sistema emulado com a taxa de
 	quadros nativa do monitor que estiver sendo usado no Windows, apenas
 	ative esta opção caso esteja utilizando o modo janela. Em tela
 	inteira esta opção só é necessária caso a opção ``-triplebuffer``
@@ -3201,13 +3200,13 @@ Opções de vídeo para uso com janelas individuais
 	todas as janelas.
 	
 	Para identificar qual o nome correto para ser utilizado com a opção
-	``-view``, ao iniciar a máquina pressione **TAB** e vá em
-	**Opções de Vídeo**, escolha a visualização que mais lhe agrada e
-	encerre a emulação. No diretório **cfg** haverá um arquivo de
-	configuração com **nomedarom.cfg** (se usarmos o exemplo abaixo o
+	``-view``, ao iniciar o sistema pressione :kbd:`Tab` e vá em
+	:guilabel:`Opções de Vídeo`, escolha a visualização que mais lhe
+	agrada e encerre a emulação. No diretório **cfg** haverá um arquivo
+	de configuração com **nomedarom.cfg** (se usarmos o exemplo abaixo o
 	nome do arquivo será ``neobombe.cfg``), abra-o num editor de texto
-	qualquer, no campo **view** veja qual a opção está sendo usada e
-	use-a na linha de comando como mostra o exemplo abaixo:
+	qualquer, no campo :guilabel:`view` veja qual a opção está sendo
+	usada e use-a na linha de comando como mostra o exemplo abaixo:
 
 	Exemplo:
 		.. code-block:: shell
@@ -3215,14 +3214,14 @@ Opções de vídeo para uso com janelas individuais
 			mame neobombe -view "Screen 0 Cropped (304x224)"
 
 	Supondo que esta seja a sua opção de visualização preferida e caso
-	queira que ela seja aplicada a todas as máquinas deste driver, no
+	queira que ela seja aplicada a todos os sistemas deste driver, no
 	nosso caso, basta fazer o comando ``mame -ls neobombe`` para
 	identificá-lo. Com o nome do driver em mãos crie o arquivo
 	``neogeo.ini`` dentro do diretório **ini/source** e use a opção
 	``view "Screen 0 Cropped (304x224)"``.
 
-	Salve o arquivo e rode a máquina novamente sem a opção ``-view``,
-	note que ela já começa com a opção de visualização selecionada.
+	Salve o arquivo e rode o sistema novamente sem a opção ``-view``,
+	note que ele já começa com a opção selecionada de visualização.
 
 .. raw:: latex
 
@@ -3372,7 +3371,7 @@ Opções para os ajustes de imagem da tela
 	``.png`` é repetido para cobrir toda a tela (mas nenhuma parte da
 	arte externa). Ela é renderizada na resolução nativa do sistema.
 
-	É possível adicionar o efeito de forma automática para máquinas com
+	É possível adicionar o efeito de forma automática para sistemas com
 	orientação horizontal e vertical, basta criar os arquivos
 	**vertical.ini** e **horizont.ini** dentro do diretório **ini**.
 	No arquivo ``vertical.ini`` adicione a linha abaixo e salve ao
@@ -3430,7 +3429,7 @@ Opções para os ajustes de imagem da tela
 
 	\clearpage
 
-Opções para máquinas que usem gráficos vetoriais
+Opções para sistemas que usem gráficos vetoriais
 ------------------------------------------------
 
 .. _mame-commandline-beamwidthmin:
@@ -3680,7 +3679,7 @@ Opções para a configuração do áudio
 **-[no]samples**
 
 	Usar arquivos de amostras caso estejam disponíveis. Esses arquivos
-	são gravações de efeitos de áudio usados por algumas máquinas.
+	são gravações de efeitos de áudio usados por alguns sistemas.
 
 	O valor predefinido é ``Ligado`` (``-samples``).
 
@@ -4083,7 +4082,7 @@ Opções para as configurações de diferentes entradas
 	pesquisados. Os arquivos de configuração do controle utilizam um
 	formato similar ao ``.cfg`` que é utilizado para gravar as
 	configurações do sistema. Estes arquivos são criados durante a
-	configuração dos botões do controle de uma máquina, estas
+	configuração dos botões do controle de um sistema, estas
 	configurações são gravadas no diretório **cfg** como
 	(nome_da_maquina).cfg. Para mais informações, consulte o capítulo
 	:ref:`ctrlrcfg` e o capítulo :ref:`advanced-tricks-botões-ordem`.
@@ -4266,9 +4265,9 @@ Opções para as configurações de diferentes entradas
 	quando a diagonal é acionada, o Pac-Man simplesmente para nos
 	cruzamentos do mapa fazendo com que seja quase que impossível
 	jogá-lo direito ou pelo menos, da maneira que ele foi desenvolvido
-	para ser jogado. Outras máquinas arcade utilizam controles digitais
+	para ser jogado. Outros sistemas arcade utilizam controles digitais
 	do tipo 4-way ou 8-way (em vez de utilizarem controles analógicos),
-	assim para controles analógicos como os utilizados em máquinas de
+	assim para controles analógicos como os utilizados em sistemas de
 	voo com manches ou thumb sticks analógicos, estes precisam ser
 	mapeados para valores correspondentes aos controles digitais
 	com 4 ou 8 posições.
@@ -4297,7 +4296,7 @@ Opções para as configurações de diferentes entradas
 	Este mapeamento oferece uma grande margem de manobra para os ângulos
 	aceitos numa determinada direção, assim sendo bem próximo da área
 	da direção desejada. Sem isso, caso esteja um pouco fora do eixo
-	central enquanto segura o controle para a esquerda, a máquina não
+	central enquanto segura o controle para a esquerda, o sistema não
 	vai reconhecer a ação de forma adequada.
 
 	O valor predefinido é ``auto``, significa que o controle padrão com
@@ -4363,7 +4362,7 @@ Opções para as configurações de diferentes entradas
 	sejam espelhos do sentido cima/baixo das 3 primeiras carreiras,
 	gerando as carreiras finais com 111222333.
 
-	Em máquinas compatíveis com controles com 4 posições, o "sticky"
+	Em sistemas compatíveis com controles com 4 posições, o "sticky"
 	(pegadiço) se torna importante para evitar problemas com as
 	diagonais. Geralmente seria escolhido um mapa semelhante com este:
 
@@ -5062,7 +5061,7 @@ Opções diversas
 **-[no]skip_gameinfo**
 
 	Ao iniciar, faz com que o MAME não exiba a tela de informações do
-	sistema da máquina.
+	sistema iniciado.
 
 	O valor predefinido é ``Desligado`` (``-noskip_gameinfo``).
 
@@ -5198,8 +5197,8 @@ Opções para uso com script
 
 **-autoboot_command** / **-ab** "<*comando*>"
 
-	Cadeia de comandos que serão executados após a inicialização da
-	máquina (entre aspas " "). Para emitir uma cotação para a
+	Uma cadeia de comandos que serão executados após a inicialização do
+	sistema (entre aspas " "). Para emitir uma cotação para a
 	emulação, use """ no comando. Usando **\\n** irá criar uma nova
 	linha, emitindo o que foi digitado antes como comando.
 
@@ -5225,7 +5224,7 @@ Opções para uso com script
 
 **-autoboot_script** / **-script** <*nome_do_arquivo.lua*>
 
-	Carrega e executa um scrit após a inicialização da máquina.
+	Carrega e executa um scrit após a inicialização do sistema.
 
 	Exemplo:
 		.. code-block:: shell
