@@ -44,7 +44,7 @@ Comandos gerais do depurador
     :ref:`debugger-command-source`
         Faz a leitura dos comando a partir do arquivo e os executa individualmente.
     :ref:`debugger-command-time`
-        Imprime o tempo atual da máquina no console
+        Imprime o tempo atual do sistema no console
     :ref:`debugger-command-quit`
         Encerra o depurador e a emulação.
 
@@ -451,7 +451,7 @@ rewind
 Carrega o estado salvo mais recente da *RAM*. Quando ativado os estados
 ``rewind`` são gravados quando os comando :ref:`debugger-command-step`,
 :ref:`debugger-command-over` e :ref:`debugger-command-out` são
-utilizados, armazenando o estado da máquina em um momento antes do
+utilizados, armazenando o estado do sistema num momento antes do
 avanço. Este comando pode ser abreviado para ``rw``.
 
 A carga consecutiva dos estados ``rewind`` pode funcionar como uma
@@ -481,7 +481,7 @@ statesave
 
 **statesave** <*nome_do_arquivo*>
 
-Grava um estado da máquina do momento atual no tempo do emulador. O
+Grava um estado do sistema do momento atual no tempo do emulador. O
 arquivo do estado é gravado no diretório de gravação do estado (consulte
 a opção :ref:`state_directory <mame-commandline-statedirectory>`), a
 extensão ``.sta`` é adicionada automaticamente ao nome do arquivo. Pode
@@ -494,9 +494,9 @@ Exemplos:
 .. line-block::
 
    ``statesave foo``
-      Grava o estado da máquina que está sendo emulada no arquivo ``foo.sta`` no diretório de gravação do estado.
+      Grava o estado do sistema que está sendo emulado no arquivo ``foo.sta`` no diretório de gravação do estado.
    ``ss bar``
-      A forma abreviada do comando, grava o estado da máquina que está sendo emulada no arquivo ``bar.sta``.
+      A forma abreviada do comando, grava o estado do sistema que está sendo emulado no arquivo ``bar.sta``.
 
 |ret| :ref:`debugger-general-list`.
 
@@ -594,7 +594,7 @@ Fecha o depurador e encerra a emulação imediatamente. Ou encerra o MAME
 ou retorna ao menu de seleção do sistema dependendo de como o sistema
 foi usado na linha de comando, se o MAME foi iniciado sozinho e sem
 comandos ele retorna para a interface gráfica, caso tenha sido iniciado
-com alguma máquina, o MAME encerra imediatamente.
+com algum sistema, o MAME encerra imediatamente.
 
 Exemplo:
 
@@ -621,4 +621,4 @@ Exemplo:
 .. |fde| replace:: faixa de endereços
 .. |nrvd| replace:: na região visível do programa na *CPU*
 .. |amaa| replace:: A memória anterior e as estatísticas de rastreamento do PC serão apagadas
-.. |tsdc| replace:: Toda a saída deste comando é ecoada em tempo real na janela da máquina que estiver em execução
+.. |tsdc| replace:: Toda a saída deste comando é ecoada em tempo real na janela do sistema que estiver em execução
