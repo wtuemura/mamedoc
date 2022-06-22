@@ -57,9 +57,9 @@ Baixe o arquivo ``strings.mo`` e copie-o para o diretório
 
 	\clearpage
 
-Ao clicar com o botão direito do mouse no nome da máquina, é possível
-configurar a máquina individualmente caso seja necessário. Tais
-configurações ficam armazenadas em arquivos <*nome_da_máquina*>.ini, no
+Ao clicar com o botão direito do mouse no nome do sistema, é possível
+configurar o sistema individualmente caso seja necessário. Tais
+configurações ficam armazenadas em arquivos <*nome_do_sistema*>.ini, no
 Windows fica no mesmo diretório do executável do MAME e no Linux/macOS
 fica em ``~/.mame``.
 
@@ -72,7 +72,7 @@ precisam ser feitas por linha de comando ou por arquivos ``*.ini``.
 	:width: 100%
 	:align: center
 	:figclass: align-center
-	:alt: Configuração individual da máquina
+	:alt: Configuração individual do sistema
 
 .. raw:: latex
 
@@ -80,7 +80,7 @@ precisam ser feitas por linha de comando ou por arquivos ``*.ini``.
 
 Ainda é possível fazer personalizações visuais como adicionar uma
 :ref:`imagem de fundo <advanced-tricks-imagem-fundo>`, adicionar ícones
-ao lado dos nomes das máquinas:
+ao lado dos nomes dos sistemas:
 
 .. figure:: images/mame_icons.png
 	:width: 100%
@@ -93,15 +93,15 @@ Tais ícones são mantidos fora do projeto MAME pelo
 simples, baixe o arquivo mais recente e extraia o diretório **icons** e
 **folders** dentro do diretório do MAME, caso apareça algum erro de
 arquivo já existente basta sobrescrever. Agora ao iniciar o MAME o nomes
-das máquinas mostram um ícone.
+dos sistemas mostram um ícone.
 
 .. raw:: latex
 
 	\clearpage
 
-Para iniciar uma máquina na lista que aparece ao centro da tela clique
-2x no nome da máquina desejada. Pressione :kbd:`F12` durante a execução
-da máquina para que seja salvo uma **captura da tela** na pasta
+Para iniciar um sistema na lista que aparece ao centro da tela clique
+2x no nome do sistema desejado. Pressione :kbd:`F12` durante a execução
+do sistema para que seja salvo uma **captura da tela** na pasta
 **snap**. Ao encerrar a emulação a imagem da tela vai aparecer do lado
 direito da interface do MAME.
 
@@ -122,12 +122,12 @@ leve isso em consideração.
 
 	\clearpage
 
-As máquinas que você mais gosta de jogar podem ser adicionadas aos
-:guilabel:`Favoritos`, na interface durante a seleção da máquina clique
-com o botão direito em cima do nome da máquina e selecione a opção
+Os sistemas que você mais gosta de jogar podem ser adicionadas aos
+:guilabel:`Favoritos`, na interface durante a seleção do sistema, clique
+com o botão direito em cima do nome do sistema e selecione a opção
 :guilabel:`Adicione aos favoritos`. Caso tenha iniciado o MAME pela
-linha de comando ou caso a máquina já esteja rodando, pressione
-:kbd:`TAB` para abrir a tela de opções e escolha
+linha de comando ou caso o sistema já esteja rodando, pressione
+:kbd:`Tab` para abrir a tela de opções e escolha
 :guilabel:`Adicione aos favoritos`.
 
 .. figure:: images/mame_favoritos.png
@@ -136,7 +136,7 @@ linha de comando ou caso a máquina já esteja rodando, pressione
 	:figclass: align-center
 	:alt: Favoritos
 
-Todas as máquinas favoritadas ficam armazenadas num arquivo
+Todos os sistemas favoritadas ficam armazenados num arquivo
 ``favorites.ini`` dentro do diretório **ui** que fica no mesmo diretório
 do executável do MAME.
 
@@ -154,7 +154,7 @@ usuários Windows, inicie a interface do MAME com o comando:
 
 	**mame**
 
-Para iniciar iniciar uma máquina faça:
+Para iniciar iniciar um sistema faça:
 
 	**mame** <*ROM*>
 
@@ -163,7 +163,7 @@ Para iniciar um sistema específico junto com um software faça:
 	**mame** <*sistema*> <*software*>
 
 Em **sistema** escolha uma das centenas de sistemas emulados, já em
-**software** é o nome da máquina [#]_ que deseja rodar. O software
+**software** é o nome do sistema [#]_ que deseja rodar. O software
 nada mais é do que um nome de uma ROM ou a imagem de uma mídia. É
 possível também a utilização de um **catálogo de programas**
 (**softlists**), no catálogo tem a lista de programas compatíveis (ou
@@ -469,14 +469,14 @@ arquivo ``mame.ini`` diretamente.
 Arquivos CHD
 ------------
 
-Além das ROMs, algumas máquinas também precisam de arquivos **.CHD**
+Além das ROMs, alguns sistemas também precisam de arquivos **.CHD**
 para funcionarem. Estes arquivos são cópias das mídias originais (HDD,
 CD, DVD, etc) compactadas num formato proprietário, para mais detalhes
 consulte :ref:`aboutromsets_rom_chd`.
 
 O MAME procura por estes arquivos dentro do diretório **roms**, eles
 devem estar dentro de diretórios próprios com o mesmo nome da ROM a qual
-os arquivos CHD's estão associados, por exemplo, a máquina **Street
+os arquivos CHD's estão associados, por exemplo, o sistema **Street
 Fighter III: New Generation (Euro 970204)** precisa que a ROM
 ``sfiii.zip`` esteja dentro da pasta **roms** e o arquivo **.CHD**
 ``cap-sf3-3.chd`` precisa estar dentro de um diretório com o mesmo nome
@@ -490,10 +490,13 @@ da ROM, ou seja, uma pasta ``sfiii`` dentro da pasta **roms**::
              +-cap-sf3-3.chd
 
 
-.. [#]	Os desenvolvedores do MAME preferem usar o termo **máquinas** em
-		vez de **jogos**, talvez visando evitar problemas legais?
-.. [#]	Existe uma diferença entre sistema e máquina, o comando em
-		questão funciona apenas com sistemas. Arcades são considerados
-		máquinas como o CPS1, CP2, ZN, etc. O comando ao ser usado com
-		uma máquina irá retornar um erro "*Unknown system*".
+.. [#]	Os desenvolvedores do MAME preferem usar o termo **sistemas** em
+		vez de **jogos**, talvez visando evitar problemas legais? O
+		termo "máquina" foi alterado
+		`neste commit <https://github.com/mamedev/mame/commit/f47f9c3db3c7d20bea0526425cdbc469d5a10868>`_.
+.. [#]	Existe uma diferença entre driver e sistema, o comando em
+		questão funciona apenas com sistemas. Os arcades são considerados
+		drivers como o CPS1, CP2, ZN, etc; os jogos dentros dos drivers
+		são chamados de sistemas. O comando ao ser usado com um sistema
+		irá retornar um erro "*Unknown system*".
 		(Nota do tradutor)
