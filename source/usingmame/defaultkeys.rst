@@ -15,12 +15,12 @@ Teclas já predefinidas
 Introdução aos controles
 ------------------------
 
-O MAME é compatível com uma vasta gama de diferentes tipos de máquinas,
-e estas, possuem uma considerável quantidade de diferentes entradas
+O MAME é compatível com uma vasta gama de diferentes tipos de sistemas,
+e estes, possuem uma considerável quantidade de diferentes entradas
 entre elas. Isso significa que algumas teclas do teclado, alguns botões
 do mouse e alguns botões do joystick serão usados para diversas funções.
 Como resultado, o mapa dos controles mostrados abaixo abaixo são
-separados pelos tipos das máquinas facilitando a busca.
+separados pelos tipos dos sistemas facilitando a busca.
 
 Todos os controles abaixo são totalmente configuráveis através da
 interface do usuário. Os exemplos abaixo são as configurações
@@ -39,7 +39,7 @@ Controles da interface
 ----------------------
 
 Estes controles cobrem as teclas básicas de funcionamento do MAME como o
-cardápio de opções, a pausa da máquina, o salvamento e a leitura dos
+cardápio de opções, a pausa do sistema, o salvamento e a leitura dos
 estados.
 
 :kbd:`Tab`
@@ -85,7 +85,7 @@ Seta direcional :kbd:`direita`
 :kbd:`[` :kbd:`]`
     Move para o grupo anterior ou para o próximo grupo nos menus
     compatíveis da IU (por exemplo, move para as entradas do dispositivo
-    anterior ou para o seguinte no menu Input (esta Máquina)).
+    anterior ou para o seguinte no menu :guilabel`Atribuições da entrada (este sistema)).
 :kbd:`Enter` / **Botão** :kbd:`1` do controle
     Seleciona a opção que estiver me destaque.
 :kbd:`Espaço`
@@ -103,11 +103,11 @@ Seta direcional :kbd:`direita`
     Enquanto estiver pausado, carrega o estado salvo mais recente para
     ser usado com o rebobinamento.
 :kbd:`F1`
-    Liga a máquina nas máquinas que tenham esta função específica.
+    Liga o sistema nos sistema que tenham esta função de liga/desliga.
 :kbd:`F2`
-    Desliga a máquina nas máquinas que tenham esta função específica.
+    Desliga o sistema nos sistema que tenham esta função de liga/desliga.
 :kbd:`F3`
-    Faz um reinicio simples da máquina.
+    Faz um reinicio simples do sistema.
 :kbd:`Shift` esquerdo + :kbd:`F3`
     Realiza um reinicio "pesado" onde tudo é zerado e carregado do
     início. Este é um processo mais completo do que quando feito com
@@ -220,7 +220,7 @@ Seta direcional :kbd:`direita`
     Essa tecla alterna entre a interface do MAME e a interface que está
     sendo emulada, quando a tecla é pressionada é possível usar a tecla
     :kbd:`Tab` para alterar as opções do MAME e posteriormente retornar
-    na máquina emulada. Consulte também a opção
+    no sistema emulado. Consulte também a opção
     :ref:`-uimodekey<mame-commandline-uimodekey>`
 :kbd:`Esc`
     Encerra a emulação, retorna para o menu anterior ou cancela uma
@@ -257,11 +257,11 @@ Os menus de seleção do programa e do sistema usam controles adicionais.
 
 .. _default-arcade-keys:
 
-Controles predefinidos das máquinas arcade
+Controles predefinidos dos sistemas arcade
 ------------------------------------------
 
 Esta seção aborda os controles que são aplicáveis à maioria dos tipos
-das máquinas de arcade. Observe que nem todas as máquinas terão todos
+dos sistemas de arcade. Observe que nem todas os sistemas terão todos
 estes controles disponíveis. Todos os controles abaixo são totalmente
 configuráveis na interface do usuário. Esta lista mostra a configuração
 predefinida do teclado.
@@ -275,38 +275,38 @@ predefinida do teclado.
 :kbd:`8` (*fora do teclado numérico*)
     Ficha do slot 4
 :kbd:`Backspace`
-    Cédula 1 (Para máquinas que tenham um receptor/leitor de cédulas)
+    Cédula 1 (Para sistemas que tenham um receptor/leitor de cédulas)
 :kbd:`T`
     Tilt
 
     Normalmente um interruptor de inclinação ou sensor de impacto que
-    encerra o jogo atual, redefine os créditos e/ou reinicia a máquina
+    encerra o jogo atual, redefine os créditos e/ou reinicia o sistema
     caso ela seja derrubada com muita força ou seja deslocada. Mais
-    comumente encontrado nas máquinas de pinball.
+    comumente encontrado nos sistemas de pinball.
 :kbd:`-` (*fora do teclado numérico*)
     Reduz o volume
 
-    Para máquinas que tenham um controle de volume.
+    Para sistemas que tenham um controle de volume.
 :kbd:`=` (*fora do teclado numérico*)
     Aumenta o volume
 
-    Para máquinas que tenham um controle de volume.
+    Para sistemas que tenham um controle de volume.
 :kbd:`F1`
     Redefine a memória
 
     Isso redefine/zera o(s) placar(es), os créditos/prêmios, as
-    estatísticas e/ou as configurações do operados nas máquinas
+    estatísticas e/ou as configurações do operados nos sistemas
     compatíveis.
 :kbd:`F2`
     Modo de serviço
 
-    Este é um botão existente em algumas máquinas para acessar este
-    modo, em outras máquinas pode ser uma chave ou uma chave DIP.
+    Este é um botão existente em alguns sistemas para acessar este
+    modo, em outros sistemas pode ser uma chave ou uma chave DIP.
 :kbd:`9` (*fora do teclado numérico*)
     Serviço 1
 
     Estes botões geralmente servem para dar créditos de graça, sem
-    passar pela contabilidade da máquina, ou para navegar no menu de
+    passar pela contabilidade do sistema, ou para navegar no menu de
     serviço do operador.
 :kbd:`0` (*fora do teclado numérico*)
     Serviço 2
@@ -357,21 +357,21 @@ Seta direcional :kbd:`esquerda`
 Seta direcional :kbd:`direita`
     Jogador 1 direita
 :kbd:`E`
-    Jogador 1 - Cima no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
+    Jogador 1 - Cima no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
 :kbd:`D`
-    Jogador 1 - Baixo no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
+    Jogador 1 - Baixo no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
 :kbd:`S`
-    Jogador 1 - Esquerda no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
+    Jogador 1 - Esquerda no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
 :kbd:`F`
-    Jogador 1 - Direita no controle esquerdo nas máquinas com dois controles (p.e. Robotron)
+    Jogador 1 - Direita no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
 :kbd:`I`
-    Jogador 1 - Cima no controle direito nas máquinas com dois controles (p.e. Robotron)
+    Jogador 1 - Cima no controle direito nos sistemas com dois controles (p.e. Robotron)
 :kbd:`K`
-    Jogador 1 - Baixo no controle direito nas máquinas com dois controles (p.e. Robotron)
+    Jogador 1 - Baixo no controle direito nos sistemas com dois controles (p.e. Robotron)
 :kbd:`J`
-    Jogador 1 - Esquerdo no controle direito nas máquinas com dois controles (p.e. Robotron)
+    Jogador 1 - Esquerdo no controle direito nos sistemas com dois controles (p.e. Robotron)
 :kbd:`L`
-    Jogador 1 - Direito no controle direito nas máquinas com dois controles (p.e. Robotron)
+    Jogador 1 - Direito no controle direito nos sistemas com dois controles (p.e. Robotron)
 :kbd:`Ctrl` esquerdo / **Mouse** :kbd:`B0` / **Pistola 1** **Botão** :kbd:`0`
     Jogador 1 botão :kbd:`1`
 :kbd:`Alt` esquerdo / **Mouse** :kbd:`B2` / **Pistola 1** **Botão** :kbd:`1`
@@ -610,7 +610,7 @@ específica para os botões *Take Score*, *Double Up*, *High* e  *Low*.
 :kbd:`8`
     Ficha do slot 4
 :kbd:`Backspace`
-    Cédula 1 (Para máquinas que tenham um receptor/leitor de cédulas)
+    Cédula 1 (Para sistemas que tenham um receptor/leitor de cédulas)
 :kbd:`I`
     Payout
 :kbd:`Q`
@@ -623,11 +623,11 @@ específica para os botões *Take Score*, *Double Up*, *High* e  *Low*.
     Serviço 1
 
     Estes botões geralmente servem para dar créditos de graça, sem
-    passar pela contabilidade da máquina, ou para navegar no menu de
+    passar pela contabilidade do sistema, ou para navegar no menu de
     serviço do operador.
 :kbd:`0` (*fora do teclado numérico*)
     Serviço 2
-    Book-Keeping (para máquinas com este recurso)
+    Book-Keeping (para sistemas com este recurso)
 :kbd:`-` (*fora do teclado numérico*)
     Serviço 3
 :kbd:`=` (*fora do teclado numérico*)
@@ -756,8 +756,8 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
 
 Observe que os controles podem variar bastante de computador para
 computador, assim sendo, nem todas as teclas serão mostradas aqui. No
-MAME veja a opção "Entrada (esta máquina)" para obter mais detalhes da
-máquina que estiver usando.
+MAME veja a opção :guilabel:`Atribuições da entrada (este sistema)` para
+obter mais detalhes do sistema que estiver usando.
 
 
 :kbd:`Tab`
@@ -768,22 +768,22 @@ máquina que estiver usando.
     Essa tecla alterna entre a interface do MAME e a interface que está
     sendo emulada, quando a tecla é pressionada é possível usar a tecla
     :kbd:`Tab` para alterar as opções do MAME e posteriormente retornar
-    na máquina emulada. Consulte também a opção
+    no sistema emulado. Consulte também a opção
     :ref:`-uimodekey<mame-commandline-uimodekey>`
 :kbd:`F2`
-    Inicia a fita das máquinas que possuem leitores de fitas.
+    Inicia a fita dos sistemas que possuem leitores de fitas.
 :kbd:`Shift` + :kbd:`F2`
     Interrompe a leitura da fita.
 :kbd:`Shift` esquerdo + :kbd:`ScrLk`
-    Cola a partir da área de transferência do sistema para a máquina
-    emulada.
+    Cola a partir da área de transferência do sistema para o sistema
+    emulado.
 **Teclas numéricas**
-    Estas teclas são as mesmas usadas na máquina emulada.
+    Estas teclas são as mesmas usadas no sistema emulado.
 
 
 .. _default-othermachine-keys:
 
-Outras máquinas
+Outros sistemas
 ---------------
 
 Todas as teclas abaixo são totalmente configuráveis na interface do
@@ -791,8 +791,8 @@ usuário.
 
 Observe que os controles podem variar bastante de computador para
 computador, assim sendo, nem todas as teclas serão mostradas aqui. No
-MAME veja a opção "Entrada (esta máquina)" para obter mais detalhes da
-máquina que estiver usando.
+MAME veja a opção :guilabel:`Atribuições da entrada (este sistema)` para
+obter mais detalhes do sistema que estiver usando.
 
 .. _default-comparative-kbd:
 
