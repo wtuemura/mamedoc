@@ -1305,9 +1305,6 @@ Five a Side Soccer
 	  em :kbd:`F3` uma vez. Não solte :kbd:`F2` até que apareça a mensagem
 	  dizendo **Initializing EEPROM**.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-foodf:
 
@@ -1464,9 +1461,6 @@ Golden Canaries
 	  **RF/AMT** será alterado de :kbd:`0` para **200**, pressione :kbd:`F1`,
 	  depois :kbd:`F2`.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-gtfore01:
 
@@ -1537,9 +1531,6 @@ Hae Hae Ka Ka
 	  **RAM CLEAR**, mantenha :kbd:`9` pressionado até aparecer **OK**
 	  na tela. Reinicie o sistema com :kbd:`F3`.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-hangplt:
 
@@ -1676,9 +1667,6 @@ Hyper Sports
 	  **World Records** como **Erase on Reset**, pressione :kbd:`F3`.
 	  Redefina **World Records** como **Don't Erase**.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-ilpag:
 
@@ -1835,9 +1823,6 @@ K.G Bird
 	  corretamente o valor de **RF/AMT** será alterado de :kbd:`0` para
 	  **200**, pressione :kbd:`F1`, depois :kbd:`F2`.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-karatblzu:
 
@@ -1980,9 +1965,6 @@ Konami 80's AC Special
 	  Navegue para baixo com o botão :kbd:`2` do jogador 1, selecione
 	  **SAVE AND EXIT**, pressione :kbd:`1` para continuar.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-opengolf:
 
@@ -2132,9 +2114,6 @@ Lucky & Wild
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-lhaunt_2:
 
@@ -2371,9 +2350,6 @@ Monster Maulers
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-mk2:
 
@@ -2441,9 +2417,6 @@ Mystic Warriors
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-nclubv3:
 
@@ -2638,9 +2611,6 @@ Player's Edge Plus (Set038) Set Chip
 	A informação será mantida para futuras referências de versões mais
 	antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-peke0004:
 
@@ -2767,10 +2737,6 @@ Pop'n Music 4
 
 		chdman createcd -i gq986jaa02.iso -o gq986jaa02.chd
 
-	  .. raw:: latex
-
-		\clearpage
-
 	  Na próxima vez que a maquina iniciar não haverá mais o erro
 	  **E750: SPU DVDROM ERROR**. Caso já tenha tentado rodar o sistema
 	  antes e depois da conversão aparecer o erro::
@@ -2869,9 +2835,6 @@ Pop'n Music Animelo 2
 
 	  Consulte :ref:`faqgames-popn4`
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-pontoon:
 
@@ -3057,9 +3020,6 @@ Qix
 	  Use a tecla :kbd:`9` para passar por todas as telas de
 	  configuração até chegar na tela do título.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-qgakumon:
 
@@ -3122,9 +3082,6 @@ Raiden Fighters Jet (Todas as regiões)
 	  :guilabel:`Chaves DIP`, **Desligue** a chave **JP1**, encerre o
 	  MAME e inicie o sistema novamente.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-racinfrc:
 
@@ -3196,9 +3153,6 @@ Resident
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-revx:
 
@@ -3272,9 +3226,6 @@ Rock Climber (rclimb_3)
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-royalcrd:
 
@@ -3340,9 +3291,6 @@ Run and Gun
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-salmndr2:
 
@@ -3573,9 +3521,6 @@ Space Dungeon
 	  Use a tecla :kbd:`9` para passar por todas as telas de
 	  configuração até chegar na tela do título.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-spacegun:
 
@@ -3643,9 +3588,6 @@ Steel Gunner / Steel Gunner 2
 	  pressione :kbd:`F2`, atire nos alvos com a pistola do jogador 1 e
 	  2. Pressione :kbd:`F2` para encerrar a configuração.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-sss:
 
@@ -3886,9 +3828,6 @@ Teenage Mutant Ninja (Hero) Turtles 2 - Turtles in Time
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-tenballs:
 
@@ -3962,9 +3901,6 @@ The Simpsons
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-thrilld:
 
@@ -4120,9 +4056,6 @@ Twin Bee Yahhoo!
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-vendetta:
 
@@ -4195,9 +4128,6 @@ Virtual Mahjong
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-myfairld:
 
@@ -4448,9 +4378,6 @@ X-Men
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
-.. raw:: latex
-
-	\clearpage
 
 .. _faqgames-xexex:
 

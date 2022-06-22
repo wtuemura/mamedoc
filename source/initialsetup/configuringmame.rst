@@ -459,6 +459,10 @@ configuração destas para cada sistema individualmente, é possível
 aplicar esta exata configuração **por sistema**, ou seja, todas os
 sistemas do driver CPS-1 por exemplo, podem usar uma só configuração.
 
+.. raw:: latex
+
+	\clearpage
+
 Para isso, copie o arquivo ``sf2.cfg`` da pasta ``cfg`` para a pasta
 ``ctrlr``, esta pasta fica junto com o executável do MAME, caso o seu
 MAME venha de uma distribuição Linux ou macOS em particular com algum
@@ -472,10 +476,6 @@ algo como ``street.cfg`` (pode ser o nome que quiser). Abra o arquivo
 ``street.cfg`` (ou o nome do arquivo que usou) num editor de texto e
 troque o **sf2** da linha ``<system name="sf2">`` para **default** ou
 ``<system name="defaut">`` e salve o arquivo.
-
-.. raw:: latex
-
-	\clearpage
 
 Para aplicar a configuração para **TODOS** os sistemas do driver CPS-1,
 crie uma pasta chamada chamada ``sources`` dentro da pasta ``ini``,
