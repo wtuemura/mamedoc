@@ -65,7 +65,7 @@ Por exemplo:
 A interface **_INTERNAL** indica um dispositivo que não é selecionável
 pelo usuário, o que é útil para o controlador.
 
-Então na configuração da máquina (ou numa configuração de fragmento)
+Então na configuração do sistema (ou numa configuração de fragmento)
 primeiro é necessário adicionar o barramento e em seguida os
 dispositivos (potenciais) como dispositivos de sub-dispositivos do
 barramento com o SCSI ID como seu nome, exemplo:
@@ -146,7 +146,7 @@ dispositivos.
   em si, para evitar uma recursão irritante e um tanto inútil).
 
 A implementação do controle é apenas uma questão de seguir o estado
-descritivos das máquinas, pelo menos se eles estiverem disponíveis.
+descritivos dos sistemas, pelo menos se eles estiverem disponíveis.
 A única parte não descrita é a arbitragem/seleção que está documentada
 na norma do SCSI. Para um iniciador (o que é que o controlador sempre é
 essencialmente), funciona assim:
@@ -180,7 +180,7 @@ E tudo pronto, a conexão com o dispositivo de destino está feita até que
 o alvo desocupe a linha ocupada, seja porque foi requisitado ou apenas
 para te aborrecer. O **de-assert** (desocupar) é chamado de desconexão.
 
-O **ncr5390** é um exemplo de como usar um estado de máquina com dois
+O **ncr5390** é um exemplo de como usar um estado do sistema com dois
 níveis de estado para lidar com todos os eventos.
 
 
