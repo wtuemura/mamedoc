@@ -25,7 +25,6 @@ complexo, porém é bem mais simples do que parece.
 Inicie o MAME clicando duas vezes no executável:
 
 .. figure:: images/mame_main.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Tela principal do MAME
@@ -35,20 +34,19 @@ Inicie o MAME clicando duas vezes no executável:
 	\clearpage
 
 Boa parte da interface já foi traduzida, para trocar o idioma da
-interface vá em :guilabel:`Configure Options` -->
+interface gráfica, vá em :guilabel:`General Settings` -->
 :guilabel:`Customize UI`, clique duas vezes em :guilabel:`Language`,
 role para baixo e selecione :guilabel:`Portuguese (Brazil)`. Retorne e
-:guilabel:`Salve a configuração`.
+faça um clique duplo em :guilabel:`Salva as definições`.
 
 A versão da tradução compatível com este documento pode ser encontrado
-em `mamedoc <https://github.com/wtuemura/mamedoc>`_ ou mais precisamente
-`aqui <https://github.com/wtuemura/mamedoc/tree/master/language/Portuguese_Brazil>`_.
+no site do `mamedoc <https://github.com/wtuemura/mamedoc>`_ ou mais
+precisamente `aqui <https://github.com/wtuemura/mamedoc/tree/master/language/Portuguese_Brazil>`_.
 
 Baixe o arquivo ``strings.mo`` e copie-o para o diretório
-**language\\Portuguese_Brazil**.
+**language\\Portuguese_Brazil**, substituindo o que já está lá.
 
 .. figure:: images/mame_main_pt_br.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Tela principal do MAME traduzido
@@ -63,13 +61,14 @@ configurações ficam armazenadas em arquivos <*nome_do_sistema*>.ini, no
 Windows fica no mesmo diretório do executável do MAME e no Linux/macOS
 fica em ``~/.mame``.
 
-Apesar de ser possível fazer algumas configurações através da interface,
+Apesar de ser possível fazer algumas definições através da interface,
 nem todas as :ref:`configurações do MAME <mame-commandline-universal>`
 estão acessíveis pela interface, configurações mais específicas ainda
-precisam ser feitas por linha de comando ou por arquivos ``*.ini``.
+precisam ser feitas através da linha de comando ou por arquivos
+``*.ini`` específicos. Consulte :ref:`advanced-multi-CFG` para obter
+mais informações.
 
 .. figure:: images/mame_config_machine.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Configuração individual do sistema
@@ -83,17 +82,22 @@ Ainda é possível fazer personalizações visuais como adicionar uma
 ao lado dos nomes dos sistemas:
 
 .. figure:: images/mame_icons.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Ícones
 
-Tais ícones são mantidos fora do projeto MAME pelo
+Tais ícones são mantidos fora do projeto MAME, eles são mantidos pelo
 `progetto-SNAPS <https://www.progettosnaps.net/icons/>`_. A instalação é
 simples, baixe o arquivo mais recente e extraia o diretório **icons** e
 **folders** dentro do diretório do MAME, caso apareça algum erro de
 arquivo já existente basta sobrescrever. Agora ao iniciar o MAME o nomes
 dos sistemas mostram um ícone.
+
+Note porém que quanto mais "coisas" forem adicionadas, o MAME vai levar
+mais tempo para carregar tudo para exibi-los na interface principal,
+porém, isso não altera em nada o funcionamento e a performance do MAME
+quando for executado através da linha de comando ou por uma
+:ref:`fron-tend <frontends>`.
 
 .. raw:: latex
 
@@ -106,7 +110,6 @@ do sistema para que seja salvo uma **captura da tela** na pasta
 direito da interface do MAME.
 
 .. figure:: images/mame_captura_tela.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Captura da tela
@@ -125,13 +128,12 @@ leve isso em consideração.
 Os sistemas que você mais gosta de jogar podem ser adicionadas aos
 :guilabel:`Favoritos`, na interface durante a seleção do sistema, clique
 com o botão direito em cima do nome do sistema e selecione a opção
-:guilabel:`Adicione aos favoritos`. Caso tenha iniciado o MAME pela
+:guilabel:`Adiciona aos favoritos`. Caso tenha iniciado o MAME pela
 linha de comando ou caso o sistema já esteja rodando, pressione
 :kbd:`Tab` para abrir a tela de opções e escolha
-:guilabel:`Adicione aos favoritos`.
+:guilabel:`Adiciona aos favoritos`.
 
 .. figure:: images/mame_favoritos.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Favoritos
@@ -162,12 +164,13 @@ Para iniciar um sistema específico junto com um software faça:
 
 	**mame** <*sistema*> <*software*>
 
-Em **sistema** escolha uma das centenas de sistemas emulados, já em
-**software** é o nome do sistema [#]_ que deseja rodar. O software
-nada mais é do que um nome de uma ROM ou a imagem de uma mídia. É
-possível também a utilização de um **catálogo de programas**
-(**softlists**), no catálogo tem a lista de programas compatíveis (ou
-não) no banco de dados interno do MAME com o sistema em questão.
+Em **sistema**, escolha um sistema numa lista de centenas de sistemas
+emulados, já em **software** é o nome do sistema [#]_ que deseja rodar.
+O software nada mais é do que um nome de uma ROM ou a imagem de uma
+mídia. É possível também a utilização de um
+:guilabel:`[ catálogo de programas ]` (**softlists**), no catálogo tem a
+lista de programas compatíveis (ou não) no banco de dados interno do
+MAME com o sistema em questão.
 
 Para rodar o **Sonic the Headgehog** na versão do **Sega Genesis
 Americano**, por exemplo, execute o comando como mostrado abaixo:
@@ -178,12 +181,15 @@ Alternativamente, também é possível iniciar MAME apenas com o sistema:
 
 	**mame genesis**
 
-Selecione **cartridge (cart)**, depois **catálogo de programas** para
-ver uma lista de qual deseja iniciar. Para que essa lista funcione é
-necessário ter um conjunto ROMs compatíveis no diretório **roms**.
+Selecione :guilabel:`cartridge (cart)`, depois
+:guilabel:`[ catálogo de programas ]` para ver uma lista de qual deseja
+iniciar. Para que essa lista funcione é necessário ter um conjunto ROMs
+compatíveis no diretório **roms** ou outro que você definir.
 Observe que muitas cópias de ROMs antigas, de fitas e de discos que
 funcionavam em versões anteriores, podem não mais serem reconhecidas
 pelas versões mais novas do MAME exigindo algum tipo de atualização.
+Consulte :ref:`assetsearch-softlist` para obter mais informações sobre o
+catálogo de programas.
 
 A estrutura básica da linha de comando fica assim:
 
@@ -358,7 +364,6 @@ o teclado do seu computador, pressione :kbd:`Tab` e vá em
 :guilabel:`Dispositivos de slot`:
 
 .. figure:: images/mame_slot_options.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Opções do slot
@@ -378,7 +383,6 @@ arquivos avulsos, talvez uma gravação de uma fita k7 feita por você, a
 imagem de algum cartucho que só você tenha, que tenha baixado, etc.
 
 .. figure:: images/mame_gerenciador.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Opções do slot
@@ -407,7 +411,6 @@ a imagem seja incompatível com esta versão do MSX ou até mesmo a imagem
 está com algum problema, não foi capturada corretamente, etc.
 
 .. figure:: images/mame_load_zanac.png
-	:width: 100%
 	:align: center
 	:figclass: align-center
 	:alt: Carregando imagem ZANAC
@@ -492,8 +495,9 @@ da ROM, ou seja, uma pasta ``sfiii`` dentro da pasta **roms**::
 
 .. [#]	Os desenvolvedores do MAME preferem usar o termo **sistemas** em
 		vez de **jogos**, talvez visando evitar problemas legais? O
-		termo "máquina" foi alterado
-		`neste commit <https://github.com/mamedev/mame/commit/f47f9c3db3c7d20bea0526425cdbc469d5a10868>`_.
+		termo "*máquina*" foi alterado
+		`neste commit <https://github.com/mamedev/mame/commit/f47f9c3db3c7d20bea0526425cdbc469d5a10868>`_
+		para sistema.
 .. [#]	Existe uma diferença entre driver e sistema, o comando em
 		questão funciona apenas com sistemas. Os arcades são considerados
 		drivers como o CPS1, CP2, ZN, etc; os jogos dentros dos drivers

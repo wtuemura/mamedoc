@@ -28,6 +28,9 @@ opções disponíveis para controlar onde o MAME deve procurar pelos
 arquivos e os diferentes tipos de configurações, consulte os capítulos
 :ref:`mame-commandline-pathoptions` e o :ref:`advanced-multi-CFG`.
 
+
+.. _assetsearch-terminologia:
+
 Terminologia
 ~~~~~~~~~~~~
 
@@ -128,6 +131,8 @@ mais adiante:
 	\clearpage
 
 
+.. _assetsearch-path-options:
+
 Opções do caminho para fazer a busca
 ------------------------------------
 
@@ -144,6 +149,8 @@ onde o executável do MAME estiver. Caso inicie o MAME clicando duas
 vezes nele através do *Finder* do macOS ou na maioria das distribuições
 Linux, o seu **home** será definido como o diretório de trabalho.
 
+
+.. _assetsearch-compact-files:
 
 Arquivos compactados
 --------------------
@@ -176,6 +183,8 @@ carregamento dos arquivos, então o uso de "compactação sólida"
 geralmente resulta no MAME descompactando os mesmos dados repetidamente
 durante o carregamento da mídia.
 
+
+.. _assetsearch-media-search:
 
 Como o MAME procura por uma mídia?
 ----------------------------------
@@ -216,6 +225,8 @@ SSDs. É melhor manter as imagens CHD sem compressão dentro das suas
 respectivas pastas.
 
 
+.. _assetsearch-system-roms:
+
 As ROMs dos sistemas
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -241,6 +252,8 @@ buscará pelas ROMs do sistema nesta ordem:
   **coh3002c**, um arquivo PKZIP chamado ``coh3002c.zip`` ou um arquivo
   7-Zip chamado ``coh3002c.7z``.
 
+
+.. _assetsearch-device-roms:
 
 ROMs do dispositivo
 ~~~~~~~~~~~~~~~~~~~
@@ -278,6 +291,8 @@ procurará a ROM do microcontrolador do teclado da seguinte maneira:
 * Caso não haja uma BIOS que corresponda ao sistema, então o MAME não
   fará mais buscas.
 
+
+.. _assetsearch-softlist:
 
 As ROMs dos itens dos programas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -345,6 +360,8 @@ Mega Drive, o MAME procurará a ROM do cartucho ROM da seguinte maneira:
   chamado ``genesis.zip`` ou um arquivo 7-Zip chamado ``genesis.7z``.
 
 
+.. _assetsearch-chd:
+
 As imagens de disco no formato CHD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -371,6 +388,8 @@ através das as imagens de disco no formato CHD, com algumas diferenças:
   (*checksum*) do próprio arquivo CHD. A soma de verificação do próprio
   arquivo CHD pode variar dependendo das opções de compressão.
 
+
+.. _assetsearch-loose-software:
 
 Programas avulsos
 ~~~~~~~~~~~~~~~~~
@@ -414,6 +433,8 @@ no arquivo ``sys603.zip`` montado na primeira unidade de disquete:
 
     mame macplus -flop1 "sys603.zip/system tools.img"
 
+
+.. _assetsearch-missing-media:
 
 Diagnosticando uma mídia ausente
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
