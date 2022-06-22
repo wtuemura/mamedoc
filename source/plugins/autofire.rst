@@ -58,7 +58,7 @@ botão turbo.
 
 Quanto menor o valor, mais rápido é o tubo, quanto maior o valor, mais
 lento ele fica. Observe que nem todos os sistemas podem aceitar valores
-muito baixos (rápido), para que o turbo surta efeito na máquina Alcon
+muito baixos (rápido), para que o turbo surta efeito no sistema Alcon
 por exemplo, é preciso configurar os valores como 2 **quadros ligados**
 e 2 **quadros desligados**. Ao concluir a configuração, pressione
 :kbd:`Tab` para retornar para a emulação.
