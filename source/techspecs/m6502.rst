@@ -119,7 +119,7 @@ método da CPU **get_sync()**, possibilitando a implementação da
 descriptografia no manipulador.
 
 A cada dispositivo executável, o método de CPU **total_cycles()** dá o
-tempo atual em ciclos desde o início da máquina do ponto de vista da
+tempo atual em ciclos desde o início do sistema do ponto de vista da
 CPU. Ou em outras palavras, o que normalmente é chamado o número de
 ciclo da CPU quando alguém fala sobre contenção do barramento ou a
 espera do estado. A chamada é projetada para ser rápida (sem
@@ -296,10 +296,10 @@ O código gerado
 
 Um gerador de código é usado para ser compatível com a interrupção
 durante o reinício de uma instrução. Isso é feito por meio de um estado
-de máquina de dois níveis com atualizações apenas nos limites. Para ser
-mais exato, o ``inst_state`` informa qual o estado principal no momento.
-É igual ao byte opcode quando **0-255** e **0xff00** significarem
-um reset. É sempre válido e usado por instruções como rmb.
+do sistema com dois níveis e com atualizações apenas nos limites. Para
+ser mais exato, o ``inst_state`` informa qual o estado principal no
+momento. É igual ao byte opcode quando **0-255** e **0xff00**
+significarem um reset. É sempre válido e usado por instruções como rmb.
 O ``inst_substate`` indica em qual etapa estamos numa instrução, mas é
 definida somente quando uma instrução tiver sido interrompida.
 Vamos voltar ao código asl <abs>:
