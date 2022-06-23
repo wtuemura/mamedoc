@@ -30,8 +30,8 @@ diferentes cores de fundo indicando a sua condição.
 
 Abaixo da lista dos sistemas nós temos:
 
-	* :guilabel:`Configurações`: Exibe uma lista das configurações do MAME.
-	* :guilabel:`Configure o sistema`: Exibe uma lista das opções de configuração do sistema selecionado.
+	* :guilabel:`Definições gerais`: Exibe uma lista das configurações do MAME.
+	* :guilabel:`Configurações do sistema`: Exibe uma lista das opções de configuração do sistema selecionado.
 
 Todos os itens exibidos nessa interface podem ser acessadas usando as
 setas do seu teclado (cima, baixo, esquerda, direita) e são selecionadas
@@ -169,7 +169,7 @@ Os filtros disponíveis são:
 
 	* :guilabel:`Cabinets`: Lista os sistemas **Arcade** do MAME que estão divididos em tipos de gabinetes.
 	* :guilabel:`Category`: Lista os sistema separados em categorias como corrida, tabuleiro, tiro, etc.
-	* :guilabel:`Driver`: Lista os sistemas por driver como cps1.cpp, 1943.cpp, 3do.cpp, etc.
+	* :guilabel:`Driver`: Lista os sistemas por driver como ``cps1.cpp``, ``1943.cpp``, ``3do.cpp``, etc.
 	* :guilabel:`FreePlay`: Lista os sistemas **Arcade** do MAME que possuem a opção de poder jogar de graça.
 	* :guilabel:`MonoChrome`: Lista os sistemas separado por cores.
 	* :guilabel:`Resolution`: Lista os sistemas separados pela sua resolução.
@@ -283,10 +283,19 @@ Durante a emulação
 ------------------
 
 Estas opções podem ser acessadas durante a emulação e estão acessíveis
-ao pressionar a tecla **TAB**.
+ao pressionar a tecla :kbd:`Tab` e entrando na opção
+:guilabel:`Configurações da entrada`.
 
-Entrada (geral)
-~~~~~~~~~~~~~~~
+Atribuições da entrada (este sistema)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Aqui ficam as configurações que serão utilizadas apenas no sistema que
+estiver sendo emulado no momento e por isso essa lista varia, as
+configurações vão desde créditos, botões, acesso ao modo de serviço do
+sistema (caso seja um arcade), teclas de um computador pessoal, etc.
+
+Atribuições da entrada (geral)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * :guilabel:`Interface do usuário`
 
@@ -308,13 +317,13 @@ Entrada (geral)
 
   Consulte :ref:`Outros controles <mamemenu-other-controls>`.
 
-Atribuições da entrada (este sistema)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Aqui ficam as configurações que serão utilizadas apenas no sistema que
-estiver sendo emulado no momento e por isso essa lista varia, as
-configurações vão desde créditos, botões, acesso ao modo de serviço do
-sistema (caso seja um arcade), teclas de um computador pessoal, etc.
+Dispositivos de entrada
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Aqui será listado os dispositivos que estão conectados ao sistema, como
+teclado, mouse, etc. A lista é dinâmica e varia dependendo do sistema e
+do que está sendo conectado nele.
 
 Chaves DIP
 ~~~~~~~~~~
@@ -587,8 +596,8 @@ sistema na tela (em Inglês), etc.
 
 .. _mamemenu-config-options:
 
-Configurações
--------------
+Definições gerais
+-----------------
 
 Personalize a Interface
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -599,7 +608,7 @@ pressionando a tecla **Enter** e digitando o valor manualmente.
 
 As opções disponíveis são:
 
-* :guilabel:`Tipografia da interface`
+* :guilabel:`Fontes`
 
   Permite a customização da tipografia da interface, dentro desta opção
   temos:
@@ -618,9 +627,9 @@ As opções disponíveis são:
 
 		O valor predefinido é ``30``.
 
-	* :guilabel:`Tamanho da caixa de informação`
+	* :guilabel:`Tamanho do texto das informações`
 
-	  Ajusta o tamanho da fonte nas caixas de texto na tela.
+	  Ajusta o tamanho do texto nas caixas de texto na tela.
 
 		O valor predefinido é ``0.75``.
 
@@ -762,7 +771,7 @@ As opções disponíveis são:
 
 		O valor predefinido é **incorporado**.
 
-* :guilabel:`Painéis laterais`
+* :guilabel:`Mostra os painéis laterais`
 
   Configura a exibição ou não dos painéis laterais da interface do MAME.
   As opções disponíveis são:
@@ -1324,8 +1333,8 @@ Opções diversas
 
 .. _mamemenu-config-devices:
 
-Mapeamento do dispositivo
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Opções dos dispositivos na entrada
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * :guilabel:`Atribuição do dispositivo pistola de luz`
@@ -1353,7 +1362,7 @@ Mapeamento do dispositivo
 		O valor predefinido é ``keyboard``.
 
 
-* :guilabel:`Atribuição do dispositivo adstick`
+* :guilabel:`Atribuição do dispositivo do controle AD`
 
   Caso exista um controlador para adstick, os valores disponíveis são
   ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
@@ -1377,12 +1386,14 @@ Mapeamento do dispositivo
 
 		O valor predefinido é ``keyboard``.
 
+
 * :guilabel:`Atribuição do dispositivo posicional`
 
   Caso exista um controlador de posição, os valores disponíveis são
   ``None``, ``keyboard``, ``mouse``, ``lightgun`` e ``joystick``.
 
 		O valor predefinido é ``keyboard``.
+
 
 * :guilabel:`Atribuição do dispositivo mouse`
 
@@ -1391,21 +1402,58 @@ Mapeamento do dispositivo
 
 		O valor predefinido é ``mouse``.
 
+
+* :guilabel:`Provedor de entrada do teclado`
+
+  Determina o provedor responsável pela entrada do teclado, os valores
+  disponíveis variam dependendo do sistema operacional
+  ``auto``, ``win32``, ``dinput``, ``rawinput``, ``sdl`` e ``none``.
+
+		O valor predefinido é ``auto``.
+
+
+* :guilabel:`Provedor de entrada do mouse`
+
+  Determina o provedor responsável pela entrada do teclado, os valores
+  disponíveis variam dependendo do sistema operacional
+  ``auto``, ``win32``, ``dinput``, ``rawinput``, ``sdl`` e ``none``.
+
+		O valor predefinido é ``auto``.
+
+
+* :guilabel:`Provedor da pistola de luz`
+
+  Determina o provedor responsável pela entrada do teclado, os valores
+  disponíveis variam dependendo do sistema operacional
+  ``auto``, ``win32``, ``rawinput``, ``X11`` e ``none``.
+
+		O valor predefinido é ``auto``.
+
+
+* :guilabel:`Provedor de entrada do joystick`
+
+  Determina o provedor responsável pela entrada do teclado, os valores
+  disponíveis variam dependendo do sistema operacional
+  ``auto``, ``winhybrid``, ``xinput``, ``dinput``, ``sdl`` e ``none``.
+
+		O valor predefinido é ``auto``.
+
 .. raw:: latex
 
 	\clearpage
 
+
 .. _mamemenu-general-inputs:
 
-Todas as entradas
-~~~~~~~~~~~~~~~~~
+Atribuições da entrada (geral)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * :guilabel:`interface do usuário`
 
   Aqui estão os principais atalhos já predefinidos da interface do MAME,
   todos eles podem ser alterados conforme a necessidade. Para retornar
-  ao valor original tecle **DELETE** duas vezes em cima da opção.
+  ao valor original pressione :kbd:`Del` duas vezes em cima da opção.
 
 .. raw:: html
 
@@ -1534,13 +1582,6 @@ Todas as entradas
 	A tecla predefinida é :kbd:`F12`.
 
 
-* :guilabel:`Salva o código de tempo atual`
-
-  Salva o tempo decorrido num arquivo.
-
-	A tecla predefinida é :kbd:`F12`.
-
-
 * :guilabel:`Grava MNG`
 
   Grava um vídeo em formato MNG sem áudio.
@@ -1563,21 +1604,21 @@ Todas as entradas
 	A tecla predefinida é :kbd:`F6`.
 
 
-* :guilabel:`UI Cima`
+* :guilabel:`UI cima`
 
   Move o cursor para cima.
 
 	A tecla predefinida é :kbd:`cima` ou **Cima** no controle.
 
 
-* :guilabel:`UI Baixo`
+* :guilabel:`UI baixo`
 
   Move o cursor para baixo.
 
 	A tecla predefinida é :kbd:`baixo` ou **Baixo** no controle.
 
 
-* :guilabel:`UI Esquerda`
+* :guilabel:`UI esquerda`
 
   Move o cursor para a esquerda.
 
@@ -1585,7 +1626,7 @@ Todas as entradas
 	controle.
 
 
-* :guilabel:`UI Direita`
+* :guilabel:`UI direita`
 
   Move o cursor para a direita.
 
@@ -1714,7 +1755,7 @@ Todas as entradas
 	A teclas predefinidas são :kbd:`F11` + :kbd:`Shift` :kbd:`Esq`.
 
 
-* :guilabel:`Alterna UI`
+* :guilabel:`UI Alterna`
 
   Alterna a interface do usuário.
 
@@ -1746,14 +1787,14 @@ Todas as entradas
 	A tecla predefinida é :kbd:`F7`.
 
 
-* :guilabel:`UI (Primeiro) inicia fita`
+* :guilabel:`(Primeira) UI inicia fita`
 
   Inicia a fita na interface primária.
 
 	A tecla predefinida é :kbd:`F2`.
 
 
-* :guilabel:`UI (Primeiro) para fita`
+* :guilabel:`(Primeira) UI para fita`
 
   Para a fita na interface primária.
 
@@ -1770,7 +1811,7 @@ Todas as entradas
 	As teclas predefinidas são :kbd:`Alt` :kbd:`Esq` + :kbd:`D`.
 
 
-* :guilabel:`UI Adiciona ou remove um favorito`
+* :guilabel:`UI Adiciona/remove favoritos`
 
   Adiciona ou remove os sistemas da lista de favoritos.
 
@@ -1823,7 +1864,7 @@ Todas as entradas
 	\clearpage
 
 
-* :guilabel:`Reduz a escala prévia`
+* :guilabel:`Aumenta a escala prévia`
 
   Aumenta a escala prévia de dos pixels.
 
@@ -3126,7 +3167,7 @@ Opções da entrada
 	O valor predefinido é ``Desligado``.
 
 
-* :guilabel:`Comando contraditório`
+* :guilabel:`Permite a entrada contraditória do comando`
 
   Aceita comandos contraditórios e simultâneos no controle digital como
   esquerda e direita ou cima e baixo.
@@ -3134,7 +3175,7 @@ Opções da entrada
 	O valor predefinido é ``Desligado``.
 
 
-* :guilabel:`Impulso de ficha`
+* :guilabel:`Impulso da ficha`
 
   Define o tempo de impulso da ficha.
 
@@ -3147,10 +3188,21 @@ Plug-ins
 
 Consulte :ref:`plugins`.
 
+
+.. _mamemenu-general-input-devices:
+
+Dispositivos na entrada
+-----------------------
+
+Aqui será listado os dispositivos que estão conectados ao sistema, como
+teclado, mouse, etc. A lista é dinâmica e varia dependendo do sistema e
+do que está sendo conectado nele.
+
+
 .. _mamemenu-config-saving:
 
-Salva a Configuração
-~~~~~~~~~~~~~~~~~~~~
+Salva as definições
+~~~~~~~~~~~~~~~~~~~
 
 Salva todas as alterações feitas.
 
@@ -3162,8 +3214,8 @@ Retorna para a tela anterior.
 
 .. _mamemenu-config-machine:
 
-Configure o sistema
--------------------
+Configurações do sistema
+------------------------
 
 Permite que você configure individualmente cada sistema selecionado.
 
@@ -3196,7 +3248,7 @@ Permite que você configure individualmente cada sistema selecionado.
 	<p></p>
 
 
-* :guilabel:`Mapeamento dos dispositivos`
+* :guilabel:`Opções dos dispositivos na entrada`
 
   Consulte :ref:`mamemenu-config-devices`.
 
@@ -3214,7 +3266,7 @@ Permite que você configure individualmente cada sistema selecionado.
 	<p></p>
 
 
-* :guilabel:`Salva a configuração do sistema`
+* :guilabel:`Salva as configurações do sistema`
 
   Salva a configuração apenas para o sistema selecionado.
 
