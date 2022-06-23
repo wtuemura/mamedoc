@@ -26,11 +26,11 @@ manual, os exemplos a seguir mostram como alterar essa ordem.
 Veja :ref:`Alterando os valores <mamemenu-alt-valores>` antes de
 prosseguir.
 
-O processo é muito simples, inicie uma máquina qualquer como
-``mame galaxian``, depois que a máquina iniciar pressione :kbd:`TAB` e
-selecione :guilabel:`Entrada (esta máquina)`, no campo
+O processo é muito simples, inicie um sistema qualquer como
+``mame galaxian``, depois que o sistema iniciar pressione :kbd:`Tab` e
+selecione :guilabel:`Atribuições da entrada (este sistema)`, no campo
 :guilabel:`P1 BUTTON 1` (primeiro botão de disparo/tiro do jogador 1) e
-defina o botão de tiro, pressione :kbd:`TAB` novamente para fechar a
+defina o botão de tiro, pressione :kbd:`Tab` novamente para fechar a
 interface.
 
 Depois de confirmar o funcionamento do botão, pressione :kbd:`Esc` para
@@ -48,9 +48,9 @@ Configurando mais de um botão
 
 Usando um controle de **Playstation 2** (ou qualquer outro tipo de
 controle) ligado no PC com um adaptador USB como exemplo, faremos uma
-configuração de botões para máquinas **Neo-Geo** executando o comando
-``mame kof2000``, pressione :kbd:`TAB`, depois selecione
-:guilabel:`Entrada (esta máquina)` e configure os botões com a ordem da
+configuração dos botões para os sistemas **Neo-Geo** executando o
+comando ``mame kof2000``, pressione :kbd:`Tab`, depois selecione
+:guilabel:`Atribuições da entrada (este sistema)` e configure os botões com a ordem da
 sua preferência.
 
 Dentro do diretório **cfg** será criado um arquivo chamado
@@ -100,7 +100,7 @@ Agora sempre que quiser usar essa configuração para os botões, basta
 usar a opção :ref:`-ctrlr <mame-commandline-ctrlrpath>`, exemplo
 ``mame kof2003 -ctrlr neogeo``, você pode também adicionar esta opção
 ao seu ``mame.ini`` porém note que esta configuração será aplicada em
-todas as máquinas!
+todos os sistemas!
 
 .. _advanced-tricks-botões-combinação:
 
@@ -114,11 +114,12 @@ que é ativado ao se pressionar os três botões de soco ao
 essa ação aconteça ao toque de um botão apenas.
 
 Inicie o MAME com qualquer jogo da série ``mame sf2``, pressione
-:kbd:`TAB`, depois selecione :guilabel:`Entrada (esta máquina)`, ao
-configurar os botões para os três socos, pressione :kbd:`Del` para
-apagar o valor, logo depois escolha o botão que deseja ser soco fraco,
-pressione :kbd:`Enter` e escolha quase será o seu botão de
-**três socos**. Caso tenha feito tudo certo, deverá aparecer algo como
+:kbd:`Tab`, depois selecione
+:guilabel:`Atribuições da entrada (este sistema)`, ao configurar os
+botões para os três socos, pressione :kbd:`Del` para apagar o valor,
+logo depois escolha o botão que deseja ser soco fraco, pressione
+:kbd:`Enter` e escolha quase será o seu botão de **três socos**. Caso
+tenha feito tudo certo, deverá aparecer algo como
 **Joy 1 button 0 or Joy 1 button 1**, é muito importante aparecer o
 **OR** entre os botões.
 
@@ -178,9 +179,9 @@ pode ser que no Windows a definição para o botão **L1** seja alternada
 para o botão **L2**, porém basta redefini-lo no Windows ou alterná-lo
 para um outro botão qualquer depois.
 
-O mesmo tipo de configuração também se aplica para qualquer máquina,
-cito por exemplo as máquinas rítmicas da série **Guitar Freaks**,
-**Dance Dance Revolution**, **Beatmania** e tantas outras que em alguns
+O mesmo tipo de configuração também se aplica para qualquer sistema,
+cito por exemplo os sistema rítmicos da série **Guitar Freaks**,
+**Dance Dance Revolution**, **Beatmania** e tantas outros onde em alguns
 momentos, necessitam que mais de um botão seja acionado ao mesmo tempo.
 
 Baixe um exemplo de configuração de controle para `Guitar Freaks
@@ -193,13 +194,13 @@ Baixe um exemplo de configuração de controle para `Guitar Freaks
 Usando o controle 1 para controlar qualquer outro jogador
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Em máquinas onde a posição do jogador é fixa como em **Sunset Riders**,
+Nos sistemas onde a posição do jogador é fixo como em **Sunset Riders**,
 a série **Muscle Bomber**, **Teenage Mutant Ninja Turtles**, **Teenage
-Mutant Ninja Turtles - Turtles in Time** e tantas outras máquinas, é
+Mutant Ninja Turtles - Turtles in Time** e tantas outros sistemas, é
 possível utilizar o controle do jogador 1 em qualquer uma das posições
-com máquinas que aceitem 2 ou mais jogadores.
+com sistemas que aceitem 2 ou mais jogadores.
 
-Inicie a máquina que deseja configurar e siga as instruções descritas no
+Inicie o sistema que deseja configurar e siga as instruções descritas no
 capítulo :ref:`advanced-tricks-mais-de-um-botão` para gerar o seu
 arquivo com a configuração personalizada para o seu controle. Abra o
 arquivo num editor de textos e logo no começo haverá algo do tipo
@@ -234,7 +235,7 @@ maiúsculo, faça o mesmo ao informar o nome da configuração, caso
 contrário o MAME acusará um erro dizendo que os arquivos não foram
 encontrados.
 
-Para jogar com o **Donatello** (jogador 3) na máquina **Teenage
+Para jogar com o **Donatello** (jogador 3) no sistema **Teenage
 Mutant Ninja Turtles - Turtles in Time** faça o comando: ::
 
 	mame tmnt2 -ctrlr 3P
@@ -266,29 +267,29 @@ facilitar, para ver a listagem completa consulte o capítulo
      - 3
      - 4
 
-Repare que há máquinas como as da série **Muscle Bomber** por exemplo, é
-necessário pressionar os botões relacionados ao inicio da partida de
-cada jogador e não apenas pressionar os botões do controle para iniciar
-a partida.
+Repare que há sistemas como as da série **Muscle Bomber** por exemplo, é
+preciso pressionar os botões relacionados ao inicio da partida de cada
+jogador e não apenas pressionar os botões do controle para iniciar a
+partida.
 
 .. _advanced-tricks-configuração-controle-por-maquina:
 
-Criando uma configuração de controle por máquina
+Criando uma configuração de controle por sistema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No exemplo de :ref:`configuração de botões
 <advanced-tricks-mais-de-um-botão>` aprendemos como mapear os botões
 de um controle para um determinado sistema, no entanto, um sistema pode
-ter máquinas com diferentes configurações de botões, se pegarmos o
-sistema CPS1 por exemplo, o jogo **Street Fighter II** utiliza 6 botões
+ter sistemas com diferentes configurações de botões, se pegarmos o
+driver CPS1 por exemplo, o jogo **Street Fighter II** utiliza 6 botões
 já o jogo **Final Fight** utiliza apenas 2 e ambos compartilham o mesmo
-sistema CPS1. Apesar da dica ter facilitado bastante a configuração do
-controle para máquinas que usam 6 botões, ela não irá funcionar com
-todas as outras.
+driver **CPS1**. Apesar da dica ter facilitado bastante a configuração
+do controle para os sistemas que usam 6 botões, ela não irá funcionar
+com todos os outros.
 
 Para criar um mapa customizado para **Final Fight** por exemplo, siga as
 instruções descritas em :ref:`advanced-tricks-mais-de-um-botão`, porém
-usando a máquina **Final Fight** (``mame ffight``), uma vez que os
+usando o sistema **Final Fight** (``mame ffight``), uma vez que os
 botões forem definidos e você sair do MAME, encontre o arquivo
 ``ffight.cfg`` no diretório **cfg** e faça as alterações necessárias.
 Copie-o para o diretório **ctrlr** como ``ffight.cfg``. Entre no
@@ -297,11 +298,12 @@ editor de texto e adicione: ::
 
 	ctrlr ffight
 
-Salve e saia do editor, agora sempre que a máquina **Final Fight** for
-iniciada ela usará o novo mapa de botões que foi criado só para ela.
+Salve e saia do editor, agora sempre que o sistema **Final Fight** for
+iniciado, ele usará o novo mapa de configuração dos botões que foi
+criado só para ele.
 
 Repare que não é necessário que o arquivo de configuração tenha o mesmo
-nome da máquina, é possível renomear estes arquivos como por exemplo,
+nome da sistema, é possível renomear estes arquivos como por exemplo,
 ``2-botoes.cfg``, ``3-botoes.cfg``, ``4-botoes.cfg`` e compartilhar
 estas configurações conforme necessário.
 
@@ -373,14 +375,14 @@ necessário.
 
 .. _advanced-tricks-criando-romset:
 
-Criando um ROMSET apenas com máquinas tipo Arcade
+Criando um ROMSET apenas com sistemas tipo Arcade
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Umas das maneiras de se criar tal ROMSET é baixando o código fonte e
 compilando o MAME com a opção ``SUBTARGET=arcade``, isso fará com que o
-MAME funcione e exiba apenas uma lista com máquinas classificadas
-internamente como arcade, simples assim. Para mais informações leia o
-capítulo :ref:`compiling-MAME`.
+MAME funcione e exiba apenas uma lista com sistemas classificados
+internamente como "*arcade*", simples assim. Para mais informações leia
+o capítulo :ref:`compiling-MAME`.
 
 .. _advanced-tricks-using-mame-interface:
 
@@ -488,8 +490,8 @@ apenas com ROMs arcade.
 * Clique em :guilabel:`Rebuild...` para iniciar e aguarde pois
   dependendo da quantidade de arquivos todo o processo será demorado.
 
-Ao final do processo você terá um *ROMSET* apenas com as ROMs das
-máquinas arcades, o mesmo pode ser feito para qualquer outro sistema,
+Ao final do processo você terá um *ROMSET* apenas com as ROMs dos
+sistemas arcades, o mesmo pode ser feito para qualquer outro sistema,
 Mega Drive/Genesis, SNES, o céu é o limite!
 
 .. _advanced-tricks-using-scripts:
@@ -525,9 +527,9 @@ Seguido do comando abaixo: ::
 
 	for /F %f in ('type arcade.txt') do @echo G:\roms\%f.zip >> caminho-roms.txt
 
-O comando acima vai ler todos os nomes das máquinas em ``arcade.txt``,
+O comando acima vai ler todos os nomes dos sistemas em ``arcade.txt``,
 incluir o caminho completo onde estão armazenadas as suas ROMs,
-adicionar o nome da máquina + a extensão .zip e por fim redirecionar a
+adicionar o nome do sistema + a extensão .zip e por fim redirecionar a
 saída para o arquivo ``caminho-roms.txt``.
 
 .. raw:: latex
@@ -662,10 +664,10 @@ uma seção do PowerShell seja iniciada.
 
 .. _advanced-tricks-drummania:
 
-Resolvendo o problema "please call attendant" das máquinas DrumMania
+Resolvendo o problema "please call attendant" dos sistemas DrumMania
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As máquinas **DruMania 4th Mix** em diante não iniciam e param numa
+Os sistemas **DruMania 4th Mix** em diante não iniciam e param numa
 tela de erro como mostra a imagem abaixo:
 
 .. figure:: images/drummania-attendant.png
@@ -912,8 +914,8 @@ seleção das ROMs, etc.
 Melhorando o desempenho em sistemas Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Máquinas como a **Dance Dance Revolution**, **Guitar Freaks**,
-**DrumMania** dentre outras no Windows, elas funcionam sem qualquer
+Os sistemas como **Dance Dance Revolution**, **Guitar Freaks**,
+**DrumMania** dentre outros no Windows, eles funcionam sem qualquer
 problema,  porém sofrem com diversos problemas no Linux, um dos motivos
 é a configuração "padrão" que "vem de fábrica". Geralmente o seu sistema
 Linux vem configurado em modo de economia de energia, drivers genéricos
@@ -923,8 +925,8 @@ logo, quanto melhor, bem configurado e mais recente for o seu hardware
 melhor será a sua experiência com o MAME. A melhoria no desempenho
 contudo não será absoluta, extrairemos o melhor possível porém este
 desempenho se limita ao desenvolvimento do MAME, se os drivers
-responsáveis pela máquina em questão já foram concluídas ou não, se o
-desenvolvimento da emulação como um todo já foi concluída ou não, etc.
+responsáveis pelo sistema em questão já foram concluídos ou não, se o
+desenvolvimento da emulação como um todo já foi concluído ou não, etc.
 
 Os testes foram realizados com o **Debian 10.7** (Buster) e o
 **Fedora 33** usando uma **AMD Radeon HD 7750** porém as configurações
@@ -1565,13 +1567,14 @@ estatísticas.
    :scale: 60%
    :align: center
 
-Em outro terminal rode a máquina ``ddrmax2`` por exemplo (ou qualquer
-outra do driver **ksys573**) com o comando ``mame ddrmax2 -v``, além
-da mensagem **"WARNING: radv is not a conformant...** não deve haver
-nada fora do normal, repare porém no terminal rodando o **radeontop**
-que as estatísticas passam a se alterar e em especial a frequência do
-**Memory Clock** e do **Shader Clock** que sobem para 100%, repare que
-também haverá um aumento do consumo da memória de vídeo **VRAM**.
+Em outro terminal rode o sistema ``ddrmax2`` por exemplo (ou qualquer
+outro listado no driver **ksys573**) com o comando ``mame ddrmax2 -v``,
+além da mensagem **"WARNING: radv is not a conformant...** não deve
+haver nada fora do normal, repare porém no terminal rodando o
+**radeontop** que as estatísticas passam a se alterar e em especial a
+frequência do **Memory Clock** e do **Shader Clock** que sobem para
+100%, repare que também haverá um aumento do consumo da memória de vídeo
+**VRAM**.
 
 .. image:: images/radeontop-mame.png
    :scale: 60%
@@ -1590,8 +1593,8 @@ fazendo.
 Excluindo arquivos NVRAM (batch script)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Algumas vezes é preciso excluir o diretório **NVRAM** de determinada
-máquina durante a depuração ou até mesmo antes de
+Algumas vezes é preciso excluir o diretório **NVRAM** de um determinado
+sistema durante a depuração ou até mesmo antes de
 um :ref:`-record <mame-commandline-record>` e antes de iniciar um
 :ref:`-playback <mame-commandline-playback>` por motivos já
 explicados nestes capítulos. Contudo, caso a exclusão destes diretórios
