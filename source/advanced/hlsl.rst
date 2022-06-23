@@ -44,7 +44,7 @@ Você desejará que o MAME esteja usando a resolução nativa do seu monitor
 para evitar distorções e atrasos adicionais criados pelo seu monitor ao
 tentar preencher a imagem na tela.
 
-Enquanto a maioria das máquinas de arcade usava um monitor com proporção
+Enquanto a maioria dos sistemas de arcade usava um monitor com proporção
 de tela no formato 4:3 (ou 3:4 se o monitor estivesse orientado
 verticalmente como é no caso do **Pac Man**), a essa altura do
 campeonato é difícil encontrar nos dias de hoje um monitor ou TV que
