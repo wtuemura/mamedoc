@@ -39,7 +39,7 @@ mais adiante:
 
 **Sistema**
 
-    Um sistema é uma máquina completa que pode ser emulada pelo MAME.
+    Um sistema é um conjunto completo que pode ser emulado pelo MAME.
     Alguns sistemas executam um programa (*software*) fixo, enquanto
     outros podem carregar programas a partir de um catálogo de programas
     e/ou os arquivos |deum|.
@@ -70,7 +70,7 @@ mais adiante:
     sistemas do tipo arcade que usavam cartuchos com jogos
     intercambiáveis ou placas com as ROMs. Observe que isso *não* é o
     mesmo que as configurações da seleção da BIOS que permitem a escolha
-    de uma ROMs para a inicialização do sistema (como as máquinas Neo
+    de uma ROMs para a inicialização do sistema (como os sistemas Neo
     Geo por exemplo) ou um *firmware* do dispositivo.
 
 **O item de um programa**
@@ -237,7 +237,7 @@ sistema nos seguintes locais:
 * |npon| do sistema principal do sistema, caso seja aplicável.
 * |npon| da BIOS do sistema correspondente, caso seja aplicável.
 
-Usando a máquina **Shiritsu Justice Gakuen** como exemplo, o MAME
+Usando o sistema **Shiritsu Justice Gakuen** como exemplo, o MAME
 buscará pelas ROMs do sistema nesta ordem:
 
 * O nome abreviado do sistema é ``jgakuen``, então o MAME irá procurar
