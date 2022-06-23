@@ -37,7 +37,7 @@ Dentre as várias vantagens é possível citar as mais relevantes:
 	compilar a mesma versão no Windows. Compilar uma versão do MAME para
 	Linux leva em torno de 30 minutos para mais ou para menos dependendo
 	do poder de processamento do seu computador, compilando o mesmo
-	código fonte na mesma máquina, com o Windows, usando a mesma versão
+	código fonte no mesmo sistema, com o Windows, usando a mesma versão
 	do *gcc* e *g++*, a tarefa pode levar algumas *horas* [2]_ ainda que
 	tenha um computador mais recente.
 
