@@ -7,14 +7,14 @@ Desativando o interruptor de câmbio
 ===================================
 
 
-Este é um recurso avançado para lidar com o interruptor de certas
-máquinas arcade antigas como a *Spy Junter* e *Outrun* que usava uma
+Este é um recurso avançado para lidar com o interruptor de certos
+sistemas arcade antigos como a *Spy Junter* e *Outrun* que usava uma
 chave de via dupla que funcionava como um câmbio de marchas. Por
 predefinição esse câmbio é tratado como um interruptor. Um toque na
 configuração do controle para que o câmbio alterne entre marcha alta e
 baixa, com outro toque ele volta para a posição anterior. Essa pode não
 ser a melhor opção se você tiver em mãos um câmbio que trabalhe como os
-câmbios antigos usados nas máquinas originais.
+câmbios antigos usados nos sistemas originais.
 O câmbio estará engrenado quando a chave for ligada, funcionando ao
 contrário quando estiver desligada.
 
