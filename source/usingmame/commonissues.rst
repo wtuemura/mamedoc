@@ -47,11 +47,11 @@ desenvolvimento são necessárias para descobrir como certos sistemas
 funcionam, para descobrir como quebrar certas proteções, para descobrir
 informações não disponíveis, para lidar com componentes eletrônicos que
 foram customizados pelas empresas e não há informações disponíveis ao
-público, etc. Logo certos parâmetros para fazer determinada máquina
-funcionar mudam. Quando tais parâmetros mudam, certos arquivos das ROMs
-deixam de ser necessárias, algumas precisam passar por uma validação e
-outras precisam ser extraídas novamente o que acontece na grande maioria
-das vezes.
+público, etc. Logo, certos parâmetros para fazer determinado sistema
+funcionar são diferentes. Quando tais parâmetros mudam, certos arquivos
+das ROMs deixam de ser necessárias, algumas precisam passar por uma
+validação e outras precisam ser extraídas novamente o que acontece na
+grande maioria das vezes.
 
 As ROMs antigas foram extraídas de forma precária no passado sem passar
 por validações, hoje com mais conhecimento e tecnologia estas mesmas
@@ -131,13 +131,13 @@ necessário.
 Para o MAME os dispositivos adicionais são uma coisa boa pois nos
 permite realizar testes de estresse em seções dos vários núcleos de CPU
 e outras partes da emulação que normalmente não veem uma utilização mais
-pesada. Enquanto um computador e uma máquina de arcade podem usar
-exatamente o mesmo CPU, a maneira como eles usam este CPU pode diferir
+pesada. Enquanto um computador e um sistema de arcade podem usar
+exatamente a mesmo CPU, a maneira como eles usam esta CPU pode diferir
 drasticamente.
 
 Nenhuma parte do MAME é descartável, independente de qual seja.
 O princípio que o MAME defende que é a preservação e a documentação,
-sejam as máquinas de vídeo poker quanto os arcades, não importa.
+sejam os sistemas de vídeo poker quanto os arcades, não importa.
 O MAME é um software de código aberto, muitas coisas já foram abordadas
 da melhor maneira possível, há sempre espaço para melhorias, todas elas
 são sempre bem vindas caso seja um programador habilidoso
@@ -218,7 +218,7 @@ Pode ser causado por várias razões:
 	BIOS.
 
 	As ROMs da BIOS geralmente contêm um código da ROM que é usado para
-	inicializar a máquina, o código faz lista dos jogos em sistema
+	inicializar o sistema, o código faz lista dos jogos em sistema
 	multijogos e o código comum a todos os jogos no referido sistema.
 
 	As ROMs da BIOS devem estar nomeadas corretamente e comprimida em
@@ -450,14 +450,14 @@ contrário e permita tal uso.
 Mas eu já vi gabinetes do Ultracade e Global VR Classics montados em lugares públicos? Por que eles podem?
 ----------------------------------------------------------------------------------------------------------
 
-O Ultracade tinha dois produtos distintos, a máquina **Ultracade**
+O Ultracade tinha dois produtos distintos, o sistema **Ultracade**
 possuía **licenças comerciais** para o uso dos jogos com finalidade
 comercial, já o **Arcade Legends** possuía uma licença **exclusiva**
 voltada **apenas** para uso em ambiente particular e residencial.
 
-Apenas as máquinas com licença comercial foram concebidas para serem
+Apenas os sistemas com licença comercial foram concebidas para serem
 colocadas em local público e gerar renda, assim como foram e ainda são
-as máquinas de arcade tradicionais.
+os sistemas de arcade tradicionais.
 
 Desde sua aquisição pela empresa Global VR eles só oferecem o gabinete
 **Global VR Classics**, que equivale ao produto Ultracade anterior.
