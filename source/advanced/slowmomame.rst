@@ -13,9 +13,9 @@ lenta, fazendo com que a emulação passe a trabalhar quase que quadro a
 quadro. A utilidade do slowmomame é voltada para exibição de jogadas
 mais arriscadas, tomadas de decisão rápidas uma vez que a emulação está
 em câmera lenta o usuário tem tempo de sobra para reagir a tiros, golpes
-e máquinas no estilo BEMANI da Konami.
+e sistemas no estilo BEMANI da Konami.
 
-Neste modo e dependendo da máquina, o jogador leva em média cerca de 1
+Neste modo e dependendo do sistema, o jogador leva em média cerca de 1
 hora para concluir uma única fase, no entanto, o resultado final de todo
 este esforço é `uma jogabilidade perfeita
 <https://www.youtube.com/watch?v=LzUDlJtyEkA>`_.
@@ -38,12 +38,12 @@ Altere o valor de **0** para **1** e adicione a opção ``DEBUG=1`` às
 suas opções de compilação ou ao seu arquivo ``useroptions.mak`` e inicie
 a compilação. Geralmente não há a necessidade de se compilar todo o
 código fonte do MAME com essas alterações pois como já sabemos o MAME
-abrange muito mais do que máquinas arcade e consoles. Prefira usar a
-opção ``SUBTARGET=arcade`` para compilar apenas máquinas arcades ou
-então defina apenas o driver da máquina que deseja usar com o comando
+abrange muito mais do que sistemas arcade e consoles. Prefira usar a
+opção ``SUBTARGET=arcade`` para compilar apenas os sistemas arcades ou
+então defina apenas o driver do sistema que deseja usar com o comando
 ``SOURCES=caminho do driver``.
 
-Por exemplo, caso queira saber qual a ROM responsável pela máquina
+Por exemplo, caso queira saber qual a ROM responsável pelo sistema
 **DDR Max - Dance Dance Revolution 6th Mix** use o comando: ::
 
 	mame "DDR Max"
@@ -70,13 +70,13 @@ Ou usando **SOURCES**: ::
 
 Ao final da compilação renomeie o executável e se for o caso, o
 respectivo arquivo ***.syn**, para um outro nome qualquer como
-**slowmo** por exemplo. Para rodar uma máquina enquanto grava use o
-comando: ::
+**slowmo** por exemplo. Para rodar um sistema enquanto grava, use o
+comando::
 
 	slowmo ddrmax -aviwrite ddrmax.avi
 
 Repare que o terminal será inundado com mensagens de depuração sempre
-que houver som, isso deixa o MAME tão ocupado que a máquina passa a
+que houver som, isso deixa o MAME tão ocupado que o sistema passa a
 rodar quadro a quadro na tela ao mesmo tempo que toda a ação, áudio e
 vídeo é gravado no arquivo **ddrmax.avi** dentro do diretório **snap**.
 
@@ -98,7 +98,7 @@ no máximo uma redução de velocidade em torno de 10 fps e não é possível
 gravar um arquivo ***.avi** durante o gameplay sendo necessário que se
 jogue uma vez e só depois seja possível a gravação do ***.avi**.
 
-Execute a máquina com o comando: ::
+Execute o sistema com o comando: ::
 
 	mame -speed 0.2 -rec dance.inp -sound none ddrmax
 
