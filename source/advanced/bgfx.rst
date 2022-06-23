@@ -54,7 +54,7 @@ Você desejará que o MAME esteja usando a resolução nativa do seu monitor
 para evitar distorções e atrasos adicionais criados pelo seu monitor ao
 tentar preencher a imagem na tela.
 
-Enquanto a maioria das máquinas de arcade usava um monitor com proporção
+Enquanto a maioria dos sistemas de arcade usava um monitor com proporção
 de tela no formato 4:3 (ou 3:4 se o monitor estivesse orientado
 verticalmente como é no caso do **Pac Man**), a essa altura do
 campeonato é difícil encontrar nos dias de hoje um monitor ou TV que
@@ -104,7 +104,7 @@ arquivo de configuração e fazer as modificações lá.
 
 Particularmente, você vai querer que as configurações
 **bgfx_screen_chains** sejam específicas e personalizáveis para cada
-máquina em vez de uma única configuração para todas.
+sistema em vez de uma única configuração para todos.
 
 Salve o arquivo ``.ini`` e já estamos prontos para começar.
 
@@ -221,8 +221,8 @@ Alterando as configurações
 
 		``bgfx_screen_chains hlsl:hlsl``
 
-	Outro caso especial, a Nichibutsu tinha uma máquina tipo coquetel
-	de Mahjongg que usa uma tela CRT bem no meio da máquina, junto com
+	Outro caso especial, a Nichibutsu tinha uma sistema tipo coquetel
+	de Mahjongg que usa uma tela CRT bem no meio do sistema, junto com
 	outras duas telas de LCD individuais mostrando a mão para cada
 	jogador. Nós gostaríamos que os LCDs não fossem tão filtrados como
 	eram, enquanto o CRT seria melhorado através do uso do hlsl.
@@ -264,7 +264,7 @@ Alterando as configurações
 **bgfx_avi_name**
 
 	Essa opção permite que você possa definir um nome de arquivo AVI
-	para gravar o vídeo da máquina emulada com os efeitos
+	para gravar o vídeo do sistema emulado com os efeitos
 	``bgfx_avi_name pacman.avi`` por exemplo.
 
 		O Valor predefinido é ``auto``
