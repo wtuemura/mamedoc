@@ -18,26 +18,26 @@ clicando duas vezes em seu ícone, você verá a interface do usuário e
 acessando as opções da parte debaixo da tela terá acesso ao cardápio de
 opções, entre eles a lista de seleção de jogos ao centro, os filtros do
 lado esquerdo, a aba de informações e imagens. No rodapé da tela tem um
-descritivo resumido da máquina, com o nome da máquina, nome do
-fabricante, ano, a condição som e imagem e se a máquina funciona ou não.
+descritivo resumido do sistema, com o nome do sistema, nome do
+fabricante, ano, a condição som e imagem e se o sistema funciona ou não.
 
-Dependendo da condição das máquinas a interface do MAME exibirá
+Dependendo da condição dos sistemas a interface do MAME exibirá
 diferentes cores de fundo indicando a sua condição.
 
-	* :guilabel:`Verde`: São máquinas com roms completas e que funcionam.
-	* :guilabel:`Vermelha`: São máquinas que não funcionam direito ou tem roms faltando.
-	* :guilabel:`Laranja`: São máquinas que funcionam mas estão imperfeitas na parte de som ou vídeo.
+	* :guilabel:`Verde`: São sistemas com ROMs completos e que funcionam.
+	* :guilabel:`Vermelha`: São sistemas que não funcionam direito ou tem ROMs faltando.
+	* :guilabel:`Laranja`: São sistemas que funcionam mas estão imperfeitos na parte de som ou vídeo.
 
-Abaixo da lista das máquinas nós temos:
+Abaixo da lista dos sistemas nós temos:
 
 	* :guilabel:`Configurações`: Exibe uma lista das configurações do MAME.
-	* :guilabel:`Configure a máquina`: Exibe uma lista das opções de configuração da máquina selecionada.
+	* :guilabel:`Configure o sistema`: Exibe uma lista das opções de configuração do sistema selecionado.
 
 Todos os itens exibidos nessa interface podem ser acessadas usando as
 setas do seu teclado (cima, baixo, esquerda, direita) e são selecionadas
 pressionando a tecla :kbd:`Enter` do teclado. A interface também aceita
 o uso do mouse fazendo a seleção com um clique e um duplo clique para
-abrir a opção ou rodar uma máquina.
+abrir a opção ou rodar um sistema.
 
 .. _mamemenu-alt-valores:
 
@@ -68,21 +68,21 @@ Filtro
 ------
 
 Escolhe entre diferentes filtros pré configurados e um personalizado.
-Estes filtros ajudam o usuário a selecionar máquinas separadas por
-categorias, caso queira encontrar uma máquina que você não
-se lembra do nome porém se lembra do ano, é possível usar o filtro
-**Ano** para listar todas as máquinas conhecidas pelo MAME que foram
-lançadas naquele ano.
+Estes filtros ajudam o usuário a selecionar sistemas separados por
+categorias, caso queira encontrar um sistema que você não se lembra do
+nome porém se lembra do ano, é possível usar o filtro **Ano** para
+listar todos os sistema conhecidos pelo MAME que foram lançados naquele
+ano.
 
-Supondo que eu queira encontrar a máquina **Double Dragon**, faremos de
+Supondo que eu queira encontrar o sistema **Double Dragon**, faremos de
 conta que eu não me lembro, eu só lembro do ano *1987* e que o
 fabricante dela foi a *Technos Japan*. Vamos até o
 :guilabel:`Filtro Personalizado`, no primeiro filtro adicionamos um
 filtro para o :guilabel:`Ano` e colocamos ``1987``, adicionamos mais um
 filtro para o :guilabel:`Fabricante` e escolhemos *Techmos Japan*, ao
-retornarmos ao menu anterior o MAME exibirá uma lista das máquinas que
+retornarmos ao menu anterior o MAME exibirá uma lista dos sistemas que
 atendam aos critérios definidos por nós. Neste exemplo então o MAME vai
-retornar 6 diferentes máquinas **Double Dragon**, **Super Dodge Ball** e
+retornar 6 diferentes sistemas **Double Dragon**, **Super Dodge Ball** e
 **Nekketsu Koukou Dodgeball Bu**.
 
 Os filtros disponíveis são:
@@ -91,21 +91,21 @@ Os filtros disponíveis são:
 
 * :guilabel:`Sem filtro`
 
-  Exibe toda a lista das máquinas conhecidas e cadastradas no catálogo
+  Exibe toda a lista dos sistemas conhecidos e cadastrados no catálogo
   interno do MAME sem nenhum filtro.
 
 .. _mamemenu-disponivel:
 
 * :guilabel:`Disponível`
 
-  Exibe a lista das máquinas que o MAME identificou dentro do diretório
+  Exibe a lista dos sistemas que o MAME identificou dentro do diretório
   roms.
 
 .. _mamemenu-nao-disponivel:
 
 * :guilabel:`Indisponível`
 
-  Exibe toda a lista das máquinas conhecidas e cadastradas no catálogo
+  Exibe toda a lista dos sistemas conhecidos e cadastrados no catálogo
   interno do MAME que não estão disponíveis, ainda que a interface
   mostre a cor verde.
 
@@ -113,22 +113,22 @@ Os filtros disponíveis são:
 
 * :guilabel:`Funciona`
 
-  Exibe uma lista das máquinas que funcionam e estão em condição verde e
-  marrom, as máquinas na condição vermelha ou que ainda não funcionem
+  Exibe uma lista dos sistemas que funcionam e estão em condição verde e
+  marrom, os sistemas na condição vermelha ou que ainda não funcionam
   ficam de fora da lista.
 
 .. _mamemenu-nao-funciona:
 
 * :guilabel:`Não funciona`
 
-  Exibe apenas máquinas que tenham condição vermelha e que não
+  Exibe apenas os sistemas que tenham condição vermelha e que não
   funcionam.
 
 .. _mamemenu-mecanico:
 
 * :guilabel:`Mecânico`
 
-  Exibe toda a lista das máquinas mecânicas conhecidas e cadastradas no
+  Exibe toda a lista dos sistemas mecânicos conhecidos e cadastrados no
   catálogo interno do MAME como Pinball por exemplo.
 
 .. _mamemenu-nao-mecanico:
@@ -141,7 +141,7 @@ Os filtros disponíveis são:
 
 * :guilabel:`Categoria`
 
-  Este filtro usa de arquivos *.ini* para separar as máquinas em
+  Este filtro usa de arquivos *.ini* para separar os sistemas em
   diversas categoria diferentes como por exemplo gabinetes com 2
   jogadores, 4 jogadores, jogo de tiro, de corrida, de tabuleiro,
   corrida, etc. Em categorias onde a lista seja muito grande, clique
@@ -167,15 +167,15 @@ Os filtros disponíveis são:
   com o MAME foram criadas para serem usadas com o MAMEUI [#MAMEUIP]_ e
   não estão listadas aqui:
 
-	* :guilabel:`Cabinets`: Lista as máquinas **Arcade** do MAME que estão divididas em tipos de gabinetes.
-	* :guilabel:`Category`: Lista as máquinas separadas em categorias como corrida, tabuleiro, tiro, etc.
-	* :guilabel:`Driver`: Lista as máquinas por driver como cps1.cpp, 1943.cpp, 3do.cpp, etc.
-	* :guilabel:`FreePlay`: Lista as máquinas **Arcade** do MAME que possuem a opção de poder jogar de graça.
-	* :guilabel:`MonoChrome`: Lista as máquinas separada por cores.
-	* :guilabel:`Resolution`: Lista as máquinas separadas pela sua resolução.
+	* :guilabel:`Cabinets`: Lista os sistemas **Arcade** do MAME que estão divididos em tipos de gabinetes.
+	* :guilabel:`Category`: Lista os sistema separados em categorias como corrida, tabuleiro, tiro, etc.
+	* :guilabel:`Driver`: Lista os sistemas por driver como cps1.cpp, 1943.cpp, 3do.cpp, etc.
+	* :guilabel:`FreePlay`: Lista os sistemas **Arcade** do MAME que possuem a opção de poder jogar de graça.
+	* :guilabel:`MonoChrome`: Lista os sistemas separado por cores.
+	* :guilabel:`Resolution`: Lista os sistemas separados pela sua resolução.
 
 O site ainda oferece outros tipos de *.ini* como ``version.ini`` que
-separa as máquinas por versão em que elas apareceram pela primeira vez
+separa os sistemas por versão em que eles apareceram pela primeira vez
 no MAME, note que estes aquivos extras não serão abordados neste
 documento porém já deve ter ficado fácil compreender a sua utilidade no
 MAME.
@@ -184,35 +184,35 @@ MAME.
 
 * :guilabel:`Favoritos`
 
-  Exibe uma lista das máquinas que foram favoritadas, para adicionar uma
-  máquina à lista de favoritos, pressione **TAB**, no menu que aparecer
-  selecione **Adiciona aos favoritos**.
+  Exibe uma lista dos sistemas que foram favoritados, para adicionar um
+  sistema à lista de favoritos, pressione :kbd:`Tab`, no menu que aparecer
+  selecione :guilabel:`Adiciona aos favoritos`.
 
 .. _mamemenu-bios:
 
 * :guilabel:`BIOS`
 
-  Exibe uma lista das máquinas que precisam de uma BIOS para funcionar.
+  Exibe uma lista dos sistemas que precisam de uma BIOS para funcionar.
 
 .. _mamemenu-sembios:
 
 * :guilabel:`Sem BIOS`
 
-  Exibe uma lista das máquinas que não precisam de uma BIOS para
+  Exibe uma lista dos sistemas que não precisam de uma BIOS para
   funcionar.
 
 .. _mamemenu-pai:
 
 * :guilabel:`Principais`
 
-  Quando existirem máquinas derivadas da máquina principal exibe
-  uma lista das máquinas que são originadas desta matriz.
+  Quando existirem sistemas derivados do sistema principal exibe
+  uma lista dos sistemas que são originados desta matriz.
 
 .. _mamemenu-clones:
 
 * :guilabel:`Clones`
 
-  Exibe uma lista das máquinas que são consideradas clones das máquinas
+  Exibe uma lista dos sistemas que são considerados clones dos sistemas
   originais.
 
 .. _mamemenu-fabricante:
@@ -225,47 +225,47 @@ MAME.
 
 * :guilabel:`Ano`
 
-  Exibe uma lista das máquinas separadas por ano de lançamento.
+  Exibe uma lista dos sistemas separados por ano de lançamento.
 
 .. _mamemenu-save-support:
 
 * :guilabel:`É possível salvar`
 
-  Exibe uma lista das máquinas onde o salvamento do estado da máquina
+  Exibe uma lista dos sistemas onde o salvamento do estado do sistema
   é possível.
 
 .. _mamemenu-nosave-support:
 
 * :guilabel:`Não é possível salvar`
 
-  Exibe uma lista das máquinas onde não é possível salvar o estado da
-  máquina.
+  Exibe uma lista dos sistemas onde não é possível salvar o estado do
+  sistema.
 
 .. _mamemenu-chd:
 
 * :guilabel:`Precisa de CHD`
 
-  Exibe uma lista das máquinas que precisam de uma imagem de disco para
+  Exibe uma lista dos sistemas que precisam de uma imagem de disco para
   funcionar.
 
 .. _mamemenu-nochd:
 
 * :guilabel:`Não precisa de CHD`
 
-  Exibe uma lista das máquinas que não precisam de uma imagem de disco
+  Exibe uma lista dos sistemas que não precisam de uma imagem de disco
   para funcionar.
 
 .. _mamemenu-tela-vertical:
 
 * :guilabel:`Tela vertical`
 
-  Exibe uma lista das máquinas que usam orientação vertical de tela.
+  Exibe uma lista dos sistemas que usam orientação vertical da tela.
 
 .. _mamemenu-tela-horizontal:
 
 * :guilabel:`Tela horizontal`
 
-  Exibe uma lista das máquinas que usam orientação horizontal de tela.
+  Exibe uma lista dos sistemas que usam orientação horizontal da tela.
 
 .. _mamemenu-filtro-personalizado:
 
@@ -308,37 +308,37 @@ Entrada (geral)
 
   Consulte :ref:`Outros controles <mamemenu-other-controls>`.
 
-Entrada (esta máquina)
-~~~~~~~~~~~~~~~~~~~~~~
+Atribuições da entrada (este sistema)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Aqui ficam as configurações que serão utilizadas apenas na máquina que
-estiver sendo emulada no momento e por isso essa lista varia, as
-configurações vão desde créditos, botões, acesso ao modo de serviço da
-máquina (caso seja um arcade), teclas de um computador pessoal, etc.
+Aqui ficam as configurações que serão utilizadas apenas no sistema que
+estiver sendo emulado no momento e por isso essa lista varia, as
+configurações vão desde créditos, botões, acesso ao modo de serviço do
+sistema (caso seja um arcade), teclas de um computador pessoal, etc.
 
 Chaves DIP
 ~~~~~~~~~~
 
-Aqui ficam as chaves DIP, elas servem para definir as configurações da
-máquina (quando for relevante) como, a quantidade de fichas necessárias
-para registrar 1 crédito, se a tela será invertida ou não, se a máquina
+Aqui ficam as chaves DIP, elas servem para definir as configurações do
+sistema (quando for relevante) como, a quantidade de fichas necessárias
+para registrar 1 crédito, se a tela será invertida ou não, se o sistema
 ficará em silêncio ou reproduzirá qualquer tipo de áudio enquanto
-ninguém a estiver jogando, etc.
+ninguém o estiver jogando, etc.
 
 Sempre que uma chave for alterada, sempre selecione **Reinicie** para
-que a alteração seja aplicada. Em alguma máquina a ação já pode ser
+que a alteração seja aplicada. Em algum sistema a ação já pode ser
 vista na tela, contudo, não é sempre o caso.
 
 Informação da contabilidade
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-É o registro interno da máquina que mostra o tempo total que ela ficou
+É o registro interno do sistema que mostra o tempo total que ele ficou
 em execução e a quantidade de fichas que foram colocadas nela.
 
-Informação da máquina
+Informação do sistema
 ~~~~~~~~~~~~~~~~~~~~~
 
-Um breve resumo do nome da máquina, o seu driver, o tipo do processador
+Um breve resumo do nome do sistema, o seu driver, o tipo do processador
 (vídeo, áudio e outros) e a resolução do vídeo.
 
 .. raw:: latex
@@ -348,7 +348,7 @@ Um breve resumo do nome da máquina, o seu driver, o tipo do processador
 Controles deslizantes
 ~~~~~~~~~~~~~~~~~~~~~
 
-As opções disponíveis aqui também dependem do tipo da máquina, outros
+As opções disponíveis aqui também dependem do tipo do sistema, outros
 ajustes podem aparecer porém os principais são estes:
 
 * :guilabel:`Volume principal`
@@ -362,10 +362,10 @@ ajustes podem aparecer porém os principais são estes:
 
 * :guilabel:`Volume com xxx Ch.x`
 
-  Faz o ajuste individual de cada canal de áudio, máquina com áudio mono
-  só tem o ``Ch.0``, já máquinas com canal estéreo possuem ``Ch.0``
+  Faz o ajuste individual de cada canal de áudio, sistema com áudio mono
+  só tem o ``Ch.0``, já sistemas com canal estéreo possuem ``Ch.0``
   (esquerdo) e ``Ch.1`` (direito) e assim por diante. A quantidade de
-  canais disponíveis vai depender da máquina que está sendo emulada.
+  canais disponíveis vai depender do sistema que está sendo emulado.
 
 .. raw:: html
 
@@ -426,10 +426,10 @@ Opções do vídeo
 Tela #X
 ^^^^^^^
 
-Caso a máquina possua mais de uma tela, todas elas serão listadas aqui,
+Caso o sistema possua mais de uma tela, todas elas serão listadas aqui,
 onde "X" indica o número da tela e cada uma delas com as opções
 mostradas abaixo. Aqui também vai aparecer qualquer tipo de ilustração
-da máquina emulada e as suas respectivas opções, quando houver.
+do sistema emulado e as suas respectivas opções, quando houver.
 
 * :guilabel:`Nome`
 
@@ -477,7 +477,7 @@ da máquina emulada e as suas respectivas opções, quando houver.
 
 * :guilabel:`Aproxime a área da tela`
 
-  Quando a máquina estiver usando uma artwork onde exista uma tela,
+  Quando o sistema estiver usando uma artwork onde exista uma tela,
   somente esta região será aproximada.
 
 		O valor predefinido é ``Desligado``.
@@ -555,7 +555,7 @@ da tela seja feito.
 
 * :guilabel:`Aproxime a área da tela`
 
-  Quando a máquina estiver usando uma ilustração onde exista um recorte
+  Quando o sistema estiver usando uma ilustração onde exista um recorte
   de uma tela, a captura da tela será feita somente desta região.
 
 		O valor predefinido é ``Desligado``.
@@ -577,9 +577,9 @@ Esta opção estará disponível quando dois critérios forem atendidos, o
 plug-in **Data plugin** estiver ativo e os arquivos **\*.dat**
 (command.dat, gameinit.dat, etc) estiverem dentro do diretório **dats**.
 
-Caso o nome da máquina exista dentro do ``command.dat`` por exemplo,
-será exibido uma lista de como jogar, dicas, a lista dos comandos da
-máquina na tela (em Inglês), etc.
+Caso o nome do sistema exista dentro do ``command.dat`` por exemplo,
+será exibido uma lista de como jogar, dicas, a lista dos comandos do
+sistema na tela (em Inglês), etc.
 
 .. raw:: latex
 
@@ -682,14 +682,14 @@ As opções disponíveis são:
 
 	* :guilabel:`Fundo`
 
-	  Define a cor do fundo da tela e máquinas clonadas.
+	  Define a cor do fundo da tela e dos sistemas clonados.
 
 		O valor predefinido é Opacidade: ``239``, Vermelho: ``16``,
 		Verde: ``16``, Azul: ``48``.
 
 	* :guilabel:`Chave DIP`
 
-	  Define a cor das chaves DIP selecionadas em máquinas que usam tal
+	  Define a cor das chaves DIP selecionadas nos sistemas que usam tal
 	  chaves.
 
 		O valor predefinido é Opacidade: ``255``, Vermelho: ``255``,
@@ -810,7 +810,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * :guilabel:`Ilustrações`
 
   Define o caminho do diretório onde se encontram as ilustrações
-  gráficas que fazem o preenchimento de fundo da tela das máquinas.
+  gráficas que fazem o preenchimento de fundo da tela dos sistemas.
   Veja mais em :ref:`-artpath <mame-commandline-artpath>`.
 
 		O valor predefinido é um diretório chamado **artwork** no
@@ -908,7 +908,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * :guilabel:`Ícones`
 
   Define o caminho do diretório onde se encontram os arquivos *.ico*
-  para serem usados como ícones que ficam ao lado do nome da máquina.
+  para serem usados como ícones que ficam ao lado do nome do sistema.
   [#ICONS]_
 
 ..	[#ICONS] O site do `MAMEICONS <http://icons.mameworld.info/>`_ e
@@ -941,7 +941,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * :guilabel:`Marquises`
 
   Define o caminho do diretório onde se encontram as imagens com a arte
-  gráfica que ficavam na parte de cima da máquina.
+  gráfica que ficavam na parte de cima do sistema.
 
 		O valor predefinido é um diretório chamado **marquees** no
 		diretório raiz do MAME.
@@ -950,7 +950,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * :guilabel:`PCIs`
 
   Define o caminho do diretório onde se encontram fotos que mostram
-  a placa de circuito impresso da máquina.
+  a placa de circuito impresso do sistema.
 
 		O valor predefinido é um diretório chamado **pcb** no
 		diretório raiz do MAME.
@@ -968,7 +968,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * :guilabel:`Títulos das telas`
 
   Define o caminho do diretório onde se encontram as imagens que mostram
-  a tela de título da máquina.
+  a tela de título do sistema.
 
 		O valor predefinido é um diretório chamado **titles** no
 		diretório raiz do MAME. [#TITLES]_
@@ -1119,8 +1119,8 @@ seja definido aqui.
 
 * :guilabel:`Escala prévia do bitmap`
 
-  Opção útil quando máquinas com baixa resolução são ampliadas para uma
-  resolução maior, use essa opção para dar uma amenizada nessa
+  Opção útil quando os sistemas com baixa resolução são ampliadas para
+  uma resolução maior, use essa opção para dar uma amenizada nessa
   aparência, essa opção geralmente é utilizada em conjunto com a opção
   **Filtragem bilinear**.
 
@@ -1188,8 +1188,8 @@ Opções do áudio
 
 * :guilabel:`Taxa da amostragem`
 
-  Define a taxa da amostragem do áudio que será usada em todas as
-  máquinas.
+  Define a taxa da amostragem do áudio que será usada em todas os
+  sistemas.
 
 		O valor predefinido é ``48000``.
 
@@ -1206,15 +1206,15 @@ Opções diversas
 
 * :guilabel:`Ignore os avisos de emulação imperfeita`
 
-  Faz com que o MAME não exiba as telas de aviso das máquinas com
+  Faz com que o MAME não exiba as telas de aviso dos sistemas com
   emulação imperfeita (tarja amarela).
 
 		O valor predefinido é ``Desligado``.
 
 
-* :guilabel:`Selecione novamente a última máquina já executada`
+* :guilabel:`Selecione novamente o último sistema já executado`
 
-  Faz com que o MAME se lembre da última máquina que foi jogada através
+  Faz com que o MAME se lembre do último sistema que foi jogado através
   da interface do MAME.
 
 		O valor predefinido é ``Ligado``.
@@ -1243,10 +1243,10 @@ Opções diversas
 		O valor predefinido é ``Ligado``.
 
 
-* :guilabel:`Confirma se deseja encerrar a máquina ou não`
+* :guilabel:`Confirma se deseja encerrar o sistema ou não`
 
   Faz com que o MAME sempre te pergunte se quer realmente encerrar a
-  emulação da máquina ou não.
+  emulação do sistema ou não.
 
 		O valor predefinido é ``Desligado``.
 
@@ -1257,8 +1257,8 @@ Opções diversas
 
 * :guilabel:`Omite a tela de informações ao iniciar`
 
-  Não exibe a tela com informações sobre o sistema quando iniciar uma
-  máquina.
+  Não exibe a tela com informações sobre o sistema quando iniciar um
+  sistema.
 
 		O valor predefinido é ``Desligado``.
 
@@ -1283,8 +1283,8 @@ Opções diversas
 
 * :guilabel:`Omite a tela da escolha da BIOS`
 
-  Faz com que o MAME inicie a máquina com a primeira BIOS disponível
-  para a máquina ao em vez de usar uma lista.
+  Faz com que o MAME inicie o sistema com a primeira BIOS disponível
+  para o sistema ao em vez de usar uma lista.
 
 		O valor predefinido é ``Desligado``.
 
@@ -1302,9 +1302,9 @@ Opções diversas
 
   Exibe na aba de informações gerais do lado direito da interface do
   MAME informação quanto a condição da ROM selecionada se é **BOA** ou
-  **RUIM**. Assim como também verifica se a máquina usa amostras ou
-  não, aferindo se a condição delas seja **BOA** ou **RUIM**. Caso a
-  máquina não use amostras, aparecerá a mensagem **Nenhuma Necessária**.
+  **RUIM**. Assim como também verifica se o sistema usa amostras ou
+  não, aferindo se a condição delas seja **BOA** ou **RUIM**. Caso o
+  sistema não use amostras, aparecerá a mensagem **Nenhuma Necessária**.
   Note que essa função deixa a interface do MAME um pouco mais lenta
   devido as aferições que são feitas em tempo real a cada seleção da
   ROM.
@@ -1312,9 +1312,9 @@ Opções diversas
 		O valor predefinido é ``Desligado``.
 
 
-* :guilabel:`Esconde as máquinas sem ROMs da lista de disponíveis`
+* :guilabel:`Esconde os sistemas sem ROMs da lista de disponíveis`
 
-  Esconde da lista máquinas eletrônicas que não usam ROMs.
+  Esconde da lista de sistemas eletrônicos que não usam ROMs.
 
 		O valor predefinido é ``Ligado``.
 
@@ -1456,7 +1456,7 @@ Todas as entradas
 	As teclas predefinidas são :kbd:`Til` + :kbd:`Shift` :kbd:`Esq`.
 
 
-* :guilabel:`Redefine a máquina`
+* :guilabel:`Redefine o sistema`
 
   Encerra a emulação e a reinicia do zero.
 
@@ -1730,7 +1730,7 @@ Todas as entradas
 
 * :guilabel:`Salva o estado`
 
-  Salva o estado da máquina.
+  Salva o estado do sistema.
 
 	As teclas predefinidas são :kbd:`F7` + :kbd:`Shift` :kbd:`Esq`.
 
@@ -1741,7 +1741,7 @@ Todas as entradas
 
 * :guilabel:`Carrega o estado`
 
-  Carrega o estado da máquina.
+  Carrega o estado do sistema.
 
 	A tecla predefinida é :kbd:`F7`.
 
@@ -1772,14 +1772,14 @@ Todas as entradas
 
 * :guilabel:`UI Adiciona ou remove um favorito`
 
-  Adiciona ou remove as máquinas da lista de favoritos.
+  Adiciona ou remove os sistemas da lista de favoritos.
 
 	As teclas predefinidas são :kbd:`Alt` :kbd:`Esq` + :kbd:`F`.
 
 
 * :guilabel:`UI exporta lista`
 
-  Exporta a lista das máquinas no formato:
+  Exporta a lista dos sistemas no formato:
 
 	* **XML** igual ao comando **-listxml**.
 	* **XML** igual ao comando **-listxml** excluindo os dispositivos.
@@ -1840,7 +1840,7 @@ Todas as entradas
 Controles do jogador 1 ~ 10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Definições para todos os botões e controles usados pela máquina
+  Definições para todos os botões e controles usados pelo sistema
   separado por jogador, entre o jogador 1 até o 10. Abaixo a lista das
   opções predefinidas para o jogador 1 que podem ser alteradas na
   própria interface do MAME.
@@ -2867,9 +2867,9 @@ Opções de desempenho
 
 * :guilabel:`Supressão da velocidade`
 
-  Ativa a supressão de velocidade da emulação para que a máquina
-  emulada rode em sua velocidade nativa em vez da velocidade do
-  processador em que a máquina está sendo emulada.
+  Ativa a supressão de velocidade da emulação para que o sistema
+  emulado rode na sua velocidade nativa em vez da velocidade do
+  processador onde o sistema está sendo emulado.
 
 	O valor predefinido é ``Ligado``.
 
@@ -2992,7 +2992,7 @@ Opções do estado/reprodução
 
 * :guilabel:`Salve/restaure automático`
 
-  Em sistema compatíveis, carrega automaticamente o estado da máquina e
+  Em sistema compatíveis, carrega automaticamente o estado do sistema e
   a salva ao encerrar.
 
 	O valor predefinido é ``Desligado``.
@@ -3000,7 +3000,7 @@ Opções do estado/reprodução
 
 * :guilabel:`Permita o rebobinamento`
 
-  Permite o rebobinamento do estado da máquina.
+  Permite o rebobinamento do estado do sistema.
 
 	O valor predefinido é ``Desligado``.
 
@@ -3033,22 +3033,22 @@ Opções da entrada
 
 * :guilabel:`Trava da ficha`
 
-  Faz com que a máquina ignore a inserção de fichas em momentos que a
-  máquina não está pronta para recebê-las.
+  Faz com que o sistema ignore a inserção de fichas em momentos que o
+  sistema não está pronto para recebê-los.
 
 	O valor predefinido é ``Ligado``.
 
 
 * :guilabel:`Mouse`
 
-  Permite o uso de um mouse nas máquinas.
+  Permite o uso de um mouse nos sistemas.
 
 	O valor predefinido é ``Desligado``.
 
 
 * :guilabel:`Controle`
 
-  Permite o uso de um controle nas máquinas.
+  Permite o uso de um controle nos sistemas.
 
 	O valor predefinido é ``Ligado``.
 
@@ -3162,16 +3162,16 @@ Retorna para a tela anterior.
 
 .. _mamemenu-config-machine:
 
-Configure a máquina
+Configure o sistema
 -------------------
 
-Permite que você configure individualmente cada máquina selecionada.
+Permite que você configure individualmente cada sistema selecionado.
 
 
 * :guilabel:`BIOS`
 
-  Informa se a máquina usa uma BIOS ou não, nas máquinas que usam BIOS é
-  possível escolher qual BIOS você quer que a máquina use.
+  Informa se o sistema usa uma BIOS ou não, nos sistema que usam BIOS é
+  possível escolher qual BIOS você quer que o sistema use.
 
 .. raw:: html
 
@@ -3207,16 +3207,16 @@ Permite que você configure individualmente cada máquina selecionada.
 
 * :guilabel:`Adiciona aos favoritos`
 
-  Adiciona a máquina selecionada aos seus favoritos.
+  Adiciona o sistema selecionado aos seus favoritos.
 
 .. raw:: html
 
 	<p></p>
 
 
-* :guilabel:`Salva a configuração da máquina`
+* :guilabel:`Salva a configuração do sistema`
 
-  Salva a configuração apenas para a máquina selecionada.
+  Salva a configuração apenas para o sistema selecionado.
 
 ..	[#MAMEUIP] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME
 		com uma interface gráfica diferente.
