@@ -27,7 +27,7 @@ em formato binário.
 
 Para a maioria dos consoles e portáteis, os CIs individuais são
 frequentemente (mas nem sempre) mesclados num único arquivo.
-Já as máquinas arcade a coisa é um pouco mais complicada devido ao seu
+Já nos sistemas arcade, a coisa é um pouco mais complicada devido ao seu
 design, você normalmente precisará de dados encontrados em diferentes
 circuitos espalhados pela placa.
 Ao agrupar todos os arquivos do Puckman juntos, você obterá um conjunto
@@ -115,7 +115,7 @@ Estes são princípios básicos de conjuntos, porém existem dois outros
 tipos de conjunto que serão usados no MAME de tempos em tempos.
 
 Primeiro, é o **conjunto de BIOS** (*BIOS set*).
-Algumas máquinas arcade compartilhavam uma plataforma de hardware em
+Alguns sistemas arcade compartilhavam uma plataforma de hardware em
 comum, como o hardware de arcade Neo-Geo. Como a placa principal tinham
 todos os dados necessários para iniciar e realizar seu auto-teste do
 hardware antes de seguir para o cartucho de jogos. Aliás, não é
@@ -171,7 +171,7 @@ fosse necessário.
 
 Não demoraria muito para descobrir que muitos dos conjuntos existentes
 tinham dados ruins para um ou mais circuitos integrados. Os dados desses
-também precisariam ser extraídos novamente, talvez de uma máquina
+também precisariam ser extraídos novamente, talvez de um sistema
 diferente, e muitos outros conjuntos precisariam de revisões completas.
 
 Ocasionalmente, alguns jogos seriam descobertos com sua documentação
