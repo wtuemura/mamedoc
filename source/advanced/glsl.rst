@@ -39,7 +39,7 @@ Você desejará que o MAME esteja usando a resolução nativa do seu monitor
 para evitar distorções e atrasos adicionais criados pelo seu monitor ao
 tentar preencher a imagem na tela.
 
-Enquanto a maioria das máquinas de arcade usava um monitor com proporção
+Enquanto a maioria dos sistemas de arcade usava um monitor com proporção
 de tela no formato 4:3 (ou 3:4 se o monitor estivesse orientado
 verticalmente como é no caso do **Pac Man**), a essa altura do
 campeonato é difícil encontrar nos dias de hoje um monitor ou TV que
@@ -119,13 +119,13 @@ proveito do poder dos arquivos de configuração do MAME, talvez seja
 melhor copiar as opções do glsl do ``mame.ini`` para um outro arquivo de
 configuração e fazer as modificações lá.
 
-Por exemplo, uma vez selecionada as opções glsl que queira usar nas
-máquinas para Neo-Geo, coloque essas configurações no arquivo
+Por exemplo, uma vez selecionada as opções glsl que queira usar nos
+sistemas para Neo-Geo, coloque essas configurações no arquivo
 ``neogeo.ini`` dentro do diretório **ini/sources** para que essas
-configurações sejam compartilhadas com todas as máquinas Neo-Geo
+configurações sejam compartilhadas com todos os sistemas Neo-Geo
 automaticamente. Caso contrário seria necessário ter que adicionar essas
 configurações uma a uma manualmente em diferentes arquivos ``.ini`` como
-o nome de cada máquina dentro do diretório **ini**.
+o nome de cada sistema dentro do diretório **ini**.
 
 .. raw:: latex
 
