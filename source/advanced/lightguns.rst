@@ -39,7 +39,7 @@ empresa **Sinden Technology** que desenvolveu uma nova tecnologia onde
 não é mais necessário o uso de um sensor em cima da TV para que o jogo
 possa identificar o movimento da arma. Esse projeto promete fazer com
 que a arma de luz deles funcionem em qualquer TV de tela plana e
-usando desde os consoles de videogames originais, máquinas de fliperama
+usando desde os consoles de videogames originais, sistemas de fliperama
 e até mesmo emuladores como o MAME.
 
 .. raw:: latex
@@ -519,22 +519,23 @@ Configurando uma Pistola de luz
 -------------------------------
 
 Agora que tudo está funcionando a parte mais chata seria fazer
-configuração da sua arma para cada uma das trezentas e poucas
-máquinas, porém isso é mais simples do que parece. O MAME oferece a
+configuração da sua arma para cada uma das trezentas e poucos
+sistemas, porém isso é mais simples do que parece. O MAME oferece a
 opção :ref:`-ctrlr <mame-commandline-ctrlrpath>` para que você possa
-carregar a configuração que você já fez para uma máquina mas que podem
-ser usada em outras.
+carregar a configuração que você já fez para um sistema mas que podem
+ser utilizados em outros.
 
-Inicie uma máquina qualquer como **bang** por exemplo, ``mame bang``,
+Inicie uma sistema qualquer como **bang** por exemplo, ``mame bang``,
 quando ela iniciar pressione **TAB** para acessar a interface e vá em
-**Entrada (esta máquina)**. Para o **Jogador 1** selecione **Lightgun X
-Analog** e pressione **Enter**, mova a arma da esquerda para direita,
-deve aparecer **Gun 1 X**, faça o mesmo com **Lightgun X Analog** mas
-mova a arma de cima para baixo, agora a opção deve aparecer como
-**Gun 1 X**. Caso tenha mais uma arma para o jogador 2 faça o mesmo
-em **Lightgun X 2 Analog** e **Lightgun Y 2 Analog**.
+:guilabel:`Atribuições da entrada (este sistema)`. Para o **Jogador 1**
+selecione :guilabel:`Lightgun X Analog` e pressione **Enter**, mova a
+arma da esquerda para direita, deve aparecer :guilabel:`Gun 1 X`, faça o
+mesmo com :guilabel:`Lightgun X Analog` mas mova a arma de cima para
+baixo, agora a opção deve aparecer como :guilabel:`Gun 1 X`. Caso tenha
+mais uma arma para o jogador 2 faça o mesmo em
+:guilabel:`Lightgun X 2 Analog` e :guilabel:`Lightgun Y 2 Analog`.
 
-Pressione **ESQ** para sair do MAME, vá até o diretório **cfg** e
+Pressione :kbd:`Esc` para sair do MAME, vá até o diretório **cfg** e
 localize o arquivo `bang.cfg <https://pastebin.com/n1YbX53G>`_, nele
 está toda a configuração que você fez, exemplo:
 
@@ -612,7 +613,7 @@ Independente do arquivo que você tenha gerado edite a linha
 **<system name="bang">** para **<system name="default">** e salve o
 arquivo como **arma.cfg** dentro do diretório **ctrl**. Agora sempre
 que você for iniciar o MAME com essa configuração, basta fazer o comando
-``mame -ctrlr arma bang``. Assim o MAME inicia a máquina com as
+``mame -ctrlr arma bang``. Assim o MAME inicia o sistema com as
 suas configurações predefinidas.
 
 Caso não queira fazer isso para cada jogo, adicione a configuração no
@@ -641,10 +642,10 @@ simplesmente, é como o autor deste texto que gosta das coisas bem
 organizadas.
 
 O que faremos é replicar a configuração que temos e sabemos que funciona
-apenas para as máquinas que usam arma, deixando o **mame.ini** livre
+apenas para os sistemas que usam arma, deixando o ``mame.ini`` livre
 de modificações. Para realizar essa façanha *é bem simples*, basta
-criarmos um arquivo ***.ini** **para cada uma das 362 máquinas
-conhecidas** e salvar a configuração acima **EM CADA UM DESTES
+criarmos um arquivo ***.ini** **para cada uma dos 362 sistemas
+conhecidos** e salvar a configuração acima **EM CADA UM DESTES
 ARQUIVOS**. Ainda bem que temos as ferramentas certas no **Linux**
 para nos ajudar, certo?
 
@@ -669,7 +670,7 @@ ou similares.
 *	**No terminal**, vá até o diretório raiz do MAME e faça o comando
 	``mkdir arma`` para criar o diretório seguido de ``cd arma``
 	para entrar nele.
-*	Execute o comando abaixo para filtrar apenas os nomes das máquinas
+*	Execute o comando abaixo para filtrar apenas os nomes dos sistemas
 	que queremos e em seguida salvamos eles num arquivo chamado
 	`maquinas <https://pastebin.com/zZxvkza2>`_ em formato de fim de
 	linha para Unix: ::
@@ -693,7 +694,7 @@ ou similares.
 		offscreen_reload          1
 
 *	No terminal, ainda dentro do diretório arma, execute o comando
-	abaixo para criar uma configuração com o nome de cada máquina: ::
+	abaixo para criar uma configuração com o nome de cada sistema::
 
 		while read lista; do cp cfg.txt "$lista".ini; done < maquinas
 
@@ -702,7 +703,7 @@ ou similares.
 	\clearpage
 
 Agora dentro do diretório arma estará cheia de arquivos ***.ini**
-como o nome de cada máquina que usa uma arma e com a configuração
+como o nome de cada sistema que usa uma arma e com a configuração
 correta dentro de cada um deles.
 
 Estou disponibilizando esses arquivos ***.ini** já prontos visando
@@ -731,13 +732,13 @@ dentro do diretório arma.
 
 .. _arma-separando-roms:
 
-Separando apenas as ROMs das máquinas de tiro
+Separando apenas as ROMs dos sistemas de tiro
 ---------------------------------------------
 
 Da mesma maneira que podemos criar uma lista de configuração individual
-para cada máquina, podemos também usar a mesma lista para copiar apenas
-as suas ROMs atendendo a necessidade das pessoas que configuram as suas
-máquinas dessa forma.
+para cada sistema, podemos também usar a mesma lista para copiar apenas
+as suas ROMs atendendo a necessidade das pessoas que configuram os seus
+sistemas dessa forma.
 
 Ainda usando o arquivo :ref:`maquinas <arma-luz-maquinas>`
 executaremos as seguintes ações:
@@ -797,8 +798,9 @@ o comando: ::
 		cat registro | grep "No such file or directory" | awk '{print $6}' > roms-ausentes
 
 O exemplo que foi demonstrado aqui serve para qualquer outro tipo de
-lista, você pode por exemplo gerar uma lista para máquinas CPS1/CPS2/ZN
-e depois copiar essas ROMs em diretórios separados, o céu é o limite.
+lista, você pode por exemplo gerar uma lista para os sistemas dentro dos
+drivers CPS1/CPS2/ZN e depois copiar essas ROMs em diretórios separados,
+o céu é o limite.
 
 .. raw:: latex
 
@@ -809,7 +811,7 @@ e depois copiar essas ROMs em diretórios separados, o céu é o limite.
 Compilando uma versão do MAME só com maquinas de tiros
 ------------------------------------------------------
 
-O MAME disponibiliza a opção de filtrar a lista de máquinas por
+O MAME disponibiliza a opção de filtrar a lista dos sistemas por
 categoria, para mais informações veja :ref:`Categoria
 <mamemenu-categoria>`, os jogos de tiro estão listados como
 **[Shooting / Guns]**. No entanto está se tornando muito comum o uso de
@@ -828,7 +830,7 @@ a compilação do MAME e que você já esteja familiarizado com o processo.
 No :ref:`capítulo anterior <arma-em-jogos-que-precisam>` nós
 demonstramos como criar o arquivo **maquinas** usando o arquivo
 **category.ini** que fica dentro do diretório **folders**, naquele
-aquivo ficam todas as máquinas dentro da categoria de tiro, porém para
+aquivo ficam todas os sistemas dentro da categoria de tiro, porém para
 compilar o MAME com elas nós necessitamos encontrar **TODOS** os drivers
 responsável por eles e repassar essa informação aos scripts de
 compilação usando a opção **SOURCES**.
@@ -839,7 +841,7 @@ compilação usando a opção **SOURCES**.
 	tempo, assim recomendamos manter o seu arquivo **categories.ini**
 	atualizado e se for o caso, gere um novo arquivo seguindo as
 	instruções do capítulo anterior.
-*	Para encontrar os drivers responsáveis pelas máquinas da lista nós
+*	Para encontrar os drivers responsáveis pelos sistemas da lista nós
 	usamos a função
 	:ref:`-listsource / -ls <mame-commandline-listsource>` do MAME,
 	por exemplo: ::
@@ -853,7 +855,7 @@ compilação usando a opção **SOURCES**.
 
 		while read lista; do ~/mame/mame -ls "$lista"; done < maquinas | awk '{print $2}' | awk '!seen[$0]++' | sort -d > drivers
 
-	O comando vai alimentar o MAME com o nome das máquinas,
+	O comando vai alimentar o MAME com o nome dos sistemas,
 	``~/mame/mame`` mostra o caminho completo onde se encontra o
 	binário do MAME, o comando ``awk '{print $2}'`` vai selecionar
 	apenas a segunda coluna onde estão os **drivers.cpp**, o comando
@@ -910,7 +912,7 @@ compilação usando a opção **SOURCES**.
 
 
 No final da compilação você terá um executável do MAME customizado, com
-um tamanho reduzido e que vai incluir as máquinas de tiro assim como
-todas as outras máquinas que esses drivers suportam. Para exibir apenas
-as máquinas de tiro, use o filtro de Categoria.
+um tamanho reduzido e que vai incluir os sistemas de tiro assim como
+todas os outros sistema que esses drivers suportam. Para exibir apenas
+os sistemas de tiro, use o filtro de Categoria.
 
