@@ -55,7 +55,7 @@ Estrutura básica
 
 A sua estrutura segue um formato similar ao formato usado pela
 configuração do sistema que o MAME usa para salvar coisas como as
-configurações da entrada e os dados da contabilidade da máquina (criado
+configurações da entrada e os dados da contabilidade do sistema (criado
 na pasta que for definido usando a opção
 :ref:`cfg_directory <mame-commandline-cfgdirectory>`). Neste exemplo
 temos a estrutura geral de um arquivo de configuração de um controle:
@@ -103,11 +103,11 @@ seguintes critérios:
 * Caso o atributo ``name`` tenha o mesmo nome do arquivo fonte do
   driver.
 
-Para a máquina "*DaeJeon! SanJeon SuJeon (AJTUE 990412 V1.000)*" por
+Para o sistema "*DaeJeon! SanJeon SuJeon (AJTUE 990412 V1.000)*" por
 exemplo, os elementos ``system`` serão aplicados caso o seu atributo
 ``name`` tenha o valor ``default`` (se aplica a todos os sistemas),
 ``sajeon`` (um nome encurtado do próprio sistema), ``sasissu`` (um nome
-encurtado de uma outra versão da mesma máquina), ``stvbios`` (um nome
+encurtado de uma outra versão do mesmo sistema), ``stvbios`` (um nome
 encurtado do nome da BIOS do sistema) ou ``stv.cpp`` (nome do arquivo
 fonte/driver onde o sistema foi definido).
 
