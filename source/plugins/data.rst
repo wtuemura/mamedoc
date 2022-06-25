@@ -62,7 +62,9 @@ salvar o placar da memória não volátil ou através do
 Observe que não é possível, por exemplo, usar diferentes
 arquivos ``mameinfo.dat`` feitos para diferentes idiomas ao mesmo tempo.
 
-O *data plugin* cria um arquivo chamado ``history.db`` na primeira pasta
-configurada para DATs. Este arquivo armazena as informações do arquivos
-de suporte em formato SQLite3 visando uma rápida leitura.
+O *data plugin* cria um arquivo chamado ``history.db`` na pasta **data**
+dentro da pasta plugin (consulte a opção
+:ref:`homepath <mame-commandline-homepath>`). Este arquivo armazena as
+informações do arquivos de suporte em formato SQLite3 visando uma rápida
+leitura.
 
