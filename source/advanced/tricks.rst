@@ -606,10 +606,6 @@ como `us-ascii <https://en.wikipedia.org/wiki/Code_page_20127>`_:
 	IsReadOnly        : True
 	CodePage          : 20127
 
-.. raw:: latex
-
-	\clearpage
-
 Ao fazer o redirecionamento, a saída é codificada para
 `iso-10646-ucs-2 BOM <https://en.wikipedia.org/wiki/ISO_10646>`_, isso
 faz com que cada caractere comum seja armazenado com 2 bytes. Geralmente
