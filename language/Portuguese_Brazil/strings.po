@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MAME 0.237\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-11 09:24+1000\n"
-"PO-Revision-Date: 2021-11-17 12:27-0300\n"
+"POT-Creation-Date: 2022-06-30 07:10-0300\n"
+"PO-Revision-Date: 2022-06-30 07:10-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -400,7 +400,7 @@ msgstr "Mostra o ponteiro do mouse"
 
 #: src/frontend/mame/ui/submenu.cpp:39
 msgid "Confirm quit from machines"
-msgstr "Confirma se deseja encerrar a máquina ou não"
+msgstr "Confirme se deseja encerrar o sistema ou não"
 
 #: src/frontend/mame/ui/submenu.cpp:40
 msgid "Skip system information screen"
@@ -428,7 +428,7 @@ msgstr "Informação de aferição automática"
 
 #: src/frontend/mame/ui/submenu.cpp:46
 msgid "Hide romless machine from available list"
-msgstr "Esconde as máquinas sem ROMs da lista de disponíveis"
+msgstr "Esconde os sistemas sem ROMs da lista de disponíveis"
 
 #: src/frontend/mame/ui/submenu.cpp:52
 msgid "Advanced Options"
@@ -741,11 +741,11 @@ msgstr "[root%1$s]"
 #: src/frontend/mame/ui/filemngr.cpp:154
 #: src/frontend/mame/ui/confswitch.cpp:170 src/frontend/mame/ui/slotopt.cpp:204
 msgid "Reset System"
-msgstr "Redefine a máquina"
+msgstr "Redefine a sistema"
 
 #: src/frontend/mame/ui/filemngr.cpp:154
 msgid "Start System"
-msgstr "Iniciar Sistema"
+msgstr "Inicia o sistema"
 
 #: src/frontend/mame/ui/videoopt.cpp:58
 #, c-format
@@ -895,7 +895,7 @@ msgid ""
 "One or more ROMs/disk images for this system are incorrect. The system may "
 "not run correctly.\n"
 msgstr ""
-"Uma ou mais ROMs/CHDs para esta máquina estão incorretas. A máquina pode não "
+"Uma ou mais ROMs/CHDs para este sistema estão incorretos. O sistema pode não "
 "funcionar corretamente.\n"
 
 #: src/frontend/mame/ui/info.cpp:80
@@ -1792,7 +1792,7 @@ msgstr "Chaves DIP"
 
 #: src/frontend/mame/ui/confswitch.cpp:508
 msgid "Machine Configuration"
-msgstr "Configuração da máquina"
+msgstr "Configuração do sistema"
 
 #: src/frontend/mame/ui/slotopt.cpp:48
 msgid "Slot Devices"
@@ -2872,7 +2872,7 @@ msgstr "Chaves DIP"
 #: src/frontend/mame/ui/mainmenu.cpp:119
 msgctxt "menu-main"
 msgid "Machine Configuration"
-msgstr "Configuração da máquina"
+msgstr "Configuração do sistema"
 
 #: src/frontend/mame/ui/mainmenu.cpp:121
 msgctxt "menu-main"
@@ -5399,7 +5399,7 @@ msgstr "Rebobina - passo único"
 #: src/emu/inpttype.ipp:880
 msgctxt "input-name"
 msgid "Reset Machine"
-msgstr "Redefine máquina"
+msgstr "Redefine o sistema"
 
 #: src/emu/inpttype.ipp:881
 msgctxt "input-name"
