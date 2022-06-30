@@ -1205,7 +1205,7 @@ adicione o seguinte conteúdo::
 Faça o comando ``apt-get update && apt-get upgrade`` e aguarde a
 atualização de todos os pacotes do sistema, isso pode levar um pouco
 mais de meia hora. Quando todo o processo terminar faça o comando
-``apt full-upgrade``, este comando vai atualizar o restante dos pacotes
+``apt dist-upgrade``, este comando vai atualizar o restante dos pacotes
 que não foram atualizados no processo anterior e também vai atualizar o
 kernel.
 
