@@ -1718,6 +1718,46 @@ variáveis de ambiente **CFLAGS** e **CXXFLAGS**.
 
 	\clearpage
 
+
+.. _compiling-issues-mvs:
+
+Problemas que afetam o Microsoft Visual Studio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A Microsoft introduziu uma nova versão do **XAudio2** com o Windows 8
+que é incompatível com a versão incluída com o **DirectX** para as
+versões anteriores do Windows no nível de API. As novas versões do
+*Microsoft Windows SDK* incluem cabeçalhos e bibliotecas para a nova
+versão do XAudio2. É predefinido que a versão alvo do Windows seja
+definida para o Windows Vista (6.0) durante a compilação do MAME, o que
+impede o uso desta versão dos cabeçalhos e bibliotecas do XAudio2.
+Para construir o MAME com suporte ao XAudio2 usando o Microsoft Windows
+SDK, você deve fazer uma das seguintes ações:
+
+* Adicione a opção ``MODERN_WIN_API=1`` ao make ao gerar os arquivos do
+  projeto do Visual Studio. Isso definirá a versão do Windows para
+  Windows 8 (6.2). Os binários resultantes desta compilação, poderão não
+  rodar nas versões anteriores do Windows.
+* Instale o DirectX SDL e configure o projeto ``osd_windows`` para
+  realizar a procura dos caminhos dos cabeçalhos e das bibliotecas do
+  DirectX antes de procurar os caminhos do Microsoft Windows SDK.
+
+O compilador MSVC produz avisos espúrios sobre as variáveis locais que
+estejam não-inicializadas potencialmente. Atualmente é preciso adicionar
+``NOWERROR=1`` às opções do make para gerar os arquivos do projeto do
+Visual Studio. Isto impede que os avisos sejam tratados como erros.
+(O MSVC parece não ter opções para controlar quais advertências
+específicas serão tratadas como erro, coisa que os outros compiladores
+suportam).
+
+Há um problema ainda não resolvido com a definição do ``COM GUIDS``
+duplicados na biblioteca do PortAudio quando a versão alvo do Windows
+for definida para o Windows Vista (6.0) ou posterior. Para contornar
+isso, adicione a opção ``NO_USE_PORTAUDIO=1`` ao gerar os arquivos do
+projeto do Visual Studio. O MAME será compilado sem o suporte para a
+saída de áudio através do PortAudio.
+
+
 .. _compiling-issues-entry-point:
 
 Ponto de entrada não encontrado
