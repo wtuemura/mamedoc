@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME 0.237\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-30 07:10-0300\n"
-"PO-Revision-Date: 2022-06-30 07:10-0300\n"
+"PO-Revision-Date: 2022-07-07 12:04-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -741,7 +741,7 @@ msgstr "[root%1$s]"
 #: src/frontend/mame/ui/filemngr.cpp:154
 #: src/frontend/mame/ui/confswitch.cpp:170 src/frontend/mame/ui/slotopt.cpp:204
 msgid "Reset System"
-msgstr "Redefine a sistema"
+msgstr "Redefine o sistema"
 
 #: src/frontend/mame/ui/filemngr.cpp:154
 msgid "Start System"
