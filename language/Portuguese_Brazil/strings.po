@@ -1,15 +1,15 @@
 # Brazilian Portuguese translations for MAME Project.
 # Traduções para o Português do Brasil para o Projeto MAME.
-# Copyright (C) 1997-2021  MAMEDev and contributors
+# Copyright (C) 1997-2022  MAMEDev and contributors
 # This file is distributed under the same license as the MAME Project.
 # Automatically generated, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: MAME 0.237\n"
+"Project-Id-Version: MAME 0.245\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-30 07:10-0300\n"
-"PO-Revision-Date: 2022-07-07 12:04-0300\n"
+"PO-Revision-Date: 2022-07-10 07:04-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -306,7 +306,7 @@ msgstr "Opções do áudio"
 
 #: src/frontend/mame/ui/optsmenu.cpp:80
 msgid "Input Assignments"
-msgstr "Atribuições da entrada"
+msgstr "Atribuição das entradas"
 
 #: src/frontend/mame/ui/optsmenu.cpp:83 src/frontend/mame/ui/miscmenu.cpp:879
 msgid "Plugins"
@@ -330,7 +330,7 @@ msgstr "Personalize a interface"
 
 #: src/frontend/mame/ui/optsmenu.cpp:198 src/frontend/mame/ui/dirmenu.cpp:525
 msgid "Configure Folders"
-msgstr "Configura os diretórios"
+msgstr "Atribuição dos diretórios"
 
 #: src/frontend/mame/ui/pluginopt.cpp:35
 msgid "Plugin Options"
@@ -628,7 +628,7 @@ msgstr "Atribuição do dispositivo posicional"
 
 #: src/frontend/mame/ui/submenu.cpp:110
 msgid "Mouse Device Assignment"
-msgstr "Atribuição do Dispositivo Mouse"
+msgstr "Atribuição do dispositivo Mouse"
 
 #: src/frontend/mame/ui/submenu.cpp:112
 msgid "Keyboard Input Provider"
@@ -644,7 +644,7 @@ msgstr "Provedor de entrada da pistola de luz"
 
 #: src/frontend/mame/ui/submenu.cpp:115
 msgid "Joystick Input Provider"
-msgstr "Provedor de entrada do Joystick"
+msgstr "Provedor de entrada do joystick"
 
 #: src/frontend/mame/ui/submenu.cpp:121 src/frontend/mame/ui/videoopt.cpp:40
 msgid "Video Options"
@@ -741,7 +741,7 @@ msgstr "[root%1$s]"
 #: src/frontend/mame/ui/filemngr.cpp:154
 #: src/frontend/mame/ui/confswitch.cpp:170 src/frontend/mame/ui/slotopt.cpp:204
 msgid "Reset System"
-msgstr "Redefine o sistema"
+msgstr "Redefine a sistema"
 
 #: src/frontend/mame/ui/filemngr.cpp:154
 msgid "Start System"
@@ -2877,17 +2877,17 @@ msgstr "Configuração do sistema"
 #: src/frontend/mame/ui/mainmenu.cpp:121
 msgctxt "menu-main"
 msgid "Bookkeeping Info"
-msgstr "Informação da contabilidade"
+msgstr "Contabilidade"
 
 #: src/frontend/mame/ui/mainmenu.cpp:123
 msgctxt "menu-main"
 msgid "System Information"
-msgstr "Informação do sistema"
+msgstr "Informação sobre o sistema"
 
 #: src/frontend/mame/ui/mainmenu.cpp:126
 msgctxt "menu-main"
 msgid "Warning Information"
-msgstr "Informação de aviso"
+msgstr "Alerta sobre o sistema"
 
 #: src/frontend/mame/ui/mainmenu.cpp:132
 msgctxt "menu-main"

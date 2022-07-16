@@ -338,17 +338,29 @@ Sempre que uma chave for alterada, sempre selecione **Reinicie** para
 que a alteração seja aplicada. Em algum sistema a ação já pode ser
 vista na tela, contudo, não é sempre o caso.
 
-Informação da contabilidade
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Contabilidade
+~~~~~~~~~~~~~
 
 É o registro interno do sistema que mostra o tempo total que ele ficou
 em execução e a quantidade de fichas que foram colocadas nela.
 
-Informação do sistema
-~~~~~~~~~~~~~~~~~~~~~
+Informação sobre o sistema
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Um breve resumo do nome do sistema, o seu driver, o tipo do processador
 (vídeo, áudio e outros) e a resolução do vídeo.
+
+Alerta sobre o sistema
+~~~~~~~~~~~~~~~~~~~~~~
+
+Exibe informações de alerta sobre o sistema que está sendo emulado como
+o não funcionamento do áudio, vídeo, etc.
+
+Informação sobre a imagem da mídia
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Exibe informações sobre a mídia como o seu formato (imagem ROM, CD-ROM,
+etc), nome do fabricante, ano de lançamento, etc.
 
 .. raw:: latex
 
@@ -782,8 +794,8 @@ As opções disponíveis são:
 	* :guilabel:`Esconde ambos`
 
 
-Configuração das pastas
-~~~~~~~~~~~~~~~~~~~~~~~
+Atribuição dos diretórios
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Aqui é possível mudar as predefinições do locais onde os diretórios
 usados pelo MAME se encontram. As opções disponíveis são:
@@ -1445,8 +1457,8 @@ Opções dos dispositivos na entrada
 
 .. _mamemenu-general-inputs:
 
-Atribuições da entrada (geral)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Atribuição das entradas (geral)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * :guilabel:`interface do usuário`
