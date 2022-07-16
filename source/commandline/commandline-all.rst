@@ -4978,7 +4978,7 @@ Opções diversas
 
 **-[no]drc_use_c**
 
-	Impor o uso do DRC usando a infra-estrutura em código C.
+	Impõem o uso do DRC usando a infra-estrutura em código C.
 
 	O valor predefinido é ``Desligado`` (``-nodrc_use_c``).
 

@@ -476,18 +476,13 @@ Configurações para o mapeamento de teclado (SDL)
 Configurações para o mapeamento de controle joystick (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| :ref:`joyidx <mame-scommandline-joyidx>`
 | :ref:`sixaxis <mame-scommandline-sixaxis>`
 
 
-Configurações para o mapeamento do mouse (SDL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-| :ref:`mouse_index <mame-scommandline-mouseindex>`
+Mapeamento da pistola de luz (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-Configurações para o mapeamento do teclado (SDL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-| :ref:`mouse_index <mame-scommandline-keybidx>`
+| :ref:`lightgun_index <mame-scommandline-lightgunindex>`
 
 
 Opções para a configuração dos drivers (SDL)

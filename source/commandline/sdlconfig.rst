@@ -10,7 +10,9 @@ especificamente para qualquer versão MAME que for compatível com o SDL
 (incluindo o Windows caso o MAME tenha sido compilado com o SDL ao invés
 da sua forma nativa). Inicie o MAME com o comando ``mame -v`` para ver
 quais são os drivers que estão disponíveis para o seu sistema, abaixo um
-exemplo para o Linux. ::
+exemplo para o Linux.
+
+::
 
 	Available videodrivers: x11 wayland KMSDRM dummy
 	Current Videodriver: x11
@@ -38,7 +40,9 @@ exemplo para o Linux. ::
 
 Aqui temos o exemplo para o Windows das versões do MAME que forem
 compiladas com o SDL usando a opção ``OSD=sdl``, para mais informações
-veja :ref:`Microsoft Windows <compiling-windows>`. ::
+veja :ref:`Microsoft Windows <compiling-windows>`.
+
+::
 
 	Available videodrivers: windows dummy
 	Current Videodriver: windows
@@ -64,7 +68,7 @@ veja :ref:`Microsoft Windows <compiling-windows>`. ::
 	DirectSound: Primary buffer: 48000 Hz, 16 bits, 2 channels
 
 Aqui temos as opções disponíveis para a customização em todas as versões
-SDL: ::
+SDL::
 
 	Hints:
 		SDL_FRAMEBUFFER_ACCELERATION             (NULL)
@@ -105,13 +109,13 @@ seus respectivos drivers.
 
 No **Linux** e **macOS** você pode definir estes
 parâmetros como variáveis de ambiente no seu ``~/.bashrc`` como por
-exemplo: ::
+exemplo::
 
 	SDL_FRAMEBUFFER_ACCELERATION=1
 	SDL_RENDER_DRIVER=opengl
 	SDL_RENDER_OPENGL_SHADERS=1
 
-Antes do executável do MAME: ::
+Antes do executável do MAME::
 
 	SDL_FRAMEBUFFER_ACCELERATION=1 SDL_RENDER_DRIVER=opengl SDL_RENDER_OPENGL_SHADERS=1 ./mame
 
@@ -122,16 +126,14 @@ durante a inicialização do MAME: ::
 
 Já para as versões do **Windows** você pode definir estas opções como
 variáveis do ambiente no prompt de comando antes de iniciar o MAME com
-os comandos:
-
-::
+os comandos::
 
 	set SDL_FRAMEBUFFER_ACCELERATION=1
 	set SDL_RENDER_DRIVER=direct3d11
 	set SDL_RENDER_OPENGL_SHADERS=1
 
 Criar um arquivo **.BAT** com estas opções predefinidas dentro do
-diretório do MAME, exemplo de um ``run.bat``: ::
+diretório do MAME, exemplo de um ``run.bat``::
 
 	@echo off
 	set SDL_FRAMEBUFFER_ACCELERATION=1
@@ -239,28 +241,15 @@ Configurações para o mapeamento do teclado
 	**km_br_LINUX.map** no diretório **keymaps**. Um mapa é útil para
 	que o mapeamento das teclas já predefinidas coincidam com o mapa de
 	um teclado ABNT2 por exemplo, assim a tecla :kbd:`~` (til) que fica
-	acima da tecla TAB no teclado ANSI Americano pode ser remapeado para
-	a tecla que fica do lado direito da tecla :kbd:`Ç` (cê-cedilha) em
-	um teclado ABNT2.
+	acima da tecla :kbd:`Tab` no teclado ANSI Americano pode ser
+	remapeado para a tecla que fica do lado direito da tecla :kbd:`Ç`
+	(cê-cedilha) num teclado ABNT2.
 	
-	O valor predefinido é **keymap.dat**.
+	O valor predefinido é ``keymap.dat``.
 
 
 Configurações para o mapeamento do controle joystick
 ----------------------------------------------------
-
-.. _mame-scommandline-joyidx:
-
-::
-
-	-joy_idx1 <nome>
-	-joy_idx2 <nome>
-	...
-	-joy_idx8 <nome>
-
-Nome do controle joystick mapeado para um determinado slot do joystick.
-
-		O valor predefinido é ``auto``.
 
 .. _mame-scommandline-sixaxis:
 
@@ -272,38 +261,20 @@ Nome do controle joystick mapeado para um determinado slot do joystick.
 		O valor predefinido é ``Desligado`` (**-nosixaxis**)
 
 
-Configurações para o mapeamento do mouse
-----------------------------------------
+Mapeamento da pistola de luz SDL
+--------------------------------
 
-.. _mame-scommandline-mouseindex:
-
-::
-
-	-mouse_index1
-	-mouse_index2
-	...
-	-mouse_index8
-
-Faça o mapeamento do mouse para uma das 8 entradas.
-
-		O valor predefinido é ``auto``.
-
-Configurações para o mapeamento do teclado
-------------------------------------------
-
-.. _mame-scommandline-keybidx:
+.. _mame-scommandline-lightgunindex:
 
 ::
 
-	-keyb_idx1
-	-keyb_idx2
+	-lightgun_index1 <nome>
+	-lightgun_index2 <nome>
 	...
-	-keyb_idx8
+	-lightgun_index8 <nome>
 
-Faça o mapeamento do teclado para uma das 8 entradas.
-
-		O valor predefinido é ``auto``.
-
+Nome do dispositivo ou a ID de um determinado slot para a pistola de
+luz.
 
 Opções para a configuração dos drivers
 --------------------------------------
