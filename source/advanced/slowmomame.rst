@@ -54,11 +54,11 @@ responsável por ele usando o comando
 :ref:`-listsource / -ls <mame-commandline-listsource>`, exemplo: ::
 
 	mame -ls ddrmax
-	ddrmax           ksys573.cpp
+	ddrmax           konami/ksys573.cpp
 
 Com o nome do driver em mãos, use-o com com a opção ``SOURCES``, como
-por exemplo, ``SOURCES=src/mame/drivers/ksys573.cpp`` ou
-``SOURCES=src\mame\drivers\ksys573.cpp`` caso esteja usando o Windows.
+por exemplo, ``SOURCES=konami/ksys573.cpp`` ou
+``SOURCES=konami\ksys573.cpp`` caso esteja usando o Windows.
 
 Abaixo uma sugestão de linha de comando para a compilação do MAME: ::
 
@@ -66,7 +66,7 @@ Abaixo uma sugestão de linha de comando para a compilação do MAME: ::
 
 Ou usando **SOURCES**: ::
 
-	make SOURCES=src/mame/drivers/ksys573.cpp DEBUG=1 -j5
+	make SOURCES=konami/ksys573.cpp DEBUG=1 -j5
 
 Ao final da compilação renomeie o executável e se for o caso, o
 respectivo arquivo ***.syn**, para um outro nome qualquer como

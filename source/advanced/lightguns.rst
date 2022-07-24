@@ -92,7 +92,7 @@ listando apenas as partes que nos interessa para a configuração:
 	  um crash com ``ACCESS VIOLATION`` ou ignorar o dispositivo caso
 	  ele tenha o nome errado, ainda que o PID e VID estejam certos. As
 	  armas Aimtrak podem exibir algo como ``ATRAK Device #1
-	  product_1601d209-....`` neste caso, o que importa para nós é o
+	  product_1601d209-...`` neste caso, o que importa para nós é o
 	  ``ATRAK Device #1``.
 
 Para remapear este dispositivo como ``lightgun #0``, nós usamos o
@@ -160,9 +160,8 @@ Crie um novo arquivo chamado **99-aimtrak.rules** em
 ``/etc/udev/rules.d`` com o comando
 ``sudo touch /etc/udev/rules.d/99-aimtrak.rules``, usamos um valor
 numérico alto pois este arquivo não tem prioridade alguma, assim
-deixamos ele para ser carregado por último pelo sistema evitando
-possíveis conflitos. Usando o seu editor preferido, cole a configuração
-abaixo:
+deixamos que ele seja carregado por último, evitando possíveis
+conflitos. Usando o seu editor preferido, cole a configuração abaixo:
 
 .. code-block:: bash
 
@@ -277,7 +276,7 @@ completo do diretório **xorg.conf.d** para cada uma delas, isso sem
 contar macOS e as várias variantes de BSD's, no entanto, é possível usar
 o comando abaixo para tentar localizá-lo caso a sua distribuição utilize
 um diretório de mesmo nome para armazenar essas configurações porém em
-um local diferente do predefinido: ::
+um local diferente do predefinido::
 
 	sudo find /usr -name xorg.conf.d
 
@@ -437,17 +436,17 @@ muito de caso para caso):
 	Evaluating device with name: LXD Gaming Mouse
 
 No nosso exemplo o **LXD Gaming Mouse** repete 3x e ao usá-lo com o
-**lightgun_index1**: ::
+**lightgun_index1**::
 
 	lightgun_index1           LXD Gaming Mouse
 
-O MAME reclama dizendo: ::
+O MAME reclama dizendo::
 
 	Warning: There are multiple devices named "LXDGamingMouse".
 	To ensure the correct one is selected, please use the device ID
 	instead.
 
-Traduzindo a mensagem fica assim: ::
+Traduzindo a mensagem fica assim::
 
 	Atenção: Existe mais de um dispositivo com o nome "LXDGamingMouse".
 	Favor usar o ID do dispositivo para ter certeza que apenas um seja
@@ -617,7 +616,7 @@ que você for iniciar o MAME com essa configuração, basta fazer o comando
 suas configurações predefinidas.
 
 Caso não queira fazer isso para cada jogo, adicione a configuração no
-seu **mame.ini**: ::
+seu **mame.ini**::
 
 	ctrlr                     arma
 
@@ -673,7 +672,7 @@ ou similares.
 *	Execute o comando abaixo para filtrar apenas os nomes dos sistemas
 	que queremos e em seguida salvamos eles num arquivo chamado
 	`maquinas <https://pastebin.com/zZxvkza2>`_ em formato de fim de
-	linha para Unix: ::
+	linha para Unix::
 
 		awk '/Gun/{flag=1; next} / /{flag=0} flag' ../folders/category.ini| head -n -6 > maquinas && sed -i 's/\r//g' maquinas
 
@@ -685,7 +684,7 @@ ou similares.
 	**dentro do diretório arma** localizado no diretório raiz do MAME
 	como `cfg.txt <https://pastebin.com/UYu6P3gM>`_, no exemplo estou
 	usando **mouse** como **lightgun_device**, caso esteja usando uma
-	arma substitua por **lightgun**: ::
+	arma substitua por **lightgun**::
 
 		lightgun                  1
 		lightgun_device           mouse
@@ -732,8 +731,8 @@ dentro do diretório arma.
 
 .. _arma-separando-roms:
 
-Separando apenas as ROMs dos sistemas de tiro
----------------------------------------------
+Separando apenas as ROMs com jogos de tiro
+------------------------------------------
 
 Da mesma maneira que podemos criar uma lista de configuração individual
 para cada sistema, podemos também usar a mesma lista para copiar apenas
@@ -749,7 +748,7 @@ executaremos as seguintes ações:
 	para dentro deste diretório.
 *	Você precisa encontrar o caminho completo onde todas as suas ROMs se
 	encontram, vamos supor que seja ``/home/mame/mame/roms``, abra um
-	terminal neste diretório e execute o comando abaixo: ::
+	terminal neste diretório e execute o comando abaixo::
 
 		while read maquinas; do echo /home/mame/mame/roms/"$maquinas".zip ; done < maquinas > lista-roms
 
@@ -757,7 +756,7 @@ executaremos as seguintes ações:
 	substituir **"$maquinas"** pelos nomes que forem aparecendo linha a
 	linha, depois ``> lista-roms`` faz o redirecionamento completo para
 	o arquivo **lista-roms**. Ao final o arquivo ficará com o seguinte
-	conteúdo: ::
+	conteúdo::
 
 	/home/mame/mame/roms/2spicy.zip
 	/home/mame/mame/roms/alien3.zip
@@ -767,13 +766,13 @@ executaremos as seguintes ações:
 	/home/mame/mame/roms/area51.zip
 
 *	Agora com a lista das ROMs e seu caminho completo basta copiá-los
-	com o comando abaixo: ::
+	com o comando abaixo::
 
 		while read copy ; do cp "$copy" . ; done < lista-roms
 
 	O ponto depois de ``"$copy"`` faz com que o comando ``cp`` copie
 	todos os arquivos para o diretório onde você está, caso queira
-	copiá-los para outro lugar basta usar o caminho, assim: ::
+	copiá-los para outro lugar basta usar o caminho, assim::
 
 		while read copy; do cp "$copy" /caminho/completo ; done < lista-roms
 
@@ -781,10 +780,10 @@ Apesar do comando **cp** funcionar bem para a maioria dos casos, é
 impossível saber se o arquivo foi copiado de forma correta ou não para o
 destino, nestes casos a melhor opção é usar o programa **rsync** que
 durante o processo de cópia verifica a integridade do arquivo no
-destivo, além de ser a melhor opção para a cópia de arquivos nós podemos
+destino, além de ser a melhor opção para a cópia de arquivos nós podemos
 também registrar num arquivo toda a operação que ele fez, seja bem
 sucedida ou não, assim basta usar o comando anterior com algumas
-alterações: ::
+alterações::
 
 		while read copy; do rsync --info=name,progress2 --log-file=registro "$copy" . ; done < lista-roms
 
@@ -793,14 +792,14 @@ estatísticas da operação que ele estiver fazendo de um determinado
 arquivo, o ``log-file=registro`` armazena todo o processo, seja ele bem
 sucedido ou não assim como erros informando as ROMs que não foram
 encontradas. É possível filtrar essas ROMs que não foram encontradas com
-o comando: ::
+o comando::
 
 		cat registro | grep "No such file or directory" | awk '{print $6}' > roms-ausentes
 
 O exemplo que foi demonstrado aqui serve para qualquer outro tipo de
 lista, você pode por exemplo gerar uma lista para os sistemas dentro dos
-drivers CPS1/CPS2/ZN e depois copiar essas ROMs em diretórios separados,
-o céu é o limite.
+sistemas CPS1/CPS2/ZN e depois copiar essas ROMs em diretórios
+separados, o céu é o limite.
 
 .. raw:: latex
 
@@ -808,8 +807,8 @@ o céu é o limite.
 
 .. _arma-compilando:
 
-Compilando uma versão do MAME só com maquinas de tiros
-------------------------------------------------------
+Compilando uma versão do MAME só com jogos de tiros
+---------------------------------------------------
 
 O MAME disponibiliza a opção de filtrar a lista dos sistemas por
 categoria, para mais informações veja :ref:`Categoria
@@ -830,9 +829,9 @@ a compilação do MAME e que você já esteja familiarizado com o processo.
 No :ref:`capítulo anterior <arma-em-jogos-que-precisam>` nós
 demonstramos como criar o arquivo **maquinas** usando o arquivo
 **category.ini** que fica dentro do diretório **folders**, naquele
-aquivo ficam todas os sistemas dentro da categoria de tiro, porém para
-compilar o MAME com elas nós necessitamos encontrar **TODOS** os drivers
-responsável por eles e repassar essa informação aos scripts de
+aquivo ficam todos os sistemas dentro da categoria de tiro, porém para
+compilar o MAME com elas nós necessitamos encontrar **TODOS** os
+sistemas responsáveis por eles e repassar essa informação aos scripts de
 compilação usando a opção **SOURCES**.
 
 *	Precisamos do arquivo ``maquinas`` com a listagem de todas elas,
@@ -844,14 +843,14 @@ compilação usando a opção **SOURCES**.
 *	Para encontrar os drivers responsáveis pelos sistemas da lista nós
 	usamos a função
 	:ref:`-listsource / -ls <mame-commandline-listsource>` do MAME,
-	por exemplo: ::
+	por exemplo::
 
 		./mame -ls area51| awk '{print $2}'
-		jaguar.cpp
+		atari/jaguar.cpp
 
 *	Copie o arquivo **maquinas**
 	(gerado ou `baixado <https://pastebin.com/zZxvkza2>`_) dento do
-	diretório do MAME e execute o comando abaixo: ::
+	diretório do MAME e execute o comando abaixo::
 
 		while read lista; do ~/mame/mame -ls "$lista"; done < maquinas | awk '{print $2}' | awk '!seen[$0]++' | sort -d > drivers
 
@@ -865,54 +864,31 @@ compilação usando a opção **SOURCES**.
 	**drivers**.
 
 *	Copie o arquivo **drivers** para dentro do diretório raiz onde se
-	encontra o código fonte do MAME (onde está o arquivo **makefile**)
-	e execute o comando abaixo: ::
-
-		while read drivers; do find . -name "$drivers"; done <drivers | grep drivers | sed 's/..//' > list-drivers
-
-	A primeira parte do comando vai ser alimentado pelo arquivo
-	**drivers** enquanto pesquisa pelos nome da lista pois
-	``"$drivers"`` será substituído por cada um dos nomes do arquivo
-	**drivers**, dentro da pesquisa será encontrado outros itens além
-	dos drivers como **video** por exemplo, então ``grep drivers`` vai
-	ignorar todo o resto e listar apenas **drivers**. O comando
-	``sed 's/..//' > list-drivers`` vai eliminar os dois primeiros
-	caracteres **./** da lista e redirecionar tudo o que foi encontrado
-	para o arquivo `list-drivers <https://pastebin.com/j1bkR9ge>`_,
-	exemplo: ::
-
-		src/mame/drivers/3do.cpp
-		src/mame/drivers/8080bw.cpp
-		src/mame/drivers/alg.cpp
-		src/mame/drivers/atarittl.cpp
-		...
+	encontra o código fonte do MAME.
 
 *	Apesar da lista ter sido gerada, ela ainda não é útil para nós pois
 	precisamos que ela esteja disposta numa só linha e separada por
-	vírgula, para isso executamos o comando abaixo: ::
+	vírgula, para isso executamos o comando abaixo::
 
 		cat list-drivers | sed ':a;N;$!ba;s/\n/,/g' > compile-drivers
 
 	Aqui o comando ``cat list-drivers`` lista todo o conteúdo de
 	**list-drivers**, já ``sed ':a;N;$!ba;s/\n/,/g' > compile-drivers``
-	vai quebrar o final de linha depois do último caractere, o 
+	vai quebrar o final da linha depois do último caractere, o 
 	substituirá por vírgula e redirecionará a sua saída para o arquivo
-	`compile-drivers <https://pastebin.com/3rGt6yvj>`_, exemplo:
+	`compile-drivers <https://pastebin.com/3rGt6yvj>`_, exemplo::
 
-.. code-block:: bash
-
-		src/mame/drivers/3do.cpp,src/mame/drivers/8080bw.cpp,src/mame/drivers/alg.cpp,src/mame/drivers/atarittl.cpp,...
+		amiga/alg.cpp,atari/atarittl.cpp,atari/cops.cpp,etc
 
 *	Com a nossa `lista completa <https://pastebin.com/4pEvJhm2>`_,
-	basta agora executar o comando de compilação do MAME:
+	basta agora executar o comando de compilação do MAME::
 
-.. code-block:: bash
-
-		make SYMBOLS=1 SYMLEVEL=1 PTR64=1 SSE2=1 OPTIMIZE=3 SOURCES=src/mame/drivers/3do.cpp,src/mame/drivers/8080bw.cpp,src/mame/drivers/alg.cpp,src/mame/drivers/atarittl.cpp,src/mame/drivers/bbusters.cpp,src/mame/drivers/calchase.cpp,src/mame/drivers/chihiro.cpp,src/mame/drivers/cischeat.cpp,src/mame/drivers/cops.cpp,src/mame/drivers/crystal.cpp,src/mame/drivers/cswat.cpp,src/mame/drivers/deco32.cpp,src/mame/drivers/dkong.cpp,src/mame/drivers/exidy440.cpp,src/mame/drivers/fantland.cpp,src/mame/drivers/gaelco2.cpp,src/mame/drivers/gticlub.cpp,src/mame/drivers/gunbustr.cpp,src/mame/drivers/hikaru.cpp,src/mame/drivers/hng64.cpp,src/mame/drivers/hornet.cpp,src/mame/drivers/iteagle.cpp,src/mame/drivers/jaguar.cpp,src/mame/drivers/konamigq.cpp,src/mame/drivers/konamigv.cpp,src/mame/drivers/konamigx.cpp,src/mame/drivers/konamim2.cpp,src/mame/drivers/ksys573.cpp,src/mame/drivers/lethal.cpp,src/mame/drivers/lethalj.cpp,src/mame/drivers/lindbergh.cpp,src/mame/drivers/lordgun.cpp,src/mame/drivers/mazerbla.cpp,src/mame/drivers/mediagx.cpp,src/mame/drivers/midxunit.cpp,src/mame/drivers/midyunit.cpp,src/mame/drivers/midzeus.cpp,src/mame/drivers/model2.cpp,src/mame/drivers/model3.cpp,src/mame/drivers/mw8080bw.cpp,src/mame/drivers/namconb1.cpp,src/mame/drivers/namcops2.cpp,src/mame/drivers/namcos10.cpp,src/mame/drivers/namcos11.cpp,src/mame/drivers/namcos12.cpp,src/mame/drivers/namcos22.cpp,src/mame/drivers/namcos23.cpp,src/mame/drivers/namcos2.cpp,src/mame/drivers/naomi.cpp,src/mame/drivers/nycaptor.cpp,src/mame/drivers/oneshot.cpp,src/mame/drivers/opwolf.cpp,src/mame/drivers/othunder.cpp,src/mame/drivers/playch10.cpp,src/mame/drivers/policetr.cpp,src/mame/drivers/pse.cpp,src/mame/drivers/seattle.cpp,src/mame/drivers/segas18.cpp,src/mame/drivers/segas32.cpp,src/mame/drivers/segaxbd.cpp,src/mame/drivers/segaybd.cpp,src/mame/drivers/seta2.cpp,src/mame/drivers/seta.cpp,src/mame/drivers/shootaway2.cpp,src/mame/drivers/skeetsht.cpp,src/mame/drivers/slapshot.cpp,src/mame/drivers/sshot.cpp,src/mame/drivers/ssv.cpp,src/mame/drivers/system1.cpp,src/mame/drivers/taitopjc.cpp,src/mame/drivers/taito_z.cpp,src/mame/drivers/targeth.cpp,src/mame/drivers/tickee.cpp,src/mame/drivers/triplhnt.cpp,src/mame/drivers/undrfire.cpp,src/mame/drivers/unianapc.cpp,src/mame/drivers/unico.cpp,src/mame/drivers/vcombat.cpp,src/mame/drivers/viper.cpp,src/mame/drivers/voyager.cpp,src/mame/drivers/vp101.cpp,src/mame/drivers/vsnes.cpp,src/mame/drivers/williams.cpp,src/mame/drivers/zn.cpp -j5
+		make SYMBOLS=1 SYMLEVEL=1 PTR64=1 SSE2=1 OPTIMIZE=3 SOURCES=amiga/alg.cpp,atari/atarittl.cpp,atari/cops.cpp,atari/jaguar.cpp,atari/mediagx.cpp,atari/triplhnt.cpp,dataeast/deco32.cpp,edevices/fantland.cpp,exidy/exidy440.cpp,gaelco/gaelco2.cpp,gaelco/targeth.cpp,igs/lordgun.cpp,itech/iteagle.cpp,itech/itech32.cpp,jaleco/cischeat.cpp,konami/gticlub.cpp,konami/hornet.cpp,konami/konamigq.cpp,konami/konamigv.cpp,konami/konamigx.cpp,konami/konamim2.cpp,konami/ksys573.cpp,konami/lethal.cpp,konami/viper.cpp,midw8080/8080bw.cpp,midw8080/mw8080bw.cpp,midway/midxunit.cpp,midway/midyunit.cpp,midway/midzeus.cpp,midway/seattle.cpp,midway/williams.cpp,misc/3do.cpp,misc/lethalj.cpp,misc/oneshot.cpp,misc/policetr.cpp,misc/psattack.cpp,misc/pse.cpp,misc/skeetsht.cpp,misc/tickee.cpp,misc/vcombat.cpp,misc/voyager.cpp,misc/vp101.cpp,mr/sshot.cpp,namco/cswat.cpp,namco/namconb1.cpp,namco/namcops2.cpp,namco/namcos10.cpp,namco/namcos11.cpp,namco/namcos12.cpp,namco/namcos22.cpp,namco/namcos23.cpp,namco/namcos2.cpp,namco/shootaway2.cpp,nintendo/dkong.cpp,nintendo/playch10.cpp,nintendo/vsnes.cpp,pc/calchase.cpp,sega/chihiro.cpp,sega/dc_atomiswave.cpp,sega/hikaru.cpp,sega/lindbergh.cpp,sega/model2.cpp,sega/model3.cpp,sega/naomi.cpp,sega/segag80r.cpp,sega/segas18.cpp,sega/segas32.cpp,sega/segaxbd.cpp,sega/segaybd.cpp,sega/system1.cpp,seta/seta2.cpp,seta/seta.cpp,seta/ssv.cpp,snk/bbusters.cpp,snk/hng64.cpp,snk/mechatt.cpp,sony/zn.cpp,stern/mazerbla.cpp,taito/gunbustr.cpp,taito/nycaptor.cpp,taito/opwolf.cpp,taito/othunder.cpp,taito/slapshot.cpp,taito/taitopjc.cpp,taito/taito_z.cpp,taito/undrfire.cpp,unico/unianapc.cpp,unico/unico.cpp -j5
 
 
-No final da compilação você terá um executável do MAME customizado, com
-um tamanho reduzido e que vai incluir os sistemas de tiro assim como
-todas os outros sistema que esses drivers suportam. Para exibir apenas
-os sistemas de tiro, use o filtro de Categoria.
-
+No final da compilação você terá um executável personalizado do MAME com
+um tamanho reduzido e que vai incluir os jogos de tiro, assim como,
+todos os outros jogos compatíveis com estes drivers. Ainda que agora a
+gente tenha um binário do MAME apenas com os drivers que tenham jogos de
+tiros, os drivers também possuem outros tipos de jogos, para exibir
+apenas os jogos de tiro, use o filtro :guilabel:`Categoria`.

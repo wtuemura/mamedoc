@@ -89,12 +89,13 @@ Antes, alguns pontos importantes:
   fonte do MAME no GIT é atualizado a todo instante.
 
 * Para que o código fonte do MAME possa ser compilado, há toda uma
-  estrutura que precisa ser configurada, no momento que o comando
-  **make** é executado, são criados diversos outros aquivos **makefile**
-  onde todas as opções escolhidas são salvas e usadas durante a
-  compilação. Se durante a compilação for necessário alterar
-  uma opção ou adicionar outras, é **obrigatório** usar a opção
-  **REGENIE=1** para reconfigurar toda a estrutura com as novas opções.
+  estrutura que precisa estar configurada no momento que o comando
+  **make** é executado, incluindo diversos outros parâmetros de 
+  compilação. Sempre que um novo parâmetro for adicionado ou removido,
+  quando o código fonte de um driver for adicionado, atualizado,
+  renomeado, removido e assim por diante, todos os arquivos do projeto
+  responsáveis pela compilação precisam ser atualizados através da
+  opção **REGENIE=1**.
 
 .. raw:: latex
 
@@ -112,11 +113,11 @@ Antes, alguns pontos importantes:
   de compilação.
 
   É possível atualizar o código fonte com o comando ``git pull`` seguido
-  de ``make REGENIE=1`` para compilar apenas os novos arquivos e
-  aproveitar os arquivos já compilados, porém, não é recomendável uma
-  vez que isso pode causar erros durante a emulação. É uma boa prática
-  fazer um **make clean** antes do make para evitar qualquer residual
-  das compilações anteriores.
+  de um ``make REGENIE=1`` para compilar apenas os novos códigos fontes
+  que foram adicionados, atualizados (etc) e aproveitar os arquivos já
+  compilados, porém, algumas vezes isso pode causar erros de compilação.
+  É uma boa prática fazer um **make clean** antes do **make** para
+  evitar qualquer residual das compilações anteriores.
 
 * Use dois comandos em sequência com **&&** como é mostrado abaixo:
   
@@ -129,7 +130,7 @@ Antes, alguns pontos importantes:
 * As opções usada pelo make podem ser adicionadas num arquivo
   **useroptions.mak**. Muito útil em casos onde a lista de opções para
   a compilação são grandes e repetitivas, dentro do arquivo as opções se
-  organizam da seguinte maneira: ::
+  organizam da seguinte maneira::
 
 	OPÇÃO1=X
 	OPÇÃO2=Y
@@ -147,7 +148,7 @@ Antes, alguns pontos importantes:
   :ref:`mame-aditional-tools`.
 
 * Nas versões compiladas do git (versão GIT), a versão do MAME acompanha
-  um identificador único depois da versão, por exemplo: ::
+  um identificador único depois da versão, por exemplo::
 
 	./mame -help
 	MAME v0.205 (mame0205-540-gc8e4dab20c)
@@ -168,7 +169,7 @@ Antes, alguns pontos importantes:
 
 * O git mantém um controle de todos os arquivos do código fonte,
   qualquer alteração que não tenha sido feita pelos administradores a
-  versão do seu MAME incluirá um identificador **dirty** no final: ::
+  versão do seu MAME incluirá um identificador **dirty** no final::
 
 	./mame -help
 	MAME v0.205 (mame0205-540-gc8e4dab20c-dirty)
@@ -177,8 +178,8 @@ Antes, alguns pontos importantes:
   outra compilação, de não fazer um ``make clean`` antes de uma nova
   compilação, `arquivos não rastreados <https://github.com/git/git/commit/ee6fc514f2df821c2719cc49499a56ef2fb136b0>`_
   dentro do diretório de trabalho do código fonte ou até mesmo quando há
-  arquivos modificados que por algum motivo não foram aplicados,
-  exemplo: ::
+  arquivos alterados que por algum motivo não foram aplicados,
+  exemplo::
 
 	git status --short
 	
@@ -189,12 +190,12 @@ Antes, alguns pontos importantes:
 	?? language/Albanian/strings.mo
 	...
 
-  A letra **M** indica que o arquivo foi modificado, já **??** indica
-  os novos arquivos criados. Independente do que tenha acontecido,
-  execute ``git commit -a`` para aplicar essas modificações.
+  A letra **M** indica que o arquivo foi alterado, já **??** indica
+  os novos arquivos que foram criados. Independente do que tenha
+  acontecido, execute ``git commit -a`` para aplicar estas alterações.
   
-  Agora ao pedir o status do git ele deve retornar que está tudo
-  limpo: ::
+  Agora ao pedir o status do git, ele deve retornar informando que está
+  tudo limpo::
 
 	git status
 	On branch master
@@ -202,7 +203,7 @@ Antes, alguns pontos importantes:
 	nothing to commit, working tree clean
 
   Caso não funcione, execute a opção abaixo com todos os arquivos que
-  vierem a aparecer ao fazer um **git status**: ::
+  vierem a aparecer ao fazer um **git status**::
 
 	git checkout 3rdparty/winpcap/Lib/libpacket.a 3rdparty/winpcap/Lib/libwpcap.a
 
@@ -214,7 +215,7 @@ Antes, alguns pontos importantes:
   Portanto, faça um **backup** antes de executar o comando!
 
   Vamos supor que o arquivo abaixo tenha sido alterado por qualquer
-  motivo: ::
+  motivo::
 
 	git status
 	On branch master
@@ -227,7 +228,7 @@ Antes, alguns pontos importantes:
 
 	no changes added to commit (use "git add" and/or "git commit -a")
 
-  Execute o comando abaixo para restaurá-lo ao seu estado original: ::
+  Execute o comando abaixo para restaurá-lo ao seu estado original::
 
 	git checkout master -- scripts/src/osd/sdl_cfg.lua
 
@@ -254,7 +255,7 @@ seu sistema operacional.
 A configuração é muito simples, basta usá-lo antes dos compiladores, é
 mais fácil adicionar essas opções no arquivo **useroptions.mak** assim
 não é necessário usar uma linha muito grande de configuração, para o
-Linux a configuração ficaria assim: ::
+Linux a configuração ficaria assim::
 
 	# Escolha apenas uma opção para OVERRIDE_CC e OVERRIDE_CXX
 	# Remova o # da frente da opção que deseja usar.
@@ -268,7 +269,7 @@ Linux a configuração ficaria assim: ::
 	# OVERRIDE_CC=/usr/bin/ccache /usr/bin/clang
 	# OVERRIDE_CXX=/usr/bin/ccache /usr/bin/clang++
 
-A configuração para Windows no MSYS2 fica assim: ::
+A configuração para Windows no MSYS2 fica assim::
 
 	# Compila com ccache MSYS2 (Windows) 32-Bit
 	# OVERRIDE_CC=/mingw32/bin/ccache /mingw32/bin/gcc
@@ -282,7 +283,7 @@ A configuração para Windows no MSYS2 fica assim: ::
 	# OVERRIDE_CC=/mingw64/bin/ccache /mingw64/bin/clang
 	# OVERRIDE_CXX=/mingw64/bin/ccache /mingw64/bin/clang++
 
-Para ver a condição do armazenamento cache faça ``ccache -s``: ::
+Para ver a condição do armazenamento cache faça ``ccache -s``::
 
 	cache directory                     /home/mame/.ccache
 	primary config                      /home/mame/.ccache/ccache.conf
@@ -325,10 +326,10 @@ o cache e deixar as coisas mais lentas.
 Exemplos práticos para todas as plataformas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A estrutura do MAME já vem preparada de forma que seja possível compilar
-toda a estrutura ou apenas uma parte dela como arcades por exemplo,
-consoles, portáteis ou até mesmo um sistema em específico como Neo-Geo,
-CPS1, CPS2, etc. Assim como consoles como Megadrive/Genesis, Super
+O código fonte do MAME já vem preparado de forma que seja possível
+compilar toda a estrutura ou apenas uma parte dela como arcades por
+exemplo, consoles, portáteis ou até mesmo um sistema em específico como
+Neo Geo, CPS1, CPS2; assim como consoles como Megadrive/Genesis, Super
 Nintendo, Playstation e assim por diante.
 
 Isso é útil quando temos que lidar com limitações de tamanho
@@ -361,30 +362,35 @@ Para compilar o MAME junto com as
 
 	**make TOOLS=1 -j7**
 
-Para incluir os símbolos de depuração na compilação use a opção
+Para incluir os símbolos de depuração na compilação, use a opção
 **SYMBOLS=1**, opção útil caso o MAME trave por algum motivo. Para mais
 informações veja :ref:`SYMBOLS <mame-compilation-symbols>`. É importante
 também adicionar o nível destes símbolos, para mais informações veja
 :ref:`SYMLEVEL <mame-compilation-symlevel>`. Seja qual for a versão do
 MAME que esteja compilando, é uma boa prática manter ambas as opções em
-todas elas.
+todas elas. Observe que ao compilar a versão completa do MAME com os
+símbolos embutidos no próprio executável extrapola o tamanho máximo do
+executável permitido pelo Windows, motivo este que os símbolos precisam
+ser extraídos do executável.
 
 .. _mame-compile-add-symbols:
 
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 -j7**
 
 Para compilar uma versão de depuração do MAME use o comando abaixo, para
-mais informações veja :ref:`DEBUG <mame-compilation-debug>`.
+mais informações veja :ref:`DEBUG <mame-compilation-debug>`:
 
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 DEBUG=1 -j7**
 
 É possível customizar a sua compilação escolhendo um driver em
-específico usando a opção ``SOURCES=<driver>``, lembrando que é
-obrigatório usar a opção **REGENIE=1** no caso de já ter compilado algo
-antes. Caso queira compilar uma versão customizada do MAME que só rode
-o jogo **Pac Man**, use o comando abaixo:
+específico usando a opção ``SOURCES=<sistema>``, lembrando que é
+obrigatório usar a opção **REGENIE=1** para regenerar os arquivos do
+projeto caso exista uma compilação anterior, a opção **REGENIE=1** não é
+necessário caso você faça um ``make clean`` antes . Caso queira compilar
+uma versão customizada do MAME que só rode o jogo **Pac Man**, use o
+comando abaixo:
 
-	**make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1**
+	**make SOURCES=src/mame/pacman REGENIE=1 -j7**
 
 O MAME também permite de maneira prática que seja possível compilar uma
 versão só com sistemas ARCADE, nessa versão os portáteis, consoles,
@@ -397,9 +403,25 @@ Para compilar uma versão do MAME só com consoles, use o comando abaixo:
 
 	**make SUBTARGET=mess SYMBOLS=1 SYMLEVEL=1 -j7**
 
+Para compilar uma versão do MAME chamada **meumame** apenas com a
+família de sistemas inclusas em *Pac-Man* e *Galaxian* incluindo as
+ferramentas:
+
+	**make SUBTARGET=meumame SOURCES=src/mame/pacman,src/mame/galaxian TOOLS=1 REGENIE=1 -j7**
+
+Caso encontre erros de lincagem dos arquivos estáticos da compilação
+após a alteração das fontes, exclua estes arquivos do diretório
+utilizado para a compilação do seu *subtarget*. No exemplo acima, seria
+o diretório ``build/mingw-gcc/bin/x64/Release/meumame``.
+
+Para compilar uma versão do Apple II compilando até seis arquivos fonte
+em paralelo faça:
+
+	**make SUBTARGET=appulator SOURCES=apple/apple2.cpp,apple/apple2e.cpp,apple/apple2gs.cpp REGENIE=1 -j7**
+
 Para compilar uma versão do MAME que tire proveito da extensão SSE2 do
 seu processador melhorando o desempenho, use o comando abaixo. Para
-mais informações veja :ref:`SSE2 <mame-compilation-sse2>`.
+mais informações veja :ref:`SSE2 <mame-compilation-sse2>`:
 
 	**make TOOLS=1 SYMBOLS=1 SYMLEVEL=1 SSE2=1 -j7**
 
@@ -409,7 +431,7 @@ compilador que estiver usando, use a opção **ARCHOPTS** com
 **-march=native** no seu comando de compilação. Ao ativar estas opções
 pode ou não tirar o máximo de desempenho possível do seu processador,
 assim como o MAME pode ou não se beneficiar de todas elas. O comando
-completo então ficaria assim, note que a opção **SSE2=1** foi removida.
+completo então ficaria assim, note que a opção **SSE2=1** foi removida:
 
 	**make SYMBOLS=1 SYMLEVEL=1 ARCHOPTS=-march=native -j7**
 
@@ -429,7 +451,7 @@ com a opção **-march=native**:
 
 Dependendo do modelo do processador o comando retornará mais ou menos
 extensões disponíveis, num processador AMD FX(tm)-8350 com 8 núcleos
-o **-march=native** vai usar estas extensões do seu processador: ::
+o **-march=native** vai usar estas extensões do seu processador::
 
 	-m64                        		[enabled]
 	-m80387                     		[enabled]
@@ -487,16 +509,20 @@ muitas variáveis como a configuração do seu hardware por exemplo, logo a
 sua sorte pode variar bastante. É muito difícil saber com precisão se
 haverá uma melhora no desempenho ou não pois o MAME depende muito do
 desempenho do hardware onde ele é executado (quanto mais potente,
-melhor) e do sistema operacional, dos drivers, etc.
+melhor) e do sistema operacional, dos sistemas, etc.
+
+.. raw:: latex
+
+	\clearpage
 
 Podemos fazer um teste prático compilando duas versões do MAME para
-rodar apenas o **pacman** usado opções diferentes: ::
+rodar apenas o **pacman** usado opções diferentes::
 
 	Opção 1
-	make SOURCES=src/mame/drivers/pacman.cpp SUBTARGET=pacman SSE3=1 OPTIMIZE=3
+	make SOURCES=src/mame/pacman SUBTARGET=pacman SSE3=1 OPTIMIZE=3
 	
 	Opção 2
-	make SOURCES=src/mame/drivers/pacman.cpp SUBTARGET=pacman ARCHOPTS=-march=native OPTIMIZE=3
+	make SOURCES=src/mame/pacman SUBTARGET=pacman ARCHOPTS=-march=native OPTIMIZE=3
 
 Rodamos o nosso MAME por 90 segundos num AMD FX(tm)-8350 4 Ghz
 (8 núcleos), 16 GiB de memória DDR3 1866 Mhz, AMD R7 250E 1 GiB, Windows
@@ -545,7 +571,7 @@ arquivos afetados por modificações posteriormente usadas.
 
 Com o tempo e experiência, cada um irá adaptar as opções de compilação
 para a sua própria necessidade, no exemplo abaixo tem um template para
-o seu **useroptions.mak**: ::
+o seu **useroptions.mak**::
 
 	# Template de configuração do usuário para a compilação do MAME.
 	# Altere as opções conforme a sua necessidade. Remova o # da frente
@@ -561,7 +587,7 @@ o seu **useroptions.mak**: ::
 	#<- Clang ->
 	#
 	# Para compilar o MAME com apenas uma maquina em especifico.
-	#SOURCES=src/mame/drivers/neogeo.cpp
+	#SOURCES=src/mame/neogeo
 	#
 	# Para incluir símbolos de depuração (obrigatório)
 	SYMBOLS=1
@@ -701,7 +727,7 @@ desenvolvimento MSYS2 direto da página do
 Por fim é necessário definir as variáveis MINGW32 e MINGW64, instale o
 editor de texto nano com o comando ``pacman -S nano``, após a instalação
 faça ``nano ~/.bashrc`` e adicione a linha abaixo no final do
-arquivo: ::
+arquivo::
 
 		export MINGW32=/mingw32 MINGW64=/mingw64
 
@@ -774,7 +800,7 @@ reinicie o **mingw64.exe**.
 pacotes necessários para compilar o MAME estejam disponíveis no seu
 sistema, omita aqueles cuja configuração você não planeja utilizar para
 compilar ou combine diversos comandos **pacman** para instalar mais de
-um pacote de uma vez: ::
+um pacote de uma vez::
 
 	pacman -Syu
 	pacman -S curl git make
@@ -865,7 +891,7 @@ para **SigLevel = Required DatabaseOptional**, salve o arquivo e feche o
 editor.
 
 Para ter certeza de que não há nenhum erro execute o comando
-``pacman -Syu`` novamente: ::
+``pacman -Syu`` novamente::
 
 	$ pacman -Syu
 	:: Sincronizando a base de dados de pacotes...
@@ -1107,18 +1133,18 @@ usando a ferramenta '**emmake**'. O MAME completo é muito grande para
 ser carregado numa página web de uma só vez, então é preferível que seja
 compilado versões menores e separadas do MAME através do parâmetro
 **SOURCES**, por exemplo, faça o comando abaixo no mesmo diretório do
-MAME: ::
+MAME::
 
-	emmake make SUBTARGET=pacmantest SOURCES=src/mame/drivers/pacman.cpp
+	emmake make SUBTARGET=pacmantest SOURCES=src/mame/pacman
 
 O parâmetro *SOURCES* deve apontar para pelo menos um arquivo *driver*
 *\*.cpp*. O comando *make* tentará localizar e reunir todas as dependências
 para compilar o executável do MAME junto com o *driver* definido. No
 entanto porém, caso ocorra algum erro e o processo não encontre algum
 arquivo, é necessário declarar manualmente um ou mais arquivos que
-faltam (separados por vírgula). Por exemplo: ::
+faltam (separados por vírgula). Por exemplo::
 
-	emmake make SUBTARGET=apple2e SOURCES=src/mame/drivers/apple2e.cpp,src/devices/machine/applefdc.cpp
+	emmake make SUBTARGET=apple2e SOURCES=src/mame/apple2e,src/devices/machine/applefdc.cpp
 
 O valor do parâmetro *SUBTARGET* serve apenas para se diferenciar dentre
 as várias compilações existente e não precisa ser definido caso não seja
@@ -1266,7 +1292,7 @@ Opções gerais para a compilação
   dentre as várias compilações existente e não precisa ser definido sem
   necessidade. Supondo que use o comando abaixo:
 
-	**make REGENIE=1 SUBTARGET=neogeo SOURCES=src/mame/drivers/neogeo.cpp -j4**
+	**make REGENIE=1 SUBTARGET=neogeo SOURCES=src/mame/neogeo -j4**
 
   Será criado um binário MAME de nome **neogeo** caso seja uma versão
   32-bit ou **neogeo64** caso seja uma versão 64-bit.
@@ -1705,7 +1731,7 @@ GCC.
 Caso encontre erros relacionados com ``bits/string_fortified.h``,
 verifique e tenha certeza se ``_FORTIFY_SOURCE`` já está definido no
 ambiente ou junto com **CFLAGS** ou **CXXFLAGS** por exemplo. É possível
-verificar o seu ambiente com o comando abaixo: ::
+verificar o seu ambiente com o comando abaixo::
 
 	gcc -dM -E - < /dev/null | grep _FORTIFY_SOURCE
 
@@ -1764,7 +1790,7 @@ Ponto de entrada não encontrado
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Caso o seu **sdlmame.exe** mostre um erro como este ou algo
-parecido: ::
+parecido::
 
 	Não foi possível localizar o ponto de entrada do procedimento
 	_ZNSt7__cxx1118basic_stringstreamIcSt11char_traitsIcESaIcEEC1Ev na
@@ -1845,7 +1871,7 @@ compilar num disco compartilhado na rede por exemplo). Para utilizar o
 LLVM linker com o GCC, tenha certeza de tê-lo instalado no seu sistema
 e utilize ``-fuse-ld=lld`` nas opções do compilador, seja através da
 variável de ambiente **LDFLAGS**, através da opção **LDOPTS** ou
-configurando o **LDOPTS** no arquivo **useroptions.mak**), exemplo: ::
+configurando o **LDOPTS** no arquivo **useroptions.mak**), exemplo::
 
 	LDOPTS=-fuse-ld=lld
 
@@ -1892,7 +1918,7 @@ do GNU GCC que esteja instalada em seu sistema, defina o caminho
 completo dos compiladores C (gcc) e C++ (g++), assim como, adicione o
 caminho completo da biblioteca do seu sistema. Supondo que tenha o
 GNU GCC instalado em ``/opt/local/gcc72``, use o comando de compilação
-como mostrado abaixo: ::
+como mostrado abaixo::
 
 	make OVERRIDE_CC=/opt/local/gcc72/bin/gcc OVERRIDE_CXX=/opt/local/gcc72/bin/g++ ARCHOPTS=-Wl,-R,/opt/local/gcc72/lib64
 
@@ -1978,7 +2004,7 @@ Estes arquivos devem **sempre** estar junto ao executável do MAME, esse
 arquivo "**.sym**" é usado para traduzir as referências usadas no
 código fonte junto com os códigos de erro, para a maioria não significa
 muito porém é útil para os desenvolvedores. Aqui um exemplo de um erro
-que causou a parada do MAME: ::
+que causou a parada do MAME::
 
 	Exception at EIP=00000000 (something_state::something()+0x0000): ACCESS VIOLATION
 	While attempting to read memory at 00000000
@@ -2010,7 +2036,7 @@ exemplo abaixo estou usando uma versão 64-bit do MAME para Linux, porém
 o procedimento é o mesmo em qualquer outra plataforma.
 
 * Carregue o mame no gdb com o comando ``gdb mame``, irá aparecer
-  algo semelhante com a tela abaixo: ::
+  algo semelhante com a tela abaixo::
 
 	gdb mame
 	GNU gdb (Debian 7.12-6) 7.12.0.20161007-git
@@ -2031,7 +2057,7 @@ o procedimento é o mesmo em qualquer outra plataforma.
 	(gdb)
 
 Para executar o sistema com problema execute ``run`` seguido pelos
-comandos do MAME, exemplo: ::
+comandos do MAME, exemplo::
 
 	(gdb) run kof99
 	Starting program: /home/mame/mame kof99
@@ -2054,7 +2080,7 @@ será exibida uma tela como no exemplo abaixo ::
 	bytes=bytes@entry=67108864) at malloc.c:3650
 	3650 malloc.c: File or directry not found.
 
-Faça o comando ``where`` para que o gdb liste as possíves causas: ::
+Faça o comando ``where`` para que o gdb liste as possíves causas::
 
 	(gdb) where
 	#0  _int_malloc (av=av@entry=0x7ffff459fb00 <main_arena>, 
@@ -2202,12 +2228,12 @@ Como administrador crie o arquivo **clang.list**:
 
 Adicione as linha abaixo ao arquivo clang.list, o exemplo foi feito com
 a versão **5.0** porém ajuste para versões mais recentes ou que sejam
-compatíveis com a sua distribuição: ::
+compatíveis com a sua distribuição::
 
 	# 5.0
 	deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-5.0 main
 
-Depois de um ``apt-get update`` instale com o comando: ::
+Depois de um ``apt-get update`` instale com o comando::
 
 	sudo apt-get install clang-5.0 libclang-common-5.0-dev libclang1-5.0 liblldb-5.0 lldb-5.0 python-lldb-5.0 libllvm5.0 llvm-5.0 llvm-5.0-runtime
 
@@ -2223,7 +2249,7 @@ Caso a sua distribuição seja diferente, faça o comando
 Recarregue as configurações do seu terminal com o comando ``. .bashrc``
 (ponto, espaço, ponto bashrc) ou encerre a seção e faça login novamente.
 
-Compile o MAME como mostra o exemplo abaixo: ::
+Compile o MAME como mostra o exemplo abaixo::
 
 	make clean && make OVERRIDE_CC=/usr/bin/clang OVERRIDE_CXX=/usr/bin/clang++ OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 SANITIZE=address -j7
 
