@@ -1222,10 +1222,12 @@ opção **SOURCES**.
 
 	\clearpage
 
+
 .. _compiling-options:
 
 Opções gerais para a compilação
 -------------------------------
+
 
 .. _mame-compilation-premake:
 
@@ -1237,6 +1239,7 @@ Opções gerais para a compilação
   Pode ser útil caso queira alternar entre diferentes configurações de
   compilação de forma simples e rápida.
 
+
 .. _mame-compilation-build:
 
 **BUILDDIR**
@@ -1245,6 +1248,7 @@ Opções gerais para a compilação
   projeto, códigos fonte auxiliares que são gerados ao longo da
   configuração, arquivos objeto e bibliotecas intermediárias.
   Por predefinição, o nome deste diretório é **build**.
+
 
 .. _mame-compilation-regenie:
 
@@ -1255,6 +1259,7 @@ Opções gerais para a compilação
   para o caso onde uma compilação tenha sido feita anteriormente e seja
   necessário alterar as configurações predefinidas anteriormente.
 
+
 .. _mame-compilation-verbose:
 
 **VERBOSE**
@@ -1264,6 +1269,7 @@ Opções gerais para a compilação
   compilação apareçam. Essa opção é aplicada instantaneamente e não
   precisa do comando **REGENIE**.
 
+
 .. _mame-compilation-ignore_git:
 
 **IGNORE_GIT**
@@ -1272,34 +1278,8 @@ Opções gerais para a compilação
   trabalho e não embute a revisão descritiva do git no campo da versão
   do executável.
 
-.. _mame-compilation-subtarget:
 
-**SUBTARGET**
-
-  Define diferentes versões do MAME para serem compiladas, caso nenhum
-  seja escolhido o valor predefinido é **mame**. Os valores mais usados
-  são:
-
-		* **arcade**: Compila uma versão do MAME apenas com sistemas classificados como arcade.
-		* **dummy**: Compila uma versão bem simplificada do mame com apenas o driver da Coleco.
-		* **mame**: Compila uma versão do MAME com arcade, mess e virtual.
-		* **mess**: Compila uma versão do MAME só com sistemas catalogados como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
-		* **nl**: Compila todos os drivers classificados como *netlist*.
-		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita a obrigação de se compilar todo o código fonte do MAME para testar apenas uma modificação feita na interface por exemplo.
-		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
-
-  O valor do parâmetro *SUBTARGET* serve também para se diferenciar
-  dentre as várias compilações existente e não precisa ser definido sem
-  necessidade. Supondo que use o comando abaixo:
-
-	**make REGENIE=1 SUBTARGET=neogeo SOURCES=src/mame/neogeo -j4**
-
-  Será criado um binário MAME de nome **neogeo** caso seja uma versão
-  32-bit ou **neogeo64** caso seja uma versão 64-bit.
-
-.. raw:: latex
-
-	\clearpage
+.. _mame-compilation-targetos:
 
 **TARGETOS**
 
@@ -1337,6 +1317,7 @@ valores válidos são:
 
 	* ``ci20`` (Creator-Ci20)
 
+
 .. _mame-compilation-sse2:
 
 **SSE2**
@@ -1346,6 +1327,7 @@ valores válidos são:
 	compatíveis. Se definido como **1** o MAME terá um melhor
 	desempenho segundo a `nota publicada
 	<https://www.mamedev.org/?p=451>`_ no site do MAME.
+
 
 .. _mame-compilation-ptr64:
 
@@ -1368,6 +1350,7 @@ valores válidos são:
 Usando ferramentas de compilação alternativas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 .. _mame-compilation-override_cc:
 
 **OVERRIDE_CC**
@@ -1375,12 +1358,14 @@ Usando ferramentas de compilação alternativas
   Define o compilador C/Objective-C avulso ou para um compilador voltado
   para um sistema em específico. 
 
+
 .. _mame-compilation-override_cxx:
 
 **OVERRIDE_CXX**
 
   Define o compilador C++/Objective-C++ avulso ou para um compilador
   voltado para um sistema em específico.
+
 
 .. _mame-compilation-override_ld:
 
@@ -1390,12 +1375,14 @@ Usando ferramentas de compilação alternativas
   corretamente configurado não é necessário lidar com ele, mesmo em
   compilação cruzada.
 
+
 .. _mame-compilation-python_executable:
 
 **PYTHON_EXECUTABLE**
 
   Define o interpretador Python. Para compilar o MAME é necessário ter
   o Python versão *2.7*, Python *3* ou mais recente.
+
 
 .. _mame-compilation-cross_build:
 
@@ -1404,6 +1391,7 @@ Usando ferramentas de compilação alternativas
   Defina como **1** para que o lincador e o compilador fiquem isolados
   do sistema hospedeiro, opção obrigatória ao realizar uma
   :ref:`mame-crosscompilation`.
+
 
 .. _mame-compilation-openmp:
 
@@ -1419,10 +1407,73 @@ Usando ferramentas de compilação alternativas
   é necessário a instalação do ``libomp-devel`` ou ``libomp-dev``
   dependendo da sua distribuição.
 
+.. raw:: latex
+
+	\clearpage
+
+
+Incluindo os subconjuntos dos sistemas suportados
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _mame-compilation-subtarget:
+
+**SUBTARGET**
+
+  Define a compilação alternativa do compilador. Algumas predefinições
+  estão disponíveis em ``scripts/target/mame`` ou usando os filtros dos
+  drivers do sistema em ``src/mame``. As versões alternativas criadas
+  pelo usuário podem ser criadas usando **SOURCES** ou **SOURCEFILTER**.
+  Os valores já predefinidos são:
+
+		* **arcade**: Compila uma versão do MAME apenas com sistemas classificados como arcade.
+		* **dummy**: Compila uma versão bem simplificada do mame com apenas o driver da Coleco.
+		* **mame**: Compila uma versão do MAME com arcade, mess e virtual.
+		* **mess**: Compila uma versão do MAME só com sistemas catalogados como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
+		* **nl**: Compila todos os drivers classificados como *netlist*.
+		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita a obrigação de se compilar todo o código fonte do MAME para testar apenas uma modificação feita na interface por exemplo.
+		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
+
+  O valor do parâmetro *SUBTARGET* serve também para se diferenciar
+  dentre as várias compilações existente e não precisa ser definido sem
+  necessidade. No exemplo do comando abaixo:
+
+	**make REGENIE=1 SUBTARGET=neogeo SOURCES=neogeo/neogeo.cpp -j7**
+
+  Será criado um binário do MAME com o nome **neogeo** no Linux ou
+  **neogeo.exe** no Windows.
+
+
+.. _mame-compilation-sources:
+
+**SOURCES**
+
+  Define o arquivo com o código fonte do driver que serão inclusos na
+  compilação. Geralmente são usados em conjunto com a opção
+  **SUBTARGET**. Os diferentes arquivos/pastas são separados com
+  vírgulas.
+
+
+.. _mame-compilation-sourcefilter:
+
+**SOURCEFILTER**
+
+  Define um arquivo de filtro do driver do sistema. É usado normalmente
+  em conjunto com a opção **SUBTARGET**.  O arquivo de filtro pode
+  definir os arquivos de origem na inclusão dos drivers do sistema e
+  para escolher quais os drivers individuais do sistema que serão
+  inclusos ou excluídos. Há alguns exemplos de arquivos filtro dos
+  drivers de sistema na pasta ``src/mame``.
+
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-compilation-optional-resources:
 
 Recursos opcionais
 ~~~~~~~~~~~~~~~~~~
+
 
 .. _mame-compilation-tools:
 
@@ -1432,12 +1483,40 @@ Recursos opcionais
   em conjunto com o emulador como ``unidasm``, ``chdman``, ``romcmp``,
   e ``srcclean`` serão compiladas.
 
+
 .. _mame-compilation-nouseportaudio:
 
 **NO_USE_PORTAUDIO**
 
-  Caso seja definido como **1**, desabilita a construção do módulo de
-  saída de áudio PortAudio.
+  Caso seja definido como **1**, desativa a construção do módulo de
+  saída de áudio PortAudio e sua biblioteca.
+
+
+.. _mame-compilation-nousepulseaudio:
+
+**NO_USE_PULSEAUDIO**
+
+  Caso seja definido como **1**, desativa a construção do módulo de
+  saída de áudio PortAudio e sua biblioteca no Linux.
+
+
+.. _mame-compilation-usetapun:
+
+**USE_TAPTUN**
+
+  Caso seja definido como **1**, inclui o módulo de rede tap/tun, use
+  **0** para desativar. O módulo de rede tap/tun está incluso por padrão
+  no Windows e no Linux.
+
+
+.. _mame-compilation-usepcap:
+
+**USE_PCAP**
+
+  Caso seja definido como **1**, inclui o módulo de rede pcap, use **0**
+  para desativar. O módulo de rede pcap está incluso por padrão no macOS
+  e no NetBSD.
+
 
 .. _mame-compilation-use_qtdebug:
 
@@ -1446,30 +1525,33 @@ Recursos opcionais
   Caso seja definido como **1**, será incluso o depurador com a
   interface Qt em plataformas onde a mesma não vem previamente
   embutida como MacOS e Windows por exemplo, defina como **0** para
-  desabilitar. É obrigatório a instalação das bibliotecas de
+  desativar. É obrigatório a instalação das bibliotecas de
   desenvolvimento Qt assim como suas ferramentas para a compilação do
   depurador.
   Todo este processo varia de plataforma para plataforma.
+
 
 .. _mame-compilation-nowerror:
 
 **NOWERROR**
 
-  Defina como **1** para desabilitar o tratamento das mensagens de
+  Defina como **1** para desativar o tratamento das mensagens de
   aviso do compilador como erro. Talvez seja necessário em
   configurações minimamente compatíveis.
+
 
 .. _mame-compilation-deprecated:
 
 **DEPRECATED**
 
-  Defina como **0** para desabilitar as mensagens de aviso menos
+  Defina como **0** para desativar as mensagens de aviso menos
   importantes/relevantes (repare que as mensagens de avisos não são
   tratadas como erro).
 
 .. raw:: latex
 
 	\clearpage
+
 
 .. _mame-compilation-debug:
 
@@ -1482,6 +1564,7 @@ Recursos opcionais
   opção sem saber o que está fazendo. Veja também
   :ref:`compiling-advanced-options-debug`.
 
+
 .. _mame-compilation-optimize:
 
 **OPTIMIZE**
@@ -1491,7 +1574,7 @@ Recursos opcionais
   compilação.
   Há também as seguintes opções:
 
-		* **0**: Caso queira desabilitar a otimização e favorecendo a depuração.
+		* **0**: Caso queira desativar a otimização e favorecendo a depuração.
 		* **1**: Otimização simples sem impacto direto no tamanho final do executável nem no tempo de compilação.
 		* **2**: Ativa a maioria das otimizações visando desempenho e tamanho reduzido.
 		* **3**: Este é o valor predefinido, em favor do desempenho ao custo de um executável maior.
@@ -1499,6 +1582,7 @@ Recursos opcionais
 
   A compatibilidade destes valores dependem do compilador que esteja
   sendo usado.
+
 
 .. _mame-compilation-symbols:
 
@@ -1508,6 +1592,7 @@ Recursos opcionais
 	de depuração para a plataforma que o executável está sendo
 	compilado, além dos já inclusos (muitas plataformas por predefinição
 	já incluem estes símbolos e os nomes das respectivas funções).
+
 
 .. _mame-compilation-symlevel:
 
@@ -1523,6 +1608,7 @@ Recursos opcionais
 		* **1**: Incluí tabelas numéricas e variáveis externas.
 		* **2**: Incluindo os itens descritos em **1**, incluí também as variáveis locais.
 		* **3**: Incluí também definições macros.
+
 
 .. _mame-compilation-strip-symbols:
 
@@ -1540,6 +1626,7 @@ Recursos opcionais
 
 	\clearpage
 
+
 .. _mame-compilation-archopts:
 
 **ARCHOPTS**
@@ -1549,12 +1636,14 @@ Recursos opcionais
 	binária de aplicação [1]_ como por exemplo a ativação de recursos
 	opcionais do processador.
 
+
 .. _mame-compilation-archopts-c:
 
 **ARCHOPTS_C**
 
 	Opções adicionais que serão passadas ao compilador durante a
 	compilação dos arquivos de código fonte em linguagem C.
+
 
 .. _mame-compilation-archopts-cpp:
 
@@ -1563,12 +1652,14 @@ Recursos opcionais
 	Opções adicionais que serão passadas ao compilador durante a
 	compilação dos arquivos de código fonte em linguagem C++.
 
+
 .. _mame-compilation-archopts-objc:
 
 **ARCHOPTS_OBJC**
 
 	Opções adicionais que serão passadas ao compilador durante a
 	compilação dos arquivos de código fonte Objective-C.
+
 
 .. _mame-compilation-archopts-objcxx:
 
@@ -1677,6 +1768,7 @@ Sede das bibliotecas e framework
 
 	\clearpage
 
+
 .. _compiling-issues:
 
 Problemas conhecidos
@@ -1709,7 +1801,7 @@ Algumas distribuições Linux como Gentoo e Ubuntu possuem versões
 modificadas do GNU GCC que já vem com o ``_FORTIFY_SOURCE`` ativado
 com ``1``. Isso gera problemas para a maioria dos projetos e não apenas
 para o MAME, pois afeta diretamente o desempenho do emulador, dificulta
-que essas verificações adicionais sejam desabilitadas, assim como torna
+que essas verificações adicionais sejam desativadas, assim como torna
 difícil definir outros valores para ``_FORTIFY_SOURCE`` como ``2`` por
 exemplo, que ativa verificações ainda mais restritas.
 
