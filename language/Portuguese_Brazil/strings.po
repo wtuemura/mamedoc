@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME 0.245\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-30 07:10-0300\n"
-"PO-Revision-Date: 2022-07-10 07:04-0300\n"
+"PO-Revision-Date: 2022-08-02 07:04-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -1522,7 +1522,7 @@ msgstr "Grupo"
 
 #: src/frontend/mame/ui/utils.cpp:1070
 msgid "Include clones"
-msgstr "Inclui clones"
+msgstr "Incluir clones"
 
 #: src/frontend/mame/ui/utils.cpp:1130
 msgid "Category File"
@@ -3132,7 +3132,7 @@ msgstr "O Sistema é o principal"
 #: src/frontend/mame/ui/selmenu.cpp:683 src/frontend/mame/ui/selmenu.cpp:685
 #, c-format
 msgid "System is clone of: %1$s"
-msgstr "O sistema é clone do: %1$s"
+msgstr "O sistema é um clone do: %1$s"
 
 #: src/frontend/mame/ui/selmenu.cpp:721
 #, c-format
