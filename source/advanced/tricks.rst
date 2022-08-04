@@ -236,7 +236,7 @@ contrário o MAME acusará um erro dizendo que os arquivos não foram
 encontrados.
 
 Para jogar com o **Donatello** (jogador 3) no sistema **Teenage
-Mutant Ninja Turtles - Turtles in Time** faça o comando: ::
+Mutant Ninja Turtles - Turtles in Time** faça o comando::
 
 	mame tmnt2 -ctrlr 3P
 
@@ -294,7 +294,7 @@ botões forem definidos e você sair do MAME, encontre o arquivo
 ``ffight.cfg`` no diretório **cfg** e faça as alterações necessárias.
 Copie-o para o diretório **ctrlr** como ``ffight.cfg``. Entre no
 diretório **ini** e crie um arquivo chamado ``ffight.ini``, abra-o num
-editor de texto e adicione: ::
+editor de texto e adicione::
 
 	ctrlr ffight
 
@@ -321,12 +321,12 @@ Arquivos DAT são usados por gerenciadores de ROMs como
 validade de cada arquivo existente dentro de um arquivo ROM
 identificando o CRC e SHA1 de cada um, dentre outras funções.
 
-Execute o MAME com o comando: ::
+Execute o MAME com o comando::
 
 	mame -listxml >mame.xml
 
 Baixe o `DatUtil <http://www.logiqx.com/Tools/DatUtil/>`_, extraia-o no
-mesmo diretório do MAME e execute o comando: ::
+mesmo diretório do MAME e execute o comando::
 
 	datutil mame.xml
 
@@ -336,19 +336,19 @@ Criando arquivos DAT separados por sistema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Para criar um DAT para o sistema CPS1 (**cps1.dat**) compatível com o
-**Clrmamepro** faça o comando: ::
+**Clrmamepro** faça o comando::
 
 	datutil.exe -G cps1.cpp -o cps1.dat -f cmp datutil.dat
 
-Para o sistema CPS2: ::
+Para o sistema CPS2::
 
 	datutil.exe -G cps2.cpp -o cps2.dat -f cmp datutil.dat
 
-Para o sistema Neo-Geo: ::
+Para o sistema Neo-Geo::
 
 	datutil.exe -G neogeo.cpp -o neogeo.dat -f cmp datutil.dat
 
-Para uma lista de Neo-Geo sem clones: ::
+Para uma lista de Neo-Geo sem clones::
 
 	datutil.exe -G neogeo.cpp -o neogeo.dat -r -f cmp datutil.dat
 
@@ -534,11 +534,11 @@ Usando a linha de comando no Windows
 
 Abra o prompt de comando no mesmo diretório onde se encontra o arquivo
 ``arcade.txt`` defina o caminho completo para onde deseja copiar os
-arquivos: ::
+arquivos::
 
 	set DST=H:\arcade-roms
 
-Seguido do comando abaixo: ::
+Seguido do comando abaixo::
 
 	for /F %f in ('type arcade.txt') do @echo G:\roms\%f.zip >> caminho-roms.txt
 
@@ -552,7 +552,7 @@ saída para o arquivo ``caminho-roms.txt``.
 	\clearpage
 
 Execute o comando abaixo para realizar a cópia dos arquivos com base na
-lista que acabamos de criar: ::
+lista que acabamos de criar::
 
 	for /F %f in ('type caminho-roms.txt') do copy %f %DST%
 
@@ -566,25 +566,109 @@ Usando o terminal no Linux, macOS e \*NIX em geral
 --------------------------------------------------
 
 Como descrito acima, abra o terminal no mesmo diretório onde se encontra
-o arquivo ``arcade.txt`` e defina o diretório de destino: ::
+o arquivo ``arcade.txt`` e defina o diretório de destino::
 
 	export DST=/mnt/usb/arcade-roms
 
 É necessário converter o formato do arquivo de Windows (quebra de linha
 **CRLF**) para um formato compatível com \*nix (quebra de linha
-**LF**), caso contrário a lista ficará toda bagunçada: ::
+**LF**), caso contrário a lista ficará toda bagunçada::
 
 	sed -i 's/\r//g' arcade.txt
 
 Execute o comando abaixo para gerar o arquivo ``caminho-roms.txt`` onde
 **/home/mame/roms** é o caminho completo onde as ROMs estão
-armazenadas: ::
+armazenadas::
 
 	for f in $(< arcade.txt); do echo /home/mame/roms/"$f".zip; done > caminho-roms.txt
 
-Execute o comando abaixo para fazer a cópia dos arquivos: ::
+Execute o comando abaixo para fazer a cópia dos arquivos::
 
 	for f in $(< caminho-roms.txt); do cp "$f" "$DST"; done
+
+Para separar um *ROMSET* com todas as *ROMs* para **Neo Geo** usando
+apenas o terminal, crie o ``mame.xml`` com o comando::
+
+	mame -lx > mame.xml
+
+Faça o comando abaixo para criar uma lista destas ROMs nas versões
+anteriores do **MAME 0.246**::
+
+	cat mame.xml | grep 'sourcefile="neogeo.cpp"' | sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p' | awk '!seen[$0]++' | sort -d > maquinas
+
+Para novas versões após a versão **0.246**::
+
+	cat mame.xml | grep 'sourcefile="neogeo/neogeo.cpp"' | sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p' | awk '!seen[$0]++' | sort -d > maquinas
+
+O primeiro comando ``cat mame.xml`` lista o arquivo ``mame.xml``, o
+segundo comando filtra as linhas que contém
+``sourcefile="neogeo/neogeo.cpp"``, o terceiro
+``sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p'`` seleciona os nomes, o
+quarto comando ``awk '!seen[$0]++'`` remove os itens repetidos, o último
+``sort -d`` organiza a lista em ordem alfabética e por último
+``> maquinas`` redireciona todo o processamento para o arquivo
+``maquinas``.
+
+Dentro do arquivo ``maquinas`` nós teremos uma lista que inclui os
+clones e a BIOS::
+
+	2020bb
+	2020bba
+	2020bbh
+	3countb
+	...
+
+Usando o mesmo exemplo, porém, criando uma lista **sem clones** e
+**sem BIOS**, use o comando abaixo::
+
+	cat mame.xml | grep 'romof="neogeo"' | sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p' | awk '!seen[$0]++' | sort -d > maquinas
+
+Assim teremos a seguinte lista::
+
+	2020bb
+	3countb
+	alpham2
+	androdun
+	...
+
+Agora com ou sem clones, geramos o arquivo com o caminho completo para
+as *ROMs* que nós queremos::
+
+	while read maquinas; do echo /media/mame/roms/"$maquinas".zip ; done < maquinas > lista-roms
+
+O arquivo ``maquinas`` alimenta ``maquinas`` do ``while read`` que vai
+substituindo os valores da lista em ``"$maquinas"`` assim que eles vão
+sendo concluídos e no final redireciona a nossa lista pronta para
+``lista-roms``. Isso gera a seguinte lista::
+
+	/media/mame/roms/2020bb.zip
+	/media/mame/roms/3countb.zip
+	/media/mame/roms/alpham2.zip
+	/media/mame/roms/androdun.zip
+	...
+
+Com a lista em mãos, supondo que eu queira criar uma pasta exclusiva
+para *ROMs* de *Neo Geo* como por exemplo **/home/mame/roms/neogeo**,
+primeiro eu crio o diretório com ``mkdir /home/mame/roms/neogeo`` e em
+seguida, posso usar o comando abaixo para copiar todas as *ROMs* para
+dentro desta pasta::
+
+	while read copy ; do cp "$copy" /home/mame/roms/neogeo ; done < lista-roms
+
+Assim como no exemplo anterior, ``copy`` de ``while read`` é alimentado
+por ``lista-roms`` que vai substituindo os valores da lista em
+``"$copy"`` assim que eles vão sendo concluídos e copiando os arquivos
+da lista para ``/home/mame/roms/neogeo``.
+
+Ao final, nós teremos todas as *ROMs* de *Neo Geo* dentro da pasta
+escolhida. Note porém que o processo não é 100% perfeito para todos os
+sistemas e talvez seja necessário verificar as *ROMs* com o seu
+:ref:`gerenciador de ROM <advanced-tricks-dat-sistema>` preferido. Com
+o Windows, é preferível gerar um arquivo DAT (neogeo.dat) como explicado
+em :ref:`Criando arquivos DAT separados por sistema <advanced-tricks-dat-sistema>`
+e depois usar o Clrmamepro para verificar se todas as ROMs foram mesmo
+corretamente copiadas.
+
 
 .. _advanced-tricks-powershell-redirect:
 
@@ -861,7 +945,7 @@ de wallpaper qualquer na internet.
 
 Lembrando que todo o fundo é um papel de parede, tirando as opções do
 MAME nada na tela do *Iron Man* é funcional. Para as cores eu estou
-utilizando as configurações abaixo: ::
+utilizando as configurações abaixo::
 
 	# UI OPTIONS
 	#
@@ -885,7 +969,7 @@ utilizando as configurações abaixo: ::
 	ui_text_color             ffffffff
 	ui_unavail_color          ff404040
 
-Na tela do Iron Man a única diferença é a cor da borda: ::
+Na tela do Iron Man a única diferença é a cor da borda::
 
 	ui_border_color           ff076f85
 
