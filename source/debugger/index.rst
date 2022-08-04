@@ -32,6 +32,28 @@ conteúdo dos registros da *CPU*, o código desmontado em torno do
 endereço do contador atual do programa e fornece também uma interface
 com linha de comando que auxilia em toda a funcionalidade do depurador.
 
+.. _debugger-sections-list:
+
+Os comandos do depurador
+------------------------
+
+Os comandos do depurador são descritos nas seções abaixo. Também é
+possível digitar ``help comando`` no console do depurador para que a
+ajuda seja exibida diretamente na tela do depurador.
+
+.. toctree::
+	:titlesonly:
+
+	general
+	memory
+	execution
+	breakpoint
+	watchpoint
+	registerpoints
+	annotation
+	cheats
+	image
+
 .. _debugger-devicespec:
 
 Determinando os dispositivos e as faixas de endereço
@@ -402,28 +424,6 @@ O depurador suporta uma quantidade de funções úteis nas expressões.
         |paaa| **16** para **64-bits** (|sob| **16** até **63**, inclusive, |cvb| **15** |cpbc|).
     ``s32(<x>)``
         |paaa| **32** para **64-bits** (|sob| **32** até **63**, inclusive, |cvb| **31** |cpbc|).
-
-.. _debugger-sections-list:
-
-Os comandos do depurador
-------------------------
-
-Os comandos do depurador são descritos nas seções abaixo. Também é
-possível digitar ``help comando`` no console do depurador para que a
-ajuda seja exibida diretamente na tela do depurador.
-
-.. toctree::
-	:titlesonly:
-
-	general
-	memory
-	execution
-	breakpoint
-	watchpoint
-	registerpoints
-	annotation
-	cheats
-	image
 
 .. |spc| replace:: A região do endereçamento padrão
 .. |abs| replace:: do dispositivo com a etiqueta absoluta
