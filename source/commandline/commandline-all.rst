@@ -365,8 +365,8 @@ Exemplo:
 			<?xml version="1.0"?>
 			<!DOCTYPE mame [
 			<!ELEMENT mame (machine+)>
-			<mame build="0.222 (mame0222-82-g6bdc7cc979f)" debug="no" mameconfig="10">
-				<machine name="sf2" sourcefile="cps1.cpp">
+			<mame build="0.246 (mame0246-58-g3ba776d3e0b)" debug="no" mameconfig="10">
+				<machine name="sf2" sourcefile="capcom/cps1.cpp">
 					<description>Street Fighter II: The World Warrior (World 910522)</description>
 					<year>1991</year>
 					<manufacturer>Capcom</manufacturer>
@@ -456,7 +456,7 @@ Exemplo:
 		.. code-block:: shell
 
 			mame -ls pacman
-			pacman           pacman.cpp
+			pacman           pacman/pacman.cpp
 
 	É possível também utilizar um curinga (asterisco) ao final do nome
 	do sistema para que seja exibido uma lista com todos os outros
@@ -467,10 +467,10 @@ Exemplo:
 		.. code-block:: shell
 
 			mame -ls pacman*
-			pacman           pacman.cpp
-			pacmanbl         galaxian.cpp
+			pacman           pacman/pacman.cpp
+			pacmanbl         galaxian/galaxian.cpp
 			...
-			pacmania         namcos1.cpp
+			pacmania         namco/namcos1.cpp
 
 	Todos os sistemas serão listadas caso nenhuma palavra chave seja
 	informada.
@@ -1277,11 +1277,11 @@ Opções para a configuração
 	Exemplo:
 		.. code-block:: shell
 
-			mame sf2 -ls
-			sf2              cps1.cpp
+			mame -ls sf2
+			sf2              capcom/cps1.cpp
 
-	O nome do driver é **cps1**, logo, o arquivo deve ser nomeado como
-	``cps1.ini``.
+	O nome do driver é **cps1** (sem a extensão .cpp), logo, o arquivo
+	deve ser nomeado como ``cps1.ini``.
 
 	Veja mais em :ref:`advanced-multi-CFG` para mais detalhes.
 

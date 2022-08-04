@@ -352,6 +352,21 @@ Para uma lista de Neo-Geo sem clones: ::
 
 	datutil.exe -G neogeo.cpp -o neogeo.dat -r -f cmp datutil.dat
 
+.. note::
+
+	A estrutura interna do MAME para a criação de projetos foi
+	modificada depois `desta alteração <https://github.com/mamedev/mame/commit/cf11b3330261aea407a36911048f3835b7a48f31>`_.
+	Assim, em vez de usar ``-G neogeo.cpp`` (por exemplo), é preciso
+	usar ``neogeo/neogeo.cpp`` para que o ``datutil`` consiga
+	identificar e criar o respectivo arquivo dat, caso contrário, ele
+	aponta um erro na criação do arquivo. Para identificar a
+	nomenclatura correta do driver, utilize a opção
+	:ref:`-ls <mame-commandline-listsource>` seguido do nome do sistema,
+	para o **Street Fighter II** (``mame -ls sf2``), por exemplo, a
+	opção retorna ``capcom/cps1.cpp``. Esta deve ser a opção usada com o
+	``datutil`` nas versões mais novas do MAME a partir da versão
+	**0.246**.
+
 E assim por diante, para criar um DAT em formato **RomCenter** troque o
 ``cmp`` por ``rc``, para **RomCenter 2** use ``rc2`` e para criar um
 arquivo XML genérico aceito pelos outros gerenciadores use ``gx`` ou
