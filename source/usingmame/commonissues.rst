@@ -74,6 +74,8 @@ conhecer mais sobre este processo consulte a página do
 `CAPS0ff <http://caps0ff.blogspot.com>`_ ou do
 `Guru <http://members.iinet.net.au/~lantra9jp1_nbn/gurudumps/index.html>`_.
 
+Consulte também o capítulo :ref:`aboutromsets`.
+
 
 .. _rapid-coins:
 
