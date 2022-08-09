@@ -3619,8 +3619,8 @@ melhor ao seu design e veja se a animação fica boa **na tela**.
   na parte debaixo da tela.
 * Novamente na aba :guilabel:`Fill and Stroke`, defina
   :guilabel:`Width:` para ``0,005``, isso cria uma borda bem fina no
-  nosso quadrado, fina o suficiente para ele poder ser selecionado, isso
-  será útil mais adiante.
+  nosso quadrado, fina o suficiente para que ele possa ser selecionado,
+  isso será útil mais adiante.
 * Selecione o quadrado e mova ele para o layer **quadrado**.
 * Na aba :guilabel:`Align and distribute`, clique nos mesmos botões para
   centralizar o quadrado na página.
