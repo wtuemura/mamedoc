@@ -249,7 +249,7 @@ funcionar, os conjuntos das ROMs são separados em 3 categorias:
 
 * **non-merged** (não mesclado)
 * **split** (dividido)
-* **merged** (mesclados)
+* **merged** (mesclado)
 
 .. raw:: latex
 

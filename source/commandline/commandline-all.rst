@@ -3692,8 +3692,8 @@ Opções para a configuração do áudio
 
 **-[no]compressor**
 
-	Ativa a compressão do áudio. Ele reduz temporariamente o volume
-	total quando a saída do áudio é acionada de forma excessiva.
+	Ativa a compressão do áudio. Reduz temporariamente o volume total
+	quando a saída do áudio for saturada.
 
 	O valor predefinido é ``Ligado`` (``-compressor``).
 
