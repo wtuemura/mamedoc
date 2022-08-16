@@ -4077,8 +4077,9 @@ de um valor inteiro.
 
 Substitua ``224`` por ``225``, note que os cálculos retornam valores
 inteiros, é este valor que usaremos para definir o tamanho da nossa
-tela ``300`` x ``225``. Logo abaixo nós definimos a posição do nosso
-joystick e o seu respectivo tamanho.
+tela ``300`` x ``225``, procure sempre utilizar valores pares no eixo
+horizontal. Logo abaixo nós definimos a posição do nosso joystick e o
+seu respectivo tamanho.
 
 .. code-block:: xml
 
@@ -4792,7 +4793,7 @@ Iniciamos o layout com o básico:
 Agora precisamos ver no driver como os botões estão definidos para poder
 conectá-los na imagem do nosso controle, na data de criação deste texto,
 essa informação começa na
-`linha 1033 <https://github.com/mamedev/mame/blob/master/src/mame/drivers/ssv.cpp#L1033>`_:
+`linha 1028 <https://github.com/mamedev/mame/blob/master/src/mame/seta/ssv.cpp#L1028>`_:
 
 .. code-block:: xml
 
