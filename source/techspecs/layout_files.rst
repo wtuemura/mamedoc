@@ -2467,7 +2467,9 @@ Será criado dentro do diretório **cfg** um arquivo chamado
 ``galaxian.cfg``, abra-o num editor de texto e veja que para cada
 configuração feita para os controles e para o botão há um valor
 específico para eles, aqui um exemplo usando um controle de
-*Playstation 2*::
+*Playstation 2*:
+
+.. code-block:: xml
 
     <input>
         <port tag=":IN0" type="P1_JOYSTICK_LEFT" mask="4" defvalue="0">

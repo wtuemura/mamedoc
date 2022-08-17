@@ -1685,6 +1685,7 @@ gerenciamento de energia, não há problema deixar a sua placa de vídeo
 rodando no máximo desde que você saiba **EXATAMENTE** o que está
 fazendo.
 
+
 Excluindo arquivos NVRAM (batch script)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1711,4 +1712,92 @@ seja constante, use o batch script abaixo, salve o script como
     exit /B
 
 
+Removendo a suavização dos efeitos crt-geom/crt-geom-deluxe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A ideia destes efeitos é simular uma tela CRT com todas as suas
+qualidade e defeitos, no que tange a questão de defeito, a tela é
+suavizada de tal maneira que parece um embaçamento na tela inteira
+deixando uma imagem mais "soft", porém, é uma questão de gosto
+individual. Algumas pessoas que sofrem com miopia por exemplo,
+utilizam óculos para justamente corrigir a visão embaçada, estes
+efeitos borram a tela toda causando desconforto nas pessoas que já
+sofrem deste problema.
+
+Para aqueles que não sabem do que estamos falando, inicie o MAME com o
+comando abaixo::
+
+	mame sf2ce -video bgfx -bgfx_backend opengl -bgfx_screen_chains crt-geom
+
+Repare que a imagem aparece num formato de tela CRT (com curvatura e
+linhas de escaneamento) levemente embaçada, usaremos como referência o
+recorte abaixo:
+
+.. image:: images/crt-geom-sample-01.png
+   :align: center
+
+O primeiro efeito a ser desligado é a máscara [#GRILL]_, feche/encerre o
+MAME, dentro da pasta do MAME encontre a pasta chamada **bgfx** e edite
+o arquivo ``chains\crt-geom.json``, no final dele, altere a linha::
+
+	"sampler": "mask_texture", "texture": "bgfx/chains/crt-geom/aperture_1_2_bgr.png"
+
+Para::
+
+	"sampler": "mask_texture", "texture": "bgfx/chains/crt-geom/none.png"
+
+Salve o arquivo como ``crt-geom-edit.json`` ou qualquer outro nome,
+assim ao atualizar o MAME você não perde as suas alterações, ao iniciar
+o MAME novamente com os parâmetros abaixo::
+
+	mame sf2ce -video bgfx -bgfx_backend opengl -bgfx_screen_chains crt-geom-edit
+
+Repare que agora a imagem mantém a curvatura e as linhas de
+escaneamento, um pouco mais clara e sem o efeito da máscara da tela.
+
+.. image:: images/crt-geom-sample-02.png
+   :align: center
+
+O último passo agora é remover esse efeito de embaçamento da tela, ainda
+com o arquivo ``chains\crt-geom.json`` aberto, altere a linha::
+
+	"text": "Horizontal interpolation",
+	  "default":  2,
+
+Para::
+
+	"text": "Horizontal interpolation",
+	  "default":  0,
+
+.. raw:: latex
+
+	\clearpage
+
+Note que mantivemos o efeito da tela CRT com as linhas de escaneamento,
+sem os efeitos de embaçamento.
+
+.. image:: images/crt-geom-sample-03.png
+   :align: center
+
+Com a tela com uma aparência mais limpa e sem os "defeitos" da tela CRT,
+você pode alterar os outros valores do ``chains\crt-geom-edit.json``
+para fazer um ajuste fino do efeito ou experimentar os outros
+disponíveis dentro da pasta ``bgfx\chains``. Para quem achar a tela um
+pouco escura demais, altere o valor abaixo::
+
+	"text": "Gamma of simulated CRT",
+	  "default":  2.4,
+
+Para::
+
+	"text": "Gamma of simulated CRT",
+	  "default":  2.0,
+
+Os arquivos da máscara como o ``aperture_1_2_bgr.png`` estão dentro da
+pasta ``artwork\bgfx\chains\crt-geom``. Apesar de particularmente
+preferir o efeito ``none``, há efeitos mais sutis como os efeitos
+``delta_``, eles dão uma aparência bacana (para quem gosta) sem borrar a
+tela toda.
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
+.. [#GRILL]	Para mais detalhes, acesse `este link <http://www.fazendovideo.com.br/infotec/crt.html>`_
