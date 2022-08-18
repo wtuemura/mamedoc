@@ -470,8 +470,8 @@ dentro de um arquivo ZIP ou 7Z como você faria com as ROMs.
 		dados dos arquivos.
 .. [#SHA1]	Significa *Secure Hash Algorithm* ou algoritmo de dispersão
 		seguro, é uma função criptográfica que retorna um resultado com
-		valor hexadecimal (hash) uso também para aferir a autenticidade
-		dos dados dos arquivos.
+		valor hexadecimal (hash) usado também para aferir a
+		autenticidade dos dados dos arquivos.
 .. [#IMAGENS]	Foi usado a imagem
 		`deste link <https://forums.launchbox-app.com/topic/33619-mame-tutorial-for-n00bs/>`_
 		como referência.
