@@ -1053,7 +1053,7 @@ Arch Linux
 Alguns pré-requisitos precisam ser atendidos na sua distro antes de
 continuar. ::
 
-	sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5 libxi libpulse
+	sudo pacman -S base-devel git sdl2_ttf python libxinerama libpulse alsa-lib qt5-base libxi libpulse
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`
