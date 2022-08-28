@@ -1800,4 +1800,4 @@ preferir o efeito ``none``, há efeitos mais sutis como os efeitos
 tela toda.
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
-.. [#GRILL]	Para mais detalhes, acesse `este link <http://www.fazendovideo.com.br/infotec/crt.html>`_
+.. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html

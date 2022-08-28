@@ -4,8 +4,8 @@
 
 .. _luareference:
 
-As referências das Classes Lua do MAME
-======================================
+Referências das classes Lua do MAME
+===================================
 
 .. contents::
     :local:
@@ -543,35 +543,39 @@ Propriedades
 **machine.devices** |sole|
 
 	:ref:`luareference-dev-enum` que produz todos os
-	:ref:`dispositivos <luareference-dev-device>` no sistema que está
-	sendo emulado.
+	:ref:`dispositivos <luareference-dev-device>` |nsqe|.
+
+
+**machine.palettes** |sole|
+
+	:ref:`luareference-dev-enum` que produz todos os
+	:ref:`dispositivos paleta <luareference-dev-dipalette>` |nsqe|.
 
 
 **machine.screens** |sole|
 
 	:ref:`luareference-dev-enum` que produz todos os
-	:ref:`dispositivos da tela <luareference-dev-screen>` no sistema que
-	está sendo emulado.
+	:ref:`dispositivos tela <luareference-dev-screen>` |nsqe|.
 
 
 **machine.cassettes** |sole|
 
 	:ref:`luareference-dev-enum` que produz todos os
 	:ref:`dispositivos da imagem em fita cassete
-	<luareference-dev-cass>` no sistema que está sendo emulado.
+	<luareference-dev-cass>` |nsqe|.
 
 
 **machine.images** |sole|
 
 	:ref:`luareference-dev-enum` que produz toda a
 	:ref:`interface para os dispositivos de imagem
-	<luareference-dev-diimage>` no sistema que está sendo emulado.
+	<luareference-dev-diimage>` |nsqe|.
 
 
 **machine.slots** |sole|
 
 	:ref:`luareference-dev-enum` que produz toda a
-	:ref:`luareference-dev-dislot` no sistema que está sendo emulado.
+	:ref:`luareference-dev-dislot` |nsqe|.
 
 .. raw:: latex
 
@@ -1285,10 +1289,17 @@ Instanciação
 	:ref:`dispositivo <luareference-dev-device>` no sistema.
 
 
+**manager.machine.palettes**
+
+	Retorna um dispositivo enumerador que irá iterar sobre os
+	:ref:`dispositivos paleta <luareference-dev-dipalette>` no
+	sistema.
+
+
 **manager.machine.screens**
 
-	Retorna um dispositivo enumerador que irá iterar sobre o
-	:ref:`dispositivo da tela <luareference-dev-screen>` no sistema.
+	Retorna um dispositivo enumerador que irá iterar sobre os
+	:ref:`dispositivos da tela <luareference-dev-screen>` no sistema.
 
 
 **manager.machine.cassettes**
@@ -1321,10 +1332,22 @@ Instanciação
 	Retorna um dispositivo enumerador que irá iterar sobre o
 	:ref:`dispositivo <luareference-dev-device>` na sub-árvore começando
 	num dispositivo específico. O dispositivo informado será incluído.
-	Caso a profundidade seja informada este deve ser um valor inteiro
+	Caso a profundidade seja informada, este deve ser um valor inteiro
 	que irá definir a quantidade máxima dos níveis que serão iterados
 	abaixo do dispositivo informado (Por exemplo, 1 irá limitar a
 	iteração do dispositivo e dos dispositivos relacionados).
+
+
+**emu.palette_enumerator(dispositivo, [profundidade])**
+
+	Retorna um dispositivo enumerador que irá iterar sobre os
+	:ref:`dispositivos paleta <luareference-dev-dipalette>` na
+	sub-árvore começando num dispositivo específico. O dispositivo
+	informado será incluído caso seja um dispositivo paleta. Caso a
+	profundidade seja informada, este deve ser um valor inteiro que irá
+	definir a quantidade máxima dos níveis que serão iterados abaixo do
+	dispositivo informado (Por exemplo, 1 irá limitar a iteração do
+	dispositivo e dos dispositivos relacionados).
 
 
 **emu.screen_enumerator(dispositivo, [profundidade])**
@@ -1345,7 +1368,7 @@ Instanciação
 	:ref:`dispositivo da imagem em fita cassete <luareference-dev-cass>`
 	na sub-árvore começando num dispositivo específico. O dispositivo
 	informado será incluído se for um dispositivo cassete. Caso a
-	profundidade seja informada este deve ser um valor inteiro que irá
+	profundidade seja informada, este deve ser um valor inteiro que irá
 	definir a quantidade máxima dos níveis que serão iterados abaixo do
 	dispositivo informado (Por exemplo, 1 irá limitar a iteração do
 	dispositivo e dos dispositivos relacionados).
@@ -1370,7 +1393,7 @@ Instanciação
 	:ref:`interface para os dispositivos slot <luareference-dev-dislot>`
 	na sub-árvore começando num dispositivo específico. O dispositivo
 	informado será incluído se for um dispositivo slot. Caso a
-	profundidade seja informada este deve ser um valor inteiro que
+	profundidade seja informada, este deve ser um valor inteiro que
 	definirá a quantidade máxima dos níveis que serão iterados abaixo do
 	dispositivo informado (Por exemplo, 1 irá limitar a iteração do
 	dispositivo e dos dispositivos relacionados).
@@ -1529,10 +1552,148 @@ Propriedades
 
 	\clearpage
 
+.. _luareference-dev-dipalette:
+
+Dispositivo paleta
+~~~~~~~~~~~~~~~~~~
+
+Encapsula a classe ``device_palette_interface`` do MAME que representa
+um dispositivo que traduz uma cadeia de valores em cores.
+
+As cores estão no formato alfa/vermelho/verde/azul (ARGB). Os valores
+dos canais estão no intervalo de 0 (transparente ou desligado) até
+``255`` (opaco ou com intensidade total). Os valores do canal devem ser
+empacotados em bytes com 32 bits inteiros não assinados pelo valor do
+canal alfa, na ordem alpha, vermelho, verde, azul a partir do byte mais
+importante até o byte com menor importância.
+
+
+Instanciação
+^^^^^^^^^^^^
+
+**manager.machine.palettes[tag]**
+
+	Obtém um dispositivo paleta através da tag em relação ao dispositivo
+	raiz do sistema ou ``nil`` caso o dispositivo não exista ou caso não
+	seja um dispositivo paleta.
+
+Métodos
+^^^^^^^
+
+**palette:pen(índice)**
+
+	Obtém o número da cadeia remapeada para o índice especificado da
+	paleta.
+
+**palette:pen_color(pen)**
+
+	Obtém a cor para o número da cadeia especificada.
+
+**palette:pen_contrast(pen)**
+
+	Obtém o valor do contraste para o o número da cadeia especificada.
+	|ocvp|.
+
+**palette:pen_indirect(índice)**
+
+	Obtém o índice indireto da cadeia para um índice específico da
+	cadeia.
+
+**palette:indirect_color(índice)**
+
+	Obtém o índice indireto da cadeia de cores para um índice específico
+	da cadeia.
+
+**palette:set_pen_color(pen, cor)**
+
+	Define a cor para um número específico da cadeia. A cor pode ser
+	definida como um único valor empacotado de 32 bits; ou valores
+	individuais para os canais vermelho, verde e azul, nesta ordem.
+
+**palette:set_pen_red_level(pen, nível)**
+
+	Define o valor do canal da cor vermelho para o número da cadeia
+	especificada. |ovdo|.
+
+**palette:set_pen_green_level(pen, nível)**
+
+	Define o valor do canal da cor verde para o número da cadeia
+	especificada. |ovdo|.
+
+**palette:set_pen_blue_level(pen, nível)**
+
+	Define o valor do canal da cor azul para o número da cadeia
+	especificada. |ovdo|.
+
+.. raw:: latex
+
+	\clearpage
+
+**palette:set_pen_contrast(pen, fator)**
+
+	Define o valor do contraste para o número da cadeia especificada.
+	|ocvp|.
+
+**palette:set_pen_indirect(pen, índice)**
+
+	Define o índice indireto para um número específico da cadeia.
+
+**palette:set_indirect_color(índice, color)**
+
+	Define um índice indireto da cor da cadeia para um índice específico da
+	paleta. A cor pode ser definida como um único valor empacotado de 32
+	bits; ou valores individuais para os canais vermelho, verde e azul,
+	nesta ordem.
+
+**palette:set_shadow_factor(fator)**
+
+	Define o valor do contraste para o grupo *"shadow"* atual. |ocvp|.
+
+**palette:set_highlight_factor(fator)**
+
+	Define o valor do contraste para o grupo atual em destaque. |ocvp|.
+
+**palette:set_shadow_mode(modo)**
+
+	Define o modo *"shadow"*. O valor é o índice da tabela *"shadow"*
+	desejada.
+
+Propriedades
+^^^^^^^^^^^^
+
+**palette.entries** |sole|
+
+	A quantidade dos registros de cores na paleta.
+
+**palette.indirect_entries** |sole|
+
+	A quantidade de registros indiretos da cadeia na paleta.
+
+**palette.black_pen** |sole|
+
+	O índice fixo do registro da cor preta na cadeia.
+
+**palette.white_pen** |sole|
+
+	O índice fixo do registro da cor branca na cadeia.
+
+**palette.shadows_enabled** |sole|
+
+	Um booleano indicando se as cores *"shadow"* estão ativadas.
+
+**palette.highlights_enabled** |sole|
+
+	Um booleano indicando se as cores em destaque estão ativadas.
+
+**palette.device** |sole|
+
+	O dispositivo :ref:`subjacente <luareference-dev-device>`.
+
+
 .. _luareference-dev-screen:
 
-Dispositivo da tela
-~~~~~~~~~~~~~~~~~~~
+Dispositivo tela
+~~~~~~~~~~~~~~~~
 
 Encapsula a classe ``screen_device`` do MAME que representa uma saída
 emulada vídeo.
@@ -1544,7 +1705,7 @@ Instanciação
 **manager.machine.screens[tag]**
 
 	Obtém um dispositivo tela através da tag em relação ao dispositivo
-	do sistema raiz, ou ``nil`` caso o dispositivo não exista ou caso
+	raiz do sistema, ou ``nil`` caso o dispositivo não exista ou caso
 	não seja um dispositivo tela.
 
 Classes de base
@@ -1650,9 +1811,9 @@ Métodos
 	interface.
 
 
-**screen:draw_line(x1, y1, x2, y2, down, [cor])**
+**screen:draw_line(x0, y0, x1, y1, [cor])**
 
-	Desenha uma linha a partir de (x1, y1) a (x2, y2).
+	Desenha uma linha a partir de (x0, y0) a (x1, y1).
 
 	As coordenadas são números de ponto flutuante em unidades de pixels
 	da tela emulada, com a origem em (``0``, ``0``). Observe que os pixels da
@@ -1703,7 +1864,7 @@ Métodos
 
 	As cores do primeiro plano e do plano de fundo estão no formato ARGB
 	alfa/vermelho/verde/azul. Os valores dos canais estão no
-	intervalo de 0 (transparente ou desligado) até ``255`` inclusive (opaco
+	intervalo de 0 (transparente ou desligado) até ``255`` (opaco
 	ou com intensidade total). Os valores dos canais da cor não são
 	previamente multiplicados pelo valor alpha.
 	Os valores do canal devem ser empacotados em bytes com 32 bits
@@ -1804,6 +1965,14 @@ Propriedades
 	O :ref:`contêiner do renderizador <luareference-render-container>`
 	usado para desenhar a tela.
 
+
+**screen.palette** |sole|
+
+	O :ref:`dispositivo paleta <luareference-dev-dipalette>` é utilizado
+	para traduzir os valores dos pixels para cores ou ``nil`` caso a
+	tela utilize um formato de pixel de cor direta.
+
+
 .. raw:: latex
 
 	\clearpage
@@ -1824,7 +1993,7 @@ Instanciação
 **manager.machine.cassettes[tag]**
 
 	Obtém a imagem de um dispositivo cassete por tag em relação ao
-	dispositivo do sistema raiz ou ``nil`` caso o dispositivo não exista
+	dispositivo raiz do sistema ou ``nil`` caso o dispositivo não exista
 	ou caso não seja a imagem de um dispositivo cassete.
 
 Classes de base
@@ -2126,7 +2295,7 @@ Instanciação
 **manager.machine.slots[tag]**
 
 	Obtém um dispositivo slot atavés da tag com relação ao dispositivo
-	do sistema raiz ou ``nil`` caso o dispositivo não exista ou caso não
+	raiz do sistema ou ``nil`` caso o dispositivo não exista ou caso não
 	seja um dispositivo slot.
 
 Propriedades
@@ -3222,10 +3391,10 @@ Métodos
 
 **natkeyboard:post_coded(texto)**
 
-	Publique o texto no sistema que está sendo emulado. Códigos entre
-	chaves são interpretados no texto. O sistema deve ter as entradas do
-	teclado com os caracteres vinculados e o dispositivo correto da
-	entrada do teclado deve estar ativado.
+	Publique o texto |nsqe|. Os códigos entre chaves são interpretados
+	no texto. O sistema deve ter as entradas do teclado com os
+	caracteres vinculados e o dispositivo correto da entrada do teclado
+	deve estar ativado.
 
 	Os códigos reconhecidos são ``{BACKSPACE}``, ``{BS}``, ``{BKSP}``,
 	``{DEL}``, ``{DELETE}``, ``{END}``, ``{ENTER}``, ``{ESC}``,
@@ -3292,10 +3461,9 @@ Propriedades
 **natkeyboard.keyboards[]**
 
 	Obtém o :ref:`dispositivo de entrada do teclado
-	<luareference-input-kbddev>` no sistema que está sendo emulado,
-	indexado através da tag absoluta do dispositivo. O índice get tem
-	O(n) complexidade; todas as outras operações compatíveis têm
-	complexidade O(1).
+	<luareference-input-kbddev>` |nsqe|, indexado através da tag
+	absoluta do dispositivo. O índice get tem O(n) complexidade; todas
+	as outras operações compatíveis têm complexidade O(1).
 
 .. raw:: latex
 
@@ -3645,7 +3813,7 @@ Propriedades
 **field.optional** |sole|
 
 	Um booleano que indica se o campo é opcional e não é obrigatório
-	para uso no sistema que está sendo emulado.
+	para uso |nsqe|.
 
 
 **field.cocktail** |sole|
@@ -4563,6 +4731,309 @@ Propriedades
 	\clearpage
 
 
+.. _luareference-render-bitmap:
+
+Bitmap
+~~~~~~
+
+Envelopa a implementação das classes ``bitmap_t`` e ``bitmap_specific``,
+que representam bitmaps bidimensionais armazenados em ordem de maior
+prioridade na fila. As coordenadas do pixel têm base zero, aumentando
+para a direita e para baixo. Vários formatos de pixels são suportados.
+
+Instanciação
+^^^^^^^^^^^^
+
+**emu.bitmap_yuy16([largura, altura], [xslop], yslop])**
+
+	|cbef| Y'CbCr com subamostragem de croma
+	[#CHROMA]_ 4:2:2 (os pares dos pixels horizontais têm valores
+	individuais de luma [#LUMA]_, porém, compartilham os valores de
+	croma). Cada pixel é um valor inteiro de 16 bits. O byte mais
+	importante do valor de 8 bits não assinado da cor do pixel, é o
+	componente Y' (luma). Para cada par horizontal dos pixels, o byte
+	menos importante do primeiro valor do pixel (base zero par X
+	coordenada) é o valor Cb de 8 bits assinado para o par de pixels,
+	e o byte menos importante do segundo pixel (base zero ímpar X
+	coordenada) é o valor Cr de 8 bits assinado para o par de pixels.
+
+	|navl|. |clsd|. |vidq|. |dvit|. |navi|. |qlam|.
+
+	|rird|.
+
+
+**emu.bitmap_rgb32([largura, altura], [xslop, yslop])**
+
+	|cbef| RGB sem o canal alfa (transparência). |cprv| 16 bit. O byte 
+	mais importante do valor do pixel é ignorado. |tbrm|.
+
+	|navl|. |clsd|. |vidq|. |dvit|. |navi|. |qlam|.
+
+	|rird|.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+**emu.bitmap_argb32([largura, altura], [xslop, yslop])**
+
+	|cbef| ARGB. |cprv| 32 bit. O byte mais importante do valor do canal
+	do pixel é o valor alpha de 8 bit sem assinatura (transparência)
+	onde valores menores são mais transparentes. |tbrm|. Os valores dos
+	canais de cores não são previamente multiplicados pelos valores dos
+	canais alpha.
+
+	|navl|. |clsd|. |vidq|. |dvit|. |navi|. |qlam|.
+
+	|rird|.
+
+
+**emu.bitmap_yuy16(source, [x0, y0, x1, y1])**
+
+	|cbef| Y'CbCr com subamostragem 4:2:2 de croma representando uma
+	exibição de uma parte do bitmap existente. O retângulo de recorte
+	inicial é definido para os limites da exibição. |obose|.
+
+	Na ausência das coordenadas, o novo bitmap representará uma
+	visualização do retângulo do recorte atual do bitmap original. Caso
+	as coordenadas sejam fornecidas, o novo bitmap representará uma
+	exibição do retângulo com o canto superior esquerdo em
+	(``x0``, ``y0``) e com o canto inferior direito em (``x1``, ``y1``)
+	no bitmap original. As coordenadas estão em unidades de pixels. As
+	coordenadas do canto inferior direito são inclusivas.
+
+	O bitmap original deve ser de propriedade do script Lua e deve usar
+	o formato Y'CbCr. Gera um erro caso as coordenadas sejam
+	especificadas representando um retângulo que não esteja totalmente
+	contido dentro do retângulo de recorte do bitmap original.
+
+
+**emu.bitmap_rgb32(source, [x0, y0, x1, y1])**
+
+	|cbef| RGB com subamostragem 4:2:2 de croma representando uma
+	exibição de uma parte do bitmap existente. O retângulo de recorte
+	inicial é definido para os limites da exibição. |obose|.
+
+	Na ausência das coordenadas, o novo bitmap representará uma
+	visualização do retângulo do recorte atual do bitmap original. Caso
+	as coordenadas sejam fornecidas, o novo bitmap representará uma
+	exibição do retângulo com o canto superior esquerdo em
+	(``x0``, ``y0``) e com o canto inferior direito em (``x1``, ``y1``)
+	no bitmap original. As coordenadas estão em unidades de pixels. As
+	coordenadas do canto inferior direito são inclusivas.
+
+	O bitmap original deve ser de propriedade do script Lua e deve usar
+	o formato RGB. Gera um erro caso as coordenadas sejam especificadas
+	representando um retângulo que não esteja totalmente contido dentro
+	do recorte do retângulo do bitmap original.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+**emu.bitmap_argb32(source, [x0, y0, x1, y1])**
+
+	|cbef| ARGB com subamostragem 4:2:2 de croma representando uma
+	exibição de uma parte do bitmap existente. O retângulo de recorte
+	inicial é definido para os limites da exibição. |obose|.
+
+	Na ausência das coordenadas, o novo bitmap representará uma
+	visualização do retângulo do recorte atual do bitmap original. Caso
+	as coordenadas sejam fornecidas, o novo bitmap representará uma
+	exibição do retângulo com o canto superior esquerdo em
+	(``x0``, ``y0``) e com o canto inferior direito em (``x1``, ``y1``)
+	no bitmap original. As coordenadas estão em unidades de pixels. As
+	coordenadas do canto inferior direito são inclusivas.
+
+	O bitmap original deve ser de propriedade do script Lua e deve usar
+	o formato ARGB. Gera um erro caso as coordenadas sejam especificadas
+	representando um retângulo que não esteja totalmente contido dentro
+	do recorte do retângulo do bitmap original.
+
+
+Métodos
+^^^^^^^
+
+
+**bitmap:reset()**
+
+	Define a largura e a altura como zero e libera o armazenamento dos
+	pixels caso o bitmap possua o seu próprio armazenamento ou libera o
+	bitmap original se ele representar uma exibição de um outro bitmap.
+
+	|obds|.
+
+
+**bitmap:allocate(largura, altura, [xslop, yslop])**
+
+	Reatribui o armazenamento para o bitmap, define a sua largura, a
+	sua altura e ajusta o retângulo de recorte para a totalidade do
+	bitmap. |cabij|; |sbiru|. O armazenamento do pixel será preenchido
+	com o valor zero.
+
+	|vidq|. |dvit|. |navi|. |qlam|.
+
+	|obds|.
+
+
+**bitmap:resize(largura, altura, [xslop, yslop])**
+
+	Altera a largura, a altura e define o recorte do retângulo em todo o
+	bitmap.
+
+	|vidq|. |dvit|. |navi2|.
+
+	Caso o bitmap já possua um armazenamento alocado e for grande o
+	suficiente para o tamanho atualizado, ele será usado sem ser
+	liberado; caso seja muito pequeno, este sempre será liberado e
+	realocado. Se o bitmap representar uma exibição de um outro bitmap,
+	o bitmap original será liberado. Quando o armazenamento do pixel for
+	alocado, ele será preenchido com o valor zero (na utilização de
+	um armazenamento já existente, o seu conteúdo não será alterado).
+
+	|obds|.
+
+
+**bitmap:wrap(source, [x0, y0, x1, y1])**
+
+	Faz com que o bitmap represente uma visualização de uma parte de um
+	outro bitmap e define o recorte do retângulo para os limites da
+	visualização.
+
+	|nacoo|. |cacoo|. |acee|. |acodc|.
+
+	|obose|. |cabij|; |sbiru|.
+
+	|obdes| e devem usar o mesmo formato de pixel. Gera um erro caso as
+	coordenadas sejam definidas representando um retângulo que não
+	esteja totalmente contido dentro do retângulo de recorte do bitmap
+	original; caso o bitmap seja referenciado por um outro bitmap ou
+	:ref:`textura <luareference-render-texture>`; ou caso a origem e o
+	destino sejam o mesmo bitmap.
+
+
+**bitmap:pix(x, y)**
+
+	Retorna o valor da cor do pixel no local determinado. |ascoo|.
+
+
+**bitmap:fill(cor, [x0, y0, x1, y1])**
+
+	Preenche uma parte do bitmap com o valor da cor especificada. Na
+	ausência das coordenadas, o recorte do retângulo será preenchido;
+	caso as coordenadas sejam fornecidas, a interseção do recorte do
+	retângulo e do retângulo com canto superior esquerdo em
+	(``x0``, ``y0``) e canto inferior direito em (``x1``, ``y1``) serão
+	preenchidos. |acee|. |acodc|.
+
+
+**bitmap:plot(x, y, color)**
+
+	Define o valor da cor do pixel no local especificado caso esteja
+	dentro do recorte do retângulo. |ascoo|.
+
+
+**bitmap:plot_box(x, y, largura, altura, cor)**
+
+	Preenche a interseção do recorte do retângulo e o retângulo com o
+	canto superior esquerdo (``x``, ``y``) e a altura e largura
+	especificadas com o valor especificada da cor. As coordenadas e as
+	dimensões estão em unidades de pixels.
+
+
+Propriedades
+^^^^^^^^^^^^
+
+
+**bitmap.width** |sole|
+
+	Largura do bitmap em pixels.
+
+
+**bitmap.height** |sole|
+
+	Altura do bitmap em pixels.
+
+
+**bitmap.rowpixels** |sole|
+
+	Passo da linha do armazenamento do bitmap em pixels. Ou seja, a
+	diferença na compensação dos pixels no mesmo local horizontal em
+	linhas consecutivas. Pode ser maior que a largura.
+
+**bitmap.rowbytes** |sole|
+
+	Passo da linha do armazenamento do bitmap em bytes. Ou seja, a
+	diferença em endereços de byte dos pixels na mesma localização
+	horizontal das linhas consecutivas.
+
+
+**bitmap.bpp** |sole|
+
+	O tamanho do tipo usado para representar os pixels no bitmap em bits
+	(pode ser maior que a quantidade de bits importantes).
+
+
+**bitmap.valid** |sole|
+
+	Um booleano que indica se o bitmap tem armazenamento disponível
+	(pode ser *false* para bitmaps vazios).
+
+
+**bitmap.locked** |sole|
+
+	Um booleano que indica se o armazenamento do bitmap é referenciado
+	por outro bitmap ou :ref:`textura <luareference-render-texture>`.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _luareference-render-texture:
+
+Renderização da textura
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Envelopa a classe ``render_texture`` do MAME, representa a textura que
+pode ser desenhada no
+:ref:`contêiner do renderizador <luareference-render-container>`. As
+texturas renderizadas devem ser liberadas antes que a emulação em
+andamento seja encerrada.
+
+Instanciação
+^^^^^^^^^^^^
+
+
+**manager.machine.render:texture_alloc(bitmap)**
+
+	Cria uma textura renderizada com base no
+	:ref:`bitmap <luareference-render-bitmap>`. |obdes| e deve usar o
+	formato Y'CbCr, RGB ou ARGB. |obose|.
+
+Métodos
+^^^^^^^
+
+
+**texture:free()**
+
+	Libera a textura. O armazenamento do bitmap subjacente será
+	liberado.
+
+Propriedades
+^^^^^^^^^^^^
+
+**texture.valid** |sole|
+
+	Um booleano que indica se a textura é válida (*false* no caso da
+	textura ter sido liberada).
+
+
 .. _luareference-render-manager:
 
 Gerenciador do renderizador
@@ -4602,6 +5073,11 @@ Propriedades
 
 	O :ref:`contêiner do renderizador <luareference-render-container>`
 	usado para desenhar a interface do usuário.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 **render.targets[]** |sole|
@@ -6135,6 +6611,8 @@ Propriedades
 	e a condição for avaliada como um valor diferente de zero.
 	Uma *string* vazia caso nenhuma ação seja informada.
 
+.. [#CHROMA] Cor
+.. [#LUMA] Luminância
 .. |osss| replace:: O símbolo será substituído na existência de um
 	símbolo com um determinado nome já existente na tabela de símbolos.
 .. |guec| replace:: Gera um erro caso
@@ -6144,3 +6622,57 @@ Propriedades
 .. |eeun| replace:: Este é um número de ponto flutuante
 .. |sole| replace:: (somente leitura)
 .. |lees| replace:: (leitura e escrita)
+.. |nsqe| replace:: no sistema que está sendo emulado
+.. |ovdo| replace:: Os valores dos outros canais não são afetados
+.. |ocvp| replace:: O contraste é um valor de ponto flutuante
+.. |cbef| replace:: Cria um bitmap em formato
+.. |rird| replace:: O recorte inicial do retângulo é definido em todo o
+	bitmap
+.. |navl| replace:: Na ausência dos valores de largura e de altura,
+	estes valores são considerados como sendo zero
+.. |clsd| replace:: Caso a largura seja definida, é obrigatório que a
+	altura também seja especificada
+.. |vidq| replace:: Os valores de inclinação ``X`` e ``Y`` definem a
+	quantidade do armazenamento extra em pixels para reservar cada linha
+	à esquerda/direita e respectivamente a parte superior/inferior de
+	cada coluna
+.. |dvit| replace:: Ao definir o valor de inclinação ``X``, também é
+	obrigatório definir um valor de inclinação ``Y``
+.. |navi| replace:: Na ausência dos valores de inclinação ``X`` e ``Y``,
+	assume-se que seus valores também sejam zero (o armazenamento será
+	dimensionado para se ajustar ao conteúdo do bitmap)
+.. |navi2| replace:: Na ausência dos valores de inclinação ``X`` e ``Y``,
+	assume-se que seus valores também sejam zero (as linhas serão
+	armazenadas de forma contígua, a linha superior será colocada no
+	início do armazenamento do bitmap)
+.. |qlam| replace:: Quando a largura e/ou a altura for menor ou igual a
+	zero, nenhum armazenamento será alocado, independentemente dos
+	valores de inclinação ``X`` e ``Y``, assim como, ambos os valores
+	para a largura e para a altura do bitmap serão definidos como zero 
+.. |cprv| replace:: Cada pixel é representado por um valor inteiro de
+.. |tbrm| replace:: Os três bytes restantes, do mais importante ao menos
+	importante, são valores de 8 bit sem assinatura dos canais vermelho,
+	verde e azul (valores maiores correspondem a intensidades mais
+	altas)
+.. |obds| replace:: O bitmap deve ser de propriedade do script Lua. Gera
+	um erro caso o armazenamento do bitmap seja referenciado por um
+	outro bitmap ou :ref:`textura <luareference-render-texture>`
+.. |obdes| replace:: O bitmap deve ser de propriedade do script Lua
+.. |nacoo| replace:: Na ausência das coordenadas, o novo bitmap
+	representará uma visualização do retângulo do recorte atual do
+	bitmap original
+.. |cacoo| replace:: Caso as coordenadas sejam fornecidas, o novo bitmap
+	representará uma visualização do retângulo com o canto superior
+	esquerdo em (``x0``, ``y0``) e com o canto inferior direito em
+	(``x1``, ``y1``) no bitmap original
+.. |acee| replace:: As coordenadas estão em unidades de pixels
+.. |acodc| replace:: As coordenadas do canto inferior direito são
+	inclusivas
+.. |obose| replace:: O bitmap original será bloqueado, evitando o
+	redimensionamento e a realocação
+.. |cabij| replace:: Caso o bitmap já possua um armazenamento alocado,
+	ele sempre será liberado e realocado
+.. |sbiru| replace:: se o bitmap representar uma visão de um outro
+	bitmap, o bitmap original será liberado
+.. |ascoo| replace:: As coordenadas nas unidades dos pixels têm base
+	zero
