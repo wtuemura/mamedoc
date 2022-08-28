@@ -86,8 +86,8 @@ rpdisable
 Desativa os |pdis|. Quando um <*rpnum*> é definido, apenas essa
 referência será desativada, caso contrário, todas serão.
 
-Observe que ao desativar um |pdi| ele não é excluído, apenas marca
-temporariamente |pdi| como inativo. Os |pdis| que forem desativados não
+Observe que ao desativar um |pdi| ele não é excluído, apenas o marca
+temporariamente como inativo. Os |pdis| que forem desativados não
 causam a interrupção da execução, as condições associadas às expressões
 não serão avaliadas e seus respectivos comandos não serão executados.
 

@@ -44,10 +44,8 @@ Comandos de execução do depurador
     :ref:`debugger-command-traceflush`
         Elimina todos os arquivos de rastreamento que estiverem abertos.
 
-.. [#VBI]	Vertical Blanking Interval, também conhecido como intervalo vertical ou VBLANK.
 
-
- .. _debugger-command-step:
+.. _debugger-command-step:
 
 step
 ----
@@ -144,8 +142,6 @@ atingido ou até que você faça uma interrupção manual. Caso o
 incondicional será definido na *CPU* que estiver visível no endereço
 determinado. Este ponto será eliminado automaticamente quando for
 atingido.
-
-	.. [#WATCHPOINT]	Watchpoint no Inglês
 
 Exemplos:
 
@@ -590,3 +586,6 @@ Exemplo:
    dentro de chaves ``{`` ``}`` garantindo que as vírgulas e os
    ponto-e-vírgulas dentro do comando não sejam interpretadas no
    contexto do próprio comando
+.. [#WATCHPOINT] *Watchpoint* no Inglês
+.. [#VBI] *Vertical Blanking Interval*, também conhecido como intervalo
+   vertical ou VBLANK.

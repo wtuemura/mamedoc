@@ -48,9 +48,6 @@ Comandos gerais do depurador
     :ref:`debugger-command-quit`
         Encerra o depurador e a emulação.
 
-.. [#sr]	Soft reset no Inglês.
-.. [#hr]	Hard reset no Inglês.
-
 
 .. _debugger-command-help:
 
@@ -639,3 +636,5 @@ Exemplo:
 .. |nrvd| replace:: na região visível do programa na *CPU*
 .. |amaa| replace:: A memória anterior e as estatísticas de rastreamento do PC serão apagadas
 .. |tsdc| replace:: Toda a saída deste comando é ecoada em tempo real na janela do sistema que estiver em execução
+.. [#sr] *Soft reset* no Inglês.
+.. [#hr] *Hard reset* no Inglês.

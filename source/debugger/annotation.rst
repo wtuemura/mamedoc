@@ -1,3 +1,8 @@
+.. raw:: latex
+
+	\clearpage
+
+
 .. _debugger-annotation-list:
 
 Comandos da anotação do código do depurador

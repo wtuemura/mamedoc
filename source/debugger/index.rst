@@ -50,9 +50,16 @@ ajuda seja exibida diretamente na tela do depurador.
 	breakpoint
 	watchpoint
 	registerpoints
+	exceptionpoint
 	annotation
 	cheats
 	image
+
+
+.. raw:: latex
+
+	\clearpage
+
 
 .. _debugger-devicespec:
 
