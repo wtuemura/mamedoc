@@ -5014,7 +5014,7 @@ Instanciação
 
 **manager.machine.render:texture_alloc(bitmap)**
 
-	Cria uma textura renderizada com base no
+	Cria uma :ref:`textura <luareference-render-texture>` com base num
 	:ref:`bitmap <luareference-render-bitmap>`. |obdes| e deve usar o
 	formato Y'CbCr, RGB ou ARGB. |obose|.
 
@@ -5053,6 +5053,17 @@ Instanciação
 	Obtém a instância do gerenciador da renderização global para a
 	sessão emulada.
 
+
+Métodos
+^^^^^^^
+
+**render:texture_alloc(bitmap)**
+
+	Cria uma :ref:`textura <luareference-render-texture>` com base num 
+	:ref:`bitmap <luareference-render-bitmap>`. |obdes| e deve usar o
+	formato Y'CbCr, RGB ou ARGB. |obose|. As texturas renderizadas
+	devem ser liberadas antes que a seção da emulação seja encerrada.
+
 Propriedades
 ^^^^^^^^^^^^
 
@@ -5075,11 +5086,6 @@ Propriedades
 
 	O :ref:`contêiner do renderizador <luareference-render-container>`
 	usado para desenhar a interface do usuário.
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 **render.targets[]** |sole|
@@ -5253,27 +5259,27 @@ Métodos
 
 	As coordenadas são números de ponto flutuante no intervalo entre
 	``0`` (zero) até ``1`` (um), com (``0``, ``0``) na parte superior
-	esquerda e (``1``, ``1``) na parte inferior direita da janela ou da tela
-	que mostra a interface do usuário. Observe que a relação de aspecto
-	geralmente não é quadrada.
-	As coordenadas são limitadas à área da janela ou da tela.
+	esquerda e (``1``, ``1``) na parte inferior direita da janela ou da
+	tela que mostra a interface do usuário. Observe que a relação de
+	aspecto geralmente não é quadrada. As coordenadas são limitadas à
+	área da janela ou da tela.
 
 	As cores de preenchimento e da linha estão no formato
 	alfa/vermelho/verde/azul (ARGB). Os valores dos canais estão no
 	intervalo entre ``0`` (transparente ou desligado) e ``255`` (opaco
-	ou com intensidade total), inclusive. Os valores dos canais das
-	cores não são previamente multiplicados pelo valor alfa. Os valores
-	dos canais devem ser empacotados em bytes de um inteiro com 32 bits
-	sem assinatura na ordem alfa, vermelho, verde, azul do byte mais
+	ou com intensidade total). Os valores dos canais das cores não são
+	previamente multiplicados pelo valor alfa. Os valores dos canais
+	devem ser empacotados em bytes de um inteiro com 32 bits sem
+	assinatura na ordem alfa, vermelho, verde, azul do byte mais
 	importante para o de menor importância. Caso a cor da linha não seja
 	informada, é usada a cor do texto da interface; caso a cor de
 	preenchimento não seja informada, é usada a cor de fundo da
-	interface.
+	interface do usuário.
 
 
-**container:draw_line(x1, y1, x2, y2, [cor])**
+**container:draw_line(x0, y0, x1, y1, [cor])**
 
-	Desenha uma linha a partir de (``x1``, ``y1``) até (``x2``, ``y2``).
+	Desenha uma linha a partir de (``x0``, ``y0``) até (``x1``, ``y1``).
 
 	As coordenadas são números de ponto flutuante no intervalo entre
 	``0`` (zero) até ``1`` (um), com (``0``, ``0``) na parte superior
@@ -5293,17 +5299,42 @@ Métodos
 
 	A cor da linha está no formato alfa/vermelho/verde/azul (ARGB). Os
 	valores dos canais estão no intervalo entre ``0`` (transparente ou
-	desligado) e ``255`` (opaco ou com intensidade total), inclusive. Os
-	valores dos canais das cores não são previamente multiplicados pelo
-	valor alfa. Os valores dos canais devem ser empacotados em bytes de
+	desligado) e ``255`` (opaco ou com intensidade total). Os valores
+	dos canais das cores não são previamente multiplicados pelo valor
+	alfa. Os valores dos canais devem ser empacotados em bytes de
 	um inteiro com 32 bits sem assinatura na ordem alfa, vermelho,
 	verde, azul do byte mais importante para o de menor importância.
 	Caso a cor da linha não seja informada, é usada a cor do texto da
-	interface.
+	interface do usuário.
+
 
 .. raw:: latex
 
 	\clearpage
+
+
+**container:draw_quad(textura, x0, y0, x1, y1, [cor])**
+
+	Desenha um retângulo texturizado com o canto superior esquerdo em
+	(``x0``, ``y0``) e o canto inferior direito em (``x1``, ``y1``).
+	Caso uma cor seja especificada, os valores dos pixels da textura do
+	canal ARGB são multiplicados pelos valores correspondentes da cor
+	que foi especificada.
+
+	As coordenadas são números de ponto flutuante na faixa entre ``0``
+	(zero) até ``1`` (um) com (``0``, ``0``) na parte superior esquerda
+	e (``1``, ``1``) na parte inferior direita da janela ou da tela que
+	mostra a interface do usuário. Observe que a relação de aspecto
+	geralmente não é quadrada. Caso o retângulo se estenda além dos
+	limites do contêiner, este será recortado.
+
+	A cor está no formato alfa/vermelho/verde/azul (ARGB). Os valores
+	dos canais estão no intervalo entre ``0`` (transparente ou
+	desligado) e ``255`` (opaco ou com intensidade total). Os valores
+	dos canais das cores não são previamente multiplicados pelo valor
+	alfa. Os valores dos canais devem ser empacotados em bytes de
+	um inteiro com 32 bits sem assinatura na ordem alfa, vermelho,
+	verde, azul do byte mais importante para o de menor importância.
 
 
 **container:draw_text(x|justify, y, text, [primeiro plano], [plano de fundo])**
@@ -5361,6 +5392,11 @@ Propriedades
 **container.xscale** |lees|
 
 	O fator de escala X do contêiner. |eeun|.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 **container.yscale** |lees|
@@ -6658,7 +6694,7 @@ Propriedades
 	altas)
 .. |obds| replace:: O bitmap deve ser de propriedade do script Lua. Gera
 	um erro caso o armazenamento do bitmap seja referenciado por um
-	outro bitmap ou :ref:`textura <luareference-render-texture>`
+	outro bitmap ou uma :ref:`textura <luareference-render-texture>`
 .. |obdes| replace:: O bitmap deve ser de propriedade do script Lua
 .. |nacoo| replace:: Na ausência das coordenadas, o novo bitmap
 	representará uma visualização do retângulo do recorte atual do
