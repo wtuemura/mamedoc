@@ -1793,6 +1793,12 @@ Para::
 	"text": "Gamma of simulated CRT",
 	  "default":  2.0,
 
+.. note::
+
+	Em alguns `documentos técnicos <https://www.tomshardware.com/reviews/-glossary-gamma-definition,5884.html>`_,
+	o valor indicado do gamma para monitores é **2.2** no Windows e
+	**1.8** no macOS.
+
 Os arquivos da máscara como o ``aperture_1_2_bgr.png`` estão dentro da
 pasta ``artwork\bgfx\chains\crt-geom``. Apesar de particularmente
 preferir o efeito ``none``, há efeitos mais sutis como os efeitos
