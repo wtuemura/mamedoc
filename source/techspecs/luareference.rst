@@ -2661,7 +2661,8 @@ Métodos
 	*callback* uma função.
 
 	O *callback* repassa 3 argumentos para o *offset* do acesso, para a
-	leitura dos dados e a máscara de acesso à memória. Para alterar os
+	leitura dos dados e a máscara de acesso à memória. A compensação é
+	a compensação absoluta no espaço de endereçamento. Para alterar os
 	dados que estão sendo lidos, retorne o valor alterado da função do
 	*callback* como um número inteiro. Caso o *callback* não retorne um
 	valor inteiro, os dados não serão alterados.
@@ -2676,7 +2677,8 @@ Métodos
 	deve ser uma *string* e o *callback* uma função.
 
 	O *callback* repassa 3 argumentos para o *offset* do acesso, para a
-	escrita dos dados e a máscara de acesso à memória. Para alterar os
+	escrita dos dados e a máscara de acesso à memória. A compensação é
+	a compensação absoluta no espaço de endereçamento. Para alterar os
 	dados que estão sendo escritos, retorne o valor alterado da função
 	do *callback* como um número inteiro. Caso o *callback* não retorne
 	um valor inteiro, os dados não serão alterados.
