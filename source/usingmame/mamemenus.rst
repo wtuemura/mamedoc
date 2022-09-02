@@ -303,6 +303,32 @@ definição para o botão do acesso ao modo de serviço do sistema (caso
 seja um arcade), teclas individuais de um teclado de um computador
 pessoal, etc.
 
+
+Ajustes da entrada analógica
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Aqui ficam todas as configurações para os ajustes dos controles
+analógicos, este menu só aparece quando o sistema possui controle
+analógico. As opções disponíveis com seus valores predefinidos também
+variam, abaixo temos um exemplo para o jogo **Virtua Racing**:
+
+*	:guilabel:`Jogador 1 pedal 1` :guilabel:`aumenta/reduz a velocidade` ``16``
+*	:guilabel:`Jogador 1 pedal 1` :guilabel:`velocidade da centralização automática` ``16``
+*	:guilabel:`Jogador 1 pedal 1` :guilabel:`inverso` ``Desligado``
+*	:guilabel:`Jogador 1 pedal 1` :guilabel:`sensibilidade` ``100``
+*	:guilabel:`Jogador 1 pedal 2` :guilabel:`aumenta/reduz a velocidade` ``16``
+*	:guilabel:`Jogador 1 pedal 2` :guilabel:`aumenta/reduz a velocidade` ``16``
+*	:guilabel:`Jogador 1 pedal 2` :guilabel:`inverso` ``Desligado``
+*	:guilabel:`Jogador 1 pedal 2` :guilabel:`sensibilidade` ``100``
+*	:guilabel:`Acionador` :guilabel:`aumenta/reduz a velocidade` ``3``
+*	:guilabel:`Acionador` :guilabel:`velocidade da centralização automática` ``3``
+*	:guilabel:`Acionador` :guilabel:`inverso` ``Desligado``
+*	:guilabel:`Acionador` :guilabel:`sensibilidade` ``100``
+
+Consulte o capítulo :ref:`ui-inptcfg-analog` para obter mais informações
+sobre os ajustes uma vez que a nomenclatura também muda conforme o
+sistema.
+
 Atribuições da entrada (geral)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
