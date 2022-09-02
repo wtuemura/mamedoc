@@ -2,6 +2,7 @@
 
 	\clearpage
 
+
 .. _ctrlrcfg:
 
 Arquivos de configuração para os controles
@@ -47,6 +48,7 @@ e ``joystickprovider``) e possivelmente das outras configurações.
 .. raw:: latex
 
 	\clearpage
+
 
 .. _ctrlrcfg-structure:
 
@@ -126,6 +128,7 @@ elementos anteriores. Dentro de um elemento ``system``, os elementos
 .. raw:: latex
 
 	\clearpage
+
 
 .. _ctrlrcfg-substitute:
 
@@ -279,4 +282,44 @@ Abaixo um exemplo que substitui as entradas predefinidas para o
 
 Esta configuração define as entradas para o esterçamento esquerdo e
 direito para as teclas :kbd:`K` e :kbd:`J` respectivamente, desativando
-também as configurações do câmbio para a entrada da troca de marchas.
+também as configurações do câmbio para a entrada relacionada com a troca
+de marchas.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _ctrlrcfg-mapdevice:
+
+Atribuindo números aos dispositivos de entrada
+----------------------------------------------
+
+Use os elementos ``mapdevice`` em conjunto com os atributos ``device``
+e ``controller`` para atribuir números fixos aos dispositivos de
+entrada, caso contrário, eles são trocados pelo sistema operacionais
+toda a vez que eles forem conectados na porta USB do computador. Observe
+que para que esta configuração funcione como esperado, é preciso que o
+dispositivo já esteja conectando quando o MAME for iniciado.
+
+Defina o atributo ``device`` para a ID do dispositivo de entrada e
+defina o atributo ``controller`` para o token do dispositivo desejado
+(dispositivo, tipo e número).
+
+Aqui está um exemplo ao enumarar duas pistolas de luz e dois controles
+de jogo do tipo XInput:
+
+.. code-block:: XML
+
+    <system name="default">
+        <input>
+            <mapdevice device="VID_D209&amp;PID_1601" controller="GUNCODE_1" />
+            <mapdevice device="VID_D209&amp;PID_1602" controller="GUNCODE_2" />
+            <mapdevice device="XInput Player 1" controller="JOYCODE_1" />
+            <mapdevice device="XInput Player 2" controller="JOYCODE_2" />
+        </input>
+    </system>
+
+O MAME aplica os elementos ``mapdevice`` que forem encontrados dentro de
+qualquer elemento ``system`` aplicável.
