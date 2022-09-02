@@ -286,13 +286,22 @@ Estas opções podem ser acessadas durante a emulação e estão acessíveis
 ao pressionar a tecla :kbd:`Tab` e entrando na opção
 :guilabel:`Configurações da entrada`.
 
+
+Configurações da entrada
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Aqui ficam listadas todas as listas para as configurações das entradas
+do sistema que estiver sendo emulado no momento.
+
 Atribuições da entrada (este sistema)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Aqui ficam as configurações que serão utilizadas apenas no sistema que
-estiver sendo emulado no momento e por isso essa lista varia, as
-configurações vão desde créditos, botões, acesso ao modo de serviço do
-sistema (caso seja um arcade), teclas de um computador pessoal, etc.
+Aqui ficam as configurações do sistema que estiver em execução e por
+isso esta lista varia entre os sistemas, as configurações vão desde
+o botão para os créditos, os botões do controle dos jogadores, a
+definição para o botão do acesso ao modo de serviço do sistema (caso
+seja um arcade), teclas individuais de um teclado de um computador
+pessoal, etc.
 
 Atribuições da entrada (geral)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -318,12 +327,17 @@ Atribuições da entrada (geral)
   Consulte :ref:`Outros controles <mamemenu-other-controls>`.
 
 
+.. _menus-inputdevices:
+
 Dispositivos de entrada
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Aqui será listado os dispositivos que estão conectados ao sistema, como
-teclado, mouse, etc. A lista é dinâmica e varia dependendo do sistema e
-do que está sendo conectado nele.
+Aqui serão listados todos os dispositivos que estão conectados ao
+sistema atual, como o teclado, o mouse, etc. A lista é dinâmica e varia
+dependendo do sistema e do que está sendo conectado nele. Ao fazer um
+clique duplo em um dos itens da lista um novo menu é mostrado e aqui é
+possível selecionar a opção :guilabel:`Copia a ID do dispositivo`,
+consulte o capítulo :ref:`devicemap` para obter mais informações.
 
 Chaves DIP
 ~~~~~~~~~~
@@ -3206,9 +3220,9 @@ Consulte :ref:`plugins`.
 Dispositivos na entrada
 -----------------------
 
-Aqui será listado os dispositivos que estão conectados ao sistema, como
-teclado, mouse, etc. A lista é dinâmica e varia dependendo do sistema e
-do que está sendo conectado nele.
+Aqui serão listados todos os dispositivos conectados ao sistema, como o
+teclado, o mouse, etc. A lista é dinâmica e varia dependendo do sistema
+e do que está sendo conectado nele.
 
 
 .. _mamemenu-config-saving:

@@ -298,10 +298,10 @@ Atribuindo números aos dispositivos de entrada
 
 Use os elementos ``mapdevice`` em conjunto com os atributos ``device``
 e ``controller`` para atribuir números fixos aos dispositivos de
-entrada, caso contrário, eles são trocados pelo sistema operacionais
-toda a vez que eles forem conectados na porta USB do computador. Observe
-que para que esta configuração funcione como esperado, é preciso que o
-dispositivo já esteja conectando quando o MAME for iniciado.
+entrada, caso contrário, eles são alterados, consulte o capítulo
+:ref:`devicemap` para obter mais informações. Observe que para que esta
+configuração funcione como esperado, é preciso que o dispositivo já
+esteja conectando quando o MAME for iniciado.
 
 Defina o atributo ``device`` para a ID do dispositivo de entrada e
 defina o atributo ``controller`` para o token do dispositivo desejado
