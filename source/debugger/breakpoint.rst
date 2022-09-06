@@ -59,9 +59,9 @@ Exemplos:
 .. line-block::
 
     ``bp 1234``
-        Define um |pdi| |nace| e suspenda [#HALT]_ uma execução sempre que PC seja igual a ``1234``.
+        Define um |pdi| |nace| e suspenda [#HALT]_ uma execução sempre que PC seja igual à ``1234``.
     ``bp 23456,a0 == 0 && a1 == 0``
-        Define um |pdi| |nace| e suspenda uma execução sempre que PC seja igual a ``23456`` *e* a expressão ``(a0 == 0 && a1 == 0)`` seja verdadeira.
+        Define um |pdi| |nace| e suspenda uma execução sempre que PC seja igual à ``23456`` *e* a expressão ``(a0 == 0 && a1 == 0)`` seja verdadeira.
     ``bp 3456:audiocpu,1,{ printf "A0=%08X\n",a0 ; g }``
         Define um |pdi| na *CPU* com o caminho absoluto da etiqueta ``:audiocpu`` que suspenda uma execução sempre que PC seja igual à ``3456``. Quando isso acontecer, imprime ``A0=<a0val>`` no console do deputador e continua a execução.
     ``bp 45678:2,a0==100,{ a0 = ff ; g }``

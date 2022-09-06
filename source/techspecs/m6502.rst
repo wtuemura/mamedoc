@@ -428,8 +428,8 @@ e reiniciá-lo quando os ciclos tornaram-se disponíveis novamente.
 O plano de implementação seria:
 
 - Tem um método de **delay()** na CPU que remove os ciclos *icount*.
-  Caso o *icount* torne-se menor ou igual a zero, faça com que lance uma
-  exceção **suspend()**.
+  Caso o *icount* torne-se menor ou igual à ``0``, faça com que lance
+  uma exceção **suspend()**.
 
 - Mude o gerador de código para gerar:
 

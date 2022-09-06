@@ -300,7 +300,7 @@ Para ver a condição do armazenamento cache faça ``ccache -s``::
 	max cache size                      10.0 GB
 
 Antes de usar tenha certeza que a variável de ambiente ``USE_CCACHE``
-exista e seja igual a **1**, caso não exista, defina com ``export
+exista e seja igual à **1**, caso não exista, defina com ``export
 USE_CCACHE=1`` antes da compilação ou salve no arquivo ``~/.bashrc``
 como já foi descrito em :ref:`compiling-msys2-manually`.
 

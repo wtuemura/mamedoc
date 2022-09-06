@@ -1326,8 +1326,8 @@ compartilhado dos objetos, a classe pode ser configurada para reter
 vários itens alocados mais recentemente utilizando uma **TrackingCount**
 maior que 1. Caso a **poly_array** esteja gerenciando objetos para duas
 unidades de textura por exemplo, será possível definir o
-**TrackingCount** igual a 2 e passar o índice da unidade da textura em
-chamadas para ``next()`` e ``last()``. Após um *reset*, a classe
+**TrackingCount** igual à ``2`` e passar o índice da unidade da textura
+em chamadas para ``next()`` e ``last()``. Após um *reset*, a classe
 **poly_array** lembrará do objeto alocado mais recentemente para cada
 uma das unidades de forma independente.
 
@@ -1454,7 +1454,7 @@ devolvido no **chunk**:
 	``countiguous()`` no (**index** + **chunk**) para ter acesso ao
 	restante.
 
-		**Retorna:** Um ponteiro ao primeiro item no pedaço contíguo. Nenhuma verificação do intervalo é feito, portanto a sua responsabilidade é garantir que **index** + **count** seja menor ou igual a ``count()``.
+		**Retorna:** Um ponteiro ao primeiro item no pedaço contíguo. Nenhuma verificação do intervalo é feito, portanto a sua responsabilidade é garantir que **index** + **count** seja menor ou igual à ``count()``.
 
 
 .. _poly_manager-indexof:

@@ -136,25 +136,25 @@ Opções disponíveis
 
 **gl_glsl**
 
-	Caso seja igual a **1**, ativa o glsl, desativa se for definido como
-	**0**.
+	Caso seja igual à ``1`` ativa o glsl, desativa se for definido como
+	``0``.
 
-		O valor predefinido é **0**.
+		O valor predefinido é ``0``.
 
 **-gl_glsl_filter** <*valor*>
 
 	Habilita a interpolação da imagem **OpenGL GLSL**, os valores
 	válidos [3]_ são:
 
-	* **0**, Simples: Método de interpolação rápida e menos precisa que
+	* ``0``, Simples: Método de interpolação rápida e menos precisa que
 	  deixa os pixels de forma serrilhada pois utiliza a técnica de
 	  interpolação do
 	  `vizinho mais próximo <https://pt.wikipedia.org/wiki/Interpolação_por_vizinho_mais_próximo>`_.
-	* **1**, Bilinear: Método de interpolação lenta e de qualidade
+	* ``1`` Bilinear: Método de interpolação lenta e de qualidade
 	  mediana, suaviza a transição entre as cores dos pixels deixando a
 	  imagem mais suavizada como um todo. Veja também
 	  :ref:`-filter <mame-commandline-filter>`.
-	* **2**, Bicúbico: Método de interpolação lenta e mais precisa,
+	* ``2``, Bicúbico: Método de interpolação lenta e mais precisa,
 	  suaviza a transição entre as cores dos pixels próximos gerando uma
 	  gradação mais suave. Também suaviza a imagem porém nem tanto como
 	  o método bilinear.
@@ -164,8 +164,8 @@ Opções disponíveis
 |	``glsl_shader_mame9``
 |
 
-	Especifica quais dos sombreadores usar, na ordem entre **0** a
-	**9**. Informe-se com o autor do seu pacote de sombreadores para
+	Especifica quais dos sombreadores usar, na ordem entre ``0`` a
+	``9``. Informe-se com o autor do seu pacote de sombreadores para
 	saber em qual ordem rodar primeiro para que o efeito seja exibido de
 	forma correta.
 

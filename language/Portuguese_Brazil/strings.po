@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME 0.245\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-01 02:13-1000\n"
-"PO-Revision-Date: 2022-09-01 22:59-0300\n"
+"PO-Revision-Date: 2022-09-06 05:44-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -5850,11 +5850,11 @@ msgstr "Esquerda maior do que a direita"
 
 #: plugins/cheatfind/init.lua:682
 msgid "Left equal to right"
-msgstr "Esquerda igual a direita"
+msgstr "Esquerda igual à direita"
 
 #: plugins/cheatfind/init.lua:684
 msgid "Left not equal to right"
-msgstr "Esquerda não é igual a direita"
+msgstr "Esquerda não é igual à direita"
 
 #: plugins/cheatfind/init.lua:686
 msgid "Left equal to right with bitmask"

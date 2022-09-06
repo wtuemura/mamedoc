@@ -20,7 +20,7 @@ Comandos do ponto de identificação
 
 Os |pdis| avaliam uma expressão cada vez que a *CPU* executa uma
 instrução interrompendo-a e ativando o depurador caso o seu resultado
-seja verdadeiro (igual a um).
+seja verdadeiro (igual à ``1``).
 
 
 .. _debugger-command-rpset:
@@ -31,7 +31,7 @@ rpset
 **rp[set]** <*condição*>[,<*ação*>]
 
 Define um novo |pdi| que será iniciado quando a <*ação*> informada for
-verdadeira (igual a um). Para prevenir que a <*condição*> seja
+verdadeira (igual à ``1``). Para prevenir que a <*condição*> seja
 interpretada como uma atribuição, ela deve ser cercada por ``{`` ``}``.
 O parâmetro opcional <*ação*> oferece um comando que será executado
 sempre que um |pdi| for disparado. |oqts| ``rpset``.
@@ -45,11 +45,11 @@ Exemplos:
 .. line-block::
 
     ``rp {PC==150}``
-        Define um |pdi| que irá interromper a execução, sempre que o registro **PC** for igual a ``150``.
+        Define um |pdi| que irá interromper a execução, sempre que o registro **PC** for igual à ``150``.
     ``temp0=0; rp {PC==150},{temp0++; g}``
-        Define um |pdi| que aumentara o valor da variável ``temp0`` sempre que o registro **PC** for igual a ``150``.
+        Define um |pdi| que aumentara o valor da variável ``temp0`` sempre que o registro **PC** for igual à ``150``.
     ``rp {temp0==5}``
-        Define um |pdi| que irá interromper a execução sempre que a variável ``temp0`` for igual a ``150``.
+        Define um |pdi| que irá interromper a execução sempre que a variável ``temp0`` for igual à ``150``.
 
 |ret| :ref:`debugger-registerpoints-list`.
 

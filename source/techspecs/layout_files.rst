@@ -707,7 +707,7 @@ em comum:
 * Cada componente pode ter um sub-elemento ``bounds`` definindo a
   sua posição e o seu tamanho (consulte
   :ref:`layfile-concepts-coordinates`). Na ausência de tal elemento os
-  limites serão predefinidos a uma unidade quadrada com o valor igual a
+  limites serão predefinidos a uma unidade quadrada com o valor igual à
   **1.0** tanto para a largura quanto para a altura e com o canto
   superior esquerdo com valor **0.0**.
   
@@ -902,8 +902,8 @@ Há suporte para os seguintes componentes:
 	``maxstate`` deve ser um número positivo; na sua ausência o valor
 	predefinido é **999**.  Um atributo ``align`` pode ser usado para
 	determinar o alinhamento do texto através do atributo ``align``
-	que deve ser um número inteiro onde **0** significa alinhar
-	ao centro, **1** alinhar à esquerda e **2** alinhar à direita.
+	que deve ser um número inteiro onde ``0`` significa alinhar
+	ao centro, ``1`` alinhar à esquerda e ``2`` alinhar à direita.
 	Na sua ausência, o texto será centralizado automaticamente.
 
 Um exemplo de um elemento que desenha um texto estático do lado esquerdo
@@ -1097,7 +1097,7 @@ elemento ``view``:
 	``tag``).
 	Caso esteja presente, o atributo ``index`` deve ter um valor inteiro
 	e positivo. As telas são numeradas através da ordem em que aparecem
-	na configuração do sistema, começando com zero (**0**). Caso o
+	na configuração do sistema, começando com zero (``0``). Caso o
 	atributo ``tag`` esteja presente, este deve ser o caminho da
 	etiqueta para a tela com relação ao dispositivo para que provoque a
 	leitura do layout. As telas são desenhadas na ordem em que aparecem
@@ -1157,8 +1157,8 @@ O elemento ``orientation`` suporta os seguintes atributos opcionais:
 **rotate**
 
 	Se presente, aplica rotação no sentido horário em incrementos de
-	90 graus. Deve ser um número inteiro igual a **0**, **90**,
-	**180 (90 + 90)** ou **270 (180 + 90)**.
+	``90`` graus. Deve ser um número inteiro igual à ``0`` ``90``,
+	``180 (90 + 90)`` ou ``270 (180 + 90)``.
 
 **swapxy**
 
@@ -1197,7 +1197,7 @@ redimensionados usando um elemento ``bounds``
 (consulte :ref:`layfile-concepts-coordinates` para mais informações).
 Na ausência do sub-elemento ``bounds`` os elementos "screen" e "layout"
 retornam aos valores predefinidos em unidades quadradas (origem em
-**0,0** e ambos os valores de altura e largura serão igual a **1**).
+**0,0** e ambos os valores de altura e largura serão igual à ``1``
 
 Na ausência do elemento ``bounds``, os grupos são expandidos sem
 qualquer tradução ou redimensionamento (note que os grupos podem
@@ -1455,8 +1455,8 @@ e :ref:`layfile-parts-views`). Um bloco que se repete cria um escopo de
 parâmetros agrupados dentro do escopo do parâmetro do seu elemento
 léxico principal (DOM).
 
-O exemplo abaixo geram rótulos numéricos em branco a partir do zero até
-o onze com o nome ``label_0``, ``label_1`` e assim por diante (dentro do
+O exemplo abaixo geram rótulos numéricos em branco a partir de ``0`` até
+``11`` com o nome ``label_0``, ``label_1`` e assim por diante (dentro do
 elemento de primeiro nível ``mamelayout``):
 
 .. code-block:: xml
@@ -1555,8 +1555,8 @@ Observe que o parâmetro ``mask`` no elemento mais interno ``repeat``
 recebe o seu valor inicial a partir do parâmetro correspondentemente
 nomeado no delimitador do escopo, porém sem alterá-lo.
 
-Gerando um tabuleiro de xadrez com valores alfa alternados entre 0.4 e
-0.2 (dentro de um elemento ``group`` ou ``view``):
+Gerando um tabuleiro de xadrez com valores alfa alternados entre ``0.4``
+e ``0.2`` (dentro de um elemento ``group`` ou ``view``):
 
 .. code-block:: xml
 
@@ -1751,16 +1751,16 @@ região da porta E/S que o item deve ativar.
 O valor da porta E/S é mascarado com o valor do ``inputmask`` e feito
 uma operação XOR [#XOR]_ com o valor predefinido da região da porta E/S
 caso o elemento ``element`` não tenha qualquer atributo ``inputraw`` ou
-caso o valor do atributo ``inputraw`` seja **no**. Em geral é utilizado
+caso o valor do atributo ``inputraw`` seja ``no``. Em geral é utilizado
 para fornecer um retorno visual para os botões que sejam clicáveis como
 valores normais para os interruptores alto-ativo e baixo-ativo.
 
 O estado do elemento será obtido a partir dos valores da porta E/S
 mascarado com o valor do ``inputmask`` e deslocada para a direita
 para remover os zeros restantes caso o elemento ``element`` tenha um
-atributo ``inputraw`` com o valor **yes** (por exemplo, uma máscara com
-o valor **0x5** não terá deslocamento algum enquanto uma máscara com o
-valor **0xb0** resultará num deslocamento com quatro bits à direita).
+atributo ``inputraw`` com o valor ``yes`` (por exemplo, uma máscara com
+o valor ``0x5`` não terá deslocamento algum enquanto uma máscara com o
+valor ``0xb0`` resultará num deslocamento com quatro bits à direita).
 É útil para obter os valores analógicos das entradas ou das posições.
 
 .. raw:: latex
@@ -1824,8 +1824,8 @@ instâncias do mesmo tipo do dispositivo.
 O estado da animação será mascarado com o valor ``mask`` e deslocada
 para a direita para remover os zeros restantes caso um sub-elemento
 ``animate`` tenha um atributo ``mask`` (por exemplo, uma máscara com o
-valor **0x5** não terá deslocamento algum enquanto uma máscara com o
-valor **0xb0** resultará num deslocamento com quatro bits à direita).
+valor ``0x5`` não terá deslocamento algum enquanto uma máscara com o
+valor ``0xb0`` resultará num deslocamento com quatro bits à direita).
 Observe que o atributo ``mask`` aplica o valor da saída (determinado
 através do atributo ``inputtag``). Na presença do atributo ``mask`` o
 seu valor deve ser inteiro, na ausência, é equivalente a todas as
@@ -1911,8 +1911,8 @@ Após o carregamento interno dos layouts (fornecido pelo desenvolvedor) e
 do layout externo (fornecido pelo usuário). As seguintes visualizações
 são geradas automaticamente:
 
-* Será exibido a mensagem "*No screens Attached to the system*" ou
-  "*Sem telas anexadas ao sistema*" caso o sistema não possua telas e
+* Será exibido a mensagem "**No screens Attached to the system**" ou
+  "**Sem telas anexadas ao sistema**" caso o sistema não possua telas e
   tão pouco sejam encontradas visualizações viáveis no sistema interno ou
   externo do layout.
 * A tela será exibida com a sua proporção física e com a rotação
@@ -1977,10 +1977,10 @@ geração de identificadores válidos.
 
 O status gera os seguintes valores:
 
-* **0** (zero) quando for concluído com êxito.
-* **1** quando houver um erro durante a invocação através da linha de comando.
-* **2** caso haja erro no arquivo de entrada.
-* **3** caso seja um erro de E/S.
+* ``0`` (zero) quando for concluído com êxito.
+* ``1`` quando houver um erro durante a invocação através da linha de comando.
+* ``2`` caso haja erro no arquivo de entrada.
+* ``3`` caso seja um erro de E/S.
 
 Ao definir um arquivo na saída, este será criado ou substituído caso
 seja concluído com sucesso ou será removido caso haja um erro.
@@ -2433,7 +2433,7 @@ Conectando os botões e ativando as suas funções lógicas
 A referência "ref" ``esquerda``, ``direita`` e ``disparo`` são os nomes
 dos conjuntos das imagens definidos lá no começo, durante o inicio da
 emulação o MAME identifica o ``defstate`` (condição/estado
-inicial) inicial, como o seu valor é **0** (zero), a primeira imagem que
+inicial) inicial, como o seu valor é ``0`` (zero), a primeira imagem que
 aparece será aquela que estiver definida como ``state=0``. Quando
 acionarmos o botão e a sua condição mudar para ``state=1`` o MAME
 carregará a imagem definida como ``state=1``, a mecânica para todo este
@@ -3371,7 +3371,7 @@ Ambos os controles utilizam os mesmos valores para ``state`` e
 ``edge:joy:JOY1`` define que este é o controle do **jogador 1** e que
 ``edge:joy:JOY2`` é o controle do **jogador 2**.
 
-Contudo há sistemas na **CPS2** que apresentam o mesmo valor ``IN0``
+Contudo, há sistemas na **CPS2** que apresentam o mesmo valor ``IN0``
 no ``inputtag`` para ambos os jogadores, nestes casos devemos recorrer
 novamente ao código fonte do MAME para este driver, observando a linha
 `#1001 <https://github.com/mamedev/mame/blob/master/src/mame/drivers/cps2.cpp#L1001>`_
@@ -3451,20 +3451,20 @@ informações consulte :ref:`mamemenu-general-inputs-P1`.
      - Direcional **esquerda**
      - Direcional **direita**
    * - 2º Jogador
-     - **R**
-     - **F**
-     - **G**
-     - **D**
+     - :kbd:`R`
+     - :kbd:`F`
+     - :kbd:`G`
+     - :kbd:`D`
    * - 3º Jogador
-     - **I**
-     - **K**
-     - **J**
-     - **L**
+     - :kbd:`I`
+     - :kbd:`K`
+     - :kbd:`J`
+     - :kbd:`L`
    * - 4º Jogador
-     - Teclado num. **8**
-     - Teclado num. **2**
-     - Teclado num. **4**
-     - Teclado num. **6**
+     - Teclado num. :kbd:`8`
+     - Teclado num. :kbd:`2`
+     - Teclado num. :kbd:`4`
+     - Teclado num. :kbd:`6`
 
 .. raw:: latex
 
@@ -3527,7 +3527,7 @@ Assim como foi descrito em :ref:`layfile-parts-collections` isso é
 possível organizando os objetos da tela dentro dos elementos
 ``collections``, quando a visualização tiver esta opção, o jogador
 poderá desligar qualquer objeto na tela desde que tenha sido organizado
-desta maneira pelo autor da arte. Use ``visible`` **yes** ou **no**
+desta maneira pelo autor da arte. Use ``visible`` ``yes`` ou ``no``
 (também funciona com ``1`` ou ``0``) dentro do elemento ``collection``
 caso queira que ele já inicie **ligado** ou **desligado**. Baixe este
 arquivo para ver como funciona na prática com o sistema
