@@ -481,6 +481,8 @@ ajustes podem aparecer porém os principais são estes:
 
 	\clearpage
 
+.. _mamemenus-video-options:
+
 Opções do vídeo
 ~~~~~~~~~~~~~~~
 
@@ -536,10 +538,10 @@ do sistema emulado e as suas respectivas opções, quando houver.
 		O valor predefinido é ``None``.
 
 
-* :guilabel:`Aproxime a área da tela`
+* :guilabel:`Aproxime para a região da tela`
 
-  Quando o sistema estiver usando uma artwork onde exista uma tela,
-  somente esta região será aproximada.
+  Quando o sistema estiver usando uma ilustração (artwork) onde exista
+  o recorte de uma tela, somente esta região será aproximada.
 
 		O valor predefinido é ``Desligado``.
 
