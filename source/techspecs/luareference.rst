@@ -136,10 +136,10 @@ Propriedades
 Attotime
 ~~~~~~~~
 
-Encapsula a classe ``attotime`` do MAME, o que representa um intervalo
-de tempo de alta precisão. Os valores *attotime* suportam a adição e a
-subtração com outros valores *attotime*, assim como a multiplicação e a
-divisão por números inteiros.
+|encaa| ``attotime`` do MAME, o que representa um intervalo de tempo de
+alta precisão. Os valores *attotime* suportam a adição e a subtração com
+outros valores *attotime*, assim como a multiplicação e a divisão por
+números inteiros.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -291,9 +291,8 @@ Propriedades
 Gerenciador do sistema do MAME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``mame_machine_manager`` do MAME que contém o
-sistema em execução, o gerenciador da IU e os outros componentes
-globais.
+|encaa| ``mame_machine_manager`` do MAME que contém o sistema em
+execução, o gerenciador da IU e os outros componentes globais.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -339,10 +338,10 @@ Propriedades
 O sistema em execução
 ~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``running_machine`` do MAME que representa uma
-sessão da emulação. Ele fornece acesso aos outros principais objetos
-que implementam uma sessão da emulação, bem como a árvore dos
-dispositivos emulados.
+|encaa| ``running_machine`` do MAME que representa uma sessão da
+emulação. Ele fornece acesso aos outros principais objetos que
+implementam uma sessão da emulação, bem como a árvore dos dispositivos
+emulados.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -586,9 +585,9 @@ Propriedades
 Gerenciador do vídeo
 ~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``video_manager`` do MAME que é responsável por
-coordenar a exibição do vídeo que está sendo emulado, a aceleração da
-velocidade e da leitura de entradas do host.
+|encaa| ``video_manager`` do MAME que é responsável por coordenar a
+exibição do vídeo que está sendo emulado, a aceleração da velocidade e
+da leitura de entradas do host.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -741,8 +740,8 @@ Propriedades
 Gerenciador do áudio
 ~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``sound_manager`` do MAME que gerencia o gráfico do
-fluxo do áudio emulado e coordena a sua saída.
+|encaa| ``sound_manager`` do MAME que gerencia o gráfico do fluxo do
+áudio emulado e coordena a sua saída.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -829,9 +828,9 @@ Propriedades
 Gerenciador da saída
 ~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``output_manager`` do MAME que fornece acesso às
-saídas do sistema que podem ser usadas para arte interativa ou
-consumidas por programas externos.
+|encaa| ``output_manager`` do MAME que fornece acesso às saídas do
+sistema que podem ser usadas para arte interativa ou consumidas por
+programas externos.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -891,9 +890,9 @@ Métodos
 Gerenciador dos parâmetros
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``parameters_manager`` do MAME que fornece um
-armazenamento simples do valor da chave para os  metadados das
-definições da ROM do sistema.
+|encaa| ``parameters_manager`` do MAME que fornece um armazenamento
+simples do valor da chave para os  metadados das definições da ROM do
+sistema.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -928,8 +927,8 @@ Métodos
 O gerenciador da IU
 ~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``mame_ui_manager`` do MAME que lida com menus e as
-outras funcionalidades da interface do usuário.
+|encaa| ``mame_ui_manager`` do MAME que lida com menus e as outras
+funcionalidades da interface do usuário.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -1407,7 +1406,7 @@ Instanciação
 Dispositivo
 ~~~~~~~~~~~
 
-Encapsula a classe ``device_t`` do MAME que serve de base para todas as
+|encaa| ``device_t`` do MAME que serve de base para todas as
 classes dos dispositivos.
 
 Instanciação
@@ -1557,15 +1556,13 @@ Propriedades
 Dispositivo paleta
 ~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``device_palette_interface`` do MAME que representa
-um dispositivo que traduz uma cadeia de valores em cores.
+|encaa| ``device_palette_interface`` do MAME que representa um
+dispositivo que traduz uma cadeia de valores em cores.
 
-As cores estão no formato alfa/vermelho/verde/azul (ARGB). Os valores
-dos canais estão no intervalo de 0 (transparente ou desligado) até
-``255`` (opaco ou com intensidade total). Os valores do canal devem ser
-empacotados em bytes com 32 bits inteiros não assinados pelo valor do
-canal alfa, na ordem alpha, vermelho, verde, azul a partir do byte mais
-importante até o byte com menor importância.
+|acsre| alfa/vermelho/verde/azul (ARGB). |osvalo|. Os valores do canal
+devem ser empacotados em bytes com 32 bits inteiros não assinados pelo
+valor do canal alfa, na ordem alpha, vermelho, verde, azul a partir do
+byte mais importante até o byte com menor importância.
 
 
 Instanciação
@@ -1661,6 +1658,11 @@ Métodos
 Propriedades
 ^^^^^^^^^^^^
 
+**palette.palette** |sole|
+
+	A :ref:`paleta <luareference-render-palette>` adjacente gerenciada
+	pelo dispositivo.
+
 **palette.entries** |sole|
 
 	A quantidade dos registros de cores na paleta.
@@ -1695,8 +1697,8 @@ Propriedades
 Dispositivo tela
 ~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``screen_device`` do MAME que representa uma saída
-emulada vídeo.
+|encaa| ``screen_device`` do MAME que representa uma saída emulada de
+vídeo.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -1778,11 +1780,14 @@ Métodos
 
 **screen:pixels()**
 
-	Retorna todos os pixels visíveis como inteiros com 32 bits
-	empacotados numa *string* binária em ordenado como Endian. Pixels
-	são organizados em ordem maior da linha, da esquerda para direita e
-	depois de cima para baixo. Os valores dos pixels são índices da
-	paleta ou cores no formato RGB compactadas em inteiros com 32 bits.
+	Retorna todos os pixels visíveis, assim como, a região visível da
+	largura e da altura.
+
+	Os pixels retornam como inteiros com 32 bits encapsulados numa
+	*string* binária ordenado em *Endian*. Os pixels são organizados em
+	ordem maior da linha, da esquerda para direita e depois de cima para
+	baixo. Os valores dos pixels são índices da paleta ou cores no
+	formato RGB encapsuladas em inteiros com 32 bits.
 
 
 **screen:draw_box(left, up, right, down, [linha], [preenchimento])**
@@ -1799,12 +1804,10 @@ Métodos
 	As coordenadas são limitadas à área da tela.
 
 	A abrangência das cores de preenchimento e da linha estão no formato
-	alfa/vermelho/verde/azul (ARGB). Os valores dos canais estão no
-	intervalo entre ``0`` (transparente ou desligado) e ``255`` (opaco
-	ou com intensidade total). Os valores dos canais das cores não são
-	previamente multiplicados pelo valor alfa. Os valores dos canais
-	devem ser empacotados em bytes de um inteiro com 32 bits sem
-	assinatura na ordem alfa, vermelho, verde, azul do byte mais
+	alfa/vermelho/verde/azul (ARGB). |osvalo|. Os valores dos canais das
+	cores não são previamente multiplicados pelo valor alfa. Os valores
+	dos canais devem ser empacotados em bytes de um inteiro com 32 bits
+	sem assinatura na ordem alfa, vermelho, verde, azul do byte mais
 	importante para o de menor importância. Caso a cor da linha não seja
 	informada, é usada a cor do texto da interface; caso a cor de
 	preenchimento não seja informada, é usada a cor de fundo da
@@ -1825,15 +1828,12 @@ Métodos
 	As coordenadas são limitadas à área da tela.
 
 	A abrangência da cor da linha está no formato
-	alfa/vermelho/verde/azul (ARGB). Os valores dos canais estão no
-	intervalo entre ``0`` (transparente ou desligado) e ``255`` (opaco
-	ou com intensidade total). Os valores dos canais das cores não são
-	previamente multiplicados pelo valor alfa. Os valores dos canais
-	devem ser empacotados em bytes de um inteiro com 32 bits sem
-	assinatura na ordem alfa, vermelho, verde, azul do byte mais
-	importante para o de menor importância.
-	Caso a cor da linha não seja informada, é usada a cor do texto da
-	interface.
+	alfa/vermelho/verde/azul (ARGB). |osvalo|. Os valores dos canais das
+	cores não são previamente multiplicados pelo valor alfa. Os valores
+	dos canais devem ser empacotados em bytes de um inteiro com 32 bits
+	sem assinatura na ordem alfa, vermelho, verde, azul do byte mais
+	importante para o de menor importância. Caso a cor da linha não seja
+	informada, é usada a cor do texto da interface.
 
 
 .. raw:: latex
@@ -1862,17 +1862,15 @@ Métodos
 	e para baixo.
 	As coordenadas são limitadas à área da tela.
 
-	As cores do primeiro plano e do plano de fundo estão no formato ARGB
-	alfa/vermelho/verde/azul. Os valores dos canais estão no
-	intervalo de 0 (transparente ou desligado) até ``255`` (opaco
-	ou com intensidade total). Os valores dos canais da cor não são
-	previamente multiplicados pelo valor alpha.
-	Os valores do canal devem ser empacotados em bytes com 32 bits
-	inteiros não assinados pelo valor do canal alfa, na ordem alpha,
-	vermelho, verde, azul a partir do byte mais importante até o byte
-	com menor importância. Caso a cor do primeiro plano não seja
-	informado, a cor do texto da interface será usada; caso a cor de
-	fundo não seja informada, a cor do fundo da interface será usada.
+	As cores do primeiro plano e do plano de fundo estão no formato
+	alfa/vermelho/verde/azul (ARGB). |osvalo|. Os valores dos canais da
+	cor não são previamente multiplicados pelo valor alpha. Os valores
+	do canal devem ser empacotados em bytes com 32 bits inteiros não
+	assinados pelo valor do canal alfa, na ordem alpha, vermelho, verde,
+	azul a partir do byte mais importante até o byte com menor
+	importância. Caso a cor do primeiro plano não seja informado, a cor
+	do texto da interface será usada; caso a cor de fundo não seja
+	informada, a cor do fundo da interface será usada.
 
 Propriedades
 ^^^^^^^^^^^^
@@ -1983,9 +1981,9 @@ Propriedades
 Dispositivo da imagem em fita cassete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``cassette_image_device`` do MAME que representa um
-mecanismo cassete compacto normalmente usado por um computador doméstico
-para armazenamento dos programas.
+|encaa| ``cassette_image_device`` do MAME que representa um mecanismo
+cassete compacto normalmente usado por um computador doméstico para o
+armazenamento dos programas.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -2092,7 +2090,7 @@ Propriedades
 Interface para os dispositivos de imagem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``device_image_interface`` do MAME que é uma mistura
+|encaa| ``device_image_interface`` do MAME que é uma mistura
 implementada através dos dispositivos que podem carregar os arquivos de
 imagem da mídia.
 
@@ -2284,7 +2282,7 @@ Propriedades
 Interface para os dispositivos slot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``device_slot_interface`` do MAME que é uma mistura
+|encaa| ``device_slot_interface`` do MAME que é uma mistura
 implementada através dos dispositivos que instanciam um dispositivo
 herdado que foi definido pelo usuário.
 
@@ -2339,8 +2337,8 @@ Propriedades
 O formato da imagem da mídia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``image_device_format`` do MAME que descreve o
-formato do arquivo da mídia compatível através da
+|encaa| ``image_device_format`` do MAME que descreve o formato do
+arquivo da mídia compatível através da
 :ref:`interface para os dispositivos de imagem
 <luareference-dev-diimage>`.
 
@@ -2391,10 +2389,10 @@ Propriedades
 Opções do slot
 ~~~~~~~~~~~~~~
 
-Encapsula a classe ``device_slot_interface::slot_option`` do MAME que
-representa um dispositivo herdado da :ref:`interface para os
-dispositivos slot <luareference-dev-dislot>` que podem ser instanciados
-para configuração.
+|encaa| ``device_slot_interface::slot_option`` do MAME que representa um
+dispositivo herdado da :ref:`interface para os dispositivos
+slot <luareference-dev-dislot>` que podem ser instanciados para
+configuração.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -2472,9 +2470,8 @@ sistema emulado da memória.
 Gerenciador da memória
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``memory_manager`` do MAME que permite os
-compartilhamentos da memória, os bancos e as regiões num sistema que
-será enumerado.
+|encaa| ``memory_manager`` do MAME que permite os compartilhamentos da
+memória, os bancos e as regiões num sistema que será enumerado.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -2522,8 +2519,8 @@ Propriedades
 Espaço de endereçamento da memória
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``address_space`` do MAME que representa um espaço
-do endereço pertencente a um dispositivo.
+|encaa| ``address_space`` do MAME que representa um espaço do endereço
+pertencente a um dispositivo.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -2803,8 +2800,8 @@ Propriedades
 O mapa de endereçamento da memória
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``address_map`` do MAME que é usada para configurar
-os manipuladores para um espaço do endereço.
+|encaa| ``address_map`` do MAME que é usada para configurar os
+manipuladores para um espaço do endereço.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -2862,8 +2859,8 @@ Propriedades
 Entrada do endereçamento da memória
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``address_map_entry`` do MAME que representa uma
-entrada na configuração de um mapa de endereços.
+|encaa| ``address_map_entry`` do MAME que representa uma entrada na
+configuração de um mapa de endereços.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -2949,7 +2946,7 @@ Propriedades
 Dados do manipulador do mapa de endereçamento da memória
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``map_handler_data`` do MAME que oferece os dados de
+|encaa| ``map_handler_data`` do MAME que oferece os dados de
 configuração para os manipuladores nos mapas dos endereços.
 
 Instanciação
@@ -3003,8 +3000,8 @@ Propriedades
 Compartilhamento da memória
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``memory_share`` do MAME que representa um nome
-alocado na zona da memória.
+|encaa| ``memory_share`` do MAME que representa um nome alocado na
+região da memória.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -3098,8 +3095,7 @@ Propriedades
 Banco da memória
 ~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``memory_bank`` do MAME que representa uma zona
-denominada da memória.
+|encaa| ``memory_bank`` do MAME que representa uma região determinada da memória.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -3139,9 +3135,9 @@ Propriedades
 Região da memória
 ~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``memory_region`` do MAME que representa a região da
-memória usada para armazenar dados somente leitura como ROMs ou o
-resultado fixo das descriptografias.
+|encaa| ``memory_region`` do MAME que representa a região da memória
+usada para armazenar dados somente leitura como as ROMs ou o resultado
+fixo do que for descriptografado.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -3236,8 +3232,8 @@ as portas de E/S no sistema emulado.
 Gerenciador da porta de E/S
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``ioport_manager`` do MAME que oferece acesso para as
-portas emuladas de E/S e lida com as configurações da entrada.
+|encaa| ``ioport_manager`` do MAME que oferece acesso para as portas
+emuladas de E/S e lida com as configurações da entrada.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -3368,8 +3364,8 @@ Propriedades
 Gerenciador do teclado natural
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``natural_keyboard`` do MAME que gerencia o teclado
-emulado e as entradas do teclado.
+|encaa| ``natural_keyboard`` do MAME que gerencia o teclado emulado e as
+entradas do teclado.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -3545,8 +3541,7 @@ Propriedades
 Porta de E/S
 ~~~~~~~~~~~~
 
-Encapsula a classe ``ioport_port`` do MAME que representa uma porta
-emulada de E/S.
+|encaa| ``ioport_port`` do MAME que representa uma porta emulada de E/S.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -3629,8 +3624,8 @@ Propriedades
 Campo da porta de E/S
 ~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``ioport_field`` do MAME que representa um campo
-dentro da porta de E/S.
+|encaa| ``ioport_field`` do MAME que representa um campo dentro da porta
+de E/S.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -3904,8 +3899,8 @@ Propriedades
 Estado do campo da porta de E/S em tempo real
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``ioport_field_live`` do MAME que representa o estado
-em tempo real de uma porta de E/S.
+|encaa| ``ioport_field_live`` do MAME que representa o estado em tempo
+real de uma porta de E/S.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -3993,8 +3988,8 @@ Propriedades
 Gerenciador da entrada
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``input_manager`` do MAME que lê os dispositivos da
-entrada do host e verifica se as entradas configuradas estão ativas.
+|encaa| ``input_manager`` do MAME que lê os dispositivos da entrada do
+host e verifica se as entradas configuradas estão ativas.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -4134,8 +4129,8 @@ Propriedades
 Código da condição da entrada
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``input_code_poller`` do MAME que é usada para
-pesquisar as entradas do host que estão sendo ativadas.
+|encaa| ``input_code_poller`` do MAME que é usada para pesquisar as
+entradas do host que estão sendo ativadas.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -4182,9 +4177,9 @@ Métodos
 Sequência da condição da entrada
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe da condição ``input_sequence_poller`` do MAME que
-permite que os usuários atribuam combinações na entrada do host para as
-entradas emuladas e outras ações.
+|encaa| da condição ``input_sequence_poller`` do MAME que permite que os
+usuários atribuam combinações na entrada do host para as entradas
+emuladas e outras ações.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -4249,8 +4244,8 @@ Propriedades
 Sequência da entrada
 ~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``input_seq`` do MAME que representa a combinação das
-entradas do host que possam ser lidos ou designados para uma determinada
+|encaa| ``input_seq`` do MAME que representa a combinação das entradas
+do host que possam ser lidos ou designados para uma determinada
 entrada da emulação. As sequências da entrada podem ser manipuladas
 usando os métodos do
 :ref:`gerenciador da entrada <luareference-input-inputman>`. 
@@ -4326,9 +4321,8 @@ Propriedades
 Host da classe do dispositivo da entrada
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``input_class`` do MAME que representa uma categoria
-da entrada do host dos dispositivos (por exemplo, teclados ou
-joysticks).
+|encaa| ``input_class`` do MAME que representa uma categoria da entrada
+do host dos dispositivos (por exemplo, teclados ou joysticks).
 
 Instanciação
 ^^^^^^^^^^^^
@@ -4375,8 +4369,8 @@ Propriedades
 Host do dispositivo da entrada
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``input_device`` do MAME que representa um
-dispositivo da entrada do host.
+|encaa| ``input_device`` do MAME que representa um dispositivo da
+entrada do host.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -4426,8 +4420,8 @@ Propriedades
 Host do item do dispositivo da entrada
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``input_device_item`` do MAME que representa uma
-única entrada do host (por exemplo uma chave, botão ou eixo).
+|encaa| ``input_device_item`` do MAME que representa uma única entrada
+do host (por exemplo uma chave, botão ou eixo).
 
 Instanciação
 ^^^^^^^^^^^^
@@ -4483,8 +4477,8 @@ Propriedades
 Gerenciador da entrada da IU
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``ui_input_manager`` do MAME que é usada para a
-entrada de alto nível.
+|encaa| ``ui_input_manager`` do MAME que é usada para a entrada de alto
+nível.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -4557,8 +4551,8 @@ interface do usuário.
 Limites do renderizador
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``render_bounds`` do MAME que representa um retângulo
-usando as coordenadas de ponto flutuante.
+|encaa| ``render_bounds`` do MAME que representa um retângulo usando as
+coordenadas de ponto flutuante.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -4668,10 +4662,10 @@ Propriedades
 Renderização da cor
 ~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``render_color`` do MAME que representa um formato
-de cor ARGB (alfa, vermelho, verde, azul). Os canais são valores de
-ponto flutuante que variam de zero (0, alfa transparente ou sem cor) a
-um (1, opaco ou totalmente colorido). Os valores do canal da cor não são
+|encaa| ``render_color`` do MAME que representa um formato de cor ARGB
+(alfa, vermelho, verde, azul). Os canais são valores de ponto flutuante
+que variam entre zero (``0``, alfa transparente ou sem cor) a um (``1``,
+opaco ou totalmente colorido). Os valores do canal da cor não são
 pré-multiplicados pelo valor do canal alfa.
 
 Instanciação
@@ -4689,7 +4683,8 @@ Instanciação
 
 	Cria a renderização de um objeto colorido com o alfa, vermelho,
 	verde e os valores do canal azul. Os argumentos devem ser todos
-	números de ponto flutuante no intervalo de zero (``0``) até um (1).
+	números de ponto flutuante no intervalo de zero (``0``) até um
+	(``1``).
 
 Métodos
 ^^^^^^^
@@ -4699,7 +4694,7 @@ Métodos
 
 	Define os valores dos canais alfa, vermelho, verde e azul da cor do
 	objeto. Os argumentos devem ser todos números de ponto flutuante no
-	intervalo de zero (``0``) até um (1).
+	intervalo de zero (``0``) até um (``1``).
 
 Propriedades
 ^^^^^^^^^^^^
@@ -4713,20 +4708,203 @@ Propriedades
 
 **color.r** |lees|
 
-	O valor do canal vermelho, no intervalo entre zero (0, desligado)
-	até um (1, intensidade total).
+	O valor do canal vermelho, no intervalo entre zero (``0`` desligado)
+	até um (``1``, intensidade total).
 
 
 **color.g** |lees|
 
-	O valor do canal verde, no intervalo entre zero (0, desligado) até
-	um (1, intensidade total).
+	O valor do canal verde, no intervalo entre zero (``0`` desligado)
+	até um (``1``, intensidade total).
 
 
 **color.b** |lees|
 
-	O valor do canal azul, no intervalo entre zero (0, desligado) até um
-	(1, intensidade total).
+	O valor do canal azul, no intervalo entre zero (``0`` desligado) até
+	um (``1``, intensidade total).
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _luareference-render-palette:
+
+Paleta
+~~~~~~
+
+|encaa| ``palette_t`` do MAME que representa uma tabela de cores que
+pode ser buscada pelo índice com base zero. As paletas sempre contêm
+as entradas adicionais especiais para o preto e branco.
+
+Cada cor possui um valor associado do ajuste do contraste. Cada grupo de
+ajuste possui valores associados do ajuste do brilho e do contraste. A
+paleta também possui valores gerais para o ajuste do brilho, do
+contraste e do gama.
+
+|acsre| alfa/vermelho/verde/azul (ARGB). |osvalo|. Os valores dos canais
+da cor não são previamente multiplicados pelo valor alpha. Os valores do
+canal devem ser empacotados em bytes com 32 bits inteiros não assinados
+pelo valor do canal alfa, na ordem alpha, vermelho, verde, azul a partir
+do byte mais importante até o byte com menor importância.
+
+
+Instanciação
+^^^^^^^^^^^^
+
+**emu.palette(cores, [grupos])**
+
+	Cria uma paleta com uma quantidade determinada de cores e de grupos
+	para o ajuste de brilho e contraste. A quantidade dos grupos das
+	cores retorna para um caso não seja definido. As cores são
+	inicializadas em preto, o ajuste do brilho é inicializado com
+	o valor ``0,0``, o contraste com ``1,0`` e o gama com ``1,0``.
+
+
+Métodos
+^^^^^^^
+
+**palette:entry_color(índice)**
+
+	Obtém a cor especificada |noin|.
+
+	Os valores do índice variam entre zero e |aquan|. Retorna a cor
+	preta caso o |insej|.
+
+
+**palette:entry_contrast(índice)**
+
+	Obtém o ajuste de contraste para a cor |noin|. Este é um número de
+	ponto flutuante.
+
+	Indexa a faixa de valores entre zero e |aquan|. Retorna ``1.0``
+	caso o |insej|.
+
+
+**palette:entry_adjusted_color(índice, [grupo])**
+
+	Obtém a cor com os ajustes aplicados de brilho, contraste e gama.
+
+	Caso o grupo seja definido, os valores do índice das cores variam de
+	zero |aquan| e os valores do grupo variam entre zero e a quantidade
+	dos grupos de ajuste na paleta menos um.
+
+	Quando um grupo não é definido, os valores do índice variam entre
+	zero a quantidade de cores multiplicado pelo número dos grupos de
+	ajuste mais um. Os valores do índice podem ser calculados
+	multiplicando o índice do grupo com base zero pela quantidade de
+	cores na paleta e adicionando o índice das cores com base zero. Os
+	dois últimos valores do índice correspondem às entradas especiais
+	para o preto e o branco respectivamente.
+
+	Retorna a cor preta caso a combinação definida do índice e do grupo
+	de ajuste seja inválida.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+**palette:entry_set_color(índice, cor)**
+
+	Define a cor |espno|. A cor pode ser definida através de um único
+	valor de 32 bits compactado ou como valores individuais para os
+	canais vermelho, verde e azul (nesta ordem).
+
+	Os valores do índice variam entre zero |aquan|. Gera um erro caso o
+	valor do índice seja inválido.
+
+
+**palette:entry_set_red_level(índice, nível)**
+
+	Define o valor da cor vermelha do canal |espno|. Os outros valores
+	não são afetados.
+
+	Os valores do índice variam entre ``0`` até |aquan|. |guec| o valor
+	do índice seja inválido.
+
+
+**palette:entry_set_green_level(índice, nível)**
+
+	Define o valor da cor verde do canal |espno|. Os outros valores
+	não são afetados.
+
+	Os valores do índice variam entre ``0`` até |aquan|. |guec| o valor
+	do índice seja inválido.
+
+**palette:entry_set_blue_level(índice, nível)**
+
+	Define o valor da cor azul do canal |espno|. Os outros valores
+	não são afetados.
+
+	Os valores do índice variam entre ``0`` até |aquan|. |guec| o valor
+	do índice seja inválido.
+
+
+**palette:entry_set_contrast(índice, nível)**
+
+	Define o valor de ajuste do contraste da cor |espno|. |eeun|.
+
+	Os valores do índice variam entre ``0`` até |aquan|. |guec| o valor
+	do índice seja inválido.
+
+
+**palette:group_set_brightness(grupo, brilho)**
+
+	Define o valor de ajuste do brilho para o grupo de ajuste |espno|.
+	|eeun|.
+
+	Os valores do grupo variam entre ``0`` até a quantidade dos grupos
+	de ajuste na palete meno um. |guec| o valor do índice seja inválido.
+
+
+**palette:group_set_contrast(grupo, contraste)**
+
+	Define o valor de ajuste do contraste para o grupo de ajuste
+	|espno|. |eeun|.
+
+	Os valores do grupo variam entre ``0`` até a quantidade dos grupos
+	de ajuste na palete meno um. |guec| o valor do índice seja inválido.
+
+
+Propriedades
+^^^^^^^^^^^^
+
+**palette.colors** |sole|
+
+	A quantidade de entradas das cores de cada grupo de cores na paleta.
+
+**palette.groups** |sole|
+
+	A quantidade dos grupos de cores na paleta.
+
+**palette.max_index** |sole|
+
+	A quantidade valida dos índices de cores na paleta.
+
+**palette.black_entry** |sole|
+
+	O índice da entrada especial para a cor preta.
+
+**palette.white_entry** |sole|
+
+	O índice da entrada especial para a cor branca.
+
+**palette.brightness** |soes|
+
+	Ajuste geral do brilho para a paleta. |eeun|.
+
+
+**palette.contrast** |soes|
+
+	Ajuste geral do contraste para a paleta. |eeun|.
+
+**palette.gamma** |soes|
+
+	Ajuste geral do gama para a paleta. |eeun|.
+
 
 .. raw:: latex
 
@@ -5041,8 +5219,8 @@ Propriedades
 Gerenciador do renderizador
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``render_manager`` do MAME que é responsável pelo
-gerenciamento do destino da renderização e das texturas.
+|encaa| ``render_manager`` do MAME que é responsável pelo gerenciamento
+do destino da renderização e das texturas.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -5105,9 +5283,9 @@ Propriedades
 Alvo do renderizador
 ~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``render_target`` do MAME que representa a saída de
-um canal de vídeo. Pode ser uma janela, a tela do host ou um alvo oculto
-usado para a renderização da captura da tela.
+|encaa| ``render_target`` do MAME que representa a saída de um canal de
+vídeo. Pode ser uma janela, a tela do host ou um alvo oculto usado para
+a renderização da captura da tela.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -5231,7 +5409,7 @@ Propriedades
 Contêiner do renderizador
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``render_container``.
+|encaa| ``render_container``.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -5265,12 +5443,10 @@ Métodos
 	área da janela ou da tela.
 
 	As cores de preenchimento e da linha estão no formato
-	alfa/vermelho/verde/azul (ARGB). Os valores dos canais estão no
-	intervalo entre ``0`` (transparente ou desligado) e ``255`` (opaco
-	ou com intensidade total). Os valores dos canais das cores não são
-	previamente multiplicados pelo valor alfa. Os valores dos canais
-	devem ser empacotados em bytes de um inteiro com 32 bits sem
-	assinatura na ordem alfa, vermelho, verde, azul do byte mais
+	alfa/vermelho/verde/azul (ARGB). |osvalo|. Os valores dos canais das
+	cores não são previamente multiplicados pelo valor alfa. Os valores
+	dos canais devem ser empacotados em bytes de um inteiro com 32 bits
+	sem assinatura na ordem alfa, vermelho, verde, azul do byte mais
 	importante para o de menor importância. Caso a cor da linha não seja
 	informada, é usada a cor do texto da interface; caso a cor de
 	preenchimento não seja informada, é usada a cor de fundo da
@@ -5301,11 +5477,8 @@ Métodos
 	valores dos canais estão no intervalo entre ``0`` (transparente ou
 	desligado) e ``255`` (opaco ou com intensidade total). Os valores
 	dos canais das cores não são previamente multiplicados pelo valor
-	alfa. Os valores dos canais devem ser empacotados em bytes de
-	um inteiro com 32 bits sem assinatura na ordem alfa, vermelho,
-	verde, azul do byte mais importante para o de menor importância.
-	Caso a cor da linha não seja informada, é usada a cor do texto da
-	interface do usuário.
+	alfa. |osval|. Caso a cor da linha não seja informada, é usada a cor
+	do texto da interface do usuário.
 
 
 .. raw:: latex
@@ -5332,9 +5505,7 @@ Métodos
 	dos canais estão no intervalo entre ``0`` (transparente ou
 	desligado) e ``255`` (opaco ou com intensidade total). Os valores
 	dos canais das cores não são previamente multiplicados pelo valor
-	alfa. Os valores dos canais devem ser empacotados em bytes de
-	um inteiro com 32 bits sem assinatura na ordem alfa, vermelho,
-	verde, azul do byte mais importante para o de menor importância.
+	alfa. |osval|.
 
 
 **container:draw_text(x|justify, y, text, [primeiro plano], [plano de fundo])**
@@ -5356,10 +5527,8 @@ Métodos
 	aspecto geralmente não é quadrada.
 	As coordenadas são limitadas à área da janela ou da tela.
 
-	As cores do primeiro plano e do plano de fundo estão no formato ARGB
-	alfa/vermelho/verde/azul. Os valores dos canais estão no
-	intervalo entre ``0`` (transparente ou desligado) até ``255``
-	inclusive (opaco ou com intensidade total). Os valores dos canais da
+	As cores do primeiro plano e do plano de fundo estão no formato
+	alfa/vermelho/verde/azul (ARGB). |osvalo|. Os valores dos canais da
 	cor não são previamente multiplicados pelo valor alpha.
 	Os valores do canal devem ser empacotados em bytes com 32 bits
 	inteiros não assinados pelo valor do canal alfa, na ordem alpha,
@@ -5430,8 +5599,8 @@ Propriedades
 Configurações do usuário do contêiner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``render_container::user_settings`` do MAME que
-representa os ajustes da imagem aplicados a um
+|encaa| ``render_container::user_settings`` do MAME que representa os
+ajustes da imagem aplicados a um
 :ref:`contêiner do renderizador <luareference-render-container>`.
 
 Instanciação
@@ -5502,9 +5671,9 @@ Propriedades
 Arquivo layout
 ~~~~~~~~~~~~~~
 
-Encapsula a classe ``layout_file`` do MAME, faz a representação das
-visualizações carregadas a partir de um :ref:`arquivo layout <layfile>`
-que pode ser utilizado para uma renderização final.
+|encaa| ``layout_file`` do MAME, faz a representação das visualizações
+carregadas a partir de um :ref:`arquivo layout <layfile>` que pode ser
+utilizado para uma renderização final.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -5540,7 +5709,7 @@ Propriedades
 
 **layout.views[]** |sole|
 
-	As :ref:luareference-render-layview` criados a partir do arquivo
+	As :ref:`luareference-render-layview` criados a partir do arquivo
 	layout.
 	As visualizações são indexadas por nomes não qualificados (ou seja,
 	o valor do atributo ``name``). As visualizações são ordenadas como
@@ -5564,11 +5733,11 @@ Propriedades
 Visualização do layout
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``layout_view`` do MAME que representa uma
-visualização que pode ser renderizada num determinado alvo.  As
-visualizações são criadas a partir dos arquivos layout, podem ser
-carregados a partir da arte externa, interna do MAME ou gerada
-automaticamente com base nas telas do sistema que está sendo emulado.
+|encaa| ``layout_view`` do MAME que representa uma visualização que pode
+ser renderizada num determinado alvo. As visualizações são criadas a
+partir dos arquivos layout, podem ser carregados a partir da arte
+externa, interna do MAME ou gerada automaticamente com base nas telas do
+sistema que está sendo emulado.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -5701,8 +5870,8 @@ Propriedades
 Visualização do item do layout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``layout_view_item`` do MAME que representa um item
-numa visualização. Um item é desenhado como uma superfície retangular
+|encaa| ``layout_view_item`` do MAME que representa um item numa
+visualização. Um item é desenhado como uma superfície retangular
 texturizada. A textura é fornecida por uma tela emulada ou um elemento
 do layout.
 
@@ -6335,8 +6504,8 @@ Propriedades
 Gerenciador do depurador
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``debugger_manager`` do MAME que fornece a interface
-principal para controlar o depurador.
+|encaa| ``debugger_manager`` do MAME que fornece a interface principal
+para controlar o depurador.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -6396,8 +6565,8 @@ Propriedades
 Interface de depuração do dispositivo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Encapsula a classe ``device_debug`` do MAME que fornece a interface do
-depurador para um dispositivo emulado da CPU.
+|encaa| ``device_debug`` do MAME que fornece a interface do depurador
+para um dispositivo emulado da CPU.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -6533,8 +6702,8 @@ Métodos
 Breakpoint
 ~~~~~~~~~~
 
-Encapsula a classe ``debug_breakpoint`` do MAME que representa um ponto
-de interrupção (breakpoint) para um dispositivo emulado da CPU.
+|encaa| ``debug_breakpoint`` do MAME que representa um ponto de
+interrupção (breakpoint) para um dispositivo emulado da CPU.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -6590,8 +6759,8 @@ Propriedades
 Watchpoint
 ~~~~~~~~~~
 
-Encapsula a classe ``debug_watchpoint`` do MAME que representa um ponto
-de controle (watchpoint) para um dispositivo emulado da CPU.
+|encaa| ``debug_watchpoint`` do MAME que representa um ponto de controle
+(watchpoint) para um dispositivo emulado da CPU.
 
 Instanciação
 ^^^^^^^^^^^^
@@ -6659,6 +6828,7 @@ Propriedades
 .. |onds| replace:: seu nome deve ser uma *string*
 .. |eeun| replace:: Este é um número de ponto flutuante
 .. |sole| replace:: (somente leitura)
+.. |soes| replace:: (somente escrita)
 .. |lees| replace:: (leitura e escrita)
 .. |nsqe| replace:: no sistema que está sendo emulado
 .. |ovdo| replace:: Os valores dos outros canais não são afetados
@@ -6683,7 +6853,7 @@ Propriedades
 	assume-se que seus valores também sejam zero (as linhas serão
 	armazenadas de forma contígua, a linha superior será colocada no
 	início do armazenamento do bitmap)
-.. |qlam| replace:: Quando a largura e/ou a altura for menor ou igual a
+.. |qlam| replace:: Quando a largura e/ou a altura for menor ou igual à
 	zero, nenhum armazenamento será alocado, independentemente dos
 	valores de inclinação ``X`` e ``Y``, assim como, ambos os valores
 	para a largura e para a altura do bitmap serão definidos como zero 
@@ -6714,3 +6884,17 @@ Propriedades
 	bitmap, o bitmap original será liberado
 .. |ascoo| replace:: As coordenadas nas unidades dos pixels têm base
 	zero
+.. |acsre| replace:: As cores são representadas no formato
+.. |encaa| replace:: Encapsula a classe
+.. |osvalo| replace:: Os valores dos canais estão no intervalo entre
+	``0`` (transparente ou desligado) até ``255`` (opaco ou com
+	intensidade total)
+.. |osval| replace:: Os valores dos canais devem ser empacotados em
+	bytes de um inteiro com 32 bits sem assinatura na ordem alfa,
+	vermelho, verde, azul do byte mais importante para o de menor
+	importância.
+.. |noin| replace:: no índice com base zero
+.. |espno| replace:: especificada no índice com base zero
+.. |aquan| replace:: a quantidade das cores na paleta menos um
+.. |insej| replace:: índice seja maior ou igual à quantidade de cores da
+	paleta
