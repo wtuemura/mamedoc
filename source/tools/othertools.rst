@@ -2,6 +2,7 @@
 
 	\clearpage
 
+
 .. _mame-othertools:
 
 Outras ferramentas
@@ -22,10 +23,12 @@ Nas plataformas SDLMAME como o macOS e Linux, o **ledutil.sh** poderá
 ser usado. Use o comando **ledutil.sh -a** para que ele seja fechado
 automaticamente ao sair do SDLMAME.
 
+
 .. _mame-othertools-dev:
 
 Ferramentas voltadas ao desenvolvimento 
 =======================================
+
 
 .. _mame-othertools-pngcmp:
 
@@ -36,21 +39,22 @@ Essa ferramenta é usada em teste de regressão ao comparar instantâneos
 PNG vindos de um script teste **runtest.cmd** encontrado nos arquivos de
 código fonte. Esse script só funciona no Windows.
 
+
 .. _mame-othertools-nltool:
 
 nltool
 ------
 
-Componente de conversão discreto. A maioria dos usuários não precisam
-lidar com ele. 
+Componente de conversão discreto. |amado|.
+
 
 .. _mame-othertools-nlwav:
 
 nlwav
 -----
 
-Componente discreto de conversão e ferramente de teste. A maioria dos
-usuários não precisam lidar com ele. 
+Componente discreto de conversão e ferramenta de teste. |amado|.
+
 
 .. _mame-othertools-jedutil:
 
@@ -61,7 +65,8 @@ Ferramenta útil para extração de **PAL**/**PLA**/**PLD**/**GAL**.
 Ele pode converter entre o formato JED padrão da indústria e o formato
 binário compactado proprietário do MAME, pode mostrar também equações
 lógicas para os tipos de dispositivos que conhecem tal lógica interna.
-A maioria dos usuários não precisam lidar com ele. 
+|amado|.
+
 
 .. _mame-othertools-ldresample:
 
@@ -69,7 +74,8 @@ ldresample
 ----------
 
 Essa ferramenta comprime novamente os dados de vídeo para laserdisc e
-VHS. A maioria dos usuários não precisam lidar com ele. 
+VHS. |amado|.
+
 
 .. _mame-othertools-ldverify:
 
@@ -77,8 +83,19 @@ ldverify
 --------
 
 Essa ferramente é usada para comparar imagens de laserdisc ou VHS CHD
-vinda de uma fonte AVI. A maioria dos usuários não precisam lidar com
-ele. 
+vinda de uma fonte AVI. |amado|.
+
+
+.. _mame-othertools-romcmp:
+
+romcmp
+------
+
+Esta ferramenta é utilizada para realizar comparações de dados básicos e
+verificações de integridade em "*dumps*" binários. Com a opção -h, ela
+também pode ser utilizada para calcular as funções de "*hash*".
+|amado|.
+
 
 .. _mame-othertools-unidasm:
 
@@ -86,4 +103,7 @@ unidasm
 -------
 
 Disassembler universal para muitas das arquiteturas compatíveis com o
-MAME. A maioria dos usuários não precisam lidar com ele. 
+MAME. |amado|.
+
+
+.. |amado| replace:: A maioria dos usuários não precisam lidar com ele.
