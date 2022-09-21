@@ -915,6 +915,15 @@ você consiga montar o seu ambiente sem problemas.
 Uma outra alternativa interessante seria usar um sistema virtual para
 compilar o MAME ou para montar o ambiente sem qualquer erro.
 
+.. note::
+
+	A mesma dica acima serve também para resolver outro erro relacionado
+	"chave PGP inválida" (*invalid or corrupted package (PGP
+	signature)*). a solução foi apresentada por mim na parte de
+	`issues do MSYS2 <https://github.com/msys2/MSYS2-packages/issues/2058#issuecomment-1252446059>`_ 
+	Outros usuários também comprovaram que a solução funciona.
+
+
 .. _compiling-windows-visual-studio:
 
 Compilando com o Microsoft Visual Studio
