@@ -2,6 +2,7 @@
 
 	\clearpage
 
+
 .. _mamemenu:
 
 Cardápio de opções
@@ -39,6 +40,7 @@ pressionando a tecla :kbd:`Enter` do teclado. A interface também aceita
 o uso do mouse fazendo a seleção com um clique e um duplo clique para
 abrir a opção ou rodar um sistema.
 
+
 .. _mamemenu-alt-valores:
 
 Alterando os valores
@@ -61,6 +63,7 @@ ao clicar duas vezes nele, como é o caso dos campos disponíveis em
 .. raw:: latex
 
 	\clearpage
+
 
 .. _mamemenu-filtro:
 
@@ -277,6 +280,7 @@ MAME.
 
 	\clearpage
 
+
 .. _mamemenu-config-during-gameplay:
 
 Durante a emulação
@@ -292,6 +296,7 @@ Configurações da entrada
 
 Aqui ficam listadas todas as listas para as configurações das entradas
 do sistema que estiver sendo emulado no momento.
+
 
 Atribuições da entrada (este sistema)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -329,6 +334,7 @@ Consulte o capítulo :ref:`ui-inptcfg-analog` para obter mais informações
 sobre os ajustes uma vez que a nomenclatura também muda conforme o
 sistema.
 
+
 Atribuições da entrada (geral)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -365,6 +371,7 @@ clique duplo em um dos itens da lista um novo menu é mostrado e aqui é
 possível selecionar a opção :guilabel:`Copia a ID do dispositivo`,
 consulte o capítulo :ref:`devicemap` para obter mais informações.
 
+
 Chaves DIP
 ~~~~~~~~~~
 
@@ -378,11 +385,13 @@ Sempre que uma chave for alterada, sempre selecione **Reinicie** para
 que a alteração seja aplicada. Em algum sistema a ação já pode ser
 vista na tela, contudo, não é sempre o caso.
 
+
 Contabilidade
 ~~~~~~~~~~~~~
 
 É o registro interno do sistema que mostra o tempo total que ele ficou
 em execução e a quantidade de fichas que foram colocadas nela.
+
 
 Informação sobre o sistema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -390,11 +399,13 @@ Informação sobre o sistema
 Um breve resumo do nome do sistema, o seu driver, o tipo do processador
 (vídeo, áudio e outros) e a resolução do vídeo.
 
+
 Alerta sobre o sistema
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Exibe informações de alerta sobre o sistema que está sendo emulado como
 o não funcionamento do áudio, vídeo, etc.
+
 
 Informação sobre a imagem da mídia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -405,6 +416,7 @@ etc), nome do fabricante, ano de lançamento, etc.
 .. raw:: latex
 
 	\clearpage
+
 
 Controles deslizantes
 ~~~~~~~~~~~~~~~~~~~~~
@@ -480,6 +492,7 @@ ajustes podem aparecer porém os principais são estes:
 .. raw:: latex
 
 	\clearpage
+
 
 .. _mamemenus-video-options:
 
@@ -573,6 +586,7 @@ do sistema emulado e as suas respectivas opções, quando houver.
 
 	\clearpage
 
+
 Snapshot
 ^^^^^^^^
 
@@ -586,7 +600,7 @@ da tela seja feito.
 
 * :guilabel:`Tela 0 padrão (4:3)`
 
-  Faz um print de tela nesta proporção
+  Faz um print da tela com esta proporção
 
 .. raw:: html
 
@@ -623,6 +637,65 @@ da tela seja feito.
 
 		O valor predefinido é ``Desligado``.
 
+
+.. _mamemenus-mira-options:
+
+Opções da mira
+~~~~~~~~~~~~~~
+
+Esta opção aparece quando o sistema for um jogo de tiro que use uma
+pistola de luz, as seguintes opções estão disponíveis:
+
+* :guilabel:`Visibilidade do P1`
+
+  Aqui é definido quando a mira deve estar visível na tela para o
+  jogador 1 (player 1) com as seguintes opções:
+
+*	:guilabel:`Nunca`: Nunca mostra a mira.
+*	:guilabel:`Sempre`: Sempre mostra a mira.
+*	:guilabel:`Quando for movido`: Mostra apenas quando o mouse for movido.
+
+O padrão é mostrar a mira sempre que ela for movida, no caso de mais
+jogadores, haverá uma opção para cada um deles (jogador 1, jogador 2,
+etc).
+
+.. raw:: latex
+
+	\clearpage
+
+* :guilabel:`Mira P1`
+
+  Aqui é possível definir o tipo da mira que será usada pelo sistema,
+  note que o MAME só aceita arquivos **.png** com transparência (sem
+  fundo):
+  
+*	:guilabel:`[Incorporado]`: Usa a mira padrão do MAME.
+*	:guilabel:`nome do arquivo mira`: Você tem a opção de selecionar os
+	seus arquivos de mira pelo nome.
+
+  Note que é possível usar qualquer nome para o seu arquivo da mira
+  para depois poderem ser selecionados aqui. Abaixo temos alguns
+  exemplos:
+
+.. figure:: images/miras.svg
+	:width: 60%
+	:align: center
+	:figclass: align-center
+	:alt: Miras
+
+.. raw:: html
+
+	<p></p>
+
+Quem tiver interesse, é possível baixar estas miras já prontas para uso
+`neste endereço <https://www.mediafire.com/file/atfpzuhvshq5xo5/miras.zip>`_.
+Descompacte as imagens dentro da pasta **crosshair**.
+
+.. raw:: html
+
+	<p></p>
+
+
 Opções dos plug-ins
 ~~~~~~~~~~~~~~~~~~~
 
@@ -632,6 +705,7 @@ gravado no arquivo ``plugin.ini`` que fica na mesma pasta do MAME ou em
 ``~/.mame`` em sistemas Linux e macOS.
 
 Para mais informações consulte :ref:`Plug-ins <plugins-intro>`.
+
 
 Visualização da DAT externa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -648,10 +722,12 @@ sistema na tela (em Inglês), etc.
 
 	\clearpage
 
+
 .. _mamemenu-config-options:
 
 Definições gerais
 -----------------
+
 
 Personalize a Interface
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -883,7 +959,9 @@ usados pelo MAME se encontram. As opções disponíveis são:
 * :guilabel:`Miras`
 
   Define o caminho do diretório onde se encontram as imagens com uma
-  arte gráfica em formato de mira que serão usadas por jogos de tiro.
+  arte gráfica de uma mira que podem ser usadas por jogos de tiro. Para
+  mais informações consulte
+  :ref:`opções da mira <mamemenus-mira-options>`.
 
 		O valor predefinido é um diretório chamado **crosshair** no
 		diretório raiz do MAME.
@@ -1140,6 +1218,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 
 	\clearpage
 
+
 .. _mamemenu-config-video:
 
 Opções do vídeo
@@ -1226,6 +1305,7 @@ seja definido aqui.
 
 	\clearpage
 
+
 .. _mamemenu-config-audio:
 
 Opções do áudio
@@ -1259,7 +1339,8 @@ Opções do áudio
 
 * :guilabel:`Use amostras externas`
 
-  Veja :ref:`-samples <mame-commandline-nosamples>`.
+  Consulte :ref:`-samples <mame-commandline-nosamples>`.
+
 
 .. _mamemenu-config-etc:
 
@@ -1384,6 +1465,7 @@ Opções diversas
 .. raw:: latex
 
 	\clearpage
+
 
 .. _mamemenu-config-devices:
 
@@ -1932,6 +2014,7 @@ Atribuição das entradas (geral)
 	As teclas predefinidas são :kbd:`F12` + :kbd:`Ctrl` + :kbd:`Alt`
 	:kbd:`Esq`.
 
+
 Controles do jogador 1 ~ 10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2246,6 +2329,7 @@ Predefinições para o jogador 1
 |  Mouse Y analógico dec               | Cima                          |
 +--------------------------------------+-------------------------------+
 
+
 .. _mamemenu-general-inputs-P2:
 
 Predefinições para o jogador 2
@@ -2495,6 +2579,7 @@ Predefinições para o jogador 2
 |  Mouse Y 2 analógico dec             | R                             |
 +--------------------------------------+-------------------------------+
 
+
 .. _mamemenu-general-inputs-P3:
 
 Predefinições para o jogador 3
@@ -2667,6 +2752,7 @@ Predefinições para o jogador 3
 +--------------------------------------+-------------------------------+
 |  Mouse Y 3 analógico dec             | I                             |
 +--------------------------------------+-------------------------------+
+
 
 .. _mamemenu-general-inputs-P4:
 
@@ -2844,6 +2930,7 @@ Predefinições para o jogador 4
 As predefinições para o jogador 5 em diante estão vazias e podem ser
 customizadas conforme a necessidade.
 
+
 .. _mamemenu-other-controls:
 
 * **Outros controles**
@@ -2936,6 +3023,7 @@ customizadas conforme a necessidade.
 
 	\clearpage
 
+
 .. _mamemenu-advanced-options:
 
 Opções avançadas
@@ -3010,6 +3098,7 @@ Opções de desempenho
 
 	\clearpage
 
+
 .. _mamemenu-advanced-screen-rotation:
 
 Opções da Rotação da Tela
@@ -3067,6 +3156,7 @@ Opções da Rotação da Tela
 
 	O valor predefinido é ``Desligado``.
 
+
 .. _mamemenu-advanced-illustration:
 
 Opções das ilustrações
@@ -3078,6 +3168,7 @@ Opções das ilustrações
   Aproxima a região da tela emulada quando estiver numa ilustração.
 
 	O valor predefinido é ``Desligado``.
+
 
 .. _mamemenu-advanced-state-playback:
 
@@ -3119,6 +3210,7 @@ Opções do estado/reprodução
   Cria uma captura da tela com marcas de fósforo queimado.
 
 	O valor predefinido é ``Desligado``.
+
 
 .. _mamemenu-advanced-input-options:
 
@@ -3259,6 +3351,7 @@ Salva as definições
 ~~~~~~~~~~~~~~~~~~~
 
 Salva todas as alterações feitas.
+
 
 Retorna ao menu anterior
 ~~~~~~~~~~~~~~~~~~~~~~~~
