@@ -1416,6 +1416,13 @@ A linha acima deve ser contínua, encerre a sua sessão e faça login
 novamente. No terminal rode o comando ``journalctl -b -p err`` e tenha
 **CERTEZA** que não há qualquer erro relacionado com o vulkan.
 
+.. note::
+
+	Se mesmo depois de adicionar as entradas no ``/etc/profile``,
+	reiniciar o computador e ainda aparecer exatamente o mesmo erro,
+	adicione as duas linhas acima no final do seu perfil em
+	``~/.profile``, encerre a sua sessão e faça login novamente.
+
 Tente rodar novamente o ``vulkaninfo`` e dessa vez ele deve rodar sem
 problemas exibindo todas as informações da sua placa de vídeo.
 
