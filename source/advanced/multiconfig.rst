@@ -425,7 +425,7 @@ alguns exemplos.
 
 **Sega Genesis / Mega Drive**
 
-	* Crie um arquivo ``megadriv.ini`` dentro do diretório
+	* Crie um arquivo ``mdconsole.ini`` dentro do diretório
 	  **ini\\source** com as seguintes opções:
 
 .. code-block:: shell

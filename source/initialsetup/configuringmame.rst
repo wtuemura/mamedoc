@@ -145,10 +145,10 @@ Vamos supor que queira jogar o **Sonic the Hedgehog** da SEGA no
 Genesis/Mega Drive, primeiro identifique o driver com o comando::
 
 	mame genesis -ls
-	genesis          megadriv.cpp
+	genesis          sega/mdconsole.cpp
 
-O driver é ``megadriv.cpp``, então crie o arquivo ``megadriv.ini``
-dentro da pasta ``ini\sources``, edite o arquivo ``megadriv.ini`` e
+O driver é ``mdconsole.cpp``, então crie o arquivo ``mdconsole.ini``
+dentro da pasta ``ini\sources``, edite o arquivo ``mdconsole.ini`` e
 adicione o caminho completo onde estão armazenados as suas ROMs do
 Genesis/Mega Drive, exemplo::
 
