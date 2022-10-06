@@ -111,16 +111,16 @@ No **Linux** e **macOS** você pode definir estes
 parâmetros como variáveis de ambiente no seu ``~/.bashrc`` como por
 exemplo::
 
-	SDL_FRAMEBUFFER_ACCELERATION=1
-	SDL_RENDER_DRIVER=opengl
-	SDL_RENDER_OPENGL_SHADERS=1
+	export SDL_FRAMEBUFFER_ACCELERATION=opengl
+	export SDL_RENDER_DRIVER=opengl
+	export SDL_RENDER_OPENGL_SHADERS=1
 
 Antes do executável do MAME::
 
-	SDL_FRAMEBUFFER_ACCELERATION=1 SDL_RENDER_DRIVER=opengl SDL_RENDER_OPENGL_SHADERS=1 ./mame
+	SDL_FRAMEBUFFER_ACCELERATION=opengl SDL_RENDER_DRIVER=opengl SDL_RENDER_OPENGL_SHADERS=1 ./mame
 
 Ou então exportando estas opções para o ambiente, elas serão lidas
-durante a inicialização do MAME: ::
+durante a inicialização do MAME::
 
 	export SDL_FRAMEBUFFER_ACCELERATION=1 SDL_RENDER_DRIVER=opengl SDL_RENDER_OPENGL_SHADERS=1
 
@@ -155,6 +155,9 @@ alterações sejam aplicadas.
 Novamente, não é garantia que ao definir estas opções você note alguma
 melhora no desempenho da emulação, tudo vai depender do hardware usado
 e seus respectivos drivers.
+
+Para mais informações consulte a página de
+`variáveis <https://wiki.libsdl.org/CategoryHints>`_ do SDL.
 
 .. raw:: latex
 
