@@ -1730,7 +1730,7 @@ Para o linux/macOS use o script abaixo::
     
     if [ $# -lt "$ARG" ]
     then
-        echo "use limpa nome_da_rom"
+        echo "use ./limpa nome_da_rom"
     else
         rm -rf nvram/"$1"
     fi
