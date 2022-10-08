@@ -287,8 +287,9 @@ Dependendo da quantidade de dispositivos USB que você tenha conectado no
 seu computador eles ocuparão diferentes ``input/event``, ainda usando o
 nosso `mouse gamer` como exemplo, você pode fazer o comando
 ``libinput list-devices`` no **Ubuntu** e **Fedora** ou
-``libinput-list-devices`` no **Debian**. Caso o comando não funcione
+``libinput list-devices`` no **Debian**. Caso o comando não funcione,
 tenha certeza de ter instalado o pacote **libinput-tools**.
+
 Para mais informações acesse este `link
 <https://wayland.freedesktop.org/libinput/doc/latest/what-is-libinput.html>`_.
 

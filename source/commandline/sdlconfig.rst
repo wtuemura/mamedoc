@@ -156,7 +156,7 @@ Novamente, não é garantia que ao definir estas opções você note alguma
 melhora no desempenho da emulação, tudo vai depender do hardware usado
 e seus respectivos drivers.
 
-Para mais informações consulte a página de
+Para mais informações, consulte a página de
 `variáveis <https://wiki.libsdl.org/CategoryHints>`_ do SDL.
 
 .. raw:: latex
