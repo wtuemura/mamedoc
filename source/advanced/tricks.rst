@@ -1693,8 +1693,8 @@ rodando no máximo desde que você saiba **EXATAMENTE** o que está
 fazendo.
 
 
-Excluindo arquivos NVRAM (batch script)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Excluindo arquivos NVRAM (script)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Algumas vezes é preciso excluir o diretório **NVRAM** de um determinado
 sistema durante a depuração ou até mesmo antes de
@@ -1718,6 +1718,29 @@ seja constante, use o batch script abaixo, salve o script como
     :End
     exit /B
 
+.. raw:: latex
+
+	\clearpage
+
+Para o linux/macOS use o script abaixo::
+
+    #!/bin/bash
+    
+    ARG=1
+    
+    if [ $# -lt "$ARG" ]
+    then
+        echo "use limpa nome_da_rom"
+    else
+        rm -rf nvram/"$1"
+    fi
+    
+    exit 0
+
+
+.. raw:: latex
+
+	\clearpage
 
 Removendo a suavização dos efeitos crt-geom/crt-geom-deluxe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
