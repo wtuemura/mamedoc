@@ -1701,10 +1701,10 @@ sistema durante a depuração ou até mesmo antes de
 um :ref:`-record <mame-commandline-record>` e antes de iniciar um
 :ref:`-playback <mame-commandline-playback>` por motivos já
 explicados nestes capítulos. Contudo, caso a exclusão destes diretórios
-seja constante, use o batch script abaixo, salve o script como
-``limpa.bat`` e copie-o para dentro da pasta do MAME ou onde a pasta
-**NVRAM** se encontra. Execute-o no prompt de comando
-``limpa nome_da_rom`` para apagar a pasta com os dados NVRAM da ROM::
+seja constante, eu crie dois scripts que me ajudam na tarefa eliminar
+estes diretórios. No **Windows**, crie o arquivo ``limpa.bat`` dentro
+da pasta do MAME (ou onde a pasta **nvram** se encontra) com o conteúdo
+abaixo::
 
     @echo off
     IF %1.==. GOTO NOOP
@@ -1722,7 +1722,8 @@ seja constante, use o batch script abaixo, salve o script como
 
 	\clearpage
 
-Para o linux/macOS use o script abaixo::
+Para o **Linux** e **macOS** crie o arquivo ``limpa`` dentro da pasta do
+MAME (ou onde a pasta **nvram** se encontra) com o conteúdo abaixo::
 
     #!/bin/bash
     
@@ -1737,6 +1738,24 @@ Para o linux/macOS use o script abaixo::
     
     exit 0
 
+Ambos precisam rodar através do prompt de comando ou do terminal. O uso
+é simples, basta executar o script seguido do nome da ROM que deseja
+excluir, no Windows por exemplo::
+
+	limpa sf2
+
+Isso excluirá a pasta **nvram\sf2** limpando todas as definições,
+pontuações e tudo mais que o sistema registrar na memória. Note que em
+alguns casos como os sistemas **Neo Geo** por exemplo, eles geram pastas
+com nomes seguidos de **_16**, ou seja, ``kof94_16`` e assim por diante.
+Leve isso em consideração ao usar o script, neste caso, basta usar desta
+maneira para excluir o diretório::
+
+	limpa kof94_16
+
+Claro que é possível alterar o script para excluir também tudo que
+termine com **nome-da-rom_\*** ou o que mais você precisar, assim,
+adapte o script conforme às suas necessidades.
 
 .. raw:: latex
 

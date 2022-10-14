@@ -42,6 +42,11 @@ que a arma de luz deles funcionem em qualquer TV de tela plana e
 usando desde os consoles de videogames originais, sistemas de fliperama
 e até mesmo emuladores como o MAME.
 
+.. note::
+
+	Consulte o capítulo :ref:`mamemenus-mira-options` para saber como
+	trocar a mira padrão do MAME por uma outra qualquer.
+
 .. raw:: latex
 
 	\clearpage
