@@ -71,7 +71,7 @@ as linhas abaixo existem:
 dumylang        dumyhyph.tex    %for testing a new language.
 nohyphenation   zerohyph.tex    %a language with no patterns at all.
 portuguese loadhyph-pt.tex
-=portuges
+=portugues
 =brazil
 =brazilian
 ```
