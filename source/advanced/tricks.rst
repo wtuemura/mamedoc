@@ -1744,7 +1744,7 @@ excluir, no Windows por exemplo::
 
 	limpa sf2
 
-Isso excluirá a pasta **nvram\sf2** limpando todas as definições,
+Isso excluirá a pasta **nvram/sf2** limpando todas as definições,
 pontuações e tudo mais que o sistema registrar na memória. Note que em
 alguns casos como os sistemas **Neo Geo** por exemplo, eles geram pastas
 com nomes seguidos de **_16**, ou seja, ``kof94_16`` e assim por diante.
