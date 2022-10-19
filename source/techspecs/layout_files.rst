@@ -4740,7 +4740,7 @@ preocupa com  o jogo e não em lidar com o mapeamento do teclado.
 
 Neste exemplo usaremos o sistema *Lovely Pop Mahjong JangJang Shimasho
 (Japan)*, ela usa o driver
-`ssv.cpp <https://github.com/mamedev/mame/blob/master/src/mame/drivers/ssv.cpp>`_,
+`ssv.cpp <https://github.com/mamedev/mame/blob/master/src/mame/seta/ssv.cpp>`_,
 precisamos acessá-lo para identificar todas as suas entradas e
 posteriormente, mapear todos os botões.
 
@@ -4983,7 +4983,7 @@ tela do MAME.
 Com tudo pronto, rodamos o sistema novamente com ``mame janjans1`` e
 entramos no modo de serviço (:kbd:`Tab` --> :guilabel:`Chaves DIP` -->
 :guilabel:`Service Mode` --> :guilabel:`On`, depois
-:guilabel:`Redefine`. Clique no botão **A** na tela uma vez para pular o
+:guilabel:`Redefine`. Clique no botão :guilabel:`A` na tela uma vez para pular o
 teste de cores, clique novamente para entrar no modo de teste e
 pressione :kbd:`Tab` para fechar o quadro de informação na tela).
 
@@ -4996,7 +4996,7 @@ pressione :kbd:`Tab` para fechar o quadro de informação na tela).
 
 	<p></p>
 
-Ao clicar nos botões da tela, os botões da emulação deverão se alternar
+Ao clicar nos botões na tela, os botões da emulação deverão se alternar
 entre **ON** e **OFF** indicando que todos os botões estão funcionando.
 Retorne ao :guilabel:`Service Mode`, mude a chave para :guilabel:`Off`
 e clique em :guilabel:`Redefine` para reiniciar o sistema.
