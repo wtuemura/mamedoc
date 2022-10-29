@@ -5170,13 +5170,14 @@ Opções diversas
 
 .. _mame-commandline-nvramsave:
 
-**-[no]nvram_save** / **-[no]nvwrite**
+**-[no]nvram_save**
 
-	Salva o conteúdo da NVRAM ao encerrar a emulação. Caso essa opção seja
-	desligada, o conteúdo que foi gravado anteriormente não será apagado
-	e qualquer alteração atual não será gravada. Ao desabilitar essa
-	função suprime incondicionalmente o salvamento de arquivos .nv
-	associados com alguns tipos de programas usados em cartuchos.
+	Salva o conteúdo da NVRAM ao encerrar a emulação. Caso essa opção
+	seja desligada, o conteúdo que foi gravado anteriormente não será
+	apagado e qualquer alteração atual não será gravado. Ao desligar
+	esta função, n]ao será feito o salvamento dos dos dados nos arquivos
+	``.nv`` associados com alguns tipos de programas usados em
+	cartuchos.
 
 	O valor predefinido é ``Ligado`` (``-nvram_save``).
 
