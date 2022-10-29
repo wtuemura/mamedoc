@@ -154,10 +154,6 @@ exemplo::
 		Input: Remapped joystick #1: XInput Player 1 (device id: XInput Player 1)
 		Input: Remapped joystick #2: XInput Player 2 (device id: XInput Player 2)
 
-Observe que a numeração dos dispositivos listados no modo loquaz tem
-base zero, enquanto a numeração dos dispositivos mostrados na interface
-de usuário do MAME e nos arquivos de configuração não são.
-
 
 Limitações
 ----------
