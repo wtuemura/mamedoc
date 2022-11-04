@@ -917,35 +917,19 @@ Usando uma imagem de fundo no MAME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 É possível utilizar uma imagem de fundo no MAME que é exibida na
-interface como um papel de parede e somado com a opção de customização é
-possível dar uma aparência toda sua na interface. Escolha a imagem que
-deseja usar em formato .jpg ou .png e renomeie o arquivo para
+interface como um papel de parede, somado com a opção de customização, é
+possível alterar a aparência da sua interface. Escolha a imagem que
+deseja usar em formato ``.jpg`` ou ``.png`` e renomeie o arquivo para
 ``background.jpg`` ou ``background.png``, cuidado para não usar imagens
-muito pesadas, prefira o formato **.jpg**.
+muito pesadas, prefira o formato ``.jpg``.
 
-Eu usei um fundo do filme `Tron
-<https://i.postimg.cc/4yGFp8Kg/background.jpg>`_ que baixei de um site
-de wallpaper qualquer na internet.
+Ao iniciar o MAME vá em :guilabel:`Definições gerais`,
+:guilabel:`Opções diversas` e ative a opção
+:guilabel:`Usa uma imagem como plano de fundo`.
 
-.. figure:: images/mame-interface.png
-	:width: 100%
-	:align: center
-	:figclass: align-center
-	:alt: Interface customizada
-
-.. raw:: latex
-
-	\clearpage
-
-.. figure:: images/mame-interface2.png
-	:width: 100%
-	:align: center
-	:figclass: align-center
-	:alt: Interface customizada2
-
-Lembrando que todo o fundo é um papel de parede, tirando as opções do
-MAME nada na tela do *Iron Man* é funcional. Para as cores eu estou
-utilizando as configurações abaixo::
+Para ter uma interface com cores diferentes ao do padrão do MAME,
+experimente a configuração abaixo, ela usa uma paleta de cores do filme
+Tron::
 
 	# UI OPTIONS
 	#
@@ -969,12 +953,11 @@ utilizando as configurações abaixo::
 	ui_text_color             ffffffff
 	ui_unavail_color          ff404040
 
-Na tela do Iron Man a única diferença é a cor da borda::
+Salve estas opções no arquivo ``ui.ini`` no Windows e no Linux fica em
+``~/.mame/ui.ini``.
 
-	ui_border_color           ff076f85
-
-Salve estas opções no seu ``ui.ini``. Caso queira brincar com as cores,
-eu gosto do site `Hex Colors Tools <https://www.hexcolortool.com/>`_.
+Caso queira brincar com as cores, eu gosto do site
+`Hex Colors Tools <https://www.hexcolortool.com/>`_.
 No site é possível você entrar com o valor de cores em hex (#000000) e
 ela oferece a possibilidade de variar a cor para mais claro ou mais
 escuro em intervalos de 10% ou um outro valor qualquer.
@@ -1279,7 +1262,7 @@ são antigos se comparados com a versão da atualidade, portanto é
 necessário fazer alterações significativas para que seja possível usar o
 driver amdgpu compatível com o vulkan.
 
-Os procedimentos a seguir foram feitos à partir de uma instalação nova
+Os procedimentos a seguir foram feitos a partir de uma instalação nova
 do Debian 10 (Buster), não recomendamos o procedimento no seu computador
 de uso diário pois você pode perder totalmente o acesso a interface
 gráfica, inclusive do terminal local.
