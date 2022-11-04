@@ -1566,10 +1566,6 @@ Para gerar a lista abaixo::
 	arcturus_smc.bin
 	navy_flounder_dmcub.bin
 
-.. raw:: latex
-
-	\clearpage
-
 Clone o repositório do site do **Umio-Yasuno** em algum lugar do seu
 computador com o comando::
 
