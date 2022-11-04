@@ -1006,7 +1006,7 @@ desempenho se limita ao desenvolvimento do MAME, se os drivers
 responsáveis pelo sistema em questão já foram concluídos ou não, se o
 desenvolvimento da emulação como um todo já foi concluído ou não, etc.
 
-Os testes foram realizados com o **Debian 10.7** (Buster) e o
+Os testes foram realizados com o **Debian 11.5** (Buster) e o
 **Fedora 33** usando uma **AMD Radeon HD 7750** porém as configurações
 descritas aqui devem ser compatíveis com outras distribuições Linux ou
 talvez sirva como um guia para outros modelos de placas de vídeo. Não
@@ -1028,6 +1028,91 @@ cobrir todas as sua dependências e sim apenas na configuração.
 	Antes de prosseguir saiba que dependendo da versão do driver amdgpu
 	que você estiver usando ele pode **não ter áudio HDMI**, será
 	preciso usar a sua placa de som ou fones de ouvidos.
+
+
+.. _advanced-tricks-performance-cpu:
+
+Ajustando a frequência da CPU
+-----------------------------
+
+O modo de economia de energia do processador pode atrapalhar bastante o
+desempenho do MAME, incluindo a lentidão de alguns jogos quando rodados
+no Linux que rodam sem lentidão no Windows, assim como, jogos que ficam
+com o áudio falhando ou picotando.
+
+Para ver em que modo o seu processador está rodando, execute o comando
+abaixo no seu terminal::
+
+	cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
+O padrão para a maioria dos casos é ``conservative``, isso faz com que a
+frequência do seu processador `seja mantida no mínimo <https://www.kernel.org/doc/html/v6.0/admin-guide/pm/cpufreq.html#conservative>`_,
+conservando energia, porém, atrapalhando o desempenho geral da emulação.
+
+Para alterar isso, no Debian instale o pacote ``linux-cpupower``::
+
+	sudo apt install linux-cpupower
+
+No Fedora, instale o ``kernel-tools``::
+
+	sudo dnf install kernel-tools
+
+Acesse o site `pkgs.org <https://pkgs.org/>`_ para identificar em qual
+pacote vem o ``cpupower`` para a sua distro. 
+
+Um vez instalado, rode o comando abaixo para identificar quais os modos
+o seu processador suporta::
+
+    sudo cpupower frequency-info
+    analisando o CPU 0:
+      driver: acpi-cpufreq
+      CPUs que rodam na mesma frequência de hardware: 0
+      CPUs que precisam ter suas frequências coordenadas por software: 0
+      maior latência de transição: 4.0 us
+      limites do hardware: 1.40 GHz - 4.00 GHz
+      available frequency steps:  4.00 GHz, 3.40 GHz, 2.80 GHz, 2.10 GHz, 1.40 GHz
+      reguladores do cpufreq disponíveis: performance schedutil
+      política de frequência atual deve estar entre 1.40 GHz e 4.00 GHz.
+                      O regulador "performance" deve decidir qual velocidade usar
+                      dentro desse limite.
+      current CPU frequency: 4.00 GHz (asserted by call to hardware)
+      boost state support:
+        Supported: yes
+        Active: yes
+        Boost States: 2
+        Total States: 7
+        Pstate-Pb0: 4200MHz (boost state)
+        Pstate-Pb1: 4100MHz (boost state)
+        Pstate-P0:  4000MHz
+        Pstate-P1:  3400MHz
+        Pstate-P2:  2800MHz
+        Pstate-P3:  2100MHz
+        Pstate-P4:  1400MHz
+
+No nosso caso podemos utilizar ``performance`` e ``schedutil``, o modo
+``performance`` faz com que o processador rode com a sua frequência
+máxima, no nosso caso, **4000MHz**. Já o modo ``schedutil`` faz com que
+a frequência do processador varie conforme a demanda.
+
+Para alterar o modo, execute o comando abaixo::
+
+	sudo cpupower -c all frequency-set -g schedutil
+
+É possível deixar como ``performance`` porém lembre-se, neste modo o
+processador sempre vai trabalhar com a frequência máxima, ainda que
+nada esteja sendo feito no seu computador, causando um aquecimento e um
+consumo extra de energia sem qualquer necessidade. O modo ``schedutil``
+é o melhor dos dois mundos pois acelera a frequência do processador
+quando for preciso e reduz ao mínimo quando nada estiver sendo feito.
+
+Em sistemas com KDE e Gnome, é possível ir nas configurações de
+**energia** do sistema e escolher a opção :guilabel:`balanceado`, que
+também define o modo de operação do processador como ``schedutil``.
+
+Acesse a `documentação do kernel <https://www.kernel.org/doc/html/v6.0/admin-guide/pm/cpufreq.html>`_
+para obter mais informações estas e outras opções do o gerenciamento de
+energia do kernel.
+
 
 .. _advanced-tricks-performance-gpu:
 
