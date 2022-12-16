@@ -390,7 +390,7 @@ necessário caso você faça um ``make clean`` antes . Caso queira compilar
 uma versão customizada do MAME que só rode o jogo **Pac Man**, use o
 comando abaixo:
 
-	**make SOURCES=src/mame/pacman REGENIE=1 -j7**
+	**make SOURCES=src/mame/pacman/pacman.cpp REGENIE=1 -j7**
 
 O MAME também permite de maneira prática que seja possível compilar uma
 versão só com sistemas ARCADE, nessa versão os portáteis, consoles,
@@ -407,7 +407,7 @@ Para compilar uma versão do MAME chamada **meumame** apenas com a
 família de sistemas inclusas em *Pac-Man* e *Galaxian* incluindo as
 ferramentas:
 
-	**make SUBTARGET=meumame SOURCES=src/mame/pacman,src/mame/galaxian TOOLS=1 REGENIE=1 -j7**
+	**make SUBTARGET=meumame SOURCES=src/mame/pacman/pacman.cpp,src/mame/galaxian/galaxian.cpp TOOLS=1 REGENIE=1 -j7**
 
 Caso encontre erros de lincagem dos arquivos estáticos da compilação
 após a alteração das fontes, exclua estes arquivos do diretório
@@ -519,10 +519,10 @@ Podemos fazer um teste prático compilando duas versões do MAME para
 rodar apenas o **pacman** usado opções diferentes::
 
 	Opção 1
-	make SOURCES=src/mame/pacman SUBTARGET=pacman SSE3=1 OPTIMIZE=3
+	make SOURCES=src/mame/pacman/pacman.cpp SUBTARGET=pacman SSE3=1 OPTIMIZE=3
 	
 	Opção 2
-	make SOURCES=src/mame/pacman SUBTARGET=pacman ARCHOPTS=-march=native OPTIMIZE=3
+	make SOURCES=src/mame/pacman/pacman.cpp SUBTARGET=pacman ARCHOPTS=-march=native OPTIMIZE=3
 
 Rodamos o nosso MAME por 90 segundos num AMD FX(tm)-8350 4 Ghz
 (8 núcleos), 16 GiB de memória DDR3 1866 Mhz, AMD R7 250E 1 GiB, Windows

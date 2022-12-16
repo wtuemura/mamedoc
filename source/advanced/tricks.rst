@@ -1168,7 +1168,7 @@ seriam::
 * **pcie_aspm.policy**
 
     Desliga o gerenciamento de energia dos slots PCIe e permite que os
-    dispositivos conectados à ele trabalhem com o máximo desempenho. Os
+    dispositivos conectados a ele trabalhem com o máximo desempenho. Os
     valores válidos são ``default``, ``powersave`` e ``performance``,
     por predefinição o sistema usa economia de energia.
 
