@@ -93,18 +93,31 @@ norma `IEEE 1003 <https://standards.ieee.org/standard/1003_1-2017.html>`_ [3]_.
 Para configurar os atalhos do **gcc**, **ar** e **g++** voltado para
 a criação de binários para a plataforma **64-bit** faça os comandos
 abaixo no terminal, note que **cada** comando *sudo* é formado por uma
-linha só: ::
+linha só::
 
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-g++-posix /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-g++
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-ar-posix /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc-ar
 	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-posix /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc
 
 Já para a plataforma **32-bit** faremos estes comandos, note que
-**cada** comando *sudo* é formado por uma linha só: ::
+**cada** comando *sudo* é formado por uma linha só::
 
 	sudo ln -s /usr/bin/i686-w64-mingw32-g++-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-g++
 	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-ar-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc-ar
 	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-6.3-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc
+
+Para o Debian 11 ou mais recente faça o comando abaixo para 64-bit::
+
+	sudo ln -s /usr/bin/x86_64-w64-mingw32-g++-win32 /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-g++
+	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-ar-win32 /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc-ar
+	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-win32 /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc
+
+E este para 32-bit::
+
+	sudo ln -s /usr/bin/i686-w64-mingw32-g++-win32 /usr/i686-w64-mingw32/bin/i686-w64-mingw32-g++
+	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-ar-win32 /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc-ar
+	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-win32 /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc
+
 
 Fedora Linux
 ~~~~~~~~~~~~
