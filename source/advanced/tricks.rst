@@ -1810,16 +1810,22 @@ excluir, no Windows por exemplo::
 
 Isso excluirá a pasta **nvram/sf2** limpando todas as definições,
 pontuações e tudo mais que o sistema registrar na memória. Note que em
-alguns casos como os sistemas **Neo Geo** por exemplo, eles geram pastas
-com nomes seguidos de **_16**, ou seja, ``kof94_16`` e assim por diante.
+alguns casos como os sistemas **Neo Geo** por exemplo, segundo a
+lista de BIOS compatíveis listadas no
+`código fonte do MAME <https://github.com/mamedev/mame/blob/master/src/mame/neogeo/neogeo.cpp#L2250>`_,
+dependendo da BIOS selecionada o nome da pasta será seguida por um
+número, então se usarmos a BIOS *"Unibios"*, o nome da pasta termina com
+**_16**, ou seja, ``kof94_16`` e assim por diante.
+
 Leve isso em consideração ao usar o script, neste caso, basta usar desta
 maneira para excluir o diretório::
 
 	limpa kof94_16
 
 Claro que é possível alterar o script para excluir também tudo que
-termine com **nome-da-rom_\*** ou o que mais você precisar, assim,
-adapte o script conforme às suas necessidades.
+termine com **nome-da-rom_\*** ou o que mais você precisar, porém o
+exemplo mostrado aqui é apenas um exemplo, assim sendo, adapte o script
+conforme às suas necessidades.
 
 .. raw:: latex
 
