@@ -32,6 +32,7 @@ DOCUMENTAÇÃO MAME
     debugger/index
     tools/index
 
+    contributing/index
     techspecs/index
 
     security

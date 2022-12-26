@@ -1102,14 +1102,6 @@ Propriedades
 	\clearpage
 
 
-**driver.type** |sole|
-
-	Uma *string* que fornece um tipo de sistema. Será um dos
-	``"arcade"``, ``"console"``, ``"computer"`` ou ``"other"``.
-	Isso é apenas para fins informativos e pode não estar disponível no
-	futuro.
-
-
 **driver.not_working** |sole|
 
 	Um booleano que indica se o sistema está marcado como não

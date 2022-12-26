@@ -2,8 +2,10 @@
 
 	\clearpage
 
-As convenções de nomenclaturas usadas pelo MAME
-===============================================
+.. _naming:
+
+As convenções das nomenclaturas usadas pelo MAME
+================================================
 
 .. contents:: :local:
 
@@ -20,35 +22,6 @@ Introdução
 Visando promover a consistência e a legibilidade no código-fonte do
 MAME, utilizamos algumas convenções de nomenclatura em diversos
 elementos.
-
-
-.. _naming-definitions:
-
-Definições
-----------
-
-.. tabularcolumns:: |\Y{0.15}|\Y{0.23}|\Y{0.35}|
-
-.. list-table:: As convenções utilizadas no código-fonte do MAME
-    :header-rows: 0
-    :stub-columns: 0
-
-    * - **Snake Case**
-      - snake_case
-      - Tudo é escrito em minúsculas e as palavras são separadas por
-        sublinhados.
-    * - **Screaming Snake Case**
-      - ESTOU_GRITANDO
-      - Tudo é escrito em maiúsculas e as palavras são separadas por
-        sublinhados.
-    * - **Camel Case**
-      - exemploCamelCase
-      - As palavras ou frases são escritas sem espaço onde o início de
-        cada palavra começa com a letra em maiúsculas, menos a primeira.
-    * - **Llama Case**
-      - ExemploLlamaCase
-      - As palavras ou frases são escritas sem espaço onde o início de
-        cada palavra começa com a letra em maiúsculas.
 
 
 .. _naming-transliteration:
@@ -70,10 +43,6 @@ deve ser utilizado em favor de uma simples transliteração. Para os
 títulos contendo estrangeirismos e palavras emprestadas de outros
 idiomas, a grafia latina convencional deve ser usada (um exemplo prático
 disso é usar "Mahjong" nos títulos japoneses em vez de "Maajan").
-
-.. raw:: latex
-
-	\clearpage
 
 **Chinês**
 
@@ -143,70 +112,5 @@ Cerque o texto de desambiguação entre parênteses, preserve a caixa
 original para os nomes e o texto da versão, porém use minúsculas para
 qualquer outra coisa exceto os nomes próprios e os acrônimos.
 
-.. raw:: latex
-
-	\clearpage
-
-
-.. _naming-cplusplus:
-
-Convenções de nomenclatura para C++
------------------------------------
-
-**Macros do pré-processador**
-
-	Os nomes das macros devem usar o **screaming snake case**.
-	As macros são sempre globais e os nomes conflitantes podem causar
-	erros, pense com cuidado sobre o que as macros precisam ser nos
-	cabeçalhos e as nomeie de acordo.
-
-**Include guards**
-
-	A inclusão das *guard macros* devem começar com ``MAME_`` e devem
-	terminar com um uma versão em maiúsculas do nome do arquivo, com
-	espaços sendo substituídos por sublinhados.
-
-**Constantes**
-
-	As constantes devem usar o **screaming snake case**, sejam elas
-	constantes globais, membros de dados constantes, enumeradores ou
-	pré-processadores constantes.
-
-**Funções**
-
-	Os nomes de funções livres devem usar o **snake case**. Existem
-	alguns utilitários funções que foram implementadas anteriormente
-	como macros dos pré-processadores que ainda usam o **screaming snake
-	case**.
-
-**Classes**
-
-	Os nomes das classes devem usar um **snake case**. Os nomes de
-	classes abstratas devem terminar com ``_base``. Os membro de funções
-	públicas (incluindo funções de membro estático) devem usar o **snake
-	case**.
-
-**As Classes dos dispositivos**
-
-	Os nomes específicos da implementação do ``driver_device``
-	convencionalmente termina com ``_state``, enquanto a outra classe do
-	nome do dispositivo específico terminar com ``_device``. Os nomes
-	específico do ``device_interface`` convencionalmente começam com
-	``device_`` e terminam com ``_interface``.
-
-**Os tipos dos dispositivos**
-
-	Os tipos dos dispositivos devem usar **screaming snake case**.
-	Lembre-se que os tipos dos dispositivos são nomes dentro do
-	namespace global, então escolha de forma explícita, nomes unívocos
-	e diretos.
-
-**As enumerações**
-
-	O nome da enumeração deve usar maiúsculas e minúsculas. Os
-	enumeradores devem usar **screaming snake case**.
-
-**Os parâmetros usados como modelo**
-
-	Os parâmetros usados como modelo devem usar maiúsculas e minúsculas
-	(ambos os parâmetros de tipo e de valor).
+Para as convenções das nomenclaturas C++, consulte a seção da diretriz
+de programação em C++ :ref:`contributing-cxx-naming`.

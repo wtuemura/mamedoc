@@ -1813,7 +1813,7 @@ pontuações e tudo mais que o sistema registrar na memória. Note que em
 alguns casos como os sistemas **Neo Geo** por exemplo, segundo a
 lista de BIOS compatíveis listadas no
 `código fonte do MAME <https://github.com/mamedev/mame/blob/master/src/mame/neogeo/neogeo.cpp#L2250>`_,
-dependendo da BIOS selecionada o nome da pasta será seguida por um
+dependendo da BIOS selecionada, o nome da pasta será seguida por um
 número, então se usarmos a BIOS *"Unibios"*, o nome da pasta termina com
 **_16**, ou seja, ``kof94_16`` e assim por diante.
 
