@@ -2223,12 +2223,16 @@ Para as ROMs do CPS2::
 	1944u
 	...
 
+
+Criando uma lista de jogos
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Para criar uma lista de jogos com o nome da ROM e a sua respectiva
 descrição, faça o comando::
 
 	cat gamelist | awk '{$1=$1}1' OFS="," > gamelist.csv
 
-Abra o arquivo `` gamelist.csv`` no
+Abra o arquivo ``gamelist.csv`` no
 `LibreOffice <https://pt-br.libreoffice.org/>`_, no
 `Office da Microsoft <https://www.microsoft.com/pt-br/microsoft-365>`_
 ou mesmo no `Google Docs <https://docs.google.com/spreadsheets/u/0/>`_ e
