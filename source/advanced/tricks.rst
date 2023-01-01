@@ -1756,6 +1756,12 @@ gerenciamento de energia, não há problema deixar a sua placa de vídeo
 rodando no máximo desde que você saiba **EXATAMENTE** o que está
 fazendo.
 
+.. raw:: latex
+
+	\clearpage
+
+
+.. _advanced-tricks-nvram:
 
 Excluindo arquivos NVRAM (script)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1765,67 +1771,88 @@ sistema durante a depuração ou até mesmo antes de
 um :ref:`-record <mame-commandline-record>` e antes de iniciar um
 :ref:`-playback <mame-commandline-playback>` por motivos já
 explicados nestes capítulos. Contudo, caso a exclusão destes diretórios
-seja constante, eu crie dois scripts que me ajudam na tarefa eliminar
+seja constante, eu crie dois scripts que me ajudam na tarefa de eliminar
 estes diretórios. No **Windows**, crie o arquivo ``limpa.bat`` dentro
-da pasta do MAME (ou onde a pasta **nvram** se encontra) com o conteúdo
-abaixo::
+da pasta principal do MAME (ou onde a pasta **nvram** se encontra) com
+o conteúdo abaixo::
 
     @echo off
-    IF %1.==. GOTO NOOP
-    rmdir /s /q nvram\%1
-    GOTO End
     
-    :NOOP
-      ECHO use limpa nome_da_rom
-    GOTO End
+    rem Verifica se o nome da ROM foi informada junto com o comando
+    if "%1" == "" (
+      echo use limpa nome_da_rom.
+      exit /b 1
+    )
     
-    :End
-    exit /B
+    set rom_name=%1
+    
+    rem Excluí os diretórios que batem com o nome da ROM.
+    if exist "nvram\%rom_name%" (
+      rmdir /s /q "nvram\%rom_name%"
+    )
+    
+    for /L %%i in (0,1,16) do (
+      rem Verifica a existência de outros diretórios seguido de número antes de tentar excluí-los.
+      if exist "nvram\%rom_name%_%%i" (
+        rmdir /s /q "nvram\%rom_name%_%%i"
+      )
+    )
+
 
 .. raw:: latex
 
 	\clearpage
 
-Para o **Linux** e **macOS** crie o arquivo ``limpa`` dentro da pasta do
-MAME (ou onde a pasta **nvram** se encontra) com o conteúdo abaixo::
+
+Para o **Linux** e **macOS** crie o arquivo ``limpa`` dentro da pasta
+principal do MAME (ou onde a pasta **nvram** se encontra) com o conteúdo
+abaixo::
 
     #!/bin/bash
     
-    ARG=1
-    
-    if [ $# -lt "$ARG" ]
-    then
-        echo "use ./limpa nome_da_rom"
-    else
-        rm -rf nvram/"$1"
+    # Verifica se o nome da ROM foi informada junto com o comando
+    if [ "$1" == "" ]; then
+      echo "use ./limpa nome_da_rom"
+      exit 1
     fi
     
-    exit 0
+    rom_name="$1"
+    
+    # Excluí os diretórios que batem com o nome da ROM
+    if [ -d "nvram/$rom_name" ]; then
+      rm -rf "nvram/$rom_name"
+    fi
+    
+    for i in {0..16}; do
+      # Verifica a existência de outros diretórios seguido de número antes de tentar excluí-los.
+      if [ -d "nvram/${rom_name}_$i" ]; then
+        rm -rf "nvram/${rom_name}_$i"
+      fi
+    done
 
-Ambos precisam rodar através do prompt de comando ou do terminal. O uso
-é simples, basta executar o script seguido do nome da ROM que deseja
-excluir, no Windows por exemplo::
+Ambos precisam rodar através do prompt de comando ou do terminal, no
+caso do *shell script* para Linux/macOS, antes que ele possa ser
+executado; também é preciso fazer ``chmod +x limpa``. O uso é simples,
+no Windows, basta executar o script seguido do nome da ROM, por
+exemplo::
 
 	limpa sf2
 
-Isso excluirá a pasta **nvram/sf2** limpando todas as definições,
-pontuações e tudo mais que o sistema registrar na memória. Note que em
-alguns casos como os sistemas **Neo Geo** por exemplo, segundo a
-lista de BIOS compatíveis listadas no
+No Linux/macOS faça::
+
+	./limpa sf2
+
+Isso excluirá a pasta **sf2** dentro de **nvram**, limpando todas as
+definições, pontuações, configurações e tudo mais que o respectivo
+sistema registrar em sua memória nvram. Note que em alguns casos como os
+sistemas **Neo Geo** por exemplo, segundo a lista de BIOS compatíveis
+listadas no
 `código fonte do MAME <https://github.com/mamedev/mame/blob/master/src/mame/neogeo/neogeo.cpp#L2250>`_,
 dependendo da BIOS selecionada, o nome da pasta será seguida por um
 número, então se usarmos a BIOS *"Unibios"*, o nome da pasta termina com
-**_16**, ou seja, ``kof94_16`` e assim por diante.
+**_16**, ou seja, ``kof94_16`` e assim por diante, neste caso, o script
+os excluirá também.
 
-Leve isso em consideração ao usar o script, neste caso, basta usar desta
-maneira para excluir o diretório::
-
-	limpa kof94_16
-
-Claro que é possível alterar o script para excluir também tudo que
-termine com **nome-da-rom_\*** ou o que mais você precisar, porém o
-exemplo mostrado aqui é apenas um exemplo, assim sendo, adapte o script
-conforme às suas necessidades.
 
 .. raw:: latex
 

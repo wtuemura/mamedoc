@@ -148,8 +148,7 @@ Opções de ajuda e verificação
 			pacmanfm    : pm1-4.4a (256 bytes) - NEEDS REDUMP
 			romset pacmanfm [puckman] is best available
 			...
-			pacmaniao   : pac-mania_111187.sound0 (65536 bytes) - NOT FOUND
-			romset pacmaniao [pacmania] is bad
+			romset pacmaniao [pacmania] is good
 			...
 
 	Todos os sistemas e os arquivos da imagem ROM serão verificadas caso
@@ -1911,15 +1910,16 @@ Opções para a gravação e a reprodução do estado da emulação
 
 .. warning::
 
-	Em alguns sistemas como a **neogeo** por exemplo, é preciso excluir
+	Em alguns sistemas como o **neogeo** por exemplo, é preciso excluir
 	a **NVRAM** do sistema **ANTES** de iniciar uma gravação e **ANTES**
 	de reproduzir com :ref:`-playback <mame-commandline-playback>`, caso
 	contrário, a reprodução pode iniciar num estágio diferente (na série
 	"*The King of Fighters*" por exemplo) e fazendo com que a ação não
-	bata com o que foi gravado ou até mesmo haja uma interrupção da
-	reprodução muito antes do fim. Por exemplo, se for iniciar a
+	bata com o que foi gravado ou até mesmo haja uma interrupção abrupta
+	da reprodução muito antes do fim. Por exemplo, se for iniciar a
 	gravação do sistema **kof2002**, na pasta **NVRAM**, exclua a pasta
 	**kof2002** e também a pasta **kof2002_16** caso ela exista.
+	Para obter mais informações consulte :ref:`advanced-tricks-nvram`.
 
 
 .. raw:: latex
