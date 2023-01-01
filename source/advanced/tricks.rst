@@ -393,7 +393,7 @@ necessário.
 Criando um ROMSET apenas com sistemas tipo Arcade
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Umas das maneiras de se criar tal ROMSET é baixando o código fonte e
+Umas das maneiras de se criar tal ROMSET é baixando o código-fonte e
 compilando o MAME com a opção ``SUBTARGET=arcade``, isso fará com que o
 MAME funcione e exiba apenas uma lista com sistemas classificados
 internamente como "*arcade*", simples assim. Para mais informações leia
@@ -1847,7 +1847,7 @@ definições, pontuações, configurações e tudo mais que o respectivo
 sistema registrar em sua memória nvram. Note que em alguns casos como os
 sistemas **Neo Geo** por exemplo, segundo a lista de BIOS compatíveis
 listadas no
-`código fonte do MAME <https://github.com/mamedev/mame/blob/master/src/mame/neogeo/neogeo.cpp#L2250>`_,
+`código-fonte do MAME <https://github.com/mamedev/mame/blob/master/src/mame/neogeo/neogeo.cpp#L2250>`_,
 dependendo da BIOS selecionada, o nome da pasta será seguida por um
 número, então se usarmos a BIOS *"Unibios"*, o nome da pasta termina com
 **_16**, ou seja, ``kof94_16`` e assim por diante, neste caso, o script
@@ -1950,6 +1950,292 @@ pasta ``artwork\bgfx\chains\crt-geom``. Apesar de particularmente
 preferir o efeito ``none``, há efeitos mais sutis como os efeitos
 ``delta_``, eles dão uma aparência bacana (para quem gosta) sem borrar a
 tela toda.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Listando as diferentes BIOS do Neo Geo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Pode ser que por diferentes motivos, você queira usar uma BIOS diferente
+do padrão. Estas BIOS estão listadas no
+`código-fonte do MAME <https://github.com/mamedev/mame/blob/master/src/mame/neogeo/neogeo.cpp#L2250>`_,
+caso esteja usando um Linux e tenha o código-fonte do MAME no
+computador, entre na pasta onde o código-fonte está e faça o comando::
+
+	find . -name neogeo.cpp
+	./src/mame/neogeo/neogeo.cpp
+
+Agora faça o comando abaixo para extrair apenas a lista das BIOS e vamos
+redirecionar esta saída para o arquivo ``bios.txt``::
+
+	cat src/mame/neogeo/neogeo.cpp|grep -i --color=auto rom_system_bios > bios.txt
+
+No arquivo nós teremos a lista abaixo::
+
+	ROM_SYSTEM_BIOS( x+ 0, "unibios40", "Universe BIOS (Hack, Ver. 4.0)" ) \
+	ROM_SYSTEM_BIOS( x+ 1, "unibios33", "Universe BIOS (Hack, Ver. 3.3)" ) \
+	ROM_SYSTEM_BIOS( x+ 2, "unibios32", "Universe BIOS (Hack, Ver. 3.2)" ) \
+	ROM_SYSTEM_BIOS( x+ 3, "unibios31", "Universe BIOS (Hack, Ver. 3.1)" ) \
+	ROM_SYSTEM_BIOS( x+ 4, "unibios30", "Universe BIOS (Hack, Ver. 3.0)" ) \
+	ROM_SYSTEM_BIOS( x+ 5, "unibios23", "Universe BIOS (Hack, Ver. 2.3)" ) \
+	ROM_SYSTEM_BIOS( x+ 6, "unibios23o", "Universe BIOS (Hack, Ver. 2.3, older?)" ) \
+	ROM_SYSTEM_BIOS( x+ 7, "unibios22", "Universe BIOS (Hack, Ver. 2.2)" ) \
+	ROM_SYSTEM_BIOS( x+ 8, "unibios21", "Universe BIOS (Hack, Ver. 2.1)" ) \
+	ROM_SYSTEM_BIOS( x+ 9, "unibios20", "Universe BIOS (Hack, Ver. 2.0)" ) \
+	ROM_SYSTEM_BIOS( x+10, "unibios13", "Universe BIOS (Hack, Ver. 1.3)" ) \
+	ROM_SYSTEM_BIOS( x+11, "unibios12", "Universe BIOS (Hack, Ver. 1.2)" ) \
+	ROM_SYSTEM_BIOS( x+12, "unibios12o", "Universe BIOS (Hack, Ver. 1.2, older)" ) \
+	ROM_SYSTEM_BIOS( x+13, "unibios11", "Universe BIOS (Hack, Ver. 1.1)" ) \
+	ROM_SYSTEM_BIOS( x+14, "unibios10", "Universe BIOS (Hack, Ver. 1.0)" ) \
+	ROM_SYSTEM_BIOS( 0, "euro", "Europe MVS (Ver. 2)" ) \
+	ROM_SYSTEM_BIOS( 1, "euro-s1", "Europe MVS (Ver. 1)" ) \
+	ROM_SYSTEM_BIOS( 2, "asia-mv1c", "Asia NEO-MVH MV1C" ) \
+	ROM_SYSTEM_BIOS( 3, "asia-mv1b", "Asia MV1B" ) \
+	ROM_SYSTEM_BIOS( 4, "us", "US MVS (Ver. 2?)" ) \
+	ROM_SYSTEM_BIOS( 5, "us-e", "US MVS (Ver. 1)" ) \
+	ROM_SYSTEM_BIOS( 6, "us-v2", "US MVS (4 slot, Ver 2)" ) \
+	ROM_SYSTEM_BIOS( 7, "us-u4", "US MVS (U4)" ) \
+	ROM_SYSTEM_BIOS( 8, "us-u3", "US MVS (U3)" ) \
+	ROM_SYSTEM_BIOS( 9, "japan", "Japan MVS (Ver. 3)" ) \
+	ROM_SYSTEM_BIOS( 10, "japan-s2", "Japan MVS (Ver. 2)" ) \
+	ROM_SYSTEM_BIOS( 11, "japan-s1", "Japan MVS (Ver. 1)" ) \
+	ROM_SYSTEM_BIOS( 12, "japan-mv1b", "Japan MV1B" ) \
+	ROM_SYSTEM_BIOS( 13, "japan-j3a", "Japan MVS (J3, alt)" ) \
+	ROM_SYSTEM_BIOS( 14, "japan-mv1c", "Japan NEO-MVH MV1C" ) \
+	ROM_SYSTEM_BIOS( 15, "japan-hotel", "Custom Japanese Hotel" ) \
+	ROM_SYSTEM_BIOS( 0, "asia", "Asia AES" )
+	ROM_SYSTEM_BIOS( 1, "japan", "Japan AES" )
+	ROM_SYSTEM_BIOS( 2, "devel", "Development System ROM" )
+	ROM_SYSTEM_BIOS( 0, "asia", "NEO-MVH MV1C" )
+	ROM_SYSTEM_BIOS( 1, "japan", "Japan MVS (J3)" )
+	ROM_SYSTEM_BIOS( 0, "asia-sp1", "Asia MV1B 263" )
+
+
+.. raw:: latex
+
+	\clearpage
+
+Agora podemos por exemplo, listar apenas os nomes das BIOS com o
+comando::
+
+	cat bios.txt | awk -F ', "' '{print $2}' |  awk -F '"' '{print $1}'
+	unibios40
+	unibios33
+	unibios32
+	unibios31
+	...
+
+Podemos listar apenas as descrições::
+
+	cat bios.txt | awk -F ', "' '{print $3}' | awk -F '" )' '{print $1}'
+	Universe BIOS (Hack, Ver. 4.0)
+	Universe BIOS (Hack, Ver. 3.3)
+	Universe BIOS (Hack, Ver. 3.2)
+	Universe BIOS (Hack, Ver. 3.1)
+	...
+
+Usando o script abaixo:
+
+.. code-block:: shell
+
+    #!/bin/bash
+    
+    # Define o nosso arquivo de entrada e o que nos interessa
+    input_file='bios.txt'
+    regex='^ROM_SYSTEM_BIOS[^"]*"([^"]*)".*"([^"]*)"'
+    
+    # Usamos o grep para extrair o que desejamos e as organizamos lado a lado
+    while read -r line; do
+      if [[ $line =~ $regex ]]; then
+        value1="${BASH_REMATCH[1]}"
+        value2="${BASH_REMATCH[2]}"
+        echo "$value1 - $value2"
+      fi
+    done < "$input_file"
+
+Nós podemos gerar uma lista com o nome da BIOS e a sua respectiva
+descrição lado a lado, salve o script como ``filtra_bios``, torne-o
+executável com ``chmod +x filtra_bios`` e rode-o com ``./filtra_bios``
+para obter o resultado::
+
+	unibios40 - Universe BIOS (Hack, Ver. 4.0)
+	unibios33 - Universe BIOS (Hack, Ver. 3.3)
+	unibios32 - Universe BIOS (Hack, Ver. 3.2)
+	unibios31 - Universe BIOS (Hack, Ver. 3.1)
+	...
+
+Caso queira a lista em ordem alfabética rode como
+``./filtra_bios | sort -d``::
+
+	asia - Asia AES
+	asia-mv1b - Asia MV1B
+	asia-mv1c - Asia NEO-MVH MV1C
+	asia - NEO-MVH MV1C
+	asia-sp1 - Asia MV1B 263
+	devel - Development System ROM
+	euro - Europe MVS (Ver. 2)
+	euro-s1 - Europe MVS (Ver. 1)
+	japan-hotel - Custom Japanese Hotel
+	japan-j3a - Japan MVS (J3, alt)
+	japan - Japan AES
+	japan - Japan MVS (J3)
+	japan - Japan MVS (Ver. 3)
+	japan-mv1b - Japan MV1B
+	japan-mv1c - Japan NEO-MVH MV1C
+	japan-s1 - Japan MVS (Ver. 1)
+	japan-s2 - Japan MVS (Ver. 2)
+	unibios10 - Universe BIOS (Hack, Ver. 1.0)
+	unibios11 - Universe BIOS (Hack, Ver. 1.1)
+	unibios12o - Universe BIOS (Hack, Ver. 1.2, older)
+	unibios12 - Universe BIOS (Hack, Ver. 1.2)
+	unibios13 - Universe BIOS (Hack, Ver. 1.3)
+	unibios20 - Universe BIOS (Hack, Ver. 2.0)
+	unibios21 - Universe BIOS (Hack, Ver. 2.1)
+	unibios22 - Universe BIOS (Hack, Ver. 2.2)
+	unibios23o - Universe BIOS (Hack, Ver. 2.3, older?)
+	unibios23 - Universe BIOS (Hack, Ver. 2.3)
+	unibios30 - Universe BIOS (Hack, Ver. 3.0)
+	unibios31 - Universe BIOS (Hack, Ver. 3.1)
+	unibios32 - Universe BIOS (Hack, Ver. 3.2)
+	unibios33 - Universe BIOS (Hack, Ver. 3.3)
+	unibios40 - Universe BIOS (Hack, Ver. 4.0)
+	us-e - US MVS (Ver. 1)
+	us-u3 - US MVS (U3)
+	us-u4 - US MVS (U4)
+	us - US MVS (Ver. 2?)
+	us-v2 - US MVS (4 slot, Ver 2)
+
+Uma outra maneira de listar apenas os nomes dessas BIOS com o MAME, é
+rodar o comando abaixo no terminal ou no prompt de comando::
+
+	mame kof94 -lx | grep -i "bios=" | awk '{print $4}' | awk -F '"' '{print $2}' | sort -d
+	asia-mv1b
+	asia-mv1c
+	euro
+	euro-s1
+	...
+
+No Windows também é possível fazer o mesmo com o comando abaixo::
+
+	mame -lx kof94|findstr bios="
+	euro
+	euro-s1
+	asia-mv1c
+	asia-mv1b
+	...
+
+
+Listando e iniciando diferentes sistemas MSX
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Dentro da pasta com o código-fonte do MAME os principais sistemas MSX
+podem ser encontrados dentro do diretório ``src/mame/msx``, mais
+especificamente o meu foco está dentro dos arquivos
+``src/mame/msx/msx1.cpp`` e ``src/mame/msx/msx2.cpp``. Todo o diretório
+``src/mame/msx`` também se encontra no
+`repositório oficial do MAME <https://github.com/mamedev/mame/tree/master/src/mame/msx>`_
+
+Para listar todos os sistemas **MSX 1** do arquivo-fonte
+``src/mame/msx/msx1.cpp`` nós fazemos assim::
+
+	cat src/mame/msx/msx1.cpp | grep -i rom_start | sed 's/ROM_START(\(.*\))/\1/' | sort -d
+	ax150
+	canonv10
+	canonv20
+	canonv20e
+	...
+
+Para o **MSX 2** é a mesma coisa, apenas alteramos a versão::
+
+	cat src/mame/msx/msx2.cpp | grep -i rom_start | sed 's/ROM_START(\(.*\))/\1/' | sort -d
+	ax350
+	ax350ii
+	ax350iif
+	ax370
+	...
+
+Outra maneira de fazer o mesmo usando o próprio MAME é fazer o comando::
+
+	mame ax150 -lb
+	Source file:         Name:            Parent:
+	msx/msx1.cpp         ax150
+	msx/msx1.cpp         ax170
+	msx/msx1.cpp         ax230
+	msx/msx1.cpp         canonv10         canonv20
+	...
+
+Para MSX 2::
+
+	mame ax350 -lb
+	Source file:         Name:            Parent:
+	msx/msx2.cpp         ax350            ax350ii
+	msx/msx2.cpp         ax350ii
+	msx/msx2.cpp         ax350iif         ax350ii
+	msx/msx2.cpp         ax370
+	...
+
+Essas dicas também podem ser utilizadas com outros sistemas.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Filtrando o nome das ROMs a partir do arquivo XML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No Linux/macOS ou no Windows com ferramentas
+`MinGW/MSYS2 <https://www.mamedev.org/tools/>`_ já disponibilizada pelo
+MAMEDEV, faça o comando abaixo para gerar o arquivo ``mame.xml``::
+
+	mame -lx > mame.xml
+
+Para listar as ROMs do Neo Geo por exemplo::
+
+	grep 'romof="neogeo"' mame.xml | sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p'
+	2020bb
+	3countb
+	alpham2
+	androdun
+	aodk
+	...
+
+Para as ROMs do CPS2::
+
+	grep 'sourcefile="capcom/cps2.cpp"' mame.xml | sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p'
+	1944
+	1944d
+	1944j
+	1944u
+	...
+
+É possível fazer o mesmo usando o código-fonte, exemplo::
+
+	cat src/mame/capcom/cps2.cpp|grep "GAME( "| awk '{print $3}'|sed 's/,$//'| sort -d 
+	1944
+	1944d
+	1944j
+	1944u
+	...
+
+Para criar uma lista de jogos com o nome da ROM e a sua respectiva
+descrição, faça o comando::
+
+	cat gamelist | awk '{$1=$1}1' OFS="," > gamelist.csv
+
+Abra o arquivo `` gamelist.csv`` no
+`LibreOffice <https://pt-br.libreoffice.org/>`_, no
+`Office da Microsoft <https://www.microsoft.com/pt-br/microsoft-365>`_
+ou mesmo no `Google Docs <https://docs.google.com/spreadsheets/u/0/>`_ e
+aceite o padrão, você deverá ter as ROMs do lado esquerdo e a sua
+descrição do lado direito.
+
+Fonte: `u/cd4053b <https://www.reddit.com/r/MAME/comments/yc271k/rom_list/itpbrl2/?context=3>`_.
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
