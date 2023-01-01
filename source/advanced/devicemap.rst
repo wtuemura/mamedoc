@@ -161,9 +161,9 @@ Limitações
 Apenas será possível atribuir números fixos aos dispositivos da entrada
 caso o MAME receba as IDs fixas e únicas dos dispositivos do provedor do
 dispositivo e do sistema operacional. Isso nem sempre é o caso. Por
-exemplo, o provedor de um controle SDL não é capaz de fornecer IDs
-exclusivas para muitos controles USB.
+exemplo, o provedor de um controle SDL pode não ser capaz de fornecer
+IDs exclusivas para muitos controles USB.
 
-No cado de nenhum dos dispositivos já configurados estiverem conectados
-quando o MAME for iniciado, os dispositivos que forem conectados podem
-não estar com a numeração esperada.
+No caso de nenhum dos dispositivos que já foram configurados estejam
+conectados quando o MAME for iniciado, os dispositivos que forem
+conectados podem não estar com a numeração esperada.
