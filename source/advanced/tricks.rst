@@ -1780,7 +1780,7 @@ o conteúdo abaixo::
     
     rem Verifica se o nome da ROM foi informada junto com o comando
     if "%1" == "" (
-      echo use limpa nome_da_rom.
+      echo use limpa nome_da_rom
       exit /b 1
     )
     
@@ -2229,6 +2229,11 @@ Criando uma lista de jogos
 
 Para criar uma lista de jogos com o nome da ROM e a sua respectiva
 descrição, faça o comando::
+
+	mame -ll > gamelist
+
+Com a lista em mãos, nós pegamos essas informações, separamos elas com
+vírgulas e depois salvamos como ``gamelist.csv``::
 
 	cat gamelist | awk '{$1=$1}1' OFS="," > gamelist.csv
 
