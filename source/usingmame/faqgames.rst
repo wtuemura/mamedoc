@@ -488,7 +488,7 @@ Apple 10
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -528,7 +528,7 @@ Asterix
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -562,7 +562,7 @@ Avengers in Galactic Storm
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -648,7 +648,7 @@ Beast Busters
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -672,7 +672,7 @@ Bells & Whistles
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -729,7 +729,7 @@ Bosconian
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida
 	para futuras referências de versões mais antigas do MAME.
 
@@ -745,7 +745,7 @@ Bottle 10
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -768,7 +768,7 @@ Bubble Memories
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -804,7 +804,7 @@ Bucky O'Hare
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -892,7 +892,7 @@ Crazy Monkey
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -914,7 +914,7 @@ Critter Crush
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -934,7 +934,7 @@ Cuore 1
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -968,7 +968,7 @@ Cyber Sled
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -991,7 +991,7 @@ Dark Horse (Bootleg)
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1053,7 +1053,7 @@ Detana!! Twin Bee
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1112,7 +1112,7 @@ Dragoon Might
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1168,7 +1168,7 @@ Elephant Family
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1199,7 +1199,7 @@ Escape Kids
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1219,7 +1219,7 @@ Fantastic Journey
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1269,7 +1269,7 @@ Final Lap R
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1291,7 +1291,7 @@ Zenkoku Seifuku Bishoujo Grand Prix Find Love
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1321,7 +1321,7 @@ Food Fight
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1341,7 +1341,7 @@ Fruit Cocktail
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1363,7 +1363,7 @@ Funky Head Boxers
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1383,7 +1383,7 @@ Gaiapolis
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1403,7 +1403,7 @@ Garage
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1423,7 +1423,7 @@ G.I. Joe
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1443,7 +1443,7 @@ Gokujyou Parodius
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1491,7 +1491,7 @@ Golfing Greats 2
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1512,7 +1512,7 @@ GTI Club
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1546,7 +1546,7 @@ Hang Pilot
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1707,7 +1707,7 @@ Island / Island 2
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1762,7 +1762,7 @@ Jolly Card
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1779,7 +1779,7 @@ Jolly Joker
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1854,7 +1854,7 @@ Keks
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -1981,7 +1981,7 @@ Konami's Open Golf Championship
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2008,7 +2008,7 @@ Kyukyoku Sentai Dadandarn
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2040,7 +2040,7 @@ Lethal Enforcers
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2058,7 +2058,7 @@ Lethal Enforcers 2
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2110,7 +2110,7 @@ Lucky & Wild
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2130,7 +2130,7 @@ Lucky Haunter
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2148,7 +2148,7 @@ Magic's 10
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2164,7 +2164,7 @@ Magic Card II
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2225,7 +2225,7 @@ Marchen Maze
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2244,7 +2244,7 @@ Martial Champion
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2298,7 +2298,7 @@ Metamorphic Force
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2319,7 +2319,7 @@ Microman Battle Charge
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2346,7 +2346,7 @@ Monster Maulers
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2386,7 +2386,7 @@ Multi Fish
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2413,7 +2413,7 @@ Mystic Warriors
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2435,7 +2435,7 @@ Name Club Ver.3
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2567,7 +2567,7 @@ Pirate
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2698,7 +2698,7 @@ Poker Master (Tony Poker) Hack
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2868,7 +2868,7 @@ Pool 10
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2884,7 +2884,7 @@ Pot Game
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2903,7 +2903,7 @@ Premier Soccer
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2943,7 +2943,7 @@ Pro Mahjong Kiwame
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -2964,7 +2964,7 @@ Pro Mahjong Kiwame S
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3036,7 +3036,7 @@ Quiz Gakumon no Susume
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3098,7 +3098,7 @@ Racing Force
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3149,7 +3149,7 @@ Resident
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3222,7 +3222,7 @@ Rock Climber (rclimb_3)
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3240,7 +3240,7 @@ Royal Card
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3262,7 +3262,7 @@ Royal Vegas Joker Card
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3287,7 +3287,7 @@ Run and Gun
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3307,7 +3307,7 @@ Salamander 2
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3354,7 +3354,7 @@ Sea Bass Fishing
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3446,7 +3446,7 @@ Slam Dunk
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3471,7 +3471,7 @@ Snooker 10
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3490,7 +3490,7 @@ Soccer Superstars
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3606,7 +3606,7 @@ Steep Slope Sliders
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3636,7 +3636,7 @@ Sunset Riders
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3693,7 +3693,7 @@ Sweet Life
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3726,7 +3726,7 @@ Taisen Puzzle-dama
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3745,7 +3745,7 @@ Taisen Tokkar-dama
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3777,7 +3777,7 @@ Technical Bowling
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3796,7 +3796,7 @@ Techno Drive
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3824,7 +3824,7 @@ Teenage Mutant Ninja (Hero) Turtles 2 - Turtles in Time
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3841,7 +3841,7 @@ Ten Balls
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3897,7 +3897,7 @@ The Simpsons
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3926,7 +3926,7 @@ Thunder Cross II
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -3974,7 +3974,7 @@ Tokimeki Memorial Taisen Puzzle-dama
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4003,7 +4003,7 @@ Tortuga Family
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4052,7 +4052,7 @@ Twin Bee Yahhoo!
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4072,7 +4072,7 @@ Vendetta
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4103,7 +4103,7 @@ Violent Storm
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4124,7 +4124,7 @@ Virtual Mahjong
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4146,7 +4146,7 @@ Virtual Mahjong 2 - My Fair Lady
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4321,7 +4321,7 @@ Wild West C.O.W.-Boys of Moo Mesa
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4374,7 +4374,7 @@ X-Men
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 
@@ -4394,7 +4394,7 @@ Xexex
 
 	Na última versão disponível do MAME este sistema não apresenta
 	qualquer problema que necessite desta intervenção. Talvez o
-	código fonte do driver responsável por ele tenha sido atualizado
+	código-fonte do driver responsável por ele tenha sido atualizado
 	ou a informação já esteja obsoleta. A informação será mantida para
 	futuras referências de versões mais antigas do MAME.
 

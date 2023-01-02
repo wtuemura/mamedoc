@@ -24,7 +24,7 @@ Outros sistemas operacionais
 Neste caso procure por uma versão pré compilada do executável
 do (SDL) MAME que pode ser encontrado em alguns repositórios da
 distribuição Linux da sua preferência, ou, compile o MAME você
-mesmo, baixando e descompactando o arquivo do código fonte em alguma
+mesmo, baixando e descompactando o arquivo do código-fonte em alguma
 pasta qualquer.
 
 Caso queira compilar o MAME você mesmo, consulte a seção

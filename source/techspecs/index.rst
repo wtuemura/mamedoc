@@ -2,7 +2,7 @@ DEFINIÇÕES TÉCNICAS
 ===================
 
 Esta seção aborda as definições técnicas úteis para os programadores
-que estão trabalhando no código fonte do MAME ou trabalhando em
+que estão trabalhando no código-fonte do MAME ou trabalhando em
 scripts LUA que são executados na estrutura do MAME.
 
 .. toctree::

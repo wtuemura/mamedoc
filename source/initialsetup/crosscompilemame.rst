@@ -25,7 +25,7 @@ Vantagens
 
 Dentre as várias vantagens é possível citar as mais relevantes:
 
-*	Transformar o código fonte em linguagem de máquina consome muitos
+*	Transformar o código-fonte em linguagem de máquina consome muitos
 	recursos e em geral a plataforma de destino pode não ter todos os
 	recursos disponíveis em comparação com computador que está sendo
 	usando para compilar, como por exemplo, poder de processamento,
@@ -37,14 +37,14 @@ Dentre as várias vantagens é possível citar as mais relevantes:
 	compilar a mesma versão no Windows. Compilar uma versão do MAME para
 	Linux leva em torno de 30 minutos para mais ou para menos dependendo
 	do poder de processamento do seu computador, compilando o mesmo
-	código fonte no mesmo sistema, com o Windows, usando a mesma versão
+	código-fonte no mesmo sistema, com o Windows, usando a mesma versão
 	do *gcc* e *g++*, a tarefa pode levar algumas *horas* [2]_ ainda que
 	tenha um computador mais recente.
 
 *	Ao utilizar o processo de compilação cruzada, o tempo final de
 	compilação leva aproximadamente o mesmo tempo que a versão nativa do
 	Linux, ganhando tempo e economizando recursos, afinal de contas,
-	manter o processador a 100% compilando o código fonte por cerca de
+	manter o processador a 100% compilando o código-fonte por cerca de
 	30 minutos é uma coisa, fazer exatamente a mesma coisa gastando
 	algumas horas além de ser uma perda de tempo, a sua conta de energia
 	pode ficar um pouco mais cara no final do mês.
@@ -170,7 +170,7 @@ Compilando o MAME para Windows no Linux
 
 Para compilar uma versão *64-bit* do MAME para o **Windows**, execute o
 comando abaixo, lembrando que o comando deve ser executado de dentro da
-pasta raiz [4]_ do código fonte do MAME: ::
+pasta raiz [4]_ do código-fonte do MAME: ::
 
 	make clean && make TARGETOS=windows CROSS_BUILD=1 SYMBOLS=1 SYMLEVEL=1 STRIP_SYMBOLS=1 SSE2=1 PTR64=1
 

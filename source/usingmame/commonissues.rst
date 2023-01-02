@@ -103,7 +103,7 @@ Por que o meu pacote MAME não oficial (vindo do EmuCR por exemplo ou de qualque
 
 Em muitos casos, as alterações de vários subsistemas tais como plug-ins
 Lua, HLSL ou BGFX vem como atualizações para diversos arquivos
-diferentes assim como o código fonte principal do MAME.
+diferentes assim como o código-fonte principal do MAME.
 Infelizmente as versões que vem de terceiros podem vir como apenas um
 executável principal do MAME ou com arquivos externos desatualizados,
 que podem quebrar a relação entre estes arquivos externos e o código
@@ -528,7 +528,7 @@ O que aconteceu com a opção de auto disparo? (turbo)
 ----------------------------------------------------
 
 Um plug-in Lua mais aprimorado e com mais funcionalidades foi adicionado
-ao MAME 0.210, a opção que antes estava embutida no código fonte foi
+ao MAME 0.210, a opção que antes estava embutida no código-fonte foi
 removida no MAME 0.216. Este novo plug-in tem mais funcionalidades do
 que o recurso de auto disparo incorporado na versão anterior, por
 exemplo, você pode configurar um botão alternativo para o auto disparo

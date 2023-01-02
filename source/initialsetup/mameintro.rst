@@ -19,7 +19,7 @@ caso haja, prestando atenção na tela de aviso vermelha ou bege que
 aparece antes do início da emulação. Observe que, caso tenha
 informações que possam ajudar a melhorar a emulação de um sistema
 emulado ou se você puder contribuir com correções, ou novas adições ao 
-código fonte atual, siga as instruções na página de contato ou poste uma
+código-fonte atual, siga as instruções na página de contato ou poste uma
 mensagem no Fórum do MAME em `https://forum.mamedev.org/
 <https://forum.mamedev.org/>`_
 
@@ -30,7 +30,7 @@ independentes das últimas 5 décadas.
 A compatibilidade dos sistemas operacionais
 ===========================================
 
-O código fonte atual pode ser compilada diretamente nos principais
+O código-fonte atual pode ser compilada diretamente nos principais
 sistemas operacionais: Microsoft Windows (ambos com suporte nativo para
 DirectX/BGFX ou com suporte SDL), Linux, FreeBSD e Max OS X. Há ainda a
 compatibilidade para ambas as versões de 32 e de 64 bits, saiba que a

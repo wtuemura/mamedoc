@@ -37,7 +37,7 @@ A família 6502
 A família do MOS 6502 tem sido grande e produtiva. Existe um grande
 número de variantes, tamanhos de barramentos variados, I/O e até mesmo
 opcodes. Alguns coadjuvantes (g65c816, hu6280) até existem e estão
-perdidos em algum lugar dentro do código fonte do MAME. A classe
+perdidos em algum lugar dentro do código-fonte do MAME. A classe
 hierárquica final ficou assim:
 
 ::

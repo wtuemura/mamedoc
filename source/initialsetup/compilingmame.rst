@@ -33,17 +33,17 @@ Antes, alguns pontos importantes:
 * A versão nativa do MAME roda no Windows, então uma grande ênfase será
   dada a compilação neste sistema operacional.
 
-* O **git** é a melhor maneira para baixar o código fonte do MAME e
-  mantê-lo atualizado. Antigamente era preciso baixar o código fonte
+* O **git** é a melhor maneira para baixar o código-fonte do MAME e
+  mantê-lo atualizado. Antigamente era preciso baixar o código-fonte
   do site oficial, aplicar dezenas de correções (patch) para que o
   mesmo fosse atualizado e corrigido, quando eram aplicados fora da
   ordem, geravam outros problemas.
   
   Hoje o processo é automatizado com o git, com um simples comando ele
-  vai baixar todo o código fonte assim como aplicar todas as
+  vai baixar todo o código-fonte assim como aplicar todas as
   alterações feitas ao código de maneira organizada e bem controlada.
   
-  Cada nova modificação que é enviada ao código fonte do MAME e
+  Cada nova modificação que é enviada ao código-fonte do MAME e
   autorizada pelos administradores, o servidor conta como sendo
   **1 commit** ou 1 envio.
 
@@ -51,7 +51,7 @@ Antes, alguns pontos importantes:
   quem vai repassar todos comandos ou opções que vierem depois dele para
   o compilador e outras ferramentas.
   
-  Digite *make* no diretório raiz onde se encontra o código fonte do
+  Digite *make* no diretório raiz onde se encontra o código-fonte do
   MAME para que ele leia as instruções contidas num arquivo chamado
   **Makefile** para que uma versão do MAME seja compilada, observe que
   é possível usar outras opções fazendo com que a compilação do MAME
@@ -72,7 +72,7 @@ Antes, alguns pontos importantes:
 * Algumas vezes o processo de compilação é interrompido antes de chegar
   ao fim, os motivos são os mais diversos, pode ser a falta de alguma
   biblioteca, um erro de configuração em algum lugar, uma atualização do
-  código fonte onde algum desenvolvedor deixou passar algo
+  código-fonte onde algum desenvolvedor deixou passar algo
   desapercebido, enfim, estes são problemas comuns encontrados durante a
   compilação do MAME.
   
@@ -88,11 +88,11 @@ Antes, alguns pontos importantes:
   problema. Nestes casos não é necessário reportar o erro, pois o código
   fonte do MAME no GIT é atualizado a todo instante.
 
-* Para que o código fonte do MAME possa ser compilado, há toda uma
+* Para que o código-fonte do MAME possa ser compilado, há toda uma
   estrutura que precisa estar configurada no momento que o comando
   **make** é executado, incluindo diversos outros parâmetros de 
   compilação. Sempre que um novo parâmetro for adicionado ou removido,
-  quando o código fonte de um driver for adicionado, atualizado,
+  quando o código-fonte de um driver for adicionado, atualizado,
   renomeado, removido e assim por diante, todos os arquivos do projeto
   responsáveis pela compilação precisam ser atualizados através da
   opção **REGENIE=1**.
@@ -112,7 +112,7 @@ Antes, alguns pontos importantes:
   diretório nada mais é do que um espaço auxiliar usado pelo processo
   de compilação.
 
-  É possível atualizar o código fonte com o comando ``git pull`` seguido
+  É possível atualizar o código-fonte com o comando ``git pull`` seguido
   de um ``make REGENIE=1`` para compilar apenas os novos códigos fontes
   que foram adicionados, atualizados (etc) e aproveitar os arquivos já
   compilados, porém, algumas vezes isso pode causar erros de compilação.
@@ -158,7 +158,7 @@ Antes, alguns pontos importantes:
 	**mame0205** - É a versão atual do MAME.
 
 	**540** - Indica a quantidade de **commits** ou a quantidade de
-	atualizações aplicadas ao código fonte desde a última mudança de
+	atualizações aplicadas ao código-fonte desde a última mudança de
 	versão.
 
 	**gc8e4dab20c** - São os primeiros 10 dígitos do último **commit**.
@@ -167,7 +167,7 @@ Antes, alguns pontos importantes:
 
 	\clearpage
 
-* O git mantém um controle de todos os arquivos do código fonte,
+* O git mantém um controle de todos os arquivos do código-fonte,
   qualquer alteração que não tenha sido feita pelos administradores a
   versão do seu MAME incluirá um identificador **dirty** no final::
 
@@ -177,7 +177,7 @@ Antes, alguns pontos importantes:
   O problema ocorre também caso exista algum residual antigo vindo de
   outra compilação, de não fazer um ``make clean`` antes de uma nova
   compilação, `arquivos não rastreados <https://github.com/git/git/commit/ee6fc514f2df821c2719cc49499a56ef2fb136b0>`_
-  dentro do diretório de trabalho do código fonte ou até mesmo quando há
+  dentro do diretório de trabalho do código-fonte ou até mesmo quando há
   arquivos alterados que por algum motivo não foram aplicados,
   exemplo::
 
@@ -210,7 +210,7 @@ Antes, alguns pontos importantes:
   Caso nenhum dos comando acima funcione e depois de ter absoluta
   certeza de que nada tenha sido alterado, experimente o comando
   ``git clean -d -x -f``, note que o comando vai apagar tudo o que não
-  seja relacionado com o código fonte do MAME, isso incluí o seu
+  seja relacionado com o código-fonte do MAME, isso incluí o seu
   **useroptions.mak** ou qualquer outro arquivo que ali esteja.
   Portanto, faça um **backup** antes de executar o comando!
 
@@ -237,14 +237,14 @@ Antes, alguns pontos importantes:
 Acelerando uma compilação
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Compilar todo o código fonte do MAME é um processo demorado e que
+Compilar todo o código-fonte do MAME é um processo demorado e que
 consome muitos recursos de processamento, memória e principalmente
 energia elétrica. É possível acelerar todo este processo usando o
 **ccache**, este programa armazena uma cópia da sua compilação, fazendo
-com que apenas o código fonte que foi atualizado seja compilado, todo
+com que apenas o código-fonte que foi atualizado seja compilado, todo
 o resto vem do armazenamento que o **ccache** fazendo com que a
 compilação termine num tempo muito menor, estamos falando em compilar
-todo o código fonte do MAME em segundos com o **ccache**, sem ele,
+todo o código-fonte do MAME em segundos com o **ccache**, sem ele,
 uma compilação pode levar horas.
 
 Para sistemas **Ubuntu** e **Debian Linux** o comando para instalar o
@@ -304,7 +304,7 @@ exista e seja igual à **1**, caso não exista, defina com ``export
 USE_CCACHE=1`` antes da compilação ou salve no arquivo ``~/.bashrc``
 como já foi descrito em :ref:`compiling-msys2-manually`.
 
-Para montar a sua cache basta fazer uma compilação limpa do código fonte
+Para montar a sua cache basta fazer uma compilação limpa do código-fonte
 do MAME com ``rm -rf build/* && make -j7``, no final em **cache size**
 deve aparecer o quanto foi armazenado em cache. Para aumentar o **max
 cache size** edite o arquivo ``/home/mame/.ccache/ccache.conf``.
@@ -326,7 +326,7 @@ o cache e deixar as coisas mais lentas.
 Exemplos práticos para todas as plataformas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O código fonte do MAME já vem preparado de forma que seja possível
+O código-fonte do MAME já vem preparado de forma que seja possível
 compilar toda a estrutura ou apenas uma parte dela como arcades por
 exemplo, consoles, portáteis ou até mesmo um sistema em específico como
 Neo Geo, CPS1, CPS2; assim como consoles como Megadrive/Genesis, Super
@@ -539,7 +539,7 @@ Para a **opção 2** nós temos:
 	``Average speed: 6742.91% (89 seconds)``
 
 Agora compilando o MAME para rodar num Linux Debian 9.7 x64, usando as
-mesmas opções, o mesmo driver, o mesmo código fonte e usando exatamente
+mesmas opções, o mesmo driver, o mesmo código-fonte e usando exatamente
 o mesmo hardware, nós temos um resultado bem diferente:
 
 Para a **opção 1** nós temos:
@@ -676,7 +676,7 @@ Configurando o pacote MSYS2 já pronto
 3.	``cd /src``
 4.	``git clone https://github.com/mamedev/mame.git``
 
-  O último comando irá baixar todo o código fonte do MAME para um
+  O último comando irá baixar todo o código-fonte do MAME para um
   diretório chamado **mame**, o caminho completo é ``/src/mame``.
 
 .. _compiling-msys2-osd-sdl:
@@ -786,7 +786,7 @@ reinicie o **mingw64.exe**.
 	Utilize ``QTDEBUG=1`` nas opções de compilação do make para compilar
 	a interface QT do depurador.
 
-* Para gerar a documentação API do código fonte é preciso instalar
+* Para gerar a documentação API do código-fonte é preciso instalar
   o pacote **doxygen**.
 
 * Para fazer a depuração do MAME é necessário instalar o **gdb**. Para
@@ -1013,7 +1013,7 @@ MinGW devem ser utilizadas. Não é possível lincar uma versão completa do
 MAME 32-bit incluindo as versões SDL e o depurador Qt. Ambos os GNU
 **ld** e o **ldd** ficarão sem memória gerando um arquivo final que não
 funciona. Também não é possível compilar uma versão 32-bit com todos os
-símbolos. O GCC pode ficar sem memória e certos arquivos de código fonte
+símbolos. O GCC pode ficar sem memória e certos arquivos de código-fonte
 podem extrapolar o limite de **32.768** seções impostas pelo formato
 PE/COFF do objeto.
 
@@ -1121,7 +1121,7 @@ Caso ainda não tenha, obtenha o Python 3 e configure:
 * Depois de baixado, execute e siga as instruções de instalação.
 
 Use o Terminal para iniciar a compilação, navegue até onde está o
-código fonte do MAME (comando *cd*) e siga as instruções normais de
+código-fonte do MAME (comando *cd*) e siga as instruções normais de
 compilação acima para :ref:`todas as plataformas <compiling-practical-examples>`.
 
 .. raw:: latex
@@ -1187,7 +1187,7 @@ Até o presente momento, isso é esperado para funções relacionadas com o
 OpenGL como a função "*glPointSize*". Outros podem também indicar que um
 arquivo de dependência adicional precisa ser especificado na lista
 *SOURCES*. Infelizmente, este processo ainda não é automatizado sendo
-necessário localizar e informar o arquivo de código fonte, assim como,
+necessário localizar e informar o arquivo de código-fonte, assim como,
 os arquivos que contém os símbolos que estão faltando. Pode ser que
 ignorar os avisos e dar sequência na compilação funcione, desde que os
 códigos ausentes não sejam usados no momento da execução.
@@ -1224,7 +1224,7 @@ Caso algo dê errado e não funcione, abra o console Web do seu
 navegador principal e veja qual o erro que ele retorna (por exemplo,
 faltando alguma coisa, algum arquivo de ROM incorreto, etc).
 Um erro do tipo "**ReferenceError: foo is not defined**" pode indicar
-que provavelmente faltou informar um arquivo de código fonte na lista da
+que provavelmente faltou informar um arquivo de código-fonte na lista da
 opção **SOURCES**.
 
 .. raw:: latex
@@ -1439,7 +1439,7 @@ Incluindo os subconjuntos dos sistemas suportados
 		* **mame**: Compila uma versão do MAME com arcade, mess e virtual.
 		* **mess**: Compila uma versão do MAME só com sistemas catalogados como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
 		* **nl**: Compila todos os drivers classificados como *netlist*.
-		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita a obrigação de se compilar todo o código fonte do MAME para testar apenas uma modificação feita na interface por exemplo.
+		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita a obrigação de se compilar todo o código-fonte do MAME para testar apenas uma modificação feita na interface por exemplo.
 		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
 
   O valor do parâmetro *SUBTARGET* serve também para se diferenciar
@@ -1456,7 +1456,7 @@ Incluindo os subconjuntos dos sistemas suportados
 
 **SOURCES**
 
-  Define o arquivo com o código fonte do driver que serão inclusos na
+  Define o arquivo com o código-fonte do driver que serão inclusos na
   compilação. Geralmente são usados em conjunto com a opção
   **SUBTARGET**. Os diferentes arquivos/pastas são separados com
   vírgulas.
@@ -1651,7 +1651,7 @@ Recursos opcionais
 **ARCHOPTS_C**
 
 	Opções adicionais que serão passadas ao compilador durante a
-	compilação dos arquivos de código fonte em linguagem C.
+	compilação dos arquivos de código-fonte em linguagem C.
 
 
 .. _mame-compilation-archopts-cpp:
@@ -1659,7 +1659,7 @@ Recursos opcionais
 **ARCHOPTS_CXX**
 
 	Opções adicionais que serão passadas ao compilador durante a
-	compilação dos arquivos de código fonte em linguagem C++.
+	compilação dos arquivos de código-fonte em linguagem C++.
 
 
 .. _mame-compilation-archopts-objc:
@@ -1667,7 +1667,7 @@ Recursos opcionais
 **ARCHOPTS_OBJC**
 
 	Opções adicionais que serão passadas ao compilador durante a
-	compilação dos arquivos de código fonte Objective-C.
+	compilação dos arquivos de código-fonte Objective-C.
 
 
 .. _mame-compilation-archopts-objcxx:
@@ -1675,7 +1675,7 @@ Recursos opcionais
 **ARCHOPTS_OBJCXX**
 
 	Opções adicionais que serão passadas ao compilador durante a
-	compilação dos arquivos de código fonte Objective-C++.
+	compilação dos arquivos de código-fonte Objective-C++.
 
 Sede das bibliotecas e framework
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1796,7 +1796,7 @@ Problemas relacionados com versões específicas do compilador
   erro relacionado com ``std::unique_ptr`` é necessário a atualização do
   seu libstdc++ para uma versão mais recente.
 
-Recursos do código fonte fortify da biblioteca GNU C
+Recursos do código-fonte fortify da biblioteca GNU C
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A biblioteca GNU C possui opções para realizar verificações durante a
@@ -1821,7 +1821,7 @@ tenha um comportamento fora do padrão.
 Seria melhor que essas distribuições predefinissem essa opção em seu
 próprio ambiente de desenvolvimento de pacotes caso eles acreditem que
 de fato, tal opção seja realmente importante, em vez de obrigar a
-todos a usarem em todo e qualquer código fonte que seja compilado no
+todos a usarem em todo e qualquer código-fonte que seja compilado no
 sistema sem necessidade.
 
 A distribuição Red Had faz da seguinte maneira, a opção
@@ -2103,7 +2103,7 @@ durante a compilação.
 
 Estes arquivos devem **sempre** estar junto ao executável do MAME, esse
 arquivo "**.sym**" é usado para traduzir as referências usadas no
-código fonte junto com os códigos de erro, para a maioria não significa
+código-fonte junto com os códigos de erro, para a maioria não significa
 muito porém é útil para os desenvolvedores. Aqui um exemplo de um erro
 que causou a parada do MAME::
 
@@ -2215,7 +2215,7 @@ Uma outra opção para o gdb é a utilização de interfaces que ajudam a
 organizar a saída do gdb como a `GDB Dashboard
 <https://github.com/cyrus-and/gdb-dashboard>`_, com ela a saída do gdb
 além de ficar colorida, fica mais organizada, já são exibidos todos
-os valores mais relevantes dos registros, código fonte, etc.
+os valores mais relevantes dos registros, código-fonte, etc.
 
 .. raw:: latex
 
@@ -2268,7 +2268,7 @@ os valores mais relevantes dos registros, código fonte, etc.
 
 
 A instalação é simples, basta salvar o .gbdinit no seu home. Para que a
-informação do código fonte (source) apareça como no exemplo acima, é
+informação do código-fonte (source) apareça como no exemplo acima, é
 necessário que o caminho completo onde o MAME foi compilado ainda
 exista, ou seja, depois de compilar o MAME não faça um ``make clean``,
 deixe-o como está assim o gdb encontrará o que precisa.
@@ -2287,7 +2287,7 @@ erro::
 
 	2509 prot_cmc.cpp File or directry not found.
 
-Ainda dentro do gdb indique o caminho completo para o código fonte do
+Ainda dentro do gdb indique o caminho completo para o código-fonte do
 MAME com o comando ``directory``::
 
 	directory /home/mame/src/mame

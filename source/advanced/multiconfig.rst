@@ -103,10 +103,10 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 
 	<p></p>
 
-7. Os arquivos INI voltados para os arquivos de código fonte (driver).
+7. Os arquivos INI voltados para os arquivos de código-fonte (driver).
    O MAME tentará ler ``source/``\ *<sourcefile>*\ ``.ini`` onde
-   <*sourcefile*> é o nome do arquivo de código fonte onde o sistema
-   estiver definido. O código fonte de um driver pode ser encontrado
+   <*sourcefile*> é o nome do arquivo de código-fonte onde o sistema
+   estiver definido. O código-fonte de um driver pode ser encontrado
    usando o comando ``mame -listsource <nome_da_rom>``, exemplo::
 
 	mame.exe -listsource sfa
@@ -114,7 +114,7 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 
    A Banpresto **Sailor Moon**, a Atlus **Dodonpachi** e a Nihon System
    **Dangun Feveron** por exemplo, todos rodam num hardware semelhante e
-   estão listados no arquivo de código fonte chamado ``cave.cpp`` que
+   estão listados no arquivo de código-fonte chamado ``cave.cpp`` que
    chamamos de **driver**, assim sendo, todos eles usarão o arquivo
    ``source/cave.ini`` para obter as suas configurações.
 

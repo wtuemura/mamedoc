@@ -1947,7 +1947,7 @@ são geradas automaticamente:
 Usando o complay.py
 -------------------
 
-No código fonte do MAME existe um script Python chamado **complay.py**,
+No código-fonte do MAME existe um script Python chamado **complay.py**,
 encontrado no subdiretório **scripts/build**. Como parte do processo de
 compilação do MAME esse script é usado para reduzir o tamanho dos dados
 dos layouts internos e para convertê-los de maneira que possam ser
@@ -2942,7 +2942,7 @@ necessário encontrar os valores para ``defstate``, ``inputmask`` e para
 ``state``.
 O ``defstate`` e o ``inputmask`` utilizam o mesmo valor, este valor
 **precisa ser calculado**, para isso acessamos o
-`código fonte do driver Galaxian <https://github.com/mamedev/mame/blob/m
+`código-fonte do driver Galaxian <https://github.com/mamedev/mame/blob/m
 aster/src/mame/drivers/galaxian.cpp#L2836>`_, bem na linha ``2634`` de
 cara já temos o nosso ``inputtag`` com o valor ``IN0`` que utilizamos
 acima, observe quem nem sempre o valor do ``inputtag`` está disponível
@@ -3373,7 +3373,7 @@ Ambos os controles utilizam os mesmos valores para ``state`` e
 
 Contudo, há sistemas na **CPS2** que apresentam o mesmo valor ``IN0``
 no ``inputtag`` para ambos os jogadores, nestes casos devemos recorrer
-novamente ao código fonte do MAME para este driver, observando a linha
+novamente ao código-fonte do MAME para este driver, observando a linha
 `#1001 <https://github.com/mamedev/mame/blob/master/src/mame/drivers/cps2.cpp#L1001>`_
 nós temos os 4 valores para a porta do 2º jogador ``PORT_PLAYER(2)``,
 temos o valor ``100`` para a direita, ``200`` para a esquerda, ``400``

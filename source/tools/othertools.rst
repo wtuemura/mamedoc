@@ -37,7 +37,7 @@ pngcmp
 
 Essa ferramenta é usada em teste de regressão ao comparar instantâneos
 PNG vindos de um script teste **runtest.cmd** encontrado nos arquivos de
-código fonte. Esse script só funciona no Windows.
+código-fonte. Esse script só funciona no Windows.
 
 
 .. _mame-othertools-nltool:

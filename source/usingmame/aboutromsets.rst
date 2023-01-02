@@ -71,7 +71,7 @@ ser organizadas e armazenadas como ``xxyyzz.01``, ``xxyyzz.02``,
 respectivamente. Após a conclusão de todo o processo e de todo um
 trabalho de aferição para saber se as imagens foram extraídas
 corretamente, os desenvolvedores registram o nome de cada imagem e os
-seus respectivos CRC [#CRC]_ e SHA1 [#SHA1]_ dentro do código fonte do
+seus respectivos CRC [#CRC]_ e SHA1 [#SHA1]_ dentro do código-fonte do
 respectivo driver para que o MAME saiba como carrega-los.
 
 

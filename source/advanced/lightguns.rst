@@ -870,7 +870,7 @@ compilação usando a opção **SOURCES**.
 	**drivers**.
 
 *	Copie o arquivo **drivers** para dentro do diretório raiz onde se
-	encontra o código fonte do MAME.
+	encontra o código-fonte do MAME.
 
 *	Apesar da lista ter sido gerada, ela ainda não é útil para nós pois
 	precisamos que ela esteja disposta numa só linha e separada por

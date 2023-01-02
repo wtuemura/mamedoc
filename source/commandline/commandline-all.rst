@@ -1241,19 +1241,19 @@ Opções para a configuração
 
 - **arcade.ini**
 
-	Para sistemas adicionados no código fonte com a macro ``GAME()``.
+	Para sistemas adicionados no código-fonte com a macro ``GAME()``.
 
 - **console.ini**
 
-	Para sistemas adicionados no código fonte com a macro ``CONS()``.
+	Para sistemas adicionados no código-fonte com a macro ``CONS()``.
 
 - **computer.ini**
 
-	Para sistemas adicionados no código fonte com a macro ``COMP()``.
+	Para sistemas adicionados no código-fonte com a macro ``COMP()``.
 
 - **othersys.ini**
 
-	Para sistemas adicionados no código fonte com a macro ``SYST()``.
+	Para sistemas adicionados no código-fonte com a macro ``SYST()``.
 
 - **vector.ini**
 

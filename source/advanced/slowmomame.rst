@@ -21,11 +21,11 @@ este esforço é `uma jogabilidade perfeita
 <https://www.youtube.com/watch?v=LzUDlJtyEkA>`_.
 
 Abordaremos agora como atrasar o tempo de emulação do MAME para que essa
-condição seja atingida, uma delas é editando o código fonte, a segunda
+condição seja atingida, uma delas é editando o código-fonte, a segunda
 maneira é utilizando uma interface lenta e a última é através de
 configuração usando a opção :ref:`-speed <mame-commandline-speed>`.
 
-Alterando o código fonte
+Alterando o código-fonte
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Antes de prosseguir é importante que saiba como :ref:`compilar o MAME
@@ -37,7 +37,7 @@ Antes de prosseguir é importante que saiba como :ref:`compilar o MAME
 Altere o valor de **0** para **1** e adicione a opção ``DEBUG=1`` às
 suas opções de compilação ou ao seu arquivo ``useroptions.mak`` e inicie
 a compilação. Geralmente não há a necessidade de se compilar todo o
-código fonte do MAME com essas alterações pois como já sabemos o MAME
+código-fonte do MAME com essas alterações pois como já sabemos o MAME
 abrange muito mais do que sistemas arcade e consoles. Prefira usar a
 opção ``SUBTARGET=arcade`` para compilar apenas os sistemas arcades ou
 então defina apenas o driver do sistema que deseja usar com o comando

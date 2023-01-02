@@ -17,7 +17,7 @@ I. Objetivo
 O principal objetivo do MAME é preservar décadas de história, impedindo
 com que a evolução da tecnologia este importante software "vintage" não
 seja esquecido e se perca ao longo tempo. Isso se torna possível usando
-o próprio código fonte do MAME para documentar o funcionamento do
+o próprio código-fonte do MAME para documentar o funcionamento do
 equipamento físico original. Com a evolução do desenvolvimento do MAME,
 programas e jogos que foram originalmente desenvolvidos para rodarem
 apenas no seu equipamento físico original, agora através da emulação é
@@ -30,7 +30,7 @@ patentes dos softwares ou sistemas. O MAME e todo o seu código-fonte é
 de criação autoral, disponível gratuitamente. O emulador requer se
 utiliza das ROMs originais, CD, disco rígido e outras imagens em mídia
 usadas originalmente pelos sistemas ou pelos drivers para operar e que
-devem ser providenciados pelo usuário. Nenhuma parte do código fonte
+devem ser providenciados pelo usuário. Nenhuma parte do código-fonte
 original do sistema ou de qualquer outro software estão inclusos no
 executável do MAME.
 
