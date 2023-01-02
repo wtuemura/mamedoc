@@ -627,7 +627,7 @@ seu **mame.ini**::
 	ctrlr                     arma
 
 Lembrando que é possível também fazer como foi ensinado em
-:ref:`Habilitando a arma apenas em jogos que precisam
+:ref:`Ativando a arma apenas em jogos que precisam
 <arma-em-jogos-que-precisam>` adicionando esta opção em **cfg.txt**.
 
 .. raw:: latex
@@ -640,7 +640,7 @@ Ativando a arma apenas nos jogos que precisam
 ---------------------------------------------
 
 O problema de usar o ``mame.ini`` é que o MAME **sempre** vai carregar e
-habilitar a arma em maquinas que não precisam, num PC com bastante
+ativar a arma em maquinas que não precisam, num PC com bastante
 recursos pode não ser problema, no entanto, caso o MAME esteja rodando
 num ambiente com recursos limitados isso pode ser um problema. Ou
 simplesmente, é como o autor deste texto que gosta das coisas bem
