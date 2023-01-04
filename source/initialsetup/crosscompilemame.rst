@@ -79,7 +79,7 @@ O comando abaixo vai instalar ferramentas adicionais além das quais já
 foram descritas na seção :ref:`compiling-ubuntu`, note que o
 comando abaixo é formado por uma linha só: ::
 
-	sudo aptitude install binutils-mingw-w64-x86-64 g++-mingw-w64 g++-mingw-w64-x86-64 gcc-mingw-w64 gcc-mingw-w64-base gcc-mingw-w64-x86-64 gobjc++-mingw-w64 mingw-w64 mingw-w64-common mingw-w64-tools mingw-w64-x86-64-dev win-iconv-mingw-w64-dev
+	sudo aptitude install g++-mingw-w64-x86-64-posix gcc-mingw-w64-x86-64-posix gcc-mingw-w64-x86-64-posix-runtime gobjc++-mingw-w64-x86-64-posix gobjc-mingw-w64-x86-64-posix binutils-mingw-w64-x86-64 mingw-w64-common mingw-w64-tools mingw-w64-x86-64-dev win-iconv-mingw-w64-dev
 
 .. note::
 
