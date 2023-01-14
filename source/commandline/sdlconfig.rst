@@ -261,6 +261,12 @@ Configurações para o mapeamento do controle joystick
 	Usar um tratamento especial para lidar com os controles *SixAxis* do
 	PS3.
 
+	Use um manuseio especial para os controles *SixAxis* do PlayStation
+	3.
+	Pode causar um comportamento indesejado com outros controladores.
+	Apenas afeta quando usado com a opção
+	:ref:`-joystickprovider sdljoy <mame-commandline-joystickprovider>`.
+	
 		O valor predefinido é ``Desligado`` (**-nosixaxis**)
 
 

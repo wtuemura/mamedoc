@@ -829,10 +829,8 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 **-uifontprovider** <*módulo*>
 
-	Define a fonte que será renderizada na Interface do Usuário. O
-	binário oficial do MAME para Windows não é compilado com SDL, sendo
-	necessário compilar uma versão compatível para que a opção ``sdl``
-	funcione.
+	Define a fonte que será renderizada na Interface do Usuário.
+
 	O valor predefinido é ``auto``.
 
 	Exemplo:
@@ -853,7 +851,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - none
       - auto
       - 
-      - sdl
+      - sdl [#UIFPSDLWindows]_.
     * - **macOS**
       - 
       - 
@@ -869,20 +867,16 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - 
       - sdl
 
+..  [#UIFPSDLWindows] O binário oficial do MAME para Windows não é
+                     compilado com SDL, sendo necessário compilar uma
+                     versão compatível para que a opção ``sdl``
+                     funcione.
 
 .. _mame-commandline-keyboardprovider:
 
 **-keyboardprovider** <*módulo*>
 
-	Escolhe como o MAME lidará com a entrada do teclado. No Windows,
-	``auto`` tentará o **rawinput**, caso contrário retornará para
-	**dinput**. O binário oficial do MAME para Windows não é compilado
-	com SDL, sendo necessário compilar uma versão compatível para que a
-	opção ``sdl`` funcione.
-
-	Observe que a emulação do teclado em modo de usuário para
-	ferramentas como joy2key irá certamente precisar da opção
-	``-keyboardprovider win32`` no Windows.
+	Escolhe como o MAME lidará com a entrada do teclado.
 
 	O valor predefinido é ``auto``.
 
@@ -899,31 +893,40 @@ Opções relacionadas ao que é exibido na tela (OSD)
     :widths: auto
 
     * - **Microsoft Windows**
-      - auto [#KBPAutoWindows]_.
+      - auto [#KBPVAutoWindows]_.
       - rawinput
       - dinput
       - win32
       - none
-      - sdl
+      - sdl [#KBPVSDLWindows]_.
     * - **SDL (macOS e Linux)**
-      - auto
+      - auto [#KBPVAutoSDL]_.
       - 
       - 
       - 
       - none
       - sdl
     * - **Linux**
-      - auto
+      - auto [#KBPVAutoSDL]_.
       - 
       - 
       - 
       - none
       - sdl
 
+..  [#KBPVAutoWindows] No Windows, o automático tentará ``rawinput``
+                       retornando para ``dinput``.
 
-.. raw:: latex
+..  [#KBPVSDLWindows] O binário oficial do MAME para Windows não é
+                      compilado com SDL, sendo necessário compilar uma
+                      versão compatível para que a opção ``sdl``.
 
-	\clearpage
+..  [#KBPVAutoSDL] Nas versões SDL a opção ``auto`` retorna para ``sdl``.
+
+.. Note:: Observe que as ferramentas de emulação de teclado do modo de
+          usuário, como o ``joy2key``, quase certamente exigirão o uso
+          da opção ``-keyboardprovider win32`` nas máquinas Windows.
+
 
 .. _mame-commandline-mouseprovider:
 
@@ -977,12 +980,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 **-lightgunprovider** <*módulo*>
 
-	Escolhe como o MAME lidará com a arma de luz (*light gun*). No
-	Windows, ``auto`` tentará **rawinput**, caso contrário retornará
-	para **win32** ou **none** caso não encontre nenhum.
-	No SDL/Linux o ``auto`` é predefinido como **x11** ou **none**
-	caso não encontre nenhum. Em outro tipo de SDL o ``auto`` será
-	predefinido para **none**.
+	Escolhe como o MAME lidará com a arma de luz (*light gun*).
 
 	O valor predefinido é ``auto``.
 
@@ -999,39 +997,41 @@ Opções relacionadas ao que é exibido na tela (OSD)
     :widths: auto
 
     * - **Microsoft Windows**
-      - auto
+      - auto [#LGIPAutoWindows]_.
       - rawinput
       - win32
       - none
       - 
     * - **macOS**
-      - auto
+      - auto [#LGIPAutoSDL]_.
       - 
       - 
       - none
       - 
     * - **Linux**
-      - auto
+      - auto [#LGIPAutoLinux]_.
       - 
       - 
       - none
       - x11
 
-.. raw:: latex
+..  [#LGIPAutoWindows] No Windows, o automático tentará ``rawinput``
+                       retornando para ``win32`` ou ``none`` caso não
+                       encontre nenhum.
 
-	\clearpage
+..  [#LGIPAutoSDL] Nas versões SDL (não Linux), a opção ``auto`` será
+                   predefinido para ``none``.
+
+..  [#LGIPAutoLinux] Nas versões SDL/Linux, a opção ``auto`` será
+                     predefinido para ``x11``, or ``none`` caso não
+                     encontre nenhum.
+
 
 .. _mame-commandline-joystickprovider:
 
 **-joystickprovider** <*módulo*>
 
-	Escolhe como o MAME lidará com a entrada do joystick. Repare que no
-	controle do Microsoft X-Box 360 e X-Box One, eles funcionarão melhor
-	com **winhybrid** ou **xinput**. A opção do controle *winhybrid*
-	suporta uma mistura de DirectInput e Xinput ao mesmo tempo.
-	No SDL, ``auto`` será predefinido para **sdl**. O binário oficial do
-	MAME para Windows não é compilado com SDL, sendo necessário compilar
-	uma versão compatível para que a opção ``sdl`` funcione.
+	Escolhe como o MAME lidará com a entrada do joystick.
 
 	O valor predefinido é ``auto``.
 
@@ -1040,7 +1040,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 			mame mk2 -joystickprovider winhybrid
 
-.. tabularcolumns:: |L|C|C|C|C|C|C|
+.. tabularcolumns:: |L|C|C|C|C|C|C|C|
 
 .. list-table:: Opções compatíveis com a entrada do joystick separado por plataforma
     :header-rows: 0
@@ -1048,19 +1048,35 @@ Opções relacionadas ao que é exibido na tela (OSD)
     :widths: auto
 
     * - **Microsoft Windows**
-      - auto
+      - auto [#JIPAutoWindows]_.
       - winhybrid
       - dinput
       - xinput
+      - sdlgame
+      - sdljoy
       - none
-      - sdl
     * - **SDL**
-      - auto
+      - auto [#JIPAutoSDL]_.
       - 
       - 
       - 
+      - sdlgame
+      - sdljoy
       - none
-      - sdl
+
+.. [#JIPAutoWindows] No Windows, a predefinição é ``winhybrid``.
+
+.. [#JIPAutoSDL] Nas versões SDL, a predefinição é ``sdlgame``.
+
+.. Note:: Os controles do *Microsoft Xbox 360* e do *Xbox One*
+          que estiverem conectados ao Windows funcionarão melhor com a
+          opção ``winhybrid`` ou com a opção ``xinput``. A opção
+          ``winhybrid`` é compatível com diferentes controles
+          funcionando com *DirectInput* e *XInput* ao mesmo tempo.
+
+.. Note:: É provável que no Windows, a opção ``winhybrid`` ofereça uma
+          melhor experiência ao ser compatível com controles ``XInput``
+          e ``DirectInput``.
 
 
 Opções de MIDI e rede
@@ -5379,8 +5395,5 @@ Opções do servidor HTTP
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)
 ..  [#OQEIU] Interface do Usuário.
-..  [#KBPAutoWindows] A opção ``auto`` no Windows tentará utilizar a
-		``rawinput``, caso contrário retorna para ``dinput``.
-..  [#KBIPAutoSDL] A opção ``auto`` no SDL é predefinido como ``sdl``.
 ..  [#aliasing]	https://en.wikipedia.org/wiki/Aliasing
 ..  [#saaliasing]	https://en.wikipedia.org/wiki/Spatial_anti-aliasing
