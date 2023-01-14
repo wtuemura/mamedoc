@@ -63,6 +63,8 @@ Opções relacionadas ao que é exibido na tela
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | :ref:`uimodekey <mame-commandline-uimodekey>`
+| :ref:`controller_map <mame-commandline-controllermap>`
+| :ref:`background_input <mame-commandline-backgroundinput>`
 | :ref:`uifontprovider <mame-commandline-uifontprovider>`
 | :ref:`keyboardprovider <mame-commandline-keyboardprovider>`
 | :ref:`mouseprovider <mame-commandline-mouseprovider>`
@@ -400,6 +402,9 @@ Opções do PortAudio
 Configurações específicas para o Windows
 ----------------------------------------
 
+Esta seção descreve todas as opções de configuração compatíveis com o
+MAME do Windows (não SDL).
+
 Opções de desempenho
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -440,7 +445,7 @@ Configurações específicas para versões SDL
 
 Esta seção contém opções de configuração que são específicas para as
 versões SDL compatíveis (incluindo versões Windows que foram compiladas
-com SDL ao invés da sua versão nativa).
+com SDL em vez da sua versão nativa).
 
 Opções relacionadas ao desempenho (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

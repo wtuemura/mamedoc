@@ -832,8 +832,9 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 	O caminho para um arquivo de texto contendo os mapeamentos do
 	controle, botões e do direcional no formato usado pelo SDL2 e pelo
-	Steam. O arquivo deve usar um formato de texto compatível com ASCII
-	e com terminações de linha nativas (CRLF no Windows por exemplo).
+	Steam ou ``none`` para usar apenas o mapeamento nativo do MAME. O
+	arquivo deve usar um formato de texto compatível com ASCII e com
+	terminações de linha nativas (CRLF no Windows por exemplo).
 	Atualmente é compatível apenas ao usar a opção
 	:ref:`-joystickprovider sdljoy <mame-commandline-joystickprovider>`.
 
@@ -855,13 +856,36 @@ Opções relacionadas ao que é exibido na tela (OSD)
 			mame -controller_map gamecontrollerdb.txt sf2ce
 
 
+.. _mame-commandline-backgroundinput:
+
+**-[no]background_input**
+
+	Define se a entrada será aceita ou se será ignorada quando o MAME
+	não tiver o foco na interface. Atualmente é suportado na entrada do
+	mouse/teclado ``RawInput`` no Windows e na entrada do controle de
+	jogo/joystick SDL. Essa configuração é ignorada enquanto o depurador
+	estiver ativado.
+
+		O valor predefinido é ``desligado``. (**-nobackground_input**).
+
+	Examplo:
+		.. code-block:: shell
+
+			mame -background_input ssf2tb
+
+
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-uifontprovider:
 
 **-uifontprovider** <*módulo*>
 
 	Define a fonte que será renderizada na Interface do Usuário.
 
-	O valor predefinido é ``auto``.
+		O valor predefinido é ``auto``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -902,10 +926,6 @@ Opções relacionadas ao que é exibido na tela (OSD)
                      versão compatível para que a opção ``sdl``
                      funcione.
 
-.. raw:: latex
-
-	\clearpage
-
 
 .. _mame-commandline-keyboardprovider:
 
@@ -913,7 +933,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 	Escolhe como o MAME lidará com a entrada do teclado.
 
-	O valor predefinido é ``auto``.
+		O valor predefinido é ``auto``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -963,6 +983,11 @@ Opções relacionadas ao que é exibido na tela (OSD)
           da opção ``-keyboardprovider win32`` nas máquinas Windows.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-mouseprovider:
 
 **-mouseprovider** <*módulo*>
@@ -974,7 +999,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 	O binário oficial do MAME para Windows não é compilado com SDL,
 	sendo necessário compilar uma versão compatível para que a opção
 	``sdl`` funcione.
-	O valor predefinido é ``auto``.
+		O valor predefinido é ``auto``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1010,10 +1035,6 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - none
       - sdl
 
-.. raw:: latex
-
-	\clearpage
-
 
 .. _mame-commandline-lightgunprovider:
 
@@ -1021,7 +1042,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 	Escolhe como o MAME lidará com a arma de luz (*light gun*).
 
-	O valor predefinido é ``auto``.
+		O valor predefinido é ``auto``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1070,9 +1091,10 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 **-joystickprovider** <*módulo*>
 
-	Escolhe como o MAME lidará com a entrada do joystick.
+	Escolhe como o MAME lidará com a entrada do joystick ou outro
+	controle.
 
-	O valor predefinido é ``auto``.
+		O valor predefinido é ``auto``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1107,15 +1129,46 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 .. [#JIPAutoSDL] Nas versões SDL, a predefinição é ``sdlgame``.
 
-.. Note:: Os controles do *Microsoft Xbox 360* e do *Xbox One*
-          que estiverem conectados ao Windows funcionarão melhor com a
-          opção ``winhybrid`` ou com a opção ``xinput``. A opção
-          ``winhybrid`` é compatível com diferentes controles
-          funcionando com *DirectInput* e *XInput* ao mesmo tempo.
 
-.. Note:: É provável que no Windows, a opção ``winhybrid`` ofereça uma
-          melhor experiência ao ser compatível com controles ``XInput``
-          e ``DirectInput``.
+.. raw:: latex
+
+	\clearpage
+
+
+**winhybrid**
+
+	Usa o ``XInput`` para os controles compatíveis e retornando para
+	``DirectInput`` para outros controles. Geralmente, oferece uma
+	melhor experiência no Windows.
+
+**dinput**
+
+	Usa o ``DirectInput`` para todos os controles. Pode ser útil caso
+	queira usar mais de quatro controles ``XInput`` ao mesmo tempo.
+	Observe que os controles **LT** e **RT** são combinados com o uso de
+	controles ``XInput`` via ``DirectInput``.
+
+**xinput**
+
+	É compatível com até quatro controles ``XInput``.
+
+**sdlgame**
+
+	Usa a API do controle SDL para controles com o mapeamento do
+	botão/eixo disponíveis, retorna para a API do joystick SDL nos
+	outros controles. Fornece uma atribuição consistente dos botões, dos
+	eixos e dos nomes dos controles mais populares. Use a
+	:ref:`opção controller_map <mame-commandline-controllermap>` para
+	fornecer mapeamentos para os controles adicionais ou substituir os
+	mapeamentos já inclusos.
+
+**sdljoy**
+
+	Usa a API dos joystick em todos os controles de jogos.
+
+**none**
+
+	Ignora todos os controles de jogos.
 
 
 .. raw:: latex
@@ -1356,7 +1409,7 @@ Opções para a configuração
 	``vector.ini`` com a linha **effect none** nele, ele irá
 	sobrescrever qualquer valor de efeito existente no seu ``mame.ini``.
 
-		O valor predefinido é ``Ligado`` (``-readconfig``).
+			O valor predefinido é ``Ligado`` (``-readconfig``).
 
 
 .. _mame-commandline-nowriteconfig:
@@ -1474,7 +1527,7 @@ Opções para a configuração dos principais diretórios
 	separados por ponto e vírgula. É usado em conjunto com a opção
 	``-ctrlr``.
 	
-	O valor predefinido é ``ctrlr`` (isto é, um diretório chamado
+		O valor predefinido é ``ctrlr`` (isto é, um diretório chamado
 	**ctrlr** no diretório raiz do MAME).
 
 	Exemplo:
@@ -1622,7 +1675,7 @@ Opções para a configuração dos principais diretórios
 	informações da contabilidade do sistema e a organização das janelas
 	do depurador.
 
-	O valor predefinido é ``cfg`` (isto é, um diretório com o nome
+		O valor predefinido é ``cfg`` (isto é, um diretório com o nome
 	**cfg** no diretório raiz do MAME). Caso este diretório não
 	exista, ele será criado automaticamente.
 
@@ -1647,7 +1700,7 @@ Opções para a configuração dos principais diretórios
 	programáveis que fazem uso deste tipo de memória. As informações são
 	lidas no início da emulação e gravadas ao encerrar.
 
-	O valor predefinido é ``nvram`` (isto é, um diretório com nome
+		O valor predefinido é ``nvram`` (isto é, um diretório com nome
 	"nvram" no diretório raiz do MAME). Caso este diretório não
 	exista, ele será criado automaticamente.
 
@@ -1667,7 +1720,7 @@ Opções para a configuração dos principais diretórios
 	grava todos os comando e acionamentos de botões que forem feitos
 	durante a operação do sistema.
 
-	O valor predefinido é ``inp`` (ou seja, um diretório de nome
+		O valor predefinido é ``inp`` (ou seja, um diretório de nome
 	**inp** no diretório raiz do MAME). Caso este diretório não
 	exista, ele será criado automaticamente.
 
@@ -1686,7 +1739,7 @@ Opções para a configuração dos principais diretórios
 	solicitação do usuário ou ao usar a opção
 	:ref:`-autosave <mame-commandline-noautosave>`.
 
-	O valor predefinido é ``sta`` (isto é, um diretório de nome
+		O valor predefinido é ``sta`` (isto é, um diretório de nome
 	**sta** no diretório raiz do MAME). Caso este diretório não
 	exista, ele será criado automaticamente.
 
@@ -1703,7 +1756,7 @@ Opções para a configuração dos principais diretórios
 	Define o diretório onde os arquivos de instantâneos da tela são
 	armazenados quando solicitado pelo usuário.
 
-	O valor predefinido é ``snap`` (isto é, um diretório chamado
+		O valor predefinido é ``snap`` (isto é, um diretório chamado
 	**snap** no diretório raiz do MAME). Caso este diretório não
 	exista, ele será criado automaticamente.
 
@@ -1728,7 +1781,7 @@ Opções para a configuração dos principais diretórios
 	a imagem de disco original. Os arquivos são criados no inicio da
 	emulação com uma imagem compactada do disco rígido.
 
-	O valor predefinido é ``diff`` (isto é, um diretório chamado
+		O valor predefinido é ``diff`` (isto é, um diretório chamado
 	**diff** no diretório raiz do MAME). Caso este diretório não
 	exista, ele será criado automaticamente.
 
@@ -1747,7 +1800,7 @@ Opções para a configuração dos principais diretórios
 	pelo depurador quando comentários são adicionados num sistema
 	desmontado (disassembly).
 
-	O valor predefinido é ``comments`` (isto é, um diretório chamado
+		O valor predefinido é ``comments`` (isto é, um diretório chamado
 	**comments** no diretório raiz do MAME). Caso este diretório não
 	exista, ele será criado automaticamente.
 
@@ -1788,7 +1841,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	carregadas de forma consecutiva ao pressionar a tecla de atalho para
 	rebobinar passo único (:kbd:`Shift` :kbd:`Esquerdo` + :kbd:`~`) [2]_.
 
-	O valor predefinido é ``Desligado`` (``-norewind``).
+		O valor predefinido é ``Desligado`` (``-norewind``).
 
 	Caso o depurador esteja no estado *break*, a condição de estado
 	atual é criada a cada *step in*, *step over* ou caso ocorra um
@@ -1833,7 +1886,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	(até mesmo no Windows); a *string* ``%g`` representa o nome do
 	driver do sistema atual.
 
-	O valor predefinido é ``%g``, que cria uma pasta separada para cada
+		O valor predefinido é ``%g``, que cria uma pasta separada para cada
 	sistema.
 
 	Em adição ao que foi dito acima, para os drivers que usem mídias
@@ -1878,7 +1931,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	funciona para os sistemas que sejam compatíves com o salvamento do
 	seu estado.
 
-	O valor predefinido é ``Desligado`` (``-noautosave``).
+		O valor predefinido é ``Desligado`` (``-noautosave``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -1898,7 +1951,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	memória. Consulte o comando :ref:`-record <mame-commandline-record>`
 	para obter mais informações importantes.
 
-	O valor predefinido é ``NULO`` (sem reprodução).
+		O valor predefinido é ``NULO`` (sem reprodução).
 
 	Exemplo:
 		.. code-block:: shell
@@ -1949,7 +2002,7 @@ Opções para a gravação e a reprodução do estado da emulação
 
 			mame ssf2tu -playback perfect -exit_after_playback
 
-	O valor predefinido é ``Desligado`` (``-noexit_after_playback``).
+		O valor predefinido é ``Desligado`` (``-noexit_after_playback``).
 
 
 .. _mame-commandline-record:
@@ -1961,7 +2014,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	comandos durante uma seção.
 	Esse recurso não funciona de forma confiável com todos os sistemas.
 
-	O valor predefinido é ``NULO`` (sem gravação).
+		O valor predefinido é ``NULO`` (sem gravação).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2008,7 +2061,7 @@ Opções para a gravação de áudio e vídeo
 	unir os dois, ou use ``-aviwrite`` para gravar áudio e vídeo num
 	único arquivo.
 
-	O valor predefinido é ``NULO`` (sem gravação).
+		O valor predefinido é ``NULO`` (sem gravação).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2034,7 +2087,7 @@ Opções para a gravação de áudio e vídeo
 	:ref:`-playback <mame-commandline-playback>` e
 	:ref:`-exit_after_playback <mame-commandline-exitafterplayback>`.
 
-	O valor predefinido é ``NULO`` (sem gravação).
+		O valor predefinido é ``NULO`` (sem gravação).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2050,7 +2103,7 @@ Opções para a gravação de áudio e vídeo
 	com uma taxa de amostragem diferente da predefinida (**48000 Hz**),
 	consulte a opção :ref:`-samplerate <mame-commandline-samplerate>`.
 
-	O valor predefinido é ``NULO`` (sem gravação).
+		O valor predefinido é ``NULO`` (sem gravação).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2089,7 +2142,7 @@ Opções para a captura da tela
 	de ``%i`` para o próximo vazio, caso ele seja omitido, os
 	instantâneos existentes com o mesmo nome serão gravados por cima.
 
-		O valor predefinido é ``%g/%i``.
+			O valor predefinido é ``%g/%i``.
 
 	Para os drivers que usam mídias diferentes, como cartões ou
 	disquetes, também é possível usar ``%d_[media]``.
@@ -2121,7 +2174,7 @@ Opções para a captura da tela
 	tela não gira automaticamente caso o sistema seja orientado
 	verticalmente.
 
-	O valor predefinido é ``auto``.
+		O valor predefinido é ``auto``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -2168,7 +2221,7 @@ Opções para a captura da tela
 	 Use ``-snapview XXYYZZ_03`` para definir exatamente a visualização
 	 desejada na sua captura.
 
-	O valor predefinido é ``internal``.
+		O valor predefinido é ``internal``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -2187,7 +2240,7 @@ Opções para a captura da tela
 	fazer a diferença melhorando o desempenho durante a gravação do
 	vídeo.
 
-	O valor predefinido é ``Ligado`` (``-snapbilinear``).
+		O valor predefinido é ``Ligado`` (``-snapbilinear``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2211,7 +2264,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	serão pulados. Ativando esta opção ela se sobrepõem ao que for
 	definido em **-frameskip** descrito logo abaixo.
 
-	O valor predefinido é ``Desligado`` (``-noautoframeskip``).
+		O valor predefinido é ``Desligado`` (``-noautoframeskip``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2231,7 +2284,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	nativa do sistema emulado sem que haja sobrecarga no seu computador
 	ainda que ele não tenha um grande poder de processamento.
 
-	O valor predefinido é não ignorar nenhum quadro (``-frameskip 0``).
+		O valor predefinido é não ignorar nenhum quadro (``-frameskip 0``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2286,7 +2339,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	limitada pelo seu processador, placa de vídeo ou até mesmo pelo
 	desempenho final da sua memória.
 
-	O valor predefinido é ``Ligado`` (``-throttle``).
+		O valor predefinido é ``Ligado`` (``-throttle``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2307,7 +2360,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	desempenho caso outros programas que também demandem processamento
 	estejam rodando junto com o MAME.
 
-	O valor predefinido é ``Ligado`` (``-sleep``).
+		O valor predefinido é ``Ligado`` (``-sleep``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2332,7 +2385,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	A resolução interna da fração são dois pontos decimais, logo o
 	valor **1.002** será arredondado para ``1.0``.
 
-	O valor predefinido é ``1.0``.
+		O valor predefinido é ``1.0``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -2375,7 +2428,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	Utilize esta opção caso note pequenas travadas de tela durante cenas
 	de movimentação horizontal ou vertical.
 
-	O valor predefinido é ``Desligado`` (``-norefreshspeed``).
+		O valor predefinido é ``Desligado`` (``-norefreshspeed``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2393,7 +2446,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	limitado internamente para quatro vezes o número dos processadores
 	informado pelo seu sistema.
 
-	O valor predefinido é ``auto``.
+		O valor predefinido é ``auto``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -2431,7 +2484,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	do 3D, assim como sistemas onde rodam um software similar ao
 	sistema operacional).
 
-	O valor predefinido é ``-nolowlatency``.
+		O valor predefinido é ``-nolowlatency``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -2456,7 +2509,7 @@ Opções para a rotação da tela
 	disposição da tela como ela é no arcade original, mantenha esta
 	opção **DESLIGADA**.
 
-	O valor predefinido é ``Ligado`` (``-rotate``).
+		O valor predefinido é ``Ligado`` (``-rotate``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2660,7 +2713,7 @@ Opções para a configuração de vídeo
 	próprias configurações, taxa de proporção de tela, resolução e
 	exibição, que podem ser definidas usando as opções abaixo.
 
-	O valor predefinido é ``1``.
+		O valor predefinido é ``1``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -2675,7 +2728,7 @@ Opções para a configuração de vídeo
 
 	Inicia a tela do MAME numa janela em vez da tela inteira.
 
-	O valor predefinido é ``Desligado`` (``-nowindow``).
+		O valor predefinido é ``Desligado`` (``-nowindow``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2699,7 +2752,7 @@ Opções para a configuração de vídeo
 	uso. Esta opção apenas surte efeito quando a opção **-window** é
 	utilizada.
 
-	O valor predefinido é ``Ligado`` (``-maximize``).
+		O valor predefinido é ``Ligado`` (``-maximize``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2734,7 +2787,7 @@ Opções para a configuração de vídeo
 	a tecla **Control** ou **Ctrl** pressionada durante
 	redimensionamento da janela, a proporção será mantida.
 
-	O valor predefinido é ``Ligado`` (``-keepaspect``).
+		O valor predefinido é ``Ligado`` (``-keepaspect``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2800,7 +2853,7 @@ Opções para a configuração de vídeo
 	:ref:`-keepaspect <mame-commandline-keepaspect>` e
 	:ref:`-prescale <mame-commandline-prescale>`.
 
-	O valor predefinido é ``Ligado`` (``-unevenstretch``).
+		O valor predefinido é ``Ligado`` (``-unevenstretch``).
 
 	.. raw:: latex
 
@@ -2819,7 +2872,7 @@ Opções para a configuração de vídeo
 	Permite que a relação de aspecto da tela seja desigual e que a tela
 	ou janela possa ser preenchida (esticada) apenas na horizontal.
 
-	O valor predefinido é ``Ligado`` (``-unevenstretchx``).
+		O valor predefinido é ``Ligado`` (``-unevenstretchx``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2834,7 +2887,7 @@ Opções para a configuração de vídeo
 	Permite que a relação de aspecto da tela seja desigual e que a tela
 	ou janela possa ser preenchida (esticada) apenas na vertical.
 
-	O valor predefinido é ``Ligado`` (``-unevenstretchy``).
+		O valor predefinido é ``Ligado`` (``-unevenstretchy``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2849,7 +2902,7 @@ Opções para a configuração de vídeo
 	Aplica a opção **-unevenstretchx/y** automaticamente com base na
 	orientação nativa da fonte.
 
-	O valor predefinido é ``Desligado`` (``-noautostretchxy``).
+		O valor predefinido é ``Desligado`` (``-noautostretchxy``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2864,7 +2917,7 @@ Opções para a configuração de vídeo
 	Permite que a imagem passe dos limites da tela (overscan) de alvos
 	inteiros e dimensionáveis.
 
-	O valor predefinido é ``Desligado`` (``-nointoverscan``).
+		O valor predefinido é ``Desligado`` (``-nointoverscan``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2881,7 +2934,7 @@ Opções para a configuração de vídeo
 	sozinho ou até o fator **4.0**. Causa aliasing mínimo nos pixels
 	quando utilizado em conjunto com intscaley
 
-	O valor predefinido é ``0.0`` (``-nointscalex 0.0``).
+		O valor predefinido é ``0.0`` (``-nointscalex 0.0``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2902,7 +2955,7 @@ Opções para a configuração de vídeo
 	sozinho ou até o fator **4.0**. Causa aliasing mínimo nos pixels
 	quando utilizado em conjunto com intscalex.
 
-	O valor predefinido é ``0.0`` (``-nointscaley 0.0``).
+			O valor predefinido é ``0.0`` (``-nointscaley 0.0``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2947,7 +3000,7 @@ Opções para a configuração de vídeo
 	uma queda periódica na velocidade dos quadros de vídeo emulados
 	resultando em pequenos travamentos durante as cenas com movimentos.
 
-	O valor predefinido é ``Desligado`` (``-nowaitvsync``).
+			O valor predefinido é ``Desligado`` (``-nowaitvsync``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -2982,7 +3035,7 @@ Opções para a configuração de vídeo
 	atualização da tela. Esta opção não funciona com a opção
 	``-video gdi``.
 
-	O valor predefinido é ``Desligado`` (``-nosyncrefresh``).
+			O valor predefinido é ``Desligado`` (``-nosyncrefresh``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3012,7 +3065,7 @@ Opções para a configuração de vídeo
 
 	Os valores válidos são ``1`` (mínimo) e ``8`` (máximo).
 
-	O valor predefinido é ``1``.
+			O valor predefinido é ``1``.
 
 	Funciona com todos os modos de vídeo no Windows (bgfx, d3d, etc),
 	nas outras plataformas funciona **APENAS** naquelas que forem
@@ -3040,7 +3093,7 @@ Opções para a configuração de vídeo
 	todos os filtros. Consulte também a opção
 	:ref:`-gl_glsl_filter <mame-commandline-glglslfilter>`.
 
-	O valor predefinido é ``Ligado`` (``-filter``).
+			O valor predefinido é ``Ligado`` (``-filter``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3073,7 +3126,7 @@ Opções para a configuração de vídeo
 	Os arquivos PNG gerados são gravados no diretório snap dentro do
 	``systemname/burnin-<nome.da.tela>.png``.
 
-	O valor predefinido é ``Desligado`` (``-noburnin``).
+			O valor predefinido é ``Desligado`` (``-noburnin``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3104,7 +3157,7 @@ Opções para a configuração da tela inteira
 
 	Essa opção não funciona com a opção ``-video gdi``.
 
-	O valor predefinido é ``Desligado`` (``-noswitchres``).
+			O valor predefinido é ``Desligado`` (``-noswitchres``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3303,7 +3356,7 @@ Opções para uso com as ilustrações
 	Essa opção também está disponível através da interface gráfica na
 	parte das opções de vídeo.
 
-	O valor predefinido é ``Desligado`` (``-noartwork_crop``).
+			O valor predefinido é ``Desligado`` (``-noartwork_crop``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3352,7 +3405,7 @@ Opções para os ajustes de imagem da tela
 	tela mais escura, enquanto valores maiores até ``2.0`` produzirão
 	uma tela mais clara.
 
-	O valor predefinido é ``1.0``.
+			O valor predefinido é ``1.0``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -3373,7 +3426,7 @@ Opções para os ajustes de imagem da tela
 	apagada, enquanto valores maiores até ``2.0`` produzirão uma tela
 	mais saturada.
 
-	O valor predefinido é ``1.0``.
+			O valor predefinido é ``1.0``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -3394,7 +3447,7 @@ Opções para os ajustes de imagem da tela
 	trará a luminância mais para o preto, enquanto valores maiores
 	(até **3.0**) empurrarão essa luminância para o branco.
 
-	O valor predefinido é ``1.0``.
+			O valor predefinido é ``1.0``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -3407,7 +3460,7 @@ Opções para os ajustes de imagem da tela
 
 	Faz o controle do nível de brilho durante a pausa.
 
-	O valor predefinido é ``0.65``.
+			O valor predefinido é ``0.65``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -3461,7 +3514,7 @@ Opções para os ajustes de imagem da tela
 	``RealScanlinesV`` e ``RealScanlinesH`` estão disponíveis no `site
 	do projeto <https://github.com/wtuemura/mamedoc/tree/master/artwork>`_.
 
-	O valor predefinido é ``none`` ou nenhum efeito.
+		O valor predefinido é ``none`` ou nenhum efeito.
 
 	Exemplo:
 		.. code-block:: shell
@@ -3567,7 +3620,7 @@ Opções para sistemas que usem gráficos vetoriais
 	Essa opção espera um valor flutuante (float) no intervalo
 	entre ``0.00`` e ``100.00`` (``0`` = nenhum e ``100`` = máximo).
 
-	O valor predefinido é ``0``.
+		O valor predefinido é ``0``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -3596,7 +3649,7 @@ obtenha a melhor desempenho possível.
 
 	Sempre utilize a potência de 2 para o tamanhos das texturas.
 
-		O valor predefinido é ``Desligado``
+			O valor predefinido é ``Desligado``
 		(``-nogl_forcepow2texture``).
 
 .. _mame-commandline-glnotexturerect:
@@ -3605,7 +3658,7 @@ obtenha a melhor desempenho possível.
 
 	Não use o *OpenGL GL_ARB_texture_rectangle*
 
-		O valor predefinido é ``Ligado`` (``-gl_notexturerect``).
+			O valor predefinido é ``Ligado`` (``-gl_notexturerect``).
 
 .. _mame-commandline-glvbo:
 
@@ -3613,7 +3666,7 @@ obtenha a melhor desempenho possível.
 
 	Ative o *OpenGL VBO* (Vertex Buffer Objects) caso esteja disponível.
 
-		O valor predefinido é ``Ligado`` (``-gl_vbo``).
+			O valor predefinido é ``Ligado`` (``-gl_vbo``).
 
 .. _mame-commandline-glpbo:
 
@@ -3621,7 +3674,7 @@ obtenha a melhor desempenho possível.
 
 	Ativar o *OpenGL PBO* (Pixel Buffer Objects) caso esteja disponível.
 
-		O valor predefinido é ``Ligado`` (``-gl_pbo``).
+			O valor predefinido é ``Ligado`` (``-gl_pbo``).
 
 .. raw:: latex
 
@@ -3639,7 +3692,7 @@ Opções de vídeo OpenGL GLSL
 
 	Ativar o *OpenGL GLSL* caso esteja disponível.
 
-	O valor predefinido é ``Desligado`` (``-nogl_glsl``).
+		O valor predefinido é ``Desligado`` (``-nogl_glsl``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3667,7 +3720,7 @@ Opções de vídeo OpenGL GLSL
 	  gradação mais suave. Também suaviza a imagem porém nem tanto como
 	  o método bilinear.
 
-	O valor predefinido é ``1`` (``-gl_glsl_filter 1``).
+		O valor predefinido é ``1`` (``-gl_glsl_filter 1``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3727,7 +3780,7 @@ Opções para a configuração do áudio
 	Valores maiores que ``48000``, aumentam a qualidade do áudio ao
 	custo da perda do desempenho da emulação.
 
-	O valor predefinido é ``48000`` (``-samplerate 48000``).
+		O valor predefinido é ``48000`` (``-samplerate 48000``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3741,7 +3794,7 @@ Opções para a configuração do áudio
 	Usar arquivos de amostras caso estejam disponíveis. Esses arquivos
 	são gravações de efeitos de áudio usados por alguns sistemas.
 
-	O valor predefinido é ``Ligado`` (``-samples``).
+		O valor predefinido é ``Ligado`` (``-samples``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3755,7 +3808,7 @@ Opções para a configuração do áudio
 	Ativa a compressão do áudio. Reduz temporariamente o volume total
 	quando a saída do áudio for saturada.
 
-	O valor predefinido é ``Ligado`` (``-compressor``).
+		O valor predefinido é ``Ligado`` (``-compressor``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3772,7 +3825,7 @@ Opções para a configuração do áudio
 	``-volume -12`` começará com uma atenuação de **-12 dB** no volume
 	do áudio.
 
-	O valor predefinido é ``0`` (``-volume 0``).
+		O valor predefinido é ``0`` (``-volume 0``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -3795,7 +3848,7 @@ Opções para a configuração do áudio
 	* **nível 3**: imprima uma lista detalhada de todos os momento que houveram clipping.
 	* **nível 4**: imprima uma lista detalhada de tudo.
 
-	O valor predefinido é ``Desligado``.
+		O valor predefinido é ``Desligado``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -3820,7 +3873,7 @@ Opções para a configuração do áudio
 	do MAME para Windows não é compilado com SDL, sendo necessário
 	compilar uma versão compatível para que a opção ``sdl`` funcione.
 
-	O valor predefinido é ``dsound`` no Windows, no Mac é
+		O valor predefinido é ``dsound`` no Windows, no Mac é
 	``coreaudio`` nas outras plataformas é ``sdl``.
 
 	No Windows e no Linux a opção ``portaudio`` provavelmente dará uma
@@ -4035,7 +4088,7 @@ Opções para a configuração do áudio
 			PortAudio: Sample rate is 48000 Hz, device output latency is 8.67 ms
 			PortAudio: Allowed additional buffering latency is 30.00 ms/1440 frames
 
-	O valor predefinido é ``NULO`` (Nenhuma interface *PortAudio*).
+		O valor predefinido é ``NULO`` (Nenhuma interface *PortAudio*).
 
 
 .. _mame-commandline-padevice:
@@ -4079,7 +4132,7 @@ Opções para a configuração do áudio
 	Caso nenhum seja definido o MAME escolherá o dispositivo padrão ou
 	que estiver disponível.
 
-	O valor predefinido é ``NULO`` (Nenhuma dispositivo *PortAudio*).
+		O valor predefinido é ``NULO`` (Nenhuma dispositivo *PortAudio*).
 
 .. raw:: latex
 
@@ -4096,7 +4149,7 @@ Opções para a configuração do áudio
 	até encontrar o valor correto que funcione melhor com o seu hardware
 	e o seu Sistema Operacional.
 
-	O valor predefinido é ``0``.
+		O valor predefinido é ``0``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -4125,7 +4178,7 @@ Opções para as configurações de diferentes entradas
 	mensagem na tela (no modo de depuração). Caso esta função esteja
 	desativada, o sinal de bloqueio da moeda será ignorado.
 
-	O valor predefinido é ``Ligado`` (``-coin_lockout``).
+		O valor predefinido é ``Ligado`` (``-coin_lockout``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4147,7 +4200,7 @@ Opções para as configurações de diferentes entradas
 	(nome_da_maquina).cfg. Para mais informações, consulte o capítulo
 	:ref:`ctrlrcfg` e o capítulo :ref:`advanced-tricks-botões-ordem`.
 
-	O valor predefinido é ``NULO`` (nenhum arquivo de configuração).
+		O valor predefinido é ``NULO`` (nenhum arquivo de configuração).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4164,7 +4217,7 @@ Opções para as configurações de diferentes entradas
 	MAME até que a emulação seja pausada ou que a a emulação seja
 	encerrada.
 
-	O valor predefinido é ``Desligado`` (``-nomouse``).
+		O valor predefinido é ``Desligado`` (``-nomouse``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4180,7 +4233,7 @@ Opções para as configurações de diferentes entradas
 	Se estiver ligado o MAME perguntará ao *DirectInput* sobre quais
 	controles estão conectados atualmente.
 
-	O valor predefinido é ``Desligado`` (``-nojoystick``).
+		O valor predefinido é ``Desligado`` (``-nojoystick``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4204,7 +4257,7 @@ Opções para as configurações de diferentes entradas
 	Para mais informações, consulte o capítulo
 	:ref:`arma-luz-funcionamento`.
 
-	O valor predefinido é ``Desligado`` (``-nolightgun``).
+		O valor predefinido é ``Desligado`` (``-nolightgun``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4222,7 +4275,7 @@ Opções para as configurações de diferentes entradas
 	Ativando essa opção permitirá que o MAME retorne quais teclas foram
 	pressionadas em diferentes teclados de maneira independente.
 
-	O valor predefinido é ``Desligado`` (``-nomultikeyboard``).
+		O valor predefinido é ``Desligado`` (``-nomultikeyboard``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4241,7 +4294,7 @@ Opções para as configurações de diferentes entradas
 	movimento e o pressionar de botões do mouse em diferentes mouses de
 	maneira independente.
 
-	O valor predefinido é ``Desligado`` (``-nomultimouse``).
+		O valor predefinido é ``Desligado`` (``-nomultimouse``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4261,7 +4314,7 @@ Opções para as configurações de diferentes entradas
 	fácil registrar o pressionamento simultâneo das teclas, porém tem a
 	desvantagem de deixar a sua capacidade de resposta mais lenta.
 
-	O valor predefinido é ``Desligado`` (``-nosteadykey``).
+		O valor predefinido é ``Desligado`` (``-nosteadykey``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4281,7 +4334,7 @@ Opções para as configurações de diferentes entradas
 	Ativa a opção para que a interface do usuário se sobreponha a do
 	teclado emulado caso esteja presente.
 
-	O valor predefinido é ``Desligado`` (``-noui_active``).
+		O valor predefinido é ``Desligado`` (``-noui_active``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4301,7 +4354,7 @@ Opções para as configurações de diferentes entradas
 	precisam que o usuário atire para fora da tela para recarregar a
 	arma e se também a sua arma não tiver essa funcionalidade.
 
-	O valor predefinido é ``Desligado`` (``-nooffscreen_reload``).
+		O valor predefinido é ``Desligado`` (``-nooffscreen_reload``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4359,7 +4412,7 @@ Opções para as configurações de diferentes entradas
 	central enquanto segura o controle para a esquerda, o sistema não
 	vai reconhecer a ação de forma adequada.
 
-	O valor predefinido é ``auto``, significa que o controle padrão com
+		O valor predefinido é ``auto``, significa que o controle padrão com
 	4, 8 posições ou um mapa diagonal para um controle com 4 posições é
 	selecionado de forma automática com base na informação da
 	configuração da porta de entrada do sistema atual.
@@ -4480,7 +4533,7 @@ Opções para as configurações de diferentes entradas
 	alterar o valor do ``joystick_deadzone`` para ``0`` e o
 	``joystick_saturation`` para ``1``.
 
-	O valor predefinido é ``0.3`` (``-joystick_deadzone 0.3``).
+		O valor predefinido é ``0.3`` (``-joystick_deadzone 0.3``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4499,7 +4552,7 @@ Opções para as configurações de diferentes entradas
 	valor flutuante (float) no intervalo entre ``0.0`` até ``1.0`` onde
 	``0`` é o centro do joystick e ``1`` é o limite externo.
 
-	O valor predefinido é ``0.85`` (``-joystick_saturation 0.85``).
+		O valor predefinido é ``0.85`` (``-joystick_saturation 0.85``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4516,7 +4569,7 @@ Opções para as configurações de diferentes entradas
 	região, permitindo compatibilidade para teclados fora do padrão
 	"QWERTY".
 
-	O valor predefinido é ``Desligado`` (``-nonatural``).
+		O valor predefinido é ``Desligado`` (``-nonatural``).
 
 	No modo de "teclado emulado" (predefinido) o MAME traduz o
 	pressionamento/liberação de teclas/botões do host para
@@ -4562,7 +4615,7 @@ Opções para as configurações de diferentes entradas
 	controle digital como **Esquerda e Direita** ou **Cima e Baixo** ao
 	mesmo tempo.
 
-	O valor predefinido é ``Desligado``
+		O valor predefinido é ``Desligado``
 	(``-nojoystick_contradictory``).
 
 	Exemplo:
@@ -4579,7 +4632,7 @@ Opções para as configurações de diferentes entradas
 	desabilita, ``n==0`` obedeça o driver, ``0<n`` defina o tempo em
 	*n*).
 
-	O valor predefinido é ``0`` (``-coin_impulse 0``).
+		O valor predefinido é ``0`` (``-coin_impulse 0``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4685,7 +4738,7 @@ Opções voltadas para a depuração
 	saída junto caso queira entrar em contato conosco para relatar um
 	erro.
 
-	O valor predefinido é ``Desligado`` (``-noverbose``).
+		O valor predefinido é ``Desligado`` (``-noverbose``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4707,7 +4760,7 @@ Opções voltadas para a depuração
 	mensagens de erros serão enviadas para estes em vez de serem exibidas
 	no terminal.
 
-	O valor predefinido é ``Desligado`` (``-nooslog``).
+		O valor predefinido é ``Desligado`` (``-nooslog``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4724,7 +4777,7 @@ Opções voltadas para a depuração
 	Isso pode ser usado ao mesmo tempo que ``-oslog`` para escrever os
 	dados de saída de ambos ao mesmo tempo.
 
-	O valor predefinido é ``Desligado`` (``-nolog``).
+		O valor predefinido é ``Desligado`` (``-nolog``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4745,7 +4798,7 @@ Opções voltadas para a depuração
 	:ref:`-debugger <mame-commandline-debugger>` para obter mais
 	informações de como usar o depurador.
 
-	O valor predefinido é ``Desligado`` (``-nodebug``).
+		O valor predefinido é ``Desligado`` (``-nodebug``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4813,7 +4866,7 @@ Opções voltadas para a depuração
 	Define um arquivo que vai conter a lista de comandos de depuração a
 	serem executados no momento da inicialização.
 
-	O valor predefinido é ``NULO`` (nenhum comando).
+		O valor predefinido é ``NULO`` (nenhum comando).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4834,7 +4887,7 @@ Opções voltadas para a depuração
 	**VIDEO_UPDATE** sempre será chamada durante a pausa, o que pode ser
 	útil durante a depuração.
 
-	O valor predefinido é ``Desligado`` (``-noupdate_in_pause``).
+		O valor predefinido é ``Desligado`` (``-noupdate_in_pause``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4906,7 +4959,7 @@ Opções voltadas para a depuração
 	Geralmente, um valor entre ``10`` e ``30`` segundos devem ser
 	suficientes.
 
-	O valor predefinido é ``Nenhum``.
+		O valor predefinido é ``Nenhum``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -4932,7 +4985,7 @@ Opções para a configuração da rede
 	tradicional ``xxx.xxx.xxx.xxx`` ou um nome do host que possa ser
 	resolvido
 
-	O valor predefinido é ``0.0.0.0``.
+		O valor predefinido é ``0.0.0.0``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -4947,7 +5000,7 @@ Opções para a configuração da rede
 	Definição da porta local. Esta pode ser qualquer porta de
 	comunicação tradicional como um valor inteiro (``0-65535``).
 
-	O valor predefinido é ``15122``.
+		O valor predefinido é ``15122``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -4962,7 +5015,7 @@ Opções para a configuração da rede
 	Definição do endereço remoto. Este pode ser um endereço tradicional
 	``xxx.xxx.xxx.xxx`` ou um nome de host que possa ser resolvido.
 
-	O valor predefinido é ``0.0.0.0``.
+		O valor predefinido é ``0.0.0.0``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -4978,7 +5031,7 @@ Opções para a configuração da rede
 	comunicação tradicional como um valor inteiro *non-signed* com
 	16-bit (``0-65535``).
 
-	O valor predefinido é ``15122``.
+		O valor predefinido é ``15122``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -4992,7 +5045,7 @@ Opções para a configuração da rede
 
 	Sincroniza os quadros entre os hosts na rede.
 
-	O valor predefinido é ``Desligado`` (``-nocomm_framesync``).
+		O valor predefinido é ``Desligado`` (``-nocomm_framesync``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5026,7 +5079,7 @@ Opções diversas
 	preciso um poder de processamento muito maior para que isso seja
 	possível.
 
-	O valor predefinido é ``Ligado`` (``-drc``).
+		O valor predefinido é ``Ligado`` (``-drc``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5040,7 +5093,7 @@ Opções diversas
 
 	Impõem o uso do DRC usando a infra-estrutura em código C.
 
-	O valor predefinido é ``Desligado`` (``-nodrc_use_c``).
+		O valor predefinido é ``Desligado`` (``-nodrc_use_c``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5055,7 +5108,7 @@ Opções diversas
 	Grave um registro descompilado DRC UML num arquivo de registro
 	(log).
 
-	O valor predefinido é (``-nodrc_log_uml``).
+		O valor predefinido é (``-nodrc_log_uml``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5070,7 +5123,7 @@ Opções diversas
 	Grave o DRC nativo e descompilado num registro de log em formato
 	assembler.
 
-	O valor predefinido é ``Desligado`` (``-nodrc_log_native``).
+		O valor predefinido é ``Desligado`` (``-nodrc_log_native``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5108,7 +5161,7 @@ Opções diversas
 	ficam armazenadas num arquivo externo chamado ``cheat.7z``.
 	Essa opção também ativa as opções de turbo dos botões.
 
-	O valor predefinido é ``Desligado`` (``-nocheat``).
+		O valor predefinido é ``Desligado`` (``-nocheat``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5123,7 +5176,7 @@ Opções diversas
 	Ao iniciar, faz com que o MAME não exiba a tela de informações do
 	sistema iniciado.
 
-	O valor predefinido é ``Desligado`` (``-noskip_gameinfo``).
+		O valor predefinido é ``Desligado`` (``-noskip_gameinfo``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5143,7 +5196,7 @@ Opções diversas
 	``.bdf``. Para o nome das fontes que tem espaço utilize o nome entre
 	aspas (``-uifont "nome do arquivo da fonte"``).
 
-	O valor predefinido é ``default`` (O MAME usará a fonte nativa).
+		O valor predefinido é ``default`` (O MAME usará a fonte nativa).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5159,7 +5212,7 @@ Opções diversas
 	entre ``simple`` a mais simples ou ``cabinet`` que é a mais
 	completa.
 
-	O valor predefinido é ``Cabinet`` (``-ui cabinet``).
+		O valor predefinido é ``Cabinet`` (``-ui cabinet``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5187,7 +5240,7 @@ Opções diversas
 	Remove o aviso na tela "*Tem certeza que deseja encerrar?*" ao
 	pressionar a tecla :kbd:`Esc`.
 
-	O valor predefinido é ``Desligado`` (``-noconfirm_quit``).
+		O valor predefinido é ``Desligado`` (``-noconfirm_quit``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5206,7 +5259,7 @@ Opções diversas
 
 	Exibe o ponteiro do mouse na interface do usuário do MAME.
 
-	O valor predefinido é ``sem mouse`` (``-noui_mouse``).
+		O valor predefinido é ``sem mouse`` (``-noui_mouse``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5239,7 +5292,7 @@ Opções diversas
 	``.nv`` associados com alguns tipos de programas usados em
 	cartuchos.
 
-	O valor predefinido é ``Ligado`` (``-nvram_save``).
+		O valor predefinido é ``Ligado`` (``-nvram_save``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5299,7 +5352,7 @@ Opções para uso com script
 
 	Ativa emulador do Console Lua.
 
-	O valor predefinido é ``Desligado`` (``-noconsole``).
+		O valor predefinido é ``Desligado`` (``-noconsole``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5314,7 +5367,7 @@ Opções para uso com script
 	Ativa o uso de plug-ins Lua, para mais informações consulte o
 	capítulo :ref:`plugins`.
 
-	O valor predefinido é ``Ligado`` (``-plugins``).
+		O valor predefinido é ``Ligado`` (``-plugins``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5360,7 +5413,7 @@ Opções do servidor HTTP
 
 	Ativa o servidor de HTTP.
 
-	O valor predefinido é ``Desligado`` (``-nohttp``).
+		O valor predefinido é ``Desligado`` (``-nohttp``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5377,7 +5430,7 @@ Opções do servidor HTTP
 
 	Define uma porta para o servidor HTTP.
 
-	O valor predefinido é ``8080``.
+		O valor predefinido é ``8080``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -5394,7 +5447,7 @@ Opções do servidor HTTP
 
 	Define a pasta raíz para os documentos do servidor HTTP.
 
-	O valor predefinido é ``web``.
+		O valor predefinido é ``web``.
 
 	Exemplo:
 		.. code-block:: shell
