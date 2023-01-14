@@ -825,6 +825,36 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 			mame ibm5150 -uimodekey DEL
 
+
+.. _mame-commandline-controllermap:
+
+**-controller_map** / **-ctrlmap** *<nome_do_arquivo>*
+
+	O caminho para um arquivo de texto contendo os mapeamentos do
+	controle, botões e do direcional no formato usado pelo SDL2 e pelo
+	Steam. O arquivo deve usar um formato de texto compatível com ASCII
+	e com terminações de linha nativas (CRLF no Windows por exemplo).
+	Atualmente é compatível apenas ao usar a opção
+	:ref:`-joystickprovider sdljoy <mame-commandline-joystickprovider>`.
+
+	Uma `lista de controles mapeados <https://github.com/gabomdq/SDL_GameControllerDB>`_
+	da comunidade pode ser encontrada no GitHub. Além de usar um editor
+	de texto, várias ferramentas estão disponíveis para criar os
+	mapeamentos dos controles, incluindo o
+	`SDL2 Gamepad Mapper <https://gitlab.com/ryochan7/sdl2-gamepad-mapper/-/releases>`_
+	e o SDL2 ControllerMap que são
+	`fornecidos com o SDL <https://github.com/libsdl-org/SDL/releases/latest>`_.
+	Também é possível configurar o seu controle no modo *"Big Picture"*
+	do Steam e copiar os mapeamentos a partir das entradas do
+	``SDL_GamepadBind`` no arquivo **config.vdf** encontrado na pasta
+	**config** dentro da pasta de instalação do Steam.
+
+	Exemplo:
+		.. code-block:: shell
+
+			mame -controller_map gamecontrollerdb.txt sf2ce
+
+
 .. _mame-commandline-uifontprovider:
 
 **-uifontprovider** <*módulo*>
@@ -871,6 +901,11 @@ Opções relacionadas ao que é exibido na tela (OSD)
                      compilado com SDL, sendo necessário compilar uma
                      versão compatível para que a opção ``sdl``
                      funcione.
+
+.. raw:: latex
+
+	\clearpage
+
 
 .. _mame-commandline-keyboardprovider:
 
@@ -975,6 +1010,10 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - none
       - sdl
 
+.. raw:: latex
+
+	\clearpage
+
 
 .. _mame-commandline-lightgunprovider:
 
@@ -1077,6 +1116,11 @@ Opções relacionadas ao que é exibido na tela (OSD)
 .. Note:: É provável que no Windows, a opção ``winhybrid`` ofereça uma
           melhor experiência ao ser compatível com controles ``XInput``
           e ``DirectInput``.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 Opções de MIDI e rede
