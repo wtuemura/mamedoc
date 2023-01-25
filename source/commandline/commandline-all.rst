@@ -563,6 +563,33 @@ Exemplo:
 			...
 			6331.sound-u8                            32 BAD CRC(1d298cb0) SHA1(bb0bb62365402543e3154b9a77be9c75010e6abc) BAD_DUMP
 
+
+.. _mame-commandline-listbios:
+
+**-listbios** [<*palavra chave*>...]
+
+	Exibe uma lista das BIOS para os sistemas/dispositivos compatíveis
+	que correspondam aos nomes que forem especificados. Se nenhum nome
+	for informado, a BIOS de *todos* os sistemas compatíveis serão
+	listados.
+
+	Exemplo:
+		.. code-block:: bash
+
+			mame -listbios 3do
+			4 BIOSes available for driver "3do".
+			Name:             Description:
+			panafz10          "Panasonic FZ-10 R.E.A.L. 3DO Interactive Multiplayer"
+			goldstar          "Goldstar 3DO Interactive Multiplayer v1.01m"
+			panafz1           "Panasonic FZ-1 R.E.A.L. 3DO Interactive Multiplayer"
+			sanyotry          "Sanyo TRY 3DO Interactive Multiplayer"
+
+
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-listsamples:
 
 **-listsamples** <*palavra chave*>
@@ -585,9 +612,6 @@ Exemplo:
 			helicopt
 			whistle
 
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-romident:
 
@@ -624,6 +648,12 @@ Exemplo:
 	comando não retorna **nenhum** destes valores, pelo menos não é
 	visível no terminal ou linha de comando. O comando retorna apenas a
 	listagem mostrada no exemplo.
+
+
+.. raw:: latex
+
+	\clearpage
+
 
 .. _mame-commandline-listdevices:
 
@@ -5136,8 +5166,10 @@ Opções diversas
 **-bios** <*nome da bios*>
 
 	Determina qual BIOS usar no sistema a ser emulado em sistemas
-	que fazem uso de uma BIOS. A saída ``-listxml`` listará todos os
-	nomes das BIOS disponíveis para o sistema.
+	que fazem uso de uma BIOS. A saída
+	:ref:`-listbios <mame-commandline-listbios>` listará todos os
+	nomes disponíveis das BIOS para o sistema, assim como a opção
+	:ref:`-listxml <mame-commandline-listxml>`.
 
 	Não há valor predefinido (O MAME usará a primeira BIOS nativa
 	do sistema que for encontrada, caso uma esteja disponível).

@@ -2128,6 +2128,10 @@ No Windows também é possível fazer o mesmo com o comando abaixo::
 	asia-mv1b
 	...
 
+A partir da versão 0.252, o MAME agora tem a opção
+:ref:`-listbios <mame-commandline-listbios>` para listar a BIOS de
+qualquer sistema compatível.
+
 
 Listando e iniciando diferentes sistemas MSX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -45,6 +45,7 @@ Opções para listagem
 | :ref:`listbrothers <mame-commandline-listbrothers>`
 | :ref:`listcrc <mame-commandline-listcrc>`
 | :ref:`listroms <mame-commandline-listroms>`
+| :ref:`listbios <mame-commandline-listbios>`
 | :ref:`listsamples <mame-commandline-listsamples>`
 | :ref:`romident <mame-commandline-romident>`
 | :ref:`listdevices <mame-commandline-listdevices>`
