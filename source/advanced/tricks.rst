@@ -2145,7 +2145,7 @@ compatíveis com o MAME. Crie a lista com o comando::
 Usando um terminal Linux, macOS ou até mesmo o ambiente MinGW/MSYS2 no
 Windows, faça o comando::
 
-	awk '!/No BIOSes available/' bios.txt | sed '/^$/d' | sed -e '/ BIOSes available for /i\\' | sed '1{/^$/d}' > bios.txt
+	awk '!/No BIOSes available/' lista_bios.txt | sed '/^$/d' | sed -e '/ BIOSes available for /i\\' | sed '1{/^$/d}' > bios.txt
 
 O primeiro comando exclui as linhas listadas como ``No BIOSes
 available``, o segundo comando ``sed '/^$/d'``, elimina todos os espaços
