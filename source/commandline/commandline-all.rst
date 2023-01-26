@@ -519,7 +519,7 @@ Exemplo:
 
 .. _mame-commandline-listcrc:
 
-**-listcrc** <*palavra chave*>...]
+**-listcrc** <*palavra chave*>
 
 	Exibe uma lista completa com CRCs de todas as imagens ROM
 	que compõem um sistema, os nomes do sistema ou do dispositivo num
@@ -566,7 +566,7 @@ Exemplo:
 
 .. _mame-commandline-listbios:
 
-**-listbios** [<*palavra chave*>...]
+**-listbios** <*palavra chave*>
 
 	Exibe uma lista das BIOS para os sistemas/dispositivos compatíveis
 	que correspondam aos nomes que forem especificados. Se nenhum nome
@@ -1029,6 +1029,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 	O binário oficial do MAME para Windows não é compilado com SDL,
 	sendo necessário compilar uma versão compatível para que a opção
 	``sdl`` funcione.
+
 		O valor predefinido é ``auto``.
 
 	Exemplo:
@@ -1558,7 +1559,7 @@ Opções para a configuração dos principais diretórios
 	``-ctrlr``.
 	
 		O valor predefinido é ``ctrlr`` (isto é, um diretório chamado
-	**ctrlr** no diretório raiz do MAME).
+		**ctrlr** no diretório raiz do MAME).
 
 	Exemplo:
 		.. code-block:: shell
@@ -1706,8 +1707,8 @@ Opções para a configuração dos principais diretórios
 	do depurador.
 
 		O valor predefinido é ``cfg`` (isto é, um diretório com o nome
-	**cfg** no diretório raiz do MAME). Caso este diretório não
-	exista, ele será criado automaticamente.
+		**cfg** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1731,8 +1732,8 @@ Opções para a configuração dos principais diretórios
 	lidas no início da emulação e gravadas ao encerrar.
 
 		O valor predefinido é ``nvram`` (isto é, um diretório com nome
-	"nvram" no diretório raiz do MAME). Caso este diretório não
-	exista, ele será criado automaticamente.
+		"nvram" no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1751,8 +1752,8 @@ Opções para a configuração dos principais diretórios
 	durante a operação do sistema.
 
 		O valor predefinido é ``inp`` (ou seja, um diretório de nome
-	**inp** no diretório raiz do MAME). Caso este diretório não
-	exista, ele será criado automaticamente.
+		**inp** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1770,8 +1771,8 @@ Opções para a configuração dos principais diretórios
 	:ref:`-autosave <mame-commandline-noautosave>`.
 
 		O valor predefinido é ``sta`` (isto é, um diretório de nome
-	**sta** no diretório raiz do MAME). Caso este diretório não
-	exista, ele será criado automaticamente.
+		**sta** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1787,8 +1788,8 @@ Opções para a configuração dos principais diretórios
 	armazenados quando solicitado pelo usuário.
 
 		O valor predefinido é ``snap`` (isto é, um diretório chamado
-	**snap** no diretório raiz do MAME). Caso este diretório não
-	exista, ele será criado automaticamente.
+		**snap** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1812,8 +1813,8 @@ Opções para a configuração dos principais diretórios
 	emulação com uma imagem compactada do disco rígido.
 
 		O valor predefinido é ``diff`` (isto é, um diretório chamado
-	**diff** no diretório raiz do MAME). Caso este diretório não
-	exista, ele será criado automaticamente.
+		**diff** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1831,8 +1832,8 @@ Opções para a configuração dos principais diretórios
 	desmontado (disassembly).
 
 		O valor predefinido é ``comments`` (isto é, um diretório chamado
-	**comments** no diretório raiz do MAME). Caso este diretório não
-	exista, ele será criado automaticamente.
+		**comments** no diretório raiz do MAME). Caso este diretório não
+		exista, ele será criado automaticamente.
 
 	Exemplo:
 		.. code-block:: shell
@@ -1916,8 +1917,8 @@ Opções para a gravação e a reprodução do estado da emulação
 	(até mesmo no Windows); a *string* ``%g`` representa o nome do
 	driver do sistema atual.
 
-		O valor predefinido é ``%g``, que cria uma pasta separada para cada
-	sistema.
+		O valor predefinido é ``%g``, que cria uma pasta separada para
+		cada sistema.
 
 	Em adição ao que foi dito acima, para os drivers que usem mídias
 	diferentes, como cartões ou disquetes, é possível usar o indicador
@@ -3680,7 +3681,7 @@ obtenha a melhor desempenho possível.
 	Sempre utilize a potência de 2 para o tamanhos das texturas.
 
 			O valor predefinido é ``Desligado``
-		(``-nogl_forcepow2texture``).
+			(``-nogl_forcepow2texture``).
 
 .. _mame-commandline-glnotexturerect:
 
@@ -3904,7 +3905,7 @@ Opções para a configuração do áudio
 	compilar uma versão compatível para que a opção ``sdl`` funcione.
 
 		O valor predefinido é ``dsound`` no Windows, no Mac é
-	``coreaudio`` nas outras plataformas é ``sdl``.
+		``coreaudio`` nas outras plataformas é ``sdl``.
 
 	No Windows e no Linux a opção ``portaudio`` provavelmente dará uma
 	menor latência possível, enquanto no Mac a opção ``coreaudio``
@@ -4442,10 +4443,10 @@ Opções para as configurações de diferentes entradas
 	central enquanto segura o controle para a esquerda, o sistema não
 	vai reconhecer a ação de forma adequada.
 
-		O valor predefinido é ``auto``, significa que o controle padrão com
-	4, 8 posições ou um mapa diagonal para um controle com 4 posições é
-	selecionado de forma automática com base na informação da
-	configuração da porta de entrada do sistema atual.
+		O valor predefinido é ``auto``, significa que o controle padrão
+		com 4, 8 posições ou um mapa diagonal para um controle com 4
+		posições é selecionado de forma automática com base na
+		informação da configuração da porta de entrada do sistema atual.
 
 	Caso queira configurar a opção ``-joystick_map`` de forma individual
 	através do ``<sistema>.ini`` em vez da configuração do ``mame.ini``
@@ -4646,7 +4647,7 @@ Opções para as configurações de diferentes entradas
 	mesmo tempo.
 
 		O valor predefinido é ``Desligado``
-	(``-nojoystick_contradictory``).
+		(``-nojoystick_contradictory``).
 
 	Exemplo:
 		.. code-block:: shell
