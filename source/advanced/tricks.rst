@@ -2133,6 +2133,56 @@ A partir da versão 0.252, o MAME agora tem a opção
 qualquer sistema compatível.
 
 
+Criando uma lista com todas as BIOS compatíveis usadas pelo MAME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Agora com a opção :ref:`-listbios <mame-commandline-listbios>` nós
+podemos criar um arquivo texto com uma lista de todas as BIOS
+compatíveis com o MAME. Crie a lista com o comando::
+
+	mame -listbios > lista_bios.txt
+
+Usando um terminal Linux, macOS ou até mesmo o ambiente MinGW/MSYS2 no
+Windows, faça o comando::
+
+	awk '!/No BIOSes available/' bios.txt | sed '/^$/d' | sed -e '/ BIOSes available for /i\\' | sed '1{/^$/d}' > bios.txt
+
+O primeiro comando exclui as linhas listadas como ``No BIOSes
+available``, o segundo comando ``sed '/^$/d'``, elimina todos os espaços
+em branco. Já o terceiro, ``sed -e '/ BIOSes available for /i\\'`` cria
+uma linha em branco antes das linhas que tiverem ``BIOSes available
+for`` e por último, o comando ``sed '1{/^$/d}'`` a primeira linha em
+branco da nossa lista.
+
+O resultado final fica assim::
+
+	41 BIOSes available for driver "100lions".
+	Name:             Description:
+	au-nsw1           "Aristocrat MK6 Base (24013001, NSW/ACT)"
+	au-nsw2           "Aristocrat MK6 Base (21012901, NSW/ACT)"
+	...
+	
+	25 BIOSes available for driver "at".
+	Name:             Description:
+	at                "PC 286"
+	ami206            "AMI C 206.1"
+	amiht21           "AMI HT 21.1"
+
+Caso você tenha o ``enscript`` e o ``ghostscript`` instalado no seu
+sistema, execute os comandos abaixo para transformar o arquivo texto em
+PDF::
+
+	enscript -p bios.ps bios.txt && ps2pdf bios.ps
+
+Baixe `aqui <https://www.mediafire.com/file/yxn4iysgghrvfuc/bios.zip>`_
+os arquivos ``bios.txt``, ``bios.ps`` e ``bios.pdf``.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
 Listando e iniciando diferentes sistemas MSX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
