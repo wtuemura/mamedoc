@@ -2151,8 +2151,8 @@ O primeiro comando exclui as linhas listadas como ``No BIOSes
 available``, o segundo comando ``sed '/^$/d'``, elimina todos os espaços
 em branco. Já o terceiro, ``sed -e '/ BIOSes available for /i\\'`` cria
 uma linha em branco antes das linhas que tiverem ``BIOSes available
-for`` e por último, o comando ``sed '1{/^$/d}'`` a primeira linha em
-branco da nossa lista.
+for`` e por último, o comando ``sed '1{/^$/d}'`` elimina a primeira
+linha em branco da nossa lista.
 
 O resultado final fica assim::
 
