@@ -76,6 +76,7 @@ Opções relacionadas ao que é exibido na tela
 Opções de MIDI e rede
 ~~~~~~~~~~~~~~~~~~~~~
 
+| :ref:`midiprovider <mame-commandline-midiprovider>`
 | :ref:`listmidi <mame-commandline-listmidi>`
 | :ref:`midiin <mame-commandline-midiin>`
 | :ref:`midiout <mame-commandline-midiout>`
@@ -299,6 +300,7 @@ Opções para as configurações de diferentes entradas
 | :ref:`joystick_map <mame-commandline-joystickmap>`
 | :ref:`joystick_deadzone <mame-commandline-joystickdeadzone>`
 | :ref:`joystick_saturation <mame-commandline-joysticksaturation>`
+| :ref:`joystick_threshold <mame-commandline-joystickthreshold>`
 | :ref:`[no]natural <mame-commandline-natural>`
 | :ref:`[no]joystick_contradictory <mame-commandline-joystickcontradictory>`
 | :ref:`coin_impulse <mame-commandline-coinimpulse>`

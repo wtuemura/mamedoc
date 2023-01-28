@@ -1210,6 +1210,24 @@ Opções relacionadas ao que é exibido na tela (OSD)
 Opções de MIDI e rede
 ---------------------
 
+.. _mame-commandline-midiprovider:
+
+**-midiprovider** <*módulo*>
+
+	Escolhe como MAME se comunicará com os dispositivos e as aplicações
+	MIDI (teclados de música e sintetizadores por exemplo). As opções
+	compatíveis são ``pm`` para utilizar a biblioteca *PortMidi* ou
+	``none`` para desativar a entrada e a saída MIDI (os arquivos MIDI
+	ainda podem ser reproduzidos).
+
+		O padrão é ``auto`` (utilizará o PortMidi caso esteja disponível).
+
+	Exemplo:
+		.. code-block:: shell
+
+			mame -midiprovider none dx100 -midiin canyon.mid
+
+
 .. _mame-commandline-listmidi:
 
 **-listmidi**
@@ -4569,7 +4587,7 @@ Opções para as configurações de diferentes entradas
 	Exemplo:
 		.. code-block:: shell
 
-			mame sinistar -joystick_deadzone 0.45
+			mame sinistar -joystick_deadzone 0.3
 
 
 .. _mame-commandline-joysticksaturation:
@@ -4589,6 +4607,32 @@ Opções para as configurações de diferentes entradas
 		.. code-block:: shell
 
 			mame sinistar -joystick_saturation 1.0
+
+
+.. _mame-commandline-joystickthreshold:
+
+**-joystick_threshold** <*valor*> / **joy_threshold** <*valor*> / **-jthresh** <*valor*>
+
+	Quando um eixo do *joystick* (ou outro eixo analógico absoluto) for
+	atribuído a uma entrada digital, isso controla o quanto ele deve ser
+	movido da posição neutra (ou centro) para ser considerado ativo ou
+	ligado. Esta opção espera uma flutuação na faixa entre ``0,0`` a
+	``1,0`` onde ``0`` significa que qualquer movimento da posição
+	neutra for considerado ativo e ``1`` significa que apenas os
+	limites externos são considerados ativos. Este limite **não** é
+	ajustado para a faixa entre a zona morta e o ponto de saturação.
+	Observe que caso um
+	:ref:`mapa do joystick <mame-commandline-joystickmap>` seja
+	configurado, isso terá precedência sobre esta configuração quando os
+	eixos principais ``X/Y`` de um joystick forem atribuídos às entradas
+	digitais.
+
+		O valor predefinido é ``0.3``.
+
+	Exemplo:
+		.. code-block:: shell
+
+			mame raiden -joystick_threshold 0.2
 
 
 .. _mame-commandline-natural:
@@ -4613,10 +4657,6 @@ Opções para as configurações de diferentes entradas
 	de tecla a caracteres (da mesma forma quando se digita num
 	editor de texto) e o MAME tenta traduzir esses caracteres para
 	pressionamentos de tecla emulados.
-
-.. raw:: latex
-
-	\clearpage
 
 **Existem várias limitações inevitáveis no modo "teclado natural":**
 
