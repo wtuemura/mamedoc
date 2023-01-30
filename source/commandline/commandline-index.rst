@@ -81,6 +81,7 @@ Opções de MIDI e rede
 | :ref:`midiin <mame-commandline-midiin>`
 | :ref:`midiout <mame-commandline-midiout>`
 | :ref:`listnetwork <mame-commandline-listnetwork>`
+| :ref:`networkprovider <mame-commandline-networkprovider>`
 
 
 Opções de saída das notificações de tela

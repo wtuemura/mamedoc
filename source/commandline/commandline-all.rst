@@ -891,10 +891,12 @@ Opções relacionadas ao que é exibido na tela (OSD)
 **-[no]background_input**
 
 	Define se a entrada será aceita ou se será ignorada quando o MAME
-	não tiver o foco na interface. Atualmente é suportado na entrada do
-	mouse/teclado ``RawInput`` no Windows e na entrada do controle de
-	jogo/joystick SDL. Essa configuração é ignorada enquanto o depurador
-	estiver ativado.
+	não tiver o foco na interface. No Windows, o ``RawInput`` é
+	atualmente compatível para entrada com mouse e teclado,  com o
+	``DirectInput``, é compatível com mouse, teclado e joystick, com o
+	``XInput`` é compatível apenas com joystick. No SDL, o ``XInput`` é
+	compatível com controle de jogo e joystick. Essa configuração é
+	ignorada enquanto o depurador estiver ativo.
 
 		O valor predefinido é ``desligado``. (**-nobackground_input**).
 
@@ -1307,6 +1309,29 @@ Opções de MIDI e rede
 		No Windows, é necessário instalar o
 		`OpenVPN <https://openvpn.net/community-downloads/>`_ mais
 		recente para que o MAME possa ver os adaptadores de rede.
+
+
+.. _mame-commandline-networkprovider:
+
+**-networkprovider** <*módulo*>
+
+	Escolhe como o MAME oferecerá comunicação para as interfaces de rede
+	emuladas orientadas a pacotes (placas Ethernet por exemplo). As
+	opções suportadas são ``taptun`` para usar o "*TUN/TAP*",
+	TAP-Windows ou similar, ``pcap`` para usar uma biblioteca pcap ou
+	``none`` para desativar a comunicação nas interfaces emuladas de
+	rede. As opções disponíveis dependem do seu sistema operacional.
+	No Windows e no Linux as opções disponíveis são ``taptun`` e
+	``none``, no macOS as opções disponíveis são ``pcap`` e ``none`` .
+
+		O padrão é ``auto`` que usará a opção ``taptun`` caso esteja
+		disponível ou retorna para ``pcap``.
+
+	Exemplo:
+		.. code-block:: shell
+
+			mame -networkprovider pcap apple2ee -sl3 uthernet
+
 
 .. raw:: latex
 
