@@ -127,11 +127,24 @@ Opções para a entrada de controle
 
 **-[no]dual_lightgun** / **-[no]dual**
 
-	Controla se o MAME tenta ou não rastrear duas pistolas de luz
-	conectadas ao mesmo tempo. Essa opção requer ``-lightgun``. Essa
-	opção é um quebra galho para ser compatível com certos tipos antigos
-	de pistolas de luz. Caso possua múltiplas pistolas de luz
-	conectadas, basta apenas usar a opção ``-mouse`` e configurar cada
-	pistola individualmente.
+	Controla se o MAME tenta ou não rastrear duas pistolas de luz que
+	aparecem como um único mouse. Esta opção precisa que a opção
+	:ref:`-lightgun <mame-commandline-nolightgun>` esteja ativada e a
+	opção :ref:`-lightgunprovider <mame-commandline-lightgunprovider>`
+	esteja definido como ``win32``.
+
+	Esta opção suporta certas configurações mais antigas com duas
+	pistolas de luz que funcionam ajustando a localização do ponteiro do
+	mouse no momento em que um gatilho da pistola for ativado. Os
+	gatilhos primário e secundário no primeiro revólver, correspondem ao
+	primeiro e ao segundo botão do mouse, os gatilhos primário e
+	secundário no segundo revólver, correspondem ao terceiro e ao quarto
+	botão do mouse.
+
+	Caso tenha várias pistolas de luz conectadas, provavelmente será
+	preciso ativar apenas a opção
+	:ref:`-lightgun <mame-commandline-nolightgun>`, usar a opção padrão ``rawinput``
+	em :ref:`-lightgunprovider <mame-commandline-lightgunprovider>` e
+	configurar cada pistola de luz individualmente.
 
 		O valor predefinido é **Desligado** (**-nodual_lightgun**).

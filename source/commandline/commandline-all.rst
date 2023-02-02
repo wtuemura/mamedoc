@@ -4287,9 +4287,21 @@ Opções para as configurações de diferentes entradas
 **-[no]mouse**
 
 	Controla se o MAME faz uso ou não dos controladores do mouse.
-	Se estiver ligado, o mouse ficará reservado para uso exclusivo do
-	MAME até que a emulação seja pausada ou que a a emulação seja
-	encerrada.
+	Caso esta opção esteja ativa, o mouse ficará reservado para uso
+	exclusivo do MAME até que a emulação seja pausada ou até que a
+	emulação seja encerrada. A compatibilidade depende da configuração
+	do seu :ref:`-mouseprovider <mame-commandline-mouseprovider>`.
+
+	Observe que caso esta opção esteja desligada (``-nomouse``), a
+	entrada do mouse ainda pode estar ativa dependendo da
+	entrada presente no sistema emulado e a sua
+	:ref:`definição automática de entrada <mame-commandline-inputenable>`.
+	Mais especialmente, o padrão é ativar a entrada do mouse quando o
+	sistema emulado tiver entradas para o mouse
+	(``-mouse_device mouse``), assim sendo, o ponteiro do seu mouse será
+	capturado pelo MAME caso o sistema emulado tenha tal entrada, a
+	menos que, você altere a configuração através da opção
+	:ref:`-mouse_device <mame-commandline-inputenable>`.
 
 		O valor predefinido é ``Desligado`` (``-nomouse``).
 
@@ -4299,13 +4311,26 @@ Opções para as configurações de diferentes entradas
 			mame centiped -mouse
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-nojoystick:
 
 **-[no]joystick** / **-[no]joy**
 
-	Controla se o MAME usa ou não os controles do joystick/gamepad.
-	Se estiver ligado o MAME perguntará ao *DirectInput* sobre quais
-	controles estão conectados atualmente.
+	Controla se o MAME usa ou não os controles dos jogos (joystick,
+	gamepad e outras simulações de controles). A compatibilidade com os
+	controles dependem da configuração do seu
+	:ref:`-joystickprovider <mame-commandline-joystickprovider>`.
+	Caso esta opção esteja ativa, o MAME perguntará sobre quais os
+	controles estão conectados atualmente no sistema.
+
+	Observe que caso esta opção esteja desligada (``-nojoystick``), a
+	entrada do joystick ainda pode estar ativa dependendo da
+	entrada presente no sistema emulado e a sua
+	:ref:`definição automática de entrada <mame-commandline-inputenable>`.
 
 		O valor predefinido é ``Desligado`` (``-nojoystick``).
 
@@ -4315,11 +4340,6 @@ Opções para as configurações de diferentes entradas
 			mame mappy -joystick
 
 
-.. raw:: latex
-
-	\clearpage
-
-
 .. _mame-commandline-nolightgun:
 
 **-[no]lightgun** / **-[no]gun**
@@ -4327,9 +4347,17 @@ Opções para as configurações de diferentes entradas
 	Controla se o MAME usa ou não os controles da arma de luz
 	(lightgun). Observe que a maioria das armas de luz são mapeadas
 	para o mouse, assim, ao se usar ambas as opções ``-lightgun`` e
-	``-mouse`` juntos, isso pode poderá trazer resultados inesperados.
+	``-mouse`` juntas, isso pode poderá trazer resultados inesperados.
+	O suporte aos controladores da arma de luz dependem das
+	configurações do
+	:ref:`-lightgunprovider <mame-commandline-lightgunprovider>`.
 	Para mais informações, consulte o capítulo
 	:ref:`arma-luz-funcionamento`.
+
+	Observe que caso esta opção esteja desligada (``-nolightgun``), a
+	entrada para a arma de luz ainda pode estar ativa dependendo da
+	entrada presente no sistema emulado e a sua
+	:ref:`definição automática de entrada <mame-commandline-inputenable>`.
 
 		O valor predefinido é ``Desligado`` (``-nolightgun``).
 
@@ -4376,6 +4404,11 @@ Opções para as configurações de diferentes entradas
 			mame warlords -multimouse
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-nosteadykey:
 
 **-[no]steadykey** / **-[no]steady**
@@ -4394,11 +4427,6 @@ Opções para as configurações de diferentes entradas
 		.. code-block:: shell
 
 			mame ssf2tu -steadykey
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-uiactive:
@@ -4794,22 +4822,31 @@ Opções das entadas principais ativadas automaticamente
 
 	Opções válidas ``none`` | ``keyboard`` | ``mouse`` | ``lightgun`` | ``joystick``
 
-	Cada uma dessas opções de controle são ativadas automaticamente
-	para o mouse, controle (joystick) ou arma de luz (lightgun)
-	dependendo de uma classe em particular de controle analógico para um
-	sistema em particular. Por exemplo, caso seja definida a opção
-	``-paddle mouse``, então qualquer jogo que tenha um remo ou pá como
-	controle será automaticamente configurado para ser usado com o mouse
-	como se a opção ``-mouse`` tivesse sido definida.
+	Cada uma destas opções de controle define se o ``mouse``, o
+	``joystick`` ou o ``lightgun`` devem ser ativados ao executar a
+	emulação de um sistema que usa uma classe das entradas analógicas em
+	particular. Estas opções podem definir o
+	:ref:`-mouse <mame-commandline-nomouse>`, o
+	:ref:`-joystick <mame-commandline-nojoystick>` ou o
+	:ref:`-lightgun <mame-commandline-nolightgun>` dependendo do tipo
+	das entradas disponíveis no sistema emulado.
 
-	Observe que estes controles sobrescrevem as opções
-	:ref:`-[no]mouse <mame-commandline-nomouse>`,
-	:ref:`-[no]joystick <mame-commandline-nojoystick>`, etc.
+	Por exemplo, caso defina a opção ``-paddle_device mouse``, então os
+	controles do mouse serão automaticamente ativados ao executar um
+	jogo que tenha controles do tipo "*paddle*" (como o *Super Breakout*
+	por exemplo), ainda que você tenha usado a opção ``-nomouse``.
+
+	O padrão é ativar os controles do mouse automaticamente ao rodar
+	sistemas emulados com entradas do mouse (**-mouse_device mouse**).
 
 	Exemplo:
 		.. code-block:: shell
 
 			mame sbrkout -paddle_device mouse
+
+	.. Tip:: Observe que estas configurações podem substituir as opções
+	         **-nomouse**, **-nojoystick** ou **-nolightgun**,
+	         dependendo das entradas presentes no sistema emulado.
 
 
 .. raw:: latex
