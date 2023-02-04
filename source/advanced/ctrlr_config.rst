@@ -323,3 +323,10 @@ de jogo do tipo XInput:
 
 O MAME aplica os elementos ``mapdevice`` que forem encontrados dentro de
 qualquer elemento ``system`` aplicável.
+
+MAME apenas aplica os elementos do ``mapdevice`` encontrados apenas
+dentro do primeiro elemento ``system`` aplicável.  Visando evitar
+confusão, é mais simples colocar o elemento ``system`` para que se
+aplique a todos os sistemas (o atributo ``name`` definido como
+``default``) logo na primeira linha do do arquivo e fazer uso dele para
+atribuir os valores numéricos da entrada dos dispositivos.
