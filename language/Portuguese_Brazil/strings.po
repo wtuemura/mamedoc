@@ -1866,7 +1866,7 @@ msgstr "Dec analógico %1$s"
 #: src/frontend/mame/ui/inputmap.cpp:608
 #, c-format
 msgid "Press %1$s to set\n"
-msgstr "Pressione o %1$s para configurar\n"
+msgstr "Pressione %1$s para configurar\n"
 
 #: src/frontend/mame/ui/inputmap.cpp:609
 #, c-format
@@ -3053,7 +3053,7 @@ msgstr "Imagens"
 
 #: src/frontend/mame/ui/selmenu.cpp:56
 msgid "Info"
-msgstr "Info"
+msgstr "Informações"
 
 #: src/frontend/mame/ui/selmenu.cpp:83
 msgctxt "selmenu-artwork"
@@ -4066,7 +4066,7 @@ msgstr "%p start"
 #, c-format
 msgctxt "input-name"
 msgid "%p Select"
-msgstr "Seleciona %p"
+msgstr "%p select"
 
 #: src/emu/inpttype.ipp:56 src/emu/inpttype.ipp:174 src/emu/inpttype.ipp:255
 #: src/emu/inpttype.ipp:322
@@ -5476,7 +5476,7 @@ msgstr "IU direita"
 #: src/emu/inpttype.ipp:884
 msgctxt "input-name"
 msgid "UI Home"
-msgstr "IU Home"
+msgstr "IU home"
 
 #: src/emu/inpttype.ipp:885
 msgctxt "input-name"
@@ -5486,12 +5486,12 @@ msgstr "IU fim"
 #: src/emu/inpttype.ipp:886
 msgctxt "input-name"
 msgid "UI Page Up"
-msgstr "IU subir a página"
+msgstr "IU sobe a página"
 
 #: src/emu/inpttype.ipp:887
 msgctxt "input-name"
 msgid "UI Page Down"
-msgstr "IU descer a página"
+msgstr "IU desce a página"
 
 #: src/emu/inpttype.ipp:888
 msgctxt "input-name"
@@ -5561,12 +5561,12 @@ msgstr "Mosta os gráficos decodificados"
 #: src/emu/inpttype.ipp:901
 msgctxt "input-name"
 msgid "Frameskip Dec"
-msgstr "Reduz o pulo de quadros"
+msgstr "Reduz o salto de quadros"
 
 #: src/emu/inpttype.ipp:902
 msgctxt "input-name"
 msgid "Frameskip Inc"
-msgstr "Aumenta o pulo de quadros"
+msgstr "Aumenta o salto de quadros"
 
 #: src/emu/inpttype.ipp:903
 msgctxt "input-name"
@@ -6234,7 +6234,7 @@ msgstr "Tecla de atalho"
 #: plugins/inputmacro/init.lua:135 plugins/inputmacro/inputmacro_menu.lua:562
 msgctxt "plugin-inputmacro"
 msgid "Input Macros"
-msgstr "Macros de entrada"
+msgstr "Macros"
 
 #: plugins/inputmacro/inputmacro_menu.lua:31
 msgctxt "plugin-inputmacro"
