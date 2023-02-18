@@ -4522,7 +4522,7 @@ Opções para as configurações de diferentes entradas
 	Caso queira configurar a opção ``-joystick_map`` de forma individual
 	através do ``<sistema>.ini`` em vez da configuração do ``mame.ini``
 	para que tais configurações afetem apenas os sistemas que precisem
-	destes mapeamentos, consulte a seção :ref:`Múltiplos arquivos de
+	destes mapeamentos, consulte a seção :ref:`Diversos arquivos de
 	configuração <advanced-multi-CFG>` para mais detalhes.
 
 	Os mapeamentos são definidos como uma cadeia de caracteres e

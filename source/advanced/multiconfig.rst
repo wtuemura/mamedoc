@@ -1,7 +1,7 @@
 .. _advanced-multi-CFG:
 
-Múltiplos arquivos de configuração
-==================================
+Diversos arquivos de configuração
+=================================
 
 .. contents:: :local:
 
