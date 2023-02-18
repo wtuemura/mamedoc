@@ -234,7 +234,7 @@ Alterando as configurações
 	Como queremos dar a cada jogador sua própria tela cheia
 	(dois monitores físicos) junto com o LCD, nós fazemos assim::
 
-		-numscreens 2 -view0 "Player 1" -view1 "Player 2" -video bgfx -bgfx_screen_chains hlsl,unfiltered,unfiltered:hlsl,unfiltered,unfiltered
+		-numscreens 2 -view0 "Player 1" -view1 "Player 2" -video bgfx -bgfx_screen_chains hlsl,unfiltered:hlsl,unfiltered
 
 	Isso configura a visualização de cada tela respectivamente, mantendo
 	o efeito de tela CRT com HLSL para cada janela física enquanto fica
@@ -287,11 +287,6 @@ Alterando as configurações
 Customizando as configurações BGFX HLSL dentro do MAME
 ------------------------------------------------------
 
-.. note::
-
-	*As configurações BGFX HLSL não são gravados ou lidas de
-	qualquer arquivo de configuração. É esperado que isso mude no futuro.*
-
 Comece rodando o MAME com o jogo de sua preferência (**mame pacman** por
 exemplo).
 
@@ -302,6 +297,13 @@ irão permitir que você altere o valor dessas opções. Os resultados
 aparecerão em tempo real conforme elas forem sendo alteradas.
 
 Observe que as configurações são individuais para cada tela.
+
+As configurações dos controles deslizantes do BGFX são salvas
+individualmente por sistema em arquivos CFG. Caso a configuração
+``bgfx_screen_chains`` tenha sido definida (num arquivo INI ou através
+da linha de comando), ela definirá os efeitos iniciais. Caso não exista
+uma configuração ``bgfx_screen_chains``, o MAME usará os efeitos que
+você escolheu na última vez que rodou o sistema.
 
 
 Usando os filtros para adicionar pilares nos cantos da tela do vídeo
