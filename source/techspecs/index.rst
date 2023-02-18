@@ -12,6 +12,7 @@ scripts LUA que são executados na estrutura do MAME.
 	layout_files
 	layout_script
 	object_finders
+	inputsystem
 	device_memory_interface
 	device_rom_interface
 	device_disasm_interface
