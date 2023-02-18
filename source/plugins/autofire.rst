@@ -64,6 +64,15 @@ e 2 **quadros desligados**. Ao concluir a configuração, pressione
 :kbd:`Tab` para retornar para a emulação.
 Experimente diferentes valores para obter os melhores resultados.
 
+Ao adicionar um novo botão de turbo, há uma opção :guilabel:`Cancelar`
+que muda para :guilabel:`Criar` depois que você define a entrada e a
+tecla de atalho. Selecione :guilabel:`Criar` para concluir a criação do
+botão de turbo e retornar à lista dos botões de turbo. O novo botão de
+turbo será adicionado ao final da lista. Pressione a tecla
+:guilabel:`UI Back` (tecla :kbd`Esc`) ou selecione :guilabel:`Cancelar`
+antes de definir a entrada/tecla de atalho para retornar ao menu
+anterior sem criar sem criar nenhum botão turbo.
+
 Se durante o teste o turbo não agir da forma desejada, retorne para a
 opção e clique duas vezes no botão para alterar as suas configurações.
 

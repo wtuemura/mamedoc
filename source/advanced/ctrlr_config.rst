@@ -181,7 +181,7 @@ controles.
 .. code-block:: XML
 
     <input>
-        <port type="UI_CONFIGURE">
+        <port type="UI_MENU">
             <newseq type="standard">KEYCODE_TAB OR KEYCODE_1 KEYCODE_5</newseq>
         </port>
         <port type="UI_CANCEL">
@@ -207,7 +207,7 @@ controles.
 
 A configuração acima define as seguintes atribuições das entradas:
 
-* **Config Menu** (Interface do usuário).
+* **Mostra/esconde o menu** (Interface do usuário).
 
 	Tecla :kbd:`Tab`, ou pressionando as teclas :kbd:`1` e :kbd:`2`
 	simultaneamente.

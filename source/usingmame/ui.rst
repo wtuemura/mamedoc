@@ -111,21 +111,34 @@ atribuições do joystick:
   para ajustar a configurações.
 * Pressione o primeiro botão no primeiro joystick para selecionar o item
   destacado.
+* Se o primeiro joystick tiver pelo menos três botões, aperte o segundo
+  botão do primeiro joystick para fechar e retornar ao menu anterior,
+  ou retornando ao sistema que estiver sendo emulado (geralmente tem um
+  item na parte inferior do menu para o mesmo fim).
+
+Para controles no estilo *gamepad*, o botão analógico esquerdo e o
+teclado direcional geralmente controlam a navegação da interface do
+usuário. Dependendo do controle, o botão analógico direito, os gatilhos
+e os botões adicionais podem ser atribuídos automaticamente às entradas
+da interface do usuário. Verifique o menu de atribuições da entrada da
+interface do usuário para ver como os controles estão atribuídos.
 
 Para que seja possível usar o MAME com um controle joystick sem um
 teclado, é preciso definir os botões do joystick (ou a combinação dos
 seus botões) para estes controles também:
 
-* :guilabel:`Menu de configuração` / :guilabel:`Tab`
+* :guilabel:`Mostra/esconde o menu` / :guilabel:`Tab`
     Para mostrar ou dispensar o menu durante a emulação
-* ``IU Cancela``
+* ``IU retorna``
+    Para fechar os menus
+* ``IU cancela``
     Para fechar os menus, retornar para a tela de seleção, para encerar
     a emulação ou para fechar o MAME.
-* ``IU Limpa``
+* ``IU limpa``
     Não é basicamente essencial para a emulação, porém é usado para
     limpar ou redefinir algumas configurações.
-* ``IU Home``, ``IU End``, ``IU Pág. cima``, ``IU Pág. baixo``,
-    ``IU Grupo anterior`` e ``IU Próximo grupo``
+* ``IU home``, ``IU fim``, ``IU sobe a página``, ``IU desce a página``,
+    ``Grupo anterior da IU`` e ``Próximo grupo da IU``
     Não são essenciais, contudo, tornam a navegação mais fácil em alguns
     menus.
 
@@ -158,7 +171,7 @@ MAME suporta a navegação através dos menus usando um mouse ou
   o mouse sobre eles para ver uma descrição.
 
 Caso tenha botões adicionais no mouse, talvez queira atribuir
-combinações dos botões para o :guilabel:`Menu de configuração` /
+combinações dos botões para o :guilabel:`Mostra/esconde o menu` /
 :guilabel:`Tab`, :guilabel:`Pausa` e/ou :guilabel:`Cancela` para que
 seja possível usar o MAME sem usar um teclado.
 
@@ -254,10 +267,7 @@ lógica ``and``:
   a mesma tecla, botão ou movendo o mesmo controle analógico mais de uma
   vez, isso faz com que se ligue ou desligue a operação ``not`` várias
   vezes.
-* Ao pressionar :kbd:`Esc` **antes** da ativação de qualquer outra
-  entrada, isso limpa ou restaura a atribuição original.
-* Ao pressionar :kbd:`Esc` **depois** da ativação de qualquer outra
-  entrada, a configuração da entrada permanece a mesma.
+* Ao pressionar :kbd:`Esc` **antes** restaura a configuração original.
 * A nova configuração é mostrada abaixo do menu. Aguarde cerca de um
   segundo depois da ativação para que a nova configuração seja aceita.
 

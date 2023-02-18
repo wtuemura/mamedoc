@@ -4484,6 +4484,12 @@ Instanciação
 Métodos
 ^^^^^^^
 
+**uiinput:reset()**
+
+	Limpa os eventos pendentes e os estados da interface de entrada do
+	usuário. Deve ser chamado ao encerrar o modo de um estado onde a
+	entrada é tratada diretamente (ao configurar uma combinação de
+	entrada por exemplo).
 
 **uiinput:find_mouse()**
 
