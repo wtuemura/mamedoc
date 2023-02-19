@@ -248,7 +248,9 @@ class**), número do dispositivo (**device number**), classe do item
   um eixo absoluto ou de um eixo relativo. Os valores dos eixos podem
   ser convertidos para valores de comutação ao definir um modificador
   adequado.
-* O **modificador** determina como um valor deve ser interpretado. As
+* O **modificador**:
+
+  Determina como um valor deve ser interpretado. As
   opções válidas dependem do tipo do item do dispositivo na entrada e
   da classe definida do item.
 
