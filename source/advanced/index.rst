@@ -10,6 +10,7 @@ CONFIGURAÇÕES AVANÇADAS
 	bgfx
 	hlsl
 	glsl
+	lut
 	ctrlr_config
 	devicemap
 	lightguns
