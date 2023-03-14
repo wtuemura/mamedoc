@@ -62,7 +62,7 @@ maioria destas operações:
 
 **c:empty()**
 
-	Retorna um Booleano indicando se não há itens no contêiner.
+	|ubis| não há itens no contêiner.
 
 
 **c:get(k)**
@@ -1531,6 +1531,15 @@ Propriedades
 	estiver ativado.
 
 
+**device.state[]** |sole|
+
+	O estado das entradas para os dispositivos que expõem a interface de
+	registro do estado, indexadas por símbolos ou ``nil`` para outros
+	dispositivos. O operador do índice e os métodos ``index_of`` têm
+	complexidade O(n); todas as outras operações compatíveis têm
+	complexidade O(1).
+
+
 **device.spaces[]** |sole|
 
 	A tabela dos :ref:`espaços de endereçamento da memória
@@ -2318,6 +2327,79 @@ Propriedades
 **slot.device** |sole|
 
 	O :ref:`dispositivo <luareference-dev-device>` subjacente.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _luareference-dev-stateentry:
+
+O estado da entrada do dispositivo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Envelopa a classe ``device_state_entry`` do MAME, permite acesso aos
+nomes dos registos expostos por um
+:ref:`dispositivo <luareference-dev-device>`. É compatível com a
+conversão de "string" para exibição.
+
+
+Instanciação
+^^^^^^^^^^^^
+
+**manager.machine.devices[tag].state[símbolo]**
+
+	Obtém o estado da entrada para um determinado dispositivo através de
+	um símbolo.
+
+Propriedades
+^^^^^^^^^^^^
+
+**entry.value** |lees|
+
+	O valor numérico do estado da entrada, seja como um número inteiro
+	ou de ponto flutuante. É gerado um erro caso haja a tentativa de
+	definir um valor do estado numa entrada que seja de apenas leitura.
+
+
+**entry.symbol** |sole|
+
+	O nome simbólico do estado da entrada.
+
+
+**entry.visible** |sole|
+
+	|ubis| o estado da entrada deve ser mostrada na visualização de
+	registro da depuração.
+
+
+**entry.writeable** |sole|
+
+	|ubis| é possível alterar o valor do estado da entrada.
+
+
+**entry.is_float** |sole|
+
+	|ubis| o valor do estado da entrada é um número de ponto flutuante.
+
+
+**entry.datamask** |sole|
+
+	Uma máscara de bits com valores válidos de bits para o estado com
+	valor inteiro das entradas.
+
+
+**entry.datasize** |sole|
+
+	O tamanho do valor subjacente em bytes para o estado com valor
+	inteiro das entradas.
+
+
+**entry.max_length** |sole|
+
+	O comprimento máximo da string de exibição para o estado da entrada.
+
 
 .. raw:: latex
 
@@ -3247,7 +3329,7 @@ Métodos
 
 **ioport:type_pressed(tipo, [jogador])**
 
-	Retorna um booleano indicando se a entrada informada foi atualmente
+	|ubis| a entrada informada foi atualmente
 	pressionada. O tipo da entrada pode ser um valor enumerado ou um
 	:ref:`tipo de acesso <luareference-input-inputtype>`. Caso o tipo de
 	acesso seja um valor enumerado, número do jogador é um índice com
@@ -3968,7 +4050,7 @@ Propriedades
 
 **type.is_analog** |sole|
 
-	Um boleando que indica se o tipo de acesso é analógico ou digital.
+	|ubis| o tipo de acesso é analógico ou digital.
 	As entradas que possuam apenas as condições ligado ou desligado são
 	consideradas digitais, enquanto todas as outras são consideradas
 	analógicas ainda que elas representem apenas valores discretos ou
@@ -4005,14 +4087,14 @@ Métodos
 
 **input:code_pressed(código)**
 
-	Retorna um booleano indicando se o código informado da entrada do
+	|ubis| o código informado da entrada do
 	host correspondente tem um valor diferente de zero (ou seja, não é
 	uma posição neutra).
 
 
 **input:code_pressed_once(código)**
 
-	Retorna um booleano indicando se o código informado da entrada do
+	|ubis| o código informado da entrada do
 	host correspondente saiu da posição neutra desde a última vez que
 	foi verificado através desta função. O gerenciador da entrada pode
 	rastrear uma quantidade de entradas desta forma.
@@ -4038,7 +4120,7 @@ Métodos
 
 **input:seq_pressed(sequência)**
 
-	Retorna um booleano indicando se a :ref:`sequência da entrada
+	|ubis| a :ref:`sequência da entrada
 	<luareference-input-iptseq>` informada foi realmente pressionada.
 
 
@@ -4509,16 +4591,16 @@ Métodos
 
 **uiinput:pressed(tipo)**
 
-	Retorna um booleano indicando se a entrada da IU informada foi
-	pressionada. O tipo da entrada é um valor enumerado.
+	|ubis| a entrada da IU informada foi pressionada. O tipo da entrada
+	é um valor enumerado.
 
 
 **uiinput:pressed_repeat(tipo, velocidade)**
 
-	Retorna um booleano indicando se a entrada da IU informada foi
-	pressionada ou a repetição automática foi disparada na velocidade
-	informada. O tipo da entrada é um valor enumerado; a velocidade é um
-	intervalo em sessenta avos de um segundo.
+	|ubis| a entrada da IU informada foi 	pressionada ou a repetição
+	automática foi disparada na velocidade informada. O tipo da entrada
+	é um valor enumerado; a velocidade é um intervalo em sessenta avos
+	de um segundo.
 
 Propriedades
 ^^^^^^^^^^^^
@@ -4579,10 +4661,10 @@ Métodos
 
 **bounds:includes(x, y)**
 
-	Retorna um booleano indicando se o ponto informado está dentro do
-	retângulo. O retângulo deve ser normalizado para que funcione
-	(direito maior que o esquerdo e baixo maior do que cima). Os
-	argumentos devem ser números de ponto flutuante.
+	|ubis| o ponto informado está dentro do retângulo. O retângulo deve
+	ser normalizado para que funcione (direito maior que o esquerdo e
+	baixo maior do que cima). Os argumentos devem ser números de ponto
+	flutuante.
 
 
 **bounds:set_xy(esquerda, cima, direita, baixo)**
@@ -5759,10 +5841,9 @@ Métodos
 
 **view:has_screen(tela)**
 
-	Retorna um booleano indicando se a tela está presente na
-	visualização. Isso é verdadeiro para telas que estão presentes, mas
-	não visíveis porque o usuário ocultou a coleção dos itens que
-	pertencem à ela.
+	|ubis| a tela está presente na visualização. Isso é verdadeiro para
+	telas que estão presentes, mas não visíveis porque o usuário ocultou
+	a coleção dos itens que pertencem à ela.
 
 
 **view:set_prepare_items_callback(cb)**
@@ -6896,3 +6977,4 @@ Propriedades
 .. |aquan| replace:: a quantidade das cores na paleta menos um
 .. |insej| replace:: índice seja maior ou igual à quantidade de cores da
 	paleta
+.. |ubis| replace:: Retorna um booleano indicando se
