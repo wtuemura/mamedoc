@@ -593,4 +593,4 @@ entre elas como já foi explicado
 .. _nestopia: https://github.com/0ldsk00l/nestopia
 .. _NES_NTSC.pal: https://www.mediafire.com/file/o331z62b17sdmk7/NES_NTSC.zip
 .. _NES_SMPTE.pal: https://www.mediafire.com/file/zcvhkzafsfsngu5/NES_SMPTE.zip
-.. _baixe aqui: https://www.mediafire.com/file/alrsaykfvmu72r6/nes_mame_luts.zip
+.. _baixe aqui: https://www.mediafire.com/file/mxo1yj0alevfwtx/nes_mame_luts.zip

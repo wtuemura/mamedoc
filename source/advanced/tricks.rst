@@ -2300,5 +2300,59 @@ descrição do lado direito.
 
 Fonte: `u/cd4053b <https://www.reddit.com/r/MAME/comments/yc271k/rom_list/itpbrl2/?context=3>`_.
 
+
+Correção da proporção da tela para o SNES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Na época que este sistema foi lançado o padrão das TVs do mundo inteiro
+tinha uma proporção de tela (*Display Aspect Ratio* ou **DAR**) de
+**4:3** com uma resolução comum de ``640x480`` para `PAL-M`_ (Brasil) e
+`NTSC`_ (EUA e outros países).
+
+O SNES gerava diferentes resoluções, entre ``256x224`` e ``512x448``,
+sendo que a maioria ficava em ``256x224`` PAL-M/NTSC e ``256x240`` PAL
+(Europa e outros países 50 Hz). Assim a resolução gerada tinha um
+**SAR** (Source/Storage/Sample Display Ratio) de **8:7**, um **PAR**
+(Pixel Aspect Ratio) de **1:1** (quadrado ou "*square*") que era
+literalmente esticada na TV para um **DAR 4:3** (não quadrado ou
+"*non-square*").
+
+Os desenvolvedores criavam os seus jogos com tudo isso em mente para que
+quando o jogo aparecesse na TV, a proporção dos gráficos seria corrigida
+pela própria TV, por isso que a regra geral era um **DAR 4:3** para
+todos os jogos (inclusive os de arcade). No entanto, muitos jogos
+parecem ter saído fora deste padrão na época, e hoje com a emulação,
+algumas pessoas acabaram notando diferenças. Objetos que deveriam ter
+uma forma redonda acabavam ficando com um formato ovalado, o mesmo para
+quadrados que ficavam retangulares na proporção 4:3, veja este
+`exemplo`_ (em Inglês).
+
+**Então, qual é a proporção correta?**
+
+Sem dúvida é **4:3**! Porém ainda assim, a imagem aparece distorcida nas
+nossas telas.
+
+Este arquivo serve para te dar uma opção, você vai pode escolher entre o
+padrão 4:3, 8:7 ou o formato "*pixel perfect*" que nada mais é do que
+usar o SAR como DAR. Baixe o arquivo `snes.zip`_ e coloque na pasta
+**artwork** do MAME (não é preciso descompactar). Inicie um jogo
+qualquer do snes, pressione :kbd:`Tab`, vá em
+:guilabel:`Opções do vídeo` > :guilabel:`Tela #0` e escolha uma das
+novas opções disponíveis:
+
+* :guilabel:`Aspect Ratio Fix NTSC/PAL 240 (4:3)`
+* :guilabel:`Aspect Ratio Fix NTSC (Nintendo 8:7)`
+* :guilabel:`Aspect Ratio Fix PAL (Nintendo 8:7)`
+* :guilabel:`Pixel Perfect NTSC (256x224)`
+* :guilabel:`Pixel Perfect PAL (256x240)`
+
+Ao escolher uma, a sua preferencia ficará salva no arquivo
+``cfg\snes.cfg``. Caso queira redefinir a configuração, basta apagar
+este arquivo.
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
+.. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
+.. _NTSC: https://pt.wikipedia.org/wiki/NTSC
+.. _exemplo: https://www.youtube.com/watch?v=ssluTgfkdlg
+.. _snes.zip: https://www.mediafire.com/file/byz95kk0je8ishh/snes.zip
