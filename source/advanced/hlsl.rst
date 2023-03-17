@@ -21,7 +21,7 @@ Os monitores CRT dos arcades são uma experiência única na maneira que a
 imagem é formada e apresentada na tela, imagem essa que os monitores de
 LCD e até mesmo monitores CRT não possuem.
 
-É aí então que que o hlsl entra em cena.
+É aí então que o hlsl entra em cena.
 
 O filtro hlsl simula a maioria dos efeitos de vídeo que um monitor CRT
 de arcade teria, fazendo com que o resultado visual seja muito mais
@@ -37,7 +37,6 @@ fóruns conhecidos sobre o MAME espalhados pela internet.
 
 Resolução e relação de aspecto da tela
 --------------------------------------
-
 
 A resolução é um assunto muito importante para as configurações do hlsl.
 Você desejará que o MAME esteja usando a resolução nativa do seu monitor
@@ -92,6 +91,9 @@ Por último, uma edição a mais para ativar o hlsl:
 
 Salve o arquivo ``.ini`` e você está pronto para começar.
 
+.. note::
+   Caso tenha problemas com o ``d3d`` (o efeito não funciona por
+   exemplo), consulte o capítulo  :ref:`advanced-tricks-dx9`.
 
 Várias predefinições foram incluídas na pasta ``ini`` junto com o MAME,
 permitindo um bom ponto de partida para as configurações iniciais de

@@ -2350,9 +2350,60 @@ Ao escolher uma, a sua preferencia ficará salva no arquivo
 ``cfg\snes.cfg``. Caso queira redefinir a configuração, basta apagar
 este arquivo.
 
+
+.. _advanced-tricks-dx9:
+
+Usando o HLSL no Windows 8/10/11 sem precisar instalar o DirectX 9
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para que os :ref:`efeitos HLSL funcionem no Windows <advanced-hlsl>` é
+preciso definir a opção de :ref:`video <mame-commandline-video>` como
+``d3d`` e para que esta opção funcione, é preciso instalar o `DirectX
+End-User Runtime`_ que é compatível até o Windows 7, segundo a página da
+própria Microsoft. O problema é que Windows 10 e mais recente não são
+compatíveis com o DirectX 9 e se instalar, isso pode causar problemas
+com o DirectShow e outros sistemas críticos do Windows, inclusive
+causando travamentos e outras coisas desagradáveis.
+
+Para resolver este empecilho, basta descompactar alguns arquivos dentro
+da pasta do MAME (o mesmo lugar onde o executável do MAME se encontra),
+baixe o `DirectX End-User Runtime`_, abra o arquivo com o `7-zip`_,
+extraia apenas os arquivos que começam com ``Jun2010_*`` numa pasta
+vazia qualquer no seu desktop, abra um prompt de comando onde estes
+arquivos foram extraídos e rode o comando abaixo::
+
+	mkdir dlls
+	expand *_x64.cab -F:*.dll -R dlls
+
+.. raw:: latex
+
+	\clearpage
+
+O comando extrairá os seguintes arquivos dentro da pasta **dlls**:
+
+* D3DCompiler_43.dll
+* d3dcsx_43.dll
+* d3dx10_43.dll
+* d3dx11_43.dll
+* d3dx9_43.dll
+* xactengine3_7.dll
+* XAPOFX1_5.dll
+* XAudio2_7.dll
+
+Copie todos estes arquivos para a pasta do MAME, agora a opção
+:ref:`-video d3d <mame-commandline-video>` deverá funcionar sem maiores
+problemas.
+
+.. note::
+   Caso queira eliminar o efeito de "grelha" ("*shadow mask*") da tela,
+   use a opção ``-noshadow_mask_alpha`` na linha de comando ou salve a
+   opção ``shadow_mask_alpha 0`` em algum ``.ini`` específico.
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
 .. _NTSC: https://pt.wikipedia.org/wiki/NTSC
 .. _exemplo: https://www.youtube.com/watch?v=ssluTgfkdlg
 .. _snes.zip: https://www.mediafire.com/file/byz95kk0je8ishh/snes.zip
+.. _DirectX End-User Runtime: https://www.microsoft.com/pt-br/download/details.aspx?id=8109
+.. _7-zip: https://7-zip.org/download.html

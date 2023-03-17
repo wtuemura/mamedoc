@@ -335,16 +335,25 @@ o seguinte conteúdo::
 	bgfx_screen_chains lut
 	bgfx_lut NES_SMPTE.png
 
+Para quem usa HLSL no Windows::
+
+	video d3d
+	hlsl_enable 1
+	filter 0
+	lut_enable 1
+	lut_texture NES_SMPTE.png
+
+.. note::
+   Caso tenha problemas com o ``d3d`` (o efeito não funciona ou o LUT
+   não é aplicado por exemplo), consulte o capítulo
+   :ref:`advanced-tricks-dx9`.
+
 Para Linux/macOS tente::
 
 	video bgfx
 	bgfx_backend vulkan # (tente opengl ou auto caso não funcione)
 	bgfx_screen_chains lut
 	bgfx_lut NES_SMPTE.png
-
-.. raw:: latex
-
-	\clearpage
 
 Rode o comando abaixo no teminal ou no prompt de comando e veja o
 resultado::
