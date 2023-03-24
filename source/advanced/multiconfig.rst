@@ -255,23 +255,19 @@ podemos ter configurações específicas para sistemas que usem vetores sem
 que estas configurações afete sistemas rasterizados ou sistemas que
 sequer usem telas por exemplo.
 
-Criando uma configuração arcade
--------------------------------
 
-Aqui uma sugestão de configuração para sistemas **arcade** e **CPS-1**
-onde vamos definir diferentes parâmetros, porém, sem alterar nada no
-``mame.ini``, tenham certeza que todas as ROMs estejam na pasta
-**roms**, para o nosso exemplo usaremos as ROMs ``sf2.zip``,
-``ssf2.zip`` e ``qsound_hle.zip``. Na configuração *arcade* por exemplo,
-nós definimos apenas os parâmetros que será genérico para todas os
-sistemas desta categoria e assim faremos para a todas os sistema que
-estiverem dentro do driver **CPS-1**.
+Criando uma configuração específica para o Super Street Fighter 2
+-----------------------------------------------------------------
 
-**Arcade**
+Aqui uma sugestão de configuração onde vamos definir diferentes
+parâmetros, porém, sem alterar nada no ``mame.ini``, tenha certeza que
+todas as ROMs estejam na pasta **roms**. Para o nosso exemplo usaremos a
+ROM ``ssf2.zip`` e ``qsound_hle.zip``.
 
-	* Crie um arquivo texto chamado ``arcade.ini`` dentro do diretório
-	  **ini** e cole estas configurações que vão afetar apenas os
-	  sistemas que são considerados **arcade**:
+**Super Street Fighter 2**
+
+	* Crie um arquivo texto chamado ``ssf2.ini`` dentro do diretório
+	  **ini** e cole as configurações abaixo:
 
 .. code-block:: shell
 
@@ -280,48 +276,62 @@ estiverem dentro do driver **CPS-1**.
     snapbilinear              0
     refreshspeed              1
     filter                    0
-
+    bgfx_screen_chains        crt-geom
+    ctrlr                     sf2
 
 Observe que as opções sugeridas aqui são as mais genéricas possíveis
 para que funcionem com a maioria dos computadores mais recentes cobrindo
 o mínimo necessário.
 
-Já nesta outra configuração nós definimos, por exemplo, o controle que
-queremos usar **apenas com nos sistemas listados no driver CPS-1** e
-nenhuma outra.
+.. note:
+   Consulte o capítulo :ref:`advanced-tricks-mais-de-um-botão` para
+   aprender como criar a configuração de botões usada pela opção
+   :ref:`ctrlr <mame-commandline-ctrlr>`.
 
-**CPS-1**
 
-	* Crie o arquivo texto ``cps1.ini`` dentro do diretório
+Criando uma configuração específica para um sistema/driver
+----------------------------------------------------------
+
+Aqui em vez de criar várias configurações individuais, nós criaremos uma
+única configuração que será aplicada a todos os sistemas listados dentro
+do driver ``capcom/cps2.cpp`` (use o comando
+:ref:`-ls <mame-commandline-listsource>` para indentificar o driver do
+sistema).
+
+
+**CPS-2**
+
+	* Crie o arquivo texto ``cps2.ini`` dentro do diretório
 	  **ini\\source**, com as seguintes opções:
 
 .. code-block:: shell
 
+    video                     bgfx
+    bgfx_backend              vulkan
+    snapbilinear              0
+    refreshspeed              1
+    filter                    0
+    bgfx_screen_chains        crt-geom
+    ctrlr                     sf2
+
+Agora todos os sistemas dentro de ``capcom/cps2.cpp`` (veja quais são
+eles com o comando ``mame ssf2 -lb``), usarão as configurações acima.
+Caso utilize esta configuração, você pode apagar o arquivo ``ssf2.ini``,
+a não ser que você use ou queira usar uma configuração muito específica
+para ele, neste caso, não é preciso clonar a configuração, basta
+adicionar a opção que deseja. Então o seu arquivo ``ssf2.ini`` teria
+apenas a seguinte configuração:
+
+.. code-block:: shell
+
     samplerate                44100
-    steadykey                 1
-    ctrlr                     6-botoes
     window                    1
 
-Para que a opção **6-botoes** funcione é necessário criar uma
-configuração para o controle que estiver usando e salvá-la como
-**6-botoes.cfg** no diretório **ctrl**, veja mais detalhes em
-:ref:`advanced-tricks-mais-de-um-botão`.
+Neste caso, somado a configuração anterior, o sistema e todos os
+relacionados a ele, serão configurados a usar uma taxa de amostragem de
+**44.1 kHz** e rodar em modo janela, enquanto todos os outros rodarão
+com tela inteira e com uma taxa de amostragem padrão de **48 kHz**.
 
-Inicie o sistema **Street Fighter II: The World Warrior** (``mame sf2``)
-e repare que mesmo sem alterar o ``mame.ini`` ela inicia numa janela em
-vez de tela inteira e o mapeamento dos nossos botões está de acordo com
-o que configuramos.
-
-Agora se iniciarmos o sistema **Super Street Fighter II: The New
-Challengers** (``mame ssf2``) repare que a emulação começa em **tela
-inteira** e o mapeamento dos botões está diferente do que foi
-configurado.
-Isso acontece porque o sistema pertence a um driver diferente da
-**CPS-1**, ela usa o driver para **CPS-2**. Para aplicar as mesmas
-configurações para os sistemas no driver **CPS-2**, vá até a pasta
-**ini**, copie e cole o arquivo ``cps1.ini``, depois renomeie o arquivo
-colado como ``cps2.ini``. Agora ao repetir o teste, o sistema começa
-numa janela e com os botões configurados.
 
 Aplicando efeitos na tela
 -------------------------
@@ -396,8 +406,7 @@ aumenta a resolução da tela junto com o efeito
 Repare que ao usar o arquivo ``raster.ini`` para armazenar as
 configurações dos efeitos da tela, ela também será aplicada em qualquer
 outro sistema que seja definido como "raster" como consoles de
-video-game, computadores pessoais, etc. Então prefira salvar tais
-configurações dentro do arquivo ``arcade.ini``.
+video-game, computadores pessoais, etc.
 
 Criando configurações específicas para consoles
 -----------------------------------------------
@@ -443,44 +452,6 @@ alguns exemplos.
     prescale                  2
     keepaspect                1
 
-Criando configurações para consoles em geral
---------------------------------------------
-
-Da mesma maneira que é possível personalizar a configuração individual
-de cada console, também é possível usar 1 arquivo para configurar todos
-os sistemas classificadas como console.
-
-**Consoles em geral**
-
-	* Crie o arquivo ``consoles.ini`` dentro do diretório **ini** com as
-	  seguintes opções:
-
-.. code-block:: shell
-
-	video                   opengl
-	snapbilinear            0
-	audio_latency           2
-	refreshspeed            1
-	filter                  1
-	gl_glsl                 1
-	gl_glsl_filter          1
-	glsl_shader_mame0       osd\shader\glsl_plain
-	glsl_shader_mame1       osd\CRT-geom
-
-Nesta configuração nós aplicamos os efeitos de tela em qualquer sistema
-definido como **console** e ainda mantemos as configurações individuais
-criadas anteriormente, assim nós mantemos as configurações do mapeamento
-dos botões do controle por exemplo.
-
-O céu é o limite, na internet é possível encontrar muito mais shaders
-como o `MAME-PSGS <https://github.com/mgzme/MAME-PSGS>`_,
-`crt-easymode-halation <https://www.reddit.com/r/MAME/comments/8budfa/port_of_crteasymodehalation_shader_for_mame/>`_
-e assim por diante.
-
-Apesar de não abordar todas as possibilidades de configurações possíveis
-esperamos que estes exemplos sejam suficientes para lhe ajudar a
-configurar o MAME de maneira mais eficiente para cada sistema sem ficar
-limitado apenas ao arquivo ``mame.ini``.
 
 .. |codn|  replace:: Caso o depurador não esteja ativado, nenhum
    arquivo INI extra será lido
