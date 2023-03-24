@@ -65,20 +65,7 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 
 	<p></p>
 
-5. Arquivos INI voltado para diferentes sistemas (``arcade.ini``,
-   ``console.ini``, ``computer.ini`` ou ``othersys.ini``).
-   Tanto o sistema **Pac-Man** quanto o sistema **Street Fighter Alpha**
-   são jogos classificados como **arcade**, logo, o arquivo
-   ``arcade.ini`` é lido para obter as configurações para esta
-   categoria, já modelos de console que estejam dentro da categoria
-   **console** como o **Atari 2600** o aquivo ``console.ini`` é lido
-   para obter configurações que sejam específicas para esta categoria.
-
-.. raw:: html
-
-	<p></p>
-
-6. Os arquivos INI voltados para diferentes tipos de tela como
+5. Os arquivos INI voltados para diferentes tipos de tela como
    ``vector.ini`` para jogos vetoriais, ``raster.ini`` para jogos
    rasterizados, ``lcd.ini`` para jogos ou consoles que usem telas de
    cristal líquido (LCD), EL, plasma, etc.
@@ -103,7 +90,7 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 
 	<p></p>
 
-7. Os arquivos INI voltados para os arquivos de código-fonte (driver).
+6. Os arquivos INI voltados para os arquivos de código-fonte (driver).
    O MAME tentará ler ``source/``\ *<sourcefile>*\ ``.ini`` onde
    <*sourcefile*> é o nome do arquivo de código-fonte onde o sistema
    estiver definido. O código-fonte de um driver pode ser encontrado
@@ -122,7 +109,7 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 
 	<p></p>
 
-8. Os arquivos INI para BIOS (caso seja aplicável). O sistema
+7. Os arquivos INI para BIOS (caso seja aplicável). O sistema
    **The Last Soldier** por exemplo, usa a BIOS do **Neo-Geo MVS**,
    então o arquivo ``neogeo.ini`` será lido. Nenhum arquivo INI será
    lido nos sistemas que não usem uma BIOS.
@@ -131,7 +118,7 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 
 	<p></p>
 
-9. Arquivo INI da mesma família. O **The Last Soldier** é um clone do
+8. Arquivo INI da mesma família. O **The Last Soldier** é um clone do
    **The Last Blade / Bakumatsu Roman - Gekka no Kenshi**, assim o arquivo
    ``lastblad.ini`` será lido. Nenhum arquivo INI da mesma família será
    lido.
@@ -140,7 +127,7 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 
 	<p></p>
 
-10. Arquivo INI do sistema. Usando o exemplo anterior, o arquivo
+9. Arquivo INI do sistema. Usando o exemplo anterior, o arquivo
     ``lastsold.ini`` será lido para o **The Last Soldier**.
 
 .. raw:: latex
@@ -156,40 +143,37 @@ Exemplos da sequência de leitura dos arquivos
 
   1. Linha de comando
   2. ``mame.ini`` (global)
-  3. (caso o depurador não esteja habilitado, nenhum arquivo INI extra será lido)
-  4. ``vertical.ini`` (orientação de tela)
-  5. ``arcade.ini`` (tipo do sistema)
-  6. ``raster.ini`` (tipo do monitor)
-  7. ``source/jack.ini`` (configuração específica para o driver)
-  8. (nenhuma BIOS definida)
-  9. ``zzyzzyxx.ini`` (sistema da mesma família)
-  10. ``brix.ini`` (sistema)
+  3. |codn|.
+  4. ``vertical.ini`` (orientação da tela)
+  5. ``raster.ini`` (tipo do monitor)
+  6. ``source/jack.ini`` (configuração específica para o código fonte do driver)
+  7. |nebd|.
+  8. ``zzyzzyxx.ini`` (sistema da mesma família)
+  9. ``brix.ini`` (sistema)
 
 * Super Street Fighter 2 Turbo (``mame ssf2t``)
 
   1. Linha de comando
   2. ``mame.ini`` (global)
-  3. (caso o depurador não esteja habilitado, nenhum arquivo INI extra será lido)
+  3. |codn|.
   4. ``horizont.ini`` (orientação de tela)
-  5. ``arcade.ini`` (tipo do sistema)
-  6. ``raster.ini`` (tipo do monitor)
-  7. ``source/cps2.ini`` (configuração específica para o driver)
-  8. (nenhuma BIOS definida)
-  9. (nenhum sistema da mesma família)
-  10. ``ssf2t.ini`` (sistema)
+  5. ``raster.ini`` (tipo do monitor)
+  6. ``source/cps2.ini`` (configuração específica para o driver)
+  7. |nebd|.
+  8. |nsmf|.
+  9. ``ssf2t.ini`` (sistema)
 
 * Final Arch (``mame finlarch``)
 
   1. Command line
   2. ``mame.ini`` (global)
-  3. (caso o depurador não esteja habilitado, nenhum arquivo INI extra será lido)
+  3. |codn|.
   4. ``horizont.ini`` (orientação de tela)
-  5. ``arcade.ini`` (tipo do sistema)
-  6. ``raster.ini`` (tipo do monitor)
-  7. ``source/stv.ini`` (configuração específica para o driver)
-  8. ``stvbios.ini`` (BIOS definida)
-  9. ``smleague.ini`` (sistema da mesma família)
-  10. ``finlarch.ini`` (sistema)
+  5. ``raster.ini`` (tipo do monitor)
+  6. ``source/stv.ini`` (configuração específica para o driver)
+  7. ``stvbios.ini`` (BIOS definida)
+  8. ``smleague.ini`` (sistema da mesma família)
+  9. ``finlarch.ini`` (sistema)
 
 *Lembre-se que os parâmetros na linha de comando tem preferência sobre
 todos os outros arquivos!*
@@ -497,3 +481,8 @@ Apesar de não abordar todas as possibilidades de configurações possíveis
 esperamos que estes exemplos sejam suficientes para lhe ajudar a
 configurar o MAME de maneira mais eficiente para cada sistema sem ficar
 limitado apenas ao arquivo ``mame.ini``.
+
+.. |codn|  replace:: Caso o depurador não esteja ativado, nenhum
+   arquivo INI extra será lido
+.. |nebd|  replace:: Nenhuma BIOS definida
+.. |nsmf|  replace:: Nenhum sistema da mesma família
