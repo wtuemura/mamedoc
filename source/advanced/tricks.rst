@@ -1708,7 +1708,7 @@ backup dos seus arquivos ``mame.ini``, ``ui.ini`` e ``plugins.ini``.
 Crie novos arquivos com o comando ``mame -cc``.
 
 Vá até onde o seu MAME está instalado, dentro do diretório **ini** crie
-um arquivo ``arcade.ini`` e edite-o com as seguintes configurações::
+um arquivo ``raster.ini`` e edite-o com as seguintes configurações::
 
 	rompath                   roms;outro_caminho_completo_das_suas_roms
 	# Video
