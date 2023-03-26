@@ -2067,9 +2067,8 @@ arquivo ou diretório será o mesmo que o nome do sistema usado, supondo
 que teve problemas com o sistema **Street Fighter Alpha**, no diretório
 **nvram** apague o diretório **sfa**, no diretório **cfg**, apague o
 arquivo **sfa.cfg**. Verifique se não existe nenhuma configuração
-customizada dentro do diretório **ini** como **arcade.ini** ou qualquer
-outro que possa ter sido criado, caso exista, experimente mover este
-arquivo para um outro lugar.
+customizada dentro do diretório **ini**, caso exista, experimente mover
+este arquivo para um outro lugar.
 
 É provável que depois de uma atualização da versão GIT o MAME tenha se
 "*quebrado*", ao acompanhar o `desenvolvimento do MAME diariamente
