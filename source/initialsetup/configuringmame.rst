@@ -255,8 +255,7 @@ informações, primeiro consulte a opção
 :ref:`-pa_api <mame-commandline-paapi>` para identificar corretamente
 o seu hardware antes de continuar.
 
-Abra novamente o seu arquivo ``arcade.ini`` e adicione estas opções
-extras::
+Abra o seu arquivo ``mame.ini`` e adicione estas opções::
 
 	# Audio
 	sound                   portaudio
@@ -297,7 +296,7 @@ escuta música de fundo ou ouvir o som do Youtube, Spotify, Tidal ou
 qualquer outro site ou programa que use a placa de som, o áudio pode
 **não funcionar**.
 
-Neste caso altere a configuração do arquivo ``arcade.ini`` para::
+Neste caso altere a configuração do arquivo ``mame.ini`` para::
 
 	# Audio
 	sound                   sdl
