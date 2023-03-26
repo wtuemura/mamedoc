@@ -999,6 +999,12 @@ Propriedades
 	Os exemplos incluem os menus e os controles deslizantes.
 
 
+**ui.ui_active** |lees|
+
+	Um Booleano que indica se as entradas de controle da IU estão
+	ativadas.
+
+
 **ui.single_step** |lees|
 
 	Um Booleano que controla se o sistema emulado deve ser pausado
