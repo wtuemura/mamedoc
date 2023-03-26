@@ -2843,11 +2843,6 @@ tela, edite o arquivo ``CRT-geom.vsh`` e use estas configurações::
 	
 	// END of parameters
 
-Caso queira aplicar essas configurações para **TODAS** os sistemas
-classificadas como **Arcade**, então renomeie o arquivo ``galaxian.ini``
-para ``arcade.ini``, assim o sistema **Galaxian** e muitos outros terão
-este efeito na tela.
-
 Altere o valor do ``overscan`` de ``vec2(1.01,1.01)`` para
 ``vec2(1.00,1.00)`` para que a tela apareça completa na tela.
 
