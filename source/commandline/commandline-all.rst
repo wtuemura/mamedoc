@@ -1434,10 +1434,6 @@ Opções para a configuração
 
 	Para clones apenas, poderá ser chamado de forma recursiva.
 
-.. raw:: latex
-
-	\clearpage
-
 - **<nome-do-driver-do-sistema>.ini**
 
 	Para que as opções sejam aplicadas apenas no driver do sistema, para
@@ -1468,6 +1464,10 @@ Opções para a configuração
 	sobrescrever qualquer valor de efeito existente no seu ``mame.ini``.
 
 			O valor predefinido é ``Ligado`` (``-readconfig``).
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _mame-commandline-nowriteconfig:
