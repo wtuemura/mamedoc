@@ -1426,22 +1426,6 @@ Opções para a configuração
 
 	Para sistemas com orientação horizontal do monitor.
 
-- **arcade.ini**
-
-	Para sistemas adicionados no código-fonte com a macro ``GAME()``.
-
-- **console.ini**
-
-	Para sistemas adicionados no código-fonte com a macro ``CONS()``.
-
-- **computer.ini**
-
-	Para sistemas adicionados no código-fonte com a macro ``COMP()``.
-
-- **othersys.ini**
-
-	Para sistemas adicionados no código-fonte com a macro ``SYST()``.
-
 - **vector.ini**
 
 	Para sistemas com vetores apenas.
