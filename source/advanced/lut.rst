@@ -119,7 +119,7 @@ MAME.
    Para usuários de Linux e macOS, é possível obter tela semelhante
    usando o `ffmpeg`_, depois de instalar o ffmpeg abra o terminal e
    rode o comando:
-   ``ffmpeg -hide_banner -f lavfi -i smptebars=duration=10:size=550x480:rate=30 smptebars.mp4``
+   ``ffmpeg -hide_banner -f lavfi -i smptebars=duration=10:size=550x480:rate=30 -pix_fmt yuv444p smptebars.mp4``
 
 .. raw:: latex
 
@@ -565,6 +565,10 @@ neste documento, quem tiver interesse de baixar e experimentar,
 entre elas como já foi explicado
 :ref:`anteriormente <advanced-testar-luts>`.
 
+.. note::
+   Agora estes LUTs também estão disponíveis através do site do MAMEDEV
+   em `mame-goodies`_.
+
 .. |bdcs| replace:: Barras de cores SMPTE (NTSC) BT.601
 .. [#LT] https://www.avmakers.com.br/blog/l-u-t-o-que-e-e-como-utilizar
 .. _espaço de cores: https://pt.wikipedia.org/wiki/Espa%C3%A7o_de_cores
@@ -603,3 +607,4 @@ entre elas como já foi explicado
 .. _NES_NTSC.pal: https://www.mediafire.com/file/o331z62b17sdmk7/NES_NTSC.zip
 .. _NES_SMPTE.pal: https://www.mediafire.com/file/zcvhkzafsfsngu5/NES_SMPTE.zip
 .. _baixe aqui: https://www.mediafire.com/file/mxo1yj0alevfwtx/nes_mame_luts.zip
+.. _mame-goodies: https://github.com/mamedev/mame-goodies/tree/master/bgfx/lut/nes
