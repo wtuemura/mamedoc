@@ -3766,7 +3766,7 @@ Usando o mesmo arquivo que você usou acima:
 * Em :guilabel:`Image size` defina ambos para ``174``.
 * Em :guilabel:`Filename` defina o caminho completo e o nome do arquivo
   (``centro.png``), no caso, exportaremos essa imagem para dentro da
-  pasta **artwork\sfa3**.
+  pasta **artwork\\sfa3**.
 * Faça o mesmo com as outras posições e respeitando o mesmo nome usado
   anteriormente, porém, com a extensão **.png**, ``centro.png``,
   ``cima.png``, ``baixo.png``, etc.
