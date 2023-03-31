@@ -27,8 +27,12 @@ Antes, alguns pontos importantes:
 
 * É necessário um compilador C++17 e suas respectivas bibliotecas, a
   versão mínima aceitável do GCC é a versão 7.2 ou mais recente, para o
-  clang é necessário a versão 5 ou mais recente. O executável do MAME
-  rodará com a biblioteca GNU libstdc++ versão 7.2 ou mais recente.
+  clang é necessário a versão 6 ou mais recente. O executável do MAME
+  rodará com a biblioteca GNU libstdc++ versão 7.2 ou mais recente,
+  assim como, libc++ versão 7 ou mais recente. A versão inicial de
+  qualquer grande lançamento de versão do GCC deve ser evitada.
+  Por exemplo, caso queira compilar o MAME com o GCC 10, é preferível
+  que você utilize a versão 10.3 ou posterior.
 
 * A versão nativa do MAME roda no Windows, então uma grande ênfase será
   dada a compilação neste sistema operacional.
@@ -88,6 +92,10 @@ Antes, alguns pontos importantes:
   problema. Nestes casos não é necessário reportar o erro, pois o código
   fonte do MAME no GIT é atualizado a todo instante.
 
+.. raw:: latex
+
+	\clearpage
+
 * Para que o código-fonte do MAME possa ser compilado, há toda uma
   estrutura que precisa estar configurada no momento que o comando
   **make** é executado, incluindo diversos outros parâmetros de 
@@ -96,10 +104,6 @@ Antes, alguns pontos importantes:
   renomeado, removido e assim por diante, todos os arquivos do projeto
   responsáveis pela compilação precisam ser atualizados através da
   opção **REGENIE=1**.
-
-.. raw:: latex
-
-	\clearpage
 
 * Durante o processo de compilação são gerados arquivos objetos ***.o**,
   arquivos de arquivamento ***.a** dentre vários outros, é importante
@@ -227,6 +231,10 @@ Antes, alguns pontos importantes:
 		modified:   scripts/src/osd/sdl_cfg.lua
 
 	no changes added to commit (use "git add" and/or "git commit -a")
+
+  .. raw:: latex
+
+  	\clearpage
 
   Execute o comando abaixo para restaurá-lo ao seu estado original::
 
@@ -510,10 +518,6 @@ sua sorte pode variar bastante. É muito difícil saber com precisão se
 haverá uma melhora no desempenho ou não pois o MAME depende muito do
 desempenho do hardware onde ele é executado (quanto mais potente,
 melhor) e do sistema operacional, dos sistemas, etc.
-
-.. raw:: latex
-
-	\clearpage
 
 Podemos fazer um teste prático compilando duas versões do MAME para
 rodar apenas o **pacman** usado opções diferentes::

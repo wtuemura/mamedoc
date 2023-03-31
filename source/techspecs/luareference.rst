@@ -2117,13 +2117,15 @@ Métodos
 **image:load(nome_do_arquivo)**
 
 	Carrega o arquivo informado como uma imagem de mídia. Retorna
-	``"pass"`` ou ``"fail"``.
+	``nil`` caso não haja erro ou um texto descrevendo o que houve de
+	errado.
 
 
 **image:load_software(nome)**
 
 	Carrega uma imagem da mídia descrita numa lista de software.
-	Retorna ``"pass"`` ou ``"fail"``.
+	Retorna ``nil`` caso não haja erro ou um texto descrevendo o que
+	houve de errado.
 
 
 **image:unload()**
@@ -2134,7 +2136,8 @@ Métodos
 **image:create(nome_do_arquivo)**
 
 	Cria e monta um arquivo de imagem da mídia com o nome informado.
-	Retorna ``"pass"`` ou ``"fail"``.
+	Retorna ``nil`` caso não haja erro ou um texto descrevendo o que
+	houve de errado.
 
 
 **image:display()**
