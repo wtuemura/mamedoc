@@ -54,3 +54,7 @@ kbd {
     transition: all .1s linear;
     border-radius: .35rem;
 }
+div {
+    border-radius: 0.3rem;
+}
+
