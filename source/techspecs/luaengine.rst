@@ -59,11 +59,11 @@ Várias classes estão documentadas na página
 Utilização
 ----------
 
-O MAME suporta o carregamento de scripts Lua (>= 5.3), seja ele digitado
-no console interativo ou se for carregado como um arquivo externo. Para
-usar o console, rode o MAME usando o comando ``-console`` ou ``-plugin
-console``, será mostrado um *prompt* de comando com um ``[MAME]>``
-onde é possível interagir e digitar o seu script.
+O MAME suporta o carregamento de scripts Lua, seja ele digitado no
+console interativo ou se for carregado como um arquivo externo. Para
+usar o console, rode o MAME usando o comando ``-console``, será mostrado
+um *prompt* de comando com um ``[MAME]>`` onde é possível interagir e
+digitar o seu script.
 
 Use o comando ``-autoboot_script`` para carregar um script. Por
 predefinição, o carregamento do script pode ser atrasado em alguns
@@ -82,7 +82,7 @@ Demonstração passo a passo
 
 Rode o MAME num terminal para ter acesso ao console Lua::
 
-    $ mame -console SUA_ROM
+    $ mame -console SEU_SISTEMA
            /|  /|    /|     /|  /|    _______
           / | / |   / |    / | / |   /      /
          /  |/  |  /  |   /  |/  |  /  ____/
@@ -94,10 +94,10 @@ Rode o MAME num terminal para ter acesso ao console Lua::
              /  /
             / _/
 
-    mame 0.240
+    mame 0.250
     Copyright (C) Nicola Salmoria and the MAME team
 
-    Lua 5.3
+    Lua 5.4
     Copyright (C) Lua.org, PUC-Rio
 
     [MAME]>
@@ -118,7 +118,7 @@ Durante a execução é possível verificar qual a versão do MAME sendo
 rodada no momento com o comando abaixo::
 
     [MAME]> print(emu.app_name() .. " " .. emu.app_version())
-    mame 0.240
+    mame 0.250
 
 Nós agora começaremos a explorar os métodos relacionadas à tela.
 Primeiro, vamos enumerar as telas disponíveis::
