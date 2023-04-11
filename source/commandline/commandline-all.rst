@@ -564,27 +564,6 @@ Exemplo:
 			6331.sound-u8                            32 BAD CRC(1d298cb0) SHA1(bb0bb62365402543e3154b9a77be9c75010e6abc) BAD_DUMP
 
 
-.. _mame-commandline-listbios:
-
-**-listbios** <*palavra chave*>
-
-	Exibe uma lista das BIOS para os sistemas/dispositivos compatíveis
-	que correspondam aos nomes que forem especificados. Se nenhum nome
-	for informado, a BIOS de *todos* os sistemas compatíveis serão
-	listados.
-
-	Exemplo:
-		.. code-block:: bash
-
-			mame -listbios 3do
-			4 BIOSes available for driver "3do".
-			Name:             Description:
-			panafz10          "Panasonic FZ-10 R.E.A.L. 3DO Interactive Multiplayer"
-			goldstar          "Goldstar 3DO Interactive Multiplayer v1.01m"
-			panafz1           "Panasonic FZ-1 R.E.A.L. 3DO Interactive Multiplayer"
-			sanyotry          "Sanyo TRY 3DO Interactive Multiplayer"
-
-
 .. raw:: latex
 
 	\clearpage
@@ -738,6 +717,34 @@ Exemplo:
 	\clearpage
 
 
+.. _mame-commandline-listbios:
+
+**-listbios** <*palavra chave*>
+
+	Exibe uma lista das BIOS para um sistemas (caso esteja disponível).
+	As opções da BIOS podem estar disponíveis para o sistema ou
+	quaisquer dispositivos selecionados como opções de slot.
+	
+	Caso nenhum nome seja informado, a BIOS de *todos* os sistemas
+	compatíveis serão listados.
+
+	Exemplo:
+		.. code-block:: bash
+
+			mame -listbios apple2 -sl2 grapplus -sl4 videoterm
+			BIOS options for system Apple ][ (apple2):
+				default          Original Monitor
+				autostart        Autostart Monitor
+			
+			BIOS options for device Orange Micro Grappler+ Printer Interface (-sl2 grapplus):
+				v30              ROM 3.0
+				v32              ROM 3.2
+			
+			BIOS options for device Videx Videoterm 80 Column Display (-sl4 videoterm):
+				v24_60hz         Firmware v2.4 (60 Hz)
+				v24_50hz         Firmware v2.4 (50 Hz)
+
+
 .. _mame-commandline-listmedia:
 
 **-listmedia** / **-lm** <*sistema*>
@@ -772,6 +779,11 @@ Exemplo:
 	``-memc1 caminho_para_a_imagem``.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-listsoftware:
 
 **-listsoftware** / **-lsoft** <*sistema*>
@@ -797,11 +809,6 @@ Exemplo:
 					</software>
 				</softwarelist>
 			</softwarelists>
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-getsoftlist:
