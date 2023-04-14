@@ -5225,6 +5225,13 @@ Instanciação
 	do recorte do retângulo do bitmap original.
 
 
+**emu.bitmap_argb32.load(data)**
+
+	|cbef| ARGB a partir de dados em formato PNG, JPEG (JFIF/EXIF) ou
+	Microsoft DIB (BMP). |guec| os dados sejam inválidos ou caso o
+	formato não seja compatível.
+
+
 Métodos
 ^^^^^^^
 
