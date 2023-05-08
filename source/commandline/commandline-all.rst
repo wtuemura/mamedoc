@@ -3885,12 +3885,15 @@ Opções para a configuração do áudio
 **-volume** / **-vol** <*valor*>
 
 	Define o volume inicial. Pode ser alterado posteriormente usando
-	a interface do usuário.
-	O valor do volume está definido em decibéis (dB): Por exemplo,
-	``-volume -12`` começará com uma atenuação de **-12 dB** no volume
-	do áudio.
+	a interface do usuário (consulte :ref:`default-keys`).
+	O valor do volume está definido em decibéis (dB); por exemplo,
+	``-volume -12`` iniciará a emulação com uma atenuação de **-12 dB**.
+	Observe que, caso o volume seja alterado na interface do usuário,
+	ele será salvo no arquivo de configuração do sistema. O valor do
+	arquivo de configuração para o sistema **tem prioridade** sobre as
+	configurações de ``volume`` nos arquivos **INI**.
 
-		O valor predefinido é ``0`` (``-volume 0``).
+		O valor predefinido é ``0`` (``-volume 0``, sem atenuação com volume no máximo).
 
 	Exemplo:
 		.. code-block:: shell
@@ -4010,7 +4013,7 @@ Opções para a configuração do áudio
 	| O XAudio2 calcula a latência do áudio com passos de ``10ms``.
 	| O DSound calcula a latência do áudio com passos de ``10ms``.
 	| O CoreAudio calcula a latência do áudio com passos de ``25ms``.
-	| O SDL calcula a latência do áudio com passos de ``10ms``.
+	| O SDL calcula a latência do áudio com passos de ``Xms``.
 
 
 .. _mame-commandline-paapi:
@@ -4821,6 +4824,10 @@ Opções das entadas principais ativadas automaticamente
 	:ref:`-joystick <mame-commandline-nojoystick>` ou o
 	:ref:`-lightgun <mame-commandline-nolightgun>` dependendo do tipo
 	das entradas disponíveis no sistema emulado.
+	Observe que essas opções *não* substituirão as configurações usadas
+	explicitamente na linha de comando de **-nomouse**, **-nojoystick**
+	e/ou **-nolightgun** num nível de prioridade mais alto (num arquivo
+	**INI** mais específico ou na linha de comando por exemplo).
 
 	Por exemplo, caso defina a opção ``-paddle_device mouse``, então os
 	controles do mouse serão automaticamente ativados ao executar um
