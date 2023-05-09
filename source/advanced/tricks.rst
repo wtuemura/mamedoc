@@ -2399,6 +2399,190 @@ problemas.
    use a opção ``-noshadow_mask_alpha`` na linha de comando ou salve a
    opção ``shadow_mask_alpha 0`` em algum ``.ini`` específico.
 
+Convertendo alguns arquivos .CHD antigos para o novo formato createdvd
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A partir da versão 0.255 do MAME através do `commit 8f05076`_, o MAME
+passa a poder usar o formato DVD CHD, assim sendo, será preciso
+converter o formato de alguns sistemas como ``popn5``, ``popn6``,
+``popn7``, ``popn8``, ``popnanm`` e alguns outros para o novo formato
+DVD CHD.
+
+Para fazer a conversão é simples, baixe a versão 0.255 do MAME do `site
+oficial`_ e use o programa ``chdman`` que já vem com ele e rode o
+comando abaixo para converter o CHD do ``popn5`` por exemplo::
+
+	chdman extractraw -i a04jaa02.chd -o a04jaa02.iso
+
+Exclua ou renomeie o arquivo ``a04jaa02.chd`` para algo como
+``a04jaa02.chd.old``, geralmente quando o sistema acompanha mais de um
+CHD, basta converter **o maior arquivo da pasta**, assim sendo no caso
+do ``popn5``, basta converter o arquivo ``a04jaa02.chd``. Faça o comando
+abaixo para criar um novo CHD no novo formato::
+
+	chdman createdvd -i a04jaa02.iso -o a04jaa02.chd
+
+Aguarde alguns minutos até a conclusão da conversão. O antigo arquivo
+``a04jaa02.chd`` tinha as seguintes características::
+
+	chdman info -i a04jaa02.chd
+	chdman - MAME Compressed Hunks of Data (CHD) manager 0.255 (mame0255)
+	Input file:   a04jaa02.chd
+	File Version: 5
+	Logical size: 2,686,978,048 bytes
+	Hunk Size:    4,096 bytes
+	Total Hunks:  656,001
+	Unit Size:    512 bytes
+	Total Units:  5,248,004
+	Compression:  lzma (LZMA), zlib (Deflate), huff (Huffman), flac (FLAC)
+	CHD size:     1,152,280,500 bytes
+	Ratio:        42.9%
+	SHA1:         49a017dde76f84829f6e99a678524c40665c3bfd
+	Data SHA1:    568c4dcb15f3c1bb295cd30fb79b8ae1330667d5
+	Metadata:     Tag='GDDD'  Index=0  Length=36 bytes
+                      CYLS:1312001,HEADS:2,SECS:2,BPS:512.
+
+Ao final da conversão o novo arquivo passa a ter as seguintes
+características::
+
+	chdman info -i a04jaa02.chd
+	chdman - MAME Compressed Hunks of Data (CHD) manager 0.255 (mame0255)
+	Input file:   a04jaa02.chd
+	File Version: 5
+	Logical size: 2,686,978,048 bytes
+	Hunk Size:    2,048 bytes
+	Total Hunks:  1,312,001
+	Unit Size:    2,048 bytes
+	Total Units:  1,312,001
+	Compression:  lzma (LZMA), zlib (Deflate), huff (Huffman), flac (FLAC)
+	CHD size:     1,147,285,394 bytes
+	Ratio:        42.7%
+	SHA1:         058167a6ac910183a701920021cfbc0933428e97
+	Data SHA1:    568c4dcb15f3c1bb295cd30fb79b8ae1330667d5
+	Metadata:     Tag='DVD '  Index=0  Length=1 bytes
+
+Repare que em **Tag** em vez de ``GDDD`` agora temos ``DVD``.
+
+.. warning::
+   Antes de prosseguir, **FAÇA UM BACKUP DO SEU ARQUIVO CHD ANTES DE
+   USAR ESTES SCRIPTS CASO VOCÊ COLECIONE VERSÕES ANTIGAS DELES!**.
+
+Visando facilitar esse trabalho, eu criei um script chamado
+``convert_chd_dvd.bat`` para Windows (há também uma versão para
+Linux/macOS), no Windows basta copiar o script para dentro da pasta do
+CHD, abrir num editor de texto e definir o ``CHDMAN_HOME`` (este é o
+caminho onde se encontra o arquivo **chdman.exe** mais recente) e
+salvar, depois basta arrastar o arquivo precisa ser convertido em cima
+do script, se for o caso do ``a04jaa02.chd`` basta arrastar e soltar o
+arquivo em cima do script ``convert_chd_dvd.bat`` que ele fará todo o
+trabalho sujo deixando apenas o arquivo convertido e **excluindo** os
+arquivos antigos (incluindo o arquivo ISO usado na conversão).
+
+.. raw:: latex
+
+	\clearpage
+
+**Script para Windows**
+
+.. code-block:: bash
+
+	REM Criado por Wellington Terumi Uemura 08/05/2023
+	REM CC by 4.0
+	
+	@echo off
+	setlocal
+	mode con cp select=850
+	cls
+	
+	set CHDMAN_HOME=
+	
+	if "%CHDMAN_HOME%" == "" (
+		echo.
+		echo O CHDMAN_HOME não foi configurado!
+		echo.
+		echo Encerrando...
+		pause
+		goto :end
+	)
+	
+	if exist %CHDMAN_HOME%\chdman.exe (
+		echo.
+		set chdman_cmd=%CHDMAN_HOME%\chdman.exe
+		goto :command
+	) else (
+		echo Precisamos do chdman.exe para funcionar!
+		echo.
+		pause
+		echo Encerrando...
+		goto :end
+	)
+	
+	:command
+		for %%A in (%*) do %chdman_cmd% extractraw -i %%A -o %%~nA.iso && del %%A
+		echo.
+		for %%A in (%*) do %chdman_cmd% createdvd -i %%~nA.iso -o %%~nA.chd
+		goto :clean
+	
+	:clean
+		cd %~dp0
+		for %%i in (*.iso) do del %%i
+	
+	:end
+	endlocal
+	exit /B
+
+.. raw:: latex
+
+	\clearpage
+
+Nesta versão para Linux/macOS crie o arquivo ``convert_chd_dvd``, faça o
+comando ``chmod +x`` para torná-lo executável e cole o script abaixo
+nele:
+
+.. code-block:: bash
+
+	#!/bin/bash
+	# Criado por Wellington Terumi Uemura 08/05/2023
+	# CC by 4.0
+	
+	export CHDMAN_HOME=~/mame/tools
+
+	if [ -z "$CHDMAN_HOME" ]; then
+		echo "CHDMAN_HOME is not set!"
+		echo "Closing..."
+		read -n 1 -s -r -p "Press any key to continue"
+		exit 1
+	fi
+	
+	if [ ! -f "$CHDMAN_HOME/chdman" ]; then
+		echo "We need chdman to work!"
+		echo "Closing..."
+		read -n 1 -s -r -p "Press any key to continue"
+		exit 1
+	fi
+	
+	for file in "$@"; do
+		"$CHDMAN_HOME/chdman" extractraw -i "$file" -o "$(basename "$file" .*)".iso && rm "$file"
+	done
+	
+	for iso_file in *.iso; do
+		"$CHDMAN_HOME/chdman" createdvd -i "$iso_file" -o "${iso_file%.*}"
+	done
+	
+	rm *.iso
+
+Na versão atual do Gnome que eu utilizo, ele não permite "arrastar e
+soltar" em cima do arquivo como no Windows. Então como no exemplo
+anterior, defina o seu ``CHDMAN_HOME`` e decida se vai copiar o script
+para o seu ``PATH`` padrão (``/usr/bin`` por exemplo) ou se vai copiá-lo
+nas pastas que ele será utilizado e rode-o como um comando no seu
+terminal, exemplo::
+
+	convert_chd_dvd a04jaa02.chd
+
+Assim como na versão do Windows, ele fará todo o trabalho para você
+deixando apenas o arquivo convertido no lugar e excluindo o antigo.
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
@@ -2407,3 +2591,5 @@ problemas.
 .. _snes.zip: https://www.mediafire.com/file/byz95kk0je8ishh/snes.zip
 .. _DirectX End-User Runtime: https://www.microsoft.com/pt-br/download/details.aspx?id=8109
 .. _7-zip: https://7-zip.org/download.html
+.. _commit 8f05076: https://github.com/mamedev/mame/commit/8f05076b076adf494509d1ae5cbd2a6a07b25afa>
+.. _site oficial: https://www.mamedev.org/release.html
