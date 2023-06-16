@@ -249,26 +249,26 @@ outros modelos MSX, para ver a lista completa dos modelos faça::
 
 	mame expert10 -lb
 
-	Source file:         Name:            Parent:
-	msx.cpp              ax150
-	msx.cpp              ax170
+	Source file:              Name:            Parent:
+	msx/msx1.cpp              ax150
+	msx/msx1.cpp              ax170
 	...
-	msx.cpp              expert10         expert13
-	msx.cpp              expert11         expert13
-	msx.cpp              expert13
-	msx.cpp              expert20
-	msx.cpp              expert3i
-	msx.cpp              expert3t
-	msx.cpp              expertac
-	msx.cpp              expertdp
-	msx.cpp              expertdx
-	msx.cpp              expertpl
+	msx/msx1.cpp              expert10         expert13
+	msx/msx1.cpp              expert11         expert13
+	msx/msx1.cpp              expert13
+	msx/msx1.cpp              expert20
+	msx/msx1.cpp              expert3i
+	msx/msx1.cpp              expert3t
+	msx/msx1.cpp              expertac
+	msx/msx1.cpp              expertdp
+	msx/msx1.cpp              expertdx
+	msx/msx1.cpp              expertpl
 	...
 
-Veja o
-`driver MSX <https://github.com/mamedev/mame/blob/master/src/mame/drivers/msx.cpp#L8642>`_
+Consulte o
+`driver MSX1 <https://github.com/mamedev/mame/blob/master/src/mame/msx/msx1.cpp#L3681>`_
 do MAME para obter mais detalhes como o ano de lançamento, nome
-completo, etc.
+completo, etc. Aqui o `driver MSX2 <https://github.com/mamedev/mame/blob/master/src/mame/msx/msx2.cpp#L4642>`_.
 
 .. raw:: latex
 
