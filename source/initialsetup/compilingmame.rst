@@ -1438,13 +1438,9 @@ Incluindo os subconjuntos dos sistemas suportados
   pelo usuário podem ser criadas usando **SOURCES** ou **SOURCEFILTER**.
   Os valores já predefinidos são:
 
-		* **arcade**: Compila uma versão do MAME apenas com sistemas classificados como arcade.
 		* **dummy**: Compila uma versão bem simplificada do mame com apenas o driver da Coleco.
 		* **mame**: Compila uma versão do MAME com arcade, mess e virtual.
-		* **mess**: Compila uma versão do MAME só com sistemas catalogados como consoles de videogame, portáteis, diferentes plataformas de computadores e calculadoras.
-		* **nl**: Compila todos os drivers classificados como *netlist*.
 		* **tiny**: Compila uma versão simples do MAME com alguns poucos drivers usado para testar a compilação do MAME, muito útil pois evita a obrigação de se compilar todo o código-fonte do MAME para testar apenas uma modificação feita na interface por exemplo.
-		* **virtual**: Compila uma versão do MAME com o VGM player e um simulador para o Pioneer LDV-1000 e o PR-8210.
 
   O valor do parâmetro *SUBTARGET* serve também para se diferenciar
   dentre as várias compilações existente e não precisa ser definido sem
