@@ -77,9 +77,13 @@ Debian e Ubuntu
 
 O comando abaixo vai instalar ferramentas adicionais além das quais já
 foram descritas na seção :ref:`compiling-ubuntu`, note que o
-comando abaixo é formado por uma linha só: ::
+comando abaixo é formado por uma linha só::
 
+	64 bit
 	sudo aptitude install g++-mingw-w64-x86-64-posix gcc-mingw-w64-x86-64-posix gcc-mingw-w64-x86-64-posix-runtime gobjc++-mingw-w64-x86-64-posix gobjc-mingw-w64-x86-64-posix binutils-mingw-w64-x86-64 mingw-w64-common mingw-w64-tools mingw-w64-x86-64-dev win-iconv-mingw-w64-dev
+	
+	32 bit
+	sudo aptitude install g++-mingw-w64-i686-posix gcc-mingw-w64-i686-posix gcc-mingw-w64-i686-posix-runtime gobjc++-mingw-w64-i686-posix gobjc-mingw-w64-i686-posix binutils-mingw-w64-i686
 
 .. note::
 
@@ -104,19 +108,7 @@ Já para a plataforma **32-bit** faremos estes comandos, note que
 
 	sudo ln -s /usr/bin/i686-w64-mingw32-g++-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-g++
 	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-ar-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc-ar
-	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-6.3-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc
-
-Para o Debian 11 ou mais recente faça o comando abaixo para 64-bit::
-
-	sudo ln -s /usr/bin/x86_64-w64-mingw32-g++-win32 /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-g++
-	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-ar-win32 /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc-ar
-	sudo ln -s /usr/bin/x86_64-w64-mingw32-gcc-win32 /usr/x86_64-w64-mingw32/bin/x86_64-w64-mingw32-gcc
-
-E este para 32-bit::
-
-	sudo ln -s /usr/bin/i686-w64-mingw32-g++-win32 /usr/i686-w64-mingw32/bin/i686-w64-mingw32-g++
-	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-ar-win32 /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc-ar
-	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-win32 /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc
+	sudo ln -s /usr/bin/i686-w64-mingw32-gcc-VERSÃO-posix /usr/i686-w64-mingw32/bin/i686-w64-mingw32-gcc
 
 
 Fedora Linux
