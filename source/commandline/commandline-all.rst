@@ -3143,6 +3143,10 @@ Opções para a configuração de vídeo
 			mame ssf2tu -video d3d -prescale 3
 
 
+.. note:: Utilize valores mais altos do ``prescale`` na versão OpenGL
+          para deixar os pixels mais nítidos (com menor efeito de blur).
+
+
 .. _mame-commandline-filter:
 
 **-[no]filter** / **-[no]d3dfilter** / **-[no]flt**

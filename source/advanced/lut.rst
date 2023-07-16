@@ -569,6 +569,12 @@ entre elas como já foi explicado
    Agora estes LUTs também estão disponíveis através do site do MAMEDEV
    em `mame-goodies`_.
 
+.. note::
+   Para remover o efeito *"blur"* (borrado) nas versões OpenGL do MAME
+   durante o uso de Luts, use a opção :ref:`prescale
+   <mame-commandline-prescale>`. O valor ``8`` (máximo), remove todo o
+   efeito.
+
 .. |bdcs| replace:: Barras de cores SMPTE (NTSC) BT.601
 .. [#LT] https://www.avmakers.com.br/blog/l-u-t-o-que-e-e-como-utilizar
 .. _espaço de cores: https://pt.wikipedia.org/wiki/Espa%C3%A7o_de_cores
