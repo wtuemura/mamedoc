@@ -3126,7 +3126,8 @@ Opções para a configuração de vídeo
 
 	Experimente ``-prescale 4`` ou valores maiores para amenizar um
 	pouco as distorções causadas pela opção
-	:ref:`-unevenstretch <mame-commandline-unevenstretch>`.
+	:ref:`-unevenstretch <mame-commandline-unevenstretch>` e para
+	reduzir o efeito *"blur"* ao custo de um aumento de processamento.
 
 	Os valores válidos são ``1`` (mínimo) e ``8`` (máximo).
 
@@ -3141,10 +3142,6 @@ Opções para a configuração de vídeo
 		.. code-block:: shell
 
 			mame ssf2tu -video d3d -prescale 3
-
-
-.. note:: Utilize valores mais altos do ``prescale`` na versão OpenGL
-          para deixar os pixels mais nítidos (com menor efeito de blur).
 
 
 .. _mame-commandline-filter:
