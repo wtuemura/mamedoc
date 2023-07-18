@@ -30,6 +30,7 @@ DOCUMENTAÇÃO MAME
     advanced/index
 
     debugger/index
+    luascript/index
     tools/index
 
     contributing/index

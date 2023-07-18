@@ -46,14 +46,13 @@ Exemplos práticos
 -----------------
 
 Antes de entrarmos de cabeça nos detalhes técnicos do seu
-funcionamento, começaremos com alguns exemplos usando o script Lua. É
-importante que você tenha conhecimento prévio de como sistema de
-ilustrações (artwork) do MAME funciona assim como um conhecimento básico
-de como criar scripts em Lua. Para mais obter mais informações sobre
-os arquivos de layout consulte :ref:`layfile`, para uma introdução sobre
-scripts Lua no MAME consulte :ref:`luaengine`, para descrições
-detalhadas das classes Lua usadas pelo MAME consulte
-:ref:`luareference`.
+funcionamento, começaremos com alguns exemplos usando os aprimoramentos
+do script Lua. É importante que você tenha conhecimento prévio de como
+sistema de ilustrações (*artwork*) do MAME funciona, assim como, um
+conhecimento básico de como criar scripts Lua. Para mais obter mais
+informações sobre os arquivos de layout consulte :ref:`layfile`, para
+descrições detalhadas das classes Lua usadas pelo MAME consulte
+:ref:`luascript`.
 
 Espial: joystick dividido entre as portas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -198,26 +197,28 @@ como uma função através do plug-in **Layout** durante o carregamento do
 arquivo do layout. A visualização do layout foi construída neste ponto,
 porém o sistema emulado ainda não terminou de ser iniciado. Não é seguro
 acessar as entradas e as saídas neste momento. A variável chave no
-ambiente do script é ``file`` que dá ao script o acesso ao seu arquivo
-de layout.
+ambiente do script é ``file`` que dá ao script o acesso ao seu
+:ref:`arquivo de layout <luascript-ref-renderlayfile>`.
 
 Nós fornecemos uma função que será invocada depois que as tags no
 arquivo de layout tiverem sido resolvidas. Neste ponto, o sistema
 emulado terá concluído a sua inicialização. Esta função realiza as
 seguintes tarefas:
 
-* Monitora a entrada das duas portas E/S do jogador. As portas E/S podem
-  ser monitoradas através das tags relacionadas com o dispositivo que
-  fizer com que o arquivo de layout seja carregado.
-* Monitora os dois itens usados pela tela exibindo o estado do joystick.
+* Monitora a entrada das duas :ref:`portas E/S <luascript-ref-ioport>`
+  do jogador. As portas E/S podem ser monitoradas através das *tags*
+  relacionadas com o dispositivo que  fizer com que o arquivo de layout
+  seja carregado.
+* Monitora os :ref:`dois itens <luascript-ref-renderlayitem>` usados
+  pela tela exibindo o estado do joystick.
   As visualizações podem ser monitoradas através do nome (o valor
   do atributo ``name`` por exemplo), e os itens que estiverem entre
   ``view`` e que possuam um ID (o valor do atributo ``id`` por exemplo).
 * Fornece uma função que será invocada antes que os itens sejam
   renderizados na tela.
 * Oculta o aviso que lembra o usuário para ativar o plug-in do layout ao
-  definir o estado do elemento para o item com 0 (o componente do texto
-  só é desenhado quando o estado do elemento for 1).
+  definir o estado do elemento para o item com ``0`` (o componente do
+  texto só é desenhado quando o estado do elemento for ``1``).
 
 A função que é invocada antes dos itens de visualização são renderizados
 na tela, lê as entradas do jogador e embaralha os bits na ordem
@@ -429,22 +430,24 @@ O layout possui um elemento ``script`` contendo o script Lua que será
 invocado como uma função através do plug-in **Layout** quando o arquivo
 de layout for carregado. Isto ocorre após a construção das visualizações
 do layout, mas antes que o sistema emulado tenha concluído a sua
-inicialização. O objeto do arquivo do layout é fornecido ao script
-através da variável ``file``.
+inicialização. O objeto do :ref:`arquivo do layout
+<luascript-ref-renderlayfile>` é fornecido ao script através da
+variável ``file``.
 
 Nós oferecemos uma função que será invocada depois que as tags no
 arquivo do layout forem resolvidas. Esta função faz o seguinte:
 
-* Monitora o recebimento dos dados do eixo analógico.
-* Monitora o item visualizado que traça o contorno da área onde a
-  posição do manche é exibida.
+* Monitora o recebimento de dados da :ref:`entrada
+  <luascript-ref-ioport>` do eixo analógico.
+* Monitora o :ref:`item visualizado <luascript-ref-renderlayitem>` que
+  traça o contorno da área onde a posição do manche é exibido.
 * Declara algumas variáveis para manter os valores calculados através
   das chamadas das funções.
 * Fornece a função para ser invocada quando a visualização das dimensões
   tenham sido recalculadas.
 * Fornece a função para ser invocada antes de adicionar os itens
-  visíveis ao contêiner renderizado.
-* Fornece as funções que fornecerão os limites para os itens animados.
+  visíveis ao contêiner durante a renderização do quadro.
+* Fornece as funções que definirão os limites para os itens animados.
 * Esconde o aviso que alerta o usuário para ativar o plug-in **Layout**
   ao definir a condição do elemento para o item como 0 (o componente do
   texto só é desenhado quando o estado do elemento for 1).
@@ -498,12 +501,22 @@ O ambiente do script layout
 O ambiente Lua é oferecido pelo plug-in **Layout**. É bem reduzido,
 oferecendo apenas o mínimo necessário:
 
-* O ``file`` oferecendo o objeto do arquivo de layout do script.
-  Possui uma propriedade ``device`` para saber quem foi que fez com que
-  o layout fosse carregado e uma propriedade ``views`` para conseguir as
-  exibições do layout (indexadas através do nome).
-* O ``machine`` oferecendo ao MAME o sistema que está sendo executado no
-  momento.
+* O ``file`` oferecendo o objeto do :ref:`arquivo de layout
+  <luascript-ref-renderlayfile>` do script.
+  Possui uma propriedade ``device`` para saber quem foi qual foi o
+  :ref:`dispositivo <luascript-ref-device>` responsável para que o
+  layout fosse carregado e uma propriedade ``views`` para conseguir as
+  :ref:`exibições do layout <luascript-ref-renderlayview>` (indexadas
+  através do nome).
+* A função ``machine`` que oferece ao MAME a informação sobre o sistema
+  que está sendo :ref:`executado <luascript-ref-machine>` no momento.
+* As funções  ``emu.attotime``, ``emu.render_bounds`` e
+  ``emu.render_color`` que criam os objetos
+  :ref:`attotime <luascript-ref-attotime>`, :ref:`bounds <luascript-ref-renderbounds>` e :ref:`cores <luascript-ref-rendercolor>`.
+
+
+
+
 * As funções ``emu.render_bounds`` e o ``emu.render_color`` para criar
   os limites e as cores dos objetos.
 * As funções ``emu.print_error``, ``emu.print_info`` e o

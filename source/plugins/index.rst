@@ -15,7 +15,7 @@ Os plug-ins externos oferecem funcionalidades adicionais ao MAME, eles
 foram escritos de maneira a se comunicarem com programas ou plataformas
 externas, jogar jogos de forma autônoma, exibir estruturas internas do
 jogo, como hitbox [#HITBOX]_, fornecer interfaces alternativas so usuário, e
-realizar testes automáticos da emulação.  Consulte :ref:`luaengine` para
+realizar testes automáticos da emulação.  Consulte :ref:`luascript` para
 obter mais informações sobre a API Lua do MAME.
 
 ..  [#HITBOX]	São regiões delimitadoras que quando ultrapassadas o jogo
