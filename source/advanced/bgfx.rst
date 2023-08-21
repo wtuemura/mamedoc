@@ -175,12 +175,12 @@ Alterando as configurações
 	Determina como manipular a renderização **BGFX** tela a tela. As
 	opções disponíveis são:
 
-	* ``default`` Gera uma tela com filtro bilinear.
-	* ``unfiltered`` Geral uma tela sem filtro.
+	* ``default`` Gera uma tela com filtro bilinear (padrão).
+	* ``unfiltered`` Gera uma tela sem filtro.
 	* ``hlsl`` Simula uma tela CRT usando shaders hlsl.
-	* ``crt-geom`` Geral uma tela sem filtro.
-	* ``crt-geom-deluxe`` Geral uma tela sem filtro.
-	* ``lcd-grid`` Geral uma tela sem filtro.
+	* ``crt-geom`` Simula uma tela CRT simples e leve.
+	* ``crt-geom-deluxe`` Simula uma tela CRT simples, porém, mais detalhada.
+	* ``lcd-grid`` Simula uma tela de display liquido.
 
 	Nós fazemos uma distinção entre os dispositivos de tela emuladas
 	(que chamamos de **screen** ou **tela**) e a tela física (que
