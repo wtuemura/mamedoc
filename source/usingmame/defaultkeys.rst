@@ -761,7 +761,7 @@ obter mais detalhes do sistema que estiver usando.
 
 
 :kbd:`Tab`
-    Toggles the configuration menu.
+    Chama o menu de configuração.
 :kbd:`ScrLk` / :kbd:`FwdDel` (Mac Desktop) / :kbd:`fn-Del` (Mac Laptop)
     Mapeamento predefinido para o **uimodekey**.
 
