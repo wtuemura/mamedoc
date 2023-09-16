@@ -199,15 +199,15 @@ mais baixa prioridade:
 	``==`` ``!=``
 		Igual, não igual.
 	``&``
-		Lógica binária de conjunção (**and**).
+		Lógica binária de conjunção (**AND**).
 	``^``
-		Lógica binária exclusiva (**or**).
+		Lógica binária exclusiva (**OR**).
 	``|``
-		Lógica binária de união (**or**).
+		Lógica binária de união (**OR**).
 	``&&``
-		Conjunção lógica (**and**).
+		Conjunção lógica (**AND**).
 	``||``
-		Disjunção lógica (**or**).
+		Disjunção lógica (**OR**).
 	``=`` ``*=`` ``/=`` ``%=`` ``+=`` ``-=`` ``<<=`` ``>>=`` ``&=`` ``|=`` ``^=``
 		Atribuição e alteração da atribuição.
 	``,``
