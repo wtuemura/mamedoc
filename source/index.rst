@@ -100,6 +100,7 @@ permanentemente qualquer colaborador por qualquer outro comportamento
 que se considere impróprio, perigoso, ofensivo ou problemático.
 
 Escopo
+------
 
 Este Código de Conduta aplica-se dentro dos espaços do projeto ou
 qualquer espaço público onde alguém represente o mesmo ou a sua

@@ -4,7 +4,7 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
-
+    librsvg2-bin: "2.52"
 sphinx:
    configuration: source/conf.py
 
