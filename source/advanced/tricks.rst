@@ -2586,7 +2586,7 @@ deixando apenas o arquivo convertido no lugar e excluindo o antigo.
 
 
 Extraindo a lista de sistemas de um determinado driver
-------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O comando :ref:`-listfull / -ll <mame-commandline-listfull>` oferece uma
 listagem de sistemas com o nome da ROM seguido da sua descrição (como
