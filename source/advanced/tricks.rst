@@ -1,4 +1,4 @@
-.. raw:: latex
+ raw:: latex
 
 	\clearpage
 
@@ -2277,6 +2277,7 @@ Para as ROMs do CPS2::
 	1944u
 	...
 
+.. _advanced-tricks-game-list:
 
 Criando uma lista de jogos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2583,6 +2584,135 @@ terminal, exemplo::
 Assim como na versão do Windows, ele fará todo o trabalho para você
 deixando apenas o arquivo convertido no lugar e excluindo o antigo.
 
+
+Extraindo a lista de sistemas de um determinado driver
+------------------------------------------------------
+
+O comando :ref:`-listfull / -ll <mame-commandline-listfull>` oferece uma
+listagem de sistemas com o nome da ROM seguido da sua descrição (como
+também foi demonstrado no capítulo :ref:`advanced-tricks-game-list`), no
+entanto, o comando não cria uma lista com base num arquivo de código
+fonte (driver) específico, como um determinado sistema que esteja dentro
+de ``src/mame/capcom/cps1.cpp`` por exemplo, se usarmos o comando
+``-ll`` com sistema ``sf2`` como exemplo, ele retorna::
+
+	mame -ll sf2
+	sf2 "Street Fighter II: The World Warrior (World 910522)"
+
+Pessoas que têm uma leve noção de como o MAME é estruturado sabe que
+este sistema pertence ao CPS-1 da CAPCOM e está dentro do arquivo
+``src/mame/capcom/cps1.cpp``. O comando :ref:`-listsource / -ls
+<mame-commandline-listsource>` ajuda a identificar qual o arquivo fonte
+este sistema pertence, ainda usando o ``sf2`` como exemplo::
+
+	mame -ls sf2
+	sf2 capcom/cps1.cpp
+
+Até o presente momento o MAME não possui nenhuma opção para listar todos
+os sistemas de um determinado driver como o ``capcom/cps1.cpp``, por
+isso precisamos recorrer a ferramentas externas para obter tal lista.
+
+O MAME suporta uma grande quantidade de ROMs, na casa de centena de
+milhares, são tantas que é impossível tentar relatar o número exato,
+pois mais e mais ROMs são adicionadas todos os dias. No entanto, é mais
+fácil para a maioria das pessoas lembrar o nome específico do título em
+vez do nome da ROM.
+
+Para extrair todos os sistemas de ``src/mame/capcom/cps1.cpp``, podemos
+utilizar as ferramentas ``grep``, ``awk`` e ``sed``, estas ferramentas
+são nativas do Linux, macOS e podem ser usadas no Windows através do
+ambiente de desenvolvimento `MSYS2`_. Baixe o código fonte do mame no
+`site oficial do github`_ do MAME, geralmente o arquivo com o código fonte segue o
+padrão ``mame[versão]`` com um **s** no final. Usar o ``git`` é mais
+fácil, no Linux (Debian, Ubuntu, etc) você instala com::
+
+	sudo apt install git-all
+
+Para sistemas como pacotes RPM (Fedora, RHEL, CentOS, etc)::
+
+	sudo dnf install git-all
+
+`Veja aqui`_ como instalar no macOS.
+
+No terminal, execute este comando e aguarde a sua conclusão::
+
+	git clone https://github.com/mamedev/mame.git
+
+Será criada uma pasta chamada **mame** entre nela com ``cd mame`` e rode
+o comando abaixo::
+
+	cat src/mame/capcom/cps1.cpp|grep "GAME( "| awk -F'"' '{print $4}'| sort -d
+
+O comando vai extrair a lista de todos os sistemas em
+``src/mame/capcom/cps1.cpp``, exemplo::
+
+	1941: Counter Attack (Japan)
+	1941: Counter Attack (USA 900227)
+	...
+	Adventure Quiz Capcom World 2 (Japan 920611)
+	...
+	Area 88 (Japan)
+	...
+
+Agora nós precisamos adicionar o nome da ROM ao lado dos títulos, para
+isso fazendo o comando abaixo::
+
+	cat src/mame/capcom/cps1.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d
+
+	1941 - 1941: Counter Attack (World 900227)
+	1941j - 1941: Counter Attack (Japan)
+	...
+	cworld2j - Adventure Quiz Capcom World 2 (Japan 920611)
+	...
+	area88 - Area 88 (Japan)
+	...
+
+Fica mais fácil redirecionar a lista num arquivo texto e usar o
+:kbd:`Ctrl` + :kbd:`F` para buscar pelas palavras chaves::
+
+	cat src/mame/capcom/cps1.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d > lista_cps1.txt
+
+Ou ainda continuar usando o próprio terminal para filtrar o que deseja,
+como ``Air`` por exemplo::
+
+	cat src/mame/capcom/cps1.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d | grep Air
+	cawing - Carrier Air Wing (World 901012)
+	cawingr1 - Carrier Air Wing (World 901009)
+	cawingu - Carrier Air Wing (USA 901130)
+	cawingur1 - Carrier Air Wing (USA 901012)
+
+Ou agora usando o arquivo ``src/mame/capcom/cps2.cpp`` e filtrando por
+``Gem``::
+
+	cat src/mame/capcom/cps2.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d | grep Gem
+	sgemfa - Super Gem Fighter: Mini Mix (Asia 970904)
+	sgemfd - Super Gem Fighter Mini Mix (USA 970904 Phoenix Edition) (bootleg)
+	sgemfh - Super Gem Fighter: Mini Mix (Hispanic 970904)
+	sgemf - Super Gem Fighter Mini Mix (USA 970904)
+
+O mesmo pode ser feito em qualquer arquivo fonte, aqui para quem precisa
+buscar por ``Money``  no arquivo fonte para sistemas Neo Geo::
+
+	cat src/mame/neogeo/neogeo.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d | grep Money
+	miexchng - Money Puzzle Exchanger / Money Idol Exchanger
+
+Letas maiúsculas e minúsculas alteram o resultado, maiúscula::
+
+	cat src/mame/neogeo/neogeo.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d |grep Bang
+	b2b - Bang Bang Busters (2010 NCI release) 
+	bangbead - Bang Bead
+
+Minúscula::
+
+	cat src/mame/neogeo/neogeo.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d |grep bang
+	bangbead - Bang Bea
+
+Indiferente (opção ``-i``)::
+
+	cat src/mame/neogeo/neogeo.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d |grep -i bang
+	b2b - Bang Bang Busters (2010 NCI release) 
+	bangbead - Bang Bead
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
@@ -2593,3 +2723,6 @@ deixando apenas o arquivo convertido no lugar e excluindo o antigo.
 .. _7-zip: https://7-zip.org/download.html
 .. _commit 8f05076: https://github.com/mamedev/mame/commit/8f05076b076adf494509d1ae5cbd2a6a07b25afa>
 .. _site oficial: https://www.mamedev.org/release.html
+.. _MSYS2: https://www.msys2.org/
+.. _site oficial do github: https://github.com/mamedev/mame/releases
+.. _Veja aqui: https://git-scm.com/download/mac

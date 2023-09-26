@@ -33,7 +33,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.doctest',
     'edit_on_github',
-    'sphinxcontrib.rsvgconverter',
+    'sphinxcontrib.rsvgconverter'
 ]
 
 edit_on_github_project = 'wtuemura/mamedoc'
