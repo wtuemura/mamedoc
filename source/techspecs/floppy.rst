@@ -243,8 +243,8 @@ Certas proteções usam isso para tornar os formatos não reconhecíveis
 pelo controlador do sistema, quebrando a regra de três zeros ou brincar
 com as durações e tamanhos das células.
 
-Bit endocing é a arte de transformar dados brutos numa célula de
-configuração 0/1 que respeite as os dois limites.
+*Bit encoding* é a arte de transformar dados brutos numa célula de
+configuração 0/1 respeitando os dois limites.
 
 Codificação FM
 ~~~~~~~~~~~~~~
