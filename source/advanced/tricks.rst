@@ -2585,8 +2585,35 @@ Assim como na versão do Windows, ele fará todo o trabalho para você
 deixando apenas o arquivo convertido no lugar e excluindo o antigo.
 
 
-Extraindo a lista de sistemas de um determinado driver
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Extraindo uma lista de sistemas usando a interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Gerar uma lista de sistema com base no arquivo de código fonte usando a
+interface é bem simples, inicie o MAME e siga os passos a seguir:
+
+* No lado esquerdo da interface do MAME (onde há uma lista de itens
+  disponíveis como :guilabel:`Sem filtro`, :guilabel:`Disponível`,
+  :guilabel:`Indisponível`, etc.) selecione com um duplo clique no
+  item :guilabel:`Source File`.
+* Escolha o código fonte desejado, neste exemplo, selecionamos o
+  ``capcom/cps2.cpp``.
+* A interface deverá exibir uma lista com todos os sistemas existentes
+  em ``capcom/cps2.cpp``.
+* Clique no ícone do disquete no topo da tela e selecione
+  :guilabel:`Exporta e lista em formato TXT`.
+* Um arquivo texto chamado **exported.txt** será criado dentro da pasta
+  **ui** com a sua lista, exemplo::
+
+	﻿Nome:             Descrição:
+	1944              "1944: The Loop Master (Euro 000620)"
+	...
+	armwar            "Armored Warriors (Euro 941024)"
+	...
+	avsp              "Alien vs. Predator (Euro 940520)"
+
+
+Extraindo uma lista de sistemas de um determinado driver
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O comando :ref:`-listfull / -ll <mame-commandline-listfull>` oferece uma
 listagem de sistemas com o nome da ROM seguido da sua descrição (como
@@ -2608,9 +2635,10 @@ este sistema pertence, ainda usando o ``sf2`` como exemplo::
 	mame -ls sf2
 	sf2 capcom/cps1.cpp
 
-Até o presente momento o MAME não possui nenhuma opção para listar todos
-os sistemas de um determinado driver como o ``capcom/cps1.cpp``, por
-isso precisamos recorrer a ferramentas externas para obter tal lista.
+Até o presente momento o MAME não possui nenhuma opção via linha de
+comando para listar todos os sistemas de um determinado driver como o
+``capcom/cps1.cpp`` por exemplo, por isso que neste caso precisamos
+recorrer a ferramentas externas para obter tal lista.
 
 O MAME suporta uma grande quantidade de ROMs, na casa de centena de
 milhares, são tantas que é impossível tentar relatar o número exato,
@@ -2712,6 +2740,7 @@ Indiferente (opção ``-i``)::
 	cat src/mame/neogeo/neogeo.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d |grep -i bang
 	b2b - Bang Bang Busters (2010 NCI release) 
 	bangbead - Bang Bead
+
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
