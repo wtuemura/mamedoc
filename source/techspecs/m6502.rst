@@ -61,7 +61,7 @@ hierárquica final ficou assim:
 O 6510 adiciona 8 bits na porta I/O, com o 6510t, o 7501 e o 8502 são
 variantes, compatíveis entre si a nível de software com uma quantidade
 de pinos diferente (quantidade de I/O), processo da die (NMOS, HNMOS,
-etc) e suporte a clock. 
+etc.) e suporte a clock. 
 
 O deco16 é uma variante do Deco, com um pequeno número de instruções
 adicionais ainda não compreendidas e alguns I/O.

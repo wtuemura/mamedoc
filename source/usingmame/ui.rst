@@ -20,8 +20,8 @@ O MAME oferece uma simples interface ao usuário para que seja
 intuitivo selecionar, rodar um sistema ou um programa; assim como,
 alterar as configurações durante a emulação de um sistema. A interface
 foi projetada para ser utilizável com um teclado, com um controle ou
-com algo que seja possível apontar na tela (mouse, pistola, etc), porém,
-um teclado é necessário para realizar as configurações iniciais.
+com algo que seja possível apontar na tela (mouse, pistola, etc.),
+porém, um teclado é necessário para realizar as configurações iniciais.
 
 As configurações predefinidas mais importantes da interface são as
 seguintes:

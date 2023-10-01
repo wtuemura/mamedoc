@@ -2653,11 +2653,11 @@ são nativas do Linux, macOS e podem ser usadas no Windows através do
 ambiente de desenvolvimento `MSYS2`_. Baixe o código fonte do mame no
 `site oficial do github`_ do MAME, geralmente o arquivo com o código fonte segue o
 padrão ``mame[versão]`` com um **s** no final. Usar o ``git`` é mais
-fácil, no Linux (Debian, Ubuntu, etc) você instala com::
+fácil, no Linux (Debian, Ubuntu, etc.) você instala com::
 
 	sudo apt install git-all
 
-Para sistemas como pacotes RPM (Fedora, RHEL, CentOS, etc)::
+Para sistemas como pacotes RPM (Fedora, RHEL, CentOS, etc.)::
 
 	sudo dnf install git-all
 

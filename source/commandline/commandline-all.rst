@@ -1716,7 +1716,7 @@ Opções para a configuração dos principais diretórios
 **-swpath** <*caminho*>
 
 	Define um ou mais caminhos onde possam ser encontrados arquivos
-	avulsos dos programas (rom, iso, etc). O valor predefinido é
+	avulsos dos programas (rom, iso, etc.). O valor predefinido é
 	``software`` (isto é, um diretório chamado **software** no
 	diretório raiz do MAME).
 
@@ -3133,7 +3133,7 @@ Opções para a configuração de vídeo
 
 			O valor predefinido é ``1``.
 
-	Funciona com todos os modos de vídeo no Windows (bgfx, d3d, etc),
+	Funciona com todos os modos de vídeo no Windows (bgfx, d3d, etc.),
 	nas outras plataformas funciona **APENAS** naquelas que forem
 	compatíveis com o OpenGL. Não funciona com filtros
 	:ref:`GLSL <mame-commandline-glglslfilter>`.
@@ -3166,7 +3166,7 @@ Opções para a configuração de vídeo
 
 			mame ssf2tu -nofilter
 
-	No Windows funciona com todos os modos de vídeo (bgfx, d3d, etc),
+	No Windows funciona com todos os modos de vídeo (bgfx, d3d, etc.),
 	nas outras plataformas **APENAS** aquelas compatíveis com OpenGL.
 
 

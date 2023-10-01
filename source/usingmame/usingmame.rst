@@ -198,7 +198,7 @@ A estrutura básica da linha de comando fica assim:
 Onde:
 
 *	<*systema*> é o apelido ou o nome encurtado do sistema que deseja
-	emular (por exemplo, nes, snes, genesis, c64, etc).
+	emular como o ``nes``, ``snes``, ``genesis``, ``c64``, etc.
 *	<*mídia*> é o seletor da mídia que deseja carregar, continue lendo
 	para mais detalhes.
 *	<*software*> é o programa ou jogo que deseja carregar (também pode
@@ -474,7 +474,7 @@ Arquivos CHD
 
 Além das ROMs, alguns sistemas também precisam de arquivos **.CHD**
 para funcionarem. Estes arquivos são cópias das mídias originais (HDD,
-CD, DVD, etc) compactadas num formato proprietário, para mais detalhes
+CD, DVD, etc.) compactadas num formato proprietário, para mais detalhes
 consulte :ref:`aboutromsets_rom_chd`.
 
 O MAME procura por estes arquivos dentro do diretório **roms**, eles

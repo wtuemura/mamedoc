@@ -24,10 +24,10 @@ O que é uma imagem ROM?
 -----------------------
 
 A programação do jogo em si ficam armazenados dentro de circuitos
-integrados [#CI]_ na placa-mãe do arcade ou num outro tipo de dispositivo
-(CD-ROM, DVD-ROM, HDD, etc). Nós chamamos estes arquivos de ROMs pois é
-um acrônimo de *"Read-Only Memory"* que significa memória de leitura
-apenas.
+integrados [#CI]_ na placa-mãe do arcade ou num outro tipo de
+dispositivo (CD-ROM, DVD-ROM, HDD, etc.). Nós chamamos estes arquivos de
+ROMs pois é um acrônimo de *"Read-Only Memory"* que significa memória de
+leitura apenas.
 
 Na maioria dos consoles e portáteis, dentro dos cartuchos geralmente a
 programação do jogo vem num único CI (mas nem sempre). Já nos sistemas

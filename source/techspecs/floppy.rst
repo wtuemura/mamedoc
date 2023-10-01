@@ -57,7 +57,7 @@ perpendicular (por isso o nome). A gravação no sentido perpendicular
 permite que os dados de gravação ocupem menos espaço permitindo uma
 maior densidade de gravação, porém chegou no final do tempo de vida da
 tecnologia. Os discos com 2.88 Mb e derivados dos disquetes como Zip
-Drives (etc), usavam gravação perpendicular. Para fins de emulação, a
+Drives, etc; usavam gravação perpendicular. Para fins de emulação, a
 direção não importa, o que importa é o fato que duas orientações são
 possíveis. Além dessas orientações mais duas são possíveis: uma parte da
 trilha pode ser desmagnetizada (sem orientação) ou danificada (sem

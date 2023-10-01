@@ -118,7 +118,7 @@ Antes, alguns pontos importantes:
 
   É possível atualizar o código-fonte com o comando ``git pull`` seguido
   de um ``make REGENIE=1`` para compilar apenas os novos códigos fontes
-  que foram adicionados, atualizados (etc) e aproveitar os arquivos já
+  que foram adicionados, atualizados, etc; e aproveitar os arquivos já
   compilados, porém, algumas vezes isso pode causar erros de compilação.
   É uma boa prática fazer um **make clean** antes do **make** para
   evitar qualquer residual das compilações anteriores.
@@ -1213,11 +1213,12 @@ editado para refletir as suas configurações pessoais e apontar o caminho
 do seu arquivo js recém compilado do MAME. Para usar o MAME num servidor
 web, os arquivos abaixo são necessários:
 
-*	O arquivo .js compilado do MAME
-*	O arquivo .wasm do MAME caso tenha compilado o WebAssembly
-*	Os arquivos .js do pacote Emularity (loader.js, browserfs.js, etc)
-*	Um arquivo .zip com as ROMs do driver a ser rodados (caso haja)
-*	Qualquer outro programa que queira rodar com o driver do MAME
+*	O arquivo .js compilado do MAME.
+*	O arquivo .wasm do MAME caso tenha compilado o WebAssembly.
+*	Os arquivos .js do pacote Emularity (loader.js, browserfs.js, etc.).
+*	Um arquivo .zip com as ROMs do driver que serão rodados, caso
+	existam.
+*	Qualquer outro programa que queira rodar com o driver do MAME.
 *	Um loader do Emularity .html customizado para utilizar todos os
 	itens acima.
 
@@ -1226,7 +1227,7 @@ utilizar um servidor web em vez de tentar rodá-los localmente.
 
 Caso algo dê errado e não funcione, abra o console Web do seu
 navegador principal e veja qual o erro que ele retorna (por exemplo,
-faltando alguma coisa, algum arquivo de ROM incorreto, etc).
+faltando alguma coisa, algum arquivo de ROM incorreto, etc.).
 Um erro do tipo "**ReferenceError: foo is not defined**" pode indicar
 que provavelmente faltou informar um arquivo de código-fonte na lista da
 opção **SOURCES**.

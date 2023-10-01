@@ -52,7 +52,7 @@ predefinidos funcionam da seguinte maneira:
 *	**Mouse** - Move o cursor na tela, seleciona os itens, as teclas
 	cima, baixo, esquerda e direita fazem o mesmo.
 *	**Clique duplo ou Enter** - Aguarda a entrada do usuário (controle,
-	teclado, etc).
+	teclado, etc.).
 *	**Delete** - **1x** apaga o valor, **2x** retorna ao valor
 	predefinido originalmente.
 
@@ -411,7 +411,7 @@ Informação sobre a imagem da mídia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Exibe informações sobre a mídia como o seu formato (imagem ROM, CD-ROM,
-etc), nome do fabricante, ano de lançamento, etc.
+etc.), nome do fabricante, ano de lançamento, etc.
 
 .. raw:: latex
 
@@ -657,7 +657,7 @@ pistola de luz, as seguintes opções estão disponíveis:
 
 O padrão é mostrar a mira sempre que ela for movida, no caso de mais
 jogadores, haverá uma opção para cada um deles (jogador 1, jogador 2,
-etc).
+etc.).
 
 .. raw:: latex
 
@@ -712,7 +712,7 @@ Visualização da DAT externa
 
 Esta opção estará disponível quando dois critérios forem atendidos, o
 plug-in **Data plugin** estiver ativo e os arquivos **\*.dat**
-(command.dat, gameinit.dat, etc) estiverem dentro do diretório **dats**.
+(command.dat, gameinit.dat, etc.) estiverem dentro do diretório **dats**.
 
 Caso o nome do sistema exista dentro do ``command.dat`` por exemplo,
 será exibido uma lista de como jogar, dicas, a lista dos comandos do

@@ -83,7 +83,7 @@ mais adiante:
     tipicamente utilizado por cartuchos e o *carregador de arquivo de
     uma imagem*, usado por partes do programa que consistem numa única
     imagem |deum| (como a imagem de um disquete, de um CD-ROM, de uma
-    fita cassete, etc).
+    fita cassete, etc.).
 
 **O item de um programa principal**
 
@@ -170,7 +170,7 @@ quando todas as ROMs do Mega Drive estiverem compactadas dentro de um
 arquivo chamado ``megadriv.zip`` e assim por diante. O MAME não possui
 compatibilidade com arquivos dividido em vários segmentos (arquivos
 divididos em partes como, ``.zip.001``, ``.zip.002``, ``*-part.001``,
-``*-part.002``, etc), com arquivos criptografados e com o método legado
+``*-part.002``, etc.), com arquivos criptografados e com o método legado
 de compactação do tipo "implosão" nos arquivos PKZIP.
 
 O desemprenho do MAME pode ser reduzido ao utilizar arquivos compactados

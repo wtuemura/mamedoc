@@ -21,7 +21,7 @@ Favor ler a toda :ref:`MAME-license` com atenção.
 
 
 Utilização
-----------
+==========
 
 Castool é um programa de linha comando que contém um conjunto simples de
 instruções. Os comandos são invocados usando uma cadência de instruções,
@@ -42,7 +42,7 @@ Exemplo de uso:
 
 
 Lista dos formatos compatívels
-------------------------------
+==============================
 
 Estes são os formatos compatíveis com o Castool para a conversão dos
 arquivos para o formato WAV.
