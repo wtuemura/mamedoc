@@ -2601,8 +2601,9 @@ interface é bem simples, inicie o MAME e siga os passos a seguir:
   em ``capcom/cps2.cpp``.
 * Clique no ícone do disquete no topo da tela e selecione
   :guilabel:`Exporta e lista em formato TXT`.
-* Um arquivo texto chamado **exported.txt** será criado dentro da pasta
-  **ui** com a sua lista, exemplo::
+
+Um arquivo texto chamado **exported.txt** será criado dentro da pasta
+**ui** com a sua lista, exemplo::
 
 	﻿Nome:             Descrição:
 	1944              "1944: The Loop Master (Euro 000620)"
