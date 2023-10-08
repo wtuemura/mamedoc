@@ -1878,13 +1878,6 @@ Visual Studio. Isto impede que os avisos sejam tratados como erros.
 específicas serão tratadas como erro, coisa que os outros compiladores
 suportam).
 
-Há um problema ainda não resolvido com a definição do ``COM GUIDS``
-duplicados na biblioteca do PortAudio quando a versão alvo do Windows
-for definida para o Windows Vista (6.0) ou posterior. Para contornar
-isso, adicione a opção ``NO_USE_PORTAUDIO=1`` ao gerar os arquivos do
-projeto do Visual Studio. O MAME será compilado sem o suporte para a
-saída de áudio através do PortAudio.
-
 
 .. _compiling-issues-entry-point:
 
