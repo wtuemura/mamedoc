@@ -455,12 +455,24 @@ inteiro na memória.
 Assim, um novo formato foi criado para eles, sendo armazenados num
 arquivo CHD. **Compressed Hunks of Data** ou numa tradução literal seria
 **Pedaços Comprimidos de Dados** ou CHD para simplificar. Estes são
-projetados especificamente em torno das necessidades do armazenamento
-dessa mídia. Alguns jogos de arcade, consoles e de PCs precisarão de um
-arquivo CHD para rodar.
+projetados especificamente em torno das necessidades de armazenamento
+dessa mídia. Para rodar, alguns jogos de arcade, de consoles e de PCs
+precisarão de um arquivo CHD.
 
-Como os CHDs já estão comprimidos, eles **NÃO** devem ser armazenados
-dentro de um arquivo ZIP ou 7Z como você faria com as ROMs.
+Como os CHDs já estão comprimidos, eles **NÃO DEVEM** ser comprimidos
+novamente num arquivo ZIP, 7Z ou qualquer outro.
+
+Visando a economia de espaço na existência de diversas variantes de um
+sistema ou de um programa, o MAME oferece suporte a arquivos "*delta
+CHD*". Um arquivo delta CHD armazena apenas as partes de dados que forem
+diferentes dos dados do arquivo CHD *principal*, isso possibilita uma
+economia de espaço considerável quando houver um grande compartilhamento
+de dados entre eles. Os arquivos delta CHD só podem ser usados nos clones
+dos sistemas principais, em dispositivos com uma ROM principal e os
+clones dos programas. Para que seja possível usar um delta CHD, é
+obrigatório que exista um CHD principal para que o MAME consiga ler os
+dados compartilhados, seja para um sistema, para dispositivos ROM ou
+para programas.
 
 
 .. [#CI]	Estes circuitos integrados também são conhecidos pela abreviação

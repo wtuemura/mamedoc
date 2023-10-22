@@ -316,12 +316,6 @@ dos programas do sistema nos seguintes locais:
   utilizado para conveniência dos itens do programa que também são
   executados como sistemas autônomos com o mesmo nome abreviado, como
   nos jogos de Neo Geo).
-* Quaisquer pastas e ou arquivos que seriam pesquisados pelas ROMs do
-  sistema ou do dispositivo para o sistema ou para o dispositivo onde a
-  lista do programa pertença. Isso é utilizado por questões históricas
-  devido à forma como a compatibilidade ao catálogo de programas foi
-  originalmente adicionado no MESS e será removido numa versão futura do
-  MAME.
 
 Ao carregar a versão alemã do **Dune II** do cartucho do
 Mega Drive/Genesis a partir do catálogo de programas na versão PAL do
@@ -350,14 +344,6 @@ Mega Drive, o MAME procurará a ROM do cartucho ROM da seguinte maneira:
   usará apenas o nome abreviado do programa principal, procurando uma
   pasta chamada **dune2**, um arquivo PKZIP chamado ``dune2.zip`` ou um
   arquivo 7-Zip chamado ``dune2.7z``.
-* O nome abreviado da versão do sistema PAL do Mega Drive é
-  ``megadriv``, então o MAME procurará por uma pasta chamada
-  **megadriv**, um arquivo PKZIP chamado ``megadriv.zip`` ou um arquivo
-  7-Zip chamado ``megadriv.7z``.
-* O sistema principal da versão PAL do Mega Drive é o sistema
-  norte-americano Genesis, que tem o nome curto ``genesis``, então o
-  MAME irá procurar uma pasta chamada **genesis**, um arquivo PKZIP
-  chamado ``genesis.zip`` ou um arquivo 7-Zip chamado ``genesis.7z``.
 
 
 .. _assetsearch-chd:
@@ -387,6 +373,16 @@ através das as imagens de disco no formato CHD, com algumas diferenças:
   utiliza o conteúdo do cabeçalho CHD e uma soma de verificação
   (*checksum*) do próprio arquivo CHD. A soma de verificação do próprio
   arquivo CHD pode variar dependendo das opções de compressão.
+
+
+Visando a economia de espaço, o MAME permite que os arquivos delta CHD
+sejam usados por sistemas clones, dispositivo ROM principal e clones dos
+programas. O arquivo delta CHD depende de um CHD principal do sistema,
+ROM ou programa. A economia de espaço dependerá de quanto conteúdo
+poderá ser aproveitado do arquivo CHD principal. O MAME faz a busca
+nos mesmos locais que ele procuraria pelos arquivos CHD principais.
+Para obter mais informações consulte também no capítulo sobre
+:ref:`aboutromsets_rom_chd`.
 
 
 .. _assetsearch-loose-software:
