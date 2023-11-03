@@ -1489,9 +1489,9 @@ Recursos opcionais
 
 **TOOLS**
 
-  Caso seja definido como **1**, as ferramentas adicionais que trabalham
-  em conjunto com o emulador como ``unidasm``, ``chdman``, ``romcmp``,
-  e ``srcclean`` serão compiladas.
+  Caso seja definido como **1**, serão compiladas ferramentas adicionais
+  que trabalham em conjunto com o emulador como ``unidasm``, ``chdman``,
+  ``romcmp``, ``srcclean`` e outras.
 
 
 .. _mame-compilation-nouseportaudio:
@@ -1508,6 +1508,19 @@ Recursos opcionais
 
   Caso seja definido como **1**, desativa a construção do módulo de
   saída de áudio PortAudio e sua biblioteca no Linux.
+
+
+.. _mame-compilation-usewayland:
+
+**USE_WAYLAND**
+
+  Caso seja definido como **1**, inclui suporte do MAME ao `Wayland`_ à
+  saída de vídeo bgfx.
+
+.. note::
+   Para compilar o MAME com esta opção, é preciso instalar o pacote
+   ``libwayland-egl-backend-dev`` ou equivalente no seu sistema
+   operacional.
 
 
 .. _mame-compilation-usetapun:
@@ -2403,3 +2416,4 @@ semelhante ao exemplo abaixo:
 .. [2]	Out-of-bounds access. (Nota do tradutor)
 .. [3]	Pedimos a gentileza de relatar os problemas encontrados em
 		Inglês. (Nota do tradutor)
+.. _Wayland: https://wayland.freedesktop.org/
