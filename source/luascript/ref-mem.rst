@@ -675,25 +675,36 @@ Métodos
 **region:read_i{8,16,32,64}(offs)**
 
 	Lê um valor inteiro assinado do tamanho em bits do *offset*
-	informado na região da memória.
+	informado na região da memória. O *offset* é definido em bytes. A
+	tentativa de leitura além da região da memória retorna zero.
 
 
 **region:read_u{8,16,32,64}(offs)**
 
 	Lê um valor inteiro não assinado com o tamanho em bits a partir do
-	*offset* da região da memória.
+	*offset* da região da memória. O *offset* é definido em bytes. A
+	tentativa de leitura além da região da memória retorna zero.
 
 
 **region:write_i{8,16,32,64}(offs, valor)**
 
 	Grava um valor inteiro assinado com o tamanho em bits para o
-	*offset* informado da região da memória.
+	*offset* informado da região da memória. O *offset* é definido em
+	bytes. A tentativa de escrever além da região da memória não surte
+	nenhum efeito.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 **region:write_u{8,16,32,64}(offs, valor)**
 
 	Grava um valor inteiro não assinado com o tamanho em bits para o
-	*offset* informado na região da memória.
+	*offset* informado na região da memória. O *offset* é definido em
+	bytes. A tentativa de escrever além da região da memória não surte
+	nenhum efeito.
 
 
 Propriedades
