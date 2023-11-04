@@ -37,7 +37,7 @@ Instanciação
 Propriedades
 ~~~~~~~~~~~~
 
-**memory.shares[]**
+**memory.shares[ ]**
 
 	O :ref:`compartilhamento da memória <luascript-ref-memshare>` no
 	sistema, indexada pela tag absoluta. Os métodos ``at`` e o
@@ -45,7 +45,7 @@ Propriedades
 	compatíveis têm complexidade O(1).
 
 
-**memory.banks[]**
+**memory.banks[ ]**
 
 	Os :ref:`banco da memória <luascript-ref-membank>` no sistema,
 	indexada pela tag absoluta. Os métodos ``at`` e o ``index_of`` têm
@@ -53,7 +53,7 @@ Propriedades
 	complexidade O(1).
 
 
-**memory.regions[]**
+**memory.regions[ ]**
 
 	As :ref:`regiões da memória <luascript-ref-memregion>` no sistema,
 	indexada pela tag absoluta. Os métodos ``at`` e o ``index_of`` têm
@@ -383,7 +383,7 @@ Propriedades
 	espaço.
 
 
-**map.entries[]** |sole|
+**map.entries[ ]** |sole|
 
 	As :ref:`entradas do endereçamento da memória
 	<luascript-ref-addrmapentry>` não configuradas no mapa do endereço.
@@ -672,6 +672,15 @@ Instanciação
 Métodos
 ~~~~~~~
 
+**region:read(offs, len)**
+
+	Lê até o comprimento especificado em bytes a partir do *offset*
+	definido na região da memória. Os bytes lidos serão retornados como
+	uma *string*. A tentativa de leitura além da região da memória faz
+	com que a *string* retorne mais curta do que foi solicitado. Observe
+	que os dados estarão na sequência de bytes do host.
+
+
 **region:read_i{8,16,32,64}(offs)**
 
 	Lê um valor inteiro assinado do tamanho em bits do *offset*
@@ -686,17 +695,17 @@ Métodos
 	tentativa de leitura além da região da memória retorna zero.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 **region:write_i{8,16,32,64}(offs, valor)**
 
 	Grava um valor inteiro assinado com o tamanho em bits para o
 	*offset* informado da região da memória. O *offset* é definido em
 	bytes. A tentativa de escrever além da região da memória não surte
 	nenhum efeito.
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 **region:write_u{8,16,32,64}(offs, valor)**

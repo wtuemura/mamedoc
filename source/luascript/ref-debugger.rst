@@ -191,7 +191,7 @@ Métodos
 Propriedades
 ~~~~~~~~~~~~
 
-**symbols.entries[]**
+**symbols.entries[ ]**
 
 	O :ref:`acesso do símbolo <luascript-ref-debugsymentry>` na tabela
 	de símbolos indexada por nomes. Os métodos ``at`` e ``index_of`` têm
@@ -383,13 +383,13 @@ Métodos
 Propriedades
 ~~~~~~~~~~~~
 
-**debugger.consolelog[]** |sole|
+**debugger.consolelog[ ]** |sole|
 
 	As linhas no log do console (saída dos comandos do depurador).
 	Este contêiner suporta apenas o comprimento das operações do índice.
 
 
-**debugger.errorlog[]** |sole|
+**debugger.errorlog[ ]** |sole|
 
 	As linhas no registro log de erros (saída ``logerror``).
 	Este contêiner suporta apenas o comprimento das operações do índice.

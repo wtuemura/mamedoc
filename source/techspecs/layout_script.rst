@@ -512,19 +512,23 @@ oferecendo apenas o mínimo necessário:
   que está sendo :ref:`executado <luascript-ref-machine>` no momento.
 * As funções  ``emu.attotime``, ``emu.render_bounds`` e
   ``emu.render_color`` que criam os objetos
-  :ref:`attotime <luascript-ref-attotime>`, :ref:`bounds <luascript-ref-renderbounds>` e :ref:`cores <luascript-ref-rendercolor>`.
-
-
-
-
-* As funções ``emu.render_bounds`` e o ``emu.render_color`` para criar
-  os limites e as cores dos objetos.
-* As funções ``emu.print_error``, ``emu.print_info`` e o
-  ``emu.print_debug`` para diagnosticar a saída.
-* Funções Lua ``pairs``, ``ipairs``, ``table.insert`` e o
-  ``table.remove`` para manipular as tabelas e os outros contêiners.
+  :ref:`attotime <luascript-ref-attotime>`,
+  :ref:`bounds <luascript-ref-renderbounds>` e
+  :ref:`cores <luascript-ref-rendercolor>`.
+* ``emu.bitmap_ind8``, ``emu.bitmap_ind16``, ``emu.bitmap_ind32``,
+  ``emu.bitmap_ind64``, ``emu.bitmap_yuy16``, ``emu.bitmap_rgb32`` e
+  objetos ``emu.bitmap_argb32`` para criar
+  :ref:`bitmaps <luascript-ref-bitmap>`.
+* As funções ``emu.render_bounds`` e o ``emu.render_color`` criam os
+  limites e as cores dos objetos.
+* As funções ``emu.print_verbose``, ``emu.print_error``,
+  ``emu.print_warning``, ``emu.print_info`` e o ``emu.print_debug`` são
+  usadas para diagnósticos.
+* Padrão Lua, funções ``tonumber``, ``tostring``, ``pairs`` e
+  ``ipairs``, assim como objetos ``table`` ``string`` para manipular
+  strings, tabelas e os outros contêineres.
 * Função Lua ``print`` para gerar texto no console.
-* Função Lua ``string.format`` para a formatação do texto.
+
 
 .. _layscript-events:
 
@@ -760,3 +764,32 @@ e o comportamento da cor.
 	baixo. Use ``nil`` como um argumento para restaurar o manipulador da
 	posição da rolagem vertical padrão (com base nas ligações no
 	sub-elemento ``yscroll``).
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. _layscript-events-element:
+
+Eventos de elementos de layout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Os eventos de elementos de layout se aplicam à definição de um elemento
+visual individual.
+
+**Draw**
+
+    ``element:set_draw_callback(cb)``
+
+    Defina um retorno da chamada para um desenho adicional após os
+    componentes do elemento serem desenhados. Isso oferece controle
+    direto ao script sobre a textura final ao desenhar o elemento.
+
+    O retorno da chamada recebe dois argumentos, o estado do elemento
+    (um número inteiro) e um bitmap ARGB com 32 bits no tamanho
+    desejado. O retorno da chamada não deve tentar redimensionar o
+    bitmap.
+
+

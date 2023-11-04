@@ -241,7 +241,7 @@ Propriedades
 	As :ref:`luascript-ref-emuopts` para a sessão da emulação atual.
 
 
-**manager.plugins[]** |sole|
+**manager.plugins[ ]** |sole|
 
 	Obtém informações sobre o
 	:ref:`plug-in Lua <luascript-ref-plugin>` que estão presentes,

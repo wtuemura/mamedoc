@@ -311,7 +311,7 @@ Propriedades
 	\clearpage
 
 
-**device.state[]** |sole|
+**device.state[ ]** |sole|
 
 	O :ref:`estado das entradas <luascript-ref-distateentry>` para os
 	dispositivos que expõem a interface de registro do estado, indexadas
@@ -320,7 +320,7 @@ Propriedades
 	outras operações compatíveis têm complexidade O(1).
 
 
-**device.spaces[]** |sole|
+**device.spaces[ ]** |sole|
 
 	A tabela dos :ref:`espaços de endereçamento da memória
 	<luascript-ref-addrspace>` do dispositivo, indexado por nome.
@@ -982,7 +982,7 @@ Propriedades
 	número anexado que pode mudar dependendo da configuração do slot.
 
 
-**image.formatlist[]** |sole|
+**image.formatlist[ ]** |sole|
 
 	O :ref:`formato da imagem da mídia <luascript-ref-imagefmt>` são
 	suportados pelo dispositivo, indexado por nome. O operador do índice
@@ -1103,7 +1103,7 @@ Propriedades
 	as imagens da mídia).
 
 
-**slot.options[]** |sole|
+**slot.options[ ]** |sole|
 
 	As :ref:`opções do slot <luascript-ref-slotopt>` que descrevem os
 	dispositivos herdados que podem ser instanciados pelo slot,
@@ -1223,7 +1223,7 @@ Propriedades
 	O nome completo do formato.
 
 
-**format.extensions[]** |sole|
+**format.extensions[ ]** |sole|
 
 	Produz uma tabela das extensões do nome do arquivo usados no
 	formato.

@@ -784,7 +784,7 @@ Propriedades
 	usado para desenhar a interface do usuário.
 
 
-**render.targets[]** |sole|
+**render.targets[ ]** |sole|
 
 	A lista da renderização dos alvos, incluindo as janelas e as telas
 	geradas, bem como os alvos ocultos renderizados para coisas como a
@@ -881,7 +881,7 @@ Propriedades
 	\clearpage
 
 
-**target.view_names[]**
+**target.view_names[ ]**
 
 	Os nomes das visualizações disponíveis para a renderização deste
 	alvo. Usa base ``1`` e índices inteiros.  Os métodos ``find`` e o
@@ -1204,7 +1204,7 @@ Propriedades
 	externos.
 
 
-**layout.views[]** |sole|
+**layout.views[ ]** |sole|
 
 	As :ref:`visualizações do layout <luascript-ref-renderlayview>`
 	criados a partir do arquivo layout.
@@ -1294,7 +1294,7 @@ Métodos
 Propriedades
 ~~~~~~~~~~~~
 
-**view.items[]** |sole|
+**view.items[ ]** |sole|
 
 	O elemento do layout e da tela de :ref:`visualização do item do
 	layout <luascript-ref-renderlayitem>` numa visualização. Este

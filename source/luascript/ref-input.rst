@@ -124,14 +124,14 @@ Métodos
 Propriedades
 ~~~~~~~~~~~~
 
-**ioport.types[]** |sole|
+**ioport.types[ ]** |sole|
 
 	Obtém o :ref:`tipo de acesso <luascript-ref-inputtype>`
 	compatível. As teclas são índices arbitrários. Todas as operações
 	compatíveis possuem complexidade O(1).
 
 
-**ioport.ports[]**
+**ioport.ports[ ]**
 
 	Obtém a emulação da :ref:`porta de E/S <luascript-ref-ioport>`
 	no sistema.
@@ -233,7 +233,7 @@ Propriedades
 	pressionamentos da tecla do sistema emulado.
 
 
-**natkeyboard.keyboards[]**
+**natkeyboard.keyboards[ ]**
 
 	Obtém o :ref:`dispositivo de entrada do teclado
 	<luascript-ref-natkbddev>` |nsqe|, indexado através da tag
@@ -377,7 +377,7 @@ Propriedades
 	O estado ativo da porta de E/S.
 
 
-**port.fields[]** |sole|
+**port.fields[ ]** |sole|
 
 	Obtém uma tabela do :ref:`campo da porta de E/S
 	<luascript-ref-ioportfield>` indexados por nome.
@@ -648,7 +648,7 @@ Propriedades
 	O valor da chave DIP ou das definições da configuração.
 
 
-**field.settings[]** |sole|
+**field.settings[ ]** |sole|
 
 	Obtém uma tabela das configurações ativadas atualmente para um
 	interruptor DIP ou o campo de configuração, indexado por valor.
@@ -878,7 +878,7 @@ Métodos
 Propriedades
 ~~~~~~~~~~~~
 
-**input.device_classes[]** |sole|
+**input.device_classes[ ]** |sole|
 
 	Pega uma tabela host :ref:`host da classe do dispositivo da entrada
 	<luascript-ref-inputdevclass>` indexada por nome.
@@ -1107,7 +1107,7 @@ Propriedades
 	classe são combinadas e tratadas como um único dispositivo.
 
 
-**devclass.devices[]** |sole|
+**devclass.devices[ ]** |sole|
 
 	Obtém uma tabela :ref:`host do dispositivo da entrada
 	<luascript-ref-inputdev>` na classe. As chaves são os índices
