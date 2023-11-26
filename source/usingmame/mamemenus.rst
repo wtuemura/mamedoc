@@ -230,12 +230,19 @@ MAME.
 
   Exibe uma lista dos sistemas separados por ano de lançamento.
 
+.. _mamemenu-codigo-fonte:
+
+* :guilabel:`Código-fonte`
+
+  Permite listar todos os sistemas existentes num arquivo de
+  código-fonte (como ``capcom/cps2.cpp`` por exemplo).
+
 .. _mamemenu-save-support:
 
 * :guilabel:`É possível salvar`
 
-  Exibe uma lista dos sistemas onde o salvamento do estado do sistema
-  é possível.
+  Exibe uma lista dos sistemas onde existe a possibilidade de salvar o
+  estado do sistema.
 
 .. _mamemenu-nosave-support:
 
