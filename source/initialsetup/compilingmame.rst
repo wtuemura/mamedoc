@@ -927,6 +927,17 @@ compilar o MAME ou para montar o ambiente sem qualquer erro.
 	`issues do MSYS2 <https://github.com/msys2/MSYS2-packages/issues/2058#issuecomment-1252446059>`_ 
 	Outros usuários também comprovaram que a solução funciona.
 
+.. note::
+
+	Caso atualize a ferramente fornecida pelo MAMEDev (incluindo o GCC e
+	Clang), pode aparecer alguns erros sobre arquivos PCH inválidos ou
+	não encontrados, se	for o caso, user a opção ``PRECOMPILE=0`` na
+	linha de comando ou adicione-o no seu ``useroptions.mak``. Faça um
+	**make clean && make -j6** para limpar a compilação antiga e
+	compilar tudo desde o início. Caso ainda tenha problemas, aguarde
+	mais um tempo pela atualização do repositório pois os
+	desenvolvedores podem estar resolvendo esta questão internamente até
+	fazerem uma nova publicação.
 
 .. _compiling-windows-visual-studio:
 
