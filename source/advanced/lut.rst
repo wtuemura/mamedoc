@@ -573,7 +573,7 @@ entre elas como já foi explicado
    Para remover o efeito *"blur"* (borrado) nas versões OpenGL do MAME
    durante o uso de Luts com o **nes**, use a opção :ref:`prescale
    <mame-commandline-prescale>` no arquivo ``ini\source\nes.ini``. O
-   valor ``5`` (máximo), remove todo o efeito.
+   valor ``5`` (médio), remove todo o efeito.
 
 .. |bdcs| replace:: Barras de cores SMPTE (NTSC) BT.601
 .. [#LT] https://www.avmakers.com.br/blog/l-u-t-o-que-e-e-como-utilizar
