@@ -2742,6 +2742,23 @@ Indiferente (opção ``-i``)::
 	b2b - Bang Bang Busters (2010 NCI release) 
 	bangbead - Bang Bead
 
+.. _advanced-tricks-portaudio:
+
+Resolvendo problemas com PortAudio nas versões mais recentes do MAME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Até a versão **0.259** do MAME era possível usar apenas a opção
+``-sound portaudio`` para que o MAME ou o PortAudio identificasse e
+usasse o hardware padrão do sistema operacional, no caso, seria usado o
+``default (default)``. Assim sendo, se no seu sistema operacional você
+estivesse usando a saída de fone de ouvido da sua placa de som este
+seria o seu "default" e tudo deveria funcionar de acordo.
+
+Contudo na versão **0.260** e mais recentes do MAME além do
+``-sound portaudio`` é preciso definir também tanto a opção
+:ref:`-pa_api <mame-commandline-paapi>` quanto a opção
+:ref:`-pa_device <mame-commandline-padevice>`, caso contrário haverá
+ruídos e barulhos não relacionados com a emulação na saída de áudio.
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html

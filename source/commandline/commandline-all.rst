@@ -3981,6 +3981,17 @@ Opções para a configuração do áudio
       - 
 
 
+.. note::
+
+	Em caso de problemas com a opção **portaudio** consulte
+	:ref:`advanced-tricks-portaudio`.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-audiolatency:
 
 **-audio_latency** <*valor*>
@@ -4004,9 +4015,6 @@ Opções para a configuração do áudio
 
 			mame galaga -audio_latency 1
 
-.. raw:: latex
-
-	\clearpage
 
 .. note::
 
@@ -4078,10 +4086,6 @@ Opções para a configuração do áudio
 	  qualidade dos drivers usados, gera problemas com a hibernação do
 	  *Windows* quando há problemas com os drivers, a melhor opção é
 	  ficar com o *Windows WASAPI*.
-
-	.. raw:: latex
-
-		\clearpage
 
 	Para escolher qual interface usar, inicie o mame como mostra o
 	exemplo abaixo:
@@ -4190,7 +4194,13 @@ Opções para a configuração do áudio
 
 			PortAudio: Using device "6 - SONY TV  *01 (AMD High Definition Audio Device)" on API "Windows WASAPI"
 
-	E aqui o mesmo para Linux:
+
+	.. raw:: latex
+
+		\clearpage
+
+
+	Aqui o mesmo para o Linux:
 
 	Exemplo:
 		.. code-block:: shell
@@ -4201,22 +4211,20 @@ Opções para a configuração do áudio
 	Caso nenhum seja definido o MAME escolherá o dispositivo padrão ou
 	que estiver disponível.
 
-		O valor predefinido é ``NULO`` (Nenhuma dispositivo *PortAudio*).
+		O valor predefinido é ``NULO`` (Nenhum dispositivo *PortAudio*).
 
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-palatency:
 
 **-pa_latency** <*segundos*>
 
 	Escolha o tamanho em segundos da memória intermediária para a saída
-	do PortAudio. Números menores tem um menor atraso porém aumenta os
-	cortes no som. Os números em pontos decimais são compatíveis. Tente
-	começar com valores como **0.20** aumentando ou reduzindo o valor
-	até encontrar o valor correto que funcione melhor com o seu hardware
-	e o seu Sistema Operacional.
+	PortAudio. Números menores tem um menor atraso porém valores muito
+	agressivos podem aumentar a quantidade de cortes no áudio. Os
+	valores compatíveis são em pontos decimais. Tente começar com
+	valores como **0.20** e vá aumentando ou reduzindo este valor até
+	encontrar o valor apropriado que funcione melhor com o seu hardware
+	e o seu sistema operacional.
 
 		O valor predefinido é ``0``.
 
