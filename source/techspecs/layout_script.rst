@@ -508,6 +508,8 @@ oferecendo apenas o mínimo necessário:
   layout fosse carregado e uma propriedade ``views`` para conseguir as
   :ref:`exibições do layout <luascript-ref-renderlayview>` (indexadas
   através do nome).
+* ``machine`` informa a
+  :ref:`máquina em execução <luascript-ref-machine>` no momento.
 * A função ``machine`` que oferece ao MAME a informação sobre o sistema
   que está sendo :ref:`executado <luascript-ref-machine>` no momento.
 * As funções  ``emu.attotime``, ``emu.render_bounds`` e
