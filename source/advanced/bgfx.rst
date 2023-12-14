@@ -178,6 +178,7 @@ Alterando as configurações
 	* ``default`` Gera uma tela com filtro bilinear (padrão).
 	* ``unfiltered`` Gera uma tela sem filtro.
 	* ``hlsl`` Simula uma tela CRT usando shaders hlsl.
+	* ``lut`` Ativa o uso de LUTs (tabela de consulta de cores)
 	* ``crt-geom`` Simula uma tela CRT simples e leve.
 	* ``crt-geom-deluxe`` Simula uma tela CRT simples, porém, mais detalhada.
 	* ``lcd-grid`` Simula uma tela de display liquido.
@@ -265,7 +266,8 @@ Alterando as configurações
 
 **bgfx_lut**
 
-	Use um arquivo LUT para aplicar diferentes efeitos de textura.
+	Use um arquivo LUT para aplicar diferentes efeitos de textura na
+	tela.
 
 		O Valor predefinido é ``nenhum``
 

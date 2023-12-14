@@ -215,6 +215,10 @@ Criando um LUT 3D para usar no MAME
    :scale: 65%
    :align: middle
    :alt: Configurações usadas para criar o 3D LUT com gamma 2.2
+.. |3dlut22-win| image:: images/c3dlut-2.2-win.png
+   :scale: 65%
+   :align: middle
+   :alt: Configurações usadas para criar o 3D LUT com gamma 2.2
 .. |3dlutmame| image:: images/3dlutbase.png
    :scale: 20%
    :align: middle
@@ -222,19 +226,34 @@ Criando um LUT 3D para usar no MAME
 
 O tipo de LUT compatível com o MAME é o 3D no formato ``64x64x64`` com
 **8-bit** e **PNG** [#M3DLUT1]_ [#M3DLUT2]_. Ele é criado usando o **3D
-Lut Maker** que acompanha o `DisplayCAL`, ele é gratuito e está
+Lut Maker** que acompanha o `DisplayCAL`_, ele é gratuito e está
 disponível para todos os sistemas operacionais, no **Debian** instale
 com o comando::
 
 	sudo apt install displaycal dispcalgui
 
-Aqui eu utilizei as seguintes configurações:
+No **Windows** é preciso baixar a versão para Windows no link acima e
+baixar também o `Argyll Color Management`_ (ArgyllCMS). Não é preciso
+baixar o instalador do DisplayCalc, baixe a versão ZIP e descompacte-o
+em algum lugar (menos em ``C:\``), depois de baixar o ArgyllCMS,
+descompacte-o dentro da pasta do DisplayCalc. Quando iniciar o programa
+**DisplayCAL-3DLUT-maker**, ele vai te questionar para localizar a pasta
+onde se encontra os executáveis do **ArgyllCMS**, direcione o explorer
+para a pasta onde você descompactou o ArgyllCMS, entre na pasta **bin**
+e clique em "selecionar pasta" para que o programa inicie corretamente.
+
+
+Aqui as configurações utilizadas no Linux:
 
 |3dlut22|
 
 .. raw:: latex
 
 	\clearpage
+
+Aqui as configurações utilizadas no Windows:
+
+|3dlut22-win|
 
 Ao clicar em :guilabel:`Create 3D LUT` o programa cria diversos arquivos
 diferentes, porém, o que nos interessa é esta imagem aqui:
@@ -246,9 +265,8 @@ diferentes, porém, o que nos interessa é esta imagem aqui:
 Esse é o nosso **LUT 3D base**, é nele que aplicaremos as correções de
 cores, e depois a partir dele, que exportaremos um novo LUT 3D com as
 correções que desejamos. As opções escolhidas foram as que me pareceram
-mais corretas, apesar de querer ter usado o padrão SMPTE-170M, mas como
-não tem, usamos o que tinha disponível. Faça você mesmo os seus próprios
-testes com outros parâmetros e veja como fica.
+mais corretas. Faça você mesmo os seus próprios testes com outros
+parâmetros e veja como fica.
 
 
 .. _advanced-lut-different-colors:
@@ -312,12 +330,16 @@ e contraste por exemplo), pois tudo o que precisamos já está no arquivo
 ``NES_SMPTE.cube``. Mesmo quando trabalhamos com fotos ou geramos LUT
 para diferentes finalidades, todos os ajustes finos que precisamos fazer
 na imagem é feito antes de se criar o arquivo ``*.cube`` e não depois.
+Claro que é possível fazer alguns ajustes finos se for necessário, mas,
+para a nossa finalidade aqui com o MAME os ajustes que já foram feitos
+são suficientes.
 
 
 .. note::
    Geralmente quando baixamos um LUT externo (geralmente um LUT criatvo)
    criado por outra pessoa é que estes controles se tornam úteis, servem
-   como um ajuste fino no efeito que desejamos aplicar.
+   como um ajuste fino no efeito que desejamos aplicar. Porém com o MAME
+   mesmo pequenos ajustes podem extrapolar o efeito desejado.
 
 Vá em :guilabel:`File` > :guilabel:`Export As...`
 ( :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`E` ) e salve o arquivo com um nome
@@ -342,6 +364,7 @@ Para quem usa HLSL no Windows::
 	filter 0
 	lut_enable 1
 	lut_texture NES_SMPTE.png
+	saturation 1.36
 
 .. note::
    Caso tenha problemas com o ``d3d`` (o efeito não funciona ou o LUT
@@ -354,6 +377,7 @@ Para Linux/macOS tente::
 	bgfx_backend vulkan # (tente opengl ou auto caso não funcione)
 	bgfx_screen_chains lut
 	bgfx_lut NES_SMPTE.png
+	prescale 5
 
 Rode o comando abaixo no teminal ou no prompt de comando e veja o
 resultado::
@@ -559,7 +583,7 @@ editor hexadecimal e salve como ``nome_da_paleta.pal``.
 
 Eu compilei um conjunto de **37 LUTS**, incluindo os que criamos aqui
 neste documento, quem tiver interesse de baixar e experimentar,
-`baixe aqui`_, descompacte os arquivos ``.png`` dentro da pasta
+`baixe aqui`_ (nova `versão 2023`_), descompacte os arquivos ``.png`` dentro da pasta
 **artwork**. Você pode ou configurar uma paleta específica em
 ``ini\source\nes.ini`` ou usar a própria interface do MAME para alternar
 entre elas como já foi explicado
@@ -584,6 +608,7 @@ entre elas como já foi explicado
 .. [#M3DLUT1] https://www.reddit.com/r/MAME/comments/9tp2l1/using_3d_luts_with_mame/
 .. [#M3DLUT2] https://github.com/mamedev/mame/pull/4043/commits/372982391d04c24473ba6babc1b87a0f50066ddd
 .. _DisplayCAL: https://displaycal.net/#download
+.. _Argyll Color Management: https://www.argyllcms.com/downloadwin.html
 .. _Outubro de 2018: https://github.com/mamedev/mame/pull/4043
 .. _0.203: https://github.com/mamedev/mame/releases/tag/mame0203
 .. _Gimp: https://www.gimp.org/
@@ -613,4 +638,5 @@ entre elas como já foi explicado
 .. _NES_NTSC.pal: https://www.mediafire.com/file/o331z62b17sdmk7/NES_NTSC.zip
 .. _NES_SMPTE.pal: https://www.mediafire.com/file/zcvhkzafsfsngu5/NES_SMPTE.zip
 .. _baixe aqui: https://www.mediafire.com/file/mxo1yj0alevfwtx/nes_mame_luts.zip
+.. _versão 2023: https://www.mediafire.com/file/ior0eoa31qls2nx/nes_mame_luts-2023.zip
 .. _mame-goodies: https://github.com/mamedev/mame-goodies/tree/master/bgfx/lut/nes
