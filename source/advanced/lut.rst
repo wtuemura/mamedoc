@@ -583,10 +583,11 @@ editor hexadecimal e salve como ``nome_da_paleta.pal``.
 
 Eu compilei um conjunto de **37 LUTS**, incluindo os que criamos aqui
 neste documento, quem tiver interesse de baixar e experimentar,
-`baixe aqui`_ (nova `versão 2023`_), descompacte os arquivos ``.png`` dentro da pasta
-**artwork**. Você pode ou configurar uma paleta específica em
-``ini\source\nes.ini`` ou usar a própria interface do MAME para alternar
-entre elas como já foi explicado
+`baixe aqui`_ (nova `versão 2023`_, as tabelas de cores foram
+atualizadas e corrigidas para o MAME 0.261 ou mais recente), descompacte
+os arquivos ``.png`` dentro da pasta **artwork**. Você pode ou
+configurar uma paleta específica em ``ini\source\nes.ini`` ou usar a
+própria interface do MAME para alternar entre elas como já foi explicado
 :ref:`anteriormente <advanced-testar-luts>`.
 
 .. note::
