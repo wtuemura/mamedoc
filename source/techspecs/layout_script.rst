@@ -449,8 +449,8 @@ arquivo do layout forem resolvidas. Esta função faz o seguinte:
   visíveis ao contêiner durante a renderização do quadro.
 * Fornece as funções que definirão os limites para os itens animados.
 * Esconde o aviso que alerta o usuário para ativar o plug-in **Layout**
-  ao definir a condição do elemento para o item como 0 (o componente do
-  texto só é desenhado quando o estado do elemento for 1).
+  ao definir a condição do elemento para o item como ``0`` (o componente
+  do texto só é desenhado quando o estado do elemento for ``1``).
 
 A visualização é monitorada através do nome (pelo valor do seu atributo
 ``name``) e os itens dentro da visualização são monitoradas através do
@@ -471,11 +471,11 @@ Antes dos itens de visualização serem adicionados no destino da
 renderização, lemos as entradas do eixo analógico e convertemos os
 valores da posição em coordenadas para a animação dos os itens. A
 entrada do eixo Y usa valores maiores para apontar para cima, então
-precisamos inverter o valor subtraindo-o de 0xff (255). Adicionamos nas
-coordenadas do canto superior esquerdo do quadrado onde estamos exibindo
-a posição do manche. Fazemos isso uma vez cada vez que o layout for
-desenhado por questões de eficiência já que podemos usar os valores para
-todos os três itens animados.
+precisamos inverter o valor subtraindo-o de ``0xff`` (``255``).
+Adicionamos nas coordenadas do canto superior esquerdo do quadrado onde
+estamos exibindo a posição do manche. Fazemos isso uma vez cada vez que
+o layout for desenhado por questões de eficiência já que podemos usar os
+valores para todos os três itens animados.
 
 Finalmente, fornecemos limites para a animação dos itens quando
 necessário. Estas funções precisam retornar os objetos "render_bounds"
@@ -508,14 +508,12 @@ oferecendo apenas o mínimo necessário:
   layout fosse carregado e uma propriedade ``views`` para conseguir as
   :ref:`exibições do layout <luascript-ref-renderlayview>` (indexadas
   através do nome).
-* ``machine`` informa a
+* A função ``machine`` que oferece ao MAME a informação sobre a
   :ref:`máquina em execução <luascript-ref-machine>` no momento.
 * As funções ``emu.device_enumerator``, ``emu.palette_enumerator``,
   ``emu.screen_enumerator``, ``emu.cassette_enumerator``,
   ``emu.image_enumerator`` e ``emu.slot_enumerator`` para obter as
   interfaces de dispositivos específicos.
-* A função ``machine`` que oferece ao MAME a informação sobre o sistema
-  que está sendo :ref:`executado <luascript-ref-machine>` no momento.
 * As funções  ``emu.attotime``, ``emu.render_bounds`` e
   ``emu.render_color`` que criam os objetos
   :ref:`attotime <luascript-ref-attotime>`,
