@@ -510,6 +510,10 @@ oferecendo apenas o mínimo necessário:
   através do nome).
 * ``machine`` informa a
   :ref:`máquina em execução <luascript-ref-machine>` no momento.
+* As funções ``emu.device_enumerator``, ``emu.palette_enumerator``,
+  ``emu.screen_enumerator``, ``emu.cassette_enumerator``,
+  ``emu.image_enumerator`` e ``emu.slot_enumerator`` para obter as
+  interfaces de dispositivos específicos.
 * A função ``machine`` que oferece ao MAME a informação sobre o sistema
   que está sendo :ref:`executado <luascript-ref-machine>` no momento.
 * As funções  ``emu.attotime``, ``emu.render_bounds`` e
