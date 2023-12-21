@@ -3981,12 +3981,6 @@ Opções para a configuração do áudio
       - 
 
 
-.. note::
-
-	Em caso de problemas com a opção **portaudio** consulte
-	:ref:`advanced-tricks-portaudio`.
-
-
 .. raw:: latex
 
 	\clearpage
