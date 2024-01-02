@@ -638,11 +638,17 @@ o seu **useroptions.mak**::
 	# não use as opções SSE2 e SSE3.
 	#ARCHOPTS=-march=native
 	# <- Opções Relacionados com a CPU ->
+	#
+	# Nova configuração
+	EMULATOR=1
 
 Com o arquivo acima configurado e com as opções definidas, execute o
 comando ``make -j7`` que o seu MAME será compilado levando as suas
-opções em consideração. A próxima seção resume algumas das opções úteis
-reconhecidas pelo makefile.
+opções em consideração. Uma nova configuração foi `adicionada em
+31/12/2023`_ consulte :ref:`EMULATOR <mame-compilation-emulator>`.
+
+A próxima seção resume algumas das opções úteis reconhecidas pelo
+makefile.
 
 .. raw:: latex
 
@@ -1501,14 +1507,24 @@ Incluindo os subconjuntos dos sistemas suportados
 Recursos opcionais
 ~~~~~~~~~~~~~~~~~~
 
+.. _mame-compilation-emulator:
+
+**EMULATOR**
+
+  Caso seja definido como **1**, todo o código fonte será compilado e o
+  executável do MAME será gerado. Se for definido como **0**, apenas uma
+  parte do código fonte será compilada sem o executável do MAME.
+
 
 .. _mame-compilation-tools:
 
 **TOOLS**
 
-  Caso seja definido como **1**, serão compiladas ferramentas adicionais
-  que trabalham em conjunto com o emulador como ``unidasm``, ``chdman``,
-  ``romcmp``, ``srcclean`` e outras.
+  Caso seja definido como **1**, além do executável do MAME, serão
+  compiladas ferramentas adicionais que trabalham em conjunto com o
+  emulador como ``unidasm``, ``chdman``, ``romcmp``, ``srcclean``
+  dentre outras. Utilize ``TOOLS=1 EMULATOR=0`` para compilar apenas as
+  ferramentas.
 
 
 .. _mame-compilation-nouseportaudio:
@@ -2434,3 +2450,4 @@ semelhante ao exemplo abaixo:
 .. [3]	Pedimos a gentileza de relatar os problemas encontrados em
 		Inglês. (Nota do tradutor)
 .. _Wayland: https://wayland.freedesktop.org/
+.. _adicionada em 31/12/2023: https://github.com/mamedev/mame/commit/d5340b8be45db2815a6ce152813d991efa93d54f
