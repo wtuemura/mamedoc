@@ -291,21 +291,27 @@ A configuração para Windows no MSYS2 fica assim::
 	# OVERRIDE_CC=/mingw64/bin/ccache /mingw64/bin/clang
 	# OVERRIDE_CXX=/mingw64/bin/ccache /mingw64/bin/clang++
 
+
+.. raw:: latex
+
+	\clearpage
+
 Para ver a condição do armazenamento cache faça ``ccache -s``::
 
 	cache directory                     /home/mame/.ccache
 	primary config                      /home/mame/.ccache/ccache.conf
 	secondary config      (readonly)    /etc/ccache.conf
-	cache hit (direct)                     0
-	cache hit (preprocessed)               0
-	cache miss                         14278
-	cache hit rate                      0.00 %
-	called for link                        2
-	no input file                          6
-	cleanups performed                     0
-	files in cache                     42927
-	cache size                           4.9 GB
-	max cache size                      10.0 GB
+	
+	Cacheable calls:    18137 / 18247 (99.40%)
+	  Hits:               108 / 18137 ( 0.60%)
+	Direct:                98 /   108 (90.74%)
+	Preprocessed:          10 /   108 ( 9.26%)
+	  Misses:           18029 / 18137 (99.40%)
+	Uncacheable calls:    110 / 18247 ( 0.60%)
+	Local storage:
+	  Cache size (GiB):   1.2 /   5.0 (24.71%)
+	  Hits:               108 / 18137 ( 0.60%)
+	  Misses:           18029 / 18137 (99.40%)
 
 Antes de usar tenha certeza que a variável de ambiente ``USE_CCACHE``
 exista e seja igual à **1**, caso não exista, defina com ``export
