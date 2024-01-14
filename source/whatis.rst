@@ -90,6 +90,6 @@ qualquer outra utilização, acesse:
 https://www.mamedev.org/legal
 
 | **MAME ®**
-| **Copyright © 1997-2023 Nicola Salmoria and the MAME team**
+| **Copyright © 1997-2024 Nicola Salmoria and the MAME team**
 | **MAME é uma marca registrada de Gregory Ember**
 |
