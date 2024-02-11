@@ -1,3 +1,7 @@
+.. raw:: latex
+
+	\clearpage
+
 Imgtool
 =======
 
@@ -17,7 +21,7 @@ Universidade da Califórnia (c) 1989, 1993.
 Todos os direitos reservados.**
 
 Utilização
-==========
+----------
 
 Imgtool é um programa de linha comando que contém alguns "subcomandos"
 que fazem todo o trabalho. A maioria dos comandos são invocados usando
@@ -42,7 +46,7 @@ variados tipos diferentes de imagem.
 
 
 Subcomandos
-===========
+-----------
 
 **create**
 
@@ -160,7 +164,7 @@ Subcomandos
 
 
 Filtros
-=======
+-------
 
 Os filtros são uma maneira de processar a maneira que os dados estão
 sendo escritos ou lidos numa imagem. Os filtros podem ser usados nos
@@ -211,8 +215,8 @@ na linha de comando. Atualmente, os seguintes filtros são compatíveis:
 
 	Processa arquivos BASIC, Basic Master Level 3 tokenizados
 
-Lista de formatos compatíveis
-=============================
+Lista dos formatos compatíveis
+------------------------------
 
 
 Imagem de disquete do Amiga (formato OFS/FFS) - (*amiga_floppy*)

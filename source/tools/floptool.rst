@@ -20,7 +20,7 @@ para o MAME. Favor ler a toda :ref:`MAME-license` com atenção.
 
 
 Utilização
-==========
+----------
 
 Floptool é um programa de linha comando que contém um conjunto simples
 de instruções. Os comandos são invocados usando uma cadência de
@@ -48,7 +48,7 @@ Exemplo de uso:
 	\clearpage
 
 Lista dos formatos compatívels
-==============================
+------------------------------
 
 Estes são os formatos compatíveis com o Floptool usados para a conversão
 em outros formatos.
