@@ -4223,7 +4223,7 @@ Virtua Racing
 	  conectar um sistema na outro e o último (live monitor)
 	  conectando de volta para o sistema master. No exemplo acima, com a
 	  opção ``-comm_remoteport`` o sistema **nvram2 (Player 2)** está
-	  apontando para para a porta do sistema **nvram1 (Player 1)**, o
+	  apontando para a porta do sistema **nvram1 (Player 1)**, o
 	  sistema **nvram3 (Player 3)** aponta para a porta da **nvram2
 	  (Player 2)** e assim sucessivamente.
 
