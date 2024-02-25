@@ -14,6 +14,44 @@ Cardápio de opções
 
 	\clearpage
 
+
+.. _menus-intro:
+
+Introdução
+----------
+
+Para exibir o :ref:`menu principal <menus-main>` durante a execução de
+um sistema emulado no MAME, pressione a tecla ou o botão para
+**Mostrar/Ocultar** o menu (a tecla predefinida é :kbd:`Tab`). Se o
+sistema emulado tiver entradas de teclado, é necessário pressionar a
+tecla ou o botão **Toggle UI** para mostrar os controles (a tecla
+predefinida é "*Scroll Lock*", a tecla :kbd:`SRCLK` ou
+"*Forward Delete*" no macOS) para que seja possível acessar os controles
+da interface de usuário do MAME. Você pode ignorar um menu pressionando
+a tecla ou o botão **UI Retorna** do usuário (a tecla predefinida é
+:kbd;`Esc`). A desativação de um menu retornará ao seu menu principal ou
+ao sistema que estiver em execução, no caso do menu principal.
+
+Pressione a tecla :kbd:`Tab` para esconder o menu e retornar ao sistema
+principal, ao pressioná-la novamente, fará com que ela apareça
+novamente, isso é muito útil quando estiver testando ou configurando um
+sistema.
+
+As entradas dos sistemas emulados são ignorados enquanto este menu
+estiver na tela. Contudo, ainda é possível pausar o sistema que estiver
+sendo executado ao pressionar a tecla para **Pausar** (a tecla
+predefinida é :kbd:`F5`).
+
+Ao iniciar o MAME sem especificar nenhum sistema na linha de comando, a
+interface com o menu de seleção do MAME será exibida (assumindo que a
+:ref:`opção da interface <mame-commandline-ui>`) esteja definida como
+**cabinet**). Durante a execução de um sistema, este menu de seleção de
+sistema também aparece ao pressionar :kbd:`Tab` e selecionar a opção
+:guilabel:`Selecione um novo sistema`.
+
+Consulte a :ref:`seção relevante <ui-menus>` para obter mais
+informações.
+
 Caso rode o MAME sem nenhum parâmetro na linha de comando ou
 clicando duas vezes em seu ícone, você verá a interface do usuário e
 acessando as opções da parte debaixo da tela terá acesso ao cardápio de
@@ -59,6 +97,27 @@ predefinidos funcionam da seguinte maneira:
 Os campos que possuam mais de uma opção de escolha podem ser abertos
 ao clicar duas vezes nele, como é o caso dos campos disponíveis em
 :ref:`Filtro <mamemenu-filtro>`, por exemplo.
+
+
+.. _menus-main:
+
+O menu principal
+----------------
+
+O menu principal é exibido quando se pressiona a tecla :kbd:`Tab` ou o
+botão **Mostrar/Ocultar** o menu durante a execução de um sistema
+emulado ou enquanto a tela de informações do sistema é exibida. Ele
+fornece acesso a menus usados para alterar configurações, para controlar
+vários recursos e mostrar as informações sobre o sistema em execução e
+do próprio MAME.
+
+Enquanto a tela de menu estiver sendo exibida o MAME não inicia a
+emulação do sistema até que este menu seja fechado (tecla :kbd:`Tab` ou
+:kbd:`Esc`). Isso pode ser útil para montar as imagens das mídias ou
+para alternar a posição das chaves DIP ou até mesmo para alterar as
+definições de algumas configurações da máquina antes de iniciar a
+emulação do sistema.
+
 
 .. raw:: latex
 
@@ -298,6 +357,8 @@ ao pressionar a tecla :kbd:`Tab` e entrando na opção
 :guilabel:`Configurações da entrada`.
 
 
+.. _mamemenu-config-entrada:
+
 Configurações da entrada
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -383,10 +444,10 @@ Chaves DIP
 ~~~~~~~~~~
 
 Aqui ficam as chaves DIP, elas servem para definir as configurações do
-sistema (quando for relevante) como, a quantidade de fichas necessárias
-para registrar 1 crédito, se a tela será invertida ou não, se o sistema
-ficará em silêncio ou reproduzirá qualquer tipo de áudio enquanto
-ninguém o estiver jogando, etc.
+sistema (quando for relevante), a quantidade de fichas necessárias
+para registrar 1 crédito, se a tela será invertida ou não, se a
+demonstração do sistema ficará em silêncio ou se reproduzirá qualquer
+tipo de som, etc.
 
 Sempre que uma chave for alterada, sempre selecione **Reinicie** para
 que a alteração seja aplicada. Em algum sistema a ação já pode ser
@@ -403,33 +464,95 @@ em execução e a quantidade de fichas que foram colocadas nela.
 Informação sobre o sistema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Um breve resumo do nome do sistema, o seu driver, o tipo do processador
-(vídeo, áudio e outros) e a resolução do vídeo.
+Mostra um breve resumo do nome do sistema que está sendo emulado, o seu
+driver, o tipo do processador (vídeo, áudio e outros) e a resolução do
+vídeo.
 
 
 Alerta sobre o sistema
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Exibe informações de alerta sobre o sistema que está sendo emulado como
-o não funcionamento do áudio, vídeo, etc.
+o não funcionamento de áudio, vídeo, etc.
 
 
 Informação sobre a imagem da mídia
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Exibe informações sobre a mídia como o seu formato (imagem ROM, CD-ROM,
-etc.), nome do fabricante, ano de lançamento, etc.
+etc.), nome do fabricante, ano de lançamento, etc. |eise| tiver um ou
+mais dispositivos do tipo mídia (unidades de
 
 .. raw:: latex
 
 	\clearpage
 
 
+Gerenciador de arquivos
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Mostra o menu do gerenciador de arquivos onde é possível abrir arquivos
+ROM, montar ou desmontar imagens de mídia. |eise| tiver um ou mais
+dispositivos de mídia (unidades de disquete, cartuchos ou slots de
+cartão de memória por exemplo).
+
+
+Controle de fita
+~~~~~~~~~~~~~~~~
+
+Mostra o menu de controle de fita, com ele é possível emular e controlar
+os mecanismos de uma fita k7. |eise| usar uma fita k7.
+
+
+Pseudo Terminais
+~~~~~~~~~~~~~~~~
+
+Mostra a condição geral de qualquer dispositivo tipo "pseudoterminal" no
+sistema em execução (usado para conectar o sistema emulado aos
+pseudoterminais do host, como através de portas seriais por exemplo).
+|eise| tiver dispositivos do tipo pseudoterminal.
+
+
+Seleção da BIOS
+~~~~~~~~~~~~~~~
+
+Mostra o menu de seleção de BIOS, aqui é possível selecionar a BIOS para
+o *boot* ou a ROM do *firmware* para o sistema e as placas que o sistema
+tiver. |eise| tiver disponibilidade de seleção ou opções de BIOS.
+
+
+Dispositivos slot
+~~~~~~~~~~~~~~~~~
+
+Mostra o menu dos dispositivos slot, aqui é possível escolher entre os
+periféricos emulados. |eise| tiver dispositivos no slot.
+
+
+Leitor de código de barras
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mostra o menu do leitor de códigos de barras, aqui é possível simular a
+leitura de códigos de barras usando a emulação do leitor de código de
+barras. |eise| tiver um leitor de código de barras.
+
+
+Dispositivos de rede
+~~~~~~~~~~~~~~~~~~~~
+
+Mostra o menu dos dispositivos de rede, aqui é possível configurar os
+adaptadores de rede emulados compatíveis com uma ponte numa rede para um
+host. |eise| tiver adaptadores de rede que sejam compatíveis com
+*bridging*.
+
+
 Controles deslizantes
 ~~~~~~~~~~~~~~~~~~~~~
 
-As opções disponíveis aqui também dependem do tipo do sistema, outros
-ajustes podem aparecer porém os principais são estes:
+Mostra o menu de controles deslizantes, aqui é possível ajustar diversas
+configurações incluindo ajustes de vídeo, níveis individuais dos canais
+de áudio dentre outros. As opções disponíveis aqui também dependem do
+tipo do sistema, outros ajustes podem aparecer porém os principais são
+estes:
 
 * :guilabel:`Volume principal`
 
@@ -505,6 +628,11 @@ ajustes podem aparecer porém os principais são estes:
 
 Opções do vídeo
 ~~~~~~~~~~~~~~~
+
+Mostra o menu das opções de vídeo, aqui é possível ajustar as
+configurações de vídeo, alterar as opções de visualização, selecionar as
+artes gráficas (quando estiver disponível) e as capturas de tela.
+
 
 Tela #X
 ^^^^^^^
@@ -650,8 +778,10 @@ da tela seja feito.
 Opções da mira
 ~~~~~~~~~~~~~~
 
-Esta opção aparece quando o sistema for um jogo de tiro que use uma
-pistola de luz, as seguintes opções estão disponíveis:
+Mostra o menu das opções de mira, aqui é possível ajustar a aparência
+das miras usadas, para mostrar o local das miras e outras entradas
+absolutas de ponteira. |eise| tiver entradas do tipo que usem algum tipo
+de apontamento. As seguintes opções estão disponíveis:
 
 * :guilabel:`Visibilidade do P1`
 
@@ -703,8 +833,23 @@ Descompacte as imagens dentro da pasta **crosshair**.
 	<p></p>
 
 
+Trapaças
+~~~~~~~~
+
+Mosta o menu das trapaças, aqui é possível controlar o sistema interno
+de trapaças. |eise| tiver trapaças ativadas. Note que que existe a
+opção de trapaça via plug-in que está acessível através do menu
+:guilabel:`Opções dos Plug-ins`.
+
+
 Opções dos plug-ins
 ~~~~~~~~~~~~~~~~~~~
+
+Mostra o menu das opções do plug-in, aqui é possível acessar as
+configurações para todos os plug-ins que estiverem ativos. |eise|
+tiver plgug-ins ativados ou caso o menu principal seja mostrado antes de
+iniciar a emulação de um sistema (ao pressionar a tecla :kbd:`Tab`
+enquanto estiver aparecendo a tela de informação do sistema).
 
 Quando os plug-ins forem ativados na configuração, eles serão listados
 aqui. Qualquer alteração que for feita ao ativar um plugin, ele é
@@ -717,13 +862,53 @@ Para mais informações consulte :ref:`Plug-ins <plugins-intro>`.
 Visualização da DAT externa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Mostra o menu de visualização da DAT externa, aqui é possível acessar as
+informações carregadas de diversos arquivos externos de suporte. |eise|
+não tiver o :ref:`plugin de dados <plugins-data>` ativado ou se o menu
+principal for mostrado antes de iniciar a emulação do sistema (ao
+pressionar a tecla :kbd:`Tab` enquanto estiver aparecendo a tela de
+informação do sistema).
+
 Esta opção estará disponível quando dois critérios forem atendidos, o
 plug-in **Data plugin** estiver ativo e os arquivos **\*.dat**
-(command.dat, gameinit.dat, etc.) estiverem dentro do diretório **dats**.
+(command.dat, gameinit.dat, etc.) estiverem dentro do diretório
+**dats**.
 
 Caso o nome do sistema exista dentro do ``command.dat`` por exemplo,
 será exibido uma lista de como jogar, dicas, a lista dos comandos do
 sistema na tela (em Inglês), etc.
+
+
+Adiciona/remove dos favoritos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Adiciona o sistema em execução na lista de favoritos ou o remove caso
+ele já exista na lista. A lista de favoritos pode ser usada como um
+filtro no menu de seleção de sistemas.
+
+
+Sobre o MAME
+~~~~~~~~~~~~
+
+Mostra a versão do MAME, a sua revisão e as informações da licença de
+direitos autorais.
+
+Selecione um novo sistema
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mostra o menu de seleção de sistemas, aqui é possível escolher um novo
+sistema e iniciar uma nova emulação. |eise| mostrar o menu principal
+antes de iniciar a emulação do sistema (ao pressionar a tecla :kbd:`Tab`
+enquanto estiver aparecendo a tela de informação do sistema).
+
+Fecha o menu/Inicia o sistema
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fecha o menu principal retornando para o sistema em execução. Mostra
+:guilabel:`Inicia o sistema` antes de iniciar a emulação de um sistema
+(ao pressionar a tecla :kbd:`Tab` enquanto estiver aparecendo a tela de
+informação do sistema).
+
 
 .. raw:: latex
 
@@ -1475,6 +1660,7 @@ Opções diversas
 
 
 .. _mamemenu-config-devices:
+.. _menus-inputopts:
 
 Opções dos dispositivos na entrada
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3424,5 +3610,6 @@ Permite que você configure individualmente cada sistema selecionado.
 
   Salva a configuração apenas para o sistema selecionado.
 
-..	[#MAMEUIP] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME
-		com uma interface gráfica diferente.
+.. [#MAMEUIP] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME
+	com uma interface gráfica diferente.
+.. |eise| replace:: Este item só é mostrado se o sistema em execução

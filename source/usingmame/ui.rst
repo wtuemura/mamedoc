@@ -33,7 +33,7 @@ seguintes:
     :ref:`ui_active <mame-commandline-uiactive>` esteja ligada.
 :kbd:`Tab` (Menu de configuração)
     Mostra ou esconde o menu durante a emulação.
-:kbd:`Esc` (``UI Back``)
+:kbd:`Esc` (``UI Retorna``)
     Retorna para a seleção de sistemas ou encerra o MAME caso ele tenha
     sido iniciado com um determinado sistema (a partir da linha de
     comando ou caso esteja usando um
@@ -78,7 +78,7 @@ Seta :kbd:`direita` (``IU Direita``)
 :kbd:`Forward` :kbd:`Delete` ou :kbd:`Fn` + :kbd:`Delete` em alguns
     teclados compactos (``UI Limpa``)
     Limpa a configuração ou redefine para o valor predefinido
-:kbd:`Esc` (``UI Back``)
+:kbd:`Esc` (``UI Retorna``)
     Limpa o campo de busca, caso contrário, fecha o menu, retorna ao
     menu anterior ou retorna para a emulação no menu principal (também
     há um item na parte do menu que funciona igual).
