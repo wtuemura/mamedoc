@@ -171,8 +171,8 @@ elemento ``system`` que seja aplicável.
 
 .. _ctrlrcfg-typeoverride:
 
-Substituindo os controles predefinidos
---------------------------------------
+Substituindo os controles predefinidos pelo tipo da entrada
+-----------------------------------------------------------
 
 Utilize os elementos ``port`` com os atributos ``type`` sem os atributos
 ``tag`` para substituir as definições de entrada padrão do host para os
@@ -321,12 +321,9 @@ de jogo do tipo XInput:
         </input>
     </system>
 
-O MAME aplica os elementos ``mapdevice`` que forem encontrados dentro de
-qualquer elemento ``system`` aplicável.
-
-MAME apenas aplica os elementos do ``mapdevice`` encontrados apenas
-dentro do primeiro elemento ``system`` aplicável.  Visando evitar
-confusão, é mais simples colocar o elemento ``system`` para que se
-aplique a todos os sistemas (o atributo ``name`` definido como
-``default``) logo na primeira linha do do arquivo e fazer uso dele para
-atribuir os valores numéricos da entrada dos dispositivos.
+O MAME apenas aplica os elementos ``mapdevice`` que forem encontrados
+dentro de qualquer elemento ``system`` quando for possível. Visando
+evitar confusão, é mais simples colocar o elemento ``system`` para que
+se aplique a todos os sistemas (o atributo ``name`` definido como
+``default``) logo na primeira linha do arquivo e fazer seu uso para
+atribuir os valores numéricos na entrada dos dispositivos.
