@@ -477,7 +477,7 @@ troque o **sf2** da linha ``<system name="sf2">`` para **default** ou
 ``<system name="defaut">`` e salve o arquivo.
 
 Para aplicar a configuração para **TODOS** os sistemas do driver CPS-1,
-crie uma pasta chamada chamada ``sources`` dentro da pasta ``ini``,
+crie uma pasta chamada ``sources`` dentro da pasta ``ini``,
 dentro da pasta ``sources`` crie um arquivo chamado ``cps1.ini``, abra-o
 no editor de texto e adicione a opção::
 

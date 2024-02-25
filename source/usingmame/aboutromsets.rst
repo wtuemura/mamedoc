@@ -343,12 +343,11 @@ categorizados como *"Device"* (dispositivo) onde os dados são
 armazenados como um conjunto de dispositivos ou *"Device set"*.
 
 Por exemplo, a Namco utilizou um circuito integrado customizado de
-entrada e saída (I/O) *Namco 51xx* para para lidar com os
-comandos do joystick e as chaves DIP para o jogo **Galaga** que também é
-utilizado por outros jogos, assim sendo, para que o jogo funcione no
-MAME será preciso a ROM de dispositivos armazenado no arquivo
-``namco51.zip`` e também do ``namco54.zip`` para que a ROM
-``galaga.zip`` funcione.
+entrada e saída (I/O) *Namco 51xx* para lidar com os comandos do
+joystick e as chaves DIP para o jogo **Galaga** que também é utilizado
+por outros jogos, assim sendo, para que o jogo funcione no MAME será
+preciso a ROM de dispositivos armazenado no arquivo ``namco51.zip`` e
+também do ``namco54.zip`` para que a ROM ``galaga.zip`` funcione.
 
 
 .. _aboutromsets_problems:

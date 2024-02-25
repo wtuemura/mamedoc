@@ -3806,7 +3806,7 @@ Techno Drive
 	  :kbd:`9`, mantenha pressionado o botão 1 do jogador 1 para
 	  configurar o acelerador (GAS), o botão 2 para o freio (BRAKE) e
 	  mova a direção ou direcional para a esquerda e direita. Pressione
-	  :kbd:`F2` para para encerrar a configuração.
+	  :kbd:`F2` para encerrar a configuração.
 
 
 .. _faqgames-tmnt2:

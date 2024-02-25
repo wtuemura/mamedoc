@@ -5,7 +5,7 @@ CONTRIBUINDO COM O MAME
 
 Deseja contribuir com o MAME mas não sabe por onde começar? A boa
 notícia é que sempre há muito o que ser feito, especialmente para
-pessoas com com uma grande variedade de habilidades.
+pessoas com uma grande variedade de habilidades.
 
 Testando e relatando bugs
 -------------------------

@@ -19,8 +19,8 @@ O MAME é compatível com uma vasta gama de diferentes tipos de sistemas,
 e estes, possuem uma considerável quantidade de diferentes entradas
 entre elas. Isso significa que algumas teclas do teclado, alguns botões
 do mouse e alguns botões do joystick serão usados para diversas funções.
-Como resultado, o mapa dos controles mostrados abaixo abaixo são
-separados pelos tipos dos sistemas facilitando a busca.
+Como resultado, o mapa dos controles mostrados abaixo são separados
+pelos tipos dos sistemas facilitando a busca.
 
 Todos os controles abaixo são totalmente configuráveis através da
 interface do usuário. Os exemplos abaixo são as configurações

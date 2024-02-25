@@ -368,7 +368,7 @@ Propriedades
 **port.active** |sole|
 
 	Uma máscara indicando quais os bits da porta E/S correspondem aos
-	campos ativos (isto é, os bits que não não utilizados ou não foram
+	campos ativos (isto é, os bits que não utilizados ou não foram
 	atribuídos).
 
 
@@ -1201,7 +1201,7 @@ Propriedades
 **item.token** |sole|
 
 	A *string* token do item da entrada. Observe que este é um fragmento
-	do token para o o próprio item que não inclui a parte do
+	do token para o próprio item que não inclui a parte do
 	dispositivo. O token completo para o item pode ser obtido ao invocar
 	o método ``code_to_token`` no :ref:`gerenciador da entrada
 	<luascript-ref-inputman>` com o código do item.

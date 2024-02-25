@@ -18,7 +18,7 @@ Os monitores CRT dos arcades são uma experiência única na maneira que a
 imagem é formada e apresentada na tela, imagem essa que os monitores de
 LCD e até mesmo monitores CRT não possuem.
 
-É aí então que que o glsl entra em cena.
+É aí então que o glsl entra em cena.
 
 O filtro glsl simula a maioria dos efeitos de vídeo que um monitor CRT
 de arcade teria, fazendo com que o resultado visual seja muito mais
@@ -119,7 +119,7 @@ proveito do poder dos arquivos de configuração do MAME, talvez seja
 melhor copiar as opções do glsl do ``mame.ini`` para um outro arquivo de
 configuração e fazer as modificações lá.
 
-Por exemplo, uma vez selecionada as opções glsl que queira usar nos
+Por exemplo, uma vez selecionada as opções glsl que deseja usar nos
 sistemas para Neo-Geo, coloque essas configurações no arquivo
 ``neogeo.ini`` dentro do diretório **ini/sources** para que essas
 configurações sejam compartilhadas com todos os sistemas Neo-Geo

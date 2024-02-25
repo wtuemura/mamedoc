@@ -911,7 +911,7 @@ O construtor
 ~~~~~~~~~~~~
 
 O construtor do nosso renderizador de exemplo inicializa apenas o
-**poly_manager** e aloca os buffers da renderização e da profundidade::
+**poly_manager** e aloca os buffers de renderização e de profundidade::
 
     example_renderer::example_renderer(running_machine &machine, uint32_t width, uint32_t height) :
         poly_manager(machine),

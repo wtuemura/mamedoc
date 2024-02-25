@@ -1920,8 +1920,8 @@ são geradas automaticamente:
 * A tela será exibida numa proporção onde os pixels sejam quadrados e
   com a rotação aplicada para cada tela emulada onde a proporção
   configurada para o pixel não corresponda a proporção física.
-* Serão exibidos duas cópias da imagem da tela uma uma sobreposta a
-  outra com um pequeno espaço entre elas caso o sistema emule apenas uma
+* Serão exibidos duas cópias da imagem da tela uma sobreposta a outra
+  com um pequeno espaço entre elas caso o sistema emule apenas uma
   tela.
   A cópia da parte de cima será rotacionada em 180 graus. Esta visão
   pode ser usada num cabine tipo cocktail, que disponibiliza uma mesa

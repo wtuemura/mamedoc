@@ -26,7 +26,7 @@ padrões úteis para certos controles do tipo arcade.
 Apesar da extensão ``.cfg``, estes arquivos estão no formato XML. O MAME
 procura por tais arquivos nos diretórios definidos com a opção
 ``ctrlrpath``. Um arquivo de configuração será selecionado quando a
-opção ``ctrlr`` seguido pelo nome nome do arquivo sem a extensão
+opção ``ctrlr`` seguido pelo nome do arquivo sem a extensão
 ``.cfg``, exemplo::
 
 	ctrlr scorpionxg

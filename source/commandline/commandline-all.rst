@@ -29,7 +29,7 @@ o sinal de porcentagem **%** é usado numa palavra para se definir uma
 variável no ambiente do *Windows*, o sinal de til :kbd:`~` serve como um
 redirecionador para o diretório home do usuário, assim em vez de se
 digitar o caminho completo **/home/${USER}/.mame/cfg** é possível
-possível simplificar usando **~/.mame/cfg**.
+simplificar usando **~/.mame/cfg**.
 
 Note porém que o MAME só aceita interpretações de variáveis simples, o
 MAME não reconhece expressões mais complexas compatíveis com Bash, ksh,
@@ -1943,7 +1943,7 @@ Opções para a gravação e a reprodução do estado da emulação
 
 	Descreve como o MAME deve armazenar os arquivos de estado salvos
 	relativo ao caminho do *state_directory*. <*nome*> é uma *string*
-	que fornece um modelo a ser usado usado para gerar um nome de
+	que fornece um modelo que será utilizado para gerar um nome de
 	arquivo.
 
 	São disponibilizadas duas substituições simples: o caractere ``/``
@@ -2095,8 +2095,8 @@ Opções para a gravação e a reprodução do estado da emulação
 	"*The King of Fighters*" por exemplo) e fazendo com que a ação não
 	bata com o que foi gravado ou até mesmo haja uma interrupção abrupta
 	da reprodução muito antes do fim. Por exemplo, se for iniciar a
-	gravação do sistema **kof2002**, na pasta **NVRAM**, exclua a pasta
-	**kof2002** e também a pasta **kof2002_16** caso ela exista.
+	gravação do sistema **kof2002**, dentro da pasta **NVRAM**, exclua a
+	pasta **kof2002** ou uma pasta **kof2002_*** caso ela exista.
 	Para obter mais informações consulte :ref:`advanced-tricks-nvram`.
 
 
@@ -5424,7 +5424,7 @@ Opções diversas
 	Salva o conteúdo da NVRAM ao encerrar a emulação. Caso essa opção
 	seja desligada, o conteúdo que foi gravado anteriormente não será
 	apagado e qualquer alteração atual não será gravado. Ao desligar
-	esta função, n]ao será feito o salvamento dos dos dados nos arquivos
+	esta função, n]ao será feito o salvamento dos dados nos arquivos
 	``.nv`` associados com alguns tipos de programas usados em
 	cartuchos.
 

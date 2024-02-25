@@ -150,7 +150,7 @@ Os nomes do tipo e dos outros identificadores com um sublinhado à
 esquerda, devem ser evitados no espaço de nomes globais (*namespace*),
 pois são reservados de forma explícita de acordo com o padrão C++. Além
 disso, os identificadores sufixados com ``_t`` devem ser evitados dentro
-do do espaço de nomes globais, pois eles também são reservados de acordo
+do espaço de nomes globais, pois eles também são reservados de acordo
 com os padrões POSIX. Embora o MAME viole esta política ocasionalmente,
 principalmente com ``device_t``, é considerado uma infeliz decisão
 herdada que deve ser evitada em todo e qualquer novo código.

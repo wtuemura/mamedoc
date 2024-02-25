@@ -56,7 +56,7 @@ responsável por ele usando o comando
 	mame -ls ddrmax
 	ddrmax           konami/ksys573.cpp
 
-Com o nome do driver em mãos, use-o com com a opção ``SOURCES``, como
+Com o nome do driver em mãos, use-o com a opção ``SOURCES``, como
 por exemplo, ``SOURCES=konami/ksys573.cpp`` ou
 ``SOURCES=konami\ksys573.cpp`` caso esteja usando o Windows.
 

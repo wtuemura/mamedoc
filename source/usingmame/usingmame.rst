@@ -156,7 +156,7 @@ usuários Windows, inicie a interface do MAME com o comando:
 
 	**mame**
 
-Para iniciar iniciar um sistema faça:
+Para iniciar um sistema faça:
 
 	**mame** <*ROM*>
 

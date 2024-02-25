@@ -739,7 +739,7 @@ Propriedades
 **screen.pixel_period** |sole|
 
 	O intervalo necessário para desenhar um pixel horizontal, como um
-	número de ponto flutuante em em unidades de segundos.
+	número de ponto flutuante em unidades de segundos.
 
 
 **screen.scan_period** |sole|

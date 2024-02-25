@@ -71,7 +71,7 @@ botão de turbo e retornar à lista dos botões de turbo. O novo botão de
 turbo será adicionado ao final da lista. Pressione a tecla
 :guilabel:`UI Back` (tecla :kbd`Esc`) ou selecione :guilabel:`Cancelar`
 antes de definir a entrada/tecla de atalho para retornar ao menu
-anterior sem criar sem criar nenhum botão turbo.
+anterior sem criar nenhum botão turbo.
 
 Se durante o teste o turbo não agir da forma desejada, retorne para a
 opção e clique duas vezes no botão para alterar as suas configurações.

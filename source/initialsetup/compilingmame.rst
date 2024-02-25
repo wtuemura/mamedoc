@@ -1795,8 +1795,8 @@ Sede das bibliotecas e framework
 	Defina como **1** caso prefira usar a versão da biblioteca fornecida
 	pelo MAME ao invés da versão instalada no seu sistema. Essa opção já
 	vem predefinida para compilações feitas em Visual Studio e em
-	versões para Android. Já para outras outras configurações, é
-	preferível que seja usada a versão instalada no sistema.
+	versões para Android. Já para outras configurações, é preferível que
+	seja usada a versão instalada no sistema.
 
 **USE_SYSTEM_LIB_UTF8PROC**
 

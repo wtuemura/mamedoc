@@ -301,8 +301,8 @@ aparecerão em tempo real conforme elas forem sendo alteradas.
 Observe que as configurações são individuais para cada tela.
 
 As configurações dos controles deslizantes BGFX são registradas em
-arquivos **.CFG** individualmente por sistema.  Caso a configuração
-``bgfx_screen_chains`` tenha sido definida (num arquivo **.INI** ou
+arquivos ``.cfg`` individualmente por sistema.  Caso a configuração
+``bgfx_screen_chains`` tenha sido definida (num arquivo ``.ini`` ou
 através da linha de comando), será através deles que os efeitos iniciais
 sertão definidos.  Já se nenhuma configuração ``bgfx_screen_chains`` for
 definida, o MAME usará os efeitos que você escolheu na última vez que
