@@ -300,12 +300,13 @@ aparecerão em tempo real conforme elas forem sendo alteradas.
 
 Observe que as configurações são individuais para cada tela.
 
-As configurações dos controles deslizantes do BGFX são salvas
-individualmente por sistema em arquivos CFG. Caso a configuração
-``bgfx_screen_chains`` tenha sido definida (num arquivo INI ou através
-da linha de comando), ela definirá os efeitos iniciais. Caso não exista
-uma configuração ``bgfx_screen_chains``, o MAME usará os efeitos que
-você escolheu na última vez que rodou o sistema.
+As configurações dos controles deslizantes BGFX são registradas em
+arquivos **.CFG** individualmente por sistema.  Caso a configuração
+``bgfx_screen_chains`` tenha sido definida (num arquivo **.INI** ou
+através da linha de comando), será através deles que os efeitos iniciais
+sertão definidos.  Já se nenhuma configuração ``bgfx_screen_chains`` for
+definida, o MAME usará os efeitos que você escolheu na última vez que
+rodou o sistema.
 
 
 Usando os filtros para adicionar pilares nos cantos da tela do vídeo
