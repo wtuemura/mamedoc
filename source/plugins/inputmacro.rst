@@ -63,8 +63,8 @@ pode ser continuada ou repetir a sequência novamente.
 		Define o nome da macro. Pressione :kbd:`Enter` no teclado ou o
 		**botão 1** do controle para editar o nome que estiver ali ou
 		:kbd:`Espaço` para limpar antes de inserir um novo nome. Use as
-		teclas direcionais para mover o cursor e a tecla :kbd:`Esc` para
-		cancelar a edição.
+		teclas direcionais para mover o cursor e a tecla :kbd:`Esc`
+		(*UI_Back*)para cancelar a edição.
 
 *	:guilabel:`Ativação`
 
