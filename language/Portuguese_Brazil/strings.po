@@ -1,6 +1,6 @@
 # Brazilian Portuguese translation for the MAME Project.
 # Traduções para o Português do Brasil para o Projeto MAME.
-# Copyright (C) 1997-2023  MAMEDev and contributors
+# Copyright (C) 1997-2024  MAMEDev and contributors
 # This file is distributed under the same license as the MAME Project.
 # Automatically generated, 2023.
 #
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME 0.249\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-18 05:29+1100\n"
-"PO-Revision-Date: 2023-02-18 03:32-0300\n"
+"PO-Revision-Date: 2024-02-25 21:15-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -318,7 +318,7 @@ msgstr "Dispositivos na entrada"
 
 #: src/frontend/mame/ui/optsmenu.cpp:87
 msgid "Save Settings"
-msgstr "Salva as definições"
+msgstr "Salvar as definições"
 
 #: src/frontend/mame/ui/optsmenu.cpp:183 src/frontend/mame/ui/optsmenu.cpp:225
 msgid "System Filter"
