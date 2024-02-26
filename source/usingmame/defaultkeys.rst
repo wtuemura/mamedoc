@@ -95,9 +95,11 @@ Seta direcional :kbd:`direita`
     Limpa ou redefine o valor para a predefinição inicial nas configurações
     de entrada, trapaça e opções do plug-in.
 :kbd:`F1`
-    Liga o sistema nos sistema que tenham esta função de |lide|.
+    Liga o sistema nos sistema que tenham esta função de ligar e
+    desligar.
 :kbd:`F2`
-    Desliga o sistema nos sistema que tenham esta função de |lide|.
+    Desliga o sistema nos sistema que tenham esta função de ligar e
+    desligar.
 :kbd:`F3`
     Faz um reinicio simples do sistema.
 :kbd:`Shift` esquerdo + :kbd:`F3`
