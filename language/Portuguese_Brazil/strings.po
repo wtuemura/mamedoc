@@ -5651,7 +5651,7 @@ msgstr "(Primeira) IU, inicia a fita"
 #: src/emu/inpttype.ipp:919
 msgctxt "input-name"
 msgid "UI (First) Tape Stop"
-msgstr "(Primeira) IU, para a fita"
+msgstr "(Primeira) IU, interrompe a fita"
 
 #: src/emu/inpttype.ipp:920
 msgctxt "input-name"
