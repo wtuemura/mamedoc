@@ -45,10 +45,10 @@ estados.
 :kbd:`Tab`
 	Chama o cardápio de opções.
 
-| :kbd:`~`	(tecla *til* no teclado US ANSI QWERTY)
-| :kbd:`\``	(tecla *acento agudo* no teclado US ANSI QWERTY)
-| :kbd:`"`	(tecla *aspas* no teclado ABNT-2)
-| :kbd:`'`	(tecla *ápice* no teclado ABNT-2)
+| :kbd:`~` - Tecla **til** no teclado *US ANSI QWERTY*.
+| :kbd:`\`` - Tecla **acento agudo** no teclado *US ANSI QWERTY*.
+| :kbd:`"` - Tecla **aspas** no teclado *ABNT-2*.
+| :kbd:`'` - Tecla **ápice** no teclado *ABNT-2*.
 
 	Mostra as opções na tela.
 
@@ -85,27 +85,19 @@ Seta direcional :kbd:`direita`
 :kbd:`[` :kbd:`]`
     Move para o grupo anterior ou para o próximo grupo nos menus
     compatíveis da IU (por exemplo, move para as entradas do dispositivo
-    anterior ou para o seguinte no menu :guilabel`Atribuições da entrada (este sistema)).
-:kbd:`Enter` / **Botão** :kbd:`1` do controle
+    anterior ou para o seguinte no menu
+    :guilabel:`Atribuições da entrada (este sistema)`.
+:kbd:`Enter` / Botão 1 do controle 1
     Seleciona a opção que estiver me destaque.
 :kbd:`Espaço`
     Exibe um comentário na opção selecionada.
 :kbd:`Delete`
-    Limpa/redefine o valor para a predefinição inicial nas configurações
+    Limpa ou redefine o valor para a predefinição inicial nas configurações
     de entrada, trapaça e opções do plug-in.
-:kbd:`P`
-    Pausa a emulação.
-:kbd:`Shift` esquerdo + :kbd:`P`
-    Enquanto estiver pausado, avança para o próximo quadro. Se o
-    rebobinamento estiver ativo, um estado é salvo para ser usado pela
-    função de rebobinamento.
-:kbd:`Shift` esquerdo + :kbd:`~`
-    Enquanto estiver pausado, carrega o estado salvo mais recente para
-    ser usado com o rebobinamento.
 :kbd:`F1`
-    Liga o sistema nos sistema que tenham esta função de liga/desliga.
+    Liga o sistema nos sistema que tenham esta função de |lide|.
 :kbd:`F2`
-    Desliga o sistema nos sistema que tenham esta função de liga/desliga.
+    Desliga o sistema nos sistema que tenham esta função de |lide|.
 :kbd:`F3`
     Faz um reinicio simples do sistema.
 :kbd:`Shift` esquerdo + :kbd:`F3`
@@ -139,7 +131,7 @@ Seta direcional :kbd:`direita`
     * :kbd:`PgUp` / :kbd:`PgDn` - Sobe/desce uma página por vez.
     * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista.
     * :kbd:`Esquerda` / :kbd:`Direita` - Alterna a cor.
-    * :kbd:`R` - Rotaciona os pedaços em 90 º sentido horário.
+    * :kbd:`R` - Rotaciona os pedaços em 90° sentido horário.
     * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir os blocos).
     * :kbd:`0` - Restaura a quantidade das blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir os blocos).
     * :kbd:`Enter` - Alterna para o visualizador *tilemap*.
@@ -150,68 +142,78 @@ Seta direcional :kbd:`direita`
     * :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 8 pixels por vez.
     * :kbd:`Shift` + :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 1 pixel por vez.
     * :kbd:`Control` + :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 64 pixels por vez.
-    * :kbd:`R` - Rotaciona os *tilemaps* em 90 º sentido horário.
+    * :kbd:`R` - Rotaciona os *tilemaps* em 90° sentido horário.
     * :kbd:`-` / :kbd:`+` - Aumenta/reduz o fator de aproximação.
     * :kbd:`0` - Expande os pequenos *tilemaps* para preencher a tela.
     * :kbd:`Enter` - Alterna par ao modo paleta/tabela de cores.
 
     Observação: Nem todos os sistemas possuem gráficos decodificados e/ou *tilemaps*.
 
-:kbd:`Ctrl` esquerdo + :kbd:`F5`
-    Alterna o filtro.
-    (*Apenas na versão SDL do MAME*)
-:kbd:`Alt` esquerdo + :kbd:`Ctrl` esquerdo + :kbd:`F5`
-    Liga/desliga o processamento HLSL.
-    (*Apenas na versão não SDL do MAME*)
+:kbd:`Shift` esquerdo + :kbd:`F4`
+    Enquanto estiver pausado, carrega o estado salvo mais recente para
+    ser usado com o rebobinamento.
+:kbd:`F5`
+    Pausa a emulação.
+:kbd:`Shift` esquerdo + :kbd:`F5`
+    Enquanto estiver pausado avança um quadro. Se o rebobinamento
+    estiver ativo, um estado é salvo para ser usado pela função de
+    rebobinamento.
 :kbd:`F6`
-    Liga/desliga a trapaça. (caso a opção ``-cheat`` seja usada)
-:kbd:`Ctrl` + :kbd:`F6`
-    Reduz o prescaling.
-:kbd:`Ctrl` + :kbd:`F7`
-    Aumenta o prescaling.
-:kbd:`F7`
-    Carrega um estado. Você será solicitado a pressionar uma tecla ou
-    escolher no menu para determinar qual o estado deseja carregar.
-
-    *Observe que o recurso de salva o estado ainda não é suportado em
-    uma grande quantidade de drivers. Caso um determinado driver não
-    funcione perfeitamente com este recurso, será exibido um aviso
-    alertando a incompatibilidade.*
-:kbd:`Shift` esquerdo + :kbd:`F7`
     Salva um estado. É preciso pressionar uma tecla a mais para
     definir qual tecla será associada ao estado, semelhante à opção
     anterior. Caso já exista um estado salvo, ele também aparecerá na
     lista e também poderá ser substituído na lista.
+:kbd:`Shift` esquerdo + :kbd:`F6`
+    Salva um estado de forma rápida.
+:kbd:`F7`
+    Carrega um estado. Você será solicitado a pressionar uma tecla no
+    teclado para salva a posição ou a escolher uma posição já salva no
+    menu para ser carregada.
+
+    *Observe que o recurso de salvar o estado ainda não é compatível com
+    uma grande quantidade de drivers. Caso um determinado driver não
+    funcione perfeitamente com este recurso, um aviso será mostrado
+    alertando a incompatibilidade.*
+:kbd:`Shift` esquerdo + :kbd:`F7`
+     Faz o carregamento rápido de um estado já salvo.
 :kbd:`F8`
     Reduz o salto de quadros em tempo real.
+:kbd:`Shift` esquerdo + :kbd:`F8`
+    |lide| a trapaça. (caso a opção ``-cheat`` seja usada)
+:kbd:`Alt` esquerdo + :kbd:`F8`
+    Reduz o prescaling. |anvs|
 :kbd:`F9`
     Aumenta o salto de quadros em tempo real.
+:kbd:`Alt` esquerdo + :kbd:`F9`
+    Aumenta o prescaling. |anvs|
 :kbd:`F10`
-    Liga/desliga o supressor de velocidade.
+    |lide| o supressor de velocidade.
+:kbd:`Shift` esquerdo + :kbd:`F10`
+    |lide| o processamento HLSL. |anvw|
+:kbd:`Alt` esquerdo + :kbd:`F10`
+    Alterna o filtro. |anvs|
 :kbd:`F11`
-    Liga/desliga o indicador de velocidade no topo da tela.
+    |lide| o indicador de velocidade no topo da tela.
 :kbd:`Shift` esquerdo + :kbd:`F11`
     Alterna a exibição do perfil interno (caso tenha sido compilado com ele).
 :kbd:`Alt` esquerdo + :kbd:`F11`
     Grava um vídeo com filtros HLSL.
 :kbd:`F12`
-    Grava uma captura da tela.
+    Faz uma captura da tela.
 :kbd:`Shift` esquerdo + :kbd:`F12`
-    Começa a gravação de um vídeo MNG.
+    Inicia a gravação de um vídeo MNG.
 :kbd:`Control` esquerdo + :kbd:`Shift` esquerdo + :kbd:`F12`
-    Começa a gravação de um vídeo AVI.
+    Inicia a gravação de um vídeo AVI.
 :kbd:`Alt` esquerdo + :kbd:`F12`
     Faz uma captura da tela com um filtro HLSL.
 :kbd:`Insert`
     Acelera a emulação. Enquanto a tecla estiver pressionada, a
     emulação é executada sem a supressão de velocidade e com o salto de
-    quadros no máximo.
-    (*Apenas na versão não SDL do MAME*)
+    quadros no máximo. |anvw|
 :kbd:`PgDn`
     Acelera a emulação. Enquanto a tecla estiver pressionada, a
     emulação é executada sem a supressão de velocidade e com o salto de
-    quadros no máximo.
-    (*Apenas na versão SDL do MAME*)
+    quadros no máximo. |anvs|
 :kbd:`Alt` esquerdo + :kbd:`Enter`
     Alterna entre tela inteira e modo janela.
 :kbd:`ScrLk` / :kbd:`FwdDel` (Mac Desktop) / :kbd:`fn-Del` (Mac Laptop)
@@ -266,13 +268,13 @@ estes controles disponíveis. Todos os controles abaixo são totalmente
 configuráveis na interface do usuário. Esta lista mostra a configuração
 predefinida do teclado.
 
-:kbd:`5` (*fora do teclado numérico*)
+:kbd:`5` |fdtn|
     Ficha do slot 1
-:kbd:`6` (*fora do teclado numérico*)
+:kbd:`6` |fdtn|
     Ficha do slot 2
-:kbd:`7` (*fora do teclado numérico*)
+:kbd:`7` |fdtn|
     Ficha do slot 3
-:kbd:`8` (*fora do teclado numérico*)
+:kbd:`8` |fdtn|
     Ficha do slot 4
 :kbd:`Backspace`
     Cédula 1 (Para sistemas que tenham um receptor/leitor de cédulas)
@@ -283,36 +285,36 @@ predefinida do teclado.
     encerra o jogo atual, redefine os créditos e/ou reinicia o sistema
     caso ela seja derrubada com muita força ou seja deslocada. Mais
     comumente encontrado nos sistemas de pinball.
-:kbd:`-` (*fora do teclado numérico*)
+:kbd:`-` |fdtn|
     Reduz o volume
 
     Para sistemas que tenham um controle de volume.
-:kbd:`=` (*fora do teclado numérico*)
+:kbd:`=` |fdtn|
     Aumenta o volume
 
     Para sistemas que tenham um controle de volume.
 :kbd:`F1`
     Redefine a memória
 
-    Isso redefine/zera o(s) placar(es), os créditos/prêmios, as
-    estatísticas e/ou as configurações do operados nos sistemas
+    Isso redefine ou zera o(s) placar(es), os créditos/prêmios, as
+    estatísticas ou as configurações do operados nos sistemas
     compatíveis.
 :kbd:`F2`
     Modo de serviço
 
     Este é um botão existente em alguns sistemas para acessar este
     modo, em outros sistemas pode ser uma chave ou uma chave DIP.
-:kbd:`9` (*fora do teclado numérico*)
+:kbd:`9` |fdtn|
     Serviço 1
 
     Estes botões geralmente servem para dar créditos de graça, sem
     passar pela contabilidade do sistema, ou para navegar no menu de
     serviço do operador.
-:kbd:`0` (*fora do teclado numérico*)
+:kbd:`0` |fdtn|
     Serviço 2
-:kbd:`-` (*fora do teclado numérico*)
+:kbd:`-` |fdtn|
     Serviço 3
-:kbd:`=` (*fora do teclado numérico*)
+:kbd:`=` |fdtn|
     Serviço 4
 
 
@@ -325,21 +327,21 @@ Esta seção aborda os controles que são aplicáveis aos jogos arcades.
 Todos os controles abaixo são totalmente configuráveis na interface do
 usuário. Esta lista mostra a configuração predefinida do teclado.
 
-:kbd:`5` (*fora do teclado numérico*)
+:kbd:`5` |fdtn|
     Ficha do slot 1
-:kbd:`6` (*fora do teclado numérico*)
+:kbd:`6` |fdtn|
     Ficha do slot 2
-:kbd:`7` (*fora do teclado numérico*)
+:kbd:`7` |fdtn|
     Ficha do slot 3
-:kbd:`8` (*fora do teclado numérico*)
+:kbd:`8` |fdtn|
     Ficha do slot 4
-:kbd:`1` (*fora do teclado numérico*)
+:kbd:`1` |fdtn|
     Inicia o jogador 1 ou o modo com 1 jogador
-:kbd:`2` (*fora do teclado numérico*)
+:kbd:`2` |fdtn|
     Inicia o jogador 2 ou o modo com 2 jogadores
-:kbd:`3` (*fora do teclado numérico*)
+:kbd:`3` |fdtn|
     Inicia o jogador 3 ou o modo com 3 jogadores
-:kbd:`4` (*fora do teclado numérico*)
+:kbd:`4` |fdtn|
     Inicia o jogador 4 ou o modo com 4 jogadores
 
 
@@ -446,7 +448,7 @@ Controles do jogador 3
     Jogador 3 botão 1
 :kbd:`Shift` direito
     Jogador 3 botão 2
-:kbd:`Enter` (*fora do teclado numérico*)
+:kbd:`Enter` |fdtn|
     Jogador 3 botão 3
 
 
@@ -505,25 +507,25 @@ Todas as teclas abaixo são totalmente configuráveis na interface do
 usuário. Esta lista mostra a configuração predefinida do teclado.
 
 
-:kbd:`5` (*fora do teclado numérico*)
+:kbd:`5` |fdtn|
     Ficha do slot 1
-:kbd:`6` (*fora do teclado numérico*)
+:kbd:`6` |fdtn|
     Ficha do slot 2
-:kbd:`7` (*fora do teclado numérico*)
+:kbd:`7` |fdtn|
     Ficha do slot 3
-:kbd:`8` (*fora do teclado numérico*)
+:kbd:`8` |fdtn|
     Ficha do slot 4
 :kbd:`Y`
     Jogador 1 Mahjong/Hanafuda Flip Flop
-:kbd:`1` (*fora do teclado numérico*)
+:kbd:`1` |fdtn|
     Inicia o jogador 1 ou o modo com 1 jogador
-:kbd:`2` (*fora do teclado numérico*)
+:kbd:`2` |fdtn|
     Jogador 2 start or 2 players mode
-:kbd:`3` (*fora do teclado numérico*)
+:kbd:`3` |fdtn|
     Jogador 3 start or 3 players mode
 
     Mahjong Bet
-:kbd:`4` (*fora do teclado numérico*)
+:kbd:`4` |fdtn|
     Jogador 4 start or 4 players mode
 :kbd:`Ctrl` direito
     Jogador 1 Mahjong/Hanafuda Take Score
@@ -619,33 +621,33 @@ específica para os botões *Take Score*, *Double Up*, *High* e  *Low*.
     Key Out
 :kbd:`F1`
     Redefine a memória
-:kbd:`9` (*fora do teclado numérico*)
+:kbd:`9` |fdtn|
     Serviço 1
 
     Estes botões geralmente servem para dar créditos de graça, sem
     passar pela contabilidade do sistema, ou para navegar no menu de
     serviço do operador.
-:kbd:`0` (*fora do teclado numérico*)
+:kbd:`0` |fdtn|
     Serviço 2
     Book-Keeping (para sistemas com este recurso)
-:kbd:`-` (*fora do teclado numérico*)
+:kbd:`-` |fdtn|
     Serviço 3
-:kbd:`=` (*fora do teclado numérico*)
+:kbd:`=` |fdtn|
     Serviço 4
 :kbd:`M`
     Bet
-:kbd:`1` (*fora do teclado numérico*)
+:kbd:`1` |fdtn|
     Inicia o jogador 1 ou o modo com 1 jogador
-:kbd:`2` (*fora do teclado numérico*)
+:kbd:`2` |fdtn|
     Deal
 :kbd:`L`
     Stand
-:kbd:`4` (*fora do teclado numérico*)
+:kbd:`4` |fdtn|
     Take Score
 
     Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
     este botão coleta as apostas do jogo.
-:kbd:`3` (*fora do teclado numérico*)
+:kbd:`3` |fdtn|
     Double Up
 
     Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
@@ -814,3 +816,8 @@ QWERTY ABNT-2 (107 Teclas)
     :width: 100%
     :align: center
     :alt: QWERTY ABNT-2 (107)
+
+.. |anvs| replace:: (*apenas nas versões SDL*)
+.. |anvw| replace:: (*apenas na versão não SDL do Windows*)
+.. |fdtn| replace:: (*fora do teclado numérico*)
+.. |lide| replace:: Liga ou desliga

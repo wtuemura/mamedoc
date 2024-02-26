@@ -29,7 +29,7 @@ predefinida é "*Scroll Lock*", a tecla :kbd:`SRCLK` ou
 "*Forward Delete*" no macOS) para que seja possível acessar os controles
 da interface de usuário do MAME. Você pode ignorar um menu pressionando
 a tecla ou o botão **UI Retorna** do usuário (a tecla predefinida é
-:kbd;`Esc`). A desativação de um menu retornará ao seu menu principal ou
+:kbd:`Esc`). A desativação de um menu retornará ao seu menu principal ou
 ao sistema que estiver em execução, no caso do menu principal.
 
 Pressione a tecla :kbd:`Tab` para esconder o menu e retornar ao sistema
@@ -79,6 +79,11 @@ o uso do mouse fazendo a seleção com um clique e um duplo clique para
 abrir a opção ou rodar um sistema.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mamemenu-alt-valores:
 
 Alterando os valores
@@ -117,11 +122,6 @@ emulação do sistema até que este menu seja fechado (tecla :kbd:`Tab` ou
 para alternar a posição das chaves DIP ou até mesmo para alterar as
 definições de algumas configurações da máquina antes de iniciar a
 emulação do sistema.
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mamemenu-filtro:
@@ -218,10 +218,6 @@ Os filtros disponíveis são:
   <http://www.progettosnaps.net/renameset/>`_. Depois que o arquivo for
   baixado e extraído o diretório **folders** deve ser copiado para o
   diretório raiz do MAME.
-
-  .. raw:: latex
-
-	\clearpage
 
   Até o presente momento não existe uma tradução dessas categorias para
   o Português Brasileiro. Abaixo estão as categorias existentes até o
@@ -483,10 +479,6 @@ Exibe informações sobre a mídia como o seu formato (imagem ROM, CD-ROM,
 etc.), nome do fabricante, ano de lançamento, etc. |eise| tiver um ou
 mais dispositivos do tipo mídia (unidades de
 
-.. raw:: latex
-
-	\clearpage
-
 
 Gerenciador de arquivos
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -716,10 +708,6 @@ do sistema emulado e as suas respectivas opções, quando houver.
   :ref:`-keepaspect <mame-commandline-keepaspect>`.
 
 		O valor predefinido é ``Ligado``.
-
-.. raw:: latex
-
-	\clearpage
 
 
 Snapshot
