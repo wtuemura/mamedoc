@@ -5348,7 +5348,7 @@ Opções diversas
 	entre ``simple`` a mais simples ou ``cabinet`` que é a mais
 	completa.
 
-		O valor predefinido é ``Cabinet`` (``-ui cabinet``).
+		O valor predefinido é ``cabinet`` (``-ui cabinet``).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5395,7 +5395,7 @@ Opções diversas
 
 	Exibe o ponteiro do mouse na interface do usuário do MAME.
 
-		O valor predefinido é ``sem mouse`` (``-noui_mouse``).
+		O valor predefinido é ``Ligado`` (``-ui_mouse``).
 
 	Exemplo:
 		.. code-block:: shell
