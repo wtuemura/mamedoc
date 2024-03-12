@@ -745,11 +745,11 @@ msgstr "[root%1$s]"
 #: src/frontend/mame/ui/filemngr.cpp:166
 #: src/frontend/mame/ui/confswitch.cpp:170 src/frontend/mame/ui/slotopt.cpp:204
 msgid "Reset System"
-msgstr "Redefine a sistema"
+msgstr "Redefinir o sistema"
 
 #: src/frontend/mame/ui/filemngr.cpp:166
 msgid "Start System"
-msgstr "Inicia o sistema"
+msgstr "Iniciar o sistema"
 
 #: src/frontend/mame/ui/videoopt.cpp:60
 #, c-format
