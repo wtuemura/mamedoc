@@ -253,7 +253,9 @@ Opções de configuração
 
 	Cria um arquivo ``mame.ini`` pré-configurado. Todas as opções de
 	configuração (não verbos) descritos abaixo podem ser permanentemente
-	alterados ao fazer a edição deste arquivo de configuração.
+	alterados ao fazer a edição deste arquivo de configuração. Consulte
+	também o capítulo :ref:`como criar apenas um mame.ini com as
+	configurações de fábrica <advanced-tricks-mame-ini>`.
 
 	Exemplo:
 		.. code-block:: shell

@@ -2743,6 +2743,34 @@ Indiferente (opção ``-i``)::
 	bangbead - Bang Bead
 
 
+.. _advanced-tricks-mame-ini:
+
+Como criar apenas um mame.ini com as configurações de fábrica
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A opção :ref:`-cc <mame-commandline-createconfig>` cria um novo
+``mame.ini`` junto com ``ui.ini`` e ``plugin.ini``, infelizmente a opção
+não permite criar apenas o ``mame.ini``. Neste caso, rode o comando
+abaixo::
+
+	mame -norc -sc > mame_padrao.ini
+
+A opção :ref:`-norc <mame-commandline-noreadconfig>` ignora qualquer
+configuração que você possa ter no seu computador, já a opção
+:ref:`-sc <mame-commandline-showconfig>` mostra as predefinições
+internas do MAME, a parte final do comando redireciona essa lista para o
+arquivo ``mame_padrao.ini``.
+
+Se quiser substituir o seu ``mame.ini`` antigo, **faça o backup dele
+primeiro** e em seguida::
+
+	mame -norc -sc > mame.ini
+
+Como este arquivo tem apenas os valores predefinidos do MAME, não se
+esqueça de reconfigurar o seu **rompath** para que o MAME possa
+localizar as suas ROMs, assim como outras configurações de vídeo e áudio
+para que o seu MAME possa funcionar corretamente.
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
