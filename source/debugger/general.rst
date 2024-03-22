@@ -210,19 +210,23 @@ especificadores de formato e das sequências de escape estão disponíveis:
 .. line-block::
 
     ``%c``
-        |iacc| como um caractere 8-bit.
-    ``%[0][<n>]d``
-        |iacc| como um número decimal com largura opcional mínima do campo, com preenchimento zero.
-    ``%[0][<n>]o``
+        |iacc| como um caractere de 8-bit.
+    ``%[-][0][<n>]d``
+        |iacc| como um número decimal com justificação opcional à esquerda, preenchimento zero e largura mínima do campo.
+    ``%[-][0][<n>]o``
         |iacc| como um número octal com largura opcional mínima do campo, com preenchimento zero usando letras minúsculas.
-    ``%[0][<n>]x``
-        |iacc| como um número hexadecimal com largura opcional mínima do campo, com preenchimento zero usando letras maiúsculas.
+    ``%[-][0][<n>]x``
+        |iacc| como um número hexadecimal em minúsculas com justificação opcional à esquerda, preenchimento zero e largura mínima do campo.
+    ``%[-][0][<n>]X``
+        |iacc| como um número hexadecimal maiúsculo com justificação opcional à esquerda, preenchimento zero e largura mínima do campo.
+    ``%[-][<n>][.[<n>]]s``
+        Imprime uma cadeia de caracteres de 8-bits com terminação nula a partir do endereço e do espaço de endereço através do argumento correspondente, com justificação opcional à esquerda e larguras de campo mínima e máxima.
     ``\%%``
-        Imprime a porcentagem literal do símbolo.
+        Imprime literalmente um símbolo de porcentagem.
     ``\n``
         Imprime uma quebra de linha.
     ``\\``
-        Imprime literalmente uma barra lateral.
+        Imprime literalmente uma barra inclinada à esquerda.
 
 Qualquer outro formato que for utilizado será ignorado.
 
