@@ -25,14 +25,14 @@ necessário para que tenha sucesso na sua primeira compilação do MAME.
 
 Antes, alguns pontos importantes:
 
-* É necessário um compilador C++17 e suas respectivas bibliotecas, a
-  versão mínima aceitável do GCC é a versão 7.2 ou mais recente, para o
-  clang é necessário a versão 6 ou mais recente. O executável do MAME
-  rodará com a biblioteca GNU libstdc++ versão 7.2 ou mais recente,
-  assim como, libc++ versão 7 ou mais recente. A versão inicial de
-  qualquer grande lançamento de versão do GCC deve ser evitada.
-  Por exemplo, caso queira compilar o MAME com o GCC 10, é preferível
-  que você utilize a versão 10.3 ou posterior.
+* É necessário um compilador C++17 e suas respectivas bibliotecas, para
+  o GCC, a versão 10.3 é mínima aceitável ou então versões mais
+  recentes. Já o Clang é necessário a versão 11 ou mais recente. O
+  executável do MAME rodará com a biblioteca GNU libstdc++ versão 10.3
+  ou mais recente, assim como, libc++ versão 11 ou mais recente.
+  A versão inicial de qualquer grande lançamento de versão do GCC deve
+  ser evitada. Por exemplo, caso queira compilar o MAME com o GCC 12,
+  é preferível que você utilize a versão 12.1 ou mais recente.
 
 * A versão nativa do MAME roda no Windows, então uma grande ênfase será
   dada a compilação neste sistema operacional.
@@ -703,7 +703,7 @@ Configurando o pacote MSYS2 já pronto
   o MAME usando o SDL (Simple DirectMedia Layer), adicione a
   opção ``OSD=sdl`` nas opções de compilação do make. É necessário que
   seja instalado os pacotes de desenvolvimento do SDL 2 no MSYS2 da
-  versão **2.0.6** ou mais recente.
+  versão **2.0.14** ou mais recente.
 
   Caso queira compilar uma verção SDL (Simple DirectMedia Layer) do MAME
   para Windows em vez da versão nativa, instale os pacotes SDL com o
@@ -1057,11 +1057,17 @@ Fedora Linux
 ~~~~~~~~~~~~
 
 Alguns pré-requisitos precisam ser atendidos na sua distro antes de
-continuar. As versões anteriores ao SDL 2 versão **2.0.6** não possuem a
-funcionalidade necessária, certifique-se que a versão mais recente
+continuar. As versões anteriores ao SDL 2 versão **2.0.14** não possuem
+a funcionalidade necessária, certifique-se que a versão mais recente
 esteja instalada::
 
-	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel pulseaudio-libs-devel llvm
+	sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel pulseaudio-libs-devel
+
+Caso queira utilizar ferramentas LLVM mais eficientes para arquivar as
+bibliotecas estáticas e lincagem, você precisará instalar os seguintes
+pacotes::
+
+	sudo dnf install lld llvm
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`.
@@ -1072,11 +1078,17 @@ Debian e Ubuntu (incluindo dispositivos Raspberry Pi e ODROID)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alguns pré-requisitos precisam ser atendidos na sua distro antes de
-continuar. As versões anteriores ao SDL 2 versão **2.0.6** não possuem a
-funcionalidade necessária, certifique-se que a versão mais recente
+continuar. As versões anteriores ao SDL 2 versão **2.0.14** não possuem
+a funcionalidade necessária, certifique-se que a versão mais recente
 esteja instalada::
 
-	sudo apt-get install git git-lfs build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools lld llvm
+	sudo apt-get install git git-lfs build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
+
+Caso queira utilizar ferramentas LLVM mais eficientes para arquivar as
+bibliotecas estáticas e lincagem, você precisará instalar os seguintes
+pacotes::
+
+	sudo apt-get install lld llvm
 
 A compilação é exatamente como descrito em
 :ref:`compiling-practical-examples`
@@ -1103,13 +1115,12 @@ A compilação é exatamente como descrito em
 Apple macOS
 -----------
 
-Alguns pré-requisitos são necessários. Certifique-se de estar no
-*macOS X 10.14 Mojave* ou mais recente para Intel Macs ou macOS 11.0 Big
-Sur para Apple Silicon. Será também necessário o SDL2 **2.0.6** ou mais
-recente para Intel ou o **SDL2 2.0.14** no Apple Silicon. Será preciso
-também instalar o Python 3 - atualmente está incluso no *Xcode command
-line tools*, porém é possível instalá-lo de forma avulsa ou obtê-lo
-através do gerenciador de pacotes *Homebrew package manager*.
+Alguns pré-requisitos são necessários. Certifique-se que você esteja
+usando o macOS 11.0 Big Sur ou posterior. Você precisará do SDL 2 versão
+**2.0.14** ou mais recente. Também será necessário instalar o Python 3,
+atualmente, ele está incluído nas ferramentas de linha de comando do
+Xcode, mas você também pode instalar uma versão autônoma ou obtê-la
+através do gerenciador de pacotes Homebrew.
 
 *	Instale o **Xcode** encontrado no Mac App Store ou o
 	`ADC <https://developer.apple.com/download/more/>`_ (é preciso ter o
@@ -1789,14 +1800,6 @@ Sede das bibliotecas e framework
 
 	Defina como **1** caso prefira usar a biblioteca PortAudio do seu
 	sistema em vez de usar a versão fornecida pelo MAME.
-
-**USE_BUNDLED_LIB_SDL2**
-
-	Defina como **1** caso prefira usar a versão da biblioteca fornecida
-	pelo MAME ao invés da versão instalada no seu sistema. Essa opção já
-	vem predefinida para compilações feitas em Visual Studio e em
-	versões para Android. Já para outras configurações, é preferível que
-	seja usada a versão instalada no sistema.
 
 **USE_SYSTEM_LIB_UTF8PROC**
 
