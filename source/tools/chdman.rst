@@ -311,6 +311,7 @@ serão dois setores por bloco (4096 bytes).
 Na ausência das opções ``--compression`` ou ``-c`` a predefinição será
 ``lzma,zlib,huff,flac``.
 
+
 createld
 ~~~~~~~~
 
@@ -334,6 +335,7 @@ createld
 Na ausência das opções ``--compression`` ou ``-c`` a predefinição será
 ``avhu``.
 
+
 extractraw
 ~~~~~~~~~~
 
@@ -350,6 +352,7 @@ Extrai dados de um CHD para uma imagem de mídia bruta (RAW).
 * ``--output <arquivo>`` / ``-o <arquivo>`` (obrigatório)
 * ``--force`` / ``-f``
 
+
 extracthd
 ~~~~~~~~~
 Extrai dados de um CHD para uma imagem de disco rígido.
@@ -364,6 +367,7 @@ Extrai dados de um CHD para uma imagem de disco rígido.
 * ``--inputhunks <comprimento>`` / ``-ih <comprimento>``
 * ``--output <arquivo>`` / ``-o <arquivo>`` (obrigatório)
 * ``--force`` / ``-f``
+
 
 extractcd
 ~~~~~~~~~
@@ -380,6 +384,8 @@ Extrai dados de um CHD para uma imagem de CD-ROM.
 |oa|:
 
 * ``--outputbin <arquivo>`` / ``-ob <arquivo>``
+* ``--splitbin`` / ``-sb``
+
 
 extractdvd
 ~~~~~~~~~~
@@ -396,6 +402,7 @@ Extrai dados de um CHD para uma imagem de DVD-ROM.
 * ``--inputhunks <comprimento>`` / ``-ih <comprimento>``
 * ``--output <arquivo>`` / ``-o <arquivo>`` (obrigatório)
 * ``--force`` / ``-f``
+
 
 extractld
 ~~~~~~~~~
@@ -414,6 +421,7 @@ Extrai dados de um CHD para uma imagem de LaserDisc.
 * ``--inputstartframe <offset>`` / ``-isf <offset>``
 * ``--inputframes <comprimento>`` / ``-if <comprimento>``
 
+
 addmeta
 ~~~~~~~
 
@@ -431,6 +439,7 @@ Adiciona metadados ao arquivo CHD. |ecao|.
 * ``--valuefile <arquivo>`` / ``-vf <arquivo>``
 * ``--nochecksum`` / ``-nocs``
 
+
 delmeta
 ~~~~~~~
 
@@ -444,6 +453,7 @@ Excluí metadados do arquivo CHD. |ecao|.
 
 * ``--tag <tag>`` / ``-t <tag>`` (obrigatório)
 * ``--index <index>`` / ``-ix <index>``
+
 
 dumpmeta
 ~~~~~~~~
@@ -461,6 +471,7 @@ arquivo.
 
 * ``--tag <tag>`` / ``-t <tag>`` (obrigatório)
 * ``--index <index>`` / ``-ix <index>``
+
 
 listtemplates
 ~~~~~~~~~~~~~
