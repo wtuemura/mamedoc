@@ -2,6 +2,7 @@
 
 	\clearpage
 
+
 .. _advanced-tricks:
 
 Truques para tornar a vida mais fácil
@@ -12,6 +13,7 @@ Truques para tornar a vida mais fácil
 .. raw:: latex
 
 	\clearpage
+
 
 .. _advanced-tricks-botões-ordem:
 
@@ -40,6 +42,7 @@ encerrar a emulação e criar um arquivo ``galaxian.cfg`` no diretório
 .. raw:: latex
 
 	\clearpage
+
 
 .. _advanced-tricks-mais-de-um-botão:
 
@@ -101,6 +104,7 @@ usar a opção :ref:`-ctrlr <mame-commandline-ctrlrpath>`, exemplo
 ``mame kof2003 -ctrlr neogeo``, você pode também adicionar esta opção
 ao seu ``mame.ini`` porém note que esta configuração será aplicada em
 todos os sistemas!
+
 
 .. _advanced-tricks-botões-combinação:
 
@@ -272,6 +276,7 @@ preciso pressionar os botões relacionados ao inicio da partida de cada
 jogador e não apenas pressionar os botões do controle para iniciar a
 partida.
 
+
 .. _advanced-tricks-configuração-controle-por-maquina:
 
 Criando uma configuração de controle por sistema
@@ -307,6 +312,7 @@ nome da sistema, é possível renomear estes arquivos como por exemplo,
 ``2-botoes.cfg``, ``3-botoes.cfg``, ``4-botoes.cfg`` e compartilhar
 estas configurações conforme necessário.
 
+
 .. _advanced-tricks-dat-sistema:
 
 Gerando arquivos DAT para diferentes gerenciadores de ROMs
@@ -331,6 +337,7 @@ mesmo diretório do MAME e execute o comando::
 	datutil mame.xml
 
 Será criado o arquivo ``datutil.dat``.
+
 
 Criando arquivos DAT separados por sistema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -388,6 +395,7 @@ necessário.
 
 	\clearpage
 
+
 .. _advanced-tricks-criando-romset:
 
 Criando um ROMSET apenas com sistemas tipo Arcade
@@ -398,6 +406,7 @@ compilando o MAME com a opção ``SUBTARGET=arcade``, isso fará com que o
 MAME funcione e exiba apenas uma lista com sistemas classificados
 internamente como "*arcade*", simples assim. Para mais informações leia
 o capítulo :ref:`compiling-MAME`.
+
 
 .. _advanced-tricks-using-mame-interface:
 
@@ -436,6 +445,7 @@ facilita muito a nossa vida.
 .. raw:: latex
 
 	\clearpage
+
 
 .. _advanced-tricks-using-clrmamepro:
 
@@ -509,6 +519,7 @@ Ao final do processo você terá um *ROMSET* apenas com as ROMs dos
 sistemas arcades, o mesmo pode ser feito para qualquer outro sistema,
 Mega Drive/Genesis, SNES, o céu é o limite!
 
+
 .. _advanced-tricks-using-scripts:
 
 Usando Scripts
@@ -526,6 +537,7 @@ não algo exclusivo do Windows apenas.
 * Abra e extraia apenas o arquivo ``Working Arcade.ini``.
 * Apague tudo e deixe apenas o que estiver depois de ``[ROOT_FOLDER]``.
 * Salve este arquivo modificado como ``arcade.txt``.
+
 
 .. _advanced-tricks-command-windows:
 
@@ -559,6 +571,7 @@ lista que acabamos de criar::
 Assim como no comando acima, o arquivo ``caminho-roms.txt`` será lido e
 posteriormente irá alimentar o comando ``copy`` com o devido caminho e
 o destino ``H:\arcade-roms``.
+
 
 .. _advanced-tricks-others:
 
@@ -757,6 +770,7 @@ uma seção do PowerShell seja iniciada.
 
 	\clearpage
 
+
 .. _advanced-tricks-drummania:
 
 Resolvendo o problema "please call attendant" dos sistemas DrumMania
@@ -911,6 +925,7 @@ https://pastebin.com/EaJes6Eh
 
 	\clearpage
 
+
 .. _advanced-tricks-imagem-fundo:
 
 Usando uma imagem de fundo no MAME
@@ -986,6 +1001,7 @@ seleção das ROMs, etc.
 .. raw:: latex
 
 	\clearpage
+
 
 .. _advanced-tricks-performance:
 
@@ -1138,6 +1154,7 @@ Confira qual o driver que está sendo utilizado no momento::
 .. raw:: latex
 
 	\clearpage
+
 
 .. _advanced-tricks-performance-vulkan-fedora:
 
@@ -1336,6 +1353,7 @@ ela, a lista abaixo é um **resumo** com informações da placa apenas::
 	Ignore o aviso **WARNING: radv is not a conformant vulkan
 	implementation, testing use only.**
 
+
 .. _advanced-tricks-performance-vulkan-debian:
 
 Ativando o Vulkan no Debian 10/11
@@ -1443,6 +1461,7 @@ Se chegou até aqui não é preciso definir a variável **VK_ICD_FILENAMES**.
 .. raw:: latex
 
 	\clearpage
+
 
 .. _advanced-tricks-performance-erro:
 
@@ -1600,6 +1619,7 @@ terceira opção é necessária para o processo de recuperação.
 Para mais informações consulte
 `amdgpu <https://www.kernel.org/doc/html/v4.20/gpu/amdgpu.html>`_.
 
+
 .. _advanced-tricks-performance-ancora:
 
 Removendo a âncora
@@ -1690,6 +1710,7 @@ Rode um vídeo qualquer, pode ser do Youtube, em seguida execute o
 comando ``radeontop`` e veja se está havendo atividade enquanto o vídeo
 está sendo executado, tecle **c** para ativar o modo colorido. Se não
 houver qualquer atividade é porque há algum erro na sua configuração.
+
 
 .. _advanced-tricks-performance-mame:
 
@@ -1857,6 +1878,7 @@ os excluirá também.
 .. raw:: latex
 
 	\clearpage
+
 
 Removendo a suavização dos efeitos crt-geom/crt-geom-deluxe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2277,6 +2299,7 @@ Para as ROMs do CPS2::
 	1944u
 	...
 
+
 .. _advanced-tricks-game-list:
 
 Criando uma lista de jogos
@@ -2399,6 +2422,7 @@ problemas.
    Caso queira eliminar o efeito de "grelha" ("*shadow mask*") da tela,
    use a opção ``-noshadow_mask_alpha`` na linha de comando ou salve a
    opção ``shadow_mask_alpha 0`` em algum ``.ini`` específico.
+
 
 Convertendo alguns arquivos .CHD antigos para o novo formato createdvd
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
