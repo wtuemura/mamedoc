@@ -2688,6 +2688,8 @@ do processador. Caso tenha um processador moderno ou não tenha problema
 com limitação de recursos, remova a opção ``-np 4``.
 
 
+.. _advanced-tricks-chd-info:
+
 Gerando um arquivo de registro de um arquivo CHD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

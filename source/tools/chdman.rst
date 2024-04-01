@@ -146,6 +146,9 @@ Exibe informações de um arquivo no formato CHD. As informações incluem:
 * ``--input <arquivo>`` / ``-i <arquivo>`` (obrigatório)
 * ``--verbose`` / ``-v``
 
+Consulte também o capítulo :ref:`Gerando um arquivo de registro de um
+arquivo CHD <advanced-tricks-chd-info>`.
+
 
 verify
 ~~~~~~
@@ -282,6 +285,9 @@ serão oito setores por bloco (18.816 bytes).
 
 Na ausência das opções ``--compression`` ou ``-c`` a predefinição será
 ``cdlz,cdzl,cdfl``.
+
+Consulte também o capítulo :ref:`Convertendo um CD-ROM para CHD com o
+chdman <advanced-tricks-cd-chd>`.
 
 
 createdvd
