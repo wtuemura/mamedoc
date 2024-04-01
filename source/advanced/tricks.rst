@@ -2609,6 +2609,130 @@ Assim como na versão do Windows, ele fará todo o trabalho para você
 deixando apenas o arquivo convertido no lugar e excluindo o antigo.
 
 
+.. _advanced-tricks-cd-chd:
+
+Convertendo um CD-ROM para CHD com o chdman
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Uma das grandes vantagens do ``chdman`` é o seu poder de compressão de
+dados, com ele é possível reduzir o tamanho de uma imagem de uma mídia
+de CD-ROM em quase **50%** ou mais dependendo da mídia. O ``chdman``
+aceita uma grande variedade de formatos como ``.cue + .bin``,
+``.toc + bin``, ``.iso``, ``.nrg``,  ``.gdi``, ``.cdr``, ``.img`` e
+outros.
+
+Para realizar tal tarefa o comando básico é:: 
+
+	chdman createcd -i imagem_ou_cue -o arquivo.chd
+
+Visando facilitar a vida de quem precisar converter uma certa quantidade
+de imagens de uma vez, foi criado o script batch (Windows) abaixo, basta
+arrastar os arquivos ``.cue`` e ``.toc`` em cima do script para iniciar
+todo o processo, neste caso em específico, não é necessário arrastar
+junto o arquivo ``.bin``. Nos outros formatos de imagem sem ``.cue`` e
+``.toc`` como ``.iso`` por exemplo, basta arrastar estes arquivos direto
+em cima do script. Salve como **cd-to-chd.bat** e coloque-o na mesma
+pasta que o programa ``chdman.exe``.
+
+.. code-block:: bash
+
+	REM Criado por Wellington Terumi Uemura 31/03/2024
+	REM CC by 4.0
+	REM Arraste o arquivo .cue em cima deste batch script.
+	
+	@echo off
+	
+	setlocal
+	mode con cp select=850
+	
+	cls
+	
+	Title Converte imagem de CD para CHD
+	
+	if exist %~dp0\chdman.exe (
+	
+	set CHDMAN=%~dp0\chdman.exe
+	set CHDMAN_CONFIG=createcd -np 4
+	
+	) else (
+		echo Não encontrei o chdman!
+		echo Baixe de https://github.com/mamedev/mame/releases
+		echo.
+		pause
+		echo Encerrando...
+		goto :end
+	)
+	
+	if not exist convertido (
+	goto :dir
+	
+	) else (
+	goto :command
+	)
+	
+	:dir
+	mkdir chd
+	goto :command
+	
+	:command
+	for %%A in (%*) do %CHDMAN% %CHDMAN_CONFIG% -i %%A -o "chd\%%~nA.chd"
+	
+	:end
+	endlocal
+	exit /B
+
+Na variável ``CHDMAN_CONFIG`` definimos ``-np 4`` (quantidade de
+processadores), isso serve para limitar a quantidade de processadores
+já que a compressão de dados consome uma grande quantidade de recursos
+do processador. Caso tenha um processador moderno ou não tenha problema
+com limitação de recursos, remova a opção ``-np 4``.
+
+
+Gerando um arquivo de registro de um arquivo CHD
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O batch script abaixo gera um arquivo ``nome_do_arquivo_chd.log`` no
+mesmo diretório do arquivo ``.chd``. Salve como **chd-log.bat** e
+coloque-o na mesma pasta que o programa ``chdman.exe`` e arraste um
+arquivo ``.chd`` em cima dele.
+
+.. code-block:: bash
+
+	REM Criado por Wellington Terumi Uemura 31/03/2024
+	REM CC by 4.0
+	REM Arraste o arquivo .chd em cima deste batch script.
+	
+	@echo off
+	
+	setlocal
+	mode con cp select=850
+	
+	cls
+	
+	Title Gera arquivo de informação do CHD
+	
+	if exist %~dp0\chdman.exe (
+	
+	set CHDMAN=%~dp0\chdman.exe
+	set CHDMAN_CONFIG=info -v
+	
+	) else (
+		echo Não encontrei o chdman!
+		echo Baixe de https://github.com/mamedev/mame/releases
+		echo.
+		pause
+		echo Encerrando...
+		goto :end
+	)
+	
+	for %%A in (%*) do %CHDMAN% %CHDMAN_CONFIG% -i %%A > "%%~nA.log" 2>&1
+	
+	:end
+	endlocal
+	exit /B
+
+
+
 Extraindo uma lista de sistemas usando a interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2794,6 +2918,7 @@ Como este arquivo tem apenas os valores predefinidos do MAME, não se
 esqueça de reconfigurar o seu **rompath** para que o MAME possa
 localizar as suas ROMs, assim como outras configurações de vídeo e áudio
 para que o seu MAME possa funcionar corretamente.
+
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
