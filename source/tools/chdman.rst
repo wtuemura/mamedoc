@@ -196,7 +196,7 @@ formato RAW.
 	da mídia. O tamanho do bloco deve ser um múltiplo inteiro do tamanho
 	da unidade. A unidade deve ser definida caso nenhum CHD principal
 	tenha sido informado para gerar o arquivo final. Caso um CHD
-	principal seja fornecido para gerar um arquivo CHD, o tamanho da
+	principal seja informado para gerar um arquivo CHD, o tamanho da
 	unidade deverá corresponder ao tamanho da unidade do arquivo do CHD
 	principal.
 
@@ -204,7 +204,7 @@ Na ausência das opções ``--hunksize`` ou ``-hs``, as predefinições
 serão:
 
 * O tamanho do bloco do arquivo do CHD principal, caso um arquivo CHD
-  principal seja fornecido para gerar o arquivo final.
+  principal seja informado para gerar o arquivo final.
 * O menor múltiplo inteiro do tamanho da unidade, não maior que
   ``4 KiB``, caso o tamanho da unidade não seja maior que ``4 KiB``
   (4096 bytes).
@@ -250,13 +250,13 @@ Na ausência das opções ``--hunksize`` ou ``-hs``, as predefinições
 serão:
 
 * O tamanho do bloco do arquivo do CHD principal, caso um arquivo CHD
-  principal seja fornecido para gerar o arquivo final.
+  principal seja informado para gerar o arquivo final.
 * O menor múltiplo inteiro do tamanho do setor, não maior que ``4 KiB``,
   caso o tamanho do setor não seja maior que ``4 KiB`` (4096 bytes).
 * O tamanho do setor, caso seja maior que ``4 KiB`` (4096 bytes).
 
 Na ausência das opções ``--compression`` ou ``-c`` e se um arquivo de
-entrada for fornecido, a predefinição  será ``lzma,zlib,huff,flac`` ou
+entrada for informado, a predefinição  será ``lzma,zlib,huff,flac`` ou
 ``none`` na ausência de um arquivo de entrada.
 
 
@@ -276,8 +276,8 @@ createcd
 * ``--numprocessors <quantidade>`` / ``-np <quantidade>``
 
 Caso as opções ``--hunksize`` ou ``-hs`` não sejam usadas, a
-predefinição será será o tamanho do bloco do CHD principal se o CHD
-principal for fornecido para gerar o arquivo final, caso contrário,
+predefinição será o tamanho do bloco do CHD principal se o CHD
+principal for informado para gerar o arquivo final, caso contrário,
 serão oito setores por bloco (18.816 bytes).
 
 Na ausência das opções ``--compression`` ou ``-c`` a predefinição será
@@ -304,8 +304,8 @@ createdvd
 * ``--numprocessors <quantidade>`` / ``-np <quantidade>``
 
 Caso as opções ``--hunksize`` ou ``-hs`` não sejam usadas, a
-predefinição será será o tamanho do bloco do CHD principal se o CHD
-principal for fornecido para gerar o arquivo final, caso contrário,
+predefinição será o tamanho do bloco do CHD principal se o CHD
+principal for informado para gerar o arquivo final, caso contrário,
 serão dois setores por bloco (4096 bytes).
 
 Na ausência das opções ``--compression`` ou ``-c`` a predefinição será
