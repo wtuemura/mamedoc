@@ -45,7 +45,7 @@ código-fonte. Esse script só funciona no Windows.
 nltool
 ------
 
-Componente de conversão discreto. |amado|.
+Componente de conversão discreto.
 
 
 .. _mame-othertools-nlwav:
@@ -53,7 +53,7 @@ Componente de conversão discreto. |amado|.
 nlwav
 -----
 
-Componente discreto de conversão e ferramenta de teste. |amado|.
+Componente discreto de conversão e ferramenta de teste.
 
 
 .. _mame-othertools-jedutil:
@@ -65,7 +65,6 @@ Ferramenta útil para extração de **PAL**/**PLA**/**PLD**/**GAL**.
 Ele pode converter entre o formato JED padrão da indústria e o formato
 binário compactado proprietário do MAME, pode mostrar também equações
 lógicas para os tipos de dispositivos que conhecem tal lógica interna.
-|amado|.
 
 
 .. _mame-othertools-ldresample:
@@ -74,7 +73,7 @@ ldresample
 ----------
 
 Essa ferramenta comprime novamente os dados de vídeo para laserdisc e
-VHS. |amado|.
+VHS.
 
 
 .. _mame-othertools-ldverify:
@@ -83,7 +82,7 @@ ldverify
 --------
 
 Essa ferramente é usada para comparar imagens de laserdisc ou VHS CHD
-vinda de uma fonte AVI. |amado|.
+vinda de uma fonte AVI.
 
 
 .. _mame-othertools-romcmp:
@@ -94,7 +93,6 @@ romcmp
 Esta ferramenta é utilizada para realizar comparações de dados básicos e
 verificações de integridade em "*dumps*" binários. Com a opção -h, ela
 também pode ser utilizada para calcular as funções de "*hash*".
-|amado|.
 
 
 .. _mame-othertools-unidasm:
@@ -103,7 +101,6 @@ unidasm
 -------
 
 Disassembler universal para muitas das arquiteturas compatíveis com o
-MAME. |amado|.
+MAME.
 
 
-.. |amado| replace:: A maioria dos usuários não precisam lidar com ele.
