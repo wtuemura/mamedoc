@@ -10,7 +10,7 @@ especificamente para qualquer versão MAME que for compatível com o SDL
 (incluindo o Windows caso o MAME tenha sido compilado com o SDL ao invés
 da sua forma nativa). Inicie o MAME com o comando ``mame -v`` para ver
 quais são os drivers que estão disponíveis para o seu sistema, abaixo um
-exemplo para o Linux.
+exemplo no Linux.
 
 ::
 
@@ -251,18 +251,26 @@ Configurações para o mapeamento do teclado
 	O valor predefinido é ``keymap.dat``.
 
 
-Configurações para o mapeamento do controle joystick
-----------------------------------------------------
+Configurações de entrada SDL
+----------------------------
+
+.. _mame-scommandline-enabletouch:
+
+**-enable_touch**
+
+	Ativa o suporte para entrada por toque. Quando esta opção for
+	desativada, será usada a entrada do mouse simulada por dispositivos
+	de toque.
+	
+		O valor predefinido é ``Desligado`` (**-noenable_touch**)
+
 
 .. _mame-scommandline-sixaxis:
 
 **-sixaxis**
 
-	Usar um tratamento especial para lidar com os controles *SixAxis* do
+	Use um tratamento especial para lidar com os controles *SixAxis* do
 	PS3.
-
-	Use um manuseio especial para os controles *SixAxis* do PlayStation
-	3.
 	Pode causar um comportamento indesejado com outros controladores.
 	Apenas afeta quando usado com a opção
 	:ref:`-joystickprovider sdljoy <mame-commandline-joystickprovider>`.

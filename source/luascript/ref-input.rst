@@ -1240,25 +1240,6 @@ Métodos
 	entrada é tratada diretamente (ao configurar uma combinação de
 	entrada por exemplo).
 
-**uiinput:find_mouse()**
-
-	Retorna o ponteiro do mouse do sistema host, posição X, posição Y,
-	estado do botão e o :ref:`alvo do renderizador
-	<luascript-ref-rendertarget>` que se encaixa. A posição no host
-	está em pixels, onde zero está na parte superior/esquerda. O estado
-	do botão é um booleano que indica se o botão principal do mouse está
-	pressionado.
-
-	Se o ponteiro do mouse não estiver sobre uma das janelas do MAME,
-	isso pode retornar a posição e renderizar o alvo de quando o
-	ponteiro do mouse estava mais recentemente sobre uma das janelas do
-	MAME. O alvo da renderização pode ser ``nil`` se o ponteiro do
-	mouse não estiver sobre uma das janelas do MAME.
-
-.. raw:: latex
-
-	\clearpage
-
 
 **uiinput:pressed(tipo)**
 

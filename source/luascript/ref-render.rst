@@ -870,7 +870,7 @@ Propriedades
 
 **target.orientation** |lees|
 
-	Os sinalizadores de orientação do alvo. Esta é uma máscara bit
+	Os sinalizadores de orientação do alvo. Esta é uma máscara de bits
 	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
 	horizontalmente, o bit ``1`` (``0x02``) é definido para espelhar
 	verticalmente e o bit ``2`` (``0x04``) é definido para espelhar ao
@@ -904,8 +904,8 @@ Propriedades
 
 **target.visibility_mask** |sole|
 
-	Uma máscara bit inteira indicando quais as coleções dos itens estão
-	visíveis no momento da visualização atual.
+	Uma máscara de bits inteira indicando quais as coleções dos itens
+	estão visíveis no momento da visualização atual.
 
 
 **target.screen_overlay** |lees|
@@ -1061,8 +1061,8 @@ Propriedades
 
 **container.orientation** |lees|
 
-	Os sinalizadores de orientação do contêiner. Esta é uma máscara bit
-	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
+	Os sinalizadores de orientação do contêiner. Esta é uma máscara de
+	bits inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
 	horizontalmente, o bit ``1`` (``0x02``) é definido para espelhar
 	verticalmente e o bit ``2`` (``0x04``) é definido para espelhar ao
 	longo do canto superior esquerdo inferior e a diagonal direita.
@@ -1119,8 +1119,8 @@ Propriedades
 
 **settings.orientation** |lees|
 
-	Os sinalizadores de orientação do contêiner. Esta é uma máscara bit
-	inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
+	Os sinalizadores de orientação do contêiner. Esta é uma máscara de
+	bits inteira, onde o bit ``0`` (``0x01``) é definido para espelhar
 	horizontalmente, o bit ``1`` (``0x02``) é definido para espelhar
 	verticalmente e o bit ``2`` (``0x04``) é definido para espelhar ao
 	longo do canto superior esquerdo inferior e a diagonal direita.
@@ -1185,13 +1185,13 @@ Métodos
 
 **layout:set_resolve_tags_callback(cb)**
 
-	Define uma função para realizar tarefas adicionais depois que o
-	sistema emulado tenha finalizado a sua inicialização, quando as tags
-	nas visualizações do layout tenham sido resolvidas e os
-	manipuladores dos itens da visualização principal tenham sido
-	configurados. A função não deve aceitar nenhum argumento.
+	|dufp| realizar tarefas adicionais depois que o sistema emulado
+	tenha finalizado a sua inicialização, quando as tags nas
+	visualizações do layout tenham sido resolvidas e os manipuladores
+	dos itens da visualização principal tenham sido configurados.
+	A função não deve aceitar nenhum argumento.
 
-	Use com ``nil`` para remover o *callback*.
+	Use com ``nil`` para remover o |callback|.
 
 
 Propriedades
@@ -1261,35 +1261,120 @@ Métodos
 
 **view:set_prepare_items_callback(cb)**
 
-	Define uma função para realizar tarefas adicionais antes que os
-	itens da visualização sejam adicionados na renderização do alvo em
-	preparação para o desenho de um quadro de vídeo. A função não deve
-	aceitar quaisquer argumentos. Use com ``nil`` para remover o
-	*callback*.
+	|dufp| realizar tarefas adicionais antes que os itens da
+	visualização sejam adicionados na renderização do alvo em preparação
+	para o desenho de um quadro de vídeo. A função não deve aceitar
+	quaisquer argumentos. Use com ``nil`` para remover o |callback|.
 
 
 **view:set_preload_callback(cb)**
 
-	Define uma função para realizar tarefas adicionais após pré-carregar
-	a visualização dos itens visíveis. A função não deve aceitar
-	quaisquer argumentos. Use com ``nil`` para remover o *callback*.
-	Esta função pode ser invocada quando o usuário seleciona uma
-	visualização ou torna a visualização do item de uma coleção visível.
-	Ele pode ser invocado várias vezes para obter uma exibição,
-	portanto, evite repetir tarefas dispendiosas.
+	|dufp| realizar tarefas adicionais após pré-carregar a visualização
+	dos itens visíveis. A função não deve aceitar quaisquer argumentos.
+	Use com ``nil`` para remover o |callback|. Esta função pode ser
+	invocada quando o usuário seleciona uma visualização ou torna a
+	visualização do item de uma coleção visível. Ele pode ser invocado
+	várias vezes para obter uma exibição, portanto, evite repetir
+	tarefas dispendiosas.
 
 
 **view:set_recomputed_callback(cb)**
 
-	Defina uma função para realizar tarefas adicionais depois que as
+	|dufp| realizar tarefas adicionais depois que as
 	dimensões da visualizações tenham sido recomputadas.
 	A função não deve aceitar quaisquer argumentos. Use com ``nil``
-	para remover o *callback*.
+	para remover o |callback|.
 
 	As coordenadas da visualização são recalculadas em vários eventos,
 	incluindo a janela que estiver sendo redimensionada, entrando ou
 	saindo do modo de tela inteira e alterando a configuração de zoom
 	para região da tela.
+
+**view:set_pointer_updated_callback(cb)**
+
+	|dufp| receber notificações quando um ponteiro ingressar, se mover
+	ou alterar os estados do botão na exibição. A função deve aceitar
+	nove argumentos:
+
+	* O tipo do ponteiro (``mouse``, ``pen``, ``touch`` ou ``unknown``).
+	* A ID do ponteiro (um inteiro não negativo que não se alterará
+	  durante a vida do ponteiro).
+	* A ID do dispositivo para grupos de ponteiros para reconhecer
+	  multitoque. (inteiro não negativo).
+	* A posição horizontal nas coordenadas do layout.
+	* A posição vertical nas coordenadas do layout.
+	* Uma máscara de bits que representa os botões pressionados no
+	  momento.
+	* Uma máscara de bits que representa os botões que foram
+	  pressionados nesta atualização.
+	* Uma máscara de bits que representa os botões que foram liberados
+	  nesta atualização.
+	* A contagem de cliques (positivo para ações com clique simultâneo
+	  ou negativo se um clique for transformado numa retenção (clicar e
+	  manter) ou arraste (clicar e arrastar)).
+
+	Invoque com ``nil`` para remover o |callback|.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+**view:set_pointer_left_callback(cb)**
+
+	|dufp| receber notificações quando um ponteiro deixar de
+	ser visível normalmente. A função deve aceitar nove argumentos:
+
+	* O tipo do ponteiro (``mouse``, ``pen``, ``touch`` ou ``unknown``).
+	* A ID do ponteiro (um inteiro não negativo que não se alterará
+	  durante a vida do ponteiro). A ID pode ser reutilizada para um
+	  novo ponteiro após receber esta notificação.
+	* A ID do dispositivo para grupos de ponteiros para reconhecer
+	  multitoque. (inteiro não negativo).
+	* A posição horizontal nas coordenadas do layout.
+	* A posição vertical nas coordenadas do layout.
+	* Uma máscara de bits que representa os botões que foram liberados
+	  nesta atualização.
+	* A contagem de cliques (positivo para ações com clique simultâneo
+	  ou negativo se um clique for transformado numa retenção (clicar e
+	  manter) ou arraste (clicar e arrastar)).
+
+	Invoque com ``nil`` para remover o |callback|.
+
+
+**view:set_pointer_aborted_callback(cb)**
+
+	|dufp| receber notificações quando o ponteiro deixar de estar
+	visível de maneira anormal. A função deve aceitar nove argumentos:
+
+	* O tipo do ponteiro (``mouse``, ``pen``, ``touch`` ou ``unknown``).
+	* A ID do ponteiro (um inteiro não negativo que não se alterará
+	  durante a vida do ponteiro). A ID pode ser reutilizada para um
+	  novo ponteiro após receber esta notificação.
+	* A ID do dispositivo para grupos de ponteiros para reconhecer
+	  multitoque. (inteiro não negativo).
+	* A posição horizontal nas coordenadas do layout.
+	* A posição vertical nas coordenadas do layout.
+	* Uma máscara de bits que representa os botões que foram liberados
+	  nesta atualização.
+	* A contagem de cliques (positivo para ações com clique simultâneo
+	  ou negativo se um clique for transformado numa retenção (clicar e
+	  manter) ou arraste (clicar e arrastar)).
+
+	Invoque com ``nil`` para remover o |callback|.
+
+
+**view:set_forget_pointers_callback(cb)**
+
+	|dufp| receber notificações quando a visualização deve parar de
+	processar a entrada do ponteiro. Invoque com ``nil`` para remover o
+	|callback|.
+
+	Isso pode ocorrer em várias situações, por exemplo, quando ocorre a
+	alteração da configuração da visualização ou a questão de um menu
+	assumir o controle da entrada.
+
 
 Propriedades
 ~~~~~~~~~~~~
@@ -1390,12 +1475,12 @@ Métodos
 	Define uma função a ser invocada para obter o estado do elemento
 	para o item. A função não deve aceitar quaisquer argumentos e deve
 	retornar um número inteiro.
-	Use com ``nil`` para restaurar o estado original do *callback* do
+	Use com ``nil`` para restaurar o estado original do |callback| do
 	elemento (com base nos vínculos do arquivo layout).
 
 	Observe que a função não deve acessar a propriedade
 	``element_state`` do item, pois isso resultará numa repetição
-	infinita. Este *callback* não será usado para obter o estado de
+	infinita. Este |callback| não será usado para obter o estado de
 	animação para o item, mesmo se o item não tiver vínculos explícitos
 	do estado de animação no arquivo layout.
 
@@ -1405,7 +1490,7 @@ Métodos
 	Define uma função que será invocada para obter o estado de animação
 	do item. A função não deve aceitar quaisquer argumentos e deve
 	retornar um número inteiro. Use com ``nil`` para restaurar o
-	estado de animação original do *callback* (com base nos vínculos do
+	estado de animação original do |callback| (com base nos vínculos do
 	arquivo layout).
 
 	Observe que a função não deve acessar a propriedade
@@ -1419,7 +1504,7 @@ Métodos
 	A função não deve aceitar qualquer argumento e deve retornar um
 	:ref:`limites do renderizador <luascript-ref-renderbounds>` do
 	objeto nas coordenadas do alvo renderizado. Use com ``nil`` para
-	restaurar o estado do limite original do *callback* (com base no
+	restaurar o estado do limite original do |callback| (com base no
 	estado da animação do item e nos elementos ``bounds`` herdados a
 	partir do arquivo layout).
 
@@ -1433,7 +1518,7 @@ Métodos
 	multiplicador para o item. A função não deve aceitar qualquer
 	argumento e deve retornar um objeto
 	:ref:`renderização da cor <luascript-ref-rendercolor>`.
-	Use com ``nil`` para restaurar a cor original do *callback*
+	Use com ``nil`` para restaurar a cor original do |callback|
 	(com base no estado da animação do item e dos elementos ``color``
 	herdados a partir do arquivo layout).
 
@@ -1605,7 +1690,7 @@ Propriedades
 **item.orientation** |sole|
 
 	Obtém os sinalizadores da orientação do item.
-	Esta é uma máscara bit inteira onde o bit ``0`` (``0x01``) é
+	Esta é uma máscara de bits inteira onde o bit ``0`` (``0x01``) é
 	definido para espelhar horizontalmente, o bit ``1`` (``0x02``) é
 	definido para espelhar verticalmente e o bit ``2`` (``0x04``) é
 	definido para espelhar ao longo da diagonal superior esquerda e
@@ -1615,18 +1700,19 @@ Propriedades
 **item.element_state** |sole|
 
 	Obtenha o estado atual do elemento.
-	Isso invocará a função *callback* do estado do elemento para lidar
+	Isso invocará a função |callback| do estado do elemento para lidar
 	com os vínculos.
 
 
 **item.animation_state** |sole|
 
-	Obtém o estado atual da animação. Isso invocará a função *callback*
+	Obtém o estado atual da animação. Isso invocará a função |callback|
 	do estado de animação do elemento para lidar com os vínculos.
 
 .. |encaa| replace:: Encapsula a classe
 .. |sole| replace:: (somente leitura)
 .. |ubis| replace:: Retorna um booleano indicando se
+.. |dufp| replace:: Define uma função para
 .. |lees| replace:: (leitura e escrita)
 .. |acsre| replace:: As cores são representadas no formato
 .. |osvalo| replace:: Os valores dos canais estão no intervalo entre
@@ -1703,3 +1789,4 @@ Propriedades
 	bytes de um inteiro com 32 bits sem assinatura na ordem alfa,
 	vermelho, verde, azul do byte mais importante para o de menor
 	importância.
+.. |callback| replace:: retorno de chamada

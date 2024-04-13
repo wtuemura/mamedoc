@@ -1655,7 +1655,7 @@ Caso um item de visualização (elemento ``element`` ou ``screen``) tenham
 atributos ``inputtag`` e ``inputmask`` com valores que correspondam a
 uma região com interruptores digitais no sistema emulado, será possível
 clicar no elemento para que determinado interruptor seja ativado. O
-interruptor permanecerá ativo enquanto o botão do mouse estiver
+interruptor permanecerá ativo enquanto o botão o botão primário estiver
 pressionado e o ponteiro estiver dentro dos limites do item.
 (Observe que os limites podem mudar dependendo da condição do estado de
 animação do item, consulte :ref:`layfile-interact-itemanim`).
@@ -1664,6 +1664,14 @@ O atributo ``inputtag`` determina o caminho do identificador de uma
 porta E/S relativa ao dispositivo responsável pelo carregamento do
 arquivo layout. O atributo ``inputmask`` deve ser um valor inteiro
 definindo os bits da região da porta de E/S que o item deve ativar.
+
+O atributo ``clickthrough`` controla se os cliques podem passar através
+do item de visualização para outros itens de visualização desenhados
+acima dele.  O atributo ``clickthrough`` caso esteja presente,  deve ser
+``yes`` ou ``no``.  A predefinição é ``no`` (os cliques não atravessam)
+para os itens de visualização com atributos ``inputtag`` e ``inputmask``
+e ``yes`` (os cliques atravessam) para outros itens de visualização.
+
 Este exemplo demonstra a instanciação dos botões que podem ser
 clicados:
 
@@ -1679,10 +1687,8 @@ clicados:
         <bounds x="1.775" y="5.375" width="1.0" height="1.0" />
     </element>
 
-Ao lidar com o retorno das informações vindas do mouse o MAME trata
-todos os elementos do layout como sendo retangular e ativa apenas o
-primeiro item que possa ser pressionado cuja região inclua a posição do
-ponteiro do mouse.
+Ao lidar com o retorno das informações vindas da entrada o MAME trata
+todos os elementos do layout como sendo retangular.
 
 Para **bloquear** o elemento de ser clicado na tela crie uma camada
 vazia com as mesmas dimensões do item bloqueado antes do item que você

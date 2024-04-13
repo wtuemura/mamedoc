@@ -563,9 +563,8 @@ numa visualização individualmente.
 	Este é um bom momento para consultar as entradas e configurar os
 	manipuladores dos eventos do item de visualização.
 
-	O *callback*  não retorna nenhum valor e também não aceita
-	parâmetros. Use ``nil`` como um argumento para remover o manipulador
-	do evento.
+	O |callback|  não retorna nenhum valor e também não aceita
+	parâmetros. |handler|.
 
 .. raw:: latex
 
@@ -587,9 +586,8 @@ individual.
 	adicionados no destino em preparação para conceber o quadro de
 	vídeo.
 
-	O *callback*  não retorna nenhum valor e também não aceita
-	parâmetros. Use ``nil`` como um argumento para remover o manipulador
-	do evento.
+	O |callback|  não retorna nenhum valor e também não aceita
+	parâmetros. |handler|.
 
 **Carga prévia**
 
@@ -602,9 +600,8 @@ individual.
 	pode ser invocado várias vezes durante uma seção, evite a repetição
 	de tarefas onerosas ao sistema.
 
-	O *callback*  não retorna nenhum valor e não também aceita nenhum
-	parâmetro. Use ``nil`` como um argumento para remover o manipulador
-	do evento.
+	O |callback|  não retorna nenhum valor e não também aceita nenhum
+	parâmetro. |handler|.
 
 **O recálculo das dimensões**
 
@@ -618,9 +615,115 @@ individual.
 	visualizados, este é um bom momento para calcular os fatores de
 	escala e posição.
 
-	O *callback*  não retorna nenhum valor e não também aceita nenhum
-	parâmetro. Use ``nil`` como um argumento para remover o manipulador
-	do evento.
+	O |callback|  não retorna nenhum valor e não também aceita nenhum
+	parâmetro. |handler|.
+
+
+**Atualizações do ponteiro**
+
+    ``view:set_pointer_updated_callback(cb)``
+
+	É invocado quando o ponteiro ingressar, se mover ou altera o estado
+	do botão na exibição.
+
+	São passados nove argumentos para a função de |callback|:
+
+	* O tipo do ponteiro como uma *string*. Os valores válidos são
+	  ``mouse``, ``pen``, ``touch`` ou ``unknown`` que não se alterará
+	  durante a vida do ponteiro.
+	* A ID do ponteiro. Este será um inteiro não negativo que não se
+	  alterará durante a vida do ponteiro. Os valores da ID podem ser
+	  recicladas de maneira "*agressiva*".
+	* A ID do dispositivo. Para grupos de ponteiros para reconhecer
+	  gestos multitoque.
+	* A posição horizontal nas coordenadas do layout.
+	* A posição vertical nas coordenadas do layout.
+	* Uma máscara de bits que representa os botões que foram liberados
+	  nesta atualização.
+	* Uma máscara de bits que representa os botões pressionados no
+	  momento. O botão primário é o bit menos importante.
+	* Uma máscara de bits que representa os botões que foram
+	  pressionados nesta atualização. O botão primário é o bit menos
+	  importante.
+	* Uma máscara de bits que representa os botões que foram liberados
+	  nesta atualização. O botão primário é o bit menos importante.
+	* A contagem de cliques. É positivo para ações com clique simultâneo
+	  ou negativo se um clique for transformado numa retenção (clicar e
+	  manter) ou arraste (clicar e arrastar)).
+
+	O |callback| não retorna nenhum valor. |handler|.
+
+
+**O ponteiro esquerdo**
+
+    ``view:set_pointer_left_callback(cb)``
+
+	É invocado quando um ponteiro deixa a exibição normalmente. Após
+	receber este evento, a ID do ponteiro pode ser reutilizada com um
+	novo ponteiro.
+
+	São passados sete argumentos para a função de |callback|:
+
+	* O tipo do ponteiro como uma *string*. Os valores válidos são
+	  ``mouse``, ``pen``, ``touch`` ou ``unknown`` que não se alterará
+	  durante a vida do ponteiro.
+	* A ID do ponteiro. Este será um inteiro não negativo que não se
+	  alterará durante a vida do ponteiro. Os valores da ID podem ser
+	  recicladas de maneira "*agressiva*".
+	* A ID do dispositivo. Para grupos de ponteiros para reconhecer
+	  gestos multitoque.
+	* A posição horizontal nas coordenadas do layout.
+	* A posição vertical nas coordenadas do layout.
+	* Uma máscara de bits que representa os botões que foram liberados
+	  nesta atualização. O botão primário é o bit menos importante.
+	* A contagem de cliques. É positivo para ações com clique simultâneo
+	  ou negativo se um clique for transformado numa retenção (clicar e
+	  manter) ou arraste (clicar e arrastar)). Se aplica apenas ao botão
+	  primário.
+
+	O |callback| não retorna nenhum valor. |handler|.
+
+
+**Abortando o ponteiro**
+
+	``view:set_pointer_aborted_callback(cb)``
+
+	É invocado quando um ponteiro deixa a exibição de maneira anormal.
+	Após receber este evento, a ID do ponteiro pode ser reutilizada com
+	um novo ponteiro.
+
+	São passados sete argumentos para a função de |callback|:
+
+	* O tipo do ponteiro como uma *string*. Os valores válidos são
+	  ``mouse``, ``pen``, ``touch`` ou ``unknown`` que não se alterará
+	  durante a vida do ponteiro.
+	* A ID do ponteiro. Este será um inteiro não negativo que não se
+	  alterará durante a vida do ponteiro. Os valores da ID podem ser
+	  recicladas de maneira "*agressiva*".
+	* A ID do dispositivo. Para grupos de ponteiros para reconhecer
+	  gestos multitoque.
+	* A posição horizontal nas coordenadas do layout.
+	* A posição vertical nas coordenadas do layout.
+	* Uma máscara de bits que representa os botões que foram liberados
+	  nesta atualização. O botão primário é o bit menos importante.
+	* A contagem de cliques. É positivo para ações com clique simultâneo
+	  ou negativo se um clique for transformado numa retenção (clicar e
+	  manter) ou arraste (clicar e arrastar)). Se aplica apenas ao botão
+	  primário.
+
+	O |callback| não retorna nenhum valor. |handler|.
+
+**Esquecendo os ponteiros**
+
+	``view:set_forget_pointers_callback(cb)``
+
+	É invocado quando a visualização deve parar de processar a entrada
+	do ponteiro. Isso pode ocorrer em várias situações, incluindo:
+
+	* Quando o usuário ativar um menu.
+	* Quando a configuração da visualização for alterada.
+	* Quando a visualização for desativada.
+
 
 .. raw:: latex
 
@@ -640,14 +743,14 @@ e o comportamento da cor.
 
     ``item:set_element_state_callback(cb)``
 
-	Define um *callback* para obter o estado dos itens. Este controla
+	Define um |callback| para obter o estado dos itens. Este controla
 	como o elemento do item é desenhado, para componentes que mudam a
 	aparência dependendo do seu estado para desenhar os componentes de
 	forma condicional e o limite, cor da animação dos componentes. Não
-	tente acessar o ``element_state`` dos itens a partir do *callback*
+	tente acessar o ``element_state`` dos itens a partir do |callback|
 	pois pois isso resultará numa repetição infinita.
 
-	O *callback*  não retorna nenhum valor e também não aceita
+	O |callback|  não retorna nenhum valor e também não aceita
 	parâmetros. Use ``nil`` como um argumento para restaurar o estado do
 	manipulador do evento (com base nos atributos XML dos itens).
 
@@ -655,12 +758,12 @@ e o comportamento da cor.
 
     ``item:set_animation_state_callback(cb)``
 
-	Define um *callback* para obter o estado de animação do item. É
+	Define um |callback| para obter o estado de animação do item. É
 	utilizado para as animações dos limites e das cores da animação. Não
-	tente acessar o ``animation_state`` do item a partir do *callback*
+	tente acessar o ``animation_state`` do item a partir do |callback|
 	pois ocorrerá uma recorrência infinita.
 
-	O *callback*  deve retornar um número inteiro e também não aceita
+	O |callback|  deve retornar um número inteiro e também não aceita
 	nenhum parâmetro. Use ``nil`` como um argumento para restaurar o
 	estado original do manipulador do evento de animação (com base nos
 	atributos XML dos itens e do sub-elemento ``animate``).
@@ -669,11 +772,11 @@ e o comportamento da cor.
 
     ``item:set_bounds_callback(cb)``
 
-	Define um *callback* para obter os limites do item (a sua posição e
+	Define um |callback| para obter os limites do item (a sua posição e
 	o seu tamanho). Não tente acessar o ``bounds`` do item a partir do
-	*callback* pois ocorrerá uma recorrência infinita.
+	|callback| pois ocorrerá uma recorrência infinita.
 
-	O *callback*  deve retornar os limites da renderização do objeto
+	O |callback|  deve retornar os limites da renderização do objeto
 	representando os limites do item em coordenadas do seu destino
 	(geralmente criado ao invocar o ``emu.render_bounds``) e também não
 	aceita nenhum parâmetro. Use ``nil`` como um argumento para
@@ -684,10 +787,10 @@ e o comportamento da cor.
 
     ``item:set_color_callback(cb)``
 
-	Define um *callback* para obter a cor de um item (a textura da cor
+	Define um |callback| para obter a cor de um item (a textura da cor
 	do elemento multiplicado por esta cor)
 
-	O *callback*  deve retornar a renderização da cor do objeto
+	O |callback|  deve retornar a renderização da cor do objeto
 	representando a cor ARGB (geralmente criado ao invocar o
 	``emu.render_color``) e também não aceita parâmetros. Use ``nil``
 	como um argumento para restaurar a cor original do manipulador do
@@ -703,13 +806,13 @@ e o comportamento da cor.
 
     ``item:set_scroll_size_x_callback(cb)``
 
-	Define um *callback* para obter o tamanho da rolagem horizontal do
+	Define um |callback| para obter o tamanho da rolagem horizontal do
 	item da janela. Isto permite que o script controle o quanto do
 	elemento será exibido pelo item. Não tente acessar a propriedade
-	``scroll_size_x`` do item a partir do *callback*, pois isso
+	``scroll_size_x`` do item a partir do |callback|, pois isso
 	resultará numa repetição infinita.
 
-	O *callback*  deve retornar um número de ponto flutuante
+	O |callback|  deve retornar um número de ponto flutuante
 	representando o tamanho horizontal da janela como uma proporção da
 	largura dos elementos associados e não aceita quaisquer parâmetros.
 	Um valor ``1.0`` exibirá a largura total do elemento; valores
@@ -721,13 +824,13 @@ e o comportamento da cor.
 
     ``item:set_scroll_size_y_callback(cb)``
 
-	Define um *callback* para obter o tamanho da rolagem vertical do
+	Define um |callback| para obter o tamanho da rolagem vertical do
 	item da janela. Isto permite que o script controle o quanto do
 	elemento será exibido pelo item. Não tente acessar a propriedade
-	``scroll_size_y`` do item a partir do *callback*, pois isso
+	``scroll_size_y`` do item a partir do |callback|, pois isso
 	resultará numa repetição infinita.
 
-	O *callback*  deve retornar um número de ponto flutuante
+	O |callback|  deve retornar um número de ponto flutuante
 	representando o tamanho vertical da janela como uma proporção da
 	altura dos elementos associados e não aceita quaisquer parâmetros.
 	Um valor ``1.0`` exibirá a altura total do elemento; valores
@@ -739,13 +842,13 @@ e o comportamento da cor.
 
     ``item:set_scroll_pos_x_callback(cb)``
 
-	Define um *callback* para obter a posição da rolagem horizontal do
+	Define um |callback| para obter a posição da rolagem horizontal do
 	item. Isto permite que o script controle qual parte do elemento seja
 	exibido pelo item. Não tente acessar a propriedade ``scroll_pos_x``
-	do item a partir do *callback*, pois isso resultará numa repetição
+	do item a partir do |callback|, pois isso resultará numa repetição
 	infinita.
 
-	O *callback*  deve retornar um número de ponto flutuante e não
+	O |callback|  deve retornar um número de ponto flutuante e não
 	aceita parâmetros. Um valor ``0.0`` alinha a borda esquerda do
 	elemento com a borda esquerda do item; valores maiores deslocam para
 	à direita. Use ``nil`` como um argumento para restaurar o
@@ -756,13 +859,13 @@ e o comportamento da cor.
 
     ``item:set_scroll_pos_y_callback(cb)``
 
-	Define um *callback* para obter a posição da rolagem vertical do
+	Define um |callback| para obter a posição da rolagem vertical do
 	item. Isto permite que o script controle qual parte do elemento seja
 	exibido pelo item. Não tente acessar a propriedade ``scroll_pos_y``
-	do item a partir do *callback*, pois isso resultará numa repetição
+	do item a partir do |callback|, pois isso resultará numa repetição
 	infinita.
 
-	O *callback*  deve retornar um número de ponto flutuante e não
+	O |callback|  deve retornar um número de ponto flutuante e não
 	aceita parâmetros. Um valor ``0.0`` alinha a borda superior do
 	elemento com a borda superior do item; valores maiores deslocam para
 	baixo. Use ``nil`` como um argumento para restaurar o manipulador da
@@ -787,13 +890,15 @@ visual individual.
 
     ``element:set_draw_callback(cb)``
 
-    Defina um retorno da chamada para um desenho adicional após os
-    componentes do elemento serem desenhados. Isso oferece controle
-    direto ao script sobre a textura final ao desenhar o elemento.
+    Defina um |callback| para um desenho adicional após os componentes
+    do elemento serem desenhados. Isso oferece controle direto ao script
+    sobre a textura final ao desenhar o elemento.
 
-    O retorno da chamada recebe dois argumentos, o estado do elemento
-    (um número inteiro) e um bitmap ARGB com 32 bits no tamanho
-    desejado. O retorno da chamada não deve tentar redimensionar o
-    bitmap.
+    O |callback| recebe dois argumentos, o estado do elemento (um número
+    inteiro) e um bitmap ARGB com 32 bits no tamanho desejado. O
+    |callback| não deve tentar redimensionar o bitmap. |handler|.
 
 
+.. |handler| replace:: Use ``nil`` como um argumento para remover o
+   manipulador do evento
+.. |callback| replace:: retorno de chamada

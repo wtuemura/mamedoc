@@ -176,6 +176,29 @@ combinações dos botões para o :guilabel:`Mostra/esconde o menu` /
 seja possível usar o MAME sem usar um teclado.
 
 
+.. _ui-menus-touch:
+
+Usando uma tela sensível ao toque
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O MAME tem um suporte básico para navegar pelos menus usando uma tela
+sensível ao toque:
+
+* Toque nos itens do menu para destacá-los.
+* Toque duplo nos itens do menu para selecioná-los.
+* Deslize para a esquerda ou para a direita (horizontalmente) no item
+  destacado do menu para ajustar a configuração, quando for aplicável.
+* Deslize para cima ou para baixo (verticalmente) para rolar os menus ou
+  caixas de texto com muitos itens que não cabem na tela.
+* Para menus ou caixas de texto com muitos itens ou linhas que não cabem
+  na tela, pressione o triângulo que aponta para cima ou para baixo na
+  parte superior ou inferior para rolar para cima ou para baixo.
+
+Note que na versão SDL do MAME, a opção de :ref:`tela sensível ao
+toque <mame-scommandline-enabletouch>` deve ser ativada para esta função
+funcione.
+
+
 .. _ui-inptcfg:
 
 Configurando as entradas
@@ -200,6 +223,10 @@ principal a opção :guilabel:`Entrada (este sistema)` durante a emulação.
 As entradas estão agrupadas por dispositivo e ordenadas por tipo. É
 possível mover entre os dispositivos com o próximo grupo e as
 teclas/botões do grupo anterior usando as teclas :kbd:`[` e :kbd:`]`.
+
+.. raw:: latex
+
+	\clearpage
 
 Os menus de atribuição da entrada mostram o nome da entrada emulada ou
 o controle da interface do usuário à esquerda, a entrada (ou combinação
@@ -601,6 +628,9 @@ Quando o destaque estiver nas abas :guilabel:`imagens` /
 :guilabel:`Informações`, é possível rolar o texto com as informações a
 informação :kbd:`cima`, :kbd:`baixo`, :kbd:`PgUp`, :kbd:`PgDn`,
 :kbd:`Home` e :kbd:`End`.
+
+É possível mover o foco para uma área clicando nela com o botão do meio
+do mouse.
 
 
 .. raw:: latex
