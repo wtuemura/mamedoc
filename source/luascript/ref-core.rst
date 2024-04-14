@@ -1029,12 +1029,6 @@ Propriedades
 	\clearpage
 
 
-**driver.clickable_artwork** |sole|
-
-	|ubqi| se o sistema requer recursos de ilustrações clicáveis para
-	ser utilizado.
-
-
 **driver.unofficial** |sole|
 
 	|ubqi| se esta é uma alteração oficial, porém uma alteração comum do

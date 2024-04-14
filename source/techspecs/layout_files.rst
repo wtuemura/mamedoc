@@ -1046,6 +1046,13 @@ elementos e aos grupos que apareçam posteriormente naquele arquivo assim
 como os valores finais dos parâmetros que estejam anexados ao escopo do
 ``mamelayout``.
 
+Um elemento ``view`` pode ter um atributo ``showpointers`` para definir
+se os ponteiros do mouse e da caneta devem ser exibidos na visualização.
+Quando o atributo estiver presente, o valor deverá ser ``yes`` ou
+``no``, quando não estiver, os ponteiros do mouse e da caneta serão
+mostrados para as exibições que contêm itens vinculados as portas de
+E/S.
+
 As seguintes ramificações dos elementos são permitidos dentro de um
 elemento ``view``:
 

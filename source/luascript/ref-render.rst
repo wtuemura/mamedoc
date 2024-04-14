@@ -826,6 +826,14 @@ Instanciação
 Propriedades
 ~~~~~~~~~~~~
 
+**target.ui_container** |sole|
+
+	O :ref:`contêiner do renderizador <luascript-ref-rendercontainer>`
+	para desenhar elementos da interface do usuário sobre este alvo de
+	renderização ou ``nil`` para alvos ocultos de renderização
+	(alvos que não são mostrados diretamente ao usuário).
+
+
 **target.index** |sole|
 
 	O índice do destino de renderização com base ``1``. Isso tem
@@ -933,14 +941,20 @@ Instanciação
 
 **manager.machine.render.ui_container**
 
-	Obtém a renderização do contêiner usado para desenhar a interface do
+	Obtém o contêiner de renderização usado para desenhar a interface do
 	usuário, incluindo menus, controles deslizantes e as mensagens de
 	pop-up.
 
 
+**manager.machine.render.targets[índice].ui_container**
+
+	Obtém o contêiner de renderização usado para desenhar elementos da
+	interface do usuário num determinado alvo de renderização.
+
+
 **manager.machine.screens[tag].container**
 
-	Obtém a renderização do contêiner usado para desenhar uma
+	Obtém o contêiner de renderização usado para desenhar uma
 	determinada tela.
 
 
@@ -1430,11 +1444,23 @@ Propriedades
 	arbitrárias, porém assumidas como tendo uma proporção quadrada.
 
 
-**view.has_art**
+**view.has_art** |sole|
 
 	Um booleano que indica se a visualização possui itens que não são da
 	tela, incluindo itens que não são visíveis porque o usuário ocultou
 	a coleção dos itens aos quais elas pertencem.
+
+
+**view.show_pointers** |lees|
+
+	Um booleano que define se os ponteiros do mouse e do ponto devem ser
+	exibidos na visualização.
+
+
+**view.hide_inactive_pointers** |lees|
+
+	Um booleano que define se os ponteiros do mouse devem ser ocultados
+	na exibição após um período de inatividade.
 
 
 .. _luascript-ref-renderlayitem:
