@@ -1453,8 +1453,8 @@ Propriedades
 
 **view.show_pointers** |lees|
 
-	Um booleano que define se os ponteiros do mouse e do ponto devem ser
-	exibidos na visualização.
+	Um booleano que define se os ponteiros do mouse e da caneta devem
+	ser exibidos na visualização.
 
 
 **view.hide_inactive_pointers** |lees|
