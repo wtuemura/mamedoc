@@ -1228,7 +1228,7 @@ individual do layout e dois grupos de elementos:
 
 .. code-block:: xml
 
-    <view name="LED Displays, Terminal and Keypad">
+    <view name="LED Displays, Terminal and Keypad" showpointers="no">
         <screen index="0"><bounds x="0" y="132" width="320" height="240" /></screen>
         <element ref="beige"><bounds x="320" y="0" width="172" height="372" /></element>
         <group ref="displays"><bounds x="0" y="0" width="320" height="132" /></group>
@@ -1275,7 +1275,7 @@ usuário:
 
 .. code-block:: xml
 
-	<view name="Telas LED, CRT e Teclado Numérico">
+	<view name="Telas LED, CRT e Teclado Numérico" showpointers="no">
 		<collection name="Telas LED">
 			<group ref="displays"><bounds x="240" y="0" width="320" height="47" /></group>
 		</collection>
@@ -1375,7 +1375,7 @@ exemplo:
         <element ref="bottomright"><bounds x="25" y="15" width="10" height="10" /></element>
     </group>
 
-    <view name="Teste">
+    <view name="Teste" showpointers="no">
         <!--
            Os grupos limitadores são traduzidos e escalonados para preencher 2/3 da escala
            horizontal e o dobro verticalmente.
@@ -1399,7 +1399,7 @@ posição dos elementos de um grupo estejam fora dos seus limites:
         <element ref="bottomright"><bounds x="30" y="20" width="10" height="10" /></element>
     </group>
 
-    <view name="Test">
+    <view name="Test" showpointers="no">
         <!--
            Os grupos limitadores são traduzidos e escalonados para preencher 2/3 da escala
            horizontal unido verticalmente.
@@ -2182,7 +2182,7 @@ aparecer na interface do MAME para ser selecionada na opção **Vídeo**
 
 .. code-block:: xml
 
-	<view name="Galaxian Italiano">
+	<view name="Galaxian Italiano" showpointers="no">
 
 Precisamos informar ao MAME o tamanho exato da imagem, para ver estas
 informações clique com o mouse direito do mouse em cima dela e
@@ -2792,7 +2792,7 @@ Este é o nosso arquivo completo:
 	<element name="pisca" defstate="0">
 		<image file="pisca1.png" state="1" />
 	</element>
-	<view name="Galaxian Italiano">
+	<view name="Galaxian Italiano" showpointers="no">
 	<element ref="Italiano">
 		<bounds x="0" y="0" width="3296" height="4093" />
 	</element>
@@ -3549,15 +3549,15 @@ seus respectivos nomes:
 
 .. code-block:: xml
 
-	<view name="Nome da visualização 1">
+	<view name="Nome da visualização 1" showpointers="no">
 		...
 		...
 	</view>
-	<view name="Nome da visualização 2">
+	<view name="Nome da visualização 2" showpointers="no">
 		...
 		...
 	</view>
-	<view name="Nome da visualização 3">
+	<view name="Nome da visualização 3" showpointers="no">
 		...
 		...
 	</view>
@@ -4142,7 +4142,7 @@ seu respectivo tamanho.
 .. code-block:: xml
 
 	<!-- Definimos o nome que vai aparecer na seleção -->
-	<view name="Controle">
+	<view name="Controle" showpointers="no">
 
 	<!-- Não precisamos da posição, só do tamanho da tela -->
 	<screen index="0">
@@ -4397,7 +4397,7 @@ visual e depois a parte lógica.
 
 .. code-block:: xml
 
-	<view name="Controle">
+	<view name="Controle" showpointers="no">
 	<screen index="0">
 		<bounds x="0" y="0" width="300" height="225" />
 	</screen>
@@ -4606,7 +4606,7 @@ o layout.
 
 .. code-block:: xml
 
-	<view name="Controles">
+	<view name="Controles" showpointers="no">
 	<screen index="0">
 		<bounds x="0" y="0" width="300" height="225" />
 	</screen>
@@ -4753,7 +4753,7 @@ e depois montamos.
 	</element>
 	</group>
 	
-	<view name="Controle">
+	<view name="Controle" showpointers="no">
 	<screen index="0">
 		<bounds x="0" y="0" width="300" height="225" />
 	</screen>
@@ -5016,7 +5016,7 @@ usamos para concluir o nosso layout:
 .. code-block:: xml
 
 	<!-- Nome -->
-	<view name="Controle">
+	<view name="Controle" showpointers="no">
 		<!-- Delimitamos a nossa área de exibição -->
 		<bounds x="0" y="0" width="336" height="305.904" />
 	<screen index="0">
