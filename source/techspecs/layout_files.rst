@@ -1672,13 +1672,6 @@ porta E/S relativa ao dispositivo responsável pelo carregamento do
 arquivo layout. O atributo ``inputmask`` deve ser um valor inteiro
 definindo os bits da região da porta de E/S que o item deve ativar.
 
-O atributo ``clickthrough`` controla se os cliques podem passar através
-do item de visualização para outros itens de visualização desenhados
-acima dele.  O atributo ``clickthrough`` caso esteja presente,  deve ser
-``yes`` ou ``no``.  A predefinição é ``no`` (os cliques não atravessam)
-para os itens de visualização com atributos ``inputtag`` e ``inputmask``
-e ``yes`` (os cliques atravessam) para outros itens de visualização.
-
 Este exemplo demonstra a instanciação dos botões que podem ser
 clicados:
 
@@ -1694,8 +1687,8 @@ clicados:
         <bounds x="1.775" y="5.375" width="1.0" height="1.0" />
     </element>
 
-Ao lidar com o retorno das informações vindas da entrada o MAME trata
-todos os elementos do layout como sendo retangular.
+Ao lidar com o retorno das informações vindas da entrada, o MAME trata
+todos os elementos do layout como sendo um retângulo.
 
 Para **bloquear** o elemento de ser clicado na tela crie uma camada
 vazia com as mesmas dimensões do item bloqueado antes do item que você
@@ -1703,15 +1696,56 @@ deseja bloquear. Primeiro crie-o no inicio do layout:
 
 .. code-block:: xml
 
-	<element name="nada" defstate="0">
+	<element name="cobertura" defstate="0">
 		<text string=" " />
 	</element>
 
-Em seguida use-o **antes** do elemento que será protegido:
+Em seguida use-o **antes** do elemento que será protegido. A organização
+precisa ser feita desta maneira pois é nesta ordem que o MAME renderiza
+os elementos do layout na tela, primeiro vem o elemento "cobertura"
+seguido por outros elemento **abaixo dele**. O atributo ``bounds``
+definirá a sua posição na tela (``x`` e ``y``), ``width`` a largura da
+"cobertura" (em pixels) e ``height`` a altura:
 
 .. code-block:: xml
 
-	<element ref="nada" blend="add" inputtag="IN0" inputmask="0x0" inputraw="yes">
+	<element ref="cobertura" blend="add" inputtag="IN0" inputmask="0x0" inputraw="yes">
+		<bounds x="1783" y="3919" width="270" height="270" />
+	</element>
+	<element ref="controle" inputtag="IN0" inputmask="0xf" inputraw="yes">
+		<bounds x="1783" y="3919" width="270" height="270" />
+	</element>
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Na versão **0.265** do MAME em diante, o atributo ``clickthrough``
+controla se os cliques podem passar através do item de visualização para
+outros itens desenhados acima dele.  Caso esteja presente, o valor do
+atributo ``clickthrough`` deve ser ``yes`` ou ``no``. A predefinição é
+``no`` (os cliques não atravessam) nos itens de visualização com
+atributos ``inputtag`` e ``inputmask``. Já a predefinição se torna
+``yes`` (os cliques atravessam) para os outros itens de visualização.
+
+Da mesma maneira que o exemplo anterior, agora podemos utilizar o
+atributo ``clickthrough`` para bloquear os cliques.
+Primeiro definimos um retângulo transparente:
+
+.. code-block:: xml
+
+	<element name="cobertura" defstate="0">
+		<rect><color alpha="0" /></rect>
+	</element>
+
+Agora nós invocamos a nossa "cobertura" de proteção na região onde
+queremos que ela seja aplicada:
+
+.. code-block:: xml
+
+	<element ref="cobertura" clickthrough="no">
 		<bounds x="1783" y="3919" width="270" height="270" />
 	</element>
 	<element ref="controle" inputtag="IN0" inputmask="0xf" inputraw="yes">
