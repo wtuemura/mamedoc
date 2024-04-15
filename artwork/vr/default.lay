@@ -4,10 +4,15 @@
 	 https://mrdo.mameworld.info/mame_artwork_ingame.php
 	 Graphics, artwork and lay file created by: Wellington Terumi Uemura
 	 https://mamedoc.readthedocs.io/
-
 	 Creation date: September 10 2021
+
 	 Update: January 23 2022
-	 Add VR and leader lights, start button.
+		 Add VR and leader lights, start button.
+
+	Update April 14 2024
+		 MAME 0.265 add support for touch screen.
+		 Add showpointers="no" to hide the orange pointer.
+		 Use clickthrough="no" to block clickable input.
 
 	 License: CC by 4.0
 -->
@@ -73,9 +78,13 @@
 	<element name="tlight">
 		<image file="lcover.png" />
 	</element>
+
+<!-- Safe zone for our joystick -->
+<!-- Do not use clickthrough="no" here, it does nothing. -->
 	<element name="cover" defstate="0">
-		<text string=" " />
+		<rect><color alpha="0" /></rect>
 	</element>
+<!-- Safe zone for our joystick -->
 
 <!--
 
@@ -214,7 +223,7 @@
 	</element>
 	</group>
 
-	<view name="Steering Wheel">
+	<view name="Steering Wheel" showpointers="no">
 		<screen index="0">
 			<bounds x="0" y="0" width="496" height="384"/>
 		</screen>
@@ -223,19 +232,19 @@
 	<element ref="swb">
 		<bounds x="31.86" y="223.36" width="46.92" height="21.78" />
 	</element>
-	<element ref="cover" blend="add" inputtag="IN.1" inputmask="0x00" inputraw="yes">
+	<element ref="cover" clickthrough="no">
 		<bounds x="68.31" y="219.99" width="17.286" height="40.00" />
 	</element>
 	<element ref="ugear up" inputtag="IN.1" inputmask="0x20">
 		<bounds x="68.31" y="219.99" width="17.286" height="40.00" />
 	</element>
-	<element ref="cover" blend="add" inputtag="IN.1" inputmask="0x00" inputraw="yes">
+	<element ref="cover" clickthrough="no">
 		<bounds x="23.24" y="220.24" width="17.286" height="40.00" />
 	</element>
 	<element ref="ugear down" inputtag="IN.1" inputmask="0x10">
 		<bounds x="23.24" y="220.24" width="17.286" height="40.00" />
 	</element>
-	<element ref="cover" blend="add" inputtag="WHEEL" inputmask="0x00" inputraw="yes">
+	<element ref="cover" clickthrough="no">
 		<bounds x="14.77" y="194.169" width="79.020" height="141.111" />
 	</element>
 
@@ -260,13 +269,13 @@
 	<element ref="wheel" inputtag="WHEEL" inputmask="0xf8" inputraw="yes">
 			<bounds x="14.77" y="200.73" width="79.01" height="79.01" />
 	</element>
-	<element ref="cover" blend="add" inputtag="ACCEL" inputmask="0x00" inputraw="yes">
+	<element ref="cover" clickthrough="no">
 		<bounds x="57.62" y="283.37" width="23.00" height="50.00" />
 	</element>
 	<element ref="accel" inputtag="ACCEL" inputmask="0xc0">
 		<bounds x="57.62" y="283.37" width="23.00" height="50.00" />
 	</element>
-	<element ref="cover" blend="add" inputtag="BRAKE" inputmask="0x00" inputraw="yes">
+	<element ref="cover" clickthrough="no">
 		<bounds x="27.93" y="283.37" width="23.00" height="50.00" />
 	</element>
 	<element ref="brake" inputtag="BRAKE" inputmask="0xc0">
