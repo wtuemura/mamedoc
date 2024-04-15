@@ -1051,7 +1051,21 @@ se os ponteiros do mouse e da caneta devem ser exibidos na visualização.
 Quando o atributo estiver presente, o valor deverá ser ``yes`` ou
 ``no``, quando não estiver, os ponteiros do mouse e da caneta serão
 mostrados para as exibições que contêm itens vinculados as portas de
-E/S.
+E/S, exemplo:
+
+.. code-block:: xml
+
+    <view name="Painel de controle" showpointers="no">
+
+.. note::
+
+   A partir da versão **0.265** do MAME é preciso definir o
+   ``showpointers`` como **no** em seu arquivo de layout, caso
+   contrário, o ponteiro laranja do mouse irá aparecer nas suas
+   ilustrações gráficas (artwork) ainda que ele não seja necessário para
+   aquela ilustração. A predefinição é exibir o ponteiro, caso esta seja
+   a sua intenção, não é preciso alterar nada.
+
 
 As seguintes ramificações dos elementos são permitidos dentro de um
 elemento ``view``:
@@ -1071,14 +1085,14 @@ elemento ``view``:
 	proporcional para que se ajuste aos limites da tela ou da
 	janela.
 
+.. raw:: latex
+
+	\clearpage
+
 **param**
 
 	Define ou reatribui um valor no parâmetro do escopo da visualização.
 	Consulte :ref:`layfile-concepts-params` para obter mais informações.
-
-.. raw:: latex
-
-	\clearpage
 
 **element**
 
