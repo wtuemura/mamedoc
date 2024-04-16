@@ -2079,12 +2079,12 @@ Para esta tarefa precisamos dos seguintes itens:
   `Notepad++ <https://notepad-plus-plus.org/downloads/>`_ no Windows ou
   o `Geany <https://www.geany.org/>`_ para \*nix e macOS.
 * `Gimp <https://www.gimp.org/>`_.
-* A `versão básica <http://www.mediafire.com/file/knpn3uzmrjrxets/basic_galaxian.zip>`_
+* A `versão básica <https://www.mediafire.com/file/hb44k9rugnaws7x/basic_galaxian.zip>`_
   do layout do sistema Galaxian usada neste documento.
-* A versão básica do layout do sistema Galaxian usando o `método inputraw <http://www.mediafire.com/file/47bm4e5eb3hsm61/inputraw_galaxian.zip>`_.
-* A `versão avançada <http://www.mediafire.com/file/bj9m9j2spqhdanh/advanced_galaxian.zip>`_
+* A versão básica do layout do sistema Galaxian usando o `método inputraw <https://www.mediafire.com/file/1ok3t5550443cfl/inputraw_galaxian.zip>`_.
+* A `versão avançada <https://www.mediafire.com/file/vxvajtbpid15vqa/advanced_galaxian.zip>`_
   do layout com diferentes versões do sistema Galaxian.
-* O `layout modelo <https://www.mediafire.com/file/qq344sz0lz1kyu9/layout_modelo_mame.zip>`_ criado para identificar as posições do controle para 2
+* O `layout modelo <https://www.mediafire.com/file/6zryehcopfohqpo/layout_modelo_mame.zip>`_ criado para identificar as posições do controle para 2
   e 4 jogadores.
 * A arte utilizada aqui foi criada por `Etienne MacGyver
   <http://vectorlib.free.fr/Galaxian_Namco/>`_.
@@ -2378,8 +2378,8 @@ aproveitar o recorte do design.
 Na Galaxian não dá para perceber este recorte da tela pois tanto a arte
 quanto a tela são pretas, porém com outros sistemas é possível por
 exemplo, colocar uma moldura em volta da tela com efeitos de sombra,
-como mostra `este exemplo <https://www.mediafire.com/file/gwt9yvwkgj14ws
-f/mslug2.zip>`_:
+como mostra `este exemplo <https://www.mediafire.com/file/zn7hbmm323v589
+o/mslug2.zip/file>`_:
 
 .. image:: images/moldura-tela.png
    :width: 100%
@@ -2734,7 +2734,8 @@ largura por ``250`` **pixels** de altura.
 
 .. code-block:: xml
 
-	<bounds xc="~x~" yc="~y~" width="250" height="250" />
+	...
+		<bounds xc="~x~" yc="~y~" width="250" height="250" />
 	</element>
 
 O atributo abaixo encerra as definições para ``repeat``
@@ -2990,6 +2991,27 @@ mouse:
 		<bounds x="1010" y="3260" width="250" height="250" />
 	</element>
 
+A partir da versão **0.265** do MAME prefira fazer desta maneira,
+exemplo:
+
+.. code-block:: xml
+
+	<element name="cobertura" defstate="0">
+		<rect><color alpha="0" /></rect>
+	</element>
+	...
+	...
+	<element ref="cobertura" clickthrough="no">
+		<bounds x="1010" y="3260" width="250" height="250" />
+	</element>
+	<element ref="controle" inputtag="IN0" inputmask="0xc" inputraw="yes">
+		<bounds x="1010" y="3260" width="250" height="250" />
+	</element>
+
+Ambos funcionam mas o atributo ``clickthrough`` deixam as coisas mais
+fáceis. Para obter mais detalhes consulte
+:ref:`layfile-interact-clickable`.
+
 Ao executar o sistema novamente o controle não mais responde aos cliques
 do mouse.
 
@@ -2999,7 +3021,7 @@ necessário encontrar os valores para ``defstate``, ``inputmask`` e para
 O ``defstate`` e o ``inputmask`` utilizam o mesmo valor, este valor
 **precisa ser calculado**, para isso acessamos o
 `código-fonte do driver Galaxian <https://github.com/mamedev/mame/blob/m
-aster/src/mame/drivers/galaxian.cpp#L2836>`_, bem na linha ``2634`` de
+aster/src/mame/galaxian/galaxian.cpp#L3011>`_, bem na linha ``L3011`` de
 cara já temos o nosso ``inputtag`` com o valor ``IN0`` que utilizamos
 acima, observe quem nem sempre o valor do ``inputtag`` está disponível
 assim tão fácil, o driver **Playstaion** (psx) por exemplo utiliza
@@ -3409,13 +3431,13 @@ nós fazemos assim:
 	</element>
 	
 	</element>
-	<element ref="nada" blend="add" inputtag="edge:joy:JOY1" inputmask="0x00" inputraw="yes">
+	<element ref="cobertura" clickthrough="no">
 		<bounds x="158" y="794" width="150" height="150" />
 	</element>
 	<element ref="controle" inputtag="edge:joy:JOY1" inputmask="0xf" inputraw="yes">
 		<bounds x="158" y="794" width="150" height="150" />
 	</element>
-	<element ref="nada" blend="add" inputtag="edge:joy:JOY2" inputmask="0x00" inputraw="yes">
+	<element ref="cobertura" clickthrough="no">
 		<bounds x="665" y="794" width="150" height="150" />
 	</element>
 	<element ref="controle" inputtag="edge:joy:JOY2" inputmask="0xf" inputraw="yes">
@@ -3430,12 +3452,13 @@ Ambos os controles utilizam os mesmos valores para ``state`` e
 Contudo, há sistemas na **CPS2** que apresentam o mesmo valor ``IN0``
 no ``inputtag`` para ambos os jogadores, nestes casos devemos recorrer
 novamente ao código-fonte do MAME para este driver, observando a linha
-`#1001 <https://github.com/mamedev/mame/blob/master/src/mame/drivers/cps2.cpp#L1001>`_
-nós temos os 4 valores para a porta do 2º jogador ``PORT_PLAYER(2)``,
-temos o valor ``100`` para a direita, ``200`` para a esquerda, ``400``
-para baixo e ``800`` para cima. Assim foi feito anteriormente, some
-todos os valores hexadecimais com uma calculadora compatível para obter
-o valor ``f00`` ou seja ``100`` + ``200`` + ``400`` + ``800`` = ``f00``.
+`#1501 <https://github.com/mamedev/mame/blob/master/src/mame/capcom/cps2
+.cpp#L1501>`_ nós temos os 4 valores para a porta do 2º jogador
+``PORT_PLAYER(2)``, temos o valor ``100`` para a direita, ``200`` para a
+esquerda, ``400`` para baixo e ``800`` para cima. Assim foi feito
+anteriormente, some todos os valores hexadecimais com uma calculadora
+compatível para obter o valor ``f00`` ou seja ``100`` + ``200`` +
+``400`` + ``800`` = ``f00``.
 
 
 .. raw:: latex
@@ -3460,13 +3483,13 @@ para todas as outros sistemas existentes no driver **CPS2** do MAME:
 		<image file="centro.png"	state="0xf" />
 	</element>
 	
-	<element ref="nada" blend="add" inputtag="IN0" inputmask="0x00" inputraw="1">
+	<element ref="cobertura" clickthrough="no">
 		<bounds x="158" y="794" width="150" height="150" />
 	</element>
 	<element ref="controle_J1" inputtag="IN0" inputmask="0xf" inputraw="1">
 		<bounds x="158" y="794" width="150" height="150" />
 	</element>
-	<element ref="nada" blend="add" inputtag="IN0" inputmask="0x00" inputraw="1">
+	<element ref="cobertura" clickthrough="no">
 		<bounds x="665" y="794" width="150" height="150" />
 	</element>
 	<element ref="controle_J2" inputtag="IN0" inputmask="0xf00" inputraw="1">
@@ -3587,7 +3610,7 @@ desta maneira pelo autor da arte. Use ``visible`` ``yes`` ou ``no``
 (também funciona com ``1`` ou ``0``) dentro do elemento ``collection``
 caso queira que ele já inicie **ligado** ou **desligado**. Baixe este
 arquivo para ver como funciona na prática com o sistema
-`mspacman <https://www.mediafire.com/file/ltjl0mnczuvc532/mspacman.zip>`_.
+`mspacman <https://www.mediafire.com/file/rvte4f9f4n3ou49/mspacman.zip>`_.
 
 .. code-block:: xml
 
@@ -3965,7 +3988,7 @@ cabeçalho e colocando todas as informações que achamos relevantes:
 		License: CC by 4.0
 		https://mamedoc.readthedocs.io/
 		Date: October 02, 2021
-		Download: https://www.mediafire.com/file/o8j2cdqonfxyz58/sfa3-v1.zip
+		Download: https://www.mediafire.com/file/lk1veez63081xy2/sfa3-v1.zip
 	-->
 
 
@@ -4424,7 +4447,8 @@ Ao rodar o sistema novamente verá que toda a parte funcional e das
 opções continuam os mesmos, porém, o nosso arquivo layout está mais
 organizado.
 
-`Baixe este arquivo completo aqui <https://www.mediafire.com/file/aqxsi79b4j38wh8/sfa3-v2.zip>`_.
+`Baixe este arquivo completo aqui <https://www.mediafire.com/file/290x3z
+dercilsv7/sfa3-v2.zip>`_.
 
 .. _layfile-using_png_files:
 
@@ -4476,7 +4500,7 @@ Com todas as imagens em mãos podemos começar a montar o nosso layout:
 		License: CC by 4.0
 		https://mamedoc.readthedocs.io/
 		Date: October 02, 2021
-		Download: https://www.mediafire.com/file/90ethuuvvd61mp1/sfa3-v3.zip
+		Download: https://www.mediafire.com/file/3dd1dtn114ochi2/sfa3-v3.zip
 	-->
 
 
@@ -4659,7 +4683,7 @@ e depois montamos.
 		License: CC by 4.0
 		https://mamedoc.readthedocs.io/
 		Date: October 02, 2021
-		Download: https://www.mediafire.com/file/11t2a32xnowi2nl/sfa3-v4.zip
+		Download: https://www.mediafire.com/file/8w6fk6ogo0z17q2/sfa3-v4.zip
 	-->
 	
 	<element name="painel">
@@ -4829,7 +4853,7 @@ Iniciamos o layout com o básico:
 		License: CC by 4.0
 		https://mamedoc.readthedocs.io/
 		Date: October 25, 2021
-		Download: https://www.mediafire.com/file/gq1mgezijhcvx2p/janjans1.zip
+		Download: https://www.mediafire.com/file/4m6di0smdiqj8wf/janjans1.zip
 	-->
 	<!-- Aqui carregamos o nosso controle -->
 	<element name="base">
@@ -4850,8 +4874,8 @@ Iniciamos o layout com o básico:
 
 Agora precisamos ver no driver como os botões estão definidos para poder
 conectá-los na imagem do nosso controle, na data de criação deste texto,
-essa informação começa na
-`linha 1028 <https://github.com/mamedev/mame/blob/master/src/mame/seta/ssv.cpp#L1028>`_:
+essa informação começa na `linha 1028 <https://github.com/mamedev/mame/b
+lob/master/src/mame/seta/ssv.cpp#L1028>`_:
 
 .. code-block:: xml
 
