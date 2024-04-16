@@ -1040,7 +1040,7 @@ elemento ``view``:
 
 O elemento "view" cria uma seção visível do ``mamelayout``. Os elementos
 ``view`` apenas são processados **depois** que todas as outras
-ramificações dos outros elementos do``mamelayout`` forem corretamente
+ramificações dos outros elementos do ``mamelayout`` forem corretamente
 carregadas. Isso significa que uma visualização pode fazer referência a
 elementos e aos grupos que apareçam posteriormente naquele arquivo assim
 como os valores finais dos parâmetros que estejam anexados ao escopo do
@@ -1766,7 +1766,18 @@ queremos que ela seja aplicada:
 		<bounds x="1783" y="3919" width="270" height="270" />
 	</element>
 
+No exemplo acima estamos criando uma "cobertura" de proteção para o
+"controle", repare que a nossa cobertura utiliza exatamente os mesmos
+parâmetros de posição e tamanho do elemento "controle" justamente para
+cobrir toda a área que ele estiver ocupando. Não é obrigatório que a
+nossa "cobertura" tenha exatamente o mesmo tamanho da região que
+desejamos proteger. Dependendo da ilustração e do sistema onde esta
+ilustração será utilizada, talvez seja interessante ir um pouco além dos
+limites do "controle" e cobrir uma área um pouco maior evitando falsos
+cliques, caso seja necessário.
+
 Consulte também :ref:`layfile-advanced-settings`.
+
 
 .. raw:: latex
 
@@ -2036,7 +2047,7 @@ Caso nenhum ``varname`` seja informado, o **complay.py** irá
 gerar um com base no nome do arquivo da entrada. Isso não garante a
 geração de identificadores válidos.
 
-O status gera os seguintes valores:
+O script retorna as seguintes condições:
 
 * ``0`` (zero) quando for concluído com êxito.
 * ``1`` quando houver um erro durante a invocação através da linha de comando.
@@ -2309,6 +2320,16 @@ para atender qualquer outra necessidade que você venha a ter.
 	
 	Se fosse o caso do exemplo acima, o valor ideal seria
 	``1662`` x ``1899``.
+
+.. warning::
+
+	Em alguns sistemas que usam diferentes resoluções (como o Neo Geo
+	por exemplo) o design da sua ilustração pode ficar fora das
+	proporções ideais, assim, em vez de utilizar os valores **DAR**,
+	experimente usar os valores **SAR**. Nestes casos muito específicos,
+	pode ser que o mecanismo de ajuste de proporção de tela do MAME faça
+	com que haja bordas pretas em quaisquer um dos lados
+	da tela ou partes da tela podem ficar ocultas pela sua ilustração.
 
 Com o valor calculado em mãos, a resolução final será
 ``1660`` x ``2213``. Assim temos todos os valores para posicionarmos a
