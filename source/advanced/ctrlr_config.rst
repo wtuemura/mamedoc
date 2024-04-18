@@ -89,9 +89,11 @@ formato desta configuração (atualmente ``10`` - O MAME não carregará um
 arquivo usando qualquer outra versão). O elemento ``mameconfig`` contém
 um ou mais elementos do sistema, cada qual com um nome do atributo
 especificando os sistemas aos quais eles se aplicam. Cada elemento
-``system`` contém um elemento ``input`` que contém o ``remap`` atual e os
-elementos de configuração da porta ``port`` que serão descritos mais
-adiante.
+``system`` pode conter um elemento ``input`` que mantém o ``remap``
+atual e os elementos de configuração da porta ``port`` que serão
+descritos mais adiante. Cada elemento ``system`` também pode conter um
+elemento ``pointer_input`` para definir as opções de entrada do ponteiro
+para sistemas com ilustração interativa.
 
 Ao iniciar a emulação de um sistema o MAME aplicará a configuração dos
 elementos ``system`` onde o valor do atributo ``name`` atende a um dos
@@ -327,3 +329,52 @@ evitar confusão, é mais simples colocar o elemento ``system`` para que
 se aplique a todos os sistemas (o atributo ``name`` definido como
 ``default``) logo na primeira linha do arquivo e fazer seu uso para
 atribuir os valores numéricos na entrada dos dispositivos.
+
+
+.. _ctrlrcfg-pointers:
+
+Definição das opções de entrada do ponteiro
+-------------------------------------------
+
+Um elemento ``pointer_input`` pode conter elementos ``target`` para
+definir as opções de entrada do ponteiro para cada tela ou janela final.
+Cada elemento ``target`` deve ter um atributo ``index`` que contém o
+índice da tela com base em zero à qual se aplica.
+
+Cada elemento ``target`` pode ter um atributo ``activity_timeout`` para
+definir o tempo de inatividade do ponteiro do mouse quando este deixar
+de se movimentar ou não tiver os botões pressionados. O valor é
+especificado em segundos e deve estar no intervalo entre
+**0,1** a **10** segundos.
+
+Cada elemento ``target`` pode ter um elemento ``hide_inactive`` para
+definir se os ponteiros considerados inativos poderão ser ocultados. Se
+o valor for ``0`` (zero), os ponteiros inativos não serão ocultados e se
+for ``1``, os ponteiros inativos poderão ser ocultados, mas as
+visualizações de layout ainda poderão especificar que os ponteiros
+inativos não devem ser ocultados.
+
+.. raw:: latex
+
+	\clearpage
+
+Veja a seguir um exemplo que demonstra a utilização deste recurso:
+
+.. code-block:: XML
+
+    <system name="default">
+        <pointer_input>
+            <target index="0" activity_timeout="1.5" />
+        </pointer_input>
+    </system>
+    <system name="intellec4.cpp">
+        <pointer_input>
+            <target index="0" hide_inactive="0" />
+        </pointer_input>
+    </system>
+
+Em todos os sistemas, os ponteiros sobre a primeira tela ou janela final
+serão considerados inativos após não se moverem por **1.5** segundos ou
+se nenhum botão for pressionado. Para os sistemas definidos em
+``intellec4.cpp``, os ponteiros inativos sobre a primeira janela não
+serão ocultados.
