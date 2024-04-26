@@ -6,8 +6,8 @@ Opções Universais de linha de comando
 .. contents:: :local:
 
 
-Comandos e opções
------------------
+Comandos opções e parâmetros
+----------------------------
 
 Os comandos incluem o próprio executável do **mame**, bem como
 :ref:`as várias ferramentas <mame-aditional-tools>` que estão incluídas
@@ -39,7 +39,7 @@ instruções, a correspondência dessas combinações podem equiparar um
 sistema (ou vários deles) assim como dispositivos. É aconselhável
 colocar aspas em torno dos parâmetros para evitar que o seu ambiente
 tente interpretá-los de forma independente em relação aos nomes dos
-arquivos que desejamos usar (``mame -validate "pac\*"`` por exemplo).
+arquivos que desejamos usar (``mame -validate "pac*"`` por exemplo).
 
 
 .. _mame-commandline-paths:
@@ -963,24 +963,24 @@ Opções relacionadas ao que é exibido na tela (OSD)
     * - **Microsoft Windows**
       - win
       - dwrite
-      - none
       - auto
       - 
-      - sdl [#UIFPSDLWindows]_.
+      - sdl [#UIFPSDLWindows]_
+      - none
     * - **macOS**
       - 
       - 
-      - none
       - auto
       - osx
       - sdl
+      - none
     * - **Linux**
       - 
       - 
-      - none
       - auto
       - 
       - sdl
+      - none
 
 ..  [#UIFPSDLWindows] O binário oficial do MAME para Windows não é
                      compilado com SDL, sendo necessário compilar uma
@@ -1009,35 +1009,32 @@ Opções relacionadas ao que é exibido na tela (OSD)
     :widths: auto
 
     * - **Microsoft Windows**
-      - auto [#KBPVAutoWindows]_.
+      - auto [#KBPVAutoWindows]_
       - rawinput
       - dinput
       - win32
+      - sdl [#KBPVSDLWindows]_
       - none
-      - sdl [#KBPVSDLWindows]_.
     * - **SDL (macOS e Linux)**
-      - auto [#KBPVAutoSDL]_.
+      - auto [#KBPVAutoSDL]_
       - 
       - 
       - 
-      - none
       - sdl
-    * - **Linux**
-      - auto [#KBPVAutoSDL]_.
-      - 
-      - 
-      - 
       - none
-      - sdl
 
-..  [#KBPVAutoWindows] No Windows, o automático tentará ``rawinput``
-                       retornando para ``dinput``.
+..  rubric:: Observações
 
-..  [#KBPVSDLWindows] O binário oficial do MAME para Windows não é
-                      compilado com SDL, sendo necessário compilar uma
-                      versão compatível para que a opção ``sdl``.
+..  [#KBPVAutoWindows] No Windows, ``auto`` tentará ``rawinput``,
+                       caso contrário, usa o ``dinput``.
 
-..  [#KBPVAutoSDL] Nas versões SDL a opção ``auto`` retorna para ``sdl``.
+..  [#KBPVSDLWindows] Para ter suporte SDL no Windows é preciso
+                     compilar o MAME com ``OSD=sdl``. O binário oficial
+                     do MAME para Windows não é compilado com SDL. Para
+                     obter mais informações consulte o capítulo
+                     :ref:`compiling-MAME`.
+
+..  [#KBPVAutoSDL] Nas versões SDL a opção ``auto`` será ``sdl``.
 
 .. Note:: Observe que as ferramentas de emulação de teclado do modo de
           usuário, como o ``joy2key``, quase certamente exigirão o uso
@@ -1076,26 +1073,37 @@ Opções relacionadas ao que é exibido na tela (OSD)
     :widths: auto
 
     * - **Microsoft Windows**
-      - auto
+      - auto [#MIPAutoWindows]_
       - rawinput
       - dinput
       - win32
+      - sdl [#MIPSDLWindows]_
       - none
+    * - **SDL (macOS and Linux)**
+      - auto [#MIPAutoSDL]_
+      -
+      -
+      -
       - sdl
-    * - **SDL (macOS e Linux)**
-      - auto
-      - 
-      - 
-      - 
       - none
-      - sdl
-    * - **Linux**
-      - auto
-      - 
-      - 
-      - 
-      - none
-      - sdl
+
+..  rubric:: Observações
+
+..  [#MIPAutoWindows] No Windows, ``auto`` tentará o ``rawinput``, caso
+                      contrário, usa o ``dinput``.
+
+..  [#MIPSDLWindows] Para ter suporte SDL no Windows é preciso
+                     compilar o MAME com ``OSD=sdl``. O binário oficial
+                     do MAME para Windows não é compilado com SDL. Para
+                     obter mais informações consulte o capítulo
+                     :ref:`compiling-MAME`.
+
+..  [#MIPAutoSDL] Nas versões SDL a opção ``auto`` será ``sdl``.
+
+Example:
+    .. code-block:: bash
+
+        mame indy_4610 -mouseprovider win32
 
 
 .. _mame-commandline-lightgunprovider:
@@ -1119,34 +1127,40 @@ Opções relacionadas ao que é exibido na tela (OSD)
     :widths: auto
 
     * - **Microsoft Windows**
-      - auto [#LGIPAutoWindows]_.
+      - auto [#LGIPAutoWindows]_
       - rawinput
       - win32
+      - sdl [#LGIPSDLWindows]_
+      -
       - none
-      - 
     * - **macOS**
-      - auto [#LGIPAutoSDL]_.
-      - 
-      - 
+      - auto [#LGIPAutoSDL]_
+      -
+      -
+      - sdl
+      -
       - none
-      - 
     * - **Linux**
-      - auto [#LGIPAutoLinux]_.
-      - 
-      - 
-      - none
+      - auto [#LGIPAutoSDL]_
+      -
+      -
+      - sdl
       - x11
+      - none
 
-..  [#LGIPAutoWindows] No Windows, o automático tentará ``rawinput``
-                       retornando para ``win32`` ou ``none`` caso não
-                       encontre nenhum.
+..  rubric:: Observações
 
-..  [#LGIPAutoSDL] Nas versões SDL (não Linux), a opção ``auto`` será
-                   predefinido para ``none``.
+..  [#LGIPAutoWindows] No Windows, o ``auto`` tentará o ``rawinput``,
+                       caso contrário, tentará ``win32`` ou ``none``
+                       caso não encontre nenhum.
 
-..  [#LGIPAutoLinux] Nas versões SDL/Linux, a opção ``auto`` será
-                     predefinido para ``x11``, or ``none`` caso não
-                     encontre nenhum.
+..  [#LGIPSDLWindows] Para ter suporte SDL no Windows é preciso
+                      compilar o MAME com ``OSD=sdl``. O binário oficial
+                      do MAME para Windows não é compilado com SDL. Para
+                      obter mais informações consulte o capítulo
+                      :ref:`compiling-MAME`.
+
+..  [#LGIPAutoSDL] Nas versões SDL a opção ``auto`` será ``sdl``.
 
 
 .. _mame-commandline-joystickprovider:
@@ -1171,26 +1185,33 @@ Opções relacionadas ao que é exibido na tela (OSD)
     :widths: auto
 
     * - **Microsoft Windows**
-      - auto [#JIPAutoWindows]_.
+      - auto [#JIPAutoWindows]_
       - winhybrid
       - dinput
       - xinput
-      - sdlgame
-      - sdljoy
+      - sdlgame [#JIPSDLWindows]_
+      - sdljoy [#JIPSDLWindows]_
       - none
     * - **SDL**
-      - auto [#JIPAutoSDL]_.
-      - 
-      - 
-      - 
+      - auto [#JIPAutoSDL]_
+      -
+      -
+      -
       - sdlgame
       - sdljoy
       - none
+
+..  rubric:: Observações
 
 .. [#JIPAutoWindows] No Windows, a predefinição é ``winhybrid``.
 
-.. [#JIPAutoSDL] Nas versões SDL, a predefinição é ``sdlgame``.
+.. [#JIPSDLWindows] Para ter suporte SDL no Windows é preciso
+                    compilar o MAME com ``OSD=sdl``. O binário oficial
+                    do MAME para Windows não é compilado com SDL. Para
+                    obter mais informações consulte o capítulo
+                    :ref:`compiling-MAME`.
 
+..  [#JIPAutoSDL] Nas versões SDL a opção ``auto`` será ``sdlgame``.
 
 .. raw:: latex
 
@@ -1487,7 +1508,7 @@ Opções para a configuração
 
 	As configurações nos INIs posteriores substituem aquelas dos INIs
 	anteriores.
-	Então, por exemplo, caso queira desabilitar os efeitos de
+	Então, por exemplo, caso queira desativar os efeitos de
 	sobreposição nos sistemas vetoriais, é possível criar um arquivo
 	``vector.ini`` com a linha **effect none** nele, ele irá
 	sobrescrever qualquer valor de efeito existente no seu ``mame.ini``.
@@ -1949,7 +1970,7 @@ Opções para a gravação e a reprodução do estado da emulação
 	É a quantidade total de memória que será usada para rebobinar
 	os *savestates*. Quando a capacidade alcança o limite, os antigos
 	*savestates* são apagados enquanto novos são capturados. Definindo
-	uma capacidade menor do que o *savestate* atual, desabilita o
+	uma capacidade menor do que o *savestate* atual, desativa o
 	rebobinamento. Os valores negativos são automaticamente fixados em
 	``0``.
 
@@ -2420,7 +2441,7 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 
 	Ativa ou não a função de controle de velocidade do emulador [4]_.
 	Ao ativar esta opção, o MAME tenta manter o sistema rodando em
-	sua velocidade nativa, com a opção desabilitada a emulação é
+	sua velocidade nativa, com a opção desativada a emulação é
 	executada na velocidade mais rápida possível. Dependendo das
 	características do sistema emulado, o desempenho final pode
 	limitada pelo seu processador, placa de vídeo ou até mesmo pelo
@@ -3174,7 +3195,7 @@ Opções para a configuração de vídeo
 	suavização à tela, amenizando um pouco o serrilhado nos contornos
 	gráficos e suavizando a tela do sistema.
 
-	Quando desabilitado terá uma imagem pura e com aparência mais
+	Quando desativado terá uma imagem pura e com aparência mais
 	serrilhada, esta opção também ocasiona artefatos na tela em caso de
 	redimensionamento. Caso não goste da aparência amaciada da imagem,
 	tente incrementar o valor da opção ``-prescale`` em vez de desativar
@@ -3960,7 +3981,7 @@ Opções para a configuração do áudio
 	emulado. Abaixo as opções disponíveis para cada sistema operacional.
 
 	As versões especiais como o **SDLMAME** para Windows, pode usar a
-	opção ``sdl`` e ter o **portaudio** desabilitado. O binário oficial
+	opção ``sdl`` e ter o **portaudio** desativado. O binário oficial
 	do MAME para Windows não é compilado com SDL, sendo necessário
 	compilar uma versão compatível para que a opção ``sdl`` funcione.
 
@@ -4772,7 +4793,7 @@ Opções para as configurações de diferentes entradas
 **-coin_impulse** *[n]*
 
 	Define o tempo de impulso da moeda com base em *n* (``n<0``
-	desabilita, ``n==0`` obedeça o driver, ``0<n`` defina o tempo em
+	desativa, ``n==0`` obedeça o driver, ``0<n`` defina o tempo em
 	*n*).
 
 		O valor predefinido é ``0`` (``-coin_impulse 0``).
@@ -5550,7 +5571,7 @@ Opções para uso com script
 
 **-noplugin** <*apelido do plugin*>
 
-	Permite desabilitar uma lista de plug-ins Lua separados por vírgula. ::
+	Permite desativar uma lista de plug-ins Lua separados por vírgula. ::
 
 		mame alcon -noplugin cheat
 

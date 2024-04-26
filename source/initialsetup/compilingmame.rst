@@ -5,8 +5,8 @@
 
 .. _compiling-MAME:
 
-Compilando
-==========
+Compilando o MAME
+=================
 
 .. contents:: :local:
 

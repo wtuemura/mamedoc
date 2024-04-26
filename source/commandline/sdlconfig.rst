@@ -262,7 +262,7 @@ Configurações de entrada SDL
 	desativada, será usada a entrada do mouse simulada por dispositivos
 	de toque.
 	
-		O valor predefinido é ``Desligado`` (**-noenable_touch**)
+		O valor predefinido é ``Desligado`` (**-noenable_touch**).
 
 
 .. _mame-scommandline-sixaxis:
@@ -275,7 +275,28 @@ Configurações de entrada SDL
 	Apenas afeta quando usado com a opção
 	:ref:`-joystickprovider sdljoy <mame-commandline-joystickprovider>`.
 	
-		O valor predefinido é ``Desligado`` (**-nosixaxis**)
+		O valor predefinido é ``Desligado`` (**-nosixaxis**).
+
+
+.. _mame-scommandline-duallightgun:
+
+**-[no]dual_lightgun** / **-[no]dual**
+
+	Controla se o MAME tenta ou não rastrear duas arma de luz para que
+	apareçam como um único mouse. Para isso a opção :ref:`-lightgun
+	<mame-commandline-nolightgun>` precisa estar ativada e a opção
+	:ref:`-lightgunprovider <mame-commandline-lightgunprovider>` deve
+	ser definida como ``sdl``.
+
+	Esta opção oferece suporte a configurações de duas armas que
+	funcionam definindo o local do ponteiro do mouse no momento que um
+	acionador da arma for ativado. Os acionadores primário e secundário
+	da primeira arma correspondem ao primeiro e segundo botões do mouse,
+	ja os acionadores primário e secundário do segundo revólver
+	correspondem ao terceiro e quarto botões do mouse.
+
+		O valor predefinido é ``Desligado`` (**-nodual_lightgun**).
+
 
 
 Mapeamento da pistola de luz SDL

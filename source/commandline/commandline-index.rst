@@ -482,10 +482,12 @@ Configurações para o mapeamento de teclado (SDL)
 | :ref:`keymap_file <mame-scommandline-keymapfile>`
 
 
-Configurações para o mapeamento de controle joystick (SDL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configurações para o mapeamento da entrada (SDL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| :ref:`sixaxis <mame-scommandline-sixaxis>`
+| :ref:`[no]enable_touch <mame-scommandline-enabletouch>`
+| :ref:`[no]sixaxis <mame-scommandline-sixaxis>`
+| :ref:`[no]dual_lightgun <mame-scommandline-duallightgun>`
 
 
 Mapeamento da pistola de luz (SDL)
