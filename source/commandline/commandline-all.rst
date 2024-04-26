@@ -1,9 +1,46 @@
 .. _mame-commandline-universal:
 
-Opções Universais para a linha de comando
-=========================================
+Opções Universais de linha de comando
+=====================================
 
 .. contents:: :local:
+
+
+Comandos e opções
+-----------------
+
+Os comandos incluem o próprio executável do **mame**, bem como
+:ref:`as várias ferramentas <mame-aditional-tools>` que estão incluídas
+na distribuição do MAME.
+
+As opções (chamadas de "verbos" na documentação original) são ações que
+serão executadas em conjunto com o comando e qualquer outra ação
+auxiliar a opção (quando ela existir) nós a chamamos de **parâmetro** da
+opção. No Português Brasileiro, subentende-se que quando falamos
+**comando** estamos nos referindo ao comando junto com a opção (quando
+for o caso). Por exemplo, no comando ``mame -validate pacman``, **mame**
+é o comando em si, **-validate** é a opção e **pacman** o parâmetro
+que desejamos usar com a opção **-validate**.
+
+
+.. _mame-commandline-patterns:
+
+Conjunto de instruções
+----------------------
+
+Muitos comandos são compatíveis com o uso de um *conjunto de instruções*
+ou um padrão [1]_, que pode ser um sistema ou um nome abreviado do
+dispositivo (como por exemplo, **a2600**, **zorba_kbd**) ou um conjunto
+de instruções globais que correspondam a um dos dois como ``zorba_*``
+por exemplo.
+
+Dependendo do comando que foi combinado com este conjunto de
+instruções, a correspondência dessas combinações podem equiparar um
+sistema (ou vários deles) assim como dispositivos. É aconselhável
+colocar aspas em torno dos parâmetros para evitar que o seu ambiente
+tente interpretá-los de forma independente em relação aos nomes dos
+arquivos que desejamos usar (``mame -validate "pac\*"`` por exemplo).
+
 
 .. _mame-commandline-paths:
 
@@ -56,23 +93,6 @@ script executável com o comando **chmod u+x meumame**, agora ao executar
 o script, uma janela do terminal se abrirá, o MAME será executado e o
 diretório de trabalho será definido no mesmo local do script.
 
-.. _mame-commandline-patterns:
-
-Conjunto de instruções
-----------------------
-
-Muitos comandos são compatíveis com o uso de um *conjunto de instruções*
-ou um padrão [1]_, que pode ser um sistema ou um nome abreviado do
-dispositivo (como por exemplo, **a2600**, **zorba_kbd**) ou um conjunto
-de instruções globais que correspondam a um dos dois como ``zorba_*``
-por exemplo.
-
-Dependendo do comando que foi combinado com este conjunto de
-instruções, a correspondência dessas combinações podem equiparar um
-sistema ou sistemas e dispositivos. É aconselhável colocar aspas em
-torno dos seus arranjos para evitar que o seu ambiente tente
-interpretá-los de forma independente em relação aos nomes dos arquivos
-que desejamos usar (por exemplo, ``mame -validate "pac\*"``).
 
 .. _mame-commandline-coreverbs:
 
