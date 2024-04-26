@@ -2663,7 +2663,7 @@ pasta que o programa ``chdman.exe``.
 		goto :end
 	)
 	
-	if not exist convertido (
+	if not exist chd (
 	goto :dir
 	
 	) else (
