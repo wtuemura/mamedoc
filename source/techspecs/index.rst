@@ -17,6 +17,7 @@ scripts LUA que são executados na estrutura do MAME.
 	device_rom_interface
 	device_disasm_interface
 	memory
+	cpu_device
 	floppy
 	nscsi
 	m6502
