@@ -79,14 +79,6 @@ reiniciar a instrução.
 A versão reiniciada tem a seguinte aparência (para uma CPU com 4 ciclos
 por acesso):
 
-
-To ensure decent performance, the current implementations (h8, 6502
-and 68000) use a python generator to generate two versions of each
-instruction interpreter, one for the normal emulation, and one for
-restarting the instruction.
-
-The restarted version looks like that (for a 4-cycles per access cpu):
-
 .. code-block:: C++
 
     void device::execute_inst_restarted()
