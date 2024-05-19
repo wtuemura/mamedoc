@@ -317,7 +317,7 @@ pode ser reativada a qualquer momento.
 
 .. _3.5:
 
-Manipulação da contenção de barramento
+Manipulação de contenção do barramento
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Algumas CPUs específicas foram atualizadas para poderem ser
