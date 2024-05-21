@@ -2930,7 +2930,7 @@ para que o seu MAME possa funcionar corretamente.
 .. _snes.zip: https://www.mediafire.com/file/byz95kk0je8ishh/snes.zip
 .. _DirectX End-User Runtime: https://www.microsoft.com/pt-br/download/details.aspx?id=8109
 .. _7-zip: https://7-zip.org/download.html
-.. _commit 8f05076: https://github.com/mamedev/mame/commit/8f05076b076adf494509d1ae5cbd2a6a07b25afa>
+.. _commit 8f05076: https://github.com/mamedev/mame/commit/8f05076b076adf494509d1ae5cbd2a6a07b25afa
 .. _site oficial: https://www.mamedev.org/release.html
 .. _MSYS2: https://www.msys2.org/
 .. _site oficial do github: https://github.com/mamedev/mame/releases
