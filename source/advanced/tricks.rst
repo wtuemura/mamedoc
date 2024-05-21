@@ -1727,55 +1727,6 @@ comando ``radeontop`` e veja se está havendo atividade enquanto o vídeo
 está sendo executado, tecle **c** para ativar o modo colorido. Se não
 houver qualquer atividade é porque há algum erro na sua configuração.
 
-Instale o ``linux-cpupower``::
-
-	sudo apt install linux-cpupower
-
-No terminal, use o comando ``cpupower frequency-info`` para saber qual o
-regulador está ativo na sua CPU::
-
-	analisando o CPU 1:
-	  driver: acpi-cpufreq
-	  CPUs que rodam na mesma frequência de hardware: 1
-	  CPUs que precisam ter suas frequências coordenadas por software: 1
-	  maior latência de transição: 4.0 us
-	  limites do hardware: 1.40 GHz - 4.00 GHz
-	  available frequency steps:  4.00 GHz, 3.40 GHz, 2.80 GHz, 2.10 GHz, 1.40 GHz
-	  reguladores do cpufreq disponíveis: performance schedutil
-	  política de frequência atual deve estar entre 1.40 GHz e 4.00 GHz.
-				  O regulador "schedutil" deve decidir qual velocidade usar
-				  dentro desse limite.
-	  current CPU frequency: Unable to call hardware
-	  current CPU frequency: 1.41 GHz (asserted by call to kernel)
-	  boost state support:
-	Supported: yes
-	Active: yes
-
-O ``schedutil`` é um modo de economia, é ótimo para uso diário, porém,
-acaba fazendo o MAME rodar de maneira mais lenta e até causar problemas
-com o áudio, fazendo-o ficar picotando ou falhando em alguns momentos.
-Para resolver esta questão é preciso mudar o regulador para
-**performance**, isso vai fazer o seu processador trabalhar na
-frequência máxima. Para o nosso exemplo, em **schedutil** o processador
-está trabalhando a **1.41 GHz** mas ele pode chegar até **4 GHz**, para
-isso, faça o comando abaixo::
-
-	sudo cpupower -c all frequency-set -g performance
-
-
-.. raw:: latex
-
-	\clearpage
-
-Agora a frequência do processador fica em 4 GHz, isso melhora bastante o
-desempenho do MAME e também evita que o áudio fique picotando. No
-entanto, isso faz com que haja um aumento de consumo e de aquecimento do
-processador, então, caso queira retornar para o valor anterior::
-
-	sudo cpupower -c all frequency-set -g schedutil
-
-Assim o processador volta a ficar uma uma frequência dinâmica.
-
 
 .. _advanced-tricks-performance-mame:
 
