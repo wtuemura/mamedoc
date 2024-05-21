@@ -1305,6 +1305,11 @@ Verifique se tudo está em ordem::
 	(VERDE, DRM 3.39.0, 5.9.13-200.fc33.x86_64, LLVM 11.0.0)
 	OpenGL version string: 4.6 (Compatibility Profile) Mesa 20.2.4
 
+
+.. raw:: latex
+
+	\clearpage
+
 Execute o comando ``vulkaninfo`` e verifique se ele não acusa qualquer
 erro, se tudo estiver certo aparecerá uma lista detalhada com as
 informações da sua placa de vídeo e das extensões que estão ativas para
@@ -1547,18 +1552,17 @@ No caso do Linux acusar a falta de algum firmware para o **amdgpu**::
 
 É possível procurar por eles no site `PKGS <https://pkgs.org>`_,
 geralmente será preciso baixar arquivos de outra distro, descompactar e
-copiar para o local apropriado ou usar o site do
-`Umio-Yasuno <https://github.com/Umio-Yasuno/unofficial-amdgpu-firmware-repo>`_
-que mantém uma lista atualizada dos novos *firmwares* sempre que eles
-forem aparecendo.
+copiar para o local apropriado ou usar o próprio site do `Kernel Linux`_
+para ver a lista destes arquivos.
 
-Para evitar ficar copiando manualmente estes arquivos um a um, crie uma
-lista deles, salve a lista acima num arquivo qualquer (``bin.txt``) e
-execute o comando::
+Para evitar ficar copiando manualmente estes arquivos um a um, selecione
+toda a lista acima (ou o que for gerado no seu terminal) e salve a lista
+num arquivo qualquer (``bin.txt`` por exemplo) e execute o comando::
 
 	cat bin.txt | awk '{print $5}' | awk -F "/lib/firmware/amdgpu/" '{print $2}' > missing.txt
 
-Para gerar a lista abaixo::
+Para gerar uma lista dentro do arquivo **missing.txt** com os arquivos
+que estão faltando::
 
 	arcturus_gpu_info.bin
 	navy_flounder_ta.bin
@@ -1585,13 +1589,19 @@ Para gerar a lista abaixo::
 	arcturus_smc.bin
 	navy_flounder_dmcub.bin
 
-Clone o repositório do site do **Umio-Yasuno** em algum lugar do seu
-computador com o comando::
+Baixe o `linux-firmware-main.tar.gz`_ (é um arquivo grande com cerca de
+570 MiB),  abra o terminal no mesmo diretório do arquivo, extraia apenas
+a pasta **amdgpu** com o comando::
 
-	git clone https://github.com/Umio-Yasuno/unofficial-amdgpu-firmware-repo.git
+	tar -zxvf linux-firmware-main.tar.gz linux-firmware-main/amdgpu
 
-Salve a lista como ``missing.txt``, copie este arquivo para dentro da
-pasta **amdgpu**, abra o terminal dentro desta pasta e faça o comando::
+Ainda no terminal, copie o arquivo **missing.txt** para dentro de
+**linux-firmware-main/amdgpu** e entre neste diretório::
+
+	mv missing.txt linux-firmware-main/amdgpu && cd linux-firmware-main/amdgpu
+
+Para copiar apenas os arquivos que faltam para o seu devido destino,
+faça o comando::
 
 	for firmware in $(<missing.txt); do sudo cp "$firmware" /lib/firmware/amdgpu; done
 
@@ -1599,8 +1609,14 @@ Ou para os mais puritanos::
 
 	while read -r firmware; do sudo cp $firmware /lib/firmware/amdgpu; done < missing.txt
 
-Agora atualize o seu initramfs com ``sudo update-initramfs -u`` no
-**Debian** ou ``sudo dracut -fv`` no **Fedora**.
+Pode ser que nem todos os arquivos estejam disponíveis, contudo, a não
+ser que você tenha uma GPU que acabou de ser lançada (logo, este
+firmware específico ainda não existe), isso não altera em nada o
+a nossa configuração.
+
+Agora atualize o seu **initramfs** com o comando
+``sudo update-initramfs -u`` no **Debian** ou ``sudo dracut -fv`` no
+**Fedora**.
 
 **Para casos onde o amdgpu trava.**
 
@@ -2935,3 +2951,5 @@ para que o seu MAME possa funcionar corretamente.
 .. _MSYS2: https://www.msys2.org/
 .. _site oficial do github: https://github.com/mamedev/mame/releases
 .. _Veja aqui: https://git-scm.com/download/mac
+.. _Kernel Linux: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/amdgpu
+.. _linux-firmware-main.tar.gz: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/commit/amdgpu
