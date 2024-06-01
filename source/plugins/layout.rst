@@ -1,3 +1,7 @@
+.. raw:: latex
+
+	\clearpage
+
 .. _plugins-layout:
 
 Layout Plugin

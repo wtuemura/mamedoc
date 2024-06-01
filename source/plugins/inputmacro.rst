@@ -171,8 +171,8 @@ as alterações já entram em vigor imediatamente.
 
 .. _plugins-inputmacro-examples:
 
-Macros de exemplo
------------------
+Exemplos de macros
+------------------
 
 Turbo para Raiden
 ~~~~~~~~~~~~~~~~~
@@ -456,3 +456,649 @@ A macro abaixo serve para o segundo especial do mesmo personagem.
   * **Atraso (quadros)**: :guilabel:`0`
   * **Duração (quadros)**: :guilabel:`1`
   * **Entrada 1**: :guilabel:`Jogador 1 botão 3`
+
+
+.. _plugins-inputmacro-svc:
+
+SNK vs. Capcom - SVC Chaos
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Esta macro executa os comandos na tela de seleção de personagens para
+selecionar os personagens especiais. Inicie o jogo normalmente, quando
+estiver na tela de seleção de personagens mantenha pressionado a tecla
+:kbd:`1` (ou a tecla configurada para iniciar o jogador 1) e escolha uma
+das teclas do **teclado numérico** abaixo para executar o comando. O
+exemplo abaixo foi feito com as teclas do teclado numérico (à direita do
+teclado) mas, você pode usar as teclas que quiser desde que não entre em
+conflito com as :ref:`teclas já predefinidas <default-keys>`.
+
+.. note:: Os personagens **Shin Akuma** e **Serious Mr. Karate** apenas
+   podem ser selecionados na versão AES do Neo Geo, consulte o capítulo
+   :ref:`advanced-tricks-nvram`.
+
+.. note:: A configuração completa pode ser baixada `aqui`_. Copie e cole
+   num editor de texto e salve ele na pasta **inputmacro** como
+   **svc.cfg**.
+
+**Fonte**: `Strategywiki`_.
+
+.. tabularcolumns:: |L|C|C|C|C|C|C|C|
+
+.. list-table:: Lista dos personagens
+    :header-rows: 0
+    :stub-columns: 0
+    :widths: auto
+
+    * - **0**
+      - Dan Hibiki
+    * - **1**
+      - Leopold Goenitz
+    * - **2**
+      - Demitri Maximoff
+    * - **3**
+      - Geese Howard
+    * - **4**
+      - Violent Ken
+    * - **5**
+      - Orochi Iori
+    * - **6**
+      - Zero
+    * - **7**
+      - Mars People
+    * - **8**
+      - Shin Akuma *
+    * - **9**
+      - Serious Mr. Karate *
+
+
+**Dan Hibiki**
+
+* **Nome**: :guilabel:`Dan Hibiki`
+* **Ativação**: Tecla :kbd:`KEYPAD_0`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Leopold Goenitz**
+
+* **Nome**: :guilabel:`Goenitz`
+* **Ativação**: Tecla :kbd:`KEYPAD_1`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Demitri Maximoff**
+
+* **Nome**: :guilabel:`Demitri Maximoff`
+* **Ativação**: Tecla :kbd:`KEYPAD_2`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Geese Howard**
+
+* **Nome**: :guilabel:`Geese Howard`
+* **Ativação**: Tecla :kbd:`KEYPAD_3`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Violent Ken**
+
+* **Nome**: :guilabel:`Violent Ken`
+* **Ativação**: Tecla :kbd:`KEYPAD_4`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Orochi Iori**
+
+* **Nome**: :guilabel:`Orochi Iori`
+* **Ativação**: Tecla :kbd:`KEYPAD_5`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Zero**
+
+* **Nome**: :guilabel:`Zero`
+* **Ativação**: Tecla :kbd:`KEYPAD_6`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 10**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 11**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Mars People**
+
+* **Nome**: :guilabel:`Mars People`
+* **Ativação**: Tecla :kbd:`KEYPAD_7`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 10**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 11**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Shin Akuma**
+
+* **Nome**: :guilabel:`Shin Akuma`
+* **Ativação**: Tecla :kbd:`KEYPAD_8`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 10**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 11**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 12**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 13**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+
+**Serious Mr. Karate**
+
+* **Nome**: :guilabel:`Serious Mr. Karate`
+* **Ativação**: Tecla :kbd:`KEYPAD_9`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Libera`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 3**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 4**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 5**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 6**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 7**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 baixo`
+* **Etapa 8**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 9**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 cima`
+* **Etapa 10**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 esquerda`
+* **Etapa 11**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 12**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 direita`
+* **Etapa 13**:
+
+  * **Atraso (quadros)**: :guilabel:`3`
+  * **Duração (quadros)**: :guilabel:`3`
+  * **Entrada 1**: :guilabel:`P1 A`
+
+.. _aqui: https://pastebin.com/b0UbTwBH
+.. _Strategywiki: https://strategywiki.org/wiki/SVC_Chaos:_SNK_vs._Capcom/Secrets

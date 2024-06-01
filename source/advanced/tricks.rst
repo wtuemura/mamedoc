@@ -1611,8 +1611,8 @@ Ou para os mais puritanos::
 
 Pode ser que nem todos os arquivos estejam disponíveis, contudo, a não
 ser que você tenha uma GPU que acabou de ser lançada (logo, este
-firmware específico ainda não existe), isso não altera em nada o
-a nossa configuração.
+firmware específico ainda não existe), isso não altera em nada na nossa
+configuração.
 
 Agora atualize o seu **initramfs** com o comando
 ``sudo update-initramfs -u`` no **Debian** ou ``sudo dracut -fv`` no
@@ -1798,7 +1798,7 @@ fazendo.
 	\clearpage
 
 
-.. _advanced-tricks-nvram:
+.. _advanced-tricks-delete-nvram:
 
 Excluindo arquivos NVRAM (script)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2938,6 +2938,146 @@ localizar as suas ROMs, assim como outras configurações de vídeo e áudio
 para que o seu MAME possa funcionar corretamente.
 
 
+.. _advanced-tricks-nvram:
+
+Mantendo as configurações da BIOS de um sistema ao apagar a NVRAM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Diferentes sistemas armazenam dados num *Non-Volatile Random Access
+Memory* ou numa tradução direta, memória não volátil de acesso
+aleatório ou *NVRAM* para encurtar. Ao contrário da memória RAM
+convencional, que perde os dados quando a alimentação é desligada, a
+NVRAM não é não volátil, isso quer dizer que os dados permanecem
+intactos mesmo durante falhas de energia ou se a alimentação for
+cortada. Isso garante a integridade dos dados e evita perdas de
+informações críticas.
+
+O MAME armazena estes dados dentro da pasta **nvram**, na versão oficial
+do Windows, esta pasta fica no mesmo diretório onde está o executável do
+MAME, caso utilize uma versão compilada para macOS ou Linux, rode o
+comando abaixo para identificar onde a sua pasta **nvram** fica:
+
+.. code-block:: shell
+
+	mame -norc -sc | grep nvram_directory
+	nvram_directory           /usr/share/mame/nvram
+
+Certos jogos como os da série **Dance Dance Revolution** (dentre vários
+outros) precisam ser inicializados. A inicialização vai variar de
+sistema para sistema mas no geral, certos dados são copiados da ROM ou
+de uma mídia para a NVRAM. Geralmente este processo inicial costuma
+levar algum tempo, porém, é realizado apenas uma vez e é aqui que
+algumas pessoas têm problemas.
+
+É preciso excluir a NVRAM de alguns sistemas por completo para que as
+funções de :ref:`gravar <mame-commandline-record>` e de
+:ref:`reproduzir <mame-commandline-playback>` do MAME funcionem
+corretamente. Um destes sistemas é o **Neo Geo**, antes de gravar uma
+nova jogada é preciso apagar a NVRAM para que o sistema inicie "zerado"
+e o mesmo deve ser feito antes de reproduzir aquilo que foi gravado.
+Assim o sistema será iniciado nas mesmas condições da gravação. Alguns
+erros podem acontecer se nada disso for feito, por exemplo, poderá haver
+erros de sincronismo, ou seja, a fase do jogo poderá iniciar numa outra
+fase que não tem nada a ver com com a fase que foi feita a gravação, o
+personagem pode realizar movimentos em condições diferentes daquelas
+feitas durante a gravação, etc.
+
+Neste primeiro exemplo vamos usar a máquina "**Dance Dance Revolution
+Extreme**" (**ddrextrm**), ao rodá-la pela primeira vez a inicialização
+dela levará algum tempo (pressione :kbd:`Ins` no Windows ou :kbd:`Pgdn`
+no Linux/macOS para acelerar o processo). Ao concluir a inicialização
+ela pede que a máquina seja desligada, agora siga os passos:
+
+* Pressione :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação.
+* Durante o boot, a iniciação vai parar numa tela, pressione :kbd:`F2`
+  seguido de :kbd:`Esc` para encerrar a emulação.
+* Entre na pasta **NVRAM\\ddrextrm**, confirme que todos os arquivos de
+  inicialização da máquina estão lá.
+* Pressione :kbd:`Ctrl` + :kbd:`A` para selecionar todos os aquivos.
+* Clique com o botão direito e escolha a opção de **comprimir** no
+  Windows/Linux/macOS e use o nome **ddrextrm** para gerar o arquivo
+  **ddrextrm.zip**.
+* Caso queira usar o terminal, entre no diretório **NVRAM\\ddrextrm** e
+  faça o comando: ``zip -r ddrextrm.zip * && mv ddrextrm.zip ..``.
+* Mova o arquivo **ddrextrm.zip** para fora desta pasta (caso use a
+  linha de comando acima isso já é feito).
+* Exclua a pasta **NVRAM\\ddrextrm**, mantenha apenas o arquivo
+  **ddrextrm.zip**.
+
+Inicie novamente o **ddrextrm** e repare que ela não fica mais gastando
+tempo fazendo o processo de inicialização, todos os arquivos são
+descomprimidos em **NVRAM\ddrextrm** e o sistema inicia normalmente.
+O processo se repetirá caso esta pasta seja excluída.
+
+.. raw:: latex
+
+	\clearpage
+
+É possível fazer uma coisa interessante é usar o site `DDR Freak`_ e
+aplicar um código para liberar `todas as músicas`_ para a máquina
+**ddrextrm**:
+
+* Inicie a máquina, após a tela "Now Loading" e ao aparecer a tela do
+  jogo, pressione :kbd:`F2` para entrar na tela de operação da máquina.
+* Use os direcionais para colocar o cursor em **GAME OPTIONS**.
+* Mantenha pressionado direcional baixo + :kbd:`9` seguido de :kbd:`1`
+  para entrar na tela **SECRET**.
+* Pressione :kbd:`1` para entrar em **APPEND**.
+* Para liberar todas as músicas insira o código:
+  ``BWUVHBK`` - ``KVXFXYA``, use :kbd:`1` para soletrar adiante,
+  mantenha :kbd:`1` pressionado e mova as setas para a esquerda para
+  retroceder.
+* Para registrar mantenha pressionado as setas esquerda e direita, 
+  clique em :kbd:`1` (é mais fácil configurar as setas para qualquer
+  tecla do teclado ou botão do joystick), deverá aparecer **REGISTERED**
+  confirmando que o código foi aceito.
+* Selecione **EXIT** até retornar para a tela principal.
+* Selecione **GAME MODE** para retornar ao jogo e pressione :kbd:`Esc`
+  para encerrar a emulação.
+
+Repita o processo para comprimir os arquivos da NVRAM num arquivo
+**ddrextrm.zip** e mova-o para a pasta NVRAM, agora a máquina sempre
+será iniciada já com todas as músicas disponíveis mesmo que a pasta
+NVRAM seja excluída posteriormente.
+
+No caso do sistema **Neo Geo** o processo é semelhante, porém, agora
+queremos usar a "Universe Bios", configurar ela para AES (console)
+Americano (ou qualquer outro que desejar). Pegando a máquina "**SNK vs.
+Capcom - SVC Chaos (NGM-2690 ~ NGH-2690)**" (**svc**) por exemplo,
+certos caracteres como o *Shin Akuma* e o *Serious Mr. Karate*, apenas
+estão acessíveis através de um `comando especial`_ nas versões AES
+(console) do Neo Geo pois nas versões MVS (arcade), o comando não
+funciona.
+
+Caso você queira gravar :ref:`gravar <mame-commandline-record>` e
+:ref:`reproduzir <mame-commandline-playback>` depois surge um outro
+problema pois é preciso apagar a NVRAM antes de gravar e antes de
+reproduzir, isso exclui todas as configurações feitas na BIOS
+anteriormente e aqui entra a dica de comprimir os arquivos da NVRAM:
+
+* Crie o arquivo **ini\\source\\neogeo.ini**.
+* Adicione ``bios unibios40`` e salve.
+* No terminal/prompt de comando inicie o jogo com ``mame svc``.
+* Quando aparecer a tela do "Universe Bios" pressione os botões **A** +
+  **B** + **C** para entrar na configuração.
+* Pressione **A** em **REGION SETUP**.
+* Pressione **B** 2x para configurar **AES USA**.
+* Pressione **C** para encerrar a configuração e pression :kbd:`Esc`
+  para encerrar a emulação.
+* Entre na pasta **NVRAM\\svc_16**.
+* Clique no arquivo **saveram** para selecionar o aquivo.
+* Clique com o botão direito e escolha a opção de **comprimir** no
+  Windows/Linux/macOS e use o nome **svc_16** para gerar o arquivo
+  **svc_16.zip**.
+* Mova o arquivo **svc_16.zip** para fora da pasta e apague a pasta
+  **svc_16**.
+
+Agora é possível você gravar as suas jogadas e após excluir a pasta para
+iniciar a reprodução, todas as configurações da Unibios serão mantidas.
+
+Consulte o capítulo inputmacro do :ref:`plugins-inputmacro-svc` caso
+queira experimentar os comandos especiais.
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
@@ -2953,3 +3093,6 @@ para que o seu MAME possa funcionar corretamente.
 .. _Veja aqui: https://git-scm.com/download/mac
 .. _Kernel Linux: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/amdgpu
 .. _linux-firmware-main.tar.gz: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/commit/amdgpu
+.. _DDR Freak: http://www.ddrfreak.com/versions/listver.php
+.. _todas as músicas: http://www.ddrfreak.com/versions/faqs-arcade.php?version=80
+.. _comando especial: https://strategywiki.org/wiki/SVC_Chaos:_SNK_vs._Capcom/Secrets
