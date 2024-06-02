@@ -3006,7 +3006,7 @@ ela pede que a máquina seja desligada, agora siga os passos:
 
 Inicie novamente o **ddrextrm** e repare que ela não fica mais gastando
 tempo fazendo o processo de inicialização, todos os arquivos são
-descomprimidos em **NVRAM\ddrextrm** e o sistema inicia normalmente.
+descomprimidos em **NVRAM\\ddrextrm** e o sistema inicia normalmente.
 O processo se repetirá caso esta pasta seja excluída.
 
 .. raw:: latex
@@ -3036,13 +3036,14 @@ aplicar um código para liberar `todas as músicas`_ para a máquina
   para encerrar a emulação.
 
 Repita o processo para comprimir os arquivos da NVRAM num arquivo
-**ddrextrm.zip** e mova-o para a pasta NVRAM, agora a máquina sempre
-será iniciada já com todas as músicas disponíveis mesmo que a pasta
-NVRAM seja excluída posteriormente.
+**ddrextrm.zip**, mova-o para fora da pasta e exclua a pasta
+**NVRAM\\ddrextrm**, agora a máquina sempre será iniciada já com todas
+as músicas disponíveis ainda que a pasta NVRAM seja excluída
+posteriormente.
 
-No caso do sistema **Neo Geo** o processo é semelhante, porém, agora
-queremos usar a "Universe Bios", configurar ela para AES (console)
-Americano (ou qualquer outro que desejar). Pegando a máquina "**SNK vs.
+Em sistemas **Neo Geo** o processo é semelhante, porém, agora queremos
+usar a "Universe Bios", configurar ela para AES (console) Americano
+(ou qualquer outro que desejar). Pegando a máquina "**SNK vs.
 Capcom - SVC Chaos (NGM-2690 ~ NGH-2690)**" (**svc**) por exemplo,
 certos caracteres como o *Shin Akuma* e o *Serious Mr. Karate*, apenas
 estão acessíveis através de um `comando especial`_ nas versões AES

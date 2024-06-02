@@ -463,22 +463,23 @@ A macro abaixo serve para o segundo especial do mesmo personagem.
 SNK vs. Capcom - SVC Chaos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Esta macro executa os comandos na tela de seleção de personagens para
-selecionar os personagens especiais. Inicie o jogo normalmente, quando
-estiver na tela de seleção de personagens mantenha pressionado a tecla
-:kbd:`1` (ou a tecla configurada para iniciar o jogador 1) e escolha uma
-das teclas do **teclado numérico** abaixo para executar o comando. O
-exemplo abaixo foi feito com as teclas do teclado numérico (à direita do
-teclado) mas, você pode usar as teclas que quiser desde que não entre em
-conflito com as :ref:`teclas já predefinidas <default-keys>`.
+Execute esta macro na tela de seleção de personagens, ao pressionar uma
+das teclas selecionadas um comando especial será executado para
+selecionar personagens especiais. Inicie o jogo normalmente, quando
+estiver na tela de seleção de personagens, mantenha a tecla :kbd:`1`
+pressionada (ou a tecla configurada para iniciar o jogador 1) e escolha
+uma das teclas do **teclado numérico** abaixo para executar o comando
+(à direita do teclado) mas, você pode configurar as teclas que quiser
+desde que não entre em conflito com as :ref:`teclas já predefinidas
+<default-keys>`.
 
 .. note:: Os personagens **Shin Akuma** e **Serious Mr. Karate** apenas
    podem ser selecionados na versão AES do Neo Geo, consulte o capítulo
    :ref:`advanced-tricks-nvram`.
 
-.. note:: A configuração completa pode ser baixada `aqui`_. Copie e cole
-   num editor de texto e salve ele na pasta **inputmacro** como
-   **svc.cfg**.
+.. note:: Caso não queira fazer a configuração abaixo manualmente, ela
+   pode ser baixada `aqui`_. Copie o conteúdo e cole num editor de
+   texto, salve ele como **svc.cfg** na pasta **inputmacro**.
 
 **Fonte**: `Strategywiki`_.
 
