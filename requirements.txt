@@ -1,1 +1,2 @@
 sphinxcontrib-svg2pdfconverter==1.2.2
+sphinx-rtd-theme==2.0.0
