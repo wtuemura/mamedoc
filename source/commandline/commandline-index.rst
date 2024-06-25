@@ -466,7 +466,9 @@ Opções de vídeo (SDL)
 
 Configuração para tela inteira (SDL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 | :ref:`useallheads <mame-scommandline-useallheads>`
+| :ref:`attach_window <mame-scommandline-attach_window>`
 
 
 Configuração para diferentes tipos de espaços de cor para vídeo (SDL)

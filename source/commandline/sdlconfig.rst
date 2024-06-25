@@ -206,6 +206,15 @@ Configuração para tela inteira
 		O valor predefinido é ``none`` (nenhum).
 
 
+.. _mame-scommandline-attach_window:
+
+**-attach_window**
+
+	Anexa a tela a uma determinada janela.
+
+		O valor predefinido é ``none`` (nenhum).
+
+
 Configurações específicas quando o driver de vídeo for software
 ---------------------------------------------------------------
 
