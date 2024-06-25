@@ -44,8 +44,8 @@ arquivos que desejamos usar (``mame -validate "pac*"`` por exemplo).
 
 .. _mame-commandline-paths:
 
-Nome dos arquivos e a localização dos diretórios
-------------------------------------------------
+A Nomenclatura dos arquivos e a localização dos diretórios
+----------------------------------------------------------
 
 Nativa em (O MAME aceita a utilização de mais de um caminho nas suas
 configurações, como por exemplo, as configurações que permitam a
@@ -94,6 +94,11 @@ o script, uma janela do terminal se abrirá, o MAME será executado e o
 diretório de trabalho será definido no mesmo local do script.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-coreverbs:
 
 Opções de ajuda e verificação
@@ -134,9 +139,6 @@ Opções de ajuda e verificação
 			apple2_flop_orig.xml(126.8): Unexpected content
 			apple2_flop_orig.xml(127.2): Unknown tag: publisher
 
-.. raw:: latex
-
-	\clearpage
 
 .. _mame-commandline-verifyroms:
 
