@@ -5,10 +5,10 @@ build:
   apt_packages:
     - librsvg2-bin
   tools:
-    python: "3.11"
+    python: "3.12"
 
 python:
-  version: 3.11
+  version: 3.12
 
 sphinx:
    configuration: source/conf.py
