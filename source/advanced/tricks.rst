@@ -1,4 +1,4 @@
- raw:: latex
+.. raw:: latex
 
 	\clearpage
 
