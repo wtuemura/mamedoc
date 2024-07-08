@@ -24,7 +24,7 @@ na documentação oficial, alguns tópicos que foram pedidos por alguns
 membros da comunidade brasileira e outros que o autor achou necessário
 adicionar.
 
-# Compilando este documento para outros formatos
+# Como compilar este documento
 
 ## Fedora
 
@@ -37,7 +37,7 @@ sudo dnf install python3-sphinx python2-sphinx python3-sphinx-bootstrap-theme py
 ## Debian
 
 ```
-sudo apt-get install python3-sphinx python3-pip latexmk texlive texlive-science texlive-formats-extra texlive-fonts-extra librsvg2-bin
+sudo apt-get install python3-sphinx python3-pip python3-sphinxcontrib.svg2pdfconverter python3-sphinx-rtd-theme latexmk texlive texlive-science texlive-formats-extra texlive-fonts-extra librsvg2-bin
 ```
 
 ## Windows
@@ -46,13 +46,6 @@ No Windows é preciso ter o MSYS2 e instalar os seguintes pacotes:
 
 ```
 pacman -S mingw-w64-x86_64-librsvg mingw-w64-x86_64-python-sphinx mingw-w64-x86_64-python-sphinxcontrib-svg2pdfconverter mingw-w64-x86_64-texlive-latex-extra mingw-w64-x86_64-texlive-fonts-recommended
-```
-
-Na sua conta comum, use o `pip` ou `pip3` para instalar os pacotes
-restantes:
-
-```
-pip install -U Sphinx sphinx_rtd_theme sphinxcontrib-svg2pdfconverter
 ```
 
 Caso apareça o erro abaixo:
