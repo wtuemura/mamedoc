@@ -1543,7 +1543,7 @@ Recursos opcionais
 **NO_USE_PORTAUDIO**
 
   Caso seja definido como **1**, desativa a construção do módulo de
-  saída de áudio PortAudio e sua biblioteca.
+  saída de áudio PulseAudio e sua biblioteca no Linux.
 
 
 .. _mame-compilation-nousepulseaudio:
@@ -2394,7 +2394,7 @@ Recarregue as configurações do seu terminal com o comando ``. .bashrc``
 
 Compile o MAME como mostra o exemplo abaixo::
 
-	make clean && make OVERRIDE_CC=/usr/bin/clang OVERRIDE_CXX=/usr/bin/clang++ OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 SANITIZE=address -j7
+	make clean && make OVERRIDE_CC=/usr/bin/clang OVERRIDE_CXX=/usr/bin/clang++ OPTIMIZE=0 SYMBOLS=1 SYMLEVEL=1 SANITIZE=address DEBUG=1 -j7
 
 .. raw:: latex
 

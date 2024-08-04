@@ -4666,7 +4666,7 @@ Opções para as configurações de diferentes entradas
 
 **-joystick_deadzone** / **-joy_deadzone** / **-jdz** <*valor*>
 
-	Caso jogue com um joystick analógico ele poderá estar um pouco
+	Caso jogue com um joystick analógico, ele poderá estar um pouco
 	fora de centro. O ``-joystick_deadzone`` informa uma folga ao longo
 	de um eixo que você deve mover antes que o eixo comece a mudar.
 	Essa opção espera um valor flutuante (float) no intervalo entre
@@ -4690,7 +4690,7 @@ Opções para as configurações de diferentes entradas
 **-joystick_saturation** / **joy_saturation** / **-jsat** <*valor*>
 
 	Caso jogue com um joystick analógico as extremidades podem
-	estar um pouco fora e podem não corresponder nas direções + /.
+	estar um pouco fora e podem não corresponder nas direções +/-.
 	O ``-joystick_saturation`` define se uma folga no movimento do eixo
 	será aceita até que se atinja o alcance máximo. Essa opção espera um
 	valor flutuante (float) no intervalo entre ``0.0`` até ``1.0`` onde
@@ -4714,7 +4714,7 @@ Opções para as configurações de diferentes entradas
 	ligado. Esta opção espera uma flutuação na faixa entre ``0,0`` a
 	``1,0`` onde ``0`` significa que qualquer movimento da posição
 	neutra for considerado ativo e ``1`` significa que apenas os
-	limites externos são considerados ativos. Este limite **não** é
+	limites externos são considerados ativos. Este limite **não é**
 	ajustado para a faixa entre a zona morta e o ponto de saturação.
 	Observe que caso um
 	:ref:`mapa do joystick <mame-commandline-joystickmap>` seja
