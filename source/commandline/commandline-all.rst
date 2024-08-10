@@ -3215,11 +3215,6 @@ Opções para a configuração de vídeo
 	nas outras plataformas **APENAS** aquelas compatíveis com OpenGL.
 
 
-.. raw:: latex
-
-	\clearpage
-
-
 .. _mame-commandline-noburnin:
 
 **-[no]burnin**
@@ -3275,10 +3270,6 @@ Opções para a configuração da tela inteira
 
 			mame kof97 -switchres -resolution 978x720
 
-.. raw:: latex
-
-	\clearpage
-
 
 Opções de vídeo para uso com janelas individuais
 ------------------------------------------------
@@ -3327,6 +3318,10 @@ Opções de vídeo para uso com janelas individuais
 .. note:: A partir de agora a opção de várias telas simultâneas podem
           não funcionar corretamente em alguns computadores Mac.
 
+.. raw:: latex
+
+	\clearpage
+
 
 .. _mame-commandline-aspect:
 
@@ -3357,10 +3352,6 @@ Opções de vídeo para uso com janelas individuais
 
 			mame contra -aspect 16:9
 			mame pc_cntra -numscreens 2 -aspect0 16:9 -aspect1 5:4
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-resolution:
@@ -4056,7 +4047,6 @@ Opções para a configuração do áudio
 
 
 .. note::
-
 	| Para PortAudio, consulte :ref:`-pa_latency <mame-commandline-palatency>`.
 	| O XAudio2 calcula a latência do áudio com passos de ``10ms``.
 	| O DSound calcula a latência do áudio com passos de ``10ms``.
@@ -4232,11 +4222,6 @@ Opções para a configuração do áudio
 		.. code-block:: shell
 
 			PortAudio: Using device "6 - SONY TV  *01 (AMD High Definition Audio Device)" on API "Windows WASAPI"
-
-
-	.. raw:: latex
-
-		\clearpage
 
 
 	Aqui o mesmo para o Linux:
