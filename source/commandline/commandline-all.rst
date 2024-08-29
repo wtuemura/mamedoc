@@ -5011,11 +5011,15 @@ Opções voltadas para a depuração
 
 	``gdbstub``
 
-		Funciona como um servidor de depuração remota para o depurador
-		GNU GDB. Apenas um pequeno conjunto emulado das CPUs são
-		compatíveis. Use a opção :ref:`-debugger_port <mame-commandline-debuggerport>`
-		para definir a porta na interface de rede. É compatível com
-		todas as plataformas com suporte a TCP/IP.
+		Atua como um servidor de depuração remota para o depurador GNU
+		(GDB). É suportado apenas um pequeno subconjunto emulado das
+		CPUs pelo MAME. Utilize a opção
+		:ref:`debugger_port <mame-commandline-debuggerport>` para
+		definir a porta de escuta e a opção
+		:ref:`debugger_host <mame-commandline-debuggerhost>` para
+		definir o endereço ao qual se vincular. É compatível com todas
+		as plataformas com suporte TCP/IP.
+
 
 	Examplo:
 		.. code-block:: shell
@@ -5061,18 +5065,18 @@ Opções voltadas para a depuração
 
 .. _mame-commandline-debuggerport:
 
-**-debugger_port** <*valor*>
+**-debugger_port** <*porta*>
 
-	Define uma porta a ser usada pelo gdbstub debugger. Para usar,
-	execute o ``gdb`` e faça o comando
-	``target remote localhost:23946``.
+	Define o número da porta TCP para aceitar as conexões GDB ao usar o
+	módulo do depurador do GDB (consulte a opção
+	:ref:`debugger <mame-commandline-debugger>`).
 
 	A porta predefinida é ``23946``.
 
 	Exemplo:
 		.. code-block:: shell
 
-			mame indy_4610 -debugger_port 23999
+			mame rfjet -debug -debugger gdbstub -debugger_port 2159
 
 
 .. _mame-commandline-debuggerfont:
@@ -5134,6 +5138,22 @@ Opções voltadas para a depuração
 .. raw:: latex
 
 	\clearpage
+
+
+.. _mame-commandline-debuggerhost:
+
+**-debugger_host** <*endereço*>
+
+	Defina o endereço IP que ficará ouvindo e aceitará as conexões GDB
+	ao usar o módulo do depurador do GDB (consulte a opção
+	:ref:`debugger <mame-commandline-debugger>`).
+
+		O valor predefinido é ``localhost``.
+
+	Examplo:
+		.. code-block:: shell
+
+			mame rfjet -debug -debugger gdbstub -debugger_host 0.0.0.0
 
 
 .. _mame-commandline-commoptions:
