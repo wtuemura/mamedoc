@@ -5107,6 +5107,29 @@ e clique em :guilabel:`Redefine` para reiniciar o sistema.
 	\clearpage
 
 
+.. _layfile-update:
+
+Migrando o layout do formato antigo para o novo
+-----------------------------------------------
+
+Pela internet ainda se encontram aquivos artwork que utilizam o
+formato antigo, o MAME ainda não abandonou totalmente estes formatos
+porém ele pode vir a fazê-lo a qualquer momento. Basta rodar um sistema
+com artwork com o formato antigo para que o MAME o alerte logo de cara
+através do terminal ou pelo prompt de comando.
+
+Para resolver o problema, substitua estes itens:
+
+* ``bezel name=`` com ``element name=``;
+* ``bezel element=`` com ``element ref=``;
+* ``backdrop element=`` com ``element ref=``;
+* ``</backdrop>`` com ``</element>``;
+* ``overlay element=`` com ``element ref=`` e adicione
+  ``blend="multiply"`` após o nome do elemento;
+* ``</overlay>`` com ``</element>``;
+* ``</bezel>`` com ``</element>``;
+
+
 .. _layfile-examples:
 
 Exemplos de outros arquivos layout
