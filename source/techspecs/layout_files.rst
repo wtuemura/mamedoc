@@ -5113,10 +5113,11 @@ Migrando o layout do formato antigo para o novo
 -----------------------------------------------
 
 Pela internet ainda se encontram aquivos artwork que utilizam o
-formato antigo, o MAME ainda não abandonou totalmente estes formatos
-porém ele pode vir a fazê-lo a qualquer momento. Basta rodar um sistema
-com artwork com o formato antigo para que o MAME o alerte logo de cara
-através do terminal ou pelo prompt de comando.
+formato antigo que foi atualizado em Setembro de 2020, o MAME ainda não
+abandonou completamente estes formatos porém ele pode vir a fazê-lo a
+qualquer momento. Basta rodar um sistema com artwork com o formato
+antigo para que o MAME o alerte logo de cara através do terminal ou pelo
+prompt de comando.
 
 Para resolver o problema, substitua estes itens:
 
@@ -5128,6 +5129,8 @@ Para resolver o problema, substitua estes itens:
   ``blend="multiply"`` após o nome do elemento;
 * ``</overlay>`` com ``</element>``;
 * ``</bezel>`` com ``</element>``;
+
+Fontes: Setembro `6`_, `7`_ e `9`_ de 2020.
 
 
 .. _layfile-examples:
@@ -5214,3 +5217,6 @@ de visualização, todo eles estão embutidos no MAME.
 .. [#XOR]	Exclusive OR ou operador exclusivo, é um operando que sempre
 		retorna 1 quando os bits da sua entrada são diferentes e
 		O (zero) quando forem iguais.
+.. _6: https://github.com/mamedev/mame/commit/61e021ef4128e8fd61b502fccc2706ae49f12ec0
+.. _7: https://github.com/mamedev/mame/commit/dc711da2def0046c1ddc197058f0ce31e82c82ef
+.. _9: https://github.com/mamedev/mame/commit/b2158bd6ed6d7bb1ed0e7cf665b04f56ecbe3403
