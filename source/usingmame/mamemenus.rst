@@ -3598,6 +3598,6 @@ Permite que você configure individualmente cada sistema selecionado.
 
   Salva a configuração apenas para o sistema selecionado.
 
-.. [#MAMEUIP] O `MAMEUI <http://www.mameui.info/>`_ é uma versão do MAME
-	com uma interface gráfica diferente.
+.. [#MAMEUIP] O `MAMEUI <https://messui.1emulation.com/>`_ é uma versão
+	do MAME com uma interface gráfica diferente.
 .. |eise| replace:: Este item só é mostrado se o sistema em execução
