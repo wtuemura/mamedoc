@@ -1915,9 +1915,11 @@ SDK, você deve fazer uma das seguintes ações:
   projeto do Visual Studio. Isso definirá a versão do Windows para
   Windows 8 (6.2). Os binários resultantes desta compilação, poderão não
   rodar nas versões anteriores do Windows.
-* Instale o DirectX SDL e configure o projeto ``osd_windows`` para
-  realizar a procura dos caminhos dos cabeçalhos e das bibliotecas do
-  DirectX antes de procurar os caminhos do Microsoft Windows SDK.
+* Instale o `DirectX SDK`_ (já incluso desde o SDK do Windows 8.0 e
+  instalado automaticamente com o Visual Studio 2013 e versões
+  posteriores). Configure o projeto ``osd_windows`` para buscar pelos
+  caminhos do cabeçalho/biblioteca do DirectX antes de buscar pelos
+  caminhos do SDK do Microsoft Windows.
 
 O compilador MSVC produz avisos espúrios sobre as variáveis locais que
 estejam não-inicializadas potencialmente. Atualmente é preciso adicionar
@@ -2454,3 +2456,4 @@ semelhante ao exemplo abaixo:
 		Inglês. (Nota do tradutor)
 .. _Wayland: https://wayland.freedesktop.org/
 .. _adicionada em 31/12/2023: https://github.com/mamedev/mame/commit/d5340b8be45db2815a6ce152813d991efa93d54f
+.. _DirectX SDK: https://www.microsoft.com/en-US/download/details.aspx?id=6812
