@@ -11,7 +11,7 @@ DOCUMENTAÇÃO MAME
 .. note::
 	Esta publicação é o resultado de um trabalho em constante evolução.
 	Acesse o
-	`issue tracker <https://github.com/wtuemura/mamedoc/issues>`_para
+	`issue tracker <https://github.com/wtuemura/mamedoc/issues>`_ para
 	acompanhar se há alguma atualização dos tópicos e assuntos aqui
 	tratados.
 	Veja como você pode contribuir na seção `contribute <https:
