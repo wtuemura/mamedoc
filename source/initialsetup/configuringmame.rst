@@ -107,12 +107,16 @@ separado por ponto e vírgula, exemplo::
 Assim o MAME sempre irá buscar as ROMs nestes caminhos que foram
 definidos.
 
-Porém dependendo da quantidade de ROMs que cada pasta tenha e até mesmo
-a quantidade de caminhos, esta talvez não seja a melhor maneira de
-configurar pois o MAME pode ficar um pouco mais lento até ele fazer a
-varredura de todos os diretórios ao executar a sua interface gráfica.
-Caso haja muitas e muitas ROMs na sua coleção a melhor opção possa ser a
-configuração avançada.
+.. note:: Caso estes caminhos tenham espaços no nome, coloque-os entre
+   aspas ``" "`` (por exemplo, ``"D:\minhas roms1";"D:\minhas roms2"``
+   e assim por diante).
+
+Porém, dependendo da quantidade de ROMs em cada pasta e da quantidade de
+caminhos, essa talvez não seja a melhor maneira de configurar, pois o
+MAME pode ficar um pouco mais lento até conseguir varrer todos os
+diretórios durante a inicialização da sua interface gráfica. Se houver
+muitas ROMs em sua coleção, a melhor opção pode ser a configuração
+avançada.
 
 .. raw:: latex
 
@@ -187,11 +191,11 @@ Configurando os gráficos
 ------------------------
 
 A maneira mais simples de fazer a configuração gráfica do MAME é
-clicando duas vezes em seu executável ou o invocando através do terminal
-ou do prompt de comando sem qualquer opção, quando a interface aparecer,
-com o mouse dê um clique duplo em :guilabel:`Definições gerais` e depois
-em :guilabel:`Opções do vídeo` e escolha uma das opções disponíveis em
-:guilabel:`Modo do vídeo`, para mais detalhes consulte
+clicar duas vezes em seu executável ou invocá-lo através do terminal
+ou do prompt de comando sem qualquer opção. Quando a interface aparecer,
+com o mouse, dê um clique duplo em :guilabel:`Definições gerais` e depois
+em :guilabel:`Opções do vídeo`. Escolha uma das opções disponíveis em
+:guilabel:`Modo do vídeo`. Para mais detalhes, consulte
 :ref:`-video <mame-commandline-video>`.
 
 Se for possível prefira a opção :guilabel:`bgfx`, caso contrário
@@ -223,30 +227,28 @@ inteira por exemplo, altere a opção :guilabel:`Modo janela` para
 :guilabel:`Salve a configuração` para armazenar as alterações no
 **mame.ini**.
 
-Tenha ciência que nada que seja feito aqui vai "quebrar" o MAME,
-contudo, pode ser que por alguma questão de incompatibilidade, o MAME
-não abra mais a interface, rode sem som, com tela preta ou algum outro
-tipo de problema. Neste caso, faça o backup dos seus arquivos
-``mame.ini``, ``ui.ini`` e ``plugins.ini``, crie uma nova configuração
-com o comando ``mame -cc`` e tente novos ajustes, evite aqueles que
-causaram problemas. Para mais informações consulte
+Tenha em mente que nada que for feito aqui irá "quebrar" o MAME,
+mas é possível que, por alguma questão de incompatibilidade, o MAME
+não abra mais a interface, rode sem áudio, com tela preta ou apresente
+algum outro tipo de problema. Neste caso, faça o backup dos seus
+arquivos ``mame.ini``, ``ui.ini`` e ``plugins.ini``, crie uma nova
+configuração com o comando ``mame -cc`` e tente novos ajustes, evite
+aqueles que causaram problemas. Para mais informações, consulte
 :ref:`-createconfig <mame-commandline-createconfig>`.
 
-Para mais detalhes sobre todas as opções da parte da configuração do
-vídeo, consulte :ref:`mamemenu-config-video`, :ref:`advanced-bgfx`
-para saber mais.
+Para obter mais detalhes sobre todas as opções da parte da configuração
+do vídeo, consulte :ref:`mamemenu-config-video`, :ref:`advanced-bgfx`.
 
 .. _configuringmame-audio:
 
 Configurando o áudio
 --------------------
 
-Assim como na configuração de vídeo, num primeiro momento, o MAME
-detecta e configura o áudio de forma automática para que funcione com o
-hardware existente. Porém é possível obter uma menor latência (atraso)
-no áudio e assim melhorar o seu desempenho, os sistemas como a **Dance
-Dance Revolution** e outras do tipo, podem se beneficiar bastante
-de uma latência menor.
+Assim como na configuração de vídeo, o MAME detecta e configura o áudio
+automaticamente para que funcione com o hardware existente. Porém, é
+possível obter uma latência (atraso) menor no áudio e, assim, melhorar o
+seu desempenho. Sistemas como o **Dance Dance Revolution** e outros do
+tipo podem se beneficiar bastante de uma latência menor.
 
 Para identificar a sua placa de som no MAME execute o comando
 ``mame -v -sound portaudio``, ele deverá retornar uma lista com as
@@ -288,13 +290,12 @@ como mostra o exemplo abaixo para o meu computador::
 	PortAudio: Sample rate is 44100 Hz, device output latency is 8.67 ms
 	PortAudio: Allowed additional buffering latency is 30.00 ms/1440 frames
 
-Experimente jogar uma partida e repare que houve uma melhora
-considerável no sincronismo do som com a ação na tela. Para obter o
-benefício de uma latência menor, o uso da placa de som se torna
-exclusiva para o MAME, ou seja, caso você goste de usar o MAME enquanto
-escuta música de fundo ou ouvir o som do Youtube, Spotify, Tidal ou
-qualquer outro site ou programa que use a placa de som, o áudio pode
-**não funcionar**.
+Experimente jogar uma partida e perceba a melhora considerável no
+sincronismo do áudio com a ação na tela. Para obter o benefício de uma
+latência menor, o uso da placa de som deve ser exclusiva para o MAME.
+Ou seja, se você gosta de usar o MAME enquanto escuta música de fundo ou
+ouve o áudio do *YouTube*, *Spotify*, *Tidal* ou qualquer outro site ou
+plataforma que utilize a placa de som, o áudio poderá **não funcionar**.
 
 Neste caso altere a configuração do arquivo ``mame.ini`` para::
 
@@ -314,15 +315,16 @@ usadas anteriormente::
 	pa_api                  ALSA
 	pa_device               "Xonar STX: Multichannel (hw:0,0)"
 
-Todos os sistemas que estão dentro da categoria "Arcade" agora passam a
-usar a interface comum de áudio e que funciona junto com quaisquer
-outros programas ou serviços de áudio e apenas os sistemas do driver
-**ksys573** passam a usar a configuração com baixa latência.
-O mesmo pode ser feito com outros drivers como a **djmain** que é
-responsável pelos sistemas da série **Beatmania** e **Pop'n Music**,
-lembrando que você pode identificar o nome do driver com o comando
-``mame nome_da_rom -ls``, para mais informações consulte o comando
+Todos os outros sistemas passam a usar a interface comum de áudio, que
+funciona junto com quaisquer outros programas ou serviços de áudio.
+Agora, apenas os sistemas do driver **ksys573** passam a usar a
+configuração com baixa latência. O mesmo pode ser feito com outros
+drivers como o **djmain** que é responsável pelos sistemas das séries
+**Beatmania** e **Pop'n Music** por exemplo. Lembrando que você pode
+identificar o nome do driver com o comando ``mame nome_da_rom -ls``.
+Para mais informações, consulte o comando
 :ref:`-listsource <mame-commandline-listsource>`.
+
 
 .. raw:: latex
 

@@ -8,14 +8,13 @@
 Sobre as ROMs e os seus conjuntos
 =================================
 
-O manuseio e a atualização das ROMs e dos seus respectivos conjuntos é
-provavelmente a questão que causa a maior confusão e problemas dentre os
+O manuseio e a atualização das ROMs e de seus respectivos conjuntos
+provavelmente causam a maior confusão e geram problemas entre os
 usuários do MAME, especialmente os marinheiros de primeira viagem.
 
 Esta seção tem como objetivo esclarecer diversos tópicos sobre o
-assunto, para tirar muitas das dúvidas mais comuns sobre o assunto e
-para abordar detalhes que você precisa saber para poder usar o MAME de
-forma mais eficaz.
+assunto, tirar dúvidas comuns e abordar detalhes importantes para usar o
+MAME de forma mais eficaz.
 
 
 .. _aboutromsets_rom:
@@ -23,30 +22,28 @@ forma mais eficaz.
 O que é uma imagem ROM?
 -----------------------
 
-A programação do jogo em si ficam armazenados dentro de circuitos
-integrados [#CI]_ na placa-mãe do arcade ou num outro tipo de
-dispositivo (CD-ROM, DVD-ROM, HDD, etc.). Nós chamamos estes arquivos de
-ROMs pois é um acrônimo de *"Read-Only Memory"* que significa memória de
-leitura apenas.
+A programação do jogo em si e armazenada em circuitos integrados [#CI]_
+na placa-mãe do arcade ou em outro tipo de dispositivo (CD-ROM, DVD-ROM,
+HDD, etc.). Nós os chamamos de ROMs, pois é um acrônimo de
+*"Read-Only Memory"* que significa memória de somente leitura.
 
-Na maioria dos consoles e portáteis, dentro dos cartuchos geralmente a
-programação do jogo vem num único CI (mas nem sempre). Já nos sistemas
-arcade a coisa é um pouco mais complicada devido ao seu design, o
-sistema em questão normalmente precisará ler todos os dados do jogo
-encontrado em diferentes CIs espalhados por toda a placa.
+Na maioria dos consoles e portáteis, a programação do jogo geralmente
+vem num único CI (mas nem sempre). Já nos sistemas arcade, a coisa é um
+pouco mais complicada devido ao seu design: o sistema em questão
+normalmente precisa ler todos os dados do jogo encontrados em
+diferentes CIs espalhados por toda a placa.
 
-Alguns dos CIs usados para armazenar os dados não são regraváveis como
-um CI do tipo **PROM** por exemplo, uma vez gravados, os dados ficam
-armazenados de forma permanente (contanto que o CI não seja danificado
-ou caso envelheça até a pifar de vez!).
+Alguns dos CIs usados para armazenar os dados não são regraváveis, como
+um CI do tipo **PROM**, por exemplo. Uma vez gravados, os dados ficam
+armazenados de forma permanente (desde que o CI não seja danificado ou
+envelheça até que se desgaste completamente!).
 
-No exemplo abaixo podemos ver um exemplo de um conjunto de CIs do tipo
-**EPROM** que podem ser apagados através de uma luz ultravioleta e
-gravados novamente (as etiquetas são colocadas em cima destes CIs que
-contém uma abertura para realizar este apagamento, como proteção contra
-o apagamento involuntário ou acidental dos dados). Dada a questão da
-limitação da tecnologia e de espaço da época, os dados eram divididos em
-diferentes EPROMs.
+Abaixo, vemos um exemplo de um conjunto de CIs do tipo **EPROM** que
+podem ser apagados por meio de luz ultravioleta e gravados novamente
+(as etiquetas são colocadas sobre esses CIs, que contêm uma abertura
+para realizar esse apagamento, como proteção contra a eliminação
+acidental ou involuntária dos dados). Dada a limitação tecnológica e de
+espaço da época, os dados eram divididos em diferentes EPROMs.
 
 .. figure:: images/eprom.svg
 	:width: 90%
@@ -62,17 +59,18 @@ diferentes EPROMs.
 
 	\clearpage
 
-Posteriormente através de um leitor apropriado, os dados contidos dentro
-destas EPROMs são lidos e armazenado em forma de uma imagem binária.
-Este processo de se extrair a imagem de dentro destes CIs é chamado de
-*"dump"* ou *ROM dump*. As imagens depois de extraídas geralmente podem
-ser organizadas e armazenadas como ``xxyyzz.01``, ``xxyyzz.02``,
-``xxyyzz.03``, ``xxyyzz.04``, ``xxyyzz.05`` e ``xxyyzz.06``
-respectivamente. Após a conclusão de todo o processo e de todo um
+Posteriormente, os dados contidos dentro dessas EPROMs são lidos e
+armazenados em forma de imagem binária por meio de um leitor apropriado.
+Esse processo de extrair a imagem desses CI é chamado de *"dump"* ou de
+"ROM dump"*. As imagens, depois de extraídas, geralmente podem ser
+organizadas e armazenadas como ``xxyyzz.01``, ``xxyyzz.02``,
+``xxyyzz.03``, ``xxyyzz.04``, ``xxyyzz.05`` e ``xxyyzz.06``,
+respectivamente. Após a conclusão de todo o processo e de todo o
 trabalho de aferição para saber se as imagens foram extraídas
-corretamente, os desenvolvedores registram o nome de cada imagem e os
-seus respectivos CRC [#CRC]_ e SHA1 [#SHA1]_ dentro do código-fonte do
-respectivo driver para que o MAME saiba como carrega-los.
+corretamente, os desenvolvedores registram o nome de cada imagem e seus
+respectivos valores de CRC [#CRC]_ e SHA1 [#SHA1]_ dentro do
+código-fonte do respectivo driver para que o MAME saiba como
+carregá-las.
 
 
 .. _aboutromsets_rom_version:
@@ -355,76 +353,72 @@ também do ``namco54.zip`` para que a ROM ``galaga.zip`` funcione.
 Solucionando problemas dos seus conjuntos de ROMs e um pouco de história
 ------------------------------------------------------------------------
 
-A frustração de muitos usuários do MAME podem estar relacionadas com as
-alterações julgadas como desnecessárias por muitos, porém, tais
-alterações são necessárias devido as alterações que os arquivos ROM
-sofrem ao longo do tempo e que na cabeça dos usuários, parece que
-fazemos isso para tornar a vida de vocês mais difícil e realmente não é
-o caso.
+A frustração de muitos usuários do MAME pode estar relacionada com as
+alterações julgadas como desnecessárias por muitos, porém tais
+alterações são necessárias devido às alterações que os arquivos ROM
+sofrem ao longo do tempo. Na cabeça dos usuários, parece que fazemos
+isso para tornar a vida de vocês mais difícil, mas não é o caso.
 
-Compreender o motivo destas alterações e o porque delas serem
-necessárias lhe ajudará a evitar ser iludido por estas contradições
+Compreender o motivo dessas alterações e o porquê de serem necessárias
+lhe ajudará a evitar ser iludido por essas contradições
 sobre as :ref:`versões das ROMs <aboutromsets_rom_version>`.
 
-Uma grande quantidade de ROMs e com os seus respectivos conjuntos já
-existiam antes da emulação. Estes conjuntos iniciais foram criados pelos
-proprietários das casas de arcades e utilizados como um recurso de
-manutenção para as placas quebradas que já não funcionavam mais, assim
-como, para a substituição dos componentes/peças/CIs danificados.
-Infelizmente, alguns destes conjuntos já não continham mais todos os
-dados essenciais (o programa em si) para poder funcionar. Muitas das
-imagens que foram extraídas logo no começo tinham falhas e erros, seja
-por um procedimento errado na hora da extração ou pela falta da
-tecnologia para poder fazê-lo da forma mais eficiente possível, como a
-falta de informação responsável pela paleta de cores da tela por
-exemplo.
+Muitas ROMs e seus respectivos conjuntos já existiam antes da emulação.
+Esses conjuntos iniciais foram criados pelos proprietários das casas de
+arcade e utilizados como recurso de manutenção para as placas quebradas
+que já não funcionavam mais, assim como para a substituição de
+componentes, peças e CI danificados. Infelizmente, alguns desses
+conjuntos já não continham todos os dados essenciais (o programa em si)
+para poderem funcionar. Muitas das imagens extraídas no início
+apresentavam falhas e erros, seja por um procedimento incorreto no
+momento da extração ou pela falta de tecnologia para fazê-lo de maneira
+eficiente, como a falta de informação responsável pela paleta de cores
+da tela, por exemplo.
 
-Os primeiros emuladores tentavam simular artificialmente estes dados das
-cores que faltavam da maneira mais próxima possível, porém, por mais que
-se tentasse ela nunca chegava próxima da original, havia erros. Até
-descobrirem os dados que faltavam em outros circuitos integrados. Isso
-faz com que seja necessário extrair estes dados e atualizar os conjuntos
-antigos com os novos arquivos conforme fosse necessário.
+Os primeiros emuladores tentavam simular artificialmente esses dados de
+cores que faltavam da maneira mais próxima possível, porém, por mais
+que se tentasse, nunca se chegava próximo do original, pois havia
+erros. Até que se descobriram os dados que faltavam em outros circuitos
+integrados. Por isso, é necessário extrair esses dados e atualizar os
+conjuntos antigos com os novos arquivos conforme necessário.
 
 Não demoraria muito para descobrir que muitos dos conjuntos já
-existentes tinham dados ruins para um ou mais circuitos integrados
-conforme a emulação daquele sistema específico foi melhorando, entenda
-"dados ruins" como uma imagem extraída faltando partes, no formato
-errado, com partes corrompidas, etc. Algumas vezes os desenvolvedores
-precisavam criar burlar o funcionamento original de certos circuitos
-para que a emulação pudesse funcionar porque a imagem deste CI
-específico os desenvolvedores não tinham acesso ou porque ainda não
-era possível extrair o seu conteúdo. E quando a imagem deste CI era
-extraído e usado no emulador, a emulação do sistema já não funcionava
-mais.
+existentes tinham dados ruins para um ou mais circuitos integrados. À
+medida que a emulação daquele sistema específico melhorava, os dados
+ruins se tornavam mais evidentes, como uma imagem extraída com partes
+faltantes, no formato errado ou corrompidas, entre outros. Às vezes, os
+desenvolvedores precisavam criar uma maneira de burlar o funcionamento
+original de certos circuitos para que a emulação pudesse funcionar, pois
+não tinham acesso à imagem do CI específico ou não era possível extrair
+seu conteúdo. Quando a imagem do CI era extraída e usada no emulador, a
+emulação do sistema já não funcionava mais.
 
-Por essas e outras que, uma vez compreendido como o circuito funcionava,
-o driver e as ROMs daquele respectivo sistema precisavam ser
-atualizados. E conforme mais ROMs iam aparecendo, mais e mais conjuntos
-precisariam de revisões completas.
+Por esse e outros motivos, uma vez compreendido como o circuito
+funcionava, o driver e as ROMs daquele sistema específico precisavam ser
+atualizados. E, à medida que mais ROMs apareciam, mais conjuntos
+precisavam de revisões completas.
 
 Ocasionalmente, seria descoberto que a documentação de alguns jogos
-estava errada ou foi feita de forma errada. Alguns jogos considerados
-originais eram na verdade, cópias piratas de fabricantes desconhecidos.
-Outros jogos que foram considerados como "piratas" eram na verdade a
-versão original do jogo e assim por diante. Os dados de alguns jogos
-estavam bagunçados de maneira que não se sabia exatamente de qual região
-determinada placa era (como jogos **World** misturado com **Japão** por
-exemplo) o que exigiu também que ajustes internos e a correção dos nomes
-fossem feitos.
+estava incorreta ou fora de ordem. Alguns jogos considerados originais
+eram, na verdade, cópias piratas de fabricantes desconhecidos. Outros
+jogos tidos como *"piratas"* eram, na verdade, a versão original do
+jogo. Os dados de alguns jogos estavam bagunçados, de maneira que não se
+sabia exatamente de qual região determinada placa era (como jogos
+**World** misturado com **Japan**, por exemplo), o que exigiu ajustes
+internos e a correção dos seus respectivos nomes.
 
-Mesmo agora, acontecem achados ocasionais e "milagrosos" que alteram a
-nossa compreensão desses jogos. Como é fundamental que uma documentação
-seja precisa para registrar a história dos arcades, o MAME mudará o nome
-dos conjuntos sempre que for necessário, visando a precisão e mantendo
-as coisas da maneira mais correta possível, sempre no limite do
-conhecimento que a equipe têm a cada novo lançamento do MAME.
+Mesmo agora, acontecem achados ocasionais e *"milagrosos"* que alteram a
+nossa compreensão desses jogos. Como uma documentação precisa é
+fundamental para registrar a história dos arcades, o MAME mudará o nome
+dos conjuntos sempre que necessário, visando à precisão e mantendo as
+coisas da maneira mais correta possível, sempre no limite do
+conhecimento da equipe a cada novo lançamento do MAME.
 
-Isso resulta numa compatibilidade muito irregular para os conjuntos das
+Isso resulta numa compatibilidade muito irregular para os conjuntos de
 ROMs que param de funcionar nas versões mais antigas do MAME. Alguns
 jogos podem não ter mudado muito entre 20 ou 30 novas versões do MAME,
-assim como outros podem ter mudado drasticamente entre as novas
-versões já lançadas.
+enquanto outros podem ter sido alterado drasticamente entre as novas
+versões que já foram lançadas.
 
 Caso encontre problemas com um determinado conjunto de ROMs que não
 funcionam mais, há várias coisas a serem verificadas:
@@ -443,35 +437,33 @@ dentro de quais conjuntos e onde eles foram procurados.
 ROMs e CHDs
 -----------
 
-Os dados do CI que contém a imagem da ROM, tendem a ser relativamente
+Os dados do CI que contêm a imagem da ROM tendem a ser relativamente
 pequenos e são carregados sem maiores problemas na memória do sistema.
 Alguns jogos também usavam mídias adicionais de armazenamento, como
-discos rígidos, CD-ROMs, DVDs e Laserdiscs. Esses meios de armazenamento
-são, por questões técnicas diversas, inadequados para serem armazenados
-da mesma forma que os dados das ROMs e, em alguns casos, não caberão por
-inteiro na memória.
+discos rígidos, CD-ROMs, DVDs e fitas de vídeo. Esses meios de
+armazenamento são inadequados para serem armazenados da mesma forma que
+os dados das ROMs por questões técnicas diversas. Em alguns casos,
+eles não caberão por inteiro na memória.
 
-Assim, um novo formato foi criado para eles, sendo armazenados num
-arquivo CHD. **Compressed Hunks of Data** ou numa tradução literal seria
-**Pedaços Comprimidos de Dados** ou CHD para simplificar. Estes são
-projetados especificamente em torno das necessidades de armazenamento
-dessa mídia. Para rodar, alguns jogos de arcade, de consoles e de PCs
-precisarão de um arquivo CHD.
+Assim, um novo formato foi criado para eles: o CHD. Em uma tradução
+literal, o termo seria "Pedaços Comprimidos de Dados" ou CHD para
+simplificar. Esses formatos são projetados especificamente para atender
+às necessidades de armazenamento dessa mídia. Para rodar, alguns jogos
+de arcade, de consoles e de PCs necessitarão de um arquivo CHD.
 
 Como os CHDs já estão comprimidos, eles **NÃO DEVEM** ser comprimidos
-novamente num arquivo ZIP, 7Z ou qualquer outro.
+novamente, independente do formato.
 
-Visando a economia de espaço na existência de diversas variantes de um
-sistema ou de um programa, o MAME oferece suporte a arquivos "*delta
-CHD*". Um arquivo delta CHD armazena apenas as partes de dados que forem
-diferentes dos dados do arquivo CHD *principal*, isso possibilita uma
-economia de espaço considerável quando houver um grande compartilhamento
-de dados entre eles. Os arquivos delta CHD só podem ser usados nos clones
-dos sistemas principais, em dispositivos com uma ROM principal e os
-clones dos programas. Para que seja possível usar um delta CHD, é
-obrigatório que exista um CHD principal para que o MAME consiga ler os
-dados compartilhados, seja para um sistema, para dispositivos ROM ou
-para programas.
+Com o objetivo de economizar espaço na existência de diversas variantes
+de um sistema ou programa, o MAME oferece suporte a arquivos
+"*delta CHD*". Esses arquivos armazenam apenas as partes de dados
+diferentes do arquivo CHD *principal*, o que possibilita uma economia de
+espaço considerável quando houver um grande compartilhamento de dados
+entre eles. Os arquivos delta CHD só podem ser usados nos clones dos
+sistemas principais e nos dispositivos com uma ROM principal e seus
+clones. Para usar um delta CHD, é necessário que exista um CHD principal
+para que o MAME consiga ler os dados compartilhados, seja para um
+sistema, para dispositivos ROM ou para programas.
 
 
 .. [#CI]	Estes circuitos integrados também são conhecidos pela abreviação

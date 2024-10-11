@@ -9,10 +9,11 @@ DOCUMENTAÇÃO MAME
 =================
 
 .. note::
-	Esta publicação é o resultado de um trabalho em contante evolução.
-	Você pode acompanhar se há alguma atualização dos tópicos e assuntos
-	aqui tratados acessando o 
-	`issue tracker <https://github.com/wtuemura/mamedoc/issues>`_.
+	Esta publicação é o resultado de um trabalho em constante evolução.
+	Acesse o
+	`issue tracker <https://github.com/wtuemura/mamedoc/issues>`_para
+	acompanhar se há alguma atualização dos tópicos e assuntos aqui
+	tratados.
 	Veja como você pode contribuir na seção `contribute <https:
 	//github.com/wtuemura/mamedoc/blob/master/source/contribua.md>`_ no
 	site do GitHub.

@@ -4,23 +4,22 @@ ALERTA SOBRE A SAÚDE
 Fotossensibilidade / Ataques Epiléticos
 ---------------------------------------
 
-Um percentual muito baixo de pessoas podem sofrer ataques epiléticos ou
-desmaios quando expostos a determinados padrões, ou "flashes" de luz. A
-exposição a certos padrões, fundos de tela numa televisão, tela de
-computador, jogando videogames, pode provocar ataques epiléticos, ou
-desmaios nestes indivíduos.
+Um percentual muito baixo de pessoas pode sofrer ataques epiléticos ou
+desmaios quando exposto a determinados padrões ou "flashes" de luz. A
+exposição a certos padrões, como os fundos de tela da televisão ou do
+computador, nestes indivíduos, pode provocar ataques epiléticos ou
+desmaios.
 
 Estas condições podem desencadear sintomas epiléticos não detectados
-previamente em pessoas sem histórico de epilepsia ou convulsão. Podem
-ser inclusas nestas condições a precisão ou não de uma emulação, o
-desempenho de um computador durante a execução do MAME, os controladores
-da placa de vídeo, o seu monitor e diversos outros fatores. Caso você
-ou qualquer outra pessoa da sua família, tenha epilepsia ou já tenha
-sofrido convulsões de qualquer tipo, consulte um médico antes de voltar
-a usar o MAME.
+previamente em pessoas sem histórico de epilepsia ou de convulsão. Podem
+ser incluídos nesta condição a precisão da emulação, o desempenho de um
+computador durante a execução do MAME, os controladores da placa de
+vídeo, o monitor e diversos outros fatores. Se você ou qualquer outra
+pessoa da sua família tem epilepsia ou já teve convulsões de qualquer
+tipo, consulte um médico antes de voltar a usar o MAME.
 
-Se durante a utilização do MAME você apresentar alguns dos sintomas
-abaixo **INTERROMPA O USO IMEDIATAMENTE**:
+**INTERROMPA O USO IMEDIATAMENTE** se você apresentar alguns dos
+sintomas abaixo durante a utilizaçao do MAME:
 
 * Vertigem
 * Visão alterada

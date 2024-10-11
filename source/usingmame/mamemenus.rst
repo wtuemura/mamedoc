@@ -52,16 +52,17 @@ sistema também aparece ao pressionar :kbd:`Tab` e selecionar a opção
 Consulte a :ref:`seção relevante <ui-menus>` para obter mais
 informações.
 
-Caso rode o MAME sem nenhum parâmetro na linha de comando ou
-clicando duas vezes em seu ícone, você verá a interface do usuário e
-acessando as opções da parte debaixo da tela terá acesso ao cardápio de
-opções, entre eles a lista de seleção de jogos ao centro, os filtros do
-lado esquerdo, a aba de informações e imagens. No rodapé da tela tem um
+Ao executar o MAME sem nenhum parâmetro na linha de comando ou clicando
+duas vezes em seu ícone, você verá a interface do usuário. Ao acessar as
+opções na parte inferior da tela, você terá acesso ao cardápio de
+opções, incluindo a lista de seleção de jogos no centro, os filtros do
+lado esquerdo e a aba de informações e imagens. No rodapé da tela, há um
 descritivo resumido do sistema, com o nome do sistema, nome do
-fabricante, ano, a condição som e imagem e se o sistema funciona ou não.
+fabricante, ano, condição de som e imagem e se o sistema está
+funcionando ou não.
 
-Dependendo da condição dos sistemas a interface do MAME exibirá
-diferentes cores de fundo indicando a sua condição.
+Dependendo da condição dos sistemas, a interface do MAME exibirá
+diferentes cores de fundo, indicando a sua condição.
 
 	* :guilabel:`Verde`: São sistemas com ROMs completos e que funcionam.
 	* :guilabel:`Vermelha`: São sistemas que não funcionam direito ou tem ROMs faltando.
