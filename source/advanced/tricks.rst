@@ -1361,81 +1361,92 @@ ela, a lista abaixo é um **resumo** com informações da placa apenas::
 
 .. _advanced-tricks-performance-vulkan-debian:
 
-Ativando o Vulkan no Debian 10/11
----------------------------------
+Ativando o Vulkan no Debian
+---------------------------
 
-O Debian exige um tratamento todo especial, por ser uma distro bem
-conservadora e que visa a extrema estabilidade a versão dos seus pacotes
-são antigos se comparados com a versão da atualidade, portanto é
-necessário fazer alterações significativas para que seja possível usar o
-driver amdgpu compatível com o vulkan.
+O Debian exige um tratamento todo especial por ser uma distribuição
+bastante conservadora, que visa extrema estabilidade. A versão dos seus
+pacotes é antiga se comparada à versão atual, portanto é necessário
+fazer alterações significativas para que seja possível usar o driver
+amdgpu compatível com o Vulkan.
 
 Os procedimentos a seguir foram feitos a partir de uma instalação nova
-do Debian 10 (Buster), não recomendamos o procedimento no seu computador
-de uso diário pois você pode perder totalmente o acesso a interface
-gráfica, inclusive do terminal local.
+do Debian 12 (Bookworm). Não recomendamos executá-los em seu computador
+de uso diário, pois você pode perder totalmente o acesso à interface
+gráfica e inclusive do terminal local.
 
-Depois de terminada a instalação adicione um usuário comum e adicione-o
-ao grupo sudo com o comando ``usermod -aG sudo nome_do_usuário`` para
-que ele possa usar o comando ``sudo``, encerre a sessão caso esteja
-logado na interface gráfica.
+Após concluir a instalação, adicione um usuário comum e adicione-o ao
+grupo sudo com o comando ``usermod -aG sudo nome_do_usuário`` para que
+ele possa usar o comando ``sudo``. Encerre a sessão caso esteja logado
+na interface gráfica.
 
-Pressione **CTRL+ALT+F1** e se logue como **root**, faça um backup do
-arquivo ``/etc/apt/source.list``::
 
-	cp /etc/apt/source.list /etc/apt/source.list~
+Abra um terminal e faça o comando:
 
-Faça ``echo "" > /etc/apt/source.list`` para limpar o arquivo e
-adicione o seguinte conteúdo::
+.. code-block:: shell
+
+	sudo cp /etc/apt/source.list /etc/apt/source.list~
+
+Faça ``sudo echo "" > /etc/apt/source.list`` para limpar o arquivo e
+adicione o seguinte conteúdo (para o nosso caso que vivemos no Brasil,
+caso more num lugar diferente adicione o espelho da sua região)
+
+.. code-block:: shell
 
 	deb http://ftp.br.debian.org/debian/ testing main contrib non-free
 	deb http://ftp.br.debian.org/debian/ testing-updates main contrib non-free
 	deb http://security.debian.org/ testing-security main
 
-Faça o comando ``apt-get update && apt-get upgrade`` e aguarde a
-atualização de todos os pacotes do sistema, isso pode levar um pouco
-mais de meia hora. Quando todo o processo terminar faça o comando
-``apt dist-upgrade``, este comando vai atualizar o restante dos pacotes
-que não foram atualizados no processo anterior e também vai atualizar o
-kernel.
+Execute o comando ``sudo apt-get update && sudo apt-get upgrade`` e
+aguarde a atualização de todos os pacotes (em alguns casos isso pode
+levar um pouco mais de meia hora). Quando todo o processo terminar faça
+o comando ``sudo apt dist-upgrade``, este comando vai atualizar o
+restante dos pacotes que não foram atualizados no processo anterior e
+também vai atualizar o kernel se for necessário.
 
-Agora instale os seguintes pacotes, independente de como apareça, a
-linha abaixo é uma linha inteira e sem quebras::
+Agora instale os seguintes pacotes:
+
+.. note:: Independente de como apareça para você, a linha abaixo é
+   contínua e sem quebras.
+
+.. code-block:: shell
 
 	sudo apt-get install firmware-amd-graphics xserver-xorg-video-amdgpu
-	libgl1-mesa-dri libdrm-amdgpu1 firmware-linux-nonfree libgl1-mesa-dri
-	vulkan-tools radeontop mesa-vulkan-drivers mesa-utils libglvnd0
-	tuned vulkan-validationlayers mesa-opencl-icd lm-sensors
+	libgl1-mesa-dri libdrm-amdgpu1 firmware-linux-nonfree
+	libgl1-mesa-dri vulkan-tools radeontop mesa-vulkan-drivers
+	mesa-utils libglvnd0 tuned vulkan-validationlayers mesa-opencl-icd
+	lm-sensors inxi
 
 Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 
 	options radeon si_support=0
 	options amdgpu si_support=1
 	options amdgpu dpm=0
-	options amdgpu deep_color=1
 	options amdgpu dc=1
 
-.. note::
+.. note:: Para saber se a sua placa é compatível com o **SI** ou **CIK**
+   execute o comando ``inxi -G |grep drivers`` no terminal, caso retorne
+   **radeonsi** a configuração para a sua placa será ``si_support=1``,
+   caso contrário ``cri_support=1``.
 
-	Dependendo da versão da sua *VGA/GPU* você precisa usar
-	``amdgpu dc=1``, caso contrário a tela fica preta no próximo reboot,
-	`consulte este link <https://wiki.gentoo.org/wiki/Talk:AMDGPU>`_
-	para mais informações.
-
-Crie o arquivo ``/etc/modprobe.d/pcie-perf.conf`` com o seguinte
-conteúdo::
-
-	options pcie_aspm policy=performance
+.. note:: Dependendo da versão da sua *VGA/GPU* você precisa usar
+   ``amdgpu dc=1``, caso contrário a tela fica preta no próximo reboot,
+   `consulte este link <https://wiki.gentoo.org/wiki/Talk:AMDGPU>`_
+   para obter mais informações.
 
 Crie o arquivo ``/etc/modprobe.d/blacklist.conf`` com o seguinte
-conteúdo::
+conteúdo:
+
+.. code-block:: shell
 
 	blacklist radeon
 
 Quando terminar faça o comando ``sudo update-grub && sudo
 update-initramfs -u`` para atualizar o grub e criar um novo initramfs
 seguido de ``systemctl reboot`` para reiniciar. Rode o comando abaixo e
-verifique se o driver **amdgpu** está em uso::
+verifique se o driver **amdgpu** está em uso:
+
+.. code-block:: shell
 
 	lspci -vs 01:00.0|grep driver
 	Kernel driver in use: amdgpu
@@ -1444,10 +1455,12 @@ verifique se o driver **amdgpu** está em uso::
 	OpenGL renderer string: AMD Radeon HD 7700 Series (VERDE, DRM 3.40.0, 5.10.0-1-amd64, LLVM 11.0.1)
 	OpenGL version string: 4.6 (Compatibility Profile) Mesa 20.3.2
 
-Execute o comando ``vulkaninfo`` e verifique se ele não acusa qualquer
-erro, se tudo estiver certo aparecerá uma lista detalhada com as
-informações da sua placa de vídeo e das extensões que estão ativas para
-ela, a lista abaixo é um **resumo** com informações da placa apenas::
+Execute o comando ``vulkaninfo`` e veja se ele não acusa qualquer erro,
+se tudo estiver certo aparecerá uma lista detalhada com as informações
+da sua placa de vídeo e das extensões que estão ativas para
+ela, a lista abaixo é um **resumo** das informações da placa:
+
+.. code-block:: shell
 
 	vulkaninfo |grep GPU
 	WARNING: radv is not a conformant vulkan implementation, testing use only.
@@ -1461,7 +1474,8 @@ ela, a lista abaixo é um **resumo** com informações da placa apenas::
 	GPU id : 0 (AMD RADV VERDE (ACO)):
 	GPU id : 1 (llvmpipe (LLVM 11.0.1, 256 bits)):
 
-Se chegou até aqui não é preciso definir a variável **VK_ICD_FILENAMES**.
+Se chegou até aqui não é preciso definir a variável
+**VK_ICD_FILENAMES**.
 
 .. raw:: latex
 
@@ -1476,11 +1490,15 @@ Ops, alguma coisa deu errado!
 Caso a sua distribuição não configure a variável **VK_ICD_FILENAMES**,
 o ``vulkaninfo`` e toda a configuração feita até aqui não vai
 funcionar fazendo com que o teste falhe. Se for o caso, ao rodar o
-comando ``vulkaninfo`` deve aparecer o erro logo no início::
+comando ``vulkaninfo`` deve aparecer o erro logo no início:
+
+.. code-block:: shell
 
 	ERROR: Failed to find Vulkan Driver JSON
 
-Ou pior::
+Ou pior:
+
+.. code-block:: shell
 
 	Cannot create Vulkan instance.
 	This problem is often caused by a faulty installation of the Vulkan
@@ -1492,14 +1510,18 @@ Tanto no Fedora quanto no Debian os arquivos \*.json devem estar
 instalados no diretório ``/usr/share/vulkan/icd.d``, caso não estejam
 tenha certeza de ter instalado o pacote ``mesa-vulkan-drivers``, o nome
 do pacote é o mesmo tanto para Fedora quanto para o Debian. Verifique a
-existência dos arquivos com o comando::
+existência dos arquivos com o comando:
+
+.. code-block:: shell
 
 	sudo find /usr/share -name *_icd.*
 	/usr/share/vulkan/icd.d/intel_icd.x86_64.json
 	/usr/share/vulkan/icd.d/amd_icd.x86_64.json
 	/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
 
-Edite o arquivo ``/etc/profile`` e no final do arquivo coloque::
+Edite o arquivo ``/etc/profile`` e no final do arquivo coloque:
+
+.. code-block:: shell
 
 	export XDG_RUNTIME_DIR=/run/user/$UID
 	export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_icd.x86_64.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json:/usr/share/vulkan/icd.d/intel_icd.x86_64.json
@@ -1522,7 +1544,9 @@ problemas exibindo todas as informações da sua placa de vídeo.
 
 	\clearpage
 
-No caso do Linux acusar a falta de algum firmware para o **amdgpu**::
+No caso do Linux acusar a falta de algum firmware para o **amdgpu**:
+
+.. code-block:: shell
 
 	update-initramfs: Generating /boot/initrd.img-5.10.0-7-amd64
 	W: Possible missing firmware /lib/firmware/amdgpu/arcturus_gpu_info.bin for module amdgpu
@@ -1557,12 +1581,16 @@ para ver a lista destes arquivos.
 
 Para evitar ficar copiando manualmente estes arquivos um a um, selecione
 toda a lista acima (ou o que for gerado no seu terminal) e salve a lista
-num arquivo qualquer (``bin.txt`` por exemplo) e execute o comando::
+num arquivo qualquer (``bin.txt`` por exemplo) e execute o comando:
+
+.. code-block:: shell
 
 	cat bin.txt | awk '{print $5}' | awk -F "/lib/firmware/amdgpu/" '{print $2}' > missing.txt
 
 Para gerar uma lista dentro do arquivo **missing.txt** com os arquivos
-que estão faltando::
+que estão faltando:
+
+.. code-block:: shell
 
 	arcturus_gpu_info.bin
 	navy_flounder_ta.bin
@@ -1591,21 +1619,29 @@ que estão faltando::
 
 Baixe o `linux-firmware-main.tar.gz`_ (é um arquivo grande com cerca de
 570 MiB),  abra o terminal no mesmo diretório do arquivo, extraia apenas
-a pasta **amdgpu** com o comando::
+a pasta **amdgpu** com o comando:
+
+.. code-block:: shell
 
 	tar -zxvf linux-firmware-main.tar.gz linux-firmware-main/amdgpu
 
 Ainda no terminal, copie o arquivo **missing.txt** para dentro de
-**linux-firmware-main/amdgpu** e entre neste diretório::
+**linux-firmware-main/amdgpu** e entre neste diretório:
+
+.. code-block:: shell
 
 	mv missing.txt linux-firmware-main/amdgpu && cd linux-firmware-main/amdgpu
 
 Para copiar apenas os arquivos que faltam para o seu devido destino,
-faça o comando::
+faça o comando:
+
+.. code-block:: shell
 
 	for firmware in $(<missing.txt); do sudo cp "$firmware" /lib/firmware/amdgpu; done
 
-Ou para os mais puritanos::
+Ou para os mais puritanos:
+
+.. code-block:: shell
 
 	while read -r firmware; do sudo cp $firmware /lib/firmware/amdgpu; done < missing.txt
 
@@ -1620,7 +1656,9 @@ Agora atualize o seu **initramfs** com o comando
 
 **Para casos onde o amdgpu trava.**
 
-Adicione estas linhas extras ao seu ``/etc/modprobe.d/amdgpu.conf``::
+Adicione estas linhas extras ao seu ``/etc/modprobe.d/amdgpu.conf``:
+
+.. code-block:: shell
 
 	options amdgpu gpu_recovery=1
 	options amdgpu lockup_timeout=6000
@@ -1641,67 +1679,93 @@ Para mais informações consulte
 Removendo a âncora
 ------------------
 
-Em geral as distros linux vem com o modo mais agressivo de economia de
-energia ativo, seria colocar uma âncora num carro de corrida. Isso
-sacrifica o desempenho do seu computador visando a economia exagerada
-de energia, 
+Em geral as distros linux vem com um modo mais agressivo de economia de
+energia ativo, para melhorar o desempenho do seu computador já que o
+MAME exige dos recursos de processamento dele. No Fedora instale o
+``sudo dnf kernel-tools``, no Debian instale o
+``sudo apt install linux-cpupower``.
 
-Instale o ``tuned`` com ``sudo dnf install tuned`` no Fedora ou ``sudo
-apt-get install tuned`` no Debian. Inicie o tuned com o comando::
+Após a instalação rode o comando ``sudo cpupower frequency-info`` para
+ver quais são as opções compatíveis com o seu processador:
 
-	systemctl start tuned
+.. code-block:: shell
 
-Faça com que ele seja sempre inicializado no boot::
+	sudo cpupower frequency-info
+	analisando o CPU 3:
+	  driver: acpi-cpufreq
+	  CPUs que rodam na mesma frequência de hardware: 3
+	  CPUs que precisam ter suas frequências coordenadas por software: 3
+	  maior latência de transição: 4.0 us
+	  limites do hardware: 1.40 GHz - 4.00 GHz
+	  available frequency steps:  4.00 GHz, 3.40 GHz, 2.80 GHz, 2.10 GHz, 1.40 GHz
+	  reguladores do cpufreq disponíveis: performance schedutil
+	  política de frequência atual deve estar entre 1.40 GHz e 4.00 GHz.
+					  O regulador "schedutil" deve decidir qual velocidade usar
+					  dentro desse limite.
+	  current CPU frequency: 1.40 GHz (asserted by call to hardware)
+	  boost state support:
+	Supported: yes
+	Active: yes
+	Boost States: 2
+	Total States: 7
+	Pstate-Pb0: 4200MHz (boost state)
+	Pstate-Pb1: 4100MHz (boost state)
+	Pstate-P0:  4000MHz
+	Pstate-P1:  3400MHz
+	Pstate-P2:  2800MHz
+	Pstate-P3:  2100MHz
+	Pstate-P4:  1400MHz
 
-	systemctl enable tuned
+Para o nosso processador nós temos duas opções disponíveis,
+**performance** e **schedutil**. A opção **performance** faz com que
+ele ofereça o desempenho máximo deixando a frequência de operação no
+máximo mesmo em idle, ou seja, nesta condição o seu processador vai
+estar consumindo o máximo de energia que ele puder **mesmo parado e sem
+fazer nada**. Já o **schedutil** faz o seu processador trabalhar
+de forma dinâmica, acelerando ou reduzindo a frequência quando for
+necessário e trazendo mais economia para você.
 
-Definimos o perfil ``desktop`` com o comando::
+.. note:: Observe que este programa só vai funcionar caso a sua placa
+   mãe e o seu processador forem compatíveis com um sistema de
+   gerenciamento de energia (ACPI) onde seja permitido a troca de
+   frequência do processador.
 
-	tuned-adm profile desktop
+Para ativar o modo **performance** rode o comando abaixo no termial:
 
-O perfil **desktop** fica no meio termo, salva energia quando estiver
-tudo calmo e acelera quando precisar. Para ver a lista dos outros perfis
-execute o comando ``tuned-adm profile``, há o perfil
-``latency-performance`` que elimina o gerenciamento de energia e deixa
-tudo no máximo ao custo de um alto consumo de energia.
+.. code-block:: shell
 
-Para conferir qual o perfil ativo faça::
+	sudo cpupower -c all frequency-set -g performance
 
-	tuned-adm active
-	Current active profile: desktop
+Para deixar o processador em modo econômico mas em alerta caso necesside
+de mais poder de processamento, faça:
 
-Os perfis com cada configuração ficam no diretório ``/usr/lib/tuned``.
+.. code-block:: shell
 
-Para deixar o gerenciamento de energia em modo **performance** crie o
-arquivo ``10-amdgpu.rules`` em ``/etc/udev/rules.d`` com o comando
-``sudo touch /etc/udev/rules.d/10-amdgpu.rules`` e adicione estas
-configurações::
+	sudo cpupower -c all frequency-set -g schedutil
 
-	KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
+Como as necessidades de cada um é diferente e para que você não precise
+ficar digitando estes longos comandos crie um *"apelido"* para eles,
+crie o arquivo **.bash_aliases** (atenção ao ponto no início do arquivo)
+com o seguinte conteúdo:
 
-Note porém que ``high`` pode ser incompatível com o modelo da sua placa
-de vídeo, nestes casos tente ``auto`` ou experimente com as outras
-opções `disponíveis <https://dri.freedesktop.org/docs/drm/gpu/amdgpu.html#power-dpm-force-performance-level>`_.
-Na dúvida ou incerteza, não faça esta configuração.
+.. code-block:: shell
 
-Salve o arquivo e execute o comando
-``sudo udevadm control --reload-rules`` para atualizar o udev, em
-seguida rode o comando ``journalctl -b -p err`` e tenha certeza que não
-há **qualquer** erro em vermelho relacionado ao amdgpu, se houver
-verifique o arquivo ``10-amdgpu.rules`` e o seu conteúdo, repita o
-comando ``udevadm control --reload-rules``. Caso o erro persista, apague
-o arquivo ``10-amdgpu.rules`` e repita o comando
-``udevadm control --reload-rules`` novamente para eliminar as
-configurações, talvez haja algum problema com a versão do driver ou da
-compatibilidade com a sua placa de vídeo.
+	# Troca o CPU Governor
+	# Desempenho, CPU sempre no máximo
+	alias desempenho='sudo cpupower -c all frequency-set -g performance'
+	
+	# Economia, CPU com frequência variável
+	alias economia='sudo cpupower -c all frequency-set -g schedutil'
 
-Há situações onde pode ocorrer o corrompimento dos gráficos na sua tela
-como um todo ou em partes dela, se for o seu caso troque a opção
-``performance`` por ``high`` seguido do comando
-``udevadm control --reload-rules``, novamente, verifique com o comando
-``journalctl -b -p err`` se não há erros do **amdgpu** em vermelho.
+Para tornar estes apelidos ativos execute no terminal
+``. .bash_aliases`` (ponto, espaço, nome do arquivo). Agora basta
+digitar **desempenho** ou **economia** para alternar os modos de
+funcionamento do seu processador.
 
-Execute o comando para verificar a temperatura da sua placa de vídeo::
+Execute o comando **sensors** para ver se está tudo bem com a
+temperatura da sua placa de vídeo:
+
+.. code-block:: shell
 
 	sensors
 	
@@ -1710,8 +1774,7 @@ Execute o comando para verificar a temperatura da sua placa de vídeo::
 	fan1:         N/A
 	edge:         +43.0°C  (crit = +120.0°C, hyst = +90.0°C)
 
-Para encerrar a configuração com chave de ouro, ative a renderização
-direta da placa de vídeo, edite o arquivo
+Para concluir a nossa configuração, crie o arquivo
 ``/usr/share/X11/xorg.conf.d/10-amdgpu.conf`` e adicione a opção
 ``Option  "DRI" "3"`` como mostra o exemplo abaixo::
 
@@ -1754,10 +1817,8 @@ um arquivo ``raster.ini`` e edite-o com as seguintes configurações::
 	bgfx_screen_chains        crt-geom
 	window                    1
 
-.. note::
-
-	A mesma configuração serve para o **Windows**, tenha certeza de
-	estar usando a última versão dos drivers da sua placa de vídeo.
+.. note:: A mesma configuração serve para o **Windows**, tenha certeza
+   de estar usando a última versão dos drivers da sua placa de vídeo.
 
 .. raw:: latex
 
@@ -2938,6 +2999,24 @@ localizar as suas ROMs, assim como outras configurações de vídeo e áudio
 para que o seu MAME possa funcionar corretamente.
 
 
+.. _advanced-boost-pre-installation:
+
+Acelerando jogos que precisam de pré-instalação
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Jogos como o **Dance Dance Revolution**, **Street Fighter III** e
+diversos outros, ao serem iniciados pela primeira vez precisam instalar
+os seus arquivos na pasta *NVRAM*, este é um processo demorado. Caso
+queira acelerar todo o processo, inicie o mame com o comando abaixo:
+
+.. code-block:: shell
+
+	mame -fs 9 -nothrottle _nome_da_rom
+
+Ao concluir a instalação, encerre a emulação, faça o backup como é
+explicado no próximo capítulo e inicie a emulação normalmente.
+
+
 .. _advanced-tricks-nvram:
 
 Mantendo as configurações da BIOS de um sistema ao apagar a NVRAM
@@ -3078,6 +3157,8 @@ iniciar a reprodução, todas as configurações da Unibios serão mantidas.
 
 Consulte o capítulo inputmacro do :ref:`plugins-inputmacro-svc` caso
 queira experimentar os comandos especiais.
+
+
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
