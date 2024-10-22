@@ -12,42 +12,42 @@ Criando e usando um LUT 3D no MAME
 Introdução
 ----------
 
-O *LUT* é um acrônimo de *"Look Up Table"*, é um arquivo que contém
-informações usadas para aplicar correções de cores (LUT técnico [#LT]_)
-ou para fazer uma gradação de cores (alterar as cores) de uma maneira a
-aplicar certos efeitos ou para alterar o tom da imagem (LUT criativo)
-visando criar uma aparência diferente da original.
+O *LUT* é um acrônimo de *"Look Up Table"*. Trata-se de um arquivo que
+contém informações usadas para aplicar correções de cores (LUT técnico
+[#LT]_) ou para fazer uma gradação de cores (alterar as cores) de uma
+maneira a aplicar certos efeitos ou para alterar o tom da imagem (LUT
+criativo) visando criar uma aparência diferente da original.
 
-É muito comum a utilização de LUTs nas produções de vídeo e foto seja
-para dar uma certa aparência *quente/fria/neutra* a uma determinada cena
-ou para criar perfis personalizados para câmeras e para as lentes. Estes
-perfis servem para corrigir eventuais desvios ou até mesmo para fazer
-ajustes finos. Independentemente da marca ou do modelo do equipamento,
+É muito comum o uso de LUTs em produções de vídeo e foto, seja para dar
+uma certa aparência *quente*, *fria* ou *neutra* a uma determinada cena
+específica, seja para criar perfis personalizados para câmeras e lentes.
+Esses perfis servem para corrigir eventuais desvios ou fazer ajustes
+finos. Independentemente da marca ou do modelo do equipamento,
 é comum que eles apresentem desvios nas cores em determinadas condições
-de iluminação ou situações específicas, seja por causa do tipo da luz
-utilizada (natural ou artificial) ou por causa de fatores externos como
+de iluminação ou situações específicas, seja por causa do tipo de luz
+utilizado (natural ou artificial) ou por causa de fatores externos, como
 a posição do sol em diferentes horários do dia, cenas com o tempo
-nublado, ambiente iluminado por velas e assim por diante.
+nublado, ambiente iluminado por velas, etc.
 
-Neste contexto, o LUT é utilizado para compensar ou para corrigir estas
-variações, garantindo que as cores de um determinado objeto, ou de uma
-pessoa, estejam consistentes em diferentes condições de luz. Por
-exemplo, um LUT pode ser criado para garantir que uma blusa com um tom
-específico de vermelho, apareça com a mesma tonalidade em diferentes
-condições de iluminação, proporcionando uma aparência visual uniforme
-durante todo o processo de produção.
+Neste contexto, o LUT é utilizado para compensar ou para corrigir essas
+variações, garantindo que as cores de um objeto, ou pessoa estejam
+consistentes em diferentes condições de luz. Por exemplo, um LUT pode
+ser criado para garantir que uma blusa com um tom específico de
+vermelho, apareça com a mesma tonalidade em diferentes condições de
+luz, proporcionando uma aparência visual uniforme durante todo o
+processo de produção.
 
-Para aprender mais sobre LUT, consulte os links ao lado.
+Para saber mais sobre LUT, consulte os links ao lado.
 [#LUT1]_ [#LUT2]_ [#LUT3]_
 
-A capacidade de aplicar LUT foi inserida no MAME em `Outubro de 2018`_,
+A capacidade de aplicar LUT foi inserida no MAME em `outubro de 2018`_,
 porém, mesmo após o seu lançamento no MAME `0.203`_, não houve nenhum
-grande anúncio ou qualquer manifestação conhecida da comunidade.
-Talvez porque a grande maioria das pessoas sequer sabem para que serve
-ou como se usa um LUT.
+grande anúncio ou manifestação conhecida da comunidade. Talvez porque a
+grande maioria das pessoas sequer saiba para que serve ou como usar um
+LUT.
 
 Neste capítulo vamos aprender a criar e aplicar LUTs de correção de
-cores no sistema *Nintendo Entertainment System* ou *NES* emulado pelo
+cores no sistema *Nintendo Entertainment System (NES)*, emulado pelo
 MAME.
 
 .. raw:: latex
@@ -82,23 +82,23 @@ Criando um HaldCLUT
 
 Para criar um CLUT que contenha todas as informações necessárias para
 corrigir as cores, é preciso seguir um processo que envolve o uso de uma
-imagem criada pelo MAME, que nos servirá como uma base e de uma outra
-imagem de referência, esta será usada como correção. Basicamente você
-está informando ao programa que o nosso alvo é corrigir as cores do
-MAME com as características da imagem de referência.
+imagem criada pelo MAME como base e de outra imagem de referência para a
+correção. Basicamente, você informa ao programa que o objetivo é
+corrigir as cores do MAME com as características da imagem de
+referência.
 
-Se vamos criar um CLUT de correção de cores, antes de mais nada, nós
-precisamos ter uma referência que possamos confiar, assim sendo, eu
-criei uma tela com `barras de cores SMPTE`_ gerado no padrão `BT.601`_
-com `luminância`_ no intervalo ``16,235`` (`nível de TV`_). Este é um
-padrão de teste utilizado até os dias de hoje pela indústria e pelos
-profissionais na produção de vídeo, cinema, televisão e fotografia para
-aferir a precisão das cores em uma ampla variedade de equipamentos
-utilizados na indústria audiovisual. Ele foi escolhido pois era o padrão
-da época, logo, eu sei de onde estou partindo quanto ao tom e a
-intensidade das cores, contudo, isso **não garante** que a correção das
-cores será fidedigna em todos os jogos, pois o MAME usa uma paleta
-dinâmica `matematicamente calculada`_.
+Se vamos criar um CLUT de correção de cores, antes de mais nada,
+precisamos ter uma referência confiável. Assim, criei uma tela com
+`barras de cores SMPTE`_ geradas no padrão `BT.601`_ com `luminância`_
+no intervalo ``16,235`` (`nível de TV`_). Esse é um padrão de teste
+utilizado até hoje pela indústria e pelos profissionais de produção de
+vídeo, cinema, televisão e fotografia para aferir a precisão das cores
+em uma ampla variedade de equipamentos utilizados na indústria
+audiovisual. Ele foi escolhido porque era o padrão da época, portanto
+sei de onde estou partindo em relação ao tom e à intensidade das cores.
+No entanto, isso **não garante** que a correção das cores será
+fidedigna em todos os jogos, pois o MAME usa uma paleta dinâmica
+`matematicamente calculada`_.
 
 Para gerar a nossa imagem de referência, nós usamos o `AviSynth+`_ e
 criamos um arquivo ``Colorbars.avs`` com o seguinte conteúdo::
@@ -112,29 +112,29 @@ seguinte imagem:
 
 |barra|
 
-Ela servirá como a referência de correção que será aplicada na imagem do
+Ela servirá como a referência para a correção aplicada à imagem do
 MAME.
 
 .. note::
-   Para usuários de Linux e macOS, é possível obter tela semelhante
-   usando o `ffmpeg`_, depois de instalar o ffmpeg abra o terminal e
-   rode o comando:
+   Para usuários de Linux e macOS, é possível obter uma tela semelhante
+   usando o `ffmpeg`_. Após instalar o ffmpeg, abra o terminal e
+   execute o comando:
    ``ffmpeg -hide_banner -f lavfi -i smptebars=duration=10:size=550x480:rate=30 -pix_fmt yuv444p smptebars.mp4``
 
 .. raw:: latex
 
 	\clearpage
 
-Baixe o `240p-test-mini`_ e salve na mesma pasta do MAME, ele será usado
-para gerar a tela com barras coloridas, usando o terminal ou prompt de
-comando faça::
+Baixe o `240p-test-mini`_ e salve na mesma pasta do MAME. Ele será usado
+para gerar a tela com barras coloridas. Para issoo, use o terminal ou
+prompt de comando e faça::
 
 	mame nes -cart 240pee.nes -resolution 552x481 -noka -window -nofilter -video opengl
 
-Pressione o botão "B" e selecione a opção **SMPTE color bars**,
-pressione :kbd:`Alt` + :kbd:`PrtScn` (*Print Screen*) para fazer uma
-captura da tela (no Windows ou Linux, para macOS use
-`estas instruções`_), este é o resultado (já recortado):
+Pressione o botão "B" e selecione a opção **SMPTE color bars**.
+No Windows ou Linux, pressione :kbd:`Alt` + :kbd:`PrtScn` (*Print
+Screen*) para fazer uma captura da tela. No macOS use
+`estas instruções`_). Este é o resultado (já recortado):
 
 .. _advanced-lut-mame-screen:
 
@@ -144,50 +144,51 @@ captura da tela (no Windows ou Linux, para macOS use
    Caso tenha alguma dificuldade, aproveite as imagens acima que já
    estão recortadas no tamanho apropriado.
 
-O que faremos agora é transferir as cores da imagem do MAME para a nossa
-imagem de referência. Isso é necessário pois, para criar um CLUT válido,
-ambas as imagens precisam ter o mesmo tamanho e as mesmas
-características, a única coisa que deve variar na imagem são as cores e
+Agora transferimos as cores da imagem do MAME para a nossa imagem de
+referência. Isso é necessário, pois, para criar um CLUT válido,
+ambas as imagens devem ter o mesmo tamanho e as mesmas
+características. A única coisa que deve variar na imagem são as cores, e
 mais nada (observe que a barra verde tem um tamanho diferente por
-exemplo), caso contrário, o resultado será diferente do esperado. Se não
-estiver interessado em aprender como criar um CLUT ou queira evitar todo
-este procedimento, baixe o arquivo ``NES_SMPTE.cube`` `deste link`_ e
-:ref:`pule para a próxima etapa <advanced-lut-create>`.
+exemplo). Caso contrário, o resultado será diferente do esperado. Se não
+estiver interessado em aprender como criar um CLUT ou quiser evitar todo
+esse procedimento, baixe o arquivo ``NES_SMPTE.cube`` `deste link`_ e
+:ref:`passe para a próxima etapa <advanced-lut-create>`.
 
-Para esta tarefa usaremos o `Gimp`_ com o plug-in `G'MIC`_, abra a
-nossa imagem de referência no Gimp e duplique-a, nomeie esta primeira
-camada como "**MAME**" e a segunda como "**REFERÊNCIA**", é na camada
-"**MAME**" onde clonaremos as cores do MAME.
+Para esta tarefa, usaremos o `Gimp`_ com o plug-in `G'MIC`_. Abra a
+nossa imagem de referência no Gimp e duplique-a. Nomeie esta primeira
+camada como "**MAME**" e a segunda como "**REFERÊNCIA**". É na camada
+"**MAME**" que clonaremos as cores do MAME.
 
-* Abra o imagem do MAME (será criado uma nova aba), com o
-  "Color Picker" ( :kbd:`O` ) clique na primeira barra à esquerda
-  para capturar a sua cor.
+* Abra a imagem do MAME (será criada uma nova aba) e use o
+  "Color Picker" ( :kbd:`O` ) para capturar a cor da primeira barra à
+  esquerda.
 * Volte para a primeira aba, selecione a ferramenta "Fuzzy Select Tool"
-  ( :kbd:`U` ), clique na camada "**MAME**" para selecioná-la, clique na
-  primeira barra à esquerda para criar uma seleção ao redor da cor.
+  ( :kbd:`U` ) e clique na camada "**MAME**" para selecioná-la. Em
+  seguida, clique na primeira barra à esquerda para criar uma seleção ao
+  redor da cor.
 * Em seguida escolha a ferramenta "Bucket Fill Tool" ( :kbd:`Shift` +
-  :kbd:`B` ) e clique em cima da barra selecionada para preencher esta
-  barra com as cores do MAME.
-* Repita este procedimento com todas as outras barras.
-* Selecione a camada "REFERÊNCIA", logo abaixo, clique na seta para cima
-  para mover a camada para o topo. Assim você terá a primeira camada
-  "**REFERÊNCIA**" e abaixo "**MAME**".
-* Vá em :guilabel:`Filters` > :guilabel:`G'MIC-Qt...`, depois em
+  :kbd:`B` ) e clique na barra selecionada para preenchê-la com as cores
+  do MAME.
+* Repita esse procedimento com todas as outras barras.
+* Selecione a camada "REFERÊNCIA", e logo abaixo, clique na seta para
+  cima para movê-la para o topo. Assim você terá a primeira camada
+  "**REFERÊNCIA**" e, abaixo, a camada "**MAME**".
+* Vá em :guilabel:`Filters` > :guilabel:`G'MIC-Qt...`e, em
   :guilabel:`Available Filters`, clique duas vezes em :guilabel:`Color`
-  e clique em :guilabel:`CLUT from After - Before Layers`.
-* Em :guilabel:`Output Mode` selecione
+  e, em :guilabel:`CLUT from After - Before Layers`.
+* Em :guilabel:`Output Mode`, selecione
   ``Save CLUT as .cube or .png File``.
-* Em :guilabel:`Output CLUT Resolution` deixe em ``64``.
-* Em :guilabel:`Output Folder` defina uma pasta de destino para salvar o
-  arquivo ``.cube``.
-* Em :guilabel:`Output Filename` defina o nome do arquivo com a extensão
-  ``.cube``, aqui usaremos ``NES_SMPTE.cube``.
+* Em :guilabel:`Output CLUT Resolution`, deixe em ``64``.
+* Em :guilabel:`Output Folder`, defina uma pasta de destino para salvar
+  o arquivo ``.cube``.
+* Em :guilabel:`Output Filename`, defina o nome do arquivo com a
+  extensão ``.cube``, aqui usaremos ``NES_SMPTE.cube``.
 * Logo abaixo em **Input / Output** defina :guilabel:`Input Layers` como
   ``Active and below``.
-* Em :guilabel:`Output mode` selecione ``In place (default)``.
+* Em :guilabel:`Output mode`, selecione ``In place (default)``.
 * Clique em OK para criar o arquivo ``NES_SMPTE.cube``.
 
-A imagem abaixo mostra todas as configurações, clique nela para ampliar
+A imagem abaixo mostra todas as configurações. Clique nela para ampliar
 (HTML) ou aproxime a página (PDF).
 
 .. |gmic| image:: images/gmic.png
@@ -198,8 +199,9 @@ A imagem abaixo mostra todas as configurações, clique nela para ampliar
 |gmic|
 
 Agora todas as informações necessárias para aplicar as correções de
-cores estão armazenadas no arquivo ``NES_SMPTE.cube``. Acredite, o
-processo é muito mais fácil quando trabalhamos com fotos.
+cores estão armazenadas no arquivo ``NES_SMPTE.cube``. Parece complexo
+mas acredite, o processo é muito mais fácil quando trabalhamos com
+fotos.
 
 .. raw:: latex
 
@@ -224,26 +226,25 @@ Criando um LUT 3D para usar no MAME
    :align: middle
    :alt: Configurações usadas para criar o 3D LUT com gamma 2.2
 
-O tipo de LUT compatível com o MAME é o 3D no formato ``64x64x64`` com
-**8-bit** e **PNG** [#M3DLUT1]_ [#M3DLUT2]_. Ele é criado usando o **3D
-Lut Maker** que acompanha o `DisplayCAL`_, ele é gratuito e está
-disponível para todos os sistemas operacionais, no **Debian** instale
+O tipo de LUT compatível com o MAME é o 3D no formato ``64x64x64``, com
+**8 bits** e **PNG** [#M3DLUT1]_ [#M3DLUT2]_. Ele é criado usando o **3D
+Lut Maker** que acompanha o `DisplayCAL`_. O programa é gratuito e está
+disponível para todos os sistemas operacionais. No **Debian**, instale-o
 com o comando::
 
 	sudo apt install displaycal dispcalgui
 
-No **Windows** é preciso baixar a versão para Windows no link acima e
-baixar também o `Argyll Color Management`_ (ArgyllCMS). Não é preciso
-baixar o instalador do DisplayCalc, baixe a versão ZIP e descompacte-o
-em algum lugar (menos em ``C:\``), depois de baixar o ArgyllCMS,
-descompacte-o dentro da pasta do DisplayCalc. Quando iniciar o programa
-**DisplayCAL-3DLUT-maker**, ele vai te questionar para localizar a pasta
-onde se encontra os executáveis do **ArgyllCMS**, direcione o explorer
-para a pasta onde você descompactou o ArgyllCMS, entre na pasta **bin**
-e clique em "selecionar pasta" para que o programa inicie corretamente.
+No **Windows** baixe a versão no link acima e baixe também o
+`Argyll Color Management`_ (ArgyllCMS). Não é preciso baixar o
+instalador do DisplayCalc; basta baixar a versão ZIP e descompactá-la
+em algum lugar (menos em ``C:\``), e após descompactar o ArgyllCMS
+dentro da pasta do DisplayCalc. Ao iniciar o programa
+**DisplayCAL-3DLUT-maker**, ele perguntará onde estão os executáveis do
+**ArgyllCMS**. Aponte o explorer para a pasta onde você descompactou o
+ArgyllCMS, entre na pasta **bin** e clique em "Selecionar pasta" para
+que o programa seja iniciado corretamente.
 
-
-Aqui as configurações utilizadas no Linux:
+Aqui estão as configurações utilizadas no Linux:
 
 |3dlut22|
 
@@ -251,21 +252,21 @@ Aqui as configurações utilizadas no Linux:
 
 	\clearpage
 
-Aqui as configurações utilizadas no Windows:
+Aqui estão as configurações utilizadas no Windows:
 
 |3dlut22-win|
 
-Ao clicar em :guilabel:`Create 3D LUT` o programa cria diversos arquivos
-diferentes, porém, o que nos interessa é esta imagem aqui:
+Ao clicar em :guilabel:`Create 3D LUT`, o programa cria diversos
+arquivos diferentes, porém o que nos interessa é esta imagem:
 
 .. _advanced-lut-base:
 
 |3dlutmame|
 
-Esse é o nosso **LUT 3D base**, é nele que aplicaremos as correções de
-cores, e depois a partir dele, que exportaremos um novo LUT 3D com as
-correções que desejamos. As opções escolhidas foram as que me pareceram
-mais corretas. Faça você mesmo os seus próprios testes com outros
+Esse é o nosso **LUT 3D base**, onde aplicaremos as correções de
+cores e, a partir dele, exportaremos um novo LUT 3D com as
+correções desejadas. As opções escolhidas foram as que me pareceram
+mais adequadas. Faça você mesmo os seus próprios testes com outros
 parâmetros e veja como fica.
 
 
@@ -287,15 +288,15 @@ De todos os diferentes emuladores existentes que emulam o NES apresentam
 uma paleta de cores diferente entre si (incluindo o MAME) e não existe
 (até onde eu saiba) um consenso sobre qual deveria ser a paleta de cores
 "*mais correta*" para o NES pois a sua PPU `não gera sinais de vídeo em
-RGB`_ ficando a cargo do circuito interno da TV da pessoa interpretar as
-cores que chegavam nela, a partir daí começa toda essa confusão, pois os
+RGB`_, ficando a cargo do circuito interno da TV da pessoa interpretar as
+cores que chegavam até ela. A partir daí começa toda essa confusão, pois os
 circuitos internos das TVs eram diferentes, assim sendo, as cores
 variavam de uma TV para outra. No MAME por exemplo, a paleta de cores é
-`matematicamente calculada`_, já outros emuladores utilizam outros
-algoritmos ou paletas para apresentar as cores na tela.
+`matematicamente calculada`_, ao passo que outros emuladores utilizam
+outros algoritmos ou paletas para apresentá-las na tela.
 
 Veja como fica ao colocarmos a nossa imagem de referência ao lado da
-imagem gerada pelo MAME, repare na diferença do tom e na intensidade das
+imagem gerada pelo MAME. Repare na diferença de tom e de intensidade das
 cores:
 
 ..  csv-table:: Comparando a imagem de referência com o padrão gerado pelo MAME.
@@ -305,23 +306,23 @@ cores:
    "|barra|", "|barra_m|"
 
 Com o nosso CLUT e o nosso LUT 3D base criados, nós já temos o nosso
-ponto de partida para dar início a criação do nosso LUT 3D de correção,
-o procedimento é o seguinte:
+ponto de partida para dar início à criação do nosso LUT 3D de correção.
+O procedimento é o seguinte:
 
 * Abra a imagem do **LUT 3D base** que criamos acima com o Gimp.
 * Vá em :guilabel:`Filters` > :guilabel:`G'MIC-Qt...`, depois em
   :guilabel:`Available Filters`, clique duas vezes em :guilabel:`Color`
   e escolha :guilabel:`Apply Extrenal CLUT`.
-* Em :guilabel:`Specify HaldCLUT As` escolha ``Filename``.
-* Em :guilabel:`HaldCLUT Filename` procure pelo arquivo
+* Em :guilabel:`Specify HaldCLUT As`, escolha ``Filename``.
+* Em :guilabel:`HaldCLUT Filename`, procure pelo arquivo
   ``NES_SMPTE.cube``.
-* Em :guilabel:`Normalize Colors` selecione ``Both``.
-* Em :guilabel:`Preview Type` selecione ``Full``.
-* Em :guilabel:`Input layers` deixe em ``Active (default)``.
-* Em :guilabel:`Output mode` deixe em ``In place (default)``.
+* Em :guilabel:`Normalize Colors`, selecione ``Both``.
+* Em :guilabel:`Preview Type`, selecione ``Full``.
+* Em :guilabel:`Input layers`, deixe em ``Active (default)``.
+* Em :guilabel:`Output mode`, deixe em ``In place (default)``.
 * Clique em :guilabel:`Ok` para aplicar as correções.
 
-Veja na imagem abaixo como ficou as nossas opções:
+Veja na imagem abaixo como ficaram as nossas opções:
 
 |gmic_apply_clut|
 
@@ -329,27 +330,26 @@ Observe que não é necessário alterar qualquer outra configuração (brilho
 e contraste por exemplo), pois tudo o que precisamos já está no arquivo
 ``NES_SMPTE.cube``. Mesmo quando trabalhamos com fotos ou geramos LUT
 para diferentes finalidades, todos os ajustes finos que precisamos fazer
-na imagem é feito antes de se criar o arquivo ``*.cube`` e não depois.
-Claro que é possível fazer alguns ajustes finos se for necessário, mas,
-para a nossa finalidade aqui com o MAME os ajustes que já foram feitos
-são suficientes.
+na imagem são feitos antes da criação do arquivo ``*.cube``, e não
+depois. Claro que é possível fazer alguns ajustes, se necessário, mas,
+para a nossa finalidade aqui com o MAME, os ajustes que já feitos são
+suficientes.
 
 
-.. note::
-   Geralmente quando baixamos um LUT externo (geralmente um LUT criatvo)
-   criado por outra pessoa é que estes controles se tornam úteis, servem
-   como um ajuste fino no efeito que desejamos aplicar. Porém com o MAME
-   mesmo pequenos ajustes podem extrapolar o efeito desejado.
+.. note:: Geralmente, esses controles se tornam úteis quando baixamos um
+   LUT externo (geralmente um LUT criado por outra pessoa), pois servem
+   como um ajuste fino no efeito que desejamos aplicar. Porém, com o
+   MAME, mesmo pequenos ajustes podem extrapolar o efeito desejado.
 
-Vá em :guilabel:`File` > :guilabel:`Export As...`
+Em seguida, vá em :guilabel:`File` > :guilabel:`Export As...`
 ( :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`E` ) e salve o arquivo com um nome
-bacana como **NES_SMPTE.png** dentro da pasta **Artwork** do MAME.
+bacana, como **NES_SMPTE.png** dentro da pasta **Artwork** do MAME.
 
 Este é o LUT 3D **NES_SMPTE.png** que acabamos de criar:
 
 |nes_smpte|
 
-Para ver se funcionou ou não, crie o arquivo ``ini\source\nes.ini`` com
+Para verificar se funcionou, crie o arquivo ``ini\source\nes.ini`` com
 o seguinte conteúdo::
 
 	video bgfx
@@ -366,12 +366,11 @@ Para quem usa HLSL no Windows::
 	lut_texture NES_SMPTE.png
 	saturation 1.36
 
-.. note::
-   Caso tenha problemas com o ``d3d`` (o efeito não funciona ou o LUT
-   não é aplicado por exemplo), consulte o capítulo
+.. note:: Caso tenha problemas com o ``d3d`` (como o efeito não
+   funcionar ou o LUT não ser aplicado por exemplo), consulte o capítulo
    :ref:`advanced-tricks-dx9`.
 
-Para Linux/macOS tente::
+Para Linux ou macOS, tente::
 
 	video bgfx
 	bgfx_backend vulkan # (tente opengl ou auto caso não funcione)
@@ -379,12 +378,12 @@ Para Linux/macOS tente::
 	bgfx_lut NES_SMPTE.png
 	prescale 5
 
-Rode o comando abaixo no teminal ou no prompt de comando e veja o
+Execute o comando abaixo no teminal ou no prompt de comando e veja o
 resultado::
 
 	mame nes -cart 240pee.nes -noka
 
-Pressione o botão "B" e selecione a opção **SMPTE color bars**, veja
+Pressione o botão "B" e selecione a opção **SMPTE color bars**. Observe
 na imagem abaixo como o próprio MAME é capaz de aplicar as devidas
 correções em tempo real:
 
@@ -413,27 +412,26 @@ As paletas de cores
    :align: middle
    :alt: LUT 3Dda paleta NES NTSC do ROM Detectives
 
-.. note::
-   Até a presente data em que escrevo este capítulo, não há suporte para
-   o uso de paleta de cores de qualquer tipo na versão mais recente do
-   MAME (0.252).
+.. note:: Até a presente data, não há suporte para o uso de paleta de
+   cores de qualquer tipo na versão mais recente do MAME (0.270).
 
-Se pesquisar na internet, é possível encontrar diferentes sites
+Ao pesquisar na internet, é possível encontrar diferentes sites
 (`como este`_) que disponibilizam uma grande variedade de paletas de
-cores (elas vem com a extensão ``.pal``) que são utilizadas por outros
-emuladores como o `nestopia`_, `Mesen2`_, `FCEUX`_, dentre vários
-outros, para que estes emuladores consigam gerar cores na tela com um
-determinado padrão, ou obedece certos parâmetros de cores determinada
-pelos seus criadores. Para obter mais informações, consulte os links ao
-lado (todos em Inglês). [#A]_ [#B]_ [#C]_
+cores (com extensão ``.pal``), utilizadas por outros emuladores, como o
+`nestopia`_, `Mesen2`_, `FCEUX`_, entre vários outros, para que esses
+emuladores consigam gerar cores na tela com um determinado padrão, ou
+obedeçam certos parâmetros de cores determinados pelos seus criadores.
+Para obter mais informações, consulte os links ao lado (todos em
+inglês). [#A]_ [#B]_ [#C]_
 
-Para compreender como funciona a geração dos gráficos no NES, consulte o
-link ao lado (em Inglês). [#D]_
+Para compreender como os gráficos são gerados no NES, consulte o
+link ao lado (em inglês). [#D]_
 
-Dada a grande variedade de paletas e como não existe (até o presente
-momento) uma paleta definitiva para o NES, eu escolhi a paleta do
-`ROM Detectives`_ por uma simples questão de gosto, geralmente é assim
-que acontece, das várias disponíveis você usa aquelas que mais gosta.
+Dada a grande variedade de paletas e o fato de não existir (até o
+presente momento) uma paleta definitiva para o NES, eu escolhi a paleta
+do `ROM Detectives`_ por uma simples questão de gosto. Geralmente é
+assim que acontece, das várias disponíveis, você usa aquelas de que mais
+gosta.
 
 .. _advanced-lut-rom-detectives-palette:
 
@@ -443,7 +441,8 @@ que acontece, das várias disponíveis você usa aquelas que mais gosta.
 
    "|ntsc|"
 
-Aqui a mesma paleta convertida num arquivo chamado `NES_NTSC.pal`_.
+Aqui está a mesma paleta convertida num arquivo chamado
+`NES_NTSC.pal`_.
 
 .. Listagem obtida com o comando hexdump 'NES_NTSC.pal' no Linux.
 
@@ -463,17 +462,16 @@ Aqui a mesma paleta convertida num arquivo chamado `NES_NTSC.pal`_.
 	000000b0  b8 b8 f8 d8 00 fc fc f8  d8 f8 00 00 00 00 00 00  |................|
 
 Novamente, até o momento, o MAME não é compatível com paletas externas,
-assim sendo, precisamos converter a paleta em LUT 3D.
+sendo necessário, converter a paleta em LUT 3D.
 
-.. note::
-   O nosso **LUT 3D base** deve estar limpo e sem nenhum efeito ao
-   aplicar uma nova correção. Então, caso a correção do processo
-   anterior já esteja aplicado, faça um :kbd:`Ctrl` + :kbd:`Z` para
-   desfazer a correção e só então, aplique uma nova. Na dúvida e sem
-   salvar nada, feche a aba com o **LUT 3D base**, abra-a novamente,
+.. note:: Ao aplicar uma nova correção, o nosso **LUT 3D base** deve
+   estar limpo e sem nenhum efeito. Se a correção do processo anterior
+   já tiver sido aplicada, use :kbd:`Ctrl` + :kbd:`Z` para desfazê-la e
+   só então aplique uma nova. Se ainda restarem dúvidas e você não tiver
+   salvo nada, feche a aba com o **LUT 3D base**, abra-a novamente,
    aplique as novas correções e só então exporte como **NES_NTSC.png**.
    Se não fizer isso, haverá duas correções diferentes no mesmo arquivo
-   e o resultado final será muito diferente do desejado.
+   e o resultado final será muito diferente do esperado.
 
 * Carregue a ROM `240p-test-mini`_ no `nestopia`_, `Mesen2`_, `FCEUX`_
   ou qualquer outro emulador que aceite paleta de cores.
@@ -495,16 +493,16 @@ assim sendo, precisamos converter a paleta em LUT 3D.
 * Vá em :guilabel:`Filters` > :guilabel:`G'MIC-Qt...`, depois em
   :guilabel:`Available Filters`, clique duas vezes em :guilabel:`Color`,
   clique em :guilabel:`CLUT from After - Before Layers`.
-* Em :guilabel:`Output Mode` selecione
+* Em :guilabel:`Output Mode`, selecione
   ``Save CLUT as .cube or .png File``.
-* Em :guilabel:`Output CLUT Resolution` deixe em ``64``.
-* Em :guilabel:`Output Folder` defina uma pasta de destino para salvar o
+* Em :guilabel:`Output CLUT Resolution`, deixe em ``64``.
+* Em :guilabel:`Output Folder`, defina uma pasta de destino para salvar o
   arquivo ``.cube``.
-* Em :guilabel:`Output Filename` defina o nome do arquivo com a extensão
+* Em :guilabel:`Output Filename`, defina o nome do arquivo com a extensão
   ``.cube``, aqui usaremos ``NES_NTSC.cube``.
 * Logo abaixo em **Input / Output** defina :guilabel:`Input Layers` como
   ``Active and below``.
-* Em :guilabel:`Output mode` selecione ``In place (default)``.
+* Em :guilabel:`Output mode`, selecione ``In place (default)``.
 * Clique em OK para criar o arquivo ``NES_NTSC.cube``.
 * Faça o procedimento descrito em :ref:`advanced-lut-different-colors`
   para aplicar o CLUT ``NES_NTSC.cube``
@@ -513,13 +511,13 @@ assim sendo, precisamos converter a paleta em LUT 3D.
   ( :kbd:`Shift` + :kbd:`Ctrl` + :kbd:`E` ) e salve o arquivo como
   **NES_NTSC.png** dentro da pasta **Artwork** do MAME.
 
-Ao concluir estas etapas, agora nós temos o LUT 3D **NES_NTSC.png**:
+Ao concluir essas etapas, obtivemos o arquivo LUT 3D **NES_NTSC.png**:
 
 |nes_ntsc|
 
 Para testar, edite o arquivo ``ini\source\nes.ini`` e substitua a opção
-``NES_SMPTE.png`` por ``NES_NTSC.png`` e salve. Agora teste um
-jogo qualquer do NES e veja como fica, tente o *Batman* por exemplo::
+``NES_SMPTE.png`` por ``NES_NTSC.png`` e salve. Agora, teste um
+jogo qualquer do NES e veja como fica. Tente o *Batman*, por exemplo::
 
 	mame nes batmanu
 
@@ -562,41 +560,41 @@ Para quem tiver interesse, aqui está a paleta `NES_SMPTE.pal`_.
 	000000a0  b3 ca e2 d8 bd e8 e0 b1  e1 d6 6d d6 e1 6d c5 e0  |..........m..m..|
 	000000b0  c7 b9 eb e0 06 e8 e8 f3  e4 f3 00 00 00 00 00 00  |................|
 
-O processo de criação desta paleta é semelhante ao que já foi explicado:
+O processo de criação desta paleta é semelhante ao explicado
+anteriormente:
 
 * Abra a imagem da paleta do
   :ref:`ROM Detectives <advanced-lut-rom-detectives-palette>` no Gimp.
 * Vá em :guilabel:`Filters` > :guilabel:`G'MIC-Qt...`, depois em
   :guilabel:`Available Filters`, clique duas vezes em :guilabel:`Color`
   e escolha :guilabel:`Apply Extrenal CLUT`.
-* Em :guilabel:`Specify HaldCLUT As` escolha ``Filename``.
-* Em :guilabel:`HaldCLUT Filename` procure pelo arquivo
+* Em :guilabel:`Specify HaldCLUT As`, escolha ``Filename``.
+* Em :guilabel:`HaldCLUT Filename`, procure pelo arquivo
   ``NES_SMPTE.cube``. 
-* Em :guilabel:`Normalize Colors` selecione ``Both``.
-* Em :guilabel:`Preview Type` selecione ``Full``.
-* Em :guilabel:`Input layers` deixe em ``Active (default)``.
-* Em :guilabel:`Output mode` deixe em ``In place (default)``.
+* Em :guilabel:`Normalize Colors`, selecione ``Both``.
+* Em :guilabel:`Preview Type`, selecione ``Full``.
+* Em :guilabel:`Input layers`, deixe em ``Active (default)``.
+* Em :guilabel:`Output mode`, deixe em ``In place (default)``.
 * Clique em :guilabel:`Ok` para aplicar as correções.
 
-Extraia os valores em hex ("html notation" no Gimp) das cores e cole num
-editor hexadecimal e salve como ``nome_da_paleta.pal``.
+Em seguida, extraia os valores em hexadecimal ("html notation" no Gimp)
+das cores e cole-os num editor hexadecimal. Então, salve-os como
+``nome_da_paleta.pal``.
 
-Eu compilei um conjunto de **37 LUTS**, incluindo os que criamos aqui
-neste documento, quem tiver interesse de baixar e experimentar,
-`baixe aqui`_ (nova `versão 2023`_, as tabelas de cores foram
-atualizadas e corrigidas para o MAME 0.261 ou mais recente), descompacte
-os arquivos ``.png`` dentro da pasta **artwork**. Você pode ou
-configurar uma paleta específica em ``ini\source\nes.ini`` ou usar a
-própria interface do MAME para alternar entre elas como já foi explicado
+Eu compilei um conjunto de **37 LUTs**, incluindo os criados neste
+documento. Quem tiver interesse em baixar e experimentar,
+`baixe aqui`_ (nova `versão 2023`_, com tabelas de cores atualizadas e
+corrigidas para o MAME 0.261 ou mais recente). Descompacte
+os arquivos ``.png`` dentro da pasta **artwork**. é possível configurar
+uma paleta específica em ``ini\source\nes.ini`` ou usar a própria
+interface do MAME para alternar entre elas, conforme explicado
 :ref:`anteriormente <advanced-testar-luts>`.
 
-.. note::
-   Agora estes LUTs também estão disponíveis através do site do MAMEDEV
+.. note:: Agora esses LUTs também estão disponíveis no site do MAMEDEV
    em `mame-goodies`_.
 
-.. note::
-   Para remover o efeito *"blur"* (borrado) nas versões OpenGL do MAME
-   durante o uso de Luts com o **nes**, use a opção :ref:`prescale
+.. note:: Para remover o efeito *"blur"* (borrado) nas versões OpenGL do
+   MAME durante o uso de Luts com o **nes**, use a opção :ref:`prescale
    <mame-commandline-prescale>` no arquivo ``ini\source\nes.ini``. O
    valor ``5`` (médio), remove todo o efeito.
 
@@ -610,7 +608,7 @@ própria interface do MAME para alternar entre elas como já foi explicado
 .. [#M3DLUT2] https://github.com/mamedev/mame/pull/4043/commits/372982391d04c24473ba6babc1b87a0f50066ddd
 .. _DisplayCAL: https://displaycal.net/#download
 .. _Argyll Color Management: https://www.argyllcms.com/downloadwin.html
-.. _Outubro de 2018: https://github.com/mamedev/mame/pull/4043
+.. _outubro de 2018: https://github.com/mamedev/mame/pull/4043
 .. _0.203: https://github.com/mamedev/mame/releases/tag/mame0203
 .. _Gimp: https://www.gimp.org/
 .. _240p-test-mini: https://github.com/pinobatch/240p-test-mini
