@@ -14,9 +14,7 @@ DOCUMENTAÇÃO MAME
 	`issue tracker <https://github.com/wtuemura/mamedoc/issues>`_ para
 	acompanhar se há alguma atualização dos tópicos e assuntos aqui
 	tratados.
-	Veja como você pode contribuir na seção `contribute <https:
-	//github.com/wtuemura/mamedoc/blob/master/source/contribua.md>`_ no
-	site do GitHub.
+	Veja como você pode contribuir na seção :ref:`contributing`.
 
 .. toctree::
     :titlesonly:

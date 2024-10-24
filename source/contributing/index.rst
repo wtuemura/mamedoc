@@ -3,38 +3,37 @@
 CONTRIBUINDO COM O MAME
 =======================
 
-Deseja contribuir com o MAME mas não sabe por onde começar? A boa
-notícia é que sempre há muito o que ser feito, especialmente para
-pessoas com uma grande variedade de habilidades.
+Deseja contribuir com o MAME, mas não sabe por onde começar? A boa
+notícia é que há sempre muito o que ser feito, especialmente para
+pessoas com habilidades diversas.
 
 Testando e relatando bugs
 -------------------------
 
-Algo que o MAME sempre pode fazer é mais testes e mais relatórios de
-bugs. Caso esteja familiarizado com um sistema que o MAME emula e nota
-algo de errado ou caso encontre um bug na interface do MAME, crie uma
-conta em `MAME Testers <https://mametesters.org/view_all_bug_page.php>`_
-e assumindo que já não tenha sido relatado, crie uma conta e relate o
-problema encontrado. Tenha certeza que você leia primeiro as regras para
-ter certeza de que vai começar da maneira correta. Observe que o
-"MAME Testers" só aceita bugs voltados ao usuário em versões
-específicas.
+Algo que o MAME sempre pode fazer é realizar mais testes e relatar mais
+bugs. Se estiver familiarizado com um sistema que o MAME emula e notar
+algo errado ou encontrar um bug na interface do MAME, crie uma
+conta no
+`MAME Testers <https://mametesters.org/view_all_bug_page.php>`_. Caso o
+problema já não tenha sido relatado, crie uma conta e relate o que
+aconteceu. Leia primeiro as regras para ter certeza de que vai começar
+da maneira correta. Observe que o "MAME Testers" só aceita bugs
+encontrados pelos usuários e em versões específicas.
 
-Para outros tipos de bugs, temos o
-`github issues <https://github.com/mamedev/mame/issues>`_ onde há um
-pouco mais de liberdade. Por exemplo, aqui aceitamos problemas voltados
-ao desenvolvimento (problemas com a API interna ou problemas com o
-sistema de compilação), solicitações e a correção de grandes regressões
-que evita antes cheguem a versão de um lançamento.  Respeite o fato que
-o "issue tracker" **não é** um fórum de discussão ou de suporte, é
-apenas para relatar problemas que possam ser reproduzidos. Não abra um
-chamado para fazer perguntas ou para pedir ajuda. Assim como, tenha
-ciência que o versão que ali está é instável. Caso a revisão atual não
-compile ou esteja totalmente quebrada, é bem provável que a gente já
-saiba e não é necessário abrir um novo chamado para relatar o problema.
-Dê um tempo e veja se aparece uma atualização. Talvez queira comentar
+Para outros tipos de bugs, há um pouco maism de liberdade no
+`github issues <https://github.com/mamedev/mame/issues>`_. Por exemplo,
+aqui aceitamos problemas voltados ao desenvolvimento (problemas com a
+API interna ou problemas com a compilação), solicitações e a correção de
+grandes regressões que evitam que cheguem à uma nova versão. Lembre-se
+de que o "issue tracker" **não é** um fórum de discussão ou de suporte,
+mas apenas um local para relatar problemas que possam ser reproduzidos.
+Não abra um chamado para fazer perguntas ou pedir ajuda. Tenha ciência
+também de que a versão disponível é instável. Se a revisão atual não
+compilar ou estiver totalmente quebrada, provávelmente já saibemos e não
+é necessário abrir um novo chamado para relatar o problema. Espere um
+pouco e veja se aparece uma atualização. Talvez queira comentar
 algo no respectivo commit sobre a mensagem de erro do compilador,
-especialmente se estiver fazendo uma compilação não ortodoxa, mas,
+especialmente se estiver fazendo uma compilação não ortodoxa, mas
 suportada.
 
 Ao abrir um *"ticket"*, lembre-se de fornecer o máximo de informações
@@ -45,34 +44,32 @@ diagnosticar o problema.
 
 	\clearpage
 
-Informações que são importantes descrever:
+Descreva as seguintes informações:
  
-* O comportamento incorreto e o comportamento esperado ou correto. Seja
-  específico: apenas dizer que "não funciona" geralmente não informa
-  muita coisa.
-* Os detalhes do ambiente, incluindo o seu sistema operacional,
-  arquitetura da CPU, localidade do sistema e o idioma de exibição, se
-  aplicável.
-* Para problemas relacionados com a saída de vídeo, informe o seu
-  hardware de vídeo (GPU), a versão do driver e a opção de vídeo usada
-  no MAME que você usou (ou não).
-* Para problemas relacionados com a entrada, inclua os periféricos de
-  entrada e as opções de entrada MAME que você está usando.
-* A versão exata do MAME que você está usando, incluindo um
-  *"git commit digest"* caso não seja uma versão final de lançamento,
-  incluindo qualquer opção de compilação fora do padrão.
-* A descrição exata do sistema e o software que está sendo emulado (pode
-  não ser aplicável para problemas com partes da interface do usuário
-  (IU) do MAME, como o menu de seleção do sistema). Inclua itens como a
-  versão do BIOS selecionada e a configuração dos periféricos emulados
+* É preciso especificar o comportamento incorreto e o comportamento
+  esperado ou correto. Seja específico: dizer apenas que
+  *"não funciona"* geralmente não ajuda.
+* Inclua também detalhes do ambiente, incluindo o sistema operacional,
+  a arquitetura da CPU, o idioma do sistema e de exibição, se for
+  aplicável. Para erros de saída de vídeo, informe o hardware de vídeo
+  (GPU), a versão do driver e o módulo de saída de vídeo utilizado no
+  MAME. Para erros de entrada, inclua os periféricos e os módulos de
+  entrada usados no MAME.
+* A versão exata do MAME que você está usando, incluindo um resumo do
+  commit do git, se não for uma versão final, e quaisquer opções de
+  compilação fora do padrão.
+* A descrição exata do sistema e o software emulado (o que pode não ser
+  aplicável a problemas com partes da interface do usuário (IU) do
+  MAME, como o menu de seleção do sistema). Inclua itens como a versão
+  da BIOS selecionada e a configuração dos periféricos emulados
   (dispositivo de slot).
-* Os passos para reproduzir o problema.  Assuma que a pessoa que está
-  lendo é familiar com o próprio MAME, mas não necessariamente
-  familiarizado com o sistema emulado e o programa em questão. Para
-  problemas de emulação, a gravação dos comandos e/ou arquivos de estado
-  salvos para reproduzir o problema podem ser muito importante.
-* Se possível, uma referência do original que indique o comportamento
-  correto. Caso tenha acesso ao hardware original do sistema emulado,
+* A seguir, os passos para reproduzir o problema. Suponha que a pessoa
+  que está lendo é familiarizada com o MAME, mas não necessariamente com
+  o sistema emulado e o programa em questão. Para problemas de
+  emulação, gravar os comandos e/ou arquivos de estado salvos pode ser
+  muito importante para reproduzir o erro.
+* Se possível, uma referência do comportamento correto no hardware
+  original. Se tiver acesso ao hardware original do sistema emulado,
   isso ajuda a fazer uma gravação para comparar o comportamento correto.
 
 .. _contributing-code:
@@ -80,29 +77,29 @@ Informações que são importantes descrever:
 Contribuindo para o código-fonte do MAME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O MAME é desenvolvido em C++, porém, ele não é todo desenvolvido com
-essa linguagem. O código-fonte também inclui:
+O MAME é desenvolvido em C++, porém não é todo escrito nessa linguagem.
+O código-fonte também inclui:
 
 * A documentação hospedada neste site (e também disponibilizada nas
-  versões finais do MAME como um PDF), escrito em formato
+  versões finais do MAME como um PDF) é escrita em formato
   `reStructuredText <https://docutils.sourceforge.io/rst.html>`_.
-* Os :ref:`plug-ins <plugins>`, oferecidos desenvolvidos em
+* Os :ref:`plug-ins <plugins>` foram desenvolvidos em
   `Lua 5.3 <https://www.lua.org/manual/5.3/>`_.
 *  Layouts internos para máquinas emuladas que precisam exibir mais que
-   uma simples tela emulada como interfaces, botões, etc. Estes são
-   aplicações em XML :ref:`descritos aqui <layfile>`.
+   uma simples tela emulada simples, como interfaces e botões, entre
+   outros. Essas aplicações em XML são :ref:`descritas aqui <layfile>`.
 *  As listagens dos programas que descrevem os programas em mídia
-   emulados pelo MAME. Essas listagens também estão em formato XML.
-*  A tradução da interface do usuário está em formato
+   emulados pelo MAME. Essas listagens também estão no formato XML.
+*  A tradução da interface do usuário está no formato
    `GNU gettext PO <https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html>`_.
-   Eles podem ser editados com um bom editor de texto ou uma ferramenta
-   dedicada como o `Poedit <https://poedit.net/>`_.
+   É possível editá-la com um bom editor de texto ou uma ferramenta
+   dedicada, como o `Poedit <https://poedit.net/>`_.
 
 O nosso repositório principal está
-`hospedado no GitHub <https://github.com/mamedev/mame/>`_. Nós
-preferimos receber contribuições para o código-fonte em forma de
+`hospedado no GitHub <https://github.com/mamedev/mame/>`_. Preferimos
+receber contribuições para o código-fonte na forma de
 `pull requests <https://github.com/mamedev/mame/pulls>`_. Você precisará
-aprender o básico do git e se familiarizar com as ferramentas do git.
+aprender o básico do Git e suas ferramentas.
 
 .. raw:: latex
 
@@ -112,7 +109,7 @@ O processo básico para criar um *"pull request"* é o seguinte:
 
 * Crie uma conta no GitHub.
 * Faça um *fork* do repositório mamedev/mame.
-* Crie uma nova ramificação do nosso ``master`` no repositório na sua
+* Crie uma nova ramificação do nosso repositório ``master`` na sua
   conta.
 * Faça a clonagem do *fork* do seu repositório bifurcado e verifique a
   sua nova ramificação.
@@ -126,32 +123,49 @@ O processo básico para criar um *"pull request"* é o seguinte:
   ``master`` do mamedev/mame.
 
 Lembre-se do seguinte (observe que nem todos os pontos são relevantes
-a todos os tipos de alterações):
+para todos os tipos de alterações):
 
-* Detalhe bem o assunto e a mensagem do seu *commit*. Inclua o que a sua
-  alteração faz e qual a sua finalidade. Uma pessoa que leia o registro
-  log do *commit* não precisa ter que examinar todo o *diff* para ter
-  uma ideia básica do que um *commit* deve fazer. As mensagens padrão do
-  *commit* fornecidas pelo GitHub são totalmente inúteis, pois não
-  oferecem quaisquer indicação do que uma alteração deveria fazer.
+* Detalhe bem o assunto e a mensagem do seu *commit*. Inclua o que a
+  alteração afeta e o que ela deve alcançar. Uma pessoa que lê o
+  registro do commit não deve precisar recorrer ao exame do diff para
+  ter uma ideia básica do que foi feito. As mensagens padronizadas do
+  commit fornecidas pelo GitHub são completamente inúteis, pois não
+  fornecem nenhuma indicação do que uma alteração deve fazer.
 * Teste as suas alterações. Garanta que toda a compilação do MAME possa
-  ser concluída sem erros e que o código que você alterou funciona. É
+  ser concluída sem erros e que o código que foi alterado funciona. É
   uma boa ideia compilar com ``DEBUG=1`` para verificar se todas as
-  asserções são compiladas e não disparadas.
+  asserções foram compiladas e não disparadas.
 * Utilize um título e uma descrição elucidativa. O título deve fornecer
-  um resumo de uma linha do que a alteração geral afeta e o que ela faz.
-  Já na descrição, ela deve ser bem mais detalhada. Não deixe a
+  um resumo de uma linha sobre o que a alteração geral afeta e como ela
+  deve funcionar. A descrição deve conter mais detalhes. Não deixe a
   descrição em branco e descreva a alteração nos comentários, pois isso
   torna a busca e a filtragem muito mais difíceis.
-* Esteja ciente que o *"GitHub Actions"* possui recursos limitados. Não
-  fica claro quando você está perto ou atinge tais limites, nós tivemos
-  colaboradores banidos do *"GitHub Actions"* por violar tais limites.
-  Mesmo que você apele, eles ainda não vão te dizer quais são os limites
-  reais, justificando que caso você saiba os limites reais, será
-  possível criar meios para evitá-los. Caso ative o *"GitHub Actions"*,
-  considere não enviar *commits* individuais se não precisar que eles
-  sejam automaticamente compilados ou executar o cancelamento do fluxo
-  de trabalho quando não mais precisar dos resultados.
+* Esteja ciente de que o *"GitHub Actions"* tem limites de recursos. Não
+  está claro quando você está próximo dos limites, e já vimos
+  colaboradores serem banidos do *GitHub Actions* por violá-los. Mesmo
+  que você recorra da proibição, eles ainda não lhe dirão quais são os
+  limites reais, justificando que, se você os conhece, pode tomar
+  medidas para evitá-los. Ao ativar o *GitHub Actions*, considere não
+  fazer o push de commits individuais se não precisar que eles sejam
+  criados automaticamente ou cancele execuções de fluxo de trabalho
+  quando não precisar dos resultados.
+* Se o seu envio for um computador ou outro dispositivo que requer um
+  disco, fita, cartucho ou outra mídia para ser iniciado e executado,
+  considere a possibilidade de criar uma lista de software que contenha
+  pelo menos um exemplo dessa mídia. Isso ajuda todos que fazem
+  alterações nos componentes compartilhados do MAME a verificarem
+  facilmente se as alterações afetam negativamente o código.
+* Ao enviar qualquer máquina nova que não seja de arcade, mas
+  especialmente uma que não inicializa automaticamente e requer
+  interação para ser utilizada, considere adicionar instruções de uso à
+  página "Configuração" e `informações específicas do sistema`_ na
+  página `Wiki do MAME`_. Qualquer pessoa pode editar o wiki após criar
+  uma conta, e também são bem-vindas as subpáginas do seu sistema que
+  descrevam detalhes técnicos.
+
+
+.. _informações específicas do sistema: https://wiki.mamedev.org/index.php/System-Specific_Setup_and_Information
+.. _Wiki do MAME: https://wiki.mamedev.org/
 
 .. raw:: latex
 
