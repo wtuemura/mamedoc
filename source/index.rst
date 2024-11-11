@@ -20,6 +20,7 @@ DOCUMENTAÇÃO MAME
     :titlesonly:
 
     whatis
+    legal
     healthwarning
     initialsetup/index
 
