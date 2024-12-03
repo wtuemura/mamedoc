@@ -3023,78 +3023,120 @@ Mantendo as configurações da BIOS de um sistema ao apagar a NVRAM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Diferentes sistemas armazenam dados num *Non-Volatile Random Access
-Memory* ou numa tradução direta, memória não volátil de acesso
-aleatório ou *NVRAM* para encurtar. Ao contrário da memória RAM
+Memory* (NVRAM)ou numa tradução direta, ou memória não volátil de
+acesso aleatório, para encurtar. Ao contrário da memória RAM
 convencional, que perde os dados quando a alimentação é desligada, a
-NVRAM não é não volátil, isso quer dizer que os dados permanecem
+NVRAM não é não volátil, o que significa que os dados permanecem
 intactos mesmo durante falhas de energia ou se a alimentação for
-cortada. Isso garante a integridade dos dados e evita perdas de
+cortada. Isso garante a integridade dos dados e evita a perda de
 informações críticas.
 
-O MAME armazena estes dados dentro da pasta **nvram**, na versão oficial
-do Windows, esta pasta fica no mesmo diretório onde está o executável do
-MAME, caso utilize uma versão compilada para macOS ou Linux, rode o
-comando abaixo para identificar onde a sua pasta **nvram** fica:
+O MAME armazena esses dados dentro da pasta **nvram**, geralmente
+localizada na mesma pasta do executável do MAME ou em outro local
+definido através da configuração ``nvram_directory`` que fica dentro do
+arquivo ``mame.ini``, o valor predefinido é **nvram**. Caso utilize uma
+versão compilada para macOS ou Linux, rode o comando abaixo para
+identificar onde a sua pasta **nvram** da sua versão do MAME fica:
 
 .. code-block:: shell
 
 	mame -norc -sc | grep nvram_directory
 	nvram_directory           /usr/share/mame/nvram
 
-Certos jogos como os da série **Dance Dance Revolution** (dentre vários
-outros) precisam ser inicializados. A inicialização vai variar de
-sistema para sistema mas no geral, certos dados são copiados da ROM ou
-de uma mídia para a NVRAM. Geralmente este processo inicial costuma
-levar algum tempo, porém, é realizado apenas uma vez e é aqui que
-algumas pessoas têm problemas.
+Certos jogos, como os da série **Dance Dance Revolution** (entre vários
+outros), precisam ser inicializados. A inicialização varia de sistema
+para sistema, mas, no geral, certos dados são copiados da ROM ou de um
+dispositivo de armazenamento como um CD-ROM para a NVRAM. Geralmente,
+esse processo inicial costuma levar algum tempo, porém é realizado
+apenas uma vez. É nesse momento que algumas pessoas têm encontrado
+problemas.
 
 É preciso excluir a NVRAM de alguns sistemas por completo para que as
-funções de :ref:`gravar <mame-commandline-record>` e de
-:ref:`reproduzir <mame-commandline-playback>` do MAME funcionem
-corretamente. Um destes sistemas é o **Neo Geo**, antes de gravar uma
-nova jogada é preciso apagar a NVRAM para que o sistema inicie "zerado"
-e o mesmo deve ser feito antes de reproduzir aquilo que foi gravado.
-Assim o sistema será iniciado nas mesmas condições da gravação. Alguns
-erros podem acontecer se nada disso for feito, por exemplo, poderá haver
-erros de sincronismo, ou seja, a fase do jogo poderá iniciar numa outra
-fase que não tem nada a ver com com a fase que foi feita a gravação, o
-personagem pode realizar movimentos em condições diferentes daquelas
-feitas durante a gravação, etc.
+funções de :ref:`gravação <mame-commandline-record>` e de
+:ref:`reprodução <mame-commandline-playback>` do MAME funcionem
+corretamente. Um desses sistemas é o **Neo Geo**. Antes de gravar uma
+nova jogada é preciso apagar a NVRAM para que o sistema inicie
+"*zerado*". O mesmo deve ser feito antes de reproduzir o que foi
+gravado. Dessa maneira, o sistema será iniciado nas mesmas condições da
+gravação. Alguns erros podem acontecer, como, por exemplo, erros de
+sincronismo, ou seja, a fase do jogo pode iniciar numa outra
+fase diferente daquela em que a gravação foi feita, os personagens podem
+realizar movimentos em condições diferentes daquelas utilizadas durante
+a gravação e assim por diante.
 
-Neste primeiro exemplo vamos usar a máquina "**Dance Dance Revolution
-Extreme**" (**ddrextrm**), ao rodá-la pela primeira vez a inicialização
-dela levará algum tempo (pressione :kbd:`Ins` no Windows ou :kbd:`Pgdn`
-no Linux/macOS para acelerar o processo). Ao concluir a inicialização
-ela pede que a máquina seja desligada, agora siga os passos:
+Neste primeiro exemplo, usaremos a máquina "**Dance Dance Revolution
+Extreme**" (**ddrextrm**). Ao inicializá-la pela primeira vez, o
+processo levará algum tempo (pressione :kbd:`Ins` no Windows ou
+:kbd:`Pgdn` no Linux/macOS para acelerar o andamento). Ao concluir a
+inicialização a máquina pedirá para ser desligada. Agora siga os passos:
 
 * Pressione :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação.
-* Durante o boot, a iniciação vai parar numa tela, pressione :kbd:`F2`
-  seguido de :kbd:`Esc` para encerrar a emulação.
-* Entre na pasta **NVRAM\\ddrextrm**, confirme que todos os arquivos de
-  inicialização da máquina estão lá.
+* Durante a inicialização, a inicialização vai parar numa tela,
+  pressione :kbd:`F2` seguido de :kbd:`Esc` para encerrar a emulação.
+* Entre na pasta **NVRAM\\ddrextrm** e confirme que todos os arquivos
+  para a inicialização da máquina estão lá.
 * Pressione :kbd:`Ctrl` + :kbd:`A` para selecionar todos os aquivos.
 * Clique com o botão direito e escolha a opção de **comprimir** no
   Windows/Linux/macOS e use o nome **ddrextrm** para gerar o arquivo
   **ddrextrm.zip**.
-* Caso queira usar o terminal, entre no diretório **NVRAM\\ddrextrm** e
-  faça o comando: ``zip -r ddrextrm.zip * && mv ddrextrm.zip ..``.
+* No terminal, entre no diretório **NVRAM\\ddrextrm** e
+  faça o comando: ``zip -r ddrextrm.zip * && mv ddrextrm.zip ..``, para
+  criar e já mover o arquivo para fora desta pasta.
+* Para comprimir com o 7-zip que é compatível com o Windows e o macOS,
+  primeiro instale o `7-Zip`_, entre na pasta **NVRAM\\ddrextrm**,
+  selecione todos os arquivos, com o botão direito no Windows escolha
+  :guilabel:`7-zip` > :guilabel:`ddrextrm.zip` (no macOS haverá opção
+  semelhante).
+* Para fazer o mesmo via linha de comando, abrao termial ou prompt de
+  comandos dentro da pasta **NVRAM\\ddrextrm** e faça:
+  ``7z a -mmt -mm=Deflate -mx=7 -mfb=258 -mpass=4 -r ddrextrm.zip *``
+  (caso não funcione, tente trocar o comando ``7z`` por ``7za``).
 * Mova o arquivo **ddrextrm.zip** para fora desta pasta (caso use a
   linha de comando acima isso já é feito).
 * Exclua a pasta **NVRAM\\ddrextrm**, mantenha apenas o arquivo
   **ddrextrm.zip**.
 
-Inicie novamente o **ddrextrm** e repare que ela não fica mais gastando
+.. note:: Observe que caso você tenha alguma conquista destravada,
+   pontuações dentre outras coisas que foram salvas na máquina, você os
+   perderá ao excluir a pasta **NVRAM\\ddrextrm** (desta máquina ou de
+   qualquer outra). Assim sendo, tenha certeza de fazer o backup destes
+   arquivos ou refaça o processo acima para manter os seus dados e
+   conquistas intactas. Ao fazê-lo, você poderá continuar de onde parou
+   ainda que a pasta **NVRAM\\ddrextrm** tenho sido excluída. Repita o
+   processo acima quantas vezes achar necessário.
+
+Inicie novamente o **ddrextrm** e verifique que ela não fica mais gastando
 tempo fazendo o processo de inicialização, todos os arquivos são
 descomprimidos em **NVRAM\\ddrextrm** e o sistema inicia normalmente.
 O processo se repetirá caso esta pasta seja excluída.
+
+É possível comprimir ainda mais o arquivo utilizando o formato ``.7z``
+em vez do ``.zip``. No caso do **ddrextrm**, por exemplo, é possível
+reduzir de 32,4 MiB para 27,9 MiB. Embora essa redução possa não parecer
+significativa para um único arquivo, é uma economia considerável caso
+você tenha centenas de arquivos nesta pasta.
+
+Use o comando abaixo dentro da pasta **ddrextrm**:
+
+.. code-block:: shell
+
+	7za a -t7z -bb1 -mmt -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on ddrextrm.7z *
+
+.. note:: Não caia na tentação de converter todas as suas ROMs ``.zip``
+   para o formato ``.7z`` pois o MAME demora mais para realizar todo o
+   processo de descompressão na memória em comparação com o formato
+   ``.zip``. Não é nada crítico, porém, dependendo do tamanho dessa ROM,
+   você passa de um tempo quase instantâneo de carregamento para uma
+   espera de alguns segundos.
+
 
 .. raw:: latex
 
 	\clearpage
 
-É possível fazer uma coisa interessante é usar o site `DDR Freak`_ e
-aplicar um código para liberar `todas as músicas`_ para a máquina
-**ddrextrm**:
+Além do que foi explicado anteriormente é possível usar um side de dicas
+como o `DDR Freak`_ e aplicar um código nesta máquina (ddrextrm) para
+liberar `todas as músicas`_:
 
 * Inicie a máquina, após a tela "Now Loading" e ao aparecer a tela do
   jogo, pressione :kbd:`F2` para entrar na tela de operação da máquina.
@@ -3156,9 +3198,77 @@ Agora é possível você gravar as suas jogadas e após excluir a pasta para
 iniciar a reprodução, todas as configurações da Unibios serão mantidas.
 
 Consulte o capítulo inputmacro do :ref:`plugins-inputmacro-svc` caso
-queira experimentar os comandos especiais.
+queira fazer comandos para liberar personagens ocultos.
 
 
+Certos jogos do NEC PC Engine não iniciam
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ao tentat iniciar jogos como o `3x3 Eyes - Sanjiyan Hensei`_, o MAME
+não faz nada e retorna um erro na interface, via linha de comando ocorre
+um erro:
+
+.. code-block:: text
+
+	[cd] super cd-rom system (japan) (v3.0).pce NOT FOUND (tried in pce/scdsys scdsys)
+	Fatal error: Required files are missing, the machine cannot be run.
+
+Os sistemas NEC PC Engine/TurboGrafx-16 precisam de um cartão para rodar
+CD's, sem eles o CD não funciona. Se usarmos o cartão errado como o
+"*3x3 Eyes*" por exemplo, o jogo mostra essa mulher te chamando de
+"*inexperiente*" porque a versão do cartão está errada, claro que num
+tom bem singelo e doce (Baajon ga chigau zo! Kono mijukumono-me.).
+
+.. figure:: images/3x3eyes.png
+	:align: center
+	:figclass: align-center
+	:alt: Mensagem de erro
+
+.. raw:: html
+
+	<p></p>
+
+No site do `vgmuseum`_, é possível encontrar mais telas de erros
+engraçadas do NEC PC Engine/TurboGrafx-16.
+
+.. raw:: latex
+
+	\clearpage
+
+Abaixo temos os cartões lançados pela NEC:
+
+* **1.0** (``cdsysb``): Necessário apenas se estiver jogando Altered
+  Beast. É incompatível com CD+G. Talvez funcione com algum outro jogo
+  específico.
+* **2.0** (``cdsysa``): Roda todos jogos em CD, menos os definidos como
+  *Super CD* ou *Arcade CD*.
+* **2.1** (``cdsys``).
+* **Games Express CD Card** (``gecd``): Cartão específico para jogar
+  apenas os jogos: CD Mahjong Bishoujo Chuushinha (1993), Hi-Leg Fantasy
+  (1994), CD Hanafuda Bishoujo Fan Club (1994) e AV Tanjou (1995).
+* **3.0** (``scdsys``): Roda jogos comuns e *Super CD*, mas não os
+  definidos como *Arcade CD*.
+* **Arcade Card Pro** (``acardpro``): Roda todos os jogos em CD e os
+  definidos como *Super* e *Arcade CD*.
+* **Arcade Card Pro DUO** (``?``): Cartão específico para a versão DUO
+  do console. Em comparação com o Pro, o Pro expande a memória do
+  console para 17.5 Mbit de memoria RAM (2 MB + 192 kB) e já vinha com o
+  System Card 3.0 embutido. Já o DUO vinha com 16 Mbit de memoria RAM
+  (cerca de 2 MB) expandindo a memoria disponivel para o console e não
+  vinha com o System Card 3.0.
+* A grade vantagem entre o Pro e o DUO é que no Pro permite a rápida
+  transferência de dados para a VRAM. Então na dúvida, fique com o
+  **Arcade Card Pro**. Até a presente data não há a versão DUO.
+
+Para configurar este sistema no MAME, crie o arquivo
+``ini\source\pce.ini`` e adicione a opção:
+
+.. code-block:: text
+
+	cart acardpro
+
+Caso algum jogo não seja compatível com este cartão, basta alterar a
+configuração para um outro cartão.
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
@@ -3178,3 +3288,5 @@ queira experimentar os comandos especiais.
 .. _DDR Freak: http://www.ddrfreak.com/versions/listver.php
 .. _todas as músicas: http://www.ddrfreak.com/versions/faqs-arcade.php?version=80
 .. _comando especial: https://strategywiki.org/wiki/SVC_Chaos:_SNK_vs._Capcom/Secrets
+.. _3x3 Eyes - Sanjiyan Hensei: https://www.vgdb.com.br/turbografx-cd/jogos/3x3-eyes-sanjiyan-henjyo---/
+.. _vgmuseum: https://www.vgmuseum.com/features/warn2/
