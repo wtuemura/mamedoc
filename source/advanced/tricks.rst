@@ -3268,7 +3268,64 @@ Para configurar este sistema no MAME, crie o arquivo
 	cart acardpro
 
 Caso algum jogo não seja compatível com este cartão, basta alterar a
-configuração para um outro cartão.
+configuração e usar uma outra versão.
+
+
+Por que o jogo "X" não roda?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Quando algum jogo não abre ou não funciona, o próprio MAME informa o que
+está acontecendo, vamos simular um problema com "*Radiant Silvergun
+(JUET 980523 V1.000)*" (``rsgun``), ao tentar iniciar o jogo pela
+interface, aparece uma mensagem em vermelho acusando a falta de
+**stvbios**, que é a BIOS do sistema. No terminal (Linux, macOS) ou no
+prompt de comando (Windows), use a opção
+:ref:`-verifyroms<mame-commandline-verifyroms>` para verificar os
+problemas identificados pelo MAME:
+
+.. code-block:: text
+
+	mame rsgun -verifyroms
+	rsgun       : epr-23603.ic8  (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-20091.ic8  (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-19730.ic8  (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-17951a.ic8 (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-17740a.ic8 (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-17740.ic8  (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-17954a.ic8 (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-17952a.ic8 (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-17741a.ic8 (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-19854.ic8  (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-17953a.ic8 (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : epr-17742a.ic8 (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : stv110.bin     (524288 bytes) - NOT FOUND (stvbios)
+	rsgun       : stv1061.bin    (524288 bytes) - NOT FOUND (stvbios)
+	romset rsgun [stvbios] is bad
+	1 romsets found, 0 were OK.
+
+Todos os arquivos que o MAME descreve como **"NOT FOUND"** (não
+encontrado) são arquivos necessários para que ele funcione. Assim sendo,
+é preciso encontrar o arquivo **stvbios.zip** e copiá-lo para a pasta
+**roms**.
+
+.. note:: A emulação só será iniciada se o arquivo **stvbios.zip**
+   contiver todas as ROMs, e cada arquivo precisa coincidir com os
+   *hashes* CRC e SHA1 existentes no banco de dados do MAME. Para
+   mais detalhes, consulte o capítulo :ref:`aboutromsets` e leia mais
+   sobre a opção :ref:`-listroms<mame-commandline-listcrc>`.
+
+Ao copiar o arquivo **stvbios.zip** correto para a pasta **roms**,
+repita o comando **-verifyroms**:
+
+.. code-block:: text
+
+	mame rsgun -verifyroms
+	romset rsgun [stvbios] is good
+	1 romsets found, 1 were OK.
+
+Veja como o MAME confirma que tudo está pronto para iniciar a emulação e
+o jogo será executado sem problemas.
+
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
