@@ -2,7 +2,7 @@
 
 | Formatos        | Condição           |
 | ------------- |:-------------:| 
-HTML, PDF, EPUB| [![Documentation Status](https://readthedocs.org/projects/mamedoc/badge/?version=latest)](https://mamedoc.readthedocs.io/pt/latest/?badge=latest)
+HTML, PDF, EPUB| [![Documentation Status](https://readthedocs.org/projects/mamedoc/badge/?version=latest)](https://mamedoc.readthedocs.io/pt-br/latest/?badge=latest)
 
 Para ler o documento online, acesse a página oficial do projeto no link
 abaixo, lá também se encontram os arquivos em HTML, PDF e e-PUB:
