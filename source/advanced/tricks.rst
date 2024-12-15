@@ -3519,7 +3519,7 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
 * Em determinado ponto da instalação, o sistema te perguntará se você
   deseja criar um disquete de instalação. Pressione a tecla :kbd:`Tab`
   e, com os direcionais do teclado, selecione 
-  guilabel:`Gerenciador de arquivos`. Selecione a opção
+  :guilabel:`Gerenciador de arquivos`. Selecione a opção
   :guilabel:`(flop1)` e |prte2| :kbd:`Enter`. Use os
   direcionais para selecionar a imagem **win95-install-mame.ima** criada
   anteriormente e confirme com :kbd:`Enter`.

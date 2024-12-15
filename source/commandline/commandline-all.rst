@@ -1064,7 +1064,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 ..  [#KBPVAutoSDL] Nas versões SDL a opção ``auto`` será ``sdl``.
 
-.. Note:: Observe que as ferramentas de emulação de teclado do modo de
+.. tip:: Observe que as ferramentas de emulação de teclado do modo de
           usuário, como o ``joy2key``, quase certamente exigirão o uso
           da opção ``-keyboardprovider win32`` nas máquinas Windows.
 
@@ -1383,7 +1383,7 @@ Opções de MIDI e rede
 				Available network adapters:
 				TAP/TUN Device
 
-	.. note::
+	.. tip::
 
 		No Windows, é necessário instalar o
 		`OpenVPN <https://openvpn.net/community-downloads/>`_ mais
@@ -3179,7 +3179,7 @@ Opções para a configuração de vídeo
 
 			mame mk -syncrefresh
 
-	.. note::
+	.. tip::
 
 		O syncrefresh pode ser útil para as pessoas com display
 		compatível com G-Sync ou FreeSync.
@@ -3339,7 +3339,7 @@ Opções de vídeo para uso com janelas individuais
 	às opções das outras janelas.
 
 
-.. note:: Utilize a opção **-verbose** para exibir quais os displays
+.. tip:: Utilize a opção **-verbose** para exibir quais os displays
           estão disponíveis no seu sistema e qual a sua resolução quando
           estiverem conectados.
 .. note:: A partir de agora a opção de várias telas simultâneas podem
@@ -4073,7 +4073,7 @@ Opções para a configuração do áudio
 			mame galaga -audio_latency 1
 
 
-.. note::
+.. tip::
 	| Para PortAudio, consulte :ref:`-pa_latency <mame-commandline-palatency>`.
 	| O XAudio2 calcula a latência do áudio com passos de ``10ms``.
 	| O DSound calcula a latência do áudio com passos de ``10ms``.
