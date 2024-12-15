@@ -38,7 +38,7 @@ edit_on_github_branch = 'master/source'
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+#source_suffix = '.rst'
 
 # Define a codificação padrão do texto
 source_encoding = 'utf-8-sig'
