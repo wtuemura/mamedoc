@@ -753,7 +753,7 @@ Exemplo:
 	compatíveis serão listados.
 
 	Exemplo:
-		.. code-block:: bash
+		.. code-block:: shell
 
 			mame -listbios apple2 -sl2 grapplus -sl4 videoterm
 			BIOS options for system Apple ][ (apple2):
@@ -767,6 +767,32 @@ Exemplo:
 			BIOS options for device Videx Videoterm 80 Column Display (-sl4 videoterm):
 				v24_60hz         Firmware v2.4 (60 Hz)
 				v24_50hz         Firmware v2.4 (50 Hz)
+
+	Para sistemas Neo Geo AES:
+
+		.. code-block:: shell
+
+			mame -listbios aes
+			BIOS options for system Neo-Geo AES (NTSC) (aes):
+				asia             Asia AES
+				japan            Japan AES
+				devel            Development System ROM
+				unibios40        Universe BIOS (Hack, Ver. 4.0)
+				unibios33        Universe BIOS (Hack, Ver. 3.3)
+				unibios32        Universe BIOS (Hack, Ver. 3.2)
+				unibios31        Universe BIOS (Hack, Ver. 3.1)
+				unibios30        Universe BIOS (Hack, Ver. 3.0)
+				unibios23        Universe BIOS (Hack, Ver. 2.3)
+				unibios23o       Universe BIOS (Hack, Ver. 2.3, older?)
+				unibios22        Universe BIOS (Hack, Ver. 2.2)
+				unibios21        Universe BIOS (Hack, Ver. 2.1)
+				unibios20        Universe BIOS (Hack, Ver. 2.0)
+				unibios13        Universe BIOS (Hack, Ver. 1.3)
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _mame-commandline-listmedia:
@@ -803,11 +829,6 @@ Exemplo:
 	``-memc1 caminho_para_a_imagem``.
 
 
-.. raw:: latex
-
-	\clearpage
-
-
 .. _mame-commandline-listsoftware:
 
 **-listsoftware** / **-lsoft** <*sistema*>
@@ -833,6 +854,11 @@ Exemplo:
 					</software>
 				</softwarelist>
 			</softwarelists>
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _mame-commandline-getsoftlist:
@@ -1103,7 +1129,8 @@ Opções relacionadas ao que é exibido na tela (OSD)
 ..  [#MIPAutoSDL] Nas versões SDL a opção ``auto`` será ``sdl``.
 
 Example:
-    .. code-block:: bash
+
+    .. code-block:: shell
 
         mame indy_4610 -mouseprovider win32
 

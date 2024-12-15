@@ -359,7 +359,7 @@ Para uma lista de Neo-Geo sem clones::
 
 	datutil.exe -G neogeo.cpp -o neogeo.dat -r -f cmp datutil.dat
 
-.. note::
+.. tip::
 
 	A estrutura interna do MAME para a criação de projetos foi
 	modificada depois `desta alteração <https://github.com/mamedev/mame/commit/cf11b3330261aea407a36911048f3835b7a48f31>`_.
@@ -1029,12 +1029,12 @@ talvez sirva como um guia para outros modelos de placas de vídeo. Não
 entraremos nas questões de instalação de pacotes dada a complexidade de
 cobrir todas as sua dependências e sim apenas na configuração.
 
-.. note::
+.. tip::
 
 	Tenha certeza de utilizar uma versão mais recente do Linux e do
 	MAME!
 
-.. note::
+.. tip::
 
 	Considere o site `pkg.org <https://pkgs.org>`_ para pesquisar os
 	pacotes para a sua distribuição.
@@ -1274,7 +1274,7 @@ Regenere o **initramfs** e reinicie.
    :scale: 30%
    :align: middle
 
-.. note::
+.. tip::
 
 	Antes das telas "Full HD" os monitores trabalhavam com VGA e usavam
 	**8 bit** para cada canal de cor RGB (Vermelho, Verde e Azul) ou 256
@@ -1353,7 +1353,7 @@ ela, a lista abaixo é um **resumo** com informações da placa apenas::
 	driverInfo         = Mesa 20.2.4 (ACO)
 	conformanceVersion = 1.2.3.0
 
-.. note::
+.. tip::
 
 	Ignore o aviso **WARNING: radv is not a conformant vulkan
 	implementation, testing use only.**
@@ -1406,7 +1406,7 @@ também vai atualizar o kernel se for necessário.
 
 Agora instale os seguintes pacotes:
 
-.. note:: Independente de como apareça para você, a linha abaixo é
+.. tip:: Independente de como apareça para você, a linha abaixo é
    contínua e sem quebras.
 
 .. code-block:: shell
@@ -1424,12 +1424,12 @@ Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 	options amdgpu dpm=0
 	options amdgpu dc=1
 
-.. note:: Para saber se a sua placa é compatível com o **SI** ou **CIK**
+.. tip:: Para saber se a sua placa é compatível com o **SI** ou **CIK**
    execute o comando ``inxi -G |grep drivers`` no terminal, caso retorne
    **radeonsi** a configuração para a sua placa será ``si_support=1``,
    caso contrário ``cri_support=1``.
 
-.. note:: Dependendo da versão da sua *VGA/GPU* você precisa usar
+.. tip:: Dependendo da versão da sua *VGA/GPU* você precisa usar
    ``amdgpu dc=1``, caso contrário a tela fica preta no próximo reboot,
    `consulte este link <https://wiki.gentoo.org/wiki/Talk:AMDGPU>`_
    para obter mais informações.
@@ -1530,7 +1530,7 @@ A linha acima deve ser contínua, encerre a sua sessão e faça login
 novamente. No terminal rode o comando ``journalctl -b -p err`` e tenha
 **CERTEZA** que não há qualquer erro relacionado com o vulkan.
 
-.. note::
+.. tip::
 
 	Se mesmo depois de adicionar as entradas no ``/etc/profile``,
 	reiniciar o computador e ainda aparecer exatamente o mesmo erro,
@@ -1725,7 +1725,7 @@ fazer nada**. Já o **schedutil** faz o seu processador trabalhar
 de forma dinâmica, acelerando ou reduzindo a frequência quando for
 necessário e trazendo mais economia para você.
 
-.. note:: Observe que este programa só vai funcionar caso a sua placa
+.. tip:: Observe que este programa só vai funcionar caso a sua placa
    mãe e o seu processador forem compatíveis com um sistema de
    gerenciamento de energia (ACPI) onde seja permitido a troca de
    frequência do processador.
@@ -1817,7 +1817,7 @@ um arquivo ``raster.ini`` e edite-o com as seguintes configurações::
 	bgfx_screen_chains        crt-geom
 	window                    1
 
-.. note:: A mesma configuração serve para o **Windows**, tenha certeza
+.. tip:: A mesma configuração serve para o **Windows**, tenha certeza
    de estar usando a última versão dos drivers da sua placa de vídeo.
 
 .. raw:: latex
@@ -2038,7 +2038,7 @@ Para::
 	"text": "Gamma of simulated CRT",
 	  "default":  2.0,
 
-.. note::
+.. tip::
 
 	Em alguns `documentos técnicos <https://www.tomshardware.com/reviews/-glossary-gamma-definition,5884.html>`_,
 	o valor indicado do gamma para monitores é **2.2** no Windows e
@@ -2495,7 +2495,7 @@ Copie todos estes arquivos para a pasta do MAME, agora a opção
 :ref:`-video d3d <mame-commandline-video>` deverá funcionar sem maiores
 problemas.
 
-.. note::
+.. tip::
    Caso queira eliminar o efeito de "grelha" ("*shadow mask*") da tela,
    use a opção ``-noshadow_mask_alpha`` na linha de comando ou salve a
    opção ``shadow_mask_alpha 0`` em algum ``.ini`` específico.
@@ -3096,7 +3096,7 @@ inicialização a máquina pedirá para ser desligada. Agora siga os passos:
 * Exclua a pasta **NVRAM\\ddrextrm**, mantenha apenas o arquivo
   **ddrextrm.zip**.
 
-.. note:: Observe que caso você tenha alguma conquista destravada,
+.. warning:: Observe que caso você tenha alguma conquista destravada,
    pontuações dentre outras coisas que foram salvas na máquina, você os
    perderá ao excluir a pasta **NVRAM\\ddrextrm** (desta máquina ou de
    qualquer outra). Assim sendo, tenha certeza de fazer o backup destes
@@ -3122,12 +3122,12 @@ Use o comando abaixo dentro da pasta **ddrextrm**:
 
 	7za a -t7z -bb1 -mmt -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on ddrextrm.7z *
 
-.. note:: Não caia na tentação de converter todas as suas ROMs ``.zip``
-   para o formato ``.7z`` pois o MAME demora mais para realizar todo o
-   processo de descompressão na memória em comparação com o formato
-   ``.zip``. Não é nada crítico, porém, dependendo do tamanho dessa ROM,
-   você passa de um tempo quase instantâneo de carregamento para uma
-   espera de alguns segundos.
+.. warning:: Não caia na tentação de converter todas as suas ROMs
+  ``.zip`` para o formato ``.7z`` pois o MAME demora mais para realizar
+  todo o processo de descompressão na memória em comparação com o
+  formato ``.zip``. Não é nada crítico, porém, dependendo do tamanho
+  dessa ROM, você passa de um tempo quase instantâneo de carregamento
+  para uma espera de alguns segundos.
 
 
 .. raw:: latex
@@ -3308,7 +3308,7 @@ encontrado) são arquivos necessários para que ele funcione. Assim sendo,
 é preciso encontrar o arquivo **stvbios.zip** e copiá-lo para a pasta
 **roms**.
 
-.. note:: A emulação só será iniciada se o arquivo **stvbios.zip**
+.. tip:: A emulação só será iniciada se o arquivo **stvbios.zip**
    contiver todas as ROMs, e cada arquivo precisa coincidir com os
    *hashes* CRC e SHA1 existentes no banco de dados do MAME. Para
    mais detalhes, consulte o capítulo :ref:`aboutromsets` e leia mais
@@ -3325,6 +3325,378 @@ repita o comando **-verifyroms**:
 
 Veja como o MAME confirma que tudo está pronto para iniciar a emulação e
 o jogo será executado sem problemas.
+
+
+Listando todos os sistemas que usam cartão de memória
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Em sistemas Linux e macOS, abra o terminal e faça o comando:
+
+.. code-block:: shell
+
+	./mame -lm |grep memc
+	2020bb           memcard          (memc)     .neo
+	...
+	bubucar          memcard1         (memc1)    .pg2  .bin  .mem
+	...
+	ddpdojt          memcard1         (memc1)    .pg2  .bin  .mem
+	...
+	ddr3ma           memcard1         (memc1)    .mc
+	etc.
+
+
+No Windows, abra o prompt de comando e faça o comando:
+
+.. code-block:: shell
+
+	mame -lm |find memc
+	2020bb           memcard          (memc)     .neo
+	...
+	bubucar          memcard1         (memc1)    .pg2  .bin  .mem
+	...
+	ddpdojt          memcard1         (memc1)    .pg2  .bin  .mem
+	...
+	ddr3ma           memcard1         (memc1)    .mc
+	etc.
+
+
+Preparando o MAME para emular um PC 486 com o Windows 95
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Comece criando uma imagem com 300 MiB para ser usado como o HDD do nosso
+computador virtual. A instalação completa do Windows 95 ocupa menos de
+100 MiB, então 300 MiB será suficiente.
+
+Chame o prompt de comando dentro da pasta do MAME e faça o comando:
+
+.. code-block:: shell
+
+	fsutil file createnew win95-hdd-300m.hd 314572800
+
+.. tip:: Use ``2097152000`` bytes caso queira criar um disco com 2GiB.
+
+No Linux e macOS, chame o terminal para criar o mesmo arquivo dentro da
+pasta onde se encontra o executável do MAME:
+
+.. code-block:: shell
+
+	dd if=/dev/zero of=win95-hdd-300m.hd bs=1024 count=300k
+	307200+0 records in
+	307200+0 records out
+	314572800 bytes (315 MB, 300 MiB) copied, 2.63498 s, 140 MB/s
+
+.. tip:: Use ``count=2000k`` caso queira criar um disco com 2GiB.
+
+Aproveite e crie uma imagem vazia de um disquete com o comando no
+Windows:
+
+.. code-block:: shell
+
+	fsutil file createnew win95-install-mame.ima 1474560
+
+
+No Linux ou macOS:
+
+.. code-block:: shell
+
+	/sbin/mkfs.msdos -C win95-install-mame.ima 1440
+
+.. tip:: Caso tenha algum problema, baixe esta imagem vazia já pronta
+   clicando no nome da imagem ao lado: `win95-install-mame.ima`_.
+
+Para instalar o Windows 95 via CD-ROM, é preciso ter uma imagem de
+inicialização (boot) compatível com o computador para que ele inicie com
+um sistema mínimo, com o CD-ROM detectado e configurado. Eu customizei a
+minha imagem de inicialização e para também funcionar com o MAME. Todos
+os direitos autorais dos arquivos desta imagem são da Microsoft e de seus
+respectivos proprietários; a única coisa que fiz foi configurá-la com o
+mínimo para detectar a unidade de CD-ROM. Clique para baixar a imagem
+`win95-boot-cdrom-oem.ima`_ para usar com o MAME. Descompacte-a com o
+`7-zip`_ dentro da pasta do MAME.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Dentro da pasta do MAME, crie o arquivo de configuração
+**ini\\source\\ct486.ini** com as opções abaixo:
+
+.. code-block:: text
+
+	ram 32m
+	hard1 win95-hdd-300m.hd
+	board3:ide:ide:1 cdrom
+	cdrm WINDOWS_95_BR.iso
+	flop1 win95-boot-cdrom-oem.ima
+	isa1 svga_s3
+	isa2 sblaster_16
+	mouse 1
+	uesx 1
+	fs 10
+	throttle 0
+
+Nossa máquina virtual terá uma placa de áudio SoundBlaster, uma S3
+como GPU, 32 MiB de memória e uma unidade de CD-ROM com a ISO de
+instalação do Windows 95. Observe que aqui estou usando uma imagem de
+instalação do Windows 95 chamada **WINDOWS_95_BR.iso**, use o nome da
+sua imagem iso ou renomeie-a para o mesmo nome que estamos usando aqui.
+
+.. note:: Antes de prosseguir, certifique-se que todos os arquivos estão
+   dentro da pasta do MAME. Neste caso, os arquivos são:
+   ``win95-hdd-300m.hd``, ``WINDOWS_95_BR.iso`` e
+   ``win95-boot-cdrom-oem.ima``.
+
+Para dar inicio à emulação, use o comando abaixo na linha de comando ou
+prompt:
+
+.. code-block:: shell
+
+	mame ct486
+
+* Na primeira tela pressione :kbd:`F1`.
+* Use as setas de direção do teclado para selcionar a opção
+  :guilabel:`AUTO DETECT HARD DISK` e pressione :kbd:`Enter` para
+  confirmar, na próxima tela pressione :kbd:`Y`  para confirmar os
+  parâmetros.
+* Quando iniciar a detecção do segund disco pressione :kbd:`Esc`, depois
+  pressione :kbd:`Y` para confirmar os parâmetros da segunda unidade.
+* Use as setas de direção do teclado e selecione a opção
+  :guilabel:`STANDARD CMOS SETUP`, pressione :kbd:`Enter` duas vezes.
+* Em :guilabel:`Floppy Drive A:` use :kbd:`PgUp` (Page Up) duas vezes
+  para selecionar a opção :guilabel:`1.44 MB`.
+* Pressione :kbd:`Esq` para sair dessa tela.
+* Entre na opção :guilabel:`ADVANCED CMOS SETUP`, use as setas de
+  direção do teclado até selecionar a opção
+  :guilabel:`System Boot Up Sequence`, use a tecla :kbd:`PgUp` para
+  definir a ordem de boot com ``A, C``.
+* Pressione :kbd:`Esq` para sair dessa tela.
+* Selecione :guilabel:`WRITE TO CMOS AND EXIT` para encerrar a
+  configuração da BIOS (tecle :kbd:`Y` para confirmar o encerramento).
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+O sistema deve iniciar pelo disquete sem maiores problemas e já
+detectar o nosso CD-ROM chamado *MAMEDOC* no prompt mostrando
+**A:\\**. Antes de prosseguir com a instalação, é preciso preparar o HD
+com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
+
+* Digite **fdisk**, pressione :kbd:`Enter` três vezes para confirmar as
+  opções. Na última mensagem, pressione :kbd:`Esc` para retornar ao
+  prompt de comando.
+* |prte| :kbd:`ScrLk` (Screen Lock) para ativar a interface do MAME
+  seguido de :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação.
+* Ao concluir a inicialização e retornar ao prompt de comando, digite
+  **format c:** seguido de :kbd:`Enter` (clique na tecla :kbd:`Ç` do seu
+  teclado para inserir os ``:``), e confirme com :kbd:`Enter`.
+* |prte| :kbd:`S` seguido de :kbd:`Enter`. Após a formatação
+  |prte2| :kbd:`Enter` novamente.
+* |prte| ``D:`` seguido de :kbd:`Enter` para entrar no CD-ROM.
+* Digite: ``instalar /im /id /is`` seguido de :kbd:`Enter` para dar
+  inicio a instalação do Windows.
+* |prte| :kbd:`SrcLk` (Screen Lock) para ativar a interface do MAME e,
+  em seguida, |prte2| :kbd:`F10` para acelerar o processo. Para
+  desativar a interface do MAME |prte2| :kbd:`SrcLk` novamente.
+* Clique na tela do MAME, |prte2| :kbd:`Enter` para dar andamento na
+  instalação.
+
+.. warning:: Não clique ou selecione nenhuma opção de detecção de
+   hardware, pois isso só vai alongar o processo de instalação
+   desnecessariamente. É possível fazer isso mais tarde, após concluir
+   a instalação.
+
+* |prte| :kbd:`SrcLk` (Screen Lock), :kbd:`Tab`, selecione
+  :guilabel:`Gerenciador de arquivos`, selecione a opção
+  :guilabel:`(flop1)`, pressione :kbd:`Enter`, escolha :guilabel:`[slot
+  vazio]` e |prte2| :kbd:`Enter` novamente seguido da tecla :kbd:`Tab`,
+  para ocultar a interface do MAME. Isso deixará a máquina sem disquete,
+  o que será útil mais adiante.
+* Em determinado ponto da instalação, o sistema te perguntará se você
+  deseja criar um disquete de instalação. Pressione a tecla :kbd:`Tab`
+  e, com os direcionais do teclado, selecione 
+  guilabel:`Gerenciador de arquivos`. Selecione a opção
+  :guilabel:`(flop1)` e |prte2| :kbd:`Enter`. Use os
+  direcionais para selecionar a imagem **win95-install-mame.ima** criada
+  anteriormente e confirme com :kbd:`Enter`.
+* Selecione a opção :guilabel:`Leitura e escrita`. Pressione
+  :kbd:`Enter` para confirmar e aguarde. Ao retornar para o menu
+  anterior, pressione :kbd:`Tab` para ocultar a interface do MAME.
+  Continue com a instalação do Windows clicando em :guilabel:`OK`.
+* Após concluir a criação do seu disquete de boot, pressione
+  :kbd:`Tab`, selecione a opção :guilabel:`(flop1)`,  pressione
+  :kbd:`Enter`, escolha :guilabel:`[slot vazio]`, pressione
+  :kbd:`Enter`, e então pressione :kbd:`Tab` para continuar com a
+  instalação.
+* Em determinado ponto da instalação, cancele a instalação da impressora
+  (você poderá fazer isso mais tarde se quiser), feche a janela
+  "*Bem-vindo ao Windows 95*".
+* Antes de fecharmos essa imagem, precisamos configurar o teclado para
+  **ABNT2**. Para isso, vá em :guilabel:`Iniciar` >
+  :guilabel:`Configurações` > :guilabel:`Painel de Controle` >
+  :guilabel:`Teclado`. Clique na guia :guilabel:`Idioma` e, em seguida,
+  em :guilabel:`Propriedades`. Em
+  **Layout do teclado**, escolha :guilabel:`Português (Brasil ABNT2)`.
+  Clique em :guilabel:`OK` e aguarde o Windows instalar os arquivos a
+  partir do CD de instalação do Windows 95. Clique em :guilabel:`OK`
+  para fechar e concluir a configuração.
+
+Estamos entrando na parte final. Desligue o Windows, clique no menu
+:guilabel:`Iniciar` > :guilabel:`Desligar`, selecione a opção
+:guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
+desligar o Windows. Pressione :kbd:`Esc` para fechar a janela do MAME.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Altere novamente o arquivo de configuração **ini\\source\\ct486.ini**
+com as opções abaixo:
+
+.. code-block:: text
+
+	ram 32m
+	hard1 win95-hdd-300m.hd
+	board3:ide:ide:1 cdrom
+	isa1 svga_s3
+	isa2 sblaster_16
+	mouse 1
+	uesx 1
+	fs 10
+	throttle 0
+
+Removemos a imagem de disquete e o CD-ROM. Inicie novamente a emulação
+usando o comando abaixo:
+
+.. code-block::
+
+	mame ct486
+
+* Quando a interface do Windows aparecer, pressione :kbd:`SrcLk` (Screen
+  Lock) seguido de :kbd:`F10` para acelerar o processo. 
+* Desmarque a opção :guilabel:`Exibir esta tela da próxima vez que você
+  iniciar o Windows`. Feche novamente a tela de boas-vindas do Windows.
+* Vamos fazer a desfragmentação do HD, um passo necessário para manter
+  todos os dados organizados no disco. Clique duas vezes em
+  "Meu Computador", selecione o drive **C:\\**, clique com o botão
+  direito do mouse, selecione :guilabel:`Propriedades`, clique na aba
+  :guilabel:`Ferramentas`, depois em  >
+  :guilabel:`Desfragmentar agora...`.
+* Clique em :guilabel:`Avançado`, **remova a seleção** de
+  :guilabel:`Verificar se há erros na unidade de disco` e selecione
+  a opção :guilabel:`Somente desta vez...`. Estamos fazendo assim para
+  acelerar a desfragmentação já que a nossa imagem não tem erros.
+* Clique em :guilabel:`Iniciar` para iniciar o processo de
+  desfragmentação. Ao concluir, clique em :guilabel:`Sim` e, em seguida,
+  em :guilabel:`Ok` para fechar a janela de ferramentas.
+* Feche todas as janelas, clique no menu :guilabel:`Iniciar` >
+  :guilabel:`Desligar`, selecione a opção
+  :guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
+  desligar o Windows. Em seguida, pressione :kbd:`Esc` para fechar a
+  janela do MAME.
+
+Ao concluir esta última etapa, agora nós temos uma imagem do Windows 95
+instalada, já configurada com o teclado ABNT2 e com a imagem do HD
+desfragmentada.
+
+Agora, usamos o **chdman** para criar o CHD do nosso Windows 95,
+tornando a nossa imagem **estática** nesse processo. Isso significa que
+tudo o que for alterado posteriormente dentro da nossa imagem será
+escrito em um arquivo ``.diff`` dentro da
+pasta **diff**. Como o nome do nosso HD é **win95-hdd-300m.hd**, dentro
+da pasta **diff**, ele terá o nome **win95-hdd-300m.diff**, o que
+facilita sua identificação dentro da pasta.
+
+Para criar o CHD a partir da nossa imagem, use o comando abaixo:
+
+.. code-block:: shell
+
+	chdman createhd --input win95-hdd-300m.hd --output win95-hdd-300m.chd --compression lzma
+	chdman - MAME Compressed Hunks of Data (CHD) manager 0.272 (mame0272)
+	Output CHD:   win95-hdd-300m.chd
+	Input file:   win95-hdd-300m.hd
+	Compression:  lzma (LZMA)
+	Cylinders:    640
+	Heads:        16
+	Sectors:      60
+	Bytes/sector: 512
+	Sectors/hunk: 8
+	Logical size: 314,572,800
+	Compression complete ... final ratio = 12.1%
+
+Para verificar a imagem criada, use o comando a seguir:
+
+.. code-block:: shell
+
+	chdman info -i win95-hdd-300m.chd
+	chdman - MAME Compressed Hunks of Data (CHD) manager 0.272 (mame0272)
+	Input file:   win95-hdd-300m.chd
+	File Version: 5
+	Logical size: 314,572,800 bytes
+	Hunk Size:    4,096 bytes
+	Total Hunks:  76,800
+	Unit Size:    512 bytes
+	Total Units:  614,400
+	Compression:  lzma (LZMA)
+	CHD size:     38,219,664 bytes
+	Ratio:        12.1%
+	SHA1:         cea7c9315d165689c510b989b3dbe14fb24e652f
+	Data SHA1:    b513383b50dcc36d138a791e785c7310414ec80b
+	Metadata:     Tag='GDDD'  Index=0  Length=34 bytes
+	              CYLS:640,HEADS:16,SECS:60,BPS:512.
+
+Altere novamente o arquivo de configuração **ini\\source\\ct486.ini**
+com estas configurações finais:
+
+.. code-block:: text
+
+	ram 32m
+	hard1 win95-hdd-300m.chd
+	board3:ide:ide:1 cdrom
+	isa1 svga_s3
+	isa2 sblaster_16
+	mouse 1
+	uesx 1
+
+Inicie a sua nova máquina com o comando abaixo:
+
+.. code-block:: shell
+
+	mame ct486
+
+.. Tip:: Para usar o CD-ROM e poder montar imagens depois, mantenha a
+   opção ``board3:ide:ide:1 cdrom``.
+
+A emulação deve iniciar normalmente com o Windows 95.
+
+Ao definir essas configurações, inicie o MAME com o comando
+``mame ct486`` via prompt de comando ou terminal. Agora também é
+possível iniciar está máquina pela interface gráfica do MAME. Inicie o
+MAME, digite "*ct4*", selecione :guilabel:`PC/AT 486 with CS4031 chipset`
+e pressione :kbd:`Enter` para iniciar a emulação já com todas as opções
+ativas.
+
+.. raw:: latex
+
+	\clearpage
+
+Depois de todo esse processo, veja como ficou o Windows 95 no MAME.
+
+.. figure:: images/w95-mamedoc.png
+	:width: 640
+	:align: center
+	:figclass: align-center
+	:alt: Windows 95
+
+.. raw:: html
+
+	<p></p>
 
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
@@ -3347,3 +3719,7 @@ o jogo será executado sem problemas.
 .. _comando especial: https://strategywiki.org/wiki/SVC_Chaos:_SNK_vs._Capcom/Secrets
 .. _3x3 Eyes - Sanjiyan Hensei: https://www.vgdb.com.br/turbografx-cd/jogos/3x3-eyes-sanjiyan-henjyo---/
 .. _vgmuseum: https://www.vgmuseum.com/features/warn2/
+.. _win95-boot-cdrom-oem.ima: https://www.mediafire.com/file/3u2y3w626qadlif/win95-boot-cdrom-oem.7z
+.. _win95-install-mame.ima: https://www.mediafire.com/file/p9qj3telv40qthb/win95-install-mame.7z
+.. |prte| replace:: Pressione a tecla
+.. |prte2| replace:: pressione a tecla
