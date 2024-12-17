@@ -3436,6 +3436,8 @@ Dentro da pasta do MAME, crie o arquivo de configuração
 	uesx 1
 	fs 10
 	throttle 0
+	sleep 0
+	speed 3
 
 Nossa máquina virtual terá uma placa de áudio SoundBlaster, uma S3
 como GPU, 32 MiB de memória e uma unidade de CD-ROM com a ISO de
@@ -3499,9 +3501,6 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
 * |prte| ``D:`` seguido de :kbd:`Enter` para entrar no CD-ROM.
 * Digite: ``instalar /im /id /is`` seguido de :kbd:`Enter` para dar
   inicio a instalação do Windows.
-* |prte| :kbd:`SrcLk` (Screen Lock) para ativar a interface do MAME e,
-  em seguida, |prte2| :kbd:`F10` para acelerar o processo. Para
-  desativar a interface do MAME |prte2| :kbd:`SrcLk` novamente.
 * Clique na tela do MAME, |prte2| :kbd:`Enter` para dar andamento na
   instalação.
 
@@ -3570,6 +3569,8 @@ com as opções abaixo:
 	uesx 1
 	fs 10
 	throttle 0
+	sleep 0
+	speed 3
 
 Removemos a imagem de disquete e o CD-ROM. Inicie novamente a emulação
 usando o comando abaixo:
@@ -3578,8 +3579,6 @@ usando o comando abaixo:
 
 	mame ct486
 
-* Quando a interface do Windows aparecer, pressione :kbd:`SrcLk` (Screen
-  Lock) seguido de :kbd:`F10` para acelerar o processo. 
 * Desmarque a opção :guilabel:`Exibir esta tela da próxima vez que você
   iniciar o Windows`. Feche novamente a tela de boas-vindas do Windows.
 * Vamos fazer a desfragmentação do HD, um passo necessário para manter
@@ -3598,7 +3597,8 @@ usando o comando abaixo:
 * Feche todas as janelas, clique no menu :guilabel:`Iniciar` >
   :guilabel:`Desligar`, selecione a opção
   :guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
-  desligar o Windows. Em seguida, pressione :kbd:`Esc` para fechar a
+  desligar o Windows.
+* Pressione :kbd:`F10`, em seguida, pressione :kbd:`Esc` para fechar a
   janela do MAME.
 
 Ao concluir esta última etapa, agora nós temos uma imagem do Windows 95

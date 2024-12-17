@@ -1,3 +1,7 @@
+.. raw:: latex
+
+	\clearpage
+
 Software de renderização 3D no MAME
 ===================================
 

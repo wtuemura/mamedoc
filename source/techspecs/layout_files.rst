@@ -5207,8 +5207,6 @@ de visualização, todo eles estão embutidos no MAME.
 .. [#]	Alpha Blending
 .. [#]	RGB multiplication
 .. [#]	Additive blending
-.. [#]	Toggle switches, também é conhecido como chave alavanca.
-		(Nota do tradutor)
 .. [#TAG]	Tag no Inglês.
 .. [#INSTANCIA]	Em programação orientada a objetos, chama-se instância
 		de uma classe, um objeto cujo comportamento e estado sejam
