@@ -3447,8 +3447,8 @@ sua imagem iso ou renomeie-a para o mesmo nome que estamos usando aqui.
 
 .. note:: Antes de prosseguir, certifique-se que todos os arquivos estão
    dentro da pasta do MAME. Neste caso, os arquivos são:
-   ``win95-hdd-300m.hd``, ``WINDOWS_95_BR.iso`` e
-   ``win95-boot-cdrom-oem.ima``.
+   ``win95-hdd-300m.hd``, ``WINDOWS_95_BR.iso``,
+   ``win95-boot-cdrom-oem.ima`` e ``win95-install-mame.ima``.
 
 Para dar inicio à emulação, use o comando abaixo na linha de comando ou
 prompt:
@@ -3458,24 +3458,24 @@ prompt:
 	mame ct486
 
 * Na primeira tela pressione :kbd:`F1`.
-* Use as setas de direção do teclado para selcionar a opção
-  :guilabel:`AUTO DETECT HARD DISK` e pressione :kbd:`Enter` para
-  confirmar, na próxima tela pressione :kbd:`Y`  para confirmar os
+* Use as setas de direção do teclado para selecionar a opção
+  :guilabel:`AUTO DETECT HARD DISK` e |prte2| :kbd:`Enter` para
+  confirmar, na próxima tela |prte2| :kbd:`Y`  para confirmar os
   parâmetros.
-* Quando iniciar a detecção do segund disco pressione :kbd:`Esc`, depois
-  pressione :kbd:`Y` para confirmar os parâmetros da segunda unidade.
+* Quando iniciar a detecção do segundo disco |prte2| :kbd:`Esc`, depois
+  |prte2| :kbd:`Y` para confirmar os parâmetros da segunda unidade.
 * Use as setas de direção do teclado e selecione a opção
-  :guilabel:`STANDARD CMOS SETUP`, pressione :kbd:`Enter` duas vezes.
-* Em :guilabel:`Floppy Drive A:` use :kbd:`PgUp` (Page Up) duas vezes
-  para selecionar a opção :guilabel:`1.44 MB`.
-* Pressione :kbd:`Esq` para sair dessa tela.
+  :guilabel:`STANDARD CMOS SETUP`, |prte2| :kbd:`Enter` duas vezes.
+* Em :guilabel:`Floppy Drive A:` |prte2| :kbd:`PgUp` (Page Up) duas
+  vezes para selecionar a opção: :guilabel:`1.44 MB`.
+* |prte| :kbd:`Esc` para sair dessa tela.
 * Entre na opção :guilabel:`ADVANCED CMOS SETUP`, use as setas de
   direção do teclado até selecionar a opção
-  :guilabel:`System Boot Up Sequence`, use a tecla :kbd:`PgUp` para
-  definir a ordem de boot com ``A, C``.
-* Pressione :kbd:`Esq` para sair dessa tela.
+  :guilabel:`System Boot Up Sequence`, |prte2| :kbd:`PgUp` (Page Up)
+  para definir a ordem de boot como: ``A, C``.
+* |prte| :kbd:`Esc` para sair dessa tela.
 * Selecione :guilabel:`WRITE TO CMOS AND EXIT` para encerrar a
-  configuração da BIOS (tecle :kbd:`Y` para confirmar o encerramento).
+  configuração da BIOS (|prte2| :kbd:`Y` para confirmar o encerramento).
 
 
 .. raw:: latex
@@ -3488,17 +3488,17 @@ detectar o nosso CD-ROM chamado *MAMEDOC* no prompt mostrando
 **A:\\**. Antes de prosseguir com a instalação, é preciso preparar o HD
 com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
 
-* Digite **fdisk**, pressione :kbd:`Enter` três vezes para confirmar as
-  opções. Na última mensagem, pressione :kbd:`Esc` para retornar ao
+* Digite **fdisk**, |prte2| :kbd:`Enter` três vezes para confirmar as
+  opções. Na última mensagem, |prte2| :kbd:`Esc` para retornar ao
   prompt de comando.
 * |prte| :kbd:`ScrLk` (Screen Lock) para ativar a interface do MAME
   seguido de :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação.
 * Ao concluir a inicialização e retornar ao prompt de comando, digite
-  **format c:** seguido de :kbd:`Enter` (clique na tecla :kbd:`Ç` do seu
+  **format c:** seguido de :kbd:`Enter` (|prte2| :kbd:`Ç` do seu
   teclado para inserir os ``:``), e confirme com :kbd:`Enter`.
 * |prte| :kbd:`S` seguido de :kbd:`Enter`. Após a formatação
   |prte2| :kbd:`Enter` novamente.
-* |prte| ``D:`` seguido de :kbd:`Enter` para entrar no CD-ROM.
+* |prte| :kbd:`D` seguido de :kbd:`Enter` para entrar no CD-ROM.
 * Digite: ``instalar /im /id /is`` seguido de :kbd:`Enter` para dar
   inicio a instalação do Windows.
 * Clique na tela do MAME, |prte2| :kbd:`Enter` para dar andamento na
@@ -3511,29 +3511,28 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
 
 * |prte| :kbd:`SrcLk` (Screen Lock), :kbd:`Tab`, selecione
   :guilabel:`Gerenciador de arquivos`, selecione a opção
-  :guilabel:`(flop1)`, pressione :kbd:`Enter`, escolha :guilabel:`[slot
+  :guilabel:`(flop1)`, |prte2| :kbd:`Enter`, escolha :guilabel:`[slot
   vazio]` e |prte2| :kbd:`Enter` novamente seguido da tecla :kbd:`Tab`,
   para ocultar a interface do MAME. Isso deixará a máquina sem disquete,
   o que será útil mais adiante.
 * Em determinado ponto da instalação, o sistema te perguntará se você
-  deseja criar um disquete de instalação. Pressione a tecla :kbd:`Tab`
-  e, com os direcionais do teclado, selecione 
-  :guilabel:`Gerenciador de arquivos`. Selecione a opção
-  :guilabel:`(flop1)` e |prte2| :kbd:`Enter`. Use os
-  direcionais para selecionar a imagem **win95-install-mame.ima** criada
+  deseja criar um disquete de instalação. |prte| :kbd:`Tab` e, com os
+  direcionais do teclado, selecione :guilabel:`Gerenciador de arquivos`.
+  Selecione a opção :guilabel:`(flop1)` e |prte2| :kbd:`Enter`. Use os
+  direcionais para selecionar a imagem `win95-install-mame.ima`_ criada
   anteriormente e confirme com :kbd:`Enter`.
-* Selecione a opção :guilabel:`Leitura e escrita`. Pressione
-  :kbd:`Enter` para confirmar e aguarde. Ao retornar para o menu
-  anterior, pressione :kbd:`Tab` para ocultar a interface do MAME.
+* Selecione a opção :guilabel:`Leitura e escrita`. |prte| :kbd:`Enter`
+  para confirmar e aguarde. Ao retornar para o menu anterior, |prte2|
+  :kbd:`Tab` para ocultar a interface do MAME.
   Continue com a instalação do Windows clicando em :guilabel:`OK`.
-* Após concluir a criação do seu disquete de boot, pressione
+* Após concluir a criação do seu disquete de boot, |prte2|
   :kbd:`Tab`, selecione a opção :guilabel:`(flop1)`,  pressione
   :kbd:`Enter`, escolha :guilabel:`[slot vazio]`, pressione
-  :kbd:`Enter`, e então pressione :kbd:`Tab` para continuar com a
+  :kbd:`Enter`, e então |prte2| :kbd:`Tab` para continuar com a
   instalação.
 * Em determinado ponto da instalação, cancele a instalação da impressora
-  (você poderá fazer isso mais tarde se quiser), feche a janela
-  "*Bem-vindo ao Windows 95*".
+  (você poderá fazer isso mais tarde se quiser), feche a janela:
+  "**Bem-vindo ao Windows 95**".
 * Antes de fecharmos essa imagem, precisamos configurar o teclado para
   **ABNT2**. Para isso, vá em :guilabel:`Iniciar` >
   :guilabel:`Configurações` > :guilabel:`Painel de Controle` >
@@ -3547,7 +3546,7 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
 Estamos entrando na parte final. Desligue o Windows, clique no menu
 :guilabel:`Iniciar` > :guilabel:`Desligar`, selecione a opção
 :guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
-desligar o Windows. Pressione :kbd:`Esc` para fechar a janela do MAME.
+desligar o Windows. |prte| :kbd:`Esc` para fechar a janela do MAME.
 
 
 .. raw:: latex
@@ -3598,7 +3597,7 @@ usando o comando abaixo:
   :guilabel:`Desligar`, selecione a opção
   :guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
   desligar o Windows.
-* Pressione :kbd:`F10`, em seguida, pressione :kbd:`Esc` para fechar a
+* |prte| :kbd:`F10`, em seguida, |prte2| :kbd:`Esc` para fechar a
   janela do MAME.
 
 Ao concluir esta última etapa, agora nós temos uma imagem do Windows 95
@@ -3679,7 +3678,7 @@ Ao definir essas configurações, inicie o MAME com o comando
 ``mame ct486`` via prompt de comando ou terminal. Agora também é
 possível iniciar está máquina pela interface gráfica do MAME. Inicie o
 MAME, digite "*ct4*", selecione :guilabel:`PC/AT 486 with CS4031 chipset`
-e pressione :kbd:`Enter` para iniciar a emulação já com todas as opções
+e |prte2| :kbd:`Enter` para iniciar a emulação já com todas as opções
 ativas.
 
 .. raw:: latex
