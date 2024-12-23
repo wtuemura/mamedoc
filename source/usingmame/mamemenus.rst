@@ -1154,10 +1154,13 @@ usados pelo MAME se encontram. As opções disponíveis são:
   Este arquivo também pode ser deixado na pasta raiz do MAME.
 
 		O valor predefinido é um diretório chamado **cheats** no
-		diretório raiz do MAME. [#CHEAT]_
+		diretório raiz do MAME. [#CHEAT]_ [#CHEAT2]_
 
 ..	[#CHEAT] O site `Pugsy's Cheat <http://cheat.retrogames.com/>`_ é um dos
 		mais conhecidos que oferece um arquivo de trapaça para download.
+..	[#CHEAT2] O site japonês
+		`Wayder's Cheats <https://wayder.web.fc2.com/>`_ é um outro site
+		conhecido que oferece um arquivo de trapaça para download.
 
 
 * :guilabel:`Plug-ins`
