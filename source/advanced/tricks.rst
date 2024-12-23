@@ -3698,6 +3698,360 @@ Depois de todo esse processo, veja como ficou o Windows 95 no MAME.
 	<p></p>
 
 
+Preparando o MAME para emular um Macintosh LC 550
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O `Macintosh LC 550`_ foi o primeiro computador com interface gráfica
+que eu usei, vamos prepará-lo para dar boot no MAME.
+
+
+Com disquetes
+-------------
+
+Será preciso ter a imagem dos disquetes de instalação 7.5.0 (ou mais
+recente) em mãos, são 8 no total, 7 para instalar o sistema operacional
+e um é o disco de ferramentas. Eu ainda tenho os disquetes originais do
+Sistema 7.5.0, infelizmente eles não sobreviveram ao tempo.
+
+.. figure:: images/welcome75.png
+	:width: 640
+	:align: center
+	:figclass: align-center
+	:alt: System 7.5
+
+.. raw:: html
+
+	<p></p>
+
+
+O LC 550 vinha de fábrica com um HDD de 160 MiB. No Windows, chame o
+prompt de comando dentro da pasta do MAME e execute o comando abaixo:
+
+.. code-block::
+
+	fsutil file createnew mac-flp-hdd-160m.hd 167772160
+
+No Linux ou maOS, chame o terminal dentro da pasta do MAME e execute o
+comando abaixo:
+
+.. code-block:: shell
+
+	dd if=/dev/zero of=mac-flp-hdd-160m.hd bs=1024 count=160k
+	163840+0 records in
+	163840+0 records out
+	167772160 bytes (168 MB, 160 MiB) copied, 1,59015 s, 106 MB/s
+
+Para as configurações iniciais, crie o arquivo de configuração
+**ini\\maclc550.ini** com o seguinte conteúdo.
+
+.. code-block:: text
+
+	video opengl
+	ram 80m
+	hard1 mac-flp-hdd-160m.hd
+	flop1 SSW750_DiskTools.img
+	uesx 1
+	fs 10
+	throttle 0
+	sleep 0
+	speed 3
+	sound none
+	mouse 1
+
+Inicie a emulação com o comando:
+
+.. code-block:: shell
+
+	mame maclc550
+
+É preciso iniciar com o disco de ferramentas para preparar o HD para a
+instalação do sistema.
+
+* Ao concluir a inicialização, clique duas vezes no ícone de disquete
+  chamado **Disk Tools**;
+* Clique duas vezes em **Apple HD SC Setup**, selecione
+  :menuselection:`Initialize --> Init` e aguarde;
+* Ao concluir, escolha um nome para o seu HD e clique em :guilabel:`Ok`;
+* Clique em :menuselection:`Partition --> Custom`;
+* Clique no nome que você deu ao seu HD, clique em :guilabel:`Remove`;
+  e confirme clicando em :guilabel:`Ok`;
+* Em :guilabel:`Partitions` clique em qualquer área vazia;
+* Na próxima tela, escolha :guilabel:`Macintosh Volume`;
+* Defina o tamanho máximo digitando ``163792``, e confirme clicando em
+  :guilabel:`Ok`;
+
+.. figure:: images/sys75-partition.png
+	:width: 640
+	:align: center
+	:figclass: align-center
+	:alt: System 7.5
+
+.. raw:: html
+
+	<p></p>
+
+
+* Clique em :menuselection:`Done --> Quit` para concluir o processo;
+* Na janela, clique no pequeno quadrado à esquerda para fechar a janela;
+* Vá em :menuselection:`Special --> Shutdown`.
+* Pressione a tecla :kbd:`SrcLk` (Screen Lock) seguido de :kbd:`Esc`
+  para fechar a janela do MAME;
+
+Nos próximos passo nós vamos iniciar a instalação do sistema. No prompt
+ou linha de comando, inicie o MAME com a opção abaixo:
+
+.. code-block:: shell
+
+	mame maclc550 -flop1 sys75
+
+A opção **-flop1 sys75** inicia o sistema usando a lista de programas do
+MAME, caso tenha a imagem do disco 1, use a opção **-flop1 seu_disco**.
+
+* Na tela inicial de instalação do sistema, clique em
+  :menuselection:`Continue --> Install` e aguarde;
+* Quando pedir o disco 2, pressione :kbd:`ScrLk` (Screen Lock), depois
+  :kbd:`Tab`;
+* Selecione :guilabel:`Gerenciador de arquivos` ‣
+  :guilabel:`floppydisk (flop)` ‣ :guilabel:`Catálogo de programas` ‣
+  :guilabel:`Apple Macintosh high density disk` ‣ :guilabel:`images` ‣
+  :guilabel:`System Software 7.5 (US English)` ‣ :guilabel:`sys75 flop2
+  (Install Disk 2)`;
+* Você pode manter a interface do MAME ativa para ir trocando a imagem
+  de disquete toda a vez que o sistema for pedindo. Repare que
+  :guilabel:`floppydisk (flop)` ficará vazio quando o sistema pedir o
+  novo disquete;
+
+.. note:: Se não tiver o catálogo, selecione :menuselection:`Gerenciador
+   de arquivos --> floppydisk (flop)` e escolha o caminho para a sua
+   imagem do disco 2 e escolha a opção :guilabel:`Somente-leitura` e
+   confirme com :kbd:`Enter`.
+
+* Repita o procedimento anterior até instalar todos os 7 disquetes;
+
+.. figure:: images/sys75-dsk.png
+	:width: 640
+	:align: center
+	:figclass: align-center
+	:alt: System 7.5
+
+.. raw:: html
+
+	<p></p>
+
+* Ao terminar a instalação dos disquetes clique em
+  :guilabel:`Continue...`;
+* Clique em :guilabel:`Quit` para encerrar o instalador, em seguida,
+  clique em :guilabel:`Shutdown` e feche a janela do MAME;
+
+Altere o arquivo **ini\\maclc550.ini** com as opções abaixo:
+
+.. code-block:: text
+
+	video opengl
+	ram 80m
+	hard1 mac-flp-hdd-160m.hd
+	uesx 1
+	fs 10
+	throttle 0
+	sleep 0
+	speed 3
+	sound none
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+No prompt ou linha de comando, inicie o MAME novamente:
+
+.. code-block:: shell
+
+	mame maclc550
+
+Antes de fechar a nossa imagem e passá-la para CHD precisamos definir
+algumas configurações.
+
+* Clique no ícone da maçã e vá em :menuselection:`Control Panels -->
+  Monitors`;
+* Escolha a opção :guilabel:`Thousands` para definir milhares de cores
+  do monitor e feche a janela clicando no quadrado à esquerda da janela;
+
+Ao concluir a nossa única configuração, passamos a nossa imagem para CHD
+com o comando abaixo:
+
+.. code-block:: shell
+
+	chdman createhd --input mac-flp-hdd-160m.hd --output mac-flp-hdd-160m.chd --compression lzma
+	chdman - MAME Compressed Hunks of Data (CHD) manager 0.272 (mame0272)
+	Output CHD:   mac-flp-hdd-160m.chd
+	Input file:   mac-flp-hdd-160m.hd
+	Compression:  lzma (LZMA)
+	Cylinders:    512
+	Heads:        16
+	Sectors:      40
+	Bytes/sector: 512
+	Sectors/hunk: 8
+	Logical size: 167,772,160
+	Compression complete ... final ratio = 4.7%
+
+Altere o arquivo **ini\\maclc550.ini** com as opções finais do nosso
+sistema:
+
+.. code-block:: text
+
+	video opengl
+	ram 80m
+	hard1 mac-flp-hdd-160m.chd
+	uesx 1
+	mouse 1
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+E assim concluímos a nossa instalação do System 7.5.0.
+
+.. figure:: images/sys75-done.png
+	:width: 640
+	:align: center
+	:figclass: align-center
+	:alt: System 7.5
+
+.. raw:: html
+
+	<p></p>
+
+
+Com CD-ROM
+----------
+
+O processo de instalação com um CD-ROM é mais fácil, agora vamos
+instalar o System 7.6.1.
+
+.. figure:: images/welcome76.png
+	:width: 640
+	:align: center
+	:figclass: align-center
+	:alt: System 7.6
+
+.. raw:: html
+
+	<p></p>
+
+Altere o arquivo **ini\\maclc550.ini** com as opções abaixo:
+
+.. code-block:: text
+
+	video opengl
+	ram 80m
+	hard1 mac-cd-hdd-160m.hd
+	cdrm mac761
+	uesx 1
+	fs 10
+	throttle 0
+	sleep 0
+	speed 3
+	sound none
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+.. note:: Caso não tenha a imagem do CD-ROM de instalação do catálogo do
+   MAME, informe o caminho completo da sua imagem na opção **cdrm** do
+   arquivo **ini\\maclc550.ini** ou inicie o MAME com a opção na linha
+   de comando, exemplo: **mame maclc550 -cdrm sua_imagem_iso**
+
+A instalação do System 7.6.1 é um pouco diferente da instalação do
+sistema anterior. Inicie a emulação com o comando:
+
+.. code-block:: shell
+
+	mame maclc550
+
+Clique duas vezes em **Install Mac OS**:
+
+* Clique no ícone da opção **1** (jornal), após terminar a leitura,
+  clique no pequeno quadrado à esquerda para fechar a janela;
+* Clique no ícone da opção **2**, ao aparecer a tela de alerta, clique
+  em :guilabel:`Continue`;
+* selecione :menuselection:`Initialize --> Init` e aguarde;
+* Ao concluir, escolha um nome para o seu HD e clique em :guilabel:`Ok`;
+* Clique em :menuselection:`Partition --> Custom`;
+* Clique no nome que você deu ao seu HD, clique em :guilabel:`Remove`;
+  e confirme clicando em :guilabel:`Ok`;
+* Em :guilabel:`Partitions` clique em qualquer área vazia;
+* Na próxima tela, escolha :guilabel:`Macintosh Volume`;
+* Defina o tamanho máximo digitando ``163792``, e confirme clicando em
+  :guilabel:`Ok`;
+* Clique em :menuselection:`Done --> Quit` para concluir o processo;
+* Clique no ícone da opção **3**, confirme o nome que você deu ao seu
+  disco e clique em :guilabel:`Select`;
+* Clique no ícone da opção **4** para instalar o sistema, aceite a
+  predefinição e clique em :guilabel:`Start`;
+* Na próxima janela sobre a licença, clique em :guilabel:`Agree` e
+  aguarde a conclusão da instalação;
+* Clique em :guilabel:`Quit` para concluir o processo de instalação;
+* Clique em :menuselection:`Special --> Shutdown` para desligar o
+  sistema;
+* Feche a janela do MAME;
+
+Diferente do System 7.5, nós não precisamos configurar mais nada, porém
+é preciso iniciar o sistema apenas uma vez para ele "reconstruir o
+desktop". Inicie novamente a emulação com o comando:
+
+.. code-block:: shell
+
+	mame maclc550
+
+Ao concluir a "reconstrução do desktop", clique em
+:menuselection:`Special --> Shutdown` para desligar o sistema.
+
+Execute o comando abaixo para converter a nossa imagem para CHD:
+
+.. code-block:: shell
+
+	chdman createhd --input mac-cd-hdd-160m.hd --output mac-cd-hdd-160m.chd --compression lzma
+	chdman - MAME Compressed Hunks of Data (CHD) manager 0.272 (mame0272-225-g3bd3ca70934)
+	Output CHD:   mac-cd-hdd-160m.chd
+	Input file:   mac-cd-hdd-160m.hd
+	Compression:  lzma (LZMA)
+	Cylinders:    512
+	Heads:        16
+	Sectors:      40
+	Bytes/sector: 512
+	Sectors/hunk: 8
+	Logical size: 167,772,160
+	Compression complete ... final ratio = 11.4%
+
+Altere o arquivo **ini\\maclc550.ini** com a nossa configuração final:
+
+.. code-block:: text
+
+	video opengl
+	ram 80m
+	hard1 mac-cd-hdd-160m.chd
+	uesx 1
+	mouse 1
+
+E assim concluímos a nossa instalação do System 7.6.1.
+
+.. figure:: images/sys76-done.png
+	:width: 640
+	:align: center
+	:figclass: align-center
+	:alt: System 7.6
+
+.. raw:: html
+
+	<p></p>
+
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
@@ -3722,3 +4076,4 @@ Depois de todo esse processo, veja como ficou o Windows 95 no MAME.
 .. _win95-install-mame.ima: https://www.mediafire.com/file/p9qj3telv40qthb/win95-install-mame.7z
 .. |prte| replace:: Pressione a tecla
 .. |prte2| replace:: pressione a tecla
+.. _Macintosh LC 550: https://support.apple.com/pt-br/112206
