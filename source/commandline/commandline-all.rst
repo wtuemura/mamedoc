@@ -5709,7 +5709,7 @@ Opções do servidor HTTP
 .. _findstr: https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/findstr
 .. _Steam: https://store.steampowered.com
 .. _Video Games Densetsu: https://vgdensetsu.tumblr.com/post/178414835138/from-chara-design-to-graphic-design-the-artists
-.. _site do projeto: https://github.com/wtuemura/mamedoc/tree/master/artwork>
+.. _site do projeto: https://github.com/wtuemura/mamedoc/tree/master/artwork
 .. _vizinho mais próximo: https://pt.wikipedia.org/wiki/Interpolação_por_vizinho_mais_próximo
 .. _mameau: https://www.mameau.com/linux/mame-glsl-shaders-setup
 .. _mameworld: https://www.mameworld.info/ubbthreads/showflat.php?Cat=&Number=368803&page=&view=&sb=5&o=&vc=1
