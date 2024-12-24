@@ -1560,8 +1560,8 @@ Opções para a configuração
 
 .. _mame-commandline-pathoptions:
 
-Opções para a configuração dos principais diretórios 
-----------------------------------------------------
+Opções para a configuração das principais pastas
+------------------------------------------------
 
 .. _mame-commandline-homepath:
 
@@ -1703,13 +1703,14 @@ Opções para a configuração dos principais diretórios
 **-cheatpath** <*caminho*>
 
 	Define o caminho completo para os arquivos de trapaça em formato
-	**.xml**.
+	**.xml**, **.zip** ou **.7z**. Quando mais de um caminho ou arquivo
+	é informado, as trapaças são combinadas.
 	|epdm|. O valor predefinido é **cheat** (|oudc| **cheat**, |ndrd|).
 
 	Exemplo:
 		.. code-block:: shell
 
-			mame -cheatpath D:\mame\cheat;D:\emu\trapaças
+			mame -cheatpath cheat;cheat_wayder
 
 
 .. _mame-commandline-crosshairpath:
@@ -5377,7 +5378,9 @@ Opções diversas
 		mais conhecidos que oferece um arquivo de trapaça para download.
 ..	[#CHEAT2] O site japonês
 		`Wayder's Cheats <https://wayder.web.fc2.com/>`_ é um outro site
-		conhecido que oferece um arquivo de trapaça para download.
+		conhecido que oferece um arquivo de trapaça para download. Para
+		usar os dois juntos, consulte
+		:ref:`-cheatpath <mame-commandline-cheatpath>`.
 
 
 .. _mame-commandline-skipgameinfo:
