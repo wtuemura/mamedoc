@@ -267,16 +267,16 @@ vez); sem ele, uma compilação pode levar horas, dependendo da capacidade
 de processamento do seu equipamento.
 
 Para sistemas Ubuntu e Debian Linux, o comando para instalar o
-**ccache** é ``sudo apt-get install ccache``. Para Arch Linux e MSYS2,
-o comando é ``pacman -S ccache``. Verifique qual é a opção para o seu
-sistema operacional. Edite o seu ``~/.bashrc`` e adicione na última
+**ccache** é **sudo apt-get install ccache**. Para Arch Linux e MSYS2,
+o comando é **pacman -S ccache**. Verifique qual é a opção para o seu
+sistema operacional. Edite o seu **~/.bashrc** e adicione na última
 linha ``export USE_CCACHE=1``, para aplicar a configuração faça:
 
 	.. code-block:: shell
 
 		. ~/bashrc
 
-A configuração é muito simples: edite o seu arquivo ``useroptions.mak``,
+A configuração é muito simples: edite o seu arquivo **useroptions.mak**,
 assim não é necessário usar uma linha muito grande de configuração.
 No Linux, a configuração ficaria assim:
 
@@ -316,37 +316,50 @@ Já a configuração para Windows no MSYS2 fica assim:
 
 	\clearpage
 
-Para ver a condição do armazenamento cache faça ``ccache -s``:
+Para ver a condição do armazenamento cache faça **ccache -sv**:
 
 	.. code-block:: shell
 
 		cache directory                     /home/mame/.ccache
 		primary config                      /home/mame/.ccache/ccache.conf
-		secondary config      (readonly)    /etc/ccache.conf
+		secondary config                    /etc/ccache.conf
 		
-		Cacheable calls:     2316 / 18282 (12.67%)
-		  Hits:              1158 /  2316 (50.00%)
-		  Direct:            1158 /  1158 (100.0%)
-		  Preprocessed:         0 /  1158 ( 0.00%)
-		  Misses:            1158 /  2316 (50.00%)
-		Uncacheable calls:  15966 / 18282 (87.33%)
+		Cacheable calls:     3533 / 35558 ( 9.94%)
+		  Hits:              2299 /  3533 (65.07%)
+		  Direct:            2285 /  2299 (99.39%)
+		  Preprocessed:        14 /  2299 ( 0.61%)
+		  Misses:            1234 /  3533 (34.93%)
+		Uncacheable calls:  32025 / 35558 (90.06%)
+		  [...]
+		Successful lookups:
+		  Direct:            2285 /  3533 (64.68%)
+		  Preprocessed:        14 /  1248 ( 1.12%)
 		Local storage:
 		  Cache size (GiB):   0.0
-		  Hits:              1158 /  2316 (50.00%)
-		  Misses:            1158 /  2316 (50.00%)
+		  Files:             2401
+		  Hits:              2299 /  3533 (65.07%)
+		  Misses:            1234 /  3533 (34.93%)
+		  Reads:             7066
+		  Writes:            2482
 
 
 Para montar a sua cache, basta compilar o código-fonte do MAME com:
-``make clean && rm -rf build/* && make -j7``. No final, em
+**make clean && rm -rf build && make -j3**. No final, em
 **cache size**, deve aparecer o quanto foi armazenado em cache. Para
 aumentar o tamanho do **max cache size** edite o arquivo
-``/home/mame/.ccache/ccache.conf``.
+**/home/mame/.ccache/ccache.conf**.
 
 Evite alterar as configurações de compilação a todo o momento, caso
 contrário o **ccache** vai gerar um novo cache para essa nova
 configuração e assim por diante.
 
 Veja todas as opções do **ccache** com o comando ``ccache -h``.
+
+.. note:: Apenas no caso de uso do **ccache**, evite usar valores de
+   **-j** muito altos, isso causa uma grande quantidade de perdas
+   (*misses*) se comparado com acertos (*hits*). Nos testes realizados,
+   o valor **-j3** gera muito mais acertos do que perdas. Use o valor
+   que você quiser se não for usar o **ccache**.
 
 
 .. raw:: latex
@@ -387,7 +400,7 @@ com que o seu computador fique mais lento e pare de responder. No caso
 específico da compilação no Windows, a sobrecarga anula todos os
 benefícios da compilação em paralelo. Nos testes realizados com o
 Windows 10 de 64 bits, o valor ideal foi a quantidade de núcleos menos
-um, ou seja, um processador com 8 núcleos deve usar ``-j7`` para
+um, ou seja, um processador com 8 núcleos deve usar **-j7** para
 compilar em *multithread*:
 
 	.. code-block:: shell
