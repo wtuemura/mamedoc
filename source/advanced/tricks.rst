@@ -3334,7 +3334,7 @@ Em sistemas Linux e macOS, abra o terminal e faça o comando:
 
 .. code-block:: shell
 
-	./mame -lm |grep memc
+	./mame -lm |grep memcard
 	2020bb           memcard          (memc)     .neo
 	...
 	bubucar          memcard1         (memc1)    .pg2  .bin  .mem
@@ -3349,7 +3349,21 @@ No Windows, abra o prompt de comando e faça o comando:
 
 .. code-block:: shell
 
-	mame -lm |find memc
+	mame -lm |find "memcard"
+	2020bb           memcard          (memc)     .neo
+	...
+	bubucar          memcard1         (memc1)    .pg2  .bin  .mem
+	...
+	ddpdojt          memcard1         (memc1)    .pg2  .bin  .mem
+	...
+	ddr3ma           memcard1         (memc1)    .mc
+	etc.
+
+Você também pode usar o comando **findstr**:
+
+.. code-block:: shell
+
+	mame -lm |findstr memcard
 	2020bb           memcard          (memc)     .neo
 	...
 	bubucar          memcard1         (memc1)    .pg2  .bin  .mem
@@ -3421,7 +3435,7 @@ mínimo para detectar a unidade de CD-ROM. Clique para baixar a imagem
 
 
 Dentro da pasta do MAME, crie o arquivo de configuração
-**ini\\source\\ct486.ini** com as opções abaixo:
+**ini\\source\\ct486.ini** com as configurações abaixo:
 
 .. code-block:: text
 
@@ -3457,6 +3471,10 @@ prompt:
 
 	mame ct486
 
+
+.. tip:: Pressione :kbd:`Alt` + :kbd:`Tab` para liberar o mouse.
+
+
 * Na primeira tela pressione :kbd:`F1`.
 * Use as setas de direção do teclado para selecionar a opção
   :guilabel:`AUTO DETECT HARD DISK` e |prte2| :kbd:`Enter` para
@@ -3476,12 +3494,6 @@ prompt:
 * |prte| :kbd:`Esc` para sair dessa tela.
 * Selecione :guilabel:`WRITE TO CMOS AND EXIT` para encerrar a
   configuração da BIOS (|prte2| :kbd:`Y` para confirmar o encerramento).
-
-
-.. raw:: latex
-
-	\clearpage
-
 
 O sistema deve iniciar pelo disquete sem maiores problemas e já
 detectar o nosso CD-ROM chamado *MAMEDOC* no prompt mostrando
@@ -3543,19 +3555,20 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
   partir do CD de instalação do Windows 95. Clique em :guilabel:`OK`
   para fechar e concluir a configuração.
 
-Estamos entrando na parte final. Desligue o Windows, clique no menu
-:guilabel:`Iniciar` > :guilabel:`Desligar`, selecione a opção
-:guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
-desligar o Windows. |prte| :kbd:`Esc` para fechar a janela do MAME.
-
 
 .. raw:: latex
 
 	\clearpage
 
 
+Estamos entrando na parte final. Desligue o Windows, clique no menu
+:guilabel:`Iniciar` > :guilabel:`Desligar`, selecione a opção
+:guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
+desligar o Windows. |prte| :kbd:`Esc` para fechar a janela do MAME.
+
+
 Altere novamente o arquivo de configuração **ini\\source\\ct486.ini**
-com as opções abaixo:
+com as configurações abaixo:
 
 .. code-block:: text
 
@@ -3611,6 +3624,12 @@ escrito em um arquivo ``.diff`` dentro da
 pasta **diff**. Como o nome do nosso HD é **win95-hdd-300m.hd**, dentro
 da pasta **diff**, ele terá o nome **win95-hdd-300m.diff**, o que
 facilita sua identificação dentro da pasta.
+
+
+.. raw:: latex
+
+	\clearpage
+
 
 Para criar o CHD a partir da nossa imagem, use o comando abaixo:
 
@@ -3672,6 +3691,12 @@ Inicie a sua nova máquina com o comando abaixo:
 .. Tip:: Para usar o CD-ROM e poder montar imagens depois, mantenha a
    opção ``board3:ide:ide:1 cdrom``.
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 A emulação deve iniciar normalmente com o Windows 95.
 
 Ao definir essas configurações, inicie o MAME com o comando
@@ -3680,10 +3705,6 @@ possível iniciar está máquina pela interface gráfica do MAME. Inicie o
 MAME, digite "*ct4*", selecione :guilabel:`PC/AT 486 with CS4031 chipset`
 e |prte2| :kbd:`Enter` para iniciar a emulação já com todas as opções
 ativas.
-
-.. raw:: latex
-
-	\clearpage
 
 Depois de todo esse processo, veja como ficou o Windows 95 no MAME.
 
@@ -3696,6 +3717,11 @@ Depois de todo esse processo, veja como ficou o Windows 95 no MAME.
 .. raw:: html
 
 	<p></p>
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 Preparando o MAME para emular um Macintosh LC 550
@@ -3763,6 +3789,9 @@ Inicie a emulação com o comando:
 .. code-block:: shell
 
 	mame maclc550
+
+.. tip:: Pressione :kbd:`Alt` + :kbd:`Tab` para liberar o mouse.
+
 
 É preciso iniciar com o disco de ferramentas para preparar o HD para a
 instalação do sistema.
@@ -3843,7 +3872,13 @@ MAME, caso tenha a imagem do disco 1, use a opção **-flop1 seu_disco**.
 * Clique em :guilabel:`Quit` para encerrar o instalador, em seguida,
   clique em :guilabel:`Shutdown` e feche a janela do MAME;
 
-Altere o arquivo **ini\\maclc550.ini** com as opções abaixo:
+
+.. raw:: latex
+
+	\clearpage
+
+
+Altere o arquivo **ini\\maclc550.ini** com as configurações abaixo:
 
 .. code-block:: text
 
@@ -3856,12 +3891,6 @@ Altere o arquivo **ini\\maclc550.ini** com as opções abaixo:
 	sleep 0
 	speed 3
 	sound none
-
-
-.. raw:: latex
-
-	\clearpage
-
 
 No prompt ou linha de comando, inicie o MAME novamente:
 
@@ -3876,6 +3905,9 @@ algumas configurações.
   Monitors`;
 * Escolha a opção :guilabel:`Thousands` para definir milhares de cores
   do monitor e feche a janela clicando no quadrado à esquerda da janela;
+* Vá em :menuselection:`Special --> Shutdown`.
+* Pressione a tecla :kbd:`SrcLk` (Screen Lock) seguido de :kbd:`Esc`
+  para fechar a janela do MAME;
 
 Ao concluir a nossa única configuração, passamos a nossa imagem para CHD
 com o comando abaixo:
@@ -3895,8 +3927,8 @@ com o comando abaixo:
 	Logical size: 167,772,160
 	Compression complete ... final ratio = 4.7%
 
-Altere o arquivo **ini\\maclc550.ini** com as opções finais do nosso
-sistema:
+Altere o arquivo **ini\\maclc550.ini** com as configurações finais do
+nosso sistema:
 
 .. code-block:: text
 
@@ -3941,7 +3973,30 @@ instalar o System 7.6.1.
 
 	<p></p>
 
-Altere o arquivo **ini\\maclc550.ini** com as opções abaixo:
+O LC 550 vinha de fábrica com um HDD de 160 MiB. No Windows, chame o
+prompt de comando dentro da pasta do MAME e execute o comando abaixo:
+
+.. code-block::
+
+	fsutil file createnew mac-cd-hdd-160m.hd 167772160
+
+No Linux ou maOS, chame o terminal dentro da pasta do MAME e execute o
+comando abaixo:
+
+.. code-block:: shell
+
+	dd if=/dev/zero of=mac-cd-hdd-160m.hd bs=1024 count=160k
+	163840+0 records in
+	163840+0 records out
+	167772160 bytes (168 MB, 160 MiB) copied, 1,59015 s, 106 MB/s
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Altere o arquivo **ini\\maclc550.ini** com as configurações abaixo:
 
 .. code-block:: text
 
@@ -3957,11 +4012,6 @@ Altere o arquivo **ini\\maclc550.ini** com as opções abaixo:
 	sound none
 
 
-.. raw:: latex
-
-	\clearpage
-
-
 .. note:: Caso não tenha a imagem do CD-ROM de instalação do catálogo do
    MAME, informe o caminho completo da sua imagem na opção **cdrm** do
    arquivo **ini\\maclc550.ini** ou inicie o MAME com a opção na linha
@@ -3973,6 +4023,10 @@ sistema anterior. Inicie a emulação com o comando:
 .. code-block:: shell
 
 	mame maclc550
+
+
+.. tip:: Pressione :kbd:`Alt` + :kbd:`Tab` para liberar o mouse.
+
 
 Clique duas vezes em **Install Mac OS**:
 
@@ -4010,7 +4064,8 @@ desktop". Inicie novamente a emulação com o comando:
 	mame maclc550
 
 Ao concluir a "reconstrução do desktop", clique em
-:menuselection:`Special --> Shutdown` para desligar o sistema.
+:menuselection:`Special --> Shutdown` para desligar o sistema e feche a
+janela do MAME.
 
 Execute o comando abaixo para converter a nossa imagem para CHD:
 
@@ -4038,6 +4093,12 @@ Altere o arquivo **ini\\maclc550.ini** com a nossa configuração final:
 	hard1 mac-cd-hdd-160m.chd
 	uesx 1
 	mouse 1
+
+
+.. raw:: latex
+
+	\clearpage
+
 
 E assim concluímos a nossa instalação do System 7.6.1.
 
