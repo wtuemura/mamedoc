@@ -2285,6 +2285,9 @@ os arquivos ``bios.txt``, ``bios.ps`` e ``bios.pdf``.
 Listando e iniciando diferentes sistemas MSX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Por linha de comando
+--------------------
+
 Dentro da pasta com o código-fonte do MAME os principais sistemas MSX
 podem ser encontrados dentro do diretório ``src/mame/msx``, mais
 especificamente o meu foco está dentro dos arquivos
@@ -2331,7 +2334,37 @@ Para MSX 2::
 	msx/msx2.cpp         ax370
 	...
 
-Essas dicas também podem ser utilizadas com outros sistemas.
+.. raw:: latex
+
+	\clearpage
+
+
+Pela interface
+--------------
+
+Inicie o MAME sem nenhuma opção e siga os passos:
+
+* No lado esquerdo, clique no item :guilabel:`Filtro personalizado`;
+* Em :guilabel:`Filtro 1` escolha :guilabel:`Não BIOS`;
+* Clique duas vezes em :guilabel:`Adiciona um filtro`;
+* Clique duas vezes em :guilabel:`Filtro 2`, selecione
+  :guilabel:`Principais` (caso queira mostrar todos, pule para o próximo
+  passo);
+* Clique duas vezes em :guilabel:`Adicionar um filtro`;
+* Clique duas vezes em :guilabel:`Filtro 3`, selecione
+  :guilabel:`Source File` (Arquivo fonte);
+* Clique duas vezes em qualquer nome que apareça terminado com **.cpp**
+  logo abaixo de **Filtro 3** e digite **msx**.
+* Escolha a versão do msx que deseja e retorne ao menu anterior para ver
+  a listagem;
+
+
+.. note:: Caso a lista retorne vazia, tenha certeza que o caminho das
+   suas ROMs esteja disponível. Se estiver e ainda assim a lista
+   aparecer vazia, clique em :guilabel:`Sem filtro` no lado esquerdo.
+   No topo da tela clique no ícone da lupa e audite todas as ROMs e
+   aguarde.
+.. tip:: Essas dicas também podem ser utilizadas com outros sistemas.
 
 
 .. raw:: latex
@@ -3507,7 +3540,7 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
   seguido de :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação.
 * Ao concluir a inicialização e retornar ao prompt de comando, digite
   **format c:** seguido de :kbd:`Enter` (|prte2| :kbd:`Ç` do seu
-  teclado para inserir os ``:``), e confirme com :kbd:`Enter`.
+  teclado para inserir os :kbd:`:`), e confirme com :kbd:`Enter`.
 * |prte| :kbd:`S` seguido de :kbd:`Enter`. Após a formatação
   |prte2| :kbd:`Enter` novamente.
 * |prte| :kbd:`D` seguido de :kbd:`Enter` para entrar no CD-ROM.
@@ -3610,8 +3643,8 @@ usando o comando abaixo:
   :guilabel:`Desligar`, selecione a opção
   :guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
   desligar o Windows.
-* |prte| :kbd:`F10`, em seguida, |prte2| :kbd:`Esc` para fechar a
-  janela do MAME.
+* |prte| :kbd:`ScrLk` (Screen Lock), em seguida, |prte2| :kbd:`Esc` para
+  fechar a janela do MAME.
 
 Ao concluir esta última etapa, agora nós temos uma imagem do Windows 95
 instalada, já configurada com o teclado ABNT2 e com a imagem do HD
@@ -3620,10 +3653,10 @@ desfragmentada.
 Agora, usamos o **chdman** para criar o CHD do nosso Windows 95,
 tornando a nossa imagem **estática** nesse processo. Isso significa que
 tudo o que for alterado posteriormente dentro da nossa imagem será
-escrito em um arquivo ``.diff`` dentro da
-pasta **diff**. Como o nome do nosso HD é **win95-hdd-300m.hd**, dentro
-da pasta **diff**, ele terá o nome **win95-hdd-300m.diff**, o que
-facilita sua identificação dentro da pasta.
+escrito em um arquivo ``.diff`` dentro da pasta **diff**. Como o nome do
+nosso HD é **win95-hdd-300m.hd**, dentro da pasta **diff**, ele terá o
+nome **win95-hdd-300m.diff**, o que facilita sua identificação dentro da
+pasta.
 
 
 .. raw:: latex
@@ -3826,7 +3859,7 @@ instalação do sistema.
 * Pressione a tecla :kbd:`SrcLk` (Screen Lock) seguido de :kbd:`Esc`
   para fechar a janela do MAME;
 
-Nos próximos passo nós vamos iniciar a instalação do sistema. No prompt
+Vamos iniciar a instalação do sistema nos próximos passos. No prompt
 ou linha de comando, inicie o MAME com a opção abaixo:
 
 .. code-block:: shell
@@ -4072,7 +4105,7 @@ Execute o comando abaixo para converter a nossa imagem para CHD:
 .. code-block:: shell
 
 	chdman createhd --input mac-cd-hdd-160m.hd --output mac-cd-hdd-160m.chd --compression lzma
-	chdman - MAME Compressed Hunks of Data (CHD) manager 0.272 (mame0272-225-g3bd3ca70934)
+	chdman - MAME Compressed Hunks of Data (CHD) manager 0.272 (mame0272)
 	Output CHD:   mac-cd-hdd-160m.chd
 	Input file:   mac-cd-hdd-160m.hd
 	Compression:  lzma (LZMA)
