@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MAME 0.249\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-18 05:29+1100\n"
-"PO-Revision-Date: 2024-02-25 21:15-0300\n"
+"PO-Revision-Date: 2024-12-29 21:22-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -1322,7 +1322,7 @@ msgstr "BIOS"
 #: src/frontend/mame/ui/utils.cpp:94
 msgctxt "machine-filter"
 msgid "Not BIOS"
-msgstr "Sem BIOS"
+msgstr "Não BIOS"
 
 #: src/frontend/mame/ui/utils.cpp:95
 msgctxt "machine-filter"
@@ -1493,11 +1493,11 @@ msgstr "Filtro %1$u"
 
 #: src/frontend/mame/ui/utils.cpp:552
 msgid "Remove last filter"
-msgstr "Remove o último filtro"
+msgstr "Remover o último filtro"
 
 #: src/frontend/mame/ui/utils.cpp:554
 msgid "Add filter"
-msgstr "Adiciona um filtro"
+msgstr "Adicionar um filtro"
 
 #: src/frontend/mame/ui/utils.cpp:1013
 msgid "[no category INI files]"
@@ -1700,7 +1700,7 @@ msgstr "[a BIOS deste sistema não possui configurações]"
 
 #: src/frontend/mame/ui/miscmenu.cpp:833
 msgid "Add To Favorites"
-msgstr "Adiciona aos favoritos"
+msgstr "Adicionar aos favoritos"
 
 #: src/frontend/mame/ui/miscmenu.cpp:835
 msgid "Remove From Favorites"
@@ -2338,7 +2338,7 @@ msgstr "%1$s pasta"
 
 #: src/frontend/mame/ui/dirmenu.cpp:523
 msgid "Add Folder"
-msgstr "Adiciona uma pasta"
+msgstr "Adicionar uma pasta"
 
 #: src/frontend/mame/ui/dirmenu.cpp:525
 msgid "Remove Folder"
@@ -3019,7 +3019,7 @@ msgstr "Visualização da DAT externa"
 #: src/frontend/mame/ui/mainmenu.cpp:181
 msgctxt "menu-main"
 msgid "Add To Favorites"
-msgstr "Adiciona aos favoritos"
+msgstr "Adicionar aos favoritos"
 
 #: src/frontend/mame/ui/mainmenu.cpp:183
 msgctxt "menu-main"
@@ -3142,7 +3142,7 @@ msgstr "Capas"
 
 #: src/frontend/mame/ui/selmenu.cpp:103
 msgid "Add or remove favorite"
-msgstr "Adiciona ou remove um favorito"
+msgstr "Adicionar ou remover um favorito"
 
 #: src/frontend/mame/ui/selmenu.cpp:104
 msgid "Export displayed list to file"
@@ -6084,7 +6084,7 @@ msgstr "[nenhum botão turbo]"
 #: plugins/autofire/autofire_menu.lua:263
 msgctxt "plugin-autofire"
 msgid "Add autofire button"
-msgstr "Adiciona um botão turbo"
+msgstr "Adicionar um botão turbo"
 
 #: plugins/autofire/autofire_menu.lua:150
 msgctxt "plugin-autofire"
@@ -6345,12 +6345,12 @@ msgstr "Exclui etapa"
 #: plugins/inputmacro/inputmacro_menu.lua:430
 msgctxt "plugin-inputmacro"
 msgid "Add step at position"
-msgstr "Adiciona uma etapa na posição"
+msgstr "Adicionar uma etapa na posição"
 
 #: plugins/inputmacro/inputmacro_menu.lua:476
 msgctxt "plugin-inputmacro"
 msgid "Add Input Macro"
-msgstr "Adiciona uma macro"
+msgstr "Adicionar uma macro"
 
 #: plugins/inputmacro/inputmacro_menu.lua:483
 msgctxt "plugin-inputmacro"
