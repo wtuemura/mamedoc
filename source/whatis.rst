@@ -11,7 +11,7 @@ consoles de videogame, calculadoras e indo muito além de seu foco
 inicial.
 
 | **MAME ®**
-| **Direitos Autorais © 1997-2024 MAMEdev e seus colaboradores**.
+| **Direitos Autorais © 1997-2025 MAMEdev e seus colaboradores**.
 | **MAME é uma marca registrada de Gregory Ember**.
 |
 

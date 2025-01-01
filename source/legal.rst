@@ -19,7 +19,7 @@ Licença
 .. code-block:: RST
 
     MAME
-    Direitos autorais (c) 1997-2024 MAMEDev e colaboradores.
+    Direitos autorais (c) 1997-2025 MAMEDev e colaboradores.
     
     Este programa é um software livre, podendo ser redistribuído e/ou
     modificado de acordo com os termos da Licença Pública Geral GNU,
