@@ -3037,117 +3037,130 @@ para que o seu MAME possa funcionar corretamente.
 Acelerando jogos que precisam de pré-instalação
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Jogos como o **Dance Dance Revolution**, **Street Fighter III** e
-diversos outros, ao serem iniciados pela primeira vez precisam instalar
-os seus arquivos na pasta *NVRAM*, este é um processo demorado. Caso
-queira acelerar todo o processo, inicie o mame com o comando abaixo:
+Ao serem iniciados pela primeira vez, jogos como o **Dance Dance
+Revolution**, **Street Fighter III** (dentre outros), eles precisam
+instalar seus arquivos na pasta **NVRAM**, o que é um processo demorado.
+Para acelerar todo o processo, inicie o MAME com o comando abaixo:
 
 .. code-block:: shell
 
-	mame -fs 9 -nothrottle _nome_da_rom
+	mame -fs 10 -nosleep -nothrottle -speed 3 nome_da_rom
 
-Ao concluir a instalação, encerre a emulação, faça o backup como é
-explicado no próximo capítulo e inicie a emulação normalmente.
+Ao concluir a instalação, encerre a emulação, faça o backup conforme
+explicado no próximo capítulo e inicie a emulação normalmente e sem
+essas opções.
 
 
 .. _advanced-tricks-nvram:
 
-Mantendo as configurações da BIOS de um sistema ao apagar a NVRAM
+Mantenha as configurações da BIOS de um sistema ao apagar a NVRAM
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Diferentes sistemas armazenam dados num *Non-Volatile Random Access
-Memory* (NVRAM)ou numa tradução direta, ou memória não volátil de
-acesso aleatório, para encurtar. Ao contrário da memória RAM
-convencional, que perde os dados quando a alimentação é desligada, a
-NVRAM não é não volátil, o que significa que os dados permanecem
+Diferentes sistemas armazenam dados em um *Non-Volatile Random Access
+Memory* (NVRAM), ou memória não volátil de acesso aleatório e também
+numa *Electrically-Erasable Programmable Read-Only Memory* (EEPROM),
+para encurtar. Ao contrário da memória RAM convencional, que perde os
+dados quando a alimentação é desligada. A memória não é volátil quando
+armazenadas nessas memórias, o que significa que os dados permanecem
 intactos mesmo durante falhas de energia ou se a alimentação for
 cortada. Isso garante a integridade dos dados e evita a perda de
 informações críticas.
 
 O MAME armazena esses dados dentro da pasta **nvram**, geralmente
 localizada na mesma pasta do executável do MAME ou em outro local
-definido através da configuração ``nvram_directory`` que fica dentro do
-arquivo ``mame.ini``, o valor predefinido é **nvram**. Caso utilize uma
+definido pela configuração **nvram_directory**, que fica dentro do
+arquivo **mame.ini**. O valor predefinido é **nvram**. Caso utilize uma
 versão compilada para macOS ou Linux, rode o comando abaixo para
-identificar onde a sua pasta **nvram** da sua versão do MAME fica:
+identificar onde a sua pasta **nvram** está localizada na sua versão do
+MAME:
 
 .. code-block:: shell
 
 	mame -norc -sc | grep nvram_directory
 	nvram_directory           /usr/share/mame/nvram
 
+No Windows:
+
+.. code-block:: shell
+
+	mame -norc -sc|findstr nvram_directory
+	nvram_directory           nvram
+
 Certos jogos, como os da série **Dance Dance Revolution** (entre vários
 outros), precisam ser inicializados. A inicialização varia de sistema
 para sistema, mas, no geral, certos dados são copiados da ROM ou de um
-dispositivo de armazenamento como um CD-ROM para a NVRAM. Geralmente,
-esse processo inicial costuma levar algum tempo, porém é realizado
-apenas uma vez. É nesse momento que algumas pessoas têm encontrado
-problemas.
+dispositivo de armazenamento, como um CD-ROM, para a NVRAM. Geralmente,
+esse processo inicial leva algum tempo, mas é realizado apenas uma vez.
+É nesse momento que algumas pessoas têm enfrentado problemas.
 
 É preciso excluir a NVRAM de alguns sistemas por completo para que as
 funções de :ref:`gravação <mame-commandline-record>` e de
 :ref:`reprodução <mame-commandline-playback>` do MAME funcionem
 corretamente. Um desses sistemas é o **Neo Geo**. Antes de gravar uma
-nova jogada é preciso apagar a NVRAM para que o sistema inicie
-"*zerado*". O mesmo deve ser feito antes de reproduzir o que foi
-gravado. Dessa maneira, o sistema será iniciado nas mesmas condições da
-gravação. Alguns erros podem acontecer, como, por exemplo, erros de
-sincronismo, ou seja, a fase do jogo pode iniciar numa outra
-fase diferente daquela em que a gravação foi feita, os personagens podem
-realizar movimentos em condições diferentes daquelas utilizadas durante
-a gravação e assim por diante.
+nova jogada, é preciso apagar toda a NVRAM para que o sistema seja
+inicializado com as configurações de fábrica. O mesmo deve ser feito
+antes de reproduzir o que foi gravado para que a reprodução funcione nas
+mesmas condições da gravação. Alguns erros podem acontecer, como, por
+exemplo, erros de sincronismo, ou seja, a fase do jogo pode iniciar em
+uma fase diferente daquela em que a gravação foi feita, os personagens
+podem realizar movimentos em condições diferentes daquelas utilizadas
+durante a gravação, entre outros.
 
-Neste primeiro exemplo, usaremos a máquina "**Dance Dance Revolution
-Extreme**" (**ddrextrm**). Ao inicializá-la pela primeira vez, o
-processo levará algum tempo (pressione :kbd:`Ins` no Windows ou
-:kbd:`Pgdn` no Linux/macOS para acelerar o andamento). Ao concluir a
-inicialização a máquina pedirá para ser desligada. Agora siga os passos:
 
-* Pressione :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação.
-* Durante a inicialização, a inicialização vai parar numa tela,
-  pressione :kbd:`F2` seguido de :kbd:`Esc` para encerrar a emulação.
-* Entre na pasta **NVRAM\\ddrextrm** e confirme que todos os arquivos
-  para a inicialização da máquina estão lá.
-* Pressione :kbd:`Ctrl` + :kbd:`A` para selecionar todos os aquivos.
+Dance Dance Revolution Extreme (ddrextrm)
+-----------------------------------------
+
+Ao inicializá-la pela primeira vez, o processo levará algum tempo (para
+acelerá-lo, pressione :kbd:`Ins` no Windows ou :kbd:`Pgdn` no
+Linux/macOS). Ao concluir a inicialização, a máquina pedirá para ser
+desligada. Agora, siga os passos:
+
+.. tip:: Em sistemas Windows, instale o `7-zip`_.
+
+* Pressione :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação;
+* Durante a inicialização, a inicialização vai parar na tela, então
+  pressione :kbd:`F2` seguido de :kbd:`Esc` para encerrá-la;
+* Entre na pasta **NVRAM\\ddrextrm** e confirme se todos os arquivos
+  necessários para a inicialização da máquina estão lá;
+* Pressione :kbd:`Ctrl` + :kbd:`A` para selecionar todos os aquivos;
 * Clique com o botão direito e escolha a opção de **comprimir** no
   Windows/Linux/macOS e use o nome **ddrextrm** para gerar o arquivo
   **ddrextrm.zip**.
 * No terminal, entre no diretório **NVRAM\\ddrextrm** e
-  faça o comando: ``zip -r ddrextrm.zip * && mv ddrextrm.zip ..``, para
-  criar e já mover o arquivo para fora desta pasta.
+  execute o comando: ``zip -r ddrextrm.zip * && mv ddrextrm.zip ..``,
+  para criar e mover o arquivo para fora desta pasta;
 * Para comprimir com o 7-zip que é compatível com o Windows e o macOS,
-  primeiro instale o `7-Zip`_, entre na pasta **NVRAM\\ddrextrm**,
-  selecione todos os arquivos, com o botão direito no Windows escolha
+  entre na pasta **NVRAM\\ddrextrm**, selecione todos os arquivos e,
+  no Windows, com o botão direito; escolha
   :guilabel:`7-zip` > :guilabel:`ddrextrm.zip` (no macOS haverá opção
   semelhante).
-* Para fazer o mesmo via linha de comando, abrao termial ou prompt de
-  comandos dentro da pasta **NVRAM\\ddrextrm** e faça:
+* Para fazer o mesmo via linha de comando, abra o termial ou prompt de
+  comandos dentro da pasta **NVRAM\\ddrextrm** e execute o comando:
   ``7z a -mmt -mm=Deflate -mx=7 -mfb=258 -mpass=4 -r ddrextrm.zip *``
-  (caso não funcione, tente trocar o comando ``7z`` por ``7za``).
-* Mova o arquivo **ddrextrm.zip** para fora desta pasta (caso use a
-  linha de comando acima isso já é feito).
+  (caso não funcione, tente trocar o comando ``7z`` por ``7za``);
+* Em seguida, mova o arquivo **ddrextrm.zip** para fora desta pasta (se
+  você utilizar a linha de comando acima, isso já será feito);
 * Exclua a pasta **NVRAM\\ddrextrm**, mantenha apenas o arquivo
-  **ddrextrm.zip**.
+  **ddrextrm.zip**;
 
-.. warning:: Observe que caso você tenha alguma conquista destravada,
-   pontuações dentre outras coisas que foram salvas na máquina, você os
-   perderá ao excluir a pasta **NVRAM\\ddrextrm** (desta máquina ou de
-   qualquer outra). Assim sendo, tenha certeza de fazer o backup destes
-   arquivos ou refaça o processo acima para manter os seus dados e
-   conquistas intactas. Ao fazê-lo, você poderá continuar de onde parou
-   ainda que a pasta **NVRAM\\ddrextrm** tenho sido excluída. Repita o
-   processo acima quantas vezes achar necessário.
+.. warning:: Observe que, ao excluir a pasta **NVRAM\\ddrextrm** (desta
+   máquina ou de qualquer outra), você perderá conquistas destravadas,
+   pontuações e outras coisas salvas na máquina. Assim sendo, faça um
+   backup desses arquivos ou refaça o processo acima para manter os seus
+   dados e as suas conquistas intactas. Ao fazê-lo, você poderá
+   continuar de onde parou, mesmo que a pasta **NVRAM\\ddrextrm** tenha
+   sido excluída. Repita o processo quantas vezes achar necessário.
 
-Inicie novamente o **ddrextrm** e verifique que ela não fica mais gastando
-tempo fazendo o processo de inicialização, todos os arquivos são
-descomprimidos em **NVRAM\\ddrextrm** e o sistema inicia normalmente.
+Inicie novamente o **ddrextrm** e repare que ele não fica mais gastando
+tempo fazendo o processo de inicialização. Todos os arquivos serão
+descomprimidos em **NVRAM\\ddrextrm** e o sistema iniciará normalmente.
 O processo se repetirá caso esta pasta seja excluída.
 
-É possível comprimir ainda mais o arquivo utilizando o formato ``.7z``
-em vez do ``.zip``. No caso do **ddrextrm**, por exemplo, é possível
-reduzir de 32,4 MiB para 27,9 MiB. Embora essa redução possa não parecer
-significativa para um único arquivo, é uma economia considerável caso
-você tenha centenas de arquivos nesta pasta.
+É possível comprimir ainda mais o arquivo utilizando o formato **.7z**
+em vez do **.zip**. No caso do **ddrextrm**, por exemplo, é possível
+reduzir de **32.4 MiB** para **27.9 MiB**. Embora essa redução possa
+não parecer significativa para um único arquivo, é uma economia
+considerável se você tiver centenas de arquivos nesta pasta.
 
 Use o comando abaixo dentro da pasta **ddrextrm**:
 
@@ -3155,83 +3168,86 @@ Use o comando abaixo dentro da pasta **ddrextrm**:
 
 	7za a -t7z -bb1 -mmt -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on ddrextrm.7z *
 
-.. warning:: Não caia na tentação de converter todas as suas ROMs
-  ``.zip`` para o formato ``.7z`` pois o MAME demora mais para realizar
+.. warning:: Não caia na tentação de converter as suas ROMs em ``.zip``
+  para ``.7z``, pois o MAME demora mais para realizar
   todo o processo de descompressão na memória em comparação com o
-  formato ``.zip``. Não é nada crítico, porém, dependendo do tamanho
-  dessa ROM, você passa de um tempo quase instantâneo de carregamento
-  para uma espera de alguns segundos.
+  formato ``.zip``. Embora não seja algo crítico, dependendo do tamanho
+  da ROM, você passa de um carregamento quase instantâneo para uma
+  espera de alguns segundos.
 
 
 .. raw:: latex
 
 	\clearpage
 
-Além do que foi explicado anteriormente é possível usar um side de dicas
-como o `DDR Freak`_ e aplicar um código nesta máquina (ddrextrm) para
-liberar `todas as músicas`_:
+Além do que foi explicado anteriormente, é possível usar um site de
+dicas, como o `DDR Freak`_, e aplicar um código nesta máquina
+(**ddrextrm**) para liberar `todas as músicas`_:
 
-* Inicie a máquina, após a tela "Now Loading" e ao aparecer a tela do
-  jogo, pressione :kbd:`F2` para entrar na tela de operação da máquina.
-* Use os direcionais para colocar o cursor em **GAME OPTIONS**.
-* Mantenha pressionado direcional baixo + :kbd:`9` seguido de :kbd:`1`
-  para entrar na tela **SECRET**.
-* Pressione :kbd:`1` para entrar em **APPEND**.
-* Para liberar todas as músicas insira o código:
-  ``BWUVHBK`` - ``KVXFXYA``, use :kbd:`1` para soletrar adiante,
+* Inicie a máquina, aguarde a tela "**Now Loading**" e, ao aparecer a
+  tela do jogo, pressione :kbd:`F2` para entrar na tela de operação da
+  máquina;
+* Use os direcionais para colocar o cursor em "**GAME OPTIONS**";
+* Mantenha pressionado o **direcional baixo** + :kbd:`9` seguido de
+  :kbd:`1` para entrar na tela "**SECRET**";
+* Pressione :kbd:`1` para entrar em "**APPEND**";
+* Para liberar todas as músicas, insira o código:
+  ``BWUVHBK`` - ``KVXFXYA``. Use :kbd:`1` para soletrar adiante,
   mantenha :kbd:`1` pressionado e mova as setas para a esquerda para
-  retroceder.
-* Para registrar mantenha pressionado as setas esquerda e direita, 
+  retroceder;
+* Para registrar, mantenha pressionadas as setas esquerda e direita, 
   clique em :kbd:`1` (é mais fácil configurar as setas para qualquer
-  tecla do teclado ou botão do joystick), deverá aparecer **REGISTERED**
-  confirmando que o código foi aceito.
-* Selecione **EXIT** até retornar para a tela principal.
-* Selecione **GAME MODE** para retornar ao jogo e pressione :kbd:`Esc`
-  para encerrar a emulação.
+  tecla do teclado ou botão do joystick), deverá aparecer
+  "**REGISTERED**", confirmando que o código foi aceito;
+* Selecione "**EXIT**" até retornar para à tela principal;
+* Selecione "**GAME MODE**" para retornar ao jogo e pressione :kbd:`Esc`
+  para encerrar a emulação;
 
-Repita o processo para comprimir os arquivos da NVRAM num arquivo
+Repita o processo para comprimir os arquivos da NVRAM em um arquivo
 **ddrextrm.zip**, mova-o para fora da pasta e exclua a pasta
-**NVRAM\\ddrextrm**, agora a máquina sempre será iniciada já com todas
-as músicas disponíveis ainda que a pasta NVRAM seja excluída
-posteriormente.
+**NVRAM\\ddrextrm**. Agora, a máquina sempre será iniciada com todas as
+músicas disponíveis, ainda que o arquivo **NVRAM\\ddrextrm** seja
+excluído posteriormente.
 
-Em sistemas **Neo Geo** o processo é semelhante, porém, agora queremos
-usar a "Universe Bios", configurar ela para AES (console) Americano
-(ou qualquer outro que desejar). Pegando a máquina "**SNK vs.
-Capcom - SVC Chaos (NGM-2690 ~ NGH-2690)**" (**svc**) por exemplo,
-certos caracteres como o *Shin Akuma* e o *Serious Mr. Karate*, apenas
-estão acessíveis através de um `comando especial`_ nas versões AES
-(console) do Neo Geo pois nas versões MVS (arcade), o comando não
-funciona.
+Neo Geo
+-------
 
-Caso você queira gravar :ref:`gravar <mame-commandline-record>` e
-:ref:`reproduzir <mame-commandline-playback>` depois surge um outro
-problema pois é preciso apagar a NVRAM antes de gravar e antes de
-reproduzir, isso exclui todas as configurações feitas na BIOS
-anteriormente e aqui entra a dica de comprimir os arquivos da NVRAM:
+Neste sistema o processo é semelhante. Queremos usar a "Universe Bios" e
+configurá-la para o AES (console) americano (ou qualquer outro que
+desejarmos). Considerando a máquina "**SNK vs. Capcom - SVC Chaos
+(NGM-2690 ~ NGH-2690)**" (**svc**), certos personagens, como o
+*Shin Akuma* e o *Serious Mr. Karate*, só estão acessíveis por meio de
+um `comando especial`_ nas versões AES (console) do Neo Geo, pois nas
+versões MVS (arcade), o comando não funciona.
 
-* Crie o arquivo **ini\\source\\neogeo.ini**.
-* Adicione ``bios unibios40`` e salve.
-* No terminal/prompt de comando inicie o jogo com ``mame svc``.
-* Quando aparecer a tela do "Universe Bios" pressione os botões **A** +
-  **B** + **C** para entrar na configuração.
-* Pressione **A** em **REGION SETUP**.
-* Pressione **B** 2x para configurar **AES USA**.
-* Pressione **C** para encerrar a configuração e pression :kbd:`Esc`
-  para encerrar a emulação.
-* Entre na pasta **NVRAM\\svc_16**.
-* Clique no arquivo **saveram** para selecionar o aquivo.
-* Clique com o botão direito e escolha a opção de **comprimir** no
-  Windows/Linux/macOS e use o nome **svc_16** para gerar o arquivo
-  **svc_16.zip**.
+Se você quiser :ref:`gravar <mame-commandline-record>` e
+:ref:`reproduzir <mame-commandline-playback>` depois, surgirá outro
+problema: será preciso apagar a NVRAM antes de gravar e antes de
+reproduzir, o que excluirá todas as configurações feitas na BIOS
+anteriormente. Aqui entra a dica de comprimir os arquivos da NVRAM:
+
+* Crie o arquivo **ini\\source\\neogeo.ini**;
+* Adicione: ``bios unibios40`` e salve;
+* No terminal/prompt de comando, inicie o jogo com **mame svc**;
+* Quando a tela do "**Universe Bios**" aparecer, pressione os botões
+  **A**, **B** e **C** para entrar na configuração;
+* Pressione **A** em "**REGION SETUP**".
+* Pressione **B** duas vezes para configurar "**AES USA**";
+* Pressione **C** para encerrar a configuração e, em seguida, pressione
+  :kbd:`Esc` para encerrar a emulação;
+* Entre na pasta **NVRAM\\svc_16**;
+* Clique no arquivo saveram para selecioná-lo;
+* Clique com o botão direito e escolha a opção de comprimir no Windows,
+  Linux ou macOS. Em seguida, use o nome **svc_16** para gerar o arquivo
+  **svc_16.zip**;
 * Mova o arquivo **svc_16.zip** para fora da pasta e apague a pasta
-  **svc_16**.
+  **svc_16**;
 
-Agora é possível você gravar as suas jogadas e após excluir a pasta para
-iniciar a reprodução, todas as configurações da Unibios serão mantidas.
-
-Consulte o capítulo inputmacro do :ref:`plugins-inputmacro-svc` caso
-queira fazer comandos para liberar personagens ocultos.
+Agora, você pode gravar suas jogadas. Após excluir a pasta, será
+possível iniciar a reprodução e todas as configurações da Unibios serão
+mantidas. Consulte o capítulo inputmacro do
+:ref:`plugins-inputmacro-svc` caso queira criar comandos para liberar
+personagens ocultos.
 
 
 Certos jogos do NEC PC Engine não iniciam
