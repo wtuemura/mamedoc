@@ -3828,7 +3828,7 @@ prompt de comando dentro da pasta do MAME e execute o comando abaixo:
 
 	fsutil file createnew mac-flp-hdd-160m.hd 167772160
 
-No Linux ou maOS, chame o terminal dentro da pasta do MAME e execute o
+No Linux ou macOS, chame o terminal dentro da pasta do MAME e execute o
 comando abaixo:
 
 .. code-block:: shell
@@ -4051,7 +4051,7 @@ prompt de comando dentro da pasta do MAME e execute o comando abaixo:
 
 	fsutil file createnew mac-cd-hdd-160m.hd 167772160
 
-No Linux ou maOS, chame o terminal dentro da pasta do MAME e execute o
+No Linux ou macOS, chame o terminal dentro da pasta do MAME e execute o
 comando abaixo:
 
 .. code-block:: shell
@@ -4182,6 +4182,62 @@ E assim concluímos a nossa instalação do System 7.6.1.
 .. raw:: html
 
 	<p></p>
+
+
+Criando uma lista de todos os sistemas marcados como ROM ruim (bad rom)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O comando abaixo funciona no Linux e macOS, pode funcionar no Windows
+desde que você tenha estas ferramentas instaladas no seu sistema
+operacional ou esteja no seu ``%%PATH%%``.
+
+Use o comando abaixo para gerar uma lista onde o MAME identifica os
+sistemas como *bad rom*:
+
+.. code-block:: shell
+
+	./mame -verifyroms | grep -i "is bad" >> ruim.txt
+
+O comando filtra apenas as ROMs marcada como *"is bad"* e redireciona a
+saída para o arquivo texto **ruim.txt**. O próximo comando pega a lista
+de ROMs, alimenta o MAME com ela e faz com que o próprio MAME
+identifique o nome da ROM para o nome completo do sistema:
+
+.. code-block:: shell
+
+	for f in $(awk '{print $2}' ruim.txt); do ./mame -ll "$f" | sed '1d'; done > lista_rom_ruim.txt
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+O comando faz o seguinte:
+
+* Quando usamos **for f** estamos definindo um *loop* para **f**;
+* Neste caso, *ruim.txt* tem uma lista com todos os sistemas marcado com
+  "bad rom", assim sendo, o comando **$(awk '{print $2}' ruim.txt)** faz
+  com que **awk** leia cada linha do arquivo **ruim.txt** e ecoe
+  apenas a segunda palavra da lista (que é o nome da ROM que queremos);
+* O nome da ROM é passada para o MAME através da variável **$f** que vai
+  identificar o nome completo dessa ROM;
+* O **sed '1d'** elimina a primeira linha da lista que contém **Name:**
+  e **Description:**, deixando apenas o nome da ROM e o nome completo do
+  sistema;
+* Por fim o resultado é redirecionado para o arquivo texto
+  **lista_rom_ruim.txt**;
+
+Ao concluir, a lista terá o seguinte conteúdo:
+
+.. code-block:: text
+
+	a51mxr3k          "Area 51 / Maximum Force Duo (R3000, 2/10/98)"
+	a51mxr3ka         "Area 51 / Maximum Force Duo (R3000, 2/02/98)"
+	a51site4          "Area 51: Site 4 (HD Rev 2.01, September 7, 1998)"
+	aa4               "Acorn A4"
+	aa5000            "Acorn A5000"
+	[...]
 
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
