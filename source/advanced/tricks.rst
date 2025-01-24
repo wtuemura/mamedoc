@@ -2242,7 +2242,9 @@ compatíveis com o MAME. Crie a lista com o comando::
 	mame -listbios > lista_bios.txt
 
 Usando um terminal Linux, macOS ou até mesmo o ambiente MinGW/MSYS2 no
-Windows, faça o comando::
+Windows, faça o comando:
+
+.. code-block:: shell
 
 	awk '!/No BIOSes available/' lista_bios.txt | sed '/^$/d' | sed -e '/ BIOSes available for /i\\' | sed '1{/^$/d}' > bios.txt
 
@@ -2253,7 +2255,9 @@ uma linha em branco antes das linhas que tiverem ``BIOSes available
 for`` e por último, o comando ``sed '1{/^$/d}'`` elimina a primeira
 linha em branco da nossa lista.
 
-O resultado final fica assim::
+O resultado final fica assim:
+
+.. code-block:: shell
 
 	41 BIOSes available for driver "100lions".
 	Name:             Description:
@@ -2267,9 +2271,18 @@ O resultado final fica assim::
 	ami206            "AMI C 206.1"
 	amiht21           "AMI HT 21.1"
 
-Caso você tenha o ``enscript`` e o ``ghostscript`` instalado no seu
-sistema, execute os comandos abaixo para transformar o arquivo texto em
-PDF::
+Para versões mais recentes do MAME (`0.254`_ em diante), use este
+comando:
+
+.. code-block:: shell
+
+	awk '!/No BIOS options for/' lista_bios.txt | sed '/^$/d' | sed -e '/BIOS options for/i\\' > bios.txt
+
+Caso tenha o ``enscript`` e o ``ghostscript`` instalado no seu sistema,
+execute os comandos abaixo para transformar o arquivo texto em
+PDF:
+
+.. code-block:: shell
 
 	enscript -p bios.ps bios.txt && ps2pdf bios.ps
 
@@ -2296,7 +2309,9 @@ especificamente o meu foco está dentro dos arquivos
 `repositório oficial do MAME <https://github.com/mamedev/mame/tree/master/src/mame/msx>`_
 
 Para listar todos os sistemas **MSX 1** do arquivo-fonte
-``src/mame/msx/msx1.cpp`` nós fazemos assim::
+``src/mame/msx/msx1.cpp`` nós fazemos assim:
+
+.. code-block:: shell
 
 	cat src/mame/msx/msx1.cpp | grep -i rom_start | sed 's/ROM_START(\(.*\))/\1/' | sort -d
 	ax150
@@ -2305,7 +2320,9 @@ Para listar todos os sistemas **MSX 1** do arquivo-fonte
 	canonv20e
 	...
 
-Para o **MSX 2** é a mesma coisa, apenas alteramos a versão::
+Para o **MSX 2** é a mesma coisa, apenas alteramos a versão:
+
+.. code-block:: shell
 
 	cat src/mame/msx/msx2.cpp | grep -i rom_start | sed 's/ROM_START(\(.*\))/\1/' | sort -d
 	ax350
@@ -2314,7 +2331,10 @@ Para o **MSX 2** é a mesma coisa, apenas alteramos a versão::
 	ax370
 	...
 
-Outra maneira de fazer o mesmo usando o próprio MAME é fazer o comando::
+Outra maneira de fazer o mesmo usando a opção
+:ref:`-listbios <mame-commandline-listbios>`:
+
+.. code-block:: shell
 
 	mame ax150 -lb
 	Source file:         Name:            Parent:
@@ -2324,7 +2344,9 @@ Outra maneira de fazer o mesmo usando o próprio MAME é fazer o comando::
 	msx/msx1.cpp         canonv10         canonv20
 	...
 
-Para MSX 2::
+Para MSX 2:
+
+.. code-block:: shell
 
 	mame ax350 -lb
 	Source file:         Name:            Parent:
@@ -4187,3 +4209,4 @@ E assim concluímos a nossa instalação do System 7.6.1.
 .. |prte| replace:: Pressione a tecla
 .. |prte2| replace:: pressione a tecla
 .. _Macintosh LC 550: https://support.apple.com/pt-br/112206
+.. _0.254: https://github.com/mamedev/mame/commit/b06dae9201f7990bd48b677ae6a97b3a6a7000df

@@ -753,12 +753,12 @@ Exemplo:
 
 **-listbios** <*palavra-chave*>
 
-	Exibe uma lista das BIOS disponíveis para o sistemas.
-	As opções da BIOS podem estar disponíveis para o sistema ou para
-	quaisquer dispositivos selecionados no slot.
+	Exibe uma lista das BIOS disponíveis para um determinado sistema.
+	As opções da BIOS podem estar disponíveis para um sistema ou para
+	quaisquer dispositivos selecionáveis via slot.
 	
-	Se nenhum nome for informado, serão listadas as BIOS de *todos* os
-	sistemas.
+	Todas as BIOS de *todos* os sistemas compatíveis serão listadas caso
+	nenhuma *palavra-chave* seja informada.
 
 	Exemplo:
 		.. code-block:: shell
@@ -783,9 +783,11 @@ Exemplo:
 
 			mame -listbios aes
 			BIOS options for system Neo-Geo AES (NTSC) (aes):
-				asia             Asia AES
-				japan            Japan AES
-				devel            Development System ROM
+				euro             Europe MVS (Ver. 2)
+				[...]
+				asia-mv1c        Asia NEO-MVH MV1C
+				japan            Japan MVS (Ver. 3)
+				[...]
 				unibios40        Universe BIOS (Hack, Ver. 4.0)
 				unibios33        Universe BIOS (Hack, Ver. 3.3)
 				unibios32        Universe BIOS (Hack, Ver. 3.2)
@@ -797,6 +799,7 @@ Exemplo:
 				unibios21        Universe BIOS (Hack, Ver. 2.1)
 				unibios20        Universe BIOS (Hack, Ver. 2.0)
 				unibios13        Universe BIOS (Hack, Ver. 1.3)
+				[...]
 
 
 .. raw:: latex
