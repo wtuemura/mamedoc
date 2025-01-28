@@ -7,11 +7,10 @@ Aviso Legal
 -----------
 
 O código-fonte do MAME® é fornecido sob a GNU General Public License
-versão 2 ou posterior, a partir da revisão do Git
-``35ccf865aa366845b574e1fdbc71c4866b3d6a0f`` e do lançamento do MAME
-0.172. Os arquivos de origem também podem ser licenciados conforme
-especificado no cabeçalho de cada um. Essa licença não se aplica a
-versões anteriores do MAME.
+versão 2 ou posterior, a partir `deste commit`_ e do lançamento do
+`MAME 0.172`_. Os arquivos de origem também podem ser licenciados
+conforme especificado no cabeçalho de cada um. Essa licença não se
+aplica a versões anteriores do MAME.
 
 Licença
 -------
@@ -125,3 +124,6 @@ Perguntas frequentes
 | **Não**. Você estaria ganhando dinheiro com a marca registrada MAME,
   **o que é proibido**. Nosso desejo é que o MAME permaneça gratuito
   para todos.
+
+.. _deste commit: https://github.com/mamedev/mame/commit/35ccf865aa366845b574e1fdbc71c4866b3d6a0f
+.. _MAME 0.172: https://www.mamedev.org/?p=424
