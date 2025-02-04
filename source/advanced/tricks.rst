@@ -3581,7 +3581,8 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
   teclado para inserir os :kbd:`:`), e confirme com :kbd:`Enter`.
 * |prte| :kbd:`S` seguido de :kbd:`Enter`. Após a formatação
   |prte2| :kbd:`Enter` novamente.
-* |prte| :kbd:`D` seguido de :kbd:`Enter` para entrar no CD-ROM.
+* Em sequência faça: **cd D:** seguido de :kbd:`Enter`, depois **D:**
+  seguido de :kbd:`Enter` para entrar no CD-ROM.
 * Digite: ``instalar /im /id /is`` seguido de :kbd:`Enter` para dar
   inicio a instalação do Windows.
 * Clique na tela do MAME, |prte2| :kbd:`Enter` para dar andamento na
