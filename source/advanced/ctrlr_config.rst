@@ -25,9 +25,10 @@ padrões úteis para certos controles do tipo arcade.
 
 Apesar da extensão ``.cfg``, estes arquivos estão no formato XML. O MAME
 procura por tais arquivos nos diretórios definidos com a opção
-``ctrlrpath``. Um arquivo de configuração será selecionado quando a
-opção ``ctrlr`` seguido pelo nome do arquivo sem a extensão
-``.cfg``, exemplo::
+:ref:`ctrlrpath <mame-commandline-ctrlrpath>`. Um arquivo de
+configuração será selecionado quando a opção
+:ref:`ctrlr <mame-commandline-ctrlr>` seguido pelo nome do arquivo sem
+a extensão ``.cfg``, exemplo::
 
 	ctrlr scorpionxg
 
@@ -41,8 +42,11 @@ A utilização dos símbolos ou dos *tokens* de entrada variam conforme a
 aplicação. A precisão dos valores disponíveis e os seus significados
 dependem da versão exata do MAME que está sendo usado, dos dispositivos
 conectados na entrada, dos módulos do provedor da entrada selecionada
-(as opções ``keyboardprovider``, ``mouseprovider``, ``lightgunprovider``
-e ``joystickprovider``) e possivelmente das outras configurações.
+(as opções :ref:`keyboardprovider <mame-commandline-keyboardprovider>`,
+:ref:`mouseprovider <mame-commandline-mouseprovider>`,
+:ref:`lightgunprovider <mame-commandline-lightgunprovider>` e
+:ref:`joystickprovider <mame-commandline-joystickprovider>`) e
+possivelmente de outras configurações.
 
 
 .. raw:: latex

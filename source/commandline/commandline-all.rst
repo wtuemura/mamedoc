@@ -1648,7 +1648,7 @@ Opções para a configuração das principais pastas
 
 	Define um ou mais caminhos para os arquivos de configuração dos
 	controles. |epdm|. É usado em conjunto com a opção
-	**-ctrlr**.
+	:ref:`ctrlr <mame-commandline-ctrlr>`.
 	
 		O valor predefinido é **ctrlr** (|oudc| **ctrlr** |ndrd|).
 
@@ -4313,12 +4313,13 @@ Opções para as configurações de diferentes entradas
 
 	Define um arquivo de configuração personalizada do controle,
 	normalmente usado para definir novas atribuições das entradas
-	predefinidas. Todas as pastas definidas em **ctrlrpath** são
-	pesquisadas. Os arquivos de configuração do controle utilizam um
-	formato similar ao **.cfg**, utilizado para gravar as configurações
-	do sistema. Esses arquivos são criados durante a configuração dos
-	botões do controle de um sistema e são gravados na pasta **cfg**
-	como **nome_do_sistema.cfg**. Para mais informações, consulte os
+	predefinidas. Todas as pastas definidas em
+	:ref:`ctrlr <mame-commandline-ctrlrpath>` são pesquisadas.
+	Os arquivos de configuração do controle utilizam um formato similar
+	ao **.cfg**, utilizado para gravar as configurações do sistema.
+	Esses arquivos são criados durante a configuração dos botões do
+	controle de um sistema e são gravados na pasta **cfg** como
+	**nome_do_sistema.cfg**. Para mais informações, consulte os
 	capítulos :ref:`ctrlrcfg` e :ref:`advanced-tricks-botões-ordem`.
 
 		O valor predefinido é ``NULO`` (nenhum arquivo de configuração).
