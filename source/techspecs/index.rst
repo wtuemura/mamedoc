@@ -21,4 +21,5 @@ scripts LUA que são executados na estrutura do MAME.
 	floppy
 	nscsi
 	m6502
+	uml_instructions
 	poly_manager
