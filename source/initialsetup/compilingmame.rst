@@ -810,20 +810,8 @@ compilar o MAME em um sistema operacional de 64 bits; para sistemas de
 32 bits, é necessário fazer algumas alterações. Baixe e instale o
 ambiente de desenvolvimento MSYS2 diretamente da página do `MSYS2`_.
 
-Por fim, é necessário definir as variáveis ``MINGW32`` e ``MINGW64``.
-Instale o editor de texto nano com o comando ``pacman -S nano``. Após a
-instalação, faça: ``nano ~/.bashrc`` e adicione a linha abaixo no final
-do arquivo:
-
-	.. code-block:: shell
-
-		export MINGW32=/mingw32 MINGW64=/mingw64
-
-Salve o arquivo com :kbd:`Ctrl` + :kbd:`O` seguido de :kbd:`ENTER` e
-pressione as teclas :kbd:`Ctrl` + :kbd:`X` para sair do editor. Essas
-variáveis de ambiente permitem a compilação das versões 32 bits e 64 bits
-do MAME. Feche e abra o terminal novamente para aplicar essas
-configurações.
+* Para compilações de 64 bits, abra o executável **MSYS2 MinGW 64-bit**.
+* Para compilações de 32 bits, abra o executável **MSYS2 MinGW 32-bit**.
 
 Caso ocorra algum erro do tipo **GPGME error**, consulte o capítulo 
 :ref:`compiling-issues-MSYS2`. Ao final, **feche a janela** e
