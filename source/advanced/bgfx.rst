@@ -137,29 +137,31 @@ Alterando as configurações
 	disponível no seu sistema, caso queira defini-las manualmente, estas
 	são as opções disponíveis:
 
-	* ``d3d9`` Renderizador do Direct3D 9.0 (Requer o Windows XP ou
-	  uma versão mais nova do Windows).
+	* ``d3d9``: Renderizador do Direct3D 9.0 (Requer o Windows XP ou
+	  uma versão mais nova do Windows);
 
-	* ``d3d11`` Renderizador do Direct3D 11.0 (Requer o Windows Vista
+	* ``d3d11``: Renderizador do Direct3D 11.0 (Requer o Windows Vista
 	  com o D3D11 atualizado, o  Windows 7 ou uma versão mais nova do
-	  Windows).
+	  Windows);
 
-	* ``d3d12`` Renderizador do Direct3D 12.0 (Requer o Windows 10 ou
+	* ``d3d12``: Renderizador do Direct3D 12.0 (Requer o Windows 10 ou
 	  uma versão mais nova do Windows, assim como uma placa de vídeo
-	  com um driver compatível).
+	  com um driver compatível);
 
-	* ``opengl`` Renderizador OpenGL (Requer Drivers compatíveis com
+	* ``opengl``: Renderizador OpenGL (Requer Drivers compatíveis com
 	  OpenGL, pode não funcionar bem  com algumas placas de vídeo mais
-	  antigas ou mal projetadas). Compatível com Linux/macOS.
+	  antigas ou mal projetadas). Compatível com Linux/macOS;
 
-	* ``metal`` Metal Apple Graphics API (Requer macOS 10.14 Mavericks
-	  ou mais recente).
+	* ``metal``: Metal Apple Graphics API (Requer macOS 10.14 Mavericks
+	  ou mais recente);
 
-	* ``vulkan`` Renderizador Vulkan (via hardware), compatível
+	* ``vulkan``: Renderizador Vulkan (via hardware), compatível
 	  atualmente com OpenGL ES 3.1, OpenGL 4.X ou versões mais recentes.
 	  Requer drivers compatíveis para as placas de vídeo mais atuais e
 	  pode não ser compatível com as placas de vídeo ou com drivers mais
-	  antigos.
+	  antigos;
+
+	* ``auto``: O MAME decidirá qual a melhor opção para o seu sistema;
 
 		O valor predefinido é ``auto``.
 
