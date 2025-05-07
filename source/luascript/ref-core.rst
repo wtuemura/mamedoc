@@ -18,7 +18,7 @@ de uma sessão, estão disponíveis para os *scripts* Lua.
 
 .. _luascript-ref-notifiersub:
 
-Notificador da assinatura
+Assinatura do notificador
 -------------------------
 
 Envelopa a classe ``util::notifier_subscription`` do MAME, faz o
@@ -482,15 +482,15 @@ Propriedades
 
 **machine.images** |sole|
 
-	:ref:`dispositivo enumerador <luascript-ref-devenum>` que produz toda a
-	:ref:`interface para os dispositivos de imagem
+	Um :ref:`dispositivo enumerador <luascript-ref-devenum>` que produz
+	toda a :ref:`interface para os dispositivos de imagem
 	<luascript-ref-diimage>` |nsqe|.
 
 
 **machine.slots** |sole|
 
-	:ref:`dispositivo enumerador <luascript-ref-devenum>` que produz toda a
-	:ref:`dispositivos slot <luascript-ref-dislot>` |nsqe|.
+	Um :ref:`dispositivo enumerador <luascript-ref-devenum>` que produz
+	toda a :ref:`dispositivos slot <luascript-ref-dislot>` |nsqe|.
 
 
 .. _luascript-ref-videoman:
@@ -720,10 +720,10 @@ Propriedades
 	\clearpage
 
 
-**sound.attenuation** |lees|
+**sound.volume** |lees|
 
 	A atenuação do volume da saída em decibéis. Geralmente deve ser um
-	número inteiro negativo ou zero.
+	número negativo ou zero.
 
 
 **sound.recording** |sole|

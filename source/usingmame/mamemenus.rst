@@ -466,6 +466,22 @@ driver, o tipo do processador (vídeo, áudio e outros) e a resolução do
 vídeo.
 
 
+Seleção da BIOS
+~~~~~~~~~~~~~~~
+
+Mostra o menu de seleção de BIOS, aqui é possível selecionar a BIOS para
+o *boot* ou a ROM do *firmware* para o sistema e as placas que o sistema
+tiver. |eise| tiver disponibilidade de seleção ou opções de BIOS.
+
+
+Mixagem de áudio
+~~~~~~~~~~~~~~~~
+
+
+Efeitos de áudio
+~~~~~~~~~~~~~~~~
+
+
 Alerta sobre o sistema
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -506,14 +522,6 @@ pseudoterminais do host, como através de portas seriais por exemplo).
 |eise| tiver dispositivos do tipo pseudoterminal.
 
 
-Seleção da BIOS
-~~~~~~~~~~~~~~~
-
-Mostra o menu de seleção de BIOS, aqui é possível selecionar a BIOS para
-o *boot* ou a ROM do *firmware* para o sistema e as placas que o sistema
-tiver. |eise| tiver disponibilidade de seleção ou opções de BIOS.
-
-
 Dispositivos slot
 ~~~~~~~~~~~~~~~~~
 
@@ -536,6 +544,127 @@ Mostra o menu dos dispositivos de rede, aqui é possível configurar os
 adaptadores de rede emulados compatíveis com uma ponte numa rede para um
 host. |eise| tiver adaptadores de rede que sejam compatíveis com
 *bridging*.
+
+
+.. _menus-audiomixer:
+
+Mixagem de áudio
+~~~~~~~~~~~~~~~~
+
+Permite estabelecer conexões entre alto-falantes e microfones emulados,
+bem como entre entradas e saídas de áudio do sistema. As setas padrão
+para cima/para baixo são usadas para selecionar um dispositivo e/ou o
+mapeamento atual, enquanto as setas para a esquerda e para a direita são
+usadas para alterar um valor (porta de áudio do sistema, nível, canal,
+entre outros). Já as teclas :kbd:`[` :kbd:`]` são usadas para alterar a
+coluna. Além disso, a tecla :kbd:`F` (por padrão) adiciona um mapeamento
+completo, a tecla :kbd:`C` adiciona um mapeamento de canal e a tecla
+:kbd:`Del` remove um mapeamento.
+
+Um mapeamento completo envia todos os canais de um alto-falante para
+os canais apropriados da saída do sistema, e da mesma forma, recupera
+todos os canais de um microfone das entradas apropriadas de uma entrada
+do sistema. Por exemplo, um alto-falante mono enviará áudio para os dois
+canais de uma saída estéreo do sistema.
+
+Um mapeamento de canal mapeia um canal de alto-falante ou microfone com
+um canal de entrada ou saída do sistema. Embora possa ser um pouco
+tedioso, isso permite, por exemplo, pegar dois alto-falantes mono e
+transformá-los nos canais esquerdo e direito de uma saída do sistema, o
+que é útil para alguns gabinetes.
+
+É possível configurar o volume de cada mapeamento. Ao alterar o volume,
+mantenha pressionadas as teclas :kbd:`Shift` + :kbd:`Ctrl` +
+:kbd:`Alt` para ajustar o valor da etapa.
+
+A configuração do mapeamento é salva no arquivo **.cfg** do respectivo
+sistema.
+
+Alguns sistemas operacionais oferecem uma interface externa para alterar
+mapeamentos e volumes dinamicamente, como o Pipewire no Linux. O Mame
+faz o possível para seguir esse procedimento e manter as informações no
+arquivo **.cfg** para futuras execuções.
+
+
+.. _menus-audioeffects:
+
+Efeitos de áudio
+~~~~~~~~~~~~~~~~
+
+Aqui é possível configurar os efeitos de áudio aplicados às saídas dos
+alto-falantes entre o dispositivo de alto-falante e o mixer de áudio.
+Em outras palavras, os canais de saída vistos na mixagem de áudio que
+correspondem às saídas das cadeias de efeitos. Cada alto-falante possui
+uma cadeia de efeitos independente.
+
+A cadeia em si não é configurável e está sempre nessa ordem:
+
+
+* Filtro
+* Compressor
+* Reverb
+* EQ
+
+No entanto, os parâmetros de cada um são totalmente configuráveis. Um
+parâmetro configurado é exibido em branco, um padrão é exibido em
+cinza e a opção *Clear* permite retornar ao valor predefinido. Os
+parâmetros predefinidos da cadeia de um determinado alto-falante são os
+parâmetros da cadeia padrão, que são fixos. A cadeia padrão permite
+criar uma configuração global de preferência e sempre aplicá-la em todos
+os lugares por padrão.
+
+Filtro
+^^^^^^
+
+Esse efeito propõe um filtro passa-alta e passa-baixa de 2ª ordem. O
+filtro passa-alta permite que você elimine o deslocamento de CC (*DC
+offset* ou deslocamento de corrente contínua) de alguns hardwares
+emulados, evitando a saturação quando não houver necessidade. O filtro
+passa-baixa, desativado por padrão, permite reproduzir o som abafado de
+alguns gabinetes e TVs.
+
+O fator Q define a nitidez da transição; quanto maior, mais nítida ela
+será. Acima de **0,7**, o filtro começa a aumentar as frequências em
+torno do corte, o que pode ser interessante.
+
+
+Compressor
+^^^^^^^^^^
+
+Não implementado ainda.
+
+
+Reverb
+^^^^^^
+
+Não implementado ainda.
+
+
+Equalização (EQ)
+^^^^^^^^^^^^^^^^
+
+O equalizador paramétrico de 5 bandas permite aumentar ou cortar bandas
+de frequência específicas no espectro. Quando configurados como "*Peak*"
+(pico), os três filtros intermediários e também os filtros extremos
+alteram as frequências em torno do corte. O fator **Q** seleciona a
+nitidez do pico: quanto mais alto, mais nítido. Os filtros "*Shelf*"
+(também conhecido como filtro/equalizador de prateleira) movem todas as
+frequências abaixo (ou acima) da frequência de corte.
+
+
+Resampler
+^^^^^^^^^
+
+É usado na conversão de taxas de amostragem entre dispositivos emulados.
+É possível escolher entre um tipo rápido e de qualidade inferior,
+"*LoFi*", e um tipo lento e de alta qualidade, "*HQ*". O *resampler* HQ
+pode ser configurado. A latência indica a latência máxima do
+*resampler*, o que permite melhor qualidade quando for mais alta. O
+comprimento do filtro equilibra qualidade e a velocidade, sendo que um
+valor alto representa uma melhor qualidade porém a velocidade é mais
+lenta. As fases equilibram a qualidade e o tempo de criação do
+*resampler*, sendo que um valor mais alto é melhor, porém também é mais
+lento.
 
 
 Controles deslizantes

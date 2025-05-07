@@ -1,7 +1,7 @@
 .. _luascript-ref-common:
 
-Tipos Lua comuns e globais
-==========================
+Tipos comuns e globais em Lua
+=============================
 
 .. contents::
     :local:
@@ -27,21 +27,21 @@ maioria destas operações:
 
 **c[k]**
 
-	Retorna o item que corresponda a tecla :kbd:`k` ou ``nil`` caso a
+	Retorna o item que corresponda a tecla :kbd:`k` ou **nil** caso a
 	chave não esteja presente.
 
 
 **pairs(c)**
 
 	Repete o contêiner por chave e por valor. A chave é o que você
-	passaria para operador do índice ou o método ``get`` para obter o
+	passaria para operador do índice ou o método **get** para obter o
 	valor.
 
 
 **ipairs(c)**
 
 	Repete o contêiner através de um índice e de um valor. O índice é o
-	que você passaria para ao método ``at`` para obter o valor (pode ser
+	que você passaria para ao método **at** para obter o valor (pode ser
 	o mesmo como a chave para alguns contêineres).
 
 
@@ -52,28 +52,28 @@ maioria destas operações:
 
 **c:get(k)**
 
-	Retorna o item que corresponda a tecla :kbd:`k` ou ``nil`` caso a
+	Retorna o item que corresponda a tecla :kbd:`k` ou **nil** caso a
 	tecla não esteja presente. Normalmente é o equivalente ao operador
 	do índice.
 
 
 **c:at(i)**
 
-	Retorna o valor no índice com base ``1`` (1-based) ``i`` ou ``nil``
+	Retorna o valor no índice com base **1** (1-based) **i** ou **nil**
 	caso não esteja fora do alcance.
 
 
 **c:find(v)**
 
-	Retorna a chave para o item ``v`` ou ``nil`` caso não esteja no
+	Retorna a chave para o item **v** ou **nil** caso não esteja no
 	contêiner. A chave é o que você passaria ao índice do operador para
 	obter o valor.
 
 
 **c:index_of(v)**
 
-	Retorna o índice com base ``1`` (1-based) para o item ``v`` ou
-	``nil`` caso não esteja no contêiner. O índice é o que você passaria
+	Retorna o índice com base **1** (1-based) para o item **v** ou
+	**nil** caso não esteja no contêiner. O índice é o que você passaria
 	ao método ``at`` para obter o valor.
 
 .. raw:: latex
@@ -86,7 +86,7 @@ maioria destas operações:
 Interface do emulador
 ~~~~~~~~~~~~~~~~~~~~~
 
-A interface ``emu`` fornece o acesso à principal funcionalidade do
+A interface **emu** fornece o acesso à principal funcionalidade do
 emulador. Diversas classes também estão disponíveis como propriedades na
 interface do emulador.
 
@@ -100,8 +100,8 @@ Métodos
 	ou um valor numérico em segundos. |qaar|. Retorna um booleano
 	indicando se a duração expirou normalmente.
 
-	Todas as invocações pendentes para ``emu.wait``, imediatamente
-	retornarão ``false`` caso um estado salvo seja carregado ou se a
+	Todas as invocações pendentes para **emu.wait**, imediatamente
+	retornarão **false** caso um estado salvo seja carregado ou se a
 	sessão da emulação for encerrada. |ruea|.
 
 
@@ -149,6 +149,25 @@ Métodos
 .. raw:: latex
 
 	\clearpage
+
+
+**emu.add_machine_post_load_notifier(callback)**
+
+	Adicione uma chamada de retorno para receber notificação depois que
+	o sistema emulado for restaurado para um estado salvo anteriormente.
+	Retorna uma :ref:`assinatura do notificador
+	<luascript-ref-notifiersub>`.
+
+
+**emu.register_sound_update(callback)**
+
+	Adiciona uma chamada de retorno para receber novas amostras que
+	foram criadas. As amostras são provenientes dos dispositivos de
+	áudio para os quais a propriedade gancho foi definida como **true**.
+	A chamada de retorno recebe um parâmetro que é um hash com a
+	etiqueta do dispositivo como chave, um vetor (do tamanho do canal)
+	e de um vetor (do tamanho do buffer) com amostras na faixa entre
+	**-1..1**.
 
 
 **emu.add_machine_post_load_notifier(callback)**
@@ -203,5 +222,5 @@ Métodos
 	rotinas conjuntas
 .. |aurd| replace:: Adiciona um retorno de chamada para receber as
 	notificações quando o sistema emulado
-.. |runda| replace:: Retorna um
-	:ref:`notificador da assinatura  <luascript-ref-notifiersub>`
+.. |runda| replace:: Retorna a
+	:ref:`assinatura do notificador <luascript-ref-notifiersub>`

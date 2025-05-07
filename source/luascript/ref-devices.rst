@@ -60,46 +60,53 @@ Instanciação
 
 **manager.machine.devices**
 
-	Retorna um dispositivo enumerador que irá iterar sobre o
+	|rude| que irá iterar sobre o
 	:ref:`dispositivo <luascript-ref-device>` no sistema.
 
 
 **manager.machine.palettes**
 
-	Retorna um dispositivo enumerador que irá iterar sobre os
+	|rude| que irá iterar sobre os
 	:ref:`dispositivos paleta <luascript-ref-dipalette>` no
 	sistema.
 
 
 **manager.machine.screens**
 
-	Retorna um dispositivo enumerador que irá iterar sobre os
+	|rude| que irá iterar sobre os
 	:ref:`dispositivos da tela <luascript-ref-screendev>` no sistema.
 
 
 **manager.machine.cassettes**
 
-	Retorna um dispositivo enumerador que irá iterar sobre o
+	|rude| que irá iterar sobre o
 	:ref:`dispositivo de imagem em fita cassete <luascript-ref-cassdev>`
 	no sistema.
 
 
 **manager.machine.images**
 
-	Retorna um dispositivo enumerador que irá iterar sobre os
+	|rude| que irá iterar sobre os
 	:ref:`dispositivos de interface de imagem <luascript-ref-diimage>`
 	no sistema.
 
 
 **manager.machine.slots**
 
-	Retorna um dispositivo enumerador que irá iterar sobre os
-	:ref:`dispositivos slot <luascript-ref-dislot>` no sistema.
+	|rude| que irá iterar sobre a
+	:ref:`interface do dispositivo slot <luascript-ref-dislot>` no
+	sistema.
+
+
+**manager.machine.sounds**
+
+	|rude| que ira iterar sobre os
+	:ref:`dispositivos de audio <luascript-ref-disound>` no sistema.
 
 
 **emu.device_enumerator(dispositivo, [profundidade])**
 
-	Retorna um dispositivo enumerador que irá iterar sobre o
+	|rude| que irá iterar sobre o
 	:ref:`dispositivo <luascript-ref-device>` na sub-árvore começando
 	num dispositivo específico. O dispositivo informado será incluído.
 	Caso a profundidade seja informada, este deve ser um valor inteiro
@@ -110,7 +117,7 @@ Instanciação
 
 **emu.palette_enumerator(dispositivo, [profundidade])**
 
-	Retorna um dispositivo enumerador que irá iterar sobre os
+	|rude| que irá iterar sobre os
 	:ref:`dispositivos paleta <luascript-ref-dipalette>` na
 	sub-árvore começando num dispositivo específico. O dispositivo
 	informado será incluído caso seja um dispositivo paleta. Caso a
@@ -122,7 +129,7 @@ Instanciação
 
 **emu.screen_enumerator(dispositivo, [profundidade])**
 
-	Retorna um dispositivo enumerador que irá iterar sobre os
+	|rude| que irá iterar sobre os
 	:ref:`dispositivos tela <luascript-ref-screendev>` na sub-árvore
 	começando num dispositivo específico. O dispositivo informado será
 	incluído se for um dispositivo tela. Caso a profundidade seja
@@ -134,7 +141,7 @@ Instanciação
 
 **emu.cassette_enumerator(dispositivo, [profundidade])**
 
-	Retorna um dispositivo enumerador que irá iterar sobre o
+	|rude| que irá iterar sobre o
 	:ref:`dispositivo de imagem em fita cassete <luascript-ref-cassdev>`
 	na sub-árvore começando num dispositivo específico. O dispositivo
 	informado será incluído se for um dispositivo cassete. Caso a
@@ -150,7 +157,7 @@ Instanciação
 
 **emu.image_enumerator(dispositivo, [profundidade])**
 
-	Retorna um dispositivo enumerador que irá iterar sobre os
+	|rude| que irá iterar sobre os
 	:ref:`dispositivos de imagem em mídia <luascript-ref-diimage>` na
 	sub-árvore começando num dispositivo específico. O dispositivo
 	informado será incluído caso seja uma mídia de um dispositivo de
@@ -162,8 +169,8 @@ Instanciação
 
 **emu.slot_enumerator(dispositivo, [profundidade])**
 
-	Retorna um dispositivo enumerador que irá iterar sobre os
-	:ref:`dispositivos slot <luascript-ref-dislot>`
+	|rude| que irá iterar sobre a
+	:ref:`interface do dispositivo slot <luascript-ref-dislot>`
 	na sub-árvore começando num dispositivo específico. O dispositivo
 	informado será incluído se for um dispositivo slot. Caso a
 	profundidade seja informada, este deve ser um valor inteiro que
@@ -1066,9 +1073,72 @@ Propriedades
 	O :ref:`dispositivo <luascript-ref-device>` subjacente.
 
 
+.. _luascript-ref-disound:
+
+Dispositivo de interface de áudio
+---------------------------------
+
+|encaa| **device_sound_interface** do MAME, que é um *"mix-in"*
+implementado por dispositivos de entrada e/ou saída de som.
+
+Instanciação
+~~~~~~~~~~~~
+
+**manager.machine.sounds[tag]**
+
+	Obtém um dispositivo de áudio por etiqueta relativa ao dispositivo
+	da máquina raiz, ou **nil** se não existir tal dispositivo ou se não
+	for um dispositivo de slot.
+
+Propriedades
+~~~~~~~~~~~~
+
+**sound.inputs** |sole|
+
+	Quantidade de entradas de áudio do dispositivo.
+
+
+**sound.outputs** |sole|
+
+	Quantidade de saídas de áudio do dispositivo.
+
+
+**sound.microphone** |sole|
+
+	**True** se o dispositivo for um microfone, caso contrário,
+	**false**.
+
+
+**sound.speaker** |sole|
+
+	**True** se o dispositivo for um alto-falante, caso contrário,
+	**false**.
+
+
+**sound.io_positions[]** |sole|
+
+	Não é vazio apenas para microfones e alto-falantes, mas também
+	indica as posições das entradas ou saídas como coordenadas (x, y, z)
+	(por exemplo, [-0,2, 0,0, 1,0]).
+
+**sound.io_names[]** |sole|
+
+    Non-empty only for microphones and speakers, indicates the positions of
+    the inputs or outputs as strings (e.g. Front Left)
+    
+**sound.hook**
+
+	Um booleano que indica se as amostras de saída desse dispositivo
+	devem ser tocadas no gancho de som global.
+
+**sound.device** |sole|
+
+	O :ref:`dispositivo <luascript-ref-device>` subjacente.
+
+
 .. _luascript-ref-dislot:
 
-Dispositivo de interface slot
+Interface do dispositivo slot
 -----------------------------
 
 |encaa| ``device_slot_interface`` do MAME que é uma mistura
@@ -1242,7 +1312,7 @@ Opções do slot
 --------------
 
 |encaa| ``device_slot_interface::slot_option`` do MAME que representa um
-dispositivo herdado da :ref:`dispositivos de interface slot
+dispositivo herdado da :ref:`interface do dispositivo slot
 <luascript-ref-dislot>` que podem ser instanciados para configuração.
 
 
@@ -1252,7 +1322,7 @@ Instanciação
 **manager.machine.slots[tag].options[nome]**
 
 	Obtém uma opção do slot para uma determinada
-	:ref:`dispositivos de interface slot <luascript-ref-dislot>`
+	:ref:`interface do dispositivo slot <luascript-ref-dislot>`
 	através do nome (ou seja, o valor usado para selecionar a opção).
 
 Propriedades
@@ -1299,6 +1369,7 @@ Propriedades
 	denominador nos bits 0-11. Se os 8 bits mais importantes não
 	estiverem todos configurados, a frequência será em Hertz.
 
+.. |rude| replace:: Retorna um dispositivo enumerador
 .. |encaa| replace:: Encapsula a classe
 .. |sole| replace:: (somente leitura)
 .. |lees| replace:: (leitura e escrita)

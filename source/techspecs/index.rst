@@ -16,6 +16,7 @@ scripts LUA que são executados na estrutura do MAME.
 	device_memory_interface
 	device_rom_interface
 	device_disasm_interface
+	device_sound_interface
 	memory
 	cpu_device
 	floppy
@@ -23,3 +24,5 @@ scripts LUA que são executados na estrutura do MAME.
 	m6502
 	uml_instructions
 	poly_manager
+	audio_effects
+	osd_audio
