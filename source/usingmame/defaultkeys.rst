@@ -583,7 +583,7 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
     Jogador 1 Hanafuda No
 :kbd:`O`
     Jogador 1 Taiwanese Mahjong O
-:kbd:`;`
+:kbd:`P`
     Jogador 1 Taiwanese Mahjong P
 :kbd:`Q`
     Jogador 1 Taiwanese Mahjong Q
@@ -644,24 +644,24 @@ específica para os botões *Take Score*, *Double Up*, *High* e  *Low*.
     Deal
 :kbd:`L`
     Stand
-:kbd:`4` |fdtn|
-    Take Score
-
-    Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
-    este botão coleta as apostas do jogo.
-:kbd:`3` |fdtn|
+:kbd:`D` |fdtn|
     Double Up
 
     Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
     este botão aposta os prêmios do jogo.
-:kbd:`D`
+:kbd:`F`
     Half Gamble
 
     Usado em muitos jogos para apostar a metade dos prêmios.
+:kbd:`G`
+    Take Score
+
+    Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
+    este botão coleta as apostas do jogo.
 :kbd:`A`
-    High
+    High/Big
 :kbd:`S`
-    Low
+    Low/Small
 :kbd:`O`
     Door
 
