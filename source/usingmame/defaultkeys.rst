@@ -644,7 +644,7 @@ específica para os botões *Take Score*, *Double Up*, *High* e  *Low*.
     Deal
 :kbd:`L`
     Stand
-:kbd:`D` |fdtn|
+:kbd:`D`
     Double Up
 
     Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
