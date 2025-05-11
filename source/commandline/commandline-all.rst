@@ -3927,19 +3927,6 @@ Opções para a configuração do áudio
 
 			mame qbert -nosamples
 
-.. _mame-commandline-nocompressor:
-
-**-[no]compressor**
-
-	Ativa a compressão do áudio. Reduz temporariamente o volume total
-	quando a saída do áudio estiver saturada.
-
-		O valor predefinido é ``ligado`` (**-compressor**).
-
-	Exemplo:
-		.. code-block:: shell
-
-			mame popeye -nocompressor
 
 .. _mame-commandline-volume:
 
