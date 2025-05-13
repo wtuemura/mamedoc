@@ -631,7 +631,44 @@ torno do corte, o que pode ser interessante.
 Compressor
 ^^^^^^^^^^
 
-Não implementado ainda.
+Esse efeito implementa um compressor complexo, uma reimplementação do
+*Versatile Compressor* de Alain Paul. Um compressor geralmente amplifica
+os sons abaixo de um limite de volume, deixando os sons mais altos
+inalterados. Isso é particularmente útil em ambientes em que os sons
+mais suaves seriam perdidos.
+
+Parâmetros:
+
+* :guilabel:`Attack` (ataque): tempo de reação a sons altos que reduzem
+  a amplificação;
+* :guilabel:`Release` (liberação): tempo necessário para que a
+  amplificação aumente novamente;
+* :guilabel:`Ratio` (proporção): amplificação máxima;
+* :guilabel:`Input gain` (ganho de entrada): nível de amplificação na
+  entrada.
+* :guilabel:`Output gain` (ganho de saída): nível de amplificação na
+  saída;
+* :guilabel:`Convexity` (convexidade): a forma da relação entre a
+  distância ao limiar (*threshold*) e o valor da proporção. Quanto mais
+  íngreme, mais alta ela é;
+* :guilabel:`Threshold` (limiar): o nível limite onde a amplificação é
+  interrompida completamente;
+* :guilabel:`Channel link` (link de canal): com o valor **100**, todos
+  os canais do mesmo alto-falante são amplificados de forma idêntica.
+  Com o valor **0** (zero), eles são totalmente independentes. Valores
+  intermediários têm um comportamento intermediário;
+
+.. raw:: latex
+
+	\clearpage
+
+* :guilabel:`Feedback`: permite que parte da saída retorne à entrada;
+* :guilabel:`Inertia`: a inércia faz com que a relação se mova mais
+  lentamente;
+* :guilabel:`Inertia decay` (decaimento da inércia): ajusta o impacto
+  dela;
+* :guilabel:`Ceiling` (teto): nível máximo permitido na saída. Ele faz
+  um corte suave nesse nível.
 
 
 Reverb
