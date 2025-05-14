@@ -238,8 +238,8 @@ Propriedades
 
 **manager.options** |sole|
 
-	As :ref:`luascript-ref-emuopts` para a sessão da emulação atual.
-
+.. As :ref:`luascript-ref-emuopts` para a sessão da emulação atual.
+	Ainda não implementado.
 
 **manager.plugins[ ]** |sole|
 
@@ -424,9 +424,8 @@ Propriedades
 
 **machine.options** |sole|
 
-	As :ref:`opções <luascript-ref-emuopts>` definidas pelo usuário para
-	a sessão da emulação atual.
-
+.. As :ref:`opções <luascript-ref-emuopts>` definidas pelo usuário para a sessão da emulação atual.
+	Ainda não implementado.
 
 **machine.samplerate** |sole|
 
@@ -882,8 +881,8 @@ Propriedades
 
 **ui.options** |sole|
 
-	As :ref:`opções <luascript-ref-coreopts>`  da interface para a
-	sessão atual.
+.. As :ref:`opções <luascript-ref-coreopts>` da interface para a sessão atual.
+	As opções da interface para a sessão atual.
 
 
 **ui.line_height** |sole|

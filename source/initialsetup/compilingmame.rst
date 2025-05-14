@@ -157,7 +157,7 @@ Antes, porém, alguns pontos importantes:
 
   Onde:
   
-	**mame0272** - É a versão atual do MAME.
+	**mame0272** - É a versão do MAME.
 
 	**225** - Indica a quantidade de **commits** ou a quantidade de
 	atualizações aplicadas ao código-fonte desde a última alteração da
@@ -180,7 +180,7 @@ Antes, porém, alguns pontos importantes:
 		MAME v0.272 (mame0272-225-g3bd3ca70934-dirty)
 
   O problema também ocorre se houver algum residual antigo vindo de
-  outra compilação, se não fizer um make clean antes de uma nova
+  outra compilação, se não fizer um **make clean** antes de uma nova
   compilação, se houver `arquivos não rastreados` dentro do diretório de
   trabalho do código-fonte ou se, por algum motivo, arquivos alterados
   não forem aplicados, exemplo:
@@ -274,7 +274,7 @@ linha ``export USE_CCACHE=1``, para aplicar a configuração faça:
 
 	.. code-block:: shell
 
-		. ~/bashrc
+		. ~/.bashrc
 
 A configuração é muito simples: edite o seu arquivo **useroptions.mak**,
 assim não é necessário usar uma linha muito grande de configuração.
@@ -308,20 +308,24 @@ Já a configuração para Windows no MSYS2 fica assim:
 		#
 		# Compila com ccache MSYS2 (Windows) 64 bits (Clang)
 		CCACHE_CPP2=yes
-		OVERRIDE_CC=/mingw64/lib/ccache/clang
-		OVERRIDE_CXX=/mingw64/lib/ccache/clang++
+		OVERRIDE_CC=/clang64/lib/ccache/bin/clang
+		OVERRIDE_CXX=/clang64/lib/ccache/bin/clang++
 
 
 .. raw:: latex
 
 	\clearpage
 
+.. tip:: Se o executável **/clang64/lib/ccache/bin/clang** não existir, 
+   instale o pacote **mingw-w64-clang-x86_64-ccache** com o comando
+   **pacman -S mingw-w64-clang-x86_64-ccache.**
+
 Para ver a condição do armazenamento cache faça **ccache -sv**:
 
 	.. code-block:: shell
 
-		cache directory                     /home/mame/.ccache
-		primary config                      /home/mame/.ccache/ccache.conf
+		cache directory                     /home/seu_usuário/.ccache
+		primary config                      /home/seu_usuário/.ccache/ccache.conf
 		secondary config                    /etc/ccache.conf
 		
 		Cacheable calls:     3533 / 35558 ( 9.94%)
@@ -347,7 +351,7 @@ Para montar a sua cache, basta compilar o código-fonte do MAME com:
 **make clean && rm -rf build && make -j3**. No final, em
 **cache size**, deve aparecer o quanto foi armazenado em cache. Para
 aumentar o tamanho do **max cache size** edite o arquivo
-**/home/mame/.ccache/ccache.conf**.
+**/home/seu_usuário/.ccache/ccache.conf**.
 
 Evite alterar as configurações de compilação a todo o momento, caso
 contrário o **ccache** vai gerar um novo cache para essa nova
@@ -862,6 +866,11 @@ execute novamente o **mingw64.exe**.
 
 	**pacman -S mingw-w64-x86_64-doxygen**
 
+* O Bison é necessário para reconstruir os shaders BFX e o analisador
+  GLSL.
+
+	**pacman -S bison**
+
 * Para fazer a depuração do MAME é necessário instalar o **gdb**.
 
   Para **64 bits**:
@@ -884,18 +893,99 @@ de uma vez:
 	.. code-block:: shell
 
 		pacman -Syu
-		pacman -S curl git make
-		pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-libc++ mingw-w64-x86_64-lld mingw-w64-x86_64-python
+		pacman -S curl git make bison
+		pacman -S mingw-w64-x86_64-gdb
+		pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-python
+		pacman -S mingw-w64-x86_64-llvm mingw-w64-x86_64-libc++ mingw-w64-x86_64-lld
 		pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-SDL2_ttf
 		pacman -S mingw-w64-x86_64-qt5
-		pacman -S mingw-w64-i686-gcc mingw-w64-i686-libc++ mingw-w64-i686-lld mingw-w64-i686-python
+		pacman -S mingw-w64-i686-gcc mingw-w64-i686-python
+		pacman -S mingw-w64-i686-llvm mingw-w64-i686-libc++ mingw-w64-i686-lld
 		pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-SDL2_ttf
 		pacman -S mingw-w64-i686-qt5
+		pacman -S mingw-w64-i686-gdb
+		pacman -S mingw-w64-clang-aarch64-clang mingw-w64-clang-aarch64-python mingw-w64-clang-aarch64-gcc-compat
+		pacman -S mingw-w64-clang-aarch64-lld mingw-w64-clang-aarch64-llvm mingw-w64-clang-aarch64-libc++
+		pacman -S mingw-w64-clang-aarch64-SDL2 mingw-w64-clang-aarch64-SDL2_ttf
+		pacman -S mingw-w64-clang-aarch64-qt5
 
+Para versões **64-bit ARM (AArch64)** instale os seguintes pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-aarch64-clang mingw-w64-clang-aarch64-python
+		pacman -S mingw-w64-clang-aarch64-gcc-compat
+		pacman -S mingw-w64-clang-aarch64-lld mingw-w64-clang-aarch64-llvm mingw-w64-clang-aarch64-libc++
+		pacman -S mingw-w64-clang-aarch64-SDL2 mingw-w64-clang-aarch64-SDL2_ttf
+		pacman -S mingw-w64-clang-aarch64-qt5
+
+Execute o **clangarm64.exe** e ajuste os devidos caminhos e variáveis.
 
 .. raw:: latex
 
 	\clearpage
+
+
+.. _compiling-msys2-observacoes:
+
+Algumas observações sobre o ambiente de desenvolvimento MSYS2
+-------------------------------------------------------------
+
+O MSYS2 usa a ferramenta **pacman** do Arch Linux para o gerenciamento
+de pacotes. O `wiki do Arch Linux`_  tem uma página com informações
+úteis sobre o uso do pacman.
+
+O ambiente do MSYS2 inclui dois tipos de ferramentas: ferramentas MSYS2,
+que foram projetadas para funcionar em um ambiente semelhante ao UNIX
+sobre o Windows, e ferramentas MinGW, que foram projetadas para
+funcionar em um ambiente mais parecido com o Windows. As ferramentas
+MSYS2 são instaladas em **/usr/bin** e as ferramentas MinGW são
+instaladas em **/mingw64/bin**, **/mingw32/bin**, **/clang-arm64/bin** e
+**/clang64/bin** (em relação ao diretório de instalação do MSYS2).
+As ferramentas MSYS2 funcionam melhor em um terminal MSYS2 e as
+ferramentas MinGW funcionam melhor em um prompt de comando da Microsoft.
+
+O sintoma mais óbvio disso é que as teclas de seta não funcionam em
+programas interativos se eles forem executados no tipo errado de
+terminal. A execução do MinGW gdb ou do Python em uma janela de terminal
+MSYS2 fará com que o histórico de comandos não funcione, e talvez não
+seja possível interromper um programa anexado com o gdb. Da mesma forma,
+pode ser difícil editar com o MSYS2 Vim em uma janela do prompt de
+comando da Microsoft.
+
+Como o MAME é compilado usando compiladores MinGW, os diretórios MinGW
+são incluídos anteriormente na variável de ambiente PATH para os
+ambientes de compilação. Se você quiser usar um programa interativo do
+MSYS2 a partir de um shell do MSYS2, talvez seja necessário especificar
+o caminho absoluto para garantir que o equivalente do MinGW não seja
+usado em seu lugar.
+
+O MSYS2 gdb pode ter dificuldade para depurar programas MinGW como o
+MAME. Você pode obter melhores resultados instalando a versão MinGW do
+gdb e executando-a em uma janela do prompt de comando da Microsoft para
+depurar o MAME.
+
+O GNU make suporta shells no estilo POSIX (como o bash por exemplo) e o
+shell cmd.exe da Microsoft. Um problema que deve ser observado ao usar o
+cmd.exe é que o comando de cópia não fornece um status de saída útil.
+Portanto, as tarefas de cópia de arquivos podem falhar silenciosamente.
+Isso pode fazer com que sua compilação pareça bem-sucedida, embora
+produza resultados incorretos.
+
+Não é possível fazer a compilação cruzada de uma versão de 32 bits do
+MAME usando ferramentas MinGW de 64 bits no Windows; em vez disso, é
+necessário usar as ferramentas MinGW de 32 bits. Isso causa problemas
+devido ao tamanho do MAME. É impossível criar uma compilação de 32 bits
+com símbolos de variáveis locais completos. Além disso, o GCC pode ficar
+sem memória e determinados arquivos de origem podem exceder o limite de
+32.768 seções imposto pelo formato de arquivo de objeto PE/COFF.
+
+Uma compilação completa do MAME, incluindo símbolos do número da linha,
+excede o limite de tamanho imposto pelo formato de arquivo *Portable
+Executable (PE)* e não pode ser executada. Duas soluções alternativas
+são incluir apenas um subconjunto dos sistemas compatíveis com o MAME ou
+extrair os símbolos para um arquivo separado e remover os símbolos em
+excesso do executável do MAME.
 
 
 .. _compiling-issues-MSYS2:
@@ -910,21 +1000,21 @@ nenhuma solução prática. Então, aqui vai a dica para este erro em
 específico. Este documento será atualizado caso apareçam outros
 problemas.
 
-* Edite o arquivo ``/etc/pacman.conf`` com qualquer editor de texto.
-* Altere a opção ``SigLevel = Required DatabaseOptional`` para
-  ``SigLevel = Never``. e salve.
+* Edite o arquivo **/etc/pacman.conf** com qualquer editor de texto.
+* Altere a opção **SigLevel = Required DatabaseOptional** para
+  **SigLevel = Never**. e salve.
 * Mantenha a tela do seu editor aberto.
-* Vá até o diretório ``/etc/pacman.d`` e apague o diretório **gnupg**.
+* Vá até o diretório **/etc/pacman.d** e apague o diretório **gnupg**.
 
 Abra o shell do MSYS2 (**mingw64.exe**) e digite os comandos abaixo
 nessa sequência:
 
-1. ``pacman-key --init``
-2. ``pacman-key --populate msys2``
-3. ``pacman-key --refresh-keys``
+1. **pacman-key --init**
+2. **pacman-key --populate msys2**
+3. **pacman-key --refresh-keys**
 
 Com os passos acima seguidos corretamente, a atualização pode prosseguir
-com o comando ``pacman -Syu``. Se tudo tiver sido feito corretamente,
+com o comando **pacman -Syu**. Se tudo tiver sido feito corretamente,
 será exibido um retorno semelhante ao mostrado abaixo:
 
 	.. code-block:: shell
@@ -969,17 +1059,14 @@ será exibido um retorno semelhante ao mostrado abaixo:
 		
 		Continuar a instalação? [S/n]
 
-Pressione "Enter" e aguarde. no final do processo é importante seguir
-as instruções abaixo:
 
-* Não saia do terminal digitando **exit**. Apenas feche a janela e
-  abra-a novamente.
-* Retorne ao seu editor de texto e altere novamente
-  ``SigLevel = Never`` para ``SigLevel = Required DatabaseOptional``.
-* Salve o arquivo e feche o editor de texto.
+.. raw:: latex
 
-Para ter certeza de que não há erros, execute o comando
-``pacman -Syu`` novamente:
+	\clearpage
+
+
+Pressione "Enter" e aguarde. Para ter certeza de que não há erros,
+execute o comando **pacman -Syu** novamente:
 
 	.. code-block:: shell
 
@@ -1053,70 +1140,6 @@ Compilando com o Microsoft Visual Studio
 * Ainda que o Visual Studio seja usado, é necessário ter também o
   ambiente MSYS2 para gerar os arquivos do projeto, converter os layouts
   internos, compilar as traduções da interface etc.
-
-
-.. raw:: latex
-
-	\clearpage
-
-
-.. _compiling-msys2-observacoes:
-
-Algumas observações sobre o ambiente MSYS2
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-O `MSYS2`_ utiliza a ferramenta pacman do gerenciador de pacotes do
-Arch Linux. Há uma página no wiki do
-`Arch Linux`_ com informações relevantes sobre o uso da ferramenta
-pacman.
-
-O ambiente MSYS2 inclui dois tipos de ferramentas: as ferramentas MSYS2,
-desenvolvidas para trabalhar em um ambiente semelhante ao UNIX no
-Windows, e as ferramentas MinGW, desenvolvidas para trabalhar em um
-ambiente Windows. As ferramentas do MSYS2 são instaladas no diretório
-``/usr/bin``, enquanto as ferramentas do MinGW são instaladas em
-``/mingw64/bin`` ou ``/mingw32/bin``, sempre relativo ao diretório de
-instalação do MSYS2. As ferramentas do MSYS2 funcionam melhor em um
-terminal do MSYS2, enquanto as ferramentas do MinGW funcionam melhor com
-o prompt de comando do Windows.
-
-É possível notar sintomas óbvios quando se executam as ferramentas
-certas nos terminais errados, como a falta de interatividade dos
-programas com as teclas direcionais, por exemplo. Se você executar o
-MinGW **gdb** ou **python** a partir da janela do terminal do MSYS2, por
-exemplo, o histórico dos comandos não funcionará e é bem provável que os
-programas anexados com o gdb sejam interrompidos. De forma similar, pode
-ser bem difícil editar os arquivos com o VIM do MSYS2 no prompt de
-comandos do Windows.
-
-O MAME é compilado usando os compiladores do MinGW, logo, os diretórios
-do MinGW são incluídos previamente no ambiente de compilação por meio do
-``PATH``. Se você quiser usar um programa interativo do MSYS2 a partir
-de um shell MSYS2, talvez seja necessário informar os caminhos completos
-para evitar usar as ferramentas equivalentes do MinGW.
-
-O gdb do MSYS2 pode apresentar problemas para depurar programas MinGW,
-como o MAME. É possível obter melhores resultados ao instalar a versão
-do GDB do MinGW e executá-lo a partir da linha de comando do Windows
-para depurar o MAME.
-
-O GNU Make é compatível com shells dos dois estilos POSIX (como
-o Bash, por exemplo) e com o **cmd.exe** da Microsoft. Há um problema a
-ser levado em consideração ao utilizar o **cmd.exe** da Microsoft, pois
-o comando **copy** não fornece informações úteis durante a execução, de
-modo que as operações de cópia geralmente ocorrem em silêncio. É
-preferível usar ferramentas como o `robocopy`_, que garante a integridade
-do arquivo de destino e gera um relatório completo.
-
-Não é possível realizar a compilação cruzada de uma versão de 32 bits do
-MAME utilizando ferramentas de 64 bits do MinGW no Windows, pois isso
-causa problemas devido ao tamanho do MAME. Portanto, as ferramentas de
-32 bits do MinGW devem ser utilizadas. Não é possível lincar uma versão
-completa do MAME de 32 bits, incluindo as versões SDL e o depurador Qt.
-Ambos os GNU **ld** e o **ldd** ficarão sem memória, gerando um arquivo
-final que não funciona. Também não é possível compilar uma versão de
-32 bits com todos os símbolos. O GCC pode ficar sem memória e certos
-arquivos de código-fonte podem extrapolar o limite de **32.768** seções
-impostas pelo formato PE/COFF do objeto.
 
 
 .. raw:: latex
@@ -1689,6 +1712,11 @@ Recursos opcionais
   processo varia de plataforma para plataforma.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 Opções de compilação
 --------------------
 
@@ -1709,10 +1737,6 @@ Opções de compilação
   |sefo| ``0``, desativa as mensagens de aviso menos importantes ou
   relevantes (repare que as mensagens de aviso não são tratadas como
   erro).
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-compilation-debug:
@@ -1838,68 +1862,88 @@ Sede das bibliotecas e framework
   Informe o caminho completo do diretório raiz onde se encontra a
   instalação dos arquivos de desenvolvimento SDL.
 
+
 **SDL_FRAMEWORK_PATH**
 
   Informe o caminho completo do diretório raiz onde se encontra o SDL
   framework.
 
+
 **USE_LIBSDL**
 
   |sefo| ``1``, prefira usar a biblioteca SDL |doce|.
+
 
 **USE_SYSTEM_LIB_ASIO**
 
   |sefo| ``1``, prefira usar a biblioteca I/O assíncrona Asio C++
   |doce|.
 
+
 **USE_SYSTEM_LIB_EXPAT**
 
   |sefo| ``1``, prefira usar o analisador sintático Expat XML |doce|.
 
+
 **USE_SYSTEM_LIB_ZLIB**
 
   |sefo| ``1``, prefira usar a biblioteca de compressão zlib |doce|.
+
 
 **USE_SYSTEM_LIB_JPEG**
 
   |sefo| ``1``, prefira usar a biblioteca de compressão de imagem
   libjpeg |doce|.
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 **USE_SYSTEM_LIB_FLAC**
 
   |sefo| ``1``, prefira usar a biblioteca de compressão de áudio
   libFLAC |doce|.
 
+
 **USE_SYSTEM_LIB_LUA**
 
   |sefo| ``1``, prefira usar a biblioteca do interpretador Lua |doce|.
+
 
 **USE_SYSTEM_LIB_SQLITE3**
 
   |sefo| ``1``, prefira usar a biblioteca do motor de pesquisa SQLITE
   |doce|.
 
+
 **USE_SYSTEM_LIB_PORTMIDI**
 
   |sefo| ``1``, prefira usar a biblioteca PortMidi |doce|.
+
 
 **USE_SYSTEM_LIB_PORTAUDIO**
 
   |sefo| ``1``, prefira usar a biblioteca PortAudio |doce|.
 
+
 **USE_SYSTEM_LIB_UTF8PROC**
 
   |sefo| ``1``, prefira usar a biblioteca Julia utf8proc |doce|.
+
 
 **USE_SYSTEM_LIB_GLM**
 
   |sefo| ``1``, prefira usar a biblioteca GLM OpenGL Mathematics
   |doce|.
 
+
 **USE_SYSTEM_LIB_RAPIDJSON**
 
   |sefo| ``1``, prefira usar a biblioteca Tencent RapidJSON
   |doce|.
+
 
 **USE_SYSTEM_LIB_PUGIXML**
 
@@ -2310,7 +2354,7 @@ do MAME, exemplo:
 	.. code-block:: shell
 
 		(gdb) run kof99
-		Starting program: /home/mame/mame kof99
+		Starting program: /home/seu_usuário/mame kof99
 		[Thread debugging using libthread_db enabled]
 		Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
 		[New Thread 0x7fffe4f6c700 (LWP 21026)]
@@ -2445,7 +2489,7 @@ MAME com o comando ``directory``:
 
 .. code-block:: shell
 
-	directory /home/mame/src/mame
+	directory /home/seu_usuário/src/mame
 
 Outra maneira de facilitar é copiando apenas o arquivo do código-fonte
 para a mesma pasta do MAME, assim você não precisa usar o **directory**.
@@ -2514,12 +2558,12 @@ semelhante ao exemplo abaixo:
 
 		==2227==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f6b8d4a6800 at pc 0x0000019a963e bp 0x7ffd4dd2d450 sp 0x7ffd4dd2d448
 		READ of size 2 at 0x7f6b8d4a6800 thread T0
-			#0 0x19a963d in sma_prot_device::kof99_decrypt_68k(unsigned char*) /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/prot_sma.cpp:426:24
-			#1 0x15e7b10 in neogeo_sma_kof99_cart_device::decrypt_all(unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int) /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/sma.cpp:75:14
-			#2 0x15e7cd5 in non-virtual thunk to neogeo_sma_kof99_cart_device::decrypt_all(unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int) /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/sma.cpp
-			#3 0x6232c5 in neogeo_cart_slot_device::late_decrypt_all() /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/slot.h:327:48
+			#0 0x19a963d in sma_prot_device::kof99_decrypt_68k(unsigned char*) /home/seu_usuário/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/prot_sma.cpp:426:24
+			#1 0x15e7b10 in neogeo_sma_kof99_cart_device::decrypt_all(unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int) /home/seu_usuário/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/sma.cpp:75:14
+			#2 0x15e7cd5 in non-virtual thunk to neogeo_sma_kof99_cart_device::decrypt_all(unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned char*, unsigned int) /home/seu_usuário/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/sma.cpp
+			#3 0x6232c5 in neogeo_cart_slot_device::late_decrypt_all() /home/seu_usuário/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/slot.h:327:48
 		...
-		SUMMARY: AddressSanitizer: heap-buffer-overflow /home/mame/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/prot_sma.cpp:426:24 in sma_prot_device::kof99_decrypt_68k(unsigned char*)
+		SUMMARY: AddressSanitizer: heap-buffer-overflow /home/seu_usuário/build/projects/sdl/mame/gmake-linux-clang/../../../../../src/devices/bus/neogeo/prot_sma.cpp:426:24 in sma_prot_device::kof99_decrypt_68k(unsigned char*)
 		Shadow bytes around the buggy address:
 		0x0fedf1a8ccb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 		0x0fedf1a8ccc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -2568,7 +2612,6 @@ semelhante ao exemplo abaixo:
 .. _SDL: https://www.libsdl.org
 .. _MSYS2: https://www.msys2.org
 .. _Arch Linux: https://wiki.archlinux.org/index.php/Pacman
-.. _robocopy: https://docs.microsoft.com/pt-br/windows-server/administration/windows-commands/robocopy
 .. _LLVM: https://llvm.org
 .. _xcodereleases.com: https://xcodereleases.com
 .. _downloads para o macOS: https://www.python.org/downloads/macos
@@ -2583,3 +2626,4 @@ semelhante ao exemplo abaixo:
 .. _MAME testers: https://mametesters.org/view_all_bug_page.php
 .. _mamedev no github: https://github.com/mamedev/mame/issues
 .. _GDB Dashboard: https://github.com/cyrus-and/gdb-dashboard
+.. _wiki do Arch Linux: https://wiki.archlinux.org/index.php/Pacman
