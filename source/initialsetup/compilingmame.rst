@@ -734,6 +734,73 @@ sistema de 64 bits, embora possa ser necessário fazer ajustes para que
 a compilação funcione em sistemas de 32 bits.
 
 
+.. _compiling-msys2-observacoes:
+
+Algumas observações sobre o ambiente de desenvolvimento MSYS2
+-------------------------------------------------------------
+
+O MSYS2 usa a ferramenta **pacman** do Arch Linux para o gerenciamento
+de pacotes. O `wiki do Arch Linux`_  tem uma página com informações
+úteis sobre o uso do pacman.
+
+O ambiente do MSYS2 inclui dois tipos de ferramentas: ferramentas MSYS2,
+que foram projetadas para funcionar em um ambiente semelhante ao UNIX
+sobre o Windows, e ferramentas MinGW, que foram projetadas para
+funcionar em um ambiente mais parecido com o Windows. As ferramentas
+MSYS2 são instaladas em **/usr/bin** e as ferramentas MinGW são
+instaladas em **/mingw64/bin**, **/mingw32/bin**, **/clang-arm64/bin** e
+**/clang64/bin** (em relação ao diretório de instalação do MSYS2).
+As ferramentas MSYS2 funcionam melhor em um terminal MSYS2 e as
+ferramentas MinGW funcionam melhor em um prompt de comando da Microsoft.
+
+O sintoma mais óbvio disso é que as teclas de seta não funcionam em
+programas interativos se eles forem executados no tipo errado de
+terminal. A execução do MinGW gdb ou do Python em uma janela de terminal
+MSYS2 fará com que o histórico de comandos não funcione, e talvez não
+seja possível interromper um programa anexado com o gdb. Da mesma forma,
+pode ser difícil editar com o MSYS2 Vim em uma janela do prompt de
+comando da Microsoft.
+
+Como o MAME é compilado usando compiladores MinGW, os diretórios MinGW
+são incluídos anteriormente na variável de ambiente PATH para os
+ambientes de compilação. Se você quiser usar um programa interativo do
+MSYS2 a partir de um shell do MSYS2, talvez seja necessário especificar
+o caminho absoluto para garantir que o equivalente do MinGW não seja
+usado em seu lugar.
+
+O MSYS2 gdb pode ter dificuldade para depurar programas MinGW como o
+MAME. Você pode obter melhores resultados instalando a versão MinGW do
+gdb e executando-a em uma janela do prompt de comando da Microsoft para
+depurar o MAME.
+
+O GNU make suporta shells no estilo POSIX (como o bash por exemplo) e o
+shell cmd.exe da Microsoft. Um problema que deve ser observado ao usar o
+cmd.exe é que o comando de cópia não fornece um status de saída útil.
+Portanto, as tarefas de cópia de arquivos podem falhar silenciosamente.
+Isso pode fazer com que sua compilação pareça bem-sucedida, embora
+produza resultados incorretos.
+
+Não é possível fazer a compilação cruzada de uma versão de 32 bits do
+MAME usando ferramentas MinGW de 64 bits no Windows; em vez disso, é
+necessário usar as ferramentas MinGW de 32 bits. Isso causa problemas
+devido ao tamanho do MAME. É impossível criar uma compilação de 32 bits
+com símbolos de variáveis locais completos. Além disso, o GCC pode ficar
+sem memória e determinados arquivos de origem podem exceder o limite de
+32.768 seções imposto pelo formato de arquivo de objeto PE/COFF.
+
+Uma compilação completa do MAME, incluindo símbolos do número da linha,
+excede o limite de tamanho imposto pelo formato de arquivo *Portable
+Executable (PE)* e não pode ser executada. Duas soluções alternativas
+são incluir apenas um subconjunto dos sistemas compatíveis com o MAME ou
+extrair os símbolos para um arquivo separado e remover os símbolos em
+excesso do executável do MAME.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
 Configurando o pacote MSYS2 já pronto
 -------------------------------------
 
@@ -763,8 +830,21 @@ Configurando o pacote MSYS2 já pronto
 4.	``git clone https://github.com/mamedev/mame.git``
 
   O último comando baixará todo o código-fonte do MAME para um
-  diretório chamado **mame**, cujo caminho completo é ``/src/mame``.
+  diretório chamado **mame**, cujo caminho completo é **/src/mame**.
 
+* Ainda no terminal, abra o arquivo **~/.bashrc** com um editor de texto
+  (**nano ~/.bashrc** por exemplo) e adicione as informações abaixo no
+  final do arquivo:
+  
+	.. code-block:: shell
+
+		export MINGW32=/mingw32
+		export MINGW64=/mingw64
+		export CLANG64=/clang64
+
+.. note:: Para editar o arquivo **.bashrc** no Windows, ele fica em
+   **pasta_instalação_MSYS2\\home\\seu_usuario**. Por exemplo
+   **D:\\msys64\\home\\wellington**.
 
 .. _compiling-msys2-osd-sdl:
 
@@ -814,8 +894,8 @@ compilar o MAME em um sistema operacional de 64 bits; para sistemas de
 32 bits, é necessário fazer algumas alterações. Baixe e instale o
 ambiente de desenvolvimento MSYS2 diretamente da página do `MSYS2`_.
 
-* Para compilações de 64 bits, abra o executável **MSYS2 MinGW 64-bit**.
-* Para compilações de 32 bits, abra o executável **MSYS2 MinGW 32-bit**.
+* Para compilações de 64 bits, abra o executável **mingw64.exe**.
+* Para compilações de 32 bits, abra o executável **mingw32.exe**.
 
 Caso ocorra algum erro do tipo **GPGME error**, consulte o capítulo 
 :ref:`compiling-issues-MSYS2`. Ao final, **feche a janela** e
@@ -920,72 +1000,6 @@ Para versões **64-bit ARM (AArch64)** instale os seguintes pacotes:
 		pacman -S mingw-w64-clang-aarch64-qt5
 
 Execute o **clangarm64.exe** e ajuste os devidos caminhos e variáveis.
-
-.. raw:: latex
-
-	\clearpage
-
-
-.. _compiling-msys2-observacoes:
-
-Algumas observações sobre o ambiente de desenvolvimento MSYS2
--------------------------------------------------------------
-
-O MSYS2 usa a ferramenta **pacman** do Arch Linux para o gerenciamento
-de pacotes. O `wiki do Arch Linux`_  tem uma página com informações
-úteis sobre o uso do pacman.
-
-O ambiente do MSYS2 inclui dois tipos de ferramentas: ferramentas MSYS2,
-que foram projetadas para funcionar em um ambiente semelhante ao UNIX
-sobre o Windows, e ferramentas MinGW, que foram projetadas para
-funcionar em um ambiente mais parecido com o Windows. As ferramentas
-MSYS2 são instaladas em **/usr/bin** e as ferramentas MinGW são
-instaladas em **/mingw64/bin**, **/mingw32/bin**, **/clang-arm64/bin** e
-**/clang64/bin** (em relação ao diretório de instalação do MSYS2).
-As ferramentas MSYS2 funcionam melhor em um terminal MSYS2 e as
-ferramentas MinGW funcionam melhor em um prompt de comando da Microsoft.
-
-O sintoma mais óbvio disso é que as teclas de seta não funcionam em
-programas interativos se eles forem executados no tipo errado de
-terminal. A execução do MinGW gdb ou do Python em uma janela de terminal
-MSYS2 fará com que o histórico de comandos não funcione, e talvez não
-seja possível interromper um programa anexado com o gdb. Da mesma forma,
-pode ser difícil editar com o MSYS2 Vim em uma janela do prompt de
-comando da Microsoft.
-
-Como o MAME é compilado usando compiladores MinGW, os diretórios MinGW
-são incluídos anteriormente na variável de ambiente PATH para os
-ambientes de compilação. Se você quiser usar um programa interativo do
-MSYS2 a partir de um shell do MSYS2, talvez seja necessário especificar
-o caminho absoluto para garantir que o equivalente do MinGW não seja
-usado em seu lugar.
-
-O MSYS2 gdb pode ter dificuldade para depurar programas MinGW como o
-MAME. Você pode obter melhores resultados instalando a versão MinGW do
-gdb e executando-a em uma janela do prompt de comando da Microsoft para
-depurar o MAME.
-
-O GNU make suporta shells no estilo POSIX (como o bash por exemplo) e o
-shell cmd.exe da Microsoft. Um problema que deve ser observado ao usar o
-cmd.exe é que o comando de cópia não fornece um status de saída útil.
-Portanto, as tarefas de cópia de arquivos podem falhar silenciosamente.
-Isso pode fazer com que sua compilação pareça bem-sucedida, embora
-produza resultados incorretos.
-
-Não é possível fazer a compilação cruzada de uma versão de 32 bits do
-MAME usando ferramentas MinGW de 64 bits no Windows; em vez disso, é
-necessário usar as ferramentas MinGW de 32 bits. Isso causa problemas
-devido ao tamanho do MAME. É impossível criar uma compilação de 32 bits
-com símbolos de variáveis locais completos. Além disso, o GCC pode ficar
-sem memória e determinados arquivos de origem podem exceder o limite de
-32.768 seções imposto pelo formato de arquivo de objeto PE/COFF.
-
-Uma compilação completa do MAME, incluindo símbolos do número da linha,
-excede o limite de tamanho imposto pelo formato de arquivo *Portable
-Executable (PE)* e não pode ser executada. Duas soluções alternativas
-são incluir apenas um subconjunto dos sistemas compatíveis com o MAME ou
-extrair os símbolos para um arquivo separado e remover os símbolos em
-excesso do executável do MAME.
 
 
 .. _compiling-issues-MSYS2:
