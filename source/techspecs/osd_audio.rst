@@ -5,8 +5,8 @@
 
 .. _techspecs-osd-audio:
 
-Suporte de áudio com informações visuais exibidas na tela
-=========================================================
+Suporte de áudio com informações visuais na tela
+================================================
 
 
 Introdução
@@ -21,15 +21,15 @@ módulo.
 
 .. note:: Atualmente, a documentação lida apenas com a saída, mas em
    breve a entrada também deve ser adicionada.
-.. note:: **IVET** é uma abreviação de *informações visuais exibidas na
-   tela*.
-.. note:: **IU** é uma abreviação de *interface do usuário*.
+.. note:: **IVT** é um acrônimo de *informações visuais na tela*. No
+   Inglês é **OSD** ou *On Screen Display*.
+.. note:: **IU** é um acrônimo de *interface do usuário*.
 
 
 Das capacidades
 ---------------
 
-A interface *IVET* foi concebida para permitir três níveis de suporte,
+A interface *IVT* foi concebida para permitir três níveis de suporte,
 dependendo do que a API permite e da quantidade de esforço necessária.
 São eles:
 
@@ -166,11 +166,11 @@ Dois métodos são utilizados pelo módulo para indicar seu nível de
 capacidade:
 
 * A função **split_streams_per_source()** deve retornar **true** quando
-  houver vários fluxos para um destino (os níveis 2 ou 3 por exemplo).
+  houver vários fluxos para um destino (os níveis 2 ou 3 por exemplo);
 
 * A função **external_per_channel_volume()** deve retornar **true**
   quando os fluxos tiverem controle de volume por canal que possa ser
-  controlado externamente (nível 3 por exemplo).
+  controlado externamente (nível 3 por exemplo);
 
 
 Informações sobre hardware e gerações
@@ -273,6 +273,13 @@ Se um nó tiver fontes e sinks (saídas), as fontes são monitores das
 saídas, por exemplo, são *loopbacks*. Nesse caso, elas devem ter a mesma
 contagem.
 
+O nó deve ser independente. Deve ser possível abrir fluxos para dois nós
+diferentes simultaneamente. Tenha cuidado com as bibliotecas de várias
+APIs que podem entrar em conflito entre si. Além disso, com fluxos de
+monitoramento, deve ser possível abrir fluxos separados para entrada e
+saída. Se isso não for possível, não publique as entradas de
+monitoramento.
+
 Quando houver controle externo, um módulo deve alterar o valor da função
 **stream_info::m_node** e **stream_info::m_volumes** quando o usuário o
 alterar. O número da geração deve ser incrementado quando isso
@@ -282,6 +289,15 @@ Os volumes são flutuantes em dB, sendo que **0** significa **100%** e
 **-96** significa **sem áudio**. O arquivo **audio.h** fornece os
 métodos **db_to_linear** e **linear_to_db**, caso essa conversão seja
 necessária.
+
+Há dois valores especiais de posição:
+
+* **unknown()**: a posição do alto-falante ou do microfone é
+  desconhecida, mas a posição ainda deve ser usada. A posição será
+  centralizada;
+* **map_on_request_only()**: significa que a entrada ou saída não deve
+  ser usada para mapeamentos completos, mas somente quando
+  explicitamente solicitada com um mapeamento de canal;
 
 Há uma condição de corrida inerente a esse sistema, pois as coisas podem
 mudar a qualquer momento após o retorno do método. A ideia é que as
@@ -322,9 +338,9 @@ retornar zero.
   para definir o volume por canal. A chamada deve ser ignorada se a ID
   do fluxo não existir (ou for zero). Não tente aplicar volumes no
   módulo se a API do hospedeiro não oferecer essa função; deixe o núcleo
-  lidar com isso.
+  lidar com isso;
 * **stream_close** fecha um fluxo; a chamada deve ser ignorada se a ID
-  do fluxo não existir (ou for zero).
+  do fluxo não existir (ou for zero);
 
 Abrir, fechar ou alterar o volume de um fluxo não exige que se toque no
 número da geração.
@@ -336,9 +352,9 @@ número da geração.
   tempo de vida dos dados na memória intermédia ou do próprio ponteiro
   da memória intermédia é indefinido após o retorno da chamada do
   método. A chamada deve ser ignorada se a ID do fluxo não existir
-  (ou for zero).
+  (ou for zero);
 * **stream_source_update** é o equivalente a recuperar dados de um nó,
-  escrevendo no buffer em vez de lê-lo. As restrições são idênticas.
+  escrevendo no buffer em vez de lê-lo. As restrições são idênticas;
 
 Quando um fluxo some porque o nó de destino é perdido, ele deve ser
 simplesmente removido das informações, o núcleo assumirá o nó e
