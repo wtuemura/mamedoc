@@ -3053,6 +3053,10 @@ esqueça de reconfigurar o seu **rompath** para que o MAME possa
 localizar as suas ROMs, assim como outras configurações de vídeo e áudio
 para que o seu MAME possa funcionar corretamente.
 
+.. note:: Ao concluir a configuração, não se esqueça de definir a opção
+  **readconfig** como **1** para que o MAME leia o novo arquivo criado.
+  Caso contrário, ele irá ignorá-lo.
+
 
 .. _advanced-boost-pre-installation:
 
