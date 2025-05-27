@@ -266,10 +266,6 @@ Opções de vídeo OpenGL GLSL
 | :ref:`glsl_shader_screen[0-9] <mame-commandline-glslshaderscreen>`
 
 
-.. raw:: latex
-
-	\clearpage
-
 Opções para a configuração do áudio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -278,9 +274,6 @@ Opções para a configuração do áudio
 | :ref:`volume <mame-commandline-volume>`
 | :ref:`sound <mame-commandline-sound>`
 | :ref:`audio_latency <mame-commandline-audiolatency>`
-| :ref:`pa_api <mame-commandline-paapi>`
-| :ref:`pa_device <mame-commandline-padevice>`
-| :ref:`pa_latency <mame-commandline-palatency>`
 
 
 Opções para as configurações de diferentes entradas
@@ -317,10 +310,6 @@ Opções de entrada ativadas automaticamente
 | :ref:`positional_device <mame-commandline-positionaldevice>`
 | :ref:`mouse_device <mame-commandline-mousedevice>`
 
-
-.. raw:: latex
-
-	\clearpage
 
 Opções voltadas para a depuração
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -368,10 +357,6 @@ Opções diversas
 | :ref:`[no]nvram_save <mame-commandline-nvramsave>`
 
 
-.. raw:: latex
-
-	\clearpage
-
 Opções para uso com script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 | :ref:`autoboot_command <mame-commandline-autobootcommand>`
@@ -388,14 +373,6 @@ Opções do servidor HTTP
 | :ref:`http <mame-commandline-http>`
 | :ref:`http_port <mame-commandline-httpport>`
 | :ref:`http_root <mame-commandline-httproot>`
-
-
-Opções do PortAudio
-~~~~~~~~~~~~~~~~~~~
-
-| :ref:`pa_api <mame-commandline-paapi>`
-| :ref:`pa_device <mame-commandline-padevice>`
-| :ref:`pa_latency <mame-commandline-palatency>`
 
 
 .. raw:: latex

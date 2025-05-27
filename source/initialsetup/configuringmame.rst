@@ -248,87 +248,9 @@ Assim como na configuração de vídeo, o MAME detecta e configura o áudio
 automaticamente para que funcione com o hardware existente. Porém, é
 possível obter uma latência (atraso) menor no áudio e, assim, melhorar o
 seu desempenho. Sistemas como o **Dance Dance Revolution** e outros do
-tipo podem se beneficiar bastante de uma latência menor.
+tipo podem se beneficiar bastante de uma latência menor. Experimente
+opções como ``mame -sound wasapi`` ou ``mame -v -sound xaudio2``
 
-Para identificar a sua placa de som no MAME execute o comando
-``mame -v -sound portaudio``, ele deverá retornar uma lista com as
-opções disponíveis seja para Windows, Linux ou macOS. Para mais
-informações, primeiro consulte a opção
-:ref:`-pa_api <mame-commandline-paapi>` para identificar corretamente
-o seu hardware antes de continuar.
-
-Abra o seu arquivo ``mame.ini`` e adicione estas opções::
-
-	# Audio
-	sound                   portaudio
-	lowlatency              1
-	samplerate              44100
-	pa_api                  ALSA
-	pa_device               "Xonar STX: Multichannel (hw:0,0)"
-
-Remova a opção ``pa_device`` caso queira deixar que a seleção seja
-automática. Salve o arquivo e rode novamente no terminal o comando
-``mame ddrmax2 -v``, dentre as várias informações você deverá ver algo
-como mostra o exemplo abaixo para o meu computador::
-
-	PortAudio: API ALSA has 13 devices
-	PortAudio: ALSA: "Xonar STX: Multichannel (hw:0,0)" (default)
-	PortAudio: ALSA: "Xonar STX: Digital (hw:0,1)"
-	PortAudio: ALSA: "HDA ATI HDMI: 0 (hw:1,3)"
-	PortAudio: ALSA: "HDA ATI HDMI: 1 (hw:1,7)"
-	PortAudio: ALSA: "HDA ATI HDMI: 2 (hw:1,8)"
-	PortAudio: ALSA: "HDA ATI HDMI: 3 (hw:1,9)"
-	PortAudio: ALSA: "HDA ATI HDMI: 4 (hw:1,10)"
-	PortAudio: ALSA: "HDA ATI HDMI: 5 (hw:1,11)"
-	PortAudio: ALSA: "sysdefault"
-	PortAudio: ALSA: "iec958"
-	PortAudio: ALSA: "spdif"
-	PortAudio: ALSA: "pulse"
-	PortAudio: ALSA: "a52"
-	PortAudio: API OSS has 0 devices
-	PortAudio: Using device "Xonar STX: Multichannel (hw:0,0)" on API "ALSA"
-	PortAudio: Sample rate is 44100 Hz, device output latency is 8.67 ms
-	PortAudio: Allowed additional buffering latency is 30.00 ms/1440 frames
-
-Experimente jogar uma partida e perceba a melhora considerável no
-sincronismo do áudio com a ação na tela. Para obter o benefício de uma
-latência menor, o uso da placa de som deve ser exclusiva para o MAME.
-Ou seja, se você gosta de usar o MAME enquanto escuta música de fundo ou
-ouve o áudio do *YouTube*, *Spotify*, *Tidal* ou qualquer outro site ou
-plataforma que utilize a placa de som, o áudio poderá **não funcionar**.
-
-Neste caso altere a configuração do arquivo ``mame.ini`` para::
-
-	# Audio
-	sound                   sdl
-	samplerate              44100
-
-Para manter o benefício do áudio com baixa latência para todos os
-sistemas referentes ao driver **ksys573** como a **Dance Dance
-Revolution**, entre no diretório  **ini** e crie o diretório **source**,
-dentro dele crie o arquivo ``ksys573.ini`` com as configurações de áudio
-usadas anteriormente::
-
-	# Audio
-	sound                   portaudio
-	lowlatency              1
-	pa_api                  ALSA
-	pa_device               "Xonar STX: Multichannel (hw:0,0)"
-
-Todos os outros sistemas passam a usar a interface comum de áudio, que
-funciona junto com quaisquer outros programas ou serviços de áudio.
-Agora, apenas os sistemas do driver **ksys573** passam a usar a
-configuração com baixa latência. O mesmo pode ser feito com outros
-drivers como o **djmain** que é responsável pelos sistemas das séries
-**Beatmania** e **Pop'n Music** por exemplo. Lembrando que você pode
-identificar o nome do driver com o comando ``mame nome_da_rom -ls``.
-Para mais informações, consulte o comando
-:ref:`-listsource <mame-commandline-listsource>`.
-
-
-.. raw:: latex
-
-	\clearpage
 
 .. _configuringmame-controls:
 
