@@ -3948,35 +3948,10 @@ Opções para a configuração do áudio
 
 			mame ssf2tu -volume -30
 
-.. _mame-commandline-speakerreport:
 
-**-speaker_report** <*valor*>
+.. raw:: latex
 
-	Imprime um relatório na tela informando se houve ou não um **corte**
-	abrupto (ou *"clipping"*) da onda gerada pela saída de áudio no
-	alto-falante. Esse ceifamento da onda causa distorções no áudio
-	devido à saturação excessiva do sinal, transformando as curvas de
-	uma onda senoide em uma onda quadrada.
-	
-	Os valores válidos são:
-
-	* **nível 1**: relate apenas se houve corte.
-	* **nível 2**: relate o máximo possível, ainda que não haja corte.
-	* **nível 3**: imprima uma lista detalhada de todos os momento em
-	  que houveram cortes.
-	* **nível 4**: imprima uma lista detalhada de tudo.
-
-		O valor predefinido é ``desligado``.
-
-	Exemplo:
-		.. code-block:: shell
-
-			mame robocop -speaker_report 2
-			Speaker ":mono" - max = 51586 (gain *= 0.635) - clipped in 30/735 (4%) buckets
-
-	.. note:: Este comando não tem utilidade prática para o usuário,
-	          serve apenas como uma ferramenta para os desenvolvedores
-	          do MAME.
+	\clearpage
 
 
 .. _mame-commandline-sound:
@@ -4030,11 +4005,6 @@ Opções para a configuração do áudio
       - sdl
       - none
       - 
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-audiolatency:
