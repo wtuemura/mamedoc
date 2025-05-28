@@ -3956,17 +3956,28 @@ Opções para a configuração do áudio
 
 .. _mame-commandline-sound:
 
-**-sound** < ``auto`` | ``dsound`` | ``sdl`` | ``coreaudio`` | ``xaudio2`` | ``portaudio`` | ``none`` >
+**-sound** < ``wasapi`` | ``xaudio2`` | ``dsound`` | ``coreaudio`` | ``pipewire`` | ``pulse`` | ``sdl`` | ``portaudio`` | ``none`` >
 
-	Defina o tipo de saída de áudio a ser usado. Ao selecionar ``none``,
-	o áudio é desativado completamente, mas o hardware de áudio continua
-	sendo emulado. Abaixo, estão as opções disponíveis para cada sistema
-	operacional.
+	Define o módulo de áudio a ser usado. Ao selecionar ``none``,
+	desativa completamente a saída e a entrada de áudio, embora o
+	hardware de áudio ainda seja emulado.
 
-	As versões especiais, como o **SDLMAME** para Windows, podem usar a
-	opção ``sdl`` e manter o **portaudio** desativado. O binário oficial
-	do MAME para Windows não é compilado com SDL, sendo necessário
-	compilar uma versão compatível para que a opção ``sdl`` funcione.
+	Os recursos disponíveis, o desempenho e a latência variam entre os
+	módulos de áudio. A interpretação exata e o intervalo útil da
+	:ref:`opção de latência <mame-commandline-audiolatency>` também
+	variam entre os módulos de áudio. Talvez seja necessário ajustar a
+	configuração de :ref:`latência <mame-commandline-audiolatency>` se
+	você trocar de módulo de áudio.
+
+	Ao usar o subsistema de áudio ``sdl``, a API de áudio pode ser
+	selecionada com a configuração da variável de ambiente
+	**SDL_AUDIODRIVER**. As APIs de áudio disponíveis dependem do
+	sistema operacional. No Windows, talvez seja necessário definir
+	``SDL_AUDIODRIVER=directsound`` se nenhuma saída de áudio for
+	produzida por padrão.
+
+	O padrão é ``dsound``. No Mac, o ``coreAudio`` é o padrão. Em todas
+	as outras plataformas, o ``sdl`` é o padrão.
 
 		O valor predefinido é ``dsound`` no Windows, no Mac é
 		``coreaudio`` nas outras plataformas é ``sdl``.
@@ -3980,31 +3991,88 @@ Opções para a configuração do áudio
 
 			mame sf2tu -sound portaudio
 
-.. tabularcolumns:: |L|C|C|C|C|C|
 
-.. list-table:: Opções disponíveis para cada versão separado por plataforma
-    :header-rows: 0
-    :stub-columns: 0
-    :widths: auto
+.. tabularcolumns:: |>{\centering\arraybackslash}\X{1}{8}|J|J|J|J|J|J|J|J|
 
-    * - **Microsoft Windows**
-      - auto
-      - dsound
-      - xaudio2
-      - portaudio
-      - none
-    * - **macOS**
-      - auto
-      - coreaudio
-      - sdl
-      - portaudio
-      - none
-    * - **SDL**
-      - auto
-      - portaudio
-      - sdl
-      - none
-      - 
+.. list-table:: Plataformas compatíveis e recursos do módulo de áudio
+    :header-rows: 1
+
+    * - Módulo
+      - SO compatível
+      - Saída
+      - Entrada
+      - Monitoramento de saída
+      - Multicanais
+      - Alterações no dispositivo
+    * - ``wasapi``
+      - Windows
+      - Sim
+      - Sim
+      - Sim (Windows 10 1703 ou posterior)
+      - Sim
+      - Sim
+    * - ``xaudio2``
+      - Windows 8 ou posterior
+      - Sim
+      - Não
+      - Não
+      - Sim
+      - Sim
+    * - ``dsound``
+      - Windows
+      - Sim
+      - Não
+      - Não
+      - Não
+      - Não
+    * - ``coreaudio``
+      - macOS
+      - Sim
+      - Não
+      - Não
+      - Não
+      - Não
+    * - ``pipewire``
+      - Linux
+      - Sim
+      - Sim
+      - ?
+      - Sim
+      - Sim
+    * - ``pulse``
+      - Linux
+      - Sim
+      - Não
+      - Não
+      - Sim
+      - Sim
+    * - ``sdl``
+      - Todos [#SoundWinSDL]_
+      - Sim
+      - Não
+      - Não
+      - Sim
+      - Não
+    * - ``portaudio``
+      - Todos
+      - Sim
+      - Sim
+      - Sim [#SoundPortAudioMonitoring]_
+      - Sim
+      - Não
+
+.. [#SoundWinSDL] Embora o SDL não seja uma opção compatível
+   com as compilações oficiais do MAME para Windows, é possível
+   compilar o MAME com suporte a SDL no Windows.
+
+.. [#SoundPortAudioMonitoring] A compatibilidade do PortAudio
+   com o monitoramento de saída depende da plataforma e da API
+   de áudio.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _mame-commandline-audiolatency:
