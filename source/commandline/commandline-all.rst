@@ -4099,6 +4099,11 @@ Opções para a configuração do áudio
 			mame galaga -audio_latency 0.1
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-inputoptions:
 
 Opções para as configurações de diferentes entradas
@@ -4173,11 +4178,6 @@ Opções para as configurações de diferentes entradas
 		.. code-block:: shell
 
 			mame centiped -mouse
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-nojoystick:
