@@ -215,6 +215,7 @@ não há eventos especiais, ele deve ser relativamente leve.
     struct audio_info {
         struct node_info {
                 std::string m_name;
+                std::string m_display_name;
                 uint32_t m_id;
                 audio_rate_range m_rate;
 		std::vector<std::string> m_port_names;
@@ -242,8 +243,11 @@ hospedeiro e do módulo. Esse estado é:
 * **m_generation**: o número da geração atual;
 * **m_nodes**: o vetor de nós disponíveis (**node_info**);
 
-  * **m_name**: o nome do nó;
+  * **m_name**: O nome do nó a ser usado em configurações não visíveis
+    pelo usuário (pode ser um uuid ou equivalente);
   * **m_id**: a ID numérica do nó;
+  * **m_display_name**: O nome do nó a ser usado nas interfaces de
+    usuário (deve ser legível);
   * **m_rate**: a taxa de amostragem mínima, máxima e preferencial para
     o nó;
   * **m_port_names**: o vetor dos nomes das portas;
@@ -273,11 +277,11 @@ Se um nó tiver fontes e sinks (saídas), as fontes são monitores das
 saídas, por exemplo, são *loopbacks*. Nesse caso, elas devem ter a mesma
 contagem.
 
-O nó deve ser independente. Deve ser possível abrir fluxos para dois nós
-diferentes simultaneamente. Tenha cuidado com as bibliotecas de várias
-APIs que podem entrar em conflito entre si. Além disso, com fluxos de
-monitoramento, deve ser possível abrir fluxos separados para entrada e
-saída. Se isso não for possível, não publique as entradas de
+Os nós devem ser independentes. Deve ser possível abrir fluxos para dois
+nós diferentes simultaneamente. Tenha cuidado com as bibliotecas de
+várias APIs que podem entrar em conflito entre si. Além disso, com
+fluxos de monitoramento, deve ser possível abrir fluxos separados para
+entrada e saída. Se isso não for possível, não publique as entradas de
 monitoramento.
 
 Quando houver controle externo, um módulo deve alterar o valor da função

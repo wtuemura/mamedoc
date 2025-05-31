@@ -2479,8 +2479,11 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	valor, a velocidade de execução do áudio também será alterada
 	proporcionalmente.
 
-	A resolução interna da fração são dois pontos decimais, logo, o
-	valor ``1.002`` será arredondado para ``1.0``.
+	Em velocidades muito baixas, serão introduzidas falhas no áudio.
+	Isso pode ser evitado aumentando a latência do áudio usando a opção
+	:ref:`-audio_latency <mame-commandline-audiolatency>`. A precisão
+	interna da fração é de duas casas decimais. Assim sendo, um
+	<*fator*> com o valor ``1.002`` será arredondado para ``1.0``.
 
 		O valor predefinido é ``1.0``.
 
@@ -2489,12 +2492,19 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 
 			mame ssf2tu -speed 1.25
 
-	Quando utilizado em conjunto com a opção :ref:`-rec
-	<mame-commandline-record>` é possível colocar o sistema em
-	velocidade lenta, com a opção **-speed 0.3** enquanto grava. Ao
-	terminar a gravação, a reprodução com a opção
-	:ref:`-pb <mame-commandline-playback>` ocorrerá à velocidade normal,
-	como se você tivesse jogado na velocidade nativa do sistema.
+	.. tip:: Quando utilizada em conjunto com a opção :ref:`-rec
+	   <mame-commandline-record>`, é possível colocar o sistema em
+	   velocidade lenta durante a gravação com a opção **-speed 0.3**,
+	   por exemplo. Ao terminar a gravação e reproduzir o que foi
+	   gravado com a opção :ref:`-pb <mame-commandline-playback>`, tudo
+	   ocorrerá à velocidade normal, como se a gravação tivesse sido
+	   feita na velocidade nativa do sistema.
+
+
+	.. raw:: latex
+
+		\clearpage
+
 
 	Exemplo:
 		.. code-block:: shell
@@ -2504,10 +2514,6 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	A opção **-sound none** serve para eliminar o áudio durante a
 	gravação em velocidade lenta. Para mais informações, consulte
 	:ref:`slowmomame <advanced-slowmomame>`.
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-norefreshspeed:
@@ -2563,6 +2569,12 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 		.. code-block:: shell
 
 			mame ssf2tu -bench 300
+
+
+	.. raw:: latex
+
+		\clearpage
+
 
 .. _mame-commandline-lowlatency:
 
@@ -2956,10 +2968,6 @@ Opções para a configuração de vídeo
 	:ref:`-prescale <mame-commandline-prescale>`.
 
 		O valor predefinido é ``ligado`` (**-unevenstretch**).
-
-	.. raw:: latex
-
-		\clearpage
 
 	Exemplo:
 		.. code-block:: shell
@@ -3956,15 +3964,15 @@ Opções para a configuração do áudio
 
 .. _mame-commandline-sound:
 
-**-sound** < ``wasapi`` | ``xaudio2`` | ``dsound`` | ``coreaudio`` | ``pipewire`` | ``pulse`` | ``sdl`` | ``portaudio`` | ``none`` >
+**-sound** < ``wasapi`` | ``xaudio2`` | ``coreaudio`` | ``pipewire`` | ``pulse`` | ``sdl`` | ``portaudio`` | ``none`` >
 
 	Define o módulo de áudio a ser usado. Ao selecionar ``none``,
 	desativa completamente a saída e a entrada de áudio, embora o
 	hardware de áudio ainda seja emulado.
 
-	Os recursos disponíveis, o desempenho e a latência variam entre os
-	módulos de áudio. A interpretação exata e o intervalo útil da
-	:ref:`opção de latência <mame-commandline-audiolatency>` também
+	Os recursos disponíveis, o desempenho e a latência (atraso) variam
+	entre os módulos de áudio. A interpretação exata e o intervalo útil
+	da :ref:`opção de latência <mame-commandline-audiolatency>` também
 	variam entre os módulos de áudio. Talvez seja necessário ajustar a
 	configuração de :ref:`latência <mame-commandline-audiolatency>` se
 	você trocar de módulo de áudio.
@@ -3973,18 +3981,15 @@ Opções para a configuração do áudio
 	selecionada com a configuração da variável de ambiente
 	**SDL_AUDIODRIVER**. As APIs de áudio disponíveis dependem do
 	sistema operacional. No Windows, talvez seja necessário definir
-	``SDL_AUDIODRIVER=directsound`` se nenhuma saída de áudio for
+	``SDL_AUDIODRIVER=wasapi`` se nenhuma saída de áudio for
 	produzida por padrão.
 
-	O padrão é ``dsound``. No Mac, o ``coreAudio`` é o padrão. Em todas
-	as outras plataformas, o ``sdl`` é o padrão.
-
-		O valor predefinido é ``dsound`` no Windows, no Mac é
-		``coreaudio`` nas outras plataformas é ``sdl``.
+		O valor predefinido é ``wasapi`` no Windows, no Mac é
+		``coreaudio`` e nas outras plataformas é ``sdl``.
 
 	No Windows e no Linux a opção ``portaudio`` provavelmente oferecerá
-	uma menor latência possível, enquanto no Mac a opção ``coreaudio``
-	oferecerá os melhores resultados.
+	a menor latência possível, enquanto no Mac a opção ``coreaudio``
+	oferecerá melhores resultados.
 
 	Exemplo:
 		.. code-block:: shell
@@ -3992,42 +3997,31 @@ Opções para a configuração do áudio
 			mame sf2tu -sound portaudio
 
 
-.. tabularcolumns:: |>{\centering\arraybackslash}\X{1}{8}|J|J|J|J|J|J|J|J|
+.. tabularcolumns:: |>{\raggedright\arraybackslash}\X{1}{8}|J|J|J|J|J|J|J|
 
 .. list-table:: Plataformas compatíveis e recursos do módulo de áudio
     :header-rows: 1
 
     * - Módulo
-      - SO compatível
-      - Saída
+      - Compatibilidade
       - Entrada
-      - Monitoramento de saída
-      - Multicanais
+      - Monitoramento [#SoundMonitoring]_
+      - Multicanal
       - Alterações no dispositivo
     * - ``wasapi``
       - Windows
       - Sim
-      - Sim
-      - Sim (Windows 10 1703 ou posterior)
+      - Sim [#SoundWASAPIMonitoring]_
       - Sim
       - Sim
     * - ``xaudio2``
-      - Windows 8 ou posterior
-      - Sim
+      - Windows [#SoundXAudio2OS]_
       - Não
       - Não
       - Sim
       - Sim
-    * - ``dsound``
-      - Windows
-      - Sim
-      - Não
-      - Não
-      - Não
-      - Não
     * - ``coreaudio``
       - macOS
-      - Sim
       - Não
       - Não
       - Não
@@ -4035,20 +4029,17 @@ Opções para a configuração do áudio
     * - ``pipewire``
       - Linux
       - Sim
-      - Sim
       - ?
       - Sim
       - Sim
     * - ``pulse``
       - Linux
-      - Sim
       - Não
       - Não
       - Sim
       - Sim
     * - ``sdl``
       - Todos [#SoundWinSDL]_
-      - Sim
       - Não
       - Não
       - Sim
@@ -4056,10 +4047,18 @@ Opções para a configuração do áudio
     * - ``portaudio``
       - Todos
       - Sim
-      - Sim
       - Sim [#SoundPortAudioMonitoring]_
       - Sim
       - Não
+
+.. [#SoundMonitoring] Capacidade de monitorar a saída de áudio durante a
+   emulação.
+
+..  [#SoundWASAPIMonitoring] Para usar o monitoramento de saída com o
+   **WASAPI**, o MAME requer o **Windows 10 1703** ou posterior.
+
+..  [#SoundXAudio2OS] Para usar o **XAudio2**, o MAME requer o **Windows
+   8** ou posterior.
 
 .. [#SoundWinSDL] Embora o SDL não seja uma opção compatível
    com as compilações oficiais do MAME para Windows, é possível
@@ -4077,25 +4076,27 @@ Opções para a configuração do áudio
 
 .. _mame-commandline-audiolatency:
 
-**-audio_latency** <*valor*>
+**-audio_latency** <*valor*> / **-alat** <*valor*>
 
-	Nesta opção, a latência significa o tempo que o dispositivo de áudio
-	demora para responder a um comando. Essa opção ajusta a quantidade
-	dessa latência incorporada ao fluxo de dados de áudio.
+	Faz o ajuste do atraso (latência) do áudio. O ajuste pode chegar até
+	``0.5`` segundos. Valores menores resultam em um menor atraso, mas
+	exigem um melhor desempenho do sistema. Valores maiores incrementam
+	a latência, porém ajudam a evitar o esvaziamento da memória
+	intermediária (*buffer*) e as interrupções do áudio. Um valor de
+	``0.0`` usa a configuração padrão do módulo selecionado.
 
-	O comportamento exato depende do módulo de saída de áudio
-	selecionado. Valores menores oferecem um menor atraso no áudio, mas
-	exigem um desempenho maior do sistema. Valores maiores incrementam o
-	atraso do áudio, porém ajudam a evitar o esvaziamento da memória
-	intermediária (*buffer*) e as interrupções do áudio.
+	A interpretação exata e o intervalo útil de valores para essa opção
+	dependem do módulo de áudio selecionado. Talvez seja necessário
+	ajustar essa configuração se você alterar o módulo de áudio com a
+	opção :ref:`-sound <mame-commandline-sound>`.
 
-	Os valores válidos variam de ``0`` e ``5``, sendo ``2`` o valor
-	predefinido (**-audio_latency 2**).
+	Os valores válidos variam de ``0.0`` e ``0.5``. O valor predefinido
+	é ``0.0``.
 
 	Exemplo:
 		.. code-block:: shell
 
-			mame galaga -audio_latency 1
+			mame galaga -audio_latency 0.1
 
 
 .. _mame-commandline-inputoptions:
@@ -5184,9 +5185,15 @@ Opções diversas
 	Ativa o cardápio de trapaças, exibindo uma lista de trapaças que
 	ficam armazenadas em um arquivo externo chamado **cheat.7z**.
 	[#CHEAT]_ [#CHEAT2]_
-	Essa opção também ativa as opções de turbo dos botões.
+	Essa opção também ativa as opções adicionais no menu deslizante para
+	ajustar a velocidade geral e fazer *overclocking* ou
+	*underclocking*.
 
 		O valor predefinido é ``desligado`` (**-nocheat**).
+
+	.. note:: Observe que os savestates, gravações e reproduções criados
+	   com cheats podem não funcionar corretamente se esse recurso
+	   estiver desativado, e vice-versa.
 
 	Exemplo:
 		.. code-block:: shell
@@ -5254,6 +5261,11 @@ Opções diversas
 			mame -ui simple
 
 
+	.. raw:: latex
+
+		\clearpage
+
+
 .. _mame-commandline-ramsize:
 
 **-ramsize** / **-ram** <*n*>
@@ -5281,11 +5293,6 @@ Opções diversas
 		.. code-block:: shell
 
 			mame pacman -confirm_quit
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-uimouse:
