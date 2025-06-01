@@ -3987,10 +3987,6 @@ Opções para a configuração do áudio
 		O valor predefinido é ``wasapi`` no Windows, no Mac é
 		``coreaudio`` e nas outras plataformas é ``sdl``.
 
-	No Windows e no Linux a opção ``portaudio`` provavelmente oferecerá
-	a menor latência possível, enquanto no Mac a opção ``coreaudio``
-	oferecerá melhores resultados.
-
 	Exemplo:
 		.. code-block:: shell
 
@@ -4078,25 +4074,27 @@ Opções para a configuração do áudio
 
 **-audio_latency** <*valor*> / **-alat** <*valor*>
 
-	Faz o ajuste do atraso (latência) do áudio. O ajuste pode chegar até
-	``0.5`` segundos. Valores menores resultam em um menor atraso, mas
-	exigem um melhor desempenho do sistema. Valores maiores incrementam
-	a latência, porém ajudam a evitar o esvaziamento da memória
-	intermediária (*buffer*) e as interrupções do áudio. Um valor de
-	``0.0`` usa a configuração padrão do módulo selecionado.
+	Convencionalmente, a latência do áudio é medida em número de quadros
+	de áudio, sendo que um quadro corresponde a **20 ms**. Não são
+	necessários números inteiros; por exemplo, um valor de ``1.5``
+	corresponde a **30 ms**. Valores menores resultam em menos atraso de
+	áudio, mas exigem um sistema com melhor desempenho. Valores maiores
+	aumentam o atraso de áudio, mas podem ajudar a evitar o esvaziamento
+	da memória intermediária (*buffer*) e as interrupções de áudio. Um
+	valor de ``0`` usa a configuração padrão do módulo selecionado.
 
-	A interpretação exata e o intervalo útil de valores para essa opção
-	dependem do módulo de áudio selecionado. Talvez seja necessário
-	ajustar essa configuração se você alterar o módulo de áudio com a
-	opção :ref:`-sound <mame-commandline-sound>`.
+	Talvez seja necessário ajustar essa configuração se você alterar o
+	módulo de áudio com a opção :ref:`-sound <mame-commandline-sound>`.
+	Está opção não é compatível com os módulos ``pipewire``, ``pulse`` e
+	``sdl``.
 
-	Os valores válidos variam de ``0.0`` e ``0.5``. O valor predefinido
-	é ``0.0``.
+	Os valores válidos variam entre ``0`` e ``50``. O valor predefinido
+	é ``0``.
 
 	Exemplo:
 		.. code-block:: shell
 
-			mame galaga -audio_latency 0.1
+			mame galaga -audio_latency 2
 
 
 .. raw:: latex
