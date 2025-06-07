@@ -2477,13 +2477,9 @@ Opções relacionadas ao desempenho e a velocidade da emulação
 	metade da velocidade normal e um <*fator*> ``2.0`` significa
 	executar o sistema 2 vezes mais rápido. Note que, ao alterar este
 	valor, a velocidade de execução do áudio também será alterada
-	proporcionalmente.
-
-	Em velocidades muito baixas, serão introduzidas falhas no áudio.
-	Isso pode ser evitado aumentando a latência do áudio usando a opção
-	:ref:`-audio_latency <mame-commandline-audiolatency>`. A precisão
-	interna da fração é de duas casas decimais. Assim sendo, um
-	<*fator*> com o valor ``1.002`` será arredondado para ``1.0``.
+	proporcionalmente. A precisão interna da fração é de duas casas
+	decimais. Assim sendo, um <*fator*> com o valor ``1.002`` será
+	arredondado para ``1.0``.
 
 		O valor predefinido é ``1.0``.
 
