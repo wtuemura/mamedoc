@@ -4034,7 +4034,7 @@ Opções para a configuração do áudio
       - Todos [#SoundWinSDL]_
       - Não
       - Não
-      - Sim
+      - Sim [#SoundSDLMultiChannel]_
       - Não
     * - ``portaudio``
       - Todos
@@ -4055,6 +4055,9 @@ Opções para a configuração do áudio
 .. [#SoundWinSDL] Embora o SDL não seja uma opção compatível
    com as compilações oficiais do MAME para Windows, é possível
    compilar o MAME com suporte a SDL no Windows.
+
+..  [#SoundSDLMultiChannel] Para ter suporte ao som multicanal no MAME,
+   é preciso ter o SDL 2.0.16 ou uma versão mais recente.
 
 .. [#SoundPortAudioMonitoring] A compatibilidade do PortAudio
    com o monitoramento de saída depende da plataforma e da API
