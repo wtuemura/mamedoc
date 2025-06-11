@@ -4245,6 +4245,33 @@ Ao concluir, a lista terá o seguinte conteúdo:
 	[...]
 
 
+Como carregar ROMs sem precisar recompilar o MAME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Supondo que seja uma ROM para um sistema conhecido e que já exista
+dentro da pasta **hash** como **neogeo.xml** por exemplo, monte uma
+estrutura semelhante aos que já existem neste arquivo e na parte de ROM
+use ``status="nodump"``, exemplo:
+
+.. code-block:: XML
+
+	<rom name="nome_da_rom.bin" size="0xtamanho_em_hex" status="nodump" />
+
+
+ISO comprimida com o chdman antigo fica menor do que o chdman mais recente
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Pode acontecer de, em alguns casos, o ISO comprimido por uma versão mais
+antiga do chdman ficar menor se a mesma ISO for convertida com uma
+versão mais recente do chdman. Neste caso, experimente usar a opção
+``--hunksize 2048``.
+
+Fonte: `chdman question`_
+
+.. note:: O tamanho do hunk deve ser um múltiplo do tamanho do setor. O
+   tamanho ideal do hunk depende do tipo de dados no disco.
+
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
@@ -4271,3 +4298,4 @@ Ao concluir, a lista terá o seguinte conteúdo:
 .. |prte2| replace:: pressione a tecla
 .. _Macintosh LC 550: https://support.apple.com/pt-br/112206
 .. _0.254: https://github.com/mamedev/mame/commit/b06dae9201f7990bd48b677ae6a97b3a6a7000df
+.. _chdman question: https://www.reddit.com/r/MAME/comments/1l4n81t/chdman_question/
