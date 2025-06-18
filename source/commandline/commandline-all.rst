@@ -1713,7 +1713,7 @@ Opções para a configuração das principais pastas
 	Exemplo:
 		.. code-block:: shell
 
-			mame -cheatpath cheat;cheat_wayder
+			mame -cheatpath cheat
 
 
 .. _mame-commandline-crosshairpath:
@@ -5202,8 +5202,8 @@ Opções diversas
 ..	[#CHEAT2] O site japonês
 		`Wayder's Cheats <https://wayder.web.fc2.com/>`_ é um outro site
 		conhecido que oferece um arquivo de trapaça para download. Para
-		usar os dois juntos, consulte
-		:ref:`-cheatpath <mame-commandline-cheatpath>`.
+		usar os dois juntos basta colocar os arquivos .7z e .zip na
+		pasta raiz do MAME.
 
 
 .. _mame-commandline-skipgameinfo:
