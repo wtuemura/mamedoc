@@ -169,6 +169,7 @@ Ao editar uma macro já existente, selecione :guilabel:`Feito` ou
 pressione a tecla :kbd:`Esc` para retornar à lista de macros de entrada,
 as alterações já entram em vigor imediatamente.
 
+
 .. _plugins-inputmacro-examples:
 
 Exemplos de macros
