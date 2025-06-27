@@ -474,12 +474,25 @@ o *boot* ou a ROM do *firmware* para o sistema e as placas que o sistema
 tiver. |eise| tiver disponibilidade de seleção ou opções de BIOS.
 
 
+DispositivosSlot Devices
+    Shows the Slot Devices menu, where you can choose between emulated
+    peripherals.  This item is not shown for systems that have no slot devices.
+
+
 Mixagem de áudio
 ~~~~~~~~~~~~~~~~
+
+Mostra o menu :ref:`Mixagem de áudio <menus-audiomixer>`, onde é
+possível configurar como o MAME encaminha o áudio do sistema emulado
+para as saídas de áudio do sistema hospedeiro e das entradas de áudio do
+sistema hospedeiro para o sistema emulado.
 
 
 Efeitos de áudio
 ~~~~~~~~~~~~~~~~
+
+Mostra o menu :ref:`Efeitos de áudio <menus-audioeffects>`, onde você
+pode configurar os efeitos de áudio aplicados à saída emulada de áudio.
 
 
 Alerta sobre o sistema
@@ -495,6 +508,13 @@ Informação sobre a imagem da mídia
 Exibe informações sobre a mídia como o seu formato (imagem ROM, CD-ROM,
 etc.), nome do fabricante, ano de lançamento, etc. |eise| tiver um ou
 mais dispositivos do tipo mídia (unidades de
+
+
+Dispositivos slot
+~~~~~~~~~~~~~~~~~
+
+Mostra o menu dos dispositivos slot, aqui é possível escolher entre os
+periféricos emulados. |eise| tiver dispositivos no slot.
 
 
 Gerenciador de arquivos
@@ -522,13 +542,6 @@ pseudoterminais do host, como através de portas seriais por exemplo).
 |eise| tiver dispositivos do tipo pseudoterminal.
 
 
-Dispositivos slot
-~~~~~~~~~~~~~~~~~
-
-Mostra o menu dos dispositivos slot, aqui é possível escolher entre os
-periféricos emulados. |eise| tiver dispositivos no slot.
-
-
 Leitor de código de barras
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -551,39 +564,49 @@ host. |eise| tiver adaptadores de rede que sejam compatíveis com
 Mixagem de áudio
 ~~~~~~~~~~~~~~~~
 
-Permite estabelecer conexões entre alto-falantes e microfones emulados,
-bem como entre entradas e saídas de áudio do sistema. As setas padrão
-para cima/para baixo são usadas para selecionar um dispositivo e/ou o
-mapeamento atual, enquanto as setas para a esquerda e para a direita são
-usadas para alterar um valor (porta de áudio do sistema, nível, canal,
-entre outros). Já as teclas :kbd:`[` :kbd:`]` são usadas para alterar a
-coluna. Além disso, a tecla :kbd:`F` (por padrão) adiciona um mapeamento
-completo, a tecla :kbd:`C` adiciona um mapeamento de canal e a tecla
-:kbd:`Del` remove um mapeamento.
+Permite ajustar como o MAME encaminha o áudio dos alto-falantes emulados
+para as saídas de áudio emulado e das entradas de áudio do sistema para
+os microfones. Há dois tipos de rotas: rota completa e rotas de canal:
 
-Um mapeamento completo envia todos os canais de um alto-falante para
-os canais apropriados da saída do sistema, e da mesma forma, recupera
-todos os canais de um microfone das entradas apropriadas de uma entrada
-do sistema. Por exemplo, um alto-falante mono enviará áudio para os dois
-canais de uma saída estéreo do sistema.
+* Uma rota completa envia o áudio de todos os canais de um dispositivo
+  de saída para uma saída de áudio do hospedeiro. O MAME atribui
+  automaticamente os canais emulados (normalmente alto-falantes) aos
+  canais de saída com base nas informações de posição do alto-falante.
+* Da mesma forma, uma rota de entrada completa envia o áudio de uma
+  entrada de áudio do hospedeiro para todos os canais de um dispositivo
+  de entrada de áudio emulado. O MAME decide automaticamente como
+  atribuir os canais de entrada aos canais emulados (normalmente
+  microfones) com base nas informações de posição do microfone.
+* Uma rota de canal envia o áudio emulado na saída de um canal para um
+  canal de saída ou de entrada emulada do hospedeiro.
 
-Um mapeamento de canal mapeia um canal de alto-falante ou microfone com
-um canal de entrada ou saída do sistema. Embora possa ser um pouco
-tedioso, isso permite, por exemplo, pegar dois alto-falantes mono e
-transformá-los nos canais esquerdo e direito de uma saída do sistema, o
-que é útil para alguns gabinetes.
+Somente uma rota completa é permitida entre cada dispositivo emulado de
+entrada ou saída de áudio e a entrada ou saída de áudio do hospedeiro.
+Da mesma forma, somente uma rota de canal é permitida entre um canal
+individual emulado e um canal individual de áudio do hospedeiro.
 
-É possível configurar o volume de cada mapeamento. Ao alterar o volume,
-mantenha pressionadas as teclas :kbd:`Shift` + :kbd:`Ctrl` +
-:kbd:`Alt` para ajustar o valor da etapa.
+As rotas são agrupadas por dispositivo emulado. As rotas completas são
+listadas antes das rotas de canal para cada dispositivo. Você pode
+selecionar a saída ou entrada de áudio do sistema para cada rota e
+ajustar o volume de **-96 dB** (mais baixo) a **+12 dB** (mais alto).
+Para rotas de canal, você também pode selecionar os canais individuais
+e do hospedeiro. Selecione :guilabel:`Excluir esta rota` para excluir
+uma rota.
 
-A configuração do mapeamento é salva no arquivo **.cfg** do respectivo
-sistema.
+Selecione :guilabel:`Adicionar uma nova rota completa` para adicionar
+uma nova rota completa a esse grupo. Se possível, a rota será adicionada
+e o destaque do menu se moverá para a rota recém-adicionada. Se já
+houver rotas entre o dispositivo destacado e todas as saídas/entradas do
+hospedeiro, nenhuma nova rota será adicionada.
 
-Alguns sistemas operacionais oferecem uma interface externa para alterar
-mapeamentos e volumes dinamicamente, como o Pipewire no Linux. O Mame
-faz o possível para seguir esse procedimento e manter as informações no
-arquivo **.cfg** para futuras execuções.
+Alguns módulos de áudio permitem controlar as atribuições de canais e
+volumes usando uma interface de mixagem externa. Por exemplo, o módulo
+*PipeWire* para Linux tem esse recurso. Nesses casos, o MAME tenta
+seguir as alterações feitas na interface do mixer externo e salvá-las em
+sua configuração.
+
+As rotas de áudio são salvas no arquivo de configuração **.cfg** do
+respectivo sistema.
 
 
 .. _menus-audioeffects:
@@ -591,53 +614,60 @@ arquivo **.cfg** para futuras execuções.
 Efeitos de áudio
 ~~~~~~~~~~~~~~~~
 
-Aqui é possível configurar os efeitos de áudio aplicados às saídas dos
-alto-falantes entre o dispositivo de alto-falante e o mixer de áudio.
-Em outras palavras, os canais de saída vistos na mixagem de áudio que
-correspondem às saídas das cadeias de efeitos. Cada alto-falante possui
-uma cadeia de efeitos independente.
+Aqui é possível configurar os efeitos de áudio aplicados à saída emulada
+de áudio de antes de ser direcionada para as saídas de áudio do
+hospedeiro. Cada dispositivo de saída emulada de áudio tem sua própria
+cadeia independente de efeitos.
 
-A cadeia em si não é configurável e está sempre nessa ordem:
-
+A cadeia de efeitos em si não é configurável. Ela sempre consiste nestes
+quatro efeitos, seguindo a ordem abaixo:
 
 * Filtro
 * Compressor
-* Reverb
-* EQ
+* Reverberação
+* Equalizador paramétrico
 
-No entanto, os parâmetros de cada um são totalmente configuráveis. Um
-parâmetro configurado é exibido em branco, um padrão é exibido em
-cinza e a opção *Clear* permite retornar ao valor predefinido. Os
-parâmetros predefinidos da cadeia de um determinado alto-falante são os
-parâmetros da cadeia padrão, que são fixos. A cadeia padrão permite
-criar uma configuração global de preferência e sempre aplicá-la em todos
-os lugares por padrão.
+Ao editar os parâmetros de uma cadeia de efeitos de um dispositivo de
+saída, os valores predefinidos do parâmetro herdados são mostrados em
+uma cor esmaecida, enquanto os valores de parâmetro definidos para essa
+cadeia são mostrados com uma cor mais intensa. Pressione a tecla
+:guilabel:`UI Clear` (:kbd:`Del`/:kbd:`Forward Delete`) para
+redefinir um parâmetro e usar o valor predefinido.
+
+Edite a cadeia **padrão** para definir um valor de parâmetro predefinido
+que possa ser herdado pelas cadeias de dispositivos da saída. Durante a
+edição da cadeia **padrão**, você pode restaurar o valor padrão
+incorporado de um parâmetro pressionando a tecla
+:guilabel:`UI Clear` (:kbd:`Del`/:kbd:`Forward Delete`).
+
 
 Filtro
 ^^^^^^
 
-Esse efeito propõe um filtro passa-alta e passa-baixa de 2ª ordem. O
+Esse efeito implementa um filtro passa-alta e passa-baixa de 2ª ordem. O
 filtro passa-alta permite que você elimine o deslocamento de CC (*DC
-offset* ou deslocamento de corrente contínua) de alguns hardwares
-emulados, evitando a saturação quando não houver necessidade. O filtro
-passa-baixa, desativado por padrão, permite reproduzir o som abafado de
-alguns gabinetes e TVs.
+offset* ou deslocamento de corrente contínua). O filtro passa-baixa,
+desativado por padrão, permite simular a baixa qualidade de reprodução
+de altas frequências dos arcades e televisores.
 
-O fator Q define a nitidez da transição; quanto maior, mais nítida ela
-será. Acima de **0,7**, o filtro começa a aumentar as frequências em
-torno do corte, o que pode ser interessante.
+O fator Q determina a nitidez da transição da banda de parada para a
+banda passante. Fatores Q mais altos proporcionam transições mais
+nítidas. Entretanto, valores acima de 0,71 fazem com que o filtro
+amplifique as frequências próximas à frequência de corte, o que pode ser
+inesperado ou indesejável.
 
 
 Compressor
 ^^^^^^^^^^
 
-Esse efeito implementa um compressor complexo, uma reimplementação do
-*Versatile Compressor* de Alain Paul. Um compressor geralmente amplifica
-os sons abaixo de um limite de volume, deixando os sons mais altos
-inalterados. Isso é particularmente útil em ambientes em que os sons
-mais suaves seriam perdidos.
+Este efeito oferece compressão de faixa dinâmica e baseia-se em uma
+reimplementação do *Versatile Compressor* de Alain Paul. A compressão de
+faixa dinâmica reduz a diferença de volume entre áudios suaves e altos.
+Esse efeito é útil em uma variedade de situações. Por exemplo, ele pode
+ajudar a tornar os áudios silenciosos mais audíveis em relação ao ruído
+de fundo.
 
-Parâmetros:
+Os parâmetros são:
 
 * :guilabel:`Attack` (ataque): tempo de reação a sons altos que reduzem
   a amplificação;
@@ -653,55 +683,184 @@ Parâmetros:
   íngreme, mais alta ela é;
 * :guilabel:`Threshold` (limiar): o nível limite onde a amplificação é
   interrompida completamente;
-* :guilabel:`Channel link` (link de canal): com o valor **100**, todos
+* :guilabel:`Channel link` (link de canal): com o valor **100%**, todos
   os canais do mesmo alto-falante são amplificados de forma idêntica.
-  Com o valor **0** (zero), eles são totalmente independentes. Valores
+  Com o valor **0%** (zero), eles são totalmente independentes. Valores
   intermediários têm um comportamento intermediário;
-
-.. raw:: latex
-
-	\clearpage
-
-* :guilabel:`Feedback`: permite que parte da saída retorne à entrada;
-* :guilabel:`Inertia`: a inércia faz com que a relação se mova mais
-  lentamente;
+* :guilabel:`Feedback` (retorno): permite que parte da saída retorne à
+  entrada;
+* :guilabel:`Inertia` (inércia): a inércia faz com que a relação se mova
+  mais lentamente;
 * :guilabel:`Inertia decay` (decaimento da inércia): ajusta o impacto
   dela;
 * :guilabel:`Ceiling` (teto): nível máximo permitido na saída. Ele faz
   um corte suave nesse nível.
 
 
-Reverb
-^^^^^^
+Reverberação
+^^^^^^^^^^^^
 
-Não implementado ainda.
+Aplica efeitos de reverberação na saída de áudio do hospedeiro.
+
+Os parâmeros são:
+
+* :guilabel:`Modo`:
+* :guilabel:`Predefinição`: é possível escolher efeitos já
+  pré-configurados de uma lista:
+	- :guilabel:`Personalizado`: todos os valores podem ser
+	  configurados de acordo com a sua preferência;
+	- :guilabel:`Câmara de eco`: simula uma câmara de eco;
+	- :guilabel:`Sala grande`: simula uma sala grande;
+	- :guilabel:`Sala grande clara`: simula uma sala grande e iluminada;
+	- :guilabel:`Sala grande escura`: simula uma sala grande sem
+	  iluminação;
+	- :guilabel:`Sala grande bateria`: simula uma sala grande com
+	  reverberação semelhante à de uma bateria;
+	- :guilabel:`Sala grande azulejada`: simula uma sala grande com
+	  azulejos;
+	- :guilabel:`Sala grande vocal`: simula uma sala grande preparada
+	  para vocais;
+	- :guilabel:`Sala grande madeira`: simula uma sala grande com
+	  paredes de madeira;
+	- :guilabel:`Ao vivo`: simula uma transmissão ao vivo (sem paredes);
+	- :guilabel:`Reverb. 12s`: simula uma reverberação longa com duração
+	  de 12 segundos;
+	- :guilabel:`Reverb. 30s`: simula uma reverberação longa com duração
+	  de 30s segundos;
+	- :guilabel:`Sala média`: simula uma sala com tamanho médio
+	  (**padrão**);
+	- :guilabel:`Sala média clara`: simula uma sala média e iluminada;
+	- :guilabel:`Sala média escura`: simula uma sala média sem
+	  iluminação;
+	- :guilabel:`Sala média bateria`: simula uma sala média com
+	  reverberação semelhante à de uma bateria;
+	- :guilabel:`Sala média azulejada`: simula uma sala média com
+	  azulejos;
+	- :guilabel:`Sala média vocal`: simula uma sala média preparada
+	  para vocais;
+	- :guilabel:`Sala média madeira`: simula uma sala média com paredes
+	  de madeira;
+	- :guilabel:`Shimmer`: adiciona camadas de harmonias acima da nota
+	  original, criando um som brilhante e expansivo.
+	- :guilabel:`Sala pequena`: simula uma sala pequena;
+	- :guilabel:`Sala pequena clara`: simula uma sala pequena e
+	  iluminada;
+	- :guilabel:`Sala pequena escura`: simula uma sala pequena e sem
+	  iluminação;
+	- :guilabel:`Sala pequena bateria`: simula uma sala pequena com
+	  reverberação semelhante à de uma bateria;
+	- :guilabel:`Sala pequena azulejada`: simula uma sala pequena com
+	  azulejos;
+	- :guilabel:`Sala pequena vocal`: simula uma sala pequena preparada
+	  para vocais;
+	- :guilabel:`Sala pequena madeira`: simula uma sala pequena com
+	  paredes de madeira;
+	- :guilabel:`Túnel`: simula uma reverberação dentro de um túnel;
+	- :guilabel:`Sala muito ampla`: simula uma sala bem ampla;
+	- :guilabel:`Sala muito ampla clara`: simula uma sala muito ampla e
+	  iluminada;
+	- :guilabel:`Sala muito ampla escura`: simula uma sala muito ampla e
+	  sem iluminação;
+	- :guilabel:`Sala muito ampla bateria`: simula uma sala muito ampla
+	  com reverberação semelhante à de uma bateria;
+	- :guilabel:`Sala muito ampla azulejada`: simula uma sala muito
+	  ampla com azulejos;
+	- :guilabel:`Sala muito ampla vocal`: simula uma sala muito ampla
+	  preparada para vocais;
+	- :guilabel:`Sala muito ampla madeira`: simula uma sala muito ampla
+	  com paredes de madeira;
+* :guilabel:`Sinal original`: controla a quantidade do sinal original.
+  Quanto maior o valor, menor a intensidade de reverberação. O valor
+  varia entre ``0%`` e ``100%``. O valor predefinido é **90%**;
+* :guilabel:`Largura estéreo`: define como o som ecoado é distribuído
+  entre os canais esquerdo e direito. O valor varia entre ``0%`` e
+  ``100%``. O valor predefinido é **80%**;
+
+**Reflexões iniciais**
+
+* :guilabel:`Tamanho da sala`: controla o tamanho da sala. O valor varia
+  entre ``0%`` e ``100%``. O valor predefinido é **30%**;
+* :guilabel:`Configuração de acionamento`: o valor varia entre ``0`` e
+  ``22``. O valor predefinido é **0**;
+* :guilabel:`Atenuação`: controla a atenuação em hertz. O valor varia
+  entre ``100 Hz`` e ``16000 Hz``. O valor predefinido é **8000 Hz**;
+* :guilabel:`Nível`: controla a intensidade em hertz. O valor varia
+  entre ``0%`` e ``100%``. O valor predefinido é **10%**;
+* :guilabel:`Envio atrasado`: parâmetro de atraso que controla o tempo
+  entre o sinal original e a repetição. O valor varia entre ``0%`` e
+  ``100%``. O valor predefinido é **20%**;
 
 
-Equalização (EQ)
-^^^^^^^^^^^^^^^^
+**Reflexões posteriores**
 
-O equalizador paramétrico de 5 bandas permite aumentar ou cortar bandas
-de frequência específicas no espectro. Quando configurados como "*Peak*"
-(pico), os três filtros intermediários e também os filtros extremos
-alteram as frequências em torno do corte. O fator **Q** seleciona a
-nitidez do pico: quanto mais alto, mais nítido. Os filtros "*Shelf*"
-(também conhecido como filtro/equalizador de prateleira) movem todas as
-frequências abaixo (ou acima) da frequência de corte.
+* :guilabel:`Tamanho da sala`: controla o tamanho da sala. O valor varia
+  entre ``0%`` e ``100%``. O valor predefinido é **30%**;
+* :guilabel:`Atenuação`: controla a atenuação em hertz. O valor varia
+  entre ``100 Hz`` e ``16000 Hz``. O valor predefinido é **8000 Hz**;
+* :guilabel:`Pré-delay`: controla o inicio do atraso em milésimos de
+  segundo. O valor varia entre ``0.0 ms`` e ``200.0 ms``. O valor
+  predefinido é **8.0 ms**;
+* :guilabel:`Difusão`: define a complexidade do espaço simulado e a
+  densidade das reflexões sonoras. Uma alta difusão cria um efeito mais
+  suave e disperso, enquanto uma baixa difusão resulta em reflexões
+  distintas e mais espaçadas. O valor varia entre ``0%`` e ``100%``. O
+  valor predefinido é **57%**;
+* :guilabel:`Aleatoriedade`: introduz variações aleatórias no tempo de
+  atraso e/ou na frequência das reflexões do som. Isso cria uma
+  sensação mais orgânica e menos repetitiva das reflexões, evitando que
+  soe artificial ou mecânico. O valor varia entre ``0%`` e ``100%``. O
+  valor predefinido é **40%**;
+* :guilabel:`Decaimento`: determina a velocidade em segundos com que o
+  som da reflexão perde intensidade ao ser repetido. O valor varia entre
+  ``0.10s`` e ``30.00s``. O valor predefinido é **0.60s**;
+* :guilabel:`Spin`: O valor varia entre ``0.0 Hz`` e ``5.00 Hz``. O
+  valor predefinido é **0.50 Hz**;
+* :guilabel:`Nível`: controla a intensidade. O valor varia entre ``0%``
+  e ``100%``. O valor predefinido é **30%**;
+
+
+Equalizador paramétrico (EQ)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Esse é um equalizador paramétrico de cinco bandas que permite amplificar
+ou atenuar bandas de frequência específicas.
+
+Os três filtros do meio são de passagem de banda/rejeição de banda, o
+que significa que eles amplificam ou atenuam frequências em torno da
+frequência central. O primeiro e o último filtro também podem ser
+configurados como filtros de passagem de banda/rejeição de banda
+definindo o modo como o *filtro de pico* ("**Peak**"). Ao definir o modo
+como *filtro de prateleira* ("**Shelf**") faz com que o filtro
+amplifique ou atenue todas as frequências abaixo (para o primeiro
+filtro) ou acima (para o último filtro) da frequência de corte.
+
+O **fator Q** controla a nitidez do pico ou do vale na resposta de
+frequência dos filtros de passagem ou de rejeição de banda. O fator Q
+não é ajustável no modo prateleira. Fatores Q mais altos produzem uma
+forma mais nítida e afetam uma faixa mais estreita de frequências.
 
 
 Resampler
 ^^^^^^^^^
 
-É usado na conversão de taxas de amostragem entre dispositivos emulados.
-É possível escolher entre um tipo rápido e de qualidade inferior,
-"*LoFi*", e um tipo lento e de alta qualidade, "*HQ*". O *resampler* HQ
-pode ser configurado. A latência indica a latência máxima do
-*resampler*, o que permite melhor qualidade quando for mais alta. O
-comprimento do filtro equilibra qualidade e a velocidade, sendo que um
-valor alto representa uma melhor qualidade porém a velocidade é mais
-lenta. As fases equilibram a qualidade e o tempo de criação do
-*resampler*, sendo que um valor mais alto é melhor, porém também é mais
-lento.
+Permite que você configure o algoritmo usado para a conversão da taxa de
+amostragem.
+
+Os parâmetros são:
+
+* :guilabel:`Tipo` (**LoFi** e **HQ**): o algoritmo **LoFi** predefinido
+  tem requisitos de CPU modestos. Já o algoritmo **HQ** oferece uma
+  conversão da taxa de amostragem com maior qualidade à custa de um
+  desempenho substancialmente maior da CPU. O algoritmo HQ tem
+  parâmetros adicionais;
+* :guilabel:`Latência HQ`: aumenta o atraso, o aumento da latência pode
+  ter uma melhor de qualidade;
+* :guilabel:`Tamanho máximo do filtro HQ`: Define o tamanho máximo do
+  filtro que variam entre ``10`` e ``500``. O valor predefinido é
+  **400**;
+* :guilabel:`Comprimento de fases do filtro HQ`: o aumento também pode
+  melhorar a qualidade, porém requer ainda mais desempenho da CPU. Os
+  valores variam entre ``10`` e ``1000``. O valor predefinido é **200**;
 
 
 Controles deslizantes
