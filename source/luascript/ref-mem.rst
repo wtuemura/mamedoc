@@ -200,7 +200,7 @@ Métodos
 	recepção das notificações de leitura a partir de uma determinada
 	faixa de endereços no espaço de endereçamento da memória. O início e
 	o fim do endereço são abrangentes. O nome deve ser uma *string* e o
-	*callback* uma função.
+	*callback* uma função. Retorna o novo manipulador pass-through.
 
 	O *callback* repassa 3 argumentos para o *offset* do acesso, para a
 	leitura dos dados e a máscara de acesso à memória. A compensação é
@@ -216,7 +216,8 @@ Métodos
 	:ref:`manipulador pass-through <luascript-ref-addrspacetap>` que fará a
 	recepção das notificações de escrita a partir de uma determinada
 	faixa de endereços no espaço de endereçamento da memória. O nome
-	deve ser uma *string* e o *callback* uma função.
+	deve ser uma *string* e o *callback* uma função. Retorna o novo
+	manipulador pass-through.
 
 	O *callback* repassa 3 argumentos para o *offset* do acesso, para a
 	escrita dos dados e a máscara de acesso à memória. A compensação é
