@@ -707,6 +707,7 @@ Os parâmeros são:
 * :guilabel:`Modo`:
 * :guilabel:`Predefinição`: é possível escolher efeitos já
   pré-configurados de uma lista:
+
 	- :guilabel:`Personalizado`: todos os valores podem ser
 	  configurados de acordo com a sua preferência;
 	- :guilabel:`Câmara de eco`: simula uma câmara de eco;
