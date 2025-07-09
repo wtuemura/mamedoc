@@ -58,27 +58,40 @@ estados.
 	É possível utilizar as teclas abaixo quando um controle deslizante
 	estiver visível na tela:
 
-	* :kbd:`Cima` - Seleciona o parâmetro anterior.
-	* :kbd:`Baixo` - Seleciona o próximo parâmetro.
-	* :kbd:`Esquerda` - Reduz o valor do parâmetro selecionado.
-	* :kbd:`Direita` - Aumenta o valor do parâmetro selecionado.
-	* :kbd:`Enter` - Redefine o valor do parâmetro para o seu valor predefinido.
-	* :kbd:`Control` + :kbd:`Esquerda` - Reduz o valor em passos de **10x**.
-	* :kbd:`Shift` + :kbd:`Esquerda` - Reduz o valor em passos de **1x**.
-	* :kbd:`Alt` + :kbd:`Esquerda` - Reduz todo o valor.
-	* :kbd:`Control` + :kbd:`Direita` - Aumenta o valor em passos de **10x**.
-	* :kbd:`Shift` + :kbd:`Direita` - Aumenta o valor em passos de **1x**.
-	* :kbd:`Alt` + :kbd:`Direita` - Aumenta o valor no máximo.
+	.. tip:: Pressione a tecla :kbd:`'` para ocultar o menu e ajustar
+	   um parâmetro por vez.
+
+	.. U+2190 esquerda, U+2191 cima, U+2192 direita, U+2193 baixo;
+
+	* :kbd:`↑` - Seleciona o parâmetro anterior.
+	* :kbd:`↓` - Seleciona o próximo parâmetro.
+	* :kbd:`←` - Reduz o valor do parâmetro selecionado.
+	* :kbd:`→` - Aumenta o valor do parâmetro selecionado.
+	* :kbd:`Delete` - Redefine o valor do parâmetro para o seu valor predefinido.
+	* :kbd:`Alt` + :kbd:`←` - Reduz todo o valor.
+	* :kbd:`Control` + :kbd:`←` - Reduz o valor em passos de **10x**.
+	* :kbd:`Shift` + :kbd:`←` - Reduz o valor em passos de **1x**.
+	* :kbd:`Shift` + :kbd:`Alt` + :kbd:`←` - Reduz todo o valor em passos de **1x**.
+	* :kbd:`Alt` + :kbd:`→` - Aumenta todo o valor.
+	* :kbd:`Control` + :kbd:`→` - Aumenta o valor em passos de **10x**.
+	* :kbd:`Shift` + :kbd:`→` - Aumenta o valor em passos de **1x**.
 	* :kbd:`End` - Oculta temporariamente a opção visível na tela.
 	* :kbd:`Home` - Traz de volta a opção na tela depois que for oculta.
+	* :kbd:`Shift` + :kbd:`Alt` + :kbd:`→` - Aumenta o valor em passos de **1x**.
 
-Seta direcional :kbd:`cima`
+
+.. raw:: latex
+
+	\clearpage
+
+
+Seta direcional :kbd:`↑`
     Destaca a opção anterior da lista da interface.
-Seta direcional :kbd:`baixo`
+Seta direcional :kbd:`↓`
     Destaca a opção posterior da lista da interface.
-Seta direcional :kbd:`esquerda`
+Seta direcional :kbd:`←`
     Altera a opção com os valores disponível do lado esquerdo quando uma seta estiver presente.
-Seta direcional :kbd:`direita`
+Seta direcional :kbd:`→`
     Altera a opção com os valores disponível do lado direito quando uma seta estiver presente.
 :kbd:`Home` / :kbd:`End`
     Destaca a primeira ou a última opção da lista.
@@ -118,36 +131,38 @@ Seta direcional :kbd:`direita`
 
     **Modo paleta/tabela de cores**:
 
-    * :kbd:`[` :kbd:`]` - Alterna entre as paletas.
-    * :kbd:`Cima` / :kbd:`Baixo` - Sobe/desce uma linha por vez.
-    * :kbd:`PgUp` / :kbd:`PgDn` - Sobe/desce uma página por vez.
-    * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista.
-    * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de cores por fila.
-    * :kbd:`0` - Restaura a quantidade de cores por fila.
-    * :kbd:`Enter` - Alterna para o visualizador gráfico.
+    * :kbd:`[` :kbd:`]` - Alterna entre as paletas;
+    * :kbd:`↑` / :kbd:`↓` - Sobe/desce uma linha por vez;
+    * :kbd:`Shift` + :kbd:`↑` / :kbd:`↓` - Desloca uma célula de cada vez para a direita/esquerda;
+    * :kbd:`PgUp` / :kbd:`PgDn` - Sobe/desce uma página por vez (mantenha :kbd:`Ctrl` ou :kbd:`Alt` pressionado para rolar 10 ou 100 páginas);
+    * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista;
+    * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de cores por linha;
+    * :kbd:`0` - Restaura a quantidade de cores por linha;
+    * :kbd:`Enter` - Alterna para o visualizador gráfico;
 
     **Modo gráfico**:
 
-    * :kbd:`[` :kbd:`]` - Alterna entre diferentes conjuntos gráficos.
-    * :kbd:`Cima` / :kbd:`Baixo` - Sobe/desce uma linha por vez.
-    * :kbd:`PgUp` / :kbd:`PgDn` - Sobe/desce uma página por vez.
-    * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista.
-    * :kbd:`Esquerda` / :kbd:`Direita` - Alterna a cor.
-    * :kbd:`R` - Rotaciona os pedaços em 90° sentido horário.
-    * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir os blocos).
-    * :kbd:`0` - Restaura a quantidade das blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir os blocos).
-    * :kbd:`Enter` - Alterna para o visualizador *tilemap*.
+    * :kbd:`[` :kbd:`]` - Alterna entre diferentes conjuntos gráficos;
+    * :kbd:`↑` / :kbd:`↓` - Sobe/desce uma linha por vez;
+    * :kbd:`Shift` + :kbd:`↑` / :kbd:`↓` - Desloca uma célula por vez para a esquerda/direita;
+    * :kbd:`PgUp` / :kbd:`PgDn` - Sobe/desce uma página por vez (mantenha :kbd:`Ctrl` ou :kbd:`Alt` pressionado para rolar 10 ou 100 páginas);
+    * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista;
+    * :kbd:`←` / :kbd:`→` - Alterna a cor (mantenha :kbd:`Ctrl` ou :kbd:`Alt` pressionado para obter um controle mais amplo);
+    * :kbd:`R` - Rotaciona os blocos 90° sentido horário;
+    * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir a quantidade dos blocos);
+    * :kbd:`0` - Restaura a quantidade de blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir a quantidade os blocos);
+    * :kbd:`Enter` - Alterna para o visualizador de *tilemap*;
 
     **Modo Tilemap**:
 
-    * :kbd:`[` :kbd:`]` - Alterna entre diferentes tilemaps.
-    * :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 8 pixels por vez.
-    * :kbd:`Shift` + :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 1 pixel por vez.
-    * :kbd:`Control` + :kbd:`Cima` / :kbd:`Baixo` / :kbd:`Esquerda` / :kbd:`Direita` - Desloca 64 pixels por vez.
-    * :kbd:`R` - Rotaciona os *tilemaps* em 90° sentido horário.
-    * :kbd:`-` / :kbd:`+` - Aumenta/reduz o fator de aproximação.
-    * :kbd:`0` - Expande os pequenos *tilemaps* para preencher a tela.
-    * :kbd:`Enter` - Alterna par ao modo paleta/tabela de cores.
+    * :kbd:`[` :kbd:`]` - Alterna entre diferentes tilemaps;
+    * :kbd:`↑` / :kbd:`↓` / :kbd:`←` / :kbd:`→` - Desloca 8 pixels por vez;
+    * :kbd:`Shift` + :kbd:`↑` / :kbd:`↓` / :kbd:`←` / :kbd:`→` - Desloca 1 pixel por vez;
+    * :kbd:`Ctrl` + :kbd:`↑` / :kbd:`↓` / :kbd:`←` / :kbd:`→` - Desloca 64 pixels por vez;
+    * :kbd:`R` - Rotaciona os *tilemaps* em 90° sentido horário;
+    * :kbd:`-` / :kbd:`+` - Aumenta/reduz o fator de aproximação;
+    * :kbd:`0` - Expande os pequenos *tilemaps* para preencher a tela;
+    * :kbd:`Enter` - Alterna par ao modo paleta/tabela de cores;
 
     Observação: Nem todos os sistemas possuem gráficos decodificados e/ou *tilemaps*.
 
@@ -352,13 +367,13 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
 Controles do jogador 1
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Seta direcional :kbd:`cima`
+Seta direcional :kbd:`↑`
     Jogador 1 cima
-Seta direcional :kbd:`baixo`
+Seta direcional :kbd:`↓`
     Jogador 1 baixo
-Seta direcional :kbd:`esquerda`
+Seta direcional :kbd:`←`
     Jogador 1 esquerda
-Seta direcional :kbd:`direita`
+Seta direcional :kbd:`→`
     Jogador 1 direita
 :kbd:`E`
     Jogador 1 - Cima no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
@@ -823,3 +838,7 @@ QWERTY ABNT-2 (107 Teclas)
 .. |anvw| replace:: (*apenas na versão não SDL do Windows*)
 .. |fdtn| replace:: (*fora do teclado numérico*)
 .. |lide| replace:: Liga ou desliga
+.. |cima| unicode:: U+2191
+.. |baixo| unicode:: U+2193
+.. |esquerda| unicode:: U+2190
+.. |direita| unicode:: U+2192
