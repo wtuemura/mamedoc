@@ -3462,8 +3462,6 @@ Chame o prompt de comando dentro da pasta do MAME e faça o comando:
 
 	fsutil file createnew win95-hdd-300m.hd 314572800
 
-.. tip:: Use ``2097152000`` bytes caso queira criar um disco com 2GiB.
-
 No Linux e macOS, chame o terminal para criar o mesmo arquivo dentro da
 pasta onde se encontra o executável do MAME:
 
@@ -3474,7 +3472,8 @@ pasta onde se encontra o executável do MAME:
 	307200+0 records out
 	314572800 bytes (315 MB, 300 MiB) copied, 2.63498 s, 140 MB/s
 
-.. tip:: Use ``count=2000k`` caso queira criar um disco com 2GiB.
+.. tip:: No Linux use ``fallocate -l 300k win95-hdd-300m.hd`` em vez do
+   dd para alocar e criar o arquivo de maneira ainda mais rápida.
 
 Aproveite e crie uma imagem vazia de um disquete com o comando no
 Windows:
