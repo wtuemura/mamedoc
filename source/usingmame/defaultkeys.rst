@@ -45,10 +45,10 @@ estados.
 :kbd:`Tab`
 	Chama o cardápio de opções.
 
-| :kbd:`~` - Tecla **til** no teclado *US ANSI QWERTY*.
-| :kbd:`\`` - Tecla **acento agudo** no teclado *US ANSI QWERTY*.
-| :kbd:`"` - Tecla **aspas** no teclado *ABNT-2*.
-| :kbd:`'` - Tecla **ápice** no teclado *ABNT-2*.
+| :kbd:`~` - Tecla **til** no teclado *US ANSI QWERTY*;
+| :kbd:`\`` - Tecla **acento agudo** no teclado *US ANSI QWERTY*;
+| :kbd:`"` - Tecla **aspas** no teclado *ABNT-2*;
+| :kbd:`'` - Tecla **ápice** no teclado *ABNT-2*;
 
 	Mostra as opções na tela.
 
@@ -63,21 +63,21 @@ estados.
 
 	.. U+2190 esquerda, U+2191 cima, U+2192 direita, U+2193 baixo;
 
-	* :kbd:`↑` - Seleciona o parâmetro anterior.
-	* :kbd:`↓` - Seleciona o próximo parâmetro.
-	* :kbd:`←` - Reduz o valor do parâmetro selecionado.
-	* :kbd:`→` - Aumenta o valor do parâmetro selecionado.
-	* :kbd:`Delete` - Redefine o valor do parâmetro para o seu valor predefinido.
-	* :kbd:`Alt` + :kbd:`←` - Reduz todo o valor.
-	* :kbd:`Control` + :kbd:`←` - Reduz o valor em passos de **10x**.
-	* :kbd:`Shift` + :kbd:`←` - Reduz o valor em passos de **1x**.
-	* :kbd:`Shift` + :kbd:`Alt` + :kbd:`←` - Reduz todo o valor em passos de **1x**.
-	* :kbd:`Alt` + :kbd:`→` - Aumenta todo o valor.
-	* :kbd:`Control` + :kbd:`→` - Aumenta o valor em passos de **10x**.
-	* :kbd:`Shift` + :kbd:`→` - Aumenta o valor em passos de **1x**.
-	* :kbd:`End` - Oculta temporariamente a opção visível na tela.
-	* :kbd:`Home` - Traz de volta a opção na tela depois que for oculta.
-	* :kbd:`Shift` + :kbd:`Alt` + :kbd:`→` - Aumenta o valor em passos de **1x**.
+	* :kbd:`↑` - Seleciona o parâmetro anterior;
+	* :kbd:`↓` - Seleciona o próximo parâmetro;
+	* :kbd:`←` - Reduz o valor do parâmetro selecionado;
+	* :kbd:`→` - Aumenta o valor do parâmetro selecionado;
+	* :kbd:`Delete` - Redefine o valor do parâmetro para o seu valor predefinido;
+	* :kbd:`Alt` + :kbd:`←` - Reduz todo o valor;
+	* :kbd:`Control` + :kbd:`←` - Reduz o valor em passos de **10x**;
+	* :kbd:`Shift` + :kbd:`←` - Reduz o valor em passos de **1x**;
+	* :kbd:`Shift` + :kbd:`Alt` + :kbd:`←` - Reduz todo o valor em passos de **1x**;
+	* :kbd:`Alt` + :kbd:`→` - Aumenta todo o valor;
+	* :kbd:`Control` + :kbd:`→` - Aumenta o valor em passos de **10x**;
+	* :kbd:`Shift` + :kbd:`→` - Aumenta o valor em passos de **1x**;
+	* :kbd:`End` - Oculta temporariamente a opção visível na tela;
+	* :kbd:`Home` - Traz de volta a opção na tela depois que for oculta;
+	* :kbd:`Shift` + :kbd:`Alt` + :kbd:`→` - Aumenta o valor em passos de **1x**;
 
 
 .. raw:: latex

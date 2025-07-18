@@ -622,10 +622,10 @@ cadeia independente de efeitos.
 A cadeia de efeitos em si não é configurável. Ela sempre consiste nestes
 quatro efeitos, seguindo a ordem abaixo:
 
-* Filtro
+* Filtros
 * Compressor
 * Reverberação
-* Equalizador paramétrico
+* Equalizador
 
 Ao editar os parâmetros de uma cadeia de efeitos de um dispositivo de
 saída, os valores predefinidos do parâmetro herdados são mostrados em
@@ -641,8 +641,8 @@ incorporado de um parâmetro pressionando a tecla
 :guilabel:`UI Clear` (:kbd:`Del`/:kbd:`Forward Delete`).
 
 
-Filtro
-^^^^^^
+Filtros
+^^^^^^^
 
 Esse efeito implementa um filtro passa-alta e passa-baixa de 2ª ordem. O
 filtro passa-alta permite que você elimine o deslocamento de CC (*DC
@@ -669,11 +669,13 @@ de fundo.
 
 Os parâmetros são:
 
+* :guilabel:`Threshold` (limiar): o nível limite onde a amplificação é
+  interrompida completamente;
+* :guilabel:`Ratio` (proporção): amplificação máxima;
 * :guilabel:`Attack` (ataque): tempo de reação a sons altos que reduzem
   a amplificação;
 * :guilabel:`Release` (liberação): tempo necessário para que a
   amplificação aumente novamente;
-* :guilabel:`Ratio` (proporção): amplificação máxima;
 * :guilabel:`Input gain` (ganho de entrada): nível de amplificação na
   entrada.
 * :guilabel:`Output gain` (ganho de saída): nível de amplificação na
@@ -681,8 +683,6 @@ Os parâmetros são:
 * :guilabel:`Convexity` (convexidade): a forma da relação entre a
   distância ao limiar (*threshold*) e o valor da proporção. Quanto mais
   íngreme, mais alta ela é;
-* :guilabel:`Threshold` (limiar): o nível limite onde a amplificação é
-  interrompida completamente;
 * :guilabel:`Channel link` (link de canal): com o valor **100%**, todos
   os canais do mesmo alto-falante são amplificados de forma idêntica.
   Com o valor **0%** (zero), eles são totalmente independentes. Valores
@@ -695,6 +695,16 @@ Os parâmetros são:
   dela;
 * :guilabel:`Ceiling` (teto): nível máximo permitido na saída. Ele faz
   um corte suave nesse nível.
+
+Defina o **Attack** (ataque) como **0 ms**, o **Release** (liberação)
+como **infinito** e o **Ratio** (relação) como **infinito:1**. Isso
+transformará o compressor em um limitador *brickwall* ou "*parede de
+tijolos*". Um *limitador brickwall* serve para evitar que picos de sinal
+excedam o limite, resultando em uma forma de onda achatada nos picos
+onde nenhum sinal ultrapassa o ponto de corte. Deixe as configurações
+avançadas em seus valores predefinidos. Ao aumentar o ganho de entrada
+com um limite de **-3 dB**, por exemplo, fará com que ele funcione como
+um normalizador dinâmico de volume.
 
 
 Reverberação
@@ -820,11 +830,15 @@ Os parâmeros são:
   e ``100%``. O valor predefinido é **30%**;
 
 
-Equalizador paramétrico (EQ)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Equalizador
+^^^^^^^^^^^
 
 Esse é um equalizador paramétrico de cinco bandas que permite amplificar
-ou atenuar bandas de frequência específicas.
+ou atenuar bandas de frequência específicas. O filtro passa-altas é
+ativado por padrão com uma frequência de corte mínima para remoção de
+deslocamento de CC. Todos os outros efeitos são ignorados.
+Tecnicamente, o efeito do equalizador está ativo, mas todas as bandas
+estão definidas para 0 dB, portanto, ele ainda está desativado.
 
 Os três filtros do meio são de passagem de banda/rejeição de banda, o
 que significa que eles amplificam ou atenuam frequências em torno da
@@ -849,18 +863,23 @@ amostragem.
 
 Os parâmetros são:
 
-* :guilabel:`Tipo` (**LoFi** e **HQ**): o algoritmo **LoFi** predefinido
-  tem requisitos de CPU modestos. Já o algoritmo **HQ** oferece uma
-  conversão da taxa de amostragem com maior qualidade à custa de um
-  desempenho substancialmente maior da CPU. O algoritmo HQ tem
-  parâmetros adicionais;
-* :guilabel:`Latência HQ`: aumenta o atraso, o aumento da latência pode
-  ter uma melhor de qualidade;
-* :guilabel:`Tamanho máximo do filtro HQ`: Define o tamanho máximo do
-  filtro que variam entre ``10`` e ``500``. O valor predefinido é
-  **400**;
+* :guilabel:`Tipo` (**LoFi** e **HQ**): o algoritmo **LoFi** consome
+  poucos recursos da CPU. O algoritmo **HQ** tem parâmetros adicionais.
+  O algoritmo HQ oferece uma conversão de maior qualidade da taxa de
+  amostragem, mas exige um desempenho de CPU substancialmente maior.
+* :guilabel:`Latência HQ`: Aumentar a latência do HQ pode melhorar a
+  qualidade. Entretanto, se o valor for aumentado demais e vários chips
+  de áudio forem usados, as latências se acumularão, resultando em muito
+  atraso. Diminuir a latência para menos de **1 ms** faz com que o
+  *resampler* perder seu potencial; fazendo com que a qualidade de áudio
+  seja inferior e semelhante a qualidade de áudio usada pelo MAME antes
+  da versão 0.278;
+* :guilabel:`Tamanho máximo do filtro HQ`: Aumentar o tamanho máximo do
+  filtro HQ ou as fases máximas do filtro HQ pode melhorar a qualidade
+  às custas de maior processamento da CPU. Os valores
+  variam entre ``10`` e ``500``. O valor predefinido é **400**;
 * :guilabel:`Comprimento de fases do filtro HQ`: o aumento também pode
-  melhorar a qualidade, porém requer ainda mais desempenho da CPU. Os
+  melhorar a qualidade às custas de maior processamento da CPU. Os
   valores variam entre ``10`` e ``1000``. O valor predefinido é **200**;
 
 
