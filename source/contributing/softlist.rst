@@ -156,6 +156,12 @@ exclusivos num item. Vários elementos ``info`` com o mesmo nome podem
 estar presentes, caso seja apropriado. Isso é visto com frequência em
 programas vendidos com títulos diferentes e em regiões diferentes.
 
+Prefira vários elementos ``info`` com o mesmo atributo ``name`` em vez
+de combinar vários valores em um único elemento. Por exemplo, se um
+programa suporta vários idiomas de interface do usuário, use vários
+elementos ``info`` com atributos ``name="language"``. Isso torna a
+filtragem e as consultas ao banco de dados muito mais práticas.
+
 O MAME exibe os metadados dos elementos ``info`` no menu de seleção do
 programa. Os seguintes atributos ``name`` são especificamente
 identificados e podem mostrar nomes localizados:
@@ -197,11 +203,21 @@ identificados e podem mostrar nomes localizados:
 
     O código ISBN incluso num livro disponível comercialmente.
 
+**language**
+
+    O idioma da interface compatível com o programa.
+
 **oem**
 
     O fabricante original do equipamento, normalmente usado com versões
     personalizadas do programa e  distribuídas por um fornecedor de
     hardware.
+
+
+.. raw:: latex
+
+	\clearpage
+
 
 **original_publisher**
 
@@ -215,10 +231,6 @@ identificados e podem mostrar nomes localizados:
 **pcb**
 
     O identificador da placa de circuito impresso, tipicamente usado para as mídias em cartucho.
-
-.. raw:: latex
-
-	\clearpage
 
 **programmer**
 
