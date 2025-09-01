@@ -561,8 +561,8 @@ host. |eise| tiver adaptadores de rede que sejam compatíveis com
 
 .. _menus-audiomixer:
 
-Mixagem de áudio
-~~~~~~~~~~~~~~~~
+Mixer de áudio
+~~~~~~~~~~~~~~
 
 Permite ajustar como o MAME encaminha o áudio dos alto-falantes emulados
 para as saídas de áudio emulado e das entradas de áudio do sistema para
@@ -593,11 +593,11 @@ Para rotas de canal, você também pode selecionar os canais individuais
 e do hospedeiro. Selecione :guilabel:`Excluir esta rota` para excluir
 uma rota.
 
-Selecione :guilabel:`Adicionar uma nova rota completa` para adicionar
-uma nova rota completa a esse grupo. Se possível, a rota será adicionada
-e o destaque do menu se moverá para a rota recém-adicionada. Se já
-houver rotas entre o dispositivo destacado e todas as saídas/entradas do
-hospedeiro, nenhuma nova rota será adicionada.
+Selecione :guilabel:`Criar nova rota` para adicionar uma nova rota
+completa a esse grupo. Se possível, a rota será adicionada e o destaque
+do menu se moverá para a rota recém-adicionada. Se já houver rotas entre
+o dispositivo destacado e todas as saídas/entradas do hospedeiro,
+nenhuma nova rota será adicionada.
 
 Alguns módulos de áudio permitem controlar as atribuições de canais e
 volumes usando uma interface de mixagem externa. Por exemplo, o módulo
@@ -631,14 +631,14 @@ Ao editar os parâmetros de uma cadeia de efeitos de um dispositivo de
 saída, os valores predefinidos do parâmetro herdados são mostrados em
 uma cor esmaecida, enquanto os valores de parâmetro definidos para essa
 cadeia são mostrados com uma cor mais intensa. Pressione a tecla
-:guilabel:`UI Clear` (:kbd:`Del`/:kbd:`Forward Delete`) para
+:guilabel:`UI cancela` (:kbd:`Del`/:kbd:`Forward Delete`) para
 redefinir um parâmetro e usar o valor predefinido.
 
 Edite a cadeia **padrão** para definir um valor de parâmetro predefinido
 que possa ser herdado pelas cadeias de dispositivos da saída. Durante a
 edição da cadeia **padrão**, você pode restaurar o valor padrão
 incorporado de um parâmetro pressionando a tecla
-:guilabel:`UI Clear` (:kbd:`Del`/:kbd:`Forward Delete`).
+:guilabel:`UI cancela` (:kbd:`Del`/:kbd:`Forward Delete`).
 
 
 Filtros
@@ -652,7 +652,7 @@ de altas frequências dos arcades e televisores.
 
 O fator Q determina a nitidez da transição da banda de parada para a
 banda passante. Fatores Q mais altos proporcionam transições mais
-nítidas. Entretanto, valores acima de 0,71 fazem com que o filtro
+nítidas. Entretanto, valores acima de **0,71** fazem com que o filtro
 amplifique as frequências próximas à frequência de corte, o que pode ser
 inesperado ou indesejável.
 
@@ -667,37 +667,41 @@ Esse efeito é útil em uma variedade de situações. Por exemplo, ele pode
 ajudar a tornar os áudios silenciosos mais audíveis em relação ao ruído
 de fundo.
 
+.. raw:: latex
+
+	\clearpage
+
 Os parâmetros são:
 
-* :guilabel:`Threshold` (limiar): o nível limite onde a amplificação é
+* :guilabel:`Limiar` (threshold): o nível limite onde a amplificação é
   interrompida completamente;
-* :guilabel:`Ratio` (proporção): amplificação máxima;
-* :guilabel:`Attack` (ataque): tempo de reação a sons altos que reduzem
+* :guilabel:`Proporção` (ratio): amplificação máxima;
+* :guilabel:`Ataque` (attack): tempo de reação a sons altos que reduzem
   a amplificação;
-* :guilabel:`Release` (liberação): tempo necessário para que a
+* :guilabel:`Liberação` (release): tempo necessário para que a
   amplificação aumente novamente;
-* :guilabel:`Input gain` (ganho de entrada): nível de amplificação na
+* :guilabel:`Ganho de entrada` (input gain): nível de amplificação na
   entrada.
-* :guilabel:`Output gain` (ganho de saída): nível de amplificação na
+* :guilabel:`Ganho de saída` (output gain): nível de amplificação na
   saída;
-* :guilabel:`Convexity` (convexidade): a forma da relação entre a
-  distância ao limiar (*threshold*) e o valor da proporção. Quanto mais
-  íngreme, mais alta ela é;
-* :guilabel:`Channel link` (link de canal): com o valor **100%**, todos
+* :guilabel:`Convexidade` (convexity): a forma da relação entre a
+  distância ao limiar e o valor da proporção. Quanto mais íngreme, mais
+  alta ela é;
+* :guilabel:`Link do canal` (channel link): com o valor **100%**, todos
   os canais do mesmo alto-falante são amplificados de forma idêntica.
   Com o valor **0%** (zero), eles são totalmente independentes. Valores
   intermediários têm um comportamento intermediário;
-* :guilabel:`Feedback` (retorno): permite que parte da saída retorne à
+* :guilabel:`Retorno` (feedback): permite que parte da saída retorne à
   entrada;
-* :guilabel:`Inertia` (inércia): a inércia faz com que a relação se mova
+* :guilabel:`Inércia` (inertia): a inércia faz com que a relação se mova
   mais lentamente;
-* :guilabel:`Inertia decay` (decaimento da inércia): ajusta o impacto
+* :guilabel:`Decaimento da inércia` (inertia decay): ajusta o impacto
   dela;
-* :guilabel:`Ceiling` (teto): nível máximo permitido na saída. Ele faz
+* :guilabel:`Teto` (ceiling): nível máximo permitido na saída. Ele faz
   um corte suave nesse nível.
 
-Defina o **Attack** (ataque) como **0 ms**, o **Release** (liberação)
-como **infinito** e o **Ratio** (relação) como **infinito:1**. Isso
+Defina o :guilabel:`Ataque` como **0 ms**, a :guilabel:`Liberação`
+como **infinito** e a :guilabel:`Relação` como **Infinito**. Isso
 transformará o compressor em um limitador *brickwall* ou "*parede de
 tijolos*". Um *limitador brickwall* serve para evitar que picos de sinal
 excedam o limite, resultando em uma forma de onda achatada nos picos
@@ -714,8 +718,12 @@ Aplica efeitos de reverberação na saída de áudio do hospedeiro.
 
 Os parâmeros são:
 
-* :guilabel:`Modo`:
-* :guilabel:`Predefinição`: é possível escolher efeitos já
+* :guilabel:`Modo`: Define o modo de operação:
+
+	- :guilabel:`Passa direto`: o áudio passa direto sem ser processado;
+	- :guilabel:`Ativo`: ativa o processamento de áudio;
+
+* :guilabel:`Carregar predefinição`: é possível escolher efeitos já
   pré-configurados de uma lista:
 
 	- :guilabel:`Personalizado`: todos os valores podem ser
@@ -783,9 +791,9 @@ Os parâmeros são:
 * :guilabel:`Sinal original`: controla a quantidade do sinal original.
   Quanto maior o valor, menor a intensidade de reverberação. O valor
   varia entre ``0%`` e ``100%``. O valor predefinido é **90%**;
-* :guilabel:`Largura estéreo`: define como o som ecoado é distribuído
-  entre os canais esquerdo e direito. O valor varia entre ``0%`` e
-  ``100%``. O valor predefinido é **80%**;
+* :guilabel:`Profundidade do estéreo`: define como o som ecoado é
+  distribuído entre os canais esquerdo e direito. O valor varia entre
+  ``0%`` e ``100%``. O valor predefinido é **80%**;
 
 **Reflexões iniciais**
 
@@ -797,7 +805,7 @@ Os parâmeros são:
   entre ``100 Hz`` e ``16000 Hz``. O valor predefinido é **8000 Hz**;
 * :guilabel:`Nível`: controla a intensidade em hertz. O valor varia
   entre ``0%`` e ``100%``. O valor predefinido é **10%**;
-* :guilabel:`Envio atrasado`: parâmetro de atraso que controla o tempo
+* :guilabel:`Atraso no envio`: parâmetro de atraso que controla o tempo
   entre o sinal original e a repetição. O valor varia entre ``0%`` e
   ``100%``. O valor predefinido é **20%**;
 
@@ -808,7 +816,7 @@ Os parâmeros são:
   entre ``0%`` e ``100%``. O valor predefinido é **30%**;
 * :guilabel:`Atenuação`: controla a atenuação em hertz. O valor varia
   entre ``100 Hz`` e ``16000 Hz``. O valor predefinido é **8000 Hz**;
-* :guilabel:`Pré-delay`: controla o inicio do atraso em milésimos de
+* :guilabel:`Atraso inicial`: controla o inicio do atraso em milésimos de
   segundo. O valor varia entre ``0.0 ms`` e ``200.0 ms``. O valor
   predefinido é **8.0 ms**;
 * :guilabel:`Difusão`: define a complexidade do espaço simulado e a
@@ -844,22 +852,22 @@ Os três filtros do meio são de passagem de banda/rejeição de banda, o
 que significa que eles amplificam ou atenuam frequências em torno da
 frequência central. O primeiro e o último filtro também podem ser
 configurados como filtros de passagem de banda/rejeição de banda
-definindo o modo como o *filtro de pico* ("**Peak**"). Ao definir o modo
-como *filtro de prateleira* ("**Shelf**") faz com que o filtro
-amplifique ou atenue todas as frequências abaixo (para o primeiro
-filtro) ou acima (para o último filtro) da frequência de corte.
+definindo o modo como o *pico* ("**Peak**"). Ao definir o modo
+como *prateleira* ("**Shelf**") faz com que o filtro amplifique ou
+atenue todas as frequências abaixo (para o primeiro filtro) ou acima
+(para o último filtro) da frequência de corte.
 
 O **fator Q** controla a nitidez do pico ou do vale na resposta de
 frequência dos filtros de passagem ou de rejeição de banda. O fator Q
-não é ajustável no modo prateleira. Fatores Q mais altos produzem uma
-forma mais nítida e afetam uma faixa mais estreita de frequências.
+não é ajustável no modo prateleira. Um fator Q mais alto produz uma
+forma mais nítida e afeta uma faixa mais estreita de frequências.
 
 
-Resampler
-^^^^^^^^^
+Reamostrador
+^^^^^^^^^^^^
 
 Permite que você configure o algoritmo usado para a conversão da taxa de
-amostragem.
+amostragem (*resampler*).
 
 Os parâmetros são:
 
@@ -867,20 +875,20 @@ Os parâmetros são:
   poucos recursos da CPU. O algoritmo **HQ** tem parâmetros adicionais.
   O algoritmo HQ oferece uma conversão de maior qualidade da taxa de
   amostragem, mas exige um desempenho de CPU substancialmente maior.
-* :guilabel:`Latência HQ`: Aumentar a latência do HQ pode melhorar a
+* :guilabel:`Latência`: Aumentar a latência do HQ pode melhorar a
   qualidade. Entretanto, se o valor for aumentado demais e vários chips
   de áudio forem usados, as latências se acumularão, resultando em muito
   atraso. Diminuir a latência para menos de **1 ms** faz com que o
-  *resampler* perder seu potencial; fazendo com que a qualidade de áudio
-  seja inferior e semelhante a qualidade de áudio usada pelo MAME antes
-  da versão 0.278;
-* :guilabel:`Tamanho máximo do filtro HQ`: Aumentar o tamanho máximo do
-  filtro HQ ou as fases máximas do filtro HQ pode melhorar a qualidade
+  reamostrador perder seu potencial; fazendo com que a qualidade de
+  áudio seja inferior e semelhante a qualidade de áudio usada pelo MAME
+  antes da versão 0.278;
+* :guilabel:`Tamanho do filtro`: Aumenta o tamanho máximo do filtro HQ
+  ou as fases máximas do filtro HQ pode melhorar a qualidade
   às custas de maior processamento da CPU. Os valores
   variam entre ``10`` e ``500``. O valor predefinido é **400**;
-* :guilabel:`Comprimento de fases do filtro HQ`: o aumento também pode
-  melhorar a qualidade às custas de maior processamento da CPU. Os
-  valores variam entre ``10`` e ``1000``. O valor predefinido é **200**;
+* :guilabel:`Comprimento das fases`: o aumento também pode melhorar a
+  qualidade às custas de maior processamento da CPU. Os valores variam
+  entre ``10`` e ``1000``. O valor predefinido é **200**;
 
 
 Controles deslizantes
@@ -1024,14 +1032,14 @@ do sistema emulado e as suas respectivas opções, quando houver.
 		O valor predefinido é ``None``.
 
 
-* :guilabel:`Aproxime para a região da tela`
+* :guilabel:`Aproximar para a região da tela`
 
   Quando o sistema estiver usando uma ilustração (artwork) onde exista
   o recorte de uma tela, somente esta região será aproximada.
 
 		O valor predefinido é ``Desligado``.
 
-* :guilabel:`Escale a tela com valores não inteiros`
+* :guilabel:`Escalar a tela com valores não inteiros`
 
   Faz com que a tela possa ser expandida usando números facionados em
   vez de números inteiros, isso causa efeitos *"aliasing"* (um efeito
@@ -1047,7 +1055,11 @@ do sistema emulado e as suas respectivas opções, quando houver.
 
 		O valor predefinido é ``Ligado``.
 
-* :guilabel:`Mantenha a relação de aspecto`
+.. raw:: latex
+
+	\clearpage
+
+* :guilabel:`Manter a relação de aspecto`
 
   Mantém a proporção 4:3 da tela, independente do que as outras
   configurações façam, consulte também
@@ -1055,6 +1067,12 @@ do sistema emulado e as suas respectivas opções, quando houver.
 
 		O valor predefinido é ``Ligado``.
 
+* :guilabel:`Ocultar os ponteiros inativos após`
+
+  Oculta o(s) ponteiro(s) do mouse ou mira(s) visíveis na tela após um
+  determinado período de tempo. 
+
+		O valor predefinido é ``3.0 s``.
 
 Snapshot
 ^^^^^^^^
@@ -1099,7 +1117,7 @@ da tela seja feito.
 
 		O valor predefinido é ``None``.
 
-* :guilabel:`Aproxime a área da tela`
+* :guilabel:`Aproximar para a região da tela`
 
   Quando o sistema estiver usando uma ilustração onde exista um recorte
   de uma tela, a captura da tela será feita somente desta região.
@@ -1193,8 +1211,8 @@ gravado no arquivo ``plugin.ini`` que fica na mesma pasta do MAME ou em
 Para mais informações consulte :ref:`Plug-ins <plugins-intro>`.
 
 
-Visualização da DAT externa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Visualizar a DAT externa
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mostra o menu de visualização da DAT externa, aqui é possível acessar as
 informações carregadas de diversos arquivos externos de suporte. |eise|
@@ -1213,8 +1231,13 @@ será exibido uma lista de como jogar, dicas, a lista dos comandos do
 sistema na tela (em Inglês), etc.
 
 
-Adiciona/remove dos favoritos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. raw:: latex
+
+	\clearpage
+
+
+Adicionar/remover dos favoritos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Adiciona o sistema em execução na lista de favoritos ou o remove caso
 ele já exista na lista. A lista de favoritos pode ser usada como um
@@ -1235,8 +1258,8 @@ sistema e iniciar uma nova emulação. |eise| mostrar o menu principal
 antes de iniciar a emulação do sistema (ao pressionar a tecla :kbd:`Tab`
 enquanto estiver aparecendo a tela de informação do sistema).
 
-Fecha o menu/Inicia o sistema
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fechar o menu/Iniciar o sistema
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Fecha o menu principal retornando para o sistema em execução. Mostra
 :guilabel:`Inicia o sistema` antes de iniciar a emulação de um sistema
@@ -1255,8 +1278,8 @@ Definições gerais
 -----------------
 
 
-Personalize a Interface
-~~~~~~~~~~~~~~~~~~~~~~~
+Personalizar a Interface
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Aqui é possível personalizar a interface do MAME, os valores numéricos
 podem ser alterados movendo o direcional para a esquerda e direita ou
@@ -1427,7 +1450,7 @@ As opções disponíveis são:
 
 		O valor predefinido é **incorporado**.
 
-* :guilabel:`Mostra os painéis laterais`
+* :guilabel:`Mostrar os painéis laterais`
 
   Configura a exibição ou não dos painéis laterais da interface do MAME.
   As opções disponíveis são:
@@ -1438,8 +1461,8 @@ As opções disponíveis são:
 	* :guilabel:`Esconde ambos`
 
 
-Atribuição dos diretórios
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Atribuição das pastas
+~~~~~~~~~~~~~~~~~~~~~
 
 Aqui é possível mudar as predefinições do locais onde os diretórios
 usados pelo MAME se encontram. As opções disponíveis são:
@@ -1522,6 +1545,13 @@ usados pelo MAME se encontram. As opções disponíveis são:
   tradução da interface do MAME.
 
 		O valor predefinido é um diretório chamado **language** no
+		diretório raiz do MAME.
+
+* :guilabel:`Listas dos programas`
+
+  Define o caminho do diretório onde se encontram os arquivos *.xml*.
+
+		O valor predefinido é um diretório chamado **hash** no
 		diretório raiz do MAME.
 
 
@@ -1668,7 +1698,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 		<https://emumovies.com/files/file/3493-mame-bosses-pack/>`_.
 
 
-* :guilabel:`Amostras das ilustrações`
+* :guilabel:`Pré-visualização das ilustrações`
 
   Define o caminho do diretório onde se encontram as imagens com as
   amostras das ilustrações, essas amostras tem um tamanho menor se
@@ -1754,8 +1784,8 @@ Opções do vídeo
 ~~~~~~~~~~~~~~~
 
 Essas opções sempre serão carregadas na inicialização do MAME, lembrando
-que a linha de comando **SEMPRE** tem prioridade, independente do que
-seja definido aqui.
+que a linha de comando **tem prioridade**, independente do que
+for definido aqui.
 
 * :guilabel:`Modo do vídeo`
 
@@ -1805,7 +1835,7 @@ seja definido aqui.
 		O valor predefinido é ``Desligado``.
 
 
-* :guilabel:`Mantenha a relação de aspecto`
+* :guilabel:`Manter a relação de aspecto`
 
   Faz com que a proporção da tela seja sempre mantida.
 
@@ -1849,15 +1879,6 @@ Opções do áudio
 		O valor predefinido é ``Ligado``.
 
 
-* :guilabel:`Compressor`
-
-  Tenta manter o nível mais baixo e o mais alto do áudio no mesmo nível,
-  atua também na redução do volume do volume do áudio caso seja muito
-  alto.
-
-		O valor predefinido é ``Ligado``.
-
-
 * :guilabel:`Taxa da amostragem`
 
   Define a taxa da amostragem do áudio que será usada em todas os
@@ -1877,7 +1898,7 @@ Opções diversas
 ~~~~~~~~~~~~~~~
 
 
-* :guilabel:`Ignore os avisos de emulação imperfeita`
+* :guilabel:`Ignorar os avisos de emulação imperfeita`
 
   Faz com que o MAME não exiba as telas de aviso dos sistemas com
   emulação imperfeita (tarja amarela).
@@ -1885,7 +1906,7 @@ Opções diversas
 		O valor predefinido é ``Desligado``.
 
 
-* :guilabel:`Selecione novamente o último sistema já executado`
+* :guilabel:`Escolha o último sistema iniciado`
 
   Faz com que o MAME se lembre do último sistema que foi jogado através
   da interface do MAME.
@@ -1893,7 +1914,7 @@ Opções diversas
 		O valor predefinido é ``Ligado``.
 
 
-* :guilabel:`Aumenta as imagens no painel direito`
+* :guilabel:`Aumentar as imagens no painel direito`
 
   Aumenta o tamanho de qualquer uma das imagens exibidas no painel
   direito da interface do MAME, sempre mantendo a proporcionalidade da
@@ -1909,7 +1930,7 @@ Opções diversas
 		O valor predefinido é ``Desligado``.
 
 
-* :guilabel:`Mostra o ponteiro do mouse`
+* :guilabel:`Mostrar o ponteiro do mouse`
 
   Ativa ou não a exibição do mouse na interface do MAME.
 
@@ -1985,7 +2006,7 @@ Opções diversas
 		O valor predefinido é ``Desligado``.
 
 
-* :guilabel:`Esconde os sistemas sem ROMs da lista de disponíveis`
+* :guilabel:`Esconder os sistemas sem ROMs da lista de disponíveis`
 
   Esconde da lista de sistemas eletrônicos que não usam ROMs.
 
@@ -2111,8 +2132,8 @@ Opções dos dispositivos na entrada
 
 .. _mamemenu-general-inputs:
 
-Atribuição das entradas (geral)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Atribuição das entradas
+~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * :guilabel:`interface do usuário`
@@ -2126,12 +2147,122 @@ Atribuição das entradas (geral)
 	<p></p>
 
 
-* :guilabel:`Visualização na tela`
+* :guilabel:`Mostra/esconde o menu`
 
   Exibe um visor na parte inferior da tela durante a emulação para a
   realização de ajustes em tempo real.
 
 	A tecla predefinida é :kbd:`~`.
+
+
+* :guilabel:`IU seleciona`
+
+  Seleciona um ítem do menu.
+
+	A tecla predefinida é :kbd:`Enter`, no teclado numérico
+	:kbd:`Enter`, no controle **botão 1**.
+
+* :guilabel:`IU retorna`
+
+  Retorna para a tela anterior.
+
+	A tecla predefinida é :kbd:`Esc` e no controle **botão 2**.
+
+
+* :guilabel:`IU cancela`
+
+  Cancela a operação que estiver sendo realizada.
+
+		A tecla predefinida é :kbd:`Esc`.
+
+
+* :guilabel:`IU limpa`
+
+  Apaga ou redefine o valor padrão.
+
+		A tecla predefinida é :kbd:`Del` e no controle **botão 3**.
+
+
+* :guilabel:`IU ajuda`
+
+  Mostra tópicos de ajuda (quando houver).
+
+		A tecla predefinida é :kbd:`F1` e no controle **botão 4**.
+
+
+* :guilabel:`IU cima`
+
+  Mover o cursor para cima.
+
+		A tecla predefinida é :kbd:`↑`, no controle **↑** e no teclado
+		numérico :kbd:`8`.
+
+
+* :guilabel:`IU baixo`
+
+  Mover o cursor para baixo.
+
+		A tecla predefinida é :kbd:`↓`, no controle **↓** e no teclado
+		numérico :kbd:`2`.
+
+
+* :guilabel:`IU esquerda`
+
+  Mover o cursor para à esquerda.
+
+		A tecla predefinida é :kbd:`←`, no controle **←** e no teclado
+		numérico :kbd:`4`.
+
+
+* :guilabel:`IU direita`
+
+  Mover o cursor para à direita.
+
+		A tecla predefinida é :kbd:`→`, no controle **→** e no teclado
+		numérico :kbd:`6`.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+* :guilabel:`IU home`
+
+  Retorna à primeira opção do menu.
+
+		A tecla predefinida é :kbd:`Home`.
+
+
+* :guilabel:`IU fim`
+
+  Avança até última opção do menu.
+
+		A tecla predefinida é :kbd:`End`.
+
+
+* :guilabel:`IU sobe página`
+
+  Pula uma página para cima no menu.
+
+		A tecla predefinida é :kbd:`PgUp`.
+
+
+* :guilabel:`IU desce página`
+
+  Pula uma página para baixo no menu.
+
+		A tecla predefinida é :kbd:`PgDn`.
+
+
+* :guilabel:`Grupo anterior da IU`
+
+		A tecla predefinida é :kbd:`[`, no controle é o botão **L1**.
+
+
+* :guilabel:`Próximo grupo da IU`
+
+		A tecla predefinida é :kbd:`]`, no controle é o botão **L2**.
 
 
 * :guilabel:`Entra no depurador`
@@ -2189,11 +2320,6 @@ Atribuição das entradas (geral)
   Mostra a paleta GFX decodificada e os *tilemaps* dos jogos.
 
 	A tecla predefinida é :kbd:`F4`.
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 * :guilabel:`Pula quadro dec`
@@ -2260,6 +2386,11 @@ Atribuição das entradas (geral)
   Grava um vídeo em formato AVI.
 
 	A teclas predefinidas são :kbd:`F12` + :kbd:`Shift` :kbd:`Esq`.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 * :guilabel:`Liga/Desliga trapaça`
@@ -2428,6 +2559,11 @@ Atribuição das entradas (geral)
 	A tecla predefinida é :kbd:`SrcLk`.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 * :guilabel:`UI Cola texto`
 
   Cola texto na interface do usuário.
@@ -2440,10 +2576,6 @@ Atribuição das entradas (geral)
   Salva o estado do sistema.
 
 	As teclas predefinidas são :kbd:`F7` + :kbd:`Shift` :kbd:`Esq`.
-
-.. raw:: latex
-
-	\clearpage
 
 
 * :guilabel:`Carrega o estado`
@@ -2511,6 +2643,11 @@ Atribuição das entradas (geral)
 	As teclas predefinidas são :kbd:`Enter` + :kbd:`Alt` :kbd:`Esq`.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 * :guilabel:`Liga/desliga o filtro`
 
   Alterna entre usar ou não o filtro na tela.
@@ -2523,11 +2660,6 @@ Atribuição das entradas (geral)
   Reduz a escala prévia dos pixels.
 
 	As teclas predefinidas são :kbd:`F6` + :kbd:`Ctrl` :kbd:`Esq`.
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 * :guilabel:`Aumenta a escala prévia`
