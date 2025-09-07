@@ -1429,6 +1429,12 @@ Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
    **radeonsi** a configuração para a sua placa será ``si_support=1``,
    caso contrário ``cri_support=1``.
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 .. tip:: Dependendo da versão da sua *VGA/GPU* você precisa usar
    ``amdgpu dc=1``, caso contrário a tela fica preta no próximo reboot,
    `consulte este link <https://wiki.gentoo.org/wiki/Talk:AMDGPU>`_
@@ -1452,8 +1458,8 @@ verifique se o driver **amdgpu** está em uso:
 	Kernel driver in use: amdgpu
 	
 	glxinfo -B|grep "OpenGL renderer" && glxinfo -B |grep "OpenGL version"
-	OpenGL renderer string: AMD Radeon HD 7700 Series (VERDE, DRM 3.40.0, 5.10.0-1-amd64, LLVM 11.0.1)
-	OpenGL version string: 4.6 (Compatibility Profile) Mesa 20.3.2
+	OpenGL renderer string: AMD Radeon HD 7700 Series (radeonsi, verde, ACO, DRM 3.64, 6.16.3+deb14-amd64)
+	OpenGL version string: 4.6 (Compatibility Profile) Mesa 25.0.7-2
 
 Execute o comando ``vulkaninfo`` e veja se ele não acusa qualquer erro,
 se tudo estiver certo aparecerá uma lista detalhada com as informações
@@ -1463,16 +1469,19 @@ ela, a lista abaixo é um **resumo** das informações da placa:
 .. code-block:: shell
 
 	vulkaninfo |grep GPU
-	WARNING: radv is not a conformant vulkan implementation, testing use only.
-	WARNING: lavapipe is not a conformant vulkan implementation, testing use only.
-		GPU id = 0 (AMD RADV VERDE (ACO))
-		GPU id = 1 (llvmpipe (LLVM 11.0.1, 256 bits))
-		GPU id = 0 (AMD RADV VERDE (ACO))
-		GPU id = 1 (llvmpipe (LLVM 11.0.1, 256 bits))
-		GPU id = 0 (AMD RADV VERDE (ACO))
-		GPU id = 1 (llvmpipe (LLVM 11.0.1, 256 bits))
-	GPU id : 0 (AMD RADV VERDE (ACO)):
-	GPU id : 1 (llvmpipe (LLVM 11.0.1, 256 bits)):
+				GPU id = 0 (AMD Radeon HD 7700 Series (RADV VERDE))
+				GPU id = 1 (llvmpipe (LLVM 19.1.7, 256 bits))
+				GPU id = 0 (AMD Radeon HD 7700 Series (RADV VERDE))
+				GPU id = 1 (llvmpipe (LLVM 19.1.7, 256 bits))
+				GPU id = 0 (AMD Radeon HD 7700 Series (RADV VERDE))
+				GPU id = 1 (llvmpipe (LLVM 19.1.7, 256 bits))
+				GPU id = 0 (AMD Radeon HD 7700 Series (RADV VERDE))
+				GPU id = 1 (llvmpipe (LLVM 19.1.7, 256 bits))
+	GPU id : 0 (AMD Radeon HD 7700 Series (RADV VERDE)) [VK_KHR_xcb_surface, VK_KHR_xlib_surface]:
+	GPU id : 1 (llvmpipe (LLVM 19.1.7, 256 bits)) [VK_KHR_xcb_surface, VK_KHR_xlib_surface]:
+	GPU id : 0 (AMD Radeon HD 7700 Series (RADV VERDE)) [VK_KHR_wayland_surface]:
+	GPU id : 1 (llvmpipe (LLVM 19.1.7, 256 bits)) [VK_KHR_wayland_surface]:
+
 
 Se chegou até aqui não é preciso definir a variável
 **VK_ICD_FILENAMES**.
@@ -1539,6 +1548,21 @@ novamente. No terminal rode o comando ``journalctl -b -p err`` e tenha
 
 Tente rodar novamente o ``vulkaninfo`` e dessa vez ele deve rodar sem
 problemas exibindo todas as informações da sua placa de vídeo.
+
+Pode ser que nas versões Debian mais recentes o sistema acuse um erro
+dizendo que não foi possível ler os arquivos ``radeon_icd.x86_64.json``
+e o ``lvp_icd.x86_64.json`` porém eles existem no diretório
+``/usr/share/vulkan/icd.d`` com nomes diferentes, para resolver este
+problema faça os comandos abaixo em sequência no terminal:
+
+.. code-block:: shell
+
+	cd /usr/share/vulkan/icd.d
+	sudo ln -s radeon_icd.json radeon_icd.x86_64.json
+	sudo ln -s lvp_icd.json lvp_icd.x86_64.json
+
+Agora o ``vulkaninfo`` deve rodar sem problemas.
+
 
 .. raw:: latex
 
