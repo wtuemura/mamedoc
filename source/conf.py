@@ -203,6 +203,7 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
 # Suppress "WARNING: unknown mimetype for ..." https://github.com/IQSS/dataverse/issues/3391
 suppress_warnings = ['epub.unknown_project_files']
 
@@ -219,4 +220,4 @@ epub_fix_images = False
 epub_max_image_width = 0
 epub_show_urls = 'inline'
 epub_use_index = False
-epub_version = 0.270
+epub_version = 0.280
