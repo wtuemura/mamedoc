@@ -567,12 +567,6 @@ Propriedades
 	Um booleano que indica se o campo está ativado.
 
 
-**field.optional** |sole|
-
-	Um booleano que indica se o campo é opcional e não é obrigatório
-	para uso |nsqe|.
-
-
 **field.cocktail** |sole|
 
 	Um booleano que indica se o campo é usado apenas quando o sistema é
