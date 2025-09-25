@@ -579,12 +579,6 @@ Propriedades
 	hardware tipo liga/desliga ou um botão de pressão.
 
 
-**field.rotated** |sole|
-
-	Um booleano que indica se o campo corresponde a um controle que é
-	rotacionado em relação à orientação padrão.
-
-
 **field.analog_reverse** |sole|
 
 	Um booleano que indica se o campo corresponde a um controle
