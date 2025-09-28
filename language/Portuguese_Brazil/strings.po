@@ -1,12 +1,12 @@
 # Brazilian Portuguese translation for the MAME Project.
 # Traduções para o Português do Brasil para o Projeto MAME.
-# Copyright (C) 1997-2024  MAMEDev and contributors
+# Copyright (C) 1997-2025  MAMEDev and contributors
 # This file is distributed under the same license as the MAME Project.
-# Automatically generated, 2023.
+# Automatically generated, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: MAME 0.249\n"
+"Project-Id-Version: MAME 0.281\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-30 23:55-0300\n"
 "PO-Revision-Date: 2025-09-01 01:20-0300\n"
