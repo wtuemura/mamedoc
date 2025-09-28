@@ -153,11 +153,11 @@ Antes, porém, alguns pontos importantes:
 	.. code-block::
 
 		./mame -help
-		MAME v0.272 (mame0272-225-g3bd3ca70934)
+		MAME v0.280 (mame0280-225-g3bd3ca70934)
 
   Onde:
   
-	**mame0272** - É a versão do MAME.
+	**mame0280** - É a versão do MAME.
 
 	**225** - Indica a quantidade de **commits** ou a quantidade de
 	atualizações aplicadas ao código-fonte desde a última alteração da
