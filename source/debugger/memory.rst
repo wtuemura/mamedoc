@@ -32,7 +32,7 @@ Comandos para a depuração da memória
     :ref:`debugger-command-load`
         Carrega os dados binários a partir de um arquivo na |mda|.
     :ref:`debugger-command-loadr`
-        Carrega os dados da memória a partir de um arquivo na |mda|. 
+        Carrega os dados da memória a partir de um arquivo na |mda|.
     :ref:`debugger-command-map`
         Faz o mapeamento do endereço lógico ao endereço físico e ao manipulador correspondente.
     :ref:`debugger-command-memdump`
@@ -84,7 +84,8 @@ Exemplos:
 find
 ----
 
-**f[ind][{d|i|o}]** <*endereço*>[:<*faixa*>],<*comprimento*>[,<*dados*>[,…]]
+* **f[ind][{d|i|o}]** <*endereço*>[:<*faixa*>],<*comprimento*>[,<*dados*>[,…]]
+* **f[ind]** <*endereço*>:<*memória*>.{m|s},<*comprimento*>[,<*dados*>[,…]]
 
 Faz uma busca na memória por uma determinada sequência de dados. O
 <*endereço*> determina o início da busca, opcionalmente por ser seguido
@@ -130,7 +131,8 @@ Exemplos:
 fill
 ----
 
-**fill[{d|i|o}]** <*endereço*>[:<*faixa*>],<*comprimento*>[,<*dados*>[,…]]
+* **fill[{d|i|o}]** <*endereço*>[:<*faixa*>],<*comprimento*>[,<*dados*>[,…]]
+* **fill** <*endereço*>:<*memória*>.{m|s},<*comprimento*>[,<*dados*>[,…]]
 
 Sobrescreve um bloco da memória com uma cópia da sequência de dados que
 foi fornecida.
@@ -169,7 +171,8 @@ parte da sequência ou da *string* falhe além do
 dump
 ----
 
-**dump[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>],<*comprimento*>[,<*grupo*>[,<*ascii*>[,<*tamanho_da_linha*>]]]
+* **dump[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>],<*comprimento*>[,<*grupo*>[,<*ascii*>[,<*tamanho_da_linha*>]]]
+* **dump** <*nome_do_arquivo*>,<*endereço*>:<*memória*>.{m|s},<*comprimento*>[,<*grupo*>[,<*ascii*>[,<*tamanho_da_linha*>]]]
 
 Faz o despejo do conteúdo da memória num arquivo texto definido pelo
 parâmetro <*nome_do_arquivo*>.
@@ -207,7 +210,7 @@ Exemplos:
     ``dumpd harddriv.dmp,3000:3,1000,4,0``
         Faz o despejo dos dados do endereço da memória ``3000-3fff`` em pedaços de *4-bytes* a partir da 4ª *CPU* do sistema (|ibz|) no arquivo ``harddriv.dmp``.
     ``dump vram.dmp,0:sms_vdp:videoram,4000,1,false,8``
-        Faz o despejo da faixa do endereço ``0000-3fff`` da ``videoram`` em pedaços de *1-byte* a partir do dispositivo |ccad| ``:sms_vdp``, sem dados *ASCII*, com 8 *bytes* por linha no arquivo ``vram.dmp``. 
+        Faz o despejo da faixa do endereço ``0000-3fff`` da ``videoram`` em pedaços de *1-byte* a partir do dispositivo |ccad| ``:sms_vdp``, sem dados *ASCII*, com 8 *bytes* por linha no arquivo ``vram.dmp``.
 
 |ret| :ref:`debugger-memory-list`.
 
@@ -217,7 +220,8 @@ Exemplos:
 strdump
 -------
 
-**strdump[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>],<*comprimento*>[,<*term*>]
+* **strdump[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>],<*comprimento*>[,<*term*>]
+* **strdump** <*nome_do_arquivo*>,<*endereço*>:<*memória*>.{m|s},<*comprimento*>[,<*term*>]
 
 Faz o despejo do conteúdo da memória num arquivo texto definido pelo
 parâmetro <*nome_do_arquivo*>.
@@ -247,7 +251,8 @@ de terminação diferente da cadeia de caracteres.
 save
 ----
 
-**save[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>],<*comprimento*>
+* **save[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>],<*comprimento*>
+* **save** <*nome_do_arquivo*>,<*endereço*>:<*memória*>.{m|s},<*comprimento*>
 
 Grava os dados brutos da memória num arquivo binário determinado pelo
 parâmetro <*nome_do_arquivo*>.
@@ -267,6 +272,13 @@ inclusive, será gravado num arquivo.
 .. raw:: latex
 
 	\clearpage
+
+
+Alternativamente, use a sintaxe :ref:`debugger-command-save`:
+
+.. code-block::
+
+    save <nome_do_arquivo>,<endereço>:<região>.m,<comprimento>
 
 Exemplos:
 
@@ -317,7 +329,8 @@ Exemplos:
 load
 ----
 
-**load[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>][,<*comprimento*>]
+* **load[{d|i|o}]** <*nome_do_arquivo*>,<*endereço*>[:<*faixa*>][,<*comprimento*>]
+* **load** <*nome_do_arquivo*>,<*endereço*>:<*memória*>.{m|s}[,<*comprimento*>]
 
 Carrega uma memória em formato bruto a partir de um arquivo binário
 determinado pelo parâmetro <*nome_do_arquivo*>. O <*endereço*> determina
@@ -374,6 +387,12 @@ Toda a faixa do <*endereço*> através do <*endereço*>+<*comprimento*>-1
 inclusive, será lido a partir do arquivo. Quando o <*comprimento*> for
 zero ou caso seja maior que o comprimento total do arquivo, todo o
 conteúdo do arquivo será lido e nada mais.
+
+Alternativamente, use a sintaxe :ref:`debugger-command-load`:
+
+.. code-block::
+
+    load <nome_do_arquivo>,<endereço>:<região>.m[,<comprimento>]
 
 Exemplos:
 

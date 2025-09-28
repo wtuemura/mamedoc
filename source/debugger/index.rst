@@ -158,7 +158,10 @@ Exemplos:
         O endereço ``8008`` na |fdep| do dispositivo irmão |nrvd| |etq| ``:data`` ou ``data`` na região do dispositivo principal |nrvd|.
     ``9660::ram``
         O endereço ``9660`` na |fdep| do dispositivo com a etiqueta absoluta ``:ram`` ou ``ram`` |ndrm|.
-
+    ``1883:vram.m``
+        O endereço ``1883`` na |fdep| do dispositivo com a etiqueta absoluta ``:vram``.
+    ``1923:sprites.s``
+        O endereço ``1923`` na |fdep| do dispositivo com a etiqueta absoluta ``:sprites``.
 
 Os exemplos aqui incluem muitos atalhos, mas geralmente, o depurador
 deve tomar o significado mais provável para um dispositivo ou uma
@@ -193,7 +196,7 @@ mais baixa prioridade:
 	``+`` ``-``
 		Adição, subtração.
 	``<<`` ``>>``
-		Lógica binária [#bitwize]_ deslocamento [#shift]_ esquerdo/direito
+		Lógica binária [#bitwize]_ deslocamento [#shift]_ esquerdo/direito.
 	``<`` ``<=`` ``>`` ``>=``
 		Menor, menor ou igual, maior, maior ou igual.
 	``==`` ``!=``
@@ -223,10 +226,10 @@ mais baixa prioridade:
 As principais diferenças em relação à expressão semântica com C:
 
 * Todos os números são valores não assinados com **64-bits**. Isso
-  significa que números negativos não são permitidos.
+  significa que números negativos não são permitidos;
 * A conjunção lógica e os operadores de disjunção ``&&`` e ``||`` não
   apresentam propriedades de curto-circuito - ambos os lados da
-  expressão são sempre avaliados.
+  expressão são sempre avaliados;
 
 
 .. _debugger-express-num:
@@ -236,21 +239,21 @@ Números
 
 Os números literais são prefixados de acordo com suas respectivas bases:
 
-* Hexadecimal (**base-16**) com ``$`` or ``0x``.
-* Decimal (**base-10**) com ``#``.
-* Octal (**base-8**) com ``0o``.
-* Binário (**base-2**) com ``0b``.
-* Números não prefixados são hexadecimais (**base-16**).
+* Hexadecimal (**base-16**) com ``$`` or ``0x``;
+* Decimal (**base-10**) com ``#``;
+* Octal (**base-8**) com ``0o``;
+* Binário (**base-2**) com ``0b``;
+* Números não prefixados são hexadecimais (**base-16**);
 
 Exemplos:
 
-* ``123`` é **123** em hexadecimal (**291** decimal).
-* ``$123`` é **123** em hexadecimal (**291** decimal).
-* ``0x123`` é **123** em hexadecimal (**291** decimal).
-* ``#123`` é **123** em decimal.
-* ``0o123`` é **123** em octal (**83** decimal).
-* ``0b1001`` é **1001** binário (**9** decimal).
-* ``0b123`` é **inválido**.
+* ``123`` é **123** em hexadecimal (**291** decimal);
+* ``$123`` é **123** em hexadecimal (**291** decimal);
+* ``0x123`` é **123** em hexadecimal (**291** decimal);
+* ``#123`` é **123** em decimal;
+* ``0o123`` é **123** em octal (**83** decimal);
+* ``0b1001`` é **1001** binário (**9** decimal);
+* ``0b123`` é **inválido**;
 
 
 .. _debugger-express-bool:
@@ -287,12 +290,12 @@ desativados, opcionalmente, podem ser precedidos por uma determinação
 na região do endereçamento. Os tamanhos do acesso suportado e os modos
 dos efeitos colaterais são:
 
-* ``b`` |dua| **8-bit** (byte).
-* ``w`` |dua| **16-bit** (word).
-* ``d`` |dua| **32-bit** (double word ou dword).
-* ``q`` |dua| **64-bit** (quadruple word ou qword).
-* ``@`` |sec|.
-* ``!`` não |sec|.
+* ``b`` |dua| **8-bit** (byte);
+* ``w`` |dua| **16-bit** (word);
+* ``d`` |dua| **32-bit** (double word ou dword);
+* ``q`` |dua| **64-bit** (quadruple word ou qword);
+* ``@`` |sec|;
+* ``!`` não |sec|;
 
 Ao suprimir os efeitos colaterais de um acesso de leitura, a leitura do
 valor de um endereço seria obtida sem mais efeitos. Por exemplo, a
@@ -319,7 +322,7 @@ separar os diversos efeitos de um acesso de escrita, por exemplo:
   acidentalmente definir seu estado oculto quando tudo o que se
   realmente deseja fazer é alterar o valor, assim ao escrever no *OCRH*
   com efeitos colaterais suprimidos, ele não inibe a comparação, apenas
-  altera o valor no registro do comparador da saída.
+  altera o valor no registro do comparador da saída;
 * Ao escrever em alguns registros, os efeitos são diversos, o que pode
   ser útil para fins de depuração. Usando novamente o MC68HC05 como
   exemplo, ao escrever no *OCRL* o valor no registro de comparação da
@@ -328,23 +331,24 @@ separar os diversos efeitos de um acesso de escrita, por exemplo:
   escrita no *OCRH*. A escrita no *OCRL* com efeitos colaterais
   desativado altera apenas o valor no registro sem apagar o *OCF* ou
   permite a comparação uma vez que é útil para a depuração. A escrita no
-  *OCRL* com efeitos colaterais ativados tem efeitos adicionais.
+  *OCRL* com efeitos colaterais ativados tem efeitos adicionais;
 
 
 Opcionalmente, o tamanho pode ser precedido por uma indicação do tipo de
 acesso:
 
-* ``p`` ou ``lp`` |delp| 0 (programa).
-* ``d`` ou ``ld`` |delp| 1 (dados).
-* ``i`` ou ``li`` |delp| 2 (E/S).
-* ``3`` ou ``l3`` |delp| 3 (*opcodes*).
-* ``pp`` |defp| 0 (programa).
-* ``pd`` |defp| 1 (dados).
-* ``pi`` |defp| 2 (E/S).
-* ``p3`` |defp| 3 (opcodes).
-* ``r`` |dpal| 0 (programa).
-* ``o`` |dpal| 3 (opcodes).
-* ``m`` define uma região da memória.
+* ``p`` ou ``lp`` |delp| 0 (programa);
+* ``d`` ou ``ld`` |delp| 1 (dados);
+* ``i`` ou ``li`` |delp| 2 (E/S);
+* ``3`` ou ``l3`` |delp| 3 (*opcodes*);
+* ``pp`` |defp| 0 (programa);
+* ``pd`` |defp| 1 (dados);
+* ``pi`` |defp| 2 (E/S);
+* ``p3`` |defp| 3 (opcodes);
+* ``r`` |dpal| 0 (programa);
+* ``o`` |dpal| 3 (opcodes);
+* ``m`` define uma região da memória;
+* ``s`` define um compartilhamento de memória;
 
 Finalmente, isso pode ser precedido por uma etiqueta e/ou um nome na
 região do endereçamento seguido por um ponto (``.``).
@@ -355,28 +359,28 @@ nos exemplos mais simples:
 .. line-block::
 
     ``b@<addr>``
-        |crab| <``addr``> |nedp| |eese|.
+        |crab| <``addr``> |nedp| |eese|;
     ``b!<addr>``
-        |crab| <``addr``> |nedp| |enes| como ao ler a "caixa de mensagens" (*mailbox*) limpando a sinalização pendente ou ao ler o *FIFO* removendo um item.
+        |crab| <``addr``> |nedp| |enes| como ao ler a "caixa de mensagens" (*mailbox*) limpando a sinalização pendente ou ao ler o *FIFO* removendo um item;
     ``w@<addr>`` e ``w!<addr>``
-        |crab| <``addr``> |nedp| suprimindo ou não respectivamente os efeitos colaterais.
+        |crab| <``addr``> |nedp| suprimindo ou não respectivamente os efeitos colaterais;
     ``d@<addr>`` e ``d!<addr>``
-        Consulte a palavra dupla (*double word*) no <``addr``> |nedp|, respectivamente suprimindo ou não os efeitos colaterais.
+        Consulte a palavra dupla (*double word*) no <``addr``> |nedp|, respectivamente suprimindo ou não os efeitos colaterais;
     ``q@<addr>`` e ``q!<addr>``
-        Consulte a palavra quadrupla (*quadruple word*) no <``addr``> |nedp|, respectivamente suprimindo ou não os efeitos colaterais.
+        Consulte a palavra quadrupla (*quadruple word*) no <``addr``> |nedp|, respectivamente suprimindo ou não os efeitos colaterais;
 
 A adição dos tipos de acesso oferece possibilidades adicionais:
 
 .. line-block::
 
     ``dw@300``
-        |crap| em ``300`` |nedd| |eese|.
+        |crap| em ``300`` |nedd| |eese|;
     ``id@400``
-        |crap| dupla em ``400`` na região de E/S da *CPU* atual |eese|.
+        |crap| dupla em ``400`` na região de E/S da *CPU* atual |eese|;
     ``ppd!<addr>``
-        |crap| dupla no endereço físico <``addr``> |nedp| |enes|.
+        |crap| dupla no endereço físico <``addr``> |nedp| |enes|;
     ``rw@<addr>``
-        |crap| no endereço <``addr``> |nedp| usando um ponteiro de acesso direto para leitura/escrita.
+        |crap| no endereço <``addr``> |nedp| usando um ponteiro de acesso direto para leitura/escrita;
 
 Se quisermos acessar uma |fde| de um dispositivo que não seja a CPU
 atual, uma |fde| além dos quatro primeiros índices ou uma região da
@@ -385,15 +389,15 @@ memória, precisamos incluir uma etiqueta ou um nome:
 .. line-block::
 
     ``ramport.b@<addr>``
-        |crbe| no endereço <``addr``> na região ``ramport`` |nedp|.
+        |crbe| no endereço <``addr``> na região ``ramport`` |nedp|;
     ``audiocpu.dw@<addr>``
-        |crbe| no endereço <``addr``> na região de dados da *CPU* com a etiqueta absoluta ``:audiocpu``.
+        |crbe| no endereço <``addr``> na região de dados da *CPU* com a etiqueta absoluta ``:audiocpu``;
     ``maincpu:status.b@<addr>``
-        |crbe| no endereço <``addr``> na região ``status`` da *CPU* com a etiqueta absoluta ``:maincpu``.
+        |crbe| no endereço <``addr``> na região ``status`` da *CPU* com a etiqueta absoluta ``:maincpu``;
     ``monitor.mb@78``
-        |crbe| na região ``78`` da memória com a etiqueta absoluta ``:monitor``.
+        |crbe| na região ``78`` da memória com a etiqueta absoluta ``:monitor``;
     ``..md@202``
-        |crap| dupla no endereço ``22`` da região da memória com o mesmo caminho da etiqueta como a da *CPU*.
+        |crap| dupla no endereço ``22`` da região da memória com o mesmo caminho da etiqueta como a da *CPU*;
 
 Algumas combinações não são úteis. Os endereços físicos e lógicos por
 exemplo, eles são equivalentes em algumas *CPUs* e o ponteiro de acesso
@@ -416,21 +420,21 @@ O depurador suporta uma quantidade de funções úteis nas expressões.
 .. line-block::
 
     ``min(<a>, <b>)``
-        Retorna o menor valor de dois argumentos.
+        Retorna o menor valor de dois argumentos;
     ``max(<a>, <b>)``
-        Retorna o maior valor de dois argumentos.
+        Retorna o maior valor de dois argumentos;
     ``if(<condição>, <valor_verdadeiro>, <valor_falso>)``
-        Retorna o <``valor_verdadeiro``> caso a <``condição``> seja verdadeira (não zero), ou caso contrário, <``valor_falso``>. Observe que ambas as expressões para <``valor_verdadeiro``> e <``valor_falso``> são ambos avaliados independentemente ainda que a <``condição``> seja verdadeira ou falsa.
+        Retorna o <``valor_verdadeiro``> caso a <``condição``> seja verdadeira (não zero), ou caso contrário, <``valor_falso``>. Observe que ambas as expressões para <``valor_verdadeiro``> e <``valor_falso``> são ambos avaliados independentemente ainda que a <``condição``> seja verdadeira ou falsa;
     ``abs(<x>)``
-        Reinterpreta o argumento como um inteiro assinado com **64-bit** e retorna um valor absoluto.
+        Reinterpreta o argumento como um inteiro assinado com **64-bit** e retorna um valor absoluto;
     ``bit(<x>, <n>[, <w>])``
-        Extrai e alinha à direita, um campo do bit <``w``> a partir dos bits com largura <``x``> na posição do bit de menor importância <``n``>, contando a partir do bit menos importante. Caso <``w``> seja omitido, um único bit é extraído.
+        Extrai e alinha à direita, um campo do bit <``w``> a partir dos bits com largura <``x``> na posição do bit de menor importância <``n``>, contando a partir do bit menos importante. Caso <``w``> seja omitido, um único bit é extraído;
     ``s8(<x>)``
-        |paaa| **8** para **64-bits** (|sob| **8** até **63**, inclusive, |cvb| **7** |cpbc|).
+        |paaa| **8** para **64-bits** (|sob| **8** até **63**, inclusive, |cvb| **7** |cpbc|);
     ``s16(<x>)``
-        |paaa| **16** para **64-bits** (|sob| **16** até **63**, inclusive, |cvb| **15** |cpbc|).
+        |paaa| **16** para **64-bits** (|sob| **16** até **63**, inclusive, |cvb| **15** |cpbc|);
     ``s32(<x>)``
-        |paaa| **32** para **64-bits** (|sob| **32** até **63**, inclusive, |cvb| **31** |cpbc|).
+        |paaa| **32** para **64-bits** (|sob| **32** até **63**, inclusive, |cvb| **31** |cpbc|);
 
 .. |spc| replace:: A região do endereçamento padrão
 .. |abs| replace:: do dispositivo com a etiqueta absoluta
