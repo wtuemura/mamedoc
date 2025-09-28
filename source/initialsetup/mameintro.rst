@@ -60,15 +60,24 @@ adaptado para diferentes plataformas. Conforme o equipamento físico dos
 computadores evolui, o código do MAME também evolui para aproveitar
 melhor o maior poder de processamento e os novos recursos.
 
-Os binários oficiais do MAME são compilados e projetados para serem
-executados em qualquer sistema Windows. Os requisitos mínimos são:
+Os pacotes binários oficiais do MAME são compilados e projetados para
+rodar no Windows. Os requisitos mínimos são:
 
-* Processador Intel Core ou equivalente com pelo menos 2.0 GHz.
-* Sistema Operacional com 64-bit (Windows 7 SP1 ou mais recente, macOS
-  10.14 ou mais recente).
+* Uma CPU x86-64 que implemente o conjunto de recursos x86-64v2
+  (comparação/troca de 16 bytes, instruções ``lahf``/``sahf`` no modo
+  longo, instrução de contagem de população e SSE 4.2);
+* Uma CPU Arm que implemente o conjunto de recursos ARMv8.2-A;
+* Uma edição de 64 bits do Windows 7, Windows 10 ou posterior para
+  x86-64, ou posterior para Arm;
 * 4 GiB de RAM.
-* Uma placa gráfica compatível com Direct3D, OpenGL ou Vulkan.
-* Qualquer placa de áudio compatível com DirectSound.
+* DirectC 9.0c para Windows;
+* Uma GPU compatível com Direct3D ou OpenGL com suporte para tamanhos de
+  textura que não sejam potências de dois;
+
+Em geral, qualquer CPU x86-64 a partir de 2015 ou a grande maioria das
+CPUs ARM de 64 bits a partir de 2018 deve ser adequada. É possível
+compilar o MAME com suporte para CPUs mais antigas, mas haverá perda de
+desempenho.
 
 Claro, os requisitos mínimos são apenas um exemplo. Nem sempre é
 possível obter o melhor desempenho com a configuração acima, mas o MAME
