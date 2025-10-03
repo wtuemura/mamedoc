@@ -1455,7 +1455,7 @@ devolvido no **chunk**:
 	real dos itens contíguos disponíveis a partir do **index**. Caso o
 	**chunk** seja inferior ao **count**, então o solicitante deverá
 	processar os itens **chunk** devolvidos, então invoque novamente
-	``countiguous()`` no (**index** + **chunk**) para ter acesso ao
+	``contiguous()`` no (**index** + **chunk**) para ter acesso ao
 	restante.
 
 		**Retorna:** Um ponteiro ao primeiro item no pedaço contíguo. Nenhuma verificação do intervalo é feito, portanto a sua responsabilidade é garantir que **index** + **count** seja menor ou igual à ``count()``.
