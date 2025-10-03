@@ -305,29 +305,29 @@ específicas para um determinado sistema.
 Lendo os dados codificados
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Escrever dados codificados é fácil, basta de um relógio na frequência
-apropriada e enviar ou não uma cadeia de pulsos ao redor do relógio. A
-diversão está em ler esses dados. As células são uma construção lógica e
-não uma entidade física mensurável.
+Escrever dados codificados é fácil: basta um relógio com a frequência
+adequada e enviar ou não um pulso nas bordas do relógio. A diversão está
+em ler os dados. As células são uma construção lógica e não uma entidade
+física mensurável.
 
-As velocidades rotacionais variam ao redor dos valores definidos (+/- 2%
-não é raro) e perturbações locais (turbulência do ar, distância da
-superfície...) no geral, tornam a velocidade instantânea muito variável.
-Portanto, para extrair o fluxo de valores da célula, o controlador deve
-sincronizar dinamicamente com o trem de pulso que a cabeça do disquete
-seleciona. O princípio é simples: uma janela de duração do tamanho da
-célula é construída dentro da qual a presença de pelo menos um pulso
-indica que a célula é um '1' e a ausência de qualquer um '0'.
-Depois de chegar ao final da janela, a hora de início é movida
-apropriadamente para tentar manter o pulso observado no meio exato dessa
-janela. Isso permite corrigir a fase em cada célula '1', fazendo a
-sincronização funcionar se a velocidade de rotação não estiver muito
-fora.
+As velocidades de rotação variam em torno da definida (±2% não é raro) e
+as perturbações locais (turbulência do ar, distância da superfície...)
+tornam a velocidade instantânea muito variável em geral. Portanto, para
+extrair o fluxo de valores das células, o controlador deve
+sincronizar-se dinamicamente com o trem de pulsos que a cabeça do
+disquete capta. O princípio é simples: uma janela de duração do tamanho
+de uma célula é construída, dentro da qual a presença de pelo menos um
+pulso indica que a célula é um '1' e a ausência de qualquer pulso indica
+um '0'. Após chegar ao final da janela, o tempo inicial é movido
+adequadamente para tentar manter o pulso observado exatamente no meio da
+janela. Isso permite que a fase seja corrigida em cada célula '1',
+fazendo com que a sincronização funcione se a velocidade de rotação não
+estiver muito diferente.
 
-Gerações subsequentes de controladores usaram um *Phase Locked Loop*
-(PLL) que varia a duração da fase e da janela para se adaptar melhor as
-velocidades erradas de rotação, geralmente com uma tolerância de +/-
-15%.
+As gerações subsequentes de controladores usaram loops de fase bloqueada
+(*Phase Locked Loop* ou *PLL*), que variam tanto a fase quanto a duração
+da janela para se adaptar melhor a velocidades de rotação imprecisas,
+geralmente com uma tolerância de ±15%.
 
 Depois que o fluxo de dados da célula é extraído, a decodificação
 depende da codificação. No caso de FM e MFM, a única questão é
