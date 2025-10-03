@@ -5020,7 +5020,7 @@ Opções para a configuração da rede
 	comunicação tradicional, com um valor inteiro entre ``0`` e
 	``65535``.
 
-		O valor predefinido é ``15122``.
+		O valor predefinido é ``15112``.
 
 	Exemplo:
 		.. code-block:: shell
@@ -5052,7 +5052,7 @@ Opções para a configuração da rede
 	comunicação tradicional, como um valor inteiro *non-signed* de
 	16-bit entre ``0`` e ``65535``.
 
-		O valor predefinido é ``15122``.
+		O valor predefinido é ``15112``.
 
 	Exemplo:
 		.. code-block:: shell
