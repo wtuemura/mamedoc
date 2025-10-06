@@ -112,9 +112,6 @@ em outros formatos.
    * - **A2_16SECT**
      - Imagem de disco do Apple II com 16 setores
      - dsk, do, po
-   * - **A2_RWTS18**
-     - Imagem tipo RWTS18 do Apple II
-     - rti
    * - **A2_EDD**
      - Imagem EDD do Apple II
      - edd
