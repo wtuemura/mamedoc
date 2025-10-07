@@ -16,6 +16,11 @@ acessem as portas de E/S da entrada do sistema emulado.
     :depth: 1
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _luascript-ref-ioportman:
 
 Gerenciador da porta E/S
@@ -90,6 +95,11 @@ Métodos
 	será presumido que seja ``"standard"``.
 
 	Isso fornece acesso à configuração geral da entrada.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 **ioport:set_type_seq** (tipo, [jogador], tipo_da_sequência, sequência)
@@ -269,6 +279,12 @@ Propriedades
 
 	O :ref:`dispositivo <luascript-ref-device>` subjacente.
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 **keyboard.tag** |sole|
 
 	A tag absoluta do dispositivo subjacente.
@@ -422,6 +438,40 @@ Métodos
 	regular do campo.
 
 
+**field:set_sensitivity(sensibilidade)**
+
+	Define a sensibilidade ou o ganho para campos analógicos. Gera um
+	erro para campos digitais.
+
+
+**field:set_keydelta(sensibilidade)**
+    
+	Define a sensibilidade para entradas digitais associadas de
+	aumento/redução para campos analógicos. Gera um erro para campos
+	digitais.
+
+
+**field:set_centerdelta(sensibilidade)**
+
+	Define a velocidade com que os campos analógicos, sem quebra de
+	linha, retornam aos seus valores predefinidos após as entradas
+	digitais associadas de aumento/redução serem liberadas. Gera um erro
+	para campos digitais e analógicos com quebra de linha.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+**field:set_analog_reverse(reverso)**
+
+	Define se o valor de um campo analógico aumenta na direção oposta à
+	convenção (por exemplo, se valores maiores são registrados quando um
+	pedal é solto ou um joystick é movido à esquerda). Gera um erro
+	para campos digitais.
+
+
 **field:set_input_seq(tipo_da_sequência, sequência)**
 
 	Define a :ref:`sequência de entrada <luascript-ref-inputseq>`
@@ -500,6 +550,11 @@ Propriedades
 	ser substituído por *scripts* ou plug-ins).
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 **field.player** |sole|
 
 	O número do jogador para o campo com base zero.
@@ -533,11 +588,68 @@ Propriedades
 	campos digitais.
 
 
+**field.default_sensitivity** |sole|
+
+	A sensibilidade ou ganho padrão para os campos analógicos ou ``nil``
+	nos campos digitais.
+
+
+**field.keydelta** |sole|
+
+	A sensibilidade às entradas digitais correspondentes de
+	aumento/redução para campos analógicos ou ``nil`` nos campos
+	digitais.
+
+
+**field.default_keydelta** |sole|
+
+	A sensibilidade padrão às entradas digitais correspondentes de
+	aumento/redução para campos analógicos ou ``nil`` nos campos
+	digitais.
+
+
+**field.centerdelta** |sole|
+
+	A velocidade com que os campos analógicos sem quebra de linha
+	retornam aos seus valores predefinidos após as entradas digitais de
+	aumento/redução associadas serem liberadas, ou ``nil`` para campos
+	digitais e campos analógicos com quebra de linha.
+
+
+**field.default_centerdelta** |sole|
+
+	A velocidade padrão na qual os campos analógicos sem quebra de linha
+	retornam aos seus valores predefinidos após as entradas digitais de
+	aumento/redução associadas serem liberadas, ou ``nil`` para campos
+	digitais e campos analógicos com quebra de linha.
+
+
+**field.analog_reverse** |sole|
+
+	Um booleano que indica se o campo corresponde a um controle
+	analógico que aumenta na direção oposta à convenção (por exemplo,
+	valores maiores quando um pedal é solto), ou ``nil`` para campos
+	digitais.
+
+
+**field.default_analog_reverse** |sole|
+
+	Um booleano que indica se o campo corresponde a um controle
+	analógico que, por padrão, aumenta na direção oposta à convenção
+	(por exemplo, valores maiores quando um pedal é solto ou movido à
+	esquerda), ou ``nil`` para campos digitais.
+
+
 **field.way** |sole|
 
 	A quantidade das direções permitidas através do restritor da
 	placa/portão para um joystick digital ou zero (``0``) para as outras
 	entradas.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 **field.type_class** |sole|
@@ -550,10 +662,6 @@ Propriedades
 
 	Um booleano que indica se o campo é um eixo analógico ou controle
 	posicional.
-
-.. raw:: latex
-
-	\clearpage
 
 
 **field.is_digital_joystick** |sole|
@@ -577,14 +685,6 @@ Propriedades
 
 	Um booleano que indica se o campo corresponde a uma botão do
 	hardware tipo liga/desliga ou um botão de pressão.
-
-
-**field.analog_reverse** |sole|
-
-	Um booleano que indica se o campo corresponde a um controle
-	analógico que aumenta na direção oposta à convenção (por exemplo,
-	valores maiores quando um pedal é solto ou um joystick é movido para
-	a esquerda).
 
 
 **field.analog_reset** |sole|
