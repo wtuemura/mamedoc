@@ -269,7 +269,7 @@ Propriedades
 
 **expression.is_empty** |sole|
 
-	Um booleano que indica se a expressão possui *tokens*.
+	Um valor booleano que indica se a expressão possui *tokens*.
 
 
 **expression.original_string** |sole|
@@ -334,15 +334,15 @@ Propriedades
 
 **entry.is_function** |sole|
 
-	Um booleano indicando se o acesso do símbolo é uma função que pode
-	ser invocada.
+	Um valor booleano indicando se o acesso do símbolo é uma função que
+	pode ser invocada.
 
 
 **entry.is_lval** |sole|
 
-	Um booleano indicando se o acesso do símbolo é um símbolo inteiro
-	que pode ser definido (se ele pode ser usado no lado esquerdo das
-	expressões da atribuição por exemplo).
+	Um valor booleano indicando se o acesso do símbolo é um símbolo
+	inteiro que pode ser definido (se ele pode ser usado no lado
+	esquerdo das expressões da atribuição por exemplo).
 
 
 **entry.value** |lees|
@@ -576,7 +576,7 @@ Propriedades
 
 **breakpoint.enabled** |lees|
 
-	Um booleano que indica se o breakpoint no momento está ativo.
+	Um valor booleano que indica se o breakpoint no momento está ativo.
 
 
 **breakpoint.address** |sole|
@@ -630,7 +630,7 @@ Propriedades
 
 **watchpoint.enabled** |lees|
 
-	Um booleano que indica se o watchpoint no momento está ativo.
+	Um valor booleano que indica se o watchpoint no momento está ativo.
 
 
 **watchpoint.type** |sole|

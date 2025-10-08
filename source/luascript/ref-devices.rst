@@ -298,12 +298,14 @@ Propriedades
 
 **device.configured** |sole|
 
-	Um booleano que indica se o dispositivo concluiu a configuração.
+	Um valor booleano que indica se o dispositivo concluiu a
+	configuração.
 
 
 **device.started** |sole|
 
-	Um booleano que indica se o dispositivo concluiu a inicialização.
+	Um valor booleano que indica se o dispositivo concluiu a
+	inicialização.
 
 
 **device.debug** |sole|
@@ -847,30 +849,31 @@ Propriedades
 
 **cassette.is_stopped** |sole|
 
-	Um booleano que indica se a fita está parada (ou seja, não está
-	gravando e nem reproduzindo).
+	Um valor booleano que indica se a fita está parada (ou seja, não
+	está gravando e nem reproduzindo).
 
 
 **cassette.is_playing** |sole|
 
-	Um booleano que indica se a reprodução está ativada (ou seja, o
-	cassete vai reproduzir se o motor estiver ativado).
+	Um valor booleano que indica se a reprodução está ativada (ou seja,
+	o cassete vai reproduzir se o motor estiver ativado).
 
 
 **cassette.is_recording** |sole|
 
-	Um booleano que indica se a gravação está ativada (ou seja, o
+	Um valor booleano que indica se a gravação está ativada (ou seja, o
 	gravador da fita vai gravar se o motor estiver ativado).
 
 
 **cassette.motor_state** |lees|
 
-	Um booleano que indica se o motor do cassete está ativado.
+	Um valor booleano que indica se o motor do cassete está ativado.
 
 
 **cassette.speaker_state** |lees|
 
-	Um booleano que indica se o alto-falante do cassete está ativado.
+	Um valor booleano que indica se o alto-falante do cassete está
+	ativado.
 
 
 **cassette.position** |sole|
@@ -946,26 +949,28 @@ Propriedades
 
 **image.is_readable** |sole|
 
-	Um booleano que indica se o dispositivo oferece suporte à leitura.
+	Um valor booleano que indica se o dispositivo oferece suporte à
+	leitura.
 
 
 **image.is_writeable** |sole|
 
-	Um booleano que indica se o dispositivo oferece suporte para
+	Um valor booleano que indica se o dispositivo oferece suporte para
 	gravação.
 
 
 **image.must_be_loaded** |sole|
 
-	Um booleano que indica se o dispositivo requer que uma imagem da
-	mídia seja carregada para começar.
+	Um valor booleano que indica se o dispositivo requer que uma imagem
+	da mídia seja carregada para começar.
 
 
 **image.is_reset_on_load** |sole|
 
-	Um booleano que indica se o dispositivo requer uma reinicialização
-	forçada para alterar as imagens da mídia (geralmente para slots de
-	cartucho que contêm um hardware adicional para os chips de memória).
+	Um valor booleano que indica se o dispositivo requer uma
+	reinicialização forçada para alterar as imagens da mídia (geralmente
+	para slots de cartucho que contêm um hardware adicional para os
+	chips de memória).
 
 
 **image.image_type_name** |sole|
@@ -999,14 +1004,14 @@ Propriedades
 
 **image.exists** |sole|
 
-	Um booleano que indica se um arquivo de imagem da mídia está
+	Um valor booleano que indica se um arquivo de imagem da mídia está
 	montado.
 
 
 **image.readonly** |sole|
 
-	Um booleano que indica se um arquivo de imagem da mídia está montado
-	em mode de somente leitura.
+	Um valor booleano que indica se um arquivo de imagem da mídia está
+	montado em mode de somente leitura.
 
 
 **image.filename** |sole|
@@ -1029,9 +1034,9 @@ Propriedades
 
 **image.loaded_through_softlist** |sole|
 
-	Um booleano que indica se a imagem da mídia montada foi carregada a
-	partir de uma lista de software ou ``false`` caso nenhuma imagem da
-	mídia tenha sido montada.
+	Um valor booleano que indica se a imagem da mídia montada foi
+	carregada a partir de uma lista de software ou ``false`` caso
+	nenhuma imagem da mídia tenha sido montada.
 
 
 **image.software_list_name** |sole|
@@ -1128,8 +1133,8 @@ Propriedades
     
 **sound.hook**
 
-	Um booleano que indica se as amostras de saída desse dispositivo
-	devem ser tocadas no gancho de som global.
+	Um valor booleano que indica se as amostras de saída desse
+	dispositivo devem ser tocadas no gancho de som global.
 
 **sound.device** |sole|
 
@@ -1161,14 +1166,15 @@ Propriedades
 
 **slot.fixed** |sole|
 
-	Um booleano que indica se este é um slot com um cartão informado
-	na configuração do sistema que não possa ser alterado pelo usuário.
+	Um valor booleano que indica se este é um slot com um cartão
+	informado na configuração do sistema que não possa ser alterado pelo
+	usuário.
 
 
 **slot.has_selectable_options** |sole|
 
-	Um booleano que indica se o slot tem alguma opção selecionável pelo
-	usuário (ao contrário das opções que só podem ser selecionadas
+	Um valor booleano que indica se o slot tem alguma opção selecionável
+	pelo usuário (ao contrário das opções que só podem ser selecionadas
 	programaticamente, normalmente para os slots fixos ou para carregar
 	as imagens da mídia).
 
@@ -1347,9 +1353,10 @@ Propriedades
 
 **option.selectable** |sole|
 
-	Um Booleano que indica se a opção pode ser selecionada pelo usuário
-	(as opções que não são selecionáveis pelo usuário geralmente são
-	usados para os slots fixos ou para carregar as imagens da mídia).
+	Um valor booleano que indica se a opção pode ser selecionada pelo
+	usuário (as opções que não são selecionáveis pelo usuário geralmente
+	são usados para os slots fixos ou para carregar as imagens da
+	mídia).
 
 
 **option.default_bios** |sole|
@@ -1379,6 +1386,6 @@ Propriedades
 	intensidade total)
 .. |ovdo| replace:: Os valores dos outros canais não são afetados
 .. |ocvp| replace:: O contraste é um valor de ponto flutuante
-.. |ubqi| replace:: Um booleano que indica se
+.. |ubqi| replace:: Um valor booleano que indica se
 .. |eeun| replace:: Este é um número de ponto flutuante
-.. |ubis| replace:: Retorna um booleano indicando se
+.. |ubis| replace:: Retorna Um valor booleano indicando se

@@ -683,14 +683,15 @@ Propriedades
 
 **bitmap.valid** |sole|
 
-	Um booleano que indica se o bitmap tem armazenamento disponível
-	(pode ser *false* para bitmaps vazios).
+	Um valor booleano que indica se o bitmap tem armazenamento
+	disponível (pode ser *false* para bitmaps vazios).
 
 
 **bitmap.locked** |sole|
 
-	Um booleano que indica se o armazenamento do bitmap é referenciado
-	por outro bitmap ou :ref:`textura <luascript-ref-rendertexture>`.
+	Um valor booleano que indica se o armazenamento do bitmap é
+	referenciado por outro bitmap ou
+	:ref:`textura <luascript-ref-rendertexture>`.
 
 
 .. _luascript-ref-rendertexture:
@@ -728,8 +729,8 @@ Propriedades
 
 **texture.valid** |sole|
 
-	Um booleano que indica se a textura é válida (*false* no caso da
-	textura ter sido liberada).
+	Um valor booleano que indica se a textura é válida (*false* no caso
+	da textura ter sido liberada).
 
 
 .. _luascript-ref-renderman:
@@ -860,15 +861,15 @@ Propriedades
 
 **target.hidden** |sole|
 
-	Um booleano que indica se este alvo é uma renderização interna que
-	não é exibido diretamente para o usuário (por exemplo, o alvo da
+	Um valor booleano que indica se este alvo é uma renderização interna
+	que não é exibido diretamente para o usuário (por exemplo, o alvo da
 	renderização usado para criar as capturas da tela).
 
 
 **target.is_ui_target** |sole|
 
-	Um booleano que indica se este é o destino de renderização usado
-	para exibir a interface do usuário.
+	Um valor booleano que indica se este é o destino de renderização
+	usado para exibir a interface do usuário.
 
 
 **target.max_update_rate** |lees|
@@ -918,14 +919,15 @@ Propriedades
 
 **target.screen_overlay** |lees|
 
-	Um booleano que indica se as sobreposições da tela estão ativadas.
+	Um valor booleano que indica se as sobreposições da tela estão
+	ativadas.
 
 
 **target.zoom_to_screen** |lees|
 
-	Um booleano que indica se renderização do alvo está configurado para
-	escalar fazendo com que as telas emuladas preencham toda a
-	janela/tela o quanto for possível.
+	Um valor booleano que indica se renderização do alvo está
+	configurado para escalar fazendo com que as telas emuladas preencham
+	toda a janela/tela o quanto for possível.
 
 
 .. _luascript-ref-rendercontainer:
@@ -1106,7 +1108,7 @@ Propriedades
 
 **container.is_empty** |sole|
 
-	Um booleano que indica se o contêiner não possui itens.
+	Um valor booleano que indica se o contêiner não possui itens.
 
 
 .. _luascript-ref-rendercntnrsettings:
@@ -1446,21 +1448,21 @@ Propriedades
 
 **view.has_art** |sole|
 
-	Um booleano que indica se a visualização possui itens que não são da
-	tela, incluindo itens que não são visíveis porque o usuário ocultou
-	a coleção dos itens aos quais elas pertencem.
+	Um valor booleano que indica se a visualização possui itens que não
+	são da	tela, incluindo itens que não são visíveis porque o usuário
+	ocultou a coleção dos itens aos quais elas pertencem.
 
 
 **view.show_pointers** |lees|
 
-	Um booleano que define se os ponteiros do mouse e da caneta devem
-	ser exibidos na visualização.
+	Um valor booleano que define se os ponteiros do mouse e da caneta
+	devem ser exibidos na visualização.
 
 
 **view.hide_inactive_pointers** |lees|
 
-	Um booleano que define se os ponteiros do mouse devem ser ocultados
-	na exibição após um período de inatividade.
+	Um valor booleano que define se os ponteiros do mouse devem ser
+	ocultados na exibição após um período de inatividade.
 
 
 .. _luascript-ref-renderlayitem:
@@ -1629,14 +1631,14 @@ Propriedades
 
 **item.bounds_animated** |sole|
 
-	Um booleano que indica se os limites do item dependem de seu estado
-	de animação.
+	Um valor booleano que indica se os limites do item dependem de seu
+	estado de animação.
 
 
 **item.color_animated** |sole|
 
-	Um booleano que indica se a cor do item depende de seu estado de
-	animação.
+	Um valor booleano que indica se a cor do item depende de seu estado
+	de animação.
 
 
 **item.bounds** |sole|
@@ -1657,12 +1659,12 @@ Propriedades
 
 **item.scroll_wrap_x** |sole|
 
-	Um booleano indicando se o item se enrola horizontalmente.
+	Um valor booleano indicando se o item se enrola horizontalmente.
 
 
 **item.scroll_wrap_y** |sole|
 
-	Um booleano indicando se o item se enrola verticalmente.
+	Um valor booleano indicando se o item se enrola verticalmente.
 
 
 **item.scroll_size_x** |lees|
@@ -1737,7 +1739,7 @@ Propriedades
 
 .. |encaa| replace:: Encapsula a classe
 .. |sole| replace:: (somente leitura)
-.. |ubis| replace:: Retorna um booleano indicando se
+.. |ubis| replace:: Retorna Um valor booleano indicando se
 .. |dufp| replace:: Define uma função para
 .. |lees| replace:: (leitura e escrita)
 .. |acsre| replace:: As cores são representadas no formato

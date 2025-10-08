@@ -213,33 +213,33 @@ Propriedades
 
 **natkeyboard.empty** |sole|
 
-	Um booleano que indica se o buffer da entrada do gerenciador do
-	teclado natural está vazio.
+	Um valor booleano que indica se o buffer da entrada do gerenciador
+	do teclado natural está vazio.
 
 
 **natkeyboard.full** |sole|
 
-	Um booleano que indica se o buffer da entrada do gerenciador do
-	teclado natural está cheio.
+	Um valor booleano que indica se o buffer da entrada do gerenciador
+	do teclado natural está cheio.
 
 
 **natkeyboard.can_post** |sole|
 
-	Um booleano que indica se o sistema emulado suporta a postagem dos
-	dados dos caracteres através do gerenciador do teclado natural.
+	Um valor booleano que indica se o sistema emulado suporta a postagem
+	dos dados dos caracteres através do gerenciador do teclado natural.
 
 
 **natkeyboard.is_posting** |sole|
 
-	Um booleano que indica se os dados postados dos caracteres estão
-	sendo entregues ao sistema que está sendo emulado.
+	Um valor booleano que indica se os dados postados dos caracteres
+	estão sendo entregues ao sistema que está sendo emulado.
 
 
 **natkeyboard.in_use** |lees|
 
-	Um booleano que indica se o modo “teclado natural” está ativado.
-	Quando O modo “teclado natural” está ativado o gerenciador do
-	teclado natural traduz a entrada de caractere do host para
+	Um valor booleano que indica se o modo “teclado natural” está
+	ativado. Quando O modo “teclado natural” está ativado o gerenciador
+	do teclado natural traduz a entrada de caractere do host para
 	pressionamentos da tecla do sistema emulado.
 
 
@@ -309,7 +309,7 @@ Propriedades
 
 **keyboard.is_keypad** |sole|
 
-	Um booleano que indica se o dispositivo subjacente possui as
+	Um valor booleano que indica se o dispositivo subjacente possui as
 	entradas do teclado numérico, mas não para a entradas do teclado.
 	Isso é usado para determinar quais dispositivos da entrada do
 	teclado deve ser ativado por padrão.
@@ -317,8 +317,8 @@ Propriedades
 
 **keyboard.enabled** |lees|
 
-	Um booleano que indica se as entradas do teclado e/ou do teclado
-	numérico do dispositivo estão ativados.
+	Um valor booleano que indica se as entradas do teclado e/ou do
+	teclado numérico do dispositivo estão ativados.
 
 
 .. _luascript-ref-ioport:
@@ -626,15 +626,15 @@ Propriedades
 
 **field.analog_reverse** |sole|
 
-	Um booleano que indica se o campo corresponde a um controle
-	analógico que aumenta na direção oposta à convenção (por exemplo,
-	valores maiores quando um pedal é solto), ou ``nil`` para campos
-	digitais.
+	Um valor booleano que indica se o valor aumenta na direção oposta à
+	convenção para campos analógicos (por exemplo, valores maiores
+	quando um pedal é solto ou um joystick é movido à esquerda) ou
+	``nil`` para campos digitais.
 
 
 **field.default_analog_reverse** |sole|
 
-	Um booleano que indica se o campo corresponde a um controle
+	Um valor booleano que indica se o campo corresponde a um controle
 	analógico que, por padrão, aumenta na direção oposta à convenção
 	(por exemplo, valores maiores quando um pedal é solto ou movido à
 	esquerda), ou ``nil`` para campos digitais.
@@ -660,43 +660,43 @@ Propriedades
 
 **field.is_analog** |sole|
 
-	Um booleano que indica se o campo é um eixo analógico ou controle
-	posicional.
+	Um valor booleano que indica se o campo é um eixo analógico ou
+	controle posicional.
 
 
 **field.is_digital_joystick** |sole|
 
-	Um booleano que indica se o campo corresponde ao comutador de um
-	joystick digital.
+	Um valor booleano que indica se o campo corresponde ao comutador de
+	um joystick digital.
 
 
 **field.enabled** |sole|
 
-	Um booleano que indica se o campo está ativado.
+	Um valor booleano que indica se o campo está ativado.
 
 
 **field.cocktail** |sole|
 
-	Um booleano que indica se o campo é usado apenas quando o sistema é
-	configurado para um gabinete de mesa tipo coquetel.
+	Um valor booleano que indica se o campo é usado apenas quando o
+	sistema é configurado para um gabinete de mesa tipo coquetel.
 
 
 **field.toggle** |sole|
 
-	Um booleano que indica se o campo corresponde a uma botão do
+	Um valor booleano que indica se o campo corresponde a uma botão do
 	hardware tipo liga/desliga ou um botão de pressão.
 
 
 **field.analog_reset** |sole|
 
-	Um booleano que indica se o campo corresponde a um incremental da
+	Um valor booleano que indica se o campo corresponde a um aumento da
 	posição da entrada (por exemplo, um dial ou eixo do trackball) que
 	deve ser redefinida para zero para cada quadro do vídeo.
 
 
 **field.analog_wraps** |sole|
 
-	Um booleano que indica se o campo corresponde a uma entrada
+	Um valor booleano que indica se o campo corresponde a uma entrada
 	analógica que encapsula a partir de uma extremidade da sua faixa
 	para a outra (por exemplo, uma posição incremental como a entrada de
 	um dial ou o eixo do trackball).
@@ -704,14 +704,14 @@ Propriedades
 
 **field.analog_invert** |sole|
 
-	Um booleano que indica se o campo corresponde a uma entrada
+	Um valor booleano que indica se o campo corresponde a uma entrada
 	analógica que tem o seu valor complementado.
 
 
 **field.impulse** |sole|
 
-	Um booleano que indica se o campo corresponde a uma entrada digital
-	que é ativado por um determinado período de tempo fixo.
+	Um valor booleano que indica se o campo corresponde a uma entrada
+	digital que é ativado por um determinado período de tempo fixo.
 
 
 **field.crosshair_scale** |sole|
@@ -1060,9 +1060,9 @@ Métodos
 **poller:poll()**
 
 	Obtém a entrada do usuário e atualiza a sequência, caso seja
-	apropriado. Retorna um booleano que indica se a entrada da sequência
-	está completa. Se este método retornar falso, você deve continuar
-	com o processo de obtenção.
+	apropriado. Retorna Um valor booleano que indica se a entrada da
+	sequência está completa. Se este método retornar falso, você deve
+	continuar com o processo de obtenção.
 
 
 Propriedades
@@ -1077,13 +1077,14 @@ Propriedades
 
 **poller.valid** |sole|
 
-	Um booleano que indica se a sequência da entrada atual é válida.
+	Um valor booleano que indica se a sequência da entrada atual é
+	válida.
 
 
 **poller.modified** |sole|
 
-	Um booleano que indica se a sequência foi alterada através de alguma
-	entrada do usuário desde o início do processo.
+	Um valor booleano que indica se a sequência foi alterada através de
+	alguma entrada do usuário desde o início do processo.
 
 
 .. _luascript-ref-inputseq:
@@ -1133,8 +1134,8 @@ Propriedades
 
 **seq.empty** |sole|
 
-	Um booleano indicando se a sequência da entrada está vazia (não
-	possui quaisquer itens, indicando uma entrada sem atribuição).
+	Um valor booleano indicando se a sequência da entrada está vazia
+	(não possui quaisquer itens, indicando uma entrada sem atribuição).
 
 
 **seq.length** |sole|
@@ -1144,17 +1145,17 @@ Propriedades
 
 **seq.is_valid** |sole|
 
-	Um booleano indicando se a sequência da entrada é válida. Para ser
-	válido, deve conter pelo menos um item, todos os itens devem possuir
-	códigos válidos, todos os grupos dos produtos devem conter pelo
-	menos um item que não seja negado e os itens referentes aos eixos
-	absolutos e relativos não devem ser misturados dentro de um grupo de
-	produtos.
+	Um valor booleano indicando se a sequência da entrada é válida. Para
+	ser válido, deve conter pelo menos um item, todos os itens devem
+	possuir códigos válidos, todos os grupos dos produtos devem conter
+	pelo menos um item que não seja negado e os itens referentes aos
+	eixos absolutos e relativos não devem ser misturados dentro de um
+	grupo de produtos.
 
 
 **seq.is_default** |sole|
 
-	Um booleano indicando se a sequência da entrada define se a
+	Um valor booleano indicando se a sequência da entrada define se a
 	configuração deve ser usada.
 
 
@@ -1185,14 +1186,15 @@ Propriedades
 
 **devclass.enabled** |sole|
 
-	Um booleano que indica se a classe do dispositivo está ativo.
+	Um valor booleano que indica se a classe do dispositivo está ativo.
 
 
 **devclass.multi** |sole|
 
-	Um booleano que indica se a classe do dispositivo oferece suporte a
-	vários dispositivos ou as entradas de todos os dispositivos da
-	classe são combinadas e tratadas como um único dispositivo.
+	Um valor booleano que indica se a classe do dispositivo oferece
+	suporte a vários dispositivos ou as entradas de todos os
+	dispositivos da classe são combinadas e tratadas como um único
+	dispositivo.
 
 
 **devclass.devices[ ]** |sole|
@@ -1353,6 +1355,6 @@ Propriedades
 
 .. |encaa| replace:: Encapsula a classe
 .. |sole| replace:: (somente leitura)
-.. |ubis| replace:: Retorna um booleano indicando se
+.. |ubis| replace:: Retorna Um valor booleano indicando se
 .. |lees| replace:: (leitura e escrita)
 .. |nsqe| replace:: no sistema que está sendo emulado

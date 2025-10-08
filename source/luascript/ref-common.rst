@@ -97,7 +97,7 @@ Métodos
 
 	Aguarda a duração determinada pelo tempo da emulação. A duração
 	pode ser definida como :ref:`attotime <luascript-ref-attotime>`
-	ou um valor numérico em segundos. |qaar|. Retorna um booleano
+	ou um valor numérico em segundos. |qaar|. Retorna Um valor booleano
 	indicando se a duração expirou normalmente.
 
 	Todas as invocações pendentes para **emu.wait**, imediatamente
@@ -214,7 +214,7 @@ Métodos
 	Variáveis de ambiente substituíveis em texto (*string*). A sintaxe
 	depende do sistema operacional do host.
 
-.. |ubis| replace:: Retorna um booleano indicando se
+.. |ubis| replace:: Retorna Um valor booleano indicando se
 .. |qaar| replace:: Quaisquer argumentos adicionais será retornado a
 	quem os invocou
 .. |ruea| replace:: Retornará um erro ao invocar esta função através dos

@@ -904,7 +904,7 @@ Propriedades
 
 **ui.single_step** |lees|
 
-	Um booleano que controla se o sistema emulado deve ser pausado
+	Um valor booleano que controla se o sistema emulado deve ser pausado
 	automaticamente quando o próximo quadro for desenhado.
 	Esta propriedade é redefinida automaticamente quando acontecer a
 	pausa automática.
@@ -912,14 +912,14 @@ Propriedades
 
 **ui.show_fps** |lees|
 
-	Um booleano que controla se a velocidade atual da emulação e as
-	configurações do salto de quadro devem ser exibidas.
+	Um valor booleano que controla se a velocidade atual da emulação e
+	as configurações do salto de quadro devem ser exibidas.
 
 
 **ui.show_profiler** |lees|
 
-	Um booleano que controla se as estatísticas da criação do perfil
-	devem ser exibidas.
+	Um valor booleano que controla se as estatísticas da criação do
+	perfil devem ser exibidas.
 
 
 .. _luascript-ref-driver:
@@ -1102,4 +1102,4 @@ Propriedades
 .. |encaa| replace:: Encapsula a classe
 .. |nsqe| replace:: no sistema que está sendo emulado
 .. |lees| replace:: (leitura e escrita)
-.. |ubqi| replace:: Um booleano que indica se
+.. |ubqi| replace:: Um valor booleano que indica se
