@@ -173,7 +173,7 @@ camada como "**MAME**" e a segunda como "**REFERÊNCIA**". É na camada
 * Selecione a camada "REFERÊNCIA", e logo abaixo, clique na seta para
   cima para movê-la para o topo. Assim você terá a primeira camada
   "**REFERÊNCIA**" e, abaixo, a camada "**MAME**".
-* Vá em :guilabel:`Filters` > :guilabel:`G'MIC-Qt...`e, em
+* Vá em :guilabel:`Filters` > :guilabel:`G'MIC-Qt...`, em
   :guilabel:`Available Filters`, clique duas vezes em :guilabel:`Color`
   e, em :guilabel:`CLUT from After - Before Layers`.
 * Em :guilabel:`Output Mode`, selecione
