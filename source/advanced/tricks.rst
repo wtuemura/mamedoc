@@ -3303,9 +3303,9 @@ personagens ocultos.
 Certos jogos do NEC PC Engine não iniciam
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ao tentat iniciar jogos como o `3x3 Eyes - Sanjiyan Hensei`_, o MAME
-não faz nada e retorna um erro na interface, via linha de comando ocorre
-um erro:
+Ao tentar iniciar certos jogos como o `3x3 Eyes - Sanjiyan Hensei`_, o
+MAME retorna um erro na interface. Via linha de comando é possível ver
+exatamente o que aconteceu:
 
 .. code-block:: text
 
@@ -3313,10 +3313,10 @@ um erro:
 	Fatal error: Required files are missing, the machine cannot be run.
 
 Os sistemas NEC PC Engine/TurboGrafx-16 precisam de um cartão para rodar
-CD's, sem eles o CD não funciona. Se usarmos o cartão errado como o
-"*3x3 Eyes*" por exemplo, o jogo mostra essa mulher te chamando de
-"*inexperiente*" porque a versão do cartão está errada, claro que num
-tom bem singelo e doce (Baajon ga chigau zo! Kono mijukumono-me.).
+CDs; sem ele, o CD não funciona. Se usarmos o cartão errado, com o jogo
+"*3x3 Eyes*", por exemplo, ele mostra uma mulher chamando o jogador de
+"*inexperiente*", pois a versão do cartão está errada, mas de um jeito
+bem "singelo e doce" (Baajon ga chigau zo! Kono mijukumono-me.).
 
 .. figure:: images/3x3eyes.png
 	:align: center
@@ -3353,7 +3353,7 @@ Abaixo temos os cartões lançados pela NEC:
   do console. Em comparação com o Pro, o Pro expande a memória do
   console para 17.5 Mbit de memoria RAM (2 MB + 192 kB) e já vinha com o
   System Card 3.0 embutido. Já o DUO vinha com 16 Mbit de memoria RAM
-  (cerca de 2 MB) expandindo a memoria disponivel para o console e não
+  (cerca de 2 MB) expandindo a memoria disponível para o console e não
   vinha com o System Card 3.0.
 * A grade vantagem entre o Pro e o DUO é que no Pro permite a rápida
   transferência de dados para a VRAM. Então na dúvida, fique com o
@@ -3366,8 +3366,8 @@ Para configurar este sistema no MAME, crie o arquivo
 
 	cart acardpro
 
-Caso algum jogo não seja compatível com este cartão, basta alterar a
-configuração e usar uma outra versão.
+Caso algum jogo não seja compatível com o cartão, basta alterar a
+configuração e usar outro.
 
 
 Por que o jogo "X" não roda?
