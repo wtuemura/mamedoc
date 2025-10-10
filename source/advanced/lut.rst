@@ -583,15 +583,15 @@ Em seguida, extraia os valores em hexadecimal ("html notation" no Gimp)
 das cores e cole-os num editor hexadecimal. Então, salve-os como
 ``nome_da_paleta.pal``.
 
-Um conjunto de **41 LUTs** foi compilado, incluindo os criados neste
+Um conjunto de **38 LUTs** foi compilado, incluindo os criados neste
 documento. Baixe a última versão 2025 `aqui`_. As tabelas de cores foram
-atualizadas para o MAME 0.276 ou versões mais recentes. Descompacte os
-arquivos **.png** dentro da pasta *artwork* ou crie uma pasta específica
-dentro de *artwork*, como ``artwork\luts``, e ajuste as configurações
-para o caminho correto do seu sistema operacional. É possível configurar
-uma paleta específica em ``ini\source\nes.ini`` ou usar a própria
-interface do MAME para alternar entre elas, conforme explicado explicado
-:ref:`anteriormente <advanced-testar-luts>`.
+atualizadas para o **MAME 0.280** ou versões mais recentes. Descompacte
+os arquivos **.png** dentro da pasta *artwork* ou crie uma pasta
+específica dentro de *artwork*, como ``artwork\luts``, e ajuste as
+configurações para o caminho correto do seu sistema operacional. É
+possível configurar uma paleta específica em ``ini\source\nes.ini`` ou
+usar a própria interface do MAME para alternar entre elas, conforme
+explicado explicado :ref:`anteriormente <advanced-testar-luts>`.
 
 .. note:: Os LUTs antigos ainda estão disponíveis no site do MAMEDEV
    em `mame-goodies`_.
@@ -599,12 +599,12 @@ interface do MAME para alternar entre elas, conforme explicado explicado
 .. note:: Para remover o efeito *"blur"* (borrado) nas versões OpenGL do
    MAME durante o uso de Luts com o **nes**, use a opção :ref:`prescale
    <mame-commandline-prescale>` no arquivo ``ini\source\nes.ini``. O
-   valor ``5`` (médio), remove todo o efeito porém a emulação consumirá
+   valor ``4`` (médio), remove todo o efeito porém a emulação consumirá
    um pouco mais de recursos podendo deixar a emulação mais lenta
    dependendo da capacidade do seu sistema.
 
-.. tip:: Experimente começar com o LUT **01 - NES NTSC SAT_x3.png**.
-   Este LUT foi criado com uma saturação três vezes maior.
+.. tip:: Experimente começar com o LUT **01 - NES NTSC SAT_x2.png**.
+   Este LUT foi criado com uma saturação duas vezes maior.
 
 
 .. |bdcs| replace:: Barras de cores SMPTE (NTSC) BT.601
@@ -645,5 +645,5 @@ interface do MAME para alternar entre elas, conforme explicado explicado
 .. _nestopia: https://github.com/0ldsk00l/nestopia
 .. _NES_NTSC.pal: https://www.mediafire.com/file/o331z62b17sdmk7/NES_NTSC.zip
 .. _NES_SMPTE.pal: https://www.mediafire.com/file/zcvhkzafsfsngu5/NES_SMPTE.zip
-.. _aqui: https://www.mediafire.com/file/088alh8zowj6o5s/mame_nes_luts_2025.zip
+.. _aqui: https://www.mediafire.com/file/5u85ui780oi0n2f/mame_nes_luts_10_2025.zip
 .. _mame-goodies: https://github.com/mamedev/mame-goodies/tree/master/bgfx/lut/nes
