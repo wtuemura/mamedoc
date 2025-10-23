@@ -1805,7 +1805,7 @@ Opções de compilação
 
 		* ``1``: Incluí tabelas numéricas e variáveis externas;
 		* ``2``: Incluí os itens descritos em ``1``. Também são incluídas as variáveis locais;
-		* ``3``: Incluí os itens descritos em ``2``. Também são incluídas as definições de macros;
+		* ``3``: Incluí os itens descritos em ``2``. Também são incluídas as definições de macros.
 
 
 .. _mame-compilation-strip-symbols:
@@ -1824,6 +1824,19 @@ Opções de compilação
 .. raw:: latex
 
 	\clearpage
+
+.. _mame-compilation-pdbsymbols:
+
+**PDB_SYMBOLS**
+
+	|sefo| ``1``, gera símbolos no formato CodeView em arquivos PDB
+	separados. Isso permite a depuração no nível do código-fonte com
+	o Microsoft Visual Studio ou o WinDbg. Essa opção também pode ser
+	utilizada com outras ferramentas que carregam símbolos de arquivos
+	PDB, como as ferramentas de análise de desempenho Intel VTune e AMD
+	µProf, mas ela só é compatível para compilações MinGW que utilizam o
+	compilador Clang e o vinculador LLVM (LLD). Ela só tem efeito se a
+	opção ``SYMBOLS`` estiver definida para um valor diferente de zero.
 
 
 .. _mame-compilation-archopts:
@@ -2096,13 +2109,13 @@ possível adicionar este caminho nas variáveis de ambiente do Windows
 usando o procedimento abaixo:
 
 1. Pressione a tecla com a bandeira do Windows (ela é chamada
-   :kbd:`WINKEY`) junto com a tecla :kbd:`Pause`.
+   :kbd:`WINKEY`) junto com a tecla :kbd:`Pause`;
 2. Clique na opção chamada :guilabel:`Configurações Avançadas do
-   Sistema`.
-3. Vá em :menuselection:`Avançado --> Variáveis de Ambiente`.
-4. Selecione **Path**, clique em **Editar**.
+   Sistema`;
+3. Vá em :menuselection:`Avançado --> Variáveis de Ambiente`;
+4. Selecione **Path**, clique em **Editar**;
 5. Clique em **Novo** e adicione o caminho onde está instalado o seu
-   MSYS2.
+   MSYS2;
 6. No nosso exemplo é **D:\msys64\\mingw64\\bin**, clique em
    :guilabel:`Ok` para finalizar e feche todas as janelas.
 
