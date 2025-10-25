@@ -593,7 +593,7 @@ possível configurar uma paleta específica em ``ini\source\nes.ini`` ou
 usar a própria interface do MAME para alternar entre elas, conforme
 explicado explicado :ref:`anteriormente <advanced-testar-luts>`.
 
-.. note:: Os LUTs antigos ainda estão disponíveis no site do MAMEDEV
+.. note:: Esses LUTs também estão disponíveis no git do MAMEDEV
    em `mame-goodies`_.
 
 .. note:: Para remover o efeito *"blur"* (borrado) nas versões OpenGL do
