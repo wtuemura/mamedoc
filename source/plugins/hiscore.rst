@@ -11,7 +11,7 @@ altera o seu comportamento e pode ter efeitos indesejáveis, quebrando a
 jogabilidade ou fazendo com que o software que está sendo emulado no
 momento, trave.
 
-O plugin inclui um arquivo ``hiscore.dat`` que contém as informações
+O plugin inclui um arquivo **hiscore.dat** que contém as informações
 de como salvar e restaurar o placar nos sistemas compatíveis. Este
 arquivo deve ser mantido atualizado quando as definições do sistema
 mudarem no MAME.
@@ -20,9 +20,17 @@ O placar pode ser salvo automaticamente ao encerrar a emulação ou
 segundos depois que o placar for atualizado na memória. Para alterar a
 configuração pressione :kbd:`Tab` durante a emulação e vá em
 :guilabel:`Opções do plugin` --> :guilabel:`Hiscore Support` e altere as
-opções do :guilabel:`Save scores`.
+opções do :guilabel:`Save scores`. Altere as opções destacando-a e
+usando as teclas :kbd:`←` / :kbd:`→` na interface do usuário ou clicando
+nas setas.
 
 Um arquivo com o nome da ROM e a extensão ``.hi`` ficam gravados no
 diretório **hiscore** dento da pasta de dados do plug-in, consulte a
 opção :ref:`homepath <mame-commandline-homepath>`). O conteúdo do
 arquivo tem o formato JSON.
+
+O plugin de suporte ao hiscore pode ser desativado jogo a jogo,
+alternando a opção :guilabel:`Ativar suporte ao Hiscore para este jogo`
+no menu do plugin. Por padrão, o plugin está ativado para todos os
+jogos. Os jogos que foram excluídos são rastreados em um arquivo json
+chamado **exclude_games.json**, dentro da pasta **plugins/hiscore**.
