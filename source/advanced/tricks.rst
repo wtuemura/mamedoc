@@ -458,14 +458,14 @@ gerado no passo anterior para **reconstruir (Rebuild)** o seu ROMSET
 apenas com ROMs arcade.
 
 * Baixe e instale o `Clrmamepro <https://mamedev.emulab.it/clrmamepro/>`_
-  é importante saber em qual diretório ele foi instalado!
+  é importante saber em qual diretório ele foi instalado!;
 * Renomeie o arquivo **exported.xml** que está dentro do diretório
   **ui** para **arcade-clean.xml** assim é possível ter um controle do
-  arquivo que está sendo carregado.
+  arquivo que está sendo carregado;
 * Localize o diretório onde o *Clrmamepro* foi instalado e copie o
   arquivo **arcade-clean.xml** para dentro do diretório **datfiles**.
 * Rode o *Clrmamepro* no campo direito onde diz **Profile** deve estar
-  vazio.
+  vazio;
 
 .. figure:: images/Clrmamepro-add-dat.png
 	:width: 300
@@ -474,9 +474,9 @@ apenas com ROMs arcade.
 	:alt: Add DatFile
 
 * Clique em :guilabel:`Add DatFile...` e selecione o arquivo
-  ``arcade-clean.xml``, na próxima tela apenas clique em :guilabel:`OK`.
+  ``arcade-clean.xml``, na próxima tela apenas clique em :guilabel:`OK`;
 * Clique em :guilabel:`Load / Update`, na próxima tela selecione
-  :guilabel:`Default`.
+  :guilabel:`Default`;
 
 .. figure:: images/Clrmamepro-load.png
 	:width: 300
@@ -485,8 +485,8 @@ apenas com ROMs arcade.
 	:alt: Load Update
 
 * Durante a leitura deve aparecer alguns erros do tipo
-  :guilabel:`DatFile Problem`, apenas clique em :guilabel:`OK TO ALL`.
-* Ao concluir clique no ícone :guilabel:`Rebuilder`.
+  :guilabel:`DatFile Problem`, apenas clique em :guilabel:`OK TO ALL`;
+* Ao concluir clique no ícone :guilabel:`Rebuilder`;
 
 .. figure:: images/Clrmamepro-rebuilder.png
 	:width: 250
@@ -501,7 +501,7 @@ apenas com ROMs arcade.
 * Sem alterar nenhuma das opções, vá em :guilabel:`Source` e selecione o
   diretório onde se encontram todas as suas ROMs. Em
   :guilabel:`Destination` selecione o diretório de destino onde será
-  criada a sua nova *ROMSET*.
+  criada a sua nova *ROMSET*;
 
 .. figure:: images/Clrmamepro-rebuilder-screen.png
 	:width: 300
@@ -511,7 +511,7 @@ apenas com ROMs arcade.
 
 * **ATENÇÃO! Não escolha o mesmo diretório de origem**, escolha um
   diretório completamente diferente e se possível que seja em outro HDD,
-  cartão de memória, pen-drive, etc!
+  cartão de memória, pen-drive, etc!;
 * Clique em :guilabel:`Rebuild...` para iniciar e aguarde pois
   dependendo da quantidade de arquivos todo o processo será demorado.
 
@@ -533,8 +533,8 @@ mais refinada e podendo ser utilizada em qualquer sistema operacional e
 não algo exclusivo do Windows apenas.
 
 * Faça o download da última versão do arquivo ``category.ini`` no site
-  `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_.
-* Abra e extraia apenas o arquivo ``Working Arcade.ini``.
+  `Progetto-Snaps <http://www.progettosnaps.net/renameset/>`_;
+* Abra e extraia apenas o arquivo ``Working Arcade.ini``;
 * Apague tudo e deixe apenas o que estiver depois de ``[ROOT_FOLDER]``.
 * Salve este arquivo modificado como ``arcade.txt``.
 
@@ -2900,11 +2900,11 @@ interface é bem simples, inicie o MAME e siga os passos a seguir:
 * No lado esquerdo da interface do MAME (onde há uma lista de itens
   disponíveis como :guilabel:`Sem filtro`, :guilabel:`Disponível`,
   :guilabel:`Indisponível`, etc.) selecione com um duplo clique no
-  item :guilabel:`Source File`.
+  item :guilabel:`Source File`;
 * Escolha o código fonte desejado, neste exemplo, selecionamos o
-  ``capcom/cps2.cpp``.
+  ``capcom/cps2.cpp``;
 * A interface deverá exibir uma lista com todos os sistemas existentes
-  em ``capcom/cps2.cpp``.
+  em ``capcom/cps2.cpp``;
 * Clique no ícone do disquete no topo da tela e selecione
   :guilabel:`Exporta e lista em formato TXT`.
 
@@ -3191,7 +3191,7 @@ desligada. Agora, siga os passos:
 * Em seguida, mova o arquivo **ddrextrm.zip** para fora desta pasta (se
   você utilizar a linha de comando acima, isso já será feito);
 * Exclua a pasta **NVRAM\\ddrextrm**, mantenha apenas o arquivo
-  **ddrextrm.zip**;
+  **ddrextrm.zip**.
 
 .. warning:: Observe que, ao excluir a pasta **NVRAM\\ddrextrm** (desta
    máquina ou de qualquer outra), você perderá conquistas destravadas,
@@ -3251,7 +3251,7 @@ dicas, como o `DDR Freak`_, e aplicar um código nesta máquina
   "**REGISTERED**", confirmando que o código foi aceito;
 * Selecione "**EXIT**" até retornar para à tela principal;
 * Selecione "**GAME MODE**" para retornar ao jogo e pressione :kbd:`Esc`
-  para encerrar a emulação;
+  para encerrar a emulação.
 
 Repita o processo para comprimir os arquivos da NVRAM em um arquivo
 **ddrextrm.zip**, mova-o para fora da pasta e exclua a pasta
@@ -3291,7 +3291,7 @@ anteriormente. Aqui entra a dica de comprimir os arquivos da NVRAM:
   Linux ou macOS. Em seguida, use o nome **svc_16** para gerar o arquivo
   **svc_16.zip**;
 * Mova o arquivo **svc_16.zip** para fora da pasta e apague a pasta
-  **svc_16**;
+  **svc_16**.
 
 Agora, você pode gravar suas jogadas. Após excluir a pasta, será
 possível iniciar a reprodução e todas as configurações da Unibios serão
@@ -3344,7 +3344,7 @@ Abaixo temos os cartões lançados pela NEC:
 * **2.1** (``cdsys``).
 * **Games Express CD Card** (``gecd``): Cartão específico para jogar
   apenas os jogos: CD Mahjong Bishoujo Chuushinha (1993), Hi-Leg Fantasy
-  (1994), CD Hanafuda Bishoujo Fan Club (1994) e AV Tanjou (1995).
+  (1994), CD Hanafuda Bishoujo Fan Club (1994) e AV Tanjou (1995);
 * **3.0** (``scdsys``): Roda jogos comuns e *Super CD*, mas não os
   definidos como *Arcade CD*.
 * **Arcade Card Pro** (``acardpro``): Roda todos os jogos em CD e os
@@ -3573,23 +3573,23 @@ prompt:
 .. tip:: Pressione :kbd:`Alt` + :kbd:`Tab` para liberar o mouse.
 
 
-* Na primeira tela pressione :kbd:`F1`.
+* Na primeira tela pressione :kbd:`F1`;
 * Use as setas de direção do teclado para selecionar a opção
   :guilabel:`AUTO DETECT HARD DISK` e |prte2| :kbd:`Enter` para
   confirmar, na próxima tela |prte2| :kbd:`Y`  para confirmar os
-  parâmetros.
+  parâmetros;
 * Quando iniciar a detecção do segundo disco |prte2| :kbd:`Esc`, depois
-  |prte2| :kbd:`Y` para confirmar os parâmetros da segunda unidade.
+  |prte2| :kbd:`Y` para confirmar os parâmetros da segunda unidade;
 * Use as setas de direção do teclado e selecione a opção
-  :guilabel:`STANDARD CMOS SETUP`, |prte2| :kbd:`Enter` duas vezes.
+  :guilabel:`STANDARD CMOS SETUP`, |prte2| :kbd:`Enter` duas vezes;
 * Em :guilabel:`Floppy Drive A:` |prte2| :kbd:`PgUp` (Page Up) duas
-  vezes para selecionar a opção: :guilabel:`1.44 MB`.
-* |prte| :kbd:`Esc` para sair dessa tela.
+  vezes para selecionar a opção: :guilabel:`1.44 MB`;
+* |prte| :kbd:`Esc` para sair dessa tela;
 * Entre na opção :guilabel:`ADVANCED CMOS SETUP`, use as setas de
   direção do teclado até selecionar a opção
   :guilabel:`System Boot Up Sequence`, |prte2| :kbd:`PgUp` (Page Up)
-  para definir a ordem de boot como: ``A, C``.
-* |prte| :kbd:`Esc` para sair dessa tela.
+  para definir a ordem de boot como: ``A, C``;
+* |prte| :kbd:`Esc` para sair dessa tela;
 * Selecione :guilabel:`WRITE TO CMOS AND EXIT` para encerrar a
   configuração da BIOS (|prte2| :kbd:`Y` para confirmar o encerramento).
 
@@ -3600,18 +3600,18 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
 
 * Digite **fdisk**, |prte2| :kbd:`Enter` três vezes para confirmar as
   opções. Na última mensagem, |prte2| :kbd:`Esc` para retornar ao
-  prompt de comando.
+  prompt de comando;
 * |prte| :kbd:`ScrLk` (Screen Lock) para ativar a interface do MAME
-  seguido de :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação.
+  seguido de :kbd:`Shift` + :kbd:`F3` para reiniciar a emulação;
 * Ao concluir a inicialização e retornar ao prompt de comando, digite
   **format c:** seguido de :kbd:`Enter` (|prte2| :kbd:`Ç` do seu
-  teclado para inserir os :kbd:`:`), e confirme com :kbd:`Enter`.
+  teclado para inserir os :kbd:`:`), e confirme com :kbd:`Enter`;
 * |prte| :kbd:`S` seguido de :kbd:`Enter`. Após a formatação
-  |prte2| :kbd:`Enter` novamente.
+  |prte2| :kbd:`Enter` novamente;
 * Em sequência faça: **cd D:** seguido de :kbd:`Enter`, depois **D:**
-  seguido de :kbd:`Enter` para entrar no CD-ROM.
+  seguido de :kbd:`Enter` para entrar no CD-ROM;
 * Digite: ``instalar /im /id /is`` seguido de :kbd:`Enter` para dar
-  inicio a instalação do Windows.
+  inicio a instalação do Windows;
 * Clique na tela do MAME, |prte2| :kbd:`Enter` para dar andamento na
   instalação.
 
@@ -3625,25 +3625,25 @@ com o fdisk e depois formatá-lo. Continue seguindo os passos abaixo:
   :guilabel:`(flop1)`, |prte2| :kbd:`Enter`, escolha :guilabel:`[slot
   vazio]` e |prte2| :kbd:`Enter` novamente seguido da tecla :kbd:`Tab`,
   para ocultar a interface do MAME. Isso deixará a máquina sem disquete,
-  o que será útil mais adiante.
+  o que será útil mais adiante;
 * Em determinado ponto da instalação, o sistema te perguntará se você
   deseja criar um disquete de instalação. |prte| :kbd:`Tab` e, com os
   direcionais do teclado, selecione :guilabel:`Gerenciador de arquivos`.
   Selecione a opção :guilabel:`(flop1)` e |prte2| :kbd:`Enter`. Use os
   direcionais para selecionar a imagem `win95-install-mame.ima`_ criada
-  anteriormente e confirme com :kbd:`Enter`.
+  anteriormente e confirme com :kbd:`Enter`;
 * Selecione a opção :guilabel:`Leitura e escrita`. |prte| :kbd:`Enter`
   para confirmar e aguarde. Ao retornar para o menu anterior, |prte2|
   :kbd:`Tab` para ocultar a interface do MAME.
-  Continue com a instalação do Windows clicando em :guilabel:`OK`.
+  Continue com a instalação do Windows clicando em :guilabel:`OK`;
 * Após concluir a criação do seu disquete de boot, |prte2|
   :kbd:`Tab`, selecione a opção :guilabel:`(flop1)`,  pressione
   :kbd:`Enter`, escolha :guilabel:`[slot vazio]`, pressione
   :kbd:`Enter`, e então |prte2| :kbd:`Tab` para continuar com a
-  instalação.
+  instalação;
 * Em determinado ponto da instalação, cancele a instalação da impressora
   (você poderá fazer isso mais tarde se quiser), feche a janela:
-  "**Bem-vindo ao Windows 95**".
+  "**Bem-vindo ao Windows 95**";
 * Antes de fecharmos essa imagem, precisamos configurar o teclado para
   **ABNT2**. Para isso, vá em :guilabel:`Iniciar` >
   :guilabel:`Configurações` > :guilabel:`Painel de Controle` >
@@ -3691,24 +3691,24 @@ usando o comando abaixo:
 	mame ct486
 
 * Desmarque a opção :guilabel:`Exibir esta tela da próxima vez que você
-  iniciar o Windows`. Feche novamente a tela de boas-vindas do Windows.
+  iniciar o Windows`. Feche novamente a tela de boas-vindas do Windows;
 * Vamos fazer a desfragmentação do HD, um passo necessário para manter
   todos os dados organizados no disco. Clique duas vezes em
   "Meu Computador", selecione o drive **C:\\**, clique com o botão
   direito do mouse, selecione :guilabel:`Propriedades`, clique na aba
   :guilabel:`Ferramentas`, depois em  >
-  :guilabel:`Desfragmentar agora...`.
+  :guilabel:`Desfragmentar agora...`;
 * Clique em :guilabel:`Avançado`, **remova a seleção** de
   :guilabel:`Verificar se há erros na unidade de disco` e selecione
   a opção :guilabel:`Somente desta vez...`. Estamos fazendo assim para
-  acelerar a desfragmentação já que a nossa imagem não tem erros.
+  acelerar a desfragmentação já que a nossa imagem não tem erros;
 * Clique em :guilabel:`Iniciar` para iniciar o processo de
   desfragmentação. Ao concluir, clique em :guilabel:`Sim` e, em seguida,
-  em :guilabel:`Ok` para fechar a janela de ferramentas.
+  em :guilabel:`Ok` para fechar a janela de ferramentas;
 * Feche todas as janelas, clique no menu :guilabel:`Iniciar` >
   :guilabel:`Desligar`, selecione a opção
   :guilabel:`Desligar o computador?` e clique em :guilabel:`Sim` para
-  desligar o Windows.
+  desligar o Windows;
 * |prte| :kbd:`ScrLk` (Screen Lock), em seguida, |prte2| :kbd:`Esc` para
   fechar a janela do MAME.
 
@@ -3906,7 +3906,7 @@ instalação do sistema.
 * Em :guilabel:`Partitions` clique em qualquer área vazia;
 * Na próxima tela, escolha :guilabel:`Macintosh Volume`;
 * Defina o tamanho máximo digitando ``163792``, e confirme clicando em
-  :guilabel:`Ok`;
+  :guilabel:`Ok`.
 
 .. figure:: images/sys75-partition.png
 	:width: 640
@@ -3921,9 +3921,9 @@ instalação do sistema.
 
 * Clique em :menuselection:`Done --> Quit` para concluir o processo;
 * Na janela, clique no pequeno quadrado à esquerda para fechar a janela;
-* Vá em :menuselection:`Special --> Shutdown`.
+* Vá em :menuselection:`Special --> Shutdown`;
 * Pressione a tecla :kbd:`SrcLk` (Screen Lock) seguido de :kbd:`Esc`
-  para fechar a janela do MAME;
+  para fechar a janela do MAME.
 
 Vamos iniciar a instalação do sistema nos próximos passos. No prompt
 ou linha de comando, inicie o MAME com a opção abaixo:
@@ -3947,7 +3947,7 @@ MAME, caso tenha a imagem do disco 1, use a opção **-flop1 seu_disco**.
 * Você pode manter a interface do MAME ativa para ir trocando a imagem
   de disquete toda a vez que o sistema for pedindo. Repare que
   :guilabel:`floppydisk (flop)` ficará vazio quando o sistema pedir o
-  novo disquete;
+  novo disquete.
 
 .. note:: Se não tiver o catálogo, selecione :menuselection:`Gerenciador
    de arquivos --> floppydisk (flop)` e escolha o caminho para a sua
@@ -3969,7 +3969,7 @@ MAME, caso tenha a imagem do disco 1, use a opção **-flop1 seu_disco**.
 * Ao terminar a instalação dos disquetes clique em
   :guilabel:`Continue...`;
 * Clique em :guilabel:`Quit` para encerrar o instalador, em seguida,
-  clique em :guilabel:`Shutdown` e feche a janela do MAME;
+  clique em :guilabel:`Shutdown` e feche a janela do MAME.
 
 
 .. raw:: latex
@@ -4006,7 +4006,7 @@ algumas configurações.
   do monitor e feche a janela clicando no quadrado à esquerda da janela;
 * Vá em :menuselection:`Special --> Shutdown`.
 * Pressione a tecla :kbd:`SrcLk` (Screen Lock) seguido de :kbd:`Esc`
-  para fechar a janela do MAME;
+  para fechar a janela do MAME.
 
 Ao concluir a nossa única configuração, passamos a nossa imagem para CHD
 com o comando abaixo:
@@ -4152,7 +4152,7 @@ Clique duas vezes em **Install Mac OS**:
 * Clique em :guilabel:`Quit` para concluir o processo de instalação;
 * Clique em :menuselection:`Special --> Shutdown` para desligar o
   sistema;
-* Feche a janela do MAME;
+* Feche a janela do MAME.
 
 Diferente do System 7.5, nós não precisamos configurar mais nada, porém
 é preciso iniciar o sistema apenas uma vez para ele "reconstruir o
@@ -4254,7 +4254,7 @@ O comando faz o seguinte:
   e **Description:**, deixando apenas o nome da ROM e o nome completo do
   sistema;
 * Por fim o resultado é redirecionado para o arquivo texto
-  **lista_rom_ruim.txt**;
+  **lista_rom_ruim.txt**.
 
 Ao concluir, a lista terá o seguinte conteúdo:
 

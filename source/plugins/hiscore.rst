@@ -28,9 +28,3 @@ Um arquivo com o nome da ROM e a extensão ``.hi`` ficam gravados no
 diretório **hiscore** dento da pasta de dados do plug-in, consulte a
 opção :ref:`homepath <mame-commandline-homepath>`). O conteúdo do
 arquivo tem o formato JSON.
-
-O plugin de suporte ao hiscore pode ser desativado jogo a jogo,
-alternando a opção :guilabel:`Ativar suporte ao Hiscore para este jogo`
-no menu do plugin. Por padrão, o plugin está ativado para todos os
-jogos. Os jogos que foram excluídos são rastreados em um arquivo json
-chamado **exclude_games.json**, dentro da pasta **plugins/hiscore**.

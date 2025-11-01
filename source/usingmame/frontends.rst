@@ -39,10 +39,9 @@ portáteis, etc.
     emulação de computadores domésticos. É escrito em C++,
     `o código-fonte está no GitHub <https://github.com/npwoods/bletchmame>`__.
 `IV/Play <https://john-iv.github.io/iv-play/>`__ (Microsoft Windows)
-   Um lançador rápido, controlado por teclado e acelerado por DirectX
-   para MAME. O IV/Play possui um sistema de filtragem flexível,
-   navegação e lançamento integrados para listas de software e uma
-   interface altamente personalizável. Escrito em C#.
+    O IV/Play possui uma interface personalizável projetada para ser
+    navegada com um teclado. Ele suporta listas de software e possui
+    filtragem flexível.
 `Emu Loader <http://emuloader.mameworld.info/>`__ (Microsoft Windows)
     O *Emu loader* oferece uma interface Windows para iniciar sistemas
     e diversos emuladores, incluindo o MAME, Supermodel e o DEMUL. É
