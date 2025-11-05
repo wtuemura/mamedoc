@@ -583,7 +583,7 @@ Em seguida, extraia os valores em hexadecimal ("html notation" no Gimp)
 das cores e cole-os num editor hexadecimal. Então, salve-os como
 ``nome_da_paleta.pal``.
 
-Um conjunto de **38 LUTs** foi compilado, incluindo os criados neste
+Um conjunto de **37 LUTs** foi compilado, incluindo os criados neste
 documento. Baixe a última versão 2025 `aqui`_. As tabelas de cores foram
 atualizadas para o **MAME 0.280** ou versões mais recentes. Descompacte
 os arquivos **.png** dentro da pasta *artwork* ou crie uma pasta
