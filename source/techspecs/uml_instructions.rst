@@ -1,4 +1,4 @@
-.. 1104
+.. 3668
 .. raw:: latex
 
 	\clearpage
@@ -3595,6 +3595,95 @@ Regras de simplificação
   tamanho da instrução.
 * Os valores imediatos para o operando **count** são truncados para
   cinco ou seis bits para operandos de 32 ou 64 bits respectivamente.
+
+
+.. _umlinst-bfx:
+
+BFX
+~~~
+
+Extrai um campo de bits contíguo de um valor inteiro.
+
++---------------------------------+-----------------------------------------------+
+| Disassembly                     | Utilização                                    |
++=================================+===============================================+
+| .. code-block::                 | .. code-block:: C++                           |
+|                                 |                                               |
+|     bfxu    dst,src,shift,width |     UML_BFXU(block, dst, src, shift, width);  |
+|     bfxs    dst,src,shift,width |     UML_BFXS(block, dst, src, shift, width);  |
+|     dbfxu   dst,src,shift,width |     UML_DBFXU(block, dst, src, shift, width); |
+|     dbfxs   dst,src,shift,width |     UML_DBFXS(block, dst, src, shift, width); |
++---------------------------------+-----------------------------------------------+
+
+Extrai e alinha à direita um campo de bits contíguo do valor do operando
+**src**, conforme especificado pela sua posição de bit menos
+significativa e largura em bits. O campo deve ser mais estreito que o
+operando **src**, mas pode envolver desde a posição de bit mais
+significativa até a posição de bit menos significativa. Os operandos
+BFXU e DBFXU estendem a zero um campo não-assinado, e BFXS e DBFXS
+estendem o sinal de um campo assinado.
+
+Os back-ends podem otimizar algumas formas dessa instrução, por exemplo,
+quando ambos os operandos **shift** e **width** forem valores imediatos.
+
+
+Operandos
+^^^^^^^^^
+
+dst |36mri|
+    O destino onde o campo que foi extraído será armazenado.
+src |36mriivm|
+    O valor usado para extrair um campo de bits contíguo.
+shift |36mriivm|
+    A posição do bit menos significativo do campo a ser extraído, onde
+    zero é a posição do bit menos significativo e as quantidades dos
+    bits aumentam em direção à posição do bit mais significativo. Apenas
+    os cinco ou seis bits menos significativos deste operando são
+    usados, a depender do tamanho da instrução.
+width |36mriivm|
+    A largura do campo a ser extraído em bits. Apenas os cinco ou seis
+    bits menos significativos deste operando são usados, a depender do
+    tamanho da instrução. O resultado é indefinido se a largura módulo o
+    tamanho da instrução em bits for zero.
+
+Sinalizadores
+^^^^^^^^^^^^^
+
+carry (C)
+    |idf|.
+overflow (V)
+    |idf|.
+zero (Z)
+    É definido caso o resultado seja zero |occl|.
+sign (S)
+    É definido com o valor do bit mais significativo do resultado (é
+    definido se o resultado for um valor inteiro negativo assinado
+    |occl|).
+unordered (U)
+    |idf|.
+
+Regras de simplificação
+^^^^^^^^^^^^^^^^^^^^^^^
+* É convertido para :ref:`MOV <umlinst-mov>`, :ref:`AND <umlinst-and>`
+  ou :ref:`OR <umlinst-or>` se qualquer um dos operandos **src**,
+  **shift** e **width** tiver o valor imediato zero ou caso o operando
+  **width** tiver um valor imediato zero.
+* É convertido para :ref:`SHR <umlinst-shr>` ou :ref:`SAR <umlinst-sar>`
+  se o operando **src** não tiver um valor imediato e se ambos os
+  operandos **shift** e **width** tiverem valores imediatos. Neste caso,
+  a soma dos valores dos operandos **shift** e **width** deve ser igual
+  ao tamanho da instrução em bits.
+* Ambos BFXU e DBFXU são convertidos para :ref:`AND <umlinst-and>` se
+  o operando **shift** tiver um valor imediato zero e o operando
+  **width** tiver um valor imediato.
+* Ambos BFXS e DBFXS são convertidos para :ref:`SEXT <umlinst-sext>` se
+  o operando **shift** tiver um valor imediato zero e o operando
+  **width** tiver o valor imediato 8, 16 ou 32.
+* Os valores imediatos do operando **src** são truncados para o tamanho
+  da instrução.
+* Os valores imediatos dos operandos **shift** e **width** são truncados
+  para cinco ou seis bits para operandos de 32 ou 64 bits
+  respectivamente.
 
 
 .. _umlinst-roland:
