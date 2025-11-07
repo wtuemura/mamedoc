@@ -407,6 +407,9 @@ MAME funcione e exiba apenas uma lista com sistemas classificados
 internamente como "*arcade*", simples assim. Para mais informações leia
 o capítulo :ref:`compiling-MAME`.
 
+.. note:: Não é mais possível usar ``SUBTARGET=arcade`` pois essa opção
+   foi removida.
+
 
 .. _advanced-tricks-using-mame-interface:
 

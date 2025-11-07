@@ -489,8 +489,8 @@ abaixo:
 
 		make SUBTARGET=arcade SYMBOLS=1 SYMLEVEL=1 -j7
 
-.. note:: Não é possível mais usar o *SUBTARGET* ``arcade`` pois foi
-   descontinuado e removido.
+.. note:: Não é mais possível usar ``SUBTARGET=arcade`` pois essa opção
+   foi removida.
 
 Para compilar uma versão do MAME só com consoles, use o comando abaixo:
 
@@ -606,7 +606,7 @@ aumente de forma considerável. Há sistemas nos quais não se nota
 diferença alguma, ao passo que, em outros, há perda de desempenho.
 
 Em alguns testes, a melhor média foi obtida usando apenas as opções
-``SSE3=3 OPTIMIZE=03`` e mais nada, apesar do padrão do MAME ser
+``SSE3=1 OPTIMIZE=03`` e mais nada, apesar do padrão do MAME ser
 ``SSE2=1``. Novamente, essa é uma questão muito subjetiva, pois depende
 de muitas variáveis, como a configuração do seu hardware, por exemplo.
 Logo, o desempenho pode variar bastante. É muito difícil saber com
