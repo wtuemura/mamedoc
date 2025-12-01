@@ -799,9 +799,10 @@ Há suporte para os seguintes componentes:
 	usando o atributo **string**. É possível usar o atributo **align**
 	para definir o alinhamento do texto. Se presente, o atributo
 	**align** deve ser um valor inteiro, sendo o valor ``0`` (zero)
-	centraliza o texto, ``1`` (um) alinha à esquerda e ``2`` (dois)
-	alinha à direita. Se o atributo **align** estiver ausente, o texto
-	será centralizado automaticamente.
+	centraliza o texto, ``1`` (um) alinha à esquerda, ``2`` (dois)
+	alinha à direita e ``3`` (três) estica o texto na horizontal
+	alinhando-o com seus limites. Se o atributo **align** estiver
+	ausente, o texto será centralizado automaticamente.
 
 **led7seg**
 
