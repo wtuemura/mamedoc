@@ -14,6 +14,10 @@
 		 Add showpointers="no" to hide the orange pointer.
 		 Use clickthrough="no" to block clickable input.
 
+	Update 28/10/2025
+		MAME MAME 0.281 Make hit test priority match visual order (GitHub #14113).
+		https://github.com/mamedev/mame/commit/0480c0384e2b80dcb8e36eadd1d8230600825e4a
+
 	 License: CC by 4.0
 -->
 <mamelayout version="2">
@@ -176,16 +180,16 @@
 	<group name="vrb">
 		<bounds x="0" y="0" width="99.840" height="32.960" />
 	<element name="out3" ref="VR 1" inputtag="IN.0" inputmask="0x20">
-		<bounds x="4" y="1.5" width="21" height="31" />
+		<bounds x="2.5" y="1.5" width="23" height="34" />
 	</element>
 	<element name="out4" ref="VR 2" inputtag="IN.0" inputmask="0x40">
-		<bounds x="28" y="1.5" width="21" height="31" />
+		<bounds x="27.3" y="1.5" width="23" height="34" />
 	</element>
 	<element name="out5" ref="VR 3" inputtag="IN.0" inputmask="0x80">
-		<bounds x="52" y="1.5" width="21" height="31" />
+		<bounds x="52.1" y="1.5" width="23" height="34" />
 	</element>
 	<element name="out6" ref="VR 4" inputtag="IN.1" inputmask="0x01">
-		<bounds x="76" y="1.5" width="21" height="31" />
+		<bounds x="75" y="1.5" width="23" height="34" />
 	</element>
 	<element ref="vr_btn_cover">
 		<bounds x="-1.154" y="-3.833" width="102.606" height="41.680" />
@@ -232,20 +236,11 @@
 	<element ref="swb">
 		<bounds x="31.86" y="223.36" width="46.92" height="21.78" />
 	</element>
-	<element ref="cover" clickthrough="no">
-		<bounds x="68.31" y="219.99" width="17.286" height="40.00" />
-	</element>
 	<element ref="ugear up" inputtag="IN.1" inputmask="0x20">
 		<bounds x="68.31" y="219.99" width="17.286" height="40.00" />
 	</element>
-	<element ref="cover" clickthrough="no">
-		<bounds x="23.24" y="220.24" width="17.286" height="40.00" />
-	</element>
 	<element ref="ugear down" inputtag="IN.1" inputmask="0x10">
 		<bounds x="23.24" y="220.24" width="17.286" height="40.00" />
-	</element>
-	<element ref="cover" clickthrough="no">
-		<bounds x="14.77" y="194.169" width="79.020" height="141.111" />
 	</element>
 
 <!-- 
@@ -269,18 +264,15 @@
 	<element ref="wheel" inputtag="WHEEL" inputmask="0xf8" inputraw="yes">
 			<bounds x="14.77" y="200.73" width="79.01" height="79.01" />
 	</element>
-	<element ref="cover" clickthrough="no">
-		<bounds x="57.62" y="283.37" width="23.00" height="50.00" />
-	</element>
 	<element ref="accel" inputtag="ACCEL" inputmask="0xc0">
 		<bounds x="57.62" y="283.37" width="23.00" height="50.00" />
-	</element>
-	<element ref="cover" clickthrough="no">
-		<bounds x="27.93" y="283.37" width="23.00" height="50.00" />
 	</element>
 	<element ref="brake" inputtag="BRAKE" inputmask="0xc0">
 		<bounds x="27.93" y="283.37" width="23.00" height="50.00" />
 		<orientation flipx="yes" />
+	</element>
+	<element ref="cover" clickthrough="no">
+		<bounds x="14.77" y="200.73" width="80" height="80" />
 	</element>
 	</collection>
 
