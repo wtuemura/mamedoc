@@ -6,10 +6,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: MAME 0.281\n"
+"Project-Id-Version: MAME 0.283\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-30 23:55-0300\n"
-"PO-Revision-Date: 2025-09-01 01:20-0300\n"
+"PO-Revision-Date: 2025-12-12 16:48-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -35,11 +35,11 @@ msgstr "parado"
 
 #: src/frontend/mame/ui/tapectrl.cpp:41
 msgid "playing"
-msgstr "jogando"
+msgstr "reproduzindo"
 
 #: src/frontend/mame/ui/tapectrl.cpp:41
 msgid "(playing)"
-msgstr "(jogando)"
+msgstr "(reproduzindo)"
 
 #: src/frontend/mame/ui/tapectrl.cpp:43
 msgid "recording"
@@ -55,7 +55,7 @@ msgstr "Controle da Fita"
 
 #: src/frontend/mame/ui/tapectrl.cpp:116
 msgid "Pause/Stop"
-msgstr "Pausa/Para"
+msgstr "Pausar/Parar"
 
 #: src/frontend/mame/ui/tapectrl.cpp:119
 msgid "Play"
