@@ -334,6 +334,12 @@ Métodos
 	saída de erro predefinida.
 
 
+**machine:side_effects_disabled()**
+
+	Retorna um valor booleano indicando se os efeitos laterais estão
+	desativados.
+
+
 Propriedades
 ~~~~~~~~~~~~
 
