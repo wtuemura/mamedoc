@@ -3472,34 +3472,62 @@ Opções para uso com as ilustrações
 
 .. _mame-commandline-fallbackartwork:
 
-**-fallback_artwork**
+**-fallback_artwork** <*nome da ilustração*>
 
-	Define uma ilustração alternativa caso nenhuma ilustração interna ou
-	externa do layout tenha sido definida. Se houver uma ilustração para
-	o sistema esteja presente ou se layout estiver incluso no driver do
-	sistema, então este terá precedência.
+	Especifica uma ilustração alternativa na ausência de uma ilustração
+	externa ou layout interno do driver. No entanto, se houver uma
+	ilustração externa ou um layout do driver, a ilustração aqui
+	definida terá precedência.
 
 	Exemplo:
 		.. code-block:: shell
 
-		mame coco -fallback_artwork suprmrio
+			mame coco -fallback_artwork suprmrio
+
+		.. Tip:: É possível utilizar **fallback_artwork <nome da
+			ilustração>** em ``horizont.ini`` e ``vertical.ini`` para
+			determinar diferentes ilustrações alternativas para sistemas
+			que usam tela na horizontal e na vertical.
 
 
 .. _mame-commandline-overrideartwork:
 
-**-override_artwork**
+**-override_artwork** <*nome da ilustração*>
 
-	Define uma ilustração para substituir a ilustração interna ou a
-	ilustração externa do layout.
+	Impõem o uso de uma ilustração para substituir a ilustração interna
+	ou externa do layout.
 
 	Exemplo:
 		.. code-block:: shell
 
 			mame galaga -override_artwork puckman
 
+
+.. _mame-commandline-artworkfont:
+
+**-artwork_font** / **-artfont** <*nome da fonte*>
+
+	Define a fonte que será utilizada pelos elementos de texto da
+	ilustração. O mesmo se aplica para a fonte da interface (consulte a
+	opção :ref:`uifont <mame-commandline-uifont>`).
+
+	Observe que as ilustrações são normalmente projetadas em torno de
+	uma fonte sans serif com espaçamento estreito entre os caracteres
+	(**Tahoma**, que é a fonte padrão no Windows por exemplo). O uso
+	de uma fonte com espaçamento mais amplo entre os caracteres ou de
+	uma fonte com espaçamento fixo (uma fonte da família Courier por
+	exemplo) pode resultar em problemas de posicionamento do texto.
+
+	Exemplo:
+		.. code-block:: shell
+
+			mame starwbc -artwork_font "Comic Sans MS"
+
+
 .. raw:: latex
 
 	\clearpage
+
 
 Opções para os ajustes de imagem da tela
 ----------------------------------------
@@ -5225,15 +5253,28 @@ Opções diversas
 
 **-uifont** <*nome da fonte*>
 
-	Define o nome da fonte ou o nome do arquivo de fonte a ser utilizado
-	na interface do usuário. Se essa fonte não puder ser encontrada ou
-	carregada, o MAME usará a sua própria. Em algumas plataformas, o
-	<*nome da fonte*> pode ser um nome da fonte listada no sistema em
-	vez do nome de arquivo com extensão **.bdf**. Para fontes com espaço
+	Define o nome da fonte ou o nome do arquivo da fonte a ser utilizada
+	para o texto da interface do usuário. Se essa fonte não puder ser
+	encontrada ou carregada, o MAME a sua própria. A compatibilidade das
+	fontes dependem da plataforma selecionada e do módulo provedor de
+	fontes da interface do usuário. Em algumas configurações, *<nome da
+	fonte>* pode ser o nome da fonte no sistema ou um caminho para um
+	arquivo de fonte TrueType. Em todos os casos, pode ser usado um
+	caminho para um arquivo de fonte **.bdf** (Adobe Glyph Bitmap
+	Distribution Format).
+
+	Observe que os caracteres disponíveis dependem da fonte, e muitas
+	fontes não cobrem diferentes sistemas de escrita e idiomas, ou
+	símbolos como setas por exemplo. Dependendo da configuração, o MAME
+	pode não substituir automaticamente caracteres de outras fontes.
+	Os caracteres que não estão disponíveis podem ser substituídos por
+	glifos substitutos (geralmente retângulos). Para fontes com espaço
 	no nome, utilize o nome entre aspas (**-uifont "nome do arquivo da
 	fonte"**).
 
-		O valor predefinido é ``default`` (O MAME usará a fonte nativa).
+		O valor predefinido é ``default`` (O MAME usará a fonte nativa
+		determinada pelo módulo provedor de fontes da interface do
+		usuário).
 
 	Exemplo:
 		.. code-block:: shell
@@ -5256,11 +5297,6 @@ Opções diversas
 		.. code-block:: shell
 
 			mame -ui simple
-
-
-	.. raw:: latex
-
-		\clearpage
 
 
 .. _mame-commandline-ramsize:

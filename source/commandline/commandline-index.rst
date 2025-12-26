@@ -226,6 +226,7 @@ Opções para uso com as ilustrações
 | :ref:`[no]artwork_crop <mame-commandline-noartworkcrop>`
 | :ref:`fallback_artwork <mame-commandline-fallbackartwork>`
 | :ref:`override_artwork <mame-commandline-overrideartwork>`
+| :ref:`artwork_font <mame-commandline-artworkfont>`
 
 
 Opções para os ajustes de imagem da tela

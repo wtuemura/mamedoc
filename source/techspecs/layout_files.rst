@@ -794,15 +794,15 @@ Há suporte para os seguintes componentes:
 
 **text**
 
-	Escreve um texto na tela usando a fonte da interface e na cor
-	definida pelo usuário. O texto que será escrito deve ser informado
-	usando o atributo **string**. É possível usar o atributo **align**
-	para definir o alinhamento do texto. Se presente, o atributo
-	**align** deve ser um valor inteiro, sendo o valor ``0`` (zero)
-	centraliza o texto, ``1`` (um) alinha à esquerda, ``2`` (dois)
-	alinha à direita e ``3`` (três) estica o texto na horizontal
-	alinhando-o com seus limites. Se o atributo **align** estiver
-	ausente, o texto será centralizado automaticamente.
+	Gera texto na cor especificada, utilizando a fonte da ilustração. O
+	texto a ser gerado deve ser fornecido utilizando um atributo
+	**string**. Um atributo **align** pode ser fornecido para definir o
+	alinhamento do texto. Se presente, o atributo **align** deve ser um
+	número inteiro, onde ``0`` (zero) significa centralizado, ``1`` (um)
+	significa alinhado à esquerda, ``2`` (dois) significa alinhado à
+	direita e ``3`` (três) significa que o texto será esticado
+	horizontalmente para preencher seus limites. Se o atributo **align**
+	estiver ausente, o texto será centralizado automaticamente.
 
 **led7seg**
 
@@ -866,22 +866,22 @@ Há suporte para os seguintes componentes:
 
 **simplecounter**
 
-	Exibe o valor numérico do estado do item usando a fonte do sistema
-	na cor especificada. O valor é formatado como um número decimal.
-	É possível fornecer um atributo **digits** para especificar a
-	quantidade mínima de dígitos que serão mostrados na tela. Se estiver
+	Exibe o valor numérico do estado do elemento na cor especificada,
+	usando a fonte da ilustração final. O valor é formatado em notação
+	decimal. Um atributo **digits** pode ser fornecido para especificar
+	a quantidade mínima de dígitos que serão mostrados na tela. Se
 	presente, o atributo **digits** deve ser um número inteiro positivo;
-	caso contrário, será exibido um mínimo de dois dígitos.
+	caso contrário, serão exibidos no mínimo dois dígitos.
 
 	Um atributo **maxstate** pode ser fornecido para especificar o valor
-	máximo de estado que será mostrado na tela. Se estiver presente, o
-	atributo **maxstate** deverá ser um número não negativo; se não
-	estiver presente, o padrão será **999**. Um atributo **align** pode
-	ser fornecido para especificar o alinhamento do texto. Se estiver
-	presente, o atributo **align** deverá ser um número inteiro, sendo
-	o valor ``0`` (zero) centralizado, ``1`` (um) alinhado à esquerda e
-	``2`` (dois) alinhado à direita. Na sua ausência, o texto será
-	centralizado automaticamente.
+	máximo do estado a ser exibido. Se presente, o atributo **maxstate**
+	deve ser um número não negativo; na sua ausência, o padrão será
+	**999**. Um atributo **align** pode ser fornecido para definir o
+	alinhamento do texto. Se presente, o atributo **align** deve ser um
+	número inteiro, onde ``0`` (zero) significa centralizado, ``1`` (um)
+	significa alinhado à esquerda e ``3`` (três) significa que o texto
+	será esticado horizontalmente para preencher seus limites. Na sua
+	ausência, o texto será centralizado automaticamente.
 
 Um exemplo de elemento estático posicionado à esquerda da tela:
 

@@ -240,10 +240,12 @@ primeira |fde| que for exposta pelo dispositivo, ``strdumpd`` |rfi| 1
 caracteres com uma terminação NULA (ASCIIZ), o despejo terá um caractere
 por linha, com sequências de escape em estilo C que serão utilizadas
 nos bytes que não representem caracteres ASCII imprimíveis. O parâmetro
-opcional <*term*> pode ser usado para determinar um caractere
-de terminação diferente da cadeia de caracteres. Se <*term*> for igual a
-``-0x80``, o terminador não será um byte separado. Em vez disso,
-``0x80`` será adicionado ao último caractere de cada string.
+opcional **<term>** pode ser usado para especificar um caractere
+terminador de string diferente. Se **<term>** for igual a ``-0x80``, as
+strings serão tratadas como terminado após qualquer byte com o bit mais
+significativo definido, e o bit mais significativo será ignorado ao
+imprimir caracteres.
+
 
 |ret| :ref:`debugger-memory-list`.
 
