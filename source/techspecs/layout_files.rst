@@ -969,6 +969,9 @@ pelo verde, passando pelo amarelo e chegando ao vermelho:
 	</element>
 
 
+Para mais informações, consulte o capítulo :ref:`layfile-daytona`.
+
+
 .. raw:: latex
 
 	\clearpage
@@ -5077,17 +5080,318 @@ e clique em :guilabel:`Redefine` para reiniciar o sistema.
 	\clearpage
 
 
+.. _layfile-daytona:
+
+Criando controles visuais para Daytona USA
+------------------------------------------
+
+Os controles do *Daytona USA* são bastante sensíveis, de modo que
+movimentos simples são interpretados de maneira extrema pelo jogo, como
+se você instantaneamente movesse a roda do carro para qualquer um dos
+lados ou acelerasse de zero a 100% em um instante. Com isso, você perde
+o controle e a tração na pista (na tela você vê fumaça saindo pelos
+pneus indicando que eles estão patinando). Essa ilustração te ajuda a
+ter um retorno visual para que voce possa fazer o ajuste fino nas
+configurações de sensibilidade do controle.
+
+Crie uma pasta em **artwork\\daytona** e salve o arquivo abaixo como
+**default.lay**:
+
+.. code-block:: xml
+
+	<?xml version="1.0"?>
+	<mamelayout version="2">
+	<!--
+		Controles virtuais para Daytona USA
+		Criado por: Wellington Terumi Uemura
+		Licença: CC0
+		Fonte: Documentação Oficial do MAME:
+		https://docs.mamedev.org/techspecs/layout_files.html
+		Download: https://pastebin.com/TjTx5895
+		https://mamedoc.readthedocs.io/
+		Data de criação: December 28, 2025
+	-->
+	
+	<!-- Elemento de texto "WHEEL" (volante) -->
+	<element name="volante" defstate="1">
+		<text string="WHEEL"></text>
+	</element>
+	
+	<!-- Elemento de texto "AC" (acelerador) -->
+	<element name="gas" defstate="1">
+		<text string="AC"></text>
+	</element>
+	
+	<!-- Elemento de texto "BK" (freio) -->
+	<element name="brake" defstate="1">
+		<text string="BK"></text>
+	</element>
+	
+	<!-- Para bloquear cliques do mouse -->
+	<element name="cover" defstate="0">
+		<rect><color alpha="0" /></rect>
+	</element>
+	
+	<!--
+	https://github.com/mamedev/mame/blob/master/src/mame/sega/model2.cpp#L1765
+	
+		PORT_START("STEER")
+		PORT_BIT(0xff, 0x80, IPT_PADDLE) PORT_SENSITIVITY(30) PORT_KEYDELTA(10)
+	
+		É daqui de onde obtemos os valores para o volante e aplicamos as cores
+		da posição neutra até o extremo. O mecanismo interno do MAME faz o
+		resto para transicionar entre as cores.
+	-->
+	
+	<element name="wheel">
+		<rect>
+			<bounds state="0xff" left="0.475" top="0.0" right="1.0" bottom="1.0" /><!-- Direita -->
+			<bounds state="0x80" left="0.475" top="0.0" right="0.525" bottom="1.0" /><!-- Centro -->
+			<bounds state="0x0" left="0.0" top="0.0" right="0.525" bottom="1.0" /><!-- Esquerda -->
+			<color state="0x80" red="0.0" green="0.0" blue="0.8" /><!-- neutro/centro -->
+			<color state="0x40" red="0.709" green="0.0" blue="0.709" /><!-- intermediário -->
+			<color state="0x0" red="1.0" green="0.0" blue="0.0" /><!-- Left -->
+			<color state="0xbf" red="0.709" green="0.0" blue="0.709" /><!-- intermediário -->
+			<color state="0xff" red="1.0" green="0.0" blue="0.0"  /><!-- Right-->
+		</rect>
+	</element>
+	
+	<!--
+	https://github.com/mamedev/mame/blob/master/src/mame/sega/model2.cpp#L1765
+	
+		PORT_START("ACCEL")
+		PORT_BIT(0xff, 0x00, IPT_PEDAL)  PORT_SENSITIVITY(30) PORT_KEYDELTA(10)
+	
+		PORT_START("BRAKE")
+		PORT_BIT(0xff, 0x00, IPT_PEDAL2) PORT_SENSITIVITY(30) PORT_KEYDELTA(10)
+	
+		É daqui de onde obtemos os valores para o acelerador e freio, aplicamos
+		as cores da posição neutra até o extremo. O mecanismo interno do MAME
+		faz o resto para transicionar entre as cores.
+	
+	-->
+	
+	<element name="pedal">
+		<rect>
+			<bounds state="0x00" left="0.0" top="0.9" right="1.0" bottom="1.0" /><!-- Neutro -->
+			<bounds state="0xff" left="0.0" top="0.0" right="1.0" bottom="1.0" /><!-- Socado -->
+			<color state="0x00" red="0.0" green="0.0" blue="0.8" /><!-- Neutro -->
+			<color state="0x7f" red="0.709" green="0.0" blue="0.709" /><!-- 50% -->
+			<color state="0xff" red="1.0" green="0.0" blue="0.0" /><!-- Socado -->
+		</rect>
+	</element>
+	
+	<!-- Define o nome da nossa ilustração para ser selecionada na interface do MAME-->
+	<view name="Controles Analógicos" showpointers="no">
+	<screen index="0">
+		<bounds x="0" y="0" width="4" height="3" />
+	</screen>
+	
+	<!-- Define a posição e tamanho do texto "WHEEL" na tela -->
+	<element ref="volante" align="3">
+		<bounds x="1.870" y="2.91" width="0.261" height="0.052" />
+		<color red="1.0" green="1.0" blue="1.0" />
+	</element>
+	
+	<!-- Define a posição e tamanho inicial para a animação do volante na tela -->
+	<element ref="wheel" inputtag="STEER" inputmask="0xff" inputraw="yes">
+		<bounds x="1" y="2.8" width="2" height="0.1" />
+		<color alpha="0.7" />
+	</element>
+	
+	<!-- Bloqueia o clique no volante -->
+	<element ref="cover" clickthrough="no">
+		<bounds x="0.9" y="2.8" width="2.1" height="0.2" />
+	</element>
+	
+	<!-- Define a posição e tamanho do texto "AC" na tela -->
+	<element ref="gas" align="3">
+		<bounds x="3.075" y="2.91" width="0.1" height="0.053" />
+		<color red="1.0" green="1.0" blue="1.0" />
+	</element>
+	
+	<!-- Define a posição e tamanho inicial para a animação do acelerador na tela -->
+	<element ref="pedal" inputtag="ACCEL" inputmask="0xff" inputraw="yes">
+		<bounds x="3.075" y="1.9" width="0.1" height="1" />
+		<color alpha="0.7" />
+	</element>
+	
+	<!-- Define a posição e tamanho do texto "BK" na tela -->
+	<element ref="brake" align="3">
+		<bounds x="3.274" y="2.911" width="0.1" height="0.051" />
+		<color red="1.0" green="1.0" blue="1.0" />
+	</element>
+	
+	<!-- Define a posição e tamanho inicial para a animação do freio na tela -->
+	<element ref="pedal" inputtag="BRAKE" inputmask="0xff" inputraw="yes">
+		<bounds x="3.275" y="1.9" width="0.1" height="1" />
+		<color alpha="0.7" />
+	</element>
+	
+	<!-- Bloqueia o clique nos pedais -->
+	<element ref="cover" clickthrough="no">
+		<bounds x="3.02" y="1.862" width="0.4" height="1.1" />
+	</element>
+	
+	</view>
+	</mamelayout>
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Ao iniciar o sistema, será possível ver os controles na parte
+inferior da tela com as descrições **WHEEL**, **AC** e **BK**.
+Experimente mover os controles para ver a animação acontecer em tempo
+real na tela.
+
+.. image:: images/daytona.png
+   :width: 50%
+   :align: center
+   :alt: Daytona USA
+
+.. raw:: html
+
+	<p></p>
+
+Acesse o link abaixo para assistir a ilustração em ação:
+
+https://www.youtube.com/watch?v=2MVQd1KaGOU
+
+**Problema de sensibilidade**
+
+Aparentemente, até a versão **0.284** do MAME, parece que há um *bug*
+para controles analógicos. Você notará que, mesmo tentando fazer os
+ajustes dos controles em :kbd:`Tab` --> :guilabel:`Configuração da
+entrada` --> :guilabel:`Ajustes da entrada analógica` e alterando os
+parâmetros da opção :guilabel:`aumenta/reduz velocidade` e
+:guilabel:`velocidade da centralização automática` eles não terão
+efeito, seja definindo-os como mínimo ou máximo.
+
+Uma solução paliativa para esse problema é alterar o padrão
+``JOYCODE_1_`` para qualquer outro, como ``JOYCODE_2_`` por exemplo.
+Antes de mais nada, identifique o ID do seu joystick. Com o jogo ainda
+em execução, pressione :kbd:`Tab` e acesse :guilabel:`Configuração da
+entrada` --> :guilabel:`Dispositivos da entrada` --> entre no item
+listado em **joystick**. E seguida, clique duas vezes em
+:guilabel:`Copia a ID do dispositivo`. Cole essa informação em um
+arquivo de texto para usá-la mais tarde.
+
+Também é possível obter essa ID por meio da linha de comando. No
+**Windows** ele aparece assim:
+
+.. code-block:: shell
+
+	mame daytona -v | find "Adding joystick"
+	Input: Adding joystick #1: Playstation 4 ...
+	...
+
+Já no **Linux**, **macOS** e outros sistemas SDL, aparece assim:
+
+.. code-block:: shell
+
+	./mame daytona -v | grep "Game Controller:"
+	Game Controller: PS4 Controller [GUID 03008fe54c050000c405000000016800] ...
+	...
+
+Para sistemas **Windows**, crie o arquivo **ctrlr\\daytona.cfg** com o
+seguinte conteúdo:
+
+.. code-block:: xml
+
+   <?xml version="1.0"?>
+   <mameconfig version="10">
+       <system name="daytona">
+           <input>
+   <!-- Joystick ID Windows-->
+               <mapdevice device="Playstation 4" controller="JOYCODE_2" />
+           </input>
+       </system>
+   </mameconfig>
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Para sistemas **Linux** crie o arquivo **ctrlr/daytona.cfg** com o
+seguinte conteúdo:
+
+.. code-block:: xml
+
+   <?xml version="1.0"?>
+   <mameconfig version="10">
+       <system name="daytona">
+           <input>
+   <!-- Joystick ID Linux -->
+               <mapdevice device="03008fe54c050000c405000000016800" controller="JOYCODE_2" />
+           </input>
+        </system>
+    </mameconfig>
+
+Crie o arquivo **ini\\daytona.ini** (Windows) ou **ini/daytona.ini**
+(Linux) com o seguinte conteúdo:
+
+.. code-block:: text
+
+	ctrlr daytona
+
+Se a emulação ainda estiver rodando pressione :kbd:`Shift` + :kbd:`F3`
+para forçar uma reinicialização completa ou inicie a emulação novamente
+caso ela não esteja rodando. Repare que agora os controles aparentam
+estar mais pesados e não respondem mais de maneira instantânea.
+
+Faça a personalização do mapeamento dos botões e do volante ao seu gosto
+pressionando a tecla :kbd:`Tab` e indo em :guilabel:`Configurações da
+entrada` --> :guilabel:`Atribuições da entrada (este sistema)`.
+
+As configurações utilizadas naquela gameplay foram (:kbd:`Tab` -->
+:guilabel:`Configurações da entrada` --> :guilabel:`Ajustes da entrada
+analógica`)
+
+.. code-block:: text
+
+	P1 pedal 1 velocidade da centralização automática 30
+	...
+	Acionador aumenta/reduz a velocidade 12
+	Acionador velocidade da centralização automática 13
+
+No nosso caso, o acelerador (**P1 Pedal 1**) acelera devagar e, ao tirar
+o dedo do botão, retorna mais rápido à posição neutra. Aumente o valor
+para acelerar esse movimento. Já o volante (**Acionador**), eu deixei o
+movimento mais lento (aumente caso queira mais lento) e acelerei um
+pouco o retorno ao centro. Faça os ajustes de acordo com o seu tipo de
+jogabilidade e o controle utilizado.
+
+Repare que, com a ajuda da nossa ilustração, é possível ver os efeitos
+das alterações em tempo real tanto do volante quanto dos pedais.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
 .. _layfile-update:
 
 Migrando o layout do formato antigo para o novo
 -----------------------------------------------
 
-Pela internet ainda se encontram aquivos artwork que utilizam o
-formato antigo que foi atualizado em Setembro de 2020, o MAME ainda não
-abandonou completamente estes formatos porém ele pode vir a fazê-lo a
-qualquer momento. Basta rodar um sistema com artwork com o formato
-antigo para que o MAME o alerte logo de cara por meio do terminal ou
-pelo prompt de comando.
+Ainda é possível encontrar na internet arquivos *artwork* que utilizam o
+formato antigo. O MAME ainda não abandonou completamente o formato
+antigo, mas poderá fazê-lo a qualquer momento, isso significa que o seus
+arquivos *artwork* poderão parar de funcionar. Para saber quais estão
+desatualizados, basta executar um sistema qualquer com *artwork* no
+formato antigo para que o MAME o alerte imediatamente por meio do
+terminal ou do prompt de comando informando que formato do arquivo é
+obsoleto, exemplo:
+
+.. code-block:: shell
+
+	Warning: layout view 'Upright_Artwork' contains deprecated bezel element
 
 Para resolver o problema, substitua estes itens:
 
@@ -5098,7 +5402,7 @@ Para resolver o problema, substitua estes itens:
 * **overlay element=** com **element ref=** e adicione
   **blend="multiply"** após o nome do elemento;
 * **</overlay>** com **</element>**;
-* **</bezel>** com **</element>**;
+* **</bezel>** com **</element>**.
 
 Fontes: Setembro `6`_, `7`_ e `9`_ de 2020.
 
