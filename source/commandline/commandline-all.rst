@@ -5116,8 +5116,9 @@ Opções diversas
 
 **-[no]drc**
 
-	Ativa o núcleo do DRC (recompilador dinâmico) da CPU para obter a
-	velocidade máxima de emulação, se disponível.
+	Se disponível, ativa os núcleos DRC da CPU (Recompilador Dinâmico).
+	Desative esta opção para usar os núcleos da CPU do interpretador.
+	Esta opção não afeta CPUs que suportam apenas um tipo de núcleo.
 
 	Na recompilação dinâmica, as instruções são traduzidas em tempo
 	real, de modo a serem o mais próximas possível do sistema que está
@@ -5136,18 +5137,40 @@ Opções diversas
 			mame ironfort -nodrc
 
 
+.. _mame-commandline-drcrwx:
+
+**-[no]drc_rwx**
+
+	Se compatível, permita que os núcleos DRC utilizem memória que seja
+	simultaneamente gravável e executável. Desativar esta opção pode
+	diminuir o desempenho. Observe que esta opção afeta apenas os
+	núcleos DRC da CPU e é ineficaz em configurações que não permitem
+	que a memória seja simultaneamente gravável e executável (versões
+	recentes do macOS e NetBSD por exemplo).
+
+		O valor predefinido é ``ligado`` (**-drc_rwx**).
+
+	Exemplo:
+		.. code-block:: shell
+
+			mame fiveside -nodrc_rwx
+
+
 .. _mame-commandline-drcusec:
 
 **-[no]drc_use_c**
 
-	Impõem o uso do DRC por meio da infraestrutura em código C.
+	Obriga que os núcleos DRC da CPU a usar o *back-end* de código C
+	portátil quando um *back-end* nativo estiver disponível. Essa opção
+	afeta apenas os núcleos DRC da CPU e não tem efeito se um back-end
+	DRC nativo não estiver disponível.
 
 		O valor predefinido é ``desligado`` (**-nodrc_use_c**).
 
 	Exemplo:
 		.. code-block:: shell
 
-			mame ironfort -drc_use_c
+			mame vamphalf -drc_use_c
 
 
 .. _mame-commandline-drcloguml:
