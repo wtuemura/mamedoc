@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MAME 0.286\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-06 03:57-0300\n"
-"PO-Revision-Date: 2026-01-06 07:46-0300\n"
+"POT-Creation-Date: 2026-01-12 15:15-0300\n"
+"PO-Revision-Date: 2026-01-12 15:35-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
 "Language: pt_BR\n"
@@ -180,7 +180,7 @@ msgstr "Houve um erro ao abrir uma imagem de disquete: %1$s"
 msgid "BIOS Selection"
 msgstr "Seleção da BIOS"
 
-#: src/frontend/mame/ui/miscmenu.cpp:77 src/frontend/mame/ui/miscmenu.cpp:866
+#: src/frontend/mame/ui/miscmenu.cpp:77 src/frontend/mame/ui/miscmenu.cpp:863
 msgid "System"
 msgstr "Sistema"
 
@@ -194,6 +194,7 @@ msgstr "Dispositivos de rede"
 
 #: src/frontend/mame/ui/miscmenu.cpp:271
 #, c-format
+msgctxt "menu-bookkeeping"
 msgid ""
 "Uptime: %1$d:%2$02d:%3$02d\n"
 "\n"
@@ -203,6 +204,7 @@ msgstr ""
 
 #: src/frontend/mame/ui/miscmenu.cpp:273
 #, c-format
+msgctxt "menu-bookkeeping"
 msgid ""
 "Uptime: %1$d:%2$02d\n"
 "\n"
@@ -212,6 +214,7 @@ msgstr ""
 
 #: src/frontend/mame/ui/miscmenu.cpp:278
 #, c-format
+msgctxt "menu-bookkeeping"
 msgid ""
 "Tickets dispensed: %1$d\n"
 "\n"
@@ -219,100 +222,111 @@ msgstr ""
 "Bilhetes emitidos: %1$d\n"
 "\n"
 
-#: src/frontend/mame/ui/miscmenu.cpp:291
-msgid "Coin %1$c: NA%3$s\n"
-msgstr "Ficha %1$c: NA%3$s\n"
+#: src/frontend/mame/ui/miscmenu.cpp:290
+#, c-format
+msgctxt "menu-bookkeeping"
+msgid "Coin %1$c: NA (locked)\n"
+msgstr "Ficha %1$c: NA (travado)\n"
+
+#: src/frontend/mame/ui/miscmenu.cpp:290
+#, c-format
+msgctxt "menu-bookkeeping"
+msgid "Coin %1$c: NA\n"
+msgstr "Ficha %1$c: NA\n"
 
 #: src/frontend/mame/ui/miscmenu.cpp:291
 #, c-format
-msgid "Coin %1$c: %2$d%3$s\n"
-msgstr "Ficha %1$c: %2$d%3$s\n"
+msgctxt "menu-bookkeeping"
+msgid "Coin %1$c: %2$d (locked)\n"
+msgstr "Ficha %1$c: %2$d (travado)\n"
 
-#: src/frontend/mame/ui/miscmenu.cpp:294
-msgid " (locked)"
-msgstr " (travado)"
+#: src/frontend/mame/ui/miscmenu.cpp:291
+#, c-format
+msgctxt "menu-bookkeeping"
+msgid "Coin %1$c: %2$d\n"
+msgstr "Ficha %1$c: %2$d\n"
 
-#: src/frontend/mame/ui/miscmenu.cpp:392 src/frontend/mame/ui/miscmenu.cpp:590
+#: src/frontend/mame/ui/miscmenu.cpp:389 src/frontend/mame/ui/miscmenu.cpp:587
 msgctxt "menu-crosshair"
 msgid "[built-in]"
 msgstr "[incorporado]"
 
-#: src/frontend/mame/ui/miscmenu.cpp:436
+#: src/frontend/mame/ui/miscmenu.cpp:433
 msgctxt "menu-crosshair"
 msgid "Crosshair Options"
 msgstr "Opções da mira"
 
-#: src/frontend/mame/ui/miscmenu.cpp:505
+#: src/frontend/mame/ui/miscmenu.cpp:502
 msgctxt "menu-crosshair"
 msgid "Never"
 msgstr "Nunca"
 
-#: src/frontend/mame/ui/miscmenu.cpp:506
+#: src/frontend/mame/ui/miscmenu.cpp:503
 msgctxt "menu-crosshair"
 msgid "Always"
 msgstr "Sempre"
 
-#: src/frontend/mame/ui/miscmenu.cpp:507
+#: src/frontend/mame/ui/miscmenu.cpp:504
 msgctxt "menu-crosshair"
 msgid "When moved"
 msgstr "Quando for movido"
 
-#: src/frontend/mame/ui/miscmenu.cpp:531
+#: src/frontend/mame/ui/miscmenu.cpp:528
 #, c-format
 msgctxt "menu-crosshair"
 msgid "P%1$d Visibility"
 msgstr "Visibilidade do P%1$d"
 
-#: src/frontend/mame/ui/miscmenu.cpp:589
+#: src/frontend/mame/ui/miscmenu.cpp:586
 #, c-format
 msgctxt "menu-crosshair"
 msgid "P%1$d Crosshair"
 msgstr "Mira P%1$d"
 
-#: src/frontend/mame/ui/miscmenu.cpp:611
+#: src/frontend/mame/ui/miscmenu.cpp:608
 msgctxt "menu-crosshair"
 msgid "Auto-Hide Delay"
 msgstr "Atraso da ocultação automática"
 
-#: src/frontend/mame/ui/miscmenu.cpp:612
+#: src/frontend/mame/ui/miscmenu.cpp:609
 #, c-format
 msgctxt "menu-crosshair"
 msgid "%1$d s"
 msgstr "%1$d s"
 
-#: src/frontend/mame/ui/miscmenu.cpp:633
+#: src/frontend/mame/ui/miscmenu.cpp:630
 msgid "Export Displayed List to File"
 msgstr "Exporta a lista exibida para um arquivo"
 
-#: src/frontend/mame/ui/miscmenu.cpp:693
+#: src/frontend/mame/ui/miscmenu.cpp:690
 #, c-format
 msgid "%s.xml saved in UI settings folder."
 msgstr "O %s.xml foi salvo na pasta ui."
 
-#: src/frontend/mame/ui/miscmenu.cpp:719
+#: src/frontend/mame/ui/miscmenu.cpp:716
 msgid "Name:             Description:\n"
 msgstr "Nome:             Descrição:\n"
 
-#: src/frontend/mame/ui/miscmenu.cpp:730
+#: src/frontend/mame/ui/miscmenu.cpp:727
 #, c-format
 msgid "%s.txt saved in UI settings folder."
 msgstr "O %s.txt foi salvo na pasta ui."
 
-#: src/frontend/mame/ui/miscmenu.cpp:749
+#: src/frontend/mame/ui/miscmenu.cpp:746
 msgid "Export list in XML format (like -listxml)"
 msgstr "Exporta a lista em formato XML (igual -listxml)"
 
-#: src/frontend/mame/ui/miscmenu.cpp:750
+#: src/frontend/mame/ui/miscmenu.cpp:747
 msgid "Export list in XML format (like -listxml, but exclude devices)"
 msgstr ""
 "Exporta a lista em formato XML (igual -listxml, mas excluindo os "
 "dispositivos)"
 
-#: src/frontend/mame/ui/miscmenu.cpp:751
+#: src/frontend/mame/ui/miscmenu.cpp:748
 msgid "Export list in TXT format (like -listfull)"
 msgstr "Exporta a lista em formato TXT (igual -listfull)"
 
-#: src/frontend/mame/ui/miscmenu.cpp:776
+#: src/frontend/mame/ui/miscmenu.cpp:773
 #, c-format
 msgid ""
 "System Settings:\n"
@@ -321,7 +335,7 @@ msgstr ""
 "Configuração do sistema:\n"
 "%1$s"
 
-#: src/frontend/mame/ui/miscmenu.cpp:815 src/frontend/mame/ui/ui.cpp:2675
+#: src/frontend/mame/ui/miscmenu.cpp:812 src/frontend/mame/ui/ui.cpp:2675
 msgid ""
 "\n"
 "    Settings saved    \n"
@@ -331,35 +345,36 @@ msgstr ""
 "    As definições foram salvas    \n"
 "\n"
 
-#: src/frontend/mame/ui/miscmenu.cpp:862
+#: src/frontend/mame/ui/miscmenu.cpp:859
 msgid "BIOS"
 msgstr "BIOS"
 
-#: src/frontend/mame/ui/miscmenu.cpp:869
+#: src/frontend/mame/ui/miscmenu.cpp:866
 msgid "[this system has no BIOS settings]"
 msgstr "[a BIOS deste sistema não possui configurações]"
 
-#: src/frontend/mame/ui/miscmenu.cpp:878
+#: src/frontend/mame/ui/miscmenu.cpp:875
 msgid "Add To Favorites"
 msgstr "Adicionar aos favoritos"
 
-#: src/frontend/mame/ui/miscmenu.cpp:880
+#: src/frontend/mame/ui/miscmenu.cpp:877
 msgid "Remove From Favorites"
 msgstr "Remove dos favoritos"
 
-#: src/frontend/mame/ui/miscmenu.cpp:883
+#: src/frontend/mame/ui/miscmenu.cpp:880
 msgid "Save System Settings"
 msgstr "Salva as configurações do sistema"
 
-#: src/frontend/mame/ui/miscmenu.cpp:916 src/frontend/mame/ui/selmenu.cpp:3978
+#: src/frontend/mame/ui/miscmenu.cpp:913 src/frontend/mame/ui/selmenu.cpp:3978
 msgid " (default)"
 msgstr " (padrão)"
 
-#: src/frontend/mame/ui/miscmenu.cpp:933 src/frontend/mame/ui/optsmenu.cpp:81
+#: src/frontend/mame/ui/miscmenu.cpp:930
+msgctxt "menu-plugins"
 msgid "Plugins"
 msgstr "Plug-ins"
 
-#: src/frontend/mame/ui/miscmenu.cpp:965 src/frontend/mame/ui/analogipt.cpp:805
+#: src/frontend/mame/ui/miscmenu.cpp:962 src/frontend/mame/ui/analogipt.cpp:805
 #: src/frontend/mame/ui/videoopt.cpp:173 src/frontend/mame/ui/custui.cpp:494
 #: src/frontend/mame/ui/menu.cpp:542 src/frontend/mame/ui/menu.cpp:883
 #: src/frontend/mame/ui/inputtoggle.cpp:96 plugins/cheatfind/init.lua:768
@@ -367,7 +382,7 @@ msgstr "Plug-ins"
 msgid "On"
 msgstr "Ligado"
 
-#: src/frontend/mame/ui/miscmenu.cpp:965 src/frontend/mame/ui/analogipt.cpp:805
+#: src/frontend/mame/ui/miscmenu.cpp:962 src/frontend/mame/ui/analogipt.cpp:805
 #: src/frontend/mame/ui/videoopt.cpp:189 src/frontend/mame/ui/custui.cpp:494
 #: src/frontend/mame/ui/menu.cpp:542 src/frontend/mame/ui/menu.cpp:886
 #: src/frontend/mame/ui/inputtoggle.cpp:91 plugins/cheatfind/init.lua:765
@@ -376,335 +391,332 @@ msgstr "Ligado"
 msgid "Off"
 msgstr "Desligado"
 
-#: src/frontend/mame/ui/miscmenu.cpp:993
+#: src/frontend/mame/ui/miscmenu.cpp:990
+msgctxt "menu-plugins"
 msgid "No plugins found"
 msgstr "Nenhum plug-in foi encontrado"
 
-#: src/frontend/mame/ui/submenu.cpp:33
+#: src/frontend/mame/ui/submenu.cpp:35
 msgid "Miscellaneous Options"
 msgstr "Opções diversas"
 
-#: src/frontend/mame/ui/submenu.cpp:34
+#: src/frontend/mame/ui/submenu.cpp:36
 msgid "Skip imperfect emulation warnings"
 msgstr "Ignorar os avisos de emulação imperfeita"
 
-#: src/frontend/mame/ui/submenu.cpp:35
+#: src/frontend/mame/ui/submenu.cpp:37
 msgid "Re-select last system launched"
 msgstr "Escolha o último sistema iniciado"
 
-#: src/frontend/mame/ui/submenu.cpp:36
+#: src/frontend/mame/ui/submenu.cpp:38
 msgid "Enlarge images in the right panel"
 msgstr "Aumentar as imagens no painel direito"
 
-#: src/frontend/mame/ui/submenu.cpp:37
+#: src/frontend/mame/ui/submenu.cpp:39
 msgid "Cheats"
 msgstr "Trapaças"
 
-#: src/frontend/mame/ui/submenu.cpp:38
+#: src/frontend/mame/ui/submenu.cpp:40
 msgid "Show mouse pointer"
 msgstr "Mostrar o ponteiro do mouse"
 
-#: src/frontend/mame/ui/submenu.cpp:39
+#: src/frontend/mame/ui/submenu.cpp:41
 msgid "Confirm quit from emulation"
 msgstr "Confirma se deseja encerrar o sistema ou não"
 
-#: src/frontend/mame/ui/submenu.cpp:40
+#: src/frontend/mame/ui/submenu.cpp:42
 msgid "Skip system information screen"
 msgstr "Omite a tela de informações ao iniciar"
 
-#: src/frontend/mame/ui/submenu.cpp:41
+#: src/frontend/mame/ui/submenu.cpp:43
 msgid "Force 4:3 aspect for snapshot display"
 msgstr "Mantenha o aspecto 4:3 nas capturas da tela"
 
-#: src/frontend/mame/ui/submenu.cpp:42
+#: src/frontend/mame/ui/submenu.cpp:44
 msgid "Use image as background"
 msgstr "Usa uma imagem como plano de fundo"
 
-#: src/frontend/mame/ui/submenu.cpp:43
+#: src/frontend/mame/ui/submenu.cpp:45
 msgid "Skip BIOS selection menu"
 msgstr "Omite a tela da escolha da BIOS"
 
-#: src/frontend/mame/ui/submenu.cpp:44
+#: src/frontend/mame/ui/submenu.cpp:46
 msgid "Skip software part selection menu"
 msgstr "Omite as partes do cardápio de seleção do programa"
 
-#: src/frontend/mame/ui/submenu.cpp:45
+#: src/frontend/mame/ui/submenu.cpp:47
 msgid "Info auto audit"
 msgstr "Informação de aferição automática"
 
-#: src/frontend/mame/ui/submenu.cpp:46
+#: src/frontend/mame/ui/submenu.cpp:48
 msgid "Hide romless machine from available list"
 msgstr "Esconder os sistemas sem ROMs da lista de disponíveis"
 
-#: src/frontend/mame/ui/submenu.cpp:52
+#: src/frontend/mame/ui/submenu.cpp:54
 msgid "Advanced Options"
 msgstr "Opções avançadas"
 
-#: src/frontend/mame/ui/submenu.cpp:53
+#: src/frontend/mame/ui/submenu.cpp:55
 msgid "Performance Options"
 msgstr "Opções de desempenho"
 
-#: src/frontend/mame/ui/submenu.cpp:54
+#: src/frontend/mame/ui/submenu.cpp:56
 msgid "Auto frame skip"
 msgstr "Salto automático dos quadros"
 
-#: src/frontend/mame/ui/submenu.cpp:55
+#: src/frontend/mame/ui/submenu.cpp:57
 msgid "Frame skip"
 msgstr "Salto de quadro"
 
-#: src/frontend/mame/ui/submenu.cpp:56
+#: src/frontend/mame/ui/submenu.cpp:58
 msgid "Throttle"
 msgstr "Supressão da velocidade"
 
-#: src/frontend/mame/ui/submenu.cpp:57
+#: src/frontend/mame/ui/submenu.cpp:59
 msgid "Mute when unthrottled"
 msgstr "Mute quando a supressão da velocidade estiver desligada"
 
-#: src/frontend/mame/ui/submenu.cpp:58
+#: src/frontend/mame/ui/submenu.cpp:60
 msgid "Sleep"
 msgstr "Dormir"
 
-#: src/frontend/mame/ui/submenu.cpp:59
+#: src/frontend/mame/ui/submenu.cpp:61
 msgid "Speed"
 msgstr "Velocidade"
 
-#: src/frontend/mame/ui/submenu.cpp:60
+#: src/frontend/mame/ui/submenu.cpp:62
 msgid "Adjust speed to match refresh rate"
 msgstr "Ajuste a velocidade para bater com a taxa de atualização"
 
-#: src/frontend/mame/ui/submenu.cpp:61
+#: src/frontend/mame/ui/submenu.cpp:63
 msgid "Low latency"
 msgstr "Baixa latência"
 
-#: src/frontend/mame/ui/submenu.cpp:63
+#: src/frontend/mame/ui/submenu.cpp:65
 msgid "Rotation Options"
 msgstr "Opções de rotação da tela"
 
-#: src/frontend/mame/ui/submenu.cpp:64 src/frontend/mame/ui/videoopt.cpp:161
+#: src/frontend/mame/ui/submenu.cpp:66 src/frontend/mame/ui/videoopt.cpp:161
 msgid "Rotate"
 msgstr "Rotação"
 
-#: src/frontend/mame/ui/submenu.cpp:65
+#: src/frontend/mame/ui/submenu.cpp:67
 msgid "Rotate right"
 msgstr "Rotacione à direita"
 
-#: src/frontend/mame/ui/submenu.cpp:66
+#: src/frontend/mame/ui/submenu.cpp:68
 msgid "Rotate left"
 msgstr "Rotacione à esquerda"
 
-#: src/frontend/mame/ui/submenu.cpp:67
+#: src/frontend/mame/ui/submenu.cpp:69
 msgid "Auto rotate right"
 msgstr "Auto rotacione à direita"
 
-#: src/frontend/mame/ui/submenu.cpp:68
+#: src/frontend/mame/ui/submenu.cpp:70
 msgid "Auto rotate left"
 msgstr "Auto rotacione à esquerda"
 
-#: src/frontend/mame/ui/submenu.cpp:69
+#: src/frontend/mame/ui/submenu.cpp:71
 msgid "Flip X"
 msgstr "Vire o eixo X"
 
-#: src/frontend/mame/ui/submenu.cpp:70
+#: src/frontend/mame/ui/submenu.cpp:72
 msgid "Flip Y"
 msgstr "Vire o eixo Y"
 
-#: src/frontend/mame/ui/submenu.cpp:72
+#: src/frontend/mame/ui/submenu.cpp:74
 msgid "Artwork Options"
 msgstr "Opções das ilustrações"
 
-#: src/frontend/mame/ui/submenu.cpp:73
+#: src/frontend/mame/ui/submenu.cpp:75
 msgid "Zoom to screen area"
 msgstr "Aproximar a área da tela"
 
-#: src/frontend/mame/ui/submenu.cpp:75
+#: src/frontend/mame/ui/submenu.cpp:77
 msgid "State/Playback Options"
 msgstr "Opções do estado/reprodução"
 
-#: src/frontend/mame/ui/submenu.cpp:76
+#: src/frontend/mame/ui/submenu.cpp:78
 msgid "Automatic save/restore"
 msgstr "Salve/restaure automático"
 
-#: src/frontend/mame/ui/submenu.cpp:77
+#: src/frontend/mame/ui/submenu.cpp:79
 msgid "Allow rewind"
 msgstr "Permita o rebobinamento"
 
-#: src/frontend/mame/ui/submenu.cpp:78
+#: src/frontend/mame/ui/submenu.cpp:80
 msgid "Rewind capacity"
 msgstr "Capacidade de rebobinamento"
 
-#: src/frontend/mame/ui/submenu.cpp:79
+#: src/frontend/mame/ui/submenu.cpp:81
 msgid "Bilinear filtering for snapshots"
 msgstr "Filtro bilinear para as capturas da tela"
 
-#: src/frontend/mame/ui/submenu.cpp:80
+#: src/frontend/mame/ui/submenu.cpp:82
 msgid "Burn-in"
 msgstr "Marca de queimado"
 
-#: src/frontend/mame/ui/submenu.cpp:82
+#: src/frontend/mame/ui/submenu.cpp:84
 msgid "Input Options"
 msgstr "Opções da entrada"
 
-#: src/frontend/mame/ui/submenu.cpp:83
+#: src/frontend/mame/ui/submenu.cpp:85
 msgid "Coin lockout"
 msgstr "Trava da ficha"
 
-#: src/frontend/mame/ui/submenu.cpp:84
+#: src/frontend/mame/ui/submenu.cpp:86
 msgid "Mouse"
 msgstr "Mouse"
 
-#: src/frontend/mame/ui/submenu.cpp:85
+#: src/frontend/mame/ui/submenu.cpp:87
 msgid "Joystick"
 msgstr "Controle"
 
-#: src/frontend/mame/ui/submenu.cpp:86
+#: src/frontend/mame/ui/submenu.cpp:88
 msgid "Lightgun"
 msgstr "Pistola de luz"
 
-#: src/frontend/mame/ui/submenu.cpp:87
+#: src/frontend/mame/ui/submenu.cpp:89
 msgid "Multi-keyboard"
 msgstr "Mais de um teclado"
 
-#: src/frontend/mame/ui/submenu.cpp:88
+#: src/frontend/mame/ui/submenu.cpp:90
 msgid "Multi-mouse"
 msgstr "Mais de um mouse"
 
-#: src/frontend/mame/ui/submenu.cpp:89
+#: src/frontend/mame/ui/submenu.cpp:91
 msgid "Steadykey"
 msgstr "Steadykey"
 
-#: src/frontend/mame/ui/submenu.cpp:90
+#: src/frontend/mame/ui/submenu.cpp:92
 msgid "UI active"
 msgstr "IU ativa"
 
-#: src/frontend/mame/ui/submenu.cpp:91
-msgid "Off-screen reload"
-msgstr "Recarga fora da tela"
-
-#: src/frontend/mame/ui/submenu.cpp:92
+#: src/frontend/mame/ui/submenu.cpp:93
 msgid "Joystick deadzone"
 msgstr "Zona morta do controle"
 
-#: src/frontend/mame/ui/submenu.cpp:93
+#: src/frontend/mame/ui/submenu.cpp:94
 msgid "Joystick saturation"
 msgstr "Saturação do controle"
 
-#: src/frontend/mame/ui/submenu.cpp:94
+#: src/frontend/mame/ui/submenu.cpp:95
 msgid "Joystick threshold"
 msgstr "Limiar do controle"
 
-#: src/frontend/mame/ui/submenu.cpp:95
+#: src/frontend/mame/ui/submenu.cpp:96
 msgid "Natural keyboard"
 msgstr "Teclado natural"
 
-#: src/frontend/mame/ui/submenu.cpp:96
+#: src/frontend/mame/ui/submenu.cpp:97
 msgid "Allow contradictory joystick inputs"
 msgstr "Permite a entrada contraditória do controle"
 
-#: src/frontend/mame/ui/submenu.cpp:97
+#: src/frontend/mame/ui/submenu.cpp:98
 msgid "Coin impulse"
 msgstr "Impulso da ficha"
 
-#: src/frontend/mame/ui/submenu.cpp:103
+#: src/frontend/mame/ui/submenu.cpp:104
 msgid "Input Device Options"
 msgstr "Opções dos dispositivos na entrada"
 
-#: src/frontend/mame/ui/submenu.cpp:104
+#: src/frontend/mame/ui/submenu.cpp:105
 msgid "Lightgun Device Assignment"
 msgstr "Atribuição do dispositivo pistola de luz"
 
-#: src/frontend/mame/ui/submenu.cpp:105
+#: src/frontend/mame/ui/submenu.cpp:106
 msgid "Trackball Device Assignment"
 msgstr "Atribuição do dispositivo trackball"
 
-#: src/frontend/mame/ui/submenu.cpp:106
+#: src/frontend/mame/ui/submenu.cpp:107
 msgid "Pedal Device Assignment"
 msgstr "Atribuição do dispositivo pedal"
 
-#: src/frontend/mame/ui/submenu.cpp:107
+#: src/frontend/mame/ui/submenu.cpp:108
 msgid "AD Stick Device Assignment"
 msgstr "Atribuição do dispositivo do controle AD"
 
-#: src/frontend/mame/ui/submenu.cpp:108
+#: src/frontend/mame/ui/submenu.cpp:109
 msgid "Paddle Device Assignment"
 msgstr "Atribuição do dispositivo de acionamento"
 
-#: src/frontend/mame/ui/submenu.cpp:109
+#: src/frontend/mame/ui/submenu.cpp:110
 msgid "Dial Device Assignment"
 msgstr "Atribuição do controle rotativo"
 
-#: src/frontend/mame/ui/submenu.cpp:110
+#: src/frontend/mame/ui/submenu.cpp:111
 msgid "Positional Device Assignment"
 msgstr "Atribuição do dispositivo posicional"
 
-#: src/frontend/mame/ui/submenu.cpp:111
+#: src/frontend/mame/ui/submenu.cpp:112
 msgid "Mouse Device Assignment"
 msgstr "Atribuição do dispositivo Mouse"
 
-#: src/frontend/mame/ui/submenu.cpp:113
+#: src/frontend/mame/ui/submenu.cpp:114
 msgid "Keyboard Input Provider"
 msgstr "Provedor de entrada do teclado"
 
-#: src/frontend/mame/ui/submenu.cpp:114
+#: src/frontend/mame/ui/submenu.cpp:115
 msgid "Mouse Input Provider"
 msgstr "Provedor de entrada do mouse"
 
-#: src/frontend/mame/ui/submenu.cpp:115
+#: src/frontend/mame/ui/submenu.cpp:116
 msgid "Lightgun Input Provider"
 msgstr "Provedor de entrada da pistola de luz"
 
-#: src/frontend/mame/ui/submenu.cpp:116
+#: src/frontend/mame/ui/submenu.cpp:117
 msgid "Joystick Input Provider"
 msgstr "Provedor de entrada do joystick"
 
-#: src/frontend/mame/ui/submenu.cpp:122 src/frontend/mame/ui/videoopt.cpp:44
+#: src/frontend/mame/ui/submenu.cpp:123 src/frontend/mame/ui/videoopt.cpp:44
 msgid "Video Options"
 msgstr "Opções do vídeo"
 
-#: src/frontend/mame/ui/submenu.cpp:123
+#: src/frontend/mame/ui/submenu.cpp:124
 msgid "Video Mode"
 msgstr "Modo do vídeo"
 
-#: src/frontend/mame/ui/submenu.cpp:124
+#: src/frontend/mame/ui/submenu.cpp:125
 msgid "Number Of Screens"
 msgstr "Quantidade de telas"
 
-#: src/frontend/mame/ui/submenu.cpp:126
+#: src/frontend/mame/ui/submenu.cpp:127
 msgid "Triple Buffering"
 msgstr "Buffering triplo"
 
-#: src/frontend/mame/ui/submenu.cpp:127
+#: src/frontend/mame/ui/submenu.cpp:128
 msgid "HLSL"
 msgstr "HLSL"
 
-#: src/frontend/mame/ui/submenu.cpp:129
+#: src/frontend/mame/ui/submenu.cpp:130
 msgid "GLSL"
 msgstr "GLSL"
 
-#: src/frontend/mame/ui/submenu.cpp:130
+#: src/frontend/mame/ui/submenu.cpp:131
 msgid "Bilinear Filtering"
 msgstr "Filtragem bilinear"
 
-#: src/frontend/mame/ui/submenu.cpp:131
+#: src/frontend/mame/ui/submenu.cpp:132
 msgid "Bitmap Prescaling"
 msgstr "Escala prévia do bitmap"
 
-#: src/frontend/mame/ui/submenu.cpp:132
+#: src/frontend/mame/ui/submenu.cpp:133
 msgid "Window Mode"
 msgstr "Modo janela"
 
-#: src/frontend/mame/ui/submenu.cpp:133
+#: src/frontend/mame/ui/submenu.cpp:134
 msgid "Enforce Aspect Ratio"
 msgstr "Manter a relação de aspecto"
 
-#: src/frontend/mame/ui/submenu.cpp:134
+#: src/frontend/mame/ui/submenu.cpp:135
 msgid "Start Out Maximized"
 msgstr "Inicia com a tela expandida"
 
-#: src/frontend/mame/ui/submenu.cpp:135
+#: src/frontend/mame/ui/submenu.cpp:136
 msgid "Synchronized Refresh"
 msgstr "Atualização síncrona dos quadros"
 
-#: src/frontend/mame/ui/submenu.cpp:136
+#: src/frontend/mame/ui/submenu.cpp:137
 msgid "Wait Vertical Sync"
 msgstr "Aguarde a sincronização vertical"
 
@@ -1037,16 +1049,16 @@ msgstr ""
 
 #: src/frontend/mame/ui/info.cpp:579 src/frontend/mame/ui/devopt.cpp:225
 msgid " (Mono)\n"
-msgstr ""
+msgstr " (Mono)\n"
 
 #: src/frontend/mame/ui/info.cpp:582 src/frontend/mame/ui/devopt.cpp:228
 msgid " (Stereo)\n"
-msgstr ""
+msgstr " (Estéreo)\n"
 
 #: src/frontend/mame/ui/info.cpp:585 src/frontend/mame/ui/devopt.cpp:231
 #, c-format
 msgid " (%d channels)\n"
-msgstr ""
+msgstr " (%d canais)\n"
 
 #: src/frontend/mame/ui/info.cpp:591
 msgid ""
@@ -1268,7 +1280,7 @@ msgid ""
 "Auditing media for system %2$u of %3$u...\n"
 "%1$s"
 msgstr ""
-"Aferindo %2$u ROMs de %3$u...\n"
+"Aferindo mídia para o sistema %2$u de %3$u...\n"
 "%1$s"
 
 #: src/frontend/mame/ui/auditmenu.cpp:128
@@ -1960,6 +1972,10 @@ msgstr "Opções do áudio"
 msgid "Input Assignments"
 msgstr "Atribuição das entradas"
 
+#: src/frontend/mame/ui/optsmenu.cpp:81
+msgid "Plugins"
+msgstr "Plug-ins"
+
 #: src/frontend/mame/ui/optsmenu.cpp:83
 msgid "Input Devices"
 msgstr "Dispositivos na entrada"
@@ -2018,7 +2034,7 @@ msgstr "ISBN"
 #: src/frontend/mame/ui/utils.cpp:71
 msgctxt "swlist-info"
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: src/frontend/mame/ui/utils.cpp:72
 msgctxt "swlist-info"
@@ -2820,7 +2836,7 @@ msgstr " %1$d×%2$d origin (%3$d %4$d)"
 msgid "Auto"
 msgstr "Automático"
 
-#: src/frontend/mame/ui/menu.cpp:1962
+#: src/frontend/mame/ui/menu.cpp:1961
 #: src/frontend/mame/ui/simpleselgame.cpp:281
 #: src/frontend/mame/ui/selmenu.cpp:1484
 msgid "Return to Previous Menu"
@@ -3038,15 +3054,18 @@ msgid "Change Folder"
 msgstr "Altera a pasta"
 
 #: src/frontend/mame/ui/state.cpp:221
+msgctxt "menu-savestate"
 msgid "[no saved states found]"
 msgstr "Nenhum estado salvo foi encontrado"
 
-#: src/frontend/mame/ui/state.cpp:226 plugins/cheatfind/init.lua:494
+#: src/frontend/mame/ui/state.cpp:226
+msgctxt "menu-savestate"
 msgid "Cancel"
 msgstr "Cancelar"
 
 #: src/frontend/mame/ui/state.cpp:265
 #, c-format
+msgctxt "menu-savestate"
 msgid ""
 "Delete saved state %1$s?\n"
 "Press %2$s to delete\n"
@@ -3058,27 +3077,33 @@ msgstr ""
 
 #: src/frontend/mame/ui/state.cpp:402
 #, c-format
+msgctxt "menu-savestate"
 msgid "Error removing saved state file %1$s"
 msgstr "Houve um erro ao remover o arquivo do estado salvo %1$s"
 
 #: src/frontend/mame/ui/state.cpp:483
 #, c-format
+msgctxt "menu-savestate"
 msgid "Press %1$s to delete"
 msgstr "Pressione %1$s para excluir"
 
 #: src/frontend/mame/ui/state.cpp:554
+msgctxt "menu-savestate"
 msgid "Load State"
 msgstr "Carrega o estado"
 
 #: src/frontend/mame/ui/state.cpp:554
+msgctxt "menu-savestate"
 msgid "Select state to load"
 msgstr "Selecione o estado que será carregado"
 
 #: src/frontend/mame/ui/state.cpp:578
+msgctxt "menu-savestate"
 msgid "Save State"
 msgstr "Salva o estado"
 
 #: src/frontend/mame/ui/state.cpp:578
+msgctxt "menu-savestate"
 msgid "Press a key or joystick button, or select state to overwrite"
 msgstr ""
 "Pressione uma tecla, um botão do controle ou escolha o estado que será "
@@ -3468,8 +3493,19 @@ msgid "Disabled"
 msgstr "Desativado"
 
 #: src/frontend/mame/ui/pluginopt.cpp:36
+msgctxt "menu-pluginopts"
 msgid "Plugin Options"
 msgstr "Opções dos plug-ins"
+
+#: src/frontend/mame/ui/pluginopt.cpp:191
+msgctxt "menu-pluginopts"
+msgid "Close Menu"
+msgstr "Fecha o menu"
+
+#: src/frontend/mame/ui/pluginopt.cpp:191
+msgctxt "menu-pluginopts"
+msgid "Return to Plugin Options Menu"
+msgstr "Retornar ao menu de opções do plug-in"
 
 #: src/frontend/mame/ui/audio_effect_compressor.cpp:65
 #: src/frontend/mame/ui/audio_effect_compressor.cpp:299
@@ -3690,7 +3726,7 @@ msgstr "Áudio: Imperfeito"
 #: src/frontend/mame/ui/simpleselgame.cpp:387
 #: src/frontend/mame/ui/selmenu.cpp:899
 msgid "Sound: OK"
-msgstr "Som: BOM"
+msgstr "Áudio: BOM"
 
 #: src/frontend/mame/ui/simpleselgame.cpp:427
 msgid ""
@@ -6891,6 +6927,10 @@ msgstr ""
 "Não foi possível gravar no arquivo\n"
 "Certifique-se que a pasta cheatpath existe"
 
+#: plugins/cheatfind/init.lua:494
+msgid "Cancel"
+msgstr "Cancelar"
+
 #: plugins/cheatfind/init.lua:499
 msgid "CPU or RAM"
 msgstr "CPU ou RAM"
@@ -7161,7 +7201,7 @@ msgstr "Desativado: %s"
 msgid "%s added"
 msgstr "%s adicionado"
 
-#: plugins/inputmacro/init.lua:137 plugins/inputmacro/inputmacro_menu.lua:578
+#: plugins/inputmacro/init.lua:137 plugins/inputmacro/inputmacro_menu.lua:685
 msgctxt "plugin-inputmacro"
 msgid "Input Macros"
 msgstr "Macros"
@@ -7177,148 +7217,154 @@ msgctxt "plugin-inputmacro"
 msgid "New macro %d"
 msgstr "Nova macro %d"
 
-#: plugins/inputmacro/inputmacro_menu.lua:86
+#: plugins/inputmacro/inputmacro_menu.lua:88
 msgctxt "plugin-inputmacro"
 msgid "Set Input"
 msgstr "Definir a entrada"
 
-#: plugins/inputmacro/inputmacro_menu.lua:355
+#: plugins/inputmacro/inputmacro_menu.lua:444
 msgctxt "plugin-inputmacro"
 msgid "Name"
 msgstr "Nome"
 
-#: plugins/inputmacro/inputmacro_menu.lua:363
-#: plugins/inputmacro/inputmacro_menu.lua:405
+#: plugins/inputmacro/inputmacro_menu.lua:452
+#: plugins/inputmacro/inputmacro_menu.lua:494
 msgctxt "plugin-inputmacro"
 msgid "[not set]"
 msgstr "[não definido]"
 
-#: plugins/inputmacro/inputmacro_menu.lua:364
+#: plugins/inputmacro/inputmacro_menu.lua:453
 msgctxt "plugin-inputmacro"
 msgid "Activation combination"
 msgstr "Combinação de ativação"
 
-#: plugins/inputmacro/inputmacro_menu.lua:367
+#: plugins/inputmacro/inputmacro_menu.lua:456
 msgctxt "plugin-inputmacro"
 msgid "Stop immediately"
 msgstr "Pare imediatamente"
 
-#: plugins/inputmacro/inputmacro_menu.lua:367
+#: plugins/inputmacro/inputmacro_menu.lua:456
 msgctxt "plugin-inputmacro"
 msgid "Complete macro"
 msgstr "Conclua a macro"
 
-#: plugins/inputmacro/inputmacro_menu.lua:368
+#: plugins/inputmacro/inputmacro_menu.lua:457
 msgctxt "plugin-inputmacro"
 msgid "On release"
 msgstr "Ao soltar"
 
-#: plugins/inputmacro/inputmacro_menu.lua:374
+#: plugins/inputmacro/inputmacro_menu.lua:463
 msgctxt "plugin-inputmacro"
 msgid "Release"
 msgstr "Libera"
 
-#: plugins/inputmacro/inputmacro_menu.lua:377
+#: plugins/inputmacro/inputmacro_menu.lua:466
 #, lua-format
 msgctxt "plugin-inputmacro"
 msgid "Loop to step %d"
 msgstr "Repita até a etapa %d"
 
-#: plugins/inputmacro/inputmacro_menu.lua:382
+#: plugins/inputmacro/inputmacro_menu.lua:471
 #, lua-format
 msgctxt "plugin-inputmacro"
 msgid "Prolong step %d"
 msgstr "Mantenha a etapa %d ativa"
 
-#: plugins/inputmacro/inputmacro_menu.lua:384
+#: plugins/inputmacro/inputmacro_menu.lua:473
 msgctxt "plugin-inputmacro"
 msgid "When held"
 msgstr "Enquanto estiver pressionado"
 
-#: plugins/inputmacro/inputmacro_menu.lua:388
+#: plugins/inputmacro/inputmacro_menu.lua:477
 #, lua-format
 msgctxt "plugin-inputmacro"
 msgid "Step %d"
 msgstr "Etapa %d"
 
-#: plugins/inputmacro/inputmacro_menu.lua:389
+#: plugins/inputmacro/inputmacro_menu.lua:478
 msgctxt "plugin-inputmacro"
 msgid "Delay (frames)"
 msgstr "Atraso (quadros)"
 
-#: plugins/inputmacro/inputmacro_menu.lua:395
+#: plugins/inputmacro/inputmacro_menu.lua:484
 msgctxt "plugin-inputmacro"
 msgid "Duration (frames)"
 msgstr "Duração (quadros)"
 
-#: plugins/inputmacro/inputmacro_menu.lua:403
+#: plugins/inputmacro/inputmacro_menu.lua:492
 msgctxt "plugin-inputmacro"
 msgid "n/a"
 msgstr "n/a"
 
-#: plugins/inputmacro/inputmacro_menu.lua:407
+#: plugins/inputmacro/inputmacro_menu.lua:496
 #, lua-format
 msgctxt "plugin-inputmacro"
 msgid "Input %d"
 msgstr "Entrada %d"
 
-#: plugins/inputmacro/inputmacro_menu.lua:412
+#: plugins/inputmacro/inputmacro_menu.lua:513
+#, lua-format
+msgctxt "plugin-inputmacro"
+msgid "Value (%u-%u)"
+msgstr "Valor (%u-%u)"
+
+#: plugins/inputmacro/inputmacro_menu.lua:519
 msgctxt "plugin-inputmacro"
 msgid "Add input"
 msgstr "Nova entrada"
 
-#: plugins/inputmacro/inputmacro_menu.lua:417
+#: plugins/inputmacro/inputmacro_menu.lua:524
 msgctxt "plugin-inputmacro"
 msgid "Delete step"
 msgstr "Excluir"
 
-#: plugins/inputmacro/inputmacro_menu.lua:433
+#: plugins/inputmacro/inputmacro_menu.lua:540
 msgctxt "plugin-inputmacro"
 msgid "Add step at position"
 msgstr "Adicionar uma etapa na posição"
 
-#: plugins/inputmacro/inputmacro_menu.lua:490
+#: plugins/inputmacro/inputmacro_menu.lua:597
 msgctxt "plugin-inputmacro"
 msgid "Add Input Macro"
 msgstr "Adicionar uma macro"
 
-#: plugins/inputmacro/inputmacro_menu.lua:497
+#: plugins/inputmacro/inputmacro_menu.lua:604
 msgctxt "plugin-inputmacro"
 msgid "Create"
 msgstr "Criar"
 
-#: plugins/inputmacro/inputmacro_menu.lua:499
+#: plugins/inputmacro/inputmacro_menu.lua:606
 msgctxt "plugin-inputmacro"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: plugins/inputmacro/inputmacro_menu.lua:515
+#: plugins/inputmacro/inputmacro_menu.lua:622
 msgctxt "plugin-inputmacro"
 msgid "Edit Input Macro"
 msgstr "Edita uma macro"
 
-#: plugins/inputmacro/inputmacro_menu.lua:521
+#: plugins/inputmacro/inputmacro_menu.lua:628
 msgctxt "plugin-inputmacro"
 msgid "Delete macro"
 msgstr "Excluir"
 
-#: plugins/inputmacro/inputmacro_menu.lua:525
+#: plugins/inputmacro/inputmacro_menu.lua:632
 msgctxt "plugin-inputmacro"
 msgid "Done"
 msgstr "Feito"
 
-#: plugins/inputmacro/inputmacro_menu.lua:579
+#: plugins/inputmacro/inputmacro_menu.lua:686
 #, lua-format
 msgctxt "plugin-inputmacro"
 msgid "Press %s to delete"
 msgstr "Pressione %s para excluir"
 
-#: plugins/inputmacro/inputmacro_menu.lua:591
+#: plugins/inputmacro/inputmacro_menu.lua:698
 msgctxt "plugin-inputmacro"
 msgid "[no macros]"
 msgstr "[nenhuma macro]"
 
-#: plugins/inputmacro/inputmacro_menu.lua:596
+#: plugins/inputmacro/inputmacro_menu.lua:703
 msgctxt "plugin-inputmacro"
 msgid "Add macro"
 msgstr "Nova macro"
@@ -7705,3 +7751,4 @@ msgstr "Houve uma falha ao carregar o menu do turbo"
 msgctxt "plugin-autofire"
 msgid "Autofire"
 msgstr "Turbo"
+
