@@ -24,10 +24,6 @@ grandes arquivos de dados tais como o **history.xml**. Então, seja
 paciente ao iniciar o MAME após atualizar ou adicionar novos arquivos de
 dados para serem carregados na inicialização.
 
-.. raw:: latex
-
-	\clearpage
-
 Os seguintes arquivos são compatíveis com o MAME:
 
 history.xml

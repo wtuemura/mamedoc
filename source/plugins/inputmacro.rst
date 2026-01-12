@@ -136,6 +136,16 @@ Casa passo possui um atraso, duração e configuração da entrada:
 		devem ter pelo menos mais de uma entrada, caso contrário não é
 		possível excluir a única entrada existente na etapa).
 
+	* :guilabel:`Valor`
+
+		Para entradas analógicas, é possível definir o **Valor**
+		desejado para cada etapa. Para ajustar o valor, pressione as
+		teclas :kbd:`←` e :kbd:`→` ou digite um 	valor numérico e
+		confirme pressionando a tecla :guilabel:`Enter` para aceitar o
+		novo valor. O valor será limitado ao intervalo válido para a
+		entrada. Ao pressionar a tecla :guilabel:`Esc`, o valor
+		é redefinido para o valor padrão.
+
 	* :guilabel:`Excluí etapa`
 
 		Em macros com mais de uma etapa, use esta opção para excluí-la
@@ -146,16 +156,15 @@ Casa passo possui um atraso, duração e configuração da entrada:
 
 Para adicionar uma etapa, selecione
 :guilabel:`Adiciona uma etapa na posição` (depois dos passos já
-existentes), use as teclas direcionais :kbd:`Esquerda` / :kbd:`Direita`
-ou clique com o mouse nas setas para definir a posição desejada para a
-inserção do novo passo, pressione então :kbd:`Enter` (ou clique duas
-vezes no item) para adicionar a nova etapa. Será solicitado que você
-defina a primeira entrada para a nova etapa. Lembre-se de verificar as
-configurações :guilabel:`Ao soltar` e :guilabel:`Enquanto estiver
-pressionado` depois de adicionar as etapas. O item :guilabel:`Adiciona
-uma etapa na posição` só aparecerá depois que for definido a primeira
-entrada para a etapa inicialmente criada durante a criação de uma nova
-macro.
+existentes), use as teclas direcionais :kbd:`←` / :kbd:`→` ou clique com
+o mouse nas setas para definir a posição desejada para a inserção do
+novo passo, pressione então :kbd:`Enter` (ou clique duas vezes no item)
+para adicionar a nova etapa. Será solicitado que você defina a primeira
+entrada para a nova etapa. Lembre-se de verificar as configurações
+:guilabel:`Ao soltar` e :guilabel:`Enquanto estiver pressionado` depois
+de adicionar as etapas. O item :guilabel:`Adiciona uma etapa na posição`
+só aparecerá depois que for definido a primeira entrada para a etapa
+inicialmente criada durante a criação de uma nova macro.
 
 Ao criar uma nova macro há uma opção :guilabel:`Cancela` que muda para
 :guilabel:`Cria` depois de definir a ativação e a primeira entrada para
@@ -168,6 +177,11 @@ menu anterior sem criar a nova macro.
 Ao editar uma macro já existente, selecione :guilabel:`Feito` ou
 pressione a tecla :kbd:`Esc` para retornar à lista de macros de entrada,
 as alterações já entram em vigor imediatamente.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _plugins-inputmacro-examples:
@@ -471,8 +485,8 @@ Essa macro funciona com o personagem em qualquer lado da tela:
 Super Street Fighter II Turbo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tip:: Essa macro funciona com a versão americana ou a versão japonesa
-   (**Super Street Fighter II X**).
+.. tip:: Essa macro funciona tanto na versão americana quanto na versão
+   japonesa (**Super Street Fighter II X**).
 
 Akuma
 ^^^^^
@@ -1453,6 +1467,31 @@ A macro abaixo serve para o segundo especial do mesmo personagem.
   * **Atraso (quadros)**: :guilabel:`0`
   * **Duração (quadros)**: :guilabel:`1`
   * **Entrada 1**: :guilabel:`Jogador 1 botão 3`
+
+
+.. _plugins-inputmacro-vcop:
+
+Virtua Cop
+~~~~~~~~~~
+
+Essa macro permite que você recarregue a arma ao pressionar um botão:
+
+* **Nome**: :guilabel:`Recarrega arma`
+* **Combinação de ativação**: :guilabel:`Mouse Button 2`
+* **Ao soltar**: :guilabel:`Pare imediatamente`
+* **Enquanto estiver pressionado**: :guilabel:`Mantenha a etapa 1 ativa`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`1`
+  * **Entrada 1**: :guilabel:`Pistola de luz X`
+  * **Valor (131-630)**: :guilabel:`131`
+  * **Entrada 2**: :guilabel:`Pistola de luz Y`
+  * **Valor (36-425)**: :guilabel:`36`
+
+Esta macro é usada para definir valores da entrada analógica. Consulte
+também o capítulo :ref:`plugins-offscreenreload`.
+
 
 .. |emfc| replace:: Essa macro funciona com o personagem à
 .. _aqui: https://pastebin.com/b0UbTwBH

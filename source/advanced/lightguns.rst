@@ -390,16 +390,13 @@ Configuração genérica
 ---------------------
 
 Existem diferentes maneiras de fazer este tipo de configuração no MAME,
-a primeira seria editando o seu ``~/.mame/mame.ini`` com as
-configurações abaixo para **Windows**:
+a primeira seria editando o seu ``mame.ini`` com as configurações abaixo
+para **Windows**:
 
 .. code-block:: kconfig
 
 	lightgun                  1
 	lightgun_device           lightgun
-	offscreen_reload          1
-
-Adicione as opções acima no seu ``mame.ini`` e pronto.
 
 Aqui a configuração para **Linux** e variantes **SDL**:
 
@@ -409,7 +406,6 @@ Aqui a configuração para **Linux** e variantes **SDL**:
 	lightgun_device           mouse
 	lightgunprovider          x11
 	lightgun_index1           "Continue lendo para saber o que usar aqui"
-	offscreen_reload          1
 
 Lembrando que estamos usando um mouse como teste, assim estamos usando
 **lightgun_device** como **mouse**, caso você esteja usando uma arma
@@ -493,7 +489,6 @@ dispositivo é o **id=15**, logo a configuração final fica assim:
 	lightgun_device           mouse
 	lightgunprovider          x11
 	lightgun_index1           15
-	offscreen_reload          1
 
 Salve o seu ``mame.ini`` com as opções acima e inicie o MAME com o
 comando ``mame -v``, na saída agora temos:
@@ -513,6 +508,12 @@ comando ``mame -v``, na saída agora temos:
 
 Escolha um jogo de tiro qualquer e verá que a sua arma ou mouse deve
 funcionar sem qualquer problema.
+
+Por fim, como muitos jogos que usam uma arma de luz exigem que se mirar
+e atirar para fora da tela para recarregar, é possível usar um botão
+separado só para isso. Consulte o capítulo
+:ref:`plugins-offscreenreload` ou o :ref:`plugins-inputmacro` para mais
+informações.
 
 .. raw:: latex
 
@@ -696,7 +697,6 @@ ou similares.
 		lightgun_device           mouse
 		lightgunprovider          x11
 		lightgun_index1           15
-		offscreen_reload          1
 
 *	No terminal, ainda dentro do diretório arma, execute o comando
 	abaixo para criar uma configuração com o nome de cada sistema::

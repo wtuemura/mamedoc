@@ -4333,30 +4333,6 @@ Opções para as configurações de diferentes entradas
 			mame apple2e -ui_active
 
 
-.. _mame-commandline-nooffscreenreload:
-
-**-[no]offscreen_reload** / **-[no]reload**
-
-	Ele controla se o MAME trata o segundo botão da arma de luz
-	(*lightgun*) como um sinal para recarregá-la. Neste caso, o MAME
-	reportará a posição da arma como (``0,MAX``) com o gatilho
-	pressionado, o que equivale a uma recarga da arma apontada para fora
-	da tela. Isso só é necessário para jogos que precisam que o usuário
-	atire para fora da tela para recarregar a arma, e se a sua arma
-	também não tiver essa funcionalidade.
-
-		O valor predefinido é ``desligado`` (**-nooffscreen_reload**).
-
-	Exemplo:
-		.. code-block:: shell
-
-			mame lethalen -offscreen_reload
-
-.. raw:: latex
-
-	\clearpage
-
-
 .. _mame-commandline-joystickmap:
 
 **-joystick_map** / **-joymap** <*mapa*>
