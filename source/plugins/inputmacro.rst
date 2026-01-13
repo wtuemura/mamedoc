@@ -1484,8 +1484,7 @@ Essa macro permite que você recarregue a arma ao pressionar um botão:
 
   * **Atraso (quadros)**: :guilabel:`0`
   * **Duração (quadros)**: :guilabel:`1`
-  * **Entrada 1**: :guilabel:`Pistola de luz X`
-  * **Valor (131-630)**: :guilabel:`131`
+  * **Entrada 1**: :guilabel:`P1 Trigger`
   * **Entrada 2**: :guilabel:`Pistola de luz Y`
   * **Valor (36-425)**: :guilabel:`36`
 
