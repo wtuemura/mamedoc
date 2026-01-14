@@ -3221,13 +3221,11 @@ Use o comando abaixo dentro da pasta **ddrextrm**:
 
 	7za a -t7z -bb1 -mmt -m0=lzma2 -mx=9 -mfb=64 -md=32m -ms=on ddrextrm.7z *
 
-.. warning:: Não caia na tentação de converter as suas ROMs em ``.zip``
-  para ``.7z``, pois o MAME demora mais para realizar
-  todo o processo de descompressão na memória em comparação com o
-  formato ``.zip``. Embora não seja algo crítico, dependendo do tamanho
-  da ROM, você passa de um carregamento quase instantâneo para uma
-  espera de alguns segundos.
-
+.. warning:: Não caia na tentação de converter suas ROMs de ``.zip``
+   para ``.7z``, pois o MAME demora mais para descompactar todo o
+   conteúdo na memória nesse formato. Embora não seja algo crítico,
+   dependendo do tamanho da ROM, você passa de um carregamento quase
+   instantâneo para uma espera de alguns segundos a mais.
 
 .. raw:: latex
 
@@ -3240,10 +3238,10 @@ dicas, como o `DDR Freak`_, e aplicar um código nesta máquina
 * Inicie a máquina, aguarde a tela "**Now Loading**" e, ao aparecer a
   tela do jogo, pressione :kbd:`F2` para entrar na tela de operação da
   máquina;
-* Use os direcionais para colocar o cursor em "**GAME OPTIONS**";
+* Use os direcionais para colocar o cursor em :guilabel:`GAME OPTIONS`;
 * Mantenha pressionado o **direcional baixo** + :kbd:`9` seguido de
-  :kbd:`1` para entrar na tela "**SECRET**";
-* Pressione :kbd:`1` para entrar em "**APPEND**";
+  :kbd:`1` para entrar na tela :guilabel:`SECRET`;
+* Pressione :kbd:`1` para entrar em :guilabel:`APPEND`;
 * Para liberar todas as músicas, insira o código:
   ``BWUVHBK`` - ``KVXFXYA``. Use :kbd:`1` para soletrar adiante,
   mantenha :kbd:`1` pressionado e mova as setas para a esquerda para
@@ -3251,10 +3249,10 @@ dicas, como o `DDR Freak`_, e aplicar um código nesta máquina
 * Para registrar, mantenha pressionadas as setas esquerda e direita, 
   clique em :kbd:`1` (é mais fácil configurar as setas para qualquer
   tecla do teclado ou botão do joystick), deverá aparecer
-  "**REGISTERED**", confirmando que o código foi aceito;
-* Selecione "**EXIT**" até retornar para à tela principal;
-* Selecione "**GAME MODE**" para retornar ao jogo e pressione :kbd:`Esc`
-  para encerrar a emulação.
+  :guilabel:`REGISTERED`, confirmando que o código foi aceito;
+* Selecione :guilabel:`EXIT` até retornar para à tela principal;
+* Selecione :guilabel:`GAME MODE` para retornar ao jogo e pressione
+  :kbd:`Esc` para encerrar a emulação.
 
 Repita o processo para comprimir os arquivos da NVRAM em um arquivo
 **ddrextrm.zip**, mova-o para fora da pasta e exclua a pasta
@@ -3284,8 +3282,8 @@ anteriormente. Aqui entra a dica de comprimir os arquivos da NVRAM:
 * No terminal/prompt de comando, inicie o jogo com **mame svc**;
 * Quando a tela do "**Universe Bios**" aparecer, pressione os botões
   **A**, **B** e **C** para entrar na configuração;
-* Pressione **A** em "**REGION SETUP**".
-* Pressione **B** duas vezes para configurar "**AES USA**";
+* Pressione **A** em :guilabel:`REGION SETUP`.
+* Pressione **B** duas vezes para configurar :guilabel:`AES USA`;
 * Pressione **C** para encerrar a configuração e, em seguida, pressione
   :kbd:`Esc` para encerrar a emulação;
 * Entre na pasta **NVRAM\\svc_16**;
