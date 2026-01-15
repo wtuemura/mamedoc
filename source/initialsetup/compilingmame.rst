@@ -2048,6 +2048,18 @@ ou redefinindo as suas variáveis de ambiente ``CFLAGS`` e ``CXXFLAGS``.
 	\clearpage
 
 
+Problemas que afetam o MinGW clang
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O clang e o llvm do MinGW podem apresentar erros espúrios de símbolos
+indefinidos ao vincular símbolos no formato CodeView com altos níveis de
+detalhe. Caso encontre erros com símbolos indefinidos ao lincar usando
+a opção **PDB_SYMBOLS=1** para produzir símbolos no formato CodeView,
+tente usar também a opção **SYMLEVEL=1** para reduzir a quantidade de
+detalhe dos símbolos (as tabelas com os números de linha ainda serão
+incluídas, porém as variáveis locais serão omitidas).
+
+
 .. _compiling-issues-mvs:
 
 Problemas que afetam o Microsoft Visual Studio
