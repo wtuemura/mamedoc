@@ -50,7 +50,7 @@ master_doc = 'index'
 #project = u'Manual de Instruções do MAME'
 #copyright = u'2018, Equipe de Desenvolvimento do MAME, MAMEdev'
 project = u'Documentação'
-copyright = u'2026, Equipe de Desenvolvimento do MAME (MAMEdev), Tradução e Revisão Wellington T. Uemura'
+copyright = u'2026, Equipe de Desenvolvimento do MAME (MAMEdev), Tradução e Revisão Wellington Terumi Uemura'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -136,7 +136,7 @@ smartquotes = False
 html_show_sourcelink = False
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MAME'
+htmlhelp_basename = 'MAMEDOC'
 
 # Mostrar "Compilado com Sphinx"
 #html_show_sphinx = False
@@ -175,8 +175,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'MAME-pt_BR.tex', 'Documentação - MAME',
-   'Tradução e Revisão Wellington T. Uemura', 'manual')
+  ('index', 'MAMEDOC.tex', 'Documentação - MAME',
+   'Tradução e Revisão Wellington Terumi Uemura', 'manual')
 ]
 
 
@@ -185,8 +185,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'MAME', u'',
-     [u'Equipe de Desenvolvimento do MAME, MAMEdev \\Tradução e Revisão Wellington T. Uemura'], 1)
+    ('index', 'MAMEDOC', u'',
+     [u'Equipe de Desenvolvimento do MAME, MAMEdev \\Tradução e Revisão Wellington Terumi Uemura'], 1)
 ]
 
 
@@ -196,8 +196,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'MAME-pt_BR', u'Documentação - MAME',
-   u'Equipe de Desenvolvimento do MAME, MAMEdev \\Tradução e Revisão Wellington T. Uemura \\Português do Brasil', 'MAME', 'Multi-purpose emulation framework',
+  ('index', 'MAMEDOC', u'Documentação - MAME',
+   u'Equipe de Desenvolvimento do MAME, MAMEdev \\Tradução e Revisão Wellington Terumi Uemura \\Português do Brasil', 'MAME', 'Multi-purpose emulation framework',
    'Emulation'),
 ]
 
