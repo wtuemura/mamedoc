@@ -1374,40 +1374,20 @@ fazer alterações significativas para que seja possível usar o driver
 amdgpu compatível com o Vulkan.
 
 Os procedimentos a seguir foram feitos a partir de uma instalação nova
-do Debian 12 (Bookworm). Não recomendamos executá-los em seu computador
-de uso diário, pois você pode perder totalmente o acesso à interface
-gráfica e inclusive do terminal local.
+do Debian 13 (trixie). Após concluir a instalação, adicione um usuário
+comum e adicione-o ao grupo sudo com o comando ``usermod -aG sudo
+nome_do_usuário`` para que ele possa usar o comando ``sudo``. Encerre a
+sessão caso esteja logado na interface gráfica.
 
-Após concluir a instalação, adicione um usuário comum e adicione-o ao
-grupo sudo com o comando ``usermod -aG sudo nome_do_usuário`` para que
-ele possa usar o comando ``sudo``. Encerre a sessão caso esteja logado
-na interface gráfica.
+Abra um terminal e faça o comando ``sudo apt-get update && sudo
+apt-get upgrade`` e aguarde para que o sistema faça a atualização de
+todos os pacotes (em alguns casos isso pode levar um pouco mais de meia
+hora). Quando todo o processo terminar, faça o comando
+``sudo apt dist-upgrade``, este comando vai atualizar o restante dos
+pacotes que não foram atualizados no processo anterior e também vai
+atualizar o kernel se for necessário.
 
-
-Abra um terminal e faça o comando:
-
-.. code-block:: shell
-
-	sudo cp /etc/apt/source.list /etc/apt/source.list~
-
-Faça ``sudo echo "" > /etc/apt/source.list`` para limpar o arquivo e
-adicione o seguinte conteúdo (para o nosso caso que vivemos no Brasil,
-caso more num lugar diferente adicione o espelho da sua região)
-
-.. code-block:: shell
-
-	deb http://ftp.br.debian.org/debian/ testing main contrib non-free
-	deb http://ftp.br.debian.org/debian/ testing-updates main contrib non-free
-	deb http://security.debian.org/ testing-security main
-
-Execute o comando ``sudo apt-get update && sudo apt-get upgrade`` e
-aguarde a atualização de todos os pacotes (em alguns casos isso pode
-levar um pouco mais de meia hora). Quando todo o processo terminar faça
-o comando ``sudo apt dist-upgrade``, este comando vai atualizar o
-restante dos pacotes que não foram atualizados no processo anterior e
-também vai atualizar o kernel se for necessário.
-
-Agora instale os seguintes pacotes:
+Instale os pacotes abaixo:
 
 .. tip:: Independente de como apareça para você, a linha abaixo é
    contínua e sem quebras.
@@ -1420,6 +1400,12 @@ Agora instale os seguintes pacotes:
 	mesa-utils libglvnd0 tuned vulkan-validationlayers mesa-opencl-icd
 	lm-sensors inxi
 
+.. tip:: Para saber se a sua placa é compatível com o **SI** ou **CIK**
+   você pode executar o comando ``inxi -G |grep drivers`` ou
+   ``glxinfo -B | grep Device`` no terminal, caso retorne **radeonsi**,
+   a configuração para a sua placa será ``si_support=1``, caso contrário
+   ``cri_support=1``.
+
 Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 
 	options radeon si_support=0
@@ -1427,41 +1413,51 @@ Crie o arquivo ``/etc/modprobe.d/amdgpu.conf`` com o seguinte conteúdo::
 	options amdgpu dpm=0
 	options amdgpu dc=1
 
-.. tip:: Para saber se a sua placa é compatível com o **SI** ou **CIK**
-   execute o comando ``inxi -G |grep drivers`` no terminal, caso retorne
-   **radeonsi** a configuração para a sua placa será ``si_support=1``,
-   caso contrário ``cri_support=1``.
+.. tip:: A opção ``dpm=0`` desativa o gerenciamento de energia da sua
+   placa de vídeo, isso faz com que ela sempre trabalhe na capacidade
+   máxima a todo o momento, mesmo quando você não estiver fazendo nada.
+   A configuração é útil para quem deseja obter o máximo de desempenho
+   em jogos (além do MAME). O MAME (no momento) não utiliza aceleração
+   via GPU.
 
+.. tip:: Dependendo da versão e do modelo da sua *VGA/GPU* você pode
+   precisar usar a opção ``amdgpu dc=1``, pois em alguns casos a tela
+   fica preta após reboot,
+   `consulte este link <https://wiki.gentoo.org/wiki/Talk:AMDGPU>`_
+   para obter mais informações.
 
 .. raw:: latex
 
 	\clearpage
 
-
-.. tip:: Dependendo da versão da sua *VGA/GPU* você precisa usar
-   ``amdgpu dc=1``, caso contrário a tela fica preta no próximo reboot,
-   `consulte este link <https://wiki.gentoo.org/wiki/Talk:AMDGPU>`_
-   para obter mais informações.
-
-Crie o arquivo ``/etc/modprobe.d/blacklist.conf`` com o seguinte
+Crie ou edite arquivo ``/etc/modprobe.d/blacklist.conf`` com o seguinte
 conteúdo:
 
 .. code-block:: shell
 
 	blacklist radeon
 
-Quando terminar faça o comando ``sudo update-grub && sudo
-update-initramfs -u`` para atualizar o grub e criar um novo initramfs
-seguido de ``systemctl reboot`` para reiniciar. Rode o comando abaixo e
-verifique se o driver **amdgpu** está em uso:
+Isso evita que o drive **radeon** seja carregado pelo kernel. Quando
+terminar, execute o comando ``sudo update-grub && sudo
+update-initramfs -u`` para atualizar o grub e criar um novo
+**initramfs** seguido de ``systemctl reboot`` para reiniciar.
+
+Identifique a sua placa de vídeo com o comando:
 
 .. code-block:: shell
 
-	lspci -vs 01:00.0|grep driver
+	$ sudo lspci | grep VGA
+	07:00.0 VGA compatible controller: Sua VGA, modelo e revisão
+
+Execute o comando abaixo e verifique se o driver **amdgpu** está em uso:
+
+.. code-block:: shell
+
+	lspci -vs 07:00.0|grep driver
 	Kernel driver in use: amdgpu
 	
 	glxinfo -B|grep "OpenGL renderer" && glxinfo -B |grep "OpenGL version"
-	OpenGL renderer string: AMD Radeon HD 7700 Series (radeonsi, verde, ACO, DRM 3.64, 6.16.3+deb14-amd64)
+	OpenGL renderer string: Sua VGA, modelo e revisão
 	OpenGL version string: 4.6 (Compatibility Profile) Mesa 25.0.7-2
 
 Execute o comando ``vulkaninfo`` e veja se ele não acusa qualquer erro,
@@ -1486,7 +1482,7 @@ ela, a lista abaixo é um **resumo** das informações da placa:
 	GPU id : 1 (llvmpipe (LLVM 19.1.7, 256 bits)) [VK_KHR_wayland_surface]:
 
 
-Se chegou até aqui não é preciso definir a variável
+Se chegou até aqui, não é preciso definir a variável
 **VK_ICD_FILENAMES**.
 
 .. raw:: latex
@@ -1678,8 +1674,8 @@ firmware específico ainda não existe), isso não altera em nada na nossa
 configuração.
 
 Agora atualize o seu **initramfs** com o comando
-``sudo update-initramfs -u`` no **Debian** ou ``sudo dracut -fv`` no
-**Fedora**.
+``sudo update-initramfs -u`` ou ``sudo update-initramfs -u -k all`` no
+**Debian** ou ``sudo dracut -fv`` no **Fedora**.
 
 **Para casos onde o amdgpu trava.**
 
@@ -1691,11 +1687,21 @@ Adicione estas linhas extras ao seu ``/etc/modprobe.d/amdgpu.conf``:
 	options amdgpu lockup_timeout=6000
 	options amdgpu noretry=0
 
-A primeira opção ativa a recuperação do amdgpu, isso resolve a questão
-das mensagens de erros "*amdgpu: GPU recovery disabled*" no registro de
-eventos. A segunda opção determina o tempo limite para que a recuperação
-aconteça, o padrão é ``10s``, o valor foi alterado para ``6s``. A
-terceira opção é necessária para o processo de recuperação.
+* A primeira opção ``gpu_recovery=1`` ativa a recuperação do amdgpu,
+  isso resolve a questão das mensagens de erros "**amdgpu: GPU recovery
+  disabled**" no registro de eventos do sistema;
+* A segunda opção ``lockup_timeout=6000`` determina o tempo limite para
+  que a recuperação aconteça, o padrão é ``10s``, o valor foi alterado
+  para ``6s``;
+* A terceira opção ``noretry=0`` é necessária para o processo de
+  recuperação. A definição predefinida dessa opção já é ``0``.
+
+Repita os comando ``sudo update-initramfs -u`` ou
+``sudo update-initramfs -u -k all`` no **Debian** ou ``sudo dracut -fv``
+no **Fedora** para aplicar as alterações.
+
+.. tip:: O comando ``sudo update-initramfs -u -k all`` atualiza todos os
+   kernels presentes na sua lista de inicialização.
 
 Para mais informações consulte
 `amdgpu <https://www.kernel.org/doc/html/v4.20/gpu/amdgpu.html>`_.
@@ -1725,7 +1731,7 @@ ver quais são as opções compatíveis com o seu processador:
 	  maior latência de transição: 4.0 us
 	  limites do hardware: 1.40 GHz - 4.00 GHz
 	  available frequency steps:  4.00 GHz, 3.40 GHz, 2.80 GHz, 2.10 GHz, 1.40 GHz
-	  reguladores do cpufreq disponíveis: performance schedutil
+	  reguladores do cpufreq disponíveis: conservative performance schedutil
 	  política de frequência atual deve estar entre 1.40 GHz e 4.00 GHz.
 					  O regulador "schedutil" deve decidir qual velocidade usar
 					  dentro desse limite.

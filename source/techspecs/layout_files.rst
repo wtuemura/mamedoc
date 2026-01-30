@@ -1950,30 +1950,29 @@ Lidando com erros
 
 .. _layfile-autogen:
 
-As visualizações que são geradas automaticamente
-------------------------------------------------
+Visualizações que são geradas automaticamente
+---------------------------------------------
 
 Após o carregamento interno dos layouts (fornecido pelo desenvolvedor) e
 do layout externo (fornecido pelo usuário). As seguintes visualizações
 são geradas automaticamente:
 
-* Será exibido a mensagem "**No screens Attached to the system**" ou
-  "**Sem telas anexadas ao sistema**" caso o sistema não possua telas e
-  tão pouco sejam encontradas visualizações viáveis no sistema interno ou
-  externo do layout.
+* o MAME carregará uma visualização que mostra a mensagem “**Sem saída
+  visual**” se o sistema não tiver telas e nenhuma visualização viável
+  for encontrada nos layouts interno e externo;
 * A tela será exibida com a sua proporção física e com a rotação
-  aplicada em cada tela que for emulada.
+  aplicada em cada tela que for emulada;
 * A tela será exibida em uma proporção onde os pixels sejam quadrados e
   com a rotação aplicada para cada tela emulada onde a proporção
-  configurada para o pixel não corresponda a proporção física.
+  configurada para o pixel não corresponda a proporção física;
 * Serão exibidos duas cópias da imagem da tela uma sobreposta a outra
   com um pequeno espaço entre elas caso o sistema emule apenas uma
   tela.
   A cópia da parte de cima será rotacionada em 180 graus. Esta visão
-  pode ser usada num cabine tipo cocktail, que disponibiliza uma mesa
-  onde os jogadores se sentam frente a frente e cada um com a sua tela,
-  ou alternando os jogos que não girem automaticamente a tela para o
-  segundo jogador.
+  pode ser usada em uma cabine do tipo cocktail, que disponibiliza uma
+  mesa onde os jogadores se sentam frente a frente e cada um com a sua
+  própria tela, ou alternando os jogos que não girem automaticamente a
+  tela para o segundo jogador.
 * As telas serão organizadas horizontalmente da esquerda para a direita
   e verticalmente de cima para baixo, ambos com e sem as pequenas
   lacunas entre elas caso o sistema tenha exatamente duas telas emuladas
