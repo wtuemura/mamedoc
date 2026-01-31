@@ -30,7 +30,7 @@ history.xml
     Do `Gaming-History <https://www.arcade-history.com/>`_ (antigamente
     conhecido como Arcade-History)
 mameinfo.dat
-    Do `MASH’s MAMEINFO <https://mameinfo.mameworld.info/>`_
+    Do `MASH’s MAMEINFO <https://mashinfo.github.io/mameinfo/>`_
 messinfo.dat
     Do `progetto-SNAPS MESSINFO.dat
     <https://www.progettosnaps.net/messinfo/>`_
