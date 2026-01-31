@@ -24,6 +24,16 @@ na documentação oficial, alguns tópicos que foram pedidos por alguns
 membros da comunidade brasileira e outros que o autor achou necessário
 adicionar.
 
+## Onde obter mais informações? (em Inglês)
+
+* [Site oficial da equipe de desenvolvimento do MAME](https://www.mamedev.org/) (inclui downloads de binários, wiki, fóruns e muito mais);
+* [MAME Testers](https://mametesters.org/) (gerenciamento oficial de bugs do MAME).
+
+### Comunidade (em Inglês)
+
+* [Fórum do MAME no bannister.org](https://forums.bannister.org/ubbthreads.php?ubb=cfrm&c=5)
+* [r/MAME](https://www.reddit.com/r/MAME/) no Reddit
+
 # Como compilar este documento
 
 ## Fedora
