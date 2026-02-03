@@ -42,11 +42,6 @@ portáteis, etc.
     O IV/Play possui uma interface personalizável projetada para ser
     navegada com um teclado. Ele suporta listas de software e possui
     filtragem flexível.
-`Emu Loader <http://emuloader.mameworld.info/>`__ (Microsoft Windows)
-    O *Emu loader* oferece uma interface Windows para iniciar sistemas
-    e diversos emuladores, incluindo o MAME, Supermodel e o DEMUL. É
-    escrito em Delphi Pascal, o código-fonte está disponível na
-    `página de download do projeto <https://emuloader.mameworld.info/downloads.htm>`__.
 `Retrofire <https://e2j.net/downloads/>`__ (Japanese, Microsoft Windows)
     O *Retrofire* oferece uma interface gráfica em japonês para rodar
     sistemas ou programas no MAME.
