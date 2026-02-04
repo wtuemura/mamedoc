@@ -32,6 +32,14 @@ pressione a tecla predefinida para :guilabel:`UI Clear` (:kbd:`Del`,
 recarga selecionando-o para edição e, em seguida, escolhendo
 :guilabel:`Excluir o assistente` no menu.
 
+Este plug-in funciona com jogos que reconhecem a condição de puxar o
+gatilho da pistola de luz enquanto um dos eixos dela reporta o seu valor
+mínimo. Isso inclui *Lethal Enforcers* e *Virtua Cop*, por exemplo.
+Alguns jogos, como *Invasion: The Abductors*, têm requisitos de recarga
+mais complexos. Este plug-in não é adequado para esses jogos, mas você
+pode usar o :ref:`Input Macro plugin <plugins-inputmacro>` para
+recarregar facilmente com uma combinação de teclas ou botões.
+
 Os assistentes são salvos dentro da pasta **offscreenreload** (consulte
 o capítulo sobre a opção :ref:`homepath <mame-commandline-homepath>`).
 É criado um arquivo para cada nome do sistema (ou nome da ROM), com a

@@ -1476,7 +1476,7 @@ Virtua Cop
 
 Essa macro permite que você recarregue a arma ao pressionar um botão:
 
-* **Nome**: :guilabel:`Recarrega arma`
+* **Nome**: :guilabel:`Recarrega a arma`
 * **Combinação de ativação**: :guilabel:`Mouse Button 2`
 * **Ao soltar**: :guilabel:`Pare imediatamente`
 * **Enquanto estiver pressionado**: :guilabel:`Mantenha a etapa 1 ativa`
@@ -1490,6 +1490,40 @@ Essa macro permite que você recarregue a arma ao pressionar um botão:
 
 Esta macro é usada para definir valores da entrada analógica. Consulte
 também o capítulo :ref:`plugins-offscreenreload`.
+
+
+Invasion: The Abductors Reload
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para recarregar, este jogo requer que a pistola seja apontada para
+fora da tela por cerca de um décimo de segundo antes de puxar o gatilho,
+e requer que o gatilho seja mantido pressionado por um período
+semelhante. Isso o torna inadequado para uso com o plug-in
+:ref:`plugins-offscreenreload`. No entanto, você pode usar uma macro de
+duas etapas para produzir as ações necessárias ao pressionar uma tecla
+ou um botão:
+
+* **Nome**: :guilabel:`Recarrega a arma`
+* **Combinação de ativação**: :kbd:`Shift`
+* **Ao soltar**: :guilabel:`Conclua a macro`
+* **Enquanto estiver pressionado**: :guilabel:`Mantenha a etapa 2 ativa`
+* **Etapa 1**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duração (quadros)**: :guilabel:`6`
+  * **Entrada 1**: :guilabel:`Pistola de luz X`
+  * **Valor (0-255)**: :guilabel:`255`
+* **Etapa 2**:
+
+  * **Atraso (quadros)**: :guilabel:`0`
+  * **Duration (quadros)**: :guilabel:`6`
+  * **Entrada 1**: :guilabel:`Pistola de luz X`
+  * **Valor (0-255)**: :guilabel:`255`
+  * **Entrada 2**: :guilabel:`Jogador 1 botão 1`
+
+Esta macro envolve várias etapas: definir valores de entrada analógica,
+ativar várias entradas simultaneamente e concluir a macro mesmo que a
+combinação de ativação seja pressionada brevemente.
 
 
 .. |emfc| replace:: Essa macro funciona com o personagem à
