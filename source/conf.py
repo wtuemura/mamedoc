@@ -169,6 +169,8 @@ latex_elements = {
 \usepackage{charter}
 \usepackage[defaultsans]{lato}
 \usepackage{inconsolata}
+\usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{21B3}{\textrightarrow}
 ''',
 }
 
