@@ -2327,6 +2327,7 @@ os arquivos ``bios.txt``, ``bios.ps`` e ``bios.pdf``.
 
 	\clearpage
 
+.. _advanced-tricks-list-msx:
 
 Listando e iniciando diferentes sistemas MSX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2425,6 +2426,136 @@ Inicie o MAME sem nenhuma opção e siga os passos:
 .. raw:: latex
 
 	\clearpage
+
+
+.. _advanced-tricks-full-list-msx-etc:
+
+Criando uma lista completa de sistemas MSX e outros
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Como admirador de sistemas MSX eu gostaria de criar uma lista com o nome
+da ROM/BIOS seguido do nome completo do sistema. O script abaixo faz
+exatamente isso, a opção :ref:`-listbios <mame-commandline-listbios>` já
+faz algo semelhante porém o script gera uma saída diferente com
+informações de fabricante, se a BIOS é clone ou não, etc.
+
+.. code-block:: bash
+
+	#!/usr/bin/bash
+	
+	# Criado por Wellington Terumi Uemura 04/02/2026
+	# CC by 4.0
+	
+	# uso ex.:
+	# ./bios_list.sh src/mame/msx/msx1.cpp
+	
+	if [ $# -lt 1 ]; then
+	  echo "Uso: $0 arquivo(s) [fabricante]"
+	  exit 1
+	fi
+	
+	FILTRO=""
+	if [ $# -gt 1 ]; then
+	  FILTRO="${@: -1}"
+	fi
+	
+	awk -v filtro="$FILTRO" '
+	/^COMP\(/ {
+	
+	# shortname e parent
+	match($0, /^COMP\([^,]+,[[:space:]]*([^,]+),[[:space:]]*([^,]+)/, a)
+	short  = a[1]
+	parent = a[2]
+	
+	# fabricante e descrição
+	match($0, /"([^"]+)"[[:space:]]*,[[:space:]]*"([^"]+)"/, b)
+	manuf = b[1]
+	desc  = b[2]
+	
+	gsub(/^[ \t]+|[ \t]+$/, "", short)
+	gsub(/^[ \t]+|[ \t]+$/, "", parent)
+	
+	# filtro por fabricante
+	if (filtro != "" && tolower(manuf) !~ tolower(filtro))
+	    next
+	
+	if (parent == "0") {
+	    printf "%-12s %s - %s [PRINCIPAL]\n", short, manuf, desc
+	} else {
+	printf "%-12s %s - %s (Clone de %s)\n", short, manuf, desc, parent
+	  }
+	}
+	' "$@" | sort
+
+Salve como **bios_list.sh**, torne-o executável com
+``chmod +x bios_list.sh`` e rode ele indicando o caminho completo do
+código fonte, exemplo:
+
+.. code-block:: shell
+
+	$ ./bios_list.sh src/mame/msx/msx1.cpp
+	ax150        Sakhr - AX-150 (MSX1, Arabic) [PRINCIPAL]
+	...
+	canonv10     Canon - V-10 (MSX1, Japan) (Clone de canonv20)
+	canonv20     Canon - V-20 (MSX1, Japan) [PRINCIPAL]
+	...
+	canonv20f    Canon - V-20F (MSX1, France) (Clone de canonv20)
+	...
+	cf1200       National - CF-1200 (MSX1, Japan) [PRINCIPAL]
+
+Outra maneira de utilizá-lo é fazendo um loop simples para varrer todo o
+diretório:
+
+.. code-block:: shell
+
+	$ for f in $(ls src/mame/msx/*.cpp); do ./bios_list.sh $f; done
+	bruc100      Frael - Bruc 100-1 (MSX1, Italy) [PRINCIPAL]
+	...
+	canonv20     Canon - V-20 (MSX1, Japan) [PRINCIPAL]
+	...
+	ax350ii      Sakhr - AX-350 II (MSX2, Arabic) [PRINCIPAL]
+	...
+	expert3t     Ciel - Expert 3 Turbo (MSX2+, Brazil) [PRINCIPAL]
+	...
+	fsa1st       Panasonic - FS-A1ST (MSX Turbo-R, Japan) [PRINCIPAL]
+
+É possível também utilizar o **grep** para filtrar pela versão (MSX1, MSX2, etc.):
+
+.. code-block:: shell
+
+	$ for f in $(ls src/mame/msx/*.cpp); do ./bios_list.sh $f; done | grep -i msx1 | sort
+	ax150        Sakhr - AX-150 (MSX1, Arabic) [PRINCIPAL]
+	ax170        Sakhr - AX-170 (MSX1, Arabic) [PRINCIPAL]
+	ax200m       Sakhr - AX-200M (MSX1, Arabic/English) (Clone de ax200)
+	...
+
+Pelo nome do fabricante:
+
+.. code-block:: shell
+
+	$ for f in $(ls src/mame/msx/*.cpp); do ./bios_list.sh $f; done | grep -i sony | sort
+	hb101p       Sony - HB-101P (MSX1, Europe) [PRINCIPAL]
+	hb101        Sony - HB-101 (MSX1, Japan) (Clone de hb101p)
+	hb10p        Sony - HB-10P (MSX1, Netherlands) [PRINCIPAL]
+
+Além das BIOS dos sistemas MSX também é possível fazer uma varredura
+completa no diretório por outros sistemas, exemplo:
+
+.. code-block:: shell
+
+	$ for f in $(ls src/mame/*/*.cpp); do ./bios_list.sh $f; done
+	aa3000       Acorn Computers - BBC A3000 (Clone de aa310)
+	...
+	altos8600    Altos Computer Systems - ACS8600 [PRINCIPAL]
+	...
+	apple2gs     Apple Computer - Apple IIgs (ROM03) [PRINCIPAL]
+	...
+	palmiii      3Com - Palm III (Clone de pilot1k)
+	...
+	ibm5170      International Business Machines - PC/AT 5170 [PRINCIPAL]
+	...
+	x820ii       Xerox - Xerox 820-II [PRINCIPAL]
+	...
 
 
 Filtrando o nome das ROMs a partir do arquivo XML
@@ -2846,6 +2977,10 @@ pasta que o programa ``chdman.exe``.
 	endlocal
 	exit /B
 
+.. raw:: latex
+
+	\clearpage
+
 Na variável ``CHDMAN_CONFIG`` definimos ``-np 4`` (quantidade de
 processadores), isso serve para limitar a quantidade de processadores
 já que a compressão de dados consome uma grande quantidade de recursos
@@ -2930,6 +3065,9 @@ Um arquivo texto chamado **exported.txt** será criado dentro da pasta
 
 Extraindo uma lista de sistemas de um determinado driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Primeira versão
+---------------
 
 O comando :ref:`-listfull / -ll <mame-commandline-listfull>` oferece uma
 listagem de sistemas com o nome da ROM seguido da sua descrição (como
@@ -3056,6 +3194,158 @@ Indiferente (opção ``-i``)::
 	cat src/mame/neogeo/neogeo.cpp|grep "GAME( "| awk -F', ' '{print $2 " - " $10}'| sed 's/"//g'| sort -d |grep -i bang
 	b2b - Bang Bang Busters (2010 NCI release) 
 	bangbead - Bang Bead
+
+
+Segunda versão
+--------------
+
+Nesta versão a saída fica um pouco mais organizada e separada entre a
+ROM principal e os clones.
+
+.. code-block:: bash
+
+	#!/usr/bin/bash
+	
+	# Criado por Wellington Terumi Uemura 04/02/2026
+	# CC by 4.0
+	
+	# uso ex.:
+	# ./mame_game_list.sh src/mame/capcom/cps1.cpp
+	
+	if [ $# -lt 1 ]; then
+	  echo "Uso: $0 arquivo(s) [fabricante]"
+	  exit 1
+	fi
+	
+	FILTRO=""
+	if [ $# -gt 1 ]; then
+	  FILTRO="${@: -1}"
+	fi
+	
+	awk -v filtro="$FILTRO" '
+	/^GAME\(/ {
+	
+	# ano, rom, parent e hardware
+	match($0, /^GAME\([[:space:]]*([0-9]+)[[:space:]]*,[[:space:]]*([^,]+)[[:space:]]*,[[:space:]]*([^,]+)[[:space:]]*,[[:space:]]*([^,]+)/, a)
+	ano      = a[1]
+	rom      = a[2]
+	parent   = a[3]
+	hardware = a[4]
+	
+	# fabricante e título
+	match($0, /"([^"]+)"[[:space:]]*,[[:space:]]*"([^"]+)"/, b)
+	company = b[1]
+	title   = b[2]
+	
+	gsub(/^[ \t]+|[ \t]+$/, "", rom)
+	gsub(/^[ \t]+|[ \t]+$/, "", parent)
+	gsub(/^[ \t]+|[ \t]+$/, "", hardware)
+	
+	if (filtro != "" && tolower(company) !~ tolower(filtro))
+	    next
+	
+	key = hardware "|" rom
+	
+	games[key, "ano"]     = ano
+	games[key, "company"] = company
+	games[key, "title"]   = title
+	games[key, "parent"]  = parent
+	games[key, "rom"]     = rom
+	games[key, "hw"]      = hardware
+	
+	if (parent == "0") {
+	    parents[hardware, rom] = ano
+	  } else {
+	    clones[hardware, parent] = clones[hardware, parent] " " rom
+	  }
+	
+	  hardwares[hardware] = 1
+	}
+	
+	END {
+	
+	  PROCINFO["sorted_in"] = "@ind_str_asc"
+	
+	  for (hw in hardwares) {
+	
+	    print ""
+	    print "===== HARDWARE: " hw " ====="
+	
+	# ordenar parents por ano
+	    n = 0
+	    for (p in parents) {
+	      split(p, x, SUBSEP)
+	    if (x[1] == hw) {
+		    order[++n] = x[2]
+	    year[x[2]] = parents[p]
+	  }
+	}
+	
+	# sort manual por ano
+	for (i = 1; i <= n; i++) {
+	  for (j = i + 1; j <= n; j++) {
+	    if (year[order[i]] > year[order[j]]) {
+		  tmp = order[i]
+		  order[i] = order[j]
+		  order[j] = tmp
+	    }
+	  }
+	}
+	
+	for (i = 1; i <= n; i++) {
+	  rom = order[i]
+	  k = hw "|" rom
+	
+	  printf "[%s][%s] %s - %s [PRINCIPAL]\n",
+	    games[k, "ano"],
+	    games[k, "company"],
+	    rom,
+	    games[k, "title"]
+	
+	  # imprimir clones
+	  split(clones[hw, rom], cl, " ")
+	  for (c in cl) {
+	    if (cl[c] != "") {
+		  ck = hw "|" cl[c]
+		  printf "    ↳ [%s][%s] %s - %s [CLONE]\n",
+		    games[ck, "ano"],
+		    games[ck, "company"],
+		    cl[c],
+		    games[ck, "title"]
+	    }
+	  }
+	}
+
+	delete order
+	delete year
+	  }
+	}
+	' "$@"
+
+.. raw:: latex
+
+	\clearpage
+
+Salve como **mame_game_list.sh**, torne-o executável com
+``chmod +x mame_game_list.sh`` e rode ele indicando o caminho completo
+do código fonte, exemplo:
+
+.. code-block:: shell
+
+	$ ./mame_game_list.sh src/mame/capcom/cps1.cpp
+	===== HARDWARE: cps1_10MHz =====
+	[1988][Capcom] ghouls - Ghouls'n Ghosts (World) [PRINCIPAL]
+	    ↳ [1988][Capcom] ghoulsu - Ghouls'n Ghosts (USA) [CLONE]
+	    ↳ [1988][Capcom] daimakai - Daimakaimura (Japan) [CLONE]
+	[1989][Capcom] ffight - Final Fight (World, set 1) [PRINCIPAL]
+	    ↳ [1989][Capcom] ffighta - Final Fight (World, set 2) [CLONE]
+	...
+	===== HARDWARE: cps1_12MHz =====
+	[1992][Capcom] cworld2j - Adventure Quiz Capcom World 2 (Japan 920611) [PRINCIPAL]
+	    ↳ [1992][Capcom] cworld2ja - Adventure Quiz Capcom World 2 (Japan 920611, B-Board 90629B-3, no battery) [CLONE]
+	    ↳ [1992][Capcom] cworld2jb - Adventure Quiz Capcom World 2 (Japan 920611, B-Board 91634B-2) [CLONE]
+	[1992][Capcom] qad - Quiz & Dragons: Capcom Quiz Game (USA 920701) [PRINCIPAL]
+	...
 
 
 .. _advanced-tricks-mame-ini:
