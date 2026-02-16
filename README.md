@@ -47,7 +47,7 @@ sudo dnf install python3-sphinx python2-sphinx python3-sphinx-bootstrap-theme py
 ## Debian
 
 ```
-sudo apt-get install python3-sphinx python3-pip python3-sphinxcontrib.svg2pdfconverter python3-sphinx-rtd-theme latexmk texlive texlive-science texlive-formats-extra texlive-fonts-extra librsvg2-bin
+sudo apt-get install python3-sphinx python3-pip python3-sphinxcontrib.svg2pdfconverter python3-sphinx-rtd-theme latexmk texlive texlive-science texlive-formats-extra texlive-fonts-extra texlive-lang-portuguese librsvg2-bin
 ```
 
 ## Windows
