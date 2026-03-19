@@ -340,11 +340,11 @@ Propriedades
 
 .. _luascript-ref-dipalette:
 
-Dispositivo paleta
-------------------
+Dispositivo palette
+-------------------
 
-|encaa| ``device_palette_interface`` do MAME que representa um
-dispositivo que traduz uma cadeia de valores em cores.
+|encaa| ``device_palette_interface`` do MAME. |escl| um dispositivo que
+traduz uma cadeia de valores em cores.
 
 |acsre| alfa/vermelho/verde/azul (ARGB). |osvalo|. Os valores das cores
 do canal não são multiplicados previamente pelo valor alpha. Os valores
@@ -508,11 +508,10 @@ Propriedades
 
 .. _luascript-ref-screendev:
 
-Dispositivo tela
-----------------
+Dispositivo screen
+------------------
 
-|encaa| ``screen_device`` do MAME que representa uma saída emulada de
-vídeo.
+|encaa| ``screen_device`` do MAME. |escl| uma saída emulada de vídeo.
 
 Instanciação
 ~~~~~~~~~~~~
@@ -784,14 +783,104 @@ Propriedades
 	tela utilize um formato de pixel de cor direta.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
+.. _luascript-ref-vectordev:
+
+Dispositivo vector
+------------------
+
+|encaa| ``vector_device`` do MAME. |escl| cria um visor vetorial X/Y
+emulado.
+
+
+Instanciação
+~~~~~~~~~~~~
+
+**manager.machine.vector_devices[tag]**
+
+	Obtém um dispositivo vetorial por meio de uma **tag**, em relação ao
+	dispositivo da máquina raiz. Se tal dispositivo não existir, ou se
+	não for um dispositivo vetorial, ele retorna **nil**.
+
+
+Classes base
+~~~~~~~~~~~~
+
+* :ref:`luascript-ref-device`
+
+Métodos
+~~~~~~~
+
+**vector:add_frame_begin_notifier(callback)**
+
+	Adiciona uma função de retorno de chamada (*callback*) para receber
+	notificações quando o processamento vetorial começar. A função de
+	retorno de chamada não recebe nenhum argumento. Ela retorna uma
+	:ref:`assinatura do notificador <luascript-ref-notifiersub>`.
+
+**vector:add_frame_end_notifier(callback)**
+
+	Adiciona uma função de retorno de chamada (*callback*) para receber
+	notificações quando o processamento vetorial terminar. A função de
+	retorno de chamada não recebe nenhum argumento. Ela retorna uma
+	:ref:`assinatura do notificador <luascript-ref-notifiersub>`.
+
+**vector:add_line_notifier(callback)**
+
+	Adiciona uma função de retorno de chamada (*callback*) quando o
+	feixe vetorial se deslocar entre dois pontos nos quais a intensidade
+	do feixe seja diferente de zero. A função de retorno de chamada
+	recebe os seguintes argumentos na ordem listada abaixo:
+
+    - **lastx:** a antiga posição **X** do feixe (horizontal);
+    - **lasty:** a antiga posição **Y** do feixe (vertical);
+    - **x:** a atual posição **X** do feixe (horizontal);
+    - **y:** a atual posição **Y** do feixe (vertical);
+    - **color:** a **cor** do feixe, como um valor RGB de 24 bits;
+    - **intensity:** a **intensidade** do feixe, como um valor de 8-bit;
+    - **width:** a **largura** em pixels configurada da tela vetorial virtual;
+    - **height:** a **altura** em pixels configurada da tela vetorial virtual.
+    
+	Retornar para :ref:`assinatura do notificador
+	<luascript-ref-notifiersub>`.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+**vector:add_move_notifier(callback)**
+
+	Adiciona uma função de retorno de chamada para receber notificações
+	quando o feixe vetorial se mover com intensidade zero. Esse recurso
+	é oferecido por conveniência, já que a posição e a intensidade
+	anteriores do feixe não têm significado quando se “salta” o feixe
+	vetorial. A função de retorno de chamada recebe os seguintes
+	argumentos na ordem listada abaixo:
+    
+    - **x:** a atual posição **X** do feixe (horizontal);
+    - **y:** a atual posição **Y** do feixe (vertical);
+    - **color:** a **cor** do feixe, como um valor RGB de 24 bits;
+    - **width:** a **largura** em pixels configurada da tela vetorial virtual;
+    - **height:** a **altura** em pixels configurada da tela vetorial virtual.
+    
+	Retornar para :ref:`assinatura do notificador
+	<luascript-ref-notifiersub>`.
+
+
 .. _luascript-ref-cassdev:
 
-Dispositivo de imagem em fita cassete
--------------------------------------
+Dispositivo cassette image
+--------------------------
 
-|encaa| ``cassette_image_device`` do MAME que representa um mecanismo
+|encaa| ``cassette_image_device`` do MAME. |escl| cria um mecanismo
 cassete compacto normalmente usado por um computador doméstico para o
-armazenamento dos programas.
+armazenamento de programas.
 
 
 Instanciação
@@ -890,10 +979,10 @@ Propriedades
 
 .. _luascript-ref-diimage:
 
-Dispositivos de interface de imagem
------------------------------------
+Dispositivo device image
+------------------------
 
-|encaa| ``device_image_interface`` do MAME que é uma mistura
+|encaa| ``device_image_interface`` do MAME. |escl| é uma mistura
 implementada através dos dispositivos que podem carregar arquivos de
 imagem a partir de uma mídia.
 
@@ -1080,11 +1169,11 @@ Propriedades
 
 .. _luascript-ref-disound:
 
-Dispositivo de interface de áudio
----------------------------------
+Dispositivo sound interface
+---------------------------
 
-|encaa| **device_sound_interface** do MAME, que é um *"mix-in"*
-implementado por dispositivos de entrada e/ou saída de som.
+|encaa| **device_sound_interface** do MAME. |escl| é um *"mix-in"*
+implementado por dispositivos de entrada e/ou saída de áudio.
 
 Instanciação
 ~~~~~~~~~~~~
@@ -1146,7 +1235,7 @@ Propriedades
 Interface do dispositivo slot
 -----------------------------
 
-|encaa| ``device_slot_interface`` do MAME que é uma mistura
+|encaa| ``device_slot_interface`` do MAME. |escl| é uma mistura
 implementada através dos dispositivos que instanciam um dispositivo
 herdado que foi definido pelo usuário.
 
@@ -1195,11 +1284,11 @@ Propriedades
 
 .. _luascript-ref-distateentry:
 
-Estado da entrada do dispositivo
---------------------------------
+Dispositivo device state
+------------------------
 
-Envelopa a classe ``device_state_entry`` do MAME, permite acesso aos
-nomes dos registos expostos por um :ref:`dispositivo
+Envelopa a classe ``device_state_entry`` do MAME. |escl| permite acesso
+aos nomes dos registos expostos por um :ref:`dispositivo
 <luascript-ref-device>`. É compatível com a conversão de "string" para
 exibição.
 
@@ -1270,8 +1359,8 @@ Propriedades
 Formato da imagem da mídia
 --------------------------
 
-|encaa| ``image_device_format`` do MAME que descreve o formato do
-arquivo da mídia compatível através da :ref:`dispositivo de interface de
+|encaa| ``image_device_format`` do MAME. |escl| descreve o formato do
+arquivo da mídia compatível através do :ref:`dispositivo de interface de
 imagem <luascript-ref-diimage>`.
 
 
@@ -1317,8 +1406,8 @@ Propriedades
 Opções do slot
 --------------
 
-|encaa| ``device_slot_interface::slot_option`` do MAME que representa um
-dispositivo herdado da :ref:`interface do dispositivo slot
+|encaa| ``device_slot_interface::slot_option`` do MAME. |escl|
+representa dispositivo herdado da :ref:`interface do dispositivo slot
 <luascript-ref-dislot>` que podem ser instanciados para configuração.
 
 
@@ -1389,3 +1478,4 @@ Propriedades
 .. |ubqi| replace:: Um valor booleano que indica se
 .. |eeun| replace:: Este é um número de ponto flutuante
 .. |ubis| replace:: Retorna Um valor booleano indicando se
+.. |escl| replace:: Essa classe

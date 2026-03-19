@@ -318,7 +318,8 @@ HASH
 Associa um local com o modo especificado e os valores do contador de
 programa emulado. A instrução :ref:`HASHJMP <umlinst-hashjmp>` pode ser
 usada para transferir o controle para o local associado a um modo e a
-um valor de contador de programa emulado.
+um valor de contador de programa emulado. Os blocos de código
+invariantes não permitem instruções HASH.
 
 Isso geralmente é usado para marcar o local do código gerado para uma
 instrução ou sequência de instruções emulada.
@@ -668,7 +669,9 @@ Regras de simplificação
 CALLC
 ~~~~~
 
-A invocação de uma função C com a assinatura ``void (*)(void *)``.
+Invoca uma função C com a assinatura ``void (*)(T *)``, ou
+``void (*)(T &)`` (ou seja, uma função com um único parâmetro de
+ponteiro ou de referência que não retorna um valor).
 
 +---------------------------+-----------------------------------------+
 | Disassembly               | Utilização                              |
