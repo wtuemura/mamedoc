@@ -33,6 +33,7 @@ adicionar.
 
 * [Fórum do MAME no bannister.org](https://forums.bannister.org/ubbthreads.php?ubb=cfrm&c=5)
 * [r/MAME](https://www.reddit.com/r/MAME/) no Reddit
+* [MAMEWorld Forums](https://www.mameworld.info/ubbthreads/)
 
 # Como compilar este documento
 
