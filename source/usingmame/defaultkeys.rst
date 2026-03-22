@@ -43,12 +43,12 @@ cardápio de opções, a pausa do sistema, o salvamento e a leitura dos
 estados.
 
 :kbd:`Tab`
-	Chama o cardápio de opções.
+	Mostra o cardápio de opções.
 
 | :kbd:`~` - Tecla **til** no teclado *US ANSI QWERTY*;
-| :kbd:`\`` - Tecla **acento agudo** no teclado *US ANSI QWERTY*;
+| :kbd:`\\` - Tecla **acento agudo** no teclado *US ANSI QWERTY*;
 | :kbd:`"` - Tecla **aspas** no teclado *ABNT-2*;
-| :kbd:`'` - Tecla **ápice** no teclado *ABNT-2*;
+| :kbd:`'` - Tecla **ápice** no teclado *ABNT-2*.
 
 	Mostra as opções na tela.
 
@@ -77,7 +77,7 @@ estados.
 	* :kbd:`Shift` + :kbd:`→` - Aumenta o valor em passos de **1x**;
 	* :kbd:`End` - Oculta temporariamente a opção visível na tela;
 	* :kbd:`Home` - Traz de volta a opção na tela depois que for oculta;
-	* :kbd:`Shift` + :kbd:`Alt` + :kbd:`→` - Aumenta o valor em passos de **1x**;
+	* :kbd:`Shift` + :kbd:`Alt` + :kbd:`→` - Aumenta o valor em passos de **1x**.
 
 
 .. raw:: latex
@@ -138,7 +138,7 @@ Seta direcional :kbd:`→`
     * :kbd:`Home` / :kbd:`End` - Vai para o topo/fim da lista;
     * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de cores por linha;
     * :kbd:`0` - Restaura a quantidade de cores por linha;
-    * :kbd:`Enter` - Alterna para o visualizador gráfico;
+    * :kbd:`Enter` - Alterna para o visualizador gráfico.
 
     **Modo gráfico**:
 
@@ -151,7 +151,7 @@ Seta direcional :kbd:`→`
     * :kbd:`R` - Rotaciona os blocos 90° sentido horário;
     * :kbd:`-` / :kbd:`+` - Aumenta/reduz a quantidade de blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir a quantidade dos blocos);
     * :kbd:`0` - Restaura a quantidade de blocos por fila (mantenha :kbd:`Shift` pressionado para que valores integrais sejam usados ao aumentar/reduzir a quantidade os blocos);
-    * :kbd:`Enter` - Alterna para o visualizador de *tilemap*;
+    * :kbd:`Enter` - Alterna para o visualizador de *tilemap*.
 
     **Modo Tilemap**:
 
@@ -162,7 +162,7 @@ Seta direcional :kbd:`→`
     * :kbd:`R` - Rotaciona os *tilemaps* em 90° sentido horário;
     * :kbd:`-` / :kbd:`+` - Aumenta/reduz o fator de aproximação;
     * :kbd:`0` - Expande os pequenos *tilemaps* para preencher a tela;
-    * :kbd:`Enter` - Alterna par ao modo paleta/tabela de cores;
+    * :kbd:`Enter` - Alterna par ao modo paleta/tabela de cores.
 
     Observação: Nem todos os sistemas possuem gráficos decodificados e/ou *tilemaps*.
 
@@ -245,10 +245,6 @@ Seta direcional :kbd:`→`
     Encerra a emulação, retorna para o menu anterior ou cancela uma
     opção na interface.
 
-.. raw:: latex
-
-	\clearpage
-
 .. _default-selmenu-keys:
 
 Menus para a seleção de programas e sistemas
@@ -274,6 +270,11 @@ Os menus de seleção do programa e do sistema usam controles adicionais.
     Inicia a auditoria das ROMs e das imagens de disco.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _default-arcade-keys:
 
 Controles predefinidos dos sistemas arcade
@@ -286,53 +287,57 @@ configuráveis na interface do usuário. Esta lista mostra a configuração
 predefinida do teclado.
 
 :kbd:`5` |fdtn|
-    Ficha do slot 1
+    Ficha do slot 1.
 :kbd:`6` |fdtn|
-    Ficha do slot 2
+    Ficha do slot 2.
 :kbd:`7` |fdtn|
-    Ficha do slot 3
+    Ficha do slot 3.
 :kbd:`8` |fdtn|
-    Ficha do slot 4
+    Ficha do slot 4.
 :kbd:`Backspace`
-    Cédula 1 (Para sistemas que tenham um receptor/leitor de cédulas)
+    Cédula 1 (Para sistemas que tenham um receptor/leitor de cédulas).
 :kbd:`T`
-    Tilt
+    Tilt.
 
     Normalmente um interruptor de inclinação ou sensor de impacto que
     encerra o jogo atual, redefine os créditos e/ou reinicia o sistema
     caso ela seja derrubada com muita força ou seja deslocada. Mais
     comumente encontrado nos sistemas de pinball.
+:kbd:`O`
+    Trava interna (door interlock). Por exemlo, funciona como a trava da
+    porta do moedeiro.
+
 :kbd:`-` |fdtn|
-    Reduz o volume
+    Reduz o volume.
 
     Para sistemas que tenham um controle de volume.
 :kbd:`=` |fdtn|
-    Aumenta o volume
+    Aumenta o volume.
 
     Para sistemas que tenham um controle de volume.
 :kbd:`F1`
-    Redefine a memória
+    Redefine a memória.
 
     Isso redefine ou zera o(s) placar(es), os créditos/prêmios, as
     estatísticas ou as configurações do operados nos sistemas
     compatíveis.
 :kbd:`F2`
-    Modo de serviço
+    Modo de serviço.
 
     Este é um botão existente em alguns sistemas para acessar este
     modo, em outros sistemas pode ser uma chave ou uma chave DIP.
 :kbd:`9` |fdtn|
-    Serviço 1
+    Serviço 1.
 
     Estes botões geralmente servem para dar créditos de graça, sem
     passar pela contabilidade do sistema, ou para navegar no menu de
     serviço do operador.
 :kbd:`0` |fdtn|
-    Serviço 2
+    Serviço 2.
 :kbd:`-` |fdtn|
-    Serviço 3
+    Serviço 3.
 :kbd:`=` |fdtn|
-    Serviço 4
+    Serviço 4.
 
 
 .. _default-game-keys:
@@ -345,21 +350,21 @@ Todos os controles abaixo são totalmente configuráveis na interface do
 usuário. Esta lista mostra a configuração predefinida do teclado.
 
 :kbd:`5` |fdtn|
-    Ficha do slot 1
+    Ficha do slot 1.
 :kbd:`6` |fdtn|
-    Ficha do slot 2
+    Ficha do slot 2.
 :kbd:`7` |fdtn|
-    Ficha do slot 3
+    Ficha do slot 3.
 :kbd:`8` |fdtn|
-    Ficha do slot 4
+    Ficha do slot 4.
 :kbd:`1` |fdtn|
-    Inicia o jogador 1 ou o modo com 1 jogador
+    Inicia o jogador 1 ou o modo com 1 jogador.
 :kbd:`2` |fdtn|
-    Inicia o jogador 2 ou o modo com 2 jogadores
+    Inicia o jogador 2 ou o modo com 2 jogadores.
 :kbd:`3` |fdtn|
-    Inicia o jogador 3 ou o modo com 3 jogadores
+    Inicia o jogador 3 ou o modo com 3 jogadores.
 :kbd:`4` |fdtn|
-    Inicia o jogador 4 ou o modo com 4 jogadores
+    Inicia o jogador 4 ou o modo com 4 jogadores.
 
 
 .. _default-player1-keys:
@@ -368,29 +373,29 @@ Controles do jogador 1
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Seta direcional :kbd:`↑`
-    Jogador 1 cima
+    Jogador 1 cima.
 Seta direcional :kbd:`↓`
-    Jogador 1 baixo
+    Jogador 1 baixo.
 Seta direcional :kbd:`←`
-    Jogador 1 esquerda
+    Jogador 1 esquerda.
 Seta direcional :kbd:`→`
-    Jogador 1 direita
+    Jogador 1 direita.
 :kbd:`E`
-    Jogador 1 - Cima no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
+    Jogador 1 - Cima no controle esquerdo nos sistemas com dois controles (p.e. Robotron).
 :kbd:`D`
-    Jogador 1 - Baixo no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
+    Jogador 1 - Baixo no controle esquerdo nos sistemas com dois controles (p.e. Robotron).
 :kbd:`S`
-    Jogador 1 - Esquerda no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
+    Jogador 1 - Esquerda no controle esquerdo nos sistemas com dois controles (p.e. Robotron).
 :kbd:`F`
-    Jogador 1 - Direita no controle esquerdo nos sistemas com dois controles (p.e. Robotron)
+    Jogador 1 - Direita no controle esquerdo nos sistemas com dois controles (p.e. Robotron).
 :kbd:`I`
-    Jogador 1 - Cima no controle direito nos sistemas com dois controles (p.e. Robotron)
+    Jogador 1 - Cima no controle direito nos sistemas com dois controles (p.e. Robotron).
 :kbd:`K`
-    Jogador 1 - Baixo no controle direito nos sistemas com dois controles (p.e. Robotron)
+    Jogador 1 - Baixo no controle direito nos sistemas com dois controles (p.e. Robotron).
 :kbd:`J`
-    Jogador 1 - Esquerdo no controle direito nos sistemas com dois controles (p.e. Robotron)
+    Jogador 1 - Esquerdo no controle direito nos sistemas com dois controles (p.e. Robotron).
 :kbd:`L`
-    Jogador 1 - Direito no controle direito nos sistemas com dois controles (p.e. Robotron)
+    Jogador 1 - Direito no controle direito nos sistemas com dois controles (p.e. Robotron).
 :kbd:`Ctrl` esquerdo / **Mouse** :kbd:`B0` / **Pistola 1** **Botão** :kbd:`0`
     Jogador 1 botão :kbd:`1`
 :kbd:`Alt` esquerdo / **Mouse** :kbd:`B2` / **Pistola 1** **Botão** :kbd:`1`
@@ -429,23 +434,23 @@ Controles do jogador 2
 ~~~~~~~~~~~~~~~~~~~~~~
 
 :kbd:`R`
-    Jogador 2 cima
+    Jogador 2 :kbd:`↑`
 :kbd:`F`
-    Jogador 2 baixo
+    Jogador 2 :kbd:`↓`
 :kbd:`D`
-    Jogador 2 esquerda
+    Jogador 2 :kbd:`←` 
 :kbd:`G`
-    Jogador 2 direita
+    Jogador 2 :kbd:`→`
 :kbd:`A`
-    Jogador 2 botão 1
+    Jogador 2 botão :kbd:`1`
 :kbd:`S`
-    Jogador 2 botão 2
+    Jogador 2 botão :kbd:`2`
 :kbd:`Q`
-    Jogador 2 botão 3
+    Jogador 2 botão :kbd:`3`
 :kbd:`W`
-    Jogador 2 botão 4
+    Jogador 2 botão :kbd:`4`
 :kbd:`E`
-    Jogador 2 botão 5
+    Jogador 2 botão :kbd:`5`
 
 
 .. _default-player3-keys:
@@ -454,19 +459,19 @@ Controles do jogador 3
 ~~~~~~~~~~~~~~~~~~~~~~
 
 :kbd:`I`
-    Jogador 3 cima
+    Jogador 3 :kbd:`↑`
 :kbd:`K`
-    Jogador 3 baixo
+    Jogador 3 :kbd:`↓`
 :kbd:`J`
-    Jogador 3 esquerda
+    Jogador 3 :kbd:`←` 
 :kbd:`L`
-    Jogador 3 direita
+    Jogador 3 :kbd:`→`
 :kbd:`Control` direito
-    Jogador 3 botão 1
+    Jogador 3 botão :kbd:`1`
 :kbd:`Shift` direito
-    Jogador 3 botão 2
+    Jogador 3 botão :kbd:`2`
 :kbd:`Enter` |fdtn|
-    Jogador 3 botão 3
+    Jogador 3 botão :kbd:`3`
 
 
 .. _default-player4-keys:
@@ -475,19 +480,19 @@ Controles do jogador 4
 ~~~~~~~~~~~~~~~~~~~~~~
 
 :kbd:`8` (*no teclado numérico*)
-    Jogador 4 cima
+    Jogador 4 :kbd:`↑`
 :kbd:`2` (*no teclado numérico*)
-    Jogador 4 baixo
+    Jogador 4 :kbd:`↓`
 :kbd:`4` (*no teclado numérico*)
-    Jogador 4 esquerda
+    Jogador 4 :kbd:`←` 
 :kbd:`6` (*no teclado numérico*)
-    Jogador 4 direita
+    Jogador 4 :kbd:`→`
 :kbd:`0` (*no teclado numérico*)
-    Jogador 4 botão 1
+    Jogador 4 :kbd:`1`
 :kbd:`.` (*no teclado numérico*)
-    Jogador 4 botão 2
+    Jogador 4 :kbd:`2`
 :kbd:`Enter` (*no teclado numérico*)
-    Jogador 4 botão 3
+    Jogador 4 :kbd:`3`
 
 .. raw:: latex
 
@@ -525,83 +530,83 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
 
 
 :kbd:`5` |fdtn|
-    Ficha do slot 1
+    Ficha do slot 1.
 :kbd:`6` |fdtn|
-    Ficha do slot 2
+    Ficha do slot 2.
 :kbd:`7` |fdtn|
-    Ficha do slot 3
+    Ficha do slot 3.
 :kbd:`8` |fdtn|
-    Ficha do slot 4
+    Ficha do slot 4.
 :kbd:`Y`
-    Jogador 1 Mahjong/Hanafuda Flip Flop
+    Jogador 1 Mahjong/Hanafuda Flip Flop.
 :kbd:`1` |fdtn|
-    Inicia o jogador 1 ou o modo com 1 jogador
+    Inicia o jogador 1 ou o modo com 1 jogador.
 :kbd:`2` |fdtn|
-    Jogador 2 start or 2 players mode
+    Inicia o jogador 2 ou o modo com 2 jogadores.
 :kbd:`3` |fdtn|
-    Jogador 3 start or 3 players mode
+    Inicia o jogador 3 ou o modo com 3 jogadores.
 
     Mahjong Bet
 :kbd:`4` |fdtn|
-    Jogador 4 start or 4 players mode
+    Inicia o jogador 4 ou o modo com 4 jogadores.
 :kbd:`Ctrl` direito
-    Jogador 1 Mahjong/Hanafuda Take Score
+    Jogador 1 Mahjong/Hanafuda :kbd:`Take Score`
 :kbd:`Shift` direito
-    Jogador 1 Mahjong/Hanafuda Double Up
+    Jogador 1 Mahjong/Hanafuda :kbd:`Double Up`
 :kbd:`Enter`
-    Jogador 1 Mahjong/Hanafuda Big
+    Jogador 1 Mahjong/Hanafuda :kbd:`Big`
 :kbd:`Backspace`
-    Jogador 1 Mahjong/Hanafuda Small
+    Jogador 1 Mahjong/Hanafuda :kbd:`Small`
 :kbd:`Alt` direito
-    Jogador 1 Mahjong/Hanafuda Last Chance
+    Jogador 1 Mahjong/Hanafuda :kbd:`Last Chance`
 :kbd:`Ctrl`
-    Mahjong Kan
+    Mahjong :kbd:`Kan`
 :kbd:`Alt`
-    Mahjong Pon
+    Mahjong :kbd:`Pon`
 :kbd:`Espaço`
-    Mahjong Chi
+    Mahjong :kbd:`Chi`
 :kbd:`Shift`
-    Mahjong Reach
+    Mahjong :kbd:`Reach`
 :kbd:`Z`
-    Mahjong Ron
+    Mahjong :kbd:`Ron`
 :kbd:`A`
-    Jogador 1 Mahjong/Hanafuda A
+    Jogador 1 Mahjong/Hanafuda :kbd:`A`
 :kbd:`B`
-    Jogador 1 Mahjong/Hanafuda B
+    Jogador 1 Mahjong/Hanafuda :kbd:`B`
 :kbd:`C`
-    Jogador 1 Mahjong/Hanafuda C
+    Jogador 1 Mahjong/Hanafuda :kbd:`C`
 :kbd:`D`
-    Jogador 1 Mahjong/Hanafuda D
+    Jogador 1 Mahjong/Hanafuda :kbd:`D`
 :kbd:`E`
-    Jogador 1 Mahjong/Hanafuda E
+    Jogador 1 Mahjong/Hanafuda :kbd:`E`
 :kbd:`F`
-    Jogador 1 Mahjong/Hanafuda F
+    Jogador 1 Mahjong/Hanafuda :kbd:`F`
 :kbd:`G`
-    Jogador 1 Mahjong/Hanafuda G
+    Jogador 1 Mahjong/Hanafuda :kbd:`G`
 :kbd:`H`
-    Jogador 1 Mahjong/Hanafuda H
+    Jogador 1 Mahjong/Hanafuda :kbd:`H`
 :kbd:`I`
-    Jogador 1 Mahjong I
+    Jogador 1 Mahjong :kbd:`I`
 :kbd:`J`
-    Jogador 1 Mahjong J
+    Jogador 1 Mahjong :kbd:`J`
 :kbd:`K`
-    Jogador 1 Mahjong K
+    Jogador 1 Mahjong :kbd:`K`
 :kbd:`L`
-    Jogador 1 Mahjong L
+    Jogador 1 Mahjong :kbd:`L`
 :kbd:`M`
-    Jogador 1 Mahjong M
+    Jogador 1 Mahjong :kbd:`M`
 
-    Jogador 1 Hanafuda Yes
+    Jogador 1 Hanafuda :kbd:`Yes`
 :kbd:`N`
-    Jogador 1 Mahjong N
+    Jogador 1 Mahjong :kbd:`N`
 
-    Jogador 1 Hanafuda No
+    Jogador 1 Hanafuda :kbd:`No`
 :kbd:`O`
-    Jogador 1 Taiwanese Mahjong O
+    Jogador 1 Taiwanese Mahjong :kbd:`O`
 :kbd:`P`
-    Jogador 1 Taiwanese Mahjong P
+    Jogador 1 Taiwanese Mahjong :kbd:`P`
 :kbd:`Q`
-    Jogador 1 Taiwanese Mahjong Q
+    Jogador 1 Taiwanese Mahjong :kbd:`Q`
 
 
 .. _default-gambling-keys:
@@ -621,64 +626,63 @@ específica para os botões *Take Score*, *Double Up*, *High* e  *Low*.
 
 
 :kbd:`5`
-    Ficha do slot 1
+    Ficha do slot 1.
 :kbd:`6`
-    Ficha do slot 2
+    Ficha do slot 2.
 :kbd:`7`
-    Ficha do slot 3
+    Ficha do slot 3.
 :kbd:`8`
-    Ficha do slot 4
+    Ficha do slot 4.
 :kbd:`Backspace`
-    Cédula 1 (Para sistemas que tenham um receptor/leitor de cédulas)
+    Cédula 1 (Para sistemas que tenham um receptor/leitor de cédulas).
 :kbd:`I`
-    Payout
+    Payout.
 :kbd:`Q`
-    Key In
+    Key In.
 :kbd:`W`
-    Key Out
+    Key Out.
 :kbd:`F1`
-    Redefine a memória
+    Redefine a memória.
 :kbd:`9` |fdtn|
-    Serviço 1
+    Serviço 1.
 
     Estes botões geralmente servem para dar créditos de graça, sem
     passar pela contabilidade do sistema, ou para navegar no menu de
     serviço do operador.
 :kbd:`0` |fdtn|
-    Serviço 2
-    Book-Keeping (para sistemas com este recurso)
+    Serviço 2.
+
+    Book-Keeping (para sistemas com este recurso).
 :kbd:`-` |fdtn|
-    Serviço 3
+    Serviço 3.
 :kbd:`=` |fdtn|
-    Serviço 4
+    Serviço 4.
 :kbd:`M`
     Bet
 :kbd:`1` |fdtn|
-    Inicia o jogador 1 ou o modo com 1 jogador
+    Inicia o jogador 1 ou o modo com 1 jogador.
 :kbd:`2` |fdtn|
-    Deal
+    Deal.
 :kbd:`L`
-    Stand
+    Stand.
 :kbd:`D`
-    Double Up
+    Double Up.
 
     Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
     este botão aposta os prêmios do jogo.
 :kbd:`F`
-    Half Gamble
+    Half Gamble.
 
     Usado em muitos jogos para apostar a metade dos prêmios.
 :kbd:`G`
-    Take Score
+    Take Score.
 
     Para jogos que permitem ganhar apostas num jogo de o dobro ou nada,
     este botão coleta as apostas do jogo.
 :kbd:`A`
-    High/Big
+    High/Big.
 :kbd:`S`
-    Low/Small
-:kbd:`O`
-    Door
+    Low/Small.
 
 
 .. _default-blackjack-keys:
@@ -691,18 +695,18 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
 
 
 :kbd:`1`
-    Inicia o jogador 1 ou o modo com 1 jogador
+    Inicia o jogador 1 ou o modo com 1 jogador.
 
     Usado para iniciar uma nova rodada em jogos que possuem botões
     separados para fazer uma nova rodada e obter uma carta a mais.
 :kbd:`2`
-    Deal (hit)
+    Deal (hit).
 
     Usado para obter uma carta a mais e para iniciar uma nova rodada em
     jogos que não usam diferentes botões para fazer uma nova rodada e
     para obter uma carta a mais.
 :kbd:`L`
-    Stand
+    Stand.
 
 
 .. _default-poker-keys:
@@ -715,26 +719,26 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
 
 
 :kbd:`1`
-    Inicia o jogador 1 ou o modo com 1 jogador
+    Inicia o jogador 1 ou o modo com 1 jogador.
 
     Usado para iniciar uma nova rodada em jogos que possuem botões
     separados para fazer uma nova rodada e obter uma carta a mais.
 :kbd:`2`
-    Deal
+    Deal.
 
     Usado para substituir cartas e para iniciar uma nova rodada em jogos
     que não usam diferentes botões para fazer uma nova rodada e para
     substituir cartas.
 :kbd:`Z`
-    Hold 1/discard 1 (Mantém/descarta 1)
+    Hold 1/discard 1 (Mantém/descarta 1).
 :kbd:`X`
-    Hold 2/discard 2 (Mantém/descarta 2)
+    Hold 2/discard 2 (Mantém/descarta 2).
 :kbd:`C`
-    Hold 3/discard 3 (Mantém/descarta 2)
+    Hold 3/discard 3 (Mantém/descarta 3).
 :kbd:`V`
-    Hold 4/discard 4 (Mantém/descarta 4)
+    Hold 4/discard 4 (Mantém/descarta 4).
 :kbd:`B`
-    Hold 5/discard 5 (Mantém/descarta 1)
+    Hold 5/discard 5 (Mantém/descarta 5).
 :kbd:`N`
     Cancela
 
@@ -752,17 +756,22 @@ usuário. Esta lista mostra a configuração predefinida do teclado.
 
 
 :kbd:`1`
-    Inicia o jogador 1 ou o modo com 1 jogador
+    Inicia o jogador 1 ou o modo com 1 jogador.
 :kbd:`X`
-    Para o mostrador rotativo 1
+    Para o mostrador rotativo 1.
 :kbd:`C`
-    Para o mostrador rotativo 2
+    Para o mostrador rotativo 2.
 :kbd:`V`
-    Para o mostrador rotativo 3
+    Para o mostrador rotativo 3.
 :kbd:`B`
-    Para o mostrador rotativo 4
+    Para o mostrador rotativo 4.
 :kbd:`Z`
-    Para todos os mostradores rotativos
+    Para todos os mostradores rotativos.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _default-computer-keys:
@@ -813,6 +822,12 @@ computador, assim sendo, nem todas as teclas serão mostradas aqui. No
 MAME veja a opção :guilabel:`Atribuições da entrada (este sistema)` para
 obter mais detalhes do sistema que estiver usando.
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 .. _default-comparative-kbd:
 
 Comparativo entre os mapas de teclado
@@ -825,6 +840,7 @@ QWERTY US (104 Teclas)
     :width: 100%
     :align: center
     :alt: QWERTY US (104)
+
 
 QWERTY ABNT-2 (107 Teclas)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
