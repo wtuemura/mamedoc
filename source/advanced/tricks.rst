@@ -4578,8 +4578,8 @@ use ``status="nodump"``, exemplo:
 	<rom name="nome_da_rom.bin" size="0xtamanho_em_hex" status="nodump" />
 
 
-ISO comprimida com o chdman antigo fica menor do que o chdman mais recente
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ISO comprimida com o chdman antigo fica menor do que com o chdman mais recente
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pode acontecer de, em alguns casos, o ISO comprimido por uma versão mais
 antiga do chdman ficar menor se a mesma ISO for convertida com uma
@@ -4590,6 +4590,114 @@ Fonte: `chdman question`_
 
 .. note:: O tamanho do hunk deve ser um múltiplo do tamanho do setor. O
    tamanho ideal do hunk depende do tipo de dados no disco.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Fazendo um loop para rodar uma lista de jogos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Neste exemplo, vamos gerar uma lista de todos os jogos compatíveis com o
+sistema `PlayChoice-10`_ e executá-los um a um por 30 segundos (no tempo
+da emulação). O mesmo pode ser feito com qualquer outro sistema. Para
+isso, gere a lista dos jogos do sistema desejado e use um dos comandos
+abaixo na mesma pasta do executável do MAME:
+
+.. code-block:: shell
+
+	$ ./mame playch10 -lb | awk '{print $2}' | sed '$d' > pc10.txt
+	$ ./mame playch10 -lb | awk '{print $2}' | awk '{if (last) print last; last = $2}' > pc10.txt
+	$ ./mame playch10 -lb | awk '{print $2}' | awk '{print $2}' | head -n -1 > pc10.txt
+
+O **sed** e o **awk** são utilizados para eliminar o nome do sistema na
+última linha da lista.
+
+Com a lista gerada, rode com o comando abaixo no terminal do Linux ou
+macOS:
+
+.. code-block:: shell
+
+	$ for roms in $(cat pc10.txt); do ./mame $roms -str 30; done
+	$ cat pc10.txt | while read roms; do ./mame $roms -str 30; done
+	$ while read roms; do ./mame $roms -str 30; done < pc10.txt
+
+Caso queira usar um script bash:
+
+.. code-block:: shell
+
+    #!/bin/bash
+
+    # Lê o arquivo pc10.txt linha por linha
+    while read rom; do
+        echo "Nome da ROM: $rom"
+            ./mame "$rom" -str 30 || exit
+                if [ $? -ne 0 ];
+            then break;
+        fi
+    done < pc10.txt
+
+.. tip:: Pressione :kbd:`Ctrl` + :kbd:`\\` no terminal para interromper
+   o script.
+
+No **Windows**, use o PowrShell e faça o comando abaixo na mesma pasta
+do executável do MAME para gerar a lista:
+
+.. code-block:: shell
+
+	.\mame playch10 -lb | Select-Object -Skip 1 | Select-Object -SkipLast 1 | ForEach-Object { ($_.Trim() -split '\s+')[1] } > pc10.txt
+
+Ainda no Windows com PowerShell, faça:
+
+.. code-block:: shell
+
+	Get-Content pc10.txt | ForEach-Object { ./mame $_ -str 30 }
+
+Para executar no prompt de comando em vez do PowerShell:
+
+.. code-block:: shell
+
+	for /f "tokens=*" %i in (pc10.txt) do mame.exe %i -str 30
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Para executar a partir de um script batch (ex. **roda_lista.bat**):
+
+.. code-block:: batch
+
+    @echo off
+    for /f "tokens=*" %%i in (pc10.txt) do (
+        mame.exe %%i -str 30
+    )
+    pause
+
+.. tip:: Para ocultar a tela do script, clique com o botão direito em
+   cima do script **roda_lista.bat** e selecione **Criar atalho**.
+   Clique com o botão direito do mouse em cima do atalho que acabou de
+   criar, na aba :guilabel:`Atalho`, no campo **Executar** selecione
+   **Minimizar** e cloque em Ok.
+
+Se quiser utilizar os :ref:`luts do NES <advanced-lut>` neste sistema,
+crie dentro da pasta **ini** do MAME a pasta **source**. Em seguida,
+crie o arquivo **playch10.ini** com as configurações abaixo:
+
+.. code-block:: text
+
+	# BGFX
+	video bgfx
+	bgfx_screen_chains unfiltered,lut
+	bgfx_lut "luts\00_SMPTE.png"
+	filter 0
+	prescale 5
+
+.. note:: Tenha certeza que os seus arquivos lut estejam na pasta
+   **artwork\\luts**.
 
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
@@ -4619,3 +4727,4 @@ Fonte: `chdman question`_
 .. _Macintosh LC 550: https://support.apple.com/pt-br/112206
 .. _0.254: https://github.com/mamedev/mame/commit/b06dae9201f7990bd48b677ae6a97b3a6a7000df
 .. _chdman question: https://www.reddit.com/r/MAME/comments/1l4n81t/chdman_question/
+.. _PlayChoice-10: https://pt.wikipedia.org/wiki/PlayChoice-10
