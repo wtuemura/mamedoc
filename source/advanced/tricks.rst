@@ -4195,9 +4195,9 @@ instalação do sistema.
 * Ao concluir a inicialização, clique duas vezes no ícone de disquete
   chamado **Disk Tools**;
 * Clique duas vezes em **Apple HD SC Setup**, selecione
-  :menuselection:`Initialize --> Init` e aguarde;
+  :menuselection:`Initialize ‣ Init` e aguarde;
 * Ao concluir, escolha um nome para o seu HD e clique em :guilabel:`Ok`;
-* Clique em :menuselection:`Partition --> Custom`;
+* Clique em :menuselection:`Partition ‣ Custom`;
 * Clique no nome que você deu ao seu HD, clique em :guilabel:`Remove`;
   e confirme clicando em :guilabel:`Ok`;
 * Em :guilabel:`Partitions` clique em qualquer área vazia;
@@ -4216,9 +4216,9 @@ instalação do sistema.
 	<p></p>
 
 
-* Clique em :menuselection:`Done --> Quit` para concluir o processo;
+* Clique em :menuselection:`Done ‣ Quit` para concluir o processo;
 * Na janela, clique no pequeno quadrado à esquerda para fechar a janela;
-* Vá em :menuselection:`Special --> Shutdown`;
+* Vá em :menuselection:`Special ‣ Shutdown`;
 * Pressione a tecla :kbd:`SrcLk` (Screen Lock) seguido de :kbd:`Esc`
   para fechar a janela do MAME.
 
@@ -4233,7 +4233,7 @@ A opção **-flop1 sys75** inicia o sistema usando a lista de programas do
 MAME, caso tenha a imagem do disco 1, use a opção **-flop1 seu_disco**.
 
 * Na tela inicial de instalação do sistema, clique em
-  :menuselection:`Continue --> Install` e aguarde;
+  :menuselection:`Continue ‣ Install` e aguarde;
 * Quando pedir o disco 2, pressione :kbd:`ScrLk` (Screen Lock), depois
   :kbd:`Tab`;
 * Selecione :guilabel:`Gerenciador de arquivos` ‣
@@ -4247,7 +4247,7 @@ MAME, caso tenha a imagem do disco 1, use a opção **-flop1 seu_disco**.
   novo disquete.
 
 .. note:: Se não tiver o catálogo, selecione :menuselection:`Gerenciador
-   de arquivos --> floppydisk (flop)` e escolha o caminho para a sua
+   de arquivos ‣ floppydisk (flop)` e escolha o caminho para a sua
    imagem do disco 2 e escolha a opção :guilabel:`Somente-leitura` e
    confirme com :kbd:`Enter`.
 
@@ -4301,7 +4301,7 @@ algumas configurações.
   Monitors`;
 * Escolha a opção :guilabel:`Thousands` para definir milhares de cores
   do monitor e feche a janela clicando no quadrado à esquerda da janela;
-* Vá em :menuselection:`Special --> Shutdown`.
+* Vá em :menuselection:`Special ‣ Shutdown`.
 * Pressione a tecla :kbd:`SrcLk` (Screen Lock) seguido de :kbd:`Esc`
   para fechar a janela do MAME.
 
@@ -4430,16 +4430,16 @@ Clique duas vezes em **Install Mac OS**:
   clique no pequeno quadrado à esquerda para fechar a janela;
 * Clique no ícone da opção **2**, ao aparecer a tela de alerta, clique
   em :guilabel:`Continue`;
-* selecione :menuselection:`Initialize --> Init` e aguarde;
+* selecione :menuselection:`Initialize ‣ Init` e aguarde;
 * Ao concluir, escolha um nome para o seu HD e clique em :guilabel:`Ok`;
-* Clique em :menuselection:`Partition --> Custom`;
+* Clique em :menuselection:`Partition ‣ Custom`;
 * Clique no nome que você deu ao seu HD, clique em :guilabel:`Remove`;
   e confirme clicando em :guilabel:`Ok`;
 * Em :guilabel:`Partitions` clique em qualquer área vazia;
 * Na próxima tela, escolha :guilabel:`Macintosh Volume`;
 * Defina o tamanho máximo digitando ``163792``, e confirme clicando em
   :guilabel:`Ok`;
-* Clique em :menuselection:`Done --> Quit` para concluir o processo;
+* Clique em :menuselection:`Done ‣ Quit` para concluir o processo;
 * Clique no ícone da opção **3**, confirme o nome que você deu ao seu
   disco e clique em :guilabel:`Select`;
 * Clique no ícone da opção **4** para instalar o sistema, aceite a
@@ -4447,7 +4447,7 @@ Clique duas vezes em **Install Mac OS**:
 * Na próxima janela sobre a licença, clique em :guilabel:`Agree` e
   aguarde a conclusão da instalação;
 * Clique em :guilabel:`Quit` para concluir o processo de instalação;
-* Clique em :menuselection:`Special --> Shutdown` para desligar o
+* Clique em :menuselection:`Special ‣ Shutdown` para desligar o
   sistema;
 * Feche a janela do MAME.
 
@@ -4460,7 +4460,7 @@ desktop". Inicie novamente a emulação com o comando:
 	mame maclc550
 
 Ao concluir a "reconstrução do desktop", clique em
-:menuselection:`Special --> Shutdown` para desligar o sistema e feche a
+:menuselection:`Special ‣ Shutdown` para desligar o sistema e feche a
 janela do MAME.
 
 Execute o comando abaixo para converter a nossa imagem para CHD:
