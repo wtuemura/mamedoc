@@ -4602,9 +4602,9 @@ Fazendo um loop para rodar uma lista de jogos
 
 Neste exemplo, vamos gerar uma lista de todos os jogos compatíveis com o
 sistema `PlayChoice-10`_ e executá-los um a um por 30 segundos (no tempo
-da emulação). O mesmo pode ser feito com qualquer outro sistema. Para
-isso, gere a lista dos jogos do sistema desejado e use um dos comandos
-abaixo na mesma pasta do executável do MAME:
+da emulação). O mesmo procedimento pode ser feito com qualquer outro
+sistema. Para isso, gere a lista dos jogos do sistema desejado e use um
+dos comandos abaixo na mesma pasta do executável do MAME:
 
 .. code-block:: shell
 
@@ -4681,7 +4681,7 @@ Para executar a partir de um script batch (ex. **roda_lista.bat**):
    cima do script **roda_lista.bat** e selecione **Criar atalho**.
    Clique com o botão direito do mouse em cima do atalho que acabou de
    criar, na aba :guilabel:`Atalho`, no campo **Executar** selecione
-   **Minimizar** e cloque em Ok.
+   **Minimizar** e clique em Ok.
 
 Se quiser utilizar os :ref:`luts do NES <advanced-lut>` neste sistema,
 crie dentro da pasta **ini** do MAME a pasta **source**. Em seguida,
