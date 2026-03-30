@@ -2558,8 +2558,10 @@ completa no diretório por outros sistemas, exemplo:
 	...
 
 
-Filtrando o nome das ROMs a partir do arquivo XML
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _advanced-tricks-filter-xml:
+
+Filtrando o nome das ROMs a partir de um arquivo XML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No Linux/macOS ou no Windows com ferramentas
 `MinGW/MSYS2 <https://www.mamedev.org/tools/>`_ já disponibilizada pelo
@@ -2594,6 +2596,39 @@ Para as ROMs do CPS2::
 	1944j
 	1944u
 	...
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Para consoles é ŕeciso utilizar os arquivos que estão na pasta **hash**
+do MAME. Se for criar uma lista para jogos do **SNES** o arquivo XML se
+chama **snes.xml**
+
+Use o comando abaixo para extrair a lista::
+
+	grep 'software name=' snes.xml | sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p'|sort > ~/snes-lista.txt
+
+Para **NES**::
+
+	grep 'software name=' nes.xml | sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p'|sort > ~/nes-lista.txt
+
+Para **Mega Drive/Genesis**::
+
+	grep 'software name=' megadriv.xml | sed -rn 's/.* name="([a-z0-9]+)" .*/\1/p'|sort > ~/megadriv-lista.txt
+
+No **Windows** usando o PowerShell, use o comando abaixo::
+
+	Select-String -Path "snes.xml" -Pattern 'software name=' | ForEach-Object { $_.Matches.Groups[1].Value } | Sort-Object > "$HOME\snes-lista.txt"
+
+* **Select-String**: Funciona como o grep, buscando o padrão no arquivo;
+* **ForEach-Object { ... }**: Substitui o sed. Ele acessa o grupo de
+  captura da expressão regular (o que está entre parênteses);
+* **Sort-Object**: Faz o mesmo que o sort;
+* **$HOME**: É a variável de ambiente para a sua pasta de usuário no
+  Windows (equivalente ao **~/**).
 
 
 .. _advanced-tricks-game-list:
@@ -4615,6 +4650,10 @@ dos comandos abaixo na mesma pasta do executável do MAME:
 O **sed** e o **awk** são utilizados para eliminar o nome do sistema na
 última linha da lista.
 
+.. tip:: Para criar uma lista de jogos de consoles que estejam listados
+   dentro da pasta **hash**, consulte o capítulo
+   :ref:`advanced-tricks-filter-xml`.
+
 Com a lista gerada, rode com o comando abaixo no terminal do Linux ou
 macOS:
 
@@ -4649,6 +4688,12 @@ do executável do MAME para gerar a lista:
 
 	.\mame playch10 -lb | Select-Object -Skip 1 | Select-Object -SkipLast 1 | ForEach-Object { ($_.Trim() -split '\s+')[1] } > pc10.txt
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 Ainda no Windows com PowerShell, faça:
 
 .. code-block:: shell
@@ -4660,12 +4705,6 @@ Para executar no prompt de comando em vez do PowerShell:
 .. code-block:: shell
 
 	for /f "tokens=*" %i in (pc10.txt) do mame.exe %i -str 30
-
-
-.. raw:: latex
-
-	\clearpage
-
 
 Para executar a partir de um script batch (ex. **roda_lista.bat**):
 
