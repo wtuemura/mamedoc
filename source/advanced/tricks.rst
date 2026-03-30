@@ -4609,8 +4609,8 @@ dos comandos abaixo na mesma pasta do executável do MAME:
 .. code-block:: shell
 
 	$ ./mame playch10 -lb | awk '{print $2}' | sed '$d' > pc10.txt
-	$ ./mame playch10 -lb | awk '{print $2}' | awk '{if (last) print last; last = $2}' > pc10.txt
-	$ ./mame playch10 -lb | awk '{print $2}' | awk '{print $2}' | head -n -1 > pc10.txt
+	$ ./mame playch10 -lb | awk '{if (last) print last; last = $2}' > pc10.txt
+	$ ./mame playch10 -lb | awk '{print $2}' | head -n -1 > pc10.txt
 
 O **sed** e o **awk** são utilizados para eliminar o nome do sistema na
 última linha da lista.
