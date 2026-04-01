@@ -4031,7 +4031,7 @@ Opções para a configuração do áudio
     * - ``wasapi``
       - Windows
       - Sim
-      - Sim [#SoundWASAPIMonitoring]_
+      - Sim
       - Sim
       - Sim
     * - ``xaudio2``
@@ -4073,9 +4073,6 @@ Opções para a configuração do áudio
 
 .. [#SoundMonitoring] Capacidade de monitorar a saída de áudio durante a
    emulação.
-
-..  [#SoundWASAPIMonitoring] Para usar o monitoramento de saída com o
-   **WASAPI**, o MAME requer o **Windows 10 1703** ou posterior.
 
 ..  [#SoundXAudio2OS] Para usar o **XAudio2**, o MAME requer o **Windows
    8** ou posterior.
