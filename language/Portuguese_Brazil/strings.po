@@ -670,7 +670,7 @@ msgstr "Provedor de entrada do joystick"
 
 #: src/frontend/mame/ui/submenu.cpp:123 src/frontend/mame/ui/videoopt.cpp:44
 msgid "Video Options"
-msgstr "Opções do vídeo"
+msgstr "Opções de vídeo"
 
 #: src/frontend/mame/ui/submenu.cpp:124
 msgid "Video Mode"
@@ -1753,7 +1753,7 @@ msgstr "Tela #%d"
 #: src/frontend/mame/ui/videoopt.cpp:107
 #, c-format
 msgid "Video Options: %1$s"
-msgstr "Opções do vídeo: %1$s"
+msgstr "Opções de vídeo: %1$s"
 
 #: src/frontend/mame/ui/videoopt.cpp:165
 msgid "Zoom to Screen Area"
@@ -3828,7 +3828,7 @@ msgstr "Controles deslizantes"
 #: src/frontend/mame/ui/mainmenu.cpp:175
 msgctxt "menu-main"
 msgid "Video Options"
-msgstr "Opções do vídeo"
+msgstr "Opções de vídeo"
 
 #: src/frontend/mame/ui/mainmenu.cpp:178
 msgctxt "menu-main"

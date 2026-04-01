@@ -972,7 +972,7 @@ estes:
 
 .. _mamemenus-video-options:
 
-Opções do vídeo
+Opções de vídeo
 ~~~~~~~~~~~~~~~
 
 Mostra o menu das opções de vídeo, aqui é possível ajustar as
@@ -1780,7 +1780,7 @@ usados pelo MAME se encontram. As opções disponíveis são:
 
 .. _mamemenu-config-video:
 
-Opções do vídeo
+Opções de vídeo
 ~~~~~~~~~~~~~~~
 
 Essas opções sempre serão carregadas na inicialização do MAME, lembrando
@@ -1867,7 +1867,7 @@ for definido aqui.
 
 .. _mamemenu-config-audio:
 
-Opções do áudio
+Opções de áudio
 ~~~~~~~~~~~~~~~
 
 
