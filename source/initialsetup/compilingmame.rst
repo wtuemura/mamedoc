@@ -24,12 +24,12 @@ necessário para que tenha sucesso em sua primeira compilação.
 
 Antes, porém, alguns pontos importantes:
 
-* É necessário um compilador C++17 e suas respectivas bibliotecas; para
-  o GCC, a versão mínima aceitável é a 10.3, podendo ser utilizadas
-  versões mais recentes. Já o Clang requer a versão 11 ou mais recente.
+* É necessário um compilador C++20 e suas respectivas bibliotecas; para
+  o GCC, a versão mínima aceitável é a 11 ou mais recente. Já o Clang
+  requer a versão 11 ou mais recente.
   O executável do MAME rodará com a biblioteca GNU libstdc++ na versão
-  10.3 ou mais recente, assim como a libc++ na versão 11 ou mais
-  recente. Deve-se evitar a versão inicial de qualquer grande lançamento
+  11 ou mais recente, assim como a libc++ na versão 11 ou mais recente.
+  Deve-se evitar a versão inicial de qualquer grande lançamento
   de versão do GCC. Por exemplo, se você quiser compilar o MAME com o
   GCC 12, prefira utilizar a versão 12.1 ou mais recente.
 * A versão nativa do MAME roda no Windows, portanto a compilação neste
@@ -2065,26 +2065,6 @@ incluídas, porém as variáveis locais serão omitidas).
 Problemas que afetam o Microsoft Visual Studio
 ----------------------------------------------
 
-A Microsoft introduziu uma nova versão do **XAudio2** com o Windows 8,
-que é incompatível com a versão incluída com o **DirectX** para as
-versões anteriores do Windows no que se refere ao nível de API. As novas
-versões do *Microsoft Windows SDK* incluem cabeçalhos e bibliotecas para
-a nova versão do XAudio2. Durante a compilação do MAME, a versão-alvo do
-Windows é definida como o Windows Vista (6.0), o que impede o uso desta
-versão dos cabeçalhos e bibliotecas do XAudio2. Para construir o MAME
-com suporte ao XAudio2 usando o Microsoft Windows SDK, é necessário
-realizar uma das seguintes ações:
-
-* Adicione a opção ``MODERN_WIN_API=1`` ao comando make ao gerar os
-  arquivos do projeto do Visual Studio. Isso definirá a versão do
-  Windows para 6.2. Os binários resultantes desta compilação poderão não
-  funcionar em versões anteriores do Windows.
-* Instale o `DirectX SDK`_ (já incluso desde o SDK do Windows 8.0 e
-  instalado automaticamente com o Visual Studio 2013 e versões
-  posteriores). Configure o projeto ``osd_windows`` para buscar os
-  caminhos do cabeçalho/biblioteca do DirectX antes de buscar os
-  caminhos do SDK do Microsoft Windows.
-
 O compilador MSVC produz avisos espúrios sobre variáveis locais não
 inicializadas. Atualmente, é preciso adicionar o parâmetro
 ``NOWERROR=1`` às opções do make para gerar os arquivos do projeto do
@@ -2230,7 +2210,7 @@ Usando uma instalação do GNU GCC libstdc++ que esteja fora do local tradiciona
 diferente caso o responsável pela compilação utilize a opção
 ``--prefix=`` juntamente com o comando configure. Isso pode ser útil
 caso você queira compilar o MAME em uma distribuição Linux que ainda use
-a versão do GNU libstdc++ anterior ao C++17. Para compilar o MAME com
+a versão do GNU libstdc++ anterior ao C++20. Para compilar o MAME com
 uma versão alternativa do GNU GCC instalada no sistema, é necessário
 definir o caminho completo dos compiladores C (gcc) e C++ (g++), bem
 como o caminho completo da biblioteca do sistema. Supondo que o GNU GCC
