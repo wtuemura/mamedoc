@@ -915,10 +915,9 @@ execute novamente o **mingw64.exe**.
 
 * Para lincá-lo usando o LLVM Linker (geralmente mais rápido que o
   GNU linker), instale o pacote ``mingw-w64-x86_64-lld`` e o
-  ``mingw-w64-x86_64-libc++`` para as versões 64 bits, ou o pacote
-  ``mingw-w64-i686-lld`` e o ``mingw-w64-i686-libc++`` para as versões
-  32 bits. Para mais informações, consulte o capítulo
-  :ref:`compiling-llvm`.
+  ``mingw-w64-x86_64-libc++``, ``mingw-w64-clang-x86_64-llvm-tools`` e
+  ``mingw-w64-clang-x86_64-llvm``. Para mais informações, consulte o
+  capítulo :ref:`compiling-llvm`.
 
 * Para compilar usando as interfaces portáteis do SDL **64 bits**:
 
@@ -985,7 +984,7 @@ de uma vez:
 		pacman -S mingw-w64-i686-qt5
 		pacman -S mingw-w64-i686-gdb
 		pacman -S mingw-w64-clang-aarch64-clang mingw-w64-clang-aarch64-python mingw-w64-clang-aarch64-gcc-compat
-		pacman -S mingw-w64-clang-aarch64-lld mingw-w64-clang-aarch64-llvm mingw-w64-clang-aarch64-libc++
+		pacman -S mingw-w64-clang-aarch64-lld mingw-w64-clang-aarch64-llvm-tools mingw-w64-clang-aarch64-llvm mingw-w64-clang-aarch64-libc++
 		pacman -S mingw-w64-clang-aarch64-SDL2 mingw-w64-clang-aarch64-SDL2_ttf
 		pacman -S mingw-w64-clang-aarch64-qt5
 
@@ -1545,6 +1544,13 @@ Usando ferramentas de compilação alternativas
   compilação cruzada.
 
 
+.. _mame-compilation-override_ar:
+
+**OVERRIDE_AR**
+
+  Estabelece o comando do compactador de bibliotecas estáticas.
+
+
 .. _mame-compilation-python_executable:
 
 **PYTHON_EXECUTABLE**
@@ -1986,20 +1992,6 @@ Sede das bibliotecas e framework
 Problemas conhecidos
 ~~~~~~~~~~~~~~~~~~~~
 
-Problemas relacionados com versões específicas do compilador
-------------------------------------------------------------
-
-* O GCC 7 de 32 bits para Windows x86 gera erros esporádicos com alertas
-  de acesso fora dos limites. [2]_
-  Para remediar o problema, use o parâmetro ``NOWERROR=1`` em suas
-  opções de compilação para não tratar alertas como se fossem erros.
-
-* Versões iniciais do GNU libstdc++ 6 contêm uma implementação quebrada 
-  do ``std::unique_ptr``. Se encontrar qualquer mensagem de erro
-  relacionada a este tipo de ponteiro, será necessário a atualizar o
-  seu libstdc++ para uma versão mais recente.
-
-
 Recursos do código-fonte fortify da biblioteca GNU C
 ----------------------------------------------------
 A biblioteca GNU C possui opções para realizar verificações durante a
@@ -2166,13 +2158,12 @@ GCC. Isso fica mais evidente em sistemas com uma elevada sobrecarga de
 operações de arquivos do sistema, como o Microsoft Windows, ou ao
 compilar em um disco compartilhado na rede, por exemplo. Para utilizar o
 *LLVM linker* com o GCC, certifique-se de tê-lo instalado em seu sistema
-e utilize o parâmetro ``-fuse-ld=lld`` nas opções do compilador, seja
-através da variável de ambiente ``LDFLAGS``, da opção ``LDOPTS`` ou
-configurando o ``LDOPTS`` no arquivo **useroptions.mak**, por exemplo:
+e utilize o parâmetro ``OVERRIDE_AR=llvm-ar`` nas opções do compilador,
+por exemplo:
 
 	.. code-block:: shell
 
-		LDOPTS=-fuse-ld=lld
+		OVERRIDE_AR=llvm-ar
 
 
 Usando libc++ no Linux
