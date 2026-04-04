@@ -137,22 +137,22 @@ Alterando as configurações
 	disponível no seu sistema, caso queira defini-las manualmente, estas
 	são as opções disponíveis:
 
-	* ``d3d9``: Renderizador do Direct3D 9.0 (Requer o Windows XP ou
-	  uma versão mais nova do Windows);
+	* ``d3d9``: Renderizador do Direct3D 9.0 (requer o `DirectX End-User
+	  Runtime`_ mais recente);
 
-	* ``d3d11``: Renderizador do Direct3D 11.0 (Requer o Windows Vista
+	* ``d3d11``: Renderizador do Direct3D 11.0 (requer o Windows Vista
 	  com o D3D11 atualizado, o  Windows 7 ou uma versão mais nova do
 	  Windows);
 
-	* ``d3d12``: Renderizador do Direct3D 12.0 (Requer o Windows 10 ou
+	* ``d3d12``: Renderizador do Direct3D 12.0 (requer o Windows 10 ou
 	  uma versão mais nova do Windows, assim como uma placa de vídeo
 	  com um driver compatível);
 
-	* ``opengl``: Renderizador OpenGL (Requer Drivers compatíveis com
+	* ``opengl``: Renderizador OpenGL (requer Drivers compatíveis com
 	  OpenGL, pode não funcionar bem  com algumas placas de vídeo mais
 	  antigas ou mal projetadas). Compatível com Linux/macOS;
 
-	* ``metal``: Metal Apple Graphics API (Requer macOS 10.14 Mavericks
+	* ``metal``: Metal Apple Graphics API (requer macOS 10.14 Mavericks
 	  ou mais recente);
 
 	* ``vulkan``: Renderizador Vulkan (via hardware), compatível
@@ -161,7 +161,7 @@ Alterando as configurações
 	  pode não ser compatível com as placas de vídeo ou com drivers mais
 	  antigos;
 
-	* ``auto``: O MAME decidirá qual a melhor opção para o seu sistema;
+	* ``auto``: O MAME decidirá qual a melhor opção para o seu sistema.
 
 		O valor predefinido é ``auto``.
 
@@ -354,3 +354,4 @@ opções::
 .. [#]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
 		tecla ESQ. (Nota do tradutor)
+.. _DirectX End-User Runtime: https://www.microsoft.com/en-us/download/details.aspx?id=8109
