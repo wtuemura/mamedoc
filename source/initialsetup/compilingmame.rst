@@ -2116,6 +2116,12 @@ quiser lidar com variáveis de ambiente, é possível também copiar as
 bibliotecas listadas acima para o diretório onde se encontra o seu SDL
 MAME.
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 Outra maneira de corrigir o problema sem alterar as variáveis de
 ambiente do Windows é copiar as seguintes DLLs para a mesma pasta do seu
 **sdlmame.exe**:
@@ -2129,18 +2135,16 @@ ambiente do Windows é copiar as seguintes DLLs para a mesma pasta do seu
 		SDL2.dll
 		SDL2_ttf.dll
 
-Note que, até a presente versão deste texto, estas são as DLLs
-solicitadas pela versão SDL do MAME. No entanto, é possível que, em
-determinado momento, o MAME solicite outras DLLs. Se alguma DLL estiver
-faltando, o próprio Windows mostrará uma nova mensagem de erro
-informando qual DLL está faltando ao executar o sdlmame.exe. Nesse caso,
-vá até a pasta **C:\\msys64\\mingw64\\bin** e copie a DLL faltante para
-dentro da pasta do MAME.
+Observe que, até a presente versão deste texto, essas são as DLLs
+solicitadas pela versão SDL do MAME. No entanto, é possível que o MAME
+solicite outras DLLs em determinado momento. Se alguma DLL estiver
+faltando, o próprio Windows exibirá uma mensagem de erro informando qua
+DLL está ausente ao executar o sdlmame.exe. Nesse caso, vá até a
+pasta **C:\\msys64\\mingw64\\bin** e copie a DLL faltante para dentro
+da pasta do MAME.
 
-
-.. raw:: latex
-
-	\clearpage
+	.. note:: Após o commit `21defbe`_ a lincagem estática com o SDL3
+	   foi corrigida.
 
 
 .. _compiling-unusual:
@@ -2321,7 +2325,7 @@ Sem o arquivo de símbolos o ``something_state::something`` apareceria
 como um código hexadecimal sem sentido. Com os símbolos, esses códigos
 são traduzidos para algo legível e compreensível para os
 desenvolvedores. Caso o MAME trave durante a emulação, uma tela
-semelhante aparecerá. Copie e reporte [3]_ o erro no fórum
+semelhante aparecerá. Copie e reporte [2]_ o erro no fórum
 `MAME testers`_.
 
 
@@ -2610,8 +2614,7 @@ semelhante ao exemplo abaixo:
 .. [1]	No Inglês ABI ou `Application Binary Interface
 		<https://pt.wikipedia.org/wiki/Interface_binária_de_aplicação>`_.
 		(Nota do tradutor)
-.. [2]	Out-of-bounds access. (Nota do tradutor)
-.. [3]	Pedimos a gentileza de relatar os problemas encontrados em
+.. [2]	Pedimos a gentileza de relatar os problemas encontrados em
 		Inglês. (Nota do tradutor)
 .. _Wayland: https://wayland.freedesktop.org/
 .. _MAMEDEv em 31/12/2023: https://github.com/mamedev/mame/commit/d5340b8be45db2815a6ce152813d991efa93d54f
@@ -2637,3 +2640,4 @@ semelhante ao exemplo abaixo:
 .. _mamedev no github: https://github.com/mamedev/mame/issues
 .. _GDB Dashboard: https://github.com/cyrus-and/gdb-dashboard
 .. _wiki do Arch Linux: https://wiki.archlinux.org/index.php/Pacman
+.. _21defbe: https://github.com/mamedev/mame/commit/21defbea953c36bba6eeec5ea6f7cf6d3cd310d8
