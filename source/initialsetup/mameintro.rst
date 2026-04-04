@@ -67,12 +67,12 @@ rodar no Windows. Os requisitos mínimos são:
   (comparação/troca de 16 bytes, instruções ``lahf``/``sahf`` no modo
   longo, instrução de contagem de população e SSE 4.2);
 * Uma CPU Arm que implemente o conjunto de recursos ARMv8.2-A;
-* Uma edição de 64 bits do Windows 7, Windows 10 ou posterior para
-  x86-64, ou posterior para Arm;
+* Uma edição de 64 bits do Windows 10 ou posterior para x86-64, ou
+  posterior para Arm;
 * 4 GiB de RAM.
 * DirectC 9.0c para Windows;
 * Uma GPU compatível com Direct3D ou OpenGL com suporte para tamanhos de
-  textura que não sejam potências de dois;
+  textura que não sejam potências de dois.
 
 Em geral, qualquer CPU x86-64 a partir de 2015 ou a grande maioria das
 CPUs ARM de 64 bits a partir de 2018 deve ser adequada. É possível
