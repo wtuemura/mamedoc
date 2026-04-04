@@ -929,7 +929,7 @@ execute novamente o **mingw64.exe**.
 
 * Para compilar o MAME com o depurador Qt **64 bits**:
 
-	**pacman -S mingw-w64-x86_64-qt5**
+	**pacman -S mingw-w64-x86_64-qt6**
 
 * Para compilar o MAME com o depurador Qt **32 bits**:
 
@@ -977,7 +977,7 @@ de uma vez:
 		pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-python
 		pacman -S mingw-w64-x86_64-llvm mingw-w64-x86_64-libc++ mingw-w64-x86_64-lld
 		pacman -S mingw-w64-x86_64-SDL2 mingw-w64-x86_64-SDL2_ttf
-		pacman -S mingw-w64-x86_64-qt5
+		pacman -S mingw-w64-x86_64-qt6
 		pacman -S mingw-w64-i686-gcc mingw-w64-i686-python
 		pacman -S mingw-w64-i686-llvm mingw-w64-i686-libc++ mingw-w64-i686-lld
 		pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-SDL2_ttf
@@ -986,7 +986,7 @@ de uma vez:
 		pacman -S mingw-w64-clang-aarch64-clang mingw-w64-clang-aarch64-python mingw-w64-clang-aarch64-gcc-compat
 		pacman -S mingw-w64-clang-aarch64-lld mingw-w64-clang-aarch64-llvm-tools mingw-w64-clang-aarch64-llvm mingw-w64-clang-aarch64-libc++
 		pacman -S mingw-w64-clang-aarch64-SDL2 mingw-w64-clang-aarch64-SDL2_ttf
-		pacman -S mingw-w64-clang-aarch64-qt5
+		pacman -S mingw-w64-clang-aarch64-qt6
 
 Para versões **64-bit ARM (AArch64)** instale os seguintes pacotes:
 
@@ -996,7 +996,7 @@ Para versões **64-bit ARM (AArch64)** instale os seguintes pacotes:
 		pacman -S mingw-w64-clang-aarch64-gcc-compat
 		pacman -S mingw-w64-clang-aarch64-lld mingw-w64-clang-aarch64-llvm mingw-w64-clang-aarch64-libc++
 		pacman -S mingw-w64-clang-aarch64-SDL2 mingw-w64-clang-aarch64-SDL2_ttf
-		pacman -S mingw-w64-clang-aarch64-qt5
+		pacman -S mingw-w64-clang-aarch64-qt6
 
 Execute o **clangarm64.exe** e ajuste os devidos caminhos e variáveis.
 
