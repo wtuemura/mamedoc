@@ -4035,7 +4035,7 @@ Opções para a configuração do áudio
       - Sim
       - Sim
     * - ``xaudio2``
-      - Windows [#SoundXAudio2OS]_
+      - Windows
       - Não
       - Não
       - Sim
@@ -4073,9 +4073,6 @@ Opções para a configuração do áudio
 
 .. [#SoundMonitoring] Capacidade de monitorar a saída de áudio durante a
    emulação.
-
-..  [#SoundXAudio2OS] Para usar o **XAudio2**, o MAME requer o **Windows
-   8** ou posterior.
 
 .. [#SoundWinSDL] Embora o SDL não seja uma opção compatível
    com as compilações oficiais do MAME para Windows, é possível
