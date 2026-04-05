@@ -26,7 +26,7 @@ Antes, porém, alguns pontos importantes:
 
 * É necessário um compilador C++20 e suas respectivas bibliotecas; para
   o GCC, a versão mínima aceitável é a 11 ou mais recente. Já o Clang
-  requer a versão 11 ou mais recente.
+  requer a versão 13 ou mais recente.
   O executável do MAME rodará com a biblioteca GNU libstdc++ na versão
   11 ou mais recente, assim como a libc++ na versão 11 ou mais recente.
   Deve-se evitar a versão inicial de qualquer grande lançamento
@@ -99,7 +99,7 @@ Antes, porém, alguns pontos importantes:
   que um novo parâmetro for adicionado ou removido, quando o
   código-fonte de um driver for adicionado, atualizado, renomeado,
   removido etc., todos os arquivos do projeto responsáveis pela
-  compilação precisam ser atualizados pela opção ``REGENIE=1``.
+  compilação precisam ser atualizados através da opção ``REGENIE=1``.
 * Durante o processo de compilação, são gerados arquivos objetos
   ***.o**, arquivos de arquivamento ***.a**, entre vários outros. É
   importante executar o comando **make clean** sempre que for feita uma
@@ -132,7 +132,7 @@ Antes, porém, alguns pontos importantes:
   de opções para a compilação é grande e repetitiva. No arquivo, as
   opções se organizam da seguinte maneira:
 
-	.. code-block:: shell
+	.. code-block:: text
 
 		OPÇÃO1=X
 		OPÇÃO2=Y
@@ -873,7 +873,7 @@ Configurando o pacote MSYS2 já pronto
 
 * Por predefinição, o MAME incluirá a versão nativa do depurador para
   Windows. Para incluir a versão Qt do depurador, é necessário instalar
-  os pacotes de desenvolvimento do Qt versão 5 no MSYS2 e usar
+  os pacotes de desenvolvimento do Qt versão 6 no MSYS2 e usar
   ``QTDEBUG=1`` nas opções de compilação do make.
 
 
@@ -933,7 +933,7 @@ execute novamente o **mingw64.exe**.
 
 * Para compilar o MAME com o depurador Qt **32 bits**:
 
-	**pacman -S mingw-w64-i686-qt5**
+	**pacman -S mingw-w64-i686-qt6**
 
 .. note:: Utilize ``QTDEBUG=1`` nas opções de compilação do **make**
    para compilar a interface QT do depurador.
@@ -981,7 +981,7 @@ de uma vez:
 		pacman -S mingw-w64-i686-gcc mingw-w64-i686-python
 		pacman -S mingw-w64-i686-llvm mingw-w64-i686-libc++ mingw-w64-i686-lld
 		pacman -S mingw-w64-i686-SDL2 mingw-w64-i686-SDL2_ttf
-		pacman -S mingw-w64-i686-qt5
+		pacman -S mingw-w64-i686-qt6
 		pacman -S mingw-w64-i686-gdb
 		pacman -S mingw-w64-clang-aarch64-clang mingw-w64-clang-aarch64-python mingw-w64-clang-aarch64-gcc-compat
 		pacman -S mingw-w64-clang-aarch64-lld mingw-w64-clang-aarch64-llvm-tools mingw-w64-clang-aarch64-llvm mingw-w64-clang-aarch64-libc++
@@ -1175,7 +1175,7 @@ certifique-se de que a versão mais recente esteja instalada:
 
 	.. code-block:: shell
 
-		sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel alsa-lib-devel pulseaudio-libs-devel
+		sudo dnf install gcc gcc-c++ make python SDL2-devel SDL2_ttf-devel libXi-devel libXinerama-devel qt6-qtbase-devel qt6-qttools expat-devel fontconfig-devel alsa-lib-devel pulseaudio-libs-devel
 
 Para utilizar ferramentas `LLVM`_ mais eficientes para arquivar
 bibliotecas estáticas e lincagem, é necessário instalar os seguintes
@@ -1201,7 +1201,7 @@ certifique-se de que a versão mais recente esteja instalada:
 
 	.. code-block:: shell
 
-		sudo apt install git git-lfs build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gettext
+		sudo apt install git git-lfs build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qtbase6-dev qtchooser qt6-qmake qtbase6-dev-tools gettext
 
 Para utilizar ferramentas `LLVM`_ mais eficientes para arquivar
 bibliotecas estáticas e lincagem, é necessário instalar os seguintes
@@ -1225,7 +1225,7 @@ sido atendidos em sua distro:
 
 	.. code-block:: shell
 
-		sudo pacman -S base-devel git sdl2_ttf python libxinerama libpulse alsa-lib qt5-base libxi libpulse
+		sudo pacman -S base-devel git sdl2_ttf python libxinerama libpulse alsa-lib qt6-base libxi libpulse
 
 A compilação procede exatamente como foi descrito em
 :ref:`compiling-practical-examples`.
