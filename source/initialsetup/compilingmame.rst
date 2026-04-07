@@ -808,12 +808,16 @@ MAME. Para obter melhores resultados, instale a versão MinGW do
 gdb e execute-a em uma janela do prompt de comando da Microsoft para
 depurar o MAME.
 
-O GNU make suporta shells no estilo POSIX (como o Bash por exemplo) e o
-shell cmd.exe da Microsoft. Ao usar o cmd.exe, um problema a ser
-observado é que o comando de cópia não fornece um status de saída útil.
-Portanto, as tarefas de cópia de arquivos podem falhar silenciosamente.
-Isso pode fazer com que a compilação pareça bem-sucedida, embora
-produza resultados incorretos.
+O GNU Make é compatível com shells no estilo POSIX, como o bash, bem
+como com o shell cmd.exe da Microsoft. No entanto, ao usar o cmd.exe, o
+comando de cópia não fornece um código de saída útil. Consequentemente,
+as tarefas de cópia de arquivos podem falhar silenciosamente. Isso pode
+fazer com que sua compilação pareça bem-sucedida, embora produza
+resultados incorretos. O comando que realiza a lincagem do MAME excede o
+comprimento máximo de comando suportado pelo cmd.exe, portanto, não é
+possível realizar uma compilação completa do MAME. Portanto,
+recomendamos que você **não instale** as versões MinGW do GNU Make e, em
+vez disso, use a versão do MSYS2 do pacote make.
 
 
 .. raw:: latex
@@ -821,12 +825,13 @@ produza resultados incorretos.
 	\clearpage
 
 
-Uma compilação completa do MAME, incluindo os símbolos do número da
-linha, excede o limite de tamanho imposto pelo formato de arquivo
-*Portable Executable (PE)* e não pode ser executada. Duas soluções alternativas
-são incluir apenas um subconjunto dos sistemas compatíveis com o MAME ou
-extrair os símbolos para um arquivo separado, removendo os símbolos em
-excesso do executável do MAME.
+Uma compilação completa do MAME que inclua símbolos de número de linha
+excede o limite de tamanho imposto pelo formato de arquivo PE (*Portable
+Executable*), portanto não pode ser executada. As soluções alternativas
+incluem usar apenas um subconjunto dos sistemas compatíveis com o MAME,
+extrair os símbolos para um arquivo separado, remover os símbolos em
+excesso do executável do MAME ou compilar o MAME com o clang e a opção
+de colocar os símbolos em arquivos PDB externos.
 
 .. warning:: Não é mais possível compilar uma versão de 32 bits do MAME.
 
@@ -846,15 +851,6 @@ com o gerenciador de pacotes **pacman**.
 
 * Instele ambiente de desenvolvimento MSYS2 da `página oficial do MSYS2
   <https://www.msys2.org/>`_;
-* Como passo opcional, baixe a versão mais recente do pacote
-  **MAME Essentials** do `repositório de pacotes do MAME
-  <https://repo.mamedev.org/x86_64/>`_ e instale-o usando o comando
-  **pacman -U mame-essentials-1.0.6-1-x86_64.pkg.tar.xz**;
-* Se você instalou o pacote **MAME Essentials**, adicione o repositório
-  de pacotes do MAME ao arquivo ``/etc/pacman.conf`` usando
-  ``/etc/pacman.d/mirrorlist.mame`` como localização e desative a
-  verificação de assinatura para esse repositório
-  (``SigLevel = Never``);
 * Instale os pacotes necessários para compilar o MAME. No mínimo, você
   precisará do **bash**, do **git** e do **make**:
   
@@ -1254,20 +1250,20 @@ Compilando com o Microsoft Visual Studio
   o comando ``make vs2019``. A solução e o projeto serão criados, por
   padrão, no diretório ``build/projects/windows/mame/vs2019``.
   O nome do diretório **build** pode ser alterado ao alterar a opção
-  ``BUILDDIR``.
+  ``BUILDDIR``;
 
-  O comando regenera as configurações sempre, portanto a opção
-  ``REGENIE=1`` **não é necessária**.
+  O comando sempre regenera os projetos, portanto a opção ``REGENIE=1``
+  **não é necessária**.
 
 * Com a opção ``MSBUILD=1``, a solução será construída usando o
   *Microsoft Build Engine* após a criação dos arquivos do projeto.
   É necessário que o ambiente e os caminhos estejam corretament
-  configurados para que o Visual Studio possa encontrá-los.
+  configurados para que o Visual Studio possa encontrá-los;
 
 * Consulte a documentação `Usando o conjunto de ferramentas Microsoft
   C++ na linha de comando <https://docs.microsoft.com/pt-br/cpp/build/building-on-the-command-line>`_.
   Talvez você ache mais fácil carregar o projeto diretamente na
-  interface do Visual Studio do que usar a opção ``MSBUILD=1``.
+  interface do Visual Studio do que usar a opção ``MSBUILD=1``;
 
 * Mesmo utilizando o Visual Studio, é necessário ter também o ambiente
   MSYS2 para gerar os arquivos do projeto, converter os layouts
