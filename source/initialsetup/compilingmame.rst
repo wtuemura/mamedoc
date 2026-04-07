@@ -750,7 +750,7 @@ Microsoft Windows
 ~~~~~~~~~~~~~~~~~
 
 O MAME para Windows é compilado usando o ambiente MSYS2. Para isso,
-você precisará de uma versão de 64 bits do Windows 10 ou posterior,
+você precisará de uma versão de 64 bits do Windows 10 1809 ou posterior,
 bem como de uma instalação razoavelmente atualizada do MSYS2. Para
 compilar para ARM de 64 bits (AArch64), é necessário um sistema ARM de
 64 bits com o Windows 11 ou uma versão mais recente.
@@ -783,11 +783,10 @@ MSYS2, que foram projetadas para funcionarem em um ambiente semelhante
 ao UNIX sobre o Windows, e as ferramentas MinGW, que foram projetadas
 para funcionarem em um ambiente mais parecido com o Windows. As
 ferramentas MSYS2 são instaladas em **/usr/bin** e as ferramentas MinGW
-são instaladas em **/mingw64/bin**, **/mingw32/bin**,
-**/clang-arm64/bin** e **/clang64/bin** (em relação ao diretório de
-instalação do MSYS2). As ferramentas MSYS2 funcionam melhor em um
-terminal MSYS2 e as ferramentas MinGW funcionam melhor em um prompt de
-comando da Microsoft.
+são instaladas em **/ucrt64/bin**, **/clangarm64/bin** e
+**/clang64/bin** (em relação ao diretório de instalação do MSYS2). As
+ferramentas MSYS2 funcionam melhor em um terminal MSYS2 e as ferramentas
+MinGW funcionam melhor em um prompt de comando da Microsoft.
 
 O sintoma mais evidente disso é que as teclas de seta não funcionam em
 programas interativos se forem executados no tipo errado de terminal. A
@@ -815,14 +814,6 @@ observado é que o comando de cópia não fornece um status de saída útil.
 Portanto, as tarefas de cópia de arquivos podem falhar silenciosamente.
 Isso pode fazer com que a compilação pareça bem-sucedida, embora
 produza resultados incorretos.
-
-Não é possível fazer uma compilação cruzada de uma versão de 32 bits do
-MAME usando ferramentas MinGW de 64 bits no Windows; em vez disso, é
-necessário usar as ferramentas MinGW de 32 bits. Isso causa problemas
-devido ao tamanho do MAME. É impossível criar uma compilação de 32 bits
-com símbolos de variáveis locais completos. Além disso, o GCC pode ficar
-sem memória e determinados arquivos de origem podem exceder o limite de
-32.768 seções imposto pelo formato de arquivo de objeto PE/COFF.
 
 
 .. raw:: latex
@@ -865,30 +856,74 @@ com o gerenciador de pacotes **pacman**.
   verificação de assinatura para esse repositório
   (``SigLevel = Never``);
 * Instale os pacotes necessários para compilar o MAME. No mínimo, você
-  precisará do **bash**, do **git** e do **make**;
-* Para depuração, instale o **gdb**;
+  precisará do **bash**, do **git** e do **make**:
+  
+	.. code-block:: shell
+
+		pacman -S bash git make
+
+* Para depuração, instale o **gdb**:
+
+	.. code-block:: shell
+
+		pacman -S gdb
+
 * Para criar a documentação HTML para usuários e desenvolvedores, você
-  precisará instalar os pacotes: ``mingw-w64-clang-x86_64-librsvg``,
-  ``mingw-w64-clang-x86_64-python-sphinx``,
-  ``mingw-w64-clang-x86_64-python-sphinx_rtd_theme`` e
-  ``mingw-w64-clang-x86_64-python-sphinxcontrib-svg2pdfconverter`` para
-  o ambiente CLANG64 (ou alternativamente os seguintes pacotes
-  ``mingw-w64-clang-aarch64-librsvg``,
-  ``mingw-w64-clang-aarch64-python-sphinx``,
-  ``mingw-w64-clang-aarch64-python-sphinx_rtd_theme`` e
-  ``mingw-w64-clang-aarch64-python-sphinxcontrib-svg2pdfconverter`` que
-  é um ambiente **CLANGARM64**). Compile a documentação em PDF usando o
-  ambiente **CLANG64** ou **CLANGARM64**;
-* Use o ambiente **CLANG64** (or **CLANGARM64**) para gerar a
-  documentação em PDF, também será necessário instalar o pacote
-  ``mingw-w64-clang-x86_64-texlive-latex-extra`` e o
-  ``mingw-w64-clang-x86_64-texlive-fonts-recommended`` (ou
-  ``mingw-w64-clang-aarch64-texlive-latex-extra`` e o
-  ``mingw-w64-clang-aarch64-texlive-fonts-recommended`` para sistemas
-  64-bit ARM);
-* Instale também o pacote ``mingw-w64-x86_64-doxygen``;
+  precisará instalar os pacotes para o ambiente **CLANG64**:
+
+	.. code-block:: shell
+  
+		pacman -S mingw-w64-clang-x86_64-librsvg
+		mingw-w64-clang-x86_64-python-sphinx
+		mingw-w64-clang-x86_64-python-sphinx_rtd_theme
+		mingw-w64-clang-x86_64-python-sphinxcontrib-svg2pdfconverter``
+
+  Ou alternativamente os seguintes pacotes para o ambiente
+  **CLANGARM64**:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-aarch64-librsvg
+		mingw-w64-clang-aarch64-python-sphinx
+		mingw-w64-clang-aarch64-python-sphinx_rtd_theme
+		mingw-w64-clang-aarch64-python-sphinxcontrib-svg2pdfconverter
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+* Use o ambiente **UCRT64** para gerar a documentação em PDF, instale os
+  pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-ucrt-x86_64-texlive-latex-extra
+		mingw-w64-ucrt-x86_64-texlive-fonts-recommended``
+
+  Para o ambiente **CLANG64** instale os pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-x86_64-texlive-latex-extra
+		mingw-w64-clang-x86_64-texlive-fonts-recommended
+
+  Você deve utilizar o ambiente **UCRT64** or **CLANG64** para compilar
+  a documentação PDF pois as ferramentas TeX Live atualmente não
+  funciona com o ambiente **CLANGARM64**;
+* Instale também o pacote:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-x86_64-doxygen
+
 * Se você pretende recompilar os shaders do bgfx e o analisador GLSL,
-  você precisará instalar o **bison** (``pacman -S bison``).
+  você precisará instalar o **bison**:
+
+	.. code-block:: shell
+
+		pacman -S bison
 
 Os pacotes adicionais dependem da arquitetura da CPU para qual você
 estiver compilando.
@@ -899,64 +934,137 @@ estiver compilando.
 	\clearpage
 
 
-**64-bit x86-64 (libstdc++/MSVCRT)**
+**64-bit x86-64 (libstdc++/UCRT)**
 
-* Instale os pacotes ``mingw-w64-x86_64-gcc`` e
-  ``mingw-w64-x86_64-python``;
+* Instale os pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-ucrt-x86_64-gcc
+		mingw-w64-ucrt-x86_64-python
+
+* Para utilizar o compilador Clang, instale o pacote:
+
+	.. code-block:: shell
+
+		mingw-w64-ucrt-x86_64-clang
+
 * Para utilizar o lincador LLVM e o arquivador (é geralmente muito mais
   rápido que o *GNU linker* e o arquivador padrão), você precisará dos
-  pacotes ``mingw-w64-x86_64-lld``, ``mingw-w64-x86_64-llvm-tools``,
-  ``mingw-w64-x86_64-llvm`` e do ``mingw-w64-x86_64-libc++``;
+  pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-ucrt-x86_64-lld
+		mingw-w64-ucrt-x86_64-llvm-tools
+		mingw-w64-x86_64-llvm
+		mingw-w64-ucrt-x86_64-libc++
+
 * Para compilar usando as interfaces portáteis do SDL, você precisará
-  dos pacotes ``mingw-w64-x86_64-SDL2`` e do
-  ``mingw-w64-x86_64-SDL2_ttf``;
-* Para compilar o depurador QT, você precisará do pacote
-  ``mingw-w64-x86_64-qt6-base``;
+  dos pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-ucrt-x86_64-SDL2
+		mingw-w64-ucrt-x86_64-SDL2_ttf
+
+* Para compilar o depurador QT, você precisará do pacote:
+
+	.. code-block:: shell
+
+		mingw-w64-ucrt-x86_64-qt6-base
+
 * Para iniciar um shell Bash configurado com os caminhos e as variáveis
-  de ambiente corretos, abra o executável **mingw64.exe** que está na
-  pasta de instalação do **msys64** ou use o atalho do **MSYS2 MinGW 64
-  bits** no menu Iniciar.
+  de ambiente corretos, abra o executável **ucrt64.exe** que está na
+  pasta de instalação do **msys64** ou use o atalho do **MSYS2 UCRT64**
+  no menu Iniciar já com as configurações e as variaveis de ambiente
+  prontas.
 
-**64-bit x86-64 (libc++/ucrt)**
+**64-bit x86-64 (libc++/UCRT)**
 
-* Instale os pacotes ``mingw-w64-clang-x86_64-clang``,
-  ``mingw-w64-clang-x86_64-python`` e o
-  ``mingw-w64-clang-x86_64-gcc-compat``;
+* Instale os pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-x86_64-clang
+		mingw-w64-clang-x86_64-python
+		mingw-w64-clang-x86_64-gcc-compat
+
 * Para utilizar o lincador LLVM e o arquivador (é geralmente muito mais
-  rápido que o *GNU linker* e o arquivador padrão), você precisará dos
-  pacotes ``mingw-w64-clang-x86_64-lld``,
-  ``mingw-w64-clang-x86_64-llvm-tools``, ``mingw-w64-clang-x86_64-llvm``
-  e do ``mingw-w64-clang-x86_64-libc++``.
+  rápido que o GNU linker e o arquivador padrão), você precisará dos
+  pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-x86_64-lld
+		mingw-w64-clang-x86_64-llvm-tools
+		mingw-w64-clang-x86_64-llvm
+		mingw-w64-clang-x86_64-libc++
+
 * Para compilar usando as interfaces portáteis do SDL, você precisará
-  dos pacotes ``mingw-w64-clang-x86_64-SDL2`` e do
-  ``mingw-w64-clang-x86_64-SDL2_ttf``;
-* Para compilar o depurador QT, você precisará do pacote
-  ``mingw-w64-clang-x86_64-qt6-base``.
+  dos pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-x86_64-SDL2
+		mingw-w64-clang-x86_64-SDL2_ttf
+
+* Para compilar o depurador QT, você precisará do pacote:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-x86_64-qt6-base
+
 * Para iniciar um shell Bash configurado com os caminhos e as variáveis
   de ambiente corretos, abra o executável **clang64.exe** que está na
   pasta de instalação do **msys64** ou use o atalho do **MSYS2
   CLANG64**.
 
-**64-bit ARM (libc++/ucrt)**
+**64-bit ARM (libc++/UCRT)**
 
-* Instale os pacotes ``mingw-w64-clang-aarch64-clang``,
-  ``mingw-w64-clang-aarch64-python`` e o
-  ``mingw-w64-clang-aarch64-gcc-compat``;
+* Instale os pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-aarch64-clang
+		mingw-w64-clang-aarch64-python
+		mingw-w64-clang-aarch64-gcc-compat
+
 * Para utilizar o lincador LLVM e o arquivador (é geralmente muito mais
   rápido que o *GNU linker* e o arquivador padrão), você precisará dos
-  pacotes ``mingw-w64-clang-aarch64-lld``,
-  ``mingw-w64-clang-aarch64-llvm-tools``,
-  ``mingw-w64-clang-aarch64-llvm`` e do
-  ``mingw-w64-clang-aarch64-libc++``.
+  pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-aarch64-lld
+		mingw-w64-clang-aarch64-llvm-tools
+		mingw-w64-clang-aarch64-llvm
+		mingw-w64-clang-aarch64-libc++
+
 * Para compilar usando as interfaces portáteis do SDL, você precisará
-  dos pacotes ``mingw-w64-clang-aarch64-SDL2`` e do
-  ``mingw-w64-clang-aarch64-SDL2_ttf``;
-* Para compilar o depurador QT, você precisará do pacote
-  ``mingw-w64-clang-aarch64-qt6-base``;
+  dos pacotes:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-aarch64-SDL
+		mingw-w64-clang-aarch64-SDL2_ttf
+
+* Para compilar o depurador QT, você precisará do pacote:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-aarch64-qt6-base
+
 * Para iniciar um shell Bash configurado com os caminhos e as variáveis
   de ambiente corretos, abra o executável **clangarm64.exe** que está na
   pasta de instalação do **msys64** ou use o atalho do **MSYS2
   CLANGARM64**.
+
+
+.. raw:: latex
+
+	\clearpage
+
 
 **32-bit x86**
 
@@ -968,12 +1076,6 @@ pacotes LLVM e Clang de 32 bits para x86. Para compilar o MAME para
 sistemas x86 de 32 bits, use um ambiente que permita a compilação
 cruzada para um alvo de 32 bits com ferramentas de 64 bits. Por exemplo,
 use um ambiente MinGW em um sistema Linux.
-
-
-.. raw:: latex
-
-	\clearpage
-
 
 **Configuração do ambiente**
 
@@ -1094,12 +1196,6 @@ será exibido um retorno semelhante ao mostrado abaixo:
 		Alteração no tamanho:    61,49 MiB
 		
 		Continuar a instalação? [S/n]
-
-
-.. raw:: latex
-
-	\clearpage
-
 
 Pressione a tecla :kbd:`Enter` e aguarde. Para ter certeza de que não há
 erros. Execute o comando **pacman -Syu** novamente:
@@ -1939,6 +2035,11 @@ Sede das bibliotecas e framework
   |sefo| ``1``, prefira usar o analisador sintático Expat XML |doce|.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 **USE_SYSTEM_LIB_ZLIB**
 
   |sefo| ``1``, prefira usar a biblioteca de compressão zlib |doce|.
@@ -1948,11 +2049,6 @@ Sede das bibliotecas e framework
 
   |sefo| ``1``, prefira usar a biblioteca de compressão de imagem
   libjpeg |doce|.
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 **USE_SYSTEM_LIB_FLAC**
@@ -2059,10 +2155,6 @@ comando **-U_FORTIFY_SOURCE**. Use-o em seu parâmetro de compilação
 **ARCHOPTS** ao redefinir suas variáveis de ambiente **CFLAGS** e
 **CXXFLAGS**.
 
-.. raw:: latex
-
-	\clearpage
-
 
 Problemas que afetam o MinGW clang
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2088,6 +2180,11 @@ projeto do Visual Studio. Isso impede que os avisos sejam tratados como
 erros pois o MSVC não parece ter opções para controlar quais
 advertências específicas serão tratadas como erro, ao contrário dos
 outros compiladores.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _compiling-issues-entry-point:
@@ -2140,12 +2237,6 @@ que utilizará a versão atualizada do arquivo libstdc++-6.dll. Se não
 quiser lidar com variáveis de ambiente, é possível também copiar as
 bibliotecas listadas acima para o diretório onde se encontra o seu SDL
 MAME.
-
-
-.. raw:: latex
-
-	\clearpage
-
 
 Outra maneira de corrigir o problema sem alterar as variáveis de
 ambiente do Windows é copiar as seguintes DLLs para a mesma pasta do seu
@@ -2532,11 +2623,6 @@ MAME com o comando ``directory``:
 
 Outra maneira de facilitar é copiando apenas o arquivo do código-fonte
 para a mesma pasta do MAME, assim você não precisa usar o **directory**.
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _compiling-using-asan:
