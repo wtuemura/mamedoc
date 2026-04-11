@@ -2253,7 +2253,7 @@ rodar o comando abaixo no terminal ou no prompt de comando::
 
 No Windows também é possível fazer o mesmo com o comando abaixo::
 
-	mame -lx kof94|findstr bios="
+	mame -lx kof94|findstr "bios="
 	euro
 	euro-s1
 	asia-mv1c
@@ -3391,9 +3391,11 @@ Como criar apenas um mame.ini com as configurações de fábrica
 A opção :ref:`-cc <mame-commandline-createconfig>` cria um novo
 ``mame.ini`` junto com ``ui.ini`` e ``plugin.ini``, infelizmente a opção
 não permite criar apenas o ``mame.ini``. Neste caso, rode o comando
-abaixo::
+abaixo (Linux e macOS):
 
-	mame -norc -sc > mame_padrao.ini
+.. code-block:: shell
+
+	./mame -norc -sc | sed 's/readconfig                0/readconfig                1/' > mame_padrao.ini
 
 A opção :ref:`-norc <mame-commandline-noreadconfig>` ignora qualquer
 configuração que você possa ter no seu computador, já a opção
@@ -3402,18 +3404,26 @@ internas do MAME, a parte final do comando redireciona essa lista para o
 arquivo ``mame_padrao.ini``.
 
 Se quiser substituir o seu ``mame.ini`` antigo, **faça o backup dele
-primeiro** e em seguida::
+primeiro** e em seguida:
 
-	mame -norc -sc > mame.ini
+.. code-block:: shell
 
-Como este arquivo tem apenas os valores predefinidos do MAME, não se
+	./mame -norc -sc | sed 's/readconfig                0/readconfig                1/' > mame.ini
+
+.. note:: Atenção à quantidade de espaços.
+
+Para usuários Windows, no terminal do powershell faça:
+
+.. code-block:: shell
+
+	.\mame.exe -norc -sc | ForEach-Object { $_ -replace 'readconfig\s+0', 'readconfig                1' } | Out-File -FilePath mame_padrao.ini -Encoding ascii
+
+.. note:: Atenção à quantidade de espaços.
+
+Como esse arquivo contém apenas os valores predefinidos do MAME, não se
 esqueça de reconfigurar o seu **rompath** para que o MAME possa
-localizar as suas ROMs, assim como outras configurações de vídeo e áudio
-para que o seu MAME possa funcionar corretamente.
-
-.. note:: Ao concluir a configuração, não se esqueça de definir a opção
-  **readconfig** como **1** para que o MAME leia o novo arquivo criado.
-  Caso contrário, ele irá ignorá-lo.
+localizar as suas ROMs, bem como outras configurações de vídeo e áudio,
+para que ele funcione corretamente.
 
 
 .. _advanced-boost-pre-installation:
