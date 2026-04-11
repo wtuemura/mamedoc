@@ -3412,7 +3412,7 @@ primeiro** e em seguida:
 
 .. note:: Atenção à quantidade de espaços.
 
-Para usuários Windows, no terminal do powershell faça:
+Para usuários Windows, no terminal do PowerShell faça:
 
 .. code-block:: shell
 
@@ -3800,6 +3800,7 @@ No Windows, abra o prompt de comando e faça o comando:
 	ddr3ma           memcard1         (memc1)    .mc
 	etc.
 
+
 Você também pode usar o comando **findstr**:
 
 .. code-block:: shell
@@ -3813,6 +3814,38 @@ Você também pode usar o comando **findstr**:
 	...
 	ddr3ma           memcard1         (memc1)    .mc
 	etc.
+
+Para gerar uma lista com o nome da ROM seguido do nome completo do sistema,
+redirecione a saída para um arquivo texto:
+
+.. code-block:: shell
+
+	./mame -lm |grep memcard>tmp.txt
+
+Gere a lista com o comando abaixo:
+
+.. code-block:: shell
+
+	for f in $(awk '{print $1}' tmp.txt); do ./mame -ll "$f" | sed '1d'; done > lista_games_mcard.txt
+
+Para usuários Windows, no terminal do PowerShell faça:
+
+.. code-block:: shell
+
+	Get-Content tmp.txt | ForEach-Object { ./mame -ll ($_.Split(' ')[0]) | Select-Object -Skip 1 } | Out-File lista_games_mcard.txt -Encoding utf8
+	gc tmp.txt | % { ./mame -ll ($_.Split(' ')[0]) | select -skip 1 } > lista_games_mcard.txt
+
+Isso gera uma lista como o exemplo abaixo:
+
+.. code-block:: text
+
+	2020bb            "2020 Super Baseball (set 1)"
+	...
+	3countb           "3 Count Bout / Fire Suplex (NGM-043 ~ NGH-043)"
+	...
+	psj               "Sony PlayStation (Japan)"
+	...
+	psu               "Sony PlayStation (USA)"
 
 
 Preparando o MAME para emular um PC 486 com o Windows 95
@@ -4559,7 +4592,7 @@ Criando uma lista de todos os sistemas marcados como ROM ruim (bad rom)
 
 O comando abaixo funciona no Linux e macOS, pode funcionar no Windows
 desde que você tenha estas ferramentas instaladas no seu sistema
-operacional ou esteja no seu ``%%PATH%%``.
+operacional ou esteja no seu ``%PATH%``.
 
 Use o comando abaixo para gerar uma lista onde o MAME identifica os
 sistemas como *bad rom*:
