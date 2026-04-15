@@ -869,9 +869,9 @@ com o gerenciador de pacotes **pacman**.
 
 	.. code-block:: shell
   
-		pacman -S mingw-w64-clang-x86_64-librsvg
-		mingw-w64-clang-x86_64-python-sphinx
-		mingw-w64-clang-x86_64-python-sphinx_rtd_theme
+		pacman -S mingw-w64-clang-x86_64-librsvg \
+		mingw-w64-clang-x86_64-python-sphinx \
+		mingw-w64-clang-x86_64-python-sphinx_rtd_theme \
 		mingw-w64-clang-x86_64-python-sphinxcontrib-svg2pdfconverter``
 
   Ou alternativamente os seguintes pacotes para o ambiente
@@ -879,9 +879,9 @@ com o gerenciador de pacotes **pacman**.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-clang-aarch64-librsvg
-		mingw-w64-clang-aarch64-python-sphinx
-		mingw-w64-clang-aarch64-python-sphinx_rtd_theme
+		pacman -S mingw-w64-clang-aarch64-librsvg \
+		mingw-w64-clang-aarch64-python-sphinx \
+		mingw-w64-clang-aarch64-python-sphinx_rtd_theme \
 		mingw-w64-clang-aarch64-python-sphinxcontrib-svg2pdfconverter
 
 
@@ -895,14 +895,14 @@ com o gerenciador de pacotes **pacman**.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-ucrt-x86_64-texlive-latex-extra
+		pacman -S mingw-w64-ucrt-x86_64-texlive-latex-extra \
 		mingw-w64-ucrt-x86_64-texlive-fonts-recommended``
 
   Para o ambiente **CLANG64** instale os pacotes:
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-clang-x86_64-texlive-latex-extra
+		pacman -S mingw-w64-clang-x86_64-texlive-latex-extra \
 		mingw-w64-clang-x86_64-texlive-fonts-recommended
 
   Você deve utilizar o ambiente **UCRT64** or **CLANG64** para compilar
@@ -936,7 +936,7 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-ucrt-x86_64-gcc
+		pacman -S mingw-w64-ucrt-x86_64-gcc \
 		mingw-w64-ucrt-x86_64-python
 
 * Para utilizar o compilador Clang, instale o pacote:
@@ -951,9 +951,9 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-ucrt-x86_64-lld
-		mingw-w64-ucrt-x86_64-llvm-tools
-		mingw-w64-x86_64-llvm
+		pacman -S mingw-w64-ucrt-x86_64-lld \
+		mingw-w64-ucrt-x86_64-llvm-tools \
+		mingw-w64-x86_64-llvm \
 		mingw-w64-ucrt-x86_64-libc++
 
 * Para compilar usando as interfaces portáteis do SDL, você precisará
@@ -961,7 +961,7 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-ucrt-x86_64-SDL2
+		pacman -S mingw-w64-ucrt-x86_64-SDL2 \
 		mingw-w64-ucrt-x86_64-SDL2_ttf
 
 * Para compilar o depurador QT, você precisará do pacote:
@@ -982,8 +982,8 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-clang-x86_64-clang
-		mingw-w64-clang-x86_64-python
+		pacman -S mingw-w64-clang-x86_64-clang \
+		mingw-w64-clang-x86_64-python \
 		mingw-w64-clang-x86_64-gcc-compat
 
 * Para utilizar o lincador LLVM e o arquivador (é geralmente muito mais
@@ -992,9 +992,9 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-clang-x86_64-lld
-		mingw-w64-clang-x86_64-llvm-tools
-		mingw-w64-clang-x86_64-llvm
+		pacman -S mingw-w64-clang-x86_64-lld \
+		mingw-w64-clang-x86_64-llvm-tools \
+		mingw-w64-clang-x86_64-llvm \
 		mingw-w64-clang-x86_64-libc++
 
 * Para compilar usando as interfaces portáteis do SDL, você precisará
@@ -1002,7 +1002,7 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-clang-x86_64-SDL2
+		pacman -S mingw-w64-clang-x86_64-SDL2 \
 		mingw-w64-clang-x86_64-SDL2_ttf
 
 * Para compilar o depurador QT, você precisará do pacote:
@@ -1022,8 +1022,8 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-clang-aarch64-clang
-		mingw-w64-clang-aarch64-python
+		pacman -S mingw-w64-clang-aarch64-clang \
+		mingw-w64-clang-aarch64-python \
 		mingw-w64-clang-aarch64-gcc-compat
 
 * Para utilizar o lincador LLVM e o arquivador (é geralmente muito mais
@@ -1032,9 +1032,9 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-clang-aarch64-lld
-		mingw-w64-clang-aarch64-llvm-tools
-		mingw-w64-clang-aarch64-llvm
+		pacman -S mingw-w64-clang-aarch64-lld \
+		mingw-w64-clang-aarch64-llvm-tools \
+		mingw-w64-clang-aarch64-llvm \
 		mingw-w64-clang-aarch64-libc++
 
 * Para compilar usando as interfaces portáteis do SDL, você precisará
@@ -1042,7 +1042,7 @@ estiver compilando.
 
 	.. code-block:: shell
 
-		pacman -S mingw-w64-clang-aarch64-SDL
+		pacman -S mingw-w64-clang-aarch64-SDL \
 		mingw-w64-clang-aarch64-SDL2_ttf
 
 * Para compilar o depurador QT, você precisará do pacote:
