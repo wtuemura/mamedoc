@@ -1568,39 +1568,27 @@ Opções
 
 **TARGETOS**
 
-Define o sistema operacional de destino. É importante deixar claro que
-essa opção é desnecessária caso esteja compilando o MAME nativamente. Os
-valores válidos são:
+  Define o sistema operacional de destino. É importante deixar claro que
+  essa opção é desnecessária caso esteja compilando o MAME nativamente. 
+  Os valores válidos são:
 
 	* ``android`` (Android)
-
 	* ``asmjs`` (Emscripten/asm.js)
-
 	* ``freebsd`` (FreeBSD)
-
 	* ``netbsd`` (NetBSD)
-
 	* ``openbsd`` (OpenBSD)
-
-	* ``pnacl`` (Native Client - PNaCl)
-
 	* ``linux`` (Linux)
-
-	* ``ios`` (iOS)
-
 	* ``macosx`` (OSX)
-
 	* ``windows`` (Windows)
-
 	* ``haiku`` (Haiku)
 
-	* ``solaris`` (Solaris SunOS)
+		.. tip:: Fonte: pesquise pelo termo "*targetos*" em
+		   **mame_src/scripts/genie.lua**.
 
-	* ``steamlink`` (Steam Link)
 
-	* ``rpi`` (Raspberry Pi)
+.. raw:: latex
 
-	* ``ci20`` (Creator-Ci20)
+	\clearpage
 
 
 .. _mame-compilation-sse2:
@@ -1692,8 +1680,8 @@ Usando ferramentas de compilação alternativas
   instalar o pacote **libomp-devel** ou o **libomp-dev**, dependendo da
   sua distribuição.
 
-.. warning:: O MAME não é totalmente compatível com essa opção, assim
-   sendo, use por sua conta e risco.
+.. warning:: O MAME não é totalmente compatível com essa opção;
+   portanto, use-a por sua conta e risco.
 
 .. raw:: latex
 
