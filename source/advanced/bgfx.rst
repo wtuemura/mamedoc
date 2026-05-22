@@ -100,12 +100,12 @@ corretamente:
 Agora tire um momento para ler as definições de configuração na seção
 abaixo para aprender como melhor configurar as opções do bgfx.
 
-Como descrito em :ref:`advanced-multi-CFG`, o MAME segue uma sequência
-na hora de processar os arquivos ``.ini``. As configurações bgfx podem ser
-editadas diretamente no arquivo ``mame.ini``, porém para tirar melhor
-proveito do poder dos arquivos de configuração do MAME, talvez seja
-melhor copiar as opções do **bgfx** do ``mame.ini`` para um outro
-arquivo de configuração e fazer as modificações lá.
+Como descrito em :ref:`advanced-multicfg-order`, o MAME segue uma
+sequência na hora de processar os arquivos ``.ini``. As configurações
+bgfx podem ser editadas diretamente no arquivo ``mame.ini``, porém para
+tirar melhor proveito do poder dos arquivos de configuração do MAME,
+talvez seja melhor copiar as opções do **bgfx** do ``mame.ini`` para um
+outro arquivo de configuração e fazer as modificações lá.
 
 Particularmente, você vai querer que as configurações
 ``bgfx_screen_chains`` sejam específicas e personalizáveis para cada

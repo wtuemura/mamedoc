@@ -125,18 +125,19 @@ bloco de notas e saia do MAME.
 Alterando as configurações
 --------------------------
 
-Como descrito em :ref:`advanced-multi-CFG`, o MAME segue uma sequência
-na hora de processar os arquivos ``.ini``. As configurações hlsl podem
-ser editadas diretamente no arquivo ``mame.ini``, porém para tirar melhor
-proveito do poder dos arquivos de configuração do MAME, talvez seja
-melhor copiar as opções do hlsl do ``mame.ini`` para um outro arquivo de
-configuração e fazer as modificações lá.
+Como descrito em :ref:`advanced-multicfg-order`, o MAME segue uma
+sequência na hora de processar os arquivos ``.ini``. As configurações
+hlsl podem ser editadas diretamente no arquivo ``mame.ini``, porém para
+tirar melhor proveito do poder dos arquivos de configuração do MAME,
+talvez seja melhor copiar as opções do hlsl do ``mame.ini`` para um
+outro arquivo de configuração e fazer as modificações lá.
 
 Por exemplo, uma vez que você encontrou configurações de hlsl que acha
 que são apropriadas para os jogos de Neo-Geo, você pode colocar essas
-configurações num arquivo ``neogeo.ini`` para que todos os jogos de Neo-Geo
-usem essas configurações sem que você tenha que adicioná-las manualmente
-uma a uma em diferentes arquivos ``.ini`` como o nome do jogo.
+configurações num arquivo ``neogeo.ini`` para que todos os jogos de
+Neo Geo usem essas configurações sem que você tenha que adicioná-las
+manualmente uma a uma em diferentes arquivos ``.ini`` como o nome do
+jogo.
 
 
 Alterando as configurações

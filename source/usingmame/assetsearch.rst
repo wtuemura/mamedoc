@@ -26,7 +26,7 @@ respectivas opções diretamente na linha de comando ou dos outros
 arquivos de configuração. Para obter mais informações sobre todas as
 opções disponíveis para controlar onde o MAME deve procurar pelos
 arquivos e os diferentes tipos de configurações, consulte os capítulos
-:ref:`mame-commandline-pathoptions` e o :ref:`advanced-multi-CFG`.
+:ref:`mame-commandline-pathoptions` e o :ref:`advanced-multicfg-order`.
 
 
 .. _assetsearch-terminologia:

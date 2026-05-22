@@ -65,8 +65,8 @@ Apesar de ser possível fazer algumas definições através da interface,
 nem todas as :ref:`configurações do MAME <mame-commandline-universal>`
 estão acessíveis pela interface, configurações mais específicas ainda
 precisam ser feitas através da linha de comando ou por arquivos
-``*.ini`` específicos. Consulte :ref:`advanced-multi-CFG` para obter
-mais informações.
+``*.ini`` específicos. Consulte :ref:`advanced-multicfg-order` para
+obter mais informações.
 
 .. figure:: images/mame_config_machine.png
 	:align: center

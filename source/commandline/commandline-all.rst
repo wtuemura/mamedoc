@@ -1520,7 +1520,7 @@ Opções para a configuração
 	O nome do driver é **cps1** (sem a extensão .cpp), portanto,
 	o nome do arquivo de configuração deve ser **cps1.ini**.
 
-	Consulte o capítulo :ref:`advanced-multi-CFG` para obter mais
+	Consulte o capítulo :ref:`advanced-multicfg-order` para obter mais
 	informações.
 
 	Exemplo:
@@ -4384,7 +4384,7 @@ Opções para as configurações de diferentes entradas
 	**mame.ini**, para que tais configurações afetem apenas os sistemas
 	que necessitem desses mapeamentos. Para obter mais informações
 	consulte o capítulo
-	:ref:`Diversos arquivos de configuração <advanced-multi-CFG>`.
+	:ref:`Diversos arquivos de configuração <advanced-multicfg-order>`.
 
 	Os mapeamentos são definidos como uma cadeia de caracteres e
 	números. Como a grade possui 9x9, existem 81 caracteres no

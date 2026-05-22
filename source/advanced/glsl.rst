@@ -112,12 +112,12 @@ bloco de notas e saia do MAME.
 Alterando as configurações
 --------------------------
 
-Como descrito em :ref:`advanced-multi-CFG`, o MAME segue uma sequência
-na hora de processar os arquivos ``.ini``. As configurações glsl podem
-ser editadas diretamente no arquivo ``mame.ini``, porém para tirar melhor
-proveito do poder dos arquivos de configuração do MAME, talvez seja
-melhor copiar as opções do glsl do ``mame.ini`` para um outro arquivo de
-configuração e fazer as modificações lá.
+Como descrito em :ref:`advanced-multicfg-order`, o MAME segue uma
+sequência na hora de processar os arquivos ``.ini``. As configurações
+glsl podem ser editadas diretamente no arquivo ``mame.ini``, porém para
+tirar melhor proveito do poder dos arquivos de configuração do MAME,
+talvez seja melhor copiar as opções do glsl do ``mame.ini`` para um
+outro arquivo de configuração e fazer as modificações lá.
 
 Por exemplo, uma vez selecionada as opções glsl que deseja usar nos
 sistemas para Neo-Geo, coloque essas configurações no arquivo

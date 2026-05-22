@@ -1,7 +1,7 @@
-.. _advanced-multi-CFG:
+.. _advanced-multicfg-order:
 
-Diversos arquivos de configuração
-=================================
+Ordem de carregamento dos arquivos de configuração
+==================================================
 
 .. contents:: :local:
 
@@ -91,13 +91,20 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 	<p></p>
 
 6. Os arquivos INI voltados para os arquivos de código-fonte (driver).
-   O MAME tentará ler ``source/``\ *<sourcefile>*\ ``.ini`` onde
-   <*sourcefile*> é o nome do arquivo de código-fonte onde o sistema
+   O MAME tentará ler ``source/``\ *<arquivo_fonte>*\ ``.ini`` onde
+   <*arquivo_fonte*> é o nome do arquivo de código-fonte onde o sistema
    estiver definido. O código-fonte de um driver pode ser encontrado
-   usando o comando ``mame -listsource <nome_da_rom>``, exemplo::
+   usando o comando ``mame -listsource <nome_da_rom>``, exemplo:
+
+   .. code-block:: text
 
 	mame.exe -listsource sfa
 	sfa             cps2.cpp
+
+
+   Neste caso, o "arquivo_fonte" é **cps2.cpp**. Então o arquivo INI
+   para este sistema deve se chamar ``cps2.ini`` e deve estar dentro da
+   pasta **source**.
 
    A Banpresto **Sailor Moon**, a Atlus **Dodonpachi** e a Nihon System
    **Dangun Feveron** por exemplo, todos rodam num hardware semelhante e
@@ -130,9 +137,18 @@ O MAME faz a interpretação dos arquivos de configuração na ordem abaixo:
 9. Arquivo INI do sistema. Usando o exemplo anterior, o arquivo
     ``lastsold.ini`` será lido para o **The Last Soldier**.
 
-.. raw:: latex
 
-	\clearpage
+Várias pastas de procura
+------------------------
+
+Se você incluir várias pastas na configuração do :ref:`caminho INI
+<mame-commandline-inipath>`, o MAME procurará um arquivo INI em cada
+pasta, na ordem em que elas estão listadas. Se várias pastas contiverem
+um arquivo com o mesmo nome, as configurações dos arquivos listados
+primeiro terão prioridade sobre as dos arquivos listados depois. O MAME
+sempre salva os arquivos INI na primeira pasta listada na configuração
+do caminho INI.
+
 
 .. _advanced-multi-cfg-exemplo-seq:
 
@@ -175,8 +191,9 @@ Exemplos da sequência de leitura dos arquivos
   8. ``smleague.ini`` (sistema da mesma família)
   9. ``finlarch.ini`` (sistema)
 
-*Lembre-se que os parâmetros na linha de comando tem preferência sobre
-todos os outros arquivos!*
+.. note:: Lembre-se de que os argumentos da linha de comando têm
+   prioridade sobre qualquer outra configuração!
+
 
 .. _advanced-multi-cfg-usando:
 
@@ -357,13 +374,12 @@ graphics**, crie o arquivo ``raster.ini`` dentro do diretório **ini**:
 
 Agora ao rodar o sistema **Street Fighter II: The World Warrior**
 (``mame sf2``) note que há algumas linhas na tela, outros efeitos podem
-ser baixados do `MameWorld <https://www.mameworld.info/ubbthreads/showflat.php?Cat=&Number=92158&page=0>`_.
-Apesar dos efeitos de sobreposição darem apenas uma aparência muito
-simplificada de uma tela CRT, a sua vantagem é consumir poucos
-recursos, porém há muito tempo que não se utiliza mais a opção
-``effect`` já que nos dias de hoje há opções mais modernas. Para quem
-tem um hardware um pouco mais sofisticado, use a simulação as opções do
-BGFX, GLSL e HLSL.
+ser baixados do `MameWorld`_. Apesar dos efeitos de sobreposição darem
+apenas uma aparência muito simplificada de uma tela CRT, a sua vantagem
+é consumir poucos recursos, porém há muito tempo que não se utiliza mais
+a opção ``effect`` já que nos dias de hoje há opções mais modernas. Para
+quem tem um hardware um pouco mais sofisticado, use a simulação as
+opções do BGFX, GLSL e HLSL.
 
 Baixe os shaders GLSL do
 `mameau <https://www.mameau.com/linux/mame-glsl-shaders-setup/>`_,
@@ -457,3 +473,4 @@ alguns exemplos.
    arquivo INI extra será lido
 .. |nebd|  replace:: Nenhuma BIOS definida
 .. |nsmf|  replace:: Nenhum sistema da mesma família
+.. _MameWorld: https://www.mameworld.info/ubbthreads/showflat.php?Cat=&Number=92158&page=0

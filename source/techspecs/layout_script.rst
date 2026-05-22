@@ -34,7 +34,7 @@ diretório **ini** para que a configuração do layout e do plug-in sempre
 seja utilizada quando o sistema for iniciado. Consulte :ref:`plugins`
 para mais informações.
 
-Consulte também o capítulo :ref:`advanced-multi-CFG`.
+Consulte também o capítulo :ref:`advanced-multicfg-order`.
 
 .. raw:: latex
 
