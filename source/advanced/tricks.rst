@@ -4782,6 +4782,23 @@ crie o arquivo **playch10.ini** com as configurações abaixo:
    **artwork\\luts**.
 
 
+Como emular o som clássico do MAME no novo sistema de áudio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Alguns usuários preferem a sonoridade com aliasing das versões antigas
+do MAME. Conforme apontado por HAP (2026), é possível recriar esse
+efeito no sistema atual: após iniciar a emulação, pressione :kbd:`TAB`
+para abrir o menu, acesse :guilabel:`Efeitos de áudio`, em
+:guilabel:`Reamostrador` alterne para :guilabel:`HQ`. Em seguida,
+reduza a latência para :guilabel:`0ms`.
+
+Fonte: **HAP. Re: Disable new sound system?** Em: Bannister Forums:
+`MAME. 12 abr. 2026`_. Fórum de discussão. Acesso em: **26 mai. 2026**
+
+.. _MAME. 12 abr. 2026: https://forums.bannister.org/ubbthreads.php?ubb=showflat&Number=125195#Post125195
+
+
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
