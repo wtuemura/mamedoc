@@ -21,8 +21,8 @@ de uma sessão, estão disponíveis para os *scripts* Lua.
 Assinatura do notificador
 -------------------------
 
-Envelopa a classe ``util::notifier_subscription`` do MAME, faz o
-gerenciamento de uma assinatura numa notificação de difusão.
+|encaa| ``util::notifier_subscription`` do MAME, faz o gerenciamento de
+uma assinatura numa notificação de difusão.
 
 
 Métodos
@@ -203,6 +203,45 @@ Propriedades
 .. raw:: latex
 
 	\clearpage
+
+
+.. _luascript-ref-outputproxy:
+
+Output proxy
+------------
+
+|encaa| ``output_proxy``, que pode ser usada para obter ou para definir
+o valor de uma saída.
+
+Instanciação
+~~~~~~~~~~~~
+
+**manager.machine.devices[tag]:output(nome)**
+
+	Obtém um proxy para uma saída por nome, em relação a um
+	dispositivo. A saída só será criada se já existir.
+
+
+Métodos
+~~~~~~~
+
+**output:exists()**
+
+	Retorna um valor booleano indicando se a saída existe.
+
+
+**output:get()**
+
+	Se houver, retorna o valor atual da saída. Caso contrário, retorna
+	um valor armazenado pela saída do proxy.
+
+
+**output:set(val)**
+
+	Se houver, define o valor da saída ou armazena o valor da saída no
+	proxy, caso a saída não exista. Atenção: se a saída não existir, o
+	novo valor não será refletido em outras saídas de proxies com o
+	mesmo dispositivo e nome.
 
 
 .. _luascript-ref-mameman:
@@ -756,30 +795,6 @@ Instanciação
 
 Métodos
 ~~~~~~~
-
-**output:set_value(nome, valor)**
-
-	Define o valor de saída informada.  O valor deve ser um número
-	inteiro. A saída será criada caso ainda não exista.
-
-
-**output:set_indexed_value(prefixo, índice, valor)**
-
-	Acrescenta o índice (formatado como um inteiro decimal) ao prefixo e
-	define o valor da saída correspondente. O valor deve ser um número
-	inteiro. A saída será criada caso ainda não exista.
-
-
-**output:get_value(nome)**
-
-	Retorna o valor da saída informada ou zero caso não exista.
-
-
-**output:get_indexed_value(prefixo, índice)**
-
-	Anexa o índice (formatado como um inteiro decimal) ao prefixo e
-	retorna o valor da saída correspondente ou zero caso não exista.
-
 
 **output:name_to_id(nome)**
 

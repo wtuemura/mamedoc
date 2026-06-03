@@ -247,6 +247,13 @@ Métodos
 	exista.
 
 
+**device:output(nome)**
+
+	Obtém uma :ref:`saída proxy <luascript-ref-outputproxy>` para a
+	saída com nome específico com relação ao dispositivo. A saída só
+	será criada se já existir.
+
+
 **device:subdevice(tag)**
 
 	Obtém um dispositivo através de uma tag com relação ao dispositivo.

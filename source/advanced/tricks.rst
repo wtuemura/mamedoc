@@ -4810,10 +4810,9 @@ Fonte: **HAP. Re: Disable new sound system?** Em: Bannister Forums:
 Criando diversas configurações do MAME a partir de um único arquivo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Essa dica demonstra como pegar uma configuração ``.ini`` ou ``.cfg`` (ou
-qualquer outro arquivo) como base e a multiplica a partir de uma lista
-de jogos. Neste exemplo, eu quero aplicar uma equalização de áudio em
-todos os jogos do sistema CPS1.
+Essa dica demonstra como pegar uma configuração ``.cfg`` como base e a
+multiplica a partir de uma lista de jogos. Neste exemplo, eu quero
+aplicar uma equalização de áudio em todos os jogos do sistema CPS1.
 
 Primeiro, executamos o MAME com o *Street Fighter II* (**mame sf2**).
 Aplique todas as configurações de equalização e o que mais desejar. Ao
