@@ -60,6 +60,11 @@ Exemplos:
     ``ep 2``
         Define um |pde| que interromperá a execução sempre que a CPU
         visível gerar uma exceção número 2.
+    ``ep a, ir == a9c9``
+        Define um |pde| que interromperá a execução sempre que a CPU
+        visível gerar a exceção número 10 — a interrupção de código de
+        operação "*A-line*" no MC68000 — e o "*IR*" for igual a
+        ``0xa9c9``.
 
 |ret| :ref:`debugger-exceptionpoint-list`
 
