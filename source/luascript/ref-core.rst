@@ -793,22 +793,6 @@ Instanciação
 	Obtém o gerenciador da saída para a sessão da emulação atual.
 
 
-Métodos
-~~~~~~~
-
-**output:name_to_id(nome)**
-
-	Obtém o ID com número inteiro exclusivo por sessão para a saída
-	informada ou zero caso não exista.
-
-
-**output:id_to_name(id)**
-
-	Obtém o nome da saída com o ID exclusivo por sessão informada ou
-	``nil`` caso não exista. Este método tem complexidade O(n),
-	portanto, evite chamá-lo quando o desempenho for importante.
-
-
 .. raw:: latex
 
 	\clearpage
