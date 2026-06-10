@@ -463,7 +463,9 @@ iteradores e com base nos intervalos de loop ``for``.
 
 Por ter um offset do índice definido, as etiquetas não precisam utilizar
 os índices com base zero. É comum utilizar a indexação com base 1 como
-mostra o exemplo abaixo::
+mostra o exemplo abaixo:
+
+.. code-block:: C++
 
 	class dooyong_state : public driver_device
 	{
@@ -509,7 +511,9 @@ Neste caso as portas da matriz chave usam as etiquetas ``KEYA``,
 
 É possível usar uma lista das etiquetas do inicializador fechado-as
 entre colchetes quando as etiquetas não seguirem uma sequência
-ascendente simples::
+ascendente simples:
+
+.. code-block:: C++
 
 	class seabattl_state : public driver_device
 	{
@@ -527,7 +531,9 @@ ascendente simples::
 Se os localizadores subjacentes dos objetos exigirem argumentos
 adicionais do construtor, forneça-os após o formato da etiqueta e o
 deslocamento do índice (os mesmos valores serão usados para todos os
-elementos da array)::
+elementos da array):
+
+.. code-block:: C++
 
 	class dreamwld_state : public driver_device
 	{
@@ -568,7 +574,9 @@ Componentes opcionais do sistema
 Muitas vezes uma classe é usada para representar uma família relacionada
 de sistemas. Caso um componente não esteja presente em todas as
 configurações, pode ser conveniente usar um localizador opcional para
-obter acesso a ele. Como exemplo, usaremos o dispositivo Sega X-board::
+obter acesso a ele. Como exemplo, usaremos o dispositivo Sega X-board:
+
+.. code-block:: C++
 
 	class segaxbd_state : public device_t
 	{
@@ -621,7 +629,9 @@ maneira explícita com a mesma finalidade):
 
 As portas opcionais de E/S oferecem de maneira conveniente a função do
 membro chamado ``read_safe`` que lê o valor da porta caso esta esteja
-presente ou em vez disso retorna o valor padrão::
+presente ou em vez disso retorna o valor padrão:
+
+.. code-block:: C++
 
 	u8 segaxbd_state::analog_r()
 	{
@@ -677,7 +687,9 @@ para que o cartucho instale os manipuladores correspondentes.
 Vejamos como isso é implementado. O dispositivo de slot do cartucho do
 **Virtual Boy** declara os membros ``optional_address_space`` para os
 três espaços dos endereços, os membros do ``offs_t`` para os espaços
-nestes endereços e as funções dos membros em linha para configurá-los::
+nestes endereços e as funções dos membros em linha para configurá-los:
+
+.. code-block:: C++
 
 	class vboy_cart_slot_device :
 			public device_t,
@@ -1054,14 +1066,8 @@ porém eles são descritos aqui porque são usados de maneira similar. Há
 uma série de diferenças importantes a se considerar:
 
 * Os localizadores das saídas sempre criam saídas caso elas não existam.
-* Os localizadores devem ser resolvidos de forma manual, eles não são
-  automaticamente resolvidos.
-* Os localizadores não podem ter o seu alvo alterado depois da
-  construção.
 * Os localizadores são do tipo array e suportam uma quantidade
   indeterminado de dimensões.
-* Os nomes das saídas são globais, não há influência do dispositivo de
-  base (Isto irá mudar no futuro).
 
 Os localizadores da saída aceitam uma quantidade variável de argumentos
 do modelo correspondente a quantidade das dimensões que você quiser da
@@ -1114,21 +1120,27 @@ Neste caso todos os deslocamentos são zero. O localizador unidimensional
 ``p1_1``, … ``p1_7`` para a segunda e ``p2_0``, ``p2_1``, … ``p2_7`` para
 a terceira.
 
-Você deve solicitar o ``resolve`` em cada localizador antes de serem
-utilizados. Isto deve ser feito na inicialização para que os valores da
-saída sejam incluídos nos estados de salvamento:
+Também é possível especificar os nomes de saída fornecendo uma matriz de
+strings com as mesmas dimensões do localizador. Por exemplo, um
+localizador de saída unidimensional requer uma matriz unidimensional de
+strings, e um localizador de saída bidimensional requer uma matriz
+bidimensional.
 
-.. code-block:: C++
+Os nomes podem ser alterados durante a configuração da máquina invocando
+``set_name`` para um localizador de saída de dimensão zero ou
+``set_names`` para qualquer outro tipo de localizador de saída. Os nomes
+são especificados de duas formas: como uma string de formato e um
+deslocamento de índice para cada dimensão, ou como uma matriz de strings
+com dimensões correspondentes às do localizador de saída. Os nomes são
+interpretados em relação ao dispositivo atualmente configurado.
 
-	void mmd2_state::machine_start()
-	{
-		m_digits.resolve();
-		m_p.resolve();
-		m_led_halt.resolve();
-		m_led_hold.resolve();
-	
-		save_item(NAME(m_digit));
-	}
+o que pode gerar problemas na execução do programa.
+
+Observe que os localizadores de saída **não copiam** strings de
+formatação de nome ou matrizes de nomes de saída. Aquele que o invocar
+deve garantir que a string de formato de nome ou a matriz de nomes
+permaneça válida até que a validação e/ou a resolução de objetos seja
+concluída.
 
 Os localizadores da saída proporcionam operadores que permitem que eles
 sejam designados ou fundidos aos inteiros assinados com 32 bits. O
