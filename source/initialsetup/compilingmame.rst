@@ -749,6 +749,11 @@ opções em consideração.
 Microsoft Windows
 ~~~~~~~~~~~~~~~~~
 
+As informações aqui apresentadas são muito detalhadas e pressupõem que
+você conheça as opções disponíveis e seus significados. Como
+alternativa, disponibilizamos em nosso site `um tutorial sobre como
+compilar o MAME no Windows <https://https://www.mamedev.org/tools/>`_.
+
 O MAME para Windows é compilado usando o ambiente MSYS2. Para isso,
 você precisará de uma versão de 64 bits do Windows 10 1809 ou posterior,
 bem como de uma instalação razoavelmente atualizada do MSYS2. Para
@@ -790,9 +795,9 @@ MinGW funcionam melhor em um prompt de comando da Microsoft.
 
 O sintoma mais evidente disso é que as teclas de seta não funcionam em
 programas interativos se forem executados no tipo errado de terminal. A
-execução do MinGW gdb ou do Python em uma janela de terminal MSYS2 fará
+execução do MinGW GDB ou do Python em uma janela de terminal MSYS2 fará
 com que o histórico de comandos não funcione, e talvez não seja possível
-interromper um programa anexado ao gdb. Da mesma forma, pode ser difícil
+interromper um programa anexado ao GDB. Da mesma forma, pode ser difícil
 editar com o Vim do MSYS2 em uma janela do prompt de comando da
 Microsoft.
 
@@ -803,10 +808,10 @@ partir de um shell do MSYS2, talvez seja necessário especificar
 o caminho absoluto para garantir que o equivalente do MinGW não seja
 utilizado em seu lugar.
 
-O MSYS2 gdb pode ter dificuldade para depurar programas MinGW, como o
+O GDB do MSYS2 tem dificuldade para depurar programas MinGW, como o
 MAME. Para obter melhores resultados, instale a versão MinGW do
-gdb e execute-a em uma janela do prompt de comando da Microsoft para
-depurar o MAME.
+GDB ou LLDB e execute-a em uma janela do prompt de comando da Microsoft
+para depurar o MAME.
 
 O GNU Make é compatível com shells no estilo POSIX, como o bash, bem
 como com o shell cmd.exe da Microsoft. No entanto, ao usar o cmd.exe, o
@@ -857,12 +862,6 @@ com o gerenciador de pacotes **pacman**.
 	.. code-block:: shell
 
 		pacman -S bash git make
-
-* Para depuração, instale o **gdb**:
-
-	.. code-block:: shell
-
-		pacman -S gdb
 
 * Para criar a documentação HTML para usuários e desenvolvedores, você
   precisará instalar os pacotes para o ambiente **CLANG64**:
@@ -956,6 +955,12 @@ estiver compilando.
 		mingw-w64-x86_64-llvm \
 		mingw-w64-ucrt-x86_64-libc++
 
+* Para depuração, instle o pacote:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-ucrt-x86_64-gdb
+
 * Para compilar usando as interfaces portáteis do SDL, você precisará
   dos pacotes:
 
@@ -997,6 +1002,12 @@ estiver compilando.
 		mingw-w64-clang-x86_64-llvm \
 		mingw-w64-clang-x86_64-libc++
 
+* Para depuração, instle o pacote:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-clang-x86_64-gdb
+
 * Para compilar usando as interfaces portáteis do SDL, você precisará
   dos pacotes:
 
@@ -1036,6 +1047,12 @@ estiver compilando.
 		mingw-w64-clang-aarch64-llvm-tools \
 		mingw-w64-clang-aarch64-llvm \
 		mingw-w64-clang-aarch64-libc++
+
+* Para depuração, instle o pacote:
+
+	.. code-block:: shell
+
+		pacman -S mingw-w64-ucrt-aarch64-gdb
 
 * Para compilar usando as interfaces portáteis do SDL, você precisará
   dos pacotes:
@@ -1120,7 +1137,7 @@ use um ambiente MinGW em um sistema Linux.
 
 		pacman -S mingw-w64-x86_64-gdb
 
-.. note:: Para mais informações sobre o gdb, conculte o capítulo
+.. note:: Para mais informações sobre o GDB, conculte o capítulo
    :ref:`compiling-using-gdb`.
 
 
@@ -1351,9 +1368,9 @@ A compilação deve ser feita exatamente como foi descrito em
 Apple macOS
 ~~~~~~~~~~~
 Antes de prosseguir, certifique-se de que os pré-requisitos tenham
-sido atendidos. Verifique se você está usando o macOS 11.0 Big
-Sur ou uma versão mais recente. Também é necessário ter a versão
-**2.0.14** ou mais recente do `SDL`_ 2 e instalar o Python 3,
+sido atendidos. Verifique se você está usando o Xcode 16.2 e o macOS
+14.5 "Sodoma" ou uma versão mais recente. Também é necessário instalar o
+Python 3 e a versão **2.0.14** ou mais recente do `SDL`_ 2,
 que atualmente está incluído nas ferramentas de linha de comando do
 Xcode. No entanto, também é possível instalar uma versão autônoma ou
 obtê-la por meio do gerenciador de pacotes Homebrew.
@@ -2431,10 +2448,10 @@ semelhante aparecerá. Copie e reporte [2]_ o erro no fórum
 
 .. _compiling-using-gdb:
 
-Usando o gdb
+Usando o GDB
 ------------
 
-A ideia não é oferecer um manual completo sobre como usar o gdb, mas
+A ideia não é oferecer um manual completo sobre como usar o GDB, mas
 apenas o mínimo necessário para se obter um stack trace válido. No
 exemplo abaixo, estou usando uma versão de 64 bits do MAME para Linux,
 mas o procedimento é o mesmo em qualquer outra plataforma.
@@ -2490,7 +2507,7 @@ quando será exibida uma tela como a do exemplo abaixo:
 		bytes=bytes@entry=67108864) at malloc.c:3650
 		3650 malloc.c: File or directry not found.
 
-Faça o comando **where** para que o gdb liste as possíveis causas:
+Faça o comando **where** para que o GDB liste as possíveis causas:
 
 	.. code-block:: shell
 
@@ -2580,11 +2597,11 @@ A instalação é simples: basta salvar o **.gbdinit** em sua pasta
 pessoal. Para que a informação do código-fonte (source) apareça como no
 exemplo acima, é necessário que o caminho completo onde o MAME foi
 compilado ainda exista. Ou seja, depois de compilar o MAME, não faça um
-**make clean**; deixe-o como está, assim o gdb encontrará o que precisa.
+**make clean**; deixe-o como está, assim o GDB encontrará o que precisa.
 
 A *GDB Dashboard* é personalizável, oferece plug-ins e outras
 configurações que atendam às suas necessidades caso queira se envolver
-com o desenvolvimento ou outras funções do gdb que não serão abordadas
+com o desenvolvimento ou outras funções do GDB que não serão abordadas
 aqui.
 
 
@@ -2598,7 +2615,7 @@ Se nada aparecer no Source Code junto com uma mensagem de erro:
 
 	2509 prot_cmc.cpp File or directry not found.
 
-Ainda dentro do gdb indique o caminho completo para o código-fonte do
+Ainda dentro do GDB indique o caminho completo para o código-fonte do
 MAME com o comando ``directory``:
 
 .. code-block:: shell
