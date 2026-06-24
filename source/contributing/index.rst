@@ -186,3 +186,24 @@ Temos diretrizes para partes específicas do código-fonte:
 
     cxx
     softlist
+
+
+.. _contributing-ai:
+
+Uso de IA
+---------
+
+O uso de IA como auxílio por parte dos membros da equipe deve ser
+mencionado na mensagem de commit correspondente, ao realizar um commit.
+
+Todas as solicitações ("*pull request*") que utilizem auxílio de IA,
+sejam de membros da equipe ou de outros colaboradores, é obrigatório
+fazer essa menção na descrição inicial da solicitação. Inclua o modelo e
+a versão utilizada.
+
+Embora o uso de ferramentas de IA não resulte na rejeição imediata de
+uma solicitação ou alteração, ele deve ser mencionado para permitir uma
+análise mais detalhada.
+
+Como colaborador, você é responsável por compreender e descrever suas
+alterações.
