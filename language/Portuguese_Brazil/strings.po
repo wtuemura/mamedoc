@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: MAME 0.288\n"
+"Project-Id-Version: MAME 0.289\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 03:16-0300\n"
+"POT-Creation-Date: 2026-07-10 07:56-0300\n"
 "PO-Revision-Date: 2026-01-12 15:35-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
@@ -2511,31 +2511,36 @@ msgctxt "gfxview"
 msgid " #%1$X:%2$X (%3$d %4$d) = %5$X"
 msgstr " #%1$X:%2$X (%3$d %4$d) = %5$X"
 
-#: src/frontend/mame/ui/viewgfx.cpp:1276
+#: src/frontend/mame/ui/viewgfx.cpp:1277
+msgctxt "gfxview"
+msgid " %1$d×%2$d color %7$X/%8$X"
+msgstr " %1$d×%2$d cor %7$X/%8$X"
+
+#: src/frontend/mame/ui/viewgfx.cpp:1278
 #, c-format
 msgctxt "gfxview"
-msgid " %1$d×%2$d color %3$X/%4$X"
-msgstr " %1$d×%2$d cor %3$X/%4$X"
+msgid " %1$d×%2$d (clip: %3$d:%4$d×%5$d:%6$d) color %7$X/%8$X"
+msgstr " %1$d×%2$d (clipe: %3$d:%4$d×%5$d:%6$d) cor %7$X/%8$X"
 
-#: src/frontend/mame/ui/viewgfx.cpp:1415
+#: src/frontend/mame/ui/viewgfx.cpp:1418
 #, c-format
 msgctxt "gfxview"
 msgid "Tilemap %1$d/%2$d category %3$u"
-msgstr "Tilemap %1$d/%2$d category %3$u"
+msgstr "Tilemap %1$d/%2$d categoria %3$u"
 
-#: src/frontend/mame/ui/viewgfx.cpp:1415
+#: src/frontend/mame/ui/viewgfx.cpp:1418
 #, c-format
 msgctxt "gfxview"
-msgid "Tilemap %1$d/%2$d "
-msgstr "Tilemap %1$d/%2$d "
+msgid "Tilemap %1$d/%2$d"
+msgstr "Tilemap %1$d/%2$d"
 
-#: src/frontend/mame/ui/viewgfx.cpp:1437
+#: src/frontend/mame/ui/viewgfx.cpp:1440
 #, c-format
 msgctxt "gfxview"
-msgid " (%1$u %2$u) = GFX%3$u #%4$X:%5$X"
-msgstr " (%1$u %2$u) = GFX%3$u #%4$X:%5$X"
+msgid " (%1$u %2$u) = GFX%3$u #%4$X:%5$X palette %6$X"
+msgstr " (%1$u %2$u) = GFX%3$u #%4$X:%5$X paleta %6$X"
 
-#: src/frontend/mame/ui/viewgfx.cpp:1449
+#: src/frontend/mame/ui/viewgfx.cpp:1453
 #, c-format
 msgctxt "gfxview"
 msgid " %1$d×%2$d origin (%3$d %4$d)"
@@ -4262,7 +4267,7 @@ msgstr "Houve um erro ao carregar o programa: %1$s"
 #: src/frontend/mame/ui/imgcntrl.cpp:345
 msgid "Files required for the selected software are missing or incorrect."
 msgstr ""
-"Os arquivos necessários para  programa selecionado estão ausentes ou errados."
+"Os arquivos necessários para o programa selecionado estão ausentes ou errados."
 
 #: src/frontend/mame/ui/confswitch.cpp:178
 msgid "[currently n/a]"
@@ -4349,7 +4354,7 @@ msgstr "Data do lançamento"
 #: src/frontend/mame/ui/utils.cpp:78
 msgctxt "swlist-info"
 msgid "Required Operating System"
-msgstr ""
+msgstr "Sistema operacional exigido"
 
 #: src/frontend/mame/ui/utils.cpp:79
 msgctxt "swlist-info"
@@ -4605,6 +4610,10 @@ msgstr "Remover o último filtro"
 #: src/frontend/mame/ui/utils.cpp:552
 msgid "Add filter"
 msgstr "Adicionar um filtro"
+
+#: src/frontend/mame/ui/utils.cpp:975
+msgid "Select Category"
+msgstr "Selecione a categoria"
 
 #: src/frontend/mame/ui/utils.cpp:1024
 msgid "[no category INI files]"
@@ -6801,28 +6810,28 @@ msgid "UI Audit Media"
 msgstr "IU afere a mídia"
 
 #: src/osd/sdl/osdsdl.cpp:367 src/osd/modules/input/input_windows.cpp:105
-#: src/osd/sdl3/osdsdl.cpp:381
+#: src/osd/sdl3/osdsdl.cpp:385
 msgctxt "input-name"
 msgid "Toggle Fullscreen"
 msgstr "Alterna para tela inteira"
 
-#: src/osd/sdl/osdsdl.cpp:383 src/osd/sdl3/osdsdl.cpp:397
+#: src/osd/sdl/osdsdl.cpp:383 src/osd/sdl3/osdsdl.cpp:401
 msgctxt "input-name"
 msgid "Toggle Filter"
 msgstr "Alterna o filtro"
 
-#: src/osd/sdl/osdsdl.cpp:394 src/osd/sdl3/osdsdl.cpp:408
+#: src/osd/sdl/osdsdl.cpp:394 src/osd/sdl3/osdsdl.cpp:412
 msgctxt "input-name"
 msgid "Decrease Prescaling"
 msgstr "Reduz a escala prévia"
 
-#: src/osd/sdl/osdsdl.cpp:405 src/osd/sdl3/osdsdl.cpp:419
+#: src/osd/sdl/osdsdl.cpp:405 src/osd/sdl3/osdsdl.cpp:423
 msgctxt "input-name"
 msgid "Increase Prescaling"
 msgstr "Aumenta a escala prévia"
 
 #: src/osd/sdl/osdsdl.cpp:416 src/osd/modules/input/input_windows.cpp:122
-#: src/osd/sdl3/osdsdl.cpp:430
+#: src/osd/sdl3/osdsdl.cpp:434
 msgctxt "input-name"
 msgid "Record Rendered Video"
 msgstr "Grava um vídeo com efeitos"
@@ -7293,7 +7302,7 @@ msgstr "CPU ou RAM"
 #: plugins/cheatfind/init.lua:503
 msgid "Changes to this only take effect when \"Start new search\" is selected"
 msgstr ""
-"As alterações nisto só tem efeito quando \"Iniciar nova busca\" for "
+"As alterações só entram em vigor quando \"Iniciar nova busca\" for "
 "selecionada"
 
 #: plugins/cheatfind/init.lua:513
@@ -7670,21 +7679,21 @@ msgctxt "plugin-inputmacro"
 msgid "Add macro"
 msgstr "Nova macro"
 
-#: plugins/portname/init.lua:103
+#: plugins/portname/init.lua:105
 msgid "Save input names to file"
 msgstr "Salvar os nomes da entrada no arquivo"
 
-#: plugins/portname/init.lua:134 plugins/portname/init.lua:139
-#: plugins/portname/init.lua:155
+#: plugins/portname/init.lua:136 plugins/portname/init.lua:141
+#: plugins/portname/init.lua:157
 msgid "Failed to save input name file"
 msgstr "Houve uma falha ao salvar o arquivo dos nomes da entrada"
 
-#: plugins/portname/init.lua:167
+#: plugins/portname/init.lua:169
 #, lua-format
 msgid "Input port name file saved to %s"
 msgstr "O nome das portas da entrada foram salvos em %s"
 
-#: plugins/portname/init.lua:172
+#: plugins/portname/init.lua:174
 msgid "Input ports"
 msgstr "Portas da entrada"
 
