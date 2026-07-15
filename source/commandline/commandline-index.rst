@@ -356,6 +356,7 @@ Opções diversas
 | :ref:`[no]ui_mouse <mame-commandline-uimouse>`
 | :ref:`language <mame-commandline-language>`
 | :ref:`[no]nvram_save <mame-commandline-nvramsave>`
+| :ref:`rtc <mame-commandline-rtc>`
 
 
 Opções para uso com script

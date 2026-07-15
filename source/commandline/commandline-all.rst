@@ -5371,6 +5371,53 @@ Opções diversas
 
 	\clearpage
 
+
+.. _mame-commandline-rtc:
+
+**-rtc** <*valor*>
+
+	Especifica um horário de referência fixo para inicializar os CI's
+	de relógio de tempo real (RTC) emulados pelo MAME. É predefinido que
+	o MAME utilize a hora atual do sistema do computador anfitrião para
+	inicializar os CI's RTC.
+
+	É possível especificar uma string formatada de 14 dígitos com data e
+	hora para o parâmetro **valor**, no formato **AAAAMMDDhhmmss** (por
+	exemplo, ``20260709070000`` para **9 de julho de 2026, às
+	07:00:00)**.
+
+	Exemplo:
+		.. code-block:: text
+
+			mame sscope -rtc 20260709070000
+
+	.. note:: O RTC (*Real-Time Clock*) é um circuito integrado presente em
+	   computadores e dispositivos eletrônicos cuja única função é
+	   manter a contagem precisa de horas, minutos, segundos, dias,
+	   meses e anos, mesmo quando o aparelho principal está
+	   completamente desligado. Para garantir esse funcionamento
+	   contínuo, o CI é alimentado por uma bateria interna independente
+	   (geralmente uma bateria de lítio do tipo moeda CR2032) e utiliza
+	   um cristal de quartzo para medir o tempo com alta precisão.
+	   Graças ao RTC, o sistema operacional de um computador ou o
+	   cronograma de um dispositivo inteligente sabem a hora exata
+	   imediatamente após a inicialização, sem depender de conexão
+	   constante com a internet para sincronização.
+
+	.. tip:: Se um arquivo de reprodução de macro de entrada (como o
+	   utilizado com a opção
+	   :ref:`-playback <mame-commandline-playback>`) estiver ativo, ele
+	   terá precedência absoluta para evitar a dessincronização da
+	   entrada. Nesse caso, a opção de linha de comando
+	   :ref:`-rtc <mame-commandline-rtc>` será ignorada e um aviso será
+	   exibido no console.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
 Opções para uso com script
 --------------------------
 
