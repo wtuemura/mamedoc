@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MAME 0.289\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-10 07:56-0300\n"
+"POT-Creation-Date: 2026-07-16 09:23-0300\n"
 "PO-Revision-Date: 2026-01-12 15:35-0300\n"
 "Last-Translator: Wellington Terumi Uemura, Ashura-X\n"
 "Language-Team: MAME Language Team\n"
@@ -2151,7 +2151,7 @@ msgstr "%1$s (%2$s %3$d)"
 #: src/frontend/mame/ui/inputdevices.cpp:117
 msgctxt "menu-inputdev"
 msgid "Copy Device ID"
-msgstr "Copia a ID do dispositivo"
+msgstr "Copiar a ID do dispositivo"
 
 #: src/frontend/mame/ui/inputdevices.cpp:149
 msgctxt "menu-inputdev"
