@@ -221,8 +221,8 @@ Opções de ajuda e verificação
 	Verifica se há imagens ROM inválidas ou ausentes na lista de
 	software. É predefinido que todos os drivers que possuem arquivos
 	**.zip** ou diretórios válidos no **rompath** (caminho da ROM) serão
-	verificados. No entanto, é possível limitar essa lista definindo um
-	nome de driver específico ou combinações após o comando
+	verificados. No entanto, é possível filtrar essa lista usando
+	uma "*palavra-chave*" ou "*coringa*" após o comando
 	**-verifysoftware**.
 
 	Exemplo:
@@ -238,15 +238,15 @@ Opções de ajuda e verificação
 
 .. _mame-commandline-verifysoftlist:
 
-**-verifysoftlist** / **-vlist** <*nome do catálogo de programas*>
+**-verifysoftlist** / **-vlist** <*nome do catálogo*>
 
 	Verifica ROMs ausentes com base em uma lista de software
 	predeterminado na pasta **hash**.
 	É predefinido que a busca e a verificação serão feitas em todos os
 	drivers e arquivos **.zip** em diretórios válidos no **rompath**
 	(caminho da rom), no entanto, é possível filtrar essa lista usando
-	uma palavra-chave ou coringa em "*softwarelistname*" após o comando
-	**-verifysoftlist**. As listas estão na pasta *hash* e devem ser
+	uma palavra-chave ou coringa em "*nome do catálogo*" após o comando
+	**-verifysoftlist**. Os catálogos estão na pasta *hash* e devem ser
 	informadas sem a extensão **.xml**.
 
 	O resultado é exatamente igual ao comando **-verifysoftware**, porém
@@ -255,11 +255,12 @@ Opções de ajuda e verificação
 	Exemplo:
 		.. code-block:: shell
 
-			mame -vsoft x68k_flop
-			romset x68k_flop:2069ad is good
-			romset x68k_flop:3takun is good
-			romset x68k_flop:38mankk is good
-			romset x68k_flop:4thunit is good
+			mame -vlist apple2_flop_orig
+			romset apple2_flop_orig:agentusa is good
+			romset apple2_flop_orig:airheart is good
+			romset apple2_flop_orig:aplpanic is good
+			romset apple2_flop_orig:alambush is good
+			romset apple2_flop_orig:ankh is good
 			...
 			0000 romsets found in 1 software lists, 0000 romsets were OK.
 
