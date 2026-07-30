@@ -1425,14 +1425,23 @@ siga as instruções de compilação descritas em
 Javascript Emscripten e HTML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Primeiro, baixe e instale o **Emscripten 3.1.74** ou a versão mais
+Primeiro, baixe e instale o **Emscripten 6.0.2** ou a versão mais
 recente, conforme as instruções do `site oficial
 <https://emscripten.org/docs/getting_started/downloads.html>`_.
 
-Após a instalação, será possível compilar o MAME diretamente,
-usando a ferramenta "**emmake**". Como o MAME completo é muito grande
-para ser carregado de uma só vez em uma página da web, então compile
-apenas os drivers separados do MAME por meio do parâmetro **SOURCES**.
+Após a instalação, use as ferramentas **source emsdk_env.sh** ou
+**emsdk_env.bat** para definir as variáveis de ambiente. Como o MAME
+precisa das bibliotecas SDL, prepare-as conforme mostrado abaixo.
+
+.. code-block:: shell
+
+	embuilder build sdl3 sdl3_ttf
+
+Após a compilação das dependências, será possível compilar o MAME
+diretamente, usando a ferramenta "**emmake**". Como o MAME completo é
+muito grande para ser carregado de uma só vez em uma página da web,
+então compile apenas os drivers separados do MAME por meio do parâmetro
+**SOURCES**.
 Para mais informações, consulte a seção :ref:`mame-compile-sources`. Por
 exemplo, execute o comando a seguir no mesmo diretório do MAME:
 
@@ -1454,12 +1463,6 @@ arquivos faltantes (separados por vírgula). Por exemplo:
 O valor do parâmetro ``SUBTARGET`` serve apenas para diferenciar as
 várias compilações existentes, por tanto não precisa ser definido caso
 não seja necessário.
-
-O *Emscripten* oferece suporte à compilação do *WebAssembly* com um
-carregador (*loader*) de JavaScript, em vez de executar o JavaScript
-inteiro, o que é o padrão nas versões mais recentes. Para ativar ou
-desativar o *WebAssembly*, adicione o parâmetro **WEBASSEMBLY=1** ou
-**WEBASSEMBLY=0** ao comando make, respectivamente.
 
 Outros parâmetros para o comando make também podem ser usados, como o
 **-j**, para usar a compilação em *multithread*.
