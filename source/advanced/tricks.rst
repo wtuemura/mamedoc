@@ -4939,6 +4939,54 @@ backup da pasta cfg do MAME e cole todos os arquivos ***.cfg** dentro
 dela.
 
 
+Gerando o nome dos jogos com base no nome das ROMs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Os comandos a seguir extraem a lista de jogos do
+`Sega ST-V (Sega Titan Video game system)`_ e a organizam com o nome da
+ROM seguido do nome completo do jogo. Primeiro, geramos uma lista das
+ROMs do sistema em questão e a salvamos em um arquivo chamado
+**tmp.txt**. Execute os comandos a seguir dentro da pasta do executável
+do MAME.
+
+.. code-block:: shell
+
+    mame diehard -lb | awk '{print $2}' | sed '1d; $d' > tmp.txt
+
+Agora, alimentamos o MAME com essa lista para extrair o nome completo do
+jogo e o salvamos no arquivo **stv-lista.txt**:
+
+.. code-block:: shell
+
+    for f in $(awk '{print $2}' tmp.txt); do ./mame -ll "$f" | sed '1d'; done > stv-lista.txt
+
+Use os comandos a seguir no Windows com o PowerShell. Como explicado
+anteriormente, primeiro geramos a lista de ROMs:
+
+.. code-block:: shell
+
+    (.\mame diehard -lb) | ForEach-Object { ($_ -split '\s+')[1] } | Select-Object -Skip 1 | Select-Object -SkipLast 1 | Out-File -FilePath tmp.txt -Encoding utf8
+
+Agora obtemos o nome completo dos jogos:
+
+.. code-block:: shell
+
+    Get-Content tmp.txt | ForEach-Object { .\mame -ll $_ | Select-Object -Skip 1 } | Out-File -FilePath stv-lista.txt -Encoding utf8
+
+Você terá uma lista organizada contendo o nome da ROM e o nome completo
+do jogo, como no exemplo a seguir:
+
+.. code-block:: text
+
+    astrass           "Astra SuperStars (J 980514 V1.002)"
+    bakubaku          "Baku Baku Animal (J 950407 V1.000)"
+    batmanfr          "Batman Forever (JUE 960507 V1.000)"
+    ...
+    diehard           "Die Hard Arcade (UET 960515 V1.000)"
+    ...
+    gaxeduel          "Golden Axe - The Duel (JUETL 950117 V1.000)"
+
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M
@@ -4967,3 +5015,4 @@ dela.
 .. _0.254: https://github.com/mamedev/mame/commit/b06dae9201f7990bd48b677ae6a97b3a6a7000df
 .. _chdman question: https://www.reddit.com/r/MAME/comments/1l4n81t/chdman_question/
 .. _PlayChoice-10: https://pt.wikipedia.org/wiki/PlayChoice-10
+.. _Sega ST-V (Sega Titan Video game system): https://www.system16.com/hardware.php?id=711
