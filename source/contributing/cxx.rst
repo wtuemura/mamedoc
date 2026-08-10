@@ -416,43 +416,6 @@ valor inteiro, começando na posição do bit determinado. O resultado
 também será justificado à direita e terá o mesmo tipo de dado que o
 valor da entrada.
 
-Há, adicionalmente, uma série de auxiliares para funcionalidades como
-a contagem de zeros/uns à esquerda, para a contagem populada e para a 
-multiplicação e a divisão de números inteiros assinados/não assinados
-nos resultados de 32 bits ou 64 bits. Nem todos esses auxiliares têm
-amplo uso no código-base do MAME, mas usá-los num novo código é
-altamente recomendável quando o código for crítico para questões de
-desempenho, pois eles utilizam a montagem *"inline"* ou recursos
-intrínsecos do compilador por plataforma, quando estiverem disponíveis.
-
-``count_leading_zeros_32/64(T value)``
-
-    Aceita um valor não assinado de 32 ou 64 bits e retorna um valor não
-    assinado de 8 bits contendo a quantidade de zeros consecutivos a
-    partir do bit mais importante.
-
-``count_leading_ones_32/64(T value)``
-
-    A funcionalidade é idêntica à da anterior, porém, examinando um bit
-    consecutivo.
-
-``population_count_32/64(T value)``
-
-    Aceita um valor de 32 ou 64 bits não assinado e retorna a quantidade
-    de bits encontrada, ou seja, o peso *Hamming* do valor.
-
-``rotl_32/64(T value, int shift)``
-
-    Ele executa um deslocamento circular/barril à esquerda de um valor
-    não assinado de 32 ou 64 bits usando um valor de deslocamento
-    determinado. O valor do deslocamento será mascarado para se integrar
-    no intervalo válido de bits para um valor de 32 ou 64 bits.
-
-``rotr_32/64(T value, int shift)``
-
-    A funcionalidade é idêntica à da anterior, porém, com o deslocamento
-    à direita.
-
 Para documentação sobre os auxiliares relacionados à multiplicação e à
 divisão, consulte o ``src/osd/eminline.h``.
 
