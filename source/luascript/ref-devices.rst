@@ -315,6 +315,14 @@ Propriedades
 	inicialização.
 
 
+**device.outputs[]** |sole|
+
+	Uma lista de :ref:`saídas proxie <luascript-ref-outputproxy>` para
+	as saídas do dispositivo, organizada por nome. O índice do operdor
+	e os métodos ``index_of`` possuem complexidade O(log2(n)), enquanto
+	todas as outras operações suportadas têm complexidade O(1).
+
+
 **device.debug** |sole|
 
 	A :ref:`interface de depuração do dispositivo
@@ -711,10 +719,12 @@ Propriedades
 	refletir o valor atual).
 
 
-**screen.refresh_attoseconds** |sole|
+**screen.refresh_interval** |sole|
 
-	O intervalo de atualização configurado da tela em *"attosegundos"*
-	(isso pode não refletir o valor atual).
+	O intervalo de atualização configurado da tela como descrito em
+	:ref:`attotime <luascript-ref-attotime>` (isso pode não refletir o
+	valor atual).
+
 
 .. raw:: latex
 

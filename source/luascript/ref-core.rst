@@ -230,6 +230,11 @@ Métodos
 	Retorna um valor booleano indicando se a saída existe.
 
 
+**output:name()**
+
+	Se houver, retorna o nome da saída. Caso contrário, retorna ``nil``.
+
+
 **output:get()**
 
 	Se houver, retorna o valor atual da saída. Caso contrário, retorna
