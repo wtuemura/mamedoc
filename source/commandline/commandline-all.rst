@@ -5204,15 +5204,15 @@ Opções diversas
 	Ativa o cardápio de trapaças, exibindo uma lista de trapaças que
 	ficam armazenadas em um arquivo externo chamado **cheat.7z**.
 	[#CHEAT]_ [#CHEAT2]_
-	Essa opção também ativa as opções adicionais no menu deslizante para
-	ajustar a velocidade geral e fazer *overclocking* ou
+	Essa opção também ativa as opções adicionais no menu dos controles
+	desizantes para ajustar a velocidade geral e fazer *overclocking* ou
 	*underclocking*.
 
 		O valor predefinido é ``desligado`` (**-nocheat**).
 
 	.. note:: Observe que os savestates, gravações e reproduções criados
 	   com cheats podem não funcionar corretamente se esse recurso
-	   estiver desativado, e vice-versa.
+	   estiver desativado e vice-versa.
 
 	Exemplo:
 		.. code-block:: shell

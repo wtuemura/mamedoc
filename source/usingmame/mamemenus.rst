@@ -517,13 +517,13 @@ Mostra o menu dos dispositivos slot, aqui é possível escolher entre os
 periféricos emulados. |eise| tiver dispositivos no slot.
 
 
-Gerenciador de arquivos
-~~~~~~~~~~~~~~~~~~~~~~~
+Gerenciador de mídias
+~~~~~~~~~~~~~~~~~~~~~
 
-Mostra o menu do gerenciador de arquivos onde é possível abrir arquivos
-ROM, montar ou desmontar imagens de mídia. |eise| tiver um ou mais
-dispositivos de mídia (unidades de disquete, cartuchos ou slots de
-cartão de memória por exemplo).
+Mostra o menu do gerenciador de mídias onde é possível abrir arquivos
+ROM, montar ou desmontar imagens diversas (ISO, CUE, CHD, etc). |eise|
+tiver um ou mais dispositivos de mídia (unidades de disquete, cartuchos
+ou slots de cartão de memória por exemplo).
 
 
 Controle de fita
