@@ -5293,19 +5293,33 @@ Opções diversas
 			mame -ui simple
 
 
-.. _mame-commandline-ramsize:
+.. _mame-commandline-ram:
 
-**-ramsize** / **-ram** <*n*>
+**-ram** <*quantidade*>
 
-	Permite alterar o tamanho padrão da RAM (caso haja suporte
-	no sistema emulado). O valor dessa opção é ignorada em sistemas não
-	compatíveis.
+	Define a quantidade de memória RAM do sistema. A opção **-ramsize**
+	foi removida no commit `19e0c0c`_ e agora está disponível na
+	listagem de slots do sistema. Use a opção
+	:ref:`-listslots <mame-commandline-listslots>` para conhecer os
+	valores disponíveis.
 
 	Exemplo:
 		.. code-block:: shell
 
-			mame maclc -ramsize 10M -hard1 mac761.chd
+			mame maclc -listslots | find "RAM"
+			maclc            ram            10m              RAM
+			                                2m               RAM
+			                                4m               RAM
+			                                6m               RAM
 
+	Exemplo de uso:
+		.. code-block:: shell
+
+			mame maclc -ram 10m -hard1 mac761.chd
+
+		.. tip:: Valores intermediários também são aceitos como ``8m``
+			ou ``7m`` desde que não se extrapole os limites
+			mínimos e máximos.
 
 .. _mame-commandline-confirmquit:
 
@@ -5350,6 +5364,11 @@ Opções diversas
 			mame -language Portuguese_Brazil
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 .. _mame-commandline-nvramsave:
 
 **-[no]nvram_save**
@@ -5366,11 +5385,6 @@ Opções diversas
 		.. code-block:: shell
 
 			mame galaga88 -nonvram_save
-
-
-.. raw:: latex
-
-	\clearpage
 
 
 .. _mame-commandline-rtc:
@@ -5623,3 +5637,4 @@ Opções do servidor HTTP
 .. |snex| replace:: Se não existir, esta pasta será criada
    automaticamente.
 .. |ndrd| replace:: na pasta raiz do MAME
+.. _19e0c0c: https://github.com/mamedev/mame/commit/19e0c0c7604de73c86646190be4000427e10f723
