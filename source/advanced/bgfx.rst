@@ -172,6 +172,16 @@ Alterando as configurações
 	Ativa as funcionalidades de depuração, voltado apenas para os
 	desenvolvedores.
 
+
+**bgfx_vectorcrt**
+
+	Ativa o renderizador CRT vetorial BGFX persistente para jogos
+	vetoriais. Ele utiliza acúmulo de fósforo HDR, renderização de
+	feixe gaussiano, variação da ordem de varredura e efeito bloom. Essa
+	opção não tem efeito quando se utiliza um backend de vídeo diferente
+	do BGFX ou ao rodar um jogo rasterizado.
+
+
 **bgfx_screen_chains**
 
 	Determina como manipular a renderização **BGFX** tela a tela. As
