@@ -293,16 +293,16 @@ Opções de configuração
 
 **-showconfig** / **-sc**
 
-	Exibe as configurações atualmente usadas. É possível direcionar essa
-	saída para um arquivo ou também é possível utilizá-lo como um
-	arquivo **.ini**, como mostra o exemplo abaixo:
+	Exibe as configurações que estão sendo usadas atualmente. É possível
+	direcionar essa saída para um arquivo ou também é possível
+	utilizá-lo como um arquivo **.ini**, como mostra o exemplo abaixo:
 
 	Exemplo:
 		.. code-block:: shell
 
 			mame -showconfig > mame.ini
 
-	É o mesmo que **-createconfig**.
+	Consulte também o capítulo :ref:`advanced-tricks-mame-ini`.
 
 .. _mame-commandline-showusage:
 

@@ -3385,8 +3385,8 @@ do código fonte, exemplo:
 
 .. _advanced-tricks-mame-ini:
 
-Como criar apenas um mame.ini com as configurações de fábrica
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Como criar um mame.ini com configurações padrão
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A opção :ref:`-cc <mame-commandline-createconfig>` cria um novo
 ``mame.ini`` junto com ``ui.ini`` e ``plugin.ini``, infelizmente a opção
