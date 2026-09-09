@@ -1017,7 +1017,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - 
       - auto
       - osx
-      - sdl
+      - sdl [#UIFPSDLMacOS]_
       - none
     * - **Linux**
       - 
@@ -1028,10 +1028,10 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - none
 
 ..  [#UIFPSDLWindows] O binário oficial do MAME para Windows não é
-                     compilado com SDL, sendo necessário compilar uma
-                     versão compatível para que a opção **sdl**
-                     funcione.
-
+                      compilado com o SDL, para que a opção **sdl**
+                      funcione.
+..  [#UIFPSDLMacOS] É preciso compilar o MAME com suporte ao SDL para
+                    que a opção **sdl** funcione.
 
 .. _mame-commandline-keyboardprovider:
 
@@ -1046,7 +1046,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 			mame c64 -keyboardprovider win32
 
-.. tabularcolumns:: |L|C|C|C|C|C|C|
+.. tabularcolumns:: |L|C|C|C|C|C|C|C|
 
 .. list-table:: Provedores compatíveis com a entrada do teclado, separados por plataforma
     :header-rows: 0
@@ -1058,6 +1058,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - rawinput
       - dinput
       - win32
+      -
       - sdl [#KBPVSDLWindows]_
       - none
     * - **SDL (macOS e Linux)**
@@ -1065,7 +1066,16 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - 
       - 
       - 
+      - 
       - sdl
+      - none
+    * - **nativo do macOS**
+      - auto [#KBIPAutoMac]_
+      -
+      -
+      -
+      - mac
+      -
       - none
 
 ..  [#KBPVAutoWindows] No Windows, ``auto`` tentará ``rawinput``,
@@ -1075,7 +1085,8 @@ Opções relacionadas ao que é exibido na tela (OSD)
                      do MAME para Windows não é compilado com SDL. Para
                      obter mais informações consulte o capítulo
                      :ref:`compiling-MAME`.
-..  [#KBPVAutoSDL] Nas versões SDL a opção ``auto`` será ``sdl``.
+..  [#KBPVAutoSDL] Em ``auto`` nas versões SDL o padrão é ``sdl``.
+..  [#KBIPAutoMac] Em ``auto`` no macOS o padrão é ``mac``.
 
 .. tip:: Observe que as ferramentas de emulação de teclado do modo de
           usuário, como o ``joy2key``, quase certamente exigirão o uso
@@ -1105,7 +1116,7 @@ Opções relacionadas ao que é exibido na tela (OSD)
 
 			mame indy_4610 -mouseprovider win32
 
-.. tabularcolumns:: |L|C|C|C|C|C|C|
+.. tabularcolumns:: |L|C|C|C|C|C|C|C|
 
 .. list-table:: Opções compatíveis com a entrada do mouse separado por plataforma
     :header-rows: 0
@@ -1117,16 +1128,25 @@ Opções relacionadas ao que é exibido na tela (OSD)
       - rawinput
       - dinput
       - win32
+      -
       - sdl [#MIPSDLWindows]_
       - none
-    * - **SDL (macOS and Linux)**
+    * - **SDL (macOS e Linux)**
       - auto [#MIPAutoSDL]_
+      -
       -
       -
       -
       - sdl
       - none
-
+    * - **nativo macOS**
+      - auto [#MIPAutoMac]_
+      -
+      -
+      -
+      - mac
+      -
+      - none
 
 ..  [#MIPAutoWindows] No Windows, ``auto`` tentará o ``rawinput``, caso
                       contrário, usa o ``dinput``.
@@ -1135,13 +1155,8 @@ Opções relacionadas ao que é exibido na tela (OSD)
                      do MAME para Windows não é compilado com SDL. Para
                      obter mais informações consulte o capítulo
                      :ref:`compiling-MAME`.
-..  [#MIPAutoSDL] Nas versões SDL a opção ``auto`` será ``sdl``.
-
-Example:
-
-    .. code-block:: shell
-
-        mame indy_4610 -mouseprovider win32
+..  [#MIPAutoSDL] Em ``auto`` nas versões SDL o padrão é ``sdl``.
+..  [#MIPAutoMac] Em ``auto`` no macOS o padrão é ``mac``.
 
 
 .. _mame-commandline-lightgunprovider:
@@ -1171,11 +1186,11 @@ Example:
       - sdl [#LGIPSDLWindows]_
       -
       - none
-    * - **macOS**
+    * - **SDL**
       - auto [#LGIPAutoSDL]_
       -
       -
-      - sdl
+      - sdl [#LGIPSDLMacOS]_
       -
       - none
     * - **Linux**
@@ -1184,6 +1199,13 @@ Example:
       -
       - sdl
       - x11
+      - none
+    * - **nativo macOS**
+      - auto [#LGIPAutoMac]_
+      -
+      -
+      - mac
+      -
       - none
 
 ..  [#LGIPAutoWindows] No Windows, o ``auto`` tentará o ``rawinput``,
@@ -1194,8 +1216,10 @@ Example:
                       do MAME para Windows não é compilado com SDL. Para
                       obter mais informações consulte o capítulo
                       :ref:`compiling-MAME`.
-..  [#LGIPAutoSDL] Nas versões SDL a opção ``auto`` será ``sdl``.
-
+..  [#LGIPSDLMacOS] É preciso compilar o MAME com suporte ao SDL para
+                    que a opção **sdl** funcione.
+..  [#LGIPAutoSDL] Em ``auto`` nas versões SDL o padrão é ``sdl``.
+..  [#LGIPAutoMac] Em ``auto`` no macOS o padrão é ``mac``.
 
 .. _mame-commandline-joystickprovider:
 
@@ -1211,7 +1235,7 @@ Example:
 
 			mame mk2 -joystickprovider winhybrid
 
-.. tabularcolumns:: |L|C|C|C|C|C|C|C|
+.. tabularcolumns:: |L|C|C|C|C|C|C|C|C|C|
 
 .. list-table:: Opções compatíveis com a entrada do joystick separado por plataforma
     :header-rows: 0
@@ -1223,6 +1247,8 @@ Example:
       - winhybrid
       - dinput
       - xinput
+      -
+      -
       - sdlgame [#JIPSDLWindows]_
       - sdljoy [#JIPSDLWindows]_
       - none
@@ -1231,19 +1257,31 @@ Example:
       -
       -
       -
+      -
+      -
       - sdlgame
       - sdljoy
       - none
+    * - **nativo macOS**
+      - auto [#JIPAutoMac]_
+      -
+      -
+      -
+      - macgame
+      - macjoy
+      -
+      -
+      - none
 
-
-.. [#JIPAutoWindows] No Windows, a predefinição é ``winhybrid``.
-.. [#JIPSDLWindows] Para ter suporte SDL no Windows é preciso
-                    compilar o MAME com ``OSD=sdl``. O binário oficial
-                    do MAME para Windows não é compilado com SDL. Para
-                    obter mais informações consulte o capítulo
-                    :ref:`compiling-MAME`.
+..  [#JIPAutoWindows] No Windows, a predefinição é ``winhybrid``.
+..  [#JIPSDLWindows] Para ter suporte SDL no Windows é preciso
+                     compilar o MAME com ``OSD=sdl``. O binário oficial
+                     do MAME para Windows não é compilado com SDL. Para
+                     obter mais informações consulte o capítulo
+                     :ref:`compiling-MAME`.
 ..  [#JIPAutoSDL] Nas versões SDL a opção ``auto`` será ``sdlgame``.
-
+..  [#JIPAutoMac] Sem o suporte SDL no macOS a opção ``auto``será
+                  ``macgame``.
 
 **winhybrid**
 
@@ -1262,6 +1300,20 @@ Example:
 
 	É compatível com até quatro controles ``XInput``.
 
+**macgame**
+
+	Utiliza a estrutura Game Controller do macOS para controles de
+	videogame com mapeamentos de botões/eixos disponíveis, incluindo
+	controladores de consoles da Sony e da Microsoft, bem como
+	controladores certificados pela MFi. Ele oferece atribuições
+	consistentes de botões e eixos, além de nomes de controles
+	relevantes.
+
+**macjoy**
+
+	Usa o framework IOKit do macOS IOKit para todos os controles de
+	videogame.
+
 **sdlgame**
 
 	Usa a API do controle SDL para controles com o mapeamento de
@@ -1274,11 +1326,11 @@ Example:
 
 **sdljoy**
 
-	Usa a API dos joystick em todos os controles de jogos.
+	Usa a API dos joystick em todos os controles de videogame.
 
 **none**
 
-	Ignora todos os controles de jogos.
+	Ignora todos os controles.
 
 
 .. raw:: latex
@@ -2766,7 +2818,7 @@ Opções para a configuração de vídeo
 
 	\clearpage
 
-**Em outras plataformas (incluindo o SDL no Windows):**
+**Em outras plataformas (incluindo o SDL no Windows ou no macOS):**
 
 .. _mame-commandline-video-accel:
 
@@ -2781,10 +2833,18 @@ Opções para a configuração de vídeo
 
 	  A tela é renderizada por meio de software. Por não utilizar nenhum
 	  tipo de aceleração de vídeo, o desempenho da emulação pode ser
-	  penalizado, porém, há uma maior  compatibilidade em qualquer
+	  penalizado, porém, há uma maior compatibilidade em qualquer
 	  plataforma.
 
-* **Predefinições até a versão 0.240:**
+	* **Nativamente no macOS**:
+
+	  Ao utilizar ``soft`` a tela é renderizada por meio de software.
+	  Por não utilizar nenhum tipo de aceleração de vídeo, o desempenho
+	  da emulação pode ser penalizado, porém, há uma maior
+	  compatibilidade em qualquer plataforma.
+
+
+* **Predefinições até a versão 0.240**:
 
 	No Windows é ``d3d``.
 
@@ -2800,7 +2860,8 @@ Opções para a configuração de vídeo
 
 			mame ssf2tu -video bgfx
 
-* **Predefinições após a versão 0.241:**
+
+* **Predefinições a partir da versão 0.241**:
 
 	Todos os sistemas passam a utilizar ``bgfx`` [#bgfx]_.
 
