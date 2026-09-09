@@ -4104,10 +4104,10 @@ Opções para a configuração do áudio
       - Sim
     * - ``coreaudio``
       - macOS
+      - Sim
       - Não
-      - Não
-      - Não
-      - Não
+      - Sim
+      - Sim
     * - ``pipewire``
       - Linux
       - Sim

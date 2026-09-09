@@ -1332,7 +1332,7 @@ verifique se a versão mais recente está instalada:
 
 	.. code-block:: shell
 
-		sudo apt install git git-lfs build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qtbase6-dev qtchooser qt6-qmake qtbase6-dev-tools gettext
+		sudo apt install git git-lfs build-essential python3 libxi-dev libsdl2-dev libsdl2-ttf-dev libfontconfig-dev libpulse-dev qt6-base-dev qmake6 qt6-base-dev-tools qtchooser gettext
 
 Para usar ferramentas `LLVM`_ mais eficientes para arquivar bibliotecas
 estáticas e fazer a lincagem, é preciso instalar os pacotes a seguir:
