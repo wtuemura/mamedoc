@@ -5,8 +5,8 @@
 
 .. _ctrlrcfg:
 
-Arquivos de configuração para os controles
-==========================================
+Arquivos de configuração para controles
+=======================================
 
 .. contents:: :local:
 
@@ -15,38 +15,40 @@ Arquivos de configuração para os controles
 Introdução
 ----------
 
-Os arquivos de configuração para o controle podem ser usados para
-alterar as configurações da entrada predefinida do MAME. Tais arquivos
-de configuração podem ser usados com um dispositivo de entrada
-fornecendo padrões mais adequados, ou usados como perfis que possam ser
-selecionados para diferentes situações. O MAME inclui alguns exemplos de
-arquivos de configuração na pasta **ctrlr** desenvolvidos para fornecer
-padrões úteis para certos controles do tipo arcade.
+Esses arquivos podem ser utilizados para alterar as configurações de
+entrada padrão do MAME. Esses arquivos podem ser utilizados com um
+dispositivo de entrada, fornecendo padrões mais adequados, ou como
+perfis que podem ser selecionados para diferentes situações. O MAME
+inclui, na pasta **ctrlr**, alguns exemplos de arquivos de configuração
+desenvolvidos para fornecer padrões úteis para certos controles do tipo
+arcade.
 
-Apesar da extensão ``.cfg``, estes arquivos estão no formato XML. O MAME
-procura por tais arquivos nos diretórios definidos com a opção
+Apesar da extensão ``.cfg``, esses arquivos estão no formato XML. O MAME
+os procura nos diretórios definidos com a opção
 :ref:`ctrlrpath <mame-commandline-ctrlrpath>`. Um arquivo de
-configuração será selecionado quando a opção
-:ref:`ctrlr <mame-commandline-ctrlr>` seguido pelo nome do arquivo sem
-a extensão ``.cfg``, exemplo::
+configuração é selecionado quando a opção
+:ref:`ctrlr <mame-commandline-ctrlr>` é seguida pelo nome do arquivo sem
+a extensão ``.cfg``, exemplo:
+
+.. code-block:: text
 
 	ctrlr scorpionxg
 
 Isso faz com que o MAME use o arquivo **ctlrl\\scorpionxg.cfg**.
 
-Haverá um erro caso o MAME identifique que o arquivo de configuração
-informado não exista ou caso o seu conteúdo não tenha nenhuma seção
-aplicável ao sistema que está sendo emulado.
+Haverá um erro se o MAME identificar que o arquivo de configuração
+informado não existir ou se o seu conteúdo não tiver nenhuma
+configuração aplicável ao sistema que estiver sendo emulado.
 
-A utilização dos símbolos ou dos *tokens* de entrada variam conforme a
-aplicação. A precisão dos valores disponíveis e os seus significados
-dependem da versão exata do MAME que está sendo usado, dos dispositivos
-conectados na entrada, dos módulos do provedor da entrada selecionada
-(as opções :ref:`keyboardprovider <mame-commandline-keyboardprovider>`,
+A utilização de símbolos ou *tokens* de entrada varia conforme a
+aplicação. A precisão dos valores disponíveis e seus significados
+dependem da versão específica do MAME em uso, dos dispositivos
+conectados à entrada, dos módulos do provedor da entrada selecionado (as
+opções :ref:`keyboardprovider <mame-commandline-keyboardprovider>`,
 :ref:`mouseprovider <mame-commandline-mouseprovider>`,
 :ref:`lightgunprovider <mame-commandline-lightgunprovider>` e
-:ref:`joystickprovider <mame-commandline-joystickprovider>`) e
-possivelmente de outras configurações.
+:ref:`joystickprovider <mame-commandline-joystickprovider>`) e,
+possivelmente, de outras configurações.
 
 
 .. raw:: latex
@@ -59,12 +61,12 @@ possivelmente de outras configurações.
 Estrutura básica
 ----------------
 
-A sua estrutura segue um formato similar ao formato usado pela
-configuração do sistema que o MAME usa para salvar coisas como as
-configurações da entrada e os dados da contabilidade do sistema (criado
-na pasta que for definido usando a opção
-:ref:`cfg_directory <mame-commandline-cfgdirectory>`). Neste exemplo
-temos a estrutura geral de um arquivo de configuração de um controle:
+A estrutura do arquivo é semelhante à usada pela configuração do sistema
+do MAME para salvar itens como configurações de entrada e dados de
+contabilidade (criados na pasta definida pela opção
+:ref:`cfg_directory <mame-commandline-cfgdirectory>`). A seguir, temos
+uma amostra da estrutura geral de um arquivo de configuração de
+controle:
 
 .. code-block:: XML
 
@@ -72,7 +74,7 @@ temos a estrutura geral de um arquivo de configuração de um controle:
     <mameconfig version="10">
         <system name="default">
             <input>
-                <!-- as configurações que afetam todos os sistemas emulados vão aqui -->
+                <!-- as configurações que afetam todos os sistemas vão aqui -->
             </input>
         </system>
         <system name="neogeo">
@@ -138,8 +140,8 @@ elementos anteriores. Dentro de um elemento ``system``, os elementos
 
 .. _ctrlrcfg-substitute:
 
-Remapeando os controles já predefinidos
----------------------------------------
+Remapeando controles já predefinidos
+------------------------------------
 
 É possível usar o emelento ``remap`` para substituir uma entrada do host
 para um outro qualquer na configuração padrão do MAME. O exemplo abaixo
@@ -177,8 +179,8 @@ elemento ``system`` que seja aplicável.
 
 .. _ctrlrcfg-typeoverride:
 
-Substituindo os controles predefinidos pelo tipo da entrada
------------------------------------------------------------
+Substituindo controles predefinidos pelo tipo da entrada
+--------------------------------------------------------
 
 Utilize os elementos ``port`` com os atributos ``type`` sem os atributos
 ``tag`` para substituir as definições de entrada padrão do host para os
