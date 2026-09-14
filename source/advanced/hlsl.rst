@@ -503,6 +503,37 @@ Estes são as predefinições sugeridos para os jogos rasterizados:
 
 	\clearpage
 
+
+**lut_texture**
+
+	Nome do arquivo LUT 3D que será utilizado na tela, no formato PNG.
+	Para obter mais informações, consulte o capítulo
+	:ref:`advanced-lut`.
+
+
+**lut_enable**
+
+	Ativa o LUT 3D para aplicá-lo na tela após o pós-processamento.
+
+
+**ui_lut_texture**
+
+	Nome do arquivo LUT 3D que será utilizado na interface do usuário,
+	no formato PNG. Para obter mais informações, consulte o capítulo
+	:ref:`advanced-lut`.
+
+
+**ui_lut_enable**
+
+	Ativa o LUT 3D para aplicá-lo na interface e na ilustração após o
+	pós-processamento.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
 Jogos vetorizados
 -----------------
 
