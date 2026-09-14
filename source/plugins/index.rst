@@ -77,7 +77,6 @@ partida ao escrever os seus próprios plug-ins.
     gdbstub
     hiscore
     inputmacro
-    keypress
     layout
     offscreenreload
     timecode
