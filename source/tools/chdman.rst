@@ -281,7 +281,7 @@ createcd
 Caso as opções ``--hunksize`` ou ``-hs`` não sejam usadas, a
 predefinição será o tamanho do bloco do CHD principal se o CHD
 principal for informado para gerar o arquivo final, caso contrário,
-serão oito setores por bloco (18.816 bytes).
+serão oito setores por bloco (19.584 bytes).
 
 Na ausência das opções ``--compression`` ou ``-c`` a predefinição será
 ``cdlz,cdzl,cdfl``.
