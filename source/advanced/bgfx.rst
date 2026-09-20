@@ -10,12 +10,6 @@ Efeitos BGFX para (quase) todo mundo
 
 .. contents:: :local:
 
-.. note::
-
-	Segundo `este post <https://www.reddit.com/r/MAME/comments/bx1c90/would_using_hlsl_add_input_lag_with_my_spec/eq3boab>`_
-	feito pelo **MameHaze** [#]_ os efeitos BGFX causam lentidão na
-	emulação e poderão ser removidos do MAME no futuro.
-
 Introdução
 ----------
 
@@ -187,22 +181,27 @@ Alterando as configurações
 	Determina como manipular a renderização **BGFX** tela a tela. As
 	opções disponíveis são:
 
-	* ``default`` Gera uma tela com filtro bilinear (padrão).
-	* ``unfiltered`` Gera uma tela sem filtro.
-	* ``hlsl`` Simula uma tela CRT usando shaders hlsl.
-	* ``lut`` Ativa o uso de LUTs (tabela de consulta de cores)
-	* ``crt-geom`` Simula uma tela CRT simples e leve.
-	* ``crt-geom-deluxe`` Simula uma tela CRT simples, porém, mais detalhada.
-	* ``lcd-grid`` Simula uma tela de display liquido.
+	* ``default``: Gera uma tela com filtro bilinear (padrão).
+	* ``unfiltered``: Gera uma tela sem filtro.
+	* ``hlsl``: Simula uma tela CRT usando shaders hlsl.
+	* ``lut``: Ativa o uso de LUTs (tabela de consulta de cores)
+	* ``crt-geom``: Simula uma tela CRT simples e leve.
+	* ``crt-geom-deluxe``: Simula uma tela CRT simples, porém, mais
+	  detalhada.
+	* ``lcd-grid``: Simula uma tela de display liquido.
+	* ``depixelize``: Upscaler vetorial para arte pixelada (criado por
+	  Kopf & Lischinski, “*Depixelizing Pixel Art*"): Cria contornos
+	  suaves funcionando melhor com imagens nítidas e de baixa
+	  resolução.
 
-	Nós fazemos uma distinção entre os dispositivos de tela emuladas
-	(que chamamos de **screen** ou **tela**) e a tela física (que
-	chamaremos de **window** ou **janela**, configurável através da
-	opção ``-numscreens``). Nós usamos dois pontos ``:`` para separar as
-	janelas e as vírgulas ``,`` para separar as telas definindo valores
-	na opção ``-bgfx_screen_chains`` .
+	Fazemos uma distinção entre dispositivos de tela emulados, chamados
+	de **screen** ou **tela**. Já a tela física é chamada de **window**
+	ou **janela**, configurável por meio da opção :ref:`-numscreens
+	<mame-commandline-numscreens>`). Usamos dois pontos (:kbd:`:`) para
+	separar janelas e vírgulas (:kbd:`,`) para separar telas quando for
+	definido através da opção ``-bgfx_screen_chains``.
 
-	Numa combinação de só uma janela, no caso de jogos com uma única
+	Em uma combinação com uma só janela, no caso de jogos com uma única
 	tela, como o **Pac Man** num monitor físico de PC, você pode
 	definir a opção como::
 
@@ -355,11 +354,6 @@ opções::
   determinado sistema por exemplo).
 
 
-.. [#]	**Citação** "O uso do BGFX adiciona um atraso em torno de 2 ou 3
-		quadros e no geral é considerado inadequado para jogos, ainda
-		que se obtenha uma melhor aparência visual (Eu acredito que
-		(o BGFX) acabará sendo removido já que há muitos problemas
-		segundo os próprios usuários)".
 .. [#]	Onde? (Nota do tradutor)
 .. [#]	Até que o teclado **ABNT-2** seja mapeado pela equipe do MAMEDev,
 		essa tecla fica do lado esquerdo da tecla 1, logo abaixo da
