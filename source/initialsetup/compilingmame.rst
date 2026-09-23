@@ -732,6 +732,12 @@ Com o tempo e a experiência, cada um adaptará as opções de compilação
 		# Nova configuração
 		EMULATOR=1
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 Com o arquivo acima configurado e com as opções definidas, execute o
 comando ``make -j7`` que o seu MAME será compilado levando as suas
 opções em consideração.
@@ -740,9 +746,39 @@ opções em consideração.
    31/12/2023`_  consulte :ref:`EMULATOR <mame-compilation-emulator>`.
 
 
+.. _compiling-database:
+
+Compilando o banco de dados
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para gerar um arquivo compile_commands.json para editores e ferramentas
+como o clangd, adicione o alvo jcdb ao seu comando make habitual:
+
+.. code-block:: shell
+
+	make OVERRIDE_CC=clang OVERRIDE_CXX=clang++ TOOLS=1 jcdb
+
+Isso faz com que o gerador de banco de dados de compilação do GENie seja
+executado sem que o MAME seja compilado. O banco de dados é salvo na
+pasta raiz do código-fonte do MAME utilizando o compilador, a 
+arquitetura e a configuração de depuração/lançamento selecionados. As
+opções de compilação, como **SOURCES**, **SUBTARGET**, **TOOLS**,
+**DEBUG** e **PTR64**, são aplicadas normalmente. É necessário instalar
+as dependências de compilação necessárias para gerar os arquivos do
+projeto.
+
+É necessário executar o comando novamente após alterar as opções de
+compilação ou adicionar ou remover arquivos-fonte. Cada execução
+substitui o banco de dados pela configuração selecionada; o uso de
+**REGENIE=1** não é necessário. Os arquivos-fonte e os cabeçalhos
+gerados ainda precisam ser produzidos por uma compilação normal, para
+que as ferramentas possam analisar os arquivos que os utilizam.
+
+
 .. raw:: latex
 
 	\clearpage
+
 
 .. _compiling-windows:
 
