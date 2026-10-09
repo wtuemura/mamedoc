@@ -1049,6 +1049,12 @@ Métodos
 
 	Interrompe a reprodução e retorna ao início da faixa atual.
 
+
+.. raw:: latex
+
+	\clearpage
+
+
 **cdplayer:previous_track()**
 
 	Retorna ao início da faixa atual se a reprodução já tiver avançado
@@ -1211,6 +1217,11 @@ Propriedades
 	número anexado que pode mudar dependendo da configuração do slot.
 
 
+.. raw:: latex
+
+	\clearpage
+
+
 **image.formatlist[ ]** |sole|
 
 	O :ref:`formato da imagem da mídia <luascript-ref-imagefmt>` são
@@ -1235,10 +1246,6 @@ Propriedades
 
 	O caminho completo para o arquivo montado da imagem da mídia ou
 	``nil`` se nenhuma imagem da mídia estiver montada.
-
-.. raw:: latex
-
-	\clearpage
 
 
 **image.crc** |sole|
@@ -1293,6 +1300,11 @@ Propriedades
 **image.device** |sole|
 
 	O :ref:`dispositivo <luascript-ref-device>` subjacente.
+
+
+.. raw:: latex
+
+	\clearpage
 
 
 .. _luascript-ref-disound:
