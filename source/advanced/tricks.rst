@@ -4987,6 +4987,70 @@ do jogo, como no exemplo a seguir:
     gaxeduel          "Golden Axe - The Duel (JUETL 950117 V1.000)"
 
 
+Ferramentas de formatação de NVRAM para 3DO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Angelo Salese e outros colaboradores fizeram grandes contribuições para
+a emulação do 3DO, que estarão incluídas na versão 0.390 do MAME. Embora
+a emulação ainda esteja longe da perfeição, já é suficientemente boa
+para ser funcional.
+
+Assim que você inicia a emulação do 3DO, por exemplo:
+
+.. code-block:: shell
+
+	mame 3do_fz1 (3DO Americano)
+	mame 3do_fz1j (3DO Japonês)
+
+O MAME cria um arquivo **nvram** vazio dentro da pasta
+**nvram\\3do_fz1j**. Esse arquivo tem 32.768 bytes (32 k) e está todo
+preenchido com FF do início ao fim. Como a NVRAM do sistema ainda não
+está inicializado e formatado. Ao iniciar um jogo, como o Supreme
+Warrior, e tentar criar um save, o jogo retorna um erro informando que o
+armazenamento está cheio, embora não haja nenhum save nele.
+
+Ao tentar iniciar o "Panasonic REAL 3DO Interactive Multiplayer -
+Sampler CD (Japan)" e pressionar :kbd:`X` no ponto indicado, você tem
+acesso ao gerenciador de armazenamento de memória do 3DO. Ainda assim,
+aparece uma tela de erro com um texto dizendo para você desligar o
+console sem resolver o problema.
+
+Para solucionar essa questão, você precisa:
+
+* Apague a pasta **nvram\\3do_fz1j**;
+* Inicie a emulação sem nenhum disco e deixar a emulação seguir por
+  alguns segundos, isso inicializará a sua nvram;
+* Desligar a emulação;
+* Iniciar a emulação já com o "Sampler CD" e pressionar :kbd:`X` no
+  ponto apropriado;
+* Já na tela do gerenciador pressione :kbd:`C` 2x para confirmar a
+  formatação.
+
+Para não ter que passar por todo esse processo eu criei alguns scripts
+que resolve esse problema em versão para Windows, Linux e macOS:
+
+* :download:`cria_nvram_formatada.bat <scripts/cria_nvram_formatada.bat>` / :download:`cria_nvram_formatada.sh <scripts/cria_nvram_formatada.sh>`
+
+  O script cria uma nvram pronta para uso no MAME. Após executar o
+  script basta arrastar o arquivo nvram criado para a pasta
+  **nvram\\3do_fz1j**;
+* :download:`cria_nvram_formatada_FF.bat <scripts/cria_nvram_formatada_FF.bat>`/ :download:`cria_nvram_formatada_FF.sh <scripts/cria_nvram_formatada_FF.sh>`
+
+  Ele faz o mesmo que o anterior, mas, preenche o arquivo com ``FF``.
+  A versão anterior funciona no MAME (e em outros emuladores) sem
+  problemas. Contudo, essa versão poderá ser útil se você precisar criar
+  uma nova NVRAM para gravar diretamente no hardware;
+* :download:`zera_nvram_existente_00.bat <scripts/zera_nvram_existente_00.bat>` / :download:`zera_nvram_existente_00.sh <scripts/zera_nvram_existente_00.sh>`
+  
+  Restaura uma nvram usada para uma
+  condição formatada usando ``00``. Na versão Windows basta arrastar o
+  arquivo nvram para cima do script. Na versão Linux/macOS faça:
+  **zera_nvram_existente_00 nvram**;
+* :download:`zera_nvram_existente_FF.bat <scripts/zera_nvram_existente_FF.bat>` / :download:`zera_nvram_existente_FF.sh <scripts/zera_nvram_existente_FF.sh>`
+  
+  Faz o mesmo que o anterior porém usa ``FF``. O procedimento é o mesmo.
+
+
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
 .. [#GRILL]	Para mais detalhes, acesse http://www.fazendovideo.com.br/infotec/crt.html
 .. _PAL-M: https://pt.wikipedia.org/wiki/PAL-M

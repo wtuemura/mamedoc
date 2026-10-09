@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Criado por Wellington Terumi Uemura
+# 09/10/2026
+# Licença: CC by 4.0
+
+# Define o nome do arquivo que será criado
+FILENAME="nvram"
+
+echo "Criando novo arquivo NVRAM do 3DO: $FILENAME..."
+
+# Header String
+HEX="015A5A5A5A5A02006372656174656420627920777475656D757261000000000000000000000000006E7672616D000000000000000000000000000000000000000000000000000000FFFFFFFF0000000100008000FFFFFFFE00000000000000010000000000000084FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF855A02B6000000980000009800000014000000147AA565BD000000840000008400007F6800000040"
+
+# Cria o arquivo diretamente com os dados binários do cabeçalho
+echo -n "$HEX" | xxd -r -p > "$FILENAME"
+
+# Expande o arquivo recém-criado até dar exatamente 32768 bytes com preenchimento em zero
+truncate -s 32768 "$FILENAME"
+
+echo "[SUCESSO] Um novo arquivo '$FILENAME' foi criado!"
