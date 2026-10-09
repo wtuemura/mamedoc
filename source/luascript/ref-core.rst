@@ -529,6 +529,13 @@ Propriedades
 	\clearpage
 
 
+machine.cdplayers |sole|
+
+	Um :ref:`dispositivo enumerador <luascript-ref-devenum>` que
+	reproduz toda a :ref:`Interface para o reprodutor de CD de áudio
+	<luascript-ref-cdplayerdev>` |nsqe|.
+
+
 **machine.images** |sole|
 
 	Um :ref:`dispositivo enumerador <luascript-ref-devenum>` que produz

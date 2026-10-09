@@ -84,6 +84,12 @@ Instanciação
 	no sistema.
 
 
+**manager.machine.cdplayers**
+
+	|rude| que irá iterar sobre os :ref:`dispositivos reprodutores de CD
+	de áudio<luascript-ref-cdplayerdev>` no sistema.
+
+
 **manager.machine.images**
 
 	|rude| que irá iterar sobre os
@@ -153,6 +159,18 @@ Instanciação
 .. raw:: latex
 
 	\clearpage
+
+
+**emu.cdplayer_enumerator(dispositivo, [profundidade])**
+
+	|rude| que irá iterar sobre os :ref:`dispositivos de reprodução de
+	Áudio CD <luascript-ref-cdplayerdev>` na
+	sub-árvore começando num dispositivo específico. O dispositivo
+	informado será incluído caso seja um dispositivo de reprodução de
+	Áudio CD.  Caso a profundidade seja informada este deve ser um valor
+	inteiro que definirá a quantidade máxima dos níveis que serão
+	iterados abaixo do dispositivo informado (Por exemplo, ``1`` irá
+	limitar a iteração do dispositivo e dos dispositivos relacionados).
 
 
 **emu.image_enumerator(dispositivo, [profundidade])**
@@ -992,6 +1010,99 @@ Propriedades
 
 	A duração da fita como um número de ponto flutuante em unidades de
 	segundos, ou zero (``0``) caso nenhuma imagem da fita seja montada.
+
+
+.. _luascript-ref-cdplayerdev:
+
+Interface para o reprodutor de CD de áudio
+------------------------------------------
+
+Encapsula a classe ``device_cd_player_interface`` do MAME que é um
+mix-in implementado por dispositivos que contêm um reprodutor de CD de
+áudio operado manualmente, cuja saída é direcionada para o sistema
+emulado no momento, por exemplo, por meio de fita cassete ou um
+adaptador via porta de joystick.
+
+
+Instanciação
+~~~~~~~~~~~~
+
+**manager.machine.cdplayers[tag]**
+
+	Obtém um dispositivo reprodutor de CD de áudio através de uma tag
+	relativa ao dispositivo raiz da máquina, ou ``nil`` caso tal
+	dispositivo não exista ou não contenha um reprodutor de CD de áudio.
+
+
+Métodos
+~~~~~~~
+
+**cdplayer:play()**
+
+	Inicia ou retoma a reprodução a partir da posição atual.
+
+**cdplayer:pause()**
+
+	Pausa a reprodução, mantendo a posição atual.
+
+**cdplayer:stop()**
+
+	Interrompe a reprodução e retorna ao início da faixa atual.
+
+**cdplayer:previous_track()**
+
+	Retorna ao início da faixa atual se a reprodução já tiver avançado
+	mais de dois segundos; caso contrário, passa para o início da faixa
+	anterior.
+
+**cdplayer:next_track()**
+
+	Vai para o início da faixa seguinte.
+
+Propriedades
+~~~~~~~~~~~~
+
+**cdplayer.is_stopped** |sole|
+
+	Um valor booleano que indica se o reprodutor está parado.
+
+**cdplayer.is_playing** |sole|
+
+	Um valor booleano que indica se o reprodutor está reproduzindo algo.
+
+**cdplayer.is_paused** |sole|
+
+	Um valor booleano que indica se o reprodutor está pausado.
+
+**cdplayer.track** |lees|
+
+	O número da faixa atual começa em um. Quando você o define, ele
+	salta para o início dessa faixa sem alterar o status do reprodutor.
+
+**cdplayer.track_count** |sole|
+
+	A quantidade total de faixas no disco, ou zero (0) caso nenhuma
+	imagem de disco esteja montada.
+
+**cdplayer.position** |sole|
+
+	A posição atual é expressa como um número de ponto flutuante em
+	unidades de segundos em relação ao início da faixa atual.
+
+**cdplayer.length** |sole|
+
+	A duração da faixa atual é expressa como um número de ponto
+	flutuante em segundos, ou zero (0) caso nenhuma imagem de disco
+	esteja montada.
+
+**cdplayer.device** |sole|
+
+	O :ref:`dispositivo <luascript-ref-device>` subjacente.
+
+**cdplayer.image** |sole|
+
+	O :ref:`dispositivo de imagem de CD <luascript-ref-diimage>` que
+	contém o disco.
 
 
 .. _luascript-ref-diimage:
