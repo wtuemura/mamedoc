@@ -4987,7 +4987,7 @@ do jogo, como no exemplo a seguir:
     gaxeduel          "Golden Axe - The Duel (JUETL 950117 V1.000)"
 
 
-Ferramentas de formatação de NVRAM para 3DO
+Ferramentas de formatação para NVRAM do 3DO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Angelo Salese e outros colaboradores fizeram grandes contribuições para
@@ -5032,7 +5032,7 @@ que resolve esse problema em versão para Windows, Linux e macOS:
 * :download:`cria_nvram_formatada.bat <scripts/cria_nvram_formatada.bat>` / :download:`cria_nvram_formatada.sh <scripts/cria_nvram_formatada.sh>`
 
   O script cria uma nvram pronta para uso no MAME. Após executar o
-  script basta arrastar o arquivo nvram criado para a pasta
+  script basta arrastar o arquivo **nvram** criado para a pasta
   **nvram\\3do_fz1j**;
 * :download:`cria_nvram_formatada_FF.bat <scripts/cria_nvram_formatada_FF.bat>`/ :download:`cria_nvram_formatada_FF.sh <scripts/cria_nvram_formatada_FF.sh>`
 
@@ -5045,10 +5045,178 @@ que resolve esse problema em versão para Windows, Linux e macOS:
   Restaura uma nvram usada para uma
   condição formatada usando ``00``. Na versão Windows basta arrastar o
   arquivo nvram para cima do script. Na versão Linux/macOS faça:
-  **zera_nvram_existente_00 nvram**;
+  **./zera_nvram_existente_00 nvram**;
 * :download:`zera_nvram_existente_FF.bat <scripts/zera_nvram_existente_FF.bat>` / :download:`zera_nvram_existente_FF.sh <scripts/zera_nvram_existente_FF.sh>`
   
   Faz o mesmo que o anterior porém usa ``FF``. O procedimento é o mesmo.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Editando saves no 3DO (Supreme Warrior)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. |stats| image:: images/sw_stats.png
+   :scale: 50%
+   :align: middle
+   :alt: Stats máximo
+.. |all| image:: images/sw_all.png
+   :scale: 50%
+   :align: middle
+   :alt: Stats máximo
+
+Com a emulação, ficou muito mais fácil acessar a NVRAM do 3DO e editar
+os dados de certos jogos salvos nessa memória. O jogo que usaremos como
+exemplo é o Supreme Warrior. Eu tive esse jogo quando ele foi lançado,
+e ele me impactou bastante na época, pois até então não havíamos visto
+nada igual. Além de ser muito difícil, era preciso decorar o movimento
+dos inimigos nos níveis mais altos, como Master e Supreme, pois nessas
+dificuldades o jogo não indica qual golpe dar, se era para usar as
+mãos ou os pés, nem em que lado do corpo aplicá-lo.
+
+Inicie o jogo, vá pressionando :kbd:`Start` para cortar o filme de
+introdução, quando aparecer a tela de seleção de inimigos acesse
+:guilabel:`Options Menu` > :guilabel:`Save Game`, crie o seu primeiro
+save, dê o nome que desejar, aqui usarei **WTUEMURA**.
+
+Ao utilizar um editor hexadecimal nós podemos ver o bloco de dados que
+nos interessa:
+
+.. Listagem obtida com o comando 'hexdump -C nvram' no Linux.
+
+.. code-block:: hexdump
+
+	00000100  98 00 00 02 2a 00 00 00  40 00 00 01 ea 00 00 00  |....*...@.......|
+	00000110  00 20 20 20 20 53 75 70  72 57 61 72 72 69 6f 72  |.    SuprWarrior|
+	00000120  47 61 6d 65 73 00 00 00  00 00 00 00 00 00 00 00  |Games...........|
+	00000130  00 00 00 00 00 34 01 f4  01 f4 02 58 00 00 00 00  |.....4.....X....|
+	00000140  00 00 00 00 00 c0 00 00  ff 52 43 76 80 f2 00 00  |.........RCv....|
+	00000150  00 00 57 54 55 45 4d 55  52 41 00 00 00 00 00 00  |..WTUEMURA......|
+
+A partir do offset ``0x135`` nós temos o valor ``34``, esse byte define
+o nível de dificuldade do jogo, sendo:
+
+* ``34`` ou ``14``: **Aprentice**;
+* ``35`` ou ``15``: **Master**;
+* ``36`` ou ``16``: **Supreme**.
+
+.. note:: Nenhum checksum é necessário quando esses valores forem
+   alterados.
+
+É possível alterar este valor livremente pois o jogo não o considera,
+então, por exemplo, é possível chegar até o último estágio para lutar
+com Fang-Tu na dificuldade *Aprentice* e editar a dificuldade para
+*Supreme* no save. Geralmente quando carregamos o save do jogo, o jogo
+não permite que a dificuldade seja alterada, porém se a dificuldade for
+alterada diretamente na nvram, o jogo será carregado com a dificuldade
+desejada mesmo que você não tenha chego até o final nessa dificuldade.
+
+.. tip:: A partir daqui é preciso fazer o cálculo de checksum, caso
+   contrário o jogo não carrega e aparece uma mensagem dizendo que o
+   save do jogo está corrompido. Isso será explicado mais adiante.
+
+Do offset ``0x13C`` até ``0x144`` é possível definir a quantidade de
+itens que você recebe durante o jogo. Ao preencher essa faixa com ``63``
+(99 em decimal) você obtém a quantidade de 99 de cada item.
+
+Do offset ``0x136`` até ``0x13B`` é possível definir a condição geral do
+seu jogador (*Stats*). Se definirmos ``03 E7`` (999 em decimal) em
+todos estes campos, o seu jogador fica com **999** em todos os estatus
+(saúde, ataque e resistência).
+
+Do offset ``0x14E`` até ``0x151`` nós podemos definir a quantidade de
+pontos do jogador. Se definirmos os valores ``3B 9A C9 FF`` o jogador
+terá **999.999.999** em pontos.
+
+|stats|
+
+.. note:: Parece que o jogo só tolera valores até aproximadamente
+   **1.999.999.999**, mais que isso aparece um "lixo" de letras
+   ilegíveis. Use com cuidado.
+
+No offset ``0x145`` o valor ``C0`` define que você não tem nenhum
+"*Dirty Trick*" e nenhum "*Special Skill*". Já se ele for alterado para:
+
+* ``B8``: Você tem todos os "*Dirty Tricks*" e nenhum "*Special Skill*";
+* ``C7``: Você não tem nenhum "*Dirty Trick*" e todos os "*Special
+  Skills*";
+* ``BF``: Você tem ambos, "*Dirty Tricks*" e "*Special Skills*".
+
+Há outros campos que definem se você derrotou determinado chefe, etc.
+Porém isso não nos interessa.
+
+
+.. raw:: latex
+
+	\clearpage
+
+
+Calculando o checksum
+---------------------
+
+Para que o jogo reconheça todas essas alterações, é preciso calcular o
+**checksum** (CRC-16 ou CRC-16/ARC) de todo o bloco de dados que
+alteramos. Ele começa no offset ``0x136`` e vai até o offset ``0x159``,
+neste caso, começa após o byte de dificuldade (``34``) até o byte da
+última letra do seu nome. Assim o offset final vai variar dependendo do
+tamanho do nome que você deu ao save do jogo.
+
+No **Windows** a maneira mais fácil é utilizando o `HxD`_:
+
+* Abra o arquivo **nvram**;
+* Aplique as alterações desejadas;
+* Selecione a partir do offset ``0x136`` até ``0x159`` (ou até a última
+  letra do seu nome);
+* Vá em :guilabel:`Analysis` > :guilabel:`Checksums...`;
+* Selecione **CRC-16**, em :guilabel:`Scope` deixe em **Selected
+  data** e clique em **Ok**;
+* Na parte de baixo do HxD você verá o valor do checksum.
+
+O valor encontrado deve ser inserido a partir do offset ``0x107`` até o
+offset ``0x108``. Depois de salvo, ele pode ser utilizado pelo jogo sem
+problemas.
+
+No Linux instale o **Oketa**:
+
+.. code-block:: shell
+
+	sudo apt install oketa
+
+.. tip:: Para macOS siga as instruções do `MacPorts`_.
+
+* Abra o arquivo **nvram** no Oketa;
+* Aplique as alterações desejadas;
+* Selecione a partir do offset ``0x136`` até ``0x159`` (ou até a última
+  letra do seu nome);
+* Clique com o botão direito em cima da seleção, escolha
+  :guilabel:`Copiar como` > :guilabel:`Valores`;
+* Em **Separação** não deixe nenhum espaço para ficar uma cadeia de
+  caracteres contínuo e sem espaço em branco entre os caracteres;
+* Clique em :guilabel:`copiar para a área de transferência`;
+* Acesse a `calculadora CRC online`_ e tenha certeza que **Input** e
+  **Output** esteja em **HEX**;
+* Cole os dados e clique no botão **CRC-16**;
+* Logo abaixo no campo **CRC-16/ARC** você deverá ter o valor do
+  checksum;
+
+O valor encontrado deve ser inserido a partir do offset ``0x107`` até o
+offset ``0x108``. Depois de salvo, ele pode ser utilizado pelo jogo sem
+problemas.
+
+Se tudo der certo, o seu lutador estará com tudo no máximo.
+
+|all|
+
+Se você não tiver paciência para passar por tudo isso, eu separei alguns
+arquivos NVRAM pronto para uso `bem aqui`_. Dentro das pastas haverá
+arquivos como ``nvram aprentice + All Dirty Tricks, No Skills and All
+99``. Copie este arquivo para dentro da pasta **nvram\\bios_do_3do**
+(por exemplo, **nvram\\3do_fz1j**) e o renomeie para **nvram**. Inicie o
+jogo, carregue o save e comece todo equipado. Há diferentes saves para
+todos os gostos.
 
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
@@ -5080,3 +5248,7 @@ que resolve esse problema em versão para Windows, Linux e macOS:
 .. _chdman question: https://www.reddit.com/r/MAME/comments/1l4n81t/chdman_question/
 .. _PlayChoice-10: https://pt.wikipedia.org/wiki/PlayChoice-10
 .. _Sega ST-V (Sega Titan Video game system): https://www.system16.com/hardware.php?id=711
+.. _HxD: https://mh-nexus.de/en/hxd/
+.. _MacPorts: https://ports.macports.org/port/okteta/
+.. _calculadora CRC online: https://crccalc.com/?crc=&method=CRC-16&datatype=hex&outtype=hex
+.. _bem aqui: https://www.mediafire.com/file/alinjk8l5jleyxl/Supreme_Warrior_Saves.zip
