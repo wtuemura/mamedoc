@@ -5077,6 +5077,11 @@ dos inimigos nos níveis mais altos, como Master e Supreme, pois nessas
 dificuldades o jogo não indica qual golpe dar, se era para usar as
 mãos ou os pés, nem em que lado do corpo aplicá-lo.
 
+.. note:: Não há uma maneira "fácil" de se editar um save. Você gasta
+   muito tempo vendo a "dança dos bytes" até identificar o que eles
+   fazem e para que servem. Eu demorei semanas para levantar todas essas
+   informações.
+
 Inicie o jogo, vá pressionando :kbd:`Start` para cortar o filme de
 introdução, quando aparecer a tela de seleção de inimigos acesse
 :guilabel:`Options Menu` > :guilabel:`Save Game`, crie o seu primeiro
@@ -5217,6 +5222,155 @@ arquivos como ``nvram aprentice + All Dirty Tricks, No Skills and All
 (por exemplo, **nvram\\3do_fz1j**) e o renomeie para **nvram**. Inicie o
 jogo, carregue o save e comece todo equipado. Há diferentes saves para
 todos os gostos.
+
+
+Criando códigos Game Guru para 3DO a partir de saves
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Na condição atual do MAME, o *3DO Game Guru* (3GG) funciona
+aparentemente sem maiores problemas. Ele é uma ferramenta avançada para
+manipular os saves dos jogos do 3DO. Mas antes é preciso configurá-lo
+para tal:
+
+Usando a mesma NVRAM que você salvou o seu jogo, baixe e salve a imagem
+do 3GG em algum lugar. Crie o arquivo **ini\\3do_fz1.ini** com a opção
+``cdrm`` seguido do caminho completo da imagem do 3GG, exemplo:
+
+.. code-block:: text
+
+	cdrm "W:\3DO\iso\3DO Game Guru (USA, Europe).cue"
+	#cdrm "W:\3DO\iso\Supreme Warrior CD1.iso"
+	#cdrm "W:\3DO\iso\Supreme Warrior CD2.iso"
+
+Inicie o MAME com o comando:
+
+.. code-block:: shell
+
+	mame 3do_fz1
+
+O 3GG deve iniciar dizendo que a configuração foi criada, pressione
+:kbd:`Esc` para encerrar a emulação. Abra o arquivo
+**nvram\\3do_fz1\\nvram** em um editor hexadecimal, vá passando a tela
+para cima até encontrar **GGRFGameGuru.CFG**. Após esse nome, haverá uma
+sequência de ``00`` até o byte ``08``, altere esse valor para ``4B`` e
+salve (não feche o editor). Isso faz o 3GG começar em modo avançado, sem
+efeitos e sem animação.
+
+* Inicie o MAME novamente com o comando anterior;
+* No 3GG selecione :guilabel:`FILE RELATED` > :guilabel:`COPY`;
+* Selecione **SupremeWarriorGames** e pressione o botão :kbd:`A` para
+  confirmar;
+* Na tela **Enter New File Name** selecione :kbd:`-`:kbd:`1` ou qualquer
+  outro caracter simples, o nome pouco importa, desde que seja diferente
+  do original. Pressione :kbd:`C` para concluir;
+* Na próxima janela selecione **Yes** e confirme pressionando o botão
+  :kbd:`A`;
+* Pressione :kbd:`Esc` para encerrar a emulação.
+
+Retorne para o seu editor hex e veja que logo abaixo de
+**GGRFGameGuru.CFG** está a cópia do save do jogo com o nome
+**SupremeWarriorGames-1** (meu caso). Alguns bytes adiante após
+**SupremeWarriorGames-1** deve aparecer o byte ``34`` indicando o inicio
+do save.
+
+A partir daqui basta ir aplicando as alterações desejadas na cópia sem
+ter que se preocupar com checksum pois o 3GG vai lidar com isso
+automaticamente. Apesar de simples, note que você precisará identificar
+todas as alterações que deseja fazer antes e depois basta ir colando na
+cópia. A maneira que eu fiz foi copiando todo o bloco, depois aplica-se
+a alteração, compara os saves, gera o código, encerra a emulação, cola o
+bloco original, aplica outra alteração e repete tudo novamente.
+Lembrando de aplicar as alterações com o MAME desligado.
+
+O processo para gerar o código é simples:
+
+* Aplique as alterações na cópia do save e inicie a emulação com o 3GG;
+* Selecione :guilabel:`GAME GURU CODES` > :guilabel:`CREATE CODE`;
+* Selecione o save original **SupremeWarriorGames** e confirme
+  pressionando o botão :kbd:`A`;
+* Selecione o save modificado  **SupremeWarriorGames-1** e confirme
+  pressionando o botão :kbd:`A`.
+
+O código ou códigos deverão estar aparecendo na sua tela. Caso não
+apareça nada, ou não há diferenças entre os saves ou, você aplicou as
+alterações com o MAME rodando, por isso a importância de fazer as
+alterações com o MAME desligado.
+
+Abaixo alguns códigos que eu gerei com o 3GG:
+
+* **Nome**: Alterna a dificuldade para aprentice (em qualquer fase)
+
+  * **CODE 1**: ``STUXXXF``
+
+* **Nome**: Alterna a dificuldade para master (em qualquer fase)
+
+  * **CODE 1**: ``RSUXXXF``
+
+* **Nome**: Alterna a dificuldade para supreme (em qualquer fase)
+
+  * **CODE 1**: ``LMUXXXF``
+
+* **Nome**: 999.999.999 Pontos
+
+  * **CODE 1**: ``KGGLIJKHUIWXF``
+
+* **Nome**: 999 Stats
+
+  * **CODE 1**: ``ZUXOHUXMFUXWXXF``
+  * **CODE 2**: ``WLELXXF``
+
+* **Nome**: Todos os itens 99
+
+  * **CODE 1**: ``QUQUPUOUNUMKXXF``
+  * **CODE 2**: ``ZUPUOUNUMFXXF``
+
+* **Nome**: Começa com todas as *"special skills*" (APRENTICE)
+
+  * **CODE 1**: ``PLGXWXF``
+
+* **Nome**: Começa com todas as *"special skills*" (MASTER)
+
+  * **CODE 1**: ``RSUXXXF``
+  * **CODE 2**: ``PLGXWXF``
+
+* **Nome**: Começa com todas as *"special skills*" (SUPREME)
+
+  * **CODE 1**: ``LMUXXXF``
+  * **CODE 2**: ``PLGXWXF``
+
+* Começa com todos os "*dirty tricks*" (APRENTICE)
+
+  * **CODE 1**: ``PKHXWXF``
+
+* Começa com todos os "*dirty tricks*" (MASTER)
+
+  * **CODE 1**: ``RSUXXXF``
+  * **CODE 2**: ``PKHXWXF``
+
+* Começa com todos os "*dirty tricks*" (SUPREME)
+
+  * **CODE 1**: ``LMUXXXF``
+  * **CODE 2**: ``PKHXWXF``
+
+* **Nome**: Luta com Fang Tu (APRENTICE), todos os "*dirty tricks*" e "*secret moves*"
+
+  * **CODE 1**: ``INXEUDHXWXF``
+  * **CODE 2**: ``MNNUXKTTWXF``
+  * **CODE 3**: ``QDJJWXF``
+
+* **Nome**: Luta com Fang Tu (MASTER), todos os "*dirty tricks*" e "*secret moves*"
+
+  * **CODE 1**: ``RSUXXXF``
+  * **CODE 2**: ``INXEUDHXWXF``
+  * **CODE 3**: ``MNNUXKTTWXF``
+  * **CODE 4**: ``QDJJWXF``
+
+* **Nome**: Luta com Fang Tu (SUPREME), todos os "*dirty tricks*" e "*secret moves*"
+
+  * **CODE 1**: ``LMUXXXF``
+  * **CODE 2**: ``INXEUDHXWXF``
+  * **CODE 3**: ``MNNUXKTTWXF``
+  * **CODE 4**: ``QDJJWXF``
 
 
 .. [#]	#5694 https://github.com/mamedev/mame/issues/5694
